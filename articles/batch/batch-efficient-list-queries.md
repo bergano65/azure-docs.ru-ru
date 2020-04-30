@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: fea8efd4e4946b67754bad98589b728e8d696425
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82116117"
 ---
 # <a name="create-queries-to-list-batch-resources-efficiently"></a>Эффективное создание запросов на вывод списка ресурсов пакетной службы
@@ -168,7 +168,7 @@ List<CloudPool> testPools =
 ## <a name="example-construct-a-filter-string"></a>Пример. Создание строки фильтрации
 При создании строки фильтрации для [ODATADetailLevel.FilterClause][odata_filter] обратитесь к таблице, приведенной выше в разделе "Сопоставления для строк фильтрации", чтобы найти страницу документации по REST API, соответствующей операции списка, которую необходимо выполнить. В первой многострочной таблице на этой странице содержатся фильтруемые свойства и соответствующие поддерживаемые ими операторы. К примеру, вы хотите получить все задачи с ненулевым кодом возврата. В строке [Вывод задач, связанных с заданием][rest_list_tasks] указана строка с соответствующим параметром и допустимые операторы.
 
-| Свойство | Разрешенные операции | Тип |
+| Свойство | Разрешенные операции | Type |
 |:--- |:--- |:--- |
 | `executionInfo/exitCode` |`eq, ge, gt, le , lt` |`Int` |
 

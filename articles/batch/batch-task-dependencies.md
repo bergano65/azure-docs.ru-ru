@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 05/22/2017
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 9b3bc37a3d004f077e2e780d096b7bb2a8e5f773
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82116491"
 ---
 # <a name="create-task-dependencies-to-run-tasks-that-depend-on-other-tasks"></a>Создание зависимостей для выполнения задач, которые зависят от других задач
@@ -200,7 +200,7 @@ new CloudTask("B", "cmd.exe /c echo B")
 - как выполнить эти задачи в пуле вычислительных узлов.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
-### <a name="application-deployment"></a>Развертывание приложения
+### <a name="application-deployment"></a>Развертывание приложений
 Функция [пакетов приложения](batch-application-packages.md) в пакетной службе дает возможность очень легко развернуть приложения, которые задачи выполняют на вычислительных узлах, и управлять их версиями.
 
 ### <a name="installing-applications-and-staging-data"></a>Установка приложений и промежуточных данных

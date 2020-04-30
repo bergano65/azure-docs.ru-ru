@@ -4,10 +4,10 @@ description: Создайте пул пакетной службы с помощ
 ms.topic: article
 ms.date: 08/28/2019
 ms.openlocfilehash: 45f721dbdf11e0a6f58da71c644acf687dfadd49
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82116525"
 ---
 # <a name="use-the-shared-image-gallery-to-create-a-custom-pool"></a>Создание пользовательского пула с помощью коллекции общих образов
@@ -139,7 +139,7 @@ private static void CreateBatchPool(BatchClient batchClient, VirtualMachineConfi
 1. Выберите **Пулы** , а затем — **Добавить** , чтобы создать новый пул.
 1. В разделе **тип образа** выберите **Коллекция общих образов**.
 1. Выполните остальные разделы со сведениями об управляемом образе.
-1. Щелкните **ОК**.
+1. Нажмите кнопку **OK**.
 
 ![Создайте пул из общего образа с помощью портала.](media/batch-sig-images/create-custom-pool.png)
 

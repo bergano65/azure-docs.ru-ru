@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 03/10/2019
 ms.author: markscu
 ms.openlocfilehash: 0c58bdf50f3e69b2b7d18f750f94fecdb512af85
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82116032"
 ---
 # <a name="job-and-task-error-checking"></a>Проверка ошибок заданий и задач
@@ -54,7 +54,7 @@ ms.locfileid: "82116032"
 - Все экземпляры выполняемой задачи выпуска задания можно получить из задания с помощью функции [подготовки списка API и состояния задачи выпуска](https://docs.microsoft.com/rest/api/batchservice/job/listpreparationandreleasetaskstatus). Как и в случае с любой задачей, доступны [сведения о выполнении](https://docs.microsoft.com/rest/api/batchservice/job/listpreparationandreleasetaskstatus#jobpreparationandreleasetaskexecutioninformation) со свойствами `failureInfo`, `exitCode`такими как `result`, и.
 - Если одна или несколько задач выпуска задания завершаются сбоем, задание по-прежнему будет завершено и переходить `completed` в состояние.
 
-## <a name="tasks"></a>Задания
+## <a name="tasks"></a>Задачи
 
 Задачи заданий могут завершаться сбоем по нескольким причинам:
 
