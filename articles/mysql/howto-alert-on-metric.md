@@ -1,17 +1,17 @@
 ---
 title: Настройка оповещений метрик — портал Azure — база данных Azure для MySQL
 description: В этой статье описывается, как настроить уведомления на основе метрик для базы данных Azure для MySQL и получить к ним доступ с помощью портала Azure.
-author: rachel-msft
-ms.author: raagyema
+author: ajlam
+ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: c917804b42bc987228bbb2542682fe9fb308a467
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f91efb7f99b826b6c1db330fb480013ab2486bdc
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80067882"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82508264"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-mysql"></a>Настройка оповещений на основе метрик для базы данных Azure для MySQL на портале Azure 
 
@@ -84,6 +84,6 @@ ms.locfileid: "80067882"
 * **отключить** или **включить** его, если нужно временно остановить или возобновить получение уведомлений.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../azure-monitor/platform/alerts-webhooks.md).
 * Прочитайте [обзор сбора метрики](../monitoring-and-diagnostics/insights-how-to-customize-monitoring.md) и узнайте, как можно обеспечить, чтобы служба была доступна и отвечала на запросы.

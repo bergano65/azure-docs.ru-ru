@@ -4,12 +4,12 @@ description: Узнайте, как выполнить миграцию вирт
 ms.topic: tutorial
 ms.date: 04/15/2020
 ms.custom: mvc
-ms.openlocfilehash: 4612c9b0ea2ef8d53b0c04f47628f3789705d833
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 86f24b7fdfee30c182419023e4ed33f6228b3711
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81535321"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509318"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>Миграция виртуальных машин VMware в Azure (без агента)
 
@@ -57,7 +57,7 @@ ms.locfileid: "81535321"
 
 Добавьте средство "Миграция сервера" службы "Миграция Azure".
 
-- Если вы выполнили инструкции из второго руководства по [оценке виртуальных машин VMware](/tutorial-assess-vmware.md), можете добавить это средство.
+- Если вы выполнили инструкции из второго руководства по [оценке виртуальных машин VMware](tutorial-assess-vmware.md), можете добавить это средство.
 - В противном случае [выполните эти инструкции](how-to-add-tool-first-time.md), чтобы настроить проект службы "Миграция Azure".  При создании проекта вы добавите средство "Миграция сервера" службы "Миграция Azure".
 
 Если вы уже настроили проект, добавьте это средство следующим образом:

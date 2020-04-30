@@ -2,31 +2,29 @@
 title: Функции шаблонов
 description: Описывает функции, используемые в шаблоне диспетчера ресурсов Azure для извлечения значений, работы со строками и числовыми значениями и получения сведений о развертывании.
 ms.topic: conceptual
-ms.date: 04/06/2020
-ms.openlocfilehash: fbd82f89ed9a97a3f376a9ed6eaa8ae3760759ff
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.date: 04/27/2020
+ms.openlocfilehash: a15e7dfdf01a99cd23b216fafcfb44320a716d16
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80982384"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82231294"
 ---
-# <a name="arm-template-functions"></a>Функции шаблона ARM
+# <a name="arm-template-functions"></a>Функции шаблонов ARM
 
-В этой статье описаны все функции, которые можно использовать в шаблоне Azure Resource Manager (ARM). Для получения информации об использовании функций в шаблоне [см.](template-expressions.md)
+В этой статье описываются все функции, которые можно использовать в шаблоне Azure Resource Manager (ARM). Сведения об использовании функций в шаблоне см. в разделе [синтаксис шаблона](template-expressions.md).
 
 Для создания собственных функций см. раздел об [определяемых пользователем функциях](template-syntax.md#functions).
 
-Большинство функций работают одинаково при развертывании в группе ресурсов, подписке, группе управления или арендаторе. Несколько функций не могут быть использованы во всех областях. Они отмечены в списках ниже.
+Большинство функций работают одинаково при развертывании в группе ресурсов, подписке, группе управления или клиенте. Некоторые функции нельзя использовать во всех областях. Они указаны в списках ниже.
 
 <a id="array" aria-hidden="true" />
-<a id="coalesce" aria-hidden="true" />
 <a id="concatarray" aria-hidden="true" />
 <a id="contains" aria-hidden="true" />
 <a id="createarray" aria-hidden="true" />
 <a id="empty" aria-hidden="true" />
 <a id="first" aria-hidden="true" />
 <a id="intersection" aria-hidden="true" />
-<a id="json" aria-hidden="true" />
 <a id="last" aria-hidden="true" />
 <a id="length" aria-hidden="true" />
 <a id="min" aria-hidden="true" />
@@ -36,28 +34,27 @@ ms.locfileid: "80982384"
 <a id="take" aria-hidden="true" />
 <a id="union" aria-hidden="true" />
 
-## <a name="array-and-object-functions"></a>Функции массива и объекта
+## <a name="array-functions"></a>Функции массива
 
-Resource Manager предоставляет ряд функций для работы с массивами и объектами.
+Диспетчер ресурсов предоставляет несколько функций для работы с массивами.
 
-* [Массива](template-functions-array.md#array)
-* [Coalesce](template-functions-array.md#coalesce)
-* [Concat](template-functions-array.md#concat)
-* [Содержит](template-functions-array.md#contains)
+* [inArray](template-functions-array.md#array)
+* [сцеплен](template-functions-array.md#concat)
+* [contains](template-functions-array.md#contains)
 * [createArray](template-functions-array.md#createarray)
-* [Пустой](template-functions-array.md#empty)
-* [Первый](template-functions-array.md#first)
-* [Пересечения](template-functions-array.md#intersection)
-* [Json](template-functions-array.md#json)
-* [Последний](template-functions-array.md#last)
-* [длина](template-functions-array.md#length)
-* [Мин](template-functions-array.md#min)
-* [Макс](template-functions-array.md#max)
-* [Диапазон](template-functions-array.md#range)
-* [Пропустить](template-functions-array.md#skip)
-* [Принять](template-functions-array.md#take)
-* [Союза](template-functions-array.md#union)
+* [пустых](template-functions-array.md#empty)
+* [началь](template-functions-array.md#first)
+* [крайне](template-functions-array.md#intersection)
+* [Последняя](template-functions-array.md#last)
+* [length](template-functions-array.md#length)
+* [минимум](template-functions-array.md#min)
+* [max](template-functions-array.md#max)
+* [разнообраз](template-functions-array.md#range)
+* [сразу](template-functions-array.md#skip)
+* [нимают](template-functions-array.md#take)
+* [наборов](template-functions-array.md#union)
 
+<a id="coalesce" aria-hidden="true" />
 <a id="equals" aria-hidden="true" />
 <a id="less" aria-hidden="true" />
 <a id="lessorequals" aria-hidden="true" />
@@ -68,8 +65,9 @@ Resource Manager предоставляет ряд функций для раб�
 
 Resource Manager предоставляет ряд функций для выполнения сравнений в шаблонах.
 
+* [объединение](template-functions-comparison.md#coalesce)
 * [equals](template-functions-comparison.md#equals)
-* [Меньше](template-functions-comparison.md#less)
+* [столь](template-functions-comparison.md#less)
 * [lessOrEquals](template-functions-comparison.md#lessorequals)
 * [greater](template-functions-comparison.md#greater)
 * [greaterOrEquals](template-functions-comparison.md#greaterorequals)
@@ -80,19 +78,19 @@ Resource Manager предоставляет ряд функций для вып�
 
 ## <a name="date-functions"></a>Функции данных
 
-Менеджер ресурсов предоставляет следующие функции для работы с датами.
+Диспетчер ресурсов предоставляет следующие функции для работы с датами.
 
-* [dateTimeAdd](template-functions-date.md#datetimeadd)
+* [датетимеадд](template-functions-date.md#datetimeadd)
 * [utcnow](template-functions-date.md#utcnow)
 
 ## <a name="deployment-value-functions"></a>Функции для параметров развертывания
 
 Диспетчер ресурсов предоставляет следующие функции для получения значений из разделов шаблонов и значений, связанных с развертыванием:
 
-* [Развертывания](template-functions-deployment.md#deployment)
-* [Среды](template-functions-deployment.md#environment)
-* [Параметры](template-functions-deployment.md#parameters)
-* [Переменные](template-functions-deployment.md#variables)
+* [развертывания](template-functions-deployment.md#deployment)
+* [PXE](template-functions-deployment.md#environment)
+* [Вход](template-functions-deployment.md#parameters)
+* [среды](template-functions-deployment.md#variables)
 
 <a id="and" aria-hidden="true" />
 <a id="bool" aria-hidden="true" />
@@ -104,11 +102,11 @@ Resource Manager предоставляет ряд функций для вып�
 
 Resource Manager предоставляет для работы с логическими условиями следующие функции:
 
-* [И](template-functions-logical.md#and)
+* [и](template-functions-logical.md#and)
 * [bool](template-functions-logical.md#bool)
 * [if](template-functions-logical.md#if)
-* [Не](template-functions-logical.md#not)
-* [Или](template-functions-logical.md#or)
+* [недостаточно](template-functions-logical.md#not)
+* [или диспетчер конфигурации служб](template-functions-logical.md#or)
 
 <a id="add" aria-hidden="true" />
 <a id="copyindex" aria-hidden="true" />
@@ -125,16 +123,29 @@ Resource Manager предоставляет для работы с логиче�
 
 Диспетчер ресурсов предоставляет следующие функции для работы с целыми числами:
 
-* [добавление](template-functions-numeric.md#add)
+* [add](template-functions-numeric.md#add)
 * [copyIndex](template-functions-numeric.md#copyindex)
 * [div](template-functions-numeric.md#div)
-* [Плавать](template-functions-numeric.md#float)
-* [Int](template-functions-numeric.md#int)
-* [Мин](template-functions-numeric.md#min)
-* [Макс](template-functions-numeric.md#max)
-* [Мод](template-functions-numeric.md#mod)
+* [float](template-functions-numeric.md#float)
+* [int](template-functions-numeric.md#int)
+* [минимум](template-functions-numeric.md#min)
+* [max](template-functions-numeric.md#max)
+* [взят](template-functions-numeric.md#mod)
 * [mul](template-functions-numeric.md#mul)
-* [Sub](template-functions-numeric.md#sub)
+* [Директор](template-functions-numeric.md#sub)
+
+<a id="json" aria-hidden="true" />
+
+## <a name="object-functions"></a>Функции объектов
+
+Диспетчер ресурсов предоставляет несколько функций для работы с объектами.
+
+* [contains](template-functions-object.md#contains)
+* [пустых](template-functions-object.md#empty)
+* [крайне](template-functions-object.md#intersection)
+* [формат](template-functions-object.md#json)
+* [length](template-functions-object.md#length)
+* [наборов](template-functions-object.md#union)
 
 <a id="extensionResourceId" aria-hidden="true" />
 <a id="listkeys" aria-hidden="true" />
@@ -151,18 +162,18 @@ Resource Manager предоставляет для работы с логиче�
 
 Диспетчер ресурсов предоставляет следующие функции для получения значений ресурсов:
 
-* [расширениеResourceId](template-functions-resource.md#extensionresourceid)
+* [екстенсионресаурцеид](template-functions-resource.md#extensionresourceid)
 * [listAccountSas](template-functions-resource.md#list)
 * [listKeys](template-functions-resource.md#listkeys)
-* [списокСекреты](template-functions-resource.md#list)
-* [list*](template-functions-resource.md#list)
-* [providers](template-functions-resource.md#providers)
-* [Ссылки](template-functions-resource.md#reference)
-* [resourceGroup](template-functions-resource.md#resourcegroup) - может использоваться только при развертывании в группе ресурсов.
-* [resourceId](template-functions-resource.md#resourceid) - может использоваться в любой сфере, но допустимые параметры меняются в зависимости от сферы.
-* [подписка](template-functions-resource.md#subscription) - может быть использована только при развертывании в группе ресурсов или подписке.
-* [подпискаResourceId](template-functions-resource.md#subscriptionresourceid)
-* [арендаторРесурсИд](template-functions-resource.md#tenantresourceid)
+* [листсекретс](template-functions-resource.md#list)
+* [числ](template-functions-resource.md#list)
+* [поставщик](template-functions-resource.md#providers)
+* [IsReference](template-functions-resource.md#reference)
+* [resourceGroup](template-functions-resource.md#resourcegroup) — может использоваться только в развертываниях для группы ресурсов.
+* [resourceId](template-functions-resource.md#resourceid) — может использоваться в любой области, но допустимые параметры изменяются в зависимости от области.
+* [Подписка](template-functions-resource.md#subscription) — может использоваться только в развертываниях для группы ресурсов или подписки.
+* [субскриптионресаурцеид](template-functions-resource.md#subscriptionresourceid)
+* [тенантресаурцеид](template-functions-resource.md#tenantresourceid)
 
 <a id="base64" aria-hidden="true" />
 <a id="base64tojson" aria-hidden="true" />
@@ -199,42 +210,42 @@ Resource Manager предоставляет для работы с логиче�
 
 Диспетчер ресурсов предоставляет следующие функции для работы со строками:
 
-* [base64](template-functions-string.md#base64)
+* [формате](template-functions-string.md#base64)
 * [base64ToJson](template-functions-string.md#base64tojson)
 * [base64ToString](template-functions-string.md#base64tostring)
-* [Concat](template-functions-string.md#concat)
-* [Содержит](template-functions-string.md#contains)
+* [сцеплен](template-functions-string.md#concat)
+* [contains](template-functions-string.md#contains)
 * [dataUri](template-functions-string.md#datauri)
 * [dataUriToString](template-functions-string.md#datauritostring)
-* [Пустой](template-functions-string.md#empty)
-* [концыС](template-functions-string.md#endswith)
-* [Первый](template-functions-string.md#first)
-* [Формат](template-functions-string.md#format)
-* [Guid](template-functions-string.md#guid)
-* [Indexof](template-functions-string.md#indexof)
-* [Последний](template-functions-string.md#last)
-* [Lastindexof](template-functions-string.md#lastindexof)
-* [длина](template-functions-string.md#length)
+* [пустых](template-functions-string.md#empty)
+* [endsWith](template-functions-string.md#endswith)
+* [началь](template-functions-string.md#first)
+* [format](template-functions-string.md#format)
+* [устройства](template-functions-string.md#guid)
+* [indexOf](template-functions-string.md#indexof)
+* [Последняя](template-functions-string.md#last)
+* [lastIndexOf](template-functions-string.md#lastindexof)
+* [length](template-functions-string.md#length)
 * [newGuid](template-functions-string.md#newguid)
 * [padLeft](template-functions-string.md#padleft)
-* [Заменить](template-functions-string.md#replace)
-* [Пропустить](template-functions-string.md#skip)
-* [Сплит](template-functions-string.md#split)
-* [начинаетсяс](template-functions-string.md#startswith)
-* [строка](template-functions-string.md#string)
-* [Подстроки](template-functions-string.md#substring)
-* [Принять](template-functions-string.md#take)
-* [в Толоуэр](template-functions-string.md#tolower)
-* [Toupper](template-functions-string.md#toupper)
-* [Обрезать](template-functions-string.md#trim)
+* [replace](template-functions-string.md#replace)
+* [сразу](template-functions-string.md#skip)
+* [биваем](template-functions-string.md#split)
+* [startsWith](template-functions-string.md#startswith)
+* [string](template-functions-string.md#string)
+* [подстроки](template-functions-string.md#substring)
+* [нимают](template-functions-string.md#take)
+* [toLower](template-functions-string.md#tolower)
+* [toUpper](template-functions-string.md#toupper)
+* [возмож](template-functions-string.md#trim)
 * [uniqueString](template-functions-string.md#uniquestring)
-* [Uri](template-functions-string.md#uri)
+* [URI](template-functions-string.md#uri)
 * [uriComponent](template-functions-string.md#uricomponent)
 * [uriComponentToString](template-functions-string.md#uricomponenttostring)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Для описания разделов в шаблоне ARM [см.](template-syntax.md)
+* Описание разделов в шаблоне ARM см. в разделе [Создание шаблонов ARM](template-syntax.md) .
 * Инструкции по объединению нескольких шаблонов см. в статье [Использование связанных шаблонов в Azure Resource Manager](linked-templates.md).
-* Чтобы итерировать определенное количество раз при создании типа ресурса, [см. Создать несколько экземпляров ресурсов в azure Resource Manager.](copy-resources.md)
-* Чтобы узнать, как развернуть созданный шаблон, просмотрите [развертывание приложения с шаблонами ARM](deploy-powershell.md)
+* Чтобы выполнить итерацию указанного числа раз при создании типа ресурса, см. раздел [Создание нескольких экземпляров ресурсов в Azure Resource Manager](copy-resources.md).
+* Сведения о развертывании созданного шаблона см. в разделе [развертывание приложения с помощью шаблонов ARM](deploy-powershell.md) .

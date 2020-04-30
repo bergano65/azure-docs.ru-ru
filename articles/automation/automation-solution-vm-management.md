@@ -3,14 +3,14 @@ title: Решение для запуска и остановки виртуал
 description: Это решение для управления виртуальными машинами запускает и останавливает виртуальные машины Azure по расписанию и отслеживает Azure Monitor журналов.
 services: automation
 ms.subservice: process-automation
-ms.date: 04/01/2020
+ms.date: 04/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 631c9b37cf1fec0d39c3c362c6bc303a576d6b7c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f7e30fd0d53af7ee61d919b56e9ffcd1f1b6bd36
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
-ms.locfileid: "82187336"
+ms.locfileid: "82207604"
 ---
 # <a name="startstop-vms-during-off-hours-solution-in-azure-automation"></a>Решение для запуска и остановки виртуальных машин в нерабочее время в службе автоматизации Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "82187336"
 Это решение использует командлет [Start-AzureRmVM](https://docs.microsoft.com/powershell/module/azurerm.compute/start-azurermvm?view=azurermps-6.13.0) для запуска виртуальных машин. Для остановки виртуальных машин используется [остановить-AzureRmVM](https://docs.microsoft.com/powershell/module/AzureRM.Compute/Stop-AzureRmVM?view=azurermps-6.13.0) .
 
 > [!NOTE]
-> Решение " **Запуск и завершение виртуальных машин в нерабочее время** " Обновлено для поддержки последних версий доступных модулей Azure.
+> Решение " **Запуск и завершение виртуальных машин в нерабочее время** " Обновлено для поддержки последних версий доступных модулей Azure. Обновленная версия этого решения, доступная в Marketplace, не поддерживает модули AzureRM, так как мы перешли с AzureRM на AZ modules.
 
 Решение предоставляет децентрализованную автоматизацию с низкими затратами для пользователей, желающих оптимизировать затраты на виртуальные машины. Это решение обеспечивает следующие возможности:
 
@@ -108,7 +108,7 @@ ms.locfileid: "82187336"
 | --- | --- | ---|
 |AutoStop_CreateAlert_Child | VMObject <br> AlertAction <br> WebHookURI | Вызывается из родительского runbook. Этот модуль Runbook создает предупреждения для каждого отдельного ресурса в сценарии автоматической отмены.|
 |AutoStop_CreateAlert_Parent | VMList<br> WhatIf: true или false.  | Создает или обновляет правила генерации оповещений Azure для виртуальных машин в целевой подписке или группах ресурсов. <br> `VMList`— Это список виртуальных машин с разделителями-запятыми. Например, `vm1, vm2, vm3`.<br> `WhatIf`включает проверку логики модуля Runbook без выполнения.|
-|AutoStop_Disable | None | Отключает автоматическое оповещение и расписание по умолчанию.|
+|AutoStop_Disable | Нет | Отключает автоматическое оповещение и расписание по умолчанию.|
 |AutoStop_VM_Child | WebHookData | Вызывается из родительского runbook. Правила генерации оповещений вызывают этот модуль Runbook для отключения классической виртуальной машины.|
 |AutoStop_VM_Child_ARM | WebHookData |Вызывается из родительского runbook. Правила генерации оповещений вызывают этот модуль Runbook для завершения виртуальной машины.  |
 |ScheduledStartStop_Base_Classic; | CloudServiceName<br> Действие: Start или Stop<br> VMList  | Выполняет действие Запуск или завершение действия в классической группе виртуальных машин по облачным службам. |
@@ -233,6 +233,6 @@ ms.locfileid: "82187336"
 
 4. Если вы не хотите использовать [компоненты решения](#solution-components)для учетной записи службы автоматизации Azure, их можно удалить вручную.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Включите](automation-solution-vm-management-enable.md) решение " **Запуск и завершение виртуальных машин в нерабочее время** " для виртуальных машин Azure.

@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 03/31/2020
-ms.openlocfilehash: 58fd9225298b4322567f4feb02629e3ad4e0f00d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: 2760033cd66e99a7a7f6d331e03c6f98c486d286
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
-ms.locfileid: "82127564"
+ms.locfileid: "82231974"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning"></a>Известные проблемы и устранение неполадок Машинное обучение Azure
 
@@ -56,7 +56,23 @@ ms.locfileid: "82127564"
         pip install azure-ml-datadrift
         pip install azureml-train-automl 
      ```
-     
+
+* **Ошибки Panda: обычно встречаются во время Аутомл эксперимента:**
+   
+   При ручной настройке енвиронмнет с помощью PIP вы увидите ошибки атрибутов (особенно от PANDAS) из-за установки неподдерживаемых версий пакета. Чтобы предотвратить такие ошибки, [установите пакет SDK для аутомл с помощью automl_setup. cmd](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/README.md):
+   
+    1. Откройте запрос Anaconda и клонировать репозиторий GitHub для набора примеров записных книжек.
+
+    ```bash
+    git clone https://github.com/Azure/MachineLearningNotebooks.git
+    ```
+    
+    2. Перейдите в папку с инструкциями azureml/автоматизированного машинного обучения, где были извлечены примеры записных книжек, а затем запустите:
+    
+    ```bash
+    automl_setup
+    ```
+  
 * **Сообщение об ошибке: не удается удалить "PyYAML"**
 
     Машинное обучение Azure SDK для Python: Пиямл является `distutils` установленным проектом. Поэтому невозможно точно определить, какие файлы принадлежат ему в случае частичного удаления. Чтобы продолжить установку SDK игнорируя эту ошибку, используйте:

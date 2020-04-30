@@ -7,16 +7,16 @@ manager: craigg
 ms.service: synapse-analytics
 ms.topic: quickstart
 ms.subservice: ''
-ms.date: 02/04/2020
+ms.date: 04/27/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: d3d1b9af0b26fa775beb78b313937890cb9287b3
-ms.sourcegitcommit: d597800237783fc384875123ba47aab5671ceb88
+ms.openlocfilehash: 99c64e703158c40c2cc110a18be7b8c8d3800ff0
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80633764"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82207808"
 ---
 # <a name="quickstart-configure-workload-isolation-using-t-sql"></a>Краткое руководство. Настройка изоляции рабочих нагрузок с помощью T-SQL
 
@@ -30,10 +30,6 @@ ms.locfileid: "80633764"
 ## <a name="prerequisites"></a>Предварительные требования
 
 В этом кратком руководстве предполагается, что у вас уже есть экземпляр SQL Analytics в Azure Synapse и права доступа к системе управления базой данных. Если его требуется создать, используйте инструкции из раздела [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md), чтобы создать хранилище данных **mySampleDataWarehouse**.
-
-## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
-
-Войдите на [портал Azure](https://portal.azure.com/).
 
 ## <a name="create-login-for-dataloads"></a>Создание имени для входа для DataLoads
 
@@ -111,20 +107,6 @@ DROP USER [ELTLogin]
 
 - Если вы хотите сохранить данные в хранилище, то можете приостановить работу вычислительных ресурсов, когда не используете пул SQL. При приостановке вычислений плата взимается только за хранение данных. Когда вы будете готовы работать с данными, возобновите вычисление.
 - Если вы хотите исключить будущие расходы, то можете удалить хранилище данных.
-
-Выполните следующие действия, чтобы очистить ресурсы.
-
-1. Войдите на [портал Azure](https://portal.azure.com) и выберите хранилище данных.
-
-    ![Очистка ресурсов](./media/quickstart-configure-workload-isolation-tsql/clean-up-resources.png)
-
-2. Чтобы приостановить вычисление, нажмите кнопку **Пауза**. Если работа хранилища данных приостановлена, вы увидите кнопку **Запуск**.  Чтобы возобновить вычисление, нажмите кнопку **Пуск**.
-
-3. Чтобы удалить хранилище данных во избежание дальнейших платежей за вычисления или хранение, нажмите кнопку **Удалить**.
-
-4. Чтобы удалить созданный вами сервер SQL, выберите сервер **mynewserver-20180430.database.windows.net**, выделенный на предыдущем изображении, а затем нажмите **Удалить**.  Будьте внимательны, так как удаление сервера приведет к удалению всех баз данных, назначенных этому серверу.
-
-5. Чтобы удалить группу ресурсов, выберите **myResourceGroup**, а затем **Удалить группу ресурсов**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

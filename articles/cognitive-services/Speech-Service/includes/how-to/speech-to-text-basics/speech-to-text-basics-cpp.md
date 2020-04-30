@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/06/2020
 ms.author: trbye
-ms.openlocfilehash: e39486f0daf1c865de3e53372d32a44fdcb8eb99
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 3d67361ecd4e06fdf006e836011d2cab59e340b6
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81399779"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82587820"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -219,7 +219,7 @@ config->EnableDictation();
 Распространенной задачей распознавания речи является указание языка ввода (или исходного языка). Давайте посмотрим, как изменить язык ввода на немецкий. В коде найдите [`SpeechConfig`](https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig), а затем добавьте следующую строку непосредственно под ней.
 
 ```cpp
-config->SetSpeechRecognitionLanguage("fr-FR");
+config->SetSpeechRecognitionLanguage("de-DE");
 ```
 
 [`SetSpeechRecognitionLanguage`](https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig#setspeechrecognitionlanguage) — это параметр, принимающий строку в качестве аргумента. Вы можете указать любое значение в списке поддерживаемых [языковых стандартов/языков](../../../language-support.md).

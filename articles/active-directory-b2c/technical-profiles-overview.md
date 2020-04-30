@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 03/20/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 5d89d123fe757b0502f4c6b3a0d33c185b25224b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 125d89301e9d2cc3fc863bffb9b9e6c41e0c129e
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
-ms.locfileid: "80057316"
+ms.locfileid: "82229941"
 ---
 # <a name="about-technical-profiles-in-azure-active-directory-b2c-custom-policies"></a>Технические профили в пользовательских политиках Azure Active Directory B2C
 
@@ -39,7 +39,7 @@ ms.locfileid: "80057316"
 - [OpenID Connect Connect](openid-connect-technical-profile.md) -Federation с любым поставщиком удостоверений протокола OpenID Connect Connect.
 - [Телефонный фактор](phone-factor-technical-profile.md) — поддержка регистрации и проверки номеров телефонов.
 - [Поставщик RESTful](restful-technical-profile.md) — вызов служб REST API Services, таких как проверка вводимых пользователем данных, обогащение пользовательской информации или интеграция с бизнес-приложениями.
-- [SAML2](saml-technical-profile.md): федерация с любым поставщиком удостоверений по протоколу SAML.
+- [Поставщик удостоверений SAML](saml-identity-provider-technical-profile.md) — Федерация с любым поставщиком удостоверений протокола SAML.
 - [Издатель токена SAML](saml-issuer-technical-profile.md) — создает токен SAML, возвращаемый обратно в приложение проверяющей стороны.
 - [Самостоятельное подтверждение](self-asserted-technical-profile.md): взаимодействие с пользователем. Например, получение учетных данных пользователя для входа, а затем отображение страницы регистрации или сброса пароля.
 - [Управление сеансами](custom-policy-reference-sso.md): работа с различными типами сеансов.

@@ -1,5 +1,5 @@
 ---
-title: Создание зональных Windows VM с помощью Azure PowerShell
+title: Создание виртуальной машины с зоной Windows с помощью Azure PowerShell
 description: Создание виртуальной машины Windows в зоне доступности с помощью Azure PowerShell
 author: cynthn
 ms.service: virtual-machines-windows
@@ -8,18 +8,18 @@ ms.workload: infrastructure
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: ''
-ms.openlocfilehash: 26ddc6be744e823cffc213798c73568d19ad82dd
-ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.openlocfilehash: 60ce5b868b2a8f955b32e372201613ba66d49eff
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82084096"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82208981"
 ---
 # <a name="create-a-windows-virtual-machine-in-an-availability-zone-with-powershell"></a>Создание виртуальной машины Windows в зоне доступности с помощью PowerShell
 
 В этой статье описывается использование Azure PowerShell для создания виртуальной машины Azure под управлением Windows Server 2016 в зоне доступности Azure. [Зона доступности](../../availability-zones/az-overview.md) — это физически отдельная зона в регионе Azure. Зоны доступности позволяют защитить приложения и данные от маловероятных сбоев и потери всего центра обработки данных.
 
-Чтобы использовать зону доступности, создайте виртуальную машину в [поддерживаемом регионе Azure](../../availability-zones/az-overview.md#services-support-by-region).
+Чтобы использовать зону доступности, создайте виртуальную машину в [поддерживаемом регионе Azure](../../availability-zones/az-region.md).
 
  
 
@@ -168,6 +168,6 @@ Tags               : {}
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Из этой статье вы узнали, как создать виртуальную машину в зоне доступности. Подробнее о [доступности](availability.md) для VMs Azure.
+Из этой статье вы узнали, как создать виртуальную машину в зоне доступности. Дополнительные сведения о [доступности](availability.md) для виртуальных машин Azure.

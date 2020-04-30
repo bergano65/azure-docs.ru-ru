@@ -8,32 +8,36 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 03/09/2020
+ms.date: 04/28/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 80cf0d101a29de7fca9d4dd36e188a500d35e290
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f2887ab23dd89f1a3e1e3112ce3713ef1139de8e
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
-ms.locfileid: "79246036"
+ms.locfileid: "82229686"
 ---
 # <a name="single-sign-on-session-management-in-azure-active-directory-b2c"></a>Управление сеансами единого входа в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Управление сеансами единого входа (SSO) в Azure Active Directory B2C (Azure AD B2C) позволяет администратору управлять взаимодействием с пользователем после того, как пользователь уже прошел проверку подлинности. Например, администратор может управлять отображением выбранных поставщиков удостоверений или необходимостью повторного ввода данных локальной учетной записи. В этой статье описывается настройка параметров единого входа для Azure AD B2C.
-
-Управление сеансами единого входа состоит из двух частей. Первая относится к непосредственному взаимодействию пользователя с Azure AD B2C, а вторая — к взаимодействию пользователя с внешними сторонами, например Facebook. Azure AD B2C не переопределяет и не обходит сеансы единого входа, которые могут поддерживаться внешними сторонами. Вместо того, чтобы направиться к внешней стороне с помощью Azure AD B2C, нужно будет «запомнить», чтобы не запрашивать у пользователя возможность выбрать социальных или корпоративных поставщиков удостоверений. Окончательный выбор сеанса единого входа остается за внешней стороной.
+Управление [сеансами единого входа (SSO)](session-overview.md) в Azure Active Directory B2C (Azure AD B2C) позволяет администратору управлять взаимодействием с пользователем после того, как пользователь уже прошел проверку подлинности. Например, администратор может управлять отображением выбранных поставщиков удостоверений, а также указывать, нужно ли повторно указывать сведения об учетной записи. В этой статье описывается настройка параметров единого входа для Azure AD B2C.
 
 Для управления сеансами единого входа используется та же семантика, что и для любого другого технического профиля в настраиваемых политиках. При выполнении шага оркестрации из технического профиля, связанного с шагом, запрашиваются ссылка на `UseTechnicalProfileForSessionManagement`. Затем, при наличии такового, указанный поставщик сеансов единого входа проверяется, чтобы определить, является ли пользователь участником сеанса. Если это так, то поставщик сеансов единого входа используется для повторного заполнения данных сеанса. Аналогичным образом после выполнения шага оркестрации поставщик используется для сохранения сведений в сеансе, если был указан поставщик сеансов единого входа.
 
 В Azure AD B2C можно использовать определенное количество поставщиков сеансов единого входа.
 
-* NoopSSOSessionProvider
-* DefaultSSOSessionProvider
-* ExternalLoginSSOSessionProvider
-* SamlSSOSessionProvider
+|Поставщик сеанса  |Область  |
+|---------|---------|
+|[NoopSSOSessionProvider](#noopssosessionprovider)     |  Нет       |       
+|[DefaultSSOSessionProvider](#defaultssosessionprovider)    | Azure AD B2C диспетчер внутренних сеансов.      |       
+|[ExternalLoginSSOSessionProvider](#externalloginssosessionprovider)     | Между Azure AD B2C и OAuth1, OAuth2 или OpenID Connect Connect Identity Provider.        |         |
+|[оаусссосессионпровидер](#oauthssosessionprovider)     | Между приложением проверяющей стороны OAuth2 или OpenID Connect и Azure AD B2C.        |        
+|[SamlSSOSessionProvider](#samlssosessionprovider)     | Между Azure AD B2C и поставщиком удостоверений SAML. И между поставщиком службы SAML (приложение проверяющей стороны) и Azure AD B2C.  |        
+
+
+
 
 Классы управления единым входом указываются с помощью элемента `<UseTechnicalProfileForSessionManagement ReferenceId="{ID}" />` технического профиля.
 
@@ -64,11 +68,11 @@ ms.locfileid: "79246036"
 
 ### <a name="defaultssosessionprovider"></a>DefaultSSOSessionProvider
 
-Этот поставщик можно использовать для хранения утверждений в сеансе. Как правило, этот поставщик указывается в техническом профиле, используемом для управления локальными учетными записями. Следующий `SM-AAD` технический профиль включен в [начальный пакет пользовательской политики](custom-policy-get-started.md#custom-policy-starter-pack).
+Этот поставщик можно использовать для хранения утверждений в сеансе. Этот поставщик обычно упоминается в техническом профиле, который используется для управления локальными и федеративными учетными записями. Следующий `SM-AAD` технический профиль включен в [начальный пакет пользовательской политики](custom-policy-get-started.md#custom-policy-starter-pack).
 
 ```XML
 <TechnicalProfile Id="SM-AAD">
-  <DisplayName>Session Mananagement Provider</DisplayName>
+  <DisplayName>Session Management Provider</DisplayName>
   <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.DefaultSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
   <PersistedClaims>
     <PersistedClaim ClaimTypeReferenceId="objectId" />
@@ -83,6 +87,7 @@ ms.locfileid: "79246036"
   </OutputClaims>
 </TechnicalProfile>
 ```
+
 
 Следующий `SM-MFA` технический профиль включен в `SocialAndLocalAccountsWithMfa` [начальный пакет пользовательской политики](custom-policy-get-started.md#custom-policy-starter-pack) . Этот технический профиль управляет сеансом многофакторной проверки подлинности.
 
@@ -101,11 +106,11 @@ ms.locfileid: "79246036"
 
 ### <a name="externalloginssosessionprovider"></a>ExternalLoginSSOSessionProvider
 
-Этот поставщик используется для подавления экрана "Выбор поставщика удостоверений". Обычно он указывается в техническом профиле, настроенном для внешнего поставщика удостоверений, например Facebook. Следующий `SM-SocialLogin` технический профиль включен в [начальный пакет пользовательской политики](custom-policy-get-started.md#custom-policy-starter-pack).
+Этот поставщик используется для подавления экрана "Выбор поставщика удостоверений" и выхода из федеративного поставщика удостоверений. Он обычно упоминается в техническом профиле, настроенном для федеративного поставщика удостоверений, например Facebook, или Azure Active Directory. Следующий `SM-SocialLogin` технический профиль включен в [начальный пакет пользовательской политики](custom-policy-get-started.md#custom-policy-starter-pack).
 
 ```XML
 <TechnicalProfile Id="SM-SocialLogin">
-  <DisplayName>Session Mananagement Provider</DisplayName>
+  <DisplayName>Session Management Provider</DisplayName>
   <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.ExternalLoginSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
   <Metadata>
     <Item Key="AlwaysFetchClaimsFromProvider">true</Item>
@@ -122,9 +127,20 @@ ms.locfileid: "79246036"
 | --- | --- | --- |
 | алвайсфетчклаимсфромпровидер | Нет | В настоящее время не используется, может игнорироваться. |
 
+### <a name="oauthssosessionprovider"></a>оаусссосессионпровидер
+
+Этот поставщик используется для управления Azure AD B2C сеансами между OAuth2 или OpenID Connect и Azure AD B2C.
+
+```xml
+<TechnicalProfile Id="SM-jwt-issuer">
+  <DisplayName>Session Management Provider</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.OAuthSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+</TechnicalProfile>
+```
+
 ### <a name="samlssosessionprovider"></a>SamlSSOSessionProvider
 
-Этот поставщик используется для управления Azure AD B2C сеансов SAML между приложением проверяющей стороны или федеративным поставщиком удостоверений SAML. При использовании поставщика единого входа для хранения сеанса поставщика удостоверений SAML `RegisterServiceProviders` необходимо установить значение. `false` `SM-Saml-idp` [Технический профиль SAML](saml-technical-profile.md)использует следующий технический профиль.
+Этот поставщик используется для управления Azure AD B2C сеансов SAML между приложением проверяющей стороны или федеративным поставщиком удостоверений SAML. При использовании поставщика единого входа для хранения сеанса поставщика удостоверений SAML `RegisterServiceProviders` необходимо установить значение. `false` `SM-Saml-idp` [Технический профиль поставщика удостоверений SAML](saml-identity-provider-technical-profile.md)использует следующий технический профиль.
 
 ```XML
 <TechnicalProfile Id="SM-Saml-idp">
@@ -138,14 +154,15 @@ ms.locfileid: "79246036"
 
 При использовании поставщика для хранения сеанса SAML B2C параметр `RegisterServiceProviders` должен иметь значение. `true` Для завершения выхода из сеанса SAML требуются `SessionIndex` и `NameID`.
 
-`SM-Saml-idp` [Технический профиль издателя SAML](saml-issuer-technical-profile.md) использует следующий технический профиль
+`SM-Saml-issuer` [Технический профиль издателя SAML](saml-issuer-technical-profile.md) использует следующий технический профиль
 
 ```XML
-<TechnicalProfile Id="SM-Saml-sp">
+<TechnicalProfile Id="SM-Saml-issuer">
   <DisplayName>Session Management Provider</DisplayName>
   <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.SamlSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"/>
 </TechnicalProfile>
 ```
+
 #### <a name="metadata"></a>Метаданные
 
 | Атрибут | Обязательный | Описание|
@@ -154,4 +171,6 @@ ms.locfileid: "79246036"
 | RegisterServiceProviders | Нет | Указывает, что поставщик должен зарегистрировать все поставщики услуг SAML, которыми было выдано утверждение. Возможные значения: `true` (по умолчанию) или `false`.|
 
 
+## <a name="next-steps"></a>Следующие шаги
 
+- Дополнительные сведения о [Azure AD B2C сеансе](session-overview.md).
