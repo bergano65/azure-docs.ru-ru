@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 04/01/2020
+ms.date: 04/29/2020
 ms.author: aahi
-ms.openlocfilehash: 2caae4fecdf13a1833f23cf9423cf3ded67f6f72
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: d5283051de50b84ea87c0f02a391652854067168
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80879035"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82610753"
 ---
 # <a name="install-and-run-speech-service-containers-preview"></a>Установка и запуск контейнеров речевых служб (Предварительная версия)
 
@@ -26,9 +26,9 @@ ms.locfileid: "80879035"
 > [!IMPORTANT]
 > Все контейнеры речи в настоящее время предоставляются как часть [общедоступного "условного" предварительного просмотра](../cognitive-services-container-support.md#public-gated-preview-container-registry-containerpreviewazurecrio). Объявление будет создано, когда речевые контейнеры переводятся в общедоступную версию.
 
-| Функция | Функции | Последняя версия |
+| Функция | Компоненты | Последняя версия |
 |--|--|--|
-| Преобразование речи в текст | Расшифровывает непрерывных речевых или пакетных звуковых записей в режиме реального времени в текст с промежуточными результатами. | 2.1.1 |
+| Преобразование речи в текст | Анализирует тональности и расшифровывает непрерывную голосовую или пакетную звукозапись в реальном времени с промежуточными результатами.  | 2.2.0 |
 | Пользовательское распознавание речи к тексту | Используя настраиваемую модель на [портале пользовательское распознавание речи](https://speech.microsoft.com/customspeech), расшифровывает непрерывную голосовую или пакетную звукозапись в режиме реального времени в текст с промежуточными результатами. | 2.1.1 |
 | Преобразование текста в речь | Преобразует текст в голосовую речь с помощью обычного текстового ввода или языка разметки речи (SSML). | 1.3.0 |
 | Пользовательский текст в речь | С помощью настраиваемой модели [пользовательского голосового портала](https://aka.ms/custom-voice-portal)преобразует текст в голосовую речь с помощью обычного текстового ввода или языка разметки речи (SSML). | 1.3.0 |
@@ -164,7 +164,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-t
 Следующий тег является примером формата:
 
 ```
-2.1.1-amd64-en-us-preview
+2.2.0-amd64-en-us-preview
 ```
 
 Сведения о всех поддерживаемых языковых стандартах контейнера **для преобразования речи** в текст см. в статье [теги изображений](../containers/container-image-tags.md#speech-to-text).
@@ -258,6 +258,33 @@ ApiKey={API_KEY}
 * Выделяет 4 ядра ЦП и 4 гигабайта (ГБ) памяти.
 * предоставляет TCP-порт 5000 и выделяет псевдотелетайп для контейнера;
 * автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере.
+
+
+#### <a name="analyze-sentiment-on-the-speech-to-text-output"></a>Анализ тональности на выходе из речи в текст 
+
+Начиная с версии v 2.2.0 контейнера для преобразования речи в текст можно вызвать [API тональности Analysis v3](../text-analytics/how-tos/text-analytics-how-to-sentiment-analysis.md) на выходе. Для вызова анализа тональности требуется конечная точка ресурса API анализа текста. Пример: 
+* `https://westus2.api.cognitive.microsoft.com/text/analytics/v3.0-preview.1/sentiment`
+* `https://localhost:5000/text/analytics/v3.0-preview.1/sentiment`
+
+Если вы обращаетесь к конечной точке текстовой аналитики в облаке, потребуется ключ. Если вы работаете Анализ текста локально, вам может не потребоваться его указывать.
+
+Ключ и конечная точка передаются в контейнер речи в качестве аргументов, как показано в следующем примере.
+
+```bash
+docker run -it --rm -p 5000:5000 \
+containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text:latest \
+Eula=accept \
+Billing={ENDPOINT_URI} \
+ApiKey={API_KEY} \
+CloudAI:SentimentAnalysisSettings:TextAnalyticsHost={TEXT_ANALYTICS_HOST} \
+CloudAI:SentimentAnalysisSettings:SentimentAnalysisApiKey={SENTIMENT_APIKEY}
+```
+
+Эта команда:
+
+* Выполняет те же действия, что и приведенная выше команда.
+* Хранит API анализа текстаную конечную точку и ключ для отправки запросов анализа тональности. 
+
 
 # <a name="custom-speech-to-text"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
 
@@ -380,6 +407,9 @@ ApiKey={API_KEY}
 
 ## <a name="query-the-containers-prediction-endpoint"></a>Запрос конечной точки прогнозирования контейнера
 
+> [!NOTE]
+> Если вы используете несколько контейнеров, используйте уникальный номер порта.
+
 | Контейнеры | URL-адрес узла SDK | Протокол |
 |--|--|--|
 | Преобразование речи в текст и Пользовательское распознавание речи в текст | `ws://localhost:5000` | WS |
@@ -388,6 +418,121 @@ ApiKey={API_KEY}
 Дополнительные сведения об использовании протоколов WSS и HTTPS см. в разделе [Безопасность контейнера](../cognitive-services-container-support.md#azure-cognitive-services-container-security).
 
 [!INCLUDE [Query Speech-to-text container endpoint](includes/speech-to-text-container-query-endpoint.md)]
+
+#### <a name="analyze-sentiment"></a>Анализ тональности
+
+Если вы указали учетные данные API анализа текста в [контейнере](#analyze-sentiment-on-the-speech-to-text-output), вы можете использовать РЕЧЕВОЙ пакет SDK для отправки запросов распознавания речи с помощью анализа тональности. Можно настроить Ответы API для использования *простого* или *подробного* формата.
+
+# <a name="simple-format"></a>[Простой формат](#tab/simple-format)
+
+Чтобы настроить речевой клиент для использования простого формата, добавьте `"Sentiment"` в качестве значения. `Simple.Extensions` Если вы хотите выбрать конкретную версию модели Анализ текста, замените `'latest'` в конфигурации `speechcontext-phraseDetection.sentimentAnalysis.modelversion` свойства.
+
+```python
+speech_config.set_service_property(
+    name='speechcontext-PhraseOutput.Simple.Extensions',
+    value='["Sentiment"]',
+    channel=speechsdk.ServicePropertyChannel.UriQueryParameter
+)
+speech_config.set_service_property(
+    name='speechcontext-phraseDetection.sentimentAnalysis.modelversion',
+    value='latest',
+    channel=speechsdk.ServicePropertyChannel.UriQueryParameter
+)
+```
+
+`Simple.Extensions`вернет результат тональности в корневом слое ответа.
+
+```json
+{
+   "DisplayText":"What's the weather like?",
+   "Duration":13000000,
+   "Id":"6098574b79434bd4849fee7e0a50f22e",
+   "Offset":4700000,
+   "RecognitionStatus":"Success",
+   "Sentiment":{
+      "Negative":0.03,
+      "Neutral":0.79,
+      "Positive":0.18
+   }
+}
+```
+
+# <a name="detailed-format"></a>[Подробный формат](#tab/detailed-format)
+
+Чтобы настроить речевой клиент для использования подробного формата, добавьте `"Sentiment"` в качестве значения для `Detailed.Extensions`параметров `Detailed.Options`, или. Если вы хотите выбрать конкретную версию модели Анализ текста, замените `'latest'` в конфигурации `speechcontext-phraseDetection.sentimentAnalysis.modelversion` свойства.
+
+```python
+speech_config.set_service_property(
+    name='speechcontext-PhraseOutput.Detailed.Options',
+    value='["Sentiment"]',
+    channel=speechsdk.ServicePropertyChannel.UriQueryParameter
+)
+speech_config.set_service_property(
+    name='speechcontext-PhraseOutput.Detailed.Extensions',
+    value='["Sentiment"]',
+    channel=speechsdk.ServicePropertyChannel.UriQueryParameter
+)
+speech_config.set_service_property(
+    name='speechcontext-phraseDetection.sentimentAnalysis.modelversion',
+    value='latest',
+    channel=speechsdk.ServicePropertyChannel.UriQueryParameter
+)
+```
+
+`Detailed.Extensions`предоставляет тональности результат в корневом слое ответа. `Detailed.Options`предоставляет результат в `NBest` слое ответа. Их можно использовать отдельно или вместе.
+
+```json
+{
+   "DisplayText":"What's the weather like?",
+   "Duration":13000000,
+   "Id":"6a2aac009b9743d8a47794f3e81f7963",
+   "NBest":[
+      {
+         "Confidence":0.973695,
+         "Display":"What's the weather like?",
+         "ITN":"what's the weather like",
+         "Lexical":"what's the weather like",
+         "MaskedITN":"What's the weather like",
+         "Sentiment":{
+            "Negative":0.03,
+            "Neutral":0.79,
+            "Positive":0.18
+         }
+      },
+      {
+         "Confidence":0.9164971,
+         "Display":"What is the weather like?",
+         "ITN":"what is the weather like",
+         "Lexical":"what is the weather like",
+         "MaskedITN":"What is the weather like",
+         "Sentiment":{
+            "Negative":0.02,
+            "Neutral":0.88,
+            "Positive":0.1
+         }
+      }
+   ],
+   "Offset":4700000,
+   "RecognitionStatus":"Success",
+   "Sentiment":{
+      "Negative":0.03,
+      "Neutral":0.79,
+      "Positive":0.18
+   }
+}
+```
+
+---
+
+Если вы хотите полностью отключить анализ тональности, добавьте `false` значение в. `sentimentanalysis.enabled`
+
+```python
+speech_config.set_service_property(
+    name='speechcontext-phraseDetection.sentimentanalysis.enabled',
+    value='false',
+    channel=speechsdk.ServicePropertyChannel.UriQueryParameter
+)
+```
 
 ### <a name="text-to-speech-or-custom-text-to-speech"></a>Преобразование текста в речь или пользовательский текст в речь
 
