@@ -1,6 +1,6 @@
 ---
-title: Лакстарт облачной оболочки - PowerShell
-description: Узнайте, как использовать PowerShell в браузере с помощью Облачной оболочки Azure.
+title: Краткое руководство по Azure Cloud Shell-PowerShell
+description: Узнайте, как использовать PowerShell в браузере с Azure Cloud Shell.
 author: maertendmsft
 ms.author: damaerte
 tags: azure-resource-manager
@@ -10,10 +10,10 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 10/18/2018
 ms.openlocfilehash: 72261989b7cee9d2251eb18b36431ec807b0e874
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79273011"
 ---
 # <a name="quickstart-for-powershell-in-azure-cloud-shell"></a>Краткое руководство по использованию PowerShell в Azure Cloud Shell
@@ -261,7 +261,7 @@ mywebapp3       Running  MyResourceGroup3   {mywebapp3.azurewebsites.net...   So
 
 ### <a name="using-ssh"></a>Использование SSH
 
-Следуйте инструкциям [здесь,](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-powershell) чтобы создать новую конфигурацию VM с помощью смдлетов Azure PowerShell.
+Следуйте инструкциям [, чтобы создать](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-powershell) новую конфигурацию виртуальной машины с помощью командлетов Azure PowerShell.
 Прежде чем вызвать `New-AzVM` для запуска развертывания, добавьте открытый ключ SSH в конфигурацию виртуальной машины.
 Новая виртуальная машина будет содержать открытый ключ в расположении `~\.ssh\authorized_keys`. Это позволит запускать на виртуальной машине сеансы SSH без учетных данных.
 
@@ -332,7 +332,7 @@ Hello World!
 
 ## <a name="use-git"></a>Использование Git
 
-Чтобы клонировать репо Git в облачной оболочке, необходимо создать [токен для личного доступа][githubtoken] и использовать его в качестве имени пользователя. Создав маркер, клонируйте репозиторий, как показано ниже.
+Чтобы клонировать репозиторий Git в Cloud Shell, необходимо создать [личный маркер доступа][githubtoken] и использовать его в качестве имени пользователя. Создав маркер, клонируйте репозиторий, как показано ниже.
 
 ```azurepowershell-interactive
   git clone https://<your-access-token>@github.com/username/repo.git
