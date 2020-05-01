@@ -1,5 +1,5 @@
 ---
-title: Ссылка разработчика Azure Functions
+title: 'Справочник разработчика F # для функций Azure'
 description: Узнайте, как разрабатывать функции Azure с помощью скрипта F#.
 author: sylvanc
 ms.assetid: e60226e5-2630-41d7-9e5b-9f9e5acc8e50
@@ -7,10 +7,10 @@ ms.topic: reference
 ms.date: 10/09/2018
 ms.author: syclebsc
 ms.openlocfilehash: 669701f91ab28a4eb734b0346be6515dc44e8685
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79276768"
 ---
 # <a name="azure-functions-f-developer-reference"></a>Справочник разработчика F# по Функциям Azure
@@ -18,7 +18,7 @@ ms.locfileid: "79276768"
 F# для Функций Azure — это решение для быстрого запуска фрагментов кода (функций) в облаке. Данные поступают в функцию F# через аргументы функции. Имена аргументов указываются в `function.json`, и есть предварительно определенные имена для доступа к таким объектам, как средство ведения журнала функций и маркеры отмены. 
 
 >[!IMPORTANT]
->Скрипт F# (.fsx) поддерживается только в среде выполнения функций Azure [версии 1.x](functions-versions.md#creating-1x-apps). Если вы хотите использовать F-версию с версией 2.x и более поздними версиями времени выполнения, необходимо использовать проект библиотеки класса F '(.fs). Создание, управление и публикация проекта библиотеки классов F# выполняются в Visual Studio точно так же, как и [проекта библиотеки классов C#](functions-dotnet-class-library.md). Дополнительные сведения о версиях службы "Функции Azure" см. [здесь](functions-versions.md).
+>Скрипт F# (.fsx) поддерживается только в среде выполнения функций Azure [версии 1.x](functions-versions.md#creating-1x-apps). Если вы хотите использовать F # с версией 2. x и более поздними версиями среды выполнения, необходимо использовать предкомпилированный проект библиотеки классов F # (. FS). Создание, управление и публикация проекта библиотеки классов F# выполняются в Visual Studio точно так же, как и [проекта библиотеки классов C#](functions-dotnet-class-library.md). Дополнительные сведения о версиях службы "Функции Azure" см. [здесь](functions-versions.md).
 
 В этой статье предполагается, что вы уже прочли [справочник разработчика по Функциям Azure](functions-reference.md).
 
@@ -48,7 +48,7 @@ FunctionsProject
 
 Существует общий файл [host.json](functions-host-json.md), который можно использовать для настройки приложения-функции. У каждой функции есть собственный файл кода (.fsx) и файл конфигурации привязки (function.json).
 
-Обязательные расширения, [необходимые в версии 2.x и более поздних версиях](functions-versions.md) времени выполнения функций, определяются в `extensions.csproj` файле, а фактические файлы библиотеки — в папке. `bin` При локальной разработке необходимо [зарегистрировать расширения привязки](./functions-bindings-register.md#extension-bundles). При разработке функций на портале Azure эта регистрация выполняется автоматически.
+Расширения привязки, необходимые в [версии 2. x и более поздних версиях](functions-versions.md) среды выполнения функций, определяются `extensions.csproj` в файле с фактическими файлами библиотеки в `bin` папке. При локальной разработке необходимо [зарегистрировать расширения привязки](./functions-bindings-register.md#extension-bundles). При разработке функций на портале Azure эта регистрация выполняется автоматически.
 
 ## <a name="binding-to-arguments"></a>Привязка к аргументам
 Каждая привязка поддерживает набор аргументов. Это подробно описано в [справочнике разработчика по триггерам и привязкам в Функциях Azure](functions-triggers-bindings.md). Например, одной из привязок аргументов, поддерживаемых триггером больших двоичных объектов, выступает POCO. Эту привязку можно представить с помощью записи F#. Пример:
@@ -89,7 +89,7 @@ let Run(input: string, item: byref<Item>) =
     item <- result
 ```
 
-## <a name="logging"></a>Ведение журнала
+## <a name="logging"></a>Logging
 Для записи выходных данных в [потоковые журналы](../app-service/troubleshoot-diagnostic-logs.md) в F# в функции следует использовать аргумент типа [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger). Для согласованности мы советуем назвать этот аргумент `log`. Пример:
 
 ```fsharp
@@ -109,7 +109,7 @@ let Run(req: HttpRequestMessage) =
 ```
 
 ## <a name="cancellation-token"></a>Токен отмены
-Если функция должна обрабатывать выключение изящно, вы можете дать ему [`CancellationToken`](/dotnet/api/system.threading.cancellationtoken) аргумент. При этом можно использовать `async`. Например:
+Если функция должна правильно обработать завершение работы, можно присвоить ей [`CancellationToken`](/dotnet/api/system.threading.cancellationtoken) аргумент. При этом можно использовать `async`. Например:
 
 ```fsharp
 let Run(req: HttpRequestMessage, token: CancellationToken)
@@ -284,13 +284,13 @@ let mylog(log: ILogger, text: string) =
 
 Директива `#load` работает только с файлами `.fsx` (скрипт F#), а не с файлами `.fs`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения см. в следующих ресурсах:
 
-* [F- Путеводитель](/dotnet/articles/fsharp/index)
-* [Лучшие практики для функций Azure](functions-best-practices.md)
+* [Руководство по языку F#](/dotnet/articles/fsharp/index)
+* [Рекомендации по использованию функций Azure](functions-best-practices.md)
 * [Справочник разработчика по функциям Azure](functions-reference.md)
-* [Триггеры и привязки функций Azure](functions-triggers-bindings.md)
+* [Azure Functions triggers and bindings (Триггеры и привязки в Функциях Azure)](functions-triggers-bindings.md)
 * [Тестирование Функций Azure](functions-test-a-function.md)
 * [Масштабирование Функций Azure](functions-scale.md)
 
