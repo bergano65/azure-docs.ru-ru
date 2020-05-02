@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/18/2017
 ms.author: tagore
 ms.openlocfilehash: 4fe1ee3ccf2849943959889838ba0f22fb64bb9a
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "79273063"
 ---
 # <a name="common-cloud-service-startup-tasks"></a>Стандартные задачи запуска в облачной службе
@@ -300,7 +300,7 @@ string fileContent = System.IO.File.ReadAllText(System.IO.Path.Combine(localStor
 
 Эту возможность выполнять различные действия в эмуляторе вычислений и облаке можно получить, создав переменную среды в файле [ServiceDefinition.csdef]. Затем переменная проверяется в задаче запуска.
 
-Чтобы создать переменную среды, добавьте [элемент Variable]/[RoleInstanceValue] и создайте `/RoleEnvironment/Deployment/@emulated`значение XPath. При выполнении в эмуляторе вычислений переменная среды **%ComputeEmulatorRunning%** приобретает значение `true`, а при выполнении в облаке — `false`.
+Чтобы создать переменную среды, добавьте элемент [variable]/[RoleInstanceValue] и создайте значение XPath `/RoleEnvironment/Deployment/@emulated`. При выполнении в эмуляторе вычислений переменная среды **%ComputeEmulatorRunning%** приобретает значение `true`, а при выполнении в облаке — `false`.
 
 ```xml
 <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
@@ -493,23 +493,23 @@ EXIT %ERRORLEVEL%
 ### <a name="use-local-storage-to-store-files-that-must-be-accessed-in-the-role"></a>Используйте локальное хранилище для хранения файлов, которые должны использоваться в роли
 Если вы хотите во время выполнения задачи запуска скопировать или создать файл, который затем будет доступен вашей роли, этот файл необходимо поместить в локальное хранилище. См. [предыдущий раздел](#create-files-in-local-storage-from-a-startup-task).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с [моделью и пакетом облачной службы](cloud-services-model-and-package.md)
 
 Узнайте, как работают [задачи](cloud-services-startup-tasks.md) .
 
 [Создайте и разверните](cloud-services-how-to-create-deploy-portal.md) свой пакет облачной службы.
 
-[ServiceDefinition.csdef]: cloud-services-model-and-package.md#csdef
+[ServiceDefinition. csdef]: cloud-services-model-and-package.md#csdef
 [Задача]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Task
 [Startup]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Startup
 [Runtime]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Runtime
-[Среды]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
-[Переменной]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
+[Среда]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
+[Переменная]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 [RoleEnvironment]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
 [Конечные точки]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Endpoints
-[Localstorage]: https://msdn.microsoft.com/library/azure/gg557552.aspx#LocalStorage
+[LocalStorage]: https://msdn.microsoft.com/library/azure/gg557552.aspx#LocalStorage
 [LocalResources]: https://msdn.microsoft.com/library/azure/gg557552.aspx#LocalResources
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 
