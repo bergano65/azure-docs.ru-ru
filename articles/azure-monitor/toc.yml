@@ -214,6 +214,7 @@
             - name: Веб-страницы
               items:
                 - name: Клиентская часть JavaScript
+                  displayname: 'SPA, Single Page Applications, React, JS, Angular'
                   href: app/javascript.md
                 - name: Сопоставитель с исходным кодом для JavaScript
                   href: app/source-map-support.md
@@ -441,6 +442,11 @@
               href: app/custom-data-correlation.md
             - name: Строки подключения
               href: app/sdk-connection-string.md
+            - name: Строки подключения
+              href: app/sdk-connection-string.md
+            - name: GetMetric
+              displayname: 'get metric, custom metrics, metrics, TrackMetric'
+              href: app/get-metric.md
             - name: Специальные разделы
               items:
                 - name: Углубленная диагностика для веб-приложений и служб

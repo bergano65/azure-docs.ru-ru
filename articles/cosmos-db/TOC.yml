@@ -697,6 +697,8 @@
               href: mongodb-feature-support-36.md
             - name: Поддержка протокола коммутации (3.2)
               href: mongodb-feature-support.md
+            - name: ВОПРОСЫ И ОТВЕТЫ
+              href: mongodb-api-faq.md
         - name: Практические руководства
           items:
             - name: Руководство по подготовке к миграции
@@ -763,6 +765,10 @@
           items:
             - name: "1.\_Запрашивание данных"
               href: tutorial-query-graph.md
+        - name: Основные понятия
+          items:
+            - name: ВОПРОСЫ И ОТВЕТЫ
+              href: gremlin-api-faq.md
         - name: Практические руководства
           items:
             - name: Моделирование данных графов
@@ -844,6 +850,10 @@
             - name: 'F#'
               href: /dotnet/articles/fsharp/using-fsharp-on-azure/table-storage
               maintainContext: true
+        - name: Основные понятия
+          items:
+            - name: ВОПРОСЫ И ОТВЕТЫ
+              href: table-api-faq.md
         - name: Практические руководства
           items:
             - name: Создание приложений с помощью API таблиц

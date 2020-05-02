@@ -36,8 +36,12 @@
       href: powershell-samples.md
 - name: Основные понятия
   items:
-    - name: Компоненты и ограничения
-      href: concepts-limitations.md
+    - name: Components
+      href: components.md
+    - name: Основные понятия
+      href: concepts.md
+    - name: Типы
+      href: types.md
     - name: Мониторинг работоспособности
       items:
         - name: Пробы работоспособности
@@ -133,6 +137,8 @@
       items:
         - name: Устранение неполадок Azure Load Balancer
           href: load-balancer-troubleshoot.md
+        - name: Устранение стандартных ошибок развертывания
+          href: load-balancer-common-deployment-errors.md
 - name: Справочник
   items:
     - name: Примеры кода
