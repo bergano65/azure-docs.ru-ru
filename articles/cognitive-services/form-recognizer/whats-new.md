@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 5f8c66db491b93278fedf1378d3df86e7ce5fdbf
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: c2b67989cbffb03eb182b4de2bf471a02ee33e7b
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81531088"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82627999"
 ---
 # <a name="whats-new-in-form-recognizer"></a>Новые возможности Распознавателя документов
 
@@ -22,6 +22,23 @@ ms.locfileid: "81531088"
 
 > [!NOTE]
 > В кратком руководстве и руководствах для распознавателя форм всегда используется последняя версия API, если не указано иное.
+
+## <a name="april-2020"></a>Апрель 2020 г.
+
+### <a name="new-features"></a>Новые функции
+* **Поддержка пакета SDK для API распознавателя форм (общедоступная Предварительная версия 2.0** ) В этом месяце мы расширили поддержку службы, включив в нее предварительную версию пакета SDK для выпуска распознавателя версии 2.0 (Предварительная версия). Воспользуйтесь приведенными ниже ссылками, чтобы начать работу с выбранным языком: 
+   * [Пакет SDK для .NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer)
+   * [Пакет SDK для Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/formrecognizer/azure-ai-formrecognizer)
+   * [Пакет SDK для Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer)
+   * [Пакет SDK для JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer)
+
+
+  Новый пакет SDK поддерживает все функции REST API версии 2.0 для распознавателя форм. Например, можно обучить модель с метками или без них, а также извлечь текст, пары "ключ-значение" и таблицы из форм, извлечь данные из чеков с помощью предварительно построенной службы получения и извлечь текст и таблицы со службой макета из документов. Вы можете поделиться своими отзывами о [пакетах SDK в форме отзывов SDK](https://aka.ms/FR_SDK_v1_feedback).
+ 
+* **Копировать пользовательскую модель** Теперь вы можете копировать модели между регионами и подписками, используя новую пользовательскую функцию копирования модели. Перед вызовом API копирования настраиваемой модели необходимо сначала получить авторизацию для копирования в целевой ресурс, вызвав операцию копирования авторизации для конечной точки целевого ресурса.
+   * [Создание авторизации копии](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/CopyCustomFormModelAuthorization) REST API
+   * [Копирование настраиваемой модели](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/CopyCustomFormModel) REST API 
+
 
 ## <a name="march-2020"></a>Март 2020 г. 
 
