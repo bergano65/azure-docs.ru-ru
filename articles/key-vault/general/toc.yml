@@ -48,6 +48,8 @@
       href: authentication-requests-and-responses.md
     - name: Руководство по регулированию хранилища ключей Azure
       href: overview-throttling.md
+    - name: Доступность и избыточность хранилища ключей Azure
+      href: disaster-recovery-guidance.md
     - name: "Конечные точки служб для виртуальной сети для Azure Key Vault\_— Azure Key Vault"
       href: overview-vnet-service-endpoints.md
 - name: Практические руководства
@@ -92,6 +94,10 @@
           href: soft-delete-cli.md
         - name: Обратимое удаление с помощью PowerShell
           href: soft-delete-powershell.md
+    - name: Перемещение хранилища ключей
+      items:
+        - name: Перемещение хранилища ключей в другой регион
+          href: keyvault-moveregion.md
     - name: Диагностика
       items:
         - name: Изменение идентификатора клиента хранилища ключей после перемещения подписки

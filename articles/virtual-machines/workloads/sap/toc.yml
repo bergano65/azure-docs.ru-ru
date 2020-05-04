@@ -76,6 +76,8 @@
           href: ha-setup-with-stonith.md
         - name: "Резервное копирование ОС для номеров SKU типа\_II"
           href: os-backup-type-ii-skus.md
+        - name: Включение Kdump для крупных экземпляров HANA
+          href: hana-large-instance-enable-kdump.md
         - name: Обновление ОС для HLI
           href: os-upgrade-hana-large-instance.md
         - name: Настройка сервера SMT для SUSE Linux

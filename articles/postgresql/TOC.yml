@@ -167,6 +167,10 @@
               href: concepts-hyperscale-firewall-rules.md
             - name: Настройка SSL
               href: concepts-hyperscale-ssl-connection-security.md
+        - name: Непрерывность бизнес-процессов
+          items:
+            - name: Резервное копирование и восстановление
+              href: concepts-hyperscale-backup.md
         - name: Мониторинг и настройка
           items:
             - name: Мониторинг и настройка
@@ -273,6 +277,8 @@
               href: howto-data-encryption-portal.md
             - name: Azure CLI
               href: howto-data-encryption-cli.md
+            - name: Проверка шифрования данных
+              href: howto-data-encryption-validation.md
         - name: Перезапуск сервера
           items:
             - name: Портал Azure

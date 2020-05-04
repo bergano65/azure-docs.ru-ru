@@ -8,10 +8,12 @@
   items:
     - name: Обеспечение высокой доступности для приложений Azure
       href: 'https://docs.microsoft.com/azure/architecture/resiliency/high-availability-azure-applications'
+    - name: Регионы и зоны доступности
+      href: az-overview.md
     - name: Документация по Зонам доступности
       items:
-        - name: Общие сведения о Зонах доступности
-          href: az-overview.md
+        - name: Регионы с поддержкой зон доступности
+          href: az-region.md
         - name: Виртуальные машины
           items:
             - name: Создание виртуальной машины Linux в зоне доступности с помощью CLI

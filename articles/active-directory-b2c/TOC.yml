@@ -76,6 +76,8 @@
       href: user-overview.md
     - name: Атрибуты профиля пользователя
       href: user-profile-attributes.md
+    - name: Сеансы единого входа
+      href: session-overview.md
 - name: Практические руководства
   items:
     - name: Интеграция приложений
@@ -335,8 +337,8 @@
                       href: phone-factor-technical-profile.md
                     - name: REST
                       href: restful-technical-profile.md
-                    - name: SAML
-                      href: saml-technical-profile.md
+                    - name: Поставщик удостоверений SAML
+                      href: saml-identity-provider-technical-profile.md
                     - name: Издатель токенов JWT
                       href: saml-issuer-technical-profile.md
                     - name: Профиль с самостоятельным подтверждением

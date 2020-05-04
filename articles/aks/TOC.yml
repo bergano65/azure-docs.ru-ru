@@ -252,7 +252,7 @@
         - name: Просмотр данных контейнера в реальном времени
           href: ../azure-monitor/insights/container-insights-livedata-overview.md
           maintainContext: true
-    - name: Использование контейнеров Windows Server (предварительная версия)
+    - name: Использование контейнеров Windows Server
       items:
         - name: Создание кластера AKS
           href: windows-container-cli.md

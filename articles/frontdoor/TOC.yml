@@ -4,6 +4,8 @@
   items:
     - name: Что такое Azure Front Door?
       href: front-door-overview.md
+    - name: Новые возможности в Azure Front Door
+      href: front-door-whats-new.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -17,6 +19,8 @@
       href: front-door-custom-domain-https.md
     - name: Настройка политики геофильтрации для службы AFD
       href: front-door-tutorial-geo-filtering.md
+    - name: Настройка обработчика правил
+      href: front-door-tutorial-rules-engine.md
 - name: Примеры
   items:
     - name: Шаблоны Resource Manager
@@ -53,6 +57,12 @@
       href: front-door-url-redirect.md
     - name: Домен с подстановочным знаком
       href: front-door-wildcard-domain.md
+    - name: Обработчик правил
+      href: front-door-rules-engine.md
+    - name: Условия соответствия для обработчика правил
+      href: front-door-rules-engine-match-conditions.md
+    - name: Действия обработчика правил
+      href: front-door-rules-engine-actions.md
 - name: Практические руководства
   items:
     - name: Перенаправление трафика

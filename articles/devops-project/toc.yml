@@ -1,8 +1,8 @@
-- name: Документация по Azure DevOps Projects
+- name: Документация по Azure DevOps Starter
   href: index.yml
 - name: Обзор
   items:
-    - name: Общие сведения об Azure DevOps Projects
+    - name: Что собой представляет Azure DevOps Starter?
       href: overview.md
 - name: Краткие руководства
   expanded: true
@@ -30,7 +30,7 @@
       maintainContext: true
 - name: Учебники
   items:
-    - name: "1.\_GitHub и DevOps Projects"
+    - name: "1.\_GitHub и DevOps Starter"
       href: azure-devops-project-github.md
       maintainContext: true
     - name: "2.\_Развертывание на виртуальных машинах."

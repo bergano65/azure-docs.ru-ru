@@ -291,7 +291,7 @@
       items:
         - name: Все функции
           href: template-functions.md
-        - name: Функции массива и объекта
+        - name: Функции массива
           href: template-functions-array.md
         - name: Функции сравнения
           href: template-functions-comparison.md
@@ -303,6 +303,8 @@
           href: template-functions-logical.md
         - name: Числовые функции
           href: template-functions-numeric.md
+        - name: Функции для работы с объектами
+          href: template-functions-object.md
         - name: Функции для работы с ресурсами
           href: template-functions-resource.md
         - name: Строковые функции

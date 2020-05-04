@@ -262,9 +262,11 @@
       items:
         - name: Работа с результатами
           href: search-pagination-page-layout.md
-        - name: Настройка релевантности (профили повышения)
+        - name: Оценка релевантности
+          href: index-similarity-and-scoring.md
+        - name: Профили оценки
           href: index-add-scoring-profiles.md
-        - name: Настройка релевантности (алгоритм на основе подобия)
+        - name: Алгоритм проверки сходства
           href: index-ranking-similarity.md
     - name: План
       items:

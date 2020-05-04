@@ -155,9 +155,9 @@
           href: directory-assign-admin-roles.md
         - name: Просмотр и назначение ролей
           href: directory-manage-roles-portal.md
-        - name: Настраиваемая роль
+        - name: Пользовательские роли
           items:
-            - name: Настраиваемая роль
+            - name: Пользовательские роли
               href: roles-custom-overview.md
             - name: Создание настраиваемой роли
               href: roles-create-custom.md

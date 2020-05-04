@@ -6,6 +6,10 @@
       href: overview-iot-central.md
     - name: Обзор пользовательского интерфейса
       href: overview-iot-central-tour.md
+    - name: Последние обновления
+      items:
+        - name: "Март 2020\_г."
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-march-2020-updates/'
 - name: Краткие руководства
   expanded: true
   items:
@@ -127,6 +131,14 @@
               href: howto-show-hide-chat.md
 - name: Ресурсы
   items:
+    - name: Последние обновления (любой запрос)
+      href: 'https://azure.microsoft.com/updates/?category=iot&query=azure%20iot%20central'
+    - name: Последние обновления (список)
+      items:
+        - name: "Апрель 2020\_г."
+          href: 'https://azure.microsoft.com//updates/new-iot-central-pricing-plans/'
+        - name: "Март 2020\_г."
+          href: 'https://azure.microsoft.com//updates/new-iot-central-pricing-plans/'
     - name: Возможности получения поддержки и справки
       href: /azure/iot-fundamentals/iot-support-help
     - name: Отраслевые шаблоны приложений

@@ -1,30 +1,30 @@
 ### YamlMime:Landing
-title: Документация по Azure DevOps Projects
-summary: Azure DevOps Projects представляет собой упрощенный интерфейс, к которому вы подключаете существующий код и репозиторий Git. Или можно выбрать один из примеров приложений, чтобы создать конвейер непрерывной интеграции (CI) и непрерывной поставки (CD) в Azure.
+title: Документация по Azure DevOps Starter
+summary: Azure DevOps Starter представляет собой упрощенный интерфейс, к которому вы подключаете существующий код и репозиторий Git. Либо можно выбрать один из примеров приложений, чтобы создать конвейер непрерывной интеграции (CI) и непрерывной поставки (CD) в Azure.
 metadata:
-  title: Документация по Azure DevOps Projects
+  title: Документация по Azure DevOps Starter
   description: Добавьте существующий код и репозиторий Git либо выберите пример приложения, чтобы создать конвейер непрерывной интеграции (CI) и непрерывной поставки (CD) в Azure.
   ms.service: devops-project
   ms.topic: landing-page
   author: 
   ms.author: 
-  ms.date: 03/05/2020
-  ms.openlocfilehash: f03a03b353ffa0d0562169a51a2552c2f2ab143b
-  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.date: 03/24/2020
+  ms.openlocfilehash: 461d088f85f6845dfb9204381209b477b384a0be
+  ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/25/2020
-  ms.locfileid: "78942470"
+  ms.lasthandoff: 04/28/2020
+  ms.locfileid: "82231478"
 landingContent:
-- title: Сведения об Azure DevOps Projects
+- title: Сведения об Azure DevOps Starter
   linkLists:
   - linkListType: overview
     links:
-    - text: Общие сведения об Azure DevOps Projects
+    - text: Что собой представляет Azure DevOps Starter?
       url: overview.md
   - linkListType: video
     links:
-    - text: Видео о создании конвейера CI/CD с использованием Azure DevOps Projects (8:53)
+    - text: Видео о создании конвейера CI/CD с использованием Azure DevOps Starter (8:53)
       url: https://channel9.msdn.com/Events/Connect/2017/T174/player/
 - title: Создание конвейера CI/CD
   linkLists:

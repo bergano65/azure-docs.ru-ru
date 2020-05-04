@@ -40,8 +40,6 @@
       href: components.md
     - name: Основные понятия
       href: concepts.md
-    - name: Типы
-      href: types.md
     - name: Мониторинг работоспособности
       items:
         - name: Пробы работоспособности
