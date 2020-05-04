@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: swmachan
-ms.openlocfilehash: 6a197095d97e67f7548e60375148cff57e47b797
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 0c099584642de1939df5e1e7d9785006e8d25235
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68595939"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82732348"
 ---
 # <a name="how-to-use-collaborative-translation-framework-ctf-reporting"></a>Как использовать отчеты на платформе для совместного перевода (CTF)
 
@@ -101,7 +101,7 @@ API отчетов платформы для совместного перево
 | Rating| Оценка, применяемая отправителем в вызове метода AddTranslation ()|
 | Кому| Конечный язык|
 | URI| URI, примененный в вызове метода AddTranslation ()|
-| User (Пользователь)| Имя пользователя|
+| Пользователь| Имя пользователя|
 
 **Исключения**
 
@@ -115,8 +115,8 @@ API отчетов платформы для совместного перево
 > Квота будет корректироваться, чтобы обеспечить распределение ресурсов между всеми пользователями.
 
 **Примеры кода в GitHub**
-* [C#](https://github.com/MicrosoftTranslator/Documentation-Code-TextAPI/blob/master/ctf/ctf-getusertranslationcounts-example-csharp.md)
-* [PHP](https://github.com/MicrosoftTranslator/Documentation-Code-TextAPI/blob/master/ctf/ctf-getusertranslationcounts-example-php.md)
+* [C#](https://github.com/MicrosoftTranslator/CustomTranslator-API-CSharp)
+* [PHP](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-PHP)
 
 ## <a name="getusertranslations-method"></a>Метод GetUserTranslations
 
@@ -174,7 +174,7 @@ API отчетов платформы для совместного перево
 |Кому|    Конечный язык|
 |TranslatedText|    Перевод, представленный в вызове метода AddTranslation ()|
 |URI|   URI, примененный в вызове метода AddTranslation ()|
-|User (Пользователь)   |Имя пользователя|
+|Пользователь   |Имя пользователя|
 
 **Исключения**
 
@@ -188,5 +188,5 @@ API отчетов платформы для совместного перево
 > Квота будет корректироваться, чтобы обеспечить распределение ресурсов между всеми пользователями.
 
 **Примеры кода в GitHub**
-* [C#](https://github.com/MicrosoftTranslator/Documentation-Code-TextAPI/blob/master/ctf/ctf-getusertranslations-example-csharp.md)
-* [PHP](https://github.com/MicrosoftTranslator/Documentation-Code-TextAPI/blob/master/ctf/ctf-getusertranslations-example-php.md)
+* [C#](https://github.com/MicrosoftTranslator/CustomTranslator-API-CSharp)
+* [PHP](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-PHP)
