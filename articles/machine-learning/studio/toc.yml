@@ -52,8 +52,6 @@
           href: create-workspace.md
         - name: Управление
           href: manage-workspace.md
-        - name: Диагностика
-          href: troubleshooting-creating-ml-workspace.md
         - name: Развертывание с помощью ARM
           href: deploy-with-resource-manager-template.md
     - name: Импорт данных для обучения
@@ -84,8 +82,6 @@
               href: algorithm-parameters-optimize.md
             - name: Интерпретация результатов
               href: interpret-model-results.md
-            - name: Отладка
-              href: debug-models.md
         - name: Повторное обучение моделей
           items:
             - name: Новые веб-службы
@@ -96,19 +92,12 @@
           items:
             - name: Начало работы с R
               href: r-get-started.md
-            - name: Выполнение скриптов R
-              href: extend-your-experiment-with-r.md
             - name: Создание пользовательских модулей R
               href: custom-r-modules.md
             - name: Выполнение скриптов Python
               href: execute-python-scripts.md
     - name: Выбор алгоритма
-      items:
-        - name: Выбор алгоритмов
-          href: algorithm-choice.md
-        - name: Примеры алгоритмов
-          displayName: 'infographic, studio basics'
-          href: basics-infographic-with-algorithm-examples.md
+      href: algorithm-choice.md
     - name: Развертывание моделей
       items:
         - name: Развертывание веб-службы
@@ -143,14 +132,6 @@
           href: consuming-from-excel.md
         - name: Использование надстройки Excel
           href: excel-add-in-for-web-services.md
-    - name: Варианты использования
-      items:
-        - name: Уход клиентов
-          href: azure-ml-customer-churn-scenario.md
-        - name: Анализ мнений
-          href: text-analytics-module-tutorial.md
-        - name: Перенос аналитики из Excel в Студию машинного обучения (классическая версия)
-          href: use-case-excel-studio.md
     - name: Удаление и экспортирование данных клиента
       items:
         - name: Данные Студии машинного обучения (классическая версия)
