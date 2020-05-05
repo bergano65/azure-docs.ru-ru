@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/11/2020
 ms.author: trbye
-ms.openlocfilehash: 2de836a63eed79b7d166db220218e0c11ef11e70
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: d59f2ef564da710d084dc027950bc983a88143de
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81399773"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82204612"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -83,7 +83,7 @@ SpeechRecognizer recognizer = new SpeechRecognizer(config, audioConfig);
 [Класс распознавателя](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer?view=azure-java-stable) для пакета SDK службы "Речь" для Java предоставляет несколько методов, которые можно использовать для распознавания речи.
 
 * Одноразовое распознавание (async) — выполняет распознавание в неблокирующем (асинхронном) режиме. Это позволит распознать одиночный речевой фрагмент. Конец одного речевого фрагмента определяется путем прослушивания до тишины в конце, или пока не будет обработано максимум 15 секунд аудио.
-* Непрерывное распознавание (асинхронное) — асинхронно инициирует операцию непрерывного распознавания. Если вы хотите предоставить звуковой файл, а не использовать микрофон, вам по-прежнему потребуется предоставить. Чтобы прерывать асинхронное непрерывное распознавание, вызовите [stopContinuousRecognitionAsync](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer.stopcontinuousrecognitionasync).
+* Непрерывное распознавание (асинхронное) — асинхронно инициирует операцию непрерывного распознавания. Если вы хотите предоставить звуковой файл, а не использовать микрофон, вам по-прежнему потребуется предоставить `audioConfig`. Чтобы прерывать асинхронное непрерывное распознавание, вызовите [stopContinuousRecognitionAsync](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer.stopcontinuousrecognitionasync).
 
 > [!NOTE]
 > Узнайте больше о том, как [выбрать режим распознавания речи](../../../how-to-choose-recognition-mode.md).
