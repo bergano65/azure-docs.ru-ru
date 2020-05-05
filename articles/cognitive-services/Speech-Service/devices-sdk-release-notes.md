@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: wellsi
-ms.openlocfilehash: 5dbbbbb18bf81d70ed7955530db7c603594c16d0
-ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
+ms.openlocfilehash: 93bedbf4275dacc3ec84e6df9c55e7e9a7b9d632
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82652725"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82780918"
 ---
 # <a name="release-notes-speech-devices-sdk"></a>Заметки о выпуске: пакет SDK для речевых устройств
 
@@ -23,6 +23,7 @@ ms.locfileid: "82652725"
 
 ## <a name="speech-devices-sdk-1110"></a>1.11.0 пакета SDK для речевых устройств:
 
+- Поддержка [произвольных геометрических массивов микрофона](how-to-devices-microphone-array-configuration.md) и задание рабочего угла с помощью [файла конфигурации](https://aka.ms/sdsdk-micarray-json).
 - Поддержка [УРБЕТТЕР DDK](http://www.urbetter.com/products_56/278.html).
 - Освобожденные двоичные файлы для [динамика гжек](https://aka.ms/sdsdk-download-speaker) , используемого в нашем [примере голосового помощника](https://aka.ms/sdsdk-speaker).
 - Выпущены двоичные файлы для [Linux ARM32](https://aka.ms/sdsdk-download-linux-arm32) и [Linux ARM 64](https://aka.ms/sdsdk-download-linux-arm64) для Raspberry Pi и аналогичных устройств.
