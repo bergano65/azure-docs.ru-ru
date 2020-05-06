@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f43db805ccbb7d4e546c51bbe39350f4bbba2efb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 04/30/2020
 ms.locfileid: "80049978"
 ---
 # <a name="controlled-validation-of-hybrid-azure-ad-join"></a>Контролируемая проверка гибридного присоединения к Azure AD
@@ -100,6 +100,6 @@ ms.locfileid: "80049978"
 
 Убедившись в том, что все работает правильно, вы можете автоматически зарегистрировать остальные устройства Windows и службы нижнего уровня в Azure AD, [настроив SCP с помощью Azure AD Connect](hybrid-azuread-join-managed-domains.md#configure-hybrid-azure-ad-join).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Планирование реализации гибридного присоединения к Azure Active Directory](hybrid-azuread-join-plan.md).

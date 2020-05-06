@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: cdad95b1a910a45629e85bcc716218b272afd9de
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: e18fc765385e6d703e735a1ca15c539c32f36e93
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81421298"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82116253"
 ---
 # <a name="overview-query-data-in-storage"></a>Общие сведения. Запрашивание данных в хранилище
 
@@ -72,9 +72,6 @@ CREATE DATABASE mydbname;
 > По умолчанию для SQL по запросу всегда используется сквозной доступ через Azure Active Directory.
 
 Дополнительные сведения об управлении доступом к хранилищу см. по этой [ссылке](develop-storage-files-storage-access-control.md).
-
-> [!WARNING]
-> Создайте учетные данные для учетной записи хранения, расположенной в том же регионе, что и конечная точка. Хотя SQL по запросу может получать доступ к хранилищам из разных регионов, наличие хранилища и конечной точки в одном регионе обеспечит лучшую производительность.
 
 Чтобы создать учетные данные для контейнеров CSV, JSON и Parquet, выполните следующий код:
 
