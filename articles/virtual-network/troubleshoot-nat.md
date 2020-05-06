@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/30/2020
+ms.date: 04/28/2020
 ms.author: allensu
-ms.openlocfilehash: c012a8d83761b88cc59b62d11fd3d5542ca7f7a1
-ms.sourcegitcommit: 632e7ed5449f85ca502ad216be8ec5dd7cd093cb
+ms.openlocfilehash: c9b5aaefeb8ab21eed850f5bf291d38981239aab
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80396090"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82508434"
 ---
 # <a name="troubleshoot-azure-virtual-network-nat-connectivity"></a>Устранение неполадок с подключением при использовании NAT виртуальной сети Azure
 
@@ -101,6 +101,7 @@ _**Решение.**_ Вместо него для сквозной провер
 
 Проблемы с подключением при использовании [NAT виртуальной сети](nat-overview.md) могут быть вызваны несколькими причинами:
 
+* постоянные сбои из-за ошибок конфигурации;
 * временная или постоянная [нехватка SNAT](#snat-exhaustion) для шлюза NAT;
 * временные сбои в инфраструктуре Azure; 
 * временные сбои на пути между Azure и общедоступным местом назначения в Интернете; 
@@ -112,6 +113,13 @@ _**Решение.**_ Вместо него для сквозной провер
 |---|---|---|---|
 | Linux | nc (универсальный тест подключения) | curl (тест TCP на уровне приложения) | в зависимости от приложения |
 | Windows | [PsPing](https://docs.microsoft.com/sysinternals/downloads/psping) | PowerShell [Invoke-WebRequest](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest) | в зависимости от приложения |
+
+#### <a name="configuration"></a>Конфигурация
+
+Проверьте следующее.
+1. Есть ли у ресурса шлюза NAT хотя бы один ресурс общедоступного IP-адреса или один ресурс префикса общедоступного IP-адреса? У вас должен быть хотя бы один IP-адрес, связанный со шлюзом NAT, чтобы он мог обеспечить исходящее соединение.
+2. Настроена ли подсеть виртуальной сети на использование шлюза NAT?
+3. Используете ли вы UDR (определяемый пользователем маршрут) и переопределяете ли вы назначение?  Ресурсы шлюза NAT становятся в настроенных подсетях маршрутом по умолчанию (0/0).
 
 #### <a name="snat-exhaustion"></a>Нехватка SNAT
 

@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 06/25/2019
-ms.openlocfilehash: d93c1d81e1434ffdd41297ed54e874c6b71240d2
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 6611c394d6aff92a62a7ecd9a7656d3408fb9da6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "75430487"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82146624"
 ---
 # <a name="quickstart-create-an-azure-database-for-postgresql-server-in-the-azure-portal"></a>Краткое руководство. Создание базы данных Azure для сервера PostgreSQL на портале Azure
 
@@ -178,7 +178,7 @@ pgAdmin — это средство с открытым кодом, которо
     Имя пользователя | Имя для входа администратора сервера | Имя для входа администратора сервера, которое вы использовали раньше при создании базы данных Azure для сервера PostgreSQL. Если вы не помните имя пользователя, выполните действия из предыдущего раздела, чтобы получить сведения о подключении. Формат *имя пользователя\@имя сервера*.
     Пароль | Ваш пароль администратора | Пароль, выбранный при создании сервера во время работы с этим руководством.
     Роль | Не указывайте | Указывать роль на этом шаге не нужно. Оставьте поле пустым.
-    Режим SSL | *Require* (Требовать) | На вкладке pgAdmin SSL можно настроить режим SSL. По умолчанию все серверы службы "База данных Azure для PostgreSQL" создаются с включенным применением SSL. Чтобы отключить применение SSL, см. сведения о [включении SSL](./concepts-ssl-connection-security.md).
+    Режим SSL | *Require* (Требовать) | На вкладке pgAdmin SSL можно настроить режим TLS или SSL. По умолчанию все серверы службы "База данных Azure для PostgreSQL" создаются с включенным применением TLS. Чтобы отключить применение TLS, см. раздел [Настройка принудительного применения TLS](./concepts-ssl-connection-security.md#configure-enforcement-of-tls).
     
 5. Щелкните **Сохранить**.
 
