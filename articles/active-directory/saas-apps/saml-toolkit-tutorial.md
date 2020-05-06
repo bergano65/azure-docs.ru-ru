@@ -11,17 +11,16 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/31/2020
+ms.date: 04/24/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7902112c1694bacfeb45b5f20db80d5136642169
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4d2681c09030ff0f36938d7a09e1d1b2e9aa645c
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77047953"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82166316"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-azure-ad-saml-toolkit"></a>Руководство по Интеграция единого входа Azure Active Directory с Azure AD SAML Toolkit
 
@@ -89,6 +88,9 @@ ms.locfileid: "77047953"
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://samltoolkit.azurewebsites.net/SAML/Consume`
 
+    > [!NOTE]
+    > Эти значения приведены в качестве примера. Замените эти значения фактическими URL-адресом входа, URL-адресом ответа и идентификатором, как описано далее в этом руководстве.
+
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **Сертификат (необработанный)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
     ![Ссылка для скачивания сертификата](common/certificateraw.png)
@@ -154,6 +156,8 @@ ms.locfileid: "77047953"
     1. Щелкните **Choose File** (Выбрать файл) и передайте файл **сертификата (необработанный)** , скачанный с портала Azure.
 
     1. Нажмите кнопку **Создать**.
+
+    1. Скопируйте URL-адрес входа, идентификатор и URL-адрес службы ACS на странице настройки единого входа для набора средств SAML. Вставьте эти данные в соответствующие текстовые поля в **разделе базовой конфигурации SAML** на портале Azure.
 
 ### <a name="create-azure-ad-saml-toolkit-test-user"></a>Создание тестового пользователя Azure AD SAML Toolkit
 

@@ -7,12 +7,12 @@ ms.service: azure-migrate
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.author: raynew
-ms.openlocfilehash: 2a30222902fd8797908202562a04018209842af2
-ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
+ms.openlocfilehash: 484dfd7834a206dce6805dc38b0eabeae2ee352a
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81115061"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82114570"
 ---
 # <a name="assess-servers-by-using-imported-data"></a>Оценка серверов по импортированным данным
 
@@ -68,7 +68,7 @@ ms.locfileid: "81115061"
 5. В разделе **Проект миграции** выберите подписку Azure и создайте группу ресурсов, если у вас ее нет.
 6. В разделе **Сведения о проекте** укажите имя проекта и регион для его создания. Дополнительные сведения
 
-    - Просмотрите [список поддерживаемых регионов](migrate-support-matrix.md#supported-geographies). Географический регион проекта используется только для хранения обнаруженных метаданных локальных виртуальных машин.
+    - Просмотрите список поддерживаемых географических регионов для [общедоступного](migrate-support-matrix.md#supported-geographies-public-cloud) облака и облака для [государственных организаций](migrate-support-matrix.md#supported-geographies-azure-government).
     - При выполнении миграции можно выбрать любой целевой регион.
 
     ![Создание проекта службы "Миграция Azure"](./media/tutorial-assess-import/migrate-project.png)
@@ -248,6 +248,8 @@ ms.locfileid: "81115061"
 > Оценки достоверности не назначаются оценкам серверов, которые импортируются в средство оценки сервера через CSV-файлы.
 
 ## <a name="supported-operating-system-names"></a>Поддерживаемые имена операционных систем
+
+Имена операционных систем, указанные в CSV-файле, должны совпадать с именами в этом списке или содержать их. Это нужно для того, чтобы указанные имена были распознаны как допустимые при оценке.
 
 <!-- BEGIN A - H -->
 

@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 01/12/2020
 ms.author: glenga
-ms.openlocfilehash: d8665b4cec3357baee5d6c1b77b5719645575419
-ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
+ms.openlocfilehash: 41dfb809cdab00f4f9bee335d92522f37a438c68
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81112887"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82109904"
 ---
 ## <a name="publish-the-project-to-azure"></a>Публикация проекта в Azure
 
@@ -24,6 +24,8 @@ ms.locfileid: "81112887"
     ![Публикация проекта в Azure](media/functions-publish-project-vscode/function-app-publish-project.png)
 
 1. Введите следующие сведения по соответствующим запросам:
+
+    + **Выбор папки**. Выберите папку из рабочей области или перейдите к папке, содержащей приложение-функцию. Этот элемент не отобразится, если вы уже открыли допустимое приложение-функцию.
 
     + **Выбрать подписку**. Выберите подписку, которую нужно использовать. Если у вас только одна подписка, вы не увидите этот параметр.
 

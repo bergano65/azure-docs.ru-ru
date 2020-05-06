@@ -7,12 +7,12 @@ ms.service: iot-hub
 ms.topic: tutorial
 ms.date: 11/21/2019
 ms.author: robinsh
-ms.openlocfilehash: 334b7b2c59b328e8eff3c7c2b9c3ed46bffc3442
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 889c5e68759a94682150ac88970b7123ad0fc412
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74706437"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82201743"
 ---
 # <a name="tutorial-send-email-notifications-about-azure-iot-hub-events-using-event-grid-and-logic-apps"></a>Руководство по отправке уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Сетки событий и Logic Apps
 
@@ -22,9 +22,14 @@ ms.locfileid: "74706437"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Учетная запись электронной почты любого поставщика услуг электронной почты, поддерживаемого Azure Logic Apps, например Office 365 Outlook, Outlook.com или Gmail. Такая учетная запись используется для отправки уведомлений о событиях. Полный список поддерживаемых соединителей для приложения логики см. в статье [Соединители](https://docs.microsoft.com/connectors/).
-* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/).
-* Центр Интернета вещей в Azure. Если вы его еще не создали, ознакомьтесь с соответствующими инструкциями в статье [Подключение устройства к Центру Интернета вещей с помощью .NET](../iot-hub/iot-hub-csharp-csharp-getstarted.md). 
+* Активная подписка Azure. Если у вас нет подписки, вы можете [создать бесплатную учетную запись Azure](https://azure.microsoft.com/pricing/free-trial/).
+
+* Учетная запись электронной почты любого поставщика услуг электронной почты, поддерживаемого Azure Logic Apps, например Office 365 Outlook, Outlook.com или Gmail. Такая учетная запись используется для отправки уведомлений о событиях. Полный список поддерживаемых соединителей для приложения логики см. в статье [Соединители](https://docs.microsoft.com/connectors/).
+
+  > [!IMPORTANT]
+  > Перед использованием Gmail проверьте наличие учетной записи для бизнеса G-Suite (адрес электронной почты с личным доменом) или учетной записи потребителя Gmail (адрес электронной почты с @gmail.com или @googlemail.com). Только учетные записи для бизнеса G-Suite могут использовать соединитель Gmail с другими соединителями без ограничений в приложениях логики. Если у вас есть учетная запись потребителя Gmail, вы можете использовать соединитель Gmail только с определенными утвержденными Google службами. Вы также можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности](https://docs.microsoft.com/connectors/gmail/#authentication-and-bring-your-own-application). Дополнительные сведения см. в статье [Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
+
+* Центр Интернета вещей в Azure. Если вы его еще не создали, ознакомьтесь с соответствующими инструкциями в статье [Подключение устройства к Центру Интернета вещей с помощью .NET](../iot-hub/iot-hub-csharp-csharp-getstarted.md).
 
 ## <a name="create-a-logic-app"></a>Создайте приложение логики
 

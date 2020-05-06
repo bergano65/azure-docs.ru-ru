@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 04/17/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 18490ec7c3cfde33cef186b753e2adc809f854c6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6821e3de3bfec891d98e9291a479cbb7537364ca
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81641364"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82733671"
 ---
 # <a name="elevate-access-to-manage-all-azure-subscriptions-and-management-groups"></a>Повышение прав доступа для управления всеми подписками Azure и группами управления
 
@@ -84,7 +84,7 @@ Azure AD и ресурсы Azure защищены независимо друг 
 
 1. Выполните изменения, для которых требуются повышенные права доступа.
 
-    Сведения о том, как назначить роли, см. в статье, посвященной [управлению доступом с помощью RBAC и портала Azure](role-assignments-portal.md). Если вы используете Azure AD Privileged Identity Management (PIM), ознакомьтесь со статьей [Обнаружение ресурсов Azure и управление ими с помощью управления привилегированными пользователями](../active-directory/privileged-identity-management/pim-resource-roles-discover-resources.md) и [Назначение ролей ресурсам Azure в PIM](../active-directory/privileged-identity-management/pim-resource-roles-assign-roles.md).
+    Сведения о назначении ролей см. [в статье Добавление и удаление назначений ролей Azure с помощью портал Azure](role-assignments-portal.md). Если вы используете Azure AD Privileged Identity Management (PIM), ознакомьтесь со статьей [Обнаружение ресурсов Azure и управление ими с помощью управления привилегированными пользователями](../active-directory/privileged-identity-management/pim-resource-roles-discover-resources.md) и [Назначение ролей ресурсам Azure в PIM](../active-directory/privileged-identity-management/pim-resource-roles-assign-roles.md).
 
 ### <a name="remove-elevated-access"></a>Удаление повышенного права доступа
 
@@ -319,7 +319,7 @@ az role assignment list --role "User Access Administrator" --scope "/"
     DELETE https://management.azure.com/providers/Microsoft.Authorization/roleAssignments/11111111-1111-1111-1111-111111111111?api-version=2015-07-01
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
-- [Сведения о различных ролях в Azure](rbac-and-directory-admin-roles.md)
-- [Управление доступом к ресурсам Azure с помощью RBAC и REST API](role-assignments-rest.md)
+- [О разных ролях](rbac-and-directory-admin-roles.md)
+- [Добавление или удаление назначений ролей Azure с помощью REST API](role-assignments-rest.md)
