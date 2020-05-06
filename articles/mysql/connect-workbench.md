@@ -8,19 +8,19 @@ ms.custom: mvc
 ms.topic: quickstart
 ms.date: 3/18/2020
 ms.openlocfilehash: 95a3c9e81bfc1d3b010027e628204666c472d1da
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 04/30/2020
 ms.locfileid: "81731874"
 ---
 # <a name="azure-database-for-mysql-use-mysql-workbench-to-connect-and-query-data"></a>База данных Azure для MySQL: подключение и запрос данных с помощью MySQL Workbench
 В этом кратком руководстве показано, как подключиться к базе данных Azure для MySQL с помощью приложения MySQL Workbench. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 В качестве отправной точки в этом кратком руководстве используются ресурсы, созданные в соответствии со следующими материалами:
 - [Create an Azure Database for MySQL server using Azure portal](./quickstart-create-mysql-server-database-using-azure-portal.md) (Создание базы данных Azure для сервера MySQL с помощью портала Azure)
-- [Create an Azure Database for MySQL server using Azure CLI](./quickstart-create-mysql-server-database-using-azure-cli.md) (Создание сервера базы данных Azure для MySQL с помощью Azure CLI)
+- [Краткое руководство. Создание сервера базы данных Azure для MySQL с помощью Azure CLI](./quickstart-create-mysql-server-database-using-azure-cli.md)
 
 ## <a name="install-mysql-workbench"></a>Установка MySQL Workbench
 Скачайте и установите MySQL Workbench на свой компьютер с [веб-сайта MySQL](https://dev.mysql.com/downloads/workbench/).
