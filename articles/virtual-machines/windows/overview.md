@@ -9,10 +9,10 @@ ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
 ms.openlocfilehash: e304841d09913aac59f5e6ba082d3e76ec791e81
-ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "81869342"
 ---
 # <a name="windows-virtual-machines-in-azure"></a>Виртуальные машины Windows в Azure
@@ -45,7 +45,7 @@ ms.locfileid: "81869342"
 
 В этой таблице приведены некоторые способы, с помощью которых можно получить список доступных расположений.
 
-| Метод | Описание |
+| Метод | Description |
 | --- | --- |
 | Портал Azure |Выберите расположение из списка при создании виртуальной машины. |
 | Azure PowerShell |Используйте команду [Get-AzLocation](https://docs.microsoft.com/powershell/module/az.resources/get-azlocation). |
@@ -71,7 +71,7 @@ Azure предоставляет множество [образов из Marketp
 
 В этой таблице указано, как можно найти сведения об образе.
 
-| Метод | Описание |
+| Метод | Description |
 | --- | --- |
 | Портал Azure |При выборе используемого образа значения задаются автоматически. |
 | Azure PowerShell |[Get-AzVMImagePublisher](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagepublisher). Параметр *location* указывает расположение.<BR>[Get-AzVMImageOffer](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimageoffer). Параметр *location* указывает расположение, *publisherName* — имя издателя.<BR>[Get-AzVMImageSku](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagesku). Параметр *location* указывает расположение, *publisherName* — имя издателя, *offerName* — имя предложения. |
@@ -92,9 +92,9 @@ Azure предоставляет множество [образов из Marketp
 ### <a name="related-resources"></a>Связанные ресурсы
 Ресурсы в этой таблице используются в виртуальной машине. Они должны существовать или создаваться вместе с виртуальной машиной.
 
-| Ресурс | Обязательно | Описание |
+| Ресурс | Обязательно | Description |
 | --- | --- | --- |
-| [Группа ресурсов](../../azure-resource-manager/management/overview.md) |Да |Виртуальная машина должна входить в группу ресурсов. |
+| [группа ресурсов](../../azure-resource-manager/management/overview.md) |Да |Виртуальная машина должна входить в группу ресурсов. |
 | [Учетная запись хранения](../../storage/common/storage-create-storage-account.md) |Да |Виртуальной машине требуется учетная запись хранения для хранения виртуальных жестких дисков. |
 | [Виртуальная сеть](../../virtual-network/virtual-networks-overview.md) |Да |Виртуальная машина должна быть подключена к виртуальной сети. |
 | [Общедоступный IP-адрес](../../virtual-network/virtual-network-ip-addresses-overview-arm.md) |нет |Для удаленного доступа к виртуальной машине ей можно назначить общедоступный IP-адрес. |

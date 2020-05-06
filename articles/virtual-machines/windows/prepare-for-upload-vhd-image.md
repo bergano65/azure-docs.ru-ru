@@ -6,14 +6,14 @@ manager: dcscontentpm
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.topic: troubleshooting
-ms.date: 04/27/2020
+ms.date: 04/28/2020
 ms.author: genli
-ms.openlocfilehash: c83850ea479e115121da8eb049db4a01befe7f89
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.openlocfilehash: bf96cea2f64c52714ed6c63b0e973d0d26999856
+ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82201080"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82864391"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Подготовка диска VHD или VHDX для Windows к отправке в Azure
 
@@ -151,8 +151,8 @@ Convert-VHD -Path C:\test\MyVM.vhdx -DestinationPath C:\test\MyNewVM.vhd -VHDTyp
 1. Убедитесь, что для переменных среды **TEMP** и **tmp** заданы значения по умолчанию:
 
    ```powershell
-   Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment -Name TEMP -Value "%SystemRoot%\TEMP" -Type ExpandString -Force
-   Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment -Name TMP -Value "%SystemRoot%\TEMP" -Type ExpandString -Force
+   Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' -Name TEMP -Value "%SystemRoot%\TEMP" -Type ExpandString -Force
+   Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment' -Name TMP -Value "%SystemRoot%\TEMP" -Type ExpandString -Force
    ```
 
 ## <a name="check-the-windows-services"></a>Настройка служб Windows
@@ -466,7 +466,7 @@ Get-Service -Name Netlogon, Netman, TermService |
 
     ![Средство SysPrep](media/prepare-for-upload-vhd-image/syspre.png)
 1. В окне **Параметры завершения работы** выберите параметр **Завершение работы**.
-1. Нажмите кнопку **OK**.
+1. Нажмите кнопку **ОК**.
 1. После завершения работы программы Sysprep завершите работу виртуальной машины. Не используйте **перезагрузку** для завершения работы виртуальной машины.
 
 Теперь диск VHD можно отправлять. Дополнительные сведения о том, как создать виртуальную машину на основе обобщенного диска, см. в разделе [Отправка обобщенного виртуального жесткого диска и его использование для создания новой виртуальной машины в Azure](sa-upload-generalized.md).
@@ -489,7 +489,7 @@ Get-Service -Name Netlogon, Netman, TermService |
 
   - Рекомендуется отключить блокирование сценариев, которое может быть предоставлено антивирусным программным обеспечением. Они могут мешать работе и блокировать сценарии агента подготовки Windows, выполняемые при развертывании новой виртуальной машины из образа.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Отправка образа виртуальной машины Windows в Azure для развертываний Resource Manager](upload-generalized-managed.md)
 - [Устранение неполадок при активации виртуальной машины Windows в Azure](troubleshoot-activation-problems.md)

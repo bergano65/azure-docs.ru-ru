@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 01/26/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 70eb2449c5c54750831c30ff7d5c948173a38594
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 8f9c0dca29d173eb2c7893a20b2ab41dd31522e1
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81426353"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82183217"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-that-use-single-usersingle-password-authentication"></a>Автоматизация ротации секрета для ресурсов, использующих проверку на основе единого пароля пользователя
 
@@ -263,7 +263,7 @@ az keyvault secret set --name sqluser --vault-name simplerotation-kv --value "Si
  
 ![Выбор URL-адреса](../media/rotate10.png)
 
-Для созданного значения секрета следует установить значение true для параметра Database Connected (Подключено к базе данных).
+Когда приложение откроется в браузере, вы увидите **созданное секретное значение** и **подключенную базу данных** со значением *true*.
 
 ## <a name="learn-more"></a>Дополнительные сведения
 

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 01/03/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 957fee48397bc0b23737157dec0e74cf6505fab5
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d6f6cb87cf7628c48ce6adf12336c4b712dc0ff9
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73160132"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82202678"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-jira-by-resolution-gmbh"></a>Руководство по Интеграция Azure Active Directory с SAML SSO for Jira by resolution GmbH
 
@@ -291,7 +291,7 @@ ms.locfileid: "73160132"
 
 Щелкнув элемент "SAML SSO for Jira by resolution GmbH" на панели доступа, вы должны автоматически войти в SAML SSO for Jira by resolution GmbH, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
-Единый вход можно также проверить, перейдя по адресу [https://\<server-base-url>/plugins/servlet/samlsso](https://\<server-base-url>/plugins/servlet/samlsso). Замените **\<server-base-url>** базовым URL-адресом своего экземпляра Jira.
+Вы также можете протестировать единый вход, если перейдете по адресу `https://<server-base-url>/plugins/servlet/samlsso`. Замените **\<server-base-url>** базовым URL-адресом своего экземпляра Jira.
 
 
 ## <a name="enable-single-sign-on-redirection-for-jira"></a>Включение перенаправления для единого входа в Jira
@@ -311,7 +311,7 @@ ms.locfileid: "73160132"
 
 1. Нажмите кнопку **Save Settings** (Сохранить параметры) в правом верхнем углу.
 
-После включения этой функции вы по-прежнему сможете выполнять запрос имени пользователя и пароля. Для этого перейдите по адресу [https://\<server-base-url>/login.jsp?nosso](https://\<server-base-url>/login.jsp?nosso) и установите флажок **Enable nosso** (Включить запрет SSO). Как и ранее, замените **\<server-base-url>** базовым URL-адресом своего экземпляра Jira.
+После включения этой функции вы по-прежнему сможете выполнять запрос имени пользователя и пароля, даже если установлен флажок **Enable nosso** (Включить запрет SSO). Для этого перейдите по адресу `https://\<server-base-url>/login.jsp?nosso`. Как и ранее, замените **\<server-base-url>** базовым URL-адресом своего экземпляра Jira.
 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы

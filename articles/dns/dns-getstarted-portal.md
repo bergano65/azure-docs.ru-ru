@@ -8,16 +8,16 @@ ms.service: dns
 ms.topic: quickstart
 ms.date: 3/11/2019
 ms.author: rohink
-ms.openlocfilehash: 26e5386f1c9730f1600e59a002ea7845b82ffe06
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 3b34b45cba805d748dcc8a0c31340cd8116e1c80
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76937135"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82160772"
 ---
 # <a name="quickstart-create-an-azure-dns-zone-and-record-using-the-azure-portal"></a>Краткое руководство. Создание зоны и записи Azure DNS с помощью портала Azure
 
-В общедоступном домене можно настроить Azure DNS для разрешения имен узлов. Например, если вы приобрели доменное имя *contoso.xyz* у регистратора доменных имен, вы можете настроить Azure DNS для размещения домена *contoso.xyz* и разрешить *www.contoso.xyz* для IP-адреса веб-сервера или веб-приложения.
+В общедоступном домене можно настроить Azure DNS для разрешения имен узлов. Например, если вы приобрели доменное имя *contoso.xyz* у регистратора доменных имен, вы можете настроить Azure DNS для размещения домена *contoso.xyz* и разрешить *`www.contoso.xyz`* в IP-адрес веб-сервера или веб-приложения.
 
 В рамках этого краткого руководства вы создадите тестовый домен, а затем запись адреса для разрешения *www* IP-адресу *10.10.10.10*.
 

@@ -4,10 +4,10 @@ description: Примеры шаблонов Azure Resource Manager для ра�
 ms.topic: sample
 ms.date: 11/16/2018
 ms.openlocfilehash: 61d46d4b032a4eaf326acd21e85b332bdb407f40
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75471789"
 ---
 # <a name="azure-resource-manager-templates-for-management-features"></a>Шаблоны Azure Resource Manager для использования функций управления

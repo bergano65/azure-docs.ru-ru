@@ -11,14 +11,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 06/28/2019
+ms.date: 04/22/2020
 ms.author: apimpm
-ms.openlocfilehash: c393ba081b480408373ed6867624ac6278c1674e
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 6f4626a8c42f3a50fa273c55099158750241bfee
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81260961"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82202930"
 ---
 # <a name="import-an-azure-function-app-as-an-api-in-azure-api-management"></a>Импорт приложения-функции Azure в качестве API в службу управления API Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "81260961"
 
 Выполните следующие действия, чтобы создать новый интерфейс API из приложения-функции Azure.
 
-1. В своем экземпляре службы **Управление API Azure** выберите в меню слева **API**.
+1. На портале Azure перейдите к службе "Управление API" и в меню выберите **Интерфейсы API**.
 
 2. В списке **Добавление нового API** выберите **Приложение-функция**.
 
@@ -71,10 +71,7 @@ ms.locfileid: "81260961"
     > [!NOTE]
     > Вы можете импортировать только функции, которые основаны на триггере HTTP и имеют уровень авторизации *Анонимный* или *Функция*.
 
-7. Переключитесь в **полное** представление и назначьте **продукт** вашему новому API. При необходимости измените другие предварительно заполненные поля.
-
-    ![Добавление из приложения-функции](./media/import-function-app-as-api/add-06.png)
-
+7. Переключитесь в **полное** представление и назначьте **продукт** вашему новому API. При необходимости задайте значения в других полях во время создания или позже, перейдя на вкладку **Параметры**. Эти параметры описаны в руководстве [Импорт и публикация первого интерфейса API](import-and-publish.md#-import-and-publish-a-backend-api).
 8. Нажмите кнопку **Создать**.
 
 ## <a name="append-azure-function-app-to-an-existing-api"></a><a name="append-azure-function-app-to-api"></a> Добавление приложения-функции Azure в API

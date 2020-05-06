@@ -3,17 +3,17 @@ title: Подготовка имитированного устройства X.
 description: В этом кратком руководстве используется индивидуальная регистрация. В этом кратком руководстве показано, как создать и подготовить к работе имитированное устройство X.509 с помощью пакета SDK C для Службы подготовки устройств к добавлению в Центр Интернета вещей Azure (DPS).
 author: wesmc7777
 ms.author: wesmc
-ms.date: 11/08/2019
+ms.date: 04/26/2020
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: f0c95e495e222cc72f0a6fc432404fcbaa47df65
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 882d62c088fa51153ca496231beccd4bfd5af0cb
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79216352"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82190369"
 ---
 # <a name="quickstart-provision-an-x509-simulated-device-using-the-azure-iot-c-sdk"></a>Краткое руководство. Подготовка имитированного устройства X.509 с помощью пакета SDK для устройства C Интернета вещей Azure
 
@@ -172,7 +172,7 @@ ms.locfileid: "79216352"
 
 7. На портале перейдите в центр Интернета вещей, связанный со службой подготовки, и щелкните вкладку **Устройства Интернета вещей**. Когда имитированное устройство X.509 будет подготовлено для центра, в колонке **Устройства Интернета вещей** появится идентификатор этого устройства со значением *Включено* в столбце **Состояние**. Возможно, вам потребуется нажать кнопку **Обновить** в верхней области. 
 
-    ![Устройство зарегистрировано в Центре Интернета вещей](./media/quick-create-simulated-device/hub-registration.png) 
+    ![Устройство зарегистрировано в Центре Интернета вещей](./media/quick-create-simulated-device-x509/hub-registration.png) 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

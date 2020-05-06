@@ -4,10 +4,10 @@ description: Процедура развертывания для отдельн
 ms.date: 01/13/2020
 ms.topic: sample
 ms.openlocfilehash: f5920541d49c454bd6648318c04ed607eada1dfb
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75922503"
 ---
 # <a name="deploy-the-iso-27001-blueprint-sample"></a>Развертывание примера схемы ISO 27001

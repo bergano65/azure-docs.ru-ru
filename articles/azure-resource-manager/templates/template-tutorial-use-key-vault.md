@@ -2,16 +2,16 @@
 title: Использование Azure Key Vault в шаблонах
 description: Узнайте, как использовать Azure Key Vault для передачи значений безопасного параметра во время развертывания шаблона Resource Manager
 author: mumian
-ms.date: 04/16/2020
+ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: c33ad17927dae701e4201e76b7a75690c59dc374
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 7fd84fc2e98578772c806f358cb8d6c400e0d994
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81536711"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82185019"
 ---
 # <a name="tutorial-integrate-azure-key-vault-in-your-arm-template-deployment"></a>Руководство по Интеграция с Azure Key Vault при развертывании шаблона ARM
 
@@ -161,22 +161,30 @@ Write-Host "Press [ENTER] to continue ..."
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Следуйте указаниям в этом разделе о [развертывании шаблона](./template-tutorial-create-templates-with-dependent-resources.md#deploy-the-template). Отправьте оба файла (*azuredeploy.json* и *azuredeploy.parameters.json*) в Cloud Shell. После этого выполните следующий сценарий PowerShell для развертывания шаблона.
+1. Войдите в [Azure Cloud Shell](https://shell.azure.com).
 
-```azurepowershell
-$projectName = Read-Host -Prompt "Enter the same project name that is used for creating the key vault"
-$location = Read-Host -Prompt "Enter the same location that is used for creating the key vault (i.e. centralus)"
-$resourceGroupName = "${projectName}rg"
+1. В левом верхнем углу выберите используемую среду — **PowerShell** или **Bash** (для CLI).  После переключения желательно перезагрузить оболочку.
 
-New-AzResourceGroupDeployment `
-    -ResourceGroupName $resourceGroupName `
-    -TemplateFile "$HOME/azuredeploy.json" `
-    -TemplateParameterFile "$HOME/azuredeploy.parameters.json"
+    ![Файл отправки Cloud Shell на портале Azure](./media/template-tutorial-use-template-reference/azure-portal-cloud-shell-upload-file.png)
 
-Write-Host "Press [ENTER] to continue ..."
-```
+1. Выберите **Отправка и скачивание файлов**, а затем **Отправить**. Отправьте *azuredeploy.json* и *azuredeploy.parameters.json* в Cloud Shell. После отправки вы можете использовать команды **ls** и **cat**, чтобы проверить отправку файла.
 
-При развертывании шаблона используйте ту же группу ресурсов, что и для хранилища ключей. Такой подход упрощает процесс чистки ресурсов, так как вам необходимо удалить одну группу вместо двух.
+1. а затем выполните следующий сценарий PowerShell для его развертывания.
+
+    ```azurepowershell
+    $projectName = Read-Host -Prompt "Enter the same project name that is used for creating the key vault"
+    $location = Read-Host -Prompt "Enter the same location that is used for creating the key vault (i.e. centralus)"
+    $resourceGroupName = "${projectName}rg"
+
+    New-AzResourceGroupDeployment `
+        -ResourceGroupName $resourceGroupName `
+        -TemplateFile "$HOME/azuredeploy.json" `
+        -TemplateParameterFile "$HOME/azuredeploy.parameters.json"
+
+    Write-Host "Press [ENTER] to continue ..."
+    ```
+
+    При развертывании шаблона используйте ту же группу ресурсов, что и для хранилища ключей. Такой подход упрощает процесс чистки ресурсов, так как вам необходимо удалить одну группу вместо двух.
 
 ## <a name="validate-the-deployment"></a>Проверка развертывания
 

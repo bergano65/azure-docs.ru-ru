@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: tutorial
 ms.date: 10/11/2019
-ms.openlocfilehash: f5aac7fe63b2afc997ff69e5d976c755440c1bea
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 045f6d50846092820014ccc7f11a81f1e2234311
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75982572"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82144085"
 ---
 # <a name="tutorial-monitor-virtual-machine-changes-by-using-azure-event-grid-and-logic-apps"></a>Руководство по отслеживанию изменений виртуальной машины с помощью Azure Logic Apps и службы "Сетка событий Azure"
 
@@ -48,6 +48,9 @@ ms.locfileid: "75982572"
 * Учетная запись электронной почты поставщика электронной почты, поддерживаемого Logic Apps, для отправки уведомлений, например Office 365 Outlook, Outlook.com или Gmail. Сведения о дополнительных поставщиках см. в [списке соединителей](/connectors/).
 
   В этом руководстве используется учетная запись Office 365 Outlook. Если используется другая учетная запись электронной почты, общие шаги остаются неизменными, однако интерфейс может выглядеть несколько иначе.
+
+  > [!IMPORTANT]
+  > Только учетные записи для бизнеса G-Suite могут использовать соединитель Gmail без ограничений в приложениях логики. Если у вас есть учетная запись потребителя Gmail, вы можете использовать этот соединитель только с определенными утвержденными Google службами. Кроме того, вы можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности в соединителе Gmail](https://docs.microsoft.com/connectors/gmail/#authentication-and-bring-your-own-application). Дополнительные сведения см. в статье [Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
 
 * [Виртуальная машина](https://azure.microsoft.com/services/virtual-machines), которая находится отдельно в собственной группе ресурсов Azure. Создайте виртуальную машину, используя [сведения из учебника по созданию виртуальной машины](../virtual-machines/windows/quick-create-portal.md), если вы еще не сделали этого. Чтобы настроить виртуальную машину для публикации событий, [не нужны никакие дополнительные действия](../event-grid/overview.md).
 

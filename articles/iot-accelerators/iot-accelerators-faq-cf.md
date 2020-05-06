@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 12/12/2017
 ms.author: dobett
-ms.openlocfilehash: f2f8c08176f80436a339924adb4b2a09338a548a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0c8739dff39490f14b613af483f769ac031c1bd9
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81313591"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792383"
 ---
 # <a name="frequently-asked-questions-for-connected-factory-solution-accelerator"></a>Часто задаваемые вопросы об акселераторе решения "Подключенная фабрика"
 
@@ -82,7 +82,7 @@ IP-адрес можно удалить двумя вариантами.
         export IOTHUB_CONNECTIONSTRING="HostName={yourdeployment}.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey={your key}"
         ```
 
-    * Выполните команду `./startsimulation`.
+    * Запустите `./startsimulation`.
 
 ### <a name="how-do-i-update-the-simulation-in-the-vm"></a>Как обновить симуляцию на виртуальной машине?
 
@@ -111,7 +111,7 @@ IP-адрес можно удалить двумя вариантами.
 * publisher.rio.corp.contoso;
 * publisher.seattle.corp.contoso.
 
-С помощью инструмента [DeviceExplorer](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer) или [расширения центра Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension) можно проверить, какие устройства зарегистрированы в центре Интернета вещей, используемом решением. Чтобы использовать обозреватель устройств, требуется строка подключения к Центру Интернета вещей в вашем развертывании. Чтобы использовать расширение центра Интернета вещей для Azure CLI, требуется имя центра Интернета вещей.
+С помощью инструмента [DeviceExplorer](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/) или [расширения центра Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension) можно проверить, какие устройства зарегистрированы в центре Интернета вещей, используемом решением. Чтобы использовать обозреватель устройств, требуется строка подключения к Центру Интернета вещей в вашем развертывании. Чтобы использовать расширение центра Интернета вещей для Azure CLI, требуется имя центра Интернета вещей.
 
 ### <a name="how-can-i-get-log-data-from-the-simulation-components"></a>Как получить данные журнала из компонентов симуляции?
 
@@ -125,7 +125,7 @@ IP-адрес можно удалить двумя вариантами.
 
 ### <a name="how-can-i-check-if-the-simulation-is-sending-data-to-the-cloud"></a>Как проверить, отправляет ли симуляция данные в облако?
 
-Инструмент [DeviceExplorer](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer) или команда [Azure IoT CLI Extension monitor-events](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/hub?view=azure-cli-latest#ext-azure-iot-az-iot-hub-monitor-events) позволяют просмотреть данные, отправленные в Центр Интернета вещей с определенных устройств. Чтобы использовать эти инструменты, требуется знать строку подключения к Центру Интернета вещей в вашем развертывании. Дополнительные сведения см. в разделе [Как найти строку подключения Центра Интернета вещей, используемого моим решением?](#how-do-i-find-out-the-connection-string-of-the-iot-hub-used-by-my-solution)
+С помощью [обозревателя Интернета вещей Azure](https://github.com/Azure/azure-iot-explorer) или команды [Monitor-Events интерфейса командной строки Azure IOT](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/hub?view=azure-cli-latest#ext-azure-iot-az-iot-hub-monitor-events) можно проверить данные, отправляемые в центр Интернета вещей с определенных устройств. Чтобы использовать эти инструменты, требуется знать строку подключения к Центру Интернета вещей в вашем развертывании. Дополнительные сведения см. в разделе [Как найти строку подключения Центра Интернета вещей, используемого моим решением?](#how-do-i-find-out-the-connection-string-of-the-iot-hub-used-by-my-solution)
 
 Проверьте данные, отправленные одним из устройств издателя:
 
@@ -190,7 +190,7 @@ IP-адрес можно удалить двумя вариантами.
 
 1. Перезапустите службу приложений для решения "Подключенная фабрика".
 
-### <a name="next-steps"></a>Дальнейшие шаги
+### <a name="next-steps"></a>Следующие шаги
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 

@@ -13,12 +13,12 @@ ms.custom:
 - seo-javascript-september2019
 - mqtt
 ms.date: 06/21/2019
-ms.openlocfilehash: 24b6d2eca2eaa12e3e04647d403a015bdbf24ec6
-ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
+ms.openlocfilehash: 5c34dcc606e87e11a3a018df1b2d6bbedb262d04
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81770029"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82209117"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-nodejs"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (Node.js)
 
@@ -86,19 +86,19 @@ az extension add --name azure-iot
 
     Это значение понадобится позже при работе с этим кратким руководством.
 
-1. Чтобы разрешить внутреннему приложению подключаться к Центру Интернета вещей и получать сообщения, вам необходима _строка подключения к службе_. Следующая команда извлекает строку подключения службы для Центра Интернета вещей:
+1. Вам также понадобится _конечная точка, совместимая с Центрами событий_, _путь, совместимый с Центрами событий_, и _первичный ключ службы_ из Центра Интернета вещей, чтобы подключить внутреннее приложение к Центру Интернета вещей и получить сообщения. Следующие команды позволяют получить эти значения для Центра Интернета вещей:
 
-   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub show-connection-string --name {YourIoTHubName} --policy-name service --output table
+    az iot hub show --query properties.eventHubEndpoints.events.endpoint --name {YourIoTHubName}
+
+    az iot hub show --query properties.eventHubEndpoints.events.path --name {YourIoTHubName}
+
+    az iot hub policy show --name service --query primaryKey --hub-name {YourIoTHubName}
     ```
 
-    Запишите строку подключения к службе, которая выглядит так:
-
-   `HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey={YourSharedAccessKey}`
-
-    Это значение понадобится позже при работе с этим кратким руководством. Строка подключения к службе отличается от строки подключения к устройству из предыдущего шага.
+    Запишите эти три значения, они понадобятся позже при работе с этим кратким руководством.
 
 ## <a name="send-simulated-telemetry"></a>Отправка имитированной телеметрии
 
@@ -127,9 +127,13 @@ az extension add --name azure-iot
 
 1. Откройте другое окно локального терминала и перейдите в корневую папку примера проекта Node.js. Затем перейдите в папку **iot-hub\Quickstarts\read-d2c-messages**.
 
-1. Откройте файл **ReadDeviceToCloudMessages.js** в любом текстовом редакторе.
+1. Откройте файл **ReadDeviceToCloudMessages.js** в любом текстовом редакторе. Обновите указанные ниже переменные и сохраните изменения в файле.
 
-    Замените значение переменной `connectionString` записанной ранее строкой подключения к службе. Сохраните изменения в файле **ReadDeviceToCloudMessages.js**.
+    | Переменная | Значение |
+    | -------- | ----------- |
+    | `eventHubsCompatibleEndpoint` | Замените значение переменной записанной ранее конечной точкой, совместимой с Центрами событий. |
+    | `eventHubsCompatiblePath`     | Замените значение переменной записанным ранее путем, совместимым с Центрами событий. |
+    | `iotHubSasKey`                | Замените значение переменной записанным ранее первичным ключом службы. |
 
 1. Установите необходимые библиотеки и запустите внутреннее приложение, выполнив в окне локального терминала следующие команды:
 

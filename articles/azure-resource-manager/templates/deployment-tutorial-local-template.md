@@ -4,12 +4,12 @@ description: Узнайте, как развернуть шаблон Azure Reso
 ms.date: 03/13/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: c8e3eb62fa52caeaa63808b6b9ea199bdff5c4da
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7f134bb836d05d006ef2e474ea48382a671957fe
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80081823"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82188830"
 ---
 # <a name="tutorial-deploy-a-local-azure-resource-manager-template"></a>Руководство по развертыванию шаблона Azure Resource Manager
 
@@ -37,9 +37,7 @@ ms.locfileid: "80081823"
 
 ## <a name="review-template"></a>Проверка шаблона
 
-Шаблон, используемый в этом руководстве, аналогичен шаблону, используемому в статье [Учебник. Использование шаблонов быстрого запуска](template-tutorial-quickstart-template.md). Если вы заинтересованы в создании шаблона, можно изучить этот учебник. Однако это не является обязательным для работы с данным руководством.
-
-Шаблон развертывает учетную запись хранения, план службы приложений и веб-приложение.
+Шаблон развертывает учетную запись хранения, план службы приложений и веб-приложение. Если вы заинтересованы в создании шаблона быстрого запуска, изучите [это руководство](template-tutorial-quickstart-template.md). Однако это не является обязательным для работы с данным руководством.
 
 :::code language="json" source="~/resourcemanager-templates/get-started-deployment/local-template/azuredeploy.json":::
 

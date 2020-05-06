@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 05/06/2019
-ms.openlocfilehash: fe15c02286223ec0829b31664811b7f589cf16aa
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 1dd20d94737df3e799876323d2aeb555dcb9a381
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "74774838"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82146806"
 ---
 # <a name="quickstart-use-an-azure-cli-command-az-postgres-up-preview-to-create-an-azure-database-for-postgresql---single-server"></a>Краткое руководство. Создание базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью команды Azure CLI az postgres up (предварительная версия)
 
@@ -63,7 +63,7 @@ sku-name | GP_Gen5_2 | Имя номера SKU. В сокращенной зап
 backup-retention | 7 | Время хранения резервной копии. Указывается в днях.
 geo-redundant-backup | Выключено | Позволяет включить или отключить создание геоизбыточных резервных копий для этого сервера.
 location | westus2 | Расположение сервера в Azure.
-ssl-enforcement | Выключено | Позволяет включить или отключить SSL для этого сервера.
+ssl-enforcement | Выключено | Позволяет включить или отключить TLS либо SSL для этого сервера.
 storage-size | 5120 | Объем хранилища сервера (в мегабайтах).
 version | 10 | Основной номер версии PostgreSQL.
 admin-user | Генерируемое системой | Имя пользователя администратора.

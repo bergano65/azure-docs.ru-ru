@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 11/06/2018
 ms.author: cshoe
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: 7d121e9aeb897897322f1253c332e7a1baabdc9e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: f6698bcc8125cd00dcb1cd6c86a8d69153242b35
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75768968"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82190305"
 ---
 # <a name="create-a-function-that-integrates-with-azure-logic-apps"></a>Создание функции, интегрируемой с Azure Logic Apps
 
@@ -36,7 +36,11 @@ ms.locfileid: "75768968"
 
 + Активная учетная запись [Twitter](https://twitter.com/). 
 + Учетная запись [Outlook.com](https://outlook.com/) (для отправки уведомлений).
-+ В этой статье в качестве отправной точки используются ресурсы, созданные при работе со статьей [Создание первой функции на портале Azure](functions-create-first-azure-function.md).  
+
+> [!NOTE]
+> Только учетные записи для бизнеса G-Suite могут использовать соединитель Gmail без ограничений в приложениях логики. Если у вас есть учетная запись потребителя Gmail, вы можете использовать соединитель Gmail только с определенными утвержденными Google приложениями и службами. Вы также можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности в соединителе Gmail](https://docs.microsoft.com/connectors/gmail/#authentication-and-bring-your-own-application). Дополнительные сведения см. в статье [Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
+
++ В этой статье в качестве отправной точки используются ресурсы, созданные при работе со статьей [Создание первой функции на портале Azure](functions-create-first-azure-function.md).
 Выполните шаги в этой статье для создания приложения-функции, если вы еще не сделали этого.
 
 ## <a name="create-a-cognitive-services-resource"></a>Создание ресурса Cognitive Services

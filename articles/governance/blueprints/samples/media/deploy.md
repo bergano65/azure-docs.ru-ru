@@ -4,10 +4,10 @@ description: Шаги развертывания для примера схем�
 ms.date: 02/25/2020
 ms.topic: sample
 ms.openlocfilehash: f4eb93d3e03b9a0e59a7d53304c19c371d42ea6e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "78201731"
 ---
 # <a name="deploy-the-media-blueprint-sample"></a>Развертывание примера схемы мультимедийных данных

@@ -10,14 +10,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 11/22/2017
+ms.date: 04/22/2020
 ms.author: apimpm
-ms.openlocfilehash: bf4039b661ac7e0ee9630b86b9e15d1388991431
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: e6195409a08498527ec40a2ddd2f909a092c9d19
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74108488"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82202831"
 ---
 # <a name="import-an-api-app-as-an-api"></a>импорт приложения API в качестве API;
 
@@ -30,16 +30,16 @@ ms.locfileid: "74108488"
 > * проверка API на портале Azure;
 > * проверка API на портале разработчика.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-+ Выполните задачи из краткого руководства по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md)
++ Выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md)
 + Убедитесь, что в вашей подписке есть приложение API. Дополнительные сведения см. в [документации по службе приложений](https://docs.microsoft.com/azure/app-service/).
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
 
 ## <a name="import-and-publish-a-back-end-api"></a><a name="create-api"> </a>Импорт и публикация API серверной части
 
-1. Выберите **Интерфейсы API** в разделе **УПРАВЛЕНИЕ API**.
+1. На портале Azure перейдите к службе "Управление API" и в меню выберите **Интерфейсы API**.
 2. Выберите **Приложение API** в списке **Add a new API** (Добавление нового API).
 
     ![приложение API;](./media/import-api-app-as-api/api-app.png)
@@ -56,7 +56,8 @@ ms.locfileid: "74108488"
 
     * **Starter**
     * **Unlimited**   
-7. Нажмите кнопку **Создать**.
+7. Введите другие параметры API. Вы можете задать значения во время создания или настроить их позже, перейдя на вкладку **Параметры**. Эти параметры описаны в руководстве [Импорт и публикация первого интерфейса API](import-and-publish.md#-import-and-publish-a-backend-api).
+8. Нажмите кнопку **создания**.
 
 ## <a name="test-the-new-api-in-the-azure-portal"></a>Проверка нового API на портале Azure
 

@@ -4,12 +4,12 @@ description: В этом кратком руководстве с помощью
 ms.date: 03/16/2020
 ms.topic: quickstart
 ms.custom: subject-armqs
-ms.openlocfilehash: ae6b2d151baaa904215639276c7fb74766810c6a
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.openlocfilehash: 646e2e064618e70fd9e9e747926f0886d85fde26
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81606600"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82187789"
 ---
 # <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources-by-using-a-resource-manager-template"></a>Краткое руководство. Создание назначения политики для идентификации несоответствующих требованиям ресурсов с помощью шаблона Resource Manager
 
@@ -70,7 +70,7 @@ ms.locfileid: "81606600"
 
 Выберите **Соответствие** в левой части страницы и найдите ранее созданное назначение политики **Аудит виртуальных машин, которые не используют управляемые диски**.
 
-![Страница сведений о соответствии политике](./media/assign-policy-template/policy-compliance.png)
+:::image type="content" source="./media/assign-policy-template/policy-compliance.png" alt-text="Страница сведений о соответствии политике" border="false":::
 
 Существующие ресурсы, которые не соответствуют новому назначению, отображаются в разделе **Несоответствующие ресурсы**.
 
@@ -80,11 +80,11 @@ ms.locfileid: "81606600"
 
 Чтобы удалить созданное назначение, выполните следующие действия:
 
-1. Выберите элемент **Соответствие** (или **Назначения**) в левой части страницы службы "Политика Azure" и найдите ранее созданное назначение политики **Аудит виртуальных машин, которые не используют управляемые диски**.
+1. Выберите элемент **Соответствие** (или **Назначения**) в левой части страницы службы Политика Azure и найдите ранее созданное назначение политики **Аудит виртуальных машин, которые не используют управляемые диски**.
 
 1. Щелкните правой кнопкой мыши назначение политики **Аудит виртуальных машин, которые не используют управляемые диски** и выберите **Удалить назначение**.
 
-   ![Удаление назначения на странице сведений о соответствии](./media/assign-policy-template/delete-assignment.png)
+   :::image type="content" source="./media/assign-policy-template/delete-assignment.png" alt-text="Удаление назначения на странице сведений о соответствии" border="false":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
