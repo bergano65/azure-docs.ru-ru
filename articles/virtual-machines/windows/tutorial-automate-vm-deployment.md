@@ -1,25 +1,19 @@
 ---
 title: Учебник. Установка приложений на виртуальной машине Windows в Azure
 description: В этом руководстве описано, как использовать расширение пользовательских скриптов для выполнения скриптов и развертывания приложений на виртуальных машинах Windows в Azure.
-services: virtual-machines-windows
-documentationcenter: virtual-machines
 author: cynthn
-manager: gwallace
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-windows
 ms.topic: tutorial
-ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/29/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 66764781391a55df0ad903a81b86f62f954fcaf7
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: c576ac1f56a29fc73f92e2292b457262828c5046
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81456130"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82100470"
 ---
 # <a name="tutorial---deploy-applications-to-a-windows-virtual-machine-in-azure-with-the-custom-script-extension"></a>Руководство. Развертывание приложений на виртуальной машине Windows в Azure с помощью расширения пользовательских скриптов
 

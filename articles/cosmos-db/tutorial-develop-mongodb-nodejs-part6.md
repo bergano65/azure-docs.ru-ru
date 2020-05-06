@@ -10,12 +10,12 @@ ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18
 ms.reviewer: sngun
-ms.openlocfilehash: 0c39ffe40a490ee23ac65f892c46fba2578bce74
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 103545225b15a74d8c2ea0be5e88caa18f3c31cc
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75441106"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82184781"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---add-crud-functions-to-the-app"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Добавление функций CRUD в приложение
 
@@ -27,7 +27,7 @@ ms.locfileid: "75441106"
 
 > [!VIDEO https://www.youtube.com/embed/Y5mdAlFGZjc]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем переходить к этой части руководства, следует выполнить все задачи из [части 5](tutorial-develop-mongodb-nodejs-part5.md).
 
@@ -86,7 +86,7 @@ ms.locfileid: "75441106"
 
 5. Запустите приложение, чтобы убедиться в его работоспособности. В Visual Studio Code сохраните все изменения, нажмите кнопку **Отладка** слева ![Значок "Отладка" в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part6/debug-button.png) и нажмите кнопку **Начать отладку**![Значок "Начать отладку" в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part6/start-debugging-button.png).
 
-6. Теперь вернитесь в браузер и откройте вкладку с параметрами сети в инструментах разработчика. На большинстве компьютеров эта вкладка открывается нажатием клавиши F12. Перейдите по адресу [http://localhost:3000](http://localhost:3000) для просмотра вызовов по сети.
+6. Теперь вернитесь в браузер и откройте вкладку с параметрами сети в инструментах разработчика. На большинстве компьютеров эта вкладка открывается нажатием клавиши F12. Перейдите по адресу `http://localhost:3000` для просмотра вызовов по сети.
 
     ![Вкладка с параметрами сети в браузере Chrome с отображением действий в сети](./media/tutorial-develop-mongodb-nodejs-part6/add-new-hero.png)
 
