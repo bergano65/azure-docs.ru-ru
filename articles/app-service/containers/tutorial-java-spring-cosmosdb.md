@@ -7,12 +7,12 @@ ms.devlang: java
 ms.topic: tutorial
 ms.date: 12/10/2018
 ms.custom: mvc, seodec18, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: e5dcb39430158db1ee9a18524d0214335a2bbbba
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 0b65e8f470b36ab1642e9144e081253a577dabc3
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80045377"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82202508"
 ---
 # <a name="tutorial-build-a-java-spring-boot-web-app-with-azure-app-service-on-linux-and-azure-cosmos-db"></a>Руководство по созданию веб-приложения Java Spring Boot с помощью Службы приложений Azure в Linux и Azure Cosmos DB
 
@@ -165,7 +165,7 @@ bash-3.2$ mvn package spring-boot:run
 [INFO] TodoApplication - Started TodoApplication in 45.573 seconds (JVM running for 76.534)
 ```
 
-После запуска приложения со списком задач Spring к нему можно получить доступ локально с помощью этой ссылки: [http://localhost:8080/](http://localhost:8080/).
+После запуска приложения Spring со списком задач к нему можно получить доступ локально с помощью этой ссылки: `http://localhost:8080/`.
 
  ![Локальный доступ к приложению со списком задач Spring](./media/tutorial-java-spring-cosmosdb/spring-todo-app-running-locally.jpg)
 

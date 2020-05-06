@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: overview
 ms.date: 04/15/2020
 ms.author: v-erkel
-ms.openlocfilehash: 084c33874b474fc1789df93e088d3cec4263eac9
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 02013abe7050f7f193b6aeb1a441e70f46a5df48
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81536647"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82106463"
 ---
 # <a name="what-is-azure-hpc-cache"></a>Что такое Azure HPC Cache?
 
@@ -63,6 +63,12 @@ Azure HPC Cache доступен в следующих регионах Azure:
 * западная часть США 2
 
 Последние сведения о доступности см. на [странице продукта "Azure HPC Cache "](https://azure.microsoft.com/services/hpc-cache).
+
+## <a name="service-availability"></a>Доступность службы
+
+Необходимо запросить доступ для каждой подписки, которая будет использоваться с Azure HPC Cache. Это ограничение обеспечивает качество обслуживания.
+
+Запросите доступ, заполнив [эту форму](https://aka.ms/onboard-hpc-cache). После добавления подписки в список доступа можно создать кэши.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

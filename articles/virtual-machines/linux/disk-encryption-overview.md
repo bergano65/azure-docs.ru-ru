@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: fa7e085f723d4f4c411f52e045c9437d5cb293b3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 7d8cf03342f51a7bc6584800cb9fff8d8238921e
+ms.sourcegitcommit: c8a0fbfa74ef7d1fd4d5b2f88521c5b619eb25f8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81459786"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82801660"
 ---
 # <a name="azure-disk-encryption-for-linux-vms"></a>Шифрование дисков Azure для виртуальных машин Linux 
 
@@ -28,7 +28,7 @@ ms.locfileid: "81459786"
 > - Выполнение некоторых приведенных рекомендаций может привести к более интенсивному использованию данных, сети или вычислительных ресурсов, а следовательно к дополнительным затратам на лицензии или подписки. Необходима действующая подписка Azure, которая позволяет создавать ресурсы Azure в поддерживаемых регионах.
 > - В настоящее время виртуальные машины поколения 2 не поддерживают шифрование дисков Azure. Дополнительные сведения см. [в статье поддержка виртуальных машин поколения 2 в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) .
 
-Основные сведения о шифровании дисков Azure для Linux можно получить всего за несколько минут с помощью [краткого руководства по созданию и шифрованию виртуальной машины Linux с помощью Azure CLI](disk-encryption-cli-quickstart.md) или в [кратком руководстве по созданию и шифрованию виртуальной машины Linux с помощью Azure PowerShell](disk-encryption-powershell-quickstart.md).
+Основные сведения о шифровании дисков Azure для Linux можно получить всего за несколько минут с помощью [Azure CLI](disk-encryption-cli-quickstart.md) быстрого запуска или [создания и шифрования виртуальной машины linux с помощью Azure PowerShell краткого руководства](disk-encryption-powershell-quickstart.md).
 
 ## <a name="supported-vms-and-operating-systems"></a>Поддерживаемые виртуальные машины и операционные системы
 
@@ -56,29 +56,36 @@ ms.locfileid: "81459786"
 
 Дистрибутивы сервера Linux, не поддерживаемые Azure, не поддерживают шифрование дисков Azure. из тех, которые были одобрены, поддерживаются только следующие дистрибутивы и версии, поддерживаемые шифрованием дисков Azure:
 
-| Дистрибутив Linux | Версия | Тип тома, для которого поддерживается шифрование|
-| --- | --- |--- |
-| Ubuntu | 18,04| Диск операционной системы и данных |
-| Ubuntu | 16.04| Диск операционной системы и данных |
-| Ubuntu | 14.04.5</br>[с ядром, оптимизированным для Azure, обновленным до версии 4.15 или более поздней версии](disk-encryption-troubleshooting.md) | Диск операционной системы и данных |
-| RHEL | 7,7 | ОС и диск данных (см. Примечание ниже) |
-| RHEL | 7.6 | ОС и диск данных (см. Примечание ниже) |
-| RHEL | 7.5 | ОС и диск данных (см. Примечание ниже) |
-| RHEL | 7.4 | ОС и диск данных (см. Примечание ниже) |
-| RHEL | 7.3 | ОС и диск данных (см. Примечание ниже) |
-| RHEL | 7.2 | ОС и диск данных (см. Примечание ниже) |
-| RHEL | 6,8 | Диск данных (см. Примечание ниже) |
-| RHEL | 6.7 | Диск данных (см. Примечание ниже) |
-| CentOS | 7,7 | Диск операционной системы и данных |
-| CentOS | 7.6 | Диск операционной системы и данных |
-| CentOS | 7.5 | Диск операционной системы и данных |
-| CentOS | 7.4 | Диск операционной системы и данных |
-| CentOS | 7.3 | Диск операционной системы и данных |
-| CentOS | 7.2n | Диск операционной системы и данных |
-| CentOS | 6,8 | Диск данных |
-| openSUSE | 42.3 | Диск данных |
-| SLES | 12-SP4 | Диск данных |
-| SLES | 12-SP3 | Диск данных |
+| Издатель | ПРЕДЛОЖЕНИЕ | номер SKU | URN | Тип тома, для которого поддерживается шифрование |
+| --- | --- |--- | --- |
+| Canonical | Ubuntu | 18.04-LTS | Канонический: UbuntuServer: 18.04-LTS: Latest | Диск операционной системы и данных |
+| Canonical | Ubuntu 18.04 | 18,04-ЕЖЕДНЕВНОЕ — LTS | Канонический: UbuntuServer: 18.04-DAILY-LTS: Latest | Диск операционной системы и данных |
+| Canonical | Ubuntu 16.04 | 16.04-DAILY-LTS | Канонический: UbuntuServer: 16.04-DAILY-LTS: Latest | Диск операционной системы и данных |
+| Canonical | Ubuntu 14.04.5</br>[с ядром, оптимизированным для Azure, обновленным до версии 4.15 или более поздней версии](disk-encryption-troubleshooting.md) | 14.04.5-LTS | Канонический: UbuntuServer: 14.04.5-LTS: Latest | Диск операционной системы и данных |
+| Canonical | Ubuntu 14.04.5</br>[с ядром, оптимизированным для Azure, обновленным до версии 4.15 или более поздней версии](disk-encryption-troubleshooting.md) | 14.04.5-DAILY-LTS | Канонический: UbuntuServer: 14.04.5-DAILY-LTS: Latest | Диск операционной системы и данных |
+| RedHat | RHEL 7,7 | 7,7 | RedHat: RHEL: 7.7: Последняя | ОС и диск данных (см. Примечание ниже) |
+| RedHat | RHEL 7,7 | 7-RAW | RedHat: RHEL: 7 — необработанный: последний | ОС и диск данных (см. Примечание ниже) |
+| RedHat | RHEL 7,7 | 7-LVM | RedHat: RHEL: 7 — LVM: Последняя | ОС и диск данных (см. Примечание ниже) |
+| RedHat | RHEL 7,6 | 7.6 | RedHat: RHEL: 7.6: Последняя | ОС и диск данных (см. Примечание ниже) |
+| RedHat | RHEL 7.5 | 7.5 | RedHat: RHEL: 7.5: Последняя | ОС и диск данных (см. Примечание ниже) |
+| RedHat | RHEL 7.4 | 7.4 | RedHat: RHEL: 7.4: Последняя | ОС и диск данных (см. Примечание ниже) |
+| RedHat | RHEL 7.3 | 7.3 | RedHat: RHEL: 7.3: Последняя | ОС и диск данных (см. Примечание ниже) |
+| RedHat | RHEL 7.2; | 7.2 | RedHat: RHEL: 7,2: Последняя версия | ОС и диск данных (см. Примечание ниже) |
+| RedHat | RHEL 6,8 | 6,8 | RedHat: RHEL: 6.8: Последняя | Диск данных (см. Примечание ниже) |
+| RedHat | RHEL 6,7 | 6.7 | RedHat: RHEL: 6.7: Последняя | Диск данных (см. Примечание ниже) |
+| OpenLogic | CentOS 7,7 | 7,7 | OpenLogic: CentOS: 7.7: Последняя | Диск операционной системы и данных |
+| OpenLogic | CentOS 7,7 | 7-LVM | OpenLogic: CentOS: 7 — LVM: Последняя | Диск операционной системы и данных |
+| OpenLogic | CentOS 7,6 | 7.6 | OpenLogic: CentOS: 7.6: Последняя | Диск операционной системы и данных |
+| OpenLogic | CentOS 7.5 | 7.5 | OpenLogic: CentOS: 7.5: Последняя | Диск операционной системы и данных |
+| OpenLogic | CentOS 7.4 | 7.4 | OpenLogic: CentOS: 7.4: Последняя | Диск операционной системы и данных |
+| OpenLogic | CentOS 7.3 | 7.3 | OpenLogic: CentOS: 7.3: Последняя | Диск операционной системы и данных |
+| OpenLogic | CentOS 7,2 n | 7.2n | OpenLogic: CentOS: 7,2 n: Последняя | Диск операционной системы и данных |
+| OpenLogic | CentOS 7.1; | 7.1 | OpenLogic: CentOS: 7.1: Последняя версия | Только диск данных |
+| OpenLogic | CentOS 7,0 | 7.0 | OpenLogic: CentOS: 7.0: Последняя версия | Только диск данных |
+| OpenLogic | CentOS 6.8. | 6,8 | OpenLogic: CentOS: 6.8: Последняя | Только диск данных |
+| SUSE | openSUSE 42.3 | 42.3 | SUSE:openSUSE-Leap:42.3:latest | Только диск данных |
+| SUSE | SLES Priority 12 — SP4 | 12-SP4 | SUSE: SLES: 12-SP4: Последняя версия | Только диск данных |
+| SUSE | SLES HPC 12-SP3 | 12-SP3 | SUSE:SLES-HPC:12-SP3:latest | Только диск данных |
 
 > [!NOTE]
 > Новая реализация шифрования дисков Azure поддерживается для RHEL ОС и диска данных для образов RHEL7 с оплатой по мере использования.  
@@ -125,7 +132,7 @@ ms.locfileid: "81459786"
 | Командлеты PowerShell | Дополнительные сведения см. в статье [Общие сведения об Azure PowerShell](/powershell/azure/overview). |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Краткое руководство. Создание и шифрование виртуальной машины Linux с помощью Azure CLI](disk-encryption-cli-quickstart.md)
 - [Краткое руководство. Создание и шифрование виртуальной машины Linux с помощью Azure PowerShell](disk-encryption-powershell-quickstart.md)

@@ -2,16 +2,16 @@
 title: Использование справочника по шаблонам
 description: Для создания шаблона используйте справочник по шаблонам Azure Resource Manager.
 author: mumian
-ms.date: 03/27/2020
+ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: b713d508a5e28291778d3727c15e12972eea3a77
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.openlocfilehash: 12990238455046d837b175318225bb4f3d317706
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80878521"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82185053"
 ---
 # <a name="tutorial-utilize-the-resource-manager-template-reference"></a>Руководство по использованию справочника по шаблонам Resource Manager
 
@@ -102,21 +102,42 @@ ms.locfileid: "80878521"
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Дополнительные сведения о [развертывании шаблона](quickstart-create-templates-use-visual-studio-code.md#deploy-the-template) см. в кратком руководстве по Visual Studio Code. При развертывании шаблона укажите параметр **storageAccountType** с новым значением, например **Premium_ZRS**. Если вы используете исходный шаблон быстрого запуска, при развертывании произойдет сбой, так как **Premium_ZRS** не является допустимым значением.  Чтобы передать значение параметра, добавьте следующий параметр в команду развертывания:
+1. Войдите в [Azure Cloud Shell](https://shell.azure.com).
 
-# <a name="cli"></a>[CLI](#tab/CLI)
+1. В левом верхнем углу выберите используемую среду — **PowerShell** или **Bash** (для CLI).  После переключения желательно перезагрузить оболочку.
 
-```azurecli
---parameters storageAccountType='Premium_ZRS'
-```
+    ![Файл отправки Cloud Shell на портале Azure](./media/template-tutorial-use-template-reference/azure-portal-cloud-shell-upload-file.png)
 
-# <a name="powershell"></a>[PowerShell](#tab/PowerShell)
+1. Выберите **Отправка и скачивание файлов**, а затем **Отправить**. См. предыдущий снимок экрана. Выберите файл, сохраненный ранее. После отправки вы можете использовать команды **ls** и **cat**, чтобы проверить отправку файла.
 
-```azurepowershell
--storageAccountType "Premium_ZRS"
-```
+1. Выполните следующие команды в Cloud Shell. Выберите вкладку, чтобы отобразить код PowerShell или код CLI.
 
----
+    # <a name="cli"></a>[CLI](#tab/CLI)
+
+    ```azurecli
+    echo "Enter a project name that is used to generate resource group name:" &&
+    read projectName &&
+    echo "Enter the location (i.e. centralus):" &&
+    read location &&
+    resourceGroupName="${projectName}rg" &&
+    az group create --name $resourceGroupName --location "$location" &&
+    az deployment group create --resource-group $resourceGroupName --template-file "$HOME/azuredeploy.json" --parameters storageAccountType='Standard_RAGRS'
+    ```
+
+    # <a name="powershell"></a>[PowerShell](#tab/PowerShell)
+
+    ```azurepowershell
+    $projectName = Read-Host -Prompt "Enter a project name that is used to generate resource group name"
+    $location = Read-Host -Prompt "Enter the location (i.e. centralus)"
+    $resourceGroupName = "${projectName}rg"
+
+    New-AzResourceGroup -Name $resourceGroupName -Location "$location"
+    New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile "$HOME/azuredeploy.json" -storageAccountType "Standard_RAGRS"
+    ```
+
+    ---
+
+ При развертывании шаблона укажите параметр **storageAccountType** с новым значением, например **Standard_RAGRS**. Если вы используете исходный шаблон быстрого запуска, при развертывании произойдет сбой, так как **Standard_RAGRS** не является допустимым значением.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

@@ -9,12 +9,12 @@ ms.subservice: immersive-reader
 ms.topic: tutorial
 ms.date: 01/14/2020
 ms.author: skamal
-ms.openlocfilehash: 3912d55b13f3977818e8d898efa651ffeb1a798a
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: f68112095bc8a8fd9bcc1bd67ff77827d6d00fd7
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76046478"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82195627"
 ---
 # <a name="tutorial-integrate-multiple-immersive-reader-resources"></a>Руководство. Интеграция нескольких ресурсов иммерсивного средства чтения
 
@@ -258,7 +258,7 @@ module.exports = router;
     npm start
     ```
 
-4. Откройте веб-браузер и перейдите по адресу [http://localhost:3000](http://localhost:3000). Вы увидите упомянутое выше содержимое на странице. Нажмите кнопку **Иммерсивное средство чтения EastUS** или кнопку **Иммерсивное средство чтения WestUS**, чтобы запустить иммерсивное средство чтения с помощью соответствующих ресурсов.
+4. Откройте браузер и перейдите по адресу `http://localhost:3000`. Вы увидите упомянутое выше содержимое на странице. Нажмите кнопку **Иммерсивное средство чтения EastUS** или кнопку **Иммерсивное средство чтения WestUS**, чтобы запустить иммерсивное средство чтения с помощью соответствующих ресурсов.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

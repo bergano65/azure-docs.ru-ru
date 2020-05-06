@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 04/07/2020
+ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: f369eb54dc92a29ba122a8a645262dc085b1ed36
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 2b4b94c05b39dddcef83644638a105d5b6c75118
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "80930054"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82184985"
 ---
 # <a name="tutorial-use-deployment-scripts-to-create-a-self-signed-certificate-preview"></a>Руководство по Использование скриптов развертывания для создания самозаверяющего сертификата (предварительная версия)
 
@@ -284,35 +284,43 @@ ms.locfileid: "80930054"
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Дополнительные сведения об открытии Cloud Shell и передаче файла шаблона в оболочку см. в разделе о [развертывании шаблона](./quickstart-create-templates-use-visual-studio-code.md?tabs=PowerShell#deploy-the-template) в кратком руководстве по Visual Studio Code. После этого выполните следующий скрипт PowerShell:
+1. Войдите в [Azure Cloud Shell](https://shell.azure.com).
 
-```azurepowershell-interactive
-$projectName = Read-Host -Prompt "Enter a project name that is used to generate resource names"
-$location = Read-Host -Prompt "Enter the location (i.e. centralus)"
-$upn = Read-Host -Prompt "Enter your email address used to sign in to Azure"
-$identityId = Read-Host -Prompt "Enter the user-assigned managed identity ID"
+1. В левом верхнем углу выберите используемую среду — **PowerShell** или **Bash** (для CLI).  После переключения желательно перезагрузить оболочку.
 
-$adUserId = (Get-AzADUser -UserPrincipalName $upn).Id
-$resourceGroupName = "${projectName}rg"
-$keyVaultName = "${projectName}kv"
+    ![Файл отправки Cloud Shell на портале Azure](./media/template-tutorial-use-template-reference/azure-portal-cloud-shell-upload-file.png)
 
-New-AzResourceGroup -Name $resourceGroupName -Location $location
+1. Выберите **Отправка и скачивание файлов**, а затем **Отправить**. См. предыдущий снимок экрана.  Выберите файл, сохраненный ранее. После отправки вы можете использовать команды **ls** и **cat**, чтобы проверить отправку файла.
 
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile "$HOME/azuredeploy.json" -identityId $identityId -keyVaultName $keyVaultName -objectId $adUserId
+1. а затем выполните следующий сценарий PowerShell для его развертывания.
 
-Write-Host "Press [ENTER] to continue ..."
-```
+    ```azurepowershell-interactive
+    $projectName = Read-Host -Prompt "Enter a project name that is used to generate resource names"
+    $location = Read-Host -Prompt "Enter the location (i.e. centralus)"
+    $upn = Read-Host -Prompt "Enter your email address used to sign in to Azure"
+    $identityId = Read-Host -Prompt "Enter the user-assigned managed identity ID"
 
-Службе скрипта развертывания необходимо создать дополнительные ресурсы скрипта развертывания для его выполнения. В дополнение к фактическому времени выполнения сценария еще около одной минуты может занимать процесс подготовки и очистки.
+    $adUserId = (Get-AzADUser -UserPrincipalName $upn).Id
+    $resourceGroupName = "${projectName}rg"
+    $keyVaultName = "${projectName}kv"
 
-Сбой развертывания произошел из-за недопустимой команды: в скрипте используется **Write-Output1**. Вы получите следующее сообщение об ошибке:
+    New-AzResourceGroup -Name $resourceGroupName -Location $location
 
-```error
-The term 'Write-Output1' is not recognized as the name of a cmdlet, function, script file, or operable
-program.\nCheck the spelling of the name, or if a path was included, verify that the path is correct and try again.\n
-```
+    New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile "$HOME/azuredeploy.json" -identityId $identityId -keyVaultName $keyVaultName -objectId $adUserId
 
-Результат выполнения скрипта развертывания сохраняется в ресурсах этого скрипта для устранения неполадок.
+    Write-Host "Press [ENTER] to continue ..."
+    ```
+
+    Службе скрипта развертывания необходимо создать дополнительные ресурсы скрипта развертывания для его выполнения. В дополнение к фактическому времени выполнения сценария еще около одной минуты может занимать процесс подготовки и очистки.
+
+    Сбой развертывания произошел из-за недопустимой команды: в скрипте используется **Write-Output1**. Вы получите следующее сообщение об ошибке:
+
+    ```error
+    The term 'Write-Output1' is not recognized as the name of a cmdlet, function, script file, or operable
+    program.\nCheck the spelling of the name, or if a path was included, verify that the path is correct and try again.\n
+    ```
+
+    Результат выполнения скрипта развертывания сохраняется в ресурсах этого скрипта для устранения неполадок.
 
 ## <a name="debug-the-failed-script"></a>Отладка невыполненного скрипта
 

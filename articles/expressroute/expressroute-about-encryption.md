@@ -5,14 +5,14 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 12/13/2019
+ms.date: 05/05/2020
 ms.author: cherylmc
-ms.openlocfilehash: d48f83df4e83fd1d1fe38eea76432e1b1c711b76
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 77755ab6bdbb3c1e6416475f5066b5dd463eb7f5
+ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81461469"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82838762"
 ---
 # <a name="expressroute-encryption"></a>Шифрование ExpressRoute
  
@@ -30,8 +30,8 @@ ExpressRoute поддерживает несколько технологий ш
 Нет. Если Максек настроен и обнаружено несовпадение ключей, подключение к Майкрософт теряется. Другими словами, мы не будем возвращаться к незашифрованному соединению, предоставляя данные. 
 ### <a name="will-enabling-macsec-on-expressroute-direct-degrade-network-performance"></a>Включает ли Максек в ExpressRoute прямую производительность сети?
 Шифрование и расшифровка Максек происходят в оборудовании на используемых маршрутизаторах. На наши стороны не влияет на производительность. Тем не менее следует обратиться к поставщику сети для устройств, которые вы используете, и узнать, не имеет ли Максек производительность.
-### <a name="which-cipher-suites-are-supported-for-encryption"></a>какие комплекты шифров поддерживаются для шифрования?
-Мы поддерживаем AES128 и AES256.
+### <a name="which-cipher-suites-are-supported-for-encryption"></a>Какие комплекты шифров поддерживаются для шифрования?
+Поддерживается только версия [расширенной нумерации пакетов](https://1.ieee802.org/security/802-1aebw/) AES128 и AES256. Кроме того, отключите [идентификатор Secure Channel (SCI)](https://en.wikipedia.org/wiki/IEEE_802.1AE) в конфигурации максек на устройстве. 
 
 ## <a name="end-to-end-encryption-by-ipsec-faq"></a>Полное шифрование по протоколу IPsec: вопросы и ответы
 Протокол IPsec является [стандартом IETF](https://tools.ietf.org/html/rfc6071). Он шифрует данные на уровне протокола Интернета (IP) или уровня сети 3. Протокол IPsec можно использовать для шифрования сквозного подключения между локальной сетью и виртуальной сетью в Azure. См. другие вопросы и ответы ниже.
@@ -44,7 +44,7 @@ ExpressRoute поддерживает несколько технологий ш
 ### <a name="what-is-the-throughput-i-will-get-after-enabling-ipsec-on-my-expressroute-connection"></a>Какова пропускная способность, которую я получаю после включения IPsec для подключения ExpressRoute?
 Если используется VPN-шлюз Azure, проверьте [номера производительности здесь](../vpn-gateway/vpn-gateway-about-vpngateways.md). Если используется сторонний VPN-шлюз, обратитесь к поставщику за номерами производительности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о конфигурации Максек см. в разделе [Configure максек](expressroute-howto-macsec.md) .
 
 Дополнительные сведения о конфигурации IPsec см. в разделе [Настройка IPSec](site-to-site-vpn-over-microsoft-peering.md) .
