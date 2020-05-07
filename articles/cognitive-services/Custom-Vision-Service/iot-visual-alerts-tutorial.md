@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: tutorial
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: ac7609d49631fb2ed16fa129f8dc4099cc166247
-ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
+ms.openlocfilehash: d94f557ddd946d20020825e2bbb6babbd67d3af3
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81769873"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82734337"
 ---
 # <a name="tutorial-use-custom-vision-with-an-iot-device-to-report-visual-states"></a>Руководство по использованию Пользовательского визуального распознавания с устройством Интернета вещей для сообщения о визуальных состояниях
 
@@ -62,7 +62,7 @@ ms.locfileid: "81769873"
 | [MainPage.xaml.cs](https://github.com/Azure-Samples/Cognitive-Services-Vision-Solution-Templates/blob/master/IoTVisualAlerts/MainPage.xaml.cs) | Код в этом файле управляет поведением пользовательского интерфейса XAML. В нем также содержится код обработки состояния.|
 | [CustomVision\CustomVisionServiceWrapper.cs](https://github.com/Azure-Samples/Cognitive-Services-Vision-Solution-Templates/blob/master/IoTVisualAlerts/CustomVision/CustomVisionServiceWrapper.cs) | Этот класс является программой-оболочкой, которая обрабатывает интеграцию со службой "Пользовательское визуальное распознавание".|
 | [CustomVision\CustomVisionONNXModel.cs](https://github.com/Azure-Samples/Cognitive-Services-Vision-Solution-Templates/blob/master/IoTVisualAlerts/CustomVision/CustomVisionONNXModel.cs) | Этот класс представляет собой программу-оболочку, которая обрабатывает интеграцию с Машинным обучением Windows для загрузки модели ONNX и оценки изображений с ее помощью.|
-| [IoTHub\IotHubWrapper.cs](https://github.com/Azure-Samples/Cognitive-Services-Vision-Solution-Templates/blob/master/IoTVisualAlerts/IoTHub/IotHubWrapper.cs) | Этот класс представляет собой программу-оболочку, которая обрабатывает интеграцию с Центром Интернета вещей для передачи результатов оценки в Azure.|
+| [IoTHub\IotHubWrapper.cs](https://github.com/Azure-Samples/Cognitive-Services-Vision-Solution-Templates/blob/master/IoTVisualAlerts/IoTHub/IoTHubWrapper.cs) | Этот класс представляет собой программу-оболочку, которая обрабатывает интеграцию с Центром Интернета вещей для передачи результатов оценки в Azure.|
 
 ## <a name="set-up-the-visual-alerts-app"></a>Настройка приложения визуальных оповещений
 
@@ -90,7 +90,7 @@ ms.locfileid: "81769873"
 
 Чтобы настроить модель, необходимо переключить приложение в состояние **Capturing Training Images** (Запись изображений для обучения). Выполните один из следующих шагов.
 * Если вы используете приложение на компьютере, нажмите кнопку в правом верхнем углу пользовательского интерфейса.
-* Если вы используете приложение на устройстве Интернета вещей, вызовите метод `EnterLearningMode` на устройстве с помощью Центра Интернета вещей. Его можно вызвать с использованием записи устройства в меню Центра Интернета вещей на портале Azure или с помощью такого средства, как [обозреватель устройств Центра Интернета вещей](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer).
+* Если вы используете приложение на устройстве Интернета вещей, вызовите метод `EnterLearningMode` на устройстве с помощью Центра Интернета вещей. Его можно вызвать с использованием записи устройства в меню Центра Интернета вещей на портале Azure или с помощью такого средства, как [обозреватель устройств Центра Интернета вещей](https://github.com/Azure/azure-iot-sdk-csharp).
  
 Когда приложение перейдет в состояние **записи изображений для обучения**, оно будет записывать около двух изображений каждую секунду, пока не достигнет целевого количества изображений. По умолчанию это 30 изображений, но этот параметр можно изменить, передав нужное число в качестве аргумента в метод `EnterLearningMode` Центра Интернета вещей. 
 
