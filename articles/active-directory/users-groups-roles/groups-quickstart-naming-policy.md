@@ -14,16 +14,16 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 84e419ac5c3d292b7e630d1ebb3d3b9f59ef7b8a
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 4253f5bd702abd061cf1cddd4badd68c9cd5d475
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "74026936"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82582835"
 ---
 # <a name="quickstart-naming-policy-for-groups-in-azure-active-directory"></a>Краткое руководство. Политика именования для групп в Azure Active Directory
 
-В рамках этого краткого руководства вы настроите политику именования в клиенте Azure Active Directory (Azure AD) для созданных пользователем групп Office 365, чтобы отсортировать группы клиента и найти их. Например, политику именования можно использовать, чтобы:
+В этом кратком руководстве объясняется, как настроить политику именования в организации Azure Active Directory (Azure AD) для созданных пользователем групп Office 365, чтобы отсортировать и найти группы организации. Например, политику именования можно использовать, чтобы:
 
 * Указать функцию группы, членство, географический регион или создателя группы.
 * Помочь классифицировать группы в адресной книге.
@@ -31,7 +31,7 @@ ms.locfileid: "74026936"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="configure-the-group-naming-policy-for-a-tenant-using-azure-portal"></a>Настройка политики именования групп для клиента с помощью портала Azure
+## <a name="configure-the-group-naming-policy-in-the-azure-portal"></a>Настройка политики именования групп на портале Azure
 
 1. Войдите в [Центр администрирования Azure AD](https://aad.portal.azure.com) с учетной записью администратора пользователей.
 1. Чтобы открыть страницу политики именования, выберите **Группы**, а затем — **Политика именования**.

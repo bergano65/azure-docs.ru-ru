@@ -10,6 +10,9 @@
     - name: Индекс
       displayName: 'template, sample'
       href: ./samples/index.md
+    - name: Встроенные политики службы "Политика Azure"
+      displayName: 'samples, policies, definitions'
+      href: ./samples/policy-samples.md
 - name: Основные понятия
   items:
     - name: Делегированное управление ресурсами Azure
@@ -33,6 +36,9 @@
     - name: Использование Azure Lighthouse в корпоративных сценариях
       displayName: 'corporation, IT, consolidate'
       href: ./concepts/enterprise.md
+    - name: Azure Lighthouse и управляемые приложения Azure
+      displayName: 'managed apps, ama'
+      href: ./concepts/managed-applications.md
 - name: Практические руководства
   items:
     - name: Подключение клиента к системе делегированного управления ресурсами Azure

@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: josels
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 1ccfb1b008a7e3e48f56b1af62087d303522ed73
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.openlocfilehash: 49bd251b7f76a844a0d3fd1b1a09f7e15c5e7ddb
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81676730"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792213"
 ---
 # <a name="quickstart-create-an-azure-synapse-analytics-workspace-preview"></a>Краткое руководство. Создание рабочей области Azure Synapse Analytics (предварительная версия)
 
@@ -41,7 +41,7 @@ ms.locfileid: "81676730"
     | Параметр | Рекомендуемое значение | Описание |
     | :------ | :-------------- | :---------- |
     | **Подписка** | *Ваша подписка* | Дополнительные сведения о подписках см. [здесь](https://account.windowsazure.com/Subscriptions). |
-    | **Группа ресурсов** | *Любая группа ресурсов* | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). |
+    | **Группа ресурсов** | *Любая группа ресурсов* | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). |
     | **Имя рабочей области** | mysampleworkspace | Указывает имя рабочей области, которое также будет использоваться для конечных точек подключения.|
     | **Регион** | восточная часть США 2 | Указывает расположение рабочей области.|
     | **Data Lake Storage 2-го поколения** | Учетная запись —`storage account name`. </br> Файловая система —`root file system to use`. | Указывает имя учетной записи хранения ADLS 2-го поколения для использования в качестве основного хранилища, а также используемую файловую систему.|

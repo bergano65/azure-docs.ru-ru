@@ -63,6 +63,9 @@
       href: cli-samples.md
     - name: PowerShell
       href: powershell-samples.md
+    - name: Встроенные политики службы "Политика Azure"
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Azure Resource Manager
@@ -81,6 +84,8 @@
           href: ../virtual-network/virtual-network-optimize-network-bandwidth.md?toc=%2fazure%2fvirtual-machine-scale-sets%2fwindows%2ftoc.json
         - name: Управление доменами сбоя в масштабируемых наборах
           href: virtual-machine-scale-sets-manage-fault-domains.md
+    - name: Изображения
+      href: shared-image-galleries.md
     - name: Типы и размеры виртуальных машин
       href: ../virtual-machines/windows/sizes.md
       maintainContext: true
@@ -184,6 +189,51 @@
           href: virtual-machine-scale-sets-design-overview.md
         - name: Общие сведения об идентификаторах экземпляров
           href: virtual-machine-scale-sets-instance-ids.md
+    - name: Использование образов
+      displayName: 'SIG, AMI, image'
+      items:
+        - name: Общая коллекция образов
+          items:
+            - name: PowerShell
+              items:
+                - name: Создание коллекции
+                  href: ../virtual-machines/shared-images-powershell.md
+                - name: Создание образа
+                  items:
+                    - name: Из виртуальной машины
+                      href: ../virtual-machines/image-version-vm-powershell.md
+                    - name: Перенос из управляемого образа
+                      href: ../virtual-machines/image-version-managed-image-powershell.md
+                    - name: Копирование из другой коллекции
+                      href: ../virtual-machines/image-version-another-gallery-powershell.md
+                - name: Создание масштабируемого набора
+                  items:
+                    - name: Специализированный
+                      href: instance-specialized-image-version-powershell.md
+                    - name: Универсальный
+                      href: instance-generalized-image-version-powershell.md
+                - name: Обновление ресурсов образа
+                  href: ../virtual-machines/update-image-resources-powershell.md
+            - name: CLI
+              items:
+                - name: Создание коллекции
+                  href: ../virtual-machines/shared-images-cli.md
+                - name: Создание образа
+                  items:
+                    - name: Из виртуальной машины
+                      href: ../virtual-machines/image-version-vm-cli.md
+                    - name: Перенос из управляемого образа
+                      href: ../virtual-machines/image-version-managed-image-cli.md
+                    - name: Копирование из другой коллекции
+                      href: ../virtual-machines/image-version-another-gallery-cli.md
+                - name: Создание масштабируемого набора
+                  items:
+                    - name: Специализированный
+                      href: instance-specialized-image-version-cli.md
+                    - name: Универсальный
+                      href: instance-generalized-image-version-cli.md
+                - name: Обновление ресурсов образа
+                  href: ../virtual-machines/update-image-resources-cli.md
     - name: Создание шаблона
       items:
         - name: Сведения о шаблонах масштабируемых наборов

@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 96a2cce5d0e8abfd1f22b5fc64633eebc41aca39
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f58c34a46f4eb1bffe4516f2a6f9f17a799fbfb3
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81431570"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82786603"
 ---
 # <a name="system-views-supported-in-synapse-sql"></a>Системные представления, поддерживаемые в синапсе SQL
 Ссылки на документацию по инструкциям T-SQL, поддерживаемым в синапсе SQL.
@@ -247,8 +247,8 @@ ms.locfileid: "81431570"
 * [VIEW_TABLE_USAGE](/sql/relational-databases/system-information-schema-views/view-table-usage-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 * [Представления](/sql/relational-databases/system-information-schema-views/views-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные справочные сведения см. [в статьях инструкции t-SQL в СИНАПСЕ SQL](/sql-data-warehouse/sql-data-warehouse-reference-tsql-language-elements)и [элементы языка t-SQL в синапсе SQL](/sql-data-warehouse/sql-data-warehouse-reference-tsql-statements).
+Дополнительные справочные сведения см. [в статьях инструкции t-SQL в СИНАПСЕ SQL](/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-reference-tsql-language-elements)и [элементы языка t-SQL в синапсе SQL](/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-reference-tsql-statements).
 
  

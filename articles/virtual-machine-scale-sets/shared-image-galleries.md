@@ -1,23 +1,20 @@
 ---
 title: Совместное использование образов виртуальных машин с общими галереями
 description: Узнайте, как предоставлять сотрудникам своей организации доступ к образам виртуальных машин с помощью коллекций общих образов.
-documentationcenter: virtual-machine-scale-sets
-author: axayjo
-tags: azure-resource-manager
+author: cynthn
 ms.service: virtual-machine-scale-sets
+ms.subservice: imaging
 ms.topic: conceptual
-ms.tgt_pltfrm: ''
 ms.workload: infrastructure
-ms.date: 05/06/2019
-ms.author: akjosh
-ms.reviewer: cynthn
-ms.custom: ''
-ms.openlocfilehash: 38b8738a383d2953d89677f76e6395035b83181f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 05/04/2020
+ms.author: cynthn
+ms.reviewer: akjosh
+ms.openlocfilehash: 130fe0cc4813c764ceacec0fc7c800fc38f88741
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76276363"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792826"
 ---
 # <a name="shared-image-galleries-overview"></a>Обзор коллекций общих образов
 
@@ -25,6 +22,6 @@ ms.locfileid: "76276363"
 [!INCLUDE [virtual-machines-common-shared-image-galleries](../../includes/virtual-machines-common-shared-image-galleries.md)]
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как развертывать общие образы с помощью [Azure CLI](shared-images-cli.md) и [Azure PowerShell](shared-images-powershell.md).

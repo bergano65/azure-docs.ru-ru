@@ -140,6 +140,8 @@
                   href: ./../scripts/virtual-machines-windows-cli-sample-create-vm-oms.md
 - name: Основные понятия
   items:
+    - name: Изображения
+      href: shared-image-galleries.md
     - name: Azure Resource Manager
       href: ../../azure-resource-manager/management/overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Регионы
@@ -524,19 +526,64 @@
         - name: Получение метрик потребления с помощью REST
           href: ../linux/metrics-vm-usage-rest.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Использование образов
+      displayName: 'SIG, AMI, image'
       items:
-        - name: Общие образы
+        - name: Создание и совместное использование образов
           items:
-            - name: Обзор
-              href: shared-image-galleries.md
             - name: PowerShell
-              href: shared-images.md
-            - name: Портал
-              href: shared-images-portal.md
+              items:
+                - name: Создание коллекции
+                  href: ../shared-images-powershell.md
+                - name: Создание образа
+                  items:
+                    - name: Из виртуальной машины
+                      href: ../image-version-vm-powershell.md
+                    - name: Перенос из управляемого образа
+                      href: ../image-version-managed-image-powershell.md
+                    - name: Копирование из другой коллекции
+                      href: ../image-version-another-gallery-powershell.md
+                - name: Создание виртуальной машины
+                  items:
+                    - name: Универсальный
+                      href: ../vm-generalized-image-version-powershell.md
+                    - name: Специализированный
+                      href: ../vm-specialized-image-version-powershell.md
+                - name: Обновление ресурсов образа
+                  href: ../update-image-resources-powershell.md
             - name: CLI
-              href: ../linux/shared-images.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
-            - name: Регистрация приложения для совместного использования
-              href: share-images-across-tenants.md
+              items:
+                - name: Создание коллекции
+                  href: ../linux/shared-images.md
+                - name: Создание образа
+                  items:
+                    - name: Из виртуальной машины
+                      href: ../image-version-vm-cli.md
+                    - name: Перенос из управляемого образа
+                      href: ../image-version-managed-image-cli.md
+                    - name: Копирование из другой коллекции
+                      href: ../image-version-another-gallery-cli.md
+                    - name: Копирование из другой коллекции
+                      href: ../image-version-another-gallery-cli.md
+                - name: Создание виртуальной машины
+                  items:
+                    - name: Универсальный
+                      href: ../vm-generalized-image-version-cli.md
+                - name: Обновление ресурсов образа
+                  href: ../update-image-resources-cli.md
+            - name: Портал
+              items:
+                - name: 'Создание коллекции, образа и виртуальной машины'
+                  href: shared-images-portal.md
+            - name: Шаблоны Resource Manager
+              items:
+                - name: Создание Общей коллекции образов.
+                  href: 'https://azure.microsoft.com/resources/templates/101-sig-create/'
+                - name: Создание определения образа в Общей коллекции образов
+                  href: 'https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/'
+                - name: Создание версии образа в Общей коллекции образов
+                  href: 'https://azure.microsoft.com/resources/templates/101-sig-image-version-create/'
+                - name: Создание виртуальной машины из версии образа
+                  href: 'https://azure.microsoft.com/resources/templates/101-vm-from-sig/'
             - name: Устранение неполадок с общими образами
               href: troubleshooting-shared-images.md
         - name: Конструктор изображений (предварительная версия)

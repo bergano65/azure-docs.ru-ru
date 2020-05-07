@@ -8,12 +8,12 @@ ms.reviewer: jrasnick, carlrab
 ms.service: synapse-analytics
 ms.topic: tutorial
 ms.date: 04/15/2020
-ms.openlocfilehash: 310dfec2bbd1bf6cb69f6293becead30487d6cbd
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: fc7551c081d14a871c8ee96610ca7190f629901d
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81425463"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82790972"
 ---
 # <a name="tutorial-use-azure-toolkit-for-intellij-to-create-apache-spark-applications-for-spark-pools-preview"></a>Руководство по использованию Azure Toolkit for IntelliJ для создания приложений Apache Spark для пулов Spark
 
@@ -35,7 +35,7 @@ ms.locfileid: "81425463"
 - [Версия IntelliJ IDEA для сообщества](https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows&code=IIC);
 - подключаемый модуль Azure Toolkit 3.27.0-2019.2 — [установите из репозитория подключаемого модуля IntelliJ](/java/azure/intellij/azure-toolkit-for-intellij-installation?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json);
 - [JDK (версия 1.8)](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html);
-- подключаемый модуль Scala — [установите из репозитория подключаемого модуля IntelliJ](/hdinsight/spark/apache-spark-intellij-tool-plugin#install-scala-plugin-for-intellij-idea.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+- подключаемый модуль Scala — [установите из репозитория подключаемого модуля IntelliJ](/azure/hdinsight/spark/apache-spark-intellij-tool-plugin#install-scala-plugin-for-intellij-idea).
 - Это предварительное требование предназначено только для пользователей Windows.
 
   При запуске локального приложения Spark Scala на компьютере с Windows может возникнуть исключение, описанное в статье о [SPARK-2356](https://issues.apache.org/jira/browse/SPARK-2356). Это исключение возникает, так как в Windows отсутствует файл WinUtils.exe.
