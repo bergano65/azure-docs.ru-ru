@@ -8,12 +8,12 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 06/25/2019
 ms.custom: mvc
-ms.openlocfilehash: ed78d3dd4e6fbde10c69403cc3dcff24072dc676
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: de46eeb20f3c99eb7a459965d17e2dd55728a9db
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "75358059"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82146660"
 ---
 # <a name="quickstart-create-an-azure-database-for-postgresql---single-server-using-the-azure-cli"></a>Краткое руководство. Создание базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Azure CLI
 
@@ -58,7 +58,7 @@ sku-name | GP_Gen5_2 | Имя номера SKU. В сокращенной зап
 backup-retention | 7 | Срок хранения резервной копии. Указывается в днях. Можно указать от 7 до 35 дней. 
 geo-redundant-backup | Выключено | Позволяет включить или отключить создание геоизбыточных резервных копий для этого сервера. Допустимые значения: Enabled, Disabled.
 location | westus | Расположение сервера в Azure.
-ssl-enforcement | Активировано | Позволяет включить или отключить SSL для этого сервера. Допустимые значения: Enabled, Disabled.
+ssl-enforcement | Активировано | Позволяет включить или отключить TLS либо SSL для этого сервера. Допустимые значения: Enabled, Disabled.
 storage-size | 51 200 | Объем хранилища сервера (в мегабайтах). Допустимое минимальное значение storage-size составляет 5120 МБ и может быть увеличено с шагом в 1024 МБ. Ознакомьтесь с документом о [ценовых категориях](./concepts-pricing-tiers.md), чтобы узнать больше об ограничениях размера хранилища. 
 version | 9,6 | Основной номер версии PostgreSQL.
 admin-user | myadmin | Имя для входа администратора. Не может иметь значение **azure_superuser**, **admin**, **administrator**, **root**, **guest** или **public**.
@@ -186,7 +186,7 @@ pgAdmin — это средство с открытым кодом, которо
     Имя пользователя | Имя для входа администратора сервера | Имя для входа администратора сервера, которое вы использовали раньше при создании базы данных Azure для сервера PostgreSQL. Если вы не помните имя пользователя, выполните действия из предыдущего раздела, чтобы получить сведения о подключении. Формат *имя пользователя\@имя сервера*.
     Пароль | Ваш пароль администратора | Пароль, выбранный при создании сервера во время работы с этим руководством.
     Роль | Не указывайте | Указывать роль на этом шаге не нужно. Оставьте поле пустым.
-    Режим SSL | *Require* (Требовать) | На вкладке pgAdmin SSL можно настроить режим SSL. По умолчанию все серверы службы "База данных Azure для PostgreSQL" создаются с включенным применением SSL. Чтобы отключить применение SSL, см. сведения о [включении SSL](./concepts-ssl-connection-security.md).
+    Режим SSL | *Require* (Требовать) | На вкладке pgAdmin SSL можно настроить режим TLS или SSL. По умолчанию все серверы службы "База данных Azure для PostgreSQL" создаются с включенным применением TLS. Чтобы отключить применение TLS, см. раздел [Настройка принудительного применения TLS](./concepts-ssl-connection-security.md#configure-enforcement-of-tls).
     
 5. Щелкните **Сохранить**.
 

@@ -6,14 +6,14 @@ author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 04/14/2020
+ms.date: 05/05/2020
 ms.author: cherylmc
-ms.openlocfilehash: b825ed513f530733d7552e32206c12422a956b14
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: 63226089a0a87660f0796cdfef2b729070ca01e3
+ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81766937"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82837861"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -43,7 +43,7 @@ ms.locfileid: "81766937"
 | **Геополитический регион** | **Регионы Azure** | **Расположения ExpressRoute** |
 | --- | --- | --- |
 | **Государственные организации Австралии** |Центральная Австралия, Центральная Австралия 2 |Канберра, Канберра 2 |
-| **Европа** | Центральная часть Франции, Юго-Восточная Франция, Северная Германия, Центрально-Западная Германия, Северная Европа, Норвегия восток, Западная Норвежская, Северная Швейцария, Западная Швейцария, западная часть Соединенного Королевства, южная часть Соединенного Королевства, Западная Европа |Амстердам, Amsterdam2, Копенгаген, Дублин, Франкфурт, Geneva, Лондон, London2, Марселе, Милан, Мюнхене, Ньюпорт (), Oslo, Париж, Ставанжер, Стокгольм, Цюрих |
+| **Европа** | Центральная часть Франции, Юго-Восточная Франция, Северная Германия, Центрально-Западная Германия, Северная Европа, Норвегия восток, Западная Норвежская, Северная Швейцария, Западная Швейцария, западная часть Соединенного Королевства, южная часть Соединенного Королевства, Западная Европа |Амстердам, Amsterdam2, Берлин, Копенгаген, Дублин, Франкфурт, Geneva, Лондон, London2, Марселе, Милан, Мюнхене, Ньюпорт (), Oslo, Париж, Ставанжер, Стокгольм, Цюрих |
 | **Северная Америка** |Восточная часть США, западная часть США, восточная часть США 2, западная часть США 2, центральная часть США, центрально-южная часть США, центрально-северная часть США, центрально-западная часть США, Центральная Канада, Восточная Канада |Атланта, Чикаго, Далласе, Денвер, Лас-Йорк, Лос-Анджелес, Майами, Нью-Йорке, Сан Сан Антонио, Сиэтл, впадина, Silicon Valley2, Вашингтон (округ Колумбия), Вашингтон, округ DC2, Монреаль, Квебек City, Торонто, Vancouver |
 | **Азия** | Восточная Азия, Юго-Восточная Азия | Бангкок, Гонконг, Гонконг, Kong2, Джакарта, Куала — Лумпур, Сингапур, Сингапур 2, Тайбэй |
 | **Индия** | Западная Индия, Центральная Индия, Южная Индия |Ченнаи, Ченнаи 2, Мумбаи, Мумбаи 2 |
@@ -94,6 +94,7 @@ ms.locfileid: "81766937"
 | **Китайский (Международная)** |Поддерживается |Поддерживается | Сингапур |
 | **China Telecom Global** |Поддерживается |Поддерживается |Гонконг, САР |
 | **Уником (Китайская, Глобальная)** |Поддерживается |Поддерживается | Сингапур 2 |
+| **[Телекоммуникации чунгхва](https://www.cht.com.tw/en/home/cht/about-cht/products-and-services/International/Cloud-Service)** |Поддерживается |Поддерживается |Тайбэй |
 | **[Cologix](https://www.cologix.com/hyperscale/microsoft-azure/)** |Поддерживается |Поддерживается |Чикаго, Далласе, Монреаль, Торонто, Vancouver, Вашингтон (округ Колумбия) |
 | **[Colt](https://www.colt.net/uk/en/news/colt-announces-dedicated-cloud-access-for-microsoft-azure-services-en.htm)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Чикаго, Дублин, Франкфурт, Лондон, London2, Ньюпорт, Нью Йорк, Осака, Париж, впадина, Silicon Valley2, Сингапур 2, Токио, Вашингтон (округ Колумбия) |
 | **[Comcast](https://business.comcast.com/landingpage/microsoft-azure)** |Поддерживается |Поддерживается |Чикаго, Кремниевая долина, Вашингтон, округ Колумбия |
@@ -132,6 +133,7 @@ ms.locfileid: "81766937"
 | **[некстдк](https://www.nextdc.com/services/axon-ethernet/microsoft-expressroute)** |Поддерживается |Поддерживается |Мельбурн, Перт, Сидней, Sydney2 |
 | **[NTT связь](https://www.ntt.com/en/services/network/virtual-private-network.html)** |Поддерживается |Поддерживается |Амстердам, Гонконг, САР, Лондон, Лос-Анджелес, Осака, Сингапур, Сидней, Токио, Вашингтон (округ Колумбия) |
 | **[NTT EAST](https://flets.com/cloudgateway/crossconnect/)** |Поддерживается |Поддерживается |Токио |
+| **[NTT Global Datacenters EMEA](https://www.ntt.com/en/services/data-center.html)** |Поддерживается |Поддерживается |Берлин |
 | **[NTT Смартконнект](https://cloud.nttsmc.com/cxc/azure.html)** |Поддерживается |Поддерживается |Осака |
 | **[Уреду Cloud Connect](https://www.ooredoo.qa/portal/OoredooQatar/cloud-connect-expressroute)** |Поддерживается |Поддерживается |Марсель |
 | **[Optus](https://www.optus.com.au/enterprise/)** |Поддерживается |Поддерживается |Мельбурн, Сидней |
@@ -188,7 +190,7 @@ ms.locfileid: "81766937"
 | **Поставщик услуг** | **Microsoft Azure** | **Office 365.** | **Расположения** |
 | --- | --- | --- | --- |
 | **China Telecom** |Поддерживается |Не поддерживается |Пекин, Beijing2, Шанхай, Shanghai2 |
-| **Уником Китая** | Поддерживается | Не поддерживается | Пекин 2 |
+| **Уником Китая** | Поддерживается | Не поддерживается | Пекин 2, Шанхай 2 |
 | **[GDS](http://www.gds-services.com/en/about_2.html)** |Поддерживается |Не поддерживается |Пекин 2, Шанхай 2 |
 
 Дополнительные сведения см. на странице [ExpressRoute в Китае](http://www.windowsazure.cn/home/features/expressroute/).
@@ -211,6 +213,7 @@ ms.locfileid: "81766937"
 * Узнайте у своего поставщика услуг подключения, подключен ли он к какому-либо Exchange, указанному в таблице выше. Дополнительные сведения об услугах, предлагаемых поставщиками Exchange, см. по ссылкам ниже. Несколько поставщиков услуг подключения уже подключены к серверам Ethernet Exchange.
   * [Cologix](https://www.cologix.com/)
   * [CoreSite](https://www.coresite.com/)
+  * [DE-ЦИКС](https://www.de-cix.net/en/de-cix-service-world/cloud-exchange)
   * [Equnix Cloud Exchange](https://www.equinix.com/services/interconnection-connectivity/cloud-exchange/)
   * [Interxion](https://www.interxion.com/products/interconnection/cloud-connect/)
   * [IX Reach](https://www.ixreach.com/partners/cloud-partners/microsoft-azure/)
@@ -353,7 +356,7 @@ ms.locfileid: "81766937"
 | **[Venha Pra Nuvem](https://venhapranuvem.com.br/)** | Южная Америка |
 | **[Vigilant.IT](https://vigilant.it/expressroute)** | Австралия |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения об ExpressRoute см. в статье [вопросы и ответы по expressroute](expressroute-faqs.md).
 * Убедитесь, что выполнены все необходимые условия. Ознакомьтесь с разделом [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).
 

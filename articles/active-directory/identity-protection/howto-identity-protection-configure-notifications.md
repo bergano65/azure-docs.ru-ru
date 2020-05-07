@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: conceptual
-ms.date: 10/18/2019
+ms.date: 05/05/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c83aa6e476bbd898999fb6efe490c7847a809ff
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 200ede6b4c5565a8eab95b0398abaa1c056c612f
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77120132"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82853122"
 ---
 # <a name="azure-active-directory-identity-protection-notifications"></a>Уведомления защиты идентификации Azure Active Directory
 
@@ -50,12 +50,11 @@ ms.locfileid: "77120132"
 Еженедельное сообщение сводки содержит сводку новых обнаружений рисков.  
 Сюда входят:
 
-- Пользователи, подверженные риску
-- подозрительные действия;
-- обнаруженные уязвимости;
+- Обнаружены новые пользователи, совершающие рискованные действия
+- Обнаружены новые рискованные входы в систему (в режиме реального времени)
 - ссылки на связанные отчеты в службе защиты идентификации.
 
-![сообщение электронной почты еженедельного дайджеста.](./media/howto-identity-protection-configure-notifications/400.png)
+![сообщение электронной почты еженедельного дайджеста.](./media/howto-identity-protection-configure-notifications/weekly-digest-email.png)
 
 По умолчанию получатели включают всех глобальных администраторов. Глобальные администраторы также могут добавить в список получателей других глобальных администраторов, администраторов безопасности и читателей сведений о безопасности.
 
@@ -65,6 +64,6 @@ ms.locfileid: "77120132"
 
 Настройте Еженедельный дайджест-адрес в **портал Azure** в разделе**Еженедельный дайджест****защиты** > идентификации**безопасности** >  **Azure Active Directory** > .
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Защита идентификации Azure Active Directory](../active-directory-identityprotection.md)

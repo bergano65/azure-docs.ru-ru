@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/18/2019
-ms.openlocfilehash: f68f973882af28d80b3a27bc4591c5ee932404a1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9c9ad45ac1cf59f05454cba0babff8c3b7368f72
+ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75443605"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82839119"
 ---
 # <a name="azure-stream-analytics-output-to-azure-sql-database"></a>Вывод данных Azure Stream Analytics в базу данных SQL Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "75443605"
 
 ## <a name="azure-stream-analytics"></a>Azure Stream Analytics
 
-- **Секционирование по наследованию**. Этот вариант конфигурации выходных данных SQL позволяет наследовать схему секционирования, используемую на предыдущем шаге запроса или с предыдущими входными данными. Если этот параметр включен, выполняется запись в таблицу на диске и присутствует задание с топологией [полной параллельной обработки](stream-analytics-parallelization.md#embarrassingly-parallel-jobs), будет прослеживаться лучшая пропускная способность. Такое секционирование автоматически выполняется для многих других [выходных данных](stream-analytics-parallelization.md#partitions-in-sources-and-sinks). Блокировка таблицы (TABLOCK) также отключается для массовой вставки, выполняемой при использовании этого параметра.
+- **Секционирование по наследованию**. Этот вариант конфигурации выходных данных SQL позволяет наследовать схему секционирования, используемую на предыдущем шаге запроса или с предыдущими входными данными. Если этот параметр включен, выполняется запись в таблицу на диске и присутствует задание с топологией [полной параллельной обработки](stream-analytics-parallelization.md#embarrassingly-parallel-jobs), будет прослеживаться лучшая пропускная способность. Такое секционирование автоматически выполняется для многих других [выходных данных](stream-analytics-parallelization.md#partitions-in-inputs-and-outputs). Блокировка таблицы (TABLOCK) также отключается для массовой вставки, выполняемой при использовании этого параметра.
 
 > [!NOTE] 
 > При наличии более чем 8 секций входных данных может быть нецелесообразно использовать наследование схемы секционирования входных данных. Это максимальное ограничение было обнаружено в таблице с одним столбцом идентификаторов и кластеризованным индексом. В этом случае рекомендуется использовать [в](https://docs.microsoft.com/stream-analytics-query/into-azure-stream-analytics#into-shard-count) запросе 8, чтобы явно указать число модулей записи вывода. В зависимости от этой схемы и выбранных индексов, результаты отличаются.

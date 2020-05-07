@@ -5,14 +5,14 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 04/14/2020
+ms.date: 05/05/2020
 ms.author: cherylmc
-ms.openlocfilehash: ba0573af59c2924648361fec10bffed189291d28
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 19457dc7324c509f54a58a2cdaa39561bfc71b4d
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81768569"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82853342"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -42,7 +42,7 @@ ms.locfileid: "81768569"
 | **Геополитический регион** | **Регионы Azure** | **Расположения ExpressRoute** |
 | --- | --- | --- |
 | **Государственные организации Австралии** | Центральная Австралия, Центральная Австралия 2 |Канберра, Канберра 2 |
-| **Европа** | Центральная часть Франции, Юго-Восточная Франция, Северная Германия, Центрально-Западная Германия, Северная Европа, Норвегия восток, Западная Норвежская, Северная Швейцария, Западная Швейцария, западная часть Соединенного Королевства, южная часть Соединенного Королевства, Западная Европа |Амстердам, Amsterdam2, Копенгаген, Дублин, Франкфурт, Geneva, Лондон, London2, Марселе, Милан, Мюнхене, Ньюпорт (), Oslo, Париж, Ставанжер, Стокгольм, Цюрих, Мюнхене |
+| **Европа** | Центральная часть Франции, Юго-Восточная Франция, Северная Германия, Центрально-Западная Германия, Северная Европа, Норвегия восток, Западная Норвежская, Северная Швейцария, Западная Швейцария, западная часть Соединенного Королевства, южная часть Соединенного Королевства, Западная Европа |Амстердам, Amsterdam2, Берлин, Копенгаген, Дублин, Франкфурт, Geneva, Лондон, London2, Марселе, Милан, Мюнхене, Ньюпорт (), Oslo, Париж, Ставанжер, Стокгольм, Цюрих, Мюнхене |
 | **Северная Америка** | Восточная часть США, западная часть США, восточная часть США 2, западная часть США 2, центральная часть США, центрально-южная часть США, центрально-северная часть США, центрально-западная часть США, Центральная Канада, Восточная Канада |Атланта, Чикаго, Далласе, Денвер, Лас-Йорк, Лос-Анджелес, Майами, Нью-Йорке, Сан Сан Антонио, Сиэтл, впадина, Silicon Valley2, Вашингтон (округ Колумбия), Вашингтон, округ DC2, Монреаль, Квебек City, Торонто, Vancouver |
 | **Азия** | Восточная Азия, Юго-Восточная Азия | Бангкок, Гонконг, Гонконг, Kong2, Джакарта, Куала — Лумпур, Сингапур, Сингапур 2, Тайбэй |
 | **Индия** | Западная Индия, Центральная Индия, Южная Индия |Ченнаи, Ченнаи 2, Мумбаи, Мумбаи 2 |
@@ -82,6 +82,7 @@ ms.locfileid: "81768569"
 | **Атланта** | [Equinix AT2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/atlanta-data-centers/at2/) | 1 | н/д | н/д | Equinix, Megaport |
 | **Окленд** | [Олбани группа вокус (NZ)](https://www.vocus.co.nz/business/cloud-data-centres) | 2 | н/д | 10 | Деволи, Кордиа, Orange, Spark NZ, Вокус Group NZ |
 | **Бангкок** | [AIS](https://business.ais.co.th/solution/en/azure-expressroute.html) | 2 | н/д | 10 | AIS |
+| **Берлин** | [NTT GDC](https://www.e-shelter.de/en/location/berlin-1-data-center) | 1 | Северная Германия | 10 | NTT Global Datacenters EMEA|
 | **Пусан** | [LG CNS](https://www.lgcns.com/datacenter) | 2 | Республика Корея, южный регион | н/д | LG CNS |
 | **Канберра** | [CDC](https://cdcdatacentres.com.au/content/about-cdc) | 1 | Центральная Австралия | 10G, 100G | CDC |
 | **Канберра 2** | [CDC](https://cdcdatacentres.com.au/content/about-cdc) | 1 | Центральная Австралия 2| 10G, 100G | CDC |
@@ -111,7 +112,7 @@ ms.locfileid: "81768569"
 | **Майами** | [Equinix MI1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/miami-data-centers/mi1/) | 1 | н/д | 10 | C3ntro, Equinix, Orange, Неутрона сетей |
 | **Milan** | [иридеос](https://irideos.it/en/data-centers/) | 1 | н/д | 10 | |
 | **Монреаль** | [Кологикс MTL3](https://www.cologix.com/data-centers/montreal/mtl3/) | 1 | н/д | 10G, 100G | Bell для Канады, Кологикс, Orange, Телус, Zayo |
-| **Мумбаи** | Tata Communications | 2 | Западная Индия | н/д | Global Клаудксчанже (ГККС), зависимость ЖИО, Сифи, Tata Communications, Verizon |
+| **Мумбаи** | Tata Communications | 2 | Западная Индия | 10 | Global Клаудксчанже (ГККС), зависимость ЖИО, Сифи, Tata Communications, Verizon |
 | **Мумбаи 2** | Airtel | 2 | Западная Индия | н/д | Airtel, Sify, Vodafone Idea |
 | **Мюнхене** | [еджеконнекс](https://www.edgeconnex.com/locations/europe/) | 1 | н/д | 10G, 100G | |
 | **Нью-Йорк** | [Equinix NY9](https://www.equinix.com/locations/americas-colocation/united-states-colocation/new-york-data-centers/ny9/) | 1 | н/д | н/д | CenturyLink Cloud Connect, Colt, Коресите, Equinix, в облаке, Orange, пакет, Zayo |
@@ -133,11 +134,11 @@ ms.locfileid: "81768569"
 | **Стокгольм** | [Equinix SK1](https://www.equinix.com/locations/europe-colocation/sweden-colocation/stockholm-data-centers/sk1/) | 1 | н/д | 10 | Equinix, оператор Телиа |
 | **Сидней** | [Equinix SY2](https://www.equinix.com/locations/asia-colocation/australia-colocation/sydney-data-centers/sy2/) | 2 | Восточная Австралия | 10G, 100G | Аарнет, AT&T NetBond, Британская телекоммуникации, Деволи, Equinix, Кордиа, Orange, НЕКСТДК, NTT Communications, ОПТУС, оранжевый, Spark NZ, Телстра Corporation, ТПГ Communications, Verizon, Вокус Group NZ |
 | **Sydney2** | [Некстдк S1](https://www.nextdc.com/data-centres/s1-sydney-data-centre) | 2 | Восточная Австралия | 10G, 100G | Orange, Некстдк |
-| **Тайбэй** | Chief Telecom | 2 | н/д | 10 | Главный телекоммуникации, Фареастоне |
+| **Тайбэй** | Chief Telecom | 2 | н/д | 10 | Главный телекоммуникации, Чунгхваный телекоммуникации, Фареастоне |
 | **Токио** | [Equinix TY4](https://www.equinix.com/locations/asia-colocation/japan-colocation/tokyo-data-centers/ty4/) | 2 | Восточная Япония | 10G, 100G | Aryaka Networks, AT&T NetBond, ББИКС, Британская телекоммуникации, CenturyLink Cloud Connect, Colt, Equinix, Интернет-инициативы Япония Inc. — IIJ, Orange, NTT Communications, NTT Восток, оранжевый, Softbank ", Verizon |
 | **Tokyo2** | [В ТОКИО](https://www.attokyo.com/) | 2 | Восточная Япония | 10G, 100G | В ТОКИО |
 | **Торонто** | [Кологикс TOR1](https://www.cologix.com/data-centers/toronto/tor1/) | 1 | Центральная Канада | 10G, 100G | В&T NetBond, колокольчик Канады, CenturyLink Cloud Connect, Кологикс, Equinix, IX REACH Orange, Телус, Verizon, Zayo |
-| **Ванкувер** | [Кологикс VAN1](https://www.cologix.com/data-centers/vancouver/van1/) | 1 | Cologix | 10G, 100G | |
+| **Ванкувер** | [Кологикс VAN1](https://www.cologix.com/data-centers/vancouver/van1/) | 1 | н/д | 10 | Cologix |
 | **Вашингтон, округ Колумбия** | [Equinix DC2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/washington-dc-data-centers/dc2/) | 1 | Восточная часть США, Восточная часть США 2 | 10G, 100G | Aryaka Networks, AT&T NetBond, Британская телекоммуникации, CenturyLink Cloud Connect, Кологикс, Colt, Comcast, Коресите, Equinix, Internet2, в облаке, IX REACH, уровень 3, взаимодействие, Orange, Неутрона сети, NTT Communications, оранжевый, паккетфабрик, SES, спринт, Tata Communications, Телиа, Verizon, в Zayo |
 | **Вашингтон, округ Колумбия 2** | [Коресите Рестоне](https://www.coresite.com/data-centers/locations/northern-virginia-washington-dc/reston-campus) | 1 | Восточная часть США, Восточная часть США 2 | 10G, 100G | CenturyLink Cloud Connect, Коресите, ИНТЕЛСАТ, ВИАСАТ, Zayo | 
 | **Цюрих** | [Interxion ZUR2](https://www.interxion.com/Locations/zurich/) | 1 | Северная Швейцария | 10G, 100G | Взаимооблако, Interxion, Orange, компания Swisscom |
@@ -167,7 +168,7 @@ ms.locfileid: "81768569"
 | **Пекин** |China Telecom |
 | **Пекин 2** | Телекоммуникационные, Китайская, Уником, GDS |
 | **Шанхай** |China Telecom |
-| **Шанхай 2** | Телекоммуникации в Китае, GDS |
+| **Шанхай 2** | Телекоммуникационные, Китайская, Уником, GDS |
 
 Дополнительные сведения см. [в разделе ExpressRoute в Китае](http://www.windowsazure.cn/home/features/expressroute/) .
 
@@ -183,6 +184,7 @@ ms.locfileid: "81768569"
 * Узнайте у своего поставщика услуг подключения, подключен ли он к какому-либо Exchange, указанному в таблице выше. Дополнительные сведения об услугах, предлагаемых поставщиками Exchange, см. по ссылкам ниже. Несколько поставщиков услуг подключения уже подключены к серверам Ethernet Exchange.
   * [Cologix](https://www.cologix.com/)
   * [CoreSite](https://www.coresite.com/)
+  * [DE-ЦИКС](https://www.de-cix.net/en/de-cix-service-world/cloud-exchange)
   * [Equnix Cloud Exchange](https://www.equinix.com/services/interconnection-connectivity/cloud-exchange/)
   * [InterXion](https://www.interxion.com/)
   * [некстдк](https://www.nextdc.com/)

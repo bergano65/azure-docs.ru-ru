@@ -11,15 +11,15 @@ ms.service: azure-monitor
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 04/28/2020
+ms.date: 05/04/2020
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: 8904d584d453cb0945a11b08ad50688aeb1e1fc0
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 601f1c224d6e1d756c27dc2478951682ce6bb4fd
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82207332"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82854766"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Управление использованием и затратами с помощью журналов Azure Monitor
 
@@ -44,11 +44,13 @@ ms.locfileid: "82207332"
 
 Кроме того, обратите внимание, что некоторые решения, такие как [Центр безопасности Azure](https://azure.microsoft.com/pricing/details/security-center/), управление Sentinel и [конфигурацией](https://azure.microsoft.com/pricing/details/automation/) [Azure](https://azure.microsoft.com/pricing/details/azure-sentinel/) , имеют собственные модели ценообразования. 
 
-### <a name="dedicated-clusters"></a>Выделенные кластеры
+### <a name="log-analytics-clusters"></a>Кластеры Log Analytics
 
-Azure Monitor выделенные кластеры журналов — это коллекции рабочих областей в едином управляемом кластере Azure обозреватель данных (ADX) для поддержки сложных сценариев, таких как [управляемые клиентом ключи](https://docs.microsoft.com/azure/azure-monitor/platform/customer-managed-keys).  Выделенные кластеры поддерживают только модель ценообразования резервирования мощностей, начиная с 1000 ГБ в день с скидкой 25% по сравнению с ценами оплаты по мере использования. При использовании выше уровня резервирования будет взиматься плата по тарифу по мере использования. В резервировании емкости кластера имеется 31-дневный период обязательства после увеличения уровня резервирования. В течение периода обязательства уровень резервирования емкости не может быть уменьшен, но его можно увеличить в любое время. Дополнительные сведения о [создании выделенных кластеров](https://docs.microsoft.com/azure/azure-monitor/platform/customer-managed-keys#create-cluster-resource) и [связывании рабочих областей с ними](https://docs.microsoft.com/azure/azure-monitor/platform/customer-managed-keys#workspace-association-to-cluster-resource).  
+Log Analytics кластеры представляют собой коллекции рабочих областей в едином управляемом кластере Azure обозреватель данных для поддержки таких сложных сценариев, как [управляемые клиентом ключи](https://docs.microsoft.com/azure/azure-monitor/platform/customer-managed-keys).  Log Analytics кластеры поддерживают только модель ценообразования резервирования мощностей начиная с 1000 ГБ в день с скидкой 25% по сравнению с ценами оплаты по мере использования. При использовании выше уровня резервирования будет взиматься плата по тарифу по мере использования. В резервировании емкости кластера имеется 31-дневный период обязательства после увеличения уровня резервирования. В течение периода обязательства уровень резервирования емкости не может быть уменьшен, но его можно увеличить в любое время. Дополнительные сведения о [создании кластеров log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/customer-managed-keys#create-cluster-resource) и [связывании рабочих областей с ними](https://docs.microsoft.com/azure/azure-monitor/platform/customer-managed-keys#workspace-association-to-cluster-resource).  
 
-Поскольку выставление счетов за принимаемые данные выполняется на уровне кластера, рабочие области, связанные с кластером, больше не имеют ценовой категории. Полученные количества данных из каждой рабочей области, связанной с кластером, суммируются для вычисления ежедневного счета за кластер. Обратите внимание, что выделения для каждого узла из центра безопасности Azure применяются на уровне рабочей области до этого статистического выражения. Плата за хранение данных по-прежнему взимается на уровне рабочей области.  
+Уровень резервирования емкости кластера настраивается программным путем с Azure Resource Manager с `Capacity` помощью параметра `Sku`в разделе. Параметр `Capacity` указывается в единицах измерения ГБ и может иметь значения 1000 ГБ/день или более с шагом в 100 ГБ/день. Это подробно описано [здесь](https://docs.microsoft.com/azure/azure-monitor/platform/customer-managed-keys#create-cluster-resource). Если для кластера требуется резервирование свыше 2000 Гб в день, свяжитесь с [LAIngestionRate@microsoft.com](mailto:LAIngestionRate@microsoft.com)нами по адресу.
+
+Поскольку выставление счетов за принимаемые данные выполняется на уровне кластера, рабочие области, связанные с кластером, больше не имеют ценовой категории. Полученные количества данных из каждой рабочей области, связанной с кластером, суммируются для вычисления ежедневного счета за кластер. Обратите внимание, что выделения для каждого узла из [центра безопасности Azure](https://docs.microsoft.com/azure/security-center/) применяются на уровне рабочей области до этой статистической обработки агрегированных данных во всех рабочих областях в кластере. Плата за хранение данных по-прежнему взимается на уровне рабочей области. Обратите внимание, что выставление счетов за кластер начинается при создании кластера независимо от того, связаны ли с кластером рабочие области. 
 
 ## <a name="estimating-the-costs-to-manage-your-environment"></a>Оценка затрат на управление средой 
 
@@ -310,7 +312,7 @@ Usage
 
 ### <a name="data-volume-by-computer"></a>Объем данных по компьютерам
 
-Тип `Usage` данных не содержит сведений на уровне завершения. Чтобы увидеть **Размер** принимаемых данных на компьютер, используйте `_BilledSize` [свойство](log-standard-properties.md#_billedsize), которое предоставляет размер в байтах:
+Тип `Usage` данных не включает сведения на уровне компьютера. Чтобы увидеть **Размер** принимаемых данных на компьютер, используйте `_BilledSize` [свойство](log-standard-properties.md#_billedsize), которое предоставляет размер в байтах:
 
 ```kusto
 union withsource = tt * 
@@ -467,7 +469,7 @@ union withsource = tt *
 | where computerName != ""
 | summarize nodesPerHour = dcount(computerName) by bin(TimeGenerated, 1h)  
 | summarize nodesPerDay = sum(nodesPerHour)/24.  by day=bin(TimeGenerated, 1d)  
-| join (
+| join kind=leftouter (
     Heartbeat 
     | where TimeGenerated >= startofday(now(-7d)) and TimeGenerated < startofday(now())
     | where Computer != ""

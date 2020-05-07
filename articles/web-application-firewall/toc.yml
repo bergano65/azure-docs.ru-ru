@@ -63,6 +63,8 @@
           href: ./ag/policy-overview.md
         - name: Общие сведения о защите от ботов
           href: ./ag/bot-protection-overview.md
+        - name: ВОПРОСЫ И ОТВЕТЫ
+          href: ./ag/application-gateway-waf-faq.md
     - name: Front Door
       items:
         - name: Настраиваемые правила

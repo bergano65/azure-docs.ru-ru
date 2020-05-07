@@ -7,14 +7,14 @@ author: tamram
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.date: 02/26/2020
+ms.date: 04/23/2020
 ms.author: tamram
-ms.openlocfilehash: 2e1b1ac2ea315759b18dc882b98837bca0a84d46
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 333d9f12ff817a5264183666cd1b858075a93077
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80061443"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82176691"
 ---
 # <a name="quickstart-create-download-and-list-blobs-with-azure-cli"></a>Краткое руководство. Создание, скачивание и составление списка больших двоичных объектов с помощью Azure CLI
 
@@ -72,7 +72,7 @@ az storage account create \
     --resource-group <resource-group> \
     --location <location> \
     --sku Standard_ZRS \
-    --encryption blob
+    --encryption-services blob
 ```
 
 ## <a name="create-a-container"></a>Создание контейнера
@@ -163,7 +163,7 @@ az group delete \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве вы узнали, как передавать файлы между локальной файловой системой и контейнером в хранилище BLOB-объектов Azure. Дополнительные сведения о работе с большими двоичными объектами в службе хранилища Azure см. в руководстве по работе с хранилищем BLOB-объектов Azure.
+В этом кратком руководстве вы узнали, как передавать файлы между локальной файловой системой и контейнером в хранилище BLOB-объектов Azure. Чтобы узнать больше о работе с хранилищем BLOB-объектов с использованием Azure CLI, изучите примеры Azure CLI для хранилища BLOB-объектов.
 
 > [!div class="nextstepaction"]
-> [Руководство. Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью Azure CLI](storage-how-to-use-blobs-cli.md)
+> [Примеры Azure CLI для хранилища BLOB-объектов](/azure/storage/blobs/storage-samples-blobs-cli?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)

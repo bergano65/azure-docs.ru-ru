@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 05/16/2018
-ms.openlocfilehash: 65a15a8506b88e95e14af8c87bcbe33087301519
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 986c2783f3d130114da93406bfaf70d5c038d5ed
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75647838"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82856148"
 ---
 # <a name="use-hdinsight-tools-for-intellij-with-hortonworks-sandbox"></a>Использование инструментов HDInsight для IntelliJ с песочницей Hortonworks
 
@@ -32,7 +32,7 @@ ms.locfileid: "75647838"
 
 - [Java Developer Kit (JDK) версии 1.8 или более поздней версии](https://aka.ms/azure-jdks). Для набора средств Azure для IntelliJ требуется пакет JDK.
 
-- [Выпуск IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download) с подключаемым модулем [Scala](https://plugins.jetbrains.com/idea/plugin/1347-scala) и подключаемым модулем [Набор средств Azure для IntelliJ](https://docs.microsoft.com/java/azure/intellij/azure-toolkit-for-intellij). Средства HDInsight для IntelliJ доступны в составе набора средств Azure для IntelliJ. 
+- [Выпуск IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download) с подключаемым модулем [Scala](https://plugins.jetbrains.com/idea/plugin/1347-scala) и подключаемым модулем [Набор средств Azure для IntelliJ](https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij). Средства HDInsight для IntelliJ доступны в составе набора средств Azure для IntelliJ.
 
 Чтобы установить подключаемые модули, сделайте следующее:
 
@@ -146,7 +146,7 @@ ms.locfileid: "75647838"
 
 3. Нажмите кнопку **Submit** (Отправить). Журналы отправки заданий отображаются в окне инструмента отправки Spark.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [создавать приложения Apache Spark для кластера HDInsight Spark на платформе Linux с помощью средств HDInsight в Azure Toolkit for IntelliJ](../spark/apache-spark-intellij-tool-plugin.md).
 

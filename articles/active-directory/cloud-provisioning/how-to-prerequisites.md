@@ -11,12 +11,12 @@ ms.date: 12/06/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 45648170f69d513b15e79cdd76f56e66bbc88bfa
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 553ecc971235b5ba7d55a2dcb6963200919a3480
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80332084"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82853456"
 ---
 # <a name="prerequisites-for-azure-ad-connect-cloud-provisioning"></a>Предварительные требования для подготовки облачных Azure AD Connect
 В этой статье приводятся рекомендации по выбору и использованию Azure Active Directory (Azure AD) для подключения облака в качестве решения для идентификации.
@@ -47,6 +47,8 @@ ms.locfileid: "80332084"
 ### <a name="in-your-on-premises-environment"></a>В локальной среде
 
 1. Выявление присоединенного к домену сервера узла под управлением Windows Server 2012 R2 или более поздней версии с 4 ГБ ОЗУ и .NET 4.7.1 + Runtime.
+
+1. Политика выполнения PowerShell на локальном сервере должна быть установлена в значение undefine или RemoteSigned.
 
 1. Если между вашими серверами и Azure AD есть брандмауэр, настройте следующие параметры:
    - Убедитесь, что агенты могут передавать *исходящие* запросы в Azure AD через приведенные ниже порты.

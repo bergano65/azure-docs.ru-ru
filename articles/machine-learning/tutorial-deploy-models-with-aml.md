@@ -8,14 +8,14 @@ ms.subservice: core
 ms.topic: tutorial
 author: sdgilley
 ms.author: sgilley
-ms.date: 02/10/2020
+ms.date: 03/18/2020
 ms.custom: seodec18
-ms.openlocfilehash: 81e02492f7e79b87e1513a910afe4719908adbbb
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5d064b0953d8d6e9089dcfa765ff29bb97088f34
+ms.sourcegitcommit: c8a0fbfa74ef7d1fd4d5b2f88521c5b619eb25f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80159093"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82801116"
 ---
 # <a name="tutorial-deploy-an-image-classification-model-in-azure-container-instances"></a>Руководство по Развертывание модели классификации изображений в Экземплярах контейнеров Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -27,14 +27,13 @@ ms.locfileid: "80159093"
 > [!div class="checklist"]
 > * настройка тестовой среды;
 > * извлечение модели из рабочей области;
-> * локальное тестирование модели;
 > * развертывание модели в Экземплярах контейнеров;
 > * тестирование развернутой модели.
 
 Экземпляры контейнеров — это идеальное решение для тестирования и понимания рабочего процесса. Для масштабируемых рабочих развертываний рекомендуется использовать Службу Azure Kubernetes. Дополнительные сведения см. в статье [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md).
 
 >[!NOTE]
-> Код в этой статье протестирован с помощью пакета SDK для Машинного обучения Azure версии 1.0.41.
+> Код в этой статье протестирован с помощью пакета SDK для Машинного обучения Azure версии 1.0.83.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -56,76 +55,175 @@ ms.locfileid: "80159093"
 
 Импортируйте пакеты Python, необходимые для этого руководства.
 
+
 ```python
 %matplotlib inline
 import numpy as np
-import matplotlib
 import matplotlib.pyplot as plt
  
-import azureml
-from azureml.core import Workspace, Run
+import azureml.core
 
 # Display the core SDK version number
 print("Azure ML SDK Version: ", azureml.core.VERSION)
 ```
 
-### <a name="retrieve-the-model"></a>Извлечение модели
+## <a name="deploy-as-web-service"></a>Развертывание в виде веб-службы
 
-В предыдущем руководстве вы зарегистрировали модель в рабочей области. Теперь загрузите эту рабочую область и скачайте модель в локальный каталог.
+Разверните модель в качестве веб-службы, размещенной в ACI. 
+
+Чтобы создать правильную среду для ACI, предоставьте следующие компоненты.
+* Сценарий оценки, чтобы показать, как использовать модель.
+* Файл конфигурации для создания ACI.
+* Обученная ранее модель.
+
+### <a name="create-scoring-script"></a>Создание сценария оценки
+
+Создайте сценарий оценки score.py, используемый вызовом веб-службы, чтобы показать, как использовать модель.
+
+В сценарий оценки необходимо включить две обязательные функции.
+* Функция `init()`, которая обычно загружает модель в глобальный объект. Эта функция выполняется только один раз при запуске контейнера Docker. 
+
+* Функция `run(input_data)` использует модель для прогнозирования значения на основе входных данных. Входные и выходные данные для запуска обычно используют JSON для сериализации и десериализации, но поддерживаются и другие форматы.
+
+```python
+%%writefile score.py
+import json
+import numpy as np
+import os
+import pickle
+import joblib
+
+def init():
+    global model
+    # AZUREML_MODEL_DIR is an environment variable created during deployment.
+    # It is the path to the model folder (./azureml-models/$MODEL_NAME/$VERSION)
+    # For multiple models, it points to the folder containing all deployed models (./azureml-models)
+    model_path = os.path.join(os.getenv('AZUREML_MODEL_DIR'), 'sklearn_mnist_model.pkl')
+    model = joblib.load(model_path)
+
+def run(raw_data):
+    data = np.array(json.loads(raw_data)['data'])
+    # make prediction
+    y_hat = model.predict(data)
+    # you can return any data type as long as it is JSON-serializable
+    return y_hat.tolist()
+```
+
+### <a name="create-configuration-file"></a>Создание файла конфигурации
+
+Создайте файл конфигурации развертывания и укажите необходимое для контейнера ACI количество ЦП и объем ОЗУ в гигабайтах. Так как он зависит от модели, для многих моделей по умолчанию обычно бывает достаточно одного ядра и одного ГБ оперативной памяти. Если в дальнейшем вам потребуется больше ресурсов, создайте образ еще раз и повторно разверните службу.
 
 
 ```python
+from azureml.core.webservice import AciWebservice
+
+aciconfig = AciWebservice.deploy_configuration(cpu_cores=1, 
+                                               memory_gb=1, 
+                                               tags={"data": "MNIST",  "method" : "sklearn"}, 
+                                               description='Predict MNIST with sklearn')
+```
+
+### <a name="deploy-in-aci"></a>Развертывание в ACI
+Предполагаемое время выполнения: **2–5 минут**
+
+Настройте изображение и разверните его. Следующий код выполняет указанные далее действия.
+
+1. Создайте объект среды, содержащий зависимости, которые необходимы для модели, используя среду (`tutorial-env`), сохраненную во время обучения.
+1. Создайте конфигурацию вывода, которая необходима для развертывания модели в виде веб-службы, используя:
+   * файла оценки (`score.py`);
+   * объект среды, созданный на предыдущем шаге.
+1. Разверните модель в контейнере ACI.
+1. Получение конечной точки HTTP веб-службы.
+
+
+```python
+%%time
+from azureml.core.webservice import Webservice
+from azureml.core.model import InferenceConfig
+from azureml.core.environment import Environment
 from azureml.core import Workspace
 from azureml.core.model import Model
-import os
+
 ws = Workspace.from_config()
 model = Model(ws, 'sklearn_mnist')
 
-model.download(target_dir=os.getcwd(), exist_ok=True)
 
-# verify the downloaded model file
-file_path = os.path.join(os.getcwd(), "sklearn_mnist_model.pkl")
+myenv = Environment.get(workspace=ws, name="tutorial-env", version="1")
+inference_config = InferenceConfig(entry_script="score.py", environment=myenv)
 
-os.stat(file_path)
+service = Model.deploy(workspace=ws, 
+                       name='sklearn-mnist-svc3', 
+                       models=[model], 
+                       inference_config=inference_config, 
+                       deployment_config=aciconfig)
+
+service.wait_for_deployment(show_output=True)
 ```
 
-## <a name="test-the-model-locally"></a>Локальное тестирование модели
+Получите конечную точку HTTP веб-службы оценки, которая принимает вызовы клиента REST. Доступ к этой конечной точке можно предоставить всем, кто хочет протестировать веб-службу или интегрировать ее в приложение.
 
-Перед развертыванием убедитесь, что модель работает локально, выполнив следующие действия:
-* загрузку тестовых данных;
-* прогнозирование тестовых данных;
-* изучение матрицы неточностей.
+
+```python
+print(service.scoring_uri)
+```
+
+## <a name="test-the-model"></a>Тестирование модели
+
+
+### <a name="download-test-data"></a>Скачивание данных тестирования
+Скачайте данные тестирования в каталог **./data/**
+
+
+```python
+import os
+from azureml.core import Dataset
+from azureml.opendatasets import MNIST
+
+data_folder = os.path.join(os.getcwd(), 'data')
+os.makedirs(data_folder, exist_ok=True)
+
+mnist_file_dataset = MNIST.get_file_dataset()
+mnist_file_dataset.download(data_folder, overwrite=True)
+```
 
 ### <a name="load-test-data"></a>Загрузка тестовых данных
 
-Загрузите тестовые данные из каталога **./data/** , созданного в обучающем руководстве:
+Загрузите тестовые данные из каталога **./data/** , созданного в обучающем руководстве.
+
 
 ```python
 from utils import load_data
 import os
+import glob
 
 data_folder = os.path.join(os.getcwd(), 'data')
 # note we also shrink the intensity values (X) from 0-255 to 0-1. This helps the neural network converge faster
-X_test = load_data(os.path.join(data_folder, 'test-images.gz'), False) / 255.0
-y_test = load_data(os.path.join(
-    data_folder, 'test-labels.gz'), True).reshape(-1)
+X_test = load_data(glob.glob(os.path.join(data_folder,"**/t10k-images-idx3-ubyte.gz"), recursive=True)[0], False) / 255.0
+y_test = load_data(glob.glob(os.path.join(data_folder,"**/t10k-labels-idx1-ubyte.gz"), recursive=True)[0], True).reshape(-1)
 ```
 
 ### <a name="predict-test-data"></a>Прогнозирование тестовых данных
 
-Чтобы получить прогнозы, введите тестовый набор данных в модель:
+Введите тестовый набор данных в модель, чтобы получить прогнозы.
+
+
+Следующий код выполняет указанные далее действия.
+1. Отправка данных в виде массива JSON в веб-службу, размещенную в ACI. 
+
+1. Использование API `run` пакета SDK для вызова службы. Вы также можете выполнять необработанные вызовы с помощью любого средства HTTP, например curl.
+
 
 ```python
-import pickle
-from sklearn.externals import joblib
-
-clf = joblib.load(os.path.join(os.getcwd(), 'sklearn_mnist_model.pkl'))
-y_hat = clf.predict(X_test)
+import json
+test = json.dumps({"data": X_test.tolist()})
+test = bytes(test, encoding='utf8')
+y_hat = service.run(input_data=test)
 ```
 
 ###  <a name="examine-the-confusion-matrix"></a>Изучение матрицы неточностей
 
-Создайте матрицу неточностей, чтобы увидеть количество правильно классифицированных выборок из тестового набора. Обратите внимание на неправильно классифицированное значение неверных прогнозов: 
+Создайте матрицу неточностей, чтобы увидеть количество правильно классифицированных выборок из тестового набора. Обратите внимание на неправильно классифицированное значение неверных прогнозов.
+
 
 ```python
 from sklearn.metrics import confusion_matrix
@@ -150,7 +248,7 @@ print('Overall accuracy:', np.average(y_hat == y_test))
     Overall accuracy: 0.9204
    
 
-Используйте `matplotlib` для отображения матрицы неточностей в виде графа. В этом графе ось X показывает фактические значения, а ось Y — прогнозируемые значения. Цвет в каждой сетке показывает частоту ошибок. Чем светлее цвет, тем выше частота ошибок. Например, многие цифры 5 неправильно классифицированы как 3. Поэтому вы видите яркую сетку в расположении (5,3).
+Используйте `matplotlib` для отображения матрицы неточностей в виде графа. В этом графе ось X представляет фактические значения, а ось Y — прогнозируемые значения. Цвет в каждой сетке представляет частоту ошибок. Чем светлее цвет, тем выше частота ошибок. Например, многие цифры 5 неправильно классифицированы как 3. Поэтому вы видите яркую сетку в расположении (5,3).
 
 ```python
 # normalize the diagonal cells so that they don't overpower the rest of the cells when visualized
@@ -175,141 +273,17 @@ plt.show()
 
 ![Диаграмма, где отображается матрица неточностей](./media/tutorial-deploy-models-with-aml/confusion.png)
 
-## <a name="deploy-as-a-web-service"></a>Развертывание в виде веб-службы
 
-Если после тестирования модели вы получили устраивающие вас результаты, разверните модель в виде веб-службы, размещенной в Экземплярах контейнеров. 
+## <a name="show-predictions"></a>Отображение прогнозов
 
-Чтобы создать правильную среду для Экземпляров контейнеров, предоставьте следующие компоненты:
-* сценарий оценки, чтобы показать, как использовать модель;
-* файл среды, чтобы показать, какие пакеты должны быть установлены;
-* файл конфигурации для создания экземпляра контейнера;
-* обученная ранее модель.
+Проверьте развернутую модель, используя случайную выборку из 30 изображений в тестовых данных.  
 
-<a name="make-script"></a>
-
-### <a name="create-scoring-script"></a>Создание сценария оценки
-
-Создайте сценарий оценки, называемый **score.py**. Он нужен в вызове веб-службы, чтобы показать, как использовать модель.
-
-В сценарий оценки необходимо включить две обязательные функции:
-* Функция `init()`, которая обычно загружает модель в глобальный объект. Эта функция выполняется только один раз при запуске контейнера Docker. 
-
-* Функция `run(input_data)` использует модель для прогнозирования значения на основе входных данных. Входные и выходные данные для запуска обычно используют JSON для сериализации и десериализации, но поддерживаются и другие форматы.
-
-```python
-%%writefile score.py
-import json
-import numpy as np
-import os
-import pickle
-from sklearn.externals import joblib
-from sklearn.linear_model import LogisticRegression
-
-from azureml.core.model import Model
-
-def init():
-    global model
-    # retrieve the path to the model file using the model name
-    model_path = os.path.join(os.getenv('AZUREML_MODEL_DIR'), 'sklearn_mnist_model.pkl')
-    model = joblib.load(model_path)
-
-def run(raw_data):
-    data = np.array(json.loads(raw_data)['data'])
-    # make prediction
-    y_hat = model.predict(data)
-    # you can return any data type as long as it is JSON-serializable
-    return y_hat.tolist()
-```
-
-<a name="make-myenv"></a>
-
-### <a name="create-environment-file"></a>Создание файла среды
-
-Создайте файл среды **myenv.yml**, который указывает все зависимости пакетов для этого сценария. Этот файл гарантирует, что все эти зависимости устанавливаются в образ Docker. Для этой модели требуется `scikit-learn` и `azureml-sdk`. Все файлы пользовательской среды должны содержать список azureml-defaults с версией >= 1.0.45 в качестве зависимости pip. Этот пакет содержит функции, необходимые для размещения модели в качестве веб-службы.
-
-```python
-from azureml.core.conda_dependencies import CondaDependencies
-
-myenv = CondaDependencies()
-myenv.add_conda_package("scikit-learn")
-myenv.add_pip_package("azureml-defaults")
-
-with open("myenv.yml", "w") as f:
-    f.write(myenv.serialize_to_string())
-```
-Проверьте содержимое файла `myenv.yml`.
-
-```python
-with open("myenv.yml", "r") as f:
-    print(f.read())
-```
-
-### <a name="create-a-configuration-file"></a>Создание файла конфигурации
-
-Создайте файл конфигурации развертывания. Укажите необходимое для контейнера службы "Экземпляры контейнеров" количество ЦП и объем ОЗУ в гигабайтах. Хотя это зависит от модели, для многих моделей по умолчанию обычно бывает достаточно одного ядра и 1 ГБ ОЗУ. Если в дальнейшем вам потребуется больше ресурсов, создайте образ еще раз и повторно разверните службу.
-
-```python
-from azureml.core.webservice import AciWebservice
-
-aciconfig = AciWebservice.deploy_configuration(cpu_cores=1, 
-                                               memory_gb=1, 
-                                               tags={"data": "MNIST",  
-                                                     "method": "sklearn"},
-                                               description='Predict MNIST with sklearn')
-```
-
-### <a name="deploy-in-container-instances"></a>Развертывание в Экземплярах контейнеров
-Примерное время завершения развертывания — **около 7–8 минут**.
-
-Настройте изображение и разверните его. Следующий код выполняет указанные далее действия.
-
-1. Создание образа с использованием таких файлов:
-   * файл оценки (`score.py`);
-   * файл среды (`myenv.yml`);
-   * файл модели.
-1. Регистрация образа в рабочей области. 
-1. Отправка образа в контейнер службы "Экземпляры контейнеров".
-1. Запуск контейнера в Экземплярах контейнеров с помощью образа.
-1. Получение конечной точки HTTP веб-службы.
-
-Обратите внимание, что при определении собственного файла среды необходимо составить список azureml-defaults с версией >= 1.0.45 в качестве зависимости pip. Этот пакет содержит функции, необходимые для размещения модели в качестве веб-службы.
-
-```python
-%%time
-from azureml.core.webservice import Webservice
-from azureml.core.model import InferenceConfig
-from azureml.core.environment import Environment
-
-myenv = Environment.from_conda_specification(name="myenv", file_path="myenv.yml")
-inference_config = InferenceConfig(entry_script="score.py", environment=myenv)
-
-service = Model.deploy(workspace=ws,
-                       name='sklearn-mnist-svc',
-                       models=[model], 
-                       inference_config=inference_config,
-                       deployment_config=aciconfig)
-
-service.wait_for_deployment(show_output=True)
-```
-
-Получите конечную точку HTTP веб-службы оценки, которая принимает вызовы клиента REST. К этой конечной точке можно предоставить совместный доступ всем, кто хочет протестировать веб-службу или интегрировать ее в приложение. 
-
-```python
-print(service.scoring_uri)
-```
-
-## <a name="test-the-deployed-service"></a>Тестирование развернутой службы
-
-Ранее вы оценили все тестовые данные с помощью локальной версии модели. Теперь можно проверить развернутую модель, используя случайную выборку из 30 изображений в тестовых данных.  
-
-Следующий код выполняет указанные далее действия.
-1. Отправка данных в виде массива JSON в веб-службу, размещенную в Экземплярах контейнеров. 
-
-1. Использование API `run` пакета SDK для вызова службы. Вы также можете выполнять необработанные вызовы с помощью любого средства HTTP, например **curl**.
 
 1. Вывод возвращенных прогнозов и отображение их вместе с входными изображениями. Красный шрифт и обратное изображение (белое на черном фоне) используются для выделения неправильно классифицированных изображений. 
 
-Так как модель характеризуется высокой точностью, перед отображением неправильно классифицированной выборки может потребоваться несколько раз запустить следующий код.
+ Поскольку модель характеризуется высокой точностью, перед отображением неправильно классифицированной выборки может потребоваться несколько раз запустить следующий код.
+
+
 
 ```python
 import json
@@ -326,7 +300,7 @@ result = service.run(input_data=test_samples)
 
 # compare actual value vs. the predicted values:
 i = 0
-plt.figure(figsize=(20, 1))
+plt.figure(figsize = (20, 1))
 
 for s in sample_indices:
     plt.subplot(1, n, i + 1)
@@ -344,11 +318,8 @@ for s in sample_indices:
 plt.show()
 ```
 
-Это результат одной случайной выборки тестовых изображений:
-
-![Рисунок, показывающий результаты](./media/tutorial-deploy-models-with-aml/results.png)
-
 Для проверки веб-службы можно также отправить необработанный HTTP-запрос.
+
 
 ```python
 import requests
