@@ -18,12 +18,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 9f8697332d34fc044c805db6c6595fdf067ed054
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 0abe443521b928dd087e23b5491635b02cd832e8
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80127193"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82592032"
 ---
 # <a name="tutorial-send-location-based-push-notifications-with-notification-hubs-and-bing-spatial-data"></a>Руководство по отправке push-уведомлений с учетом географического расположения с помощью Центров уведомлений и Bing Spatial Data
 
@@ -217,7 +217,7 @@ ms.locfileid: "80127193"
 
 ## <a name="set-up-the-backend"></a>Настройка внутренней службы.
 
-1. Скачайте [пример сервера .NET](https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet/NotifyUsers)с сайта GitHub.
+1. Скачайте [пример сервера .NET](https://github.com/Azure/azure-notificationhubs-dotnet/tree/master/Samples/NotifyUsers)с сайта GitHub.
 2. После завершения загрузки откройте папку `NotifyUsers`, а затем файл `NotifyUsers.sln` в Visual Studio.
 3. Настройте проект `AppBackend` в качестве **запускаемого проекта** и запустите его.
 

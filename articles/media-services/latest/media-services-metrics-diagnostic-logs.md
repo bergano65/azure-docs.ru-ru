@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/08/2019
 ms.author: juliako
-ms.openlocfilehash: 75363212684bb09e84a4bc4881af26e6d2a8e7e3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f051d02ac06163cf1861ab6bfc6afd0dcbb0ad8a
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80585277"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82559530"
 ---
 # <a name="monitor-media-services-metrics-and-diagnostic-logs-via-azure-monitor"></a>Мониторинг метрик и журналов диагностики служб мультимедиа с помощью Azure Monitor
 
@@ -63,7 +63,7 @@ ms.locfileid: "80585277"
 |Имя метрики|Отображаемое имя|Описание|
 |---|---|---|
 |Requests|Requests|Предоставляет общее число HTTP-запросов, обслуживаемых конечной точкой потоковой передачи.|
-|Исходящие|Исходящие|Общее число байтов исходящего трафика. Например, байты, переходящие в потоковую точку потоковой передачи.|
+|Исходящие|Исходящие|Всего байтов исходящего трафика в минуту на конечную точку потоковой передачи.|
 |SuccessE2ELatency|Успешное завершение до окончания задержки|Период времени, в течение которого конечная точка потоковой передачи получает запрос на момент отправки последнего байта ответа.|
 
 ### <a name="why-would-i-want-to-use-metrics"></a>Зачем нужно использовать метрики?
@@ -109,7 +109,7 @@ ms.locfileid: "80585277"
 
 См. раздел [мониторинг журналов диагностики службы мультимедиа](media-services-diagnostic-logs-howto.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Как получить и использовать данные журнала из ресурсов Azure](../../azure-monitor/platform/platform-logs-overview.md)
 * [Создание, Просмотр оповещений метрик и управление ими с помощью Azure Monitor](../../azure-monitor/platform/alerts-metric.md)

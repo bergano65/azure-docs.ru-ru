@@ -8,10 +8,10 @@ ms.topic: sample
 ms.date: 11/16/2019
 ms.author: victorh
 ms.openlocfilehash: d45fd7bf88e6988b83a621eda2689c10356441a4
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74129749"
 ---
 # <a name="azure-powershell-examples-for-azure-application-gateway"></a>Примеры Azure PowerShell для Шлюза приложений Azure

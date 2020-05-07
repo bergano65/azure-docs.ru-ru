@@ -1,20 +1,17 @@
 ---
-title: Применение скидки на резервирование к Базе данных Azure для MySQL
-description: Применение скидки на резервирование к Базе данных Azure для MySQL
+title: Сведения о скидке на резервирование (База данных Azure для MySQL)
+description: Узнайте, как применяется скидка на резервирование к серверам Базы данных Azure для MySQL.
 author: kummanish
 ms.author: manishku
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 02/13/2020
-ms.openlocfilehash: ed067e4bbde737cb08afe7c9429854e54e2ef3d9
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: e47153b24234480ee52847f07e723c02fabb3113
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77199319"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509437"
 ---
 # <a name="how-a-reservation-discount-is-applied-to-azure-database-for-mysql"></a>Применение скидки на резервирование к Базе данных Azure для MySQL
 
@@ -44,5 +41,6 @@ ms.locfileid: "77199319"
 
 Чтобы больше узнать о применении резервирований Azure и просмотреть отчеты о начислении платы за использование, ознакомьтесь со статьей [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](https://docs.microsoft.com/azure/billing/billing-understand-reserved-instance-usage-ea).
 
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
+## <a name="next-steps"></a>Дальнейшие действия
+
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

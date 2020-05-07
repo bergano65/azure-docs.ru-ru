@@ -7,12 +7,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 06/26/2019
 ms.custom: mvc
-ms.openlocfilehash: ef46b86186d1f5e26360de891b3a090ab0ece66b
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 9aa19dfa0626ff0726911815addbb03945ee36f1
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78894814"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82144846"
 ---
 # <a name="start-monitoring-your-aspnet-core-web-application"></a>Запуск мониторинга веб-приложения ASP.NET Core
 
@@ -99,11 +99,6 @@ ms.locfileid: "78894814"
 5. Слева щелкните **Метрики**. Используйте обозреватель метрик для анализа работоспособности и использования ресурса. Щелкните **Add new chart** (Добавить новую диаграмму), чтобы создать дополнительные пользовательские представления, или **Изменение**, чтобы изменить имеющиеся типы диаграмм, высоту, цветовую палитру, группирования и метрики. Например, можно сделать диаграмму, на которой будет показано среднее время загрузки страницы браузера. Для этого в раскрывающемся списке метрик выберите "Время загрузки страницы браузера" и "Среднее" в столбце агрегирования. Дополнительные сведения об обозревателе метрик Azure см. в статье [Getting started with Azure Metrics Explorer](../../azure-monitor/platform/metrics-getting-started.md) (Начало работы с обозревателем метрик Azure).
 
      ![Вкладка "Метрики": диаграмма, на которой показано среднее время загрузки страницы в браузере](./media/dotnetcore-quick-start/8metrics.png)
-
-## <a name="video"></a>Видеоролик
-
-- Пошаговые видеоинструкции по [настройке Application Insights с помощью .NET Core и Visual Studio](https://www.youtube.com/watch?v=NoS9UhcR4gA&t).
-- Пошаговые видеоинструкции по [настройке Application Insights с помощью .NET Core и Visual Studio Code](https://youtu.be/ygGt84GDync) с нуля.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Закончив работу, можно удалить группу ресурсов и все связанные с ней ресурсы. Для этого выполните описанные ниже действия.

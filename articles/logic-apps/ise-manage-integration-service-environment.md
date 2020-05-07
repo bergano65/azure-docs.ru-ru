@@ -3,15 +3,15 @@ title: Управление средами службы интеграции в 
 description: Проверьте работоспособность сети и управляйте приложениями логики, подключениями, пользовательскими соединителями и учетными записями интеграции в среде службы интеграции (ISE) для Azure Logic Apps
 services: logic-apps
 ms.suite: integration
-ms.reviewer: klam, logicappspm
+ms.reviewer: estfan, jonfan, logicappspm
 ms.topic: conceptual
-ms.date: 03/11/2020
-ms.openlocfilehash: f48106be67763c093a183be01098cab74391752e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 04/29/2020
+ms.openlocfilehash: 41e511bce3599dd341ccf8192612e3f08111245a
+ms.sourcegitcommit: acc558d79d665c8d6a5f9e1689211da623ded90a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79284204"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82598425"
 ---
 # <a name="manage-your-integration-service-environment-ise-in-azure-logic-apps"></a>Управление средой службы интеграции (ISE) в Azure Logic Apps
 
@@ -54,6 +54,10 @@ ms.locfileid: "79284204"
    ![Просмотр приложений логики](./media/ise-manage-integration-service-environment/ise-find-logic-apps.png)
 
 1. Чтобы удалить приложения логики, которые больше не нужны в интегрированной среде сценариев, выберите эти приложения логики, а затем нажмите кнопку **Удалить**. Чтобы подтвердить удаление, выберите **Да**.
+
+> [!NOTE]
+> При удалении и повторном создании дочернего приложения логики необходимо повторно сохранить родительское приложение логики. Повторно созданное дочернее приложение будет иметь разные метаданные.
+> Если вы не пересохраняете родительское приложение логики после повторного создания своего дочернего приложения, вызов дочернего приложения логики завершится ошибкой "несанкционированный". Это поведение относится к приложениям логики родительского и дочернего приложения, например к тем, которые используют артефакты в учетных записях интеграции или вызывают функции Azure.
 
 <a name="find-api-connections"></a>
 
@@ -178,6 +182,6 @@ ms.locfileid: "79284204"
 
 После удаления интегрированной среды сценариев может потребоваться подождать до 9 часов, прежде чем вы попытаетесь удалить виртуальную сеть или подсети Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Добавление ресурсов в среды службы интеграции](../logic-apps/add-artifacts-integration-service-environment-ise.md)
