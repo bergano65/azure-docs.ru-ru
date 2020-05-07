@@ -15,12 +15,12 @@ ms.date: 04/08/2019
 ms.author: mimart
 ms.custom: seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60bfc964ffc394b3f79c9d279158003f383b7331
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 340cf77ae6b4c5677ed91f6a0626b73d259e5fd2
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78943446"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82690502"
 ---
 # <a name="configure-azure-active-directory-sign-in-behavior-for-an-application-by-using-a-home-realm-discovery-policy"></a>Настройка поведения при входе в Azure Active Directory для приложения с помощью политики обнаружения домашней области
 
@@ -150,7 +150,7 @@ ms.locfileid: "78943446"
 - получение списка приложений, для которых настроена политика.
 
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 В примерах ниже создаются, обновляются, связываются и удаляются политики для субъектов-служб приложения в Azure AD.
 
 1.  Чтобы начать, скачайте последнюю предварительную версию командлетов PowerShell для Azure AD. 
@@ -168,7 +168,7 @@ ms.locfileid: "78943446"
 
 Если результат не возвращается, в клиенте нет созданных политик.
 
-### <a name="example-set-hrd-policy-for-an-application"></a>Пример: настройка политики обнаружения домашней области для приложения 
+### <a name="example-set-an-hrd-policy-for-an-application"></a>Пример. Задание политики обнаружения домашней области для приложения 
 
 В этом примере показано, как создать политику, которая при назначении ее приложению выполняет одно из указанных ниже действий. 
 - Выполняет автоматическое ускорение входа пользователей и переводит их на экран входа AD FS (когда они выполняют вход в систему в приложении), если в клиенте имеется один домен. 
@@ -251,7 +251,7 @@ Get-AzureADPolicy
 Get-AzureADPolicyAppliedObject -id <ObjectId of the Policy>
 ```
 
-### <a name="example-remove-an-hrd-policy-for-an-application"></a>Пример: удаление политики обнаружения домашней области для приложения
+### <a name="example-remove-an-hrd-policy-from-an-application"></a>Пример. Удаление политики обнаружения домашней области из приложения
 #### <a name="step-1-get-the-objectid"></a>Шаг 1. Получение идентификатора ObjectID
 Используйте предыдущий пример, чтобы получить идентификатор **ObjectID** политики, а также идентификатор ObjectID субъекта-службы приложения, из которого нужно удалить эту политику. 
 

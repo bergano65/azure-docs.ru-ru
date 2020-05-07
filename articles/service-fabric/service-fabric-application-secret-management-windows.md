@@ -1,16 +1,14 @@
 ---
 title: Настройка сертификата шифрования в кластерах Windows
 description: Узнайте, как настроить сертификат шифрования и шифровать секреты в кластерах Windows.
-author: vturecek
 ms.topic: conceptual
 ms.date: 01/04/2019
-ms.author: vturecek
-ms.openlocfilehash: d563b338169ab26649b42c73f5fb7ed2fe8c0312
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: eb4909d62a2627c368f24dab572b25c6f1df30ec
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81460194"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583287"
 ---
 # <a name="set-up-an-encryption-certificate-and-encrypt-secrets-on-windows-clusters"></a>Настройка сертификата шифрования и шифрование секретов в кластерах Windows
 В этой статье описывается, как настроить сертификат шифрования и использовать его для шифрования секретов в кластерах Windows. Инструкции для кластеров Linux приведены в разделе [Настройка сертификата шифрования и шифрование секретов в кластерах Linux][secret-management-linux-specific-link].
@@ -42,7 +40,7 @@ Invoke-ServiceFabricEncryptText -CertStore -CertThumbprint "<thumbprint>" -Text 
 
 Результирующая строка в кодировке Base-64 содержит как зашифрованные данные секрета, так и сведения о сертификате, с помощью которого выполнено шифрование секрета.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как [указать зашифрованные секреты в приложении][secret-management-specify-encrypted-secrets-link].
 
 <!-- Links -->

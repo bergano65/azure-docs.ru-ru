@@ -2,7 +2,7 @@
 title: Потоковая платформа Microsoft Identity и OAuth 2.0 от имени пользователя | Службы
 description: В этой статье описывается, как использовать HTTP-сообщения для проверки подлинности между службами с помощью потока On-Behalf-Of в OAuth 2.0.
 services: active-directory
-author: rwike77
+author: hpsin
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
@@ -12,12 +12,12 @@ ms.date: 1/3/2020
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: f33350dd076d0386c7518c91b77da59c3b09d0dc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 57497c7bd8cd1d0b46c40b6977079f4a6a2d876f
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82181517"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82689547"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-on-behalf-of-flow"></a>Платформа Microsoft Identity и OAuth 2,0 от имени потока
 
@@ -62,7 +62,7 @@ https://login.microsoftonline.com/<tenant>/oauth2/v2.0/token
 
 | Параметр |  | Описание |
 | --- | --- | --- |
-| `grant_type` | Обязательный | Тип запроса маркера. Для запроса с использованием JWT нужно указать значение `urn:ietf:params:oauth:grant-type:jwt-bearer`. |
+| `grant_type` | Обязательно | Тип запроса маркера. Для запроса с использованием JWT нужно указать значение `urn:ietf:params:oauth:grant-type:jwt-bearer`. |
 | `client_id` | Обязательный | Идентификатор приложения (клиента), назначенный приложению [портал Azure регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) странице. |
 | `client_secret` | Обязательный | Секрет клиента, созданный для приложения на странице портал Azure-Регистрация приложений. |
 | `assertion` | Обязательный | Значение маркера, которое используется в запросе.  Этот маркер должен иметь аудиторию приложения, делающего этот запрос OBO (приложение, определяемое `client-id` полем). |
@@ -94,7 +94,7 @@ grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
 
 | Параметр |  | Описание |
 | --- | --- | --- |
-| `grant_type` | Обязательный | Тип запроса токена. Для запроса с использованием JWT нужно указать значение `urn:ietf:params:oauth:grant-type:jwt-bearer`. |
+| `grant_type` | Обязательно | Тип запроса токена. Для запроса с использованием JWT нужно указать значение `urn:ietf:params:oauth:grant-type:jwt-bearer`. |
 | `client_id` | Обязательный |  Идентификатор приложения (клиента), назначенный приложению [портал Azure регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) странице. |
 | `client_assertion_type` | Обязательный | Значение должно быть равно `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`. |
 | `client_assertion` | Обязательный | Утверждение (JSON Web Token), которое необходимо создать и подписать с помощью сертификата, зарегистрированного вами в качестве учетных данных для приложения. Ознакомьтесь с информацией об [учетных данных сертификата](active-directory-certificate-credentials.md), чтобы узнать, как зарегистрировать сертификат и задать формат утверждения. |

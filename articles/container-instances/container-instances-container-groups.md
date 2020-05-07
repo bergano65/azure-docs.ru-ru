@@ -4,12 +4,12 @@ description: Сведения о группах контейнеров в слу
 ms.topic: article
 ms.date: 11/01/2019
 ms.custom: mvc
-ms.openlocfilehash: 3efc4528863286da676fc7eb758176156c87a32a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: b5f4f834d44294d846495a59af2fb65b231e4820
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82115658"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583831"
 ---
 # <a name="container-groups-in-azure-container-instances"></a>Группы контейнеров в службе "Экземпляры контейнеров Azure"
 
@@ -69,7 +69,7 @@ ms.locfileid: "82115658"
 
 ## <a name="networking"></a>Сеть
 
-Группы контейнеров могут совместно использовать внешний IP-адрес, один или несколько портов на этом IP-адресе, а также метку DNS с полным доменным именем (FQDN). Чтобы внешние клиенты могли получить доступ к контейнеру в группе, необходимо предоставить порт по IP-адресу и из контейнера. Поскольку контейнеры в группе совместно используют пространство имен портов, сопоставление портов не поддерживается. IP-адрес группы контейнеров и полное доменное имя будут освобождены при удалении группы контейнеров. 
+Группы контейнеров могут совместно использовать внешний IP-адрес, один или несколько портов на этом IP-адресе, а также метку DNS с полным доменным именем (FQDN). Чтобы внешние клиенты могли получить доступ к контейнеру в группе, необходимо предоставить порт по IP-адресу и из контейнера. IP-адрес и полное доменное имя группы контейнеров освобождаются при удалении группы контейнеров. 
 
 В пределах группы контейнеров экземпляры контейнеров могут взаимодействовать друг с другом через localhost на любом порте, даже если эти порты не предоставляются извне на IP-адрес или из контейнера группы.
 
@@ -79,7 +79,7 @@ ms.locfileid: "82115658"
 
 Вы можете указать внешние тома для подключения в пределах группы контейнеров. К поддерживаемым томам относятся:
 * [Файловый ресурс Azure][azure-files]
-* [Владел][secret]
+* [Секрет][secret]
 * [Пустой каталог][empty-directory]
 * [Клонированный репозиторий Git][volume-gitrepo]
 
@@ -96,7 +96,7 @@ ms.locfileid: "82115658"
 * Контейнер приложения и мониторинга. Контейнер мониторинга периодически выполняет запрос к приложению, чтобы убедиться, что оно правильно работает и отвечает, и выдает предупреждение, если это не так.
 * Интерфейсный контейнер и серверный контейнер. Внешний интерфейс может обслуживать веб-приложение с серверной частью службы для получения данных. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как развертывать группу контейнеров с несколькими контейнерами с использованием шаблона Azure Resource Manager:
 
@@ -118,7 +118,7 @@ ms.locfileid: "82115658"
 [resource-limits]: /rest/api/container-instances/containergroups/createorupdate#resourcelimits
 [resource-requirements]: /rest/api/container-instances/containergroups/createorupdate#resourcerequirements
 [azure-files]: container-instances-volume-azure-files.md
-[virtual-network]: container-instances-vnet.md
+[virtual-network]: container-instances-virtual-network-concepts.md
 [secret]: container-instances-volume-secret.md
 [volume-gitrepo]: container-instances-volume-gitrepo.md
 [gpus]: container-instances-gpu.md

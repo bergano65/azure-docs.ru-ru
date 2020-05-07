@@ -10,12 +10,12 @@ ms.workload: azure-vs
 ms.topic: how-to
 ms.date: 11/03/2017
 ms.author: ghogen
-ms.openlocfilehash: abf0570ee9f01a2378e8c0370cfc3ba5fecc7406
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: d864230ff524f6c008f9f05c16505cd9d0e9f229
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82098239"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583352"
 ---
 # <a name="publish-an-aspnet-web-app-to-an-azure-vm-from-visual-studio"></a>Публикация веб-приложения ASP.NET на виртуальную машину Azure из Visual Studio
 
@@ -24,7 +24,7 @@ ms.locfileid: "82098239"
 ## <a name="prerequisites"></a>Предварительные условия
 Чтобы использовать Visual Studio для публикации проекта ASP.NET на виртуальную машину Azure, ее необходимо правильно настроить.
 
-- Настройте виртуальную машину для запуска веб-приложения ASP.NET, а также разверните WebDeploy.
+- Компьютер должен быть настроен для запуска веб-приложения ASP.NET и установки WebDeploy. Дополнительные сведения см. в статье [Создание виртуальной машины ASP.NET с помощью WebDeploy](https://github.com/aspnet/Tooling/blob/AspNetVMs/docs/create-asp-net-vm-with-webdeploy.md).
 
 - Настройте на виртуальной машине DNS-имя. Дополнительные сведения см. в статье [Создание полного доменного имени на портале Azure для виртуальной машины Windows](portal-create-fqdn.md).
 
@@ -107,7 +107,7 @@ ms.locfileid: "82098239"
 
 ![Параметры публикации — страница параметров]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 ### <a name="set-up-cicd-for-automated-deployment-to-azure-vm"></a>Настройка непрерывной интеграции и непрерывного развертывания для автоматизированного развертывания на виртуальную машину Azure
 
