@@ -7,12 +7,12 @@ ms.reviewer: klam, deli, logicappspm
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 10/25/2019
-ms.openlocfilehash: 819a60887743f39d3c2ffab3c955b2980cee2725
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 3dccb596be2d97dd0f38d680537913a76ce09e93
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "74784839"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82147063"
 ---
 # <a name="quickstart-create-and-manage-logic-app-workflow-definitions-by-using-visual-studio-code"></a>Краткое руководство. Создание определений рабочих процессов приложения логики и управление ими с помощью Visual Studio Code
 
@@ -131,6 +131,10 @@ ms.locfileid: "74784839"
 
    > [!IMPORTANT]
    > Если вы хотите повторно использовать этот пример определения приложения логики, вам потребуется учетная запись организации Office 365, например @fabrikam.com. Обязательно замените вымышленный адрес электронной почты своим. Чтобы использовать другой соединитель электронной почты, например Outlook.com или Gmail, замените действие `Send_an_email_action` аналогичным действием, доступным в [соединителе электронной почты, поддерживаемом Azure Logic Apps](../connectors/apis-list.md).
+   >
+   > Только учетные записи для бизнеса G-Suite могут использовать соединитель Gmail без ограничений в приложениях логики. 
+   > Если у вас есть учетная запись потребителя Gmail, вы можете использовать этот соединитель только с определенными утвержденными Google службами. Кроме того, вы можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности в соединителе Gmail](https://docs.microsoft.com/connectors/gmail/#authentication-and-bring-your-own-application). 
+   > Дополнительные сведения см. в статье [Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
 
    ```json
    {

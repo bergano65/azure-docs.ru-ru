@@ -1,23 +1,32 @@
 ---
 title: Нагрузка управляемого диска
-description: Сведения о ускорении работы дисков и о том, как она работает с Azure Premium SSD.
-author: roygara
-ms.author: rogarana
-ms.date: 03/28/2019
+description: Сведения о ускорении дисковых операций для дисков Azure и ускорения дисков для виртуальных машин Azure
+author: albecker1
+ms.author: albecker
+ms.date: 04/27/2020
 ms.topic: conceptual
 ms.service: virtual-machines
 ms.subservice: disks
-ms.openlocfilehash: 4cac3c3e5346fa9c8ab68a4238d64419060a0967
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 25aa9fc166e831acd2ed0389bbbe4d2dc7e04b19
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80385203"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82594752"
 ---
-# <a name="premium-ssd-bursting"></a>SSD (цен. категория "Премиум")ный пакет
-
+# <a name="disk-bursting"></a>Всплеск активности диска
 [!INCLUDE [managed-disks-bursting](../../../includes/managed-disks-bursting.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="virtual-machine-level-bursting"></a>Пакетная передача на уровне виртуальной машины
+Поддержка ускорения на уровне виртуальной машины включена во всех регионах общедоступного облака с поддерживаемыми размерами: 
+- [Серия Lsv2](../lsv2-series.md)
 
-[Подключение диска данных к виртуальной машине Linux с помощью портала](attach-disk-portal.md)
+Для виртуальных машин, поддерживающих эту возможность, по умолчанию включено выполнение пакетов.
+
+## <a name="disk-level-bursting"></a>Разбивка на уровни диска
+Пакетная поддержка также доступна в наших [твердотельных накопителях](disks-types.md#premium-ssd) уровня "Премиум" для размера диска P20 и меньше во всех регионах. По умолчанию для новых развертываний размеров дисков, поддерживающих эту возможность, включена Ускоренная работа диска. Существующие размеры дисков, если они поддерживают ускорение работы с дисками, могут включать в себя один из следующих методов: 
+- **Перезапустите виртуальную машину.** 
+- **Отсоединение и повторное подключение диска**
+
+
+[!INCLUDE [managed-disks-bursting](../../../includes/managed-disks-bursting-2.md)]

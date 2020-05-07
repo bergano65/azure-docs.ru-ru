@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript
-ms.openlocfilehash: 1d22f66ad5f7adf5bb8196c3e72a2a343f4558b0
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: aad830ba7c7198077fe6073d6351c72ac9a8e662
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81536103"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82144389"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa"></a>Краткое руководство. Вход пользователей и получение маркера доступа в SPA JavaScript
 
@@ -25,7 +25,7 @@ ms.locfileid: "81536103"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* Подписка Azure. [Создать подписку Azure бесплатно](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 * [Node.js](https://nodejs.org/en/download/)
 * [Visual Studio Code](https://code.visualstudio.com/download) (для внесения правок в файлы проекта).
 
@@ -165,7 +165,7 @@ ms.locfileid: "81536103"
 
 ### <a name="how-the-sample-works"></a>Как работает этот пример
 
-![Как работает пример приложения, созданный в этом кратком руководстве](media/quickstart-v2-javascript/javascriptspa-intro.svg)
+![Принцип работы примера JavaScript SPA: 1. SPA инициирует вход. 2. SPA получает токен идентификатора от платформы удостоверений Майкрософт. 3. SPA вызывает получение токена. 4. Платформа удостоверений Майкрософт возвращает токен доступа в SPA. 5. SPA принимает и HTTP-запрос GET с токеном доступа к Microsoft API Graph. 6. API Graph возвращает ответ HTTP в SPA.](media/quickstart-v2-javascript/javascriptspa-intro.svg)
 
 ### <a name="msaljs"></a>msal.js
 

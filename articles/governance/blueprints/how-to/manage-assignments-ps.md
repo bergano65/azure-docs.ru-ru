@@ -1,14 +1,14 @@
 ---
 title: Управление назначениями с помощью PowerShell
 description: Узнайте, как управлять назначениями схем с помощью официального модуля PowerShell для чертежей Azure, AZ. чертеж.
-ms.date: 09/30/2019
+ms.date: 05/06/2020
 ms.topic: how-to
-ms.openlocfilehash: 0868e5e207202511c1981a930870bfdc68a77a8f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fa0f89df79c4ae1c5b66998089f04575bd53ea37
+ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80677429"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82863983"
 ---
 # <a name="how-to-manage-assignments-with-powershell"></a>Управление назначениями с помощью PowerShell
 
@@ -205,8 +205,7 @@ ResourceGroups    : ResourceGroup
 
 ### <a name="example-2-use-a-json-assignment-definition-file"></a>Пример 2. Использование файла определения назначения JSON
 
-В следующем примере создается почти такое же назначение, как и в [примере 1](#example-1-provide-parameters).
-Вместо передачи параметров в командлет, в примере показано использование файла определения назначения JSON и параметра **ассигнментфиле** . Кроме того, свойство **ексклудедпринЦипалс** настраивается как часть **блокировок**. Отсутствует параметр PowerShell для **ексклудедпринЦипалс** , и свойство можно настроить только с помощью файла определения назначения JSON.
+В следующем примере создается почти такое же назначение, как и в [примере 1](#example-1-provide-parameters). Вместо передачи параметров в командлет, в примере показано использование файла определения назначения JSON и параметра **ассигнментфиле** . Кроме того, свойство **ексклудедпринЦипалс** настраивается как часть **блокировок**. Отсутствует параметр PowerShell для **ексклудедпринЦипалс** , и свойство можно настроить только с помощью файла определения назначения JSON.
 
 ```json
 {
@@ -335,7 +334,7 @@ $blueprintAssignment = Get-AzBlueprintAssignment -Name 'Assignment-lock-resource
 Remove-AzBlueprintAssignment -InputObject $blueprintAssignment -SubscriptionId '{subId}'
 ```
 
-## <a name="end-to-end-code-example"></a>Пример сквозного кода
+## <a name="code-example"></a>Пример кода
 
 Выполнив все шаги вместе, в следующем примере получается определение схемы, затем создается, обновляется и удаляется назначение схемы в конкретной подписке, представленной `{subId}`в виде:
 

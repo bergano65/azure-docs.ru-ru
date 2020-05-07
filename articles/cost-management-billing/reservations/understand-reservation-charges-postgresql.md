@@ -1,20 +1,17 @@
 ---
-title: Как скидка на резервирование применяется к отдельному серверу Базы данных Azure для PostgreSQL
-description: Как скидка на резервирование применяется к отдельному серверу Базы данных Azure для PostgreSQL
+title: Сведения о скидке на резервирование для отдельного сервера Баз данных Azure для PostgreSQL
+description: Узнайте, как применяется скидка на резервирование к отдельным серверам Баз данных Azure для PostgreSQL.
 author: kummanish
 ms.author: manishku
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 02/13/2020
-ms.openlocfilehash: e0dc7780ee570ce2d731bedf9ef56be606088a1f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: e01b35bc540045bc272484159380f8a11e5a6c48
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77199302"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509403"
 ---
 # <a name="how-a-reservation-discount-is-applied-to-azure-database-for-postgresql-single-server"></a>Как скидка на резервирование применяется к отдельному серверу Базы данных Azure для PostgreSQL
 
@@ -44,5 +41,6 @@ ms.locfileid: "77199302"
 
 Чтобы больше узнать о применении резервирований Azure и просмотреть отчеты о начислении платы за использование, ознакомьтесь со статьей [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](https://docs.microsoft.com/azure/billing/billing-understand-reserved-instance-usage-ea).
 
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
+## <a name="next-steps"></a>Дальнейшие действия
+
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

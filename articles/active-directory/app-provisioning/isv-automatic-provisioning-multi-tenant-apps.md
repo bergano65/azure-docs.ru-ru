@@ -2,25 +2,21 @@
 title: Включение автоматической подготовки пользователей для приложений с несколькими клиентами в Azure AD
 description: Рекомендации для независимых поставщиков программного обеспечения для включения автоматической подготовки
 services: active-directory
-documentationcenter: azure
 author: BarbaraSelden
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-provisioning
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/23/2019
 ms.author: baselden
 ms.reviewer: zhchia
-ms.collection: active-directory
-ms.openlocfilehash: 93e1d879f69a95fe7472ce530e0e9f38f3480f39
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3713b7a191c5c7c90e0e76bde25d1b1b3bf3700b
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77522399"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82593596"
 ---
 # <a name="enable-automatic-user-provisioning-for-your-multi-tenant-application"></a>Включение автоматической подготовки пользователей для приложения с несколькими клиентами
 
@@ -113,7 +109,7 @@ Azure AD предоставляет несколько путей интегра
 
 SAML JIT использует сведения о заявках в токене SAML для создания и обновления сведений о пользователях в приложении. Клиенты могут настроить эти обязательные утверждения в приложении Azure AD по мере необходимости. Иногда необходимо включить JIT-подготовку на стороне приложения, чтобы клиент мог использовать эту функцию. SAML JIT удобен для создания и обновления пользователей, но не может удалять или деактивировать пользователей в приложении.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 
 * [Включение единого входа для приложения](../manage-apps/isv-sso-content.md)
 

@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/31/2020
+ms.date: 04/21/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01f969c3bc6f546025b3bbe5826181efdfa69be0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b827c2e949502ad8bd19378a84ea89947929459d
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76983666"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509369"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-docusign"></a>Руководство по интеграции единого входа Azure Active Directory с DocuSign
 
@@ -45,7 +45,7 @@ ms.locfileid: "76983666"
 
 * DocuSign поддерживает единый вход, инициированный поставщиком услуг.
 
-* DocuSign поддерживает *JIT*-подготовку пользователей.
+* DocuSign поддерживает **JIT**-подготовку пользователей.
 
 * DocuSign поддерживает [автоматическую подготовку пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/docusign-provisioning-tutorial).
 * После настройки DocuSign можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
@@ -87,12 +87,20 @@ ms.locfileid: "76983666"
 
 1. В разделе **Базовая конфигурация SAML** выполните следующие действия:
 
-    а. В поле **URL-адрес для входа** введите URL-адрес в формате `https://<subdomain>.docusign.com/organizations/<OrganizationID>/saml2/login/sp/<IDPID>`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в формате `https://<subdomain>.docusign.com/organizations/<OrganizationID>/saml2`.
+    `https://<subdomain>.docusign.com/organizations/<OrganizationID>/saml2/login/sp/<IDPID>`
+
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
+
+    `https://<subdomain>.docusign.com/organizations/<OrganizationID>/saml2`
+
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    
+    `https://<subdomain>.docusign.com/organizations/<OrganizationID>/saml2/login`
 
     > [!NOTE]
-    > Эти значения в квадратных скобках — заполнители. Замените их значениями в фактическом URL-адресе входа и идентификаторе. Эти сведения описаны в подразделе "Просмотр конечных точек SAML 2.0" далее в этом руководстве.
+    > Эти значения в квадратных скобках — заполнители. Замените их значениями в фактическом URL-адресе входа, идентификаторе и URL-адресе ответа. Эти сведения описаны в подразделе "Просмотр конечных точек SAML 2.0" далее в этом руководстве.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** выберите **Сертификат (Base64)** . Щелкните **Скачать**, чтобы получить сертификат и сохранить его на локальном компьютере.
 
@@ -206,20 +214,23 @@ ms.locfileid: "76983666"
        ![Поставщики удостоверений/Конечные точки][59]
 
     l. В разделе **View SAML 2.0 Endpoints** (Просмотр конечных точек SAML 2.0) на портале администрирования DocuSign выполните следующие действия.
-       1. Скопируйте значение **Service Provider Issuer URL** (URL-адрес издателя поставщика службы), а затем вставьте его в поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
-
-       1. Скопируйте значение **Service Provider Login URL** (URL-адрес для входа поставщика службы), а затем вставьте его в поле **URL-адрес для входа** в разделе **Базовая конфигурация SAML** на портале Azure.
-
-       1. Выберите **Закрыть**.
 
        ![Просмотр конечных точек SAML 2.0][60]
+       
+       1. Скопируйте значение **Service Provider Issuer URL** (URL-адрес издателя поставщика службы), а затем вставьте его в поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
+       
+       1. Скопируйте значение **Service Provider Assertion Consumer Service URL** (URL-адрес службы обработчика утверждений поставщика службы), а затем вставьте его в поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
+       
+       1. Скопируйте значение **Service Provider Login URL** (URL-адрес для входа поставщика службы), а затем вставьте его в поле **URL-адрес для входа** в разделе **Базовая конфигурация SAML** на портале Azure. В конце значения **Service Provider Login URL** (URL-адрес для входа поставщика службы) вы получите значение IDPID.
+
+       1. Выберите **Закрыть**.
 
 ### <a name="create-docusign-test-user"></a>Создание тестового пользователя DocuSign
 
 В этом разделе описано, как в приложении DocuSign создать пользователя с именем "B.Simon". Приложение DocuSign поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в DocuSign, он создается после проверки подлинности.
 
->[!Note]
->Чтобы создать пользователя вручную, обратитесь в [службу поддержки DocuSign](https://support.docusign.com/).
+> [!Note]
+> Чтобы создать пользователя вручную, обратитесь в [службу поддержки DocuSign](https://support.docusign.com/).
 
 ## <a name="test-sso"></a>Проверка единого входа 
 

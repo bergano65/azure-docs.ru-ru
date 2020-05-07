@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/04/2020
 ms.topic: how-to
-ms.openlocfilehash: 38116efc9e87eca8e2514a0a84045a69b8d42326
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0a0feb6b638cb6e3a74fcd30baea5e8a04375699
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80887050"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82857791"
 ---
 # <a name="use-the-model-conversion-rest-api"></a>Использование REST API преобразования модели
 
@@ -51,7 +51,7 @@ ms.locfileid: "80887050"
 
 Возвращает идентификатор текущего преобразования, заключенного в документ JSON. Имя поля — "Конверсионид".
 
-#### <a name="request-body"></a>Тело запроса
+#### <a name="request-body"></a>Текст запроса
 
 
 ```json
@@ -81,7 +81,7 @@ ms.locfileid: "80887050"
 
 Возвращает идентификатор текущего преобразования, заключенного в документ JSON. Имя поля — "Конверсионид".
 
-#### <a name="request-body"></a>Тело запроса
+#### <a name="request-body"></a>Текст запроса
 
 Текст запроса такой же, как и в вызове Create RESTFUL выше, но входные и выходные данные содержат маркеры подписанного URL *-адрес (SAS)*. Эти токены предоставляют доступ к учетной записи хранения для чтения входных данных и записи результата преобразования.
 
@@ -120,6 +120,7 @@ ms.locfileid: "80887050"
 
 Возвращает документ JSON со значением поля "Status", которое может иметь следующие значения:
 
+- Создан
 - Установлен
 - Success
 - Состояние
