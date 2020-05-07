@@ -7,12 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 09/12/2019
-ms.openlocfilehash: 17802228c8f08e3c8f1533296e2d39080f6f8b7a
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5d4990fd806aed75d9b5e5ddd3e9a615631d9d65
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75456628"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82146522"
 ---
 # <a name="tutorial-create-automated-schedule-based-recurring-workflows-by-using-azure-logic-apps"></a>Руководство по cозданию автоматических, выполняемых по расписанию, повторяющихся рабочих процессов с помощью Azure Logic Apps
 
@@ -37,6 +37,9 @@ ms.locfileid: "75456628"
 * Подписка Azure. Если у вас еще нет подписки, [подпишитесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 * Учетная запись электронной почты поставщика услуг электронной почты, поддерживаемого Logic Apps, например Office 365 Outlook, Outlook.com или Gmail. Сведения о дополнительных поставщиках см. в [списке соединителей](https://docs.microsoft.com/connectors/). В этом кратком руководстве используется учетная запись Office 365 Outlook. Если используется другая учетная запись электронной почты, общие шаги остаются неизменными, однако пользовательский интерфейс может несколько отличаться.
+
+  > [!IMPORTANT]
+  > Только учетные записи для бизнеса G-Suite могут использовать соединитель Gmail без ограничений в приложениях логики. Если у вас есть учетная запись потребителя Gmail, вы можете использовать этот соединитель только с определенными утвержденными Google службами. Кроме того, вы можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности в соединителе Gmail](https://docs.microsoft.com/connectors/gmail/#authentication-and-bring-your-own-application). Дополнительные сведения см. в статье [Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
 
 * Чтобы получить время в пути для маршрута, требуется ключ доступа для API Карт Bing. Чтобы получить этот ключ, выполните шаги [для получения ключа Карт Bing](https://docs.microsoft.com/bingmaps/getting-started/bing-maps-dev-center-help/getting-a-bing-maps-key).
 

@@ -4,17 +4,17 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 04/11/2019
 ms.author: cynthn
-ms.openlocfilehash: 7c1ad2581d025a9259c5cb2a84e4237f938fc892
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.openlocfilehash: a2083de1ddf400b368815877725d3b8dd446156b
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81637151"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82844560"
 ---
 Средства автоматизации, как правило, позволяют быстро и согласованно создавать виртуальные машины Azure в нужном масштабе, а также управлять ими. Существует множество средств и решений, которые помогают полностью автоматизировать жизненный цикл развертывания и администрирования инфраструктуры Azure. В этой статье приведены сведения о некоторых средствах автоматизации инфраструктуры Azure. Обычно их используют с такими целями:
 
 - Автоматизация настройки виртуальных машин:
-    - Инструменты включают в себя [ansible](#ansible), [шеф-повар](#chef), [кукольный](#puppet), и [Шаблон менеджера ресурсов Azure.](#azure-resource-manager-template)
+    - К средствам относятся [Ansible](#ansible), [Chef](#chef), [Puppet](#puppet)и [шаблон Azure Resource Manager](#azure-resource-manager-template).
     - средства для настройки определенных виртуальных машин, например [cloud-init](#cloud-init) для виртуальных машин Linux, [PowerShell Desired State Configuration (DSC)](#powershell-dsc) и [расширение пользовательских скриптов Azure](#azure-custom-script-extension) для всех виртуальных машин Azure.
 
 - Автоматизация управления инфраструктурой:
@@ -30,7 +30,7 @@ ms.locfileid: "81637151"
 Вы узнаете, как выполнять следующие задачи:
 
 - [Установка и настройка Ansible для управления виртуальными машинами в Azure](../articles/ansible/ansible-install-configure.md)
-- [Создайте виртуальную машину Linux.](../articles/ansible/ansible-create-vm.md)
+- [Создайте виртуальную машину Linux](../articles/ansible/ansible-create-vm.md).
 - [Управление виртуальной машиной Linux](../articles/ansible/ansible-manage-linux-vm.md)
 
 
@@ -52,7 +52,7 @@ ms.locfileid: "81637151"
 
 
 ## <a name="cloud-init"></a>Cloud-init
-[Cloud-init](https://cloudinit.readthedocs.io) — это широко используемый подход к настройке Linux VM, так как он загружается впервый раз. Вы можете использовать cloud-init для установки пакетов, записи файлов или настройки пользователей и параметров безопасности. Так как cloud-init вызывается при начальной загрузке, к вашей конфигурации не нужно применять какие-либо дополнительные действия или агентов.  Дополнительные сведения о том, как правильно отформатировать файлы, `#cloud-config`, см. на [сайте документации по cloud-init](https://cloudinit.readthedocs.io/en/latest/topics/format.html#cloud-config-data).  Файлы `#cloud-config` — это текстовые файлы, закодированные в формате base64.
+[Пакет cloud-init](https://cloudinit.readthedocs.io) — широко используемое средство, используемое для настройки виртуальной машины Linux при ее первой загрузке. Вы можете использовать cloud-init для установки пакетов, записи файлов или настройки пользователей и параметров безопасности. Так как cloud-init вызывается при начальной загрузке, к вашей конфигурации не нужно применять какие-либо дополнительные действия или агентов.  Дополнительные сведения о том, как правильно отформатировать файлы, `#cloud-config`, см. на [сайте документации по cloud-init](https://cloudinit.readthedocs.io/en/latest/topics/format.html#cloud-config-data).  Файлы `#cloud-config` — это текстовые файлы, закодированные в формате base64.
 
 Кроме того, cloud-init работает с разными дистрибутивами. Например, для установки пакета не используется **apt-get install** или **yum install**. Вместо этого можно определить список пакетов для установки. Файл cloud-init автоматически использует собственный инструмент управления пакетами из выбранного дистрибутива.
 
@@ -100,8 +100,8 @@ ms.locfileid: "81637151"
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Установка и настройка Terraform для подготовки виртуальных машин и другой инфраструктуры в Azure](../articles/terraform/terraform-install-configure.md)
-- [Создание базовой инфраструктуры в Azure с помощью Terraform](../articles/terraform/terraform-create-complete-vm.md)
+- [Установка и настройка Terraform для подготовки виртуальных машин и другой инфраструктуры в Azure](/azure/developer/terraform/install-configure)
+- [Создание базовой инфраструктуры в Azure с помощью Terraform](/azure/developer/terraform/create-linux-virtual-machine-with-infrastructure)
 
 
 ## <a name="azure-automation"></a>Служба автоматизации Azure
@@ -111,7 +111,7 @@ ms.locfileid: "81637151"
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Создайте runbook PowerShell.](../articles/automation/automation-first-runbook-textual-powershell.md)
+- [Создайте Runbook PowerShell](../articles/automation/automation-first-runbook-textual-powershell.md).
 - [Использование гибридной рабочей роли Runbook для управления локальными ресурсами](../articles/automation/automation-hybrid-runbook-worker.md).
 - [Приступая к работе с DSC службы автоматизации Azure](../articles/automation/automation-dsc-getting-started.md)
 
@@ -121,7 +121,7 @@ ms.locfileid: "81637151"
 
 См. также:
 
-- [Услуги Azure DevOps](https://docs.microsoft.com/azure/devops/user-guide/index?view=vsts).
+- [Azure DevOps Services](https://docs.microsoft.com/azure/devops/user-guide/index?view=vsts).
 
 
 ## <a name="jenkins"></a>Jenkins
@@ -133,15 +133,15 @@ ms.locfileid: "81637151"
 
 
 ## <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
-[Менеджер ресурсов Azure](../articles/azure-resource-manager/templates/overview.md) — служба развертывания и управления для Azure. Она обеспечивает уровень управления, позволяющий создавать, обновлять и удалять ресурсы в подписке Azure. Вы можете использовать ее функции управления, такие как управление доступом, блокировка и добавление тегов, чтобы защитить и упорядочить ресурсы после развертывания.
+[Azure Resource Manager](../articles/azure-resource-manager/templates/overview.md) — это служба развертывания и управления для Azure. Она обеспечивает уровень управления, позволяющий создавать, обновлять и удалять ресурсы в подписке Azure. Вы можете использовать ее функции управления, такие как управление доступом, блокировка и добавление тегов, чтобы защитить и упорядочить ресурсы после развертывания.
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Развертывание Spot VMs с помощью шаблона менеджера ресурсов.](../articles/virtual-machines/linux/spot-template.md)
-- [Развертывание виртуальной машины Azure с использованием шаблона Си-Ис и шаблона управления ресурсами.](../articles/virtual-machines/windows/csharp-template.md)
-- [Создайте виртуальную машину Windows из шаблона управления ресурсами.](../articles/virtual-machines/windows/ps-template.md)
-- [Скачать шаблон для VM](../articles/virtual-machines/windows/download-template.md).
-- [Создайте шаблон Azure Image Builder.](../articles/virtual-machines/linux/image-builder-json.md)
+- [Развертывание плашечных виртуальных машин с помощью шаблона диспетчер ресурсов](../articles/virtual-machines/linux/spot-template.md).
+- [Развертывание виртуальной машины Azure с помощью C# и шаблона диспетчер ресурсов](../articles/virtual-machines/windows/csharp-template.md).
+- [Создайте виртуальную машину Windows на основе шаблона диспетчер ресурсов](../articles/virtual-machines/windows/ps-template.md).
+- [Скачайте шаблон для виртуальной машины](../articles/virtual-machines/windows/download-template.md).
+- [Создайте шаблон Azure Image Builder](../articles/virtual-machines/linux/image-builder-json.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Средства автоматизации инфраструктуры в Azure позволяют выполнять разные задачи. Вы можете использовать решения, которые максимально отвечают вашим потребностям и требованиям среды. Чтобы приступить к работе и оценить несколько стандартных средств Azure, ознакомьтесь с руководством по автоматизации настройки виртуальной машины [Linux](../articles/virtual-machines/linux/tutorial-automate-vm-deployment.md) или [Windows](../articles/virtual-machines/windows/tutorial-automate-vm-deployment.md).
