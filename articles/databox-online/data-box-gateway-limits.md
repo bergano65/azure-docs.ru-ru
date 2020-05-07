@@ -8,16 +8,16 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: alkohli
-ms.openlocfilehash: 641d7410e414be2adae2a83840c90a680aedd2fc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: d160b0ead1ceb8c41bede20cb389a360d24258f9
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81683349"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82561370"
 ---
 # <a name="azure-data-box-gateway-limits"></a>Ограничения Шлюз Azure Data Box
 
-Учитывайте эти ограничения, когда развертываете и используете решение шлюза Microsoft Azure Data Box. 
+Учитывайте эти ограничения, когда развертываете и используете решение шлюза Microsoft Azure Data Box.
 
 ## <a name="data-box-gateway-service-limits"></a>Ограничения службы шлюза Data Box
 
@@ -50,6 +50,6 @@ ms.locfileid: "81683349"
 
 [!INCLUDE [data-box-edge-gateway-storage-object-limits](../../includes/data-box-edge-gateway-storage-object-limits.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Подготовка к развертыванию Шлюз Azure Data Box](data-box-gateway-deploy-prep.md)

@@ -1,6 +1,6 @@
 ---
 title: Включить имя файла
-description: включить файл
+description: Включить файл
 services: storage
 author: tamram
 ms.service: storage

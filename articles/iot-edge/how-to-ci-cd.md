@@ -8,12 +8,12 @@ ms.date: 08/20/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 9a653d13137a3067bfaf51c64c09454a08783e31
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: ac37e9bd10caea5c6e58fc797eac73ce6c714162
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82131413"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82561035"
 ---
 # <a name="continuous-integration-and-continuous-deployment-to-azure-iot-edge"></a>Непрерывная интеграция и непрерывное развертывание в Azure IoT Edge
 
@@ -100,6 +100,13 @@ ms.locfileid: "82131413"
    * **Платформа по умолчанию**: выберите подходящую платформу для модулей на основе целевого устройства IOT Edge.
    * **Выходные переменные**. выходные переменные включают ссылочное имя, которое можно использовать для настройки пути к файлу, в котором будет создан файл Deployment. JSON. Укажите какое-нибудь запоминающееся справочное имя, например **edge**.
 
+
+   В этих конфигурациях используется репозиторий образов и тег, который определен `module.json` в файле для имени и тега образа модуля. **Образы модулей сборки** также помогают заменить переменные на точные значения, определенные в `module.json` файле. В Visual Studio или Visual Studio Code Вы указываете фактическое значение в `.env` файле. В Azure Pipelines значение задается на вкладке " **переменные конвейера** ". Выберите вкладку **переменные** и настройте имя и значение следующим образом:
+
+    * **ACR_ADDRESS**. ваш адрес реестра контейнеров Azure. 
+
+    Если в проекте имеются другие переменные, можно указать имя и значение на этой вкладке. **образы модулей сборки** распознают только те переменные, которые имеют `${VARIABLE}` формат. Убедитесь, что в `**/module.json` файлах используется этот формат.
+    
 7. Выберите вторую задачу **Azure IoT Edge**, чтобы изменить ее. Эта задача передает все образы модулей в выбранный реестр контейнеров.
 
    * **Отображаемое имя**: отображаемое имя автоматически обновляется при изменении поля действия.
@@ -222,7 +229,7 @@ ms.locfileid: "82131413"
 
     ![Журналы выпуска](./media/how-to-ci-cd/release-logs.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * IoT Edge рекомендации по DevOps в [проекте DevOps Azure для IOT Edge](how-to-devops-project.md)
 * Основные сведения о развертывании IoT Edge см. в статье [Understand IoT Edge deployments for single devices or at scale](module-deployment-monitoring.md) (Основные сведения о развертываниях IoT Edge для отдельных устройств или в требуемом масштабе).

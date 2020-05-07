@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/28/2020
-ms.openlocfilehash: 424a0cfd02cfce9fb87bc3e21d7b067740df8218
-ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
-ms.translationtype: HT
+ms.openlocfilehash: 01cdc121abded954c2443599c5d69689acd69b62
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/29/2020
-ms.locfileid: "82509420"
+ms.locfileid: "82562344"
 ---
 # <a name="apache-spark-guidelines"></a>Рекомендации по Apache Spark
 
@@ -30,8 +30,8 @@ ms.locfileid: "82509420"
 | Отправка удаленных заданий с помощью Livy | [Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API](./apache-spark-livy-rest-interface.md) |
 |[Apache Oozie](../hdinsight-use-oozie-linux-mac.md)|Oozie — это система рабочих процессов и координации, управляющая заданиями Hadoop.|
 |[Apache Livy](./apache-spark-livy-rest-interface.md)|Вы можете использовать Livy для выполнения интерактивных оболочек Spark или отправки пакетных заданий для запуска в кластере Spark.|
-|[Фабрика данных Azure для Apache Spark](/../data-factory/transform-data-using-spark.md)|Действие Spark в конвейере фабрики данных выполняет программу Spark в собственном или [кластере HDInsight по запросу.|
-|[Фабрика данных Azure для Apache Hive](/../data-factory/transform-data-using-hadoop-hive.md)|Действие Hive в HDInsight в конвейере фабрики данных выполняет запросы Hive к собственному кластеру HDInsight или по запросу.|
+|[Фабрика данных Azure для Apache Spark](../../data-factory/transform-data-using-spark.md)|Действие Spark в конвейере фабрики данных выполняет программу Spark в собственном или [кластере HDInsight по запросу.|
+|[Фабрика данных Azure для Apache Hive](../../data-factory/transform-data-using-hadoop-hive.md)|Действие Hive в HDInsight в конвейере фабрики данных выполняет запросы Hive к собственному кластеру HDInsight или по запросу.|
 
 ## <a name="how-do-i-monitor-and-debug-spark-jobs"></a>Разделы справки отслеживать задания Spark и выполнять их отладку?
 
@@ -47,7 +47,7 @@ ms.locfileid: "82509420"
 | Параметр | Документы |
 |---|---|
 | Кэш ввода-вывода | [Повышение производительности рабочих нагрузок Apache Spark с помощью службы IO Cache для Azure HDInsight (предварительная версия)](./apache-spark-improve-performance-iocache.md) |
-| Параметры конфигурации | [Оптимизация заданий Apache Spark](./apache-spark-perf.md) |
+| Варианты настройки | [Оптимизация заданий Apache Spark](./apache-spark-perf.md) |
 
 ## <a name="how-do-i-connect-to-other-azure-services"></a>Разделы справки подключиться к другим службам Azure?
 
@@ -62,11 +62,11 @@ ms.locfileid: "82509420"
 
 | Параметр | Документы |
 |---|---|
-| Data Lake Storage 2-го поколения | [Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md) |
+| Data Lake Storage 2-го поколения | [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md) |
 | Data Lake Storage 1-го поколения | [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-store.md) |
 | хранилище BLOB-объектов Azure | [Использование службы хранилища Azure с кластерами Azure HDInsight](../hdinsight-hadoop-use-blob-storage.md) |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка параметров Apache Spark](apache-spark-settings.md)
 * [Оптимизация заданий Apache Spark в HDInsight](apache-spark-perf.md)

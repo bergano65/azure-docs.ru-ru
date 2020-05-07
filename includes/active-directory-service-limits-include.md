@@ -1,6 +1,6 @@
 ---
 title: Включить имя файла
-description: включить файл
+description: Включить файл
 services: active-directory
 author: curtand
 ms.service: active-directory

@@ -7,12 +7,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: 771d7f5b037fde1144b18dc4ed0dee7aecac6744
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: cf051da4e2976ca54c95b54cd6ac89cb6f6cc1b1
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82100215"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82562225"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-postgresql---single-server"></a>Устранение проблем с подключением к базе данных Azure для PostgreSQL — один сервер
 
@@ -49,6 +49,7 @@ ms.locfileid: "82100215"
 * Конфигурация брандмауэра сервера. Убедитесь, что брандмауэр сервера базы данных Azure для PostgreSQL настроен на разрешение подключений от клиента, включая прокси-серверы и шлюзы.
 * Конфигурация брандмауэра клиента. брандмауэр на клиенте должен разрешать подключения к серверу базы данных. В некоторых брандмауэрах необходимо разрешить IP-адреса и порты сервера, к которым нельзя подключиться, а также приложения, например PostgreSQL.
 * Ошибка пользователя: могут быть заданы недопустимые параметры подключения, такие как имя сервера в строке подключения или пропущенный * \@суффикс ServerName* в имени пользователя.
+* Если _сервер ошибок не настроен на разрешение IPv6-подключений_, обратите внимание, что базовый уровень не поддерживает конечные точки службы виртуальной сети. Необходимо удалить конечную точку Microsoft. SQL из подсети, которая пытается подключиться к базовому серверу.
 
 ### <a name="steps-to-resolve-persistent-connectivity-issues"></a>Порядок устранения постоянных проблем подключения
 
@@ -57,6 +58,6 @@ ms.locfileid: "82100215"
 3. Проверьте строку подключения и другие параметры подключения.
 4. Проверьте работоспособность службы на панели мониторинга. Если присутствует региональный сбой, см. статью [Обзор обеспечения непрерывности бизнес-процессов с помощью службы "База данных Azure для MySQL"](concepts-business-continuity.md), чтобы выполнить инструкции по восстановлению в новом регионе.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Handling of transient connectivity errors for Azure Database for PostgreSQL](concepts-connectivity.md) (Обработка временных ошибок подключения для Базы данных Azure для PostgreSQL)

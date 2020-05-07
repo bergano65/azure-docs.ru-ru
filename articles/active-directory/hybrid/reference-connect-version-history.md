@@ -30,7 +30,7 @@ ms.locfileid: "82112207"
 --------- | --------- |
 Действия по переходу с Azure AD Connect | Различные методы [обновления предыдущей версии до последней версии](how-to-upgrade-previous-version.md) Azure AD Connect.
 Необходимые разрешения | Разрешения, необходимые для применения обновления, см. в разделе [учетные записи и разрешения](reference-connect-accounts-permissions.md#upgrade).
-Скачать| [Скачайте Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771).
+Скачивание| [Скачайте Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771).
 
 >[!NOTE]
 >Выпуск новой версии Azure AD Connect — это процесс, для которого требуется несколько шагов контроля качества, чтобы обеспечить функционирование службы, а в ходе этого процесса номер версии нового выпуска, а также состояние выпуска будет обновлен для отражения последнего состояния.
@@ -200,8 +200,8 @@ ms.locfileid: "82112207"
 > Чтобы устранить эту проблему, необходимо импортировать модуль **AdSync** , а затем запустить командлет`Set-ADSyncDirSyncConfiguration` PowerShell на Azure AD Connect сервере.  Можно выполнить следующие действия.
 >
 >1. Откройте PowerShell в режиме администратора.
->2. Выполните команду `Import-Module "ADSync"`.
->3. Выполните команду `Set-ADSyncDirSyncConfiguration -AnchorAttribute ""`.
+>2. Запустите `Import-Module "ADSync"`.
+>3. Запустите `Set-ADSyncDirSyncConfiguration -AnchorAttribute ""`.
  
 ### <a name="release-status"></a>Состояние выпуска 
 
@@ -554,7 +554,7 @@ ms.locfileid: "82112207"
 *   Удаление всех элементов управления доступом в конкретном объекте, кроме элементов управления доступом, характерных для SELF. При работе с SELF нужно сохранять разрешения по умолчанию без изменений.
 *   Назначение указанных ниже специальных разрешений.
 
-Type     | Имя                          | Доступ               | Применяется к
+Type     | Название                          | Доступ               | Применяется к
 ---------|-------------------------------|----------------------|--------------|
 Allow    | SYSTEM                        | Полный доступ         | этому объекту  |
 Allow    | Администраторы предприятия             | Полный доступ         | этому объекту  |
@@ -588,7 +588,7 @@ Where
 >[!NOTE] 
 >$credential.UserName необходимо указывать в формате "FQDN\имя_пользователя". Пример: contoso.com\admin. 
 
-##### <a name="example"></a>Пример:
+##### <a name="example"></a>Пример
 
 ```powershell
 Set-ADSyncRestrictedPermissions -ObjectDN "CN=TestAccount1,CN=Users,DC=bvtadwbackdc,DC=com" -Credential $credential 
@@ -1416,5 +1416,5 @@ Desktop SSO
 
 **Первоначальный выпуск Azure AD Sync.**
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

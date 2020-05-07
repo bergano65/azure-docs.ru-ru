@@ -92,7 +92,7 @@ ms.locfileid: "82559530"
 
 ### <a name="key-delivery"></a>Доставка ключей
 
-|Имя|Описание|
+|Название|Описание|
 |---|---|
 |Запрос службы доставки ключей|Журналы, отображающие сведения о запросе службы доставки ключей. Дополнительные сведения см. в разделе [схемы](media-services-diagnostic-logs-schema.md).|
 
@@ -109,7 +109,7 @@ ms.locfileid: "82559530"
 
 См. раздел [мониторинг журналов диагностики службы мультимедиа](media-services-diagnostic-logs-howto.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Как получить и использовать данные журнала из ресурсов Azure](../../azure-monitor/platform/platform-logs-overview.md)
 * [Создание, Просмотр оповещений метрик и управление ими с помощью Azure Monitor](../../azure-monitor/platform/alerts-metric.md)
