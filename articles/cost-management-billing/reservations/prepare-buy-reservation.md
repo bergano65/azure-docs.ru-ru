@@ -5,14 +5,14 @@ author: bandersmsft
 ms.reviewer: yashar
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 04/07/2020
+ms.date: 05/04/2020
 ms.author: banders
-ms.openlocfilehash: 4ef0420eab8064343b54f2c0bf15a692b8bc038c
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: 6b01253d12b67c327bc67416ca569ccb7ee469ae
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81382814"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82780646"
 ---
 # <a name="buy-a-reservation"></a>Покупка резервирования
 
@@ -73,7 +73,10 @@ ms.locfileid: "81382814"
 - [Планы программного обеспечения](../../virtual-machines/linux/prepay-suse-software-charges.md)
 - [Память](../../storage/blobs/storage-blob-reserved-capacity.md)
 - [База данных SQL](../../sql-database/sql-database-reserved-capacity.md)
-- [Хранилище данных SQL](prepay-sql-data-warehouse-charges.md)
+- [База данных Azure для PostgreSQL](../../postgresql/concept-reserved-pricing.md)
+- [База данных Azure для MySQL](../../mysql/concept-reserved-pricing.md)
+- [База данных Azure для MariaDB](../../mariadb/concept-reserved-pricing.md)
+- [Azure Synapse Analytics](prepay-sql-data-warehouse-charges.md)
 - [Виртуальные машины](../../virtual-machines/windows/prepay-reserved-vm-instances.md)
 
 ## <a name="buy-reservations-with-monthly-payments"></a>Приобретение резервирований с ежемесячными платежами

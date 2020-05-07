@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: Dawgfan
 ms.author: mmcc
 ms.date: 09/20/2019
-ms.openlocfilehash: daea761d027341eaf8f6c0d137f3049c45e82924
-ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
-ms.translationtype: HT
+ms.openlocfilehash: 50ce0d57ec7395c69bf65e41b67f0cb005a43cb8
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82836620"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82854978"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 
@@ -145,7 +145,14 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 
 По умолчанию этот пакет SDK **не** будет управлять изменением маршрута на основе состояния, которое происходит в одностраничных приложениях. Чтобы включить автоматическое отслеживание изменений маршрута для одностраничного приложения, можно добавить `enableAutoRouteTracking: true` в конфигурацию установки.
 
-В настоящее время мы предлагаем отдельный [подключаемый модуль реагирования](#react-extensions) , который можно инициализировать с помощью этого пакета SDK. Кроме того, будет осуществляться отслеживание изменений маршрута, а также собраны [другие данные телеметрии, связанные с реагированием](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/extensions/applicationinsights-react-js/README.md).
+В настоящее время мы предлагаем отдельный [подключаемый модуль реагирования](#react-extensions), который можно инициализировать с помощью этого пакета SDK. Кроме того, будет осуществляться отслеживание изменений маршрута, а также собраны [другие данные телеметрии, связанные с реагированием](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/extensions/applicationinsights-react-js/README.md).
+
+> [!NOTE]
+> Используйте `enableAutoRouteTracking: true` , только если **не** используется подключаемый модуль "реагирующий". Оба варианта могут отправлять новые PageViews при изменении маршрута. Если оба этих флажка включены, может быть отправлен дубликат PageViews.
+
+## <a name="configuration-autotrackpagevisittime"></a>Конфигурация: Аутотраккпажевиситтиме
+
+С помощью `autoTrackPageVisitTime: true`параметра время, затрачиваемое пользователем на каждую страницу, будет отслеживаниь. На каждом новом PageView время, которое пользователь тратил на *предыдущей* странице, отправляется как [Пользовательская метрика](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-custom-overview) с `PageVisitTime`именем. Эта пользовательская метрика отображается в [Обозреватель метрик](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-getting-started) как "Метрика на основе журнала".
 
 ## <a name="react-extensions"></a>Модули реагирования
 

@@ -7,17 +7,14 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/03/2020
-ms.openlocfilehash: 2c0cd47acbd4639ff5eff2af78dcebdfc26270a7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fc35602b55e79f3351da0def800d2a2b2698e250
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81730693"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82856724"
 ---
 # <a name="prepare-your-iot-edge-module-technical-assets"></a>Подготовка технических ресурсов для модуля IoT Edge
-
-> [!IMPORTANT]
-> Мы переносите Управление предложениями модуля IoT Edge из Портал Cloud Partner в центр партнеров. Пока ваши предложения не будут перенесены, следуйте инструкциям в разделе [Подготовка технических ресурсов IOT Edge модуля](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/iot-edge-module/cpp-create-technical-assets) для портал Cloud Partner управления вашими предложениями.
 
 В этой статье описываются требования, которые должны соответствовать техническим ресурсам модуля "Интернет вещей" (IoT), прежде чем они будут опубликованы в Azure Marketplace.
 

@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 06/03/2019
-ms.openlocfilehash: b3b235833e794e48ae655d184bf938effc0d7ac0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f117f1518211680c4ea1f5ac51ecf0e44396a133
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81768380"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82856763"
 ---
 # <a name="email-notifications-for-automatic-tuning"></a>Уведомления по электронной почте об автоматической настройке
 
@@ -69,7 +69,7 @@ ms.locfileid: "81768380"
 Выполните приведенные ниже действия, чтобы создать runbook службы автоматизации Azure
 
 1. Получите доступ к учетной записи службы автоматизации Azure, созданной на предыдущем шаге.
-1. На панели учетной записи службы автоматизации щелкните пункт меню "**модули Runbook**" в левой части, чтобы создать новый Runbook службы автоматизации Azure с помощью скрипта PowerShell. Чтобы узнать больше о создании модулей runbook службы автоматизации, ознакомьтесь с разделом [Создание или импорт модуля Runbook в службе автоматизации Azure](../automation/manage-runbooks.md#creating-a-runbook).
+1. На панели учетной записи службы автоматизации щелкните пункт меню "**модули Runbook**" в левой части, чтобы создать новый Runbook службы автоматизации Azure с помощью скрипта PowerShell. Дополнительные сведения о создании модулей Runbook службы автоматизации см. в разделе [Создание нового модуля](../automation/manage-runbooks.md#create-a-runbook)Runbook.
 1. Чтобы добавить новый модуль Runbook, нажмите кнопку меню "**+ Добавить Runbook**", а затем выберите "**Быстрое создание — создать новый Runbook**".
 1. В области Runbook введите имя модуля Runbook (для этого примера используется значение "**AutomaticTuningEmailAutomation**"), выберите тип модуля Runbook в качестве **PowerShell** и напишите описание этого модуля Runbook, чтобы описать его назначение.
 1. Нажмите кнопку " **создать** ", чтобы завершить создание нового модуля Runbook.

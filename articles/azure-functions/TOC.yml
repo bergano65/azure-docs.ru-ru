@@ -125,6 +125,10 @@
           href: functions-reference-python.md
         - name: TypeScript
           href: 'functions-reference-node.md#typescript'
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Диагностика
       href: functions-diagnostics.md
     - name: Стоимость плана потребления

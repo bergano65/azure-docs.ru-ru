@@ -11,12 +11,12 @@ ms.author: abnarain
 manager: anandsub
 ms.custom: seo-lt-2019
 ms.date: 03/13/2020
-ms.openlocfilehash: 6bc0f002c6927cfd9a314797663e1dabbac392b6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6d18a8d09749b832984872b57eec8a36abc1b2e2
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81416640"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82857703"
 ---
 # <a name="create-and-configure-a-self-hosted-integration-runtime"></a>Создание и настройка локальной среды выполнения интеграции
 
@@ -67,7 +67,7 @@ ms.locfileid: "81416640"
 1. На странице **Настройка среды выполнения интеграции** выберите **Azure,** локальное размещение и нажмите кнопку **продолжить**. 
 
 1. На следующей странице выберите локальное **Размещение** , чтобы создать локальное IR, а затем выберите **продолжить**.
-   ![Создание селфхостед IR](media/create-self-hosted-integration-runtime/new-selfhosted-ir.png)
+   ![Создание селфхостед IR](media/create-self-hosted-integration-runtime/new-selfhosted-integration-runtime.png)
 
 1. Введите имя для своего типа IR и нажмите кнопку **создать**.
 
@@ -107,7 +107,7 @@ dmgcmd [ -RegisterNewNode "<AuthenticationKey>" -EnableRemoteAccess "<port>" ["<
 
 Ниже приведены подробные сведения о параметрах и свойствах приложения. 
 
-| Свойство                                                    | Описание                                                  | Обязательный |
+| Свойство                                                    | Описание                                                  | Обязательно |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | -------- |
 | **Регистерневноде** "`<AuthenticationKey>`"                     | Регистрация узла локальной среды выполнения интеграции с указанным ключом проверки подлинности. | Нет       |
 | **Регистерневноде** "`<AuthenticationKey>`" "`<NodeName>`"      | Регистрация узла локальной среды выполнения интеграции с указанным ключом проверки подлинности и именем узла. | Нет       |
@@ -153,17 +153,17 @@ dmgcmd [ -RegisterNewNode "<AuthenticationKey>" -EnableRemoteAccess "<port>" ["<
 - Используйте локальную среду выполнения интеграции, даже если хранилище данных находится в облаке на виртуальной машине Azure "инфраструктура как услуга" (IaaS).
 - Задачи могут завершиться ошибкой в локальной среде выполнения интеграции, установленной на сервере Windows Server, для которого включено шифрование, совместимое с FIPS. Чтобы устранить эту проблему, отключите на сервере шифрование, совместимое с FIPS. Чтобы отключить шифрование, совместимое с FIPS, измените значение следующего подраздела реестра с 1 (включено) на 0 (отключено): `HKLM\System\CurrentControlSet\Control\Lsa\FIPSAlgorithmPolicy\Enabled`.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Поддерживаются следующие версии Windows:
   + Windows 7 с пакетом обновления 1 (SP1)
   + Windows 8.1
   + Windows 10
   + Windows Server 2008 R2 с пакетом обновления 1 (SP1)
-  + Windows Server 2012
+  + Windows Server 2012
   + Windows Server 2012 R2
   + Windows Server 2016
-  + Windows Server 2019
+  + Windows Server 2019
    
    Установка локальной среды выполнения интеграции на контроллере домена не поддерживается.
 - Требуется .NET Framework 4.6.1 или более поздней версии. Если локальная среда выполнения интеграции устанавливается на компьютер под управлением Windows 7, установите .NET Framework 4.6.1 или более поздней версии. Дополнительные сведения см. в разделе [Требования к системе для .NET Framework](/dotnet/framework/get-started/system-requirements).
@@ -272,7 +272,7 @@ dmgcmd [ -RegisterNewNode "<AuthenticationKey>" -EnableRemoteAccess "<port>" ["<
 
 Сведения о совместном использовании локальной среды выполнения интеграции с несколькими фабриками данных см. в статье [Создание общей локальной среды выполнения интеграции](create-shared-self-hosted-integration-runtime-powershell.md) для получения дополнительных сведений.
 
-### <a name="monitoring"></a>Мониторинг
+### <a name="monitoring"></a>Наблюдение
 
 #### <a name="shared-ir"></a>Общие IR
 

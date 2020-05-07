@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
-ms.date: 4/2/2020
+ms.date: 4/17/2020
 ms.author: swmachan
-ms.openlocfilehash: fcbaabac0961f1269a929fb4a56f81ac282bae29
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: bf7701055c8c325f02c0daca1755806f3ca17b76
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80619150"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82857311"
 ---
 # <a name="translator-text-api-v30"></a>API перевода текстов v3.0
 
@@ -147,7 +147,7 @@ Authorization: Bearer <Base64-access_token>
 
 ## <a name="virtual-network-support"></a>Поддержка виртуальной сети
 
-Служба переводчиков теперь доступна с возможностями виртуальной сети в ограниченных регионах`WestUS2`( `EastUS`, `SouthCentralUS`, `WestUS`, `Central US EUAP`, `global`,). Сведения о включении виртуальной сети см. в статье [Настройка виртуальных сетей Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-virtual-networks?tabs=portal). 
+Служба переводчиков теперь доступна с возможностями виртуальной сети в ограниченных регионах`WestUS2`( `EastUS`, `SouthCentralUS`, `WestUS`, `CentralUSEUAP`, `global`,). Сведения о включении виртуальной сети см. в статье [Настройка виртуальных сетей Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-virtual-networks?tabs=portal). 
 
 После включения этой возможности необходимо использовать пользовательскую конечную точку для вызова API-интерфейса переводчика. Нельзя использовать глобальную конечную точку транслятора ("api.cognitive.microsofttranslator.com"), и вы не можете пройти проверку подлинности с помощью маркера доступа.
 

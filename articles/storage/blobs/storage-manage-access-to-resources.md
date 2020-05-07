@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/04/2019
+ms.date: 05/05/2020
 ms.author: tamram
 ms.reviewer: cbrooks
-ms.openlocfilehash: 4d9a54c220861b19d67b07998e609ee72897446a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7c524cb30b73c95329650924123b2ebc26a5d8a5
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79255487"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82856009"
 ---
 # <a name="manage-anonymous-read-access-to-containers-and-blobs"></a>Управление анонимным доступом на чтение к контейнерам и большим двоичным объектам
 
@@ -51,6 +51,16 @@ ms.locfileid: "79255487"
 
 ### <a name="set-container-public-access-level-with-net"></a>Задание уровня общего доступа к контейнеру с помощью .NET
 
+# <a name="net-v12-sdk"></a>[\.NET (пакет SDK версии 12)](#tab/dotnet)
+
+Чтобы задать разрешения для контейнера, вызовите метод [блобконтаинерклиент. сетакцессполици](https://docs.microsoft.com/dotnet/api/azure.storage.blobs.blobcontainerclient.setaccesspolicy?view=azure-dotnet) . 
+
+В следующем примере задаются разрешения контейнера на полный общий доступ на чтение. Чтобы задать разрешения на общий доступ на чтение только для больших двоичных объектов, передайте поле **PublicAccessType. BLOB** в метод [блобконтаинерклиент. сетакцессполици](https://docs.microsoft.com/dotnet/api/azure.storage.blobs.blobcontainerclient.setaccesspolicy?view=azure-dotnet) . Чтобы удалить все разрешения для анонимных пользователей, используйте поле **значение blobcontainerpublicaccesstype. None** .
+
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Security.cs" id="Snippet_SetPublicContainerPermissions":::
+
+# <a name="net-v11-sdk"></a>[\.Пакет SDK для NET версии 11](#tab/dotnet11)
+
 Чтобы задать разрешения для контейнера с помощью клиентской библиотеки службы хранилища Azure для .NET, сначала извлеките существующие разрешения контейнера, вызвав один из следующих методов:
 
 - [GetPermissions](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.getpermissions)
@@ -76,6 +86,8 @@ private static async Task SetPublicContainerPermissions(CloudBlobContainer conta
 }
 ```
 
+---
+
 ## <a name="access-containers-and-blobs-anonymously"></a>Анонимный доступ к контейнерам и большим двоичным объектам
 
 Клиент, который обращается к контейнерам и большим двоичным объектам анонимно, может использовать конструкторы, не требующие учетных данных. В следующих примерах показаны несколько различных способов анонимного обращения к контейнерам и BLOB-объектам.
@@ -83,6 +95,12 @@ private static async Task SetPublicContainerPermissions(CloudBlobContainer conta
 ### <a name="create-an-anonymous-client-object"></a>Создание анонимного клиентского объекта
 
 Вы можете создать новый объект клиента службы для анонимного доступа, предоставив конечную точку хранилища BLOB-объектов для учетной записи. Тем не менее необходимо также знать имя контейнера в этой учетной записи, которая доступна для анонимного доступа.
+
+# <a name="net-v12-sdk"></a>[\.NET (пакет SDK версии 12)](#tab/dotnet)
+
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Security.cs" id="Snippet_CreateAnonymousBlobClient":::
+
+# <a name="net-v11-sdk"></a>[\.Пакет SDK для NET версии 11](#tab/dotnet11)
 
 ```csharp
 public static void CreateAnonymousBlobClient()
@@ -100,11 +118,19 @@ public static void CreateAnonymousBlobClient()
     Console.WriteLine(container.Properties.LastModified);
     Console.WriteLine(container.Properties.ETag);
 }
-```
+``` 
+
+---
 
 ### <a name="reference-a-container-anonymously"></a>Анонимная ссылка на контейнер
 
 При наличии URL-адреса контейнера, который доступен анонимно, можно воспользоваться им для прямой ссылки на контейнер.
+
+# <a name="net-v12-sdk"></a>[\.NET (пакет SDK версии 12)](#tab/dotnet)
+
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Security.cs" id="Snippet_ListBlobsAnonymously":::
+
+# <a name="net-v11-sdk"></a>[\.Пакет SDK для NET версии 11](#tab/dotnet11)
 
 ```csharp
 public static void ListBlobsAnonymously()
@@ -120,11 +146,19 @@ public static void ListBlobsAnonymously()
         Console.WriteLine(blobItem.Uri);
     }
 }
-```
+``` 
+
+---
 
 ### <a name="reference-a-blob-anonymously"></a>Анонимная ссылка на большой двоичный объект
 
 Если имеется URL-адрес большого двоичного объекта, который доступен для анонимного доступа, можно создать прямую ссылку на этот большой двоичный объект, используя URL-адрес.
+
+# <a name="net-v12-sdk"></a>[\.NET (пакет SDK версии 12)](#tab/dotnet)
+
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Security.cs" id="Snippet_DownloadBlobAnonymously":::
+
+# <a name="net-v11-sdk"></a>[\.Пакет SDK для NET версии 11](#tab/dotnet11)
 
 ```csharp
 public static void DownloadBlobAnonymously()
@@ -133,7 +167,9 @@ public static void DownloadBlobAnonymously()
         new Uri(@"https://storagesamples.blob.core.windows.net/sample-container/logfile.txt"));
     blob.DownloadToFile(@"C:\Temp\logfile.txt", FileMode.Create);
 }
-```
+``` 
+
+---
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/13/2020
 ms.author: sohamnc
-ms.openlocfilehash: e2785baab27f5bfc996b57607816062195a19b2b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ee4bd24264be9e7730d4dc99af4e61b05a7692bc
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81313757"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82594140"
 ---
 # <a name="frequently-asked-questions-for-azure-front-door"></a>Часто задаваемые вопросы о передней дверце Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "81313757"
 2. [Передняя дверца Azure UserVoice](https://feedback.azure.com/forums/217313-networking?category_id=345025).
 3. **Служба поддержки Майкрософт:** Чтобы создать новый запрос на поддержку, в портал Azure на вкладке **Справка** нажмите кнопку **Справка и поддержка** , а затем выберите **новый запрос в службу поддержки**.
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 
 ### <a name="what-is-azure-front-door"></a>Что такое Azure Front Door?
 
@@ -91,7 +91,7 @@ ms.locfileid: "81313757"
 
 - Настройте IP адресам для своей серверной части, чтобы принимать трафик из пространства внутреннего IP-адреса внутренней дверцы Azure и только служб инфраструктуры Azure. Дополнительные сведения об IP-адресе см. в разделе адресам The Серверная часть:
  
-    - Обратитесь к разделу *азурефронтдур. внутренний* в разделе [диапазоны IP-адресов и тегов службы](https://www.microsoft.com/download/details.aspx?id=56519) для внутреннего диапазона IP-адреса внутренней дверцы в интерфейсе IPv4. Кроме того, можно использовать тег службы *азурефронтдур. внутренний* в [группах безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules) или с помощью [брандмауэра Azure](https://docs.microsoft.com/azure/firewall/service-tags).
+    - Обратитесь к разделу *азурефронтдур. внутренний* в разделе [диапазоны IP-адресов и тегов службы](https://www.microsoft.com/download/details.aspx?id=56519) для внутреннего диапазона IP-адреса внутренней дверцы в интерфейсе IPv4. также можно использовать тег службы *азурефронтдур.* Front в [группах безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules).
     - Серверное пространство IP-адресов внутренней дверцы **IPv6** , включенное в тег службы, не указано в JSON-файле диапазонов Azure. Если вы ищете явный диапазон IPv6-адресов, в настоящее время он ограничен`2a01:111:2050::/44`
     - [Основные службы инфраструктуры](https://docs.microsoft.com/azure/virtual-network/security-overview#azure-platform-considerations) Azure через ВИРТУАЛИЗИРОВАННЫЕ IP-адреса узлов: `168.63.129.16` и`169.254.169.254`
 
@@ -123,7 +123,7 @@ IP-адрес недоступности переднего плана для п
 Любые обновления маршрутов или серверных пулов и т. д. будут беспрепятственно работать, что приведет к нулевому простою (если новая конфигурация верна). Обновления сертификата также являются атомарными и не будут приводить к сбою, если не переключаться с "АФД Managed" на "использовать собственный сертификат" или наоборот.
 
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 ### <a name="can-azure-front-door-load-balance-or-route-traffic-within-a-virtual-network"></a>Может ли балансировка нагрузки для передней дверцы Azure или маршрутизация трафика в виртуальной сети?
 
@@ -133,7 +133,7 @@ IP-адрес недоступности переднего плана для п
 
 Ознакомьтесь с задокументированными [временами ожидания и ограничениями для передней дверцы Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-front-door-service-limits).
 
-## <a name="performance"></a>Тестирование
+## <a name="performance"></a>Производительность
 
 ### <a name="how-does-azure-front-door-support-high-availability-and-scalability"></a>Как передняя дверца Azure поддерживает высокий уровень доступности и масштабируемость?
 

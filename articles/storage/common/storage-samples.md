@@ -7,12 +7,12 @@ ms.date: 09/06/2019
 ms.service: storage
 ms.subservice: common
 ms.topic: sample
-ms.openlocfilehash: f4d8eabdba32eaa0a2c04e6b330fbd4c8d3a563e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 900fb5120b1674397c248fd7d090660c7a813705
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80061137"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82594191"
 ---
 # <a name="azure-storage-samples"></a>Примеры для службы хранилища Azure
 
@@ -50,9 +50,9 @@ ms.locfileid: "80061137"
 
 Для просмотра примеров C++ загрузите [Клиентскую библиотеку хранилища C++](https://www.nuget.org/packages/wastorage/) на NuGet.
 
-* [Начало работы с BLOB-объектами](https://github.com/Azure/azure-storage-cpp/tree/master/Microsoft.WindowsAzure.Storage/samples/BlobsGettingStarted)
-* [Начало работы с таблицами](https://github.com/Azure/azure-storage-cpp/tree/master/Microsoft.WindowsAzure.Storage/samples/TablesGettingStarted)
-* [Начало работы с очередями](https://github.com/Azure/azure-storage-cpp/tree/master/Microsoft.WindowsAzure.Storage/samples/QueuesGettingStarted)
+* [Начало работы с BLOB-объектами](https://github.com/Azure/azure-storage-cpp/tree/master/Microsoft.WindowsAzure.Storage/samples/BlobsGettingStarted.cpp)
+* [Начало работы с таблицами](https://github.com/Azure/azure-storage-cpp/tree/master/Microsoft.WindowsAzure.Storage/samples/TablesGettingStarted.cpp)
+* [Начало работы с очередями](https://github.com/Azure/azure-storage-cpp/tree/master/Microsoft.WindowsAzure.Storage/samples/QueuesGettingStarted.cpp)
 
 ## <a name="azure-cli"></a>Azure CLI
 
@@ -68,7 +68,7 @@ ms.locfileid: "80061137"
 |----------|---------------|-------------|
 | .NET | [Справочник по клиентской библиотеке .NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage) | [Исходный код для клиентской библиотеки хранилища .NET](https://github.com/Azure/azure-storage-net) |
 | Java | [Справочник по клиентской библиотеке Java](https://docs.microsoft.com/java/api/overview/azure/storage) | [Исходный код для клиентской библиотеки хранилища Java](https://github.com/azure/azure-storage-java) |
-| Python | [Справочник по клиентской библиотеке Python](https://azure-storage.readthedocs.io/) | [Исходный код для клиентской библиотеки хранилища Python](https://github.com/Azure/azure-storage-p[ython]) |
+| Python | [Справочник по клиентской библиотеке Python](https://azure-storage.readthedocs.io/) | [Исходный код для клиентской библиотеки хранилища Python](https://github.com/Azure/azure-storage-python) |
 | Node.js | [Справочник по клиентской библиотеке Node.js](https://azure.github.io/azure-storage-node) | [Исходный код для клиентской библиотеки хранилища Node.js](https://github.com/Azure/azure-storage-node) |
 | C++ | [Справочник по клиентской библиотеке C++](https://azure.github.io/azure-storage-cpp/) | [Исходный код для клиентской библиотеки хранилища C++](https://github.com/Azure/azure-storage-cpp)|
 | Azure CLI | [Ссылка на библиотеку Azure CLI](/cli/azure/storage) | [Исходный код для клиентской библиотеки хранилища Azure CLI](https://github.com/Azure-Samples/azure-cli-samples/tree/master/storage)

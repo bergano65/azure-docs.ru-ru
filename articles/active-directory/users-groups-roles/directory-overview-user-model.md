@@ -14,12 +14,12 @@ ms.workload: identity
 services: active-directory
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3cc2de5a2f297e8133011905ff2961b44476d6b
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 8052bb44df6d29e17304763051fa2099009b9701
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77046335"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583018"
 ---
 # <a name="users-groups-licensing-and-roles-for-large-organizations"></a>Пользователи, группы, лицензирование и роли для крупных организаций
 
@@ -60,7 +60,7 @@ ms.locfileid: "77046335"
 
 ## <a name="assign-app-access"></a>Назначение доступа к приложению
 
-С помощью Azure AD можно назначить группе доступ к [корпоративным приложениям, развернутым в клиенте Azure AD](/azure/active-directory/manage-apps/methods-for-assigning-users-and-groups?context=azure/active-directory/users-groups-roles/context/ugr-context). Если объединить динамические группы с назначением групп приложениям, можно автоматизировать назначения пользователям доступа к приложениям по мере роста организации. Для предоставления доступа к корпоративным приложениям вам потребуется лицензия Azure Active Directory Premium P1 или Premium P2.
+С помощью Azure AD можно назначить группе доступ к [корпоративным приложениям, развернутым в организации Azure AD](/azure/active-directory/manage-apps/methods-for-assigning-users-and-groups?context=azure/active-directory/users-groups-roles/context/ugr-context). Если объединить динамические группы с назначением групп приложениям, можно автоматизировать назначения пользователям доступа к приложениям по мере роста организации. Для предоставления доступа к корпоративным приложениям вам потребуется лицензия Azure Active Directory Premium P1 или Premium P2.
 
 Azure AD также обеспечивает детальный контроль данных, которые передаются между приложением и группами, к которым вы назначаете доступ. В [корпоративных приложениях](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps) откройте приложение и выберите **Подготовка**, чтобы:
 

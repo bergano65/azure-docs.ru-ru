@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/03/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: b270ce3cd15dbd1e8dd53bd60376a87d6e08f75c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cfc7e12efb0e5e4613bb4cc5f2f9a35383f37546
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80637212"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82857255"
 ---
 # <a name="blob-storage-features-available-in-azure-data-lake-storage-gen2"></a>Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения
 
@@ -36,11 +36,11 @@ ms.locfileid: "80637212"
 |Команды PowerShell для хранилища BLOB-объектов|Общедоступная версия|[Краткое руководство. Отправка, скачивание и вывод списка больших двоичных объектов с помощью PowerShell](storage-quickstart-blobs-powershell.md)|
 |Команды Azure CLI хранилища BLOB-объектов|Общедоступная версия|[Краткое руководство. Создание, скачивание и вывод списка больших двоичных объектов с помощью Azure CLI](storage-quickstart-blobs-cli.md)|
 |API хранилища BLOB-объектов|Общедоступная версия|[Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure версии 12 для .NET](storage-quickstart-blobs-dotnet.md)<br>[Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Java версии 12](storage-quickstart-blobs-java.md)<br>[Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Python версии 12](storage-quickstart-blobs-python.md)<br>[Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 12 в Node. js](storage-quickstart-blobs-nodejs.md)|
-|Архивный уровень доступа|Preview (Предварительный просмотр)|[Хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни доступа](storage-blob-storage-tiers.md)|
-|Политики управления жизненным циклом|Preview (Предварительный просмотр)|[Управление жизненным циклом хранилища BLOB-объектов Azure](storage-lifecycle-management-concepts.md)|
-|Журналы диагностики|Общедоступная версия|[Ведение журнала Аналитики Службы хранилища Azure](../common/storage-analytics-logging.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Архивный уровень доступа|Предварительный просмотр|[Хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни доступа](storage-blob-storage-tiers.md)|
+|Политики управления жизненным циклом|Предварительный просмотр|[Управление жизненным циклом хранилища BLOB-объектов Azure](storage-lifecycle-management-concepts.md)|
+|Журналы диагностики|Общедоступная версия|[Ведение журнала аналитики службы хранилища Azure](../common/storage-analytics-logging.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Канал изменений|Еще не поддерживается|[Поддержка веб-канала изменений в хранилище BLOB-объектов Azure](storage-blob-change-feed.md)|
-|Переключение учетной записи|Еще не поддерживается|[Аварийное восстановление и отработка отказа учетной записи](../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Переключение учетной записи|Еще не поддерживается|[Аварийное восстановление и отработка отказа учетной записи хранения](../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |ACL контейнера BLOB-объектов|Еще не поддерживается|[Set Container ACL](https://docs.microsoft.com/rest/api/storageservices/set-container-acl)|
 |Личные домены|Еще не поддерживается|[Сопоставьте личный домен с конечной точкой хранилища BLOB-объектов Azure](storage-custom-domain-name.md)|
 |Неизменяемое хранилище|Еще не поддерживается|[Хранение критически важных для бизнеса данных большого двоичного объекта с неизменяемым хранилищем](storage-blob-immutable-storage.md)|
@@ -50,7 +50,7 @@ ms.locfileid: "80637212"
 |Вход в Azure Monitor|Еще не поддерживается|Пока недоступно|
 |Блочные BLOB-объекты Premium|Еще не поддерживается|[Создание учетной записи Блоккблобстораже](storage-blob-create-account-block-blob.md)|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Известные проблемы с Azure Data Lake Storage 2-го поколения](data-lake-storage-known-issues.md)
 - [Службы Azure, которые поддерживают Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-azure-services.md)
