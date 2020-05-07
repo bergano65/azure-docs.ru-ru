@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 02/07/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: c2d1e8b4975be0657983192df00cc434da00a6f7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7ff7db383a74ce01f7f1a7bf49a33e41f91decf8
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79255409"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82853494"
 ---
 # <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 
@@ -97,7 +97,7 @@ az login
 
 # <a name="template"></a>[Шаблон](#tab/template)
 
-Недоступно
+Н/Д
 
 ---
 
@@ -152,8 +152,8 @@ New-AzStorageAccount -ResourceGroupName $resourceGroup `
 |Хранилище, избыточное между зонами (ZRS)     |Standard_ZRS         |
 |Геоизбыточное хранилище (GRS)     |Standard_GRS         |
 |Геоизбыточное хранилище с доступом для чтения (RA-GRS)     |Standard_RAGRS         |
-|Хранилище, избыточное в геопоясе (ГЗРС) (Предварительная версия)    |Standard_GZRS         |
-|Хранилище, избыточное в геозону с доступом на чтение (RA-ГЗРС) (Предварительная версия)    |Standard_RAGZRS         |
+|Хранилище, геоизбыточное между зонами (GZRS)    |Standard_GZRS         |
+|Хранилище, избыточное в геопоясе, с доступом на чтение (RA-ГЗРС)    |Standard_RAGZRS         |
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -195,12 +195,12 @@ az storage account create \
 |Хранилище, избыточное между зонами (ZRS)     |Standard_ZRS         |
 |Геоизбыточное хранилище (GRS)     |Standard_GRS         |
 |Геоизбыточное хранилище с доступом для чтения (RA-GRS)     |Standard_RAGRS         |
-|Хранилище, избыточное в геопоясе (ГЗРС) (Предварительная версия)    |Standard_GZRS         |
-|Хранилище, избыточное в геозону с доступом на чтение (RA-ГЗРС) (Предварительная версия)    |Standard_RAGZRS         |
+|Хранилище, геоизбыточное между зонами (GZRS)    |Standard_GZRS         |
+|Хранилище, избыточное в геопоясе, с доступом на чтение (RA-ГЗРС)    |Standard_RAGZRS         |
 
 # <a name="template"></a>[Шаблон](#tab/template)
 
-Вы можете использовать Azure Powershell или Azure CLI, чтобы развернуть шаблон Resource Manager для создания учетной записи хранения. Шаблон, используемый в этой статье, относится к [Azure Resource Manager шаблонам](https://azure.microsoft.com/resources/templates/101-storage-account-create/)быстрого запуска. Чтобы запустить эти сценарии, выберите **Попробовать**, чтобы открыть Azure Cloud Shell. Чтобы вставить сценарий, щелкните правой кнопкой мыши оболочку и выберите **Вставить**.
+Чтобы развернуть шаблон диспетчер ресурсов для создания учетной записи хранения, можно использовать либо Azure PowerShell, либо Azure CLI. Шаблон, используемый в этой статье, относится к [Azure Resource Manager шаблонам](https://azure.microsoft.com/resources/templates/101-storage-account-create/)быстрого запуска. Чтобы запустить скрипты, выберите команду **попробовать** , чтобы открыть Azure Cloud Shell. Чтобы вставить сценарий, щелкните правой кнопкой мыши оболочку и выберите **Вставить**.
 
 ```azurepowershell-interactive
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"

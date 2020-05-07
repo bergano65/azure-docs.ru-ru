@@ -422,7 +422,7 @@
     - name: Библиотеки
       href: /azure/databricks/libraries
       maintainContext: true
-    - name: Данные
+    - name: 'Данные '
       items:
         - name: Обзор данных
           href: /azure/databricks/getting-started/data
@@ -1010,6 +1010,8 @@
         - name: Общие сведения о безопасности
           href: /azure/databricks/security/index
           maintainContext: true
+        - name: Базовые средства безопасности
+          href: security-baseline.md
         - name: Управление доступом
           items:
             - name: Общие сведения о контроле доступа

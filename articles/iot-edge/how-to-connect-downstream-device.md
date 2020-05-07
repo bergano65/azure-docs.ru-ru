@@ -11,12 +11,12 @@ services: iot-edge
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 3113f01341d2a1ec6160cfea3eb9d12d18b8495c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: 49a94b8877d46cf95ec8701f470d87e187713f69
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81687184"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583308"
 ---
 # <a name="connect-a-downstream-device-to-an-azure-iot-edge-gateway"></a>Подключение подчиненного устройства к шлюзу Azure IoT Edge
 
@@ -36,7 +36,7 @@ ms.locfileid: "81687184"
 
 В этой статье под терминами *шлюз* и *шлюз IoT Edge* подразумевается устройство IoT Edge, которое настроенное в качестве прозрачного шлюза.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Попросите файл сертификата **Азуре-ИОТ-тест-Онли. root. ca. CERT. pem** , созданный в [настройке устройства IOT EDGE, в качестве прозрачного шлюза](how-to-create-transparent-gateway.md) , доступного на подчиненном устройстве. Подчиненное устройство использует этот сертификат для проверки подлинности устройства шлюза.
 * Измените строку подключения, указывающую на устройство шлюза, как описано в разделах [Проверка подлинности подчиненного устройства в центре Интернета вещей Azure](how-to-authenticate-downstream-device.md).
@@ -156,7 +156,7 @@ var options = {
 
 Чтобы установить доверенный сертификат в хранилище сертификатов программным способом с помощью приложения .NET, воспользуйтесь функцией **InstallCACert()**, которая определена в файле **EdgeDownstreamDevice/Program.cs**. Эта операция является идемпотентной, то есть ее можно безопасно выполнять несколько раз и получать одинаковые значения без побочных эффектов.
 
-### <a name="c"></a>В
+### <a name="c"></a>C
 
 Этот раздел знакомит вас с примером приложения для подключения клиентского устройства Azure IoT C к шлюзу IoT Edge. Пакет SDK для C поддерживает множество библиотек TLS, включая OpenSSL, WolfSSL и Schannel. См. дополнительные сведения о [пакете SDK для Azure IoT C](https://github.com/Azure/azure-iot-sdk-c).
 
@@ -185,9 +185,9 @@ var options = {
 
 Этот раздел знакомит вас с примером приложения для подключения клиентского устройства Azure IoT Python к шлюзу IoT Edge.
 
-1. Получите пример для **send_message** из [пакета SDK для устройств Azure IOT для примеров Python](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/async-edge-scenarios).
-2. Убедитесь, что вы либо работаете в контейнере IoT Edge, либо в сценарии отладки установите переменные среды `EdgeHubConnectionString` и. `EdgeModuleCACertificateFile`
-3. В документации по пакету SDK вы найдете инструкции по запуску примера на конкретном устройстве.
+1. Получите пример для **send_message_downstream** из [пакета SDK для устройств Azure IOT для примеров Python](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/async-edge-scenarios).
+2. Задайте переменные `IOTHUB_DEVICE_CONNECTION_STRING` среды `IOTEDGE_ROOT_CA_CERT_PATH` и, как указано в комментариях к скрипту Python.
+3. Дополнительные инструкции по запуску примера на устройстве см. в документации по пакету SDK.
 
 ## <a name="test-the-gateway-connection"></a>Тестирование подключения к шлюзу
 
@@ -211,6 +211,6 @@ openssl s_client -connect mygateway.contoso.com:8883 -CAfile <CERTDIR>/certs/azu
 2. Разрешается ли имя узла шлюза в IP-адрес? Вы можете разрешить периодические подключения с помощью DNS или путем добавления записи файла узла на конечном устройстве.
 3. Открыты ли порты связи в брандмауэре? Связь, основанная на используемом протоколе (МКТТС: 8883/AMQPS: 5671/HTTPS: 433), должна быть возможна между подчиненным устройством и прозрачным IoT Edge.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как IoT Edge расширяет [возможности автономной работы](offline-capabilities.md) для подчиненных устройств.

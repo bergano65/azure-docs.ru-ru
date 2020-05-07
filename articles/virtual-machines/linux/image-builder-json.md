@@ -7,13 +7,13 @@ ms.date: 03/24/2020
 ms.topic: article
 ms.service: virtual-machines-linux
 ms.subservice: imaging
-manager: gwallace
-ms.openlocfilehash: e1f1bc09406c34836c13deb805fa399ab4751d41
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.reviewer: cynthn
+ms.openlocfilehash: c13ace67f18b619d5ad86106ecb648db722be9fa
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80246795"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792451"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Предварительная версия: Создание шаблона Azure Image Builder 
 
@@ -120,7 +120,7 @@ ms.locfileid: "80246795"
 
 Дополнительные сведения см. в разделе [Определение зависимостей ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-define-dependencies#dependson).
 
-## <a name="identity"></a>Идентификация
+## <a name="identity"></a>Удостоверение
 По умолчанию построитель образов поддерживает использование скриптов или копирование файлов из нескольких расположений, таких как GitHub и хранилище Azure. Для использования этих данных они должны быть общедоступными.
 
 Вы также можете использовать управляемое пользователем удостоверение Azure, определяемое вами, чтобы разрешить построителю образов доступ к хранилищу Azure при условии, что удостоверение было предоставлено как минимум "модуль чтения данных BLOB-объекта хранилища" в учетной записи хранения Azure. Это означает, что вам не нужно делать большие двоичные объекты хранилища доступными извне или настраивать маркеры SAS.
@@ -469,7 +469,7 @@ az resource show \
         --api-version=2019-05-01-preview
 ```
 
-Выходные данные:
+Результат
 ```json
 {
   "id": "/subscriptions/xxxxxx/resourcegroups/rheltest/providers/Microsoft.VirtualMachineImages/imageTemplates/ImageTemplateLinuxRHEL77/runOutputs/rhel77",
@@ -590,7 +590,7 @@ az resource show \
 > [!NOTE]
 > После создания виртуального жесткого диска скопируйте его в другое расположение, как можно скорее. Виртуальный жесткий диск хранится в учетной записи хранения во временной группе ресурсов, созданной при отправке шаблона образа в службу Azure Image Builder. При удалении шаблона образа виртуальный жесткий диск будет утерян. 
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Существуют образцы JSON-файлов для различных сценариев в GitHub в [Azure Image Builder](https://github.com/danielsollondon/azvmimagebuilder).
  

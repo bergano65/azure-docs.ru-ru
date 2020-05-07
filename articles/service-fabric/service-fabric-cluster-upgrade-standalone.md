@@ -3,12 +3,12 @@ title: Обновление автономного кластера Azure Servic
 description: Сведения о том, как обновить версию или конфигурацию изолированного кластера Azure Service Fabric.  T
 ms.topic: conceptual
 ms.date: 11/12/2018
-ms.openlocfilehash: 6da9b4c6890895141ecc419382f05f667614fb31
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ac3e80aae440c6709057e4211f7a4f6a1beea058
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75451829"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82790649"
 ---
 # <a name="upgrading-and-updating-a-service-fabric-standalone-cluster"></a>Обновление изолированного кластера Service Fabric
 
@@ -36,9 +36,9 @@ ms.locfileid: "75451829"
 Приложение для управления исправлениями — это приложение Service Fabric, которое позволяет автоматизировать установку исправлений операционной системы в кластере Service Fabric и избегать простоев. [Приложение для управления исправлениями для Windows](service-fabric-patch-orchestration-application.md) можно развернуть в кластере, чтобы установить исправления контролируемым образом без простоев служб. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте, как настроить некоторые [Параметры структуры кластера Service Fabric](service-fabric-cluster-fabric-settings.md) .
-* Узнайте, как выполнять [масштабирование кластера](service-fabric-cluster-scale-up-down.md)
+* Узнайте, как выполнять [масштабирование кластера](service-fabric-cluster-scale-in-out.md)
 * Дополнительные сведения об [обновлении приложений](service-fabric-application-upgrade.md)
 
 <!--Image references-->

@@ -40,6 +40,8 @@
       href: components.md
     - name: Основные понятия
       href: concepts.md
+    - name: Номера SKU
+      href: skus.md
     - name: Мониторинг работоспособности
       items:
         - name: Пробы работоспособности

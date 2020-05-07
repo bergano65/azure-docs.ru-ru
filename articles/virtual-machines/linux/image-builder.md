@@ -4,15 +4,15 @@ description: Создание виртуальной машины Linux с по�
 author: cynthn
 ms.author: cynthn
 ms.date: 05/02/2019
-ms.topic: article
+ms.topic: how-to
 ms.service: virtual-machines-linux
 ms.subservice: imaging
-ms.openlocfilehash: 0d36d7db4d85ece8de77040925c535305951562b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b50b2a9bfca99e1868c083759cce26bb176789f4
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80066687"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792417"
 ---
 # <a name="preview-create-a-linux-vm-with-azure-image-builder"></a>Предварительная версия: создание виртуальной машины Linux с помощью Azure Image Builder
 
@@ -235,6 +235,6 @@ az group delete -n $imageResourceGroup
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о компонентах JSON, использованных в этой статье, см. в разделе [Справочник по шаблонам для Image Builder](image-builder-json.md).

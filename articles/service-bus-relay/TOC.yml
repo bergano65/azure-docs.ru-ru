@@ -8,11 +8,11 @@
   items:
     - name: Гибридные подключения
       items:
-        - name: 'Отправка и получение сообщений: соединения WebSocket в .NET'
+        - name: "Отправка и получение сообщений\_— WebSocket в .NET"
           href: relay-hybrid-connections-dotnet-get-started.md
         - name: 'Отправка и получение сообщений: соединения HTTP в.NET'
           href: relay-hybrid-connections-http-requests-dotnet-get-started.md
-        - name: 'Отправка и получение сообщений: соединения WebSocket в Node'
+        - name: "Отправка и получение сообщений\_— WebSocket в Node"
           href: relay-hybrid-connections-node-get-started.md
         - name: 'Отправка и получение сообщений: соединения HTTP в Node'
           href: relay-hybrid-connections-http-requests-node-get-started.md
@@ -32,7 +32,7 @@
       href: 'https://github.com/Azure/azure-relay/tree/master/samples/wcf-relay'
 - name: Основные понятия
   items:
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Аутентификация и авторизация
           href: relay-authentication-and-authorization.md
@@ -59,10 +59,12 @@
               href: relay-hybrid-connections-dotnet-api-overview.md
             - name: Узел
               href: relay-hybrid-connections-node-ws-api-overview.md
-    - name: Управление
+    - name: Управление и мониторинг
       items:
         - name: Мониторинг Azure Relay с помощью Azure Monitor
           href: relay-metrics-azure-monitor.md
+        - name: Настройка журналов диагностики
+          href: diagnostic-logs.md
 - name: Справочник
   items:
     - name: .NET

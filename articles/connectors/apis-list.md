@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 04/24/2020
-ms.openlocfilehash: 27f86a3fa34f8029e59d11066de9ea5a25a8c5ad
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f2a2ee7a2806a753ffd159c91ed782634e74c704
+ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82147978"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82838685"
 ---
 # <a name="connectors-for-azure-logic-apps"></a>Соединители для Azure Logic Apps
 
@@ -192,10 +192,11 @@ Logic Apps предоставляет эти соединители предпр
 
 |   |   |   |   |   |
 |---|---|---|---|---|
-[![Значок][as2-icon]<br>API**AS2**][as2-doc] | [![Значок][azure-blob-storage-icon]<br>API**хранилище BLOB<br>-объектов Azure**][azure-blob-storage-doc] | [![Значок][azure-cosmos-db-icon]<br>API**Azure Cosmos <br> DB**][azure-cosmos-db-doc] | [![Значок][azure-event-hubs-icon]<br>API**концентраторы <br>событий Azure**][azure-event-hubs-doc] | [![Значок][azure-file-storage-icon]<br>API**хранилище файлов<br>Azure**][azure-file-storage-doc] |
-| [![Значок][azure-service-bus-icon]<br>API**служебная <br>шина Azure**][azure-service-bus-doc] | [![Значок][azure-sql-data-warehouse-icon]<br>API**хранилище <br>данных SQL Azure**][azure-sql-data-warehouse-doc] | [![Значок][azure-table-storage-icon]<br>API**хранилище таблиц <br>Azure**][azure-table-storage-doc] | [![Значок][azure-queues-icon]<br>API**очереди <br>Azure**][azure-queues-doc] | [![Значок][edifact-icon]<br>API**EDIFACT**][edifact-doc] |
-| [![Значок][file-system-icon]<br>API**Файловая <br>система**][file-system-doc] | [![Значок][ftp-icon]<br>API**FTP**][ftp-doc] | [![Значок][ibm-3270-icon]<br>API**IBM 3270**][ibm-3270-doc] | [![Значок][ibm-db2-icon]<br>API**IBM DB2**][ibm-db2-doc] | [![Значок][ibm-mq-icon]<br>API**IBM MQ**][ibm-mq-doc] |
-| [![Значок][sap-icon]<br>API**SAP**][sap-connector-doc] | [![Значок][sftp-ssh-icon]<br>API**SFTP-SSH**][sftp-ssh-doc] | [![Значок][smtp-icon]<br>API**SMTP**][smtp-doc] | [![Значок][sql-server-icon]<br>API**SQL <br>Server**][sql-server-doc] | [![Значок][x12-icon]<br>API**X12**][x12-doc] |
+[![Значок][as2-icon]<br>API**AS2**][as2-doc] | [![Значок][azure-automation-icon]<br>API Служба**автоматизации Azure <br>**][azure-automation-doc] | [![Значок][azure-blob-storage-icon]<br>API**хранилище BLOB<br>-объектов Azure**][azure-blob-storage-doc] | [![Значок][azure-cosmos-db-icon]<br>API**Azure Cosmos <br> DB**][azure-cosmos-db-doc] | [![Значок][azure-event-hubs-icon]<br>API**концентраторы <br>событий Azure**][azure-event-hubs-doc] |
+[![Значок][azure-event-grid-icon]<br>API служба "**Сетка событий <br>Azure** "][azure-event-grid-doc] | [![Значок][azure-file-storage-icon]<br>API**хранилище файлов<br>Azure**][azure-file-storage-doc] | [![Значок][azure-key-vault-icon]<br>API**хранилище ключей <br>Azure**][azure-key-vault-doc] | [![Значок][azure-monitor-logs-icon]<br>API**Azure Monitor <br>журналы**][azure-monitor-logs-doc] | [![Значок][azure-service-bus-icon]<br>API**служебная <br>шина Azure**][azure-service-bus-doc] |
+| [![Значок][azure-sql-data-warehouse-icon]<br>API**хранилище <br>данных SQL Azure**][azure-sql-data-warehouse-doc] | [![Значок][azure-table-storage-icon]<br>API**хранилище таблиц <br>Azure**][azure-table-storage-doc] | [![Значок][azure-queues-icon]<br>API**очереди <br>Azure**][azure-queues-doc] | [![Значок][edifact-icon]<br>API**EDIFACT**][edifact-doc] | [![Значок][file-system-icon]<br>API**Файловая <br>система**][file-system-doc] |
+| [![Значок][ftp-icon]<br>API**FTP**][ftp-doc] | [![Значок][ibm-3270-icon]<br>API**IBM 3270**][ibm-3270-doc] | [![Значок][ibm-db2-icon]<br>API**IBM DB2**][ibm-db2-doc] | [![Значок][ibm-mq-icon]<br>API**IBM MQ**][ibm-mq-doc] | [![Значок][sap-icon]<br>API**SAP**][sap-connector-doc] |
+| [![Значок][sftp-ssh-icon]<br>API**SFTP-SSH**][sftp-ssh-doc] | [![Значок][smtp-icon]<br>API**SMTP**][smtp-doc] | [![Значок][sql-server-icon]<br>API**SQL <br>Server**][sql-server-doc] | [![Значок][x12-icon]<br>API**X12**][x12-doc] |
 ||||||
 
 Дополнительные сведения см. в следующих статьях:
@@ -243,112 +244,12 @@ Logic Apps предоставляет эти соединители предпр
 >
 > Дополнительные сведения о создании Исес см. в статье [Подключение к виртуальным сетям Azure из Azure Logic Apps](../logic-apps/connect-virtual-network-vnet-isolated-environment.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Просмотр [полного списка соединителей](https://docs.microsoft.com/connectors)
 * [Создание первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md)
 * [Обзор пользовательских соединителей](https://docs.microsoft.com/connectors/custom-connectors/)
 * [Создание настраиваемых API для приложений логики](../logic-apps/logic-apps-create-api-app.md)
-
-<!--Misc doc links-->
-[gateway-doc]: ../logic-apps/logic-apps-gateway-connection.md "Подключение к локальным источникам данных из приложений логики с помощью локального шлюза данных"
-
-<!--Built-in doc links-->
-[azure-api-management-doc]: ../api-management/get-started-create-service-instance.md "Создание экземпляра службы управления API Azure для управления и публикации API-интерфейсов"
-[azure-app-services-doc]: ../logic-apps/logic-apps-custom-hosted-api.md "Интеграция приложений логики с приложениями API службы приложений"
-[azure-functions-doc]: ../logic-apps/logic-apps-azure-functions.md "Интеграция приложений логики с помощью функций Azure"
-[batch-doc]: ../logic-apps/logic-apps-batch-process-send-receive-messages.md "Обработка сообщений в группах или в качестве пакетов"
-[condition-doc]: ../logic-apps/logic-apps-control-flow-conditional-statement.md "Оценка условия и выполнение различных действий в зависимости от того, имеет ли условие значение true или false"
-[for-each-doc]: ../logic-apps/logic-apps-control-flow-loops.md#foreach-loop "Выполнение одних и тех же действий для каждого элемента в массиве"
-[http-doc]: ./connectors-native-http.md "Вызов конечных точек HTTP или HTTPS из приложений логики"
-[http-request-doc]: ./connectors-native-reqres.md "Получение HTTP-запросов в приложениях логики"
-[http-response-doc]: ./connectors-native-reqres.md "Реагирование на HTTP-запросы из приложений логики"
-[http-swagger-doc]: ./connectors-native-http-swagger.md "Вызов конечных точек RESTFUL из приложений логики"
-[http-webhook-doc]: ./connectors-native-webhook.md "Ожидание конкретных событий от конечных точек HTTP или HTTPS"
-[nested-logic-app-doc]: ../logic-apps/logic-apps-http-endpoint.md "Интеграция приложений логики с вложенным рабочим процессом."
-[query-doc]: ../logic-apps/logic-apps-perform-data-operations.md#filter-array-action "Выбор и фильтрации массивов с помощью действия "Запрос""
-[schedule-doc]: ../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md "Запускать приложения логики на основе расписания"
-[schedule-delay-doc]: ./connectors-native-delay.md "Задержка выполнения следующего действия"
-[schedule-delay-until-doc]: ./connectors-native-delay.md "Задержка выполнения следующего действия"
-[schedule-recurrence-doc]:  ./connectors-native-recurrence.md "Запуск приложений логики по повторяющемуся расписанию"
-[schedule-sliding-window-doc]: ./connectors-native-sliding-window.md "Запуск приложений логики, требующих обработки данных в смежных фрагментах"
-[scope-doc]: ../logic-apps/logic-apps-control-flow-run-steps-group-scopes.md "Упорядочение действий в группы, которые получают свой статус после окончания выполнения действий в группе"
-[switch-doc]: ../logic-apps/logic-apps-control-flow-switch-statement.md "Упорядочите действия в варианты, которым присваиваются уникальные значения. Выполните только тот случай, значение которого соответствует результату выражения, объекта или токена. Если совпадений не существует, выполните вариант по умолчанию."
-[terminate-doc]: ../logic-apps/logic-apps-workflow-actions-triggers.md#terminate-action "Остановка или отмена активного рабочего процесса для приложения логики"
-[until-doc]: ../logic-apps/logic-apps-control-flow-loops.md#until-loop "Повторять действия до тех пор, пока заданное условие не будет равно true или изменилось некоторое состояние"
-[data-operations-doc]: ../logic-apps/logic-apps-perform-data-operations.md "Выполнение операций с данными, таких как фильтрация массивов или создание таблиц CSV и HTML"
-[variables-doc]: ../logic-apps/logic-apps-create-variables-store-values.md "Выполнение операций с переменными, такими как инициализация, набор, увеличение, декремент и добавление к строке или переменной массива"
-
-<!--Managed connector doc links-->
-[azure-blob-storage-doc]: ./connectors-create-api-azureblobstorage.md "Управление файлами в контейнере больших двоичных объектов с помощью соединителя хранилища BLOB-объектов Azure"
-[azure-cosmos-db-doc]: https://docs.microsoft.com/connectors/documentdb/ "Подключение к Azure Cosmos DB для доступа к документам и хранимым процедурам"
-[azure-event-grid-doc]: ../event-grid/monitor-virtual-machine-changes-event-grid-logic-app.md "Наблюдение за событиями, опубликованными службой "Сетка событий", например при изменении ресурсов Azure или ресурсов сторонних производителей"
-[azure-event-hubs-doc]: ./connectors-create-api-azure-event-hubs.md "Подключение к концентраторам событий Azure для получения и отправки событий между приложениями логики и концентраторами событий"
-[azure-file-storage-doc]: https://docs.microsoft.com/connectors/azurefile/ "Подключитесь к учетной записи хранения Azure, чтобы можно было создавать, обновлять, получать и удалять файлы."
-[azure-queues-doc]: https://docs.microsoft.com/connectors/azurequeues/ "Подключитесь к учетной записи хранения Azure, чтобы можно было создавать очереди и сообщения и управлять ими."
-[azure-service-bus-doc]: ./connectors-create-api-servicebus.md "Отправка сообщений из очередей и разделов служебной шины, а также получение сообщений из очередей и подписок служебной шины"
-[azure-sql-data-warehouse-doc]: https://docs.microsoft.com/connectors/sqldw/ "Подключение к хранилищу данных SQL Azure для просмотра данных"
-[azure-table-storage-doc]: https://docs.microsoft.com/connectors/azuretables/ "Подключитесь к учетной записи хранения Azure, чтобы можно было создавать, обновлять и запрашивать таблицы и многое другое."
-[biztalk-server-doc]: https://docs.microsoft.com/connectors/biztalk/ "Подключитесь к BizTalk Server, чтобы можно было запускать приложения на основе BizTalk параллельно с Azure Logic Apps"
-[box-doc]: ./connectors-create-api-box.md "Подключиться к Box. Отправка, получение, удаление, перечисление файлов и многое другое"
-[dropbox-doc]: ./connectors-create-api-dropbox.md "Подключитесь к Dropbox. Отправка, получение, удаление, перечисление файлов и многое другое"
-[dynamics-365-doc]: ./connectors-create-api-crmonline.md "Подключение к Dynamics CRM Online для работы с данными CRM Online"
-[facebook-doc]: ./connectors-create-api-facebook.md "Подключитесь к Facebook. Публикация на временной шкале, получение веб-канала страницы и многое другое"
-[file-system-doc]: ../logic-apps/logic-apps-using-file-connector.md "Подключение к локальной файловой системе"
-[ftp-doc]: ./connectors-create-api-ftp.md "Подключение к FTP и FTPS-серверу для выполнения разных FTP-задач, включая отправку, получение, удаление файлов и другие действия."
-[github-doc]: ./connectors-create-api-github.md "Подключение к GitHub и отслеживание проблем"
-[google-calendar-doc]: ./connectors-create-api-googlecalendar.md "Подключается к Google календарю и может управлять календарем"
-[google-drive-doc]: ./connectors-create-api-googledrive.md "Подключение к GoogleDrive, чтобы можно было работать с данными"
-[google-sheets-doc]: ./connectors-create-api-googlesheet.md "Подключение к Google таблицам, чтобы можно было изменять листы"
-[google-tasks-doc]: ./connectors-create-api-googletasks.md "Подключается к задачам Google, чтобы вы могли управлять своими задачами."
-[ibm-3270-doc]: ./connectors-run-3270-apps-ibm-mainframe-create-api-3270.md "Подключение к приложениям 3270 на мэйнфреймах IBM"
-[ibm-db2-doc]: ./connectors-create-api-db2.md "Подключитесь к IBM DB2 в облаке или в локальной среде. Обновление строки, получение таблицы и многое другое"
-[ibm-informix-doc]: ./connectors-create-api-informix.md "Подключитесь к Informix в облаке или в локальной среде. Чтение строки, перечисление таблиц и многое другое"
-[ibm-mq-doc]: ./connectors-create-api-mq.md "Подключение к IBM MQ в локальной среде или Azure для отправки и получения сообщений"
-[instagram-doc]: ./connectors-create-api-instagram.md "Подключитесь к Instagram. Активировать или исдействовать события"
-[mailchimp-doc]: ./connectors-create-api-mailchimp.md "Подключитесь к учетной записи MailChimp. Управление почтой и ее Автоматизация"
-[mandrill-doc]: ./connectors-create-api-mandrill.md "Подключение к Mandrill для обмена данными"
-[mysql-doc]: https://docs.microsoft.com/connectors/mysql/ "Подключитесь к локальной базе данных MySQL, чтобы можно было читать и записывать данные."
-[office-365-outlook-doc]: ./connectors-create-api-office365-outlook.md "Подключитесь к учетной записи Office 365, чтобы вы могли отправлять и получать сообщения электронной почты, управлять календарем и контактами и многое другое."
-[office-365-users-doc]: ./connectors-create-api-office365-users.md
-[onedrive-doc]: ./connectors-create-api-onedrive.md "Подключитесь к личному приложению Microsoft OneDrive, чтобы вы могли отправлять, удалять, перечислять файлы и многое другое."
-[onedrive-for-business-doc]: ./connectors-create-api-onedriveforbusiness.md "Подключитесь к Microsoft OneDrive для бизнеса, чтобы вы могли отправлять, удалять, перечислять файлы и многое другое."
-[oracle-db-doc]: ./connectors-create-api-oracledatabase.md "Подключение к базе данных Oracle, чтобы можно было добавлять, вставлять, удалять строки и многое другое."
-[outlook.com-doc]: ./connectors-create-api-outlook.md "Подключение к почтовому ящику Outlook для управления электронной почтой, календарями, контактами и т. д."
-[postgre-sql-doc]: https://docs.microsoft.com/connectors/postgresql/ "Подключитесь к базе данных PostgreSQL, чтобы можно было считывать данные из таблиц."
-[project-online-doc]: ./connectors-create-api-projectonline.md "Подключение к Microsoft Project Online для управления проектами, задачами, ресурсами и т. д."
-[rss-doc]: ./connectors-create-api-rss.md "Публикация и получение элементов канала, активация операций при публикации нового элемента в RSS-канале"
-[salesforce-doc]: ./connectors-create-api-salesforce.md "Подключитесь к учетной записи Salesforce. Управление учетными записями, интересами, возможностями и др."
-[sap-connector-doc]: ../logic-apps/logic-apps-using-sap-connector.md "Подключение к локальному серверу SAP"
-[sendgrid-doc]: ./connectors-create-api-sendgrid.md "Подключитесь к SendGrid. Отправка электронной почты и управление списками получателей"
-[sftp-ssh-doc]: ./connectors-sftp-ssh.md "Подключитесь к учетной записи SFTP с помощью SSH. Отправка, получение, удаление файлов и многое другое"
-[sharepoint-server-doc]: ./connectors-create-api-sharepointserver.md "Подключитесь к локальному серверу SharePoint. Управление документами, элементами списков и т. д."
-[sharepoint-online-doc]: ./connectors-create-api-sharepointonline.md "Подключитесь к SharePoint Online. Управление документами, элементами списков и т. д."
-[slack-doc]: ./connectors-create-api-slack.md "Подключение к резервному времени и отправка сообщений в каналы временного резерва"
-[smtp-doc]: ./connectors-create-api-smtp.md "Подключение к SMTP-серверу и отправка электронных сообщений с вложениями"
-[sparkpost-doc]: ./connectors-create-api-sparkpost.md "Подключение к SparkPost для обмена данными"
-[sql-server-doc]: ./connectors-create-api-sqlazure.md "Подключитесь к базе данных SQL Azure или SQL Server. Создание, обновление, получение и удаление записей в таблице базы данных SQL"
-[teradata-doc]: https://docs.microsoft.com/connectors/teradata/ "Подключение к базе данных Teradata для чтения данных из таблиц"
-[trello-doc]: ./connectors-create-api-trello.md "Подключитесь к Trello. Управляйте своими проектами и организуйте что угодно"
-[twilio-doc]: ./connectors-create-api-twilio.md "Подключитесь к Twilio. Отправка и получение сообщений, получение доступных номеров, управление входящими телефонными номерами и многое другое"
-[twitter-doc]: ./connectors-create-api-twitter.md "Подключитесь к Twitter. Получение временных шкал, публикация твитов и многое другое"
-[yammer-doc]: ./connectors-create-api-yammer.md "Подключитесь к Yammer. Публикация сообщений, получение новых сообщений и многое другое"
-[youtube-doc]: ./connectors-create-api-youtube.md "Подключитесь к YouTube. Управляйте своими видео и каналами"
-
-<!--Enterprise Intregation Pack doc links-->
-[as2-doc]: ../logic-apps/logic-apps-enterprise-integration-as2.md "Кодирование и декодирование сообщений, использующих протокол AS2"
-[edifact-doc]: ../logic-apps/logic-apps-enterprise-integration-edifact.md "Кодирование и декодирование сообщений, использующих протокол EDIFACT"
-[edifact-decode-doc]: ../logic-apps/logic-apps-enterprise-integration-EDIFACT-decode.md "Декодирование сообщений, использующих протокол EDIFACT"
-[edifact-encode-doc]: ../logic-apps/logic-apps-enterprise-integration-EDIFACT-encode.md "Кодирование сообщений, использующих протокол EDIFACT"
-[flat-file-decode-doc]:../logic-apps/logic-apps-enterprise-integration-flatfile.md "Сведения о неструктурированном файле интеграции Enterprise"
-[flat-file-encode-doc]:../logic-apps/logic-apps-enterprise-integration-flatfile.md "Сведения о неструктурированном файле интеграции Enterprise"
-[integration-account-doc]: ../logic-apps/logic-apps-enterprise-integration-metadata.md "Управление метаданными для артефактов учетной записи интеграции"
-[json-liquid-transform-doc]: ../logic-apps/logic-apps-enterprise-integration-liquid-transform.md "Преобразование JSON с шаблонами жидкостей"
-[x12-doc]: ../logic-apps/logic-apps-enterprise-integration-x12.md "Кодирование и декодирование сообщений, использующих протокол X12"
-[x12-decode-doc]: ../logic-apps/logic-apps-enterprise-integration-X12-decode.md "Декодирование сообщений, использующих протокол X12"
-[x12-encode-doc]: ../logic-apps/logic-apps-enterprise-integration-X12-encode.md "Кодирование сообщений, использующих протокол X12"
-[xml-transform-doc]: ../logic-apps/logic-apps-enterprise-integration-transform.md "Преобразование XML-сообщений"
-[xml-validate-doc]: ../logic-apps/logic-apps-enterprise-integration-xml-validation.md "Проверка XML-сообщений"
 
 <!-- Built-ins icons -->
 [azure-api-management-icon]: ./media/apis-list/azure-api-management.png
@@ -386,7 +287,9 @@ Logic Apps предоставляет эти соединители предпр
 [azure-event-grid-publish-icon]: ./media/apis-list/azure-event-grid-publish.png
 [azure-event-hubs-icon]: ./media/apis-list/azure-event-hubs.png
 [azure-file-storage-icon]: ./media/apis-list/azure-file-storage.png
+[azure-key-vault-icon]: ./media/apis-list/azure-key-vault.png
 [azure-ml-icon]: ./media/apis-list/azure-ml.png
+[azure-monitor-logs-icon]: ./media/apis-list/azure-monitor-logs.png
 [azure-queues-icon]: ./media/apis-list/azure-queues.png
 [azure-resource-manager-icon]: ./media/apis-list/azure-resource-manager.png
 [azure-service-bus-icon]: ./media/apis-list/azure-service-bus.png
@@ -469,3 +372,107 @@ Logic Apps предоставляет эти соединители предпр
 [x12-icon]: ./media/apis-list/x12.png
 [xml-validate-icon]: ./media/apis-list/xml-validation.png
 [xml-transform-icon]: ./media/apis-list/xsl-transform.png
+
+<!--Other doc links-->
+[gateway-doc]: ../logic-apps/logic-apps-gateway-connection.md "Подключение к локальным источникам данных из приложений логики с помощью локального шлюза данных"
+
+<!--Built-in doc links-->
+[azure-api-management-doc]: ../api-management/get-started-create-service-instance.md "Создание экземпляра службы управления API Azure для управления и публикации API-интерфейсов"
+[azure-app-services-doc]: ../logic-apps/logic-apps-custom-hosted-api.md "Интеграция приложений логики с приложениями API службы приложений"
+[azure-functions-doc]: ../logic-apps/logic-apps-azure-functions.md "Интеграция приложений логики с помощью функций Azure"
+[batch-doc]: ../logic-apps/logic-apps-batch-process-send-receive-messages.md "Обработка сообщений в группах или в качестве пакетов"
+[condition-doc]: ../logic-apps/logic-apps-control-flow-conditional-statement.md "Оценка условия и выполнение различных действий в зависимости от того, имеет ли условие значение true или false"
+[for-each-doc]: ../logic-apps/logic-apps-control-flow-loops.md#foreach-loop "Выполнение одних и тех же действий для каждого элемента в массиве"
+[http-doc]: ./connectors-native-http.md "Вызов конечных точек HTTP или HTTPS из приложений логики"
+[http-request-doc]: ./connectors-native-reqres.md "Получение HTTP-запросов в приложениях логики"
+[http-response-doc]: ./connectors-native-reqres.md "Реагирование на HTTP-запросы из приложений логики"
+[http-swagger-doc]: ./connectors-native-http-swagger.md "Вызов конечных точек RESTFUL из приложений логики"
+[http-webhook-doc]: ./connectors-native-webhook.md "Ожидание конкретных событий от конечных точек HTTP или HTTPS"
+[nested-logic-app-doc]: ../logic-apps/logic-apps-http-endpoint.md "Интеграция приложений логики с вложенным рабочим процессом."
+[query-doc]: ../logic-apps/logic-apps-perform-data-operations.md#filter-array-action "Выбор и фильтрации массивов с помощью действия "Запрос""
+[schedule-doc]: ../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md "Запускать приложения логики на основе расписания"
+[schedule-delay-doc]: ./connectors-native-delay.md "Задержка выполнения следующего действия"
+[schedule-delay-until-doc]: ./connectors-native-delay.md "Задержка выполнения следующего действия"
+[schedule-recurrence-doc]:  ./connectors-native-recurrence.md "Запуск приложений логики по повторяющемуся расписанию"
+[schedule-sliding-window-doc]: ./connectors-native-sliding-window.md "Запуск приложений логики, требующих обработки данных в смежных фрагментах"
+[scope-doc]: ../logic-apps/logic-apps-control-flow-run-steps-group-scopes.md "Упорядочение действий в группы, которые получают свой статус после окончания выполнения действий в группе"
+[switch-doc]: ../logic-apps/logic-apps-control-flow-switch-statement.md "Упорядочите действия в варианты, которым присваиваются уникальные значения. Выполните только тот случай, значение которого соответствует результату выражения, объекта или токена. Если совпадений не существует, выполните вариант по умолчанию."
+[terminate-doc]: ../logic-apps/logic-apps-workflow-actions-triggers.md#terminate-action "Остановка или отмена активного рабочего процесса для приложения логики"
+[until-doc]: ../logic-apps/logic-apps-control-flow-loops.md#until-loop "Повторять действия до тех пор, пока заданное условие не будет равно true или изменилось некоторое состояние"
+[data-operations-doc]: ../logic-apps/logic-apps-perform-data-operations.md "Выполнение операций с данными, таких как фильтрация массивов или создание таблиц CSV и HTML"
+[variables-doc]: ../logic-apps/logic-apps-create-variables-store-values.md "Выполнение операций с переменными, такими как инициализация, набор, увеличение, декремент и добавление к строке или переменной массива"
+
+<!--Managed connector doc links-->
+[azure-automation-doc]: https://docs.microsoft.com/connectors/azureautomation/ "Создание заданий службы автоматизации для облачной и локальной инфраструктуры и управление ими"
+[azure-blob-storage-doc]: ./connectors-create-api-azureblobstorage.md "Управление файлами в контейнере больших двоичных объектов с помощью соединителя хранилища BLOB-объектов Azure"
+[azure-cosmos-db-doc]: https://docs.microsoft.com/connectors/documentdb/ "Подключение к Azure Cosmos DB для доступа к документам и хранимым процедурам"
+[azure-event-grid-doc]: ../event-grid/monitor-virtual-machine-changes-event-grid-logic-app.md "Наблюдение за событиями, опубликованными службой "Сетка событий", например при изменении ресурсов Azure или ресурсов сторонних производителей"
+[azure-event-hubs-doc]: ./connectors-create-api-azure-event-hubs.md "Подключение к концентраторам событий Azure для получения и отправки событий между приложениями логики и концентраторами событий"
+[azure-file-storage-doc]: https://docs.microsoft.com/connectors/azurefile/ "Подключитесь к учетной записи хранения Azure, чтобы можно было создавать, обновлять, получать и удалять файлы."
+[azure-key-vault-doc]: https://docs.microsoft.com/connectors/keyvault/ "Подключитесь к Azure Key Vault, чтобы можно было управлять секретами и ключами."
+[azure-monitor-logs-doc]: https://docs.microsoft.com/connectors/azuremonitorlogs/ "Выполнение запросов к журналам Azure Monitor в Log Analytics рабочих областях и компонентах Application Insights"
+[azure-queues-doc]: https://docs.microsoft.com/connectors/azurequeues/ "Подключитесь к учетной записи хранения Azure, чтобы можно было создавать очереди и сообщения и управлять ими."
+[azure-service-bus-doc]: ./connectors-create-api-servicebus.md "Отправка сообщений из очередей и разделов служебной шины, а также получение сообщений из очередей и подписок служебной шины"
+[azure-sql-data-warehouse-doc]: https://docs.microsoft.com/connectors/sqldw/ "Подключение к хранилищу данных SQL Azure для просмотра данных"
+[azure-table-storage-doc]: https://docs.microsoft.com/connectors/azuretables/ "Подключитесь к учетной записи хранения Azure, чтобы можно было создавать, обновлять и запрашивать таблицы и многое другое."
+[biztalk-server-doc]: https://docs.microsoft.com/connectors/biztalk/ "Подключитесь к BizTalk Server, чтобы можно было запускать приложения на основе BizTalk параллельно с Azure Logic Apps"
+[box-doc]: ./connectors-create-api-box.md "Подключиться к Box. Отправка, получение, удаление, перечисление файлов и многое другое"
+[dropbox-doc]: ./connectors-create-api-dropbox.md "Подключитесь к Dropbox. Отправка, получение, удаление, перечисление файлов и многое другое"
+[dynamics-365-doc]: ./connectors-create-api-crmonline.md "Подключение к Dynamics CRM Online для работы с данными CRM Online"
+[facebook-doc]: ./connectors-create-api-facebook.md "Подключитесь к Facebook. Публикация на временной шкале, получение веб-канала страницы и многое другое"
+[file-system-doc]: ../logic-apps/logic-apps-using-file-connector.md "Подключение к локальной файловой системе"
+[ftp-doc]: ./connectors-create-api-ftp.md "Подключение к FTP и FTPS-серверу для выполнения разных FTP-задач, включая отправку, получение, удаление файлов и другие действия."
+[github-doc]: ./connectors-create-api-github.md "Подключение к GitHub и отслеживание проблем"
+[google-calendar-doc]: ./connectors-create-api-googlecalendar.md "Подключается к Google календарю и может управлять календарем"
+[google-drive-doc]: ./connectors-create-api-googledrive.md "Подключение к GoogleDrive, чтобы можно было работать с данными"
+[google-sheets-doc]: ./connectors-create-api-googlesheet.md "Подключение к Google таблицам, чтобы можно было изменять листы"
+[google-tasks-doc]: ./connectors-create-api-googletasks.md "Подключается к задачам Google, чтобы вы могли управлять своими задачами."
+[ibm-3270-doc]: ./connectors-run-3270-apps-ibm-mainframe-create-api-3270.md "Подключение к приложениям 3270 на мэйнфреймах IBM"
+[ibm-db2-doc]: ./connectors-create-api-db2.md "Подключитесь к IBM DB2 в облаке или в локальной среде. Обновление строки, получение таблицы и многое другое"
+[ibm-informix-doc]: ./connectors-create-api-informix.md "Подключитесь к Informix в облаке или в локальной среде. Чтение строки, перечисление таблиц и многое другое"
+[ibm-mq-doc]: ./connectors-create-api-mq.md "Подключение к IBM MQ в локальной среде или Azure для отправки и получения сообщений"
+[instagram-doc]: ./connectors-create-api-instagram.md "Подключитесь к Instagram. Активировать или исдействовать события"
+[mailchimp-doc]: ./connectors-create-api-mailchimp.md "Подключитесь к учетной записи MailChimp. Управление почтой и ее Автоматизация"
+[mandrill-doc]: ./connectors-create-api-mandrill.md "Подключение к Mandrill для обмена данными"
+[mysql-doc]: https://docs.microsoft.com/connectors/mysql/ "Подключитесь к локальной базе данных MySQL, чтобы можно было читать и записывать данные."
+[office-365-outlook-doc]: ./connectors-create-api-office365-outlook.md "Подключитесь к учетной записи Office 365, чтобы вы могли отправлять и получать сообщения электронной почты, управлять календарем и контактами и многое другое."
+[office-365-users-doc]: ./connectors-create-api-office365-users.md
+[onedrive-doc]: ./connectors-create-api-onedrive.md "Подключитесь к личному приложению Microsoft OneDrive, чтобы вы могли отправлять, удалять, перечислять файлы и многое другое."
+[onedrive-for-business-doc]: ./connectors-create-api-onedriveforbusiness.md "Подключитесь к Microsoft OneDrive для бизнеса, чтобы вы могли отправлять, удалять, перечислять файлы и многое другое."
+[oracle-db-doc]: ./connectors-create-api-oracledatabase.md "Подключение к базе данных Oracle, чтобы можно было добавлять, вставлять, удалять строки и многое другое."
+[outlook.com-doc]: ./connectors-create-api-outlook.md "Подключение к почтовому ящику Outlook для управления электронной почтой, календарями, контактами и т. д."
+[postgre-sql-doc]: https://docs.microsoft.com/connectors/postgresql/ "Подключитесь к базе данных PostgreSQL, чтобы можно было считывать данные из таблиц."
+[project-online-doc]: ./connectors-create-api-projectonline.md "Подключение к Microsoft Project Online для управления проектами, задачами, ресурсами и т. д."
+[rss-doc]: ./connectors-create-api-rss.md "Публикация и получение элементов канала, активация операций при публикации нового элемента в RSS-канале"
+[salesforce-doc]: ./connectors-create-api-salesforce.md "Подключитесь к учетной записи Salesforce. Управление учетными записями, интересами, возможностями и др."
+[sap-connector-doc]: ../logic-apps/logic-apps-using-sap-connector.md "Подключение к локальному серверу SAP"
+[sendgrid-doc]: ./connectors-create-api-sendgrid.md "Подключитесь к SendGrid. Отправка электронной почты и управление списками получателей"
+[sftp-ssh-doc]: ./connectors-sftp-ssh.md "Подключитесь к учетной записи SFTP с помощью SSH. Отправка, получение, удаление файлов и многое другое"
+[sharepoint-server-doc]: ./connectors-create-api-sharepointserver.md "Подключитесь к локальному серверу SharePoint. Управление документами, элементами списков и т. д."
+[sharepoint-online-doc]: ./connectors-create-api-sharepointonline.md "Подключитесь к SharePoint Online. Управление документами, элементами списков и т. д."
+[slack-doc]: ./connectors-create-api-slack.md "Подключение к резервному времени и отправка сообщений в каналы временного резерва"
+[smtp-doc]: ./connectors-create-api-smtp.md "Подключение к SMTP-серверу и отправка электронных сообщений с вложениями"
+[sparkpost-doc]: ./connectors-create-api-sparkpost.md "Подключение к SparkPost для обмена данными"
+[sql-server-doc]: ./connectors-create-api-sqlazure.md "Подключитесь к базе данных SQL Azure или SQL Server. Создание, обновление, получение и удаление записей в таблице базы данных SQL"
+[teradata-doc]: https://docs.microsoft.com/connectors/teradata/ "Подключение к базе данных Teradata для чтения данных из таблиц"
+[trello-doc]: ./connectors-create-api-trello.md "Подключитесь к Trello. Управляйте своими проектами и организуйте что угодно"
+[twilio-doc]: ./connectors-create-api-twilio.md "Подключитесь к Twilio. Отправка и получение сообщений, получение доступных номеров, управление входящими телефонными номерами и многое другое"
+[twitter-doc]: ./connectors-create-api-twitter.md "Подключитесь к Twitter. Получение временных шкал, публикация твитов и многое другое"
+[yammer-doc]: ./connectors-create-api-yammer.md "Подключитесь к Yammer. Публикация сообщений, получение новых сообщений и многое другое"
+[youtube-doc]: ./connectors-create-api-youtube.md "Подключитесь к YouTube. Управляйте своими видео и каналами"
+
+<!--Enterprise Intregation Pack doc links-->
+[as2-doc]: ../logic-apps/logic-apps-enterprise-integration-as2.md "Кодирование и декодирование сообщений, использующих протокол AS2"
+[edifact-doc]: ../logic-apps/logic-apps-enterprise-integration-edifact.md "Кодирование и декодирование сообщений, использующих протокол EDIFACT"
+[edifact-decode-doc]: ../logic-apps/logic-apps-enterprise-integration-EDIFACT-decode.md "Декодирование сообщений, использующих протокол EDIFACT"
+[edifact-encode-doc]: ../logic-apps/logic-apps-enterprise-integration-EDIFACT-encode.md "Кодирование сообщений, использующих протокол EDIFACT"
+[flat-file-decode-doc]:../logic-apps/logic-apps-enterprise-integration-flatfile.md "Сведения о неструктурированном файле интеграции Enterprise"
+[flat-file-encode-doc]:../logic-apps/logic-apps-enterprise-integration-flatfile.md "Сведения о неструктурированном файле интеграции Enterprise"
+[integration-account-doc]: ../logic-apps/logic-apps-enterprise-integration-metadata.md "Управление метаданными для артефактов учетной записи интеграции"
+[json-liquid-transform-doc]: ../logic-apps/logic-apps-enterprise-integration-liquid-transform.md "Преобразование JSON с шаблонами жидкостей"
+[x12-doc]: ../logic-apps/logic-apps-enterprise-integration-x12.md "Кодирование и декодирование сообщений, использующих протокол X12"
+[x12-decode-doc]: ../logic-apps/logic-apps-enterprise-integration-X12-decode.md "Декодирование сообщений, использующих протокол X12"
+[x12-encode-doc]: ../logic-apps/logic-apps-enterprise-integration-X12-encode.md "Кодирование сообщений, использующих протокол X12"
+[xml-transform-doc]: ../logic-apps/logic-apps-enterprise-integration-transform.md "Преобразование XML-сообщений"
+[xml-validate-doc]: ../logic-apps/logic-apps-enterprise-integration-xml-validation.md "Проверка XML-сообщений"
+
