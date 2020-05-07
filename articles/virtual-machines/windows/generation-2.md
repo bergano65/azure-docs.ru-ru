@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 02/11/2020
 ms.author: jushiman
-ms.openlocfilehash: 07bf03096cbe5ec8e0fe9619519fdddb91cde984
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: bf690ad3ad38632834a92c4a743b1cb584beaf65
+ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82231668"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82838830"
 ---
 # <a name="support-for-generation-2-vms-on-azure"></a>Поддержка виртуальных машин поколения 2 в Azure
 
@@ -38,6 +38,7 @@ ms.locfileid: "82231668"
 * [Серия HB](../hb-series.md)
 * [Серия HC](../hc-series.md)
 * Серии [Ls](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-previous-gen#ls-series) и [Lsv2](../lsv2-series.md)
+* [Серия M](../m-series.md)
 * [Серия Mv2](../mv2-series.md)<sup>1</sup>
 * Серии [NCv2](../ncv2-series.md) и [NCv3](../ncv3-series.md)
 * [Серия ND](../nd-series.md)
@@ -85,7 +86,7 @@ ms.locfileid: "82231668"
 
 ### <a name="generation-1-vs-generation-2-capabilities"></a>Возможности поколения 1 и поколения 2
 
-| Функция | Поколение 1 | Поколение 2 |
+| Возможности | Поколение 1 | Поколение 2 |
 |------------|--------------|--------------|
 | Диск ОС > 2 ТБ                    | :x:                | :heavy_check_mark: |
 | Пользовательский диск, образ или ОС замены         | :heavy_check_mark: | :heavy_check_mark: |
@@ -205,7 +206,7 @@ az vm image list --publisher Canonical --sku gen2 --output table --all
     1. Убедитесь, что для свойства **Создание виртуальной машины** задано значение **Gen 2** на вкладке **Дополнительно** .
     1. Убедитесь, что вы ищете [Размер виртуальной машины, который поддерживает виртуальные машины Gen2](#generation-2-vm-sizes).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [виртуальных машинах версии 2 в Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v).
 

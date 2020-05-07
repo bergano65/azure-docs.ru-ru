@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 08/05/2019
 ms.author: mathoma
-ms.openlocfilehash: 0d6d69b82e80ff9bc33e49302cf59766b9c2e8d4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5e1f61641eed0584ecb5bb33f1a510c7df6e60e3
+ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81270831"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82839085"
 ---
 # <a name="frequently-asked-questions-for-sql-server-running-on-windows-virtual-machines-in-azure"></a>Часто задаваемые вопросы об SQL Server на виртуальных машинах Windows в Azure
 
@@ -52,10 +52,14 @@ ms.locfileid: "81270831"
 1. **Можно ли развернуть более старый образ SQL Server, который не отображается в портал Azure?**
 
    Да, с помощью PowerShell. Дополнительные сведения о том, как развернуть виртуальные машины SQL Server с помощью PowerShell, см. в статье [Как подготовить виртуальные машины SQL Server с помощью Azure PowerShell](virtual-machines-windows-ps-sql-create.md).
+   
+1. **Можно ли создать универсальный образ Azure SQL Server Marketplace SQL Server виртуальной машины и использовать его для развертывания виртуальных машин?**
 
-1. **Как выполнить обобщение SQL Server на виртуальной машине Azure и использовать ее для развертывания новых виртуальных машин?**
+   Да, но после этого необходимо [зарегистрировать каждую SQL Server виртуальную машину с помощью поставщика ресурсов виртуальной машины SQL Server](virtual-machines-windows-sql-register-with-resource-provider.md) , чтобы управлять виртуальной машиной SQL Server на портале, а также использовать такие функции, как автоматическая установка исправлений и автоматическое резервное копирование. При регистрации в поставщике ресурсов также необходимо указать тип лицензии для каждой SQL Server виртуальной машины.
 
-   Вы можете развернуть виртуальную машину Windows Server (без установленных SQL Server) и использовать процесс [SQL Sysprep](/sql/database-engine/install-windows/install-sql-server-using-sysprep?view=sql-server-ver15) для подготовки SQL Server на виртуальной машине Azure (Windows) с установочным носителем SQL Server. Клиенты, у которых есть [Программа Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default?rtc=1&activetab=software-assurance-default-pivot%3aprimaryr3) , могут получить установочный носитель из [центра корпоративного лицензирования](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Клиенты, у которых нет программы Software Assurance, могут использовать установочный носитель из Marketplace SQL Server образ виртуальной машины с нужным выпуском.
+1. **Разделы справки обобщить SQL Server на виртуальной машине Azure и использовать ее для развертывания новых виртуальных машин?**
+
+   Вы можете развернуть виртуальную машину Windows Server (без установленной SQL Server) и использовать процесс [SQL Sysprep](/sql/database-engine/install-windows/install-sql-server-using-sysprep?view=sql-server-ver15) для подготовки SQL Server на виртуальной машине Azure (Windows) с установочным носителем SQL Server. Клиенты, у которых есть [Программа Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default?rtc=1&activetab=software-assurance-default-pivot%3aprimaryr3) , могут получить установочный носитель из [центра корпоративного лицензирования](https://www.microsoft.com/Licensing/servicecenter/default.aspx). Клиенты, у которых нет программы Software Assurance, могут использовать установочный носитель из Marketplace SQL Server образ виртуальной машины с нужным выпуском.
 
    Кроме того, можно использовать один из образов SQL Server, образующих Azure Marketplace, для подготовки SQL Server на виртуальной машине Azure. Обратите внимание, что перед созданием собственного образа необходимо удалить следующий раздел реестра в исходном образе. Если этого не сделать, это может привести к чрезмерному преявлению SQL Server начальной загрузочной папки или расширения SQL IaaS в состоянии Failed.
 
@@ -63,7 +67,7 @@ ms.locfileid: "81270831"
    `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\SysPrepExternal\Specialize`
 
    > [!NOTE]
-   > Рекомендуется, чтобы все SQL Server виртуальные машины Azure, включая развернутые из настраиваемых обобщенных образов, были [зарегистрированы в поставщике SQL VM](/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-register-with-resource-provider?tabs=azure-cli%2Cbash) , чтобы удовлетворить требования соответствия и использовать дополнительные функции, такие как автоматическое исправление и автоматическое резервное копирование. Он также позволяет [указать тип лицензии](/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-ahb?tabs=azure-portal) для каждой SQL Server виртуальной машины.
+   > SQL Server на виртуальных машинах Azure, включая развернутые из настраиваемых обобщенных образов, необходимо [зарегистрировать в поставщике ресурсов виртуальной машины SQL](/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-register-with-resource-provider?tabs=azure-cli%2Cbash) , чтобы удовлетворить требования соответствия и использовать дополнительные функции, такие как автоматическое исправление и автоматическое резервное копирование. Поставщик ресурсов также позволяет [указать тип лицензии](/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-ahb?tabs=azure-portal) для каждой SQL Server виртуальной машины.
 
 1. **Можно ли использовать собственный виртуальный жесткий диск для развертывания SQL Server виртуальной машины?**
 
@@ -92,7 +96,7 @@ ms.locfileid: "81270831"
 
 1. **Можно ли настроить виртуальную машину для использования собственной лицензии SQL Server, если она была создана из одного из образов коллекции с оплатой по мере использования?**
 
-   Да. Вы можете легко переключить образ коллекции с оплатой по мере использования (PAYG) на собственную лицензию (BYOL), включив [преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/faq/).  Дополнительные сведения см. в разделе [Изменение модели лицензирования для виртуальной машины SQL Server в Azure](virtual-machines-windows-sql-ahb.md). Сейчас эта возможность доступна только клиентам общедоступного облака.
+   Да. Вы можете легко переключить образ коллекции с оплатой по мере использования (PAYG) на собственную лицензию (BYOL), включив [преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/faq/).  Дополнительные сведения см. в разделе [Изменение модели лицензирования для виртуальной машины SQL Server в Azure](virtual-machines-windows-sql-ahb.md). Сейчас эта возможность доступна только для клиентов, исходящих из общедоступного облака и Azure для государственных организаций.
 
 1. **Будет ли переход на другую модель лицензирования сопровождаться простоем SQL Server?**
 
@@ -154,10 +158,7 @@ ms.locfileid: "81270831"
 
 1. **Можно ли зарегистрировать самостоятельно развернутые SQL Server виртуальные машины с помощью поставщика ресурсов виртуальной машины SQL Server?**
 
-    Да. Если вы развернули SQL Server с собственного носителя и установили расширение SQL IaaS, вы можете зарегистрировать виртуальную машину SQL в поставщике ресурсов, чтобы получить преимущества управления, предоставляемые расширением SQL IaaS. Однако вы не можете преобразовать самостоятельно развернутую виртуальную машину SQL Server в оплату по мере использования.
-
-
-   
+    Да. Если вы развернули SQL Server с собственного носителя и установили расширение SQL IaaS, вы можете зарегистрировать виртуальную машину SQL в поставщике ресурсов, чтобы получить преимущества управления, предоставляемые расширением SQL IaaS.    
 
 
 ## <a name="administration"></a>Администрирование
@@ -206,7 +207,7 @@ ms.locfileid: "81270831"
   
    
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 
 1. **Поддерживаются SQL Server экземпляры отказоустойчивого кластера (FCI) на виртуальных машинах Azure?**
 
@@ -235,7 +236,7 @@ ms.locfileid: "81270831"
 * [Подготовка виртуальной машины SQL Server на базе Windows](virtual-machines-windows-portal-sql-server-provision.md).
 * [Миграция базы данных в SQL Server на виртуальной машине Azure](virtual-machines-windows-migrate-sql.md)
 * [Высокий уровень доступности и аварийное восстановление для SQL Server на виртуальных машинах Azure](virtual-machines-windows-sql-high-availability-dr.md)
-* [Рекомендации по оптимизации производительности SQL Server в виртуальных машинах Azure](virtual-machines-windows-sql-performance.md)
+* [Рекомендации по оптимизации производительности SQL Server на виртуальных машинах Azure](virtual-machines-windows-sql-performance.md)
 * [Шаблоны приложений и стратегии разработки для SQL Server на виртуальных машинах Azure](virtual-machines-windows-sql-server-app-patterns-dev-strategies.md)
 
 **Виртуальные машины Linux**:

@@ -1,8 +1,9 @@
-- name: Тесты производительности системы безопасности Azure
+- name: Тестирование безопасности Azure
   href: index.yml
 - name: Введение
   href: introduction.md
 - name: Средства управления безопасностью
+  expanded: true
   items:
     - name: Обзор элементов управления безопасностью Azure
       href: overview.md
@@ -10,28 +11,30 @@
       href: security-control-network-security.md
     - name: Ведение журналов и мониторинг
       href: security-control-logging-monitoring.md
-    - name: Идентификатор и управление доступом
+    - name: Идентификаторы и управление доступом
       href: security-control-identity-access-control.md
     - name: Защита данных
       href: security-control-data-protection.md
-    - name: Управление уязвимостями
+    - name: управление уязвимостями;
       href: security-control-vulnerability-management.md
     - name: Инвентаризация и управление ресурсами
       href: security-control-inventory-asset-management.md
-    - name: Настройка безопасности
+    - name: Безопасная конфигурация
       href: security-control-secure-configuration.md
     - name: Защита от вредоносных программ
       href: security-control-malware-defense.md
     - name: Восстановление данных
       href: security-control-data-recovery.md
-    - name: реагирование на инциденты.
+    - name: Реагирование на инциденты
       href: security-control-incident-response.md
     - name: Тесты на проникновение и попытки нарушения безопасности "красной командой"
       href: security-control-penetration-tests-red-team-exercises.md
-- name: Базовые показатели безопасности
+- name: Базовые показатели безопасности для Azure
   items:
-    - name: Сведения об элементах управления безопасностью Azure
+    - name: Сведения о базовых показателях безопасности для Azure
       href: security-baselines-overview.md
+    - name: Базовые показатели безопасности Управления API
+      href: ../../api-management/security-baseline.md
     - name: Базовая конфигурация безопасности для Кэша Azure для Redis
       href: ../../azure-cache-for-redis/security-baseline.md
     - name: Базовые средства безопасности резервного копирования
@@ -44,8 +47,12 @@
       href: ../../cosmos-db/security-baseline.md
     - name: Базовая конфигурация системы безопасности Data Explorer
       href: /azure/data-explorer/security-baseline
+    - name: Базовые показатели безопасности Databricks
+      href: ../../azure-databricks/security-baseline.md
     - name: Базовые показатели безопасности Центров событий
       href: ../../event-hubs/security-baseline.md
+    - name: Базовые показатели безопасности Функций
+      href: ../../azure-functions/security-baseline.md
     - name: Базовый уровень безопасности HDInsight
       href: ../../hdinsight/security-baseline.md
     - name: Базовый уровень безопасности Key Vault

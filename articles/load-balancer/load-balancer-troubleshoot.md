@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/28/2020
 ms.author: allensu
-ms.openlocfilehash: ca9b70bd71a618f8e3d5f4fe9504ba66a9f14c6f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cf9fa48019ab88190175131b27f4a40e29eb5ed0
+ms.sourcegitcommit: c8a0fbfa74ef7d1fd4d5b2f88521c5b619eb25f8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76935480"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82801728"
 ---
 # <a name="troubleshoot-azure-load-balancer"></a>Устранение неполадок Azure Load Balancer
-
+<p class="alert is-flex is-primary"><span class="has-padding-left-medium has-padding-top-extra-small"><a class="button is-primary" href="https://azurevirtualsupportagent.services.microsoft.com?content=fb23185b-6c56-d9f1-7ce1-758c978e08e1" target='_blank'>Начните</a></span><span class="has-padding-small">использовать наш Виртуальный агент для запуска <b>автоматизированной диагностики</b> , чтобы быстро решить проблему.</span> <span class="has-padding-small"> <sub>Privacy Statement</sub> Заявление <a href="https://privacy.microsoft.com/privacystatement" target='_blank'> <div align="right"></div></a></span></p>
 На этой странице содержатся сведения об устранении неполадок для основных и стандартных вопросов Azure Load Balancer. См. дополнительные сведения в статье [Обзор Azure Load Balancer уровня "Стандартный" (предварительная версия)](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-diagnostics).
 
 Когда подключение к подсистеме балансировки нагрузки недоступно, наиболее распространенными симптомами являются следующие: 
@@ -98,7 +98,7 @@ ms.locfileid: "76935480"
 
 1. Войдите в виртуальную машину внутреннего пула. 
 2. Откройте командную строку и выполните следующую команду, чтобы убедиться, что приложение ожидает передачи данных через порт данных:  netstat -an 
-3. Если для состояния порта не указано значение "Ожидает вызова", то настройте соответствующий порт прослушивателя. 
+3. Если порт не указан в списке с состоянием "ПРОСЛУШИВАНИе", настройте правильный порт прослушивателя. 
 4. Если порт отмечен как "Ожидает вызова", то проверьте наличие неполадок в целевом приложении на этом порте.
 
 ### <a name="cause-2-network-security-group-is-blocking-the-port-on-the-load-balancer-backend-pool-vm"></a>Причина 2: группа безопасности сети блокирует порт на виртуальной машине внутреннего пула подсистемы балансировки нагрузки  
@@ -124,7 +124,7 @@ ms.locfileid: "76935480"
 
 ### <a name="cause-4-accessing-the-internal-load-balancer-frontend-from-the-participating-load-balancer-backend-pool-vm"></a>Причина 4: доступ к интерфейсу внутреннего Load Balancer осуществляется из виртуальной машины серверного пула Load Balancer
 
-Если внутренний Load Balancer настроен в виртуальной сети, а одна из участвующих серверных виртуальных машин пытается получить доступ к интерфейсу внутреннего Load Balancer, то когда поток сопоставляется с исходной виртуальной машиной, могут произойти сбои. Такой сценарий не поддерживается. Просмотрите [ограничения](concepts-limitations.md#limitations) для подробного обсуждения.
+Если внутренний Load Balancer настроен в виртуальной сети, а одна из участвующих серверных виртуальных машин пытается получить доступ к интерфейсу внутреннего Load Balancer, то когда поток сопоставляется с исходной виртуальной машиной, могут произойти сбои. Такой сценарий не поддерживается. Просмотрите [ограничения](concepts.md#limitations) для подробного обсуждения.
 
 **Разрешение** Существует несколько способов разблокировать этот сценарий, включая использование прокси-сервера. Оцените шлюз приложений или другие сторонние прокси-серверы (например, nginx или haproxy). Дополнительные сведения о шлюзе приложений см. в статье [Обзор шлюза приложений](../application-gateway/application-gateway-introduction.md).
 
@@ -137,7 +137,7 @@ ms.locfileid: "76935480"
 - Воспользуйтесь командой Psping с одной из виртуальных машин внутреннего пула в виртуальной сети, чтобы проверить ответ порта пробы (пример: psping 10.0.0.4:3389), и запишите результаты. 
 - Если в результате этих проверок связи ответ не получен, то одновременно с выполнением команды PsPing запустите команду netsh trace на виртуальной машине внутреннего пула и тестовой виртуальной машине в виртуальной сети, а затем остановите команду netsh trace. 
   
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Если описанные выше шаги не устранят проблему, отправьте [запрос в службу поддержки](https://azure.microsoft.com/support/options/).
 

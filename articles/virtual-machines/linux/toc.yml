@@ -69,6 +69,8 @@
       href: powershell-samples.md
 - name: Основные понятия
   items:
+    - name: Изображения
+      href: shared-image-galleries.md
     - name: Azure Resource Manager
       href: ../../azure-resource-manager/management/overview.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
     - name: Регионы
@@ -457,17 +459,64 @@
         - name: Создание оповещений журнала
           href: ../../azure-monitor/platform/alerts-log.md
     - name: Использование образов
+      displayName: 'SIG, AMI, image'
       items:
-        - name: Общедоступные коллекции образов
+        - name: Общая коллекция образов
           items:
-            - name: Обзор
-              href: shared-image-galleries.md
             - name: CLI
-              href: shared-images.md
+              items:
+                - name: Создание коллекции
+                  href: ../shared-images-cli.md
+                - name: Создание образа
+                  items:
+                    - name: Из виртуальной машины
+                      href: ../image-version-vm-cli.md
+                    - name: Перенос из управляемого образа
+                      href: ../image-version-managed-image-cli.md
+                    - name: Копирование из другой коллекции
+                      href: ../image-version-another-gallery-cli.md
+                - name: Создание виртуальной машины
+                  items:
+                    - name: Универсальный
+                      href: ../vm-generalized-image-version-cli.md
+                - name: Обновление ресурсов образа
+                  href: ../update-image-resources-cli.md
+                - name: Регистрация приложения для совместного использования
+                  href: share-images-across-tenants.md
+            - name: PowerShell
+              items:
+                - name: Создание коллекции
+                  href: ../shared-images-powershell.md
+                - name: Создание версии образа
+                  items:
+                    - name: Из виртуальной машины
+                      href: ../image-version-vm-powershell.md
+                    - name: Перенос из управляемого образа
+                      href: ../image-version-managed-image-powershell.md
+                    - name: Копирование из другой коллекции
+                      href: ../image-version-another-gallery-powershell.md
+                - name: Создание виртуальной машины
+                  items:
+                    - name: Универсальный
+                      href: ../vm-generalized-image-version-powershell.md
+                    - name: Специализированный
+                      href: ../vm-specialized-image-version-powershell.md
+                - name: Обновление ресурсов образа
+                  href: ../update-image-resources-powershell.md
             - name: Портал
-              href: shared-images-portal.md
-            - name: Регистрация приложения для совместного использования
-              href: share-images-across-tenants.md
+              items:
+                - name: 'Создание коллекции, образа и виртуальной машины'
+                  href: shared-images-portal.md
+            - name: Шаблоны Resource Manager
+              items:
+                - name: Создание Общей коллекции образов.
+                  href: 'https://azure.microsoft.com/resources/templates/101-sig-create/'
+                - name: Создание определения образа в Общей коллекции образов
+                  href: 'https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/'
+                - name: Создание версии образа в Общей коллекции образов
+                  href: 'https://azure.microsoft.com/resources/templates/101-sig-image-version-create/'
+                - name: Создание виртуальной машины из версии образа
+                  href: 'https://azure.microsoft.com/resources/templates/101-vm-from-sig/'
             - name: Устранение неполадок с общими образами
               href: troubleshooting-shared-images.md
         - name: Конструктор изображений (предварительная версия)
@@ -544,9 +593,9 @@
         - name: Terraform
           items:
             - name: Установка и настройка.
-              href: ../../terraform/terraform-install-configure.md
+              href: /azure/developer/terraform/install-configure
             - name: Создание готовой виртуальной машины
-              href: ../../terraform/terraform-create-complete-vm.md
+              href: /azure/developer/terraform/create-linux-virtual-machine-with-infrastructure
         - name: Cloud-init
           items:
             - name: Обзор cloud-Init
@@ -564,14 +613,14 @@
             - name: Подготовка существующей виртуальной машины для cloud-init
               href: cloudinit-prepare-custom-image.md
         - name: Jenkins
-          href: /azure/developer/jenkins/overview.md
+          href: /azure/developer/jenkins/overview
           items:
             - name: Создание сервера Jenkins
-              href: /azure/developer/jenkins/configure-on-linux-vm.md
+              href: /azure/developer/jenkins/configure-on-linux-vm
             - name: Масштабирование с помощью агентов виртуальных машин
-              href: /azure/developer/jenkins/scale-deployments-using-vm-agents.md
+              href: /azure/developer/jenkins/scale-deployments-using-vm-agents
             - name: Публикация артефактов в службе хранилища Azure
-              href: /azure/developer/jenkins/azure-storage-blobs-as-build-artifact-repository.md
+              href: /azure/developer/jenkins/azure-storage-blobs-as-build-artifact-repository
             - name: Обеспечение безопасности в Jenkins
               href: 'https://jenkins.io/blog/2017/04/20/secure-jenkins-on-azure/'
     - name: Запуск контейнеров
