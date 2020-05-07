@@ -178,7 +178,7 @@
                   href: automation-onboard-solutions-from-automation-account.md
                 - name: Из модуля runbook службы автоматизации
                   href: automation-onboard-solutions.md
-            - name: Просмотр содержимого отслеживаемых файлов
+            - name: Управление решением для отслеживания изменений и инвентаризации
               href: change-tracking-file-contents.md
             - name: Управление сбором данных инвентаризации из виртуальных машин
               href: automation-vm-inventory.md
@@ -230,7 +230,7 @@
           href: updatemgmt-mecmintegration.md
         - name: Настройка клиента Центра обновления Windows
           href: automation-configure-windows-update.md
-        - name: Использование динамических групп
+        - name: Использование динамических группы
           href: automation-update-management-groups.md
         - name: Запрос на получение журналов Управления обновлениями
           href: automation-update-management-query-logs.md
