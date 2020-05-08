@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/28/2019
 ms.author: mjbrown
-ms.openlocfilehash: 7184a6b85e93c41dfe914813301a4b1a0c88f2cd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3b0a3387fe34a0e1c15109aec877c0654fc1a5b0
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75887688"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82870005"
 ---
 # <a name="create-containers-with-large-partition-key"></a>Создание контейнеров с большим ключом секции
 
@@ -35,7 +35,7 @@ Azure Cosmos DB использует схему секционирования �
 
 Чтобы создать контейнер с большим ключом секции с помощью пакета SDK для .NET, укажите `PartitionKeyDefinitionVersion.V2` свойство. В следующем примере показано, как указать свойство Version в объекте Партитионкэйдефинитион и задать для него значение Партитионкэйдефинитионверсион. v2.
 
-### <a name="v3-net-sdk"></a>v3 .NET SDK
+# <a name="net-sdk-v3"></a>[ПАКЕТ SDK ДЛЯ .NET V3](#tab/dotnetv3)
 
 ```csharp
 await database.CreateContainerAsync(
@@ -45,7 +45,7 @@ await database.CreateContainerAsync(
     })
 ```
 
-### <a name="v2-net-sdk"></a>пакет SDK для .NET v2
+# <a name="net-sdk-v2"></a>[ПАКЕТ SDK ДЛЯ .NET ВЕРСИИ 2](#tab/dotnetv2)
 
 ```csharp
 DocumentCollection collection = await newClient.CreateDocumentCollectionAsync(
@@ -61,6 +61,7 @@ database,
          },
       new RequestOptions { OfferThroughput = 400 });
 ```
+---
 
 ## <a name="supported-sdk-versions"></a>Поддерживаемые версии пакета SDK
 
@@ -76,7 +77,7 @@ database,
 
 В настоящее время нельзя использовать контейнеры с большим ключом секции в в Power BI и Azure Logic Apps. В этих приложениях можно использовать контейнеры без большого ключа секции.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Секционирование в базе данных Azure Cosmos DB](partitioning-overview.md)
 * [Единицы запроса в Azure Cosmos DB](request-units.md)

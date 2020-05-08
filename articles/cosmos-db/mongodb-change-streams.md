@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-mongo
 ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: tisande
-ms.openlocfilehash: 38e262abefe5444c1fe7586810f4b971cc7baf6c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7a6060448175530ada5ba95ceda470056a7be002
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81114165"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82872145"
 ---
 # <a name="change-streams-in-azure-cosmos-dbs-api-for-mongodb"></a>Изменение потоков в API-интерфейсе Azure Cosmos DB для MongoDB
 
@@ -45,7 +45,7 @@ ms.locfileid: "81114165"
 
 В следующем примере показано, как получить потоки изменений для всех элементов в коллекции. В этом примере создается курсор для просмотра элементов при их вставке, обновлении или замене. Для `$match` получения потоков `$project` изменений требуется этап `fullDocument` , этап и параметр. Наблюдение за операциями удаления с помощью потоков изменений сейчас не поддерживается. В качестве обходного решения можно добавить мягкий маркер для удаляемых элементов. Например, можно добавить атрибут в элемент с именем Deleted. Если вы хотите удалить элемент, можно присвоить параметру "Deleted" `true` значение и задать TTL для элемента. Так как обновление "Deleted `true` " до является обновлением, это изменение будет отображаться в потоке изменений.
 
-### <a name="javascript"></a>JavaScript:
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 var cursor = db.coll.watch(
@@ -61,8 +61,7 @@ while (!cursor.isExhausted()) {
     }
 }
 ```
-
-### <a name="c"></a>C#:
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 var pipeline = new EmptyPipelineDefinition<ChangeStreamDocument<BsonDocument>>()
@@ -104,7 +103,7 @@ var cursor = db.coll.watch(
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Используйте срок жизни для автоматического истечения срока действия данных в API Azure Cosmos DB для MongoDB](mongodb-time-to-live.md)
 * [Индексирование в API Azure Cosmos DB для MongoDB](mongodb-indexing.md)

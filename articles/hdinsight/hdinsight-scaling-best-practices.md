@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: seoapr2020
-ms.date: 04/23/2020
-ms.openlocfilehash: 64fe56ff506cf256dd7e317984551949f9ffad06
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 04/29/2020
+ms.openlocfilehash: 2dae0f662eefa7f7b1f56d057cd47f1cb92244ce
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82189370"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82592066"
 ---
 # <a name="scale-azure-hdinsight-clusters"></a>Масштабирование кластеров Azure HDInsight
 
@@ -74,27 +74,38 @@ HDInsight обеспечивает эластичность с помощью п
 
 * Apache Storm
 
-    Вы можете без проблем добавлять или удалять узлы данных во время работы. Однако после успешного завершения операции масштабирования необходимо будет перераспределить топологию.
-
-    Повторную балансировку можно выполнить двумя способами:
+    Вы можете без проблем добавлять или удалять узлы данных во время работы. Однако после успешного завершения операции масштабирования необходимо будет перераспределить топологию. Повторная балансировка позволяет топологии изменять [параметры параллелизма](https://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html) на основе нового числа узлов в кластере. Чтобы повторно выполнить балансировку выполняющихся топологий, используйте один из следующих вариантов.
 
   * с помощью веб-интерфейса Storm;
+
+    чтобы запустить балансировку для топологии из пользовательского интерфейса Storm, выполните следующие действия.
+
+    1. Откройте `https://CLUSTERNAME.azurehdinsight.net/stormui` в веб-браузере, где `CLUSTERNAME` — это имя кластера с расширением. При появлении запроса введите имя администратора кластера HDInsight (admin) и пароль, указанный при создании кластера.
+
+    1. Выберите топологию, для которой нужно выполнить повторную балансировку, и нажмите кнопку **Перераспределить**. Введите задержку до завершения операции перераспределения.
+
+        ![HDInsight, Storm, масштабирование, перераспределение](./media/hdinsight-scaling-best-practices/hdinsight-portal-scale-cluster-storm-rebalance.png)
+
   * с помощью программы командной строки.
 
-    Дополнительные сведения см. в [документации по Apache Storm](https://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html).
+    подключитесь к серверу и запустите балансировку для топологии, используя следующую команду:
 
-    В кластере HDInsight доступен веб-интерфейс Storm.
+    ```bash
+     storm rebalance TOPOLOGYNAME
+    ```
 
-    ![HDInsight, Storm, масштабирование, перераспределение](./media/hdinsight-scaling-best-practices/hdinsight-portal-scale-cluster-storm-rebalance.png)
+    Можно также указать параметры для переопределения подсказок параллелизма, изначально предоставляемых топологией. Например, приведенный ниже код перестраивает `mytopology` топологию до 5 рабочих процессов, 3 исполнителей для spout компонента и 10 исполнителей для компонента с желтым молнией.
 
-    Ниже приведен пример команды CLI для повторной балансировки топологии Storm:
-
-    ```console
+    ```bash
     ## Reconfigure the topology "mytopology" to use 5 worker processes,
     ## the spout "blue-spout" to use 3 executors, and
     ## the bolt "yellow-bolt" to use 10 executors
     $ storm rebalance mytopology -n 5 -e blue-spout=3 -e yellow-bolt=10
     ```
+
+* Kafka
+
+    выполните повторную балансировку реплик разделов после масштабирования. Дополнительные сведения см. в документе о [высоком уровне доступности данных при использовании Apache Kafka в HDInsight](./kafka/apache-kafka-high-availability.md).
 
 ## <a name="how-to-safely-scale-down-a-cluster"></a>Безопасное масштабирование кластера
 
@@ -252,3 +263,8 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode leave
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Автоматическое масштабирование кластеров Azure HDInsight](hdinsight-autoscale-clusters.md)
+
+Подробные сведения о масштабировании кластера HDInsight см. в следующих статьях.
+
+* [Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md#scale-clusters)
+* [Управление кластерами Apache Hadoop в HDInsight с помощью Azure CLI](hdinsight-administer-use-command-line.md#scale-clusters)

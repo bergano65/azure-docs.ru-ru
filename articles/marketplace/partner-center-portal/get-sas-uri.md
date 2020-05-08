@@ -1,18 +1,18 @@
 ---
-title: Получение URI подписанного URL для образа виртуальной машины | Azure Marketplace
-description: В этой статье объясняется, как получить URI подписанного URL-адрес (SAS) для каждого виртуального жесткого диска (VHD).
+title: URI подписанного URL-адрес для образов виртуальных машин в Azure Marketplace
+description: Создайте URI подписанного URL-адрес (SAS) для виртуальных жестких дисков (VHD) в Azure Marketplace.
 author: anbene
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: mingshen
-ms.openlocfilehash: c226d35647e4a5a2b1d583dd6328bfb73dae2a1c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b521a3a035044e2f0c1b625df19d265cfa35b49a
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81732638"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82857929"
 ---
 # <a name="get-shared-access-signature-uri-for-your-vm-image"></a>Получение универсального кода ресурса (URI) подписанного URL-адреса для образа виртуальной машины
 
@@ -125,7 +125,7 @@ ms.locfileid: "81732638"
 * Когда `sr=c` отображается, это означает, что доступ на уровне контейнера указан.
 * Скопируйте и вставьте универсальный код ресурса (URI) в браузер, чтобы проверить скачивание большого двоичного объекта (можно отменить операцию до завершения скачивания).
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 Если у вас возникли трудности при создании URI SAS, см. раздел [распространенные проблемы с URL-адресами SAS](https://docs.microsoft.com/azure/marketplace/partner-center-portal/common-sas-uri-issues). В противном случае сохраните URI SAS в надежном расположении для последующего использования. Он потребуется вам для публикации предложения виртуальной машины в центре партнеров.
 

@@ -5,14 +5,14 @@ author: roygara
 ms.service: storage
 ms.subservice: files
 ms.topic: conceptual
-ms.date: 04/20/2020
+ms.date: 05/04/2020
 ms.author: rogarana
-ms.openlocfilehash: b2dd501344e1ea799db58ea749395aaed05d05f8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6309219b31c22f1f1d090cc9de9931609e3423f7
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82106562"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792992"
 ---
 # <a name="enable-on-premises-active-directory-domain-services-authentication-over-smb-for-azure-file-shares"></a>Включение проверки подлинности локальных служб домен Active Directory Services по протоколу SMB для файловых ресурсов Azure
 
@@ -54,13 +54,11 @@ ms.locfileid: "82106562"
 
     Чтобы получить доступ к общей папке с помощью учетных данных AD с компьютера или виртуальной машины, устройство должно быть присоединено к домену AD DS. Сведения о том, как присоединиться к домену, см. в разделе [Присоединение компьютера к домену](https://docs.microsoft.com/windows-server/identity/ad-fs/deployment/join-a-computer-to-a-domain). 
 
-- Выберите или создайте учетную запись хранения Azure в [поддерживаемом регионе](#regional-availability). 
+- Выберите или создайте учетную запись хранения Azure.  Для оптимальной производительности рекомендуется развернуть учетную запись хранения в том же регионе, что и виртуальная машина, из которой планируется доступ к общей папке.
 
     Убедитесь, что учетная запись хранения, содержащая общие файловые ресурсы, еще не настроена для проверки подлинности Azure AD DS. Если в учетной записи хранения включена проверка подлинности AD DS Azure для службы "файлы Azure", ее необходимо отключить, прежде чем переходить к использованию локальной AD DS. Это означает, что существующие списки управления доступом, настроенные в среде AD DS Azure, необходимо будет перенастроить для надлежащего применения разрешений.
     
     Сведения о создании общей папки см. [в статье Создание общей папки в службе файлов Azure](storage-how-to-create-file-share.md).
-    
-    Для оптимальной производительности рекомендуется развернуть учетную запись хранения в том же регионе, что и виртуальная машина, из которой планируется доступ к общей папке. 
 
 - Проверьте подключение, подключив файловые ресурсы Azure с помощью ключа учетной записи хранения. 
 
@@ -70,23 +68,23 @@ ms.locfileid: "82106562"
 
 Проверка подлинности файлов Azure с помощью AD DS (Предварительная версия) доступна во [всех общедоступных регионах и в регионах Azure gov](https://azure.microsoft.com/global-infrastructure/locations/).
 
-## <a name="workflow-overview"></a>Обзор рабочего процесса
-
-Перед включением проверки подлинности AD DS по протоколу SMB для файловых ресурсов Azure рекомендуется прочитать и завершить раздел [необходимых компонентов](#prerequisites) . Предварительные требования проверяют правильность настройки сред хранения AD, Azure AD и службы хранилища Azure. 
+## <a name="overview"></a>Обзор
 
 Если планируется включить любые сетевые конфигурации в общем файловом ресурсе, рекомендуется оценить [Сетевое](https://docs.microsoft.com/azure/storage/files/storage-files-networking-overview) отношение и сначала выполнить связанную конфигурацию, прежде чем включать проверку подлинности AD DS.
 
-Затем выполните следующие действия, чтобы настроить службу файлов Azure для проверки подлинности AD. 
+Включение проверки подлинности AD DS для файловых ресурсов Azure позволяет выполнять аутентификацию в файловых ресурсах Azure с помощью локальных учетных данных AD DS. Кроме того, он позволяет лучше управлять разрешениями для обеспечения детального контроля доступа. Для этого необходимо синхронизировать удостоверения из локальной AD DS с Azure AD с AD Connect. Вы управляете доступом на уровне общего доступа с удостоверениями, синхронизированными с Azure AD, при управлении доступом на уровне файлов и общих ресурсов с локальными учетными данными AD DS.
 
-1. Включите проверку подлинности AD DS файлов Azure в учетной записи хранения. 
+Затем выполните следующие действия, чтобы настроить службы файлов Azure для проверки подлинности AD DS. 
 
-2. Назначьте разрешения на доступ к общему ресурсу удостоверению Azure AD (пользователю, группе или субъекту-службе), который синхронизирован с целевым удостоверением AD. 
+1. [Включение проверки подлинности файлов Azure AD DS в учетной записи хранения](#1-enable-ad-ds-authentication-for-your-account)
 
-3. Настройка списков управления доступом по протоколу SMB для каталогов и файлов. 
+1. [Назначение разрешений на доступ к общему ресурсу удостоверению Azure AD (пользователю, группе или субъекту-службе), синхронизированному с целевым удостоверением AD](#2-assign-access-permissions-to-an-identity)
+
+1. [Настройка списков управления доступом по протоколу SMB для каталогов и файлов](#3-configure-ntfs-permissions-over-smb)
  
-4. Подключите файловый ресурс Azure к виртуальной машине, присоединенной к AD DS. 
+1. [Подключите файловый ресурс Azure к виртуальной машине, присоединенной к AD DS](#4-mount-a-file-share-from-a-domain-joined-vm)
 
-5. Обновите пароль для удостоверения учетной записи хранения в AD DS.
+1. [Обновите пароль для удостоверения учетной записи хранения в AD DS](#5-update-the-password-of-your-storage-account-identity-in-ad-ds)
 
 На следующей схеме показан комплексный рабочий процесс для включения аутентификации Azure AD через SMB для файловых ресурсов Azure. 
 
@@ -95,9 +93,9 @@ ms.locfileid: "82106562"
 > [!NOTE]
 > AD DS проверка подлинности по протоколу SMB для файловых ресурсов Azure поддерживается только на компьютерах или виртуальных машинах, работающих в версиях ОС более поздних, чем Windows 7 или Windows Server 2008 R2. 
 
-## <a name="1-enable-ad-authentication-for-your-account"></a>1. Включение проверки подлинности AD для учетной записи 
+## <a name="1-enable-ad-ds-authentication-for-your-account"></a>1. Включите проверку подлинности AD DS для вашей учетной записи 
 
-Чтобы включить AD DSную проверку подлинности в SMB для файловых ресурсов Azure, необходимо сначала зарегистрировать учетную запись хранения в AD DS, а затем задать необходимые свойства домена в учетной записи хранения. Если эта функция включена в учетной записи хранения, она применяется ко всем новым и существующим файловым ресурсам в учетной записи. Используйте `join-AzStorageAccountForAuth` , чтобы включить эту функцию. Подробное описание сквозного рабочего процесса можно найти в скрипте в этом разделе. 
+Чтобы включить AD DSную проверку подлинности в SMB для файловых ресурсов Azure, необходимо сначала зарегистрировать учетную запись хранения в AD DS, а затем задать необходимые свойства домена в учетной записи хранения. Если эта функция включена в учетной записи хранения, она применяется ко всем новым и существующим файловым ресурсам в учетной записи. Скачайте модуль PowerShell Азфилешибрид и используйте `join-AzStorageAccountForAuth` его для включения компонента. Подробное описание сквозного рабочего процесса можно найти в скрипте в этом разделе. 
 
 > [!IMPORTANT]
 > `Join-AzStorageAccountForAuth` Командлет внесет изменения в среду AD. Ознакомьтесь со следующим описанием, чтобы лучше понять, что именно необходимо для выполнения команды и что примененные изменения соответствуют политикам соответствия и безопасности. 
@@ -118,7 +116,7 @@ ms.locfileid: "82106562"
 Не забудьте заменить значения заполнителей собственными значениями в указанных ниже параметрах перед выполнением в PowerShell.
 > [!IMPORTANT]
 > Командлет присоединение к домену создаст учетную запись AD для представления учетной записи хранения (общей папки) в AD. Вы можете зарегистрировать учетную запись компьютера или учетную запись входа службы. Дополнительные сведения см. в разделе [часто задаваемые вопросы](https://docs.microsoft.com/azure/storage/files/storage-files-faq#security-authentication-and-access-control) . Для учетных записей компьютеров срок действия пароля по умолчанию задается в AD через 30 дней. Аналогичным образом для учетной записи входа в службу может быть задан срок действия пароля по умолчанию в домене AD или подразделении (OU).
-> Для обоих типов учетных записей настоятельно рекомендуется проверить срок действия пароля, настроенный в среде AD, и запланировать [Обновление пароля удостоверения учетной записи хранения в AD](#5-update-the-password-of-your-storage-account-identity-in-ad-ds) учетной записи AD, приведенной ниже, до максимального срока действия пароля. Сбой при обновлении пароля учетной записи AD приведет к ошибкам проверки подлинности при доступе к файловым ресурсам Azure. Вы можете [создать новое подразделение Active Directory (OU) в AD](https://docs.microsoft.com/powershell/module/addsadministration/new-adorganizationalunit?view=win10-ps) и отключить политику истечения срока действия паролей для [учетных записей компьютеров](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj852252(v=ws.11)?redirectedfrom=MSDN) или учетных записей службы входа в систему. 
+> Для обоих типов учетных записей настоятельно рекомендуется проверить срок действия пароля, настроенный в среде AD, и запланировать [Обновление пароля удостоверения учетной записи хранения в AD](#5-update-the-password-of-your-storage-account-identity-in-ad-ds) учетной записи AD, приведенной ниже, до максимального срока действия пароля. Вы можете [создать новое подразделение Active Directory (OU) в AD](https://docs.microsoft.com/powershell/module/addsadministration/new-adorganizationalunit?view=win10-ps) и отключить политику истечения срока действия паролей для [учетных записей компьютеров](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj852252(v=ws.11)?redirectedfrom=MSDN) или учетных записей службы входа в систему. 
 
 ```PowerShell
 #Change the execution policy to unblock importing AzFilesHybrid.psm1 module
@@ -144,12 +142,12 @@ Select-AzSubscription -SubscriptionId $SubscriptionId
 # Register the target storage account with your active directory environment under the target OU (for example: specify the OU with Name as "UserAccounts" or DistinguishedName as "OU=UserAccounts,DC=CONTOSO,DC=COM"). 
 # You can use to this PowerShell cmdlet: Get-ADOrganizationalUnit to find the Name and DistinguishedName of your target OU. If you are using the OU Name, specify it with -OrganizationalUnitName as shown below. If you are using the OU DistinguishedName, you can set it with -OrganizationalUnitDistinguishedName. You can choose to provide one of the two names to specify the target OU.
 # You can choose to create the identity that represents the storage account as either a Service Logon Account or Computer Account, depends on the AD permission you have and preference. 
-#You can run Get-Help Join-AzStorageAccountForAuth to find more details on this cmdlet.
+# You can run Get-Help Join-AzStorageAccountForAuth to find more details on this cmdlet.
 
 Join-AzStorageAccountForAuth `
         -ResourceGroupName $ResourceGroupName `
         -Name $StorageAccountName `
-        -DomainAccountType "<ComputerAccount|ServiceLogonAccount>" ` #Default set to "ComputerAccount"
+        -DomainAccountType "<ComputerAccount|ServiceLogonAccount>" ` # Default set to "ComputerAccount" if this parameter is not provided
         -OrganizationalUnitName "<ou-name-here>" #You can also use -OrganizationalUnitDistinguishedName "<ou-distinguishedname-here>" instead. If you don't provide the OU name as an input parameter, the AD identity that represents the storage account will be created under the root directory.
 
 #You can run the Debug-AzStorageAccountAuth cmdlet to conduct a set of basic checks on your AD configuration with the logged on AD user. This cmdlet is supported on AzFilesHybrid v0.1.2+ version. For more details on the checks performed in this cmdlet, go to Azure Files FAQ.
@@ -162,7 +160,7 @@ Debug-AzStorageAccountAuth -StorageAccountName $StorageAccountName -ResourceGrou
 > [!NOTE]
 > Если вы уже выполнили приведенный выше `Join-AzStorageAccountForAuth` сценарий, перейдите к следующему разделу "1,3. Убедитесь, что эта функция включена". Операции, приведенные ниже, выполнять не нужно.
 
-#### <a name="a-checking-environment"></a>a. Проверка среды
+#### <a name="a-checking-environment"></a>а. Проверка среды
 
 Во первых, сценарий проверяет вашу среду. В частности, он проверяет, установлен ли [Active Directory PowerShell](https://docs.microsoft.com/powershell/module/addsadministration/?view=win10-ps) и выполняется ли оболочка с правами администратора. Затем он проверяет, установлен ли [модуль AZ. Storage 1.11.1-Preview](https://www.powershellgallery.com/packages/Az.Storage/1.11.1-preview) , и устанавливает его, если это не так. Если эти проверки пройдены, то проверяется AD DS, чтобы узнать, есть ли [учетная запись компьютера](https://docs.microsoft.com/windows/security/identity-protection/access-control/active-directory-accounts#manage-default-local-accounts-in-active-directory) (по умолчанию) или [учетная запись входа службы](https://docs.microsoft.com/windows/win32/ad/about-service-logon-accounts) , которая уже создана с именем субъекта-службы или UPN, как CIFS/My-Storage-Account-Name-here. File. Core. Windows. NET. Если учетная запись не существует, она будет создана, как описано в разделе b ниже.
 
@@ -232,7 +230,7 @@ Update-AzStorageAccountADObjectPassword `
         -StorageAccountName "<your-storage-account-name-here>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о службе файлов Azure и использовании AD через SMB см. в следующих ресурсах:
 

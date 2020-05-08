@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 10/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8bed34e816207c9f0bd0565abab6af4adbaeb7fd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5648dc1a915f2d38dc7811e6fe23ec76d0aa6f23
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82081648"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82857263"
 ---
 # <a name="azure-disk-encryption-for-windows-vms"></a>Шифрование дисков Azure для виртуальных машин Windows 
 
@@ -37,7 +37,7 @@ ms.locfileid: "82081648"
 
 Шифрование дисков Azure также доступно для виртуальных машин с хранилищем класса Premium.
 
-Шифрование дисков Azure недоступно на [виртуальных машинах поколения 2](generation-2.md#generation-1-vs-generation-2-capabilities)и [виртуальных машинах серии Lsv2](../lsv2-series.md)). Дополнительные сведения об исключениях см. в статье [Шифрование дисков Azure: неподдерживаемые сценарии](disk-encryption-windows.md#unsupported-scenarios).
+Шифрование дисков Azure недоступно на [виртуальных машинах поколения 2](generation-2.md#generation-1-vs-generation-2-capabilities) и [виртуальных машинах серии Lsv2](../lsv2-series.md). Дополнительные сведения об исключениях см. в статье [Шифрование дисков Azure: неподдерживаемые сценарии](disk-encryption-windows.md#unsupported-scenarios).
 
 ### <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 
@@ -77,7 +77,7 @@ ms.locfileid: "82081648"
 
 | Терминология | Определение |
 | --- | --- |
-| Azure Key Vault | Key Vault представляет собой службу управления криптографическими ключами. Она основана на аппаратных модулях безопасности, соответствующих Федеральному стандарту обработки информации (FIPS). Эти стандарты позволяют надежно хранить криптографические ключи и конфиденциальные данные. Дополнительные сведения см. в [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) документации, а также [о создании и настройке хранилища ключей для шифрования дисков Azure](disk-encryption-key-vault.md). |
+| Хранилище ключей Azure; | Key Vault представляет собой службу управления криптографическими ключами. Она основана на аппаратных модулях безопасности, соответствующих Федеральному стандарту обработки информации (FIPS). Эти стандарты позволяют надежно хранить криптографические ключи и конфиденциальные данные. Дополнительные сведения см. в [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) документации, а также [о создании и настройке хранилища ключей для шифрования дисков Azure](disk-encryption-key-vault.md). |
 | Azure CLI | [Azure CLI](/cli/azure/install-azure-cli) оптимизирован для администрирования ресурсов Azure и управления ими из командной строки.|
 | BitLocker |[BitLocker](https://technet.microsoft.com/library/hh831713.aspx) — это известная промышленным стандартам технология шифрования томов Windows, которая используется для включения шифрования дисков на виртуальных машинах Windows. |
 | Ключ шифрования ключа (KEK) | Асимметричный ключ (RSA 2048), который можно использовать для защиты или перетекания секрета. Вы можете использовать защищенный HSM ключ или ключ с программной защитой. Дополнительные сведения см. в [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) документации, а также [о создании и настройке хранилища ключей для шифрования дисков Azure](disk-encryption-key-vault.md). |

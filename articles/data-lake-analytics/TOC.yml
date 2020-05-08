@@ -16,6 +16,11 @@
       href: data-lake-analytics-get-started-powershell.md
     - name: Azure CLI
       href: data-lake-analytics-get-started-cli.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Практическое руководство
   items:
     - name: Управление службой Data Lake Analytics

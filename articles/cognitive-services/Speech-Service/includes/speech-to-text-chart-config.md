@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 04/15/2020
+ms.date: 05/05/2020
 ms.author: trbye
-ms.openlocfilehash: 267c2fb72b38053429019746a573c740d812c38c
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: 85c4e0641e1989ddea6c8aa8b8a8895a966a5ddb
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82608389"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82876011"
 ---
 ### <a name="speech-to-text-sub-chart-chartsspeechtotext"></a>Преобразование речи в текст (диаграмма/Спичтотекст)
 
@@ -43,7 +43,7 @@ ms.locfileid: "82608389"
 
 #### <a name="sentiment-analysis-sub-chart-chartsspeechtotext"></a>Анализ тональности (во вспомогательной диаграмме: диаграммы/Спичтотекст)
 
-Начиная с v 2.2.0 контейнера преобразования речи в текст для анализа тональности с помощью API анализа текста используются следующие параметры.
+Начиная с v 2.2.0 контейнера преобразования речи в текст и v 0.2.0 диаграммы Helm, для анализа тональности используются следующие параметры с API анализа текста.
 
 |Параметр|Описание|Значения|По умолчанию|
 | --- | --- | --- | --- |
@@ -57,13 +57,13 @@ ms.locfileid: "82608389"
 |`textanalytics.image.args.eula`| Один из обязательных аргументов контейнера **Text-Analytics** , который указывает, что вы приняли условия лицензии. Значение этого параметра должно быть следующим: `accept`.| `accept`, если вы хотите использовать контейнер | |
 |`textanalytics.image.args.billing`| Один из обязательных аргументов контейнера **Text-Analytics** , который указывает URI конечной точки выставления счетов. Значение URI конечной точки выставления счетов доступно на странице обзора речи портал Azure.|допустимый URI конечной точки выставления счетов||
 |`textanalytics.image.args.apikey`| Один из обязательных аргументов контейнера **Text-Analytics** , который используется для трассировки сведений о выставлении счетов.| допустимый apiKey||
-|`textanalytics.cpuRequest`| Запрошенный ЦП для контейнера **Text-Analytics**| INT| `3000m`|
+|`textanalytics.cpuRequest`| Запрошенный ЦП для контейнера **Text-Analytics**| int| `3000m`|
 |`textanalytics.cpuLimit`| Ограниченный ЦП для контейнера **Text-Analytics**| | `8000m`|
 |`textanalytics.memoryRequest`| Запрошенная память для контейнера **Text-Analytics**| | `3Gi`|
 |`textanalytics.memoryLimit`| Ограниченная память для контейнера **Text-Analytics**| | `8Gi`|
 |`textanalytics.service.sentimentURISuffix`| Суффикс URI анализа тональности, полный URI имеет формат "`<service>`http://:`<port>`/`<sentimentURISuffix>`". | | `text/analytics/v3.0-preview/sentiment`|
 |`textanalytics.service.type`| Тип службы **Text-Analytics** в Kubernetes. См. раздел [типы служб Kubernetes](https://kubernetes.io/docs/concepts/services-networking/service/) | допустимый тип службы Kubernetes | `LoadBalancer` |
-|`textanalytics.service.port`| Порт службы **Text-Analytics**| INT| `50085`|
+|`textanalytics.service.port`| Порт службы **Text-Analytics**| int| `50085`|
 |`textanalytics.service.annotations`| Заметки, которые пользователи могут добавлять в метаданные службы **Text-Analytics** . например<br/> **Примечания**<br/>`   `**Some/annotation1: значение1**<br/>`  `**Some/annotation2: значение2** | заметки, по одному на каждую строку| |
 |`textanalytics.serivce.autoScaler.enabled`| Включен ли [Горизонтальный Автомасштабирование Pod](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) . Если параметр включен `text-analytics-autoscaler` , будет развернут в кластере Kubernetes | true/false| `true`|
 |`textanalytics.service.podDisruption.enabled`| Включен ли [бюджет на прерывание Pod](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/) . Если параметр включен `text-analytics-poddisruptionbudget` , будет развернут в кластере Kubernetes| true/false| `true`|

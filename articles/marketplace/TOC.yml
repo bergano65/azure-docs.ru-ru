@@ -28,9 +28,9 @@
           items:
             - name: Виртуальные машины
               href: ./marketplace-virtual-machines.md
-            - name: 'Приложения Azure: шаблоны решений'
+            - name: Шаблоны решений приложений Azure
               href: ./marketplace-solution-templates.md
-            - name: 'Приложения Azure: управляемые приложения'
+            - name: Управляемые приложения Azure
               href: ./marketplace-managed-apps.md
             - name: Приложения SaaS
               href: ./marketplace-saas-applications-technical-publishing-guide.md
@@ -42,7 +42,7 @@
               href: ./consulting-services.md
             - name: "Office\_365, Dynamics\_365 и Power BI"
               href: ./appsource-offer-publishing-guide.md
-            - name: Включение описания в AppSource и Marketplace с помощью Azure Active Directory
+            - name: Включение аутентификации предложения с помощью Azure AD
               href: ./enable-appsource-marketplace-using-azure-ad.md
             - name: Интегрированные решения
               href: ./integrated-solutions-for-publishers.md
@@ -51,7 +51,7 @@
           items:
             - name: Рекомендации по размещению предложений
               href: ./gtm-offer-listing-best-practices.md
-            - name: Получение описания
+            - name: Получить подборку
               href: ./gtm-how-to-get-featured.md
             - name: Проверка содержимого Marketplace
               href: ./marketplace-criteria-content-validation.md
@@ -69,7 +69,7 @@
         - name: Поддержка коммерческой платформы
           href: ./support-azure-marketplace.md
           items:
-            - name: Часто задаваемые вопросы о Marketplace
+            - name: Вопросы и ответы о коммерческой платформе
               href: ./marketplace-faq-publisher-guide.md
             - name: Географическая доступность и валюты
               href: ./marketplace-geo-availability-currencies.md
@@ -289,49 +289,9 @@
             - name: Вики-сайт справки
               href: ./cloud-partner-portal-orig/help-wiki.md
         - name: "Предложение модуля IoT\_Edge"
-          href: ./cloud-partner-portal/iot-edge-module/cpp-offer-process-parts.md
-          items:
-            - name: Предварительные требования
-              href: ./cloud-partner-portal/iot-edge-module/cpp-prerequisites.md
-            - name: "Создание предложения модуля IoT\_Edge"
-              href: ./cloud-partner-portal/iot-edge-module/cpp-create-offer.md
-              items:
-                - name: Вкладка "Параметры предложения"
-                  href: ./cloud-partner-portal/iot-edge-module/cpp-offer-settings-tab.md
-                - name: Вкладка "Номера SKU"
-                  href: ./cloud-partner-portal/iot-edge-module/cpp-skus-tab.md
-                - name: Вкладка "Marketplace"
-                  href: ./cloud-partner-portal/iot-edge-module/cpp-marketplace-tab.md
-                - name: Вкладка "Поддержка"
-                  href: ./cloud-partner-portal/iot-edge-module/cpp-support-tab.md
-            - name: Создание технических ресурсов для модуля IoT Edge
-              href: ./cloud-partner-portal/iot-edge-module/cpp-create-technical-assets.md
-            - name: Публикация предложения модуля IoT Edge
-              href: ./cloud-partner-portal/iot-edge-module/cpp-publish-offer.md
-            - name: Обновление существующего предложения
-              href: ./cloud-partner-portal/iot-edge-module/cpp-update-existing-offer.md
+          href: ./cloud-partner-portal/iot-edge-module/iot-edge-module-offer.md
         - name: "Предложение приложения Power\_BI"
           href: ./cloud-partner-portal/power-bi/cpp-power-bi-offer.md
-          items:
-            - name: Предварительные требования
-              href: ./cloud-partner-portal/power-bi/cpp-prerequisites.md
-            - name: "Создание предложения приложения Power\_BI"
-              href: ./cloud-partner-portal/power-bi/cpp-create-offer.md
-              items:
-                - name: Вкладка "Параметры предложения"
-                  href: ./cloud-partner-portal/power-bi/cpp-offer-settings-tab.md
-                - name: Вкладка "Технические сведения"
-                  href: ./cloud-partner-portal/power-bi/cpp-technical-info-tab.md
-                - name: Вкладка "Сведения об онлайн-магазине"
-                  href: ./cloud-partner-portal/power-bi/cpp-storefront-details-tab.md
-                - name: Вкладка "Контакты"
-                  href: ./cloud-partner-portal/power-bi/cpp-contacts-tab.md
-            - name: "Создание технических ресурсов приложения Power\_BI"
-              href: ./cloud-partner-portal/power-bi/cpp-create-technical-assets.md
-            - name: "Публикация предложения приложения Power\_BI"
-              href: ./cloud-partner-portal/power-bi/cpp-publish-offer.md
-            - name: Обновление существующего предложения
-              href: ./cloud-partner-portal/power-bi/cpp-update-existing-offer.md
         - name: Предложение приложения SaaS
           href: ./cloud-partner-portal/saas-app/cpp-saas-offer.md
         - name: Предложение виртуальной машины
@@ -449,6 +409,8 @@
           items:
             - name: Создание предложения приложения Azure
               href: ./partner-center-portal/create-new-azure-apps-offer.md
+            - name: Выставление счетов по тарифу за приложение Azure
+              href: ./partner-center-portal/azure-app-metered-billing.md
             - name: Обработка отзывов по результатам проверки
               href: ./partner-center-portal/azure-apps-review-feedback.md
             - name: Использование API для подключения
@@ -493,10 +455,10 @@
               href: ./partner-center-portal/create-new-business-central-offer.md
         - name: Предложения модуля IoT Edge
           items:
-            - name: Подготовка технических ресурсов для модуля IoT Edge
-              href: ./partner-center-portal/create-iot-edge-module-asset.md
             - name: Создание предложения модуля IoT Edge
               href: ./partner-center-portal/azure-iot-edge-module-creation.md
+            - name: Подготовка технических ресурсов для модуля IoT Edge
+              href: ./partner-center-portal/create-iot-edge-module-asset.md
         - name: Предложения управляемых служб
           items:
             - name: Создание предложения управляемой службы
@@ -515,11 +477,6 @@
               href: ./partner-center-portal/create-new-saas-offer.md
             - name: Контроль потребления с помощью SaaS
               href: ./partner-center-portal/saas-metered-billing.md
-              items:
-                - name: Вопросы и ответы об API-интерфейсах службы из Marketplace для контроля потребления
-                  href: ./partner-center-portal/marketplace-metering-service-apis-faq.md
-                - name: API-интерфейсы службы из Marketplace для контроля потребления
-                  href: ./partner-center-portal/marketplace-metering-service-apis.md
             - name: API исполнения SaaS
               href: ./partner-center-portal/pc-saas-fulfillment-apis.md
               items:
@@ -546,6 +503,14 @@
               href: ./partner-center-portal/commercial-marketplace-lead-management-instructions-marketo.md
             - name: Salesforce
               href: ./partner-center-portal/commercial-marketplace-lead-management-instructions-salesforce.md
+        - name: Служба из Marketplace для контроля потребления
+          items:
+            - name: Стратегии аутентификации
+              href: ./partner-center-portal/marketplace-metering-service-authentication.md
+            - name: API-интерфейсы службы из Marketplace для контроля потребления
+              href: ./partner-center-portal/marketplace-metering-service-apis.md
+            - name: Вопросы и ответы об API-интерфейсах службы из Marketplace для контроля потребления
+              href: ./partner-center-portal/marketplace-metering-service-apis-faq.md
         - name: Тестирование вашего предложения
           href: ./partner-center-portal/test-drive.md
         - name: Возможность совместных продаж
@@ -589,11 +554,13 @@
           href: ./partner-center-portal/get-paid.md
         - name: Настройка счета для выплат и налоговых форм
           href: ./partner-center-portal/set-up-your-payout-account-tax-forms.md
-        - name: Сведения о выставлении счетов
-          href: ./partner-center-portal/billing-details.md
-        - name: 'Пороги, методы и сроки оплаты'
+        - name: 'Пороговые значения, методы и сроки оплаты'
           href: ./partner-center-portal/payment-thresholds-methods-timeframes.md
-        - name: Сводка по выплатам
+        - name: Общие сведения о сводках по выплатам
+          href: ./partner-center-portal/payout-summary-overview.md
+        - name: Сводки по выплатам
           href: ./partner-center-portal/payout-summary.md
+        - name: Сведения о политике выплат
+          href: ./partner-center-portal/payout-policy-details.md
         - name: Сведения о налогах
           href: ./partner-center-portal/tax-details-paid-transactions.md

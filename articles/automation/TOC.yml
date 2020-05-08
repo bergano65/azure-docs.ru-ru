@@ -24,6 +24,11 @@
       href: learn/automation-tutorial-runbook-textual.md
     - name: Создание модуля runbook в Python
       href: learn/automation-tutorial-runbook-textual-python2.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Общие сведения о проверке подлинности учетной записи службы автоматизации

@@ -7,13 +7,13 @@ manager: nitinme
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 12/11/2019
-ms.openlocfilehash: 0ad780c04954c09ddfd432b3c7de3dc65f0841bf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 05/05/2020
+ms.openlocfilehash: 20819bc6ec091eddf5d65b1c0d7aa57c821b2fc1
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78942998"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82858798"
 ---
 # <a name="introduction-to-knowledge-stores-in-azure-cognitive-search"></a>Общие сведения о хранилищах знаний в Когнитивном поиске Azure
 
@@ -25,6 +25,10 @@ ms.locfileid: "78942998"
 Если вы уже использовали «автообучение» в прошлом, вам известно, что *навыков* перемещает документ с помощью последовательности дополнений. Результатом этого процесса может быть индекс поиска или проекции документа в хранилище знаний (нововведение в этой предварительной версии). Два выхода, индекс поиска и хранилище знаний — это продукты одного конвейера; производные от одних и тех же входных данных, но результат структурирован, сохранен и использован очень разными способами.
 
 Физически хранилищем знаний является [служба хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-account-overview) (хранилище таблиц Azure, хранилище BLOB-объектов Azure или оба). Любой инструмент или процесс, который может подключиться к службе хранилища Azure, может использовать содержимое хранилища знаний.
+
+
+> [!VIDEO https://www.youtube.com/embed/XWzLBP8iWqg?version=3&start=235&end=426]
+
 
 ![Хранилище знаний на схеме конвейера](./media/knowledge-store-concept-intro/knowledge-store-concept-intro.svg "Хранилище знаний на схеме конвейера")
 
@@ -46,6 +50,10 @@ ms.locfileid: "78942998"
 > Не знакомы с совершенствованием и обучением искусственного интеллекта? Когнитивный поиск Azure интегрируется с функциями распознавания изображений и текста Cognitive Services. С помощью этих функций извлекаются сведения из файлов изображений, распознаются сущности, извлекаются ключевые фразы из текстовых файлов и т. д., после чего обогащаются исходные данные. Дополнительные сведения см. в статье [Что такое когнитивный поиск в службе "Поиск Azure"?](cognitive-search-concept-intro.md).
 
 ## <a name="physical-storage"></a>Физическое хранилище
+
+
+> [!VIDEO https://www.youtube.com/embed/XWzLBP8iWqg?version=3&start=455&end=542]
+
 
 Физическое выражение хранилища знаний обозначается с помощью `projections` элемента `knowledgeStore` определения в наборе навыков. Проекция определяет структуру выходных данных, чтобы она соответствовала предполагаемому использованию.
 
@@ -131,7 +139,7 @@ ms.locfileid: "78942998"
 
 <a name="kstore-rest-api"></a>
 
-## <a name="api-reference"></a>Справочник по интерфейсам API
+## <a name="api-reference"></a>Справочник по API
 
 REST API версия `2019-05-06-Preview` предоставляет хранилище знаний через дополнительные определения в навыков. Дополнительные сведения о вызове API см. в [статье Создание хранилища знаний с помощью инструкции POST](knowledge-store-create-rest.md) .
 

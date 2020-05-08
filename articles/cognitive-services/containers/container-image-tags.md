@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: reference
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: 786fde90e1bcf47e08857c26235a27862c5b3d75
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 850d7b9732ad547d502b042e7eaad5d3b471030e
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80878771"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82926006"
 ---
 # <a name="azure-cognitive-services-container-image-tags"></a>Теги образа контейнера Cognitive Services Azure
 
@@ -106,6 +106,7 @@ Azure Cognitive Services предлагает множество образов 
 | Теги изображений            | Примечания |
 |-----------------------|:------|
 | `latest`              |       |
+| `2.2.0-amd64-preview` |       |
 | `2.1.1-amd64-preview` |       |
 | `2.1.0-amd64-preview` |       |
 | `2.0.2-amd64-preview` |       |
@@ -131,6 +132,46 @@ Azure Cognitive Services предлагает множество образов 
 | Теги изображений                  | Примечания                                    |
 |-----------------------------|:-----------------------------------------|
 | `latest`                    | Образ контейнера с `en-US` локальным языком. |
+| `2.2.0-amd64-ar-ae-preview` | Образ контейнера с `ar-AE` локальным языком. |
+| `2.2.0-amd64-ar-eg-preview` | Образ контейнера с `ar-EG` локальным языком. |
+| `2.2.0-amd64-ar-kw-preview` | Образ контейнера с `ar-KW` локальным языком. |
+| `2.2.0-amd64-ar-qa-preview` | Образ контейнера с `ar-QA` локальным языком. |
+| `2.2.0-amd64-ar-sa-preview` | Образ контейнера с `ar-SA` локальным языком. |
+| `2.2.0-amd64-ca-es-preview` | Образ контейнера с `ca-ES` локальным языком. |
+| `2.2.0-amd64-da-dk-preview` | Образ контейнера с `da-DK` локальным языком. |
+| `2.2.0-amd64-de-de-preview` | Образ контейнера с `de-DE` локальным языком. |
+| `2.2.0-amd64-en-au-preview` | Образ контейнера с `en-AU` локальным языком. |
+| `2.2.0-amd64-en-ca-preview` | Образ контейнера с `en-CA` локальным языком. |
+| `2.2.0-amd64-en-gb-preview` | Образ контейнера с `en-GB` локальным языком. |
+| `2.2.0-amd64-en-in-preview` | Образ контейнера с `en-IN` локальным языком. |
+| `2.2.0-amd64-en-nz-preview` | Образ контейнера с `en-NZ` локальным языком. |
+| `2.2.0-amd64-en-us-preview` | Образ контейнера с `en-US` локальным языком. |
+| `2.2.0-amd64-es-es-preview` | Образ контейнера с `es-ES` локальным языком. |
+| `2.2.0-amd64-es-mx-preview` | Образ контейнера с `es-MX` локальным языком. |
+| `2.2.0-amd64-fi-fi-preview` | Образ контейнера с `fi-FI` локальным языком. |
+| `2.2.0-amd64-fr-ca-preview` | Образ контейнера с `fr-CA` локальным языком. |
+| `2.2.0-amd64-fr-fr-preview` | Образ контейнера с `fr-FR` локальным языком. |
+| `2.2.0-amd64-gu-in-preview` | Образ контейнера с `gu-IN` локальным языком. |
+| `2.2.0-amd64-hi-in-preview` | Образ контейнера с `hi-IN` локальным языком. |
+| `2.2.0-amd64-it-it-preview` | Образ контейнера с `it-IT` локальным языком. |
+| `2.2.0-amd64-ja-jp-preview` | Образ контейнера с `ja-JP` локальным языком. |
+| `2.2.0-amd64-ko-kr-preview` | Образ контейнера с `ko-KR` локальным языком. |
+| `2.2.0-amd64-mr-in-preview` | Образ контейнера с `mr-IN` локальным языком. |
+| `2.2.0-amd64-nb-no-preview` | Образ контейнера с `nb-NO` локальным языком. |
+| `2.2.0-amd64-nl-nl-preview` | Образ контейнера с `nl-NL` локальным языком. |
+| `2.2.0-amd64-pl-pl-preview` | Образ контейнера с `pl-PL` локальным языком. |
+| `2.2.0-amd64-pt-br-preview` | Образ контейнера с `pt-BR` локальным языком. |
+| `2.2.0-amd64-pt-pt-preview` | Образ контейнера с `pt-PT` локальным языком. |
+| `2.2.0-amd64-ru-ru-preview` | Образ контейнера с `ru-RU` локальным языком. |
+| `2.2.0-amd64-sv-se-preview` | Образ контейнера с `sv-SE` локальным языком. |
+| `2.2.0-amd64-ta-in-preview` | Образ контейнера с `ta-IN` локальным языком. |
+| `2.2.0-amd64-te-in-preview` | Образ контейнера с `te-IN` локальным языком. |
+| `2.2.0-amd64-th-th-preview` | Образ контейнера с `th-TH` локальным языком. |
+| `2.2.0-amd64-tr-tr-preview` | Образ контейнера с `tr-TR` локальным языком. |
+| `2.2.0-amd64-zh-cn-preview` | Образ контейнера с `zh-CN` локальным языком. |
+| `2.2.0-amd64-zh-hk-preview` | Образ контейнера с `zh-HK` локальным языком. |
+| `2.2.0-amd64-zh-tw-preview` | Образ контейнера с `zh-TW` локальным языком. |
+| `2.1.1-amd64-en-us-preview` | Образ контейнера с `en-US` локальным языком. |
 | `2.1.1-amd64-ar-ae-preview` | Образ контейнера с `ar-AE` локальным языком. |
 | `2.1.1-amd64-ar-eg-preview` | Образ контейнера с `ar-EG` локальным языком. |
 | `2.1.1-amd64-ar-kw-preview` | Образ контейнера с `ar-KW` локальным языком. |

@@ -5,12 +5,12 @@ author: dkkapur
 ms.topic: conceptual
 ms.date: 11/09/2018
 ms.author: dekapur
-ms.openlocfilehash: 489a90180454e2b4a9dad34730fbd3c4f235a2ad
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5921fc9038e53f34e23f6fd97111c71b29699dc5
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77598108"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82793148"
 ---
 # <a name="upgrade-the-service-fabric-version-that-runs-on-your-cluster"></a>Изменение версии Service Fabric в кластере 
 
@@ -159,10 +159,10 @@ ms.locfileid: "77598108"
 
     Устранив проблемы, которые привели к откату, запустите обновление снова, выполнив уже описанные действия.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Обновление конфигурации изолированного кластера](service-fabric-cluster-config-upgrade-windows-server.md)
 * [Настройка параметров кластера Service Fabric](service-fabric-cluster-fabric-settings.md).
-* [Масштабирование кластера](service-fabric-cluster-scale-up-down.md).
+* [Масштабирование кластера](service-fabric-cluster-scale-in-out.md).
 
 <!--Image references-->
 [getfabversions]: ./media/service-fabric-cluster-upgrade-windows-server/getfabversions.PNG

@@ -1,28 +1,24 @@
 ---
-title: Автоматическая подготовка пользователей для приложения SaaS в Azure AD | Документы Майкрософт
+title: Автоматическая подготовка пользователей приложения SaaS в Azure AD
 description: Общие сведения об использовании Azure AD для автоматической подготовки, отзыва и постоянного обновления учетных записей пользователей в нескольких приложениях SaaS сторонних разработчиков.
 services: active-directory
-documentationcenter: ''
 author: msmimart
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-provisioning
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/25/2019
 ms.author: mimart
-ms.reviewer: arvinh
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e828fd9c2561007c332db67bfd0b20dda9b845f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.reviewer: arvinh, celested
+ms.openlocfilehash: 1e72d885858b543999090a4a0521845d556802fd
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79454539"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82593120"
 ---
-# <a name="automate-user-provisioning-and-deprovisioning-to-applications-with-azure-active-directory"></a>Автоматизируйте подготовку пользователей и отменяйте подготовку приложений с помощью Azure Active Directory
+# <a name="automate-user-provisioning-and-deprovisioning-to-applications-with-azure-ad"></a>Автоматизация подготовки пользователей и ее отмены в приложениях с помощью Azure AD
 
 В Azure Active Directory (Azure AD) термин " **Подготовка приложения** " означает автоматическое создание удостоверений пользователей и ролей в облачных приложениях ([SaaS](https://azure.microsoft.com/overview/what-is-saas/)), к которым пользователям требуется доступ. Кроме создания удостоверений пользователей, автоматическая подготовка включает в себя обслуживание и удаление удостоверений пользователей по мере изменения их статуса или ролей. Типичные сценарии включают подготовку пользователя Azure AD к таким приложениям, как [Dropbox](../saas-apps/dropboxforbusiness-provisioning-tutorial.md), [Salesforce](../saas-apps/salesforce-provisioning-tutorial.md), [ServiceNow](../saas-apps/servicenow-provisioning-tutorial.md), и других.
 

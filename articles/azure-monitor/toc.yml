@@ -62,6 +62,9 @@
   items:
     - name: Azure PowerShell
       href: platform/powershell-samples.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Что можно отслеживать?
@@ -442,8 +445,6 @@
               href: app/custom-data-correlation.md
             - name: Строки подключения
               href: app/sdk-connection-string.md
-            - name: Строки подключения
-              href: app/sdk-connection-string.md
             - name: GetMetric
               displayname: 'get metric, custom metrics, metrics, TrackMetric'
               href: app/get-metric.md
@@ -750,8 +751,6 @@
           href: insights/containers.md
     - name: Мониторинг других ресурсов
       items:
-        - name: Key Vault
-          href: insights/key-vault-insights-overview.md
         - name: Память
           items:
             - name: Использование Azure Monitor для службы хранилища
@@ -927,6 +926,10 @@
               href: platform/workbooks-data-sources.md
             - name: Развертывание с помощью Azure Resource Manager
               href: platform/workbooks-automate.md
+            - name: Группы
+              href: platform/workbooks-groups.md
+            - name: Преобразование данных JSON с использованием JSONPath
+              href: platform/workbooks-jsonpath.md
             - name: Конфигурация
               items:
                 - name: Управление доступом

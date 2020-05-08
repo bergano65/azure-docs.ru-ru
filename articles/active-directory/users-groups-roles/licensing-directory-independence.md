@@ -1,7 +1,7 @@
 ---
 title: Характеристики взаимодействия нескольких клиентов с Azure AD | Документация Майкрософт
-description: Понимание клиентов Azure Active Directory как полностью независимых организаций
-services: active-tenant
+description: Общие сведения о независимость данных от Azure Active Directory организаций
+services: active-directory
 documentationcenter: ''
 author: curtand
 manager: daveba
@@ -9,21 +9,21 @@ ms.service: active-directory
 ms.topic: article
 ms.workload: identity
 ms.subservice: users-groups-roles
-ms.date: 04/07/2020
+ms.date: 04/29/2020
 ms.author: curtand
 ms.custom: it-pro
 ms.reviewer: sumitp
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 175d9ce7db1657e0e654f46adaf8a8d8ef28c25e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bbe7b0211775e59504443d30fa253cfa14af13b1
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80878125"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82582740"
 ---
 # <a name="understand-how-multiple-azure-active-directory-organizations-interact"></a>Принципы взаимодействия нескольких Azure Active Directory организаций
 
-В Azure Active Directory (Azure AD) каждый клиент является полностью независимой организацией: одноранговый узел, который логически не зависит от других организаций Azure AD, которыми вы управляете. Такая независимость между организациями включает независимость ресурсов, административную независимость и независимость от синхронизации. Между организациями нет связи "родители-потомки".
+В Azure Active Directory (Azure AD) каждая организация Azure AD полностью независима: одноранговый узел, который логически не зависит от других организаций Azure AD, которыми вы управляете. Такая независимость между организациями включает независимость ресурсов, административную независимость и независимость от синхронизации. Между организациями нет связи "родители-потомки".
 
 ## <a name="resource-independence"></a>Независимость ресурсов
 
@@ -53,6 +53,6 @@ ms.locfileid: "80878125"
 > В отличие от других ресурсов Azure, Организации Azure AD не являются дочерними ресурсами подписки Azure. Если ваша подписка Azure отменена или истек срок ее действия, вы по-прежнему можете получать доступ к данным Организации Azure AD с помощью Azure PowerShell, API Microsoft Graph или центра администрирования Microsoft 365. Можно также [связать другую подписку с Организацией](../fundamentals/active-directory-how-subscriptions-associated-directory.md).
 >
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Рекомендации по лицензированию Azure AD и рекомендации см. в статье [что такое лицензирование Azure Active Directory?](../fundamentals/active-directory-licensing-whatis-azure-portal.md).

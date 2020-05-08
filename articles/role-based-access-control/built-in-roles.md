@@ -15,12 +15,12 @@ ms.date: 05/04/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: b6587ca113319c266d2335c9cbb154e0ecc4afa1
-ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
-ms.translationtype: HT
+ms.openlocfilehash: b5ba4b84fcd9c1722e8ab2f4031ec1551357e406
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82838745"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82869991"
 ---
 # <a name="azure-built-in-roles"></a>Встроенные роли Azure
 
@@ -150,13 +150,13 @@ ms.locfileid: "82838745"
 > | [Администратор безопасности](#security-admin) | Просмотр и обновление разрешений для центра безопасности. Те же разрешения, что и у роли читателя безопасности, также могут обновлять политику безопасности и закрывать предупреждения и рекомендации. | fb1c8493-542b-48eb-b624-b4c8fea62acd |
 > | [Участник оценки безопасности](#security-assessment-contributor) | Позволяет отправлять оценки в центр безопасности | 612c2aa1-cb24-443b-ac28-3ab7272de6f5 |
 > | [Диспетчер безопасности (устаревший)](#security-manager-legacy) | Это устаревшая роль. Используйте вместо него администратора безопасности. | e3d13bf0-dd5a-482e-ba6b-9b8433878d10 |
-> | [Читатель безопасности](#security-reader) | Просмотр разрешений для центра безопасности. Может просматривать рекомендации, предупреждения, политику безопасности и состояния безопасности, но не может вносить изменения. | 39bc4728-0917-49c7-9d2c-d95423bc2eb4 |
+> | [Читатель сведений о безопасности](#security-reader) | Просмотр разрешений для центра безопасности. Может просматривать рекомендации, предупреждения, политику безопасности и состояния безопасности, но не может вносить изменения. | 39bc4728-0917-49c7-9d2c-d95423bc2eb4 |
 > | **DevOps** |  |  |
 > | [Пользователь DevTest Labs](#devtest-labs-user) | Позволяет подключать, запускать, перезапускать виртуальные машины и завершать их работу в Azure DevTest Labs. | 76283e04-6283-4c54-8f91-bcf1374a3c64 |
 > | [Создатель лаборатории](#lab-creator) | Позволяет создавать, администрировать и удалять управляемые лаборатории в учетных записях Служб лабораторий Azure. | b97fb8bc-a8b2-4522-a38b-dd33c7e65ead |
 > | **Монитор** |  |  |
 > | [Участник компонента Application Insights](#application-insights-component-contributor) | Может управлять компонентами Application Insights | ae349356-3a1b-4a5e-921d-050484c6347e |
-> | [Отладчик моментальных снимков Application Insights](#application-insights-snapshot-debugger) | Пользователю предоставляется разрешение на просмотр и загрузку моментальных снимков отладки, собранных с помощью Application Insights Snapshot Debugger. Обратите внимание, что эти разрешения не включены в роли [Владелец](#owner) или [Участник](#contributor). | 08954f03-6346-4c2e-81c0-ec3a5cfae23b |
+> | [Отладчик моментальных снимков Application Insights](#application-insights-snapshot-debugger) | Пользователю предоставляется разрешение на просмотр и загрузку моментальных снимков отладки, собранных с помощью Application Insights Snapshot Debugger. Обратите внимание, что эти разрешения не включены в роли [Владелец](#owner) или [Участник](#contributor). При предоставлении пользователям роли Snapshot Debugger Application Insights необходимо предоставить роль непосредственно пользователю. Роль не распознается при добавлении в настраиваемую роль. | 08954f03-6346-4c2e-81c0-ec3a5cfae23b |
 > | [Monitoring Contributor](#monitoring-contributor) | Может читать все данные мониторинга и изменять параметры мониторинга. Ознакомьтесь также со статьей [Приступая к работе с ролями, разрешениями и системой безопасности с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/roles-permissions-security#built-in-monitoring-roles). | 749f88d5-cbae-40b8-bcfc-e573ddc772fa |
 > | [Издатель метрик мониторинга](#monitoring-metrics-publisher) | Включает публикацию метрик ресурсов Azure | 3913510d-42f4-4e42-8a64-420c390055eb |
 > | [Monitoring Reader](#monitoring-reader) (Читатель данных мониторинга) | Может читать все данные мониторинга (метрики, журналы и т. д.). Ознакомьтесь также со статьей [Приступая к работе с ролями, разрешениями и системой безопасности с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/roles-permissions-security#built-in-monitoring-roles). | 43d0d8ad-25c7-4714-9337-8ba259a9fe05 |
@@ -6144,7 +6144,7 @@ ms.locfileid: "82838745"
 
 ### <a name="application-insights-snapshot-debugger"></a>Отладчик моментальных снимков Application Insights
 
-Пользователю предоставляется разрешение на просмотр и загрузку моментальных снимков отладки, собранных с помощью Application Insights Snapshot Debugger. Обратите внимание, что эти разрешения не включены в роли [Владелец](#owner) или [Участник](#contributor).
+Пользователю предоставляется разрешение на просмотр и загрузку моментальных снимков отладки, собранных с помощью Application Insights Snapshot Debugger. Обратите внимание, что эти разрешения не включены в роли [Владелец](#owner) или [Участник](#contributor). При предоставлении пользователям роли Snapshot Debugger Application Insights необходимо предоставить роль непосредственно пользователю. Роль не распознается при добавлении в настраиваемую роль. 
 
 > [!div class="mx-tableFixed"]
 > |  |  |
