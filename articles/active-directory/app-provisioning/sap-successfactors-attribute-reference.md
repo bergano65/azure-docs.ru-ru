@@ -1,33 +1,37 @@
 ---
-title: Справочник по атрибутам SAP SuccessFactors | Документация Майкрософт
+title: Справочник по атрибутам SAP SuccessFactors
 description: Сведения о том, какие атрибуты из SuccessFactors поддерживаются при подготовке SuccessFactors-с управлением персоналом.
 services: active-directory
 author: cmmdesai
-documentationcenter: na
-manager: jodadzie
-ms.assetid: afb77f2d-5ddd-4c2e-a840-09021b0efef1
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-provisioning
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/06/2019
 ms.author: chmutali
-ms.openlocfilehash: 00b16f969525e7b802c008ba247ecba015875689
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.reviewer: celested
+ms.openlocfilehash: cdd6abf5d10a529aa4c529d0364b2ba9f1df72e3
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77522362"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82593190"
 ---
 # <a name="sap-successfactors-attribute-reference"></a>Справочник по атрибутам SAP SuccessFactors
 
+В этой статье вы найдете сведения о:
+
+- [Поддерживаемые сущности и атрибуты SuccessFactors](#supported-successfactors-entities-and-attributes)
+- [Сопоставление атрибутов по умолчанию](#default-attribute-mapping)
+
 ## <a name="supported-successfactors-entities-and-attributes"></a>Поддерживаемые сущности и атрибуты SuccessFactors
 
-В следующей таблице записан список атрибутов SuccessFactors, поддерживаемых следующими двумя приложениями подготовки: 
-* [SuccessFactors Active Directory подготовки пользователей](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)
-* [SuccessFactors для подготовки пользователей Azure AD](../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) 
+В следующей таблице записан список атрибутов SuccessFactors, поддерживаемых следующими двумя приложениями подготовки:
+
+- [SuccessFactors Active Directory подготовки пользователей](../saas-apps/sap-successfactors-inbound-provisioning-tutorial.md)
+- [SuccessFactors для подготовки пользователей Azure AD](../saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)
+
 
 | \# | Сущность SuccessFactors                  | Атрибут SuccessFactors     | Тип операции |
 |----|----------------------------------------|------------------------------|----------------|
@@ -40,35 +44,35 @@ ms.locfileid: "77522362"
 | 7  | перперсонал                            | lastName                     | Чтение           |
 | 8  | перперсонал                            | middleName                   | Чтение           |
 | 9  | перперсонал                            | преферреднаме                | Чтение           |
-| 10 | User (Пользователь)                                   | addressLine1                 | Чтение           |
-| 11 | User (Пользователь)                                   | addressLine2                 | Чтение           |
-| 12 | User (Пользователь)                                   | addressLIne3                 | Чтение           |
-| 13 | User (Пользователь)                                   | бусинессфоне                | Чтение           |
-| 14 | User (Пользователь)                                   | целлфоне                    | Чтение           |
-| 15 | User (Пользователь)                                   | city                         | Чтение           |
-| 16 | User (Пользователь)                                   | country                      | Чтение           |
-| 17 | User (Пользователь)                                   | custom01                     | Чтение           |
-| 18 | User (Пользователь)                                   | custom02                     | Чтение           |
-| 19 | User (Пользователь)                                   | custom03                     | Чтение           |
-| 20 | User (Пользователь)                                   | custom04                     | Чтение           |
-| 21 | User (Пользователь)                                   | custom05                     | Чтение           |
-| 22 | User (Пользователь)                                   | custom06                     | Чтение           |
-| 23 | User (Пользователь)                                   | custom07                     | Чтение           |
-| 24 | User (Пользователь)                                   | custom08                     | Чтение           |
-| 25 | User (Пользователь)                                   | custom09                     | Чтение           |
-| 26 | User (Пользователь)                                   | custom10                     | Чтение           |
-| 27 | User (Пользователь)                                   | custom11                     | Чтение           |
-| 28 | User (Пользователь)                                   | custom12                     | Чтение           |
-| 29 | User (Пользователь)                                   | custom13                     | Чтение           |
-| 30 | User (Пользователь)                                   | custom14                     | Чтение           |
-| 31 | User (Пользователь)                                   | empId                        | Чтение           |
-| 32 | User (Пользователь)                                   | homePhone                    | Чтение           |
-| 33 | User (Пользователь)                                   | жобфамили                    | Чтение           |
-| 34 | User (Пользователь)                                   | псевдоним                     | Чтение           |
-| 35 | User (Пользователь)                                   | state                        | Чтение           |
-| 36 | User (Пользователь)                                   | timeZone                     | Чтение           |
-| 37 | User (Пользователь)                                   | username                     | Чтение           |
-| 38 | User (Пользователь)                                   | zipCode                      | Чтение           |
+| 10 | Пользователь                                   | addressLine1                 | Чтение           |
+| 11 | Пользователь                                   | addressLine2                 | Чтение           |
+| 12 | Пользователь                                   | addressLIne3                 | Чтение           |
+| 13 | Пользователь                                   | бусинессфоне                | Чтение           |
+| 14 | Пользователь                                   | целлфоне                    | Чтение           |
+| 15 | Пользователь                                   | city                         | Чтение           |
+| 16 | Пользователь                                   | country                      | Чтение           |
+| 17 | Пользователь                                   | custom01                     | Чтение           |
+| 18 | Пользователь                                   | custom02                     | Чтение           |
+| 19 | Пользователь                                   | custom03                     | Чтение           |
+| 20 | Пользователь                                   | custom04                     | Чтение           |
+| 21 | Пользователь                                   | custom05                     | Чтение           |
+| 22 | Пользователь                                   | custom06                     | Чтение           |
+| 23 | Пользователь                                   | custom07                     | Чтение           |
+| 24 | Пользователь                                   | custom08                     | Чтение           |
+| 25 | Пользователь                                   | custom09                     | Чтение           |
+| 26 | Пользователь                                   | custom10                     | Чтение           |
+| 27 | Пользователь                                   | custom11                     | Чтение           |
+| 28 | Пользователь                                   | custom12                     | Чтение           |
+| 29 | Пользователь                                   | custom13                     | Чтение           |
+| 30 | Пользователь                                   | custom14                     | Чтение           |
+| 31 | Пользователь                                   | empId                        | Чтение           |
+| 32 | Пользователь                                   | homePhone                    | Чтение           |
+| 33 | Пользователь                                   | жобфамили                    | Чтение           |
+| 34 | Пользователь                                   | псевдоним                     | Чтение           |
+| 35 | Пользователь                                   | state                        | Чтение           |
+| 36 | Пользователь                                   | timeZone                     | Чтение           |
+| 37 | Пользователь                                   | username                     | Чтение           |
+| 38 | Пользователь                                   | zipCode                      | Чтение           |
 | 39 | перфоне                               | ареакоде                     | Чтение           |
 | 40 | перфоне                               | countryCode                  | Чтение           |
 | 41 | перфоне                               | Расширение                    | Чтение           |
@@ -111,7 +115,6 @@ ms.locfileid: "77522362"
 | 77 | емпемплойменттерминатион               | активимплойментскаунт       | Чтение           |
 | 78 | емпемплойменттерминатион               | латесттерминатиондате        | Чтение           |
 
-
 ## <a name="default-attribute-mapping"></a>Сопоставление атрибутов по умолчанию
 
 В следующей таблице представлено сопоставление атрибутов по умолчанию между атрибутами SuccessFactors, перечисленными выше, и атрибутами AD или Azure AD. В колонке "сопоставление" для приложения подготовки Azure AD можно изменить это сопоставление по умолчанию, включив в него атрибуты из списка выше. 
@@ -123,13 +126,13 @@ ms.locfileid: "77522362"
 | 3  | перперсонал                            | displayName              | displayName                             | Н/Д                                                                                           |
 | 4  | перперсонал                            | firstName                | givenName                               | Н/Д                                                                                           |
 | 5  | перперсонал                            | lastName                 | sn                                      | Н/Д                                                                                           |
-| 6  | User (Пользователь)                                   | addressLine1             | streetAddress                           | Н/Д                                                                                           |
-| 7  | User (Пользователь)                                   | city                     | l                                       | Н/Д                                                                                           |
-| 8  | User (Пользователь)                                   | country                  | co                                      | Н/Д                                                                                           |
-| 9  | User (Пользователь)                                   | state                    | st                                      | Н/Д                                                                                           |
-| 10 | User (Пользователь)                                   | username                 | samAccountName                          | Н/Д                                                                                           |
-| 11 | User (Пользователь)                                   | zipCode                  | postalCode                              | Н/Д                                                                                           |
-| 12 | перемаил                               | emailAddress             | mail                                    | Н/Д                                                                                           |
+| 6  | Пользователь                                   | addressLine1             | streetAddress                           | Н/Д                                                                                           |
+| 7  | Пользователь                                   | city                     | l                                       | Н/Д                                                                                           |
+| 8  | Пользователь                                   | country                  | co                                      | Н/Д                                                                                           |
+| 9  | Пользователь                                   | state                    | st                                      | Н/Д                                                                                           |
+| 10 | Пользователь                                   | username                 | samAccountName                          | Н/Д                                                                                           |
+| 11 | Пользователь                                   | zipCode                  | postalCode                              | Н/Д                                                                                           |
+| 12 | перемаил                               | emailAddress             | почта                                    | Н/Д                                                                                           |
 | 13 | емпжоб                                 | jobTitle                 | title                                   | Н/Д                                                                                           |
 | 14 | емпжоб                                 | managerId                | manager                                 | Н/Д                                                                                           |
 | 15 | Емпжоб\.каунтрйофрегистратион\.компании | твочаркаунтрикоде       | с                                       | Н/Д                                                                                           |
@@ -138,4 +141,3 @@ ms.locfileid: "77522362"
 | 18 | Расположение\.емпжоб                       | оффицелокатионаддресс    | streetAddress                           | Н/Д                                                                                           |
 | 19 | Расположение\.емпжоб                       | оффицелокатионзипкоде    | postalCode                              | Н/Д                                                                                           |
 | 20 | емпемплойменттерминатион               | активимплойментскаунт   | AccountEnabled                          | Если Активимплойментскаунт = 0, отключите аккаунт\.                                           |
-

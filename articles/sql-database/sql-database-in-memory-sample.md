@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: ''
 ms.date: 12/18/2018
-ms.openlocfilehash: b707d67c88eb550d397134b2294c1c5b0e1f7f7d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7ff4647682f5f4d688f3b581b96715e01976a387
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80528212"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891157"
 ---
 # <a name="in-memory-sample"></a>Пример использования технологий обработки в оперативной памяти
 
@@ -24,7 +24,7 @@ ms.locfileid: "80528212"
 
 В этой статье вы ознакомитесь с двумя примерами по использованию OLTP в памяти и индексов сolumnstore в Базе данных SQL Azure.
 
-Дополнительные сведения можно найти в разделе
+Дополнительные сведения можно найти в разделе 
 - Статья [Общие сведения и сценарии использования](https://msdn.microsoft.com/library/mt774593.aspx) содержит ссылки на примеры реальных клиентов и сведения, необходимые для начала работы.
 - [In-Memory OLTP (оптимизация в памяти)](https://msdn.microsoft.com/library/dn133186.aspx)
 - [Инструкции по индексам columnstore](https://msdn.microsoft.com/library/gg492088.aspx)
@@ -179,10 +179,10 @@ end
 
 На виртуальной машине (или в другом размещении) установите служебные программы RML, которые включают в себя ostress.exe.
 
-Дополнительные сведения можно найти в разделе
+Дополнительные сведения можно найти в разделе 
 - Обсуждение программы ostress.exe представлено в статье [Пример базы данных для выполняющейся в памяти OLTP](https://msdn.microsoft.com/library/mt465764.aspx).
 - [Образец базы данных для выполняющейся в памяти OLTP](https://msdn.microsoft.com/library/mt465764.aspx).
-- Можно также прочитать [блог об установке ostress.exe](https://blogs.msdn.com/b/psssql/archive/20../../cumulative-update-2-to-the-rml-utilities-for-microsoft-sql-server-released.aspx).
+- Можно также прочитать [блог об установке ostress.exe](https://techcommunity.microsoft.com/t5/sql-server-support/cumulative-update-2-to-the-rml-utilities-for-microsoft-sql/ba-p/317910).
 
 
 
@@ -380,7 +380,7 @@ GO
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Краткое руководство 1. технологии выполняющейся в памяти OLTP для повышения производительности T-SQL](https://msdn.microsoft.com/library/mt694156.aspx)
 

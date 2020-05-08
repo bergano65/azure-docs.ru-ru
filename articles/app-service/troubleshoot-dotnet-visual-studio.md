@@ -6,12 +6,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/29/2016
 ms.custom: seodec18
-ms.openlocfilehash: 3305cfb81980984574961b2a84a056f5d1879ead
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: cb68860af56914acede6c9cbf04d3e8ad3edbe04
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79280057"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891057"
 ---
 # <a name="troubleshoot-an-app-in-azure-app-service-using-visual-studio"></a>Устранение неполадок приложения в Cлужбе приложений Azure с помощью Visual Studio
 ## <a name="overview"></a>Обзор
@@ -614,7 +614,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 Дополнительную информацию об устранении неполадок, связанных с приложениями в Службе приложений Azure, см. в следующих ресурсах:
 
 * [Мониторинг приложений](web-sites-monitor.md)
-* [Исследование проблемы утечки памяти в Службе приложений Azure с использованием Visual Studio 2013](https://blogs.msdn.com/b/visualstudioalm/archive/2013/12/20/investigating-memory-leaks-in-azure-web-sites-with-visual-studio-2013.aspx). Запись блога Microsoft ALM о функциях Visual Studio для анализа проблем с управляемой памятью.
+* [Исследование проблемы утечки памяти в Службе приложений Azure с использованием Visual Studio 2013](https://devblogs.microsoft.com/devops/investigating-memory-leaks-in-azure-web-sites-with-visual-studio-2013/). Запись блога Microsoft ALM о функциях Visual Studio для анализа проблем с управляемой памятью.
 * [Онлайн-инструменты Службы приложений Azure, о которых вам следует знать](https://azure.microsoft.com/blog/2014/03/28/windows-azure-websites-online-tools-you-should-know-about-2/). Запись в блоге Амита Эппла (Amit Apple).
 
 Справочные данные об определенном вопросе, связанном с устранением неполадок, можно получить, начав беседу на одном из следующих форумов:
@@ -678,7 +678,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
   Инструмент для просмотра данных в журналах веб-сервера (*LOG* -файлов).
 * [Устранение проблем производительности IIS или ошибок приложений с помощью LogParser](https://www.iis.net/learn/troubleshoot/performance-issues/troubleshooting-iis-performance-issues-or-application-errors-using-logparser)<br/>
    Введение в средство LogParser, которое можно использовать для анализа журналов веб-сервера.
-* [Записи блога Роберта Мак-Мюррея (Robert McMurray), посвященные использованию LogParser](https://blogs.msdn.com/b/robert_mcmurray/archive/tags/logparser/)<br/>
+* [Записи блога Роберта Мак-Мюррея (Robert McMurray), посвященные использованию LogParser](https://docs.microsoft.com/archive/blogs/robert_mcmurray/using-logparser-with-ftp-7-x-sessions)<br/>
 * [Код состояния HTTP в IIS 7.0, IIS 7.5 и IIS 8.0](https://support.microsoft.com/kb/943891)
 
 ### <a name="analyzing-failed-request-tracing-logs"></a>Анализ журналов трассировки неудачно завершенных запросов

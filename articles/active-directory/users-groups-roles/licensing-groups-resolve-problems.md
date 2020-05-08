@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ddfc4bf7ed3bdf214a44a5dfe03259d32b2f3f94
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 43eba1b2f3373555e871b586ae633dcb64abfd9b
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74025694"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82582701"
 ---
 # <a name="identify-and-resolve-license-assignment-problems-for-a-group-in-azure-active-directory"></a>Определение и устранение проблем назначения лицензий для группы в Azure Active Directory
 
@@ -100,7 +100,7 @@ ms.locfileid: "74025694"
 
 ## <a name="duplicate-proxy-addresses"></a>Дублирование адресов прокси-сервера
 
-Если вы используете Exchange Online, для некоторых пользователей в вашем клиенте может быть ошибочно настроено одно и то же значение адреса прокси-сервера. Если при групповом лицензировании производится попытка назначить лицензию такому пользователю, она завершается сбоем, и появляется сообщение "Адрес прокси-сервера уже используется".
+При использовании Exchange Online некоторые пользователи в организации могут быть неправильно настроены с одинаковым значением адреса прокси-сервера. Если при групповом лицензировании производится попытка назначить лицензию такому пользователю, она завершается сбоем, и появляется сообщение "Адрес прокси-сервера уже используется".
 
 > [!TIP]
 > Чтобы посмотреть, нет ли повторов прокси адресов, выполните следующий командлет PowerShell в Exchange Online:

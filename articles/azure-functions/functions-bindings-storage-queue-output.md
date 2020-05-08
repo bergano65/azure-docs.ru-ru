@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/18/2020
 ms.author: cshoe
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 76af5f398edd736874fa79095f2e80c02298eac0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: dd8442c00e2b7685b0dc1a7bd5150c87f2c27b7c
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79277340"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891452"
 ---
 # <a name="azure-queue-storage-output-bindings-for-azure-functions"></a>Выходные привязки хранилища очередей Azure для функций Azure
 
@@ -123,7 +123,7 @@ public static void Run(
     {
       "type": "queue",
       "direction": "out",
-      "name": "$return",
+      "name": "myQueueItem",
       "queueName": "outqueue",
       "connection": "MyStorageConnectionAppSetting"
     }
@@ -137,7 +137,8 @@ public static void Run(
 
 ```javascript
 module.exports = function (context, input) {
-    context.done(null, input.body);
+    context.bindings.myQueueItem = input.body;
+    context.done();
 };
 ```
 
@@ -382,7 +383,7 @@ public class HttpTriggerQueueOutput {
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка |  Справочник |
+| Привязка |  Ссылка |
 |---|---|
 | Очередь | [Коды ошибок очередей](https://docs.microsoft.com/rest/api/storageservices/queue-service-error-codes) |
 | Большой двоичный объект, таблица, очередь | [Коды ошибок хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/common-rest-api-error-codes) |
@@ -420,7 +421,7 @@ public class HttpTriggerQueueOutput {
 |maxDequeueCount|5|Число повторных попыток обработки сообщения, прежде чем поместить его в очередь подозрительных сообщений.|
 |newBatchThreshold|batchSize/2|Каждый раз, когда количество сообщений, обрабатываемых параллельно, достигает этого числа, среда выполнения получает другой пакет.|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Выполнение функции как изменения данных хранилища очередей (триггер)](./functions-bindings-storage-queue-trigger.md)
 

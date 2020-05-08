@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8a49bc979923bf52d099e30615910c5bdb0601b6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f5e0eda72f39a70f02b596a8fd69728336eac333
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79279862"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82594820"
 ---
 # <a name="prepare-the-azure-infrastructure-for-sap-ha-by-using-a-windows-failover-cluster-and-shared-disk-for-sap-ascsscs"></a>Подготовка инфраструктуры Azure для SAP высокого уровня доступности с помощью отказоустойчивого кластера Windows и общего диска для SAP ASCS/SC
 
@@ -177,9 +177,9 @@ ms.locfileid: "79279862"
 
 Шаблоны Azure Resource Manager, описанные в этой статье, доступны здесь:
 
-* [Образ Azure Marketplace](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-marketplace-image)  
+* [Образ Azure Marketplace](https://github.com/Azure/azure-quickstart-templates/)  
 * [Образ Azure Marketplace с использованием управляемых дисков Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-marketplace-image-md)  
-* [Пользовательский образ](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-user-image)
+* [Пользовательский образ](https://github.com/Azure/azure-quickstart-templates/)
 * [Пользовательский образ с использованием управляемых дисков](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-user-image-md)
 
 Чтобы подготовить инфраструктуру для использования шаблона 1 архитектуры, сделайте следующее:
@@ -270,9 +270,9 @@ _**Рис. 1.** Настройка параметров Azure Resource Manager �
 
 Шаблоны Azure Resource Manager для сценария развертывания доступны здесь:
 
-* [Образ Azure Marketplace](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-marketplace-image-converged)  
+* [Образ Azure Marketplace](https://github.com/Azure/azure-quickstart-templates/)  
 * [Образ Azure Marketplace с использованием управляемых дисков](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-marketplace-image-converged-md)  
-* [Пользовательский образ](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-user-image-converged)
+* [Пользовательский образ](https://github.com/Azure/azure-quickstart-templates/)
 * [Пользовательский образ с использованием управляемых дисков](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-user-image-converged-md)
 
 
@@ -524,7 +524,7 @@ _**Рис. 5.** Правила балансировки нагрузки ASCS/SC
 1. В портал Azure выберите > **Load Balancing Rules** ** \<правила балансировки\>нагрузки балансировки нагрузки SID-фунтов-ASCS**.
 2. Для всех правил балансировки нагрузки, относящихся к экземпляру SAP ASCS или SCS, измените следующие значения.
 
-   * Имя
+   * Название
    * Порт
    * Внутренний порт
 
@@ -550,22 +550,22 @@ Azure Load Balancer имеет внутренний балансировщик �
 
 Чтобы добавить записи реестра на обоих узлах кластера экземпляра SAP ASCS/SCS, сначала добавьте эти записи реестра Windows на обоих узлах кластера Windows для SAP ASCS/SCS.
 
-| Path | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
+| Путь | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
 | --- | --- |
 | Имя переменной |`KeepAliveTime` |
 | Тип переменной |REG_DWORD (десятичное) |
-| Значение |120000 |
+| Применение |120000 |
 | Ссылка на документацию |[https://technet.microsoft.com/library/cc957549.aspx](https://technet.microsoft.com/library/cc957549.aspx) |
 
 **Таблица 3.** Изменение первого параметра TCP/IP
 
 Затем добавьте следующую запись реестра Windows на обоих узлах кластера Windows для SAP ASCS/SCS:
 
-| Path | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
+| Путь | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
 | --- | --- |
 | Имя переменной |`KeepAliveInterval` |
 | Тип переменной |REG_DWORD (десятичное) |
-| Значение |120000 |
+| Применение |120000 |
 | Ссылка на документацию |[https://technet.microsoft.com/library/cc957548.aspx](https://technet.microsoft.com/library/cc957548.aspx) |
 
 **Таблица 4.** Изменение второго параметра TCP/IP
@@ -888,6 +888,6 @@ SIOS DataKeeper Cluster Edition нужно установить на обоих 
 
    _**Рис. 45.** диспетчер отказоустойчивости кластеров показывает диск, который реплицируется_
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Установка SAP NetWeaver высокого уровня доступности в Azure с использованием отказоустойчивого кластера Windows и общего диска для экземпляра SAP (A)SCS][sap-high-availability-installation-wsfc-shared-disk]

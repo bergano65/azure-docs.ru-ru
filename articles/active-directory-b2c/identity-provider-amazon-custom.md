@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/05/2018
+ms.date: 05/04/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 2de891ee109677f92ff603759701f7732f5951ba
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 059c43b24ddc9f319eac4f2783cfc203bed8c7f1
+ms.sourcegitcommit: 0fda81f271f1a668ed28c55dcc2d0ba2bb417edd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78188517"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82900433"
 ---
 # <a name="set-up-sign-in-with-an-amazon-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с использованием пользовательских политик учетной записи Amazon
 
@@ -24,22 +24,21 @@ ms.locfileid: "78188517"
 
 В этой статье показано, как включить вход для пользователей из учетной записи Amazon с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 - Если у вас еще нет учетной записи Amazon, создайте ее [https://www.amazon.com/](https://www.amazon.com/).
 
-## <a name="register-the-application"></a>Регистрация приложения
+## <a name="create-an-app-in-the-amazon-developer-console"></a>Создание приложения в консоли разработчика Amazon
 
-Чтобы разрешить вход пользователей из учетной записи Amazon, необходимо создать приложение Amazon.
+Чтобы использовать учетную запись Amazon в качестве федеративного поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в [службах и технологиях Amazon Developer](https://developer.amazon.com). Если у вас еще нет учетной записи Amazon, вы можете зарегистрироваться по [https://www.amazon.com/](https://www.amazon.com/)адресу.
 
-1. Выполните вход в [Amazon Developer Center](https://login.amazon.com/) с учетными данными от учетной записи Amazon.
-2. Если это еще не сделано, нажмите кнопку **Sign Up**(Регистрация), выполните действия для регистрации разработчика и примите условия политики.
-3. Щелкните **Register new application** (Зарегистрировать новое приложение).
-4. Введите значения **Имя**, **Описание**, и **URL-адрес заявления о конфиденциальности**, а затем щелкните **Сохранить**. Уведомление о конфиденциальности — это управляемая вами страница, где предоставляются сведения о конфиденциальности для пользователей.
-5. В разделе **Web Settings** (Веб-параметры) скопируйте значение **Client ID** (Идентификатор клиента). Выберите **Показать секрет**, чтобы просмотреть и скопировать секрет клиента. Оба значения потребуются для настройки учетной записи Amazon в качестве поставщика удостоверений в вашем клиенте. **Секрет клиента**— важный элемент обеспечения безопасности.
-6. В разделе **Web Settings** (Веб-параметры) выберите действие **Редактировать**, а затем введите значение `https://your-tenant-name.b2clogin.com` в поле **Allowed JavaScript Origins** (Допустимые источники JavaScript) и значение `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` в поле **Allowed Return URLs** (Допустимые URL-адреса возврата). Замените `your-tenant-name` именем вашего клиента. При вводе имени вашего клиента используйте только строчные буквы, даже если в Azure AD B2C имя клиента определено с помощью прописных букв.
-7. Выберите команду **Сохранить**.
+> [!NOTE]  
+> Используйте следующие URL-адреса на **шаге 8** ниже, `your-tenant-name` заменив именем своего клиента. При вводе имени клиента используйте все строчные буквы, даже если клиент определен с прописными буквами в Azure AD B2C.
+> - Для **разрешенных источников**введите`https://your-tenant-name.b2clogin.com` 
+> - Для **разрешенных URL-адресов возврата**введите`https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp`
+
+[!INCLUDE [identity-provider-amazon-idp-register.md](../../includes/identity-provider-amazon-idp-register.md)]
 
 ## <a name="create-a-policy-key"></a>Создание ключа политики
 

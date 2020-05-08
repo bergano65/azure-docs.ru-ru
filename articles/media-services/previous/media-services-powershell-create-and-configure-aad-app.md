@@ -27,7 +27,7 @@ ms.locfileid: "82594089"
 
 Узнайте, как с помощью сценария PowerShell создать приложение Azure Active Directory (Azure AD) и участник-службу для доступа к ресурсам служб мультимедиа Azure.  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Учетная запись Azure. Если у вас нет учетной записи Azure, начните с получения [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/). 
 - Учетная запись служб мультимедиа. Дополнительные сведения см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
@@ -64,6 +64,6 @@ $Retries = 0;While ($NewRole -eq $null -and $Retries -le 6)
 - [Управление доступом на основе ролей с помощью Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
 - [Authenticating to Azure AD in daemon apps with certificates - manual configuration steps](https://github.com/azure-samples/active-directory-dotnetcore-daemon-v2) (Ручная настройка аутентификации приложений управляющей программы в Azure AD с помощью сертификатов)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Приступите к [передаче файлов в учетную запись](media-services-portal-upload-files.md).

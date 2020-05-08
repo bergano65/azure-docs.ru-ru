@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 03/13/2020
-ms.openlocfilehash: 8140fc4286ac97260e0b23ea700a70303ec69e2e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5428f24ea5ab780c4b51e0af37908077ddc32232
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81411200"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891365"
 ---
 # <a name="configure-azure-private-link-for-an-azure-machine-learning-workspace-preview"></a>Настройка частной ссылки Azure для Машинное обучение Azure рабочей области (Предварительная версия)
 
@@ -118,7 +118,7 @@ az group deployment create \
 
 Чтобы защитить Azure Key Vault, используемые рабочей областью, можно либо разместить ее в виртуальной сети, либо включить для нее закрытую ссылку.
 
-Сведения о размещении хранилища ключей в виртуальной сети см. в статье [использование экземпляра хранилища ключей с рабочей областью](how-to-enable-virtual-network.md#use-a-key-vault-instance-with-your-workspace).
+Сведения о размещении хранилища ключей в виртуальной сети см. в статье [использование экземпляра хранилища ключей с рабочей областью](how-to-enable-virtual-network.md#key-vault-instance).
 
 Сведения о включении закрытой ссылки для хранилища ключей см. в статье [интеграция Key Vault с помощью частного канала Azure](/azure/key-vault/private-link-service).
 
@@ -131,7 +131,7 @@ az group deployment create \
 
 ## <a name="azure-container-registry"></a>Реестр контейнеров Azure
 
-Сведения о защите реестра контейнеров Azure в виртуальной сети см. в статье [использование реестра контейнеров Azure](how-to-enable-virtual-network.md#use-azure-container-registry).
+Сведения о защите реестра контейнеров Azure в виртуальной сети см. в статье [использование реестра контейнеров Azure](how-to-enable-virtual-network.md#azure-container-registry).
 
 > [!IMPORTANT]
 > Если используется частная ссылка для рабочей области Машинное обучение Azure и размещен реестр контейнеров Azure для рабочей области в виртуальной сети, необходимо также применить следующий шаблон Azure Resource Manager. Этот шаблон позволяет рабочей области взаимодействовать с записью контроля доступа через частную ссылку.
@@ -1162,6 +1162,6 @@ az group deployment create \
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о защите рабочей области Машинное обучение Azure см. в статье [Корпоративная безопасность](concept-enterprise-security.md) .

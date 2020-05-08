@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
-ms.date: 04/10/2020
-ms.openlocfilehash: ed2fe1736c887fd8aa866c8d0c71a5df0aa4fb31
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.date: 04/30/2020
+ms.openlocfilehash: 4eaa9c4e3d200eedd57c468639c1af3830911d1d
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82232842"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82889261"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-apache-hadoop-apache-spark-apache-kafka-and-more"></a>Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий
 
@@ -25,6 +25,8 @@ ms.locfileid: "82232842"
 
 > [!IMPORTANT]  
 > Начисление оплаты начинается после создания кластера HDInsight и прекращается только после его удаления. Кластеры оплачиваются поминутно, поэтому всегда следует удалять кластер, когда он больше не нужен. Узнайте, как [удалить кластер](hdinsight-delete-cluster.md).
+
+Если вы используете несколько кластеров вместе, вам нужно создать виртуальную сеть и, если вы используете кластер Spark, также хотите использовать соединитель хранилища Hive. Дополнительные сведения см. в статьях [планирование виртуальной сети для Azure HDInsight](./hdinsight-plan-virtual-network-deployment.md) и [интеграция Apache Spark и Apache Hive с помощью соединителя хранилища Hive](interactive-query/apache-hive-warehouse-connector.md).
 
 ## <a name="cluster-setup-methods"></a>Способы установки кластера
 
@@ -190,7 +192,7 @@ Ambari используется для мониторинга кластеров
 
 Этот параметр доступен только для типа кластера Kafka. Дополнительные сведения см. в разделе [использование прокси-сервера RESTful](./kafka/rest-proxy.md).
 
-### <a name="identity"></a>Идентификация
+### <a name="identity"></a>Удостоверение
 
 Дополнительные сведения см. [в статье управляемые удостоверения в Azure HDInsight](./hdinsight-managed-identities.md).
 
@@ -204,7 +206,7 @@ Ambari используется для мониторинга кластеров
 
 Для каждого типа кластера используется своя терминология. Кроме того, типы отличаются количеством узлов и стандартными размерами виртуальных машин. В следующей таблице число узлов каждого типа указано в скобках.
 
-| Тип | Узлы | Схема |
+| Type | Узлы | Схема |
 | --- | --- | --- |
 | Hadoop |Головной узел (2), Рабочий узел (1 +) |![Узлы кластера HDInsight Hadoop](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hadoop-cluster-type-nodes.png) |
 | HBase |Головной сервер (2), региональный сервер (от 1), основной узел или узел Zookeeper (3) |![Установка типа кластера HDInsight HBase](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hbase-cluster-type-setup.png) |
@@ -282,7 +284,7 @@ Ambari используется для мониторинга кластеров
 
 Подробные сведения см. в статье [Настройка кластеров HDInsight с помощью начальной загрузки](hdinsight-hadoop-customize-cluster-bootstrap.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение сбоев при создании кластера с помощью Azure HDInsight](./hadoop/hdinsight-troubleshoot-cluster-creation-fails.md)
 * [Что такое Azure HDInsight и стек технологий Apache Hadoop](hadoop/apache-hadoop-introduction.md)

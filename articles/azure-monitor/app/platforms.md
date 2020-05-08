@@ -4,12 +4,12 @@ description: Языки, платформы и интеграции, досту�
 ms.topic: conceptual
 ms.date: 07/18/2019
 ms.reviewer: olegan
-ms.openlocfilehash: cbda252fece638393ee7757dc165c4b009a0195e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 153d4ad3d95c182dcc4f2aa3bad857d7e1984cc2
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79136729"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891113"
 ---
 # <a name="supported-languages"></a>Поддерживаемые языки
 
@@ -23,7 +23,7 @@ ms.locfileid: "79136729"
 
 ### <a name="instrumentation-for-already-deployed-applications-codeless-agent-based"></a>Инструментирование для уже развернутых приложений (без кода, на основе агентов)
 * [Виртуальные машины Azure и масштабируемые наборы виртуальных машин Azure](../../azure-monitor/app/azure-vm-vmss-apps.md)
-* [Служба приложений Azure](../../azure-monitor/app/azure-web-apps.md)
+* [служба приложений Azure](../../azure-monitor/app/azure-web-apps.md);
 * [ASP.NET — для приложений, которые уже доступны в Интернете](../../azure-monitor/app/monitor-performance-live-website-now.md)
 * [Облачные службы Azure](../../azure-monitor/app/cloudservices.md), в том числе рабочие и веб-роли;
 * [Функции Azure](https://docs.microsoft.com/azure/azure-functions/functions-monitoring)
@@ -46,7 +46,7 @@ ms.locfileid: "79136729"
 * [Azure Monitor](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/)
 
 ## <a name="export-and-data-analysis"></a>Экспорт и анализ данных
-* [Power BI](https://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx)
+* [Power BI](https://powerbi.microsoft.com/blog/explore-your-application-insights-data-with-power-bi/)
 * [Stream Analytics](../../azure-monitor/app/export-power-bi.md)
 
 ## <a name="unsupported-sdks"></a>Неподдерживаемые пакеты SDK

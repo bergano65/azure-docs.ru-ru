@@ -2,26 +2,21 @@
 title: Пользователи не подготавливаются в моем приложении
 description: В этой статье описаны способы решения распространенных проблем, когда пользователи, для которых настроена подготовка в Azure AD, не появляются в приложении в коллекции Azure AD.
 services: active-directory
-documentationcenter: ''
 author: msmimart
 manager: CelesteDG
-ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/20/2020
 ms.author: mimart
 ms.reviewer: arvinh
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac6d4f24d3b6c21828ccb11785005df736c6b070
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fa47fbba7632077c83dc1d594c7c58c59c869bf7
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81680336"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82594021"
 ---
 # <a name="no-users-are-being-provisioned"></a>Подготовка пользователей не выполняется 
 >[!NOTE]
@@ -70,6 +65,6 @@ ms.locfileid: "81680336"
 **Поведение для конфигураций подготовки, созданных до 04/16/2020:** В течение следующих 3 месяцев поведение будет продолжаться, как и сегодня. Пользователи с ролью доступа по умолчанию будут пропущены, как неэффективно. После июля 2020 поведение будет единообразным для всех приложений. Мы не будем пропускать пользователей с ролью доступа по умолчанию из-за того, что это не право. Это изменение будет внесено корпорацией Майкрософт, и никаких действий клиента не требуется. Если вы хотите убедиться, что эти пользователи продолжают пропускаться даже после этого изменения, примените соответствующие фильтры области или отмените назначение пользователя из приложения, чтобы убедиться, что они выходят за пределы области.  
 
 Для получения вопросов об этих изменениях обратитесь кprovisioningfeedback@microsoft.com
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Служба синхронизации Azure AD Connect: общие сведения о декларативной подготовке](../hybrid/concept-azure-ad-connect-sync-declarative-provisioning.md)

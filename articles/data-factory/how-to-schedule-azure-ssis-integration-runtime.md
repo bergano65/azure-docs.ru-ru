@@ -13,12 +13,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: anandsub
-ms.openlocfilehash: 50ff0afe13b5b098fbc8d9fbeefba295a6217192
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: 83ccc3160ed62a1ea801dd8c5795328fd2b5109f
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81606068"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82584027"
 ---
 # <a name="how-to-start-and-stop-azure-ssis-integration-runtime-on-a-schedule"></a>Запуск и остановка Azure-SSIS Integration Runtime по расписанию
 
@@ -339,7 +339,7 @@ ms.locfileid: "81606068"
     2. В поле **DATA FACTORY NAME** (Имя Фабрики данных) введите имя ADF, где расположена Azure-SSIS IR. 
     3. В поле **AZURESSISNAME** (Имя Azure-SSIS) введите имя Azure-SSIS IR. 
     4. Для параметра **OPERATION** введите **START**. 
-    5. Нажмите кнопку **OK**.  
+    5. Щелкните **ОК**.  
 
    ![Окно "Запуск Runbook"](./media/how-to-schedule-azure-ssis-integration-runtime/start-runbook-window.png)
    
@@ -353,7 +353,7 @@ ms.locfileid: "81606068"
 
 ## <a name="create-schedules-for-your-runbook-to-startstop-azure-ssis-ir"></a>Создание расписаний для запуска и остановки Azure-SSIS IR с помощью runbook
 
-В рамках предыдущего раздела вы создали runbook службы автоматизации Azure, который может запустить или остановить Azure-SSIS IR. В рамках этого раздела вы создадите для этого runbook два расписания. При настройке первого расписания для параметра **OPERATION** укажите значение **START**. Этот же параметр **OPERATION** для второго расписания должен иметь значение **STOP**. Подробные инструкции по созданию расписаний см. в [этой статье](../automation/shared-resources/schedules.md#creating-a-schedule).
+В рамках предыдущего раздела вы создали runbook службы автоматизации Azure, который может запустить или остановить Azure-SSIS IR. В рамках этого раздела вы создадите для этого runbook два расписания. При настройке первого расписания для параметра **OPERATION** укажите значение **START**. Этот же параметр **OPERATION** для второго расписания должен иметь значение **STOP**. Подробные инструкции по созданию расписаний см. в [этой статье](../automation/shared-resources/schedules.md#create-a-schedule).
 
 1. В окне **Runbook** выберите **Расписания** и щелкните **+ Добавить расписание** на панели инструментов. 
 
@@ -383,7 +383,7 @@ ms.locfileid: "81606068"
     
 6. Завершив тестирование, измените параметры расписаний, чтобы отключить их. Выберите **Расписания** в меню слева, выберите **Start IR daily/Stop IR daily** ("Запускать IR ежедневно" или "Останавливать IR ежедневно") и укажите значение **Нет** для параметра **Включено**. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. в следующей записи блога:
 -   [Модернизация и расширение рабочих процессов ETL/ELT с помощью операций MSSQL Integration Services в конвейерах ADF](https://techcommunity.microsoft.com/t5/SQL-Server-Integration-Services/Modernize-and-Extend-Your-ETL-ELT-Workflows-with-SSIS-Activities/ba-p/388370)
 

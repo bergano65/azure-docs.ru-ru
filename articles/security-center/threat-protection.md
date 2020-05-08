@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 03/15/2020
 ms.author: memildin
-ms.openlocfilehash: 79638f584f1c65b33f23a68f01dbe82878460cc2
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: b28901918f2606100d92f47800c6e0fb6778e3d0
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82234083"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82606897"
 ---
 # <a name="threat-protection-in-azure-security-center"></a>Защита от угроз с помощью Центра безопасности Azure
 
@@ -34,7 +34,9 @@ ms.locfileid: "82234083"
 > [!TIP]
 > Чтобы включить возможности защиты от угроз для центра безопасности, необходимо применить ценовую категорию "Стандартный" к подписке, содержащей применимые рабочие нагрузки.
 >
-> В настоящее время защита от угроз в центре безопасности для учетных записей хранения и PaaS SQL/MySQL/PG являются единственной рабочей нагрузкой, которую можно включить на уровне ресурса для защиты отдельных рабочих нагрузок хранилища или SQL.
+> Вы можете включить защиту от угроз для **учетных записей хранения Azure** на уровне подписки или на уровне ресурса.
+> Вы можете включить защиту от угроз для **серверов SQL базы данных SQL Azure** на уровне подписки или ресурса.
+> Включить защиту от угроз для **базы данных Azure для MariaDB/MySQL/PostgreSQL** можно только на уровне ресурсов.
 
 
 
@@ -155,7 +157,7 @@ ms.locfileid: "82234083"
 
 Расширенная защита от угроз для базы данных SQL Azure и SQL входит в состав унифицированного пакета [расширенной защиты данных (ADS)](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security) для расширенных возможностей обеспечения безопасности SQL, охватывающих базы данных SQL Azure, управляемые экземпляры базы данных SQL Azure, базы данных хранилища данных SQL Azure и серверы SQL Server на виртуальных машинах Azure.
 
-Дополнительные сведения можно найти в разделе
+Дополнительные сведения можно найти в разделе 
 
 * [Включение расширенной защиты от угроз для базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-overview)
 * [Включение расширенной защиты от угроз для серверов SQL Server на виртуальных машинах Azure](security-center-iaas-advanced-data.md)
@@ -173,7 +175,7 @@ ms.locfileid: "82234083"
 
 Сведения о ценах, включая бесплатную пробную версию на 30 дней, см. на [странице цен на центр безопасности Azure](https://azure.microsoft.com/pricing/details/security-center/).
 
-Дополнительные сведения можно найти в разделе
+Дополнительные сведения можно найти в разделе 
 
 * [Включение расширенной защиты от угроз для службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-advanced-threat-protection)
 * [Список оповещений системы защиты от угроз для службы хранилища Azure](alerts-reference.md#alerts-azurestorage)
@@ -188,7 +190,7 @@ ms.locfileid: "82234083"
 
 Azure Cosmos DB оповещения создаются необычными и потенциально опасными попытками доступа или использования Azure Cosmos DB учетных записей.
 
-Дополнительные сведения можно найти в разделе
+Дополнительные сведения можно найти в разделе 
 
 * [Расширенная защита от угроз для Azure Cosmos DB (Предварительная версия)](../cosmos-db/cosmos-db-advanced-threat-protection.md)
 * [Список оповещений защиты от угроз для Azure Cosmos DB (Предварительная версия)](alerts-reference.md#alerts-azurecosmos)
@@ -280,7 +282,7 @@ Azure Key Vault — это облачная служба, которая обе
 Список оповещений Azure от атак DDoS Protection см. в [справочной таблице оповещений](alerts-reference.md#alerts-azureddos).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об оповещениях системы безопасности из этих средств защиты от угроз см. в следующих статьях:
 
 * [Справочная таблица для всех оповещений центра безопасности Azure](alerts-reference.md)

@@ -4,14 +4,14 @@ description: Использование Azure Key Vault с кэшем Azure HPC 
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: conceptual
-ms.date: 04/23/2020
+ms.date: 04/29/2020
 ms.author: v-erkel
-ms.openlocfilehash: f8a8b8dfedd9c4ac0590dc91e5cdced50d2be6ef
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2d10241b8395c33767ffeeb550d9d8060bde3ce3
+ms.sourcegitcommit: acc558d79d665c8d6a5f9e1689211da623ded90a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82195083"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82597745"
 ---
 # <a name="use-customer-managed-encryption-keys-for-azure-hpc-cache"></a>Использование управляемых клиентом ключей шифрования для кэша HPC Azure
 
@@ -20,11 +20,7 @@ ms.locfileid: "82195083"
 > [!NOTE]
 > Все данные, хранящиеся в Azure, в том числе на дисках кэша, шифруются по умолчанию с помощью ключей, управляемых корпорацией Майкрософт. Чтобы управлять ключами, используемыми для шифрования данных, необходимо выполнить действия, описанные в этой статье.
 
-Эта функция доступна только в следующих регионах Azure:
-
-* Восточная часть США
-* Центрально-южная часть США
-* западная часть США 2
+Эта функция доступна только в некоторых регионах Azure, где доступен кэш Azure HPC. Дополнительные сведения см. в списке [доступности регионов](hpc-cache-overview.md#region-availability) .
 
 Существует три шага по включению шифрования ключей, управляемых клиентом, для кэша HPC Azure.
 
@@ -71,7 +67,7 @@ ms.locfileid: "82195083"
 Дополнительные сведения см. в [документации по Azure Key Vault](../key-vault/key-vault-overview.md) .
 
 > [!NOTE]
-> Azure Key Vault должны использовать одну и ту же подписку и находиться в том же регионе, что и кэш HPC Azure. Используйте один из поддерживаемых регионов, перечисленных в начале этой статьи.
+> Azure Key Vault должны использовать одну и ту же подписку и находиться в том же регионе, что и кэш HPC Azure. Убедитесь, что выбранный регион [поддерживает функцию управляемых клиентом ключей](hpc-cache-overview.md#region-availability).
 
 ## <a name="2-create-the-cache-with-customer-managed-keys-enabled"></a>2. Создайте кэш с включенными управляемыми клиентом ключами.
 
@@ -148,7 +144,7 @@ ms.locfileid: "82195083"
 * [Общие сведения о шифровании службы хранилища Azure](../storage/common/storage-service-encryption.md)
 * [Шифрование дисков с помощью управляемых клиентом ключей](../virtual-machines/linux/disk-encryption.md#customer-managed-keys) . документация по использованию Azure Key Vault с управляемыми дисками, которые аналогичны сценариям для кэша HPC Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания кэша Azure HPC и полномочного шифрования на основе Key Vault Продолжайте настраивать кэш, предоставляя ему доступ к источникам данных.
 

@@ -2,16 +2,15 @@
 title: Автоматический сбор зависимостей в Azure Application Insights | Документация Майкрософт
 description: Автоматический сбор и визуализация зависимостей Application Insights
 ms.topic: reference
-author: nikmd23
-ms.author: nimolnar
-ms.date: 04/29/2019
-ms.reviewer: mbullwin
-ms.openlocfilehash: eaafe19f5112b433d50a34aa551aa84d196726a5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+author: mrbullwinkle
+ms.author: mbullwin
+ms.date: 05/06/2020
+ms.openlocfilehash: 21e98ee9dc59e7520fb715f1146e492b9198f883
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77665822"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891607"
 ---
 # <a name="dependency-auto-collection"></a>Автоматический сбор зависимостей
 
@@ -28,10 +27,15 @@ ms.locfileid: "77665822"
 | <b>Библиотеки обмена данными</b> |
 | [HttpClient](https://www.microsoft.com/net/) | 4.5+, .NET Core 1.1+ |
 | [SqlClient](https://www.nuget.org/packages/System.Data.SqlClient) | .NET Core 1.0+, NuGet 4.3.0 |
+| [Microsoft.Data.SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient/1.1.2)| 1.1.0 — последний стабильный выпуск. (См. Примечание ниже.)
 | [Пакет SDK для клиента концентраторов событий](https://www.nuget.org/packages/Microsoft.Azure.EventHubs) | 1.1.0 |
 | [Пакет SDK для клиента служебной шины](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus) | 3.0.0 |
 | <b>Клиенты хранилища</b>|  |
 | ADO.NET | 4.5+ |
+
+> [!NOTE]
+> Существует [известная ошибка](https://github.com/microsoft/ApplicationInsights-dotnet/issues/1347) , связанная с более старыми версиями Microsoft. Data. SqlClient. Для устранения этой проблемы рекомендуется использовать 1.1.0 или более позднюю версию. Entity Framework Core не обязательно поставляется с последним стабильным выпуском Microsoft. Data. SqlClient, поэтому мы рекомендуем подтвердить, что вы по крайней мере 1.1.0, чтобы избежать этой проблемы.   
+
 
 ## <a name="java"></a>Java
 | Серверы приложений | Версии |
@@ -80,9 +84,9 @@ ms.locfileid: "77665822"
 
 | Библиотеки обмена данными | Версии |
 | ------------------------|----------|
-| [XMLHttpRequest](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) | Все |
+| [XMLHttpRequest](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) | All |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Настройка отслеживания зависимостей для платформы [.NET](../../azure-monitor/app/asp-net-dependencies.md).
 - Настройка отслеживания зависимостей для [Java](../../azure-monitor/app/java-agent.md).

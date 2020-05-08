@@ -12,12 +12,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: ''
 ms.date: 03/12/2019
-ms.openlocfilehash: f1d08581c5d29fc41fb33541d766af7cece88cdc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5c171c1bab99e4e3748267308745ee66631ed08d
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81451675"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82888964"
 ---
 # <a name="always-encrypted-protect-sensitive-data-and-store-encryption-keys-in-azure-key-vault"></a>Always Encrypted: защита конфиденциальных данных и хранение ключей шифрования в Azure Key Vault
 
@@ -608,7 +608,7 @@ SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
      Теперь в зашифрованных столбцах отображаются незашифрованные данные.
      ![Новое консольное приложение](./media/sql-database-always-encrypted-azure-key-vault/ssms-plaintext.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания базы данных с функцией Always Encrypted вы можете сделать следующее:
 
@@ -621,4 +621,4 @@ SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
 - [Прозрачное шифрование данных](https://msdn.microsoft.com/library/bb934049.aspx)
 - [Шифрование SQL Server](https://msdn.microsoft.com/library/bb510663.aspx)
 - [Мастер Always Encrypted](https://msdn.microsoft.com/library/mt459280.aspx)
-- [Блог о постоянном шифровании](https://blogs.msdn.com/b/sqlsecurity/archive/tags/always-encrypted/)
+- [Блог о постоянном шифровании](https://docs.microsoft.com/archive/blogs/sqlsecurity/always-encrypted-key-metadata)

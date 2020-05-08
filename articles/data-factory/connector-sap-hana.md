@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 02/17/2020
-ms.openlocfilehash: 74462b68bea38e4d84219adeedb7c3bb0893bbb4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 04/22/2020
+ms.openlocfilehash: 945ef895304a151ea7e0ef5b94ed0b42757743ad
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81417239"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82890614"
 ---
 # <a name="copy-data-from-sap-hana-using-azure-data-factory"></a>Копирование данных из SAP HANA с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -46,7 +46,7 @@ ms.locfileid: "81417239"
 - Параллельное копирование из источника SAP HANA. Дополнительные сведения см. в разделе [Параллельное копирование из SAP HANA](#parallel-copy-from-sap-hana) .
 
 > [!TIP]
-> Чтобы скопировать данные **в** хранилище данных SAP HANA, используйте универсальный соединитель ODBC. Подробные сведения см. в разделе о [приемнике SAP HANA](connector-odbc.md#sap-hana-sink). Обратите внимание, что связанные службы для соединителя SAP HANA и соединитель ODBC нельзя использовать повторно, так как они имеют разные типы.
+> Чтобы скопировать данные **в** хранилище данных SAP HANA, используйте универсальный соединитель ODBC. Дополнительные сведения см. в разделе о [приемнике SAP HANA](#sap-hana-sink) . Обратите внимание, что связанные службы для соединителя SAP HANA и соединитель ODBC нельзя использовать повторно, так как они имеют разные типы.
 
 ## <a name="prerequisites"></a>Предварительные условия
 
@@ -65,12 +65,12 @@ ms.locfileid: "81417239"
 
 Для связанной службы SAP HANA поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательный |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **SapHana** | Да |
 | connectionString | Укажите сведения, необходимые для подключения к SAP HANA с помощью **обычной проверки подлинности** или **проверки подлинности Windows**. Ознакомьтесь с приведенными ниже примерами.<br>В строке подключения параметр "сервер/порт" является обязательным (порт по умолчанию — 30015), а имя пользователя и пароль являются обязательными при использовании обычной проверки подлинности. Дополнительные дополнительные параметры см. в разделе [SAP HANA свойства подключения ODBC](<https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-US/7cab593774474f2f8db335710b2f5c50.html>) .<br/>Можно также поместить пароль в Azure Key Vault и извлечь конфигурацию пароля из строки подключения. Дополнительные сведения см. в разделе [хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md) статье. | Да |
-| userName | Укажите имя пользователя при использовании проверки подлинности Windows. Пример: `user@domain.com` | Нет |
-| пароль | Укажите пароль для учетной записи пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет |
+| userName | Укажите имя пользователя при использовании проверки подлинности Windows. Пример: `user@domain.com` | нет |
+| password | Укажите пароль для учетной записи пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | нет |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Требуется локальная среда IR, как упоминалось в разделе [Предварительные требования](#prerequisites). |Да |
 
 **Пример. использование обычной проверки подлинности**
@@ -146,7 +146,7 @@ ms.locfileid: "81417239"
 
 Чтобы скопировать данные из SAP HANA, поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательный |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type набора данных должно иметь значение **сафанатабле** . | Да |
 | схема | Имя схемы в базе данных SAP HANA. | Нет (если свойство query указано в источнике действия) |
@@ -185,7 +185,7 @@ ms.locfileid: "81417239"
 
 Чтобы скопировать данные из SAP HANA, в разделе **источник** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательный |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type источника действия копирования должно иметь значение **сафанасаурце** . | Да |
 | query | Указывает SQL-запрос для чтения данных из экземпляра SAP HANA. | Да |
@@ -278,7 +278,7 @@ ms.locfileid: "81417239"
 | BLOB               | Byte[]                         |
 | BOOL               | Byte                           |
 | CLOB               | Строка                         |
-| DATE               | DateTime                       |
+| DATE               | Дата и время                       |
 | DECIMAL            | Decimal                        |
 | DOUBLE             | Double                         |
 | FLOAT              | Double                         |
@@ -286,7 +286,7 @@ ms.locfileid: "81417239"
 | NCLOB              | Строка                         |
 | NVARCHAR           | Строка                         |
 | real               | Single                         |
-| SECONDDATE         | DateTime                       |
+| SECONDDATE         | Дата и время                       |
 | шорттекст          | Строка                         |
 | SMALLDECIMAL       | Decimal                        |
 | SMALLINT           | Int16                          |
@@ -296,12 +296,40 @@ ms.locfileid: "81417239"
 | TIME               | TimeSpan                       |
 | TINYINT            | Byte                           |
 | VARCHAR            | Строка                         |
-| timestamp          | DateTime                       |
+| timestamp          | Дата и время                       |
 | VARBINARY          | Byte[]                         |
+
+### <a name="sap-hana-sink"></a>Приемник SAP HANA
+
+В настоящее время соединитель SAP HANA не поддерживается в качестве приемника, тогда как для записи данных в SAP HANA можно использовать универсальный соединитель ODBC с драйвером SAP HANA. 
+
+Выполните [Предварительные требования](#prerequisites) для настройки автономного Integration Runtime и сначала установите SAP HANA драйвер ODBC. Создайте связанную службу ODBC для подключения к хранилищу данных SAP HANA, как показано в следующем примере, а затем создайте набор данных и приемник действия копирования с соответствующим типом ODBC. Дополнительные сведения см. в статье о [соединителе ODBC](connector-odbc.md) .
+
+```json
+{
+    "name": "SAPHANAViaODBCLinkedService",
+    "properties": {
+        "type": "Odbc",
+        "typeProperties": {
+            "connectionString": "Driver={HDBODBC};servernode=<HANA server>.clouddatahub-int.net:30015",
+            "authenticationType": "Basic",
+            "userName": "<username>",
+            "password": {
+                "type": "SecureString",
+                "value": "<password>"
+            }
+        },
+        "connectVia": {
+            "referenceName": "<name of Integration Runtime>",
+            "type": "IntegrationRuntimeReference"
+        }
+    }
+}
+```
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска
 
 Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

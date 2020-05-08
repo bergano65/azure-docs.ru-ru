@@ -9,12 +9,12 @@ ms.date: 04/12/2019
 ms.author: jafreebe
 ms.reviewer: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: cebe5564767ee345c1aea96b6ac54b9398c3e9a3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1e42096e7ab950e5d8046ec6140c01b24643cb87
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81733030"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891464"
 ---
 # <a name="configure-a-windows-java-app-for-azure-app-service"></a>Настройка приложения Windows Java для службы приложений Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "81733030"
 
 ## <a name="deploying-your-app"></a>Развертывание приложения
 
-Вы можете использовать [подключаемый модуль веб-приложения Azure для Maven](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) для развертывания файлов WAR. Развертывание с популярными IDE также поддерживается с [Azure Toolkit for IntelliJ](/java/azure/intellij/azure-toolkit-for-intellij) или [Azure Toolkit for Eclipse](/java/azure/eclipse/azure-toolkit-for-eclipse).
+Вы можете использовать [подключаемый модуль веб-приложения Azure для Maven](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) для развертывания файлов WAR. Развертывание с популярными IDE также поддерживается с [Azure Toolkit for IntelliJ](/azure/developer/java/toolkit-for-intellij/) или [Azure Toolkit for Eclipse](/azure/developer/java/toolkit-for-eclipse).
 
 В противном случае ваш метод развертывания будет зависеть от типа архива:
 
@@ -230,9 +230,9 @@ public int getServerPort()
 
 | База данных   | Имя класса драйвера                             | Драйвер JDBC                                                                      |
 |------------|-----------------------------------------------|------------------------------------------------------------------------------------------|
-| PostgreSQL | `org.postgresql.Driver`                        | [Скачать](https://jdbc.postgresql.org/download.html)                                    |
+| PostgreSQL | `org.postgresql.Driver`                        | [Загрузить](https://jdbc.postgresql.org/download.html)                                    |
 | MySQL      | `com.mysql.jdbc.Driver`                        | [Скачать](https://dev.mysql.com/downloads/connector/j/) (выберите "Platform Independent" (Независимо от платформы)) |
-| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Скачать](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#download)                                                           |
+| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#download)                                                           |
 
 Чтобы настроить Tomcat для использования Java Database Connectivity (JDBC) или API сохраняемости Java (JPA), сначала настройте переменную `CATALINA_OPTS` среды, которая считывается в Tomcat при запуске. Задайте эти значения с помощью параметра приложения в [подключаемом модуле Maven для службы приложений](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
 
@@ -342,7 +342,7 @@ Tomcat 8,0 достигла [окончания срока жизни (конц�
 
 Разработчики могут [сообщить о проблеме](/azure/azure-portal/supportability/how-to-create-azure-support-request) с Azul Zulu JDK в службу поддержки Azure при наличии [соответствующего плана поддержки](https://azure.microsoft.com/support/plans/).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом разделе содержится инструкция поддержки Java для службы приложений Azure в Windows.
 

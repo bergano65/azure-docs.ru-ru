@@ -110,7 +110,7 @@ New-AzRoleAssignment -ObjectId ef511139-6170-438e-a6e1-763dc31bdf74 -Scope /subs
  
 Построитель образов Azure будет распространять образ в выбранные регионы, что может повлечь за собой оплату сетевых исходящих платежей.
  
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
  
 Чтобы испытать построитель образов Azure, ознакомьтесь со статьей о создании образов [Linux](../articles/virtual-machines/linux/image-builder.md) или [Windows](../articles/virtual-machines/windows/image-builder.md) .
  

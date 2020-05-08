@@ -1,6 +1,6 @@
 ---
-title: Вывод списка назначений ролей с помощью Azure RBAC и REST API
-description: Узнайте, как определить, к каким ресурсам пользователи, группы, субъекты-службы или управляемые удостоверения имеют доступ с помощью управления доступом на основе ролей (RBAC) Azure и REST API.
+title: Вывод списка назначений ролей Azure с помощью REST API Azure RBAC
+description: Узнайте, как определить, к каким ресурсам пользователи, группы, субъекты-службы или управляемые удостоверения имеют доступ с помощью REST API и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 documentationcenter: na
 author: rolyon
@@ -12,17 +12,17 @@ ms.workload: multiple
 ms.tgt_pltfrm: rest-api
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/19/2020
+ms.date: 05/06/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: a494e7fd4c9fb79faa6a1d8cb2c3c871796ccdc5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 50ef431559a38d30f7e1e76646e8930c70fc4ef9
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80062161"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891334"
 ---
-# <a name="list-role-assignments-using-azure-rbac-and-the-rest-api"></a>Вывод списка назначений ролей с помощью Azure RBAC и REST API
+# <a name="list-azure-role-assignments-using-the-rest-api"></a>Вывод списка назначений ролей Azure с помощью REST API
 
 [!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control-definition-list.md)]В этой статье описывается, как вывести список назначений ролей с помощью REST API.
 
@@ -31,7 +31,7 @@ ms.locfileid: "80062161"
 
 ## <a name="list-role-assignments"></a>Список назначений ролей
 
-При использовании RBAC, чтобы узнать, кому предоставлен доступ, вам нужно получить список назначений ролей. Чтобы перечислить назначения ролей, используйте один из REST API [Назначения ролей — список](/rest/api/authorization/roleassignments/list). Чтобы уточнить результаты, укажите область и дополнительный фильтр.
+В Azure RBAC для получения списка назначений ролей перечисляются их. Чтобы перечислить назначения ролей, используйте один из REST API [Назначения ролей — список](/rest/api/authorization/roleassignments/list). Чтобы уточнить результаты, укажите область и дополнительный фильтр.
 
 1. Можете начать со следующего запроса:
 
@@ -61,7 +61,36 @@ ms.locfileid: "80062161"
     > | `$filter=atScope()+and+assignedTo('{objectId}')` | Выводит список назначений ролей для указанного пользователя или субъекта-службы в указанной области. |
     > | `$filter=principalId+eq+'{objectId}'` | Выводит список назначений ролей для указанного пользователя, группы или субъекта-службы. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+Следующий запрос перечисляет все назначения ролей для указанного пользователя в области подписки:
 
-- [Добавление и удаление назначений ролей с помощью Azure RBAC и REST API](role-assignments-rest.md)
+```http
+GET https://management.azure.com/subscriptions/{subscriptionId1}/providers/Microsoft.Authorization/roleAssignments?api-version=2015-07-01&$filter=atScope()+and+assignedTo('{objectId1}')
+```
+
+Ниже приведен пример выходных данных:
+
+```json
+{
+    "value": [
+        {
+            "properties": {
+                "roleDefinitionId": "/subscriptions/{subscriptionId1}/providers/Microsoft.Authorization/roleDefinitions/2a2b9908-6ea1-4ae2-8e65-a410df84e7d1",
+                "principalId": "{objectId1}",
+                "scope": "/subscriptions/{subscriptionId1}",
+                "createdOn": "2019-01-15T21:08:45.4904312Z",
+                "updatedOn": "2019-01-15T21:08:45.4904312Z",
+                "createdBy": "{createdByObjectId1}",
+                "updatedBy": "{updatedByObjectId1}"
+            },
+            "id": "/subscriptions/{subscriptionId1}/providers/Microsoft.Authorization/roleAssignments/{roleAssignmentId1}",
+            "type": "Microsoft.Authorization/roleAssignments",
+            "name": "{roleAssignmentId1}"
+        }
+    ]
+}
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- [Добавление или удаление назначений ролей Azure с помощью REST API](role-assignments-rest.md)
 - [Справочник по REST API Azure](/rest/api/azure/)
