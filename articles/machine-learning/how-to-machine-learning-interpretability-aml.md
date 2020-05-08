@@ -10,12 +10,12 @@ ms.author: mesameki
 author: mesameki
 ms.reviewer: Luis.Quintanilla
 ms.date: 04/12/2020
-ms.openlocfilehash: 45eef976fe10bbb5acda2cd348a77b28c3ffbe02
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 39d2bf0e527d43e2a5fb9437720f249e54b4dff3
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81769808"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82983641"
 ---
 # <a name="use-the-interpretability-package-to-explain-ml-models--predictions-in-python"></a>Использование пакета интерпретации для объяснения моделей машинного обучения & прогнозах в Python
 
@@ -85,7 +85,7 @@ ms.locfileid: "81769808"
                                  classes=classes)
     ```
 
-    или диспетчер конфигурации служб
+    or
 
     ```python
 
@@ -111,7 +111,7 @@ ms.locfileid: "81769808"
                                classes=classes)
     ```
 
-    или диспетчер конфигурации служб
+    or
 
     ```python
     from interpret.ext.blackbox import PFIExplainer
@@ -238,10 +238,10 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1],
 * Используйте `ExplanationClient` в удаленном запуске, чтобы передать контекст интерпретации.
 * Скачайте контекст позже в локальной среде.
 
-1. Установка `azureml-interpret` и `azureml-interpret-contrib` пакеты.
+1. Установка `azureml-interpret` и `azureml-contrib-interpret` пакеты.
     ```bash
     pip install azureml-interpret
-    pip install azureml-interpret-contrib
+    pip install azureml-contrib-interpret
     ```
 1. Создайте сценарий обучения в локальной записной книжке Jupyter. Например, `train_explain.py`.
 
@@ -566,7 +566,7 @@ ExplanationDashboard(global_explanation, model, x_test)
 
    Для удаления развернутой веб-службы используйте `service.delete()`.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о интерпретируемости модели](how-to-machine-learning-interpretability.md)
 
