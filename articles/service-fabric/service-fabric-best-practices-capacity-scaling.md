@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: bf228e17ca24df9833f96f0c6fd3ef232cdf7ae6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: be0f0a48e2fd334e2000c8a4b8c2e0101b291cef
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79258997"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82791873"
 ---
 # <a name="capacity-planning-and-scaling-for-azure-service-fabric"></a>Планирование емкости и масштабирование для Azure Service Fabric
 
@@ -68,13 +68,13 @@ ms.locfileid: "79258997"
 1. В PowerShell выполните команду `Disable-ServiceFabricNode` с намерением `RemoveNode` отключить узел, который вы собираетесь удалить. Удалите тип узла с наибольшим номером. Например, если имеется кластер из шести узлов, удалите экземпляр виртуальной машины "MyNodeType_5".
 2. Выполните `Get-ServiceFabricNode` и убедитесь, что этот узел перешел в отключенное состояние. Если это не так, подождите, пока узел не будет отключен. Для каждого узла может потребоваться несколько часов. Не продолжайте процесс, пока узел не перейдет в отключенное состояние.
 3. Сократите количество виртуальных машин на единицу в этом типе узла. Будет удален самый верхний экземпляр виртуальной машины.
-4. При необходимости повторите шаги 1–3, но никогда не следует уменьшать число экземпляров в типах первичных узлов до значения меньше гарантируемого уровнем надежности. См. [рекомендации по планированию загрузки кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity).
+4. При необходимости повторите шаги 1 – 3, но не выполняйте масштабирование в количестве экземпляров в типах первичных узлов меньше, чем гарантирует уровень надежности. См. [рекомендации по планированию загрузки кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity).
 5. После того как все виртуальные машины будут удалены (представленные ниже), структура:/System/Инфраструктуресервице/[имя узла] отобразит состояние ошибки. Затем можно обновить ресурс кластера, чтобы удалить тип узла. Можно либо использовать развертывание шаблона ARM, либо изменить ресурс кластера с помощью [Azure Resource Manager](https://resources.azure.com). Это приведет к запуску обновления кластера, которое удалит службу Fabric:/System/Инфраструктуресервице/[тип узла], которая находится в состоянии ошибки.
  6. После этого вы по-прежнему можете удалить для vmscaleset, но в этом случае узлы будут отображаться как "вниз" из Service Fabric Explorer представления. Последним шагом было бы очистить их с помощью `Remove-ServiceFabricNodeState` команды.
 
 ## <a name="horizontal-scaling"></a>горизонтальное масштабирование;
 
-Горизонтальное масштабирование можно выполнять либо [вручную](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-scale-up-down) , либо [программно](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-programmatic-scaling).
+Горизонтальное масштабирование можно выполнять либо [вручную](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-scale-in-out) , либо [программно](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-programmatic-scaling).
 
 > [!NOTE]
 > При масштабировании типа узла, имеющего серебряную или золотую устойчивость, масштабирование будет выполняться очень долго.
@@ -103,7 +103,7 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 
 Масштабирование в требует более тщательного рассмотрения, чем масштабирование. Например:
 
-* Service Fabric системные службы выполняются в кластере в типе первичного узла. Никогда не уменьшайте число экземпляров узлов для этого типа ниже значения, которое гарантирует соответствующий уровень надежности. 
+* Service Fabric системные службы выполняются в кластере в типе первичного узла. Никогда не завершайте работу и не уменьшайте количество экземпляров для этого типа узла, чтобы иметь меньше экземпляров, чем гарантирует уровень надежности. 
 * Для службы с отслеживанием состояния требуется определенное количество узлов, которые всегда поддерживают доступность и сохраняют состояние службы. Как минимум, требуется число узлов, равное количеству целевых реплик, заданных для раздела или службы.
 
 Чтобы уменьшить масштаб вручную, выполните следующие действия.
@@ -111,7 +111,7 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 1. В PowerShell выполните команду `Disable-ServiceFabricNode` с намерением `RemoveNode` отключить узел, который вы собираетесь удалить. Удалите тип узла с наибольшим номером. Например, если имеется кластер из шести узлов, удалите экземпляр виртуальной машины "MyNodeType_5".
 2. Выполните `Get-ServiceFabricNode` и убедитесь, что этот узел перешел в отключенное состояние. Если это не так, подождите, пока узел не будет отключен. Для каждого узла может потребоваться несколько часов. Не продолжайте процесс, пока узел не перейдет в отключенное состояние.
 3. Сократите количество виртуальных машин на единицу в этом типе узла. Будет удален самый верхний экземпляр виртуальной машины.
-4. Повторяйте шаги 1 – 3 по мере необходимости, пока не будет выполнена подготавливается Требуемая емкость. Никогда не уменьшайте число экземпляров в узлах основного типа ниже значения, которое гарантирует соответствующий уровень надежности. См. [рекомендации по планированию загрузки кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity).
+4. Повторяйте шаги 1 – 3 по мере необходимости, пока не будет выполнена подготавливается Требуемая емкость. Не следует масштабировать количество экземпляров в типах первичных узлов до тех пор, пока не будет гарантирован уровень надежности. См. [рекомендации по планированию загрузки кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity).
 
 Чтобы выполнить масштабирование вручную, обновите емкость в свойстве SKU требуемого ресурса [масштабируемого набора виртуальных машин](https://docs.microsoft.com/rest/api/compute/virtualmachinescalesets/createorupdate#virtualmachinescalesetosprofile) .
 
@@ -166,7 +166,7 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 ```
 
 > [!NOTE]
-> При уменьшении масштаба кластера вы увидите, что удаленный экземпляр узла или виртуальной машины отображается в неработоспособном состоянии Service Fabric Explorer. Описание этого поведения см. [в разделе варианты поведения, которые могут возникнуть в Service Fabric Explorer](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-scale-up-down#behaviors-you-may-observe-in-service-fabric-explorer). Можно выполнить следующие действия.
+> При масштабировании в кластере вы увидите, что удаленный экземпляр узла или виртуальной машины отображается в неработоспособном состоянии Service Fabric Explorer. Описание этого поведения см. [в разделе варианты поведения, которые могут возникнуть в Service Fabric Explorer](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-scale-in-out#behaviors-you-may-observe-in-service-fabric-explorer). Можно сделать следующее:
 > * Вызовите [команду Remove-ServiceFabricNodeState](https://docs.microsoft.com/powershell/module/servicefabric/remove-servicefabricnodestate?view=azureservicefabricps) с соответствующим именем узла.
 > * Разверните в кластере [вспомогательное приложение автомасштабирования Service Fabric](https://github.com/Azure/service-fabric-autoscale-helper/) . Это приложение гарантирует, что масштабируемые узлы будут удалены из Service Fabric Explorer.
 
@@ -224,7 +224,7 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Создание кластера на виртуальных машинах или компьютерах под управлением Windows Server: [Создание кластера Service Fabric для Windows Server](service-fabric-cluster-creation-for-windows-server.md).
 * Создание кластера на виртуальных машинах или компьютерах под управлением Linux: [Создание кластера Linux](service-fabric-cluster-creation-via-portal.md).
