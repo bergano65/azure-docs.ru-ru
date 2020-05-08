@@ -5,20 +5,24 @@ services: bastion
 author: charwen
 ms.service: bastion
 ms.topic: conceptual
-ms.date: 02/03/2020
+ms.date: 05/04/2020
 ms.author: charwen
-ms.openlocfilehash: 0af0fdfa1b0bcbb06d9424390e7ca8c8f406bcb3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8580b7e28c8a4860739efa0763ebb7c20a80585e
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80619306"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82780289"
 ---
 # <a name="copy-and-paste-to-a-virtual-machine-azure-bastion"></a>Копирование и вставка на виртуальную машину: Azure бастиона
 
 Эта статья поможет вам скопировать и вставить текст в виртуальные машины и из них при использовании Azure бастиона. Перед началом работы с виртуальной машиной убедитесь, что выполнены действия по [созданию узла бастиона](bastion-create-host-portal.md). Затем подключитесь к виртуальной машине, которую вы хотите использовать, с помощью [RDP](bastion-connect-vm-rdp.md) или [SSH](bastion-connect-vm-ssh.md).
 
 Для браузеров, поддерживающих расширенный доступ к API буфера обмена, можно копировать и вставлять текст между локальным устройством и удаленным сеансом так же, как и при копировании и вставке между приложениями на локальном устройстве. Для других браузеров можно использовать палитру средства доступа к буферу обмена бастиона.
+
+>[!NOTE]
+>В настоящее время поддерживается только копирование и вставка текста.
+>
 
    ![Разрешить буфер обмена](./media/bastion-vm-manage/allow.png)
 
@@ -54,6 +58,6 @@ ms.locfileid: "80619306"
 
    ![вставка](./media/bastion-vm-manage/local2.png)
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с [часто задаваемыми вопросами о бастиона](bastion-faq.md).

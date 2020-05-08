@@ -1,5 +1,5 @@
 ---
-title: Параметры приема данных
+title: Автоматизация приема данных &
 titleSuffix: Azure Machine Learning
 description: Узнайте о вариантах приема данных для обучения моделей машинного обучения.
 services: machine-learning
@@ -10,25 +10,27 @@ ms.reviewer: nibaccam
 author: nibaccam
 ms.author: nibaccam
 ms.date: 02/26/2020
-ms.openlocfilehash: 6b1c671d2079c7d8ab59e9afe981ccef3f58ef27
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 475c4fd6b34996c83035c4f7ef93b9fa02ded11f
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79086894"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82789867"
 ---
-# <a name="data-ingestion-in-azure-machine-learning"></a>Прием данных в Машинное обучение Azure
+# <a name="data-ingestion-options-for-azure-machine-learning-workflows"></a>Параметры приема данных для рабочих процессов Машинное обучение Azure
 
-В этой статье вы узнаете о преимуществах и недостатках следующих параметров приема данных, доступных в Машинное обучение Azure. 
+В этой статье вы узнаете о преимуществах и недостатках параметров приема данных, доступных в Машинное обучение Azure. 
 
-1. Конвейеры [фабрики данных Azure](#use-azure-data-factory)
-2. [Пакет SDK для Машинное обучение Azure Python](#use-the-python-sdk)
+Выберите один из следующих типов.
++ Конвейеры [фабрики данных Azure](#azure-data-factory) , специально созданные для извлечения, загрузки и преобразования данных
+
++ [Машинное обучение Azure пакет SDK для Python](#azure-machine-learning-python-sdk), предоставляя собственное программное решение для простых задач приема данных.
+
++ сочетание обоих
 
 Прием данных — это процесс, в ходе которого неструктурированные данные извлекаются из одного или нескольких источников, а затем подготавливаются для обучения моделей машинного обучения. Это также требует много времени, особенно если это сделано вручную, и при наличии больших объемов данных из нескольких источников. Автоматизация этих усилий освобождает ресурсы и гарантирует, что в моделях используются самые последние и применимые данные.
 
-Фабрика данных Azure (ADF) специально создана для извлечения, загрузки и преобразования данных, однако пакет SDK для Python позволяет разработать решение с пользовательским кодом для основных задач приема данных. Если ни одна из них не является достаточной, вы также можете использовать ADF и пакет SDK Python для создания общего рабочего процесса приема данных, который соответствует вашим потребностям. 
-
-## <a name="use-azure-data-factory"></a>Использование Фабрики данных Azure
+## <a name="azure-data-factory"></a>Фабрика данных Azure
 
 [Фабрика данных Azure](https://docs.microsoft.com/azure/data-factory/introduction) предлагает встроенную поддержку для мониторинга источников данных и триггеров для конвейеров приема данных.  
 
@@ -55,7 +57,7 @@ ms.locfileid: "79086894"
     
 Узнайте, как создать конвейер приема данных для Машинное обучение с помощью [фабрики данных Azure](how-to-data-ingest-adf.md).
 
-## <a name="use-the-python-sdk"></a>Использование пакета SDK для Python 
+## <a name="azure-machine-learning-python-sdk"></a>Пакет SDK для Машинное обучение Azure Python 
 
 С помощью [пакета SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml)можно включить задачи приема данных в машинное обучение Azure шаге [конвейера](how-to-create-your-first-pipeline.md) .
 
@@ -71,7 +73,9 @@ ms.locfileid: "79086894"
 
 ![Прием данных в конвейере Azure и пакете SDK](media/concept-data-ingestion/data-ingest-option-two.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте, как создать конвейер приема данных для Машинное обучение с помощью [фабрики данных Azure](how-to-data-ingest-adf.md) .
-* Узнайте, как автоматизировать жизненный цикл разработки конвейеров приема данных с помощью [Azure pipelines](how-to-cicd-data-ingestion.md)и управлять ими.
+Следуйте приведенным ниже статьям.
+* [Создание конвейера приема данных с помощью фабрики данных Azure](how-to-data-ingest-adf.md)
+
+* [Автоматизируйте конвейеры приема данных и управляйте ими с помощью Azure pipelines](how-to-cicd-data-ingestion.md).

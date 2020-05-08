@@ -8,12 +8,12 @@ ms.date: 03/17/2020
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 91ecff311b8820d3b97e1de0e4b4e87c150e749b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f936b62349a534e6193a3c628c66c49d1a58b681
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81678923"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82790836"
 ---
 # <a name="troubleshoot-issues-with-the-update-management-solution"></a>Устранение неполадок в решении Управление обновлениями
 
@@ -49,13 +49,13 @@ Error details: Failed to enable the Update solution
 
 * Запустите средство устранения неполадок для [Windows](update-agent-issues.md#troubleshoot-offline) или [Linux](update-agent-issues-linux.md#troubleshoot-offline)в зависимости от операционной системы.
 
-* Перейдите к разделу [планирование сети](../automation-hybrid-runbook-worker.md#network-planning) , чтобы узнать, какие адреса и порты должны быть разрешены для работы Управление обновлениями.  
+* Перейдите в раздел [Конфигурация сети](../automation-hybrid-runbook-worker.md#network-planning) , чтобы узнать, какие адреса и порты должны быть разрешены для работы Управление обновлениями.  
 
-* Перейдите к разделу [планирование сети](../../azure-monitor/platform/log-analytics-agent.md#network-requirements) , чтобы узнать, какие адреса и порты должны быть разрешены для работы агента log Analytics.
+* Перейдите в раздел [Конфигурация сети](../../azure-monitor/platform/log-analytics-agent.md#network-requirements) , чтобы узнать, какие адреса и порты должны быть разрешены для работы агента log Analytics.
 
 * Проверьте наличие проблем с конфигурацией области. [Конфигурация области](../automation-onboard-solutions-from-automation-account.md#scope-configuration) определяет, какие компьютеры настраиваются для решения. Если компьютер отображается в рабочей области, но не на портале Управление обновлениями * *, необходимо задать конфигурацию области для целевых компьютеров. Дополнительные сведения о конфигурации области см. в статье подключение [компьютеров в рабочей области](../automation-onboard-solutions-from-automation-account.md#onboard-machines-in-the-workspace).
 
-* Удалите конфигурацию рабочей роли, выполнив действия, описанные в статье [Удаление гибридной рабочей роли Runbook](../automation-hybrid-runbook-worker.md#remove-a-hybrid-runbook-worker). 
+* Удалите конфигурацию рабочей роли, выполнив действия, описанные в разделе [Удаление гибридной рабочей роли Runbook Windows](../automation-windows-hrw-install.md#remove-windows-hybrid-runbook-worker) или [Удаление гибридной рабочей роли Runbook Linux](../automation-linux-hrw-install.md#remove-linux-hybrid-runbook-worker). 
 
 ## <a name="scenario-superseded-update-indicated-as-missing-in-update-management"></a>Сценарий: замененное обновление указано как отсутствующее в Управление обновлениями
 
@@ -351,7 +351,7 @@ The client has permission to perform action 'Microsoft.Compute/virtualMachines/w
 
 ### <a name="resolution"></a>Решение
 
-Чтобы получить запланированные элементы, используйте следующее решение. Для создания расписания можно использовать командлет [New-азаутоматионсчедуле](https://docs.microsoft.com/powershell/module/az.automation/new-azautomationschedule?view=azps-3.7.0) с `ForUpdateConfiguration` параметром. Затем используйте командлет [New-азаутоматионсофтвареупдатеконфигуратион](https://docs.microsoft.com/powershell/module/Az.Automation/New-AzAutomationSoftwareUpdateConfiguration?view=azps-3.7.0) и передайте компьютеры в другом клиенте в `NonAzureComputer` параметр. В приведенном ниже примере показано, как это сделать.
+Чтобы получить запланированные элементы, используйте следующее решение. Чтобы создать расписание, можно использовать командлет [New-AzAutomationSchedule](https://docs.microsoft.com/powershell/module/az.automation/new-azautomationschedule?view=azps-3.7.0) с параметром `ForUpdateConfiguration`. Затем используйте командлет [New-азаутоматионсофтвареупдатеконфигуратион](https://docs.microsoft.com/powershell/module/Az.Automation/New-AzAutomationSoftwareUpdateConfiguration?view=azps-3.7.0) и передайте компьютеры в другом клиенте в `NonAzureComputer` параметр. В приведенном ниже примере показано, как это сделать.
 
 ```azurepowershell-interactive
 $nonAzurecomputers = @("server-01", "server-02")
@@ -448,7 +448,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 ### <a name="resolution"></a>Решение
 
 1. Выполните действия, описанные в разделе Компьютеры, которые [не отображаются на портале, в разделе Управление обновлениями](#nologs) , чтобы убедиться, что компьютер сообщает о правильной рабочей области.
-2. Очистите артефакты на компьютере, [удалив гибридную группу Runbook](../automation-hybrid-runbook-worker.md#remove-a-hybrid-worker-group), и повторите попытку.
+2. Очистите артефакты на компьютере, [удалив гибридную группу Runbook](../automation-windows-hrw-install.md#remove-a-hybrid-worker-group), и повторите попытку.
 
 ## <a name="scenario-machine-cant-communicate-with-the-service"></a><a name="machine-unable-to-communicate"></a>Сценарий: компьютеру не удается связаться со службой
 
@@ -611,7 +611,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 Статья базы знаний № 2267602 касается [обновления определений Защитника Windows](https://www.microsoft.com/wdsi/definitions). Он обновляется ежедневно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите проблему или не можете устранить проблему, воспользуйтесь одним из следующих каналов для получения дополнительной поддержки.
 

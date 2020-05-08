@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/13/2020
+ms.date: 04/24/2020
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.reviewer: rateller
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 845948d9aec28ee79a11fb11aaef4cfbf1b263fa
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 517ff16cd1cbf9bfe31404d3b1b3993a02d6dae9
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81770551"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82871570"
 ---
 # <a name="configure-and-enable-users-for-sms-based-authentication-using-azure-active-directory-preview"></a>Настройка и включение пользователей для проверки подлинности на основе SMS с помощью Azure Active Directory (Предварительная версия)
 
@@ -29,7 +29,7 @@ ms.locfileid: "81770551"
 | Проверка подлинности на основе SMS для пользователей — это общедоступная Предварительная версия функции Azure Active Directory. Дополнительные сведения о предварительных версиях см. в разделе Дополнительные [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)|
 |     |
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Для работы с этой статьей необходимы следующие ресурсы и привилегии:
 
@@ -38,9 +38,9 @@ ms.locfileid: "81770551"
 * Клиент Azure Active Directory, связанный с подпиской.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
 * Для включения проверки подлинности на основе SMS требуются права *глобального администратора* в клиенте Azure AD.
-* Каждый пользователь, включенный в политике метода проверки подлинности текстовых сообщений, должен иметь лицензию, даже если они не используют ее. Каждый включенный пользователь должен иметь одну из следующих лицензий Azure AD или Microsoft 365:
+* Каждый пользователь, включенный в политике метода проверки подлинности текстовых сообщений, должен иметь лицензию, даже если они не используют ее. Каждый включенный пользователь должен иметь одну из следующих лицензий Azure AD, Office 365 или Microsoft 365:
     * [Azure AD Premium (P1 или P2)][azuread-licensing]
-    * [Microsoft 365 (M365) F1 или F3][m365-firstline-workers-licensing]
+    * [Microsoft 365 (M365) F1 или F3][m365-firstline-workers-licensing] или [Office 365 F1][o365-f1] или [F3][o365-f3]
     * [Enterprise Mobility + Security (EMS) E3][ems-licensing] или в [Microsoft 365 (M365) E3 или][m365-licensing] в.
 
 ## <a name="limitations"></a>Ограничения
@@ -146,7 +146,7 @@ ms.locfileid: "81770551"
 1. Убедитесь, что номер телефона не используется в других местах вашего клиента.
 1. Установите флажок для учетной записи не задан номер голоса. Если задан номер голоса, удалите его и повторите попытку с номером телефона.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные способы входа в Azure AD без пароля, например Microsoft Authenticator приложения или ключей безопасности FIDO2, см. в статье [Параметры проверки подлинности без пароля для Azure AD][concepts-passwordless].
 
@@ -164,3 +164,5 @@ ms.locfileid: "81770551"
 [azuread-licensing]: https://azure.microsoft.com/pricing/details/active-directory/
 [ems-licensing]: https://www.microsoft.com/microsoft-365/enterprise-mobility-security/compare-plans-and-pricing
 [m365-licensing]: https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans
+[o365-f1]: https://www.microsoft.com/microsoft-365/business/office-365-f1?market=af
+[o365-f3]: https://www.microsoft.com/microsoft-365/business/office-365-f3?activetab=pivot%3aoverviewtab

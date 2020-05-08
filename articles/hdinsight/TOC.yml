@@ -155,8 +155,16 @@
           items:
             - name: Управление кластерами с помощью пользовательского веб-интерфейса Apache Ambari
               href: ./hdinsight-hadoop-manage-ambari.md
-            - name: Оптимизация кластеров с помощью пользовательского веб-интерфейса Apache Ambari
-              href: ./hdinsight-changing-configs-via-ambari.md
+            - name: Оптимизация с помощью Apache Ambari
+              items:
+                - name: Оптимизация кластеров
+                  href: ./hdinsight-changing-configs-via-ambari.md
+                - name: Оптимизация Apache HBase
+                  href: ./optimize-hbase-ambari.md
+                - name: Оптимизация Apache Hive
+                  href: ./optimize-hive-ambari.md
+                - name: Optimize Apache Pig
+                  href: ./optimize-pig-ambari.md
             - name: Использование REST API Apache Ambari
               href: ./hdinsight-hadoop-manage-ambari-rest-api.md
             - name: Удаление кластера
@@ -221,14 +229,18 @@
               href: ./hdinsight-hadoop-oms-log-analytics-use-queries.md
             - name: Мониторинг производительности кластера
               href: ./hdinsight-key-scenarios-to-monitor.md
-            - name: Мониторинг доступности кластера с помощью журналов Ambari и Azure Monitor
+            - name: "Доступность кластера\_— Apache Ambari"
               href: ./hdinsight-cluster-availability.md
+            - name: "Доступность кластера\_— журналы Azure Monitor"
+              href: ./cluster-availability-monitor-logs.md
         - name: Диагностика
           items:
             - name: 'Устранение неполадок, связанных с действиями скрипта'
               href: ./troubleshoot-script-action.md
             - name: Сбои при создании ресурсов
               href: ./troubleshoot-resource-creation-fails.md
+            - name: Устранение неполадок с Apache Oozie
+              href: ./troubleshoot-oozie.md
     - name: Справочник
       items:
         - name: Azure PowerShell
@@ -699,6 +711,8 @@
               href: ./hbase/hbase-troubleshoot-timeouts-hbase-hbck.md
             - name: Устранение неполадок с Apache HBase
               href: ./hbase/apache-troubleshoot-hbase.md
+            - name: "REST API для отправки запросов в Apache\_HBase"
+              href: ./hbase/troubleshoot-rest-api.md
 - name: Интерактивный запрос
   items:
     - name: Обзор
@@ -901,6 +915,8 @@
           href: ./transport-layer-security.md
         - name: Планирование виртуальных сетей для HDInsight
           href: ./hdinsight-plan-virtual-network-deployment.md
+        - name: Управление сетевым трафиком
+          href: ./control-network-traffic.md
         - name: Необходимые IP-адреса для групп безопасности сети и определяемых пользователем маршрутов
           href: ./hdinsight-management-ip-addresses.md
         - name: Теги службы для Брандмауэра Azure
@@ -931,6 +947,8 @@
           href: ./hdinsight-hadoop-create-linux-clusters-with-secure-transfer-storage.md
         - name: Ограничение исходящего трафика с помощью брандмауэра
           href: ./hdinsight-restrict-outbound-traffic.md
+        - name: Настройка сетевого виртуального устройства
+          href: ./network-virtual-appliance.md
         - name: Диагностика
           items:
             - name: Проблемы с аутентификацией ESP

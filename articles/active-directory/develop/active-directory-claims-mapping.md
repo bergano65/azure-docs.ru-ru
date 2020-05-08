@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 10/22/2019
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
-ms.openlocfilehash: 49860504da8dd2a1b994a23a24df95f59c959c90
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d8be2c8cc70db963252054a39cad558c4c1b5bd2
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79263196"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82871204"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Практическое руководство. Настройка утверждений, добавляемых в токены для определенных служб в клиенте (предварительная версия)
 
@@ -142,7 +142,7 @@ ms.locfileid: "79263196"
 | onprem_sam_account_name |
 | onprem_sid |
 | openid2_id |
-| пароль |
+| password |
 | platf |
 | polids |
 | pop_jwk |
@@ -287,44 +287,44 @@ ms.locfileid: "79263196"
 | Источник | ID | Описание |
 |-----|-----|-----|
 | Пользователь | surname | Фамилия |
-| User (Пользователь) | givenname | Заданное имя |
-| User (Пользователь) | displayname | Отображаемое имя |
-| User (Пользователь) | objectid | ObjectID |
-| User (Пользователь) | mail | Электронная почта |
-| User (Пользователь) | userprincipalname | Имя участника-пользователя |
-| User (Пользователь) | department|отдел;|
-| User (Пользователь) | onpremisessamaccountname | Имя локальной учетной записи SAM |
-| User (Пользователь) | netbiosname| NetBIOS-имя |
-| User (Пользователь) | dnsdomainname | DNS-имя домена |
-| User (Пользователь) | onpremisesecurityidentifier | Локальный идентификатор безопасности |
-| User (Пользователь) | companyname| Название организации |
-| User (Пользователь) | streetaddress | Почтовый адрес |
-| User (Пользователь) | postalcode | Почтовый индекс |
-| User (Пользователь) | preferredlanguange | Предпочитаемый язык |
-| User (Пользователь) | onpremisesuserprincipalname | Имя участника-пользователя в локальной среде |
-| User (Пользователь) | mailNickname | Почтовый псевдоним |
-| User (Пользователь) | extensionattribute1 | Атрибут расширения 1 |
-| User (Пользователь) | extensionattribute2 | Атрибут расширения 2 |
-| User (Пользователь) | extensionattribute3 | Атрибут расширения 3 |
-| User (Пользователь) | extensionattribute4 | Атрибут расширения 4 |
-| User (Пользователь) | extensionattribute5 | Атрибут расширения 5 |
-| User (Пользователь) | extensionattribute6 | Атрибут расширения 6 |
-| User (Пользователь) | extensionattribute7 | Атрибут расширения 7 |
-| User (Пользователь) | extensionattribute8 | Атрибут расширения 8 |
-| User (Пользователь) | extensionattribute9 | Атрибут расширения 9 |
-| User (Пользователь) | extensionattribute10 | Атрибут расширения 10 |
-| User (Пользователь) | extensionattribute11 | Атрибут расширения 11 |
-| User (Пользователь) | extensionattribute12 | Атрибут расширения 12 |
-| User (Пользователь) | extensionattribute13 | Атрибут расширения 13 |
-| User (Пользователь) | extensionattribute14 | Атрибут расширения 14 |
-| User (Пользователь) | extensionattribute15 | Атрибут расширения 15 |
-| User (Пользователь) | othermail | Остальные сообщения |
-| User (Пользователь) | country | Country |
-| User (Пользователь) | city | Город |
-| User (Пользователь) | state | Состояние |
-| User (Пользователь) | jobtitle | Должность |
-| User (Пользователь) | employeeid | Код сотрудника |
-| User (Пользователь) | facsimiletelephonenumber | Номер телефона, факса |
+| Пользователь | givenname | Заданное имя |
+| Пользователь | displayname | Отображаемое имя |
+| Пользователь | objectid | ObjectID |
+| Пользователь | почта | Электронная почта |
+| Пользователь | userprincipalname | Имя участника-пользователя |
+| Пользователь | department|отдел;|
+| Пользователь | onpremisessamaccountname | Имя локальной учетной записи SAM |
+| Пользователь | netbiosname| NetBIOS-имя |
+| Пользователь | dnsdomainname | DNS-имя домена |
+| Пользователь | onpremisesecurityidentifier | Локальный идентификатор безопасности |
+| Пользователь | companyname| Название организации |
+| Пользователь | streetaddress | Почтовый адрес |
+| Пользователь | postalcode | Почтовый индекс |
+| Пользователь | preferredlanguange | Preferred Language (Предпочитаемый язык); |
+| Пользователь | onpremisesuserprincipalname | Имя участника-пользователя в локальной среде |
+| Пользователь | mailNickname | Почтовый псевдоним |
+| Пользователь | extensionattribute1 | Атрибут расширения 1 |
+| Пользователь | extensionattribute2 | Атрибут расширения 2 |
+| Пользователь | extensionattribute3 | Атрибут расширения 3 |
+| Пользователь | extensionattribute4 | Атрибут расширения 4 |
+| Пользователь | extensionattribute5 | Атрибут расширения 5 |
+| Пользователь | extensionattribute6 | Атрибут расширения 6 |
+| Пользователь | extensionattribute7 | Атрибут расширения 7 |
+| Пользователь | extensionattribute8 | Атрибут расширения 8 |
+| Пользователь | extensionattribute9 | Атрибут расширения 9 |
+| Пользователь | extensionattribute10 | Атрибут расширения 10 |
+| Пользователь | extensionattribute11 | Атрибут расширения 11 |
+| Пользователь | extensionattribute12 | Атрибут расширения 12 |
+| Пользователь | extensionattribute13 | Атрибут расширения 13 |
+| Пользователь | extensionattribute14 | Атрибут расширения 14 |
+| Пользователь | extensionattribute15 | Атрибут расширения 15 |
+| Пользователь | othermail | Остальные сообщения |
+| Пользователь | country | Country |
+| Пользователь | city | Город |
+| Пользователь | state | Состояние |
+| Пользователь | jobtitle | Должность |
+| Пользователь | employeeid | Код сотрудника |
+| Пользователь | facsimiletelephonenumber | Номер телефона, факса |
 | application, resource, audience | displayname | Отображаемое имя |
 | application, resource, audience | objected | ObjectID |
 | application, resource, audience | tags | Тег субъекта-службы |
@@ -361,7 +361,7 @@ ms.locfileid: "79263196"
 |TransformationMethod|Ожидаемые входные данные|Ожидаемые выходные данные|Описание|
 |-----|-----|-----|-----|
 |Join|строка 1, строка 2, разделитель|outputClaim|Объединение входных строк с помощью разделителя между ними. Например, результатом строка 1:"foo@bar.com", строка 2:"sandbox", разделитель:"." будет outputClaim:"foo@bar.com.sandbox"|
-|ExtractMailPrefix|mail|outputClaim|Извлекает локальную часть адреса электронной почты. Например, результатом mail:"foo@bar.com" будет outputClaim:"foo". Если символ \@ отсутствует, то исходная входная строка возвращается в состоянии "как есть".|
+|ExtractMailPrefix|почта|outputClaim|Извлекает локальную часть адреса электронной почты. Например, результатом mail:"foo@bar.com" будет outputClaim:"foo". Если символ \@ отсутствует, то исходная входная строка возвращается в состоянии "как есть".|
 
 **InputClaims:** элемент InputClaims используется для передачи данных из записи схемы утверждения в преобразование. Он имеет два атрибута: **ClaimTypeReferenceId** и **TransformationClaimType**.
 
@@ -386,31 +386,31 @@ ms.locfileid: "79263196"
 
 |Источник|ID|Описание|
 |-----|-----|-----|
-| Пользователь | mail|Электронная почта|
-| User (Пользователь) | userprincipalname|Имя участника-пользователя|
-| User (Пользователь) | onpremisessamaccountname|Имя локальной учетной записи SAM|
-| User (Пользователь) | employeeid|Код сотрудника|
-| User (Пользователь) | extensionattribute1 | Атрибут расширения 1 |
-| User (Пользователь) | extensionattribute2 | Атрибут расширения 2 |
-| User (Пользователь) | extensionattribute3 | Атрибут расширения 3 |
-| User (Пользователь) | extensionattribute4 | Атрибут расширения 4 |
-| User (Пользователь) | extensionattribute5 | Атрибут расширения 5 |
-| User (Пользователь) | extensionattribute6 | Атрибут расширения 6 |
-| User (Пользователь) | extensionattribute7 | Атрибут расширения 7 |
-| User (Пользователь) | extensionattribute8 | Атрибут расширения 8 |
-| User (Пользователь) | extensionattribute9 | Атрибут расширения 9 |
-| User (Пользователь) | extensionattribute10 | Атрибут расширения 10 |
-| User (Пользователь) | extensionattribute11 | Атрибут расширения 11 |
-| User (Пользователь) | extensionattribute12 | Атрибут расширения 12 |
-| User (Пользователь) | extensionattribute13 | Атрибут расширения 13 |
-| User (Пользователь) | extensionattribute14 | Атрибут расширения 14 |
-| User (Пользователь) | extensionattribute15 | Атрибут расширения 15 |
+| Пользователь | почта|Электронная почта|
+| Пользователь | userprincipalname|Имя участника-пользователя|
+| Пользователь | onpremisessamaccountname|Имя локальной учетной записи SAM|
+| Пользователь | employeeid|Код сотрудника|
+| Пользователь | extensionattribute1 | Атрибут расширения 1 |
+| Пользователь | extensionattribute2 | Атрибут расширения 2 |
+| Пользователь | extensionattribute3 | Атрибут расширения 3 |
+| Пользователь | extensionattribute4 | Атрибут расширения 4 |
+| Пользователь | extensionattribute5 | Атрибут расширения 5 |
+| Пользователь | extensionattribute6 | Атрибут расширения 6 |
+| Пользователь | extensionattribute7 | Атрибут расширения 7 |
+| Пользователь | extensionattribute8 | Атрибут расширения 8 |
+| Пользователь | extensionattribute9 | Атрибут расширения 9 |
+| Пользователь | extensionattribute10 | Атрибут расширения 10 |
+| Пользователь | extensionattribute11 | Атрибут расширения 11 |
+| Пользователь | extensionattribute12 | Атрибут расширения 12 |
+| Пользователь | extensionattribute13 | Атрибут расширения 13 |
+| Пользователь | extensionattribute14 | Атрибут расширения 14 |
+| Пользователь | extensionattribute15 | Атрибут расширения 15 |
 
 #### <a name="table-6-transformation-methods-allowed-for-saml-nameid"></a>Таблица 6. Разрешенные методы преобразования для идентификатора имени SAML NameID
 
 | TransformationMethod | Ограничения |
 | ----- | ----- |
-| ExtractMailPrefix | None |
+| ExtractMailPrefix | Отсутствуют |
 | Join | Присоединяемый суффикс должен быть подтвержденным доменом клиента ресурса. |
 
 ### <a name="custom-signing-key"></a>Пользовательский ключ подписывания
@@ -435,7 +435,7 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 
 В Azure AD существует множество сценариев, когда можно настроить утверждения, добавляемые в токены для определенных субъектов-служб. В этом разделе рассматриваются наиболее распространенные сценарии, которые помогут вам понять, как использовать политики сопоставления утверждений.
 
-#### <a name="prerequisites"></a>Предварительные требования
+#### <a name="prerequisites"></a>Предварительные условия
 
 В следующих примерах мы будем создавать, обновлять, связывать и удалять политики для субъектов-служб. Если вы еще не знакомы с Azure AD, мы рекомендуем [узнать, как получить клиент Azure AD](quickstart-create-new-tenant.md) , прежде чем продолжить работу с этими примерами.
 
@@ -484,7 +484,7 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
    1. Чтобы создать политику, выполните следующую команду:  
      
       ``` powershell
-      New-AzureADPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"true", "ClaimsSchema": [{"Source":"user","ID":"employeeid","SamlClaimType":"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name","JwtClaimType":"name"},{"Source":"company","ID":"tenantcountry","SamlClaimType":"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/country","JwtClaimType":"country"}]}}') -DisplayName "ExtraClaimsExample" -Type "ClaimsMappingPolicy"
+      New-AzureADPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"true", "ClaimsSchema": [{"Source":"user","ID":"employeeid","SamlClaimType":"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/employeeid","JwtClaimType":"name"},{"Source":"company","ID":"tenantcountry","SamlClaimType":"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/country","JwtClaimType":"country"}]}}') -DisplayName "ExtraClaimsExample" -Type "ClaimsMappingPolicy"
       ```
     
    2. Чтобы просмотреть созданную политику и получить ее идентификатор объекта, выполните следующую команду:
@@ -524,6 +524,6 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
       Add-AzureADServicePrincipalPolicy -Id <ObjectId of the ServicePrincipal> -RefObjectId <ObjectId of the Policy>
       ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 Чтобы узнать, как настроить утверждения, выданные в токене SAML с помощью портал Azure, см [. раздел как настроить утверждения, выданные в токене SAML для корпоративных приложений](active-directory-saml-claims-customization.md) .

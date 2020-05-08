@@ -192,6 +192,6 @@ ms.locfileid: "82780935"
 * apiManagementAccounts/apis
 * sites
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Полный список квот и ограничений см. в статье [Подписка Azure, границы, квоты и ограничения службы](azure-subscription-service-limits.md).

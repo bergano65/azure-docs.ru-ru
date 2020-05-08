@@ -3,14 +3,14 @@ title: Настройка параметров Центр обновления W
 description: В этой статье описываются параметры Центр обновления Windows, настроенные для работы с Управление обновлениями Azure.
 services: automation
 ms.subservice: update-management
-ms.date: 03/02/2020
+ms.date: 05/04/2020
 ms.topic: conceptual
-ms.openlocfilehash: 7f226c4d297d25644b2650d085655f70d8326927
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b9b5f2b19b29eae0132ec01a9f3fb7e8355361f5
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79279030"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82779456"
 ---
 # <a name="configure-windows-update-settings-for-update-management"></a>Настройка параметров Центр обновления Windows для Управление обновлениями
 
@@ -22,6 +22,8 @@ ms.locfileid: "79279030"
 - Непосредственное редактирование реестра
 
 Управление обновлениями учитывает многие параметры, заданные для управления клиентом Центр обновления Windows. Если вы используете параметры для включения обновлений, отличных от Windows, Управление обновлениями также будет управлять этими обновлениями. Если вы хотите включить загрузку обновлений перед развертыванием обновления, развертывание обновлений может быть быстрее, более эффективным и менее вероятно, чем окно обслуживания.
+
+Дополнительные рекомендации по настройке служб WSUS в подписке Azure и безопасном обновлении виртуальных машин Windows см. в [подразделах планирование развертывания для обновления виртуальных машин Windows в Azure с помощью WSUS](https://docs.microsoft.com/azure/architecture/example-scenario/wsus/).
 
 ## <a name="pre-download-updates"></a>Предварительная загрузка обновлений
 
@@ -62,6 +64,6 @@ $ServiceManager.AddService2($ServiceId,7,"")
 
 Чтобы ограничить виртуальные машины только внутренней службой обновления, настройте не [подключаться к центр обновления Windows расположениям в Интернете](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates#do-not-connect-to-any-windows-update-internet-locations). 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После настройки параметров Центр обновления Windows можно запланировать развертывание обновлений, следуя инструкциям в статье [Управление обновлениями и исправлениями для виртуальных машин Azure](automation-tutorial-update-management.md).
