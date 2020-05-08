@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 10/16/2019
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4384d29811d29f06422802abba5d3eb1ea5737e9
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: 9cb2647cc5ac2dc60f5ae7327ee39ed2ff625193
+ms.sourcegitcommit: 0fda81f271f1a668ed28c55dcc2d0ba2bb417edd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "72430076"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82901391"
 ---
 # <a name="backup-and-restore"></a>Резервное копирование и восстановление
 
@@ -162,7 +162,7 @@ SAP HANA в Azure (крупные экземпляры) поставляется
 
 ### <a name="step-6-get-the-snapshot-scripts-configure-the-snapshots-and-test-the-configuration-and-connectivity"></a>Шаг 6. Получение сценариев создания моментальных снимков, настройка моментальных снимков, тестирование конфигурации и возможностей подключения
 
-Скачайте последнюю версию сценариев на [GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/tree/master/snapshot_tools_v4.1). Способ установки сценариев изменился с выпуском 4,1 сценариев. Дополнительные сведения см. в разделе "Включение связи с SAP HANA" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
+Скачайте последнюю версию сценариев на [GitHub](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/release.md). Способ установки сценариев изменился с выпуском 4,1 сценариев. Дополнительные сведения см. в разделе "Включение связи с SAP HANA" в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md).
 
 Точную последовательность команд см. в разделе «Простая установка средств создания моментальных снимков (по умолчанию)» в [средствах создания моментальных снимков Майкрософт для SAP HANA в Azure](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md). Рекомендуется использовать установку по умолчанию. 
 
@@ -401,5 +401,5 @@ SAP HANA регулярно записывает данные на том /hana/
 Чтобы выполнить восстановление до определенной точки во времени, см. раздел "восстановление базы данных до следующего момента времени" раздела [руководство по восстановлению вручную для SAP HANA в Azure из моментального снимка хранилища](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md). 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - См. раздел [принципы аварийного восстановления и подготовка](hana-concept-preparation.md).

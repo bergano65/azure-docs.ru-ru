@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46be728216ed4b9c9e84c1c7f68c5ddf2051f42b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fdc011a39c5526e6a2577ab1b21567bbe64ffcc6
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78672304"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82788881"
 ---
 # <a name="how-to-manage-stale-devices-in-azure-ad"></a>Руководство. управление устаревшими устройствами в Azure AD
 
@@ -151,7 +151,7 @@ $dt = [datetime]’2017/01/01’
 Get-MsolDevice -all -LogonTimeBefore $dt | select-object -Property Enabled, DeviceId, DisplayName, DeviceTrustType, ApproximateLastLogonTimestamp | export-csv devicelist-olderthan-Jan-1-2017-summary.csv
 ```
 
-## <a name="what-you-should-know"></a>Необходимая информация
+## <a name="what-you-should-know"></a>Учитываемые аспекты
 
 ### <a name="why-is-the-timestamp-not-updated-more-frequently"></a>Почему метка времени не обновляется чаще?
 
@@ -176,7 +176,7 @@ Get-MsolDevice -all -LogonTimeBefore $dt | select-object -Property Enabled, Devi
 
 Будет запрещена любая аутентификация, которая включает проверку этого устройства в AAD. Ниже приведены распространенные примеры.
 
-- **Гибридные устройства, присоединенные к AAD** — пользователь может использовать устройство для входа в локальный домен. Но он не получит доступ к ресурсам AAD, например к Office 365.
+- **Гибридное устройство, присоединенное к Azure AD** . пользователи могут иметь возможность использовать устройство для входа в свой локальный домен. Но он не получит доступ к ресурсам AAD, например к Office 365.
 - **Устройства, присоединенные к AAD** — пользователь не может использовать устройство для входа. 
 - **Мобильные устройства** — пользователь не получит доступа к ресурсам AAD, например к Office 365. 
 

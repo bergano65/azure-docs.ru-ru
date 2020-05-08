@@ -22,6 +22,6 @@ ms.locfileid: "82792826"
 [!INCLUDE [virtual-machines-common-shared-image-galleries](../../includes/virtual-machines-common-shared-image-galleries.md)]
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как развертывать общие образы с помощью [Azure CLI](shared-images-cli.md) и [Azure PowerShell](shared-images-powershell.md).

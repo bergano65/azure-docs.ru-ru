@@ -5,12 +5,12 @@ author: dkkapur
 ms.topic: conceptual
 ms.date: 11/09/2018
 ms.author: dekapur
-ms.openlocfilehash: 476a2d910b916ea29132b108478d06f756454813
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c2973428354f101b5b546128b08bf67587923a8e
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75463283"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82793080"
 ---
 # <a name="upgrade-the-configuration-of-a-cluster-in-azure"></a>Обновление конфигурации кластера в Azure 
 
@@ -26,7 +26,7 @@ ms.locfileid: "75463283"
 ## <a name="customize-cluster-settings-using-resource-manager-templates"></a>Настройка параметров кластера с помощью шаблонов Resource Manager
 Кластеры Azure можно настроить с помощью JSON-шаблона Resource Manager. Дополнительные сведения см. в статье о [параметрах конфигурации для кластеров](service-fabric-cluster-fabric-settings.md). В качестве примера ниже приведены инструкции, с помощью которых можно добавить новый параметр *MaxDiskQuotaInMB* в раздел *Diagnostics*, используя обозреватель ресурсов Azure.
 
-1. Перейдите на сайт https://resources.azure.com.
+1. Перейдите на страницу https://resources.azure.com.
 2. Перейдите к своей подписке, **развернув** -> **\<подписки>**  ->  **resourceGroups** -> **\<группу ресурсов>**  ->  **поставщикам** -> **Microsoft. ServiceFabric** -> **кластеры** -> **\<имя кластера>**
 3. В правом верхнем углу выберите **чтение и запись.**
 4. Выберите **изменить** и обновите `fabricSettings` элемент JSON и добавьте новый элемент:
@@ -51,6 +51,6 @@ ms.locfileid: "75463283"
 - Чтобы изменить параметр напрямую, используйте команды Azure PowerShell [Set-азсервицефабриксеттинг](https://docs.microsoft.com/powershell/module/az.servicefabric/Set-azServiceFabricSetting) и [Remove-азсервицефабриксеттинг](https://docs.microsoft.com/powershell/module/az.servicefabric/Remove-azServiceFabricSetting) .
 - чтобы изменить параметр напрямую, используйте команды Azure CLI [az sf cluster setting](https://docs.microsoft.com/cli/azure/sf/cluster/setting).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Изучите сведения о [параметрах кластера Service Fabric](service-fabric-cluster-fabric-settings.md).
-* Ознакомьтесь с концепцией [масштабирования кластера](service-fabric-cluster-scale-up-down.md).
+* Ознакомьтесь с концепцией [масштабирования кластера](service-fabric-cluster-scale-in-out.md).

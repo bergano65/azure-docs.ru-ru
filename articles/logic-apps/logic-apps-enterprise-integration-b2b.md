@@ -8,14 +8,14 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 02/10/2020
-ms.openlocfilehash: 01b2bd464db51e255930fe83a3f4321687322275
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b576fc99e2f203bb3d690a8135ee76cee26b3de8
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77151200"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792366"
 ---
-# <a name="receive-and-send-b2b-messages-by-using-azure-logic-apps-and-enterprise-integration-pack"></a>Получение и отправка сообщений B2B с помощью Azure Logic Apps и Пакет интеграции Enterprise
+# <a name="receive-and-confirm--b2b-as2-messages-by-using-azure-logic-apps-and-enterprise-integration-pack"></a>Получение и подтверждение сообщений AS2 для B2B с помощью Azure Logic Apps и Пакет интеграции Enterprise
 
 Если у вас есть учетная запись интеграции, которая определяет торговые партнеры и соглашения, вы можете создать автоматизированный рабочий процесс B2B, который обменивается сообщениями между торговыми партнерами с помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) с [пакет интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md). Azure Logic Apps работает с соединителями, поддерживающими стандартные отраслевые протоколы AS2, X12, EDIFACT и RosettaNet. Эти соединители также можно сочетать с другими [соединителями, доступными в Logic Apps](../connectors/apis-list.md), например Salesforce и Office 365 Outlook.
 
@@ -178,7 +178,7 @@ ms.locfileid: "77151200"
 
 Чтобы подключить собственные бизнес-приложения и использовать эти API в приложении логики, можно добавить дополнительные действия или [написать пользовательские API](../logic-apps/logic-apps-create-api-app.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получение и реагирование на входящие вызовы HTTPS](../connectors/connectors-native-reqres.md)
 * [Обмен сообщениями AS2 для интеграции B2B Enterprise](../logic-apps/logic-apps-enterprise-integration-as2.md)
