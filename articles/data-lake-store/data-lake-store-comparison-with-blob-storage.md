@@ -1,23 +1,17 @@
 ---
-title: Сравнение Azure Data Lake Storage 1-го поколения и Azure Storage Blob | Документы Майкрософт
-description: Сравнение Azure Data Lake Storage 1-го поколения и Azure Storage Blob
-services: data-lake-store
-documentationcenter: ''
+title: Сравнение Azure Data Lake Storage 1-го поколения с хранилищем BLOB-объектов
+description: Содержит сводку различий между Azure Data Lake Storage 1-го поколения и хранилищем BLOB-объектов Azure.
 author: twooley
-manager: mtillman
-editor: cgronlun
-ms.assetid: b199525b-84de-4f79-9eb6-69a613b8b217
 ms.service: data-lake-store
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: twooley
-ms.openlocfilehash: 7c958c3ed4d6ddaabd87f053005fcfc1eba8c842
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3565af1f3e0a002cf3852faef9c2853ff88d46e9
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75438720"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82691722"
 ---
 # <a name="comparing-azure-data-lake-storage-gen1-and-azure-blob-storage"></a>Сравнение Azure Data Lake Storage 1-го поколения и хранилища BLOB-объектов Azure
 
@@ -40,10 +34,10 @@ ms.locfileid: "75438720"
 | Операции с данными — аудит |Доступен. Дополнительные сведения см. [здесь](data-lake-store-diagnostic-logs.md) . |Доступно |
 | Шифрование неактивных данных |<ul><li>Прозрачное шифрование данных на стороне сервера</li> <ul><li>С помощью ключей, управляемых службами</li><li>С помощью ключей из хранилища ключей Azure, управляемых клиентом</li></ul></ul> |<ul><li>Прозрачное шифрование данных на стороне сервера</li> <ul><li>С помощью ключей, управляемых службами</li><li>С помощью ключей из хранилища ключей Azure, управляемых клиентом (предварительная версия)</li></ul><li>шифрования на стороне клиента</li></ul> |
 | Операции управления (например, создание учетной записи) |[Контроль доступа на основе ролей](../role-based-access-control/overview.md) (RBAC), предоставляемый Azure для управления учетными записями |[Контроль доступа на основе ролей](../role-based-access-control/overview.md) (RBAC), предоставляемый Azure для управления учетными записями |
-| Пакеты SDK для разработчиков |.NET, Java, Python, Node.js |.Net, Java, Python, Node.js, C++, Ruby, PHP, Go, Android, iOS |
+| Пакеты SDK для разработчиков |.NET, Java, Python, Node.js |.NET, Java, Python, Node.js, C++, Ruby, PHP, Go, Android, iOS |
 | Производительность рабочих нагрузок аналитики |Оптимизированная производительность для параллельных рабочих нагрузок аналитики. Высокие показатели пропускной способности и операций ввода-вывода в секунду. |Оптимизированная производительность для параллельных рабочих нагрузок аналитики. |
-| Ограничения размера |Нет ограничений на размер учетных записей, размер и количество файлов |Конкретные ограничения см. в разделе [целевые показатели масштабируемости для стандартных учетных записей хранения](../storage/common/scalability-targets-standard-account.md) , [целевые показатели масштабируемости и производительности для хранилища BLOB-объектов](../storage/blobs/scalability-targets.md). Чтобы увеличить предельные значения ограничений для учетной записи, обратитесь в службу [поддержки Azure](https://azure.microsoft.com/support/faq/) |
-| Геоизбыточность |Локальная избыточность (несколько копий данных в одном регионе Azure) |Локальная избыточность (LRS), избыточность в пределах зоны (ZRS), глобальная избыточность (GRS), геоизбыточность с доступом на чтение (RA-GRS). Дополнительные сведения см. [здесь](../storage/common/storage-redundancy.md) . |
+| Ограничения размера |Нет ограничений на размеры учетной записи, размер файлов или число файлов |Конкретные ограничения см. в разделе [целевые показатели масштабируемости для стандартных учетных записей хранения](../storage/common/scalability-targets-standard-account.md) , [целевые показатели масштабируемости и производительности для хранилища BLOB-объектов](../storage/blobs/scalability-targets.md). Чтобы увеличить предельные значения ограничений для учетной записи, обратитесь в службу [поддержки Azure](https://azure.microsoft.com/support/faq/) |
+| Геоизбыточность |Локально избыточное (несколько копий данных в одном регионе Azure) |Локальная избыточность (LRS), избыточность в пределах зоны (ZRS), глобальная избыточность (GRS), геоизбыточность с доступом на чтение (RA-GRS). Дополнительные сведения см. [здесь](../storage/common/storage-redundancy.md) . |
 | Состояние службы |Общедоступная версия |Общедоступная версия |
 | Доступность по регионам |См. [здесь](https://azure.microsoft.com/regions/#services) |Доступны во всех регионах Azure |
 | Price |Дополнительные сведения см. на [этой странице](https://azure.microsoft.com/pricing/details/data-lake-store/). |Дополнительные сведения см. на [этой странице](https://azure.microsoft.com/pricing/details/storage/). |

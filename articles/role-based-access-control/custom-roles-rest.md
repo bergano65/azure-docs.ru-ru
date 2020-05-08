@@ -1,6 +1,6 @@
 ---
-title: Создание или обновление пользовательских ролей для ресурсов Azure с помощью REST API
-description: Узнайте, как перечислять, создавать, обновлять и удалять пользовательские роли с помощью управления доступом на основе ролей (RBAC) для ресурсов Azure, используя REST API.
+title: Создание или обновление пользовательских ролей Azure с помощью REST API Azure RBAC
+description: Узнайте, как перечислять, создавать, обновлять или удалять пользовательские роли Azure с помощью REST API и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 documentationcenter: na
 author: rolyon
@@ -15,21 +15,21 @@ ms.topic: conceptual
 ms.date: 03/19/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: fda0400310f46da64322654c42af75521746d679
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0bc96dc9a8e541cfd827ba5f5abe35c13f2d2462
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80062187"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82734099"
 ---
-# <a name="create-or-update-custom-roles-for-azure-resources-using-the-rest-api"></a>Создание или обновление пользовательских ролей для ресурсов Azure с помощью REST API
+# <a name="create-or-update-azure-custom-roles-using-the-rest-api"></a>Создание или обновление пользовательских ролей Azure с помощью REST API
 
 > [!IMPORTANT]
 > Добавление группы управления в сейчас `AssignableScopes` находится на этапе предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Если [встроенные роли для ресурсов Azure](built-in-roles.md) не соответствуют конкретным потребностям Организации, можно создать собственные пользовательские роли. В этой статье описывается, как получить список, создать, обновить или удалить пользовательские роли с помощью REST API.
+Если [встроенные роли Azure](built-in-roles.md) не отвечают конкретным потребностям Организации, можно создать собственные пользовательские роли. В этой статье описывается, как получить список, создать, обновить или удалить пользовательские роли с помощью REST API.
 
 ## <a name="list-custom-roles"></a>Вывод списка настраиваемых ролей
 
@@ -189,7 +189,7 @@ ms.locfileid: "80062187"
 
 1. В свойстве `notActions` добавьте операции, которые исключены из допустимых `actions`.
 
-1. В свойствах `roleName` и `description` укажите уникальное имя и описание роли. Дополнительные сведения о свойствах см. в разделе [Пользовательские роли](custom-roles.md).
+1. В свойствах `roleName` и `description` укажите уникальное имя и описание роли. Дополнительные сведения о свойствах см. в статье [пользовательские роли Azure](custom-roles.md).
 
     Ниже приведен пример текста запроса:
 
@@ -338,8 +338,8 @@ ms.locfileid: "80062187"
 
 1. Замените *{roleDefinitionId}* идентификатором GUID настраиваемой роли.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Пользовательские роли для ресурсов Azure](custom-roles.md)
-- [Управление доступом к ресурсам Azure с помощью RBAC и REST API](role-assignments-rest.md)
+- [Пользовательские роли Azure](custom-roles.md)
+- [Добавление или удаление назначений ролей Azure с помощью REST API](role-assignments-rest.md)
 - [Справочник по REST API Azure](/rest/api/azure/)

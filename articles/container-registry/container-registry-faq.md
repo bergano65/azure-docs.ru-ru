@@ -5,12 +5,12 @@ author: sajayantony
 ms.topic: article
 ms.date: 03/18/2020
 ms.author: sajaya
-ms.openlocfilehash: 7452b5dd3c952a13a28566914d2fe513689d4751
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 39b543c5f886b22d488198873b75cf76555692fa
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80618794"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82731650"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о реестре контейнеров Azure
 
@@ -461,7 +461,7 @@ curl $redirect_url
 
 Настройте прокси-сервер DOCKER для вывода предыдущей команды и порта 8888 (например, 10.0.75.1:8888).
 
-## <a name="tasks"></a>Задачи
+## <a name="tasks"></a>Задания
 
 - [Разделы справки выполнения пакетной отмены?](#how-do-i-batch-cancel-runs)
 - [Разделы справки включить папку Git в команду AZ контроля доступа?](#how-do-i-include-the-git-folder-in-az-acr-build-command)
@@ -493,10 +493,10 @@ az acr task list-runs -r $myregistry --run-status Running --query '[].runId' -o 
 
 | Служба Git | Исходный контекст | Сборка вручную | Автоматическая сборка с помощью триггера Commit |
 |---|---|---|---|
-| GitHub | https://github.com/user/myapp-repo.git#mybranch:myfolder | Да | Да |
-| Azure Repos | https://dev.azure.com/user/myproject/_git/myapp-repo#mybranch:myfolder | Да | Да |
-| GitLab | https://gitlab.com/user/myapp-repo.git#mybranch:myfolder | Да | Нет |
-| Bitbucket; | https://user@bitbucket.org/user/mayapp-repo.git#mybranch:myfolder | Да | Нет |
+| GitHub | `https://github.com/user/myapp-repo.git#mybranch:myfolder` | Да | Да |
+| Azure Repos | `https://dev.azure.com/user/myproject/_git/myapp-repo#mybranch:myfolder` | Да | Да |
+| GitLab | `https://gitlab.com/user/myapp-repo.git#mybranch:myfolder` | Да | нет |
+| Bitbucket; | `https://user@bitbucket.org/user/mayapp-repo.git#mybranch:myfolder` | Да | нет |
 
 ## <a name="run-error-message-troubleshooting"></a>Выполнение устранения неполадок с сообщением об ошибке
 
@@ -509,6 +509,6 @@ az acr task list-runs -r $myregistry --run-status Running --query '[].runId' -o 
 - [ЦирклеЦи](https://github.com/Azure/acr/blob/master/docs/integration/CircleCI.md)
 - [Действия GitHub](https://github.com/Azure/acr/blob/master/docs/integration/github-actions/github-actions.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения](container-registry-intro.md) о реестре контейнеров Azure.

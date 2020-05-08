@@ -1,28 +1,23 @@
 ---
-title: Сбор данных из Центров событий в Azure Data Lake Storage 1-го поколения | Документация Майкрософт
-description: Сбор данных из Центров событий с помощью Azure Data Lake Storage 1-го поколения
-services: data-lake-store
-documentationcenter: ''
+title: Запись данных из концентраторов событий в Azure Data Lake Storage 1-го поколения
+description: Используйте Azure Data Lake Storage 1-го поколения для записи данных, получаемых концентраторами событий Azure.
 author: twooley
-manager: mtillman
-editor: cgronlun
 ms.service: data-lake-store
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: bb67c1769510710b368bef4dc0b501f939b3427e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5cbcdc5cb9713432be5b52898d956506d80d6ea0
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79265666"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82690672"
 ---
 # <a name="use-azure-data-lake-storage-gen1-to-capture-data-from-event-hubs"></a>Сбор данных из Центров событий с помощью Azure Data Lake Storage 1-го поколения
 
 В этой статье приведены сведения о сборе данных, полученных Центрами событий Azure, с помощью Azure Data Lake Storage 1-го поколения.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
@@ -104,7 +99,7 @@ ms.locfileid: "79265666"
 
     д) Оставьте стандартное значение параметра **Воспользуйтесь поиском, чтобы отфильтровать репликации**. Этот параметр определяет структуру папки, созданной в папке записи.
 
-    е) Нажмите кнопку **Создать**.
+    f. Нажмите кнопку **Создать**.
 
 ## <a name="test-the-setup"></a>Тестирование настройки
 
@@ -122,6 +117,6 @@ ms.locfileid: "79265666"
 Когда данные появятся в Data Lake Storage 1-го поколения, вы можете выполнить задания аналитики, чтобы обработать их. Сведения об использовании Azure Data Lake Analytics для выполнения этих действий см. в [примере USQL Avro](https://github.com/Azure/usql/tree/master/Examples/AvroExamples).
   
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
 * [Копирование данных из больших двоичных объектов хранилища Azure в хранилище озера данных](data-lake-store-copy-data-azure-storage-blob.md)

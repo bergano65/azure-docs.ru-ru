@@ -4,12 +4,12 @@ description: Узнайте, как программировать и настр
 ms.topic: conceptual
 ms.date: 04/25/2018
 ms.author: azfuncdf
-ms.openlocfilehash: d8dd0c86fbc520d0bd3ef6034891bd9871774b4a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ad498bdbc4e6dc9745c6ef45b3dc601ad36c0a62
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74232743"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82733419"
 ---
 # <a name="how-to-run-durable-functions-as-webjobs"></a>Запуск Устойчивые функции как веб-заданий
 
@@ -19,9 +19,9 @@ ms.locfileid: "74232743"
 
 В версии 3. x пакета SDK веб-заданий узел является реализацией `IHost`, а в версии 2. x используется `JobHost` объект.
 
-Образец Устойчивые функции цепочек доступен в пакете SDK для веб-заданий версии 2. x: Скачайте или клонировать [репозиторий устойчивые функции](https://github.com/azure/azure-functions-durable-extension/)и перейдите к папке *Samples\\вебжобссдк\\chaining* .
+Пример цепочки Устойчивые функции можно найти в пакете SDK для веб-заданий версии 2. x: Скачайте или клонировать [репозиторий устойчивые функции](https://github.com/azure/azure-functions-durable-extension/), а затем *выберите ветвь версии* 1 и перейдите к папке *Samples\\\\вебжобссдк chaining* .
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В этой статье предполагается, что вы знакомы с основами пакета SDK для веб-заданий, разработки библиотеки классов C# для Функций Azure и устойчивых функций. Ознакомиться с этими темами вам помогут следующие ресурсы:
 
@@ -184,7 +184,7 @@ while (true)
 
 У вас Устойчивые функции настроить запуск в качестве веб-задания, и теперь у вас есть представление о том, как это будет отличаться от запуска Устойчивые функции как автономных функций Azure. На этом этапе работа с примером может быть полезной.
 
-Этот раздел содержит общие сведения о способах запуска [примера проекта](https://github.com/Azure/azure-functions-durable-extension/tree/master/samples/webjobssdk/chaining). Подробные инструкции о том, как запустить проект пакета SDK для веб-заданий локально и развернуть его в веб-задание Azure, см. в разделе [Развертывание в качестве WebJob (веб-задания)](../../app-service/webjobs-sdk-get-started.md#deploy-as-a-webjob).
+Этот раздел содержит общие сведения о способах запуска [примера проекта](https://github.com/Azure/azure-functions-durable-extension/tree/v1/samples/webjobssdk/chaining). Подробные инструкции о том, как запустить проект пакета SDK для веб-заданий локально и развернуть его в веб-задание Azure, см. в разделе [Развертывание в качестве WebJob (веб-задания)](../../app-service/webjobs-sdk-get-started.md#deploy-as-a-webjob).
 
 ### <a name="run-locally"></a>Локальный запуск
 

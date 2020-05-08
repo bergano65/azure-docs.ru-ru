@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 6c98b699b1d3aba15ce69c519d35d7ce3e90d123
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2fec54c19b9040e7cb44f1a5d2b7909510ab7313
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77014884"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82734609"
 ---
 # <a name="choose-a-load-balancing-solution-for-cloudsimple-private-clouds"></a>Выбор решения для балансировки нагрузки для частных облаков Клаудсимпле
 
@@ -37,7 +37,7 @@ ms.locfileid: "77014884"
 
 Если вы решили запустить приложение в гибридном развертывании, где клиентский веб-интерфейс работает в виртуальной сети Azure в вашей подписке Azure, а уровень базы данных приложения выполняется на виртуальных машинах VMware в частном облаке Клаудсимпле, вы можете использовать внутренний балансировщик нагрузки Azure (балансировщик нагрузки уровня 4) перед виртуальными машинами на уровне базы данных для управления трафиком.
 
-Дополнительные сведения см. в документации по [внутренним Load Balancerам](../load-balancer/concepts-limitations.md#internalloadbalancer) Azure.
+Дополнительные сведения см. в документации по [внутренним Load Balancerам](../load-balancer/components.md#frontend-ip-configurations) Azure.
 
 ## <a name="global-server-load-balancer"></a>Глобальная подсистема балансировки нагрузки сервера
 

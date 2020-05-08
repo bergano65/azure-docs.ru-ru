@@ -6,12 +6,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: 5a8d5f96449cfecd4628c38fa2788a1e06e96b07
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a046791b8c50577c1921764b06bac5d88780194d
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81758888"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82735000"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK WebJobs Azure для фоновой обработки на основе событий
 
@@ -829,7 +829,7 @@ public static void RemoveItem([QueueTrigger("remove-item")] string message)
 |Предупреждение     | 3 |
 |Error       | 4 |
 |Critical    | 5 |
-|Нет        | 6 |
+|Отсутствуют        | 6 |
 
 Каждую категорию можно отфильтровать отдельно [`LogLevel`](/dotnet/api/microsoft.extensions.logging.loglevel). Например, вы можете просмотреть все журналы для обработки триггера большого двоичного объекта, но только `Error` и выше для всего остального.
 
@@ -956,9 +956,9 @@ static async Task Main()
 
 #### <a name="version-2x"></a>Версия 2. *x*
 
-В версии 2. *x*, [`TelemetryClient`] созданный внутренним поставщиком Application Insights для пакета SDK веб-заданий [`ServerTelemetryChannel`](https://github.com/Microsoft/ApplicationInsights-dotnet/blob/develop/src/ServerTelemetryChannel/ServerTelemetryChannel.cs). Когда конечная точка Application Insights недоступна или регулирует входящие запросы, этот канал [сохраняет запросы в файловой системе веб-приложения и позже повторно отправляет их](https://apmtips.com/blog/2015/09/03/more-telemetry-channels).
+В версии 2. *x*, [`TelemetryClient`] созданный внутренним поставщиком Application Insights для пакета SDK веб-заданий [`ServerTelemetryChannel`](https://github.com/microsoft/ApplicationInsights-dotnet/tree/develop/.publicApi/Microsoft.AI.ServerTelemetryChannel.dll). Когда конечная точка Application Insights недоступна или регулирует входящие запросы, этот канал [сохраняет запросы в файловой системе веб-приложения и позже повторно отправляет их](https://apmtips.com/blog/2015/09/03/more-telemetry-channels).
 
-Объект [`TelemetryClient`] создается классом, реализующим интерфейс `ITelemetryClientFactory`. По умолчанию это [`DefaultTelemetryClientFactory`](https://github.com/Azure/azure-webjobs-sdk/blob/dev/src/Microsoft.Azure.WebJobs.Logging.ApplicationInsights/DefaultTelemetryClientFactory.cs).
+Объект [`TelemetryClient`] создается классом, реализующим интерфейс `ITelemetryClientFactory`. По умолчанию это [`DefaultTelemetryClientFactory`](https://github.com/Azure/azure-webjobs-sdk/blob/dev/src/Microsoft.Azure.WebJobs.Logging.ApplicationInsights/).
 
 Если вы хотите изменить любую часть конвейера Application Insights, можно указать собственный `ITelemetryClientFactory`, и узел будет использовать класс для создания. [`TelemetryClient`] Например, этот код переопределяет `DefaultTelemetryClientFactory` для изменения свойства `ServerTelemetryChannel`:
 

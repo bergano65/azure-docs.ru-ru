@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 12/06/2018
 ms.custom: seodec18
 Customer intent: As a developer, I want to build a Java application to access and manage Azure Cosmos DB resources so that customers can store key/value data and utilize the global distribution, elastic scaling, multi-master, and other capabilities offered by Azure Cosmos DB.
-ms.openlocfilehash: 971f705099ffec22599af83323e5e15d604c4bca
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 472e74f7c25404a2446109ae66867a43b07294c8
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80983013"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82731786"
 ---
 # <a name="tutorial-create-a-cassandra-api-account-in-azure-cosmos-db-by-using-a-java-application-to-store-keyvalue-data"></a>Руководство по Создание учетной записи API Cassandra в Azure Cosmos DB с помощью приложения Java для хранения данных пар "ключ — значение"
 
@@ -92,21 +92,21 @@ cassandra_password=<FILLME_with_PRIMARY PASSWORD>
  
 2. Найдите папку `cassandra-demo`. Откройте в текстовом редакторе созданный файл `pom.xml`. 
 
-   Добавьте зависимости Cassandra и создайте подключаемые модули, необходимые в проекте, как показано в файле [pom.xml](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/java-examples/pom.xml).  
+   Добавьте зависимости Cassandra и создайте подключаемые модули, необходимые в проекте, как показано в файле [pom.xml](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/pom.xml).  
 
 3. В папке `cassandra-demo\src\main` создайте папку с именем `resources`.  В папке ресурсов добавьте файлы config.properties и log4j.properties:
 
-   - Файл [config.properties](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/java-examples/src/main/resources/config.properties) хранит значения конечной точки подключения и ключа учетной записи API Cassandra. 
+   - Файл [config.properties](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/src/main/resources/config.properties) хранит значения конечной точки подключения и ключа учетной записи API Cassandra. 
    
-   - Файл [log4j.properties](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/java-examples/src/main/resources/log4j.properties) определяет уровень ведения журнала, необходимый для взаимодействия с API Cassandra.  
+   - Файл [log4j.properties](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/src/main/resources/log4j.properties) определяет уровень ведения журнала, необходимый для взаимодействия с API Cassandra.  
 
 4. Перейдите в папку `src/main/java/com/azure/cosmosdb/cassandra/`. В папке cassandra создайте вторую папку с именем `utils`. Новая папка хранит служебные классы, необходимые для подключения к учетной записи API Cassandra. 
 
-   Добавьте класс [CassandraUtils](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/java-examples/src/main/java/com/azure/cosmosdb/cassandra/util/CassandraUtils.java) для создания кластера и открытия и закрытия сеансов Cassandra. Кластер подключается к учетной записи API Cassandra в Azure Cosmos DB и возвращает сеанс для доступа. Используйте класс [Configurations](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/java-examples/src/main/java/com/azure/cosmosdb/cassandra/util/Configurations.java) для чтения строки подключения из файла config.properties. 
+   Добавьте класс [CassandraUtils](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/src/main/java/com/azure/cosmosdb/cassandra/util/CassandraUtils.java) для создания кластера и открытия и закрытия сеансов Cassandra. Кластер подключается к учетной записи API Cassandra в Azure Cosmos DB и возвращает сеанс для доступа. Используйте класс [Configurations](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/src/main/java/com/azure/cosmosdb/cassandra/util/Configurations.java) для чтения строки подключения из файла config.properties. 
 
 5. Пример Java создает базу данных со сведениями о пользователе, такими как имя пользователя, идентификатор пользователя и город пользователя. Необходимо определить методы get и set для доступа к сведениям о пользователе в основной функции.
  
-   Создайте класс [User.java](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/java-examples/src/main/java/com/azure/cosmosdb/cassandra/User.java) в папке `src/main/java/com/azure/cosmosdb/cassandra/` с методами get и set. 
+   Создайте класс [User.java](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/src/main/java/com/azure/cosmosdb/cassandra/examples/UserProfile.java) в папке `src/main/java/com/azure/cosmosdb/cassandra/` с методами get и set. 
 
 ## <a name="add-a-database-and-a-table"></a>Добавление базы данных и таблицы  
 

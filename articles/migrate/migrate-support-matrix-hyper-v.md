@@ -3,12 +3,12 @@ title: Поддержка оценки Hyper-V в службе "миграция
 description: Дополнительные сведения о поддержке оценки Hyper-V с помощью Azure Migrate Server
 ms.topic: conceptual
 ms.date: 04/15/2020
-ms.openlocfilehash: 990d5026d9621c144c31635fabac4416eb9d20e6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 67fabebf805e38a6bca5dda6e691c263ee235219
+ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81538177"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82744604"
 ---
 # <a name="support-matrix-for-hyper-v-assessment"></a>Матрица поддержки для оценки Hyper-V
 
@@ -23,7 +23,7 @@ ms.locfileid: "81538177"
 --- | ---
 **Ограничения оценки** | Вы можете обнаружить и оценить до 35 000 виртуальных машин Hyper-V в одном проекте службы " [Миграция Azure](migrate-support-matrix.md#azure-migrate-projects)".
 **Ограничения проекта** | В подписке Azure можно создать несколько проектов. В дополнение к виртуальным машинам Hyper-V проект может включать виртуальные машины VMware и физические серверы, вплоть до ограничений по оценке для каждой из них.
-**Маршрутизатор** | Устройство для переноса Azure может обнаружить до 5000 виртуальных машин Hyper-V.<br/><br/> Устройство может подключаться к узлам Hyper-V до 300.
+**Обнаружение** | Устройство для переноса Azure может обнаружить до 5000 виртуальных машин Hyper-V.<br/><br/> Устройство может подключаться к узлам Hyper-V до 300.
 **Оценка** | В одну группу можно добавить до 35 000 компьютеров.<br/><br/> Вы можете оценить до 35 000 виртуальных машин в одной оценке для группы.
 
 Дополнительные [сведения](concepts-assessment-calculation.md) об оценках.
@@ -54,7 +54,7 @@ ms.locfileid: "81538177"
 
 - Сведения о [требованиях к устройству](migrate-appliance.md#appliance---hyper-v) для Hyper-V.
 - Узнайте о URL-адресах, которые требуются устройству в [общедоступных](migrate-appliance.md#public-cloud-urls) и [правительственных](migrate-appliance.md#government-cloud-urls) облаках.
-- В Azure для государственных организаций необходимо развернуть устройство с помощью скрипта.
+- В Azure для государственных организаций необходимо развернуть устройство [с помощью скрипта](deploy-appliance-script-government.md).
 
 ## <a name="port-access"></a>Доступ к портам
 
@@ -81,6 +81,6 @@ ms.locfileid: "81538177"
 **Подключение к Интернету** | Если компьютеры не подключены к Интернету, необходимо установить на них шлюз Log Analytics.
 **Azure для государственных организаций** | Анализ зависимостей на основе агента не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Подготовка к оценке виртуальных машин Hyper-V](tutorial-prepare-hyper-v.md)

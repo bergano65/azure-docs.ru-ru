@@ -1,17 +1,17 @@
 ---
 title: Технологии развертывания в функциях Azure
 description: Узнайте о различных способах развертывания кода в функциях Azure.
-author: georgewallace
+author: ggailey777
 ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 04/25/2019
-ms.author: gwallace
-ms.openlocfilehash: 43352117d149abbe41ba7bf49a1ffb68e46d2707
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.author: glenga
+ms.openlocfilehash: ec5e9da2ab80f4728d342303e1eb08c49f765485
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79277132"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82735306"
 ---
 # <a name="deployment-technologies-in-azure-functions"></a>Технологии развертывания в функциях Azure
 
@@ -196,7 +196,7 @@ URL-адрес внешнего пакета можно использовать
 
 При развертывании приложения-функции в Azure можно выполнить развертывание в отдельном слоте развертывания, а не непосредственно в рабочей среде. Дополнительные сведения о слотах развертывания см. в документации по [слотам развертывания функций Azure](../app-service/deploy-staging-slots.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь со следующими статьями, чтобы узнать больше о развертывании приложений функций. 
 

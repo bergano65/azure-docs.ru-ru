@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/05/2019
 ms.author: spelluru
-ms.openlocfilehash: 9593d60f76802cd515ca85616bce028cf3aa0d49
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7591f22286f9ac451a15dd926adab0212adb190e
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77589323"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82691289"
 ---
 # <a name="configure-a-shared-image-gallery-in-azure-devtest-labs"></a>Настройка коллекции общих образов в Azure DevTest Labs
 DevTest Labs теперь поддерживает функцию [коллекции общих образов](../virtual-machines/windows/shared-image-galleries.md) . Он позволяет пользователям лаборатории получать доступ к изображениям из общего расположения при создании лабораторных ресурсов. Кроме того, он позволяет создавать структуру и организацию для пользовательских управляемых образов виртуальных машин. Коллекция общих образов поддерживает следующие возможности.
@@ -91,9 +91,21 @@ DevTest Labs теперь поддерживает функцию [коллек�
 
 Полный пример шаблона диспетчер ресурсов см. в разделе примеры шаблонов диспетчер ресурсов в нашем общедоступном репозитории GitHub: [Настройка общей коллекции образов при создании лаборатории](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates/101-dtl-create-lab-shared-gallery-configured).
 
-## <a name="use-api"></a>Использовать API
+## <a name="use-rest-api"></a>Использование REST API
 
-### <a name="shared-image-galleries---create-or-update"></a>Коллекции общих образов — создание или обновление
+### <a name="get-a-list-of-labs"></a>Получение списка лабораторий 
+
+```rest
+GET  https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs?api-version= 2018-10-15-preview
+```
+
+### <a name="get-the-list-of-shared-image-galleries-associated-with-a-lab"></a>Получение списка общих коллекций изображений, связанных с лабораторией
+
+```rest
+GET  https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/sharedgalleries?api-version= 2018-10-15-preview
+   ```
+
+### <a name="create-or-update-shared-image-gallery"></a>Создание или обновление коллекции общих образов
 
 ```rest
 PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/sharedgalleries/{name}?api-version= 2018-10-15-preview
@@ -107,7 +119,7 @@ Body:
 
 ```
 
-### <a name="shared-image-galleries-images---list"></a>Образы из общей галереи образов — список 
+### <a name="list-images-in-a-shared-image-gallery"></a>Вывод списка образов в общей коллекции образов
 
 ```rest
 GET  https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/sharedgalleries/{name}/sharedimages?api-version= 2018-10-15-preview
@@ -115,6 +127,5 @@ GET  https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 
 
 
-
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующие статьи о создании виртуальной машины с помощью образа из коллекции подключенных общих образов: [Создание виртуальной машины с помощью общего образа из коллекции](add-vm-use-shared-image.md) .

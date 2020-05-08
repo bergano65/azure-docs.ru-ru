@@ -1,6 +1,6 @@
 ---
-title: включить файл
-description: включить файл
+title: Включить имя файла
+description: Включить файл
 services: iot-hub
 author: kgremban
 ms.service: iot-hub

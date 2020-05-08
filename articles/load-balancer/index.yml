@@ -10,13 +10,13 @@ metadata:
   ms.collection: collection
   author: asudbring
   ms.author: allensu
-  ms.date: 12/05/2019
-  ms.openlocfilehash: 46afc139f240b46b9512360e79411a5bc8b03ec4
-  ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+  ms.date: 05/07/2020
+  ms.openlocfilehash: 73d36c795ca4be905ac6e9bab31cfe00374bfa13
+  ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/03/2020
-  ms.locfileid: "82732994"
+  ms.lasthandoff: 05/08/2020
+  ms.locfileid: "82930630"
 landingContent:
 - title: Основные сведения о Load Balancer
   linkLists:
@@ -28,11 +28,13 @@ landingContent:
       url: concepts.md
     - text: Компоненты Load Balancer
       url: components.md
+    - text: SKU службы Load Balancer
+      url: skus.md
 - title: Начало работы
   linkLists:
   - linkListType: quickstart
     links:
-    - text: Создание Load Balancer (цен. категория "Стандартный") для распределения нагрузки между виртуальными машинами
+    - text: Создание экземпляра Load Balancer для распределения нагрузки между виртуальными машинами
       url: quickstart-load-balancer-standard-public-portal.md
   - linkListType: tutorial
     links:
@@ -54,25 +56,27 @@ landingContent:
       url: load-balancer-multivip-overview.md
   - linkListType: how-to-guide
     links:
-    - text: Настройка правил балансировки нагрузки и правил для исходящего трафика в Load Balancer (цен. категория "Стандартный") с использованием Azure CLI
+    - text: Настройка правил балансировки нагрузки и правил для исходящего трафика в Load Balancer (Azure CLI)
       url: configure-load-balancer-outbound-cli.md
-    - text: Создание подсистемы балансировки нагрузки с доступом в Интернет и поддержкой IPv6 с помощью PowerShell
+    - text: Создание подсистемы балансировки нагрузки с доступом в Интернет и поддержкой IPv6 (PowerShell)
       url: load-balancer-ipv6-internet-ps.md
     - text: Настройка режима распределения
       url: load-balancer-distribution-mode.md
+    - text: Переход с ценовой категории "Базовый" на категорию "Стандартный"
+      url: upgrade-basic-standard.md
 - title: Развертывание
   linkLists:
   - linkListType: concept
     links:
     - text: Azure Load Balancer ценовой категории "Стандартный" и зоны доступности
       url: load-balancer-standard-availability-zones.md
-    - text: Load Balancer со сбросом TCP-подключений при простое (общедоступная предварительная версия)
+    - text: Load Balancer со сбросом TCP-подключений при простое
       url: load-balancer-tcp-reset.md
   - linkListType: how-to-guide
     links:
-    - text: Создание Load Balancer (цен. категория "Стандартный") с избыточным между зонами внешним интерфейсом
+    - text: Создание экземпляра Load Balancer с избыточным между зонами внешним интерфейсом
       url: load-balancer-get-started-internet-az-portal.md
-    - text: Создание Load Balancer (цен. категория "Стандартный") с зональным внешним интерфейсом
+    - text: Создание подсистемы балансировки нагрузки с зональным внешним интерфейсом
       url: load-balancer-get-started-internet-availability-zones-zonal-portal.md
     - text: Балансировка нагрузки в конфигурациях с несколькими IP-адресами
       url: load-balancer-multiple-ip.md
@@ -94,3 +98,7 @@ landingContent:
       url: https://docs.microsoft.com/powershell/module/az.network/?view=azps-2.5.0#load_balancer
     - text: Azure CLI
       url: https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest
+    - text: Шаблоны ARM
+      url: https://docs.microsoft.com/azure/templates/microsoft.network/loadbalancers#quickstart-templates
+    - text: Часто задаваемые вопросы Load Balancer
+      url: load-balancer-faqs.md

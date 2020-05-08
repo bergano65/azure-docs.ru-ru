@@ -1,26 +1,20 @@
 ---
-title: Анализ данных в Azure Data Lake Storage 1-го поколения с помощью Power BI | Документы Майкрософт
-description: Использование Power BI для анализа данных, хранящихся в Azure Data Lake Storage 1-го поколения
-services: data-lake-store
-documentationcenter: ''
+title: Анализ данных в Azure Data Lake Storage 1-го поколения Power BI
+description: Используйте Power BI для анализа данных, хранящихся в Azure Data Lake Storage 1-го поколения.
 author: twooley
-manager: mtillman
-editor: cgronlun
-ms.assetid: 57d19d27-e135-49d9-a7ea-46c48ef4e3bd
 ms.service: data-lake-store
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: d8717b8f365e692b5f27bf8a04d65c5147b8f31b
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: 952be68a1675732857969f875cd2b39c2feab674
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "65603210"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82691652"
 ---
 # <a name="analyze-data-in-azure-data-lake-storage-gen1-by-using-power-bi"></a>Анализ данных в Azure Data Lake Storage 1-го поколения с помощью Power BI
-В этой статье вы узнаете, как использовать Power BI Desktop для анализа и визуализации данных в Azure Data Lake Storage 1-го поколения.
+Из этой статьи вы узнаете, как использовать Power BI Desktop для анализа и визуализации данных, хранящихся в Azure Data Lake Storage 1-го поколения.
 
 ## <a name="prerequisites"></a>Предварительные условия
 Перед началом работы с этим учебником необходимо иметь следующее:
@@ -38,7 +32,7 @@ ms.locfileid: "65603210"
 4. В диалоговом окне **Azure Data Lake Store** укажите URL-адрес для своей учетной записи Data Lake Storage 1-го поколения и нажмите кнопку **ОК**.
    
     ![URL-адрес для Data Lake Storage 1-го поколения](./media/data-lake-store-power-bi/get-data-lake-store-account-url.png "URL-адрес для Data Lake Storage 1-го поколения")
-5. В следующем диалоговом окне нажмите кнопку **Вход**, чтобы войти в учетную запись Data Lake Storage 1-го поколения. Вы будете перенаправлены на страницу входа своей организации. Следуйте инструкциям для входа в учетную запись.
+5. В следующем диалоговом окне нажмите кнопку **Вход**, чтобы войти в учетную запись Data Lake Storage 1-го поколения. Вы будете перенаправлены на страницу входа вашей организации. Следуйте инструкциям для входа в учетную запись.
    
     ![Вход в Data Lake Storage 1-го поколения](./media/data-lake-store-power-bi/get-data-lake-store-account-signin.png "Вход в Data Lake Storage 1-го поколения")
 6. Успешно выполнив вход, нажмите кнопку **Подключиться**.
@@ -96,6 +90,6 @@ ms.locfileid: "65603210"
 ## <a name="publish-report-to-power-bi-service"></a>Публикация отчета в службе Power BI
 Создав визуализации в Power BI Desktop, вы можете предоставить общий доступ к ним другим пользователям, опубликовав их в службе Power BI. Инструкции см. в разделе [Публикация из Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-upload-desktop-files/).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 * [Анализ данных в Data Lake Storage 1-го поколения с помощью Data Lake Analytics](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
 

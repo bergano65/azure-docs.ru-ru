@@ -14,12 +14,12 @@ ms.subservice: report-monitor
 ms.date: 10/30/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 2e94d9f56a865999f9169650f621a6af892c27ae
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 094939ee62046c72f07ac46f0781e687034f731f
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74014361"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82690615"
 ---
 # <a name="how-to-use-azure-monitor-workbooks-for-azure-active-directory-reports"></a>Использование книг Azure Monitor для Azure Active Directory отчетов
 
@@ -42,7 +42,7 @@ ms.locfileid: "74014361"
 
 - Получайте более подробные сведения о запросах журналов входа. книга сообщает о количестве пользователей, которым был предоставлен или запрещен доступ, а также о том, сколько пользователей пропускает политики условного доступа при доступе к ресурсам.
 
-- Чтобы помочь вам решить эти вопросы, Active Directory предоставляет книги для мониторинга. [Azure Monitor книгах](https://docs.microsoft.com/azure/azure-monitor/app/usage-workbooks) объединяет текст, аналитические запросы, метрики и параметры в расширенные Интерактивные отчеты.
+- Чтобы помочь вам решить эти вопросы, Azure Active Directory предоставляет книги для мониторинга. [Azure Monitor книгах](https://docs.microsoft.com/azure/azure-monitor/app/usage-workbooks) объединяет текст, аналитические запросы, метрики и параметры в расширенные Интерактивные отчеты.
 
 
 
@@ -54,11 +54,11 @@ ms.locfileid: "74014361"
  
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для использования рабочих книг монитора необходимо следующее:
 
-- Клиент Active Directory с лицензией Premium (P1 или P2). Узнайте, как [получить лицензию Premium](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-get-started-premium).
+- Клиент Azure Active Directory с лицензией Premium (P1 или P2). Узнайте, как [получить лицензию Premium](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-get-started-premium).
 
 - [Рабочая область log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace).
 
@@ -67,11 +67,11 @@ ms.locfileid: "74014361"
     - Администратор безопасности.
     - Читатель сведений о безопасности
     - Средство чтения отчетов
-    - Глобальный администратор
+    - Глобальный администратор.
 
 ## <a name="roles"></a>Роли
 Вы должны быть в одной из следующих ролей, а также иметь [доступ к базовой](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-azure-permissions) рабочей области log Analytics для управления книгами:
--   Глобальный администратор
+-   Глобальный администратор.
 -   Администратор безопасности.
 -   Читатель сведений о безопасности
 -   Средство чтения отчетов
@@ -97,11 +97,11 @@ ms.locfileid: "74014361"
 
 - Все входы
 
-- Успех
+- Успешно
 
 - Ожидающее действие пользователя
 
-- Failure
+- Сбой
 
 Можно отфильтровать каждую тенденцию по следующим категориям:
 
@@ -134,7 +134,7 @@ ms.locfileid: "74014361"
 
 - Все входы
 
-- Успех
+- Успешно
 
 
 Можно отфильтровать каждую тенденцию по следующим категориям:
@@ -267,11 +267,11 @@ ms.locfileid: "74014361"
 
 - Все входы
 
-- Успех
+- Успешно
 
 - Ожидающее действие
 
-- Failure
+- Сбой
 
 
 Можно отфильтровать каждую тенденцию по следующим категориям:

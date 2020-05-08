@@ -1,6 +1,6 @@
 ---
-title: Добавление или удаление назначений ролей с помощью RBAC и портал Azure
-description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, субъектов-служб или управляемых удостоверений с помощью управления доступом на основе ролей (RBAC) Azure и портал Azure.
+title: Добавление и удаление назначений ролей Azure с помощью портал Azure Azure RBAC
+description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, субъектов-служб или управляемых удостоверений с помощью портал Azure и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,14 +14,14 @@ ms.workload: identity
 ms.date: 01/25/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: e2458b07602bca3b6f12b2f486b509c11d705461
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 88cb1e9893e0ca058e57ce12f00747a59248fb19
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79246361"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82735697"
 ---
-# <a name="add-or-remove-role-assignments-using-azure-rbac-and-the-azure-portal"></a>Добавление и удаление назначений ролей с помощью Azure RBAC и портал Azure
+# <a name="add-or-remove-azure-role-assignments-using-the-azure-portal"></a>Добавление или удаление назначений ролей Azure с помощью портал Azure
 
 [!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)]В этой статье описывается назначение ролей с помощью портал Azure.
 
@@ -141,9 +141,9 @@ ms.locfileid: "79246361"
 
    ![Сообщение об удалении назначения роли](./media/role-assignments-portal/remove-role-assignment-inherited.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Вывод списка назначений ролей с помощью Azure RBAC и портал Azure](role-assignments-list-portal.md)
-- [Руководство. предоставление пользователю доступа к ресурсам Azure с помощью RBAC и портал Azure](quickstart-assign-role-user-portal.md)
-- [Устранение неполадок RBAC в Azure](troubleshooting.md)
+- [Вывод списка назначений ролей Azure с помощью портал Azure](role-assignments-list-portal.md)
+- [Руководство. предоставление пользователю доступа к ресурсам Azure с помощью портал Azure](quickstart-assign-role-user-portal.md)
+- [Устранение неполадок в Azure RBAC](troubleshooting.md)
 - [Упорядочивание ресурсов с помощью групп управления Azure](../governance/management-groups/overview.md)

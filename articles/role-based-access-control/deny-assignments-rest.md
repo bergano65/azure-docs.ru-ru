@@ -1,6 +1,6 @@
 ---
-title: Список запрещенных назначений для ресурсов Azure с помощью REST API
-description: Узнайте, как вывести список запрещенных назначений для пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) для ресурсов Azure и REST API.
+title: Список запрещенных назначений Azure с помощью REST API-Azure RBAC
+description: Узнайте, как получить список запрещенных назначений Azure для пользователей, групп и приложений с помощью REST API и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 documentationcenter: na
 author: rolyon
@@ -15,25 +15,25 @@ ms.topic: conceptual
 ms.date: 03/19/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 0f648405a3d71bf27c64dacbb3fd78f3e9801137
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: dae0352566e6cb4f8ed1384ca12213e2aaa07f9d
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80063017"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82733876"
 ---
-# <a name="list-deny-assignments-for-azure-resources-using-the-rest-api"></a>Вывод списка запретов назначений для ресурсов Azure с помощью REST API
+# <a name="list-azure-deny-assignments-using-the-rest-api"></a>Список запрещенных назначений в Azure с помощью REST API
 
-[Запрет назначений](deny-assignments.md) запрещает пользователям выполнять определенные действия с ресурсами Azure, даже если назначение ролей предоставляет им доступ. В этой статье описывается, как вывести список запрещенных назначений с помощью REST API.
+[Запрещенные назначения Azure](deny-assignments.md) запрещают пользователям выполнять определенные действия с ресурсами Azure, даже если назначение ролей предоставляет им доступ. В этой статье описывается, как вывести список запрещенных назначений с помощью REST API.
 
 > [!NOTE]
-> Вы не можете напрямую создавать собственные назначения Deny. Дополнительные сведения о создании назначений Deny см. в разделе [Deny назначений](deny-assignments.md).
+> Вы не можете напрямую создавать собственные назначения Deny. Дополнительные сведения о создании назначений Deny см. в статье [запрещение назначений в Azure](deny-assignments.md).
 
 ## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы получить сведения о назначении Deny, необходимо следующее:
 
-- `Microsoft.Authorization/denyAssignments/read`разрешение, которое входит в большинство [встроенных ролей для ресурсов Azure](built-in-roles.md).
+- `Microsoft.Authorization/denyAssignments/read`разрешение, которое входит в большинство [встроенных ролей Azure](built-in-roles.md).
 
 ## <a name="list-a-single-deny-assignment"></a>Вывод списка определенного запрета назначения
 
@@ -91,7 +91,7 @@ ms.locfileid: "80063017"
 
 ## <a name="list-deny-assignments-at-the-root-scope-"></a>Вывод списка запретов назначений в корневой области (/)
 
-1. Повысьте уровень доступа, как описано в статье [Повышение прав доступа глобального администратора в Azure Active Directory](elevate-access-global-admin.md).
+1. Повысьте уровень доступа, как описано в разделе [повышение уровня доступа для управления всеми подписками Azure и группами управления](elevate-access-global-admin.md).
 
 1. Используйте следующий запрос:
 
@@ -109,8 +109,8 @@ ms.locfileid: "80063017"
 
 1. Удалите повышенный уровень доступа.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Запрет назначений для ресурсов Azure](deny-assignments.md)
-- [Повышение прав доступа для глобального администратора в Azure Active Directory](elevate-access-global-admin.md)
+- [Общие сведения о назначении Deny в Azure](deny-assignments.md)
+- [Повышение прав доступа для управления всеми подписками Azure и группами управления](elevate-access-global-admin.md)
 - [Справочник по REST API Azure](/rest/api/azure/)

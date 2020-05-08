@@ -3,12 +3,12 @@ title: Создание пользовательского пула с помо�
 description: Создайте пул пакетной службы с помощью коллекции общих образов для подготовки пользовательских образов к вычисленным узлам, содержащим программное обеспечение и данные, необходимые для вашего приложения. Пользовательские образы представляют собой эффективный способ настройки вычислительных узлов для выполнения рабочих нагрузок пакетной службы.
 ms.topic: article
 ms.date: 08/28/2019
-ms.openlocfilehash: 45f721dbdf11e0a6f58da71c644acf687dfadd49
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1a26aaecc5da0ef348b720919b04d86f8fcfbc70
+ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82116525"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82743575"
 ---
 # <a name="use-the-shared-image-gallery-to-create-a-custom-pool"></a>Создание пользовательского пула с помощью коллекции общих образов
 
@@ -130,6 +130,71 @@ private static void CreateBatchPool(BatchClient batchClient, VirtualMachineConfi
 }
 ```
 
+## <a name="create-a-pool-from-a-shared-image-using-python"></a>Создание пула из общего образа с помощью Python
+
+Вы также можете создать пул из общего образа с помощью пакета SDK для Python: 
+
+```python
+# Import the required modules from the
+# Azure Batch Client Library for Python
+import azure.batch as batch
+import azure.batch.models as batchmodels
+from azure.common.credentials import ServicePrincipalCredentials
+
+# Specify Batch account and service principal account credentials
+account = "{batch-account-name}"
+batch_url = "{batch-account-url}"
+ad_client_id = "{sp-client-id}"
+ad_tenant = "{tenant-id}"
+ad_secret = "{sp-secret}"
+
+# Pool settings
+pool_id = "LinuxNodesSamplePoolPython"
+vm_size = "STANDARD_D2_V3"
+node_count = 1
+
+# Initialize the Batch client with Azure AD authentication
+creds = ServicePrincipalCredentials(
+    client_id=ad_client_id,
+    secret=ad_secret,
+    tenant=ad_tenant,
+    resource="https://batch.core.windows.net/"
+)
+client = batch.BatchServiceClient(creds, batch_url)
+
+# Configure the start task for the pool
+start_task = batchmodels.StartTask(
+    command_line="printenv AZ_BATCH_NODE_STARTUP_DIR"
+)
+start_task.run_elevated = True
+
+# Create an ImageReference which specifies the image from
+# Shared Image Gallery to install on the nodes.
+ir = batchmodels.ImageReference(
+    virtual_machine_image_id="/subscriptions/{sub id}/resourceGroups/{resource group name}/providers/Microsoft.Compute/galleries/{gallery name}/images/{image definition name}/versions/{version id}"
+)
+
+# Create the VirtualMachineConfiguration, specifying
+# the VM image reference and the Batch node agent to
+# be installed on the node.
+vmc = batchmodels.VirtualMachineConfiguration(
+    image_reference=ir,
+    node_agent_sku_id="batch.node.ubuntu 18.04"
+)
+
+# Create the unbound pool
+new_pool = batchmodels.PoolAddParameter(
+    id=pool_id,
+    vm_size=vm_size,
+    target_dedicated_nodes=node_count,
+    virtual_machine_configuration=vmc,
+    start_task=start_task
+)
+
+# Create pool in the Batch service
+client.pool.add(new_pool)
+```
+
 ## <a name="create-a-pool-from-a-shared-image-using-the-azure-portal"></a>Создание пула из общего образа с помощью портал Azure
 
 Чтобы создать пул из общего образа в портал Azure, выполните следующие действия.
@@ -139,7 +204,7 @@ private static void CreateBatchPool(BatchClient batchClient, VirtualMachineConfi
 1. Выберите **Пулы** , а затем — **Добавить** , чтобы создать новый пул.
 1. В разделе **тип образа** выберите **Коллекция общих образов**.
 1. Выполните остальные разделы со сведениями об управляемом образе.
-1. Нажмите кнопку **OK**.
+1. Щелкните **ОК**.
 
 ![Создайте пул из общего образа с помощью портала.](media/batch-sig-images/create-custom-pool.png)
 
@@ -151,6 +216,6 @@ private static void CreateBatchPool(BatchClient batchClient, VirtualMachineConfi
 
 * **Время ожидания изменения размера.** Если в пуле содержится фиксированное число узлов (если он не выполняет Автомасштабирование), увеличьте `resizeTimeout` свойство пула в зависимости от размера пула. Для каждых 1000 виртуальных машин рекомендуемое время ожидания изменения размера составляет не менее 15 минут. Например, рекомендуемое время ожидания изменения размера для пула с 2000 виртуальными машинами составляет не менее 30 минут.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Исчерпывающий обзор пакетной службы см. в статье [Разработка решений для крупномасштабных параллельных вычислений с использованием пакетной службы](batch-api-basics.md).
