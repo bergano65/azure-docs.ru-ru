@@ -1,6 +1,6 @@
 ---
-title: Общие сведения об определениях ролей в RBAC для ресурсов Azure | Документация Майкрософт
-description: Сведения об определениях ролей при управлении доступом на основе ролей (RBAC) для точного управления доступом к ресурсам Azure.
+title: Общие сведения об определениях ролей Azure в Azure RBAC
+description: Узнайте о определениях ролей Azure в контроле доступа на основе ролей Azure (Azure RBAC) для точного управления доступом к ресурсам Azure.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -15,16 +15,16 @@ ms.date: 04/17/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
-ms.openlocfilehash: 777ea7cc29679a3819e94d39913f167ea1cb3453
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 03edb8e5c58f0fe746921d50ab3f657f291d16da
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81641381"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82735544"
 ---
-# <a name="understand-role-definitions-for-azure-resources"></a>Общие сведения об определениях ролей для ресурсов Azure
+# <a name="understand-azure-role-definitions"></a>Общие сведения о определениях ролей Azure
 
-Чтобы составить представление о роли или создать собственную [пользовательскую роль для ресурсов Azure](custom-roles.md), полезно узнать, как определяются роли. В этой статье подробно описаны определения ролей и приведены примеры.
+Если вы пытаетесь понять, как работает роль Azure, или вы создаете собственную [настраиваемую роль Azure](custom-roles.md), то полезно понимать, как определяются роли. В этой статье подробно описаны определения ролей и приведены примеры.
 
 ## <a name="role-definition"></a>Определение роли
 
@@ -170,11 +170,11 @@ AssignableScopes []
 
 Дополнительные сведения об управлении и безопасности плоскости данных для хранилища см. в [руководстве по безопасности службы хранилища Azure](../storage/blobs/security-recommendations.md).
 
-### <a name="what-tools-support-using-rbac-for-data-operations"></a>Какие средства поддерживают использование RBAC для операций с данными?
+### <a name="what-tools-support-using-azure-roles-for-data-operations"></a>Какие средства поддерживают использование ролей Azure для операций с данными?
 
 Для просмотра операций с данными и работы с ними необходимо иметь правильные версии средств или пакетов SDK:
 
-| Инструмент  | Версия  |
+| Инструмент  | Version  |
 |---------|---------|
 | [Azure PowerShell](/powershell/azure/install-az-ps) | 1.1.0 или более поздней версии |
 | [Azure CLI](/cli/azure/install-azure-cli) | 2.0.30 или более поздней версии |
@@ -245,10 +245,10 @@ AssignableScopes []
 > | Группа управления и подписка | `"/providers/Microsoft.Management/managementGroups/{groupId1}", /subscriptions/{subscriptionId1}",` |
 > | Все области (применимо только к встроенным ролям) | `"/"` |
 
-Для дополнительных сведений об `AssignableScopes` для пользовательских ролей см. статью [Пользовательские роли в Azure](custom-roles.md).
+Дополнительные сведения о `AssignableScopes` пользовательских ролях см. в статье [пользовательские роли Azure](custom-roles.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
-* [Встроенные роли управления доступом на основе ролей в Azure](built-in-roles.md)
-* [Пользовательские роли для ресурсов Azure](custom-roles.md)
+* [Встроенные роли Azure](built-in-roles.md)
+* [Пользовательские роли Azure](custom-roles.md)
 * [Операции поставщика ресурсов Azure Resource Manager](resource-provider-operations.md)

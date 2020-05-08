@@ -34,7 +34,7 @@ ms.locfileid: "82734813"
 
 [!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для создания пользовательских ролей в Azure требуются:
 
@@ -399,7 +399,7 @@ Are you sure you want to remove role definition with name 'Virtual Machine Opera
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Руководство. Создание настраиваемой роли Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
 - [Пользовательские роли Azure](custom-roles.md)
