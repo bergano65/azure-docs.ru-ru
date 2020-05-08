@@ -7,18 +7,18 @@ manager: carmonm
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 10/23/2019
+ms.date: 04/30/2020
 ms.author: mbullwin
-ms.openlocfilehash: 2c2d70d1c945e700a3fa42609f8aa0e1607ba77c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: d62fa84711bd8cba57d07f3464c21344bc5c32c6
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77658410"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82731749"
 ---
 # <a name="programmatically-manage-workbooks"></a>Программное управление книгами
 
-Владельцы ресурсов имеют возможность программно создавать книги и управлять ими с помощью шаблонов диспетчер ресурсов. 
+Владельцы ресурсов имеют возможность программно создавать книги и управлять ими с помощью шаблонов диспетчер ресурсов.
 
 Это может быть полезно в таких сценариях, как:
 * Развертывание отчетов по анализу организационной или доменной аналитики вместе с развертываниями ресурсов. Например, вы можете развертывать связанные с конкретной организацией книги производительности и сбоев для новых приложений или виртуальных машин.
@@ -26,7 +26,98 @@ ms.locfileid: "77658410"
 
 Книга будет создана в нужной подгруппе или группе ресурсов с содержимым, указанным в шаблонах диспетчер ресурсов.
 
-## <a name="azure-resource-manager-template-for-deploying-workbooks"></a>Шаблон Azure Resource Manager для развертывания книг
+Существует два типа ресурсов книги, которыми можно управлять программно:
+* [Шаблоны книг](#azure-resource-manager-template-for-deploying-a-workbook-template)
+* [Экземпляры книги](#azure-resource-manager-template-for-deploying-a-workbook-instance)
+
+## <a name="azure-resource-manager-template-for-deploying-a-workbook-template"></a>Шаблон Azure Resource Manager для развертывания шаблона книги
+
+1. Откройте книгу, которую требуется развернуть программно.
+2. Переключите книгу в режим редактирования, щелкнув элемент панели инструментов _изменить_ .
+3. Откройте _Расширенный редактор_ с помощью _</>_ кнопки на панели инструментов.
+4. Убедитесь, что вы используете вкладку _шаблон коллекции_ .
+
+    ![Вкладка шаблона коллекции](./media/workbooks-automate/gallery-template.png)
+1. Скопируйте JSON в шаблон коллекции в буфер обмена.
+2. Ниже приведен пример шаблона Azure Resource Manager, который развертывает шаблон книги для Azure Monitor коллекции книг. Вставьте код JSON, скопированный вместо `<PASTE-COPIED-WORKBOOK_TEMPLATE_HERE>`. Справочный шаблон Azure Resource Manager, создающий шаблон книги, можно найти [здесь](https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Documentation/ARM-template-for-creating-workbook-template).
+
+    ```json
+          {
+        "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+            "resourceName": {
+                "type": "string",
+                "defaultValue": "my-workbook-template",
+                "metadata": {
+                    "description": "The unique name for this workbook template instance"
+                }
+            }
+        },
+        "resources": [
+            {
+                "name": "[parameters('resourceName')]",
+                "type": "microsoft.insights/workbooktemplates",
+                "location": "[resourceGroup().location]",
+                "apiVersion": "2019-10-17-preview",
+                "dependsOn": [],
+                "properties": {
+                    "galleries": [
+                        {
+                            "name": "A Workbook Template",
+                            "category": "Deployed Templates",
+                            "order": 100,
+                            "type": "workbook",
+                            "resourceType": "Azure Monitor"
+                        }
+                    ],
+                    "templateData": <PASTE-COPIED-WORKBOOK_TEMPLATE_HERE>
+                }
+            }
+        ]
+    }
+    ```
+1. В `galleries` объекте заполните ключи `name` и `category` значениями. Дополнительные сведения о [параметрах](#parameters) см. в следующем разделе.
+2. Разверните этот шаблон Azure Resource Manager с помощью [портал Azure](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-portal#deploy-resources-from-custom-template), [интерфейса командной строки](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-cli), [PowerShell](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-powershell)и т. д.
+3. Откройте портал Azure и перейдите к коллекции книг, выбранной в шаблоне Azure Resource Manager. В примере шаблона перейдите к коллекции книг Azure Monitor:
+    1. Откройте портал Azure и перейдите к Azure Monitor
+    2. Открыть `Workbooks` из оглавления
+    3. Найдите шаблон в коллекции в разделе Категория `Deployed Templates` (он будет одним из фиолетовых элементов).
+
+### <a name="parameters"></a>Параметры
+
+|Параметры                |Объяснение                                                                                             |
+|:-------------------------|:-------------------------------------------------------------------------------------------------------|
+| `name`                   | Имя ресурса шаблона книги в Azure Resource Manager.                                  |
+|`type`                    | Всегда Microsoft. Insights/воркбуктемплатес                                                            |
+| `location`               | Расположение Azure, в котором будет создана книга.                                               |
+| `apiVersion`             | Предварительная версия 2019-10-17                                                                                     |
+| `type`                   | Всегда Microsoft. Insights/воркбуктемплатес                                                            |
+| `galleries`              | Набор коллекций для отображения этого шаблона книги в.                                                |
+| `gallery.name`           | Понятное имя шаблона книги в коллекции.                                             |
+| `gallery.category`       | Группа в коллекции, в которой размещается шаблон.                                                     |
+| `gallery.order`          | Число, которое определяет порядок отображения шаблона в категории в коллекции. Более низкий порядок подразумевает более высокий приоритет. |
+| `gallery.resourceType`   | Тип ресурса, соответствующий коллекции. Обычно это строка типа ресурса, соответствующая ресурсу (например, Microsoft. operationalinsights/workspaces). |
+|`gallery.type`            | Этот ключ, называемый типом книги, является уникальным ключом, который отличает галерею от типа ресурса. Application Insights, например, имеют типы `workbook` и `tsg` соответствуют различным галереям книг. |
+
+### <a name="galleries"></a>Коллекции
+
+| Коллекции                                        | Тип ресурса                                      | Тип книги |
+| :--------------------------------------------- |:---------------------------------------------------|:--------------|
+| Книги в Azure Monitor                     | `Azure Monitor`                                    | `workbook`    |
+| Аналитика VM в Azure Monitor                   | `Azure Monitor`                                    | `vm-insights` |
+| Книги в рабочей области log Analytics           | `microsoft.operationalinsights/workspaces`         | `workbook`    |
+| Книги в Application Insights              | `microsoft.insights/component`                     | `workbook`    |
+| Руководства по устранению неполадок в Application Insights | `microsoft.insights/component`                     | `tsg`         |
+| Использование в Application Insights                  | `microsoft.insights/component`                     | `usage`       |
+| Книги в службе Kubernetes                | `Microsoft.ContainerService/managedClusters`       | `workbook`    |
+| Книги в группах ресурсов                   | `microsoft.resources/subscriptions/resourcegroups` | `workbook`    |
+| Книги в Azure Active Directory            | `microsoft.aadiam/tenant`                          | `workbook`    |
+| Аналитика ВМ на виртуальных машинах                | `microsoft.compute/virtualmachines`                | `insights`    |
+| Аналитика ВМ в масштабируемых наборах виртуальных машин                   | `microsoft.compute/virtualmachinescalesets`        | `insights`    |
+
+## <a name="azure-resource-manager-template-for-deploying-a-workbook-instance"></a>Шаблон Azure Resource Manager для развертывания экземпляра книги
+
 1. Откройте книгу, которую требуется развернуть программно.
 2. Переключите книгу в режим редактирования, щелкнув элемент панели инструментов _изменить_ .
 3. Откройте _Расширенный редактор_ с помощью _</>_ кнопки на панели инструментов.
@@ -121,7 +212,6 @@ ms.locfileid: "77658410"
 ### <a name="limitations"></a>Ограничения
 По техническим причинам этот механизм нельзя использовать для создания экземпляров книг в коллекции _книг_ Application Insights. Мы работаем над устранением этого ограничения. В то же время для развертывания Application Insights связанных книг рекомендуется использовать коллекцию руководств по устранению `tsg`неполадок (воркбуктипе:).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как используются книги для создания новых [Azure Monitor для работы с хранилищем](../insights/storage-insights-overview.md).
-

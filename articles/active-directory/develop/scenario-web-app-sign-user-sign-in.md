@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 0926f41fb030e27ab8be54a2672ff9ed20e15206
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: df02c7d2ace6c58d86f4044607eca386f1790e1d
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82181585"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82734320"
 ---
 # <a name="web-app-that-signs-in-users-sign-in-and-sign-out"></a>Веб-приложение, которое входит в систему пользователей: вход и выход
 
@@ -74,7 +74,7 @@ else
 
 # <a name="java"></a>[Java](#tab/java)
 
-В нашем кратком руководстве по Java кнопка входа находится в файле [Main/Resources/Templates/index.HTML](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/master/src/main/resources/templates/index.html) .
+В нашем кратком руководстве по Java кнопка входа находится в файле [Main/Resources/Templates/index.HTML](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/master/msal-java-webapp-sample/src/main/resources/templates/index.html) .
 
 ```html
 <!DOCTYPE html>
@@ -430,7 +430,7 @@ public class AccountController : Controller
 
 Если вы хотите узнать больше о выходе, прочитайте документацию по протоколу, доступную по адресу [Open ID Connect](./v2-protocols-oidc.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Перенос в рабочую среду](scenario-web-app-sign-user-production.md)
