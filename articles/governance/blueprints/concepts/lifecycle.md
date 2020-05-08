@@ -1,14 +1,14 @@
 ---
 title: Общие сведения о жизненном цикле схемы
 description: Узнайте о жизненном цикле, который проходит определение схемы, и сведения о каждом этапе, включая обновление и удаление назначений в схеме.
-ms.date: 07/30/2019
+ms.date: 05/06/2020
 ms.topic: conceptual
-ms.openlocfilehash: 46da42ec97f16af91ef8e41362a085d466bbb887
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: dc024c0e6643420d26bdc92e47fabe647c55ae7b
+ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80677374"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82864034"
 ---
 # <a name="understand-the-lifecycle-of-an-azure-blueprint"></a>Общие сведения о жизненном цикле схемы Azure Blueprints
 
@@ -104,7 +104,7 @@ ms.locfileid: "80677374"
 > [!NOTE]
 > Все ресурсы, развернутые с помощью назначения схемы, остаются на месте, но больше не защищаются с помощью чертежей Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как использовать [статические и динамические параметры](parameters.md).
 - Научитесь настраивать [последовательность схемы](sequencing-order.md).

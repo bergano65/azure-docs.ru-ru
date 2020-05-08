@@ -4,12 +4,12 @@ description: Узнайте, как создать несколько пулов
 services: container-service
 ms.topic: article
 ms.date: 04/08/2020
-ms.openlocfilehash: f948c115b86abc532a121c68fa7a148ff15caae9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bf7e767f1a7b0c657c744c96b308160393e3f326
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81259091"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82610927"
 ---
 # <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Создание нескольких пулов узлов для кластера в службе Kubernetes Azure (AKS) и управление ими
 
@@ -20,7 +20,7 @@ ms.locfileid: "81259091"
 
 В этой статье показано, как создать несколько пулов узлов и управлять ими в кластере AKS.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Требуется Azure CLI версии 2.2.0 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
@@ -722,22 +722,65 @@ az group deployment create \
 
 Обновление кластера AKS может занять несколько минут в зависимости от параметров пула узлов и операций, определенных в шаблоне диспетчер ресурсов.
 
-## <a name="assign-a-public-ip-per-node-for-a-node-pool-preview"></a>Назначение общедоступного IP-адреса для каждого узла для пула узлов (Предварительная версия)
+## <a name="assign-a-public-ip-per-node-for-your-node-pools-preview"></a>Назначение общедоступного IP-адреса каждому узлу для пулов узлов (Предварительная версия)
 
 > [!WARNING]
-> При предварительном просмотре назначения общедоступного IP-адреса на узел он не может использоваться с *Load Balancer (цен. Категория "Стандартный") SKU в AKS* из-за возможных правил подсистемы балансировки нагрузки, конфликтующих с подготовкой виртуальной машины. В результате этого ограничения Пулы агентов Windows не поддерживаются в этой предварительной версии функции. В предварительной версии необходимо использовать *базовый Load Balancer SKU* , если необходимо назначить общедоступный IP-адрес для каждого узла.
+> Необходимо установить расширение CLI Preview 0.4.43 или более поздней версии для использования функции общедоступного IP-адреса на узел.
 
-Узлы AKS не нуждаются в собственных общедоступных IP-адресах для обмена данными. Однако сценарии могут потребовать, чтобы узлы в пуле узлов получали собственные выделенные общедоступные IP-адреса. Распространенный сценарий — для игровых рабочих нагрузок, в которых консоль должна установить прямое подключение к облачной виртуальной машине для снижения числа прыжков. Этот сценарий можно получить на AKS, зарегистрировав его в предварительной версии, общедоступный IP-адрес узла (Предварительная версия).
+Узлы AKS не нуждаются в собственных общедоступных IP-адресах для обмена данными. Однако сценарии могут потребовать, чтобы узлы в пуле узлов получали собственные выделенные общедоступные IP-адреса. Типичный сценарий — для игровых рабочих нагрузок, в которых консоль должна установить прямое подключение к облачной виртуальной машине для снижения числа прыжков. Этот сценарий можно получить на AKS, зарегистрировав его в предварительной версии, общедоступный IP-адрес узла (Предварительная версия).
 
-Зарегистрируйтесь для компонента общедоступного IP-адреса узла, выполнив следующую команду Azure CLI.
+Чтобы установить и обновить последнюю версию расширения AKS-Preview, используйте следующие Azure CLI команды:
+
+```azurecli
+az extension add --name aks-preview
+az extension update --name aks-preview
+az extension list
+```
+
+Зарегистрируйтесь для компонента общедоступного IP-адреса узла с помощью следующей команды Azure CLI:
 
 ```azurecli-interactive
 az feature register --name NodePublicIPPreview --namespace Microsoft.ContainerService
 ```
+Регистрация функции может занять несколько минут.  Состояние можно проверить с помощью следующей команды:
 
-После успешной регистрации разверните шаблон Azure Resource Manager, следуя тем же инструкциям, что и [выше](#manage-node-pools-using-a-resource-manager-template) , и добавьте логическое `enableNodePublicIP` свойство в ажентпулпрофилес. Установите значение `true` по умолчанию, `false` если оно не указано. 
+```azurecli-interactive
+ az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/NodePublicIPPreview')].{Name:name,State:properties.state}"
+```
 
-Это свойство является свойством только для времени создания и требует минимальной версии API 2019-06-01. Это можно применить к пулам узлов Linux и Windows.
+После успешной регистрации создайте новую группу ресурсов.
+
+```azurecli-interactive
+az group create --name myResourceGroup2 --location eastus
+```
+
+Создайте новый кластер AKS и подключите общедоступный IP-адрес для узлов. Каждый узел в пуле узлов получает уникальный общедоступный IP-адрес. Это можно проверить, просмотрев экземпляры масштабируемых наборов виртуальных машин.
+
+```azurecli-interactive
+az aks create -g MyResourceGroup2 -n MyManagedCluster -l eastus  --enable-node-public-ip
+```
+
+Для существующих кластеров AKS можно также добавить новый пул узлов и подключить общедоступный IP-адрес для узлов.
+
+```azurecli-interactive
+az aks nodepool add -g MyResourceGroup2 --cluster-name MyManagedCluster -n nodepool2 --enable-node-public-ip
+```
+
+> [!Important]
+> На этапе предварительной версии служба метаданных экземпляров Azure сейчас не поддерживает получение общедоступных IP-адресов для номера SKU виртуальной машины уровня "Стандартный". Из-за этого ограничения нельзя использовать команды kubectl для показа общедоступных IP-адресов, назначенных узлам. Однако IP-адреса назначаются и функционируют как задуманные. Общедоступные IP-адреса для узлов присоединяются к экземплярам в масштабируемом наборе виртуальных машин.
+
+Общедоступные IP-адреса для узлов можно узнать различными способами.
+
+* Используйте команду Azure CLI [AZ vmss List-instance-public-IP][az-list-ips]
+* Используйте [команды PowerShell или bash][vmss-commands]. 
+* Общедоступные IP-адреса можно также просмотреть в портал Azure, просмотрев экземпляры в масштабируемом наборе виртуальных машин.
+
+> [!Important]
+> [Группа ресурсов узла][node-resource-group] содержит узлы и их общедоступные IP-адреса. Используйте группу ресурсов Node при выполнении команд, чтобы найти общедоступные IP-адреса для узлов.
+
+```azurecli
+az vmss list-instance-public-ips -g MC_MyResourceGroup2_MyManagedCluster_eastus -n YourVirtualMachineScaleSetName
+```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -755,7 +798,13 @@ az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster --name gpu
 az group delete --name myResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+Кроме того, можно удалить дополнительный кластер, созданный для сценария общедоступного IP-адреса для пулов узлов.
+
+```azurecli-interactive
+az group delete --name myResourceGroup2 --yes --no-wait
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [пулах системных узлов][use-system-pool].
 
@@ -795,3 +844,7 @@ az group delete --name myResourceGroup --yes --no-wait
 [taints-tolerations]: operator-best-practices-advanced-scheduler.md#provide-dedicated-nodes-using-taints-and-tolerations
 [vm-sizes]: ../virtual-machines/linux/sizes.md
 [use-system-pool]: use-system-pools.md
+[ip-limitations]: ../virtual-network/virtual-network-ip-addresses-overview-arm#standard
+[node-resource-group]: faq.md#why-are-two-resource-groups-created-with-aks
+[vmss-commands]: ../virtual-machine-scale-sets/virtual-machine-scale-sets-networking.md#public-ipv4-per-virtual-machine
+[az-list-ips]: /cli/azure/vmss?view=azure-cli-latest.md#az-vmss-list-instance-public-ips

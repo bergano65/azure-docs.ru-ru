@@ -9,12 +9,12 @@ ms.date: 12/20/2019
 ms.author: normesta
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 69983502fb7d099f474fb1c4c084f5d381a173e9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8dc3c629830019a6c207c18f1783559e89512172
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76314765"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82610978"
 ---
 # <a name="end-to-end-troubleshooting-using-azure-storage-metrics-and-logging-azcopy-and-message-analyzer"></a>Комплексный поиск и устранение неполадок с помощью метрик службы хранилища Azure и ведения журнала, AzCopy и анализатора сообщений
 
@@ -161,7 +161,7 @@ AzCopy можно скачать на странице [Загрузки Azure](
 
 ### <a name="download-and-install-message-analyzer-and-the-azure-storage-assets"></a>Скачивание и установка анализатора сообщений и ресурсов службы хранилища Azure
 
-1. Загрузите [анализатор сообщений](https://www.microsoft.com/download/details.aspx?id=44226) из Центра загрузки Майкрософт и запустите программу установки.
+1. [Анализатор сообщений](https://docs.microsoft.com/message-analyzer/installing-and-upgrading-message-analyzer)загрузки.
 2. Запустите анализатор сообщений.
 3. В меню **Инструменты** выберите **Диспетчер ресурсов**. В окне **Диспетчер ресурсов** выберите **Загрузки** и отфильтруйте данные для **хранилища Azure**. Вы увидите ресурсы хранилища Azure, как показано на рисунке ниже.
 4. Щелкните **Синхронизировать все отображаемые элементы** для установки ресурсов хранилища Azure. Доступные ресурсы включают:
@@ -308,28 +308,28 @@ AzCopy можно скачать на странице [Загрузки Azure](
 
 | Для изучения... | Использование выражения фильтра | Выражение применяется к журналу (клиента, сервера, сети, всех) |
 | --- | --- | --- |
-| Непредвиденные задержки при доставке сообщений в очередь |AzureStorageClientDotNetV4.Description содержит "Повторное выполнение неудавшейся операции". |"Клиент"; |
+| Непредвиденные задержки при доставке сообщений в очередь |AzureStorageClientDotNetV4.Description содержит "Повторное выполнение неудавшейся операции". |Клиент |
 | Увеличение HTTP в PercentThrottlingError |HTTP.Response.StatusCode == 500 &#124;&#124; HTTP.Response.StatusCode == 503 |Сеть |
 | Увеличение PercentTimeoutError |HTTP.Response.StatusCode == 500 |Сеть |
-| Увеличение PercentTimeoutError (все) |*StatusCode == 500 |Все |
-| Увеличение PercentNetworkError |AzureStorageClientDotNetV4.EventLogEntry.Level < 2 |"Клиент"; |
+| Увеличение PercentTimeoutError (все) |*StatusCode == 500 |All |
+| Увеличение PercentNetworkError |AzureStorageClientDotNetV4.EventLogEntry.Level < 2 |Клиент |
 | Сообщения HTTP 403 (запрещено) |HTTP.Response.StatusCode == 403 |Сеть |
 | Сообщения HTTP 404 (не найдено) |HTTP.Response.StatusCode == 404 |Сеть |
-| 404 (все) |*StatusCode == 404 |Все |
+| 404 (все) |*StatusCode == 404 |All |
 | Общие проблемы авторизации подписи доступа (SAS) |AzureStorageLog.RequestStatus == "SASAuthorizationError" |Сеть |
 | Сообщения HTTP 409 (конфликт) |HTTP.Response.StatusCode == 409 |Сеть |
-| 409 (все) |*StatusCode == 409 |Все |
-| Низкие значения PercentSuccess или присутствие операций с состоянием транзакции ClientOtherErrors в записях журналов аналитики |AzureStorageLog.RequestStatus == "ClientOtherError" |Server (Сервер) |
-| Предупреждение Nagle |((AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS) > (AzureStorageLog.ServerLatencyMS * 1.5)) and (AzureStorageLog.RequestPacketSize <1460) and (AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS >= 200) |Server (Сервер) |
+| 409 (все) |*StatusCode == 409 |All |
+| Низкие значения PercentSuccess или присутствие операций с состоянием транзакции ClientOtherErrors в записях журналов аналитики |AzureStorageLog.RequestStatus == "ClientOtherError" |Сервер |
+| Предупреждение Nagle |((AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS) > (AzureStorageLog.ServerLatencyMS * 1.5)) and (AzureStorageLog.RequestPacketSize <1460) and (AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS >= 200) |Сервер |
 | Диапазон времени в журналах сервера и сети |#Timestamp   >= 2014-10-20T16:36:38 and #Timestamp <= 2014-10-20T16:36:39 |Сервер, сеть |
-| Диапазон времени в журналах сервера |AzureStorageLog.Timestamp >= 2014-10-20T16:36:38 and AzureStorageLog.Timestamp <= 2014-10-20T16:36:39 |Server (Сервер) |
+| Диапазон времени в журналах сервера |AzureStorageLog.Timestamp >= 2014-10-20T16:36:38 and AzureStorageLog.Timestamp <= 2014-10-20T16:36:39 |Сервер |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о сквозных сценариях устранения ошибок в службы хранилище Azure см. следующие ресурсы:
 
 * [Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure](storage-monitoring-diagnosing-troubleshooting.md)
-* [Аналитика Службы хранилища](https://msdn.microsoft.com/library/azure/hh343270.aspx)
+* [аналитики хранилища](https://msdn.microsoft.com/library/azure/hh343270.aspx)
 * [Мониторинг учетной записи хранения на портале Azure](storage-monitor-storage-account.md)
 * [Приступая к работе со служебной программой командной строки AzCopy](storage-use-azcopy.md)
 * [Руководство по работе с анализатором сообщений (Майкрософт)](https://technet.microsoft.com/library/jj649776.aspx)

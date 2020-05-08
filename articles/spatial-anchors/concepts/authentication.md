@@ -8,12 +8,13 @@ ms.author: pmorgan
 ms.date: 05/28/2019
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: df27a77c202951a6c789703f12712e75bd8b5906
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: has-adal-ref
+ms.openlocfilehash: c2800dc361eb274eeef706556e09731da079ccab
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77656995"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82611761"
 ---
 # <a name="authentication-and-authorization-to-azure-spatial-anchors"></a>Проверка подлинности и авторизация для пространственных привязок Azure
 
@@ -259,7 +260,7 @@ configuration.AccessToken(LR"(MyAccessToken)");
 - **Участник учетной записи пространственных привязок**. приложения или пользователи с этой ролью могут создавать пространственные привязки, запрашивать их, но не могут удалять их.
 - **Средство чтения учетных записей пространственных привязок**. приложения или пользователи с этой ролью могут запрашивать только пространственные привязки, но не могут создавать новые, удалять существующие или обновлять метаданные на пространственных привязках. Обычно это используется для приложений, в которых некоторые пользователи изменяют среду, а другие могут отзывать только те привязки, которые были ранее помещены в эту среду.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Создайте свое первое приложение с пространственными привязками Azure.
 
