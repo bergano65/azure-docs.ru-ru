@@ -11,19 +11,16 @@ ms.topic: article
 ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/27/2018
+ms.date: 05/05/2020
 ms.author: allensu
-ms.openlocfilehash: 0a21af683d9fa7849d3e96c545983c9f40a8d4c6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7563eb4d22048021886925f6864e3616bed83a75
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76935320"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82858762"
 ---
 # <a name="azure-monitor-logs-for-public-basic-load-balancer"></a>Журналы Azure Monitor для общедоступной службы Load Balancer (цен. категория "Базовый")
-
->[!IMPORTANT]
->Azure Load Balancer поддерживает два типа: категории "Базовый" и "Стандартный". В этой статье рассматривается Azure Load Balancer категории "Базовый". Дополнительные сведения о Load Balancer ценовой категории "Стандартный" см. в разделе [Обзор Azure Load Balancer уровня "Стандартный"](load-balancer-standard-overview.md), в котором предоставлены данные телеметрии с помощью многомерных метрик в Azure Monitor.
 
 В Azure можно использовать различные виды журналов для управления Load Balancer ценовой категории "Базовый" и устранения возникающих в них неполадок. Доступ к некоторым из этих журналов можно получить через портал. Журналы можно передавать в концентратор событий или в рабочую область Log Analytics. Все журналы можно извлечь из хранилища BLOB-объектов Azure и просматривать в различных средствах, таких как Excel и Power BI.  В списке ниже приведены дополнительные сведения о различных типах журналов.
 

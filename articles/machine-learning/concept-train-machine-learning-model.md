@@ -1,5 +1,5 @@
 ---
-title: Методы обучения модели
+title: Построение & обучение моделей
 titleSuffix: Azure Machine Learning
 description: Узнайте о различных методах, которые можно использовать для обучения модели с помощью Машинное обучение Azure. Средства оценки предоставляют простой способ работы с популярными платформами, такими как Scikit-учиться, TensorFlow, keras, PyTorch и формирователь цепочки. Машинное обучение Конвейеры позволяют легко планировать автоматические запуски, использовать разнородные вычислительные среды и повторно использовать части рабочего процесса. Конфигурации запуска обеспечивают детальный контроль над целевыми объектами вычислений, на которых выполняется процесс обучения.
 services: machine-learning
@@ -9,12 +9,12 @@ ms.author: larryfr
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 03/05/2020
-ms.openlocfilehash: 68ad9cc47d68f7bc3ae952f7e458781cdc1c4ab2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c75c41012928b7bffb61a00a73f314e4c372b154
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79129771"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792349"
 ---
 # <a name="train-models-with-azure-machine-learning"></a>Обучение моделей с помощью Машинного обучения Azure
 
@@ -119,6 +119,6 @@ CLI машинного обучения является расширением 
 * [Использование расширения CLI для Машинное обучение Azure](reference-azure-machine-learning-cli.md)
 * [Млопс в Azure](https://github.com/microsoft/MLOps)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [настроить среды для обучения](how-to-set-up-training-targets.md).

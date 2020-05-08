@@ -12,12 +12,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: carlrab, vanto
 ms.date: 03/09/2020
-ms.openlocfilehash: b4e7d827536245a22d168c7d9923c2e5b82830b0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 112dbea4ef54c5923c586b87be9770c2e91befd2
+ms.sourcegitcommit: 0fda81f271f1a668ed28c55dcc2d0ba2bb417edd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82111799"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82901433"
 ---
 # <a name="azure-sql-connectivity-architecture"></a>Архитектура подключения к SQL Azure
 > [!NOTE]
@@ -100,7 +100,7 @@ ms.locfileid: "82111799"
 | Центральная Индия        | 104.211.96.159     |
 | Южная Индия          | 104.211.224.146    |
 | Западная Индия           | 104.211.160.80     |
-| Восточная Япония           | 13.78.61.196, 40.79.184.8, 13.78.106.224, 191.237.240.43, 40.79.192.5 | 
+| Восточная Япония           | 13.78.61.196, 40.79.184.8, 191.237.240.43, 40.79.192.5 | 
 | Западная Япония           | 104.214.148.156, 40.74.100.192, 191.238.68.11, 40.74.97.10 | 
 | Республика Корея, центральный регион        | 52.231.32.42       |
 | Республика Корея, южный регион          | 52.231.200.86      |
@@ -124,7 +124,7 @@ ms.locfileid: "82111799"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о том, как изменить политику подключения Базы данных SQL Azure для сервера Базы данных SQL Azure, см. в статье о команде [conn-policy](https://docs.microsoft.com/cli/azure/sql/server/conn-policy).
 - Сведения о поведении подключения к базе данных SQL Azure клиентов, использующих ADO.NET 4.5 или более поздней версии, см. в разделе [Порты для ADO.NET 4.5, отличные от порта 1433](sql-database-develop-direct-route-ports-adonet-v12.md).
