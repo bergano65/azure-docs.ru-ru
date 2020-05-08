@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
-ms.date: 04/23/2020
-ms.openlocfilehash: 6ab3db36ac4d743c8c03b57075d3c4d5f6c85d67
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 04/30/2020
+ms.openlocfilehash: e1ebc0257082ecfacc708352ba0a68e38e10717f
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82115029"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82607798"
 ---
 # <a name="reference-guide-to-using-functions-in-expressions-for-azure-logic-apps-and-power-automate"></a>Справочное руководство по использованию функций в выражениях для Azure Logic Apps и автоматизации Powering
 
@@ -77,10 +77,10 @@ ms.locfileid: "82115029"
 
 | Строковая функция | Задача |
 | --------------- | ---- |
-| [сцеплен](../logic-apps/workflow-definition-language-functions-reference.md#concat) | Объединяет две или более строк и возвращает объединенную строку. |
+| [concat](../logic-apps/workflow-definition-language-functions-reference.md#concat) | Объединяет две или более строк и возвращает объединенную строку. |
 | [endsWith](../logic-apps/workflow-definition-language-functions-reference.md#endswith) | Проверяет, заканчивается ли строка определенной подстрокой. |
 | [formatNumber](../logic-apps/workflow-definition-language-functions-reference.md#formatNumber) | Возврат числа в виде строки на основе указанного формата |
-| [устройства](../logic-apps/workflow-definition-language-functions-reference.md#guid) | Создает глобально уникальный идентификатор (GUID) в виде строки. |
+| [guid](../logic-apps/workflow-definition-language-functions-reference.md#guid) | Создает глобально уникальный идентификатор (GUID) в виде строки. |
 | [indexOf](../logic-apps/workflow-definition-language-functions-reference.md#indexof) | Возвращает начальную позицию подстроки. |
 | [lastIndexOf](../logic-apps/workflow-definition-language-functions-reference.md#lastindexof) | Возвращает начальную позицию последнего вхождения подстроки. |
 | [replace](../logic-apps/workflow-definition-language-functions-reference.md#replace) | Заменяет подстроку указанной строкой и возвращает обновленную строку. |
@@ -101,7 +101,7 @@ ms.locfileid: "82115029"
 | Функция для коллекций | Задача |
 | ------------------- | ---- |
 | [содержащих](../logic-apps/workflow-definition-language-functions-reference.md#contains) | Проверяет наличие определенного элемента в коллекции. |
-| [пустых](../logic-apps/workflow-definition-language-functions-reference.md#empty) | Проверяет, является ли коллекция пустой. |
+| [указано](../logic-apps/workflow-definition-language-functions-reference.md#empty) | Проверяет, является ли коллекция пустой. |
 | [началь](../logic-apps/workflow-definition-language-functions-reference.md#first) | Возвращает первый элемент из коллекции. |
 | [крайне](../logic-apps/workflow-definition-language-functions-reference.md#intersection) | Возвращает коллекцию, которая содержит *только* общие элементы в указанных коллекциях. |
 | [item](../logic-apps/workflow-definition-language-functions-reference.md#item) | При использовании внутри повторяющегося действия в массиве возвращает текущий элемент массива во время текущей итерации действия. |
@@ -110,7 +110,7 @@ ms.locfileid: "82115029"
 | [length](../logic-apps/workflow-definition-language-functions-reference.md#length) | Возвращает число элементов в строке или массиве. |
 | [сразу](../logic-apps/workflow-definition-language-functions-reference.md#skip) | Удаляет элементы из начала коллекции и возвращает *все другие элементы*. |
 | [нимают](../logic-apps/workflow-definition-language-functions-reference.md#take) | Возвращает элементы, расположенные в начале коллекции. |
-| [наборов](../logic-apps/workflow-definition-language-functions-reference.md#union) | Возвращает коллекцию, которая содержит *все* элементы из указанных коллекций. |
+| [union](../logic-apps/workflow-definition-language-functions-reference.md#union) | Возвращает коллекцию, которая содержит *все* элементы из указанных коллекций. |
 |||
 
 <a name="comparison-functions"></a>
@@ -347,7 +347,7 @@ action().outputs.body.<property>
 
 | Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*свойства*> | Нет | Строка | Имя свойства объекта действия, значение которого требуется: **name**, **startTime**, **endTime**, **inputs**, **outputs**, **status**, **code**, **trackingId** и **clientTrackingId**. На портале Azure вы можете найти эти свойства, просмотрев подробности в конкретном журнале выполнения. Дополнительные сведения см. в статье с [действиями запуска рабочего процесса в REST API](https://docs.microsoft.com/rest/api/logic/workflowrunactions/get). |
+| <*свойства*> | нет | Строка | Имя свойства объекта действия, значение которого требуется: **name**, **startTime**, **endTime**, **inputs**, **outputs**, **status**, **code**, **trackingId** и **clientTrackingId**. На портале Azure вы можете найти эти свойства, просмотрев подробности в конкретном журнале выполнения. Дополнительные сведения см. в статье с [действиями запуска рабочего процесса в REST API](https://docs.microsoft.com/rest/api/logic/workflowrunactions/get). |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -485,7 +485,7 @@ actions('<actionName>').outputs.body.<property>
 | Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*actionName*> | Да | Строка | Имя объекта действия, выходные данные которого требуется получить.  |
-| <*свойства*> | Нет | Строка | Имя свойства объекта действия, значение которого требуется: **name**, **startTime**, **endTime**, **inputs**, **outputs**, **status**, **code**, **trackingId** и **clientTrackingId**. На портале Azure вы можете найти эти свойства, просмотрев подробности в конкретном журнале выполнения. Дополнительные сведения см. в статье с [действиями запуска рабочего процесса в REST API](https://docs.microsoft.com/rest/api/logic/workflowrunactions/get). |
+| <*свойства*> | нет | Строка | Имя свойства объекта действия, значение которого требуется: **name**, **startTime**, **endTime**, **inputs**, **outputs**, **status**, **code**, **trackingId** и **clientTrackingId**. На портале Azure вы можете найти эти свойства, просмотрев подробности в конкретном журнале выполнения. Дополнительные сведения см. в статье с [действиями запуска рабочего процесса в REST API](https://docs.microsoft.com/rest/api/logic/workflowrunactions/get). |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -547,7 +547,7 @@ addDays('<timestamp>', <days>, '<format>'?)
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
 | <*недели*> | Да | Целое число | Положительное или отрицательное число дней для добавления |
-| <*формат*> | Нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -555,7 +555,7 @@ addDays('<timestamp>', <days>, '<format>'?)
 | <*Обновлено — метка времени*> | Строка | Метка времени и указанное число дней  |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере к указанной метке времени добавляются 10 дней:
 
@@ -565,7 +565,7 @@ addDays('2018-03-15T13:00:00Z', 10)
 
 Возвращается такой результат: `"2018-03-25T00:00:0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере от указанной метки времени отнимается пять дней:
 
@@ -589,7 +589,7 @@ addHours('<timestamp>', <hours>, '<format>'?)
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
 | <*суток*> | Да | Целое число | Положительное или отрицательное число часов для добавления |
-| <*формат*> | Нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -597,7 +597,7 @@ addHours('<timestamp>', <hours>, '<format>'?)
 | <*Обновлено — метка времени*> | Строка | Метка времени и указанное число часов  |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере к указанной метке времени добавляется 10 часов:
 
@@ -607,7 +607,7 @@ addHours('2018-03-15T00:00:00Z', 10)
 
 Возвращается такой результат: `"2018-03-15T10:00:0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере от указанной метки времени отнимается пять часов:
 
@@ -631,7 +631,7 @@ addMinutes('<timestamp>', <minutes>, '<format>'?)
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
 | <*тезис*> | Да | Целое число | Положительное или отрицательное число минут для добавления |
-| <*формат*> | Нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -639,7 +639,7 @@ addMinutes('<timestamp>', <minutes>, '<format>'?)
 | <*Обновлено — метка времени*> | Строка | Метка времени и указанное число минут |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере к указанной метке времени добавляется 10 минут:
 
@@ -649,7 +649,7 @@ addMinutes('2018-03-15T00:10:00Z', 10)
 
 Возвращается такой результат: `"2018-03-15T00:20:00.0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере от указанной метки времени отнимается пять минут:
 
@@ -700,7 +700,7 @@ addProperty(<object>['<parent-property>'], '<child-property>', <value>)
 | <*updated — Object*> | Объект | Обновленный объект JSON, свойство которого задается |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере `middleName` свойство добавляется в объект JSON, который преобразуется из строки в JSON с помощью функции [JSON ()](#json) . Объект уже содержит свойства `firstName` и. `surName` Функция присваивает указанное значение новому свойству и возвращает обновленный объект:
 
@@ -727,7 +727,7 @@ addProperty(json('{ "firstName": "Sophia", "lastName": "Owen" }'), 'middleName',
 }
 ```
 
-*Пример 2*
+*Пример 2*
 
 В этом примере `middleName` дочернее свойство добавляется `customerName` к существующему свойству в объекте JSON, который преобразуется из строки в JSON с помощью функции [JSON ()](#json) . Функция присваивает указанное значение новому свойству и возвращает обновленный объект:
 
@@ -772,7 +772,7 @@ addSeconds('<timestamp>', <seconds>, '<format>'?)
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
 | <*несколько*> | Да | Целое число | Положительное или отрицательное число секунд для добавления |
-| <*формат*> | Нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -780,7 +780,7 @@ addSeconds('<timestamp>', <seconds>, '<format>'?)
 | <*Обновлено — метка времени*> | Строка | Метка времени и указанное число секунд  |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере к указанной метке времени добавляется 10 секунд:
 
@@ -790,7 +790,7 @@ addSeconds('2018-03-15T00:00:00Z', 10)
 
 Возвращается такой результат: `"2018-03-15T00:00:10.0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере от указанной метки времени отнимается пять секунд:
 
@@ -816,7 +816,7 @@ addToTime('<timestamp>', <interval>, '<timeUnit>', '<format>'?)
 | <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
 | <*пределах*> | Да | Целое число | Число единиц времени для добавления |
 | <*тимеунит*> | Да | Строка | Единицы времени для использования с *интервалом*: "секунда", "минута", "час", "день", "неделя", "месяц", "год" |
-| <*формат*> | Нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -824,7 +824,7 @@ addToTime('<timestamp>', <interval>, '<timeUnit>', '<format>'?)
 | <*Обновлено — метка времени*> | Строка | Метка времени и указанное число единиц времени  |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере к указанной метке времени добавляется 1 день:
 
@@ -834,7 +834,7 @@ addToTime('2018-01-01T00:00:00Z', 1, 'Day')
 
 Возвращается такой результат: `"2018-01-02T00:00:00.0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере к указанной метке времени добавляется 1 день:
 
@@ -862,10 +862,10 @@ and(<expression1>, <expression2>, ...)
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | -----| ----------- |
-| true или false | Логическое значение | Возвращает значение true, если все выражения имеют значение true. Возвращает значение false, если хотя бы одно выражение имеет значение false. |
+| true или false | логический | Возвращает значение true, если все выражения имеют значение true. Возвращает значение false, если хотя бы одно выражение имеет значение false. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этих примерах проверяется, все ли указанные логические значения верны:
 
@@ -881,7 +881,7 @@ and(false, false)
 * Во втором примере одно из выражений имеет значение false, поэтому возвращается `false`.
 * В третьем примере оба выражения имеют значения false, поэтому возвращается `false`.
 
-*Пример 2*
+*Пример 2*
 
 В этих примерах проверяется, все ли указанные выражения верны:
 
@@ -915,7 +915,7 @@ array('<value>')
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| [<*значение*>] | Массив | Массив, содержащий один экземпляр указанных входных данных |
+| [<*значение*>] | Array | Массив, содержащий один экземпляр указанных входных данных |
 ||||
 
 *Пример*
@@ -1125,7 +1125,7 @@ bool(<value>)
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| true или false | Логическое значение | Логическая версия указанного значения |
+| true или false | логический | Логическая версия указанного значения |
 ||||
 
 *Пример*
@@ -1236,10 +1236,10 @@ contains([<collection>], '<value>')
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| true или false | Логическое значение | Возвращает true, если элемент найден. В противном случае возвращает значение false. |
+| true или false | логический | Возвращает true, если элемент найден. В противном случае возвращает значение false. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере строка "hello world" проверяется на наличие подстроки "world" и возвращается значение true:
 
@@ -1247,7 +1247,7 @@ contains([<collection>], '<value>')
 contains('hello world', 'world')
 ```
 
-*Пример 2*
+*Пример 2*
 
 В этом примере строка "hello world" проверяется на наличие подстроки "universe" и возвращается значение false:
 
@@ -1269,7 +1269,7 @@ convertFromUtc('<timestamp>', '<destinationTimeZone>', '<format>'?)
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
 | <*дестинатионтимезоне*> | Да | Строка | Имя целевого часового пояса. Имена часовых поясов см. в разделе [значения индекса часовых поясов Майкрософт](https://support.microsoft.com/en-us/help/973627/microsoft-time-zone-index-values), но может потребоваться удалить все знаки препинания из имени часового пояса. |
-| <*формат*> | Нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -1277,7 +1277,7 @@ convertFromUtc('<timestamp>', '<destinationTimeZone>', '<format>'?)
 | <*преобразовано — метка времени*> | Строка | Метка времени, преобразованная в целевой часовой пояс |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере метка времени преобразуется в указанный часовой пояс:
 
@@ -1287,7 +1287,7 @@ convertFromUtc('2018-01-01T08:00:00.0000000Z', 'Pacific Standard Time')
 
 Возвращается такой результат: `"2018-01-01T00:00:00.0000000"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере метка времени преобразуется в указанный часовой пояс и формат:
 
@@ -1312,7 +1312,7 @@ convertTimeZone('<timestamp>', '<sourceTimeZone>', '<destinationTimeZone>', '<fo
 | <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
 | <*саурцетимезоне*> | Да | Строка | Имя исходного часового пояса. Имена часовых поясов см. в разделе [значения индекса часовых поясов Майкрософт](https://support.microsoft.com/en-us/help/973627/microsoft-time-zone-index-values), но может потребоваться удалить все знаки препинания из имени часового пояса. |
 | <*дестинатионтимезоне*> | Да | Строка | Имя целевого часового пояса. Имена часовых поясов см. в разделе [значения индекса часовых поясов Майкрософт](https://support.microsoft.com/en-us/help/973627/microsoft-time-zone-index-values), но может потребоваться удалить все знаки препинания из имени часового пояса. |
-| <*формат*> | Нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -1320,7 +1320,7 @@ convertTimeZone('<timestamp>', '<sourceTimeZone>', '<destinationTimeZone>', '<fo
 | <*преобразовано — метка времени*> | Строка | Метка времени, преобразованная в целевой часовой пояс |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере исходный часовой пояс преобразуется в целевой:
 
@@ -1330,7 +1330,7 @@ convertTimeZone('2018-01-01T08:00:00.0000000Z', 'UTC', 'Pacific Standard Time')
 
 Возвращается такой результат: `"2018-01-01T00:00:00.0000000"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере часовой пояс преобразуется в указанный часовой пояс и формат:
 
@@ -1354,7 +1354,7 @@ convertToUtc('<timestamp>', '<sourceTimeZone>', '<format>'?)
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
 | <*саурцетимезоне*> | Да | Строка | Имя исходного часового пояса. Имена часовых поясов см. в разделе [значения индекса часовых поясов Майкрософт](https://support.microsoft.com/en-us/help/973627/microsoft-time-zone-index-values), но может потребоваться удалить все знаки препинания из имени часового пояса. |
-| <*формат*> | Нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -1362,7 +1362,7 @@ convertToUtc('<timestamp>', '<sourceTimeZone>', '<format>'?)
 | <*преобразовано — метка времени*> | Строка | Метка времени, которая преобразуются в формат UTC |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере метка времени преобразуется в формат UTC:
 
@@ -1372,7 +1372,7 @@ convertToUtc('01/01/2018 00:00:00', 'Pacific Standard Time')
 
 Возвращается такой результат: `"2018-01-01T08:00:00.0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере метка времени преобразуется в формат UTC:
 
@@ -1400,7 +1400,7 @@ createArray('<object1>', '<object2>', ...)
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| [<*object1*>, <*Object2*>,...] | Массив | Массив, созданный из всех входных элементов |
+| [<*object1*>, <*Object2*>,...] | Array | Массив, созданный из всех входных элементов |
 ||||
 
 *Пример*
@@ -1568,7 +1568,7 @@ dayOfWeek('<timestamp>')
 dayOfWeek('2018-03-15T13:27:36Z')
 ```
 
-Возвращается такой результат: `3`
+Возвращается такой результат: `4`
 
 <a name="dayOfYear"></a>
 
@@ -1759,7 +1759,7 @@ empty([<collection>])
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| true или false | Логическое значение | Возвращает значение true, если коллекция пуста. В противном случае возвращает значение false. |
+| true или false | логический | Возвращает значение true, если коллекция пуста. В противном случае возвращает значение false. |
 ||||
 
 *Пример*
@@ -1796,10 +1796,10 @@ endsWith('<text>', '<searchText>')
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| true или false  | Логическое значение | Возвращает значение true, если конечная подстрока обнаружена. В противном случае возвращает значение false. |
+| true или false  | логический | Возвращает значение true, если конечная подстрока обнаружена. В противном случае возвращает значение false. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере проверяется, заканчивается ли строка "hello world" строкой "world":
 
@@ -1809,7 +1809,7 @@ endsWith('hello world', 'world')
 
 Возвращается такой результат: `true`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере проверяется, заканчивается ли строка "hello world" строкой "universe":
 
@@ -1837,7 +1837,7 @@ equals('<object1>', '<object2>')
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| true или false | Логическое значение | Возвращает значение true, если оба значения эквивалентны. В противном случае возвращает значение false. |
+| true или false | логический | Возвращает значение true, если оба значения эквивалентны. В противном случае возвращает значение false. |
 ||||
 
 *Пример*
@@ -1891,7 +1891,7 @@ first(createArray(0, 1, 2))
 
 <a name="float"></a>
 
-### <a name="float"></a>FLOAT
+### <a name="float"></a>плавающее
 
 Преобразует строковую версию числа с плавающей запятой в фактическое число с плавающей запятой.
 Эту функцию можно использовать только при передаче пользовательских параметров в приложение, например в приложение логики или поток.
@@ -1933,7 +1933,7 @@ formatDateTime('<timestamp>', '<format>'?)
 | Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
-| <*формат*> | Нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -1969,7 +1969,7 @@ formDataMultiValues('<actionName>', '<key>')
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| [<*массив со значениями ключа*>] | Массив | Массив со всеми значениями, которые соответствуют заданному ключу |
+| [<*массив со значениями ключа*>] | Array | Массив со всеми значениями, которые соответствуют заданному ключу |
 ||||
 
 *Пример*
@@ -2028,7 +2028,7 @@ formatNumber(<number>, <format>, <locale>?)
 | --------- | -------- | ---- | ----------- |
 | <*Нумерация*> | Да | Integer или Double | Значение, которое необходимо отформатировать. |
 | <*формат*> | Да | Строка | Строка составного формата, указывающая формат, который необходимо использовать. Сведения о поддерживаемых строках числового формата см `number.ToString(<format>, <locale>)`. в разделе [строки стандартных числовых форматов](https://docs.microsoft.com/dotnet/standard/base-types/standard-numeric-format-strings), поддерживаемые. |
-| <*языкового стандарта*> | Нет | Строка | Языковой стандарт, поддерживаемый `number.ToString(<format>, <locale>)`. Если не задано, по умолчанию используется значение `en-us`. |
+| <*языкового стандарта*> | нет | Строка | Языковой стандарт, поддерживаемый `number.ToString(<format>, <locale>)`. Если не задано, по умолчанию используется значение `en-us`. |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -2036,7 +2036,7 @@ formatNumber(<number>, <format>, <locale>?)
 | <*форматированный номер*> | Строка | Указанное число в виде строки в указанном формате. Это возвращаемое значение можно привести к типу `int` или `float`. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 Предположим, что нужно отформатировать число `1234567890`. В этом примере этот номер форматируется как строка "1 234 567 890,00".
 
@@ -2082,7 +2082,7 @@ getFutureTime(<interval>, <timeUnit>, <format>?)
 | --------- | -------- | ---- | ----------- |
 | <*пределах*> | Да | Целое число | Число единиц времени для добавления |
 | <*тимеунит*> | Да | Строка | Единицы времени для использования с *интервалом*: "секунда", "минута", "час", "день", "неделя", "месяц", "год" |
-| <*формат*> | Нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -2090,7 +2090,7 @@ getFutureTime(<interval>, <timeUnit>, <format>?)
 | <*Обновлено — метка времени*> | Строка | Текущая метка времени и указанное число единиц времени |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 Допустим, текущая метка времени такая: "2018-03-01T00:00:00.0000000Z".
 В этом примере к этой метке времени добавляется пять дней:
@@ -2101,7 +2101,7 @@ getFutureTime(5, 'Day')
 
 Возвращается такой результат: `"2018-03-06T00:00:00.0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 Допустим, текущая метка времени такая: "2018-03-01T00:00:00.0000000Z".
 В этом примере добавляется пять дней и результат преобразуется в формат "D":
@@ -2126,7 +2126,7 @@ getPastTime(<interval>, <timeUnit>, <format>?)
 | --------- | -------- | ---- | ----------- |
 | <*пределах*> | Да | Целое число | Число единиц времени для вычитания |
 | <*тимеунит*> | Да | Строка | Единицы времени для использования с *интервалом*: "секунда", "минута", "час", "день", "неделя", "месяц", "год" |
-| <*формат*> | Нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -2134,7 +2134,7 @@ getPastTime(<interval>, <timeUnit>, <format>?)
 | <*Обновлено — метка времени*> | Строка | Текущая метка времени за вычетом указанного числа единиц времени |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 Допустим, текущая метка времени такая: "2018-02-01T00:00:00.0000000Z".
 В этом примере от указанной метки времени отнимается пять дней.
@@ -2145,7 +2145,7 @@ getPastTime(5, 'Day')
 
 Возвращается такой результат: `"2018-01-27T00:00:00.0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 Допустим, текущая метка времени такая: "2018-02-01T00:00:00.0000000Z".
 В этом примере отнимается пять дней и результат преобразуется в формат "D":
@@ -2176,7 +2176,7 @@ greater('<value>', '<compareTo>')
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| true или false | Логическое значение | Возвращает значение true, если первое значение большим, чем второе. Возвращает значение false, если первое значение меньше или равно второму. |
+| true или false | логический | Возвращает значение true, если первое значение большим, чем второе. Возвращает значение false, если первое значение меньше или равно второму. |
 ||||
 
 *Пример*
@@ -2213,7 +2213,7 @@ greaterOrEquals('<value>', '<compareTo>')
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| true или false | Логическое значение | Возвращает значение true, если первое значение больше или равно второму. Возвращает значение false, если первое значение меньше, чем второе. |
+| true или false | логический | Возвращает значение true, если первое значение больше или равно второму. Возвращает значение false, если первое значение меньше, чем второе. |
 ||||
 
 *Пример*
@@ -2248,7 +2248,7 @@ guid('<format>')
 
 | Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*формат*> | Нет | Строка | Один [указатель формата](https://msdn.microsoft.com/library/97af8hh4) для возвращенного идентификатора GUID. По умолчанию имеет формат "D", но можно использовать "N", "D", "B", "P" или "X". |
+| <*формат*> | нет | Строка | Один [указатель формата](https://msdn.microsoft.com/library/97af8hh4) для возвращенного идентификатора GUID. По умолчанию имеет формат "D", но можно использовать "N", "D", "B", "P" или "X". |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -2332,7 +2332,7 @@ indexOf('hello world', 'world')
 
 <a name="int"></a>
 
-### <a name="int"></a>INT
+### <a name="int"></a>int
 
 Возвращает целочисленную версию строки.
 
@@ -2534,7 +2534,7 @@ json('<value>')
 | <*JSON — результат*> | Собственный тип или объект JSON | Значение собственного типа или объекта JSON для заданной строки или XML. Если строка имеет значение NULL, функция возвращает пустой объект. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере эта строка преобразуется в значение JSON:
 
@@ -2544,7 +2544,7 @@ json('[1, 2, 3]')
 
 Возвращается такой результат: `[1, 2, 3]`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере эта строка преобразуется в JSON:
 
@@ -2766,7 +2766,7 @@ less('<value>', '<compareTo>')
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| true или false | Логическое значение | Возвращает значение true, если первое значение меньше, чем второе. Возвращает значение false, если первое значение больше или равно второму. |
+| true или false | логический | Возвращает значение true, если первое значение меньше, чем второе. Возвращает значение false, если первое значение больше или равно второму. |
 ||||
 
 *Пример*
@@ -2803,7 +2803,7 @@ lessOrEquals('<value>', '<compareTo>')
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| true или false  | Логическое значение | Возвращает значение true, если первое значение меньше или равно второму. Возвращает значение false, если первое значение больше, чем второе. |
+| true или false  | логический | Возвращает значение true, если первое значение меньше или равно второму. Возвращает значение false, если первое значение больше, чем второе. |
 ||||
 
 *Пример*
@@ -3014,10 +3014,10 @@ not(<expression>)
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| true или false | Логическое значение | Возвращает значение true, если выражение ложно. Возвращает значение false, если выражение истинно. |
+| true или false | логический | Возвращает значение true, если выражение ложно. Возвращает значение false, если выражение истинно. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этих примерах проверяется, все ли указанные выражения ложны:
 
@@ -3031,7 +3031,7 @@ not(true)
 * В первом примере выражение имеет значение false, поэтому функция возвращает `true`.
 * Во втором примере выражение имеет значение true, поэтому функция возвращает `false`.
 
-*Пример 2*
+*Пример 2*
 
 В этих примерах проверяется, все ли указанные выражения ложны:
 
@@ -3063,10 +3063,10 @@ or(<expression1>, <expression2>, ...)
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| true или false | Логическое значение | Возвращает значение true, если хотя бы одно выражение истинно. Возвращает значение false, если все выражения ложны. |
+| true или false | логический | Возвращает значение true, если хотя бы одно выражение истинно. Возвращает значение false, если все выражения ложны. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этих примерах проверяется, является ли хотя бы одно выражение истинным:
 
@@ -3080,7 +3080,7 @@ or(false, false)
 * В первом примере по крайней мере одно выражение имеет значение true, поэтому функция возвращает `true`.
 * Во втором примере оба выражения имеют значения false, поэтому функция возвращает `false`.
 
-*Пример 2*
+*Пример 2*
 
 В этих примерах проверяется, является ли хотя бы одно выражение истинным:
 
@@ -3244,7 +3244,7 @@ range(<startIndex>, <count>)
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| [<*результат диапазона*>] | Массив | Массив с целыми числами, который начинается с указанного индекса |
+| [<*результат диапазона*>] | Array | Массив с целыми числами, который начинается с указанного индекса |
 ||||
 
 *Пример*
@@ -3328,7 +3328,7 @@ removeProperty(<object>['<parent-property>'], '<child-property>')
 | <*updated — Object*> | Объект | Обновленный объект JSON, чье дочернее свойство было удалено. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В `middleName` этом примере удаляется свойство из объекта JSON, которое преобразуется из строки в JSON с помощью функции [JSON ()](#json) и возвращает обновленный объект:
 
@@ -3355,7 +3355,7 @@ removeProperty(json('{ "firstName": "Sophia", "middleName": "Anne", "surName": "
 }
 ```
 
-*Пример 2*
+*Пример 2*
 
 В этом примере удаляется `middleName` дочернее `customerName` свойство из родительского свойства в объекте JSON, которое преобразуется из строки в JSON с помощью функции [JSON ()](#json) и возвращает обновленный объект:
 
@@ -3388,7 +3388,7 @@ removeProperty(json('{ "customerName": { "firstName": "Sophia", "middleName": "A
 
 <a name="result"></a>
 
-### <a name="result"></a>набор по
+### <a name="result"></a>result
 
 Возврат входных и выходных данных из всех действий, которые находятся внутри указанного действия области, например действия `For_each`, `Until`или. `Scope` Эта функция полезна, возвращая результаты невыполненного действия, чтобы можно было диагностировать и обменять исключения. Дополнительные сведения см. в разделе [Получение контекста и результатов для сбоев](../logic-apps/logic-apps-exception-handling.md#get-results-from-failures).
 
@@ -3543,7 +3543,7 @@ setProperty(<object>['<parent-property>'], '<parent-property>', setProperty(<obj
 | <*updated — Object*> | Объект | Обновленный объект JSON, свойство которого задается |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере задается `surName` свойство в объекте JSON, которое преобразуется из строки в JSON с помощью функции [JSON ()](#json) . Функция присваивает указанное значение свойству и возвращает обновленный объект:
 
@@ -3569,7 +3569,7 @@ setProperty(json('{ "firstName": "Sophia", "surName": "Owen" }'), 'surName', 'Ha
 }
 ```
 
-*Пример 2*
+*Пример 2*
 
 В этом примере задается `surName` дочернее свойство `customerName` родительского свойства в объекте JSON, которое преобразуется из строки в JSON с помощью функции [JSON ()](#json) . Функция присваивает указанное значение свойству и возвращает обновленный объект:
 
@@ -3617,7 +3617,7 @@ skip([<collection>], <count>)
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| [<*обновленная коллекция*>] | Массив | Обновленная коллекция после удаления указанных элементов. |
+| [<*обновленная коллекция*>] | Array | Обновленная коллекция после удаления указанных элементов. |
 ||||
 
 *Пример*
@@ -3648,7 +3648,7 @@ split('<text>', '<delimiter>')
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| [<*substring1*>,<*substring2*>,...] | Массив | Массив, содержащий подстроки из исходной строки, разделенные запятыми |
+| [<*substring1*>,<*substring2*>,...] | Array | Массив, содержащий подстроки из исходной строки, разделенные запятыми |
 ||||
 
 *Пример*
@@ -3674,7 +3674,7 @@ startOfDay('<timestamp>', '<format>'?)
 | Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
-| <*формат*> | Нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -3705,7 +3705,7 @@ startOfHour('<timestamp>', '<format>'?)
 | Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
-| <*формат*> | Нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -3736,7 +3736,7 @@ startOfMonth('<timestamp>', '<format>'?)
 | Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
-| <*формат*> | Нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -3774,10 +3774,10 @@ startsWith('<text>', '<searchText>')
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| true или false  | Логическое значение | Возвращает значение true при обнаружении начальной подстроки. В противном случае возвращает значение false. |
+| true или false  | логический | Возвращает значение true при обнаружении начальной подстроки. В противном случае возвращает значение false. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере проверяется, начинается ли строка "hello world" подстрокой "hello":
 
@@ -3787,7 +3787,7 @@ startsWith('hello world', 'hello')
 
 Возвращается такой результат: `true`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере проверяется, начинается ли строка "hello world" подстрокой "greetings":
 
@@ -3817,7 +3817,7 @@ string(<value>)
 | <*Строковое значение*> | Строка | Строковая версия указанного значения |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере создается строковая версия для этого числа:
 
@@ -3827,7 +3827,7 @@ string(10)
 
 Возвращается такой результат: `"10"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере создается строка для указанного объекта JSON и используется символ обратной косой черты (\\) в качестве escape-символа для двойных кавычек (").
 
@@ -3917,7 +3917,7 @@ subtractFromTime('<timestamp>', <interval>, '<timeUnit>', '<format>'?)
 | <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
 | <*пределах*> | Да | Целое число | Число единиц времени для вычитания |
 | <*тимеунит*> | Да | Строка | Единицы времени для использования с *интервалом*: "секунда", "минута", "час", "день", "неделя", "месяц", "год" |
-| <*формат*> | Нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -3925,7 +3925,7 @@ subtractFromTime('<timestamp>', <interval>, '<timeUnit>', '<format>'?)
 | <*Обновлено — метка времени*> | Строка | Метка времени, от которой отнято указанное число единиц времени |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере из этой метки времени вычитается один день:
 
@@ -3935,7 +3935,7 @@ subtractFromTime('2018-01-02T00:00:00Z', 1, 'Day')
 
 Возвращается такой результат: `"2018-01-01T00:00:00:0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере из этой метки времени вычитается один день:
 
@@ -4118,7 +4118,7 @@ triggerFormDataMultiValues('<key>')
 
 | Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| [<*массив со значениями ключа*>] | Массив | Массив со всеми значениями, которые соответствуют заданному ключу |
+| [<*массив со значениями ключа*>] | Array | Массив со всеми значениями, которые соответствуют заданному ключу |
 ||||
 
 *Пример*
@@ -4553,7 +4553,7 @@ utcNow('<format>')
 
 | Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*формат*> | Нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
 | Возвращаемое значение | Type | Описание |
@@ -4561,7 +4561,7 @@ utcNow('<format>')
 | <*Current — метка времени*> | Строка | Текущая дата и время |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 Предположим, сейчас 13:00:00 15 апреля 2018 года.
 В этом примере возвращается текущая метка времени:
@@ -4572,7 +4572,7 @@ utcNow()
 
 Возвращается такой результат: `"2018-04-15T13:00:00.0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 Предположим, сейчас 13:00:00 15 апреля 2018 года.
 В этом примере возвращается текущая метка времени с использованием необязательного формата "D":
@@ -4626,7 +4626,7 @@ workflow().<property>
 
 | Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*свойства*> | Нет | Строка | Имя свойства рабочего процесса, значение которого требуется <p>Объект рабочего процесса имеет такие свойства: **name**, **type**, **id**, **location** и **run**. Значение свойства **run** также является объектом, имеющим следующие свойства: **name**, **type** и **id**. |
+| <*свойства*> | нет | Строка | Имя свойства рабочего процесса, значение которого требуется <p>Объект рабочего процесса имеет такие свойства: **name**, **type**, **id**, **location** и **run**. Значение свойства **run** также является объектом, имеющим следующие свойства: **name**, **type** и **id**. |
 |||||
 
 *Пример*
@@ -4657,7 +4657,7 @@ xml('<value>')
 | <*Версия XML*> | Объект | Закодированный XML для заданной строки или объекта JSON |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере создается версия XML для этой строки, которая содержит объект JSON:
 
@@ -4669,7 +4669,7 @@ xml('<value>')
 <name>Sophia Owen</name>
 ```
 
-*Пример 2*
+*Пример 2*
 
 Предположим, что у вас есть этот объект JSON:
 
@@ -4715,10 +4715,10 @@ xpath('<xml>', '<xpath>')
 | ------------ | ---- | ----------- |
 | <*XML-node*> | XML | Узел XML, где только один узел соответствует указанному выражению XPath |
 | <*значений*> | Любой | Значение из узла XML, где только одно значение соответствует указанному выражению XPath |
-| [<*узел XML1*>, <*узел XML2*>, ...] </br>-или- </br>[<*значение1*>, <*значение2*>, ...] | Массив | Массив с узлами XML или значениями, которые соответствуют указанному выражению XPath |
+| [<*узел XML1*>, <*узел XML2*>, ...] </br>-или- </br>[<*значение1*>, <*значение2*>, ...] | Array | Массив с узлами XML или значениями, которые соответствуют указанному выражению XPath |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере выполняется поиск узлов, которые соответствуют узлу `<name></name>` ​​в указанных аргументах, и возвращается массив с этими значениями узлов:
 
@@ -4740,7 +4740,7 @@ xpath('<xml>', '<xpath>')
 
 `[ <name>Gala</name>, <name>Honeycrisp</name> ]`
 
-*Пример 2*
+*Пример 2*
 
 Следуя примеру 1, этот пример находит узлы, которые соответствуют узлу `<count></count>`, и добавляет эти значения с помощью функции `sum()`:
 
@@ -4800,6 +4800,6 @@ xpath('<xml>', '<xpath>')
 
 Возвращается такой результат: `"Paris"`
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [языке определения рабочего процесса](../logic-apps/logic-apps-workflow-definition-language.md).

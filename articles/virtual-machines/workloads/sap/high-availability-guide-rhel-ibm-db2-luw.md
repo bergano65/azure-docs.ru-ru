@@ -14,48 +14,13 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 02/13/2020
 ms.author: juergent
-ms.openlocfilehash: c6a230f6abeab45c56aab2db40b8b1defcc06d90
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1a00a3c1e0d34a8c7abbcd5bfc7a6771d9e2a4c3
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77598703"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82983046"
 ---
-[1928533]:https://launchpad.support.sap.com/#/notes/1928533
-[2015553]:https://launchpad.support.sap.com/#/notes/2015553
-[2178632]:https://launchpad.support.sap.com/#/notes/2178632
-[2191498]:https://launchpad.support.sap.com/#/notes/2191498
-[2243692]:https://launchpad.support.sap.com/#/notes/2243692
-[2002167]:https://launchpad.support.sap.com/#/notes/2002167
-[1999351]:https://launchpad.support.sap.com/#/notes/1999351
-[2233094]:https://launchpad.support.sap.com/#/notes/2233094
-[1612105]:https://launchpad.support.sap.com/#/notes/1612105
-[2694118]:https://launchpad.support.sap.com/#/notes/2694118
-
-
-[db2-hadr-11.1]:https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.admin.ha.doc/doc/c0011267.html
-[db2-hadr-10.5]:https://www.ibm.com/support/knowledgecenter/en/SSEPGG_10.5.0/com.ibm.db2.luw.admin.ha.doc/doc/c0011267.html
-[dbms-db2]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_ibm
-
-[sap-instfind]:https://help.sap.com/viewer/9e41ead9f54e44c1ae1a1094b0f80712/ALL/en-US/576f5c1808de4d1abecbd6e503c9ba42.html
-[rhel-ha-addon]:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_overview/index
-[rhel-ha-admin]:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_administration/index
-[rhel-ha-ref]:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_reference/index
-[rhel-azr-supp]:https://access.redhat.com/articles/3131341
-[rhel-azr-inst]:https://access.redhat.com/articles/3252491
-[rhel-db2-supp]:https://access.redhat.com/articles/3144221
-[ascs-ha-rhel]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel
-[glusterfs]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-glusterfs
-[rhel-pcs-azr]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-pacemaker
-[anf-rhel]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-netapp-files
-
-[dbms-guide]:dbms-guide.md
-[deployment-guide]:deployment-guide.md
-[planning-guide]:planning-guide.md
-[azr-sap-plancheck]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-deployment-checklist
-
-
-
 # <a name="high-availability-of-ibm-db2-luw-on-azure-vms-on-red-hat-enterprise-linux-server"></a>Обеспечение высокого уровня доступности IBM DB2 LUW на виртуальных машинах Azure в Red Hat Enterprise Linux Server
 
 IBM DB2 для Linux, UNIX и Windows (LUW) в [конфигурации высокой доступности и аварийного восстановления (HADR)](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_10.5.0/com.ibm.db2.luw.admin.ha.doc/doc/c0011267.html) состоит из одного узла, на котором выполняется экземпляр базы данных-источника и по крайней мере одного узла, на котором выполняется экземпляр базы данных-получателя. Изменения в экземпляре базы данных-источника реплицируются в экземпляр базы данных получателя синхронно или асинхронно, в зависимости от конфигурации. 
@@ -442,19 +407,19 @@ Online: [AZ-idb01 AZ-idb02]
 
 1. Создайте интерфейсный пул IP-адресов:
 
-   a. В портал Azure откройте Azure Load Balancer, выберите **интерфейсный пул IP-адресов**и нажмите кнопку **Добавить**.
+   а. В портал Azure откройте Azure Load Balancer, выберите **интерфейсный пул IP-адресов**и нажмите кнопку **Добавить**.
 
    b. Введите имя нового пула IP-адресов внешнего интерфейса (например, **DB2-Connection**).
 
    c. Установите статическое **назначение** и **Static**введите IP-адрес **Virtual-IP** , определенный в начале.
 
-   d. Нажмите кнопку **OK**.
+   d. Нажмите кнопку **ОК**.
 
    д) Когда пул интерфейсных IP-адресов будет создан, запишите его IP-адрес.
 
 1. Создайте пул серверной части:
 
-   a. В портал Azure откройте Azure Load Balancer, выберите **серверные пулы**и нажмите кнопку **Добавить**.
+   а. В портал Azure откройте Azure Load Balancer, выберите **серверные пулы**и нажмите кнопку **Добавить**.
 
    b. Введите имя нового пула серверной части (например, **DB2-Серверная**часть).
 
@@ -468,17 +433,17 @@ Online: [AZ-idb01 AZ-idb02]
 
 1. Создание пробы работоспособности:
 
-   a. В портал Azure откройте Azure Load Balancer, выберите **зонды работоспособности**и нажмите кнопку **Добавить**.
+   а. В портал Azure откройте Azure Load Balancer, выберите **зонды работоспособности**и нажмите кнопку **Добавить**.
 
    b. Введите имя новой проверки работоспособности (например, **DB2-HP**).
 
    c. Выберите **TCP** в качестве протокола и порта **62500**. Установите для параметра **интервал** значение **5**и установите для параметра **порог неработоспособности** значение **2**.
 
-   d. Нажмите кнопку **OK**.
+   d. Нажмите кнопку **ОК**.
 
 1. Создайте правила балансировки нагрузки.
 
-   a. В портал Azure откройте Azure Load Balancer, выберите **правила балансировки нагрузки**, а затем нажмите кнопку **Добавить**.
+   а. В портал Azure откройте Azure Load Balancer, выберите **правила балансировки нагрузки**, а затем нажмите кнопку **Добавить**.
 
    b. Введите имя нового правила Load Balancer (например, **DB2-SID**).
 
@@ -490,7 +455,7 @@ Online: [AZ-idb01 AZ-idb02]
 
    е) Обязательно **включите плавающий IP-адрес**.
 
-   ж. Нажмите кнопку **OK**.
+   ж. Нажмите кнопку **ОК**.
 
 **[A]** добавьте правило брандмауэра для пробного порта:
 <pre><code>sudo firewall-cmd --add-port=<b><probe-port></b>/tcp --permanent
@@ -530,7 +495,7 @@ j2ee/dbhost = db-virt-hostname
     
     <pre><code>jdbc:db2://db-virt-hostname:5912/TSP:deferPrepares=0</code></pre>  
     
-1. Выберите **Добавить**.
+1. Нажмите **Добавить**.
 1. Чтобы сохранить изменения, щелкните значок диска в левом верхнем углу.
 1. Закройте средство настройки.
 1. Перезапустите экземпляр Java.
@@ -542,7 +507,7 @@ j2ee/dbhost = db-virt-hostname
 
 Рекомендуется настроить общий общий ресурс NFS или Глустерфс, где журналы записываются из обоих узлов. Общий ресурс NFS или Глустерфс должен быть высокодоступным. 
 
-Вы можете использовать существующие общие папки NFS высокой доступности или Глустерфс для транспорта или каталога профиля. Дополнительные сведения можно найти в разделе
+Вы можете использовать существующие общие папки NFS высокой доступности или Глустерфс для транспорта или каталога профиля. Дополнительные сведения можно найти в разделе 
 
 - [GlusterFS на виртуальных машинах Azure с Red Hat Enterprise Linux для SAP NetWeaver][glusterfs] 
 - [Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на Red Hat Enterprise Linux с Azure NetApp Files для приложений SAP][anf-rhel]
@@ -850,6 +815,39 @@ rsc_st_azure    (stonith:fence_azure_arm):      Started az-idb02
      vip_db2id2_ID2     (ocf::heartbeat:IPaddr2):       Started az-idb02
      nc_db2id2_ID2      (ocf::heartbeat:azure-lb):      Started az-idb02</code></pre>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Высокодоступная архитектура и сценарии для SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-architecture-scenarios)
 - [Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure][rhel-pcs-azr]
+
+[1928533]:https://launchpad.support.sap.com/#/notes/1928533
+[2015553]:https://launchpad.support.sap.com/#/notes/2015553
+[2178632]:https://launchpad.support.sap.com/#/notes/2178632
+[2191498]:https://launchpad.support.sap.com/#/notes/2191498
+[2243692]:https://launchpad.support.sap.com/#/notes/2243692
+[2002167]:https://launchpad.support.sap.com/#/notes/2002167
+[1999351]:https://launchpad.support.sap.com/#/notes/1999351
+[2233094]:https://launchpad.support.sap.com/#/notes/2233094
+[1612105]:https://launchpad.support.sap.com/#/notes/1612105
+[2694118]:https://launchpad.support.sap.com/#/notes/2694118
+
+
+[db2-hadr-11.1]:https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.admin.ha.doc/doc/c0011267.html
+[db2-hadr-10.5]:https://www.ibm.com/support/knowledgecenter/en/SSEPGG_10.5.0/com.ibm.db2.luw.admin.ha.doc/doc/c0011267.html
+[dbms-db2]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_ibm
+
+[sap-instfind]:https://help.sap.com/viewer/9e41ead9f54e44c1ae1a1094b0f80712/ALL/en-US/576f5c1808de4d1abecbd6e503c9ba42.html
+[rhel-ha-addon]:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_overview/index
+[rhel-ha-admin]:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_administration/index
+[rhel-ha-ref]:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_reference/index
+[rhel-azr-supp]:https://access.redhat.com/articles/3131341
+[rhel-azr-inst]:https://access.redhat.com/articles/3252491
+[rhel-db2-supp]:https://access.redhat.com/articles/3144221
+[ascs-ha-rhel]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel
+[glusterfs]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-glusterfs
+[rhel-pcs-azr]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-pacemaker
+[anf-rhel]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-netapp-files
+
+[dbms-guide]:dbms-guide.md
+[deployment-guide]:deployment-guide.md
+[planning-guide]:planning-guide.md
+[azr-sap-plancheck]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-deployment-checklist

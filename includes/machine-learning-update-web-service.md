@@ -4,12 +4,12 @@ ms.service: machine-learning
 ms.topic: include
 ms.date: 03/16/2020
 ms.author: larryfr
-ms.openlocfilehash: d36bf2db05113656a77e76ff900d95910f313c73
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e6a7ee8ed497c87c08f13e09a0022b0835c952cc
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79477261"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82975060"
 ---
 Чтобы обновить веб-службу, используйте `update` метод. Можно обновить веб-службу, чтобы использовать новую модель, новый скрипт записи или новые зависимости, которые можно указать в конфигурации вывода. Дополнительные сведения см. в документации по [WebService. Update](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice.webservice?view=azure-ml-py#update--args-).
 
@@ -63,6 +63,6 @@ az ml service update -n myservice --model-metadata-file modelinfo.json
 > [!TIP]
 > В этом примере документ JSON используется для передачи сведений о модели из команды регистрации в команду Update.
 >
-> Чтобы обновить службу для использования нового скрипта записи или среды, создайте [файл конфигурации вывода](/azure/machine-learning/service/reference-azure-machine-learning-cli#inference-configuration-schema) и укажите его с помощью `ic` параметра.
+> Чтобы обновить службу для использования нового скрипта записи или среды, создайте [файл конфигурации вывода](/azure/machine-learning/reference-azure-machine-learning-cli#inference-configuration-schema) и укажите его с помощью `ic` параметра.
 
 Дополнительные сведения см. в документации по [AZ ML Service Update](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/service?view=azure-cli-latest#ext-azure-cli-ml-az-ml-service-update) .

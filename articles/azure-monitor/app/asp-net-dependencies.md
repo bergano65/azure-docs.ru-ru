@@ -3,12 +3,12 @@ title: Отслеживание зависимостей в Azure Application In
 description: Отслеживайте вызовы зависимостей из локального или Microsoft Azure веб-приложения с помощью Application Insights.
 ms.topic: conceptual
 ms.date: 03/26/2020
-ms.openlocfilehash: 1e30d8036c1fc624d39f027f38e314c6c57360f6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2b7a20731fa5eae8313adcf07d877626fcaa4dce
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81731497"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82980853"
 ---
 # <a name="dependency-tracking-in-azure-application-insights"></a>Отслеживание зависимостей в Azure Application Insights 
 
@@ -92,14 +92,14 @@ ms.locfileid: "81731497"
 
 Для ASP.NET Core приложений никаких дополнительных действий по получению полного SQL Server не требуется.
 
-Для приложений ASP.NET полный запрос SQL собираются с помощью инструментирования кода в байтах, для которого требуется модуль инструментирования. Дополнительные действия, связанные с платформой, как описано ниже, являются обязательными.
+Для приложений ASP.NET полный SQL-запрос собираются с помощью инструментирования кода на основе байт, для которого требуется модуль инструментирования или с помощью пакета NuGet [Microsoft. Data. SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient) вместо библиотеки System. Data. SqlClient. Дополнительные действия, связанные с платформой, как описано ниже, являются обязательными.
 
 | Платформа | Шаг (ы), необходимый для получения полного SQL-запроса |
 | --- | --- |
 | Веб-приложение Azure |На панели управления веб-приложения [откройте колонку Application Insights](../../azure-monitor/app/azure-web-apps.md) и включите команды SQL в разделе .NET. |
-| Сервер IIS (виртуальная машина Azure, локальная сеть и т. д.) | Используйте модуль PowerShell монитор состояния для [установки модуля инструментирования](../../azure-monitor/app/status-monitor-v2-api-reference.md) и перезапуска IIS. |
+| Сервер IIS (виртуальная машина Azure, локальная сеть и т. д.) | Либо используйте пакет NuGet [Microsoft. Data. SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient) , либо используйте модуль монитор состояния PowerShell, чтобы [установить модуль инструментирования](../../azure-monitor/app/status-monitor-v2-api-reference.md) и перезапустить службы IIS. |
 | Облачная служба Azure | Добавление [задачи запуска для установки статусмонитор](../../azure-monitor/app/cloudservices.md#set-up-status-monitor-to-collect-full-sql-queries-optional) <br> Приложение следует подключить к пакету SDK для ApplicationInsights во время сборки, установив пакеты NuGet для приложений [ASP.NET](https://docs.microsoft.com/azure/azure-monitor/app/asp-net) или [ASP.NET Core](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core) |
-| IIS Express. | Не поддерживается
+| IIS Express. | Использование пакета NuGet [Microsoft. Data. SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient)
 
 В приведенных выше случаях правильный способ проверки правильности установки модуля инструментирования — проверка того, что собранная `DependencyTelemetry` версия пакета SDK — "рддп". "рдддсд" или "рддф" указывает, что зависимости собираются через обратные вызовы DiagnosticSource или EventSource, поэтому полный запрос SQL не будет записан.
 
@@ -189,7 +189,7 @@ ms.locfileid: "81731497"
 ## <a name="open-source-sdk"></a>Пакет SDK с открытым исходным кодом
 Как и каждый Application Insights пакет SDK, модуль коллекции зависимостей также является открытым исходным кодом. Прочтите код и догляните в него или сообщите о проблемах в [официальном репозитории GitHub](https://github.com/Microsoft/ApplicationInsights-dotnet-server).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Исключения](../../azure-monitor/app/asp-net-exceptions.md)
 * [Данные пользователей и страниц](../../azure-monitor/app/javascript.md)

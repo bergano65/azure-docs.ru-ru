@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/31/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: ad36547b0cf9457d7ff4fdd919a0bb1362539eb5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e1cf3905a34fdced878526cfcc55e6dd0a1a369f
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80522709"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82595329"
 ---
 В этой статье представлены ответы на некоторые часто задаваемые вопросы о службе "Управляемые диски Azure" и дисках SSD уровня "Премиум" Azure.
 
@@ -120,7 +120,7 @@ ms.locfileid: "80522709"
 Нет. Невозможно изменить свойство имени компьютера. Новая виртуальная машина наследует его из родительской виртуальной машины, которая использовалась для создания диска операционной системы. 
 
 **Где можно найти пример шаблонов Azure Resource Manager, чтобы создавать виртуальные машины с управляемыми дисками?**
-* [Список шаблонов с управляемыми дисками](https://github.com/Azure/azure-quickstart-templates/blob/master/managed-disk-support-list.md)
+* [Список шаблонов с управляемыми дисками](https://github.com/Azure/azure-quickstart-templates/)
 * https://github.com/chagarw/MDPP
 
 **При создании диска из BLOB-объекта, существует ли постоянная связь с исходным BLOB-объектом?**

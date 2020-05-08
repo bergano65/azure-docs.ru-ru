@@ -25,6 +25,9 @@
       href: powershell-samples.md
     - name: Решения для управляемых приложений
       href: sample-projects.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Просмотр артефакта определения

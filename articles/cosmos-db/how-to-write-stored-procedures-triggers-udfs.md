@@ -1,17 +1,17 @@
 ---
 title: Запись хранимых процедур, триггеров и пользовательских функций в Azure Cosmos DB
 description: Сведения о том, как определить хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB
-author: markjbrown
+author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 10/31/2019
-ms.author: mjbrown
-ms.openlocfilehash: 4dee017323bda5fc08598a9b24cadd11516807cf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 05/07/2020
+ms.author: tisande
+ms.openlocfilehash: 3c0ac8ac419b3cdd2b154974d3ccbcce6896e847
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75441737"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82982298"
 ---
 # <a name="how-to-write-stored-procedures-triggers-and-user-defined-functions-in-azure-cosmos-db"></a>Как писать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB
 
@@ -21,15 +21,12 @@ Azure Cosmos DB обеспечивает встроенное в язык тра
 
 > [!NOTE]
 > Для секционированных контейнеров при выполнении хранимой процедуры в параметрах запроса необходимо указать значение ключа секции. Хранимые процедуры всегда ограничиваются ключом секции. Элементы с другим значением ключа секции не будут видны хранимой процедуре. Это также применяется к триггерам.
-
 > [!Tip]
 > Cosmos поддерживает развертывание контейнеров с хранимыми процедурами, триггерами и определяемыми пользователем функциями. Дополнительные сведения см. в статье [Создание контейнера Azure Cosmos DB с функциональностью на стороне сервера.](manage-sql-with-resource-manager.md#create-sproc)
 
 ## <a name="how-to-write-stored-procedures"></a><a id="stored-procedures"></a>Как написать хранимые процедуры
 
 Хранимые процедуры пишутся с помощью языка JavaScript. С их помощью можно создавать, обновлять, читать, запрашивать и удалять элементы внутри контейнера Cosmos в Azure. Хранимые процедуры регистрируются в коллекциях и могут работать с любым документом и вложением, существующим в этой коллекции.
-
-**Пример**
 
 Давайте начнем с простой хранимой процедуры, которая возвращает ответ "Hello World".
 
@@ -51,7 +48,7 @@ var helloWorldStoredProc = {
 
 ### <a name="create-an-item-using-stored-procedure"></a><a id="create-an-item"></a>Создание элемента с помощью хранимой процедуры
 
-При создании элемента с помощью хранимой процедуры этот элемент вставляется в контейнер Azure Cosmos и возвращается идентификатор вновь созданного элемента. Создание элемента является асинхронной операцией и зависит от функций обратного вызова JavaScript. Функция обратного вызова имеет два параметра: один для объекта ошибки в случае, если операция не выполнится, и один для возвращаемого значения, то есть — созданного объекта. Внутри функции обратного вызова можно либо обработать исключение, либо вызвать ошибку. Если обратного вызова не предусмотрено и возникла ошибка, то среда выполнения Azure Cosmos DB выдаст ошибку. 
+При создании элемента с помощью хранимой процедуры этот элемент вставляется в контейнер Azure Cosmos и возвращается идентификатор вновь созданного элемента. Создание элемента является асинхронной операцией и зависит от функций обратного вызова JavaScript. Функция обратного вызова имеет два параметра: один для объекта ошибки в случае, если операция не выполнится, и один для возвращаемого значения, то есть — созданного объекта. Внутри функции обратного вызова можно либо обработать исключение, либо вызвать ошибку. Если обратного вызова не предусмотрено и возникла ошибка, то среда выполнения Azure Cosmos DB выдаст ошибку.
 
 Хранимая процедура также включает параметр для установки описания. Это логическое значение. Если параметр имеет значение true, а описание отсутствует, хранимая процедура приведет к возникновению исключения. В противном случае остальная часть хранимой процедуры продолжит выполняться.
 
@@ -73,7 +70,7 @@ function createToDoItem(itemToCreate) {
 }
 ```
 
-### <a name="arrays-as-input-parameters-for-stored-procedures"></a>Массивы в качестве входных параметров для хранимых процедур 
+### <a name="arrays-as-input-parameters-for-stored-procedures"></a>Массивы в качестве входных параметров для хранимых процедур
 
 При определении хранимой процедуры на портале Azure входные параметры всегда отправляются в хранимую процедуру в виде строки. Даже если передать массив строк в качестве входных данных, массив преобразуется в строку и отправляются в хранимую процедуру. Чтобы обойти эту проблему, можно определить функцию в хранимой процедуре для анализа строки как массива. В следующем коде показано, как анализировать входной параметр строки как массив:
 
@@ -102,12 +99,12 @@ function tradePlayers(playerId1, playerId2) {
     var player1Document, player2Document;
 
     // query for players
-    var filterQuery = 
-    {     
+    var filterQuery =
+    {
         'query' : 'SELECT * FROM Players p where p.id = @playerId1',
         'parameters' : [{'name':'@playerId1', 'value':playerId1}] 
     };
-            
+
     var accept = container.queryDocuments(container.getSelfLink(), filterQuery, {},
         function (err, items, responseOptions) {
             if (err) throw new Error("Error" + err.message);
@@ -115,10 +112,10 @@ function tradePlayers(playerId1, playerId2) {
             if (items.length != 1) throw "Unable to find both names";
             player1Item = items[0];
 
-            var filterQuery2 = 
-            {     
+            var filterQuery2 =
+            {
                 'query' : 'SELECT * FROM Players p where p.id = @playerId2',
-                'parameters' : [{'name':'@playerId2', 'value':playerId2}] 
+                'parameters' : [{'name':'@playerId2', 'value':playerId2}]
             };
             var accept2 = container.queryDocuments(container.getSelfLink(), filterQuery2, {},
                 function (err2, items2, responseOptions2) {
@@ -208,6 +205,56 @@ function bulkImport(items) {
             tryCreate(items[count], callback);
         }
     }
+}
+```
+
+### <a name="async-await-with-stored-procedures"></a><a id="async-promises"></a>Асинхронный ожидание с помощью хранимых процедур
+
+Ниже приведен пример хранимой процедуры, которая использует async-await с обещания с помощью вспомогательной функции. Хранимая процедура запрашивает элемент и заменяет его.
+
+```javascript
+function async_sample() {
+    const ERROR_CODE = {
+        NotAccepted: 429
+    };
+
+    const asyncHelper = {
+        queryDocuments(sqlQuery, options) {
+            return new Promise((resolve, reject) => {
+                const isAccepted = __.queryDocuments(__.getSelfLink(), sqlQuery, options, (err, feed, options) => {
+                    if (err) reject(err);
+                    resolve({ feed, options });
+                });
+                if (!isAccepted) reject(new Error(ERROR_CODE.NotAccepted, "replaceDocument was not accepted."));
+            });
+        },
+
+        replaceDocument(doc) {
+            return new Promise((resolve, reject) => {
+                const isAccepted = __.replaceDocument(doc._self, doc, (err, result, options) => {
+                    if (err) reject(err);
+                    resolve({ result, options });
+                });
+                if (!isAccepted) reject(new Error(ERROR_CODE.NotAccepted, "replaceDocument was not accepted."));
+            });
+        }
+    };
+
+    async function main() {
+        let continuation;
+        do {
+            let { feed, options } = await asyncHelper.queryDocuments("SELECT * from c", { continuation });
+
+            for (let doc of feed) {
+                doc.newProp = 1;
+                await asyncHelper.replaceDocument(doc);
+            }
+
+            continuation = options.continuation;
+        } while (continuation);
+    }
+
+    main().catch(err => getContext().abort(err));
 }
 ```
 
@@ -317,7 +364,7 @@ function tax(income) {
 
 Примеры регистрации и использования определяемой пользователем функции см. в разделе о [работе с такой функцией](how-to-use-stored-procedures-triggers-udfs.md#udfs).
 
-## <a name="logging"></a>Logging 
+## <a name="logging"></a>Ведение журнала 
 
 При использовании хранимой процедуры, триггеров или определяемых пользователем функций можно регистрировать шаги с помощью `console.log()` команды. Эта команда повлияет на строку для отладки, `EnableScriptLogging` если для задано значение true, как показано в следующем примере:
 

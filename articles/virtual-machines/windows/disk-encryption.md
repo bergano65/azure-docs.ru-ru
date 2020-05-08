@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.author: rogarana
 ms.service: virtual-machines-windows
 ms.subservice: disks
-ms.openlocfilehash: b25d35ce467786c402c56c8a7d19a305381db94f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f6b6e261b5cdfee00a9346338b6eb5d7e1f2a2a0
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82137796"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82982111"
 ---
 # <a name="server-side-encryption-of-azure-managed-disks"></a>Шифрование управляемых дисков Azure на стороне сервера
 
@@ -79,7 +79,7 @@ ms.locfileid: "82137796"
 - Все ресурсы, связанные с ключами, управляемыми клиентом (хранилища ключей Azure, наборы шифрования дисков, виртуальные машины, диски и моментальные снимки), должны находиться в одной подписке и регионе.
 - Диски, моментальные снимки и образы, зашифрованные с помощью управляемых клиентом ключей, не могут переместиться в другую подписку.
 - Если вы используете портал Azure для создания набора шифрования диска, использовать моментальные снимки сейчас нельзя.
-- Управляемые диски, зашифрованные с помощью ключей, управляемых клиентом, также не шифруются с помощью шифрования дисков Azure.
+- Управляемые диски, зашифрованные с помощью шифрования на стороне сервера, с ключами, управляемыми клиентом, не могут также быть зашифрованы с помощью шифрования дисков Azure и наоборот.
 
 ### <a name="powershell"></a>PowerShell
 
@@ -285,7 +285,7 @@ $disk.Encryption.Type
 
 [Шифрование дисков Azure](../../security/fundamentals/azure-disk-encryption-vms-vmss.md) использует функцию [BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-overview) в Windows и функцию [DM-](https://en.wikipedia.org/wiki/Dm-crypt) Encryption в Linux для шифрования управляемых дисков с помощью управляемых клиентом ключей на гостевой виртуальной машине.  Шифрование на стороне сервера с помощью управляемых клиентом ключей улучшает работу с ADE, позволяя использовать любые типы ОС и образы для виртуальных машин путем шифрования данных в службе хранилища.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Изучите шаблоны Azure Resource Manager для создания зашифрованных дисков с помощью управляемых клиентом ключей](https://github.com/ramankumarlive/manageddiskscmkpreview)
 - [Что такое хранилище ключей Azure?](../../key-vault/general/overview.md)

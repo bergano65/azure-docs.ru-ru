@@ -14,40 +14,13 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 03/06/2020
 ms.author: juergent
-ms.openlocfilehash: 614ac8b651224a3b6ec605a6bffd520449a1d793
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a9041b373c215ac226764b737ee3bf35b008e5db
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78926747"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82978388"
 ---
-[1928533]:https://launchpad.support.sap.com/#/notes/1928533
-[2015553]:https://launchpad.support.sap.com/#/notes/2015553
-[2178632]:https://launchpad.support.sap.com/#/notes/2178632
-[2191498]:https://launchpad.support.sap.com/#/notes/2191498
-[2243692]:https://launchpad.support.sap.com/#/notes/2243692
-[1984787]:https://launchpad.support.sap.com/#/notes/1984787
-[1999351]:https://launchpad.support.sap.com/#/notes/1999351
-[2233094]:https://launchpad.support.sap.com/#/notes/2233094
-[1612105]:https://launchpad.support.sap.com/#/notes/1612105
-
-[sles-for-sap-bp]:https://www.suse.com/documentation/sles-for-sap-12/
-[db2-hadr-11.1]:https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.admin.ha.doc/doc/c0011267.html
-[db2-hadr-10.5]:https://www.ibm.com/support/knowledgecenter/en/SSEPGG_10.5.0/com.ibm.db2.luw.admin.ha.doc/doc/c0011267.html
-[dbms-db2]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_ibm
-[sles-pacemaker]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker
-[sap-instfind]:https://help.sap.com/viewer/9e41ead9f54e44c1ae1a1094b0f80712/ALL/en-US/576f5c1808de4d1abecbd6e503c9ba42.html
-[nfs-ha]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-nfs
-[sles-ha-guide]:https://www.suse.com/releasenotes/x86_64/SLE-HA/12-SP4/
-[ascs-ha]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse
-
-[dbms-guide]:dbms-guide.md
-[deployment-guide]:deployment-guide.md
-[planning-guide]:planning-guide.md
-[azr-sap-plancheck]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-deployment-checklist
-
-
-
 # <a name="high-availability-of-ibm-db2-luw-on-azure-vms-on-suse-linux-enterprise-server-with-pacemaker"></a>Высокий уровень доступности IBM DB2 LUW на виртуальных машинах Azure на SUSE Linux Enterprise Server с Pacemaker
 
 IBM DB2 для Linux, UNIX и Windows (LUW) в [конфигурации высокой доступности и аварийного восстановления (HADR)](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_10.5.0/com.ibm.db2.luw.admin.ha.doc/doc/c0011267.html) состоит из одного узла, на котором выполняется экземпляр базы данных-источника и по крайней мере одного узла, на котором выполняется экземпляр базы данных-получателя. Изменения в экземпляре базы данных-источника реплицируются в экземпляр базы данных получателя синхронно или асинхронно, в зависимости от конфигурации. 
@@ -430,19 +403,19 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
 1. Создайте интерфейсный пул IP-адресов:
 
-   a. В портал Azure откройте Azure Load Balancer, выберите **интерфейсный пул IP-адресов**и нажмите кнопку **Добавить**.
+   а. В портал Azure откройте Azure Load Balancer, выберите **интерфейсный пул IP-адресов**и нажмите кнопку **Добавить**.
 
    b. Введите имя нового пула IP-адресов внешнего интерфейса (например, **DB2-Connection**).
 
    c. Установите статическое **назначение** и **Static**введите IP-адрес **Virtual-IP** , определенный в начале.
 
-   d. Нажмите кнопку **OK**.
+   d. Нажмите кнопку **ОК**.
 
    д) Когда пул интерфейсных IP-адресов будет создан, запишите его IP-адрес.
 
 1. Создайте пул серверной части:
 
-   a. В портал Azure откройте Azure Load Balancer, выберите **серверные пулы**и нажмите кнопку **Добавить**.
+   а. В портал Azure откройте Azure Load Balancer, выберите **серверные пулы**и нажмите кнопку **Добавить**.
 
    b. Введите имя нового пула серверной части (например, **DB2-Серверная**часть).
 
@@ -456,17 +429,17 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
 1. Создание пробы работоспособности:
 
-   a. В портал Azure откройте Azure Load Balancer, выберите **зонды работоспособности**и нажмите кнопку **Добавить**.
+   а. В портал Azure откройте Azure Load Balancer, выберите **зонды работоспособности**и нажмите кнопку **Добавить**.
 
    b. Введите имя новой проверки работоспособности (например, **DB2-HP**).
 
    c. Выберите **TCP** в качестве протокола и порта **62500**. Установите для параметра **интервал** значение **5**и установите для параметра **порог неработоспособности** значение **2**.
 
-   d. Нажмите кнопку **OK**.
+   d. Нажмите кнопку **ОК**.
 
 1. Создайте правила балансировки нагрузки.
 
-   a. В портал Azure откройте Azure Load Balancer, выберите **правила балансировки нагрузки**, а затем нажмите кнопку **Добавить**.
+   а. В портал Azure откройте Azure Load Balancer, выберите **правила балансировки нагрузки**, а затем нажмите кнопку **Добавить**.
 
    b. Введите имя нового правила Load Balancer (например, **DB2-SID**).
 
@@ -478,7 +451,7 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
    е) Обязательно **включите плавающий IP-адрес**.
 
-   ж. Нажмите кнопку **OK**.
+   ж. Нажмите кнопку **ОК**.
 
 
 ### <a name="make-changes-to-sap-profiles-to-use-virtual-ip-for-connection"></a>Внесение изменений в профили SAP для использования виртуального IP-адреса для подключения
@@ -510,7 +483,7 @@ j2ee/dbhost = db-virt-hostname
 1. В правом окне выберите ключевые JDBC/Pool/\<SAPSID>/УРЛ.
 1. Измените имя узла в URL-адресе JDBC на имя виртуального узла.
      `jdbc:db2://db-virt-hostname:5912/TSP:deferPrepares=0`
-1. Выберите **Добавить**.
+1. Нажмите **Добавить**.
 1. Чтобы сохранить изменения, щелкните значок диска в левом верхнем углу.
 1. Закройте средство настройки.
 1. Перезапустите экземпляр Java.
@@ -522,7 +495,7 @@ j2ee/dbhost = db-virt-hostname
 
 Рекомендуется настроить общую общую папку NFS, в которой журналы записываются из обоих узлов. Общий ресурс NFS должен быть высокодоступным. 
 
-Можно использовать существующие общие ресурсы NFS высокой доступности для транспорта или каталога профиля. Дополнительные сведения можно найти в разделе
+Можно использовать существующие общие ресурсы NFS высокой доступности для транспорта или каталога профиля. Дополнительные сведения можно найти в разделе 
 
 - [Обеспечение высокого уровня доступности NFS на виртуальных машинах Azure в SUSE Linux Enterprise Server][nfs-ha] 
 - [Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server с Azure NetApp Files для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files)
@@ -905,7 +878,31 @@ stonith-sbd     (stonith:external/sbd): Started azibmdb02
      Masters: [ azibmdb02 ]
      Slaves: [ azibmdb01 ]</code></pre>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Высокодоступная архитектура и сценарии для SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-architecture-scenarios)
 - [Настройка Pacemaker на SUSE Linux Enterprise Server в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker)
 
+[1928533]:https://launchpad.support.sap.com/#/notes/1928533
+[2015553]:https://launchpad.support.sap.com/#/notes/2015553
+[2178632]:https://launchpad.support.sap.com/#/notes/2178632
+[2191498]:https://launchpad.support.sap.com/#/notes/2191498
+[2243692]:https://launchpad.support.sap.com/#/notes/2243692
+[1984787]:https://launchpad.support.sap.com/#/notes/1984787
+[1999351]:https://launchpad.support.sap.com/#/notes/1999351
+[2233094]:https://launchpad.support.sap.com/#/notes/2233094
+[1612105]:https://launchpad.support.sap.com/#/notes/1612105
+
+[sles-for-sap-bp]:https://www.suse.com/documentation/sles-for-sap-12/
+[db2-hadr-11.1]:https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.admin.ha.doc/doc/c0011267.html
+[db2-hadr-10.5]:https://www.ibm.com/support/knowledgecenter/en/SSEPGG_10.5.0/com.ibm.db2.luw.admin.ha.doc/doc/c0011267.html
+[dbms-db2]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_ibm
+[sles-pacemaker]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker
+[sap-instfind]:https://help.sap.com/viewer/9e41ead9f54e44c1ae1a1094b0f80712/ALL/en-US/576f5c1808de4d1abecbd6e503c9ba42.html
+[nfs-ha]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-nfs
+[sles-ha-guide]:https://www.suse.com/releasenotes/x86_64/SLE-HA/12-SP4/
+[ascs-ha]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse
+
+[dbms-guide]:dbms-guide.md
+[deployment-guide]:deployment-guide.md
+[planning-guide]:planning-guide.md
+[azr-sap-plancheck]:https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-deployment-checklist

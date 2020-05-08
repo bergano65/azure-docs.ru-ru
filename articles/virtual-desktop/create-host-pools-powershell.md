@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: c003af296b10037505e6d6006b6bfc788e641dc3
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
-ms.translationtype: HT
+ms.openlocfilehash: 474eb4f5247aeb77edce0ebfde1611bf2deef493
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82731463"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82930409"
 ---
 # <a name="create-a-host-pool-with-powershell"></a>Создание пула узлов с помощью PowerShell
 
@@ -37,7 +37,7 @@ ms.locfileid: "82731463"
 New-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> -WorkspaceName <workspacename> -HostPoolType <Pooled|Personal> -LoadBalancerType <BreadthFirst|DepthFirst|Persistent> -Location <region> -DesktopAppGroupName <appgroupname> 
 ```
 
-Этот командлет создаст пул узлов, рабочую область и группу приложений рабочей среды. Кроме того, в рабочую область будет зарегистрирована группа приложений рабочей среды. Рабочую область можно создать только с помощью этого командлета, но нельзя использовать существующую рабочую область в этом командлете. 
+Этот командлет создаст пул узлов, рабочую область и группу приложений рабочей среды. Кроме того, в рабочую область будет зарегистрирована группа приложений рабочей среды. Вы можете создать рабочую область с помощью этого командлета или использовать существующую рабочую область. 
 
 Выполните следующий командлет, чтобы создать маркер регистрации для авторизации узла сеансов для приподключения к пулу узлов и сохранения его в новом файле на локальном компьютере. Можно указать срок действия маркера регистрации с помощью параметра-Експиратионхаурс.
 

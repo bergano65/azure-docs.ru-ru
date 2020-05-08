@@ -1,5 +1,5 @@
 ---
-title: Прием в Azure Data Lake Storage 2-го поколения в Azure синапсе Analytics
+title: Прием в Azure Data Lake Storage 2-го поколения
 description: Узнайте, как принимать данные в Azure Data Lake Storage 2-го поколения в Azure синапсе Analytics.
 services: synapse-analytics
 author: djpmsft
@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: daperlov
 ms.reviewer: jrasnick
-ms.openlocfilehash: 4d7d7be523749797e5dbce0e50c307fc682974f2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7b844bcf45417fefc7dd78a26d5dae0b2ce03249
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81430582"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82982910"
 ---
 # <a name="ingesting-data-into-azure-data-lake-storage-gen2"></a>Прием данных в Azure Data Lake Storage 2-го поколения 
 
@@ -70,6 +70,6 @@ ms.locfileid: "81430582"
 1. Убедитесь, что данные правильно написаны в пуле SQL.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об интеграции данных для синапсе Analytics см. в статье прием [данных в пул SQL](data-integration-sql-pool.md) .

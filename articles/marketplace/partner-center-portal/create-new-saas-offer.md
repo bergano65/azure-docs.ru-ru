@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 05/01/2020
-ms.openlocfilehash: 9ffa10726c1ca838f00b713e6640f609c122975a
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
-ms.translationtype: HT
+ms.openlocfilehash: b85846419ce5f6cd4093e198d83240817c95754a
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82735102"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82983063"
 ---
 # <a name="create-a-new-saas-offer-in-the-commercial-marketplace"></a>Создание нового предложения SaaS в коммерческом магазине
 
@@ -77,7 +77,6 @@ ms.locfileid: "82735102"
 
 - Для управления удостоверениями и аутентификацией ваше предложение должно использовать [Azure Active Directory (Azure AD)](https://azure.microsoft.com/services/active-directory/) .
 - Для интеграции с Azure Marketplace ваше предложение должно использовать [API-интерфейсы выполнения SaaS](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-fulfillment-api-v2) .
-- Более подробные требования см. в статье [рекомендации по публикации предложений SaaS](https://docs.microsoft.com/azure/marketplace/marketplace-saas-applications-technical-publishing-guide).
 
 #### <a name="saas-pricing-and-billing-options"></a>Цены на SaaS и варианты выставления счетов
 

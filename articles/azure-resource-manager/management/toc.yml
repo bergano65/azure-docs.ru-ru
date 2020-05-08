@@ -4,6 +4,11 @@
   items:
     - name: Что такое Resource Manager?
       href: overview.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Ограничения подписки и службы

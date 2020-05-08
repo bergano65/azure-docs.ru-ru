@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: a4210947d771768943775a3e62c2558fa2883bd5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8a60779fb045aa612a6ba0988c4635752f973f60
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79128190"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82607407"
 ---
 # <a name="determine-user-connection-latency-in-windows-virtual-desktop"></a>Определение задержки подключения пользователей в виртуальном рабочем столе Windows
 
@@ -25,8 +25,8 @@ ms.locfileid: "79128190"
 
 Виртуальный рабочий стол Windows использует диспетчер трафика Azure, который проверяет расположение DNS-сервера пользователя, чтобы найти ближайший экземпляр службы виртуальных рабочих столов Windows. Перед выбором расположения для виртуальных машин мы рекомендуем администраторам проверить расположение DNS-сервера пользователя.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы проверить лучшее расположение для оптимальной задержки, см. раздел [средство оценки возможностей виртуального рабочего стола Windows](https://azure.microsoft.com/services/virtual-desktop/assessment/).
 - Ценовые планы см. на странице [цены на виртуальные рабочие столы Windows](https://azure.microsoft.com/pricing/details/virtual-desktop/).
-- Чтобы приступить к работе с развертыванием виртуальных рабочих столов Windows, ознакомьтесь с [нашим руководством](tenant-setup-azure-active-directory.md).
+- Чтобы приступить к работе с развертыванием виртуальных рабочих столов Windows, ознакомьтесь с [нашим руководством](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md).
