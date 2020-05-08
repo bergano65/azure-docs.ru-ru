@@ -7,13 +7,13 @@ ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 10/16/2019
-ms.openlocfilehash: 9c43b141608e5a9051499fdfb2adb5d8b0b593df
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.date: 05/07/2020
+ms.openlocfilehash: 805b51bf4e6d8feab9539f660dfc72ca78b82d5c
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82232482"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82982638"
 ---
 # <a name="exists-transformation-in-mapping-data-flow"></a>Преобразование EXISTS в потоке данных сопоставления
 
@@ -21,7 +21,9 @@ ms.locfileid: "82232482"
 
 Преобразование «EXISTS» — это преобразование «Фильтрация строк», которое проверяет, существуют ли ваши данные в другом источнике или потоке. Выходной поток включает все строки в левом потоке, которые либо существуют, либо не существуют в правильном потоке. Преобразование EXISTS аналогично ```SQL WHERE EXISTS``` и ```SQL WHERE NOT EXISTS```.
 
-## <a name="configuration"></a>Параметр Configuration
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4vZKz]
+
+## <a name="configuration"></a>Конфигурация
 
 1. Выберите поток данных для проверки существования в правильном раскрывающемся списке **потока** .
 1. Укажите, нужно ли, чтобы данные были уже существуют или не существовали в параметре **типа EXISTS** .
@@ -82,6 +84,6 @@ NameNorm2, TypeConversions
     ) ~> checkForChanges
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Аналогичные преобразования: [Поиск](data-flow-lookup.md) и [соединение](data-flow-join.md).

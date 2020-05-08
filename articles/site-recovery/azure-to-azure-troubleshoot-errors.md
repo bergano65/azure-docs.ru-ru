@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/07/2020
 ms.author: rochakm
-ms.openlocfilehash: 9f95677211a89c1bb2a18076741dec08e76c5d70
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bbb2ddaa1fb84590f9dec1c84ac4bc87a8e03022
+ms.sourcegitcommit: 291b2972c7f28667dc58f66bbe9d9f7d11434ec1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81390378"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82738122"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-replication-errors"></a>Устранение ошибок репликации виртуальных машин Azure в Azure
 
@@ -172,8 +172,6 @@ Site Recovery configuration failed.
 ## <a name="outbound-urls-or-ip-ranges-error-code-151037-or-151072"></a>Исходящие URL-адреса или диапазоны IP-адресов (код ошибки 151037 или 151072)
 
 Чтобы Site Recovery репликация работала, на виртуальной машине требуется исходящее подключение к конкретным URL-адресам. Если виртуальная машина находится за брандмауэром или использует правила группы безопасности сети (NSG) для управления исходящими подключениями, могут возникнуть следующие проблемы. Хотя мы продолжаем поддерживать исходящий доступ через URL-адреса, использование списка разрешенных диапазонов IP-адресов больше не поддерживается.
-
-### <a name="issue-1-failed-to-register-azure-vm-with-site-recovery-151195"></a>Ошибка 1. не удалось зарегистрировать виртуальную машину Azure с Site Recovery (151195)
 
 #### <a name="possible-causes"></a>Возможные причины
 
@@ -537,6 +535,6 @@ Protection couldn't be enabled for the virtual machine as it has <DiskName> with
 
 Удалите диск реплики, указанный в сообщении об ошибке, и повторите задание защиты, завершившееся сбоем.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Репликация виртуальных машин Azure в другой регион Azure](azure-to-azure-how-to-enable-replication.md)

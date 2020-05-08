@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/22/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: 8d15c217f2e65877ea3baa18f6ba847492bc7fa1
-ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.openlocfilehash: e6ff33b6a23cb85649a8811a8bef27ab455ab9e6
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82509828"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82980904"
 ---
 # <a name="advanced-features-of-azure-metrics-explorer"></a>Расширенные возможности обозревателя метрик Azure
 
@@ -138,9 +138,6 @@ ms.locfileid: "82509828"
 
 После настройки цветов диаграммы они останутся таким образом при закреплении диаграммы на панели мониторинга. В следующем разделе показано, как закрепить диаграмму.
 
-> [!NOTE]
-> Из-за ограничений нашего расписания выпуска и публикации изменение цветов линий диаграммы временно требует передачи особого параметра **? Feature. ColorPicker = true** при запуске портал Azure [https://portal.azure.com/?feature.colorpicker=true](https://portal.azure.com/?feature.colorpicker=true). В ближайшее время эти ограничения будут устранены. 
-
 ![изображение метрики](./media/metrics-charts/018.png)
 
 ## <a name="pin-charts-to-dashboards"></a>Закрепление диаграмм на панелях мониторинга
@@ -177,7 +174,7 @@ ms.locfileid: "82509828"
 
 * Если сегментировать диаграмму по свойству, которое не определено в метрике, то на диаграмме ничего не отобразится. Попробуйте очистить сегментацию (разбиение) или выберите другое свойство.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
   Дополнительные сведения о рекомендациях по созданию готовых к работе панелей мониторинга с метриками см. в статье [Create custom KPI dashboards using Azure Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-tutorial-dashboards) (Создание пользовательских панелей мониторинга KPI с помощью Azure Application Insights).
 
