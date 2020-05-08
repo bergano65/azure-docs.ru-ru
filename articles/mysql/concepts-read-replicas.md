@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 04/21/2020
-ms.openlocfilehash: 47f686f810f62fe03a9b0217677c436f3b91782b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 5/4/2020
+ms.openlocfilehash: cb82b3223d50c66b4d6c176a274d5ccf8d510911
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81767889"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792111"
 ---
 # <a name="read-replicas-in-azure-database-for-mysql"></a>Реплики чтения в базе данных Azure для MySQL
 
@@ -56,7 +56,6 @@ ms.locfileid: "81767889"
     
 * Однонаправленные пары: некоторые регионы Azure связаны только в одном направлении. К этим регионам относятся "Западная Индия", "Южная Бразилия" и "US Gov (Вирджиния)". 
    Это означает, что главный сервер в Западной Индии может создать реплику в Южной Индии. Однако главный сервер в Южной Индии не может создать реплику в Западной Индии. Это связано с тем, что дополнительный регион "Западная Индия" — Южно-Индия, а дополнительный регион Южной Индии — не "Западная Индия".
-
 
 ## <a name="create-a-replica"></a>Создание реплики
 
@@ -147,6 +146,8 @@ mysql -h myreplica.mysql.database.azure.com -u myadmin@myreplica -p
 
 [`event_scheduler`](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_event_scheduler) Параметр заблокирован на серверах реплик. 
 
+Чтобы обновить один из указанных выше параметров на главном сервере, удалите серверы реплики, обновите значение параметра в базе данных master и повторно создайте реплики.
+
 ### <a name="other"></a>Другой
 
 - Идентификаторы глобальных транзакций (GTID) не поддерживаются.
@@ -155,7 +156,7 @@ mysql -h myreplica.mysql.database.azure.com -u myadmin@myreplica -p
 - Убедитесь, что у таблиц главного сервера есть первичные ключи. Отсутствие первичных ключей может привести к задержке репликации между главным сервером и репликами.
 - Полный список ограничений репликации MySQL см. в [документации по MySQL](https://dev.mysql.com/doc/refman/5.7/en/replication-features.html).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [создавать реплики чтения и управлять ими с помощью портала Azure](howto-read-replicas-portal.md).
 - Узнайте, как [создавать реплики чтения и управлять ими с помощью Azure CLI и REST API](howto-read-replicas-cli.md)

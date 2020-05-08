@@ -6,12 +6,12 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: reference
 ms.date: 04/20/2020
-ms.openlocfilehash: 34805c4eaae5d969fc2338c24f9f92404e065d15
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ca4dc888af414ede270118eff72652f098d3306c
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81727181"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82779048"
 ---
 # <a name="localization"></a>Локализация #
 
@@ -44,7 +44,7 @@ ms.locfileid: "81727181"
 | Французский              | fr   | Норвежский — нюнорск     | nn     | Китайский (упрощенное письмо)    | zh-hans      |
 | Галисийский            | gl   | Польский                  | pl     | Китайский (традиционное письмо)   | zh-hant      |
 | Иврит              | he   | Португальский (Бразилия)     | pt-br  |                         |              |
-| Hindi               | hu   | Португальский (Португалия)   | pt-pt  |                         |              |
+| Hindi               | hi   | Португальский (Португалия)   | pt-pt  |                         |              |
 
 
 > [!NOTE]

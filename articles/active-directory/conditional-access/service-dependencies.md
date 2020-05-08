@@ -5,24 +5,24 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: article
-ms.date: 11/21/2019
+ms.date: 05/04/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b39238575c05d35a2d87999e08c49c0c77e99bfb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 3b0d7816dc83a7c3536e44ff2461d85ea6178ff1
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74380009"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82778487"
 ---
 # <a name="what-are-service-dependencies-in-azure-active-directory-conditional-access"></a>Что такое зависимости служб в Azure Active Directory условном доступе? 
 
 С помощью политик условного доступа можно указать требования доступа к веб-сайтам и службам. Например, требования к доступу могут включать в себя требование многофакторной проверки подлинности (MFA) или [управляемых устройств](require-managed-devices.md). 
 
-При непосредственном доступе к сайту или службе влияние связанной политики обычно легко оценивается. Например, если имеется политика, требующая настройки MFA для SharePoint Online, для каждого входа на веб-портал SharePoint применяется MFA. Однако это не всегда прямо вперед, чтобы оценить влияние политики, поскольку существуют облачные приложения с зависимостями от других облачных приложений. Например, Microsoft Teams может предоставить доступ к ресурсам в SharePoint Online. Таким образом, при обращении к Microsoft Teams в нашем текущем сценарии вы также налагаетесь на политику MFA SharePoint.   
+При непосредственном доступе к сайту или службе влияние связанной политики обычно легко оценивается. Например, если имеется политика, для которой требуется многофакторная проверка подлинности (MFA) для SharePoint Online, для каждого входа на веб-портал SharePoint применяется сервер MFA. Однако это не всегда прямо вперед, чтобы оценить влияние политики, поскольку существуют облачные приложения с зависимостями от других облачных приложений. Например, Microsoft Teams может предоставить доступ к ресурсам в SharePoint Online. Таким образом, при обращении к Microsoft Teams в нашем текущем сценарии вы также налагаетесь на политику MFA SharePoint. 
 
 ## <a name="policy-enforcement"></a>Принудительное применение политики 
 
@@ -36,6 +36,8 @@ ms.locfileid: "74380009"
 ![Зависимости службы MS Teams](./media/service-dependencies/01.png)
 
 Рекомендуется устанавливать общие политики для связанных приложений и служб везде, где это возможно. Обеспечение единообразного уровня безопасности обеспечивает оптимальное взаимодействие с пользователем. Например, при настройке общей политики для Exchange Online, SharePoint Online, Microsoft Teams и Skype для бизнеса значительно сокращается количество непредвиденных запросов, которые могут возникнуть из-за применения различных политик к подчиненным службам. 
+
+Отличный способ добиться этого с помощью приложений в стеке Office — использовать [Office 365 (Предварительная версия)](concept-conditional-access-cloud-apps.md#office-365-preview) вместо назначения отдельных приложений.
 
 В таблице ниже перечислены дополнительные зависимости служб, которые должны соответствовать клиентским приложениям.  
 

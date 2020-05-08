@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 4/28/2020
-ms.openlocfilehash: 3f49ea14d5737e9c55e7193c18a5fc2ac5922ec5
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 935459a398c07d3b4f61c76dec75b083a2354720
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82230864"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82609062"
 ---
 # <a name="restart-azure-database-for-mysql-server-using-powershell"></a>Перезапуск базы данных Azure для сервера MySQL с помощью PowerShell
 
@@ -43,3 +43,8 @@ ms.locfileid: "82230864"
 ```azurepowershell-interactive
 Restart-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup
 ```
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+> [!div class="nextstepaction"]
+> [Создание базы данных Azure для сервера MySQL с помощью PowerShell](quickstart-create-mysql-server-database-using-azure-powershell.md)

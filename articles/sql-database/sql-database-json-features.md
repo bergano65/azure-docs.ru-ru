@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: ''
 ms.date: 04/19/2020
-ms.openlocfilehash: 992c981d49e7c6fbf8b6156570f6554a05caab5d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 968da0154f5a2587531e7594956a069f11c110d2
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81687754"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82890957"
 ---
 # <a name="getting-started-with-json-features-in-azure-sql-database"></a>Приступая к работе с функциями JSON в Базе данных SQL Azure
 База данных SQL Azure позволяет анализировать и запрашивать данные, представленные в формате [JSON](https://www.json.org/) (нотация объектов JavaScript), и экспортировать реляционные данные в виде текста JSON. В Базе данных SQL Azure доступны следующие сценарии использования JSON.
@@ -185,12 +185,12 @@ END
 
 Набор заказов, отформатированный как массив JSON и указанный в качестве параметра хранимой процедуры, можно проанализировать и вставить в таблицу Orders.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы узнать, как интегрировать JSON в приложение, ознакомьтесь с приведенным ниже материалами.
 
 * [Блог TechNet](https://blogs.technet.microsoft.com/dataplatforminsider/20../../json-in-sql-server-2016-part-1-of-4/)
 * [Документация MSDN](https://msdn.microsoft.com/library/dn921897.aspx)
 * [Видео Channel 9](https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-2016-and-JSON-Support)
 
-Чтобы узнать о различных сценариях интеграции JSON в приложение, ознакомьтесь с роликами [Channel 9](https://channel9.msdn.com/Events/DataDriven/SQLServer2016/JSON-as-a-bridge-betwen-NoSQL-and-relational-worlds) или найдите подходящий вам сценарий в [записях блога о JSON](https://blogs.msdn.com/b/sqlserverstorageengine/archive/tags/json/).
+Чтобы узнать о различных сценариях интеграции JSON в приложение, ознакомьтесь с роликами [Channel 9](https://channel9.msdn.com/Events/DataDriven/SQLServer2016/JSON-as-a-bridge-betwen-NoSQL-and-relational-worlds) или найдите подходящий вам сценарий в [записях блога о JSON](https://docs.microsoft.com/archive/blogs/sqlserverstorageengine/json-in-sql-server-use-cases).
 

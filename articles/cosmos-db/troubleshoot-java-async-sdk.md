@@ -1,22 +1,35 @@
 ---
-title: Диагностика и устранение неполадок с пакетом SDK Java Async для Azure Cosmos DB
-description: Воспользуйтесь такими функциями, как ведение журнала на стороне клиента, и другими сторонними инструментами для выявления, диагностики и устранения проблем, связанных с Azure Cosmos DB.
-author: moderakh
+title: Диагностика и устранение неполадок Azure Cosmos DB пакета SDK для асинхронного Java версии 2
+description: Используйте такие функции, как ведение журнала на стороне клиента и другие сторонние средства для выявления, диагностики и устранения Azure Cosmos DB проблем в асинхронном пакете SDK для Java версии 2.
+author: anfeldma-ms
 ms.service: cosmos-db
-ms.date: 04/30/2019
-ms.author: moderakh
+ms.date: 05/08/2020
+ms.author: anfeldma
 ms.devlang: java
 ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: 572139743c66546622450cef8f8a0fa264d24779
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.openlocfilehash: 04fa8d65ffb822fcd37f6da1bf3074a4e6a1d088
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
-ms.locfileid: "65519984"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82982621"
 ---
-# <a name="troubleshoot-issues-when-you-use-the-java-async-sdk-with-azure-cosmos-db-sql-api-accounts"></a>Устранение неполадок при использовании пакета SDK Async Java с учетными записями API SQL для Azure Cosmos DB
+# <a name="troubleshoot-issues-when-you-use-the-azure-cosmos-db-async-java-sdk-v2-with-sql-api-accounts"></a>Устранение неполадок при использовании Azure Cosmos DB пакета SDK версии 2 для асинхронного Java с учетными записями API SQL
+
+> [!div class="op_single_selector"]
+> * [Пакет SDK для Java v4](troubleshoot-java-sdk-v4-sql.md)
+> * [Пакет SDK для Async Java версии 2](troubleshoot-java-async-sdk.md)
+> * [.NET](troubleshoot-dot-net-sdk.md)
+> 
+
+> [!IMPORTANT]
+> Это *не* самый последний пакет SDK для Java для Azure Cosmos DB! Рассмотрите возможность использования Azure Cosmos DB пакета SDK для Java версии 4 для вашего проекта. Следуйте инструкциям из руководств по [переходу на Azure Cosmos DB пакета SDK для Java версии 4](migrate-java-v4-sdk.md) и инструкции по обновлению для [реактора VS рксжава](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/reactor-rxjava-guide.md) . 
+>
+> В этой статье описывается устранение неполадок только для Azure Cosmos DB асинхронного пакета SDK для Java версии 2. Дополнительные сведения см. в [комментариях к Выпуску](sql-api-sdk-async-java.md)Azure Cosmos DB Async Java SDK v2, о [репозитории](https://mvnrepository.com/artifact/com.microsoft.azure/azure-cosmosdb) и [Советы по повышению производительности](performance-tips-async-java.md) .
+>
+
 В этой статье рассматриваются распространенные проблемы, обходные пути, шаги диагностики и средства, используемые при использовании [пакета SDK для Java Async](sql-api-sdk-async-java.md) с учетными ЗАПИСЯМи API для Azure Cosmos DB SQL.
 Пакет SDK Java Async обеспечивает клиентское логическое представление для доступа к API SQL для Azure Cosmos DB. В этой статье описываются средства и подходы, которые помогут вам, если вы столкнетесь с проблемами.
 
@@ -80,6 +93,9 @@ GoneException{error=null, resourceAddress='https://cdb-ms-prod-westus-fd4.docume
 Потоки Netty для ввода-вывода предназначены только для операций Netty для ввода-вывода без блокировки. Пакет SDK возвращает результат вызова API, касающийся одного из потоков Netty для ввода-вывода, в код приложения. Если приложение выполняет операцию длительное время после получения результатов касательно потока Netty, пакет SDK может не располагать достаточным количеством потоков ввода-вывода для выполнения внутренних операций ввода-вывода. Кодирование такого приложения может привести к низкой пропускной способности, длительной задержке и сбоям `io.netty.handler.timeout.ReadTimeoutException`. Обходное решение заключается в том, чтобы переключить поток, когда вы знаете, что операция займет некоторое время.
 
 Рассмотрим, например, следующий фрагмент кода. Можно выполнить длительную работу, которая занимает более нескольких миллисекунд, в потоке Netty. В таком случае рано или поздно возникнет состояние, при котором не будет потока Netty для ввода-вывода, способного обрабатывать операции ввода-вывода. В результате произойдет сбой ReadTimeoutException.
+
+### <a name="async-java-sdk-v2-maven-commicrosoftazureazure-cosmosdb"></a><a id="asyncjava2-readtimeout"></a>Async Java SDK v2 (Maven com. Microsoft. Azure:: Azure-cosmosdb)
+
 ```java
 @Test
 public void badCodeWithReadTimeoutException() throws Exception {
@@ -131,13 +147,19 @@ public void badCodeWithReadTimeoutException() throws Exception {
     assertThat(failureCount.get()).isGreaterThan(0);
 }
 ```
-   Обходное решение заключается в изменении потока, в котором вы выполняете длительные операции. Определите отдельный экземпляр планировщика для приложения.
-   ```java
+Обходное решение заключается в изменении потока, в котором вы выполняете длительные операции. Определите отдельный экземпляр планировщика для приложения.
+
+### <a name="async-java-sdk-v2-maven-commicrosoftazureazure-cosmosdb"></a><a id="asyncjava2-scheduler"></a>Async Java SDK v2 (Maven com. Microsoft. Azure:: Azure-cosmosdb)
+
+```java
 // Have a singleton instance of an executor and a scheduler.
 ExecutorService ex  = Executors.newFixedThreadPool(30);
 Scheduler customScheduler = rx.schedulers.Schedulers.from(ex);
-   ```
-   Может потребоваться выполнить длительную работу (например, такую, которая требует значительных вычислений или блокировки ввода-вывода). В этом случае необходимо переключение потока на рабочую роль, предоставляемую параметром `customScheduler` с помощью API `.observeOn(customScheduler)`.
+```
+Может потребоваться выполнить длительную работу (например, такую, которая требует значительных вычислений или блокировки ввода-вывода). В этом случае необходимо переключение потока на рабочую роль, предоставляемую параметром `customScheduler` с помощью API `.observeOn(customScheduler)`.
+
+### <a name="async-java-sdk-v2-maven-commicrosoftazureazure-cosmosdb"></a><a id="asyncjava2-applycustomscheduler"></a>Async Java SDK v2 (Maven com. Microsoft. Azure:: Azure-cosmosdb)
+
 ```java
 Observable<ResourceResponse<Document>> createObservable = client
         .createDocument(getCollectionLink(), docDefinition, null, false);
@@ -169,7 +191,7 @@ Exception in thread "main" java.lang.NoSuchMethodError: rx.Observable.toSingle()
 
 Приведенное выше исключение предполагает, что у вас есть зависимость от более старой версии Рксжава lib (например, 1.2.2). Наш пакет SDK полагается на Рксжава 1.3.8, который содержит интерфейсы API, недоступные в более ранней версии Рксжава. 
 
-Обходной путь для таких 1.2.2ов заключается в том, чтобы выяснить, какая другая зависимость переносится в Рксжава-1.2.2 и исключают транзитивное зависимость от Рксжава-CosmosDB и разрешите SDK вывести новую версию.
+Обходной путь для таких проблем заключается в определении того, какая другая зависимость переносится в Рксжава-1.2.2, и исключает косвенную зависимость от Рксжава-1.2.2, а также разрешите CosmosDB SDK вывести новую версию.
 
 Чтобы узнать, какая библиотека переносится в Рксжава-1.2.2, выполните следующую команду рядом с файлом проекта POM. XML:
 ```bash

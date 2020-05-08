@@ -3,13 +3,13 @@ title: Создание контейнера Windows Server в кластере 
 description: Узнайте, как быстро создать кластер Kubernetes, развернуть приложение в контейнере Windows Server в службе Kubernetes Azure (AKS) с помощью Azure CLI.
 services: container-service
 ms.topic: article
-ms.date: 04/14/2020
-ms.openlocfilehash: 8b4d7fff6bb03e31976c28ba67c1db0e68d7cc8f
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.date: 05/06/2020
+ms.openlocfilehash: 28925961ea3b99f939ac650d54b5dcece2551f59
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82854420"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82926635"
 ---
 # <a name="create-a-windows-server-container-on-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Создание контейнера Windows Server в кластере Azure Kubernetes Service (AKS) с помощью Azure CLI
 
@@ -22,18 +22,6 @@ ms.locfileid: "82854420"
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-
-### <a name="install-aks-preview-cli-extension"></a>Установка расширения интерфейса командной строки aks-preview
-
-Для использования контейнеров Windows Server требуется расширение CLI *AKS-Preview* версии 0.4.12 или более поздней. Установите расширение Azure CLI *AKS-Preview* с помощью команды [AZ Extension Add][az-extension-add] , а затем проверьте наличие доступных обновлений с помощью команды [AZ Extension Update][az-extension-update] :
-
-```azurecli-interactive
-# Install the aks-preview extension
-az extension add --name aks-preview
-# Update the extension to make sure you have the latest version installed
-az extension update --name aks-preview
-```
 
 ### <a name="limitations"></a>Ограничения
 
@@ -92,9 +80,6 @@ az aks create \
     --enable-addons monitoring \
     --kubernetes-version 1.16.7 \
     --generate-ssh-keys \
-    --enable-vmss \
-    --vm-set-type VirtualMachineScaleSets \
-    --load-balancer-sku standard \
     --network-plugin azure
 ```
 
@@ -255,7 +240,7 @@ az group delete --name myResourceGroup --yes --no-wait
 > [!NOTE]
 > Когда вы удаляете кластер, субъект-служба Azure Active Directory, используемый в кластере AKS, не удаляется. Инструкции по удалению субъекта-службы см. в разделе с [дополнительными замечаниями][sp-delete]. Управляемые удостоверения администрируются платформой, и их не нужно удалять.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы развернули кластер Kubernetes и развернули пример приложения ASP.NET в контейнере Windows Server. Чтобы выполнить доступ к панели мониторинга кластера Kubernetes, который вы создали, см. статью [Подключение веб-панели мониторинга Kubernetes в Службе Azure Kubernetes (AKS)][kubernetes-dashboard].
 

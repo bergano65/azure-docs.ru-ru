@@ -1,17 +1,17 @@
 ---
 title: Регистрация и использование хранимых процедур, триггеров и определяемых пользователем функций в Azure Cosmos DB SDK
 description: Узнайте, как зарегистрировать и вызывать хранимые процедуры, триггеры и определяемые пользователем функции с помощью пакетов SDK для Azure Cosmos DB
-author: markjbrown
+author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 02/24/2020
-ms.author: mjbrown
-ms.openlocfilehash: 00740bc2255962089789682e3227ce414fd0ce64
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 05/07/2020
+ms.author: tisande
+ms.openlocfilehash: 2e870e6cbc16fd98d8fccb5bbe3ac5d8be634cf2
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77582506"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82982315"
 ---
 # <a name="how-to-register-and-use-stored-procedures-triggers-and-user-defined-functions-in-azure-cosmos-db"></a>Как зарегистрировать и использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB
 

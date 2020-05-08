@@ -5,17 +5,17 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 10/12/2017
 ms.author: tomfitz
-ms.openlocfilehash: 6e56c5e528a17d42a75da54158f00857a917645c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a93f4ff2ddc0737692de9e5619cf7a7521936224
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79248454"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82980819"
 ---
 # <a name="createuidefinition-functions"></a>Функции CreateUiDefinition
 Этот раздел содержит подписи для всех поддерживаемых функций CreateUiDefinition.
 
-Чтобы использовать функцию, заключите объявление в квадратные скобки. Пример:
+Чтобы использовать функцию, заключите вызов в квадратные скобки. Пример:
 
 ```json
 "[function()]"
@@ -431,7 +431,7 @@ ms.locfileid: "79248454"
 "[greaterOrEquals(2, 2)]"
 ```
 
-### <a name="and"></a>и
+### <a name="and"></a>and
 Возвращает `true`, если все параметры имеют значение `true`. Эта функция поддерживает два или более параметров только логического типа.
 
 В следующем примере возвращается `true`.
@@ -446,7 +446,7 @@ ms.locfileid: "79248454"
 "[and(equals(0, 0), greater(1, 2))]"
 ```
 
-### <a name="or"></a>или диспетчер конфигурации служб
+### <a name="or"></a>or
 Возвращает `true`, если хотя бы один из параметров имеет значение `true`. Эта функция поддерживает два или более параметров только логического типа.
 
 В следующем примере возвращается `true`.
@@ -485,10 +485,49 @@ ms.locfileid: "79248454"
 "[coalesce(steps('foo').element1, steps('foo').element2, 'foobar')]"
 ```
 
+Эта функция особенно полезна в контексте необязательного вызова, который происходит из-за действия пользователя после загрузки страницы. Например, если ограничения, накладываемые на одно поле в пользовательском интерфейсе, зависят от текущего выбранного значения другого, **изначально невидимого** поля. В этом случае можно `coalesce()` использовать функцию, чтобы разрешить синтаксически правильную работу функции при загрузке страницы, при этом при взаимодействии пользователя с полем.
+
+Рассмотрим это `DropDown`, что позволяет пользователю выбрать один из нескольких различных типов баз данных:
+
+```
+{
+    "name": "databaseType",
+    "type": "Microsoft.Common.DropDown",
+    "label": "Choose database type",
+    "toolTip": "Choose database type",
+    "defaultValue": "Oracle Database",
+    "visible": "[bool(steps('section_database').connectToDatabase)]"
+    "constraints": {
+        "allowedValues": [
+            {
+                "label": "Azure Database for PostgreSQL",
+                "value": "postgresql"
+            },
+            {
+                "label": "Oracle Database",
+                "value": "oracle"
+            },
+            {
+                "label": "Azure SQL",
+                "value": "sqlserver"
+            }
+        ],
+        "required": true
+    },
+```
+
+Чтобы применить условие к действию другого поля в текущем выбранном значении этого поля, используйте `coalesce()`, как показано ниже:
+
+```
+"regex": "[concat('^jdbc:', coalesce(steps('section_database').databaseConnectionInfo.databaseType, ''), '.*$')]",
+```
+
+Это необходимо потому, что `databaseType` изначально не является видимым и, следовательно, не имеет значения. Это приводит к неправильной оценке всего выражения.
+
 ## <a name="conversion-functions"></a>Функции преобразования
 Эти функции можно использовать для преобразования значений между типами данных JSON и кодировками.
 
-### <a name="int"></a>INT
+### <a name="int"></a>int
 Преобразует параметр в целое число. Эта функция поддерживает параметры типа "число" и "строка".
 
 В следующем примере возвращается `1`.
@@ -503,7 +542,7 @@ ms.locfileid: "79248454"
 "[int(2.9)]"
 ```
 
-### <a name="float"></a>FLOAT
+### <a name="float"></a>плавающее
 Преобразует параметр в число с плавающей точкой. Эта функция поддерживает параметры типа "число" и "строка".
 
 В следующем примере возвращается `1.0`.
@@ -518,7 +557,7 @@ ms.locfileid: "79248454"
 "[float(2.9)]"
 ```
 
-### <a name="string"></a>строка
+### <a name="string"></a>string
 Преобразует параметр в строку. Эта функция поддерживает параметры всех типов данных JSON.
 
 В следующем примере возвращается `"1"`.
@@ -778,6 +817,6 @@ ms.locfileid: "79248454"
 "[addHours('1990-12-31T23:59:59Z', 1)]"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Общие сведения об Azure Resource Manager см. в [этой статье](../management/overview.md).
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 8701fe6857e95334a5e1d24bfe70feb130d5512c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6e6bd55fbb73113dfbcd01e94753c4fb21219c14
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80756032"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82780884"
 ---
 # <a name="get-started-with-azcopy"></a>Начало работы с AzCopy
 
@@ -84,7 +84,7 @@ AzCopy — это служебная программа командной ст�
 
 Если вы хотите передать файлы, убедитесь, что участнику безопасности назначена одна из этих ролей:
 
-- [участник данных BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-queue-data-contributor);
+- [участник данных BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor);
 - [владелец данных BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner);
 
 Эти роли могут быть назначены субъекту безопасности в любой из этих областей:
@@ -273,8 +273,8 @@ azcopy copy "C:\local\path" "https://account.blob.core.windows.net/mycontainer1/
 
 | Операционная система  | Get-Help |
 |--------|-----------|
-| **Linux** | `curl -v https://aka.ms/downloadazcopy-v10-linux` |
-| **Windows** | `(curl https://aka.ms/downloadazcopy-v10-windows -MaximumRedirection 0 -ErrorAction silentlycontinue).RawContent` |
+| **Linux** | `curl -s -D- https://aka.ms/downloadazcopy-v10-linux | grep ^Location` |
+| **Windows** | `(curl https://aka.ms/downloadazcopy-v10-windows -MaximumRedirection 0 -ErrorAction silentlycontinue).headers.location` |
 
 > [!NOTE]
 > Для Linux `--strip-components=1` в `tar` команде удаляется папка верхнего уровня, содержащая имя версии, а вместо этого двоичный файл извлекается непосредственно в текущую папку. Это позволяет обновлять скрипт с новой версией `azcopy` , обновляя только `wget` URL-адрес.
@@ -318,6 +318,6 @@ URL-адрес отображается в выходных данных это�
 
 См. раздел [Настройка, оптимизация и устранение неполадок AzCopy](storage-use-azcopy-configure.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас есть вопросы, проблемы или общие отзывы, отправьте их [на страницу GitHub](https://github.com/Azure/azure-storage-azcopy) .

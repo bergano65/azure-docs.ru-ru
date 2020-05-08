@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: dech
 ms.custom: seodec18, has-adal-ref
-ms.openlocfilehash: d2fe231dce26311268e578a495fb2ba7076651e0
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
-ms.translationtype: HT
+ms.openlocfilehash: 2cf1ab2b9ec7e1094a0afa34973db3441c22ee5b
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82608036"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82982774"
 ---
 # <a name="work-with-data-using-azure-storage-explorer"></a>Работа с данными с помощью Обозревателя службы хранилища Azure
 
@@ -273,7 +273,7 @@ ms.locfileid: "82608036"
 
 ### <a name="httphttps-proxy-issue"></a>Неполадки с прокси-сервером HTTP/HTTPS
 
-При настройке прокси-сервера HTTP/HTTPS в ASE невозможно отобразить узлы Azure Cosmos DB в левом дереве узлов. Это известная проблема, и она будет исправлена в следующем выпуске. Пока в качестве временного решения можно использовать обозреватель данных Azure Cosmos DB на портале Azure.
+При настройке прокси-сервера HTTP/HTTPS в ASE невозможно отобразить узлы Azure Cosmos DB в левом дереве узлов. Пока в качестве временного решения можно использовать обозреватель данных Azure Cosmos DB на портале Azure.
 
 ### <a name="development-node-under-local-and-attached-node-issue"></a>Неполадки с узлом "Development" (Разработка) в узле "Local and Attached" (Локальные и присоединенные)
 
