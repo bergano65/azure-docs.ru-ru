@@ -6,12 +6,12 @@ ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 04/07/2020
-ms.openlocfilehash: 45e766c624ee96f7faa06fb07d00349e620a4c0a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d167c603ada885a1a4917c66bab110e4ce38cab4
+ms.sourcegitcommit: acc558d79d665c8d6a5f9e1689211da623ded90a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82133485"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82598374"
 ---
 # <a name="user-defined-functions-in-azure-stream-analytics"></a>Определяемые пользователем функции в Azure Stream Analytics
 
@@ -47,11 +47,13 @@ Azure Stream Analytics не сохраняет запись о всех вызо
 
 Любые ошибки времени выполнения считаются неустранимыми и отображаются с помощью журналов действий и ресурсов. Рекомендуется, чтобы функция обрабатывала все исключения и ошибки и возвращала в запрос допустимый результат. Это предотвратит переход задания в [состояние сбоя](job-states.md).  
 
+## <a name="exception-handling"></a>Обработка исключений
 
-## <a name="next-steps"></a>Дальнейшие шаги
+Любое исключение во время обработки данных считается разрушительным сбоем при использовании данных в Azure Stream Analytics. Определяемые пользователем функции имеют более высокий потенциал для создания исключений и вызывают прекращение обработки. Чтобы избежать этой проблемы, используйте блок *try-catch* в JavaScript или C# для перехвата исключений во время выполнения кода. Перехваченные исключения могут регистрироваться и обрабатываться без возникновения сбоя системы. Рекомендуется всегда создавать оболочку для пользовательского кода в блоке *try-catch* , чтобы избежать возникновения непредвиденных исключений для обработчика обработки.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Определяемые пользователем функции JavaScript в Azure Stream Analytics](stream-analytics-javascript-user-defined-functions.md)
 * [Azure Stream Analytics определяемые пользователем статистические функции JavaScript](stream-analytics-javascript-user-defined-aggregates.md)
 * [Разработка .NET Standard определяемых пользователем функций для Azure Stream Analyticsных заданий](stream-analytics-edge-csharp-udf-methods.md)
 * [Интеграция Azure Stream Analytics с Машинное обучение Azure](machine-learning-udf.md)
-

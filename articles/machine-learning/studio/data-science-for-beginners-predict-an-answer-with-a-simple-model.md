@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.custom: seodec18
 ms.date: 03/22/2019
-ms.openlocfilehash: 6ad9c7912eee6c3f5ec55b9cd7ab340bc79c9db7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ac9f4262d614b1e413f4283d3c459e60fc6634e2
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73837774"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82930239"
 ---
 # <a name="predict-an-answer-with-a-simple-model"></a>Прогнозирование ответа с помощью простой модели
 ## <a name="video-4-data-science-for-beginners-series"></a>Видео 4. Обработка и анализ данных для начинающих
@@ -128,4 +128,4 @@ ms.locfileid: "73837774"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Попробуйте первый эксперимент по обработке и анализу данных с помощью Машинное обучение Studio (классическая модель)](create-experiment.md)
-* [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](/azure/machine-learning/preview/overview-what-is-azure-ml)
+* [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](/azure/machine-learning/overview-what-is-azure-ml)

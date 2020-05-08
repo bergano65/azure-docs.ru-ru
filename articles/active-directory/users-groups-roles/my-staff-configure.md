@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: active-directory
 ms.subservice: user-help
 ms.workload: identity
-ms.date: 04/23/2020
+ms.date: 05/01/2020
 ms.author: curtand
 ms.reviewer: sahenry
 ms.custom: oldportal;it-pro;
-ms.openlocfilehash: 282946a023e4e79ee79b05cc2a317efc5a4056e4
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: b88f4aad650d77fea12677e61d3f249a77367e6f
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82165877"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82690692"
 ---
 # <a name="manage-your-users-with-my-staff-preview"></a>Управляйте своими пользователями с помощью моих сотрудников (Предварительная версия)
 
@@ -26,9 +26,28 @@ ms.locfileid: "82165877"
 
 Перед настройкой сотрудников Организации рекомендуется ознакомиться с этой документацией, а также с [пользовательской документацией](../user-help/my-staff-team-manager.md) , чтобы убедиться в том, что вы понимаете функциональные возможности и влияние этой функции на пользователей. Пользовательскую документацию можно использовать для обучения и подготовки пользователей к новым интерфейсам и обеспечения успешного развертывания.
 
+Проверка подлинности на основе SMS для пользователей — это общедоступная Предварительная версия функции Azure Active Directory. Дополнительные сведения о предварительных версиях см. в разделе Дополнительные [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
+
 ## <a name="how-my-staff-works"></a>Как работает мой персонал
 
 Мои сотрудники основаны на административных единицах (Au), которые являются контейнерами ресурсов, которые можно использовать для ограничения области административного управления назначением ролей. В моем отделе используется для определения подмножества пользователей организации, таких как магазин или отдел. Например, руководитель группы может быть назначен роли, область которой составляет один или несколько единиц управления. В приведенном ниже примере пользователю была предоставлена административная роль проверки подлинности, а три уровня управления — область действия роли. Дополнительные сведения об административных единицах см. [в статье Управление административными единицами в Azure Active Directory](directory-administrative-units.md).
+
+## <a name="before-you-begin"></a>Перед началом
+
+Для работы с этой статьей необходимы следующие ресурсы и привилегии:
+
+* Активная подписка Azure.
+
+  * Если у вас еще нет подписки Azure, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* Клиент Azure Active Directory, связанный с подпиской.
+
+  * Если потребуется, [создайте клиент Azure Active Directory](../fundamentals/sign-up-organization.md) или [свяжите подписку Azure со своей учетной записью](../fundamentals/active-directory-how-subscriptions-associated-directory.md).
+* Для включения проверки подлинности на основе SMS требуются права *глобального администратора* в клиенте Azure AD.
+* Каждый пользователь, включенный в политике метода проверки подлинности текстовых сообщений, должен иметь лицензию, даже если они не используют ее. Каждый включенный пользователь должен иметь одну из следующих лицензий Azure AD или Microsoft 365:
+
+  * [Azure AD Premium (P1 или P2)](https://azure.microsoft.com/pricing/details/active-directory/)
+  * [Microsoft 365 (M365) F1 или F3](https://www.microsoft.com/licensing/news/m365-firstline-workers)
+  * [Enterprise Mobility + Security (EMS) E3](https://www.microsoft.com/microsoft-365/enterprise-mobility-security/compare-plans-and-pricing) или в [Microsoft 365 (M365) E3 или](https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans) в.
 
 ## <a name="how-to-enable-my-staff"></a>Включение персонала
 
@@ -47,7 +66,7 @@ ms.locfileid: "82165877"
 
 Настоятельно рекомендуется защищать сотрудников с помощью [политик условного доступа Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/). Чтобы применить политику условного доступа к моему персоналу, необходимо вручную создать субъект-службу моего персонала с помощью PowerShell.
 
-### <a name="apply-a-----conditional-access-policy-to-my-staff"></a>Применение политики условного доступа к моим сотрудникам
+### <a name="apply-a-conditional-access-policy-to-my-staff"></a>Применение политики условного доступа к моим сотрудникам
 
 1. Установите [командлеты PowerShell Microsoft Graph Beta](https://github.com/microsoftgraph/msgraph-sdk-powershell/blob/dev/samples/0-InstallModule.ps1).
 1. Выполните следующие команды:
@@ -62,13 +81,6 @@ ms.locfileid: "82165877"
 ## <a name="using-my-staff"></a>Использование моего персонала
 
 Когда пользователь переходит к моему персоналу, он показывает имена [административных единиц](directory-administrative-units.md) , для которых у них есть административные разрешения. В [пользовательской документации "Мои сотрудники](../user-help/my-staff-team-manager.md)" мы используем термин "расположение" для ссылки на административные единицы. Если разрешения администратора не имеют области AU, то разрешения применяются в Организации. После включения сотрудников пользователи, которым назначена административная роль, могут получить к ним доступ с помощью [https://mystaff.microsoft.com](https://mystaff.microsoft.com). Они могут выбрать AU для просмотра пользователей в этом AU и выбрать пользователя, чтобы открыть свой профиль.
-
-## <a name="licenses"></a>Лицензии
-
-Каждый пользователь, который включен в мой персонал, должен быть лицензированным, даже если он не использует мой портал персонала. Каждый включенный пользователь должен иметь одну из следующих лицензий Azure AD или Microsoft 365:
-
-- Azure AD Premium (P1 или P2)
-- Microsoft 365 F1 или F3
 
 ## <a name="reset-a-users-password"></a>Сброс пароля пользователя
 
@@ -116,7 +128,7 @@ ms.locfileid: "82165877"
 
 Вы можете просматривать журналы аудита для действий, выполненных в моем персонале на портале Azure Active Directory. Если журнал аудита был создан действием, выполненным в моем персонале, вы увидите, что это указано в разделе Дополнительные сведения в событии аудита.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [My Staff user documentation](../user-help/my-staff-team-manager.md)
 [Документация по административным единицам](directory-administrative-units.md) документации по моим сотрудникам

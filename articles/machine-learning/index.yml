@@ -11,13 +11,13 @@ metadata:
   ms.collection: collection
   author: j-martens
   ms.author: jmartens
-  ms.date: 04/22/2020
-  ms.openlocfilehash: 174c5b1164505900345e35ff58d2970bf119cc82
-  ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+  ms.date: 04/30/2020
+  ms.openlocfilehash: b1df2d4420e25027a545b8a708cda31cf0ff152f
+  ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/23/2020
-  ms.locfileid: "82084215"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82690942"
 landingContent:
 - title: Начало работы с машинным обучением
   linkLists:
@@ -39,6 +39,8 @@ landingContent:
       url: concept-designer.md
     - text: Что такое автоматическое машинное обучение?
       url: concept-automated-ml.md
+    - text: Как выбрать алгоритм
+      url: how-to-select-algorithms.md
   - linkListType: tutorial
     links:
     - text: 'AutoML: создание модели классификации'
@@ -65,6 +67,8 @@ landingContent:
     links:
     - text: Настройка среды
       url: how-to-configure-environment.md
+    - text: Глубокое обучение и машинное обучение
+      url: concept-deep-learning-vs-machine-learning.md
     - text: Обучение с помощью Scikit-learn
       url: how-to-train-scikit-learn.md
     - text: Обучение с помощью TensorFlow

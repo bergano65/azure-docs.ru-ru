@@ -56,12 +56,10 @@
             - name: Автоматическое обучение модели машинного обучения
               displayName: 'automl, automated, auto ml,'
               href: tutorial-auto-train-models.md
-        - name: Конвейеры в Машинном обучении (дополнительно)
-          items:
-            - name: Пакетная оценка модели классификации
-              displayName: pipelines
-              href: tutorial-pipeline-batch-scoring-classification.md
-        - name: Переход с экспериментальной среды в рабочую среду
+        - name: Пакетная оценка моделей с использованием конвейеров
+          displayName: pipelines
+          href: tutorial-pipeline-batch-scoring-classification.md
+        - name: Подготовка кода для рабочей среды
           displayName: 'mlops, mlopspython, production'
           href: tutorial-convert-ml-experiment-to-production.md
     - name: Пакет SDK для R
@@ -88,54 +86,63 @@
     - name: Полные примеры MLOps
       href: 'https://github.com/microsoft/MLOps'
     - name: Открытые наборы данных (общедоступные)
-      href: /azure/open-datasets/samples?context=azure/machine-learning/service/context/ml-context
+      href: /azure/open-datasets/samples?context=azure/machine-learning/context/ml-context
 - name: Основные понятия
   items:
     - name: Планирование затрат и управление ими
       href: concept-plan-manage-cost.md
+    - name: Конструктор (перетаскивание ML)
+      items:
+        - name: Общие сведения о конструкторе
+          displayName: studio
+          href: concept-designer.md
+        - name: Памятка по алгоритмам
+          href: /azure/machine-learning/algorithm-cheat-sheet
+        - name: Выбор алгоритмов
+          href: /azure/machine-learning/how-to-select-algorithms
+    - name: Автоматическое Машинное обучение
+      items:
+        - name: Общие сведения об автоматизированном Машинном обучении
+          displayName: 'automl, auto ml'
+          href: concept-automated-ml.md
+        - name: Лжевзаимосвязь и несбалансированные данные
+          displayName: 'automl, auto ml, risks'
+          href: concept-manage-ml-pitfalls.md
     - name: Рабочая область
       href: concept-workspace.md
     - name: Среды
       href: concept-environments.md
-    - name: Прием данных
-      href: concept-data-ingestion.md
-    - name: Доступ к данным
-      href: concept-data.md
-    - name: Обучение модели
-      displayName: 'run config, estimator, machine learning pipeline, ml pipeline, train model'
-      href: concept-train-machine-learning-model.md
-    - name: Распределенное обучение
-      displayName: 'parallellization, deep learning, deep neural network, dnn'
-      href: concept-distributed-training.md
-    - name: Служба управления моделями (MLOps)
-      displayName: 'deploy, deployment, publish, production, operationalize, operationalization'
-      href: concept-model-management-and-deployment.md
-    - name: Интерпретируемость
-      displayName: explainability
-      href: how-to-machine-learning-interpretability.md
-    - name: 'Конструктор: ML без кода'
-      displayName: studio
-      href: concept-designer.md
-    - name: Памятка по алгоритмам
-      href: /azure/machine-learning/algorithm-cheat-sheet
-    - name: Выбор алгоритмов
-      href: /azure/machine-learning/how-to-select-algorithms
-    - name: Автоматическое Машинное обучение
-      displayName: 'automl, auto ml'
-      href: concept-automated-ml.md
-    - name: Лжевзаимосвязь и несбалансированные данные
-      displayName: 'automl, auto ml, risks'
-      href: concept-manage-ml-pitfalls.md
     - name: Вычислительная операция
       displayName: 'resource, dsvm, Data Science Virtual Machine'
       href: concept-compute-instance.md
     - name: Целевой объект вычисления
       displayName: 'resource, dsvm, AKS, kubernetes, amlcompute, Data Science Virtual Machine, local, cluster, ACI, container instance, ADB, Databricks, data lake, lake, HDI, HDInsight'
       href: concept-compute-target.md
+    - name: 'Данные '
+      items:
+        - name: Доступ к данным
+          href: concept-data.md
+        - name: Прием данных
+          href: concept-data-ingestion.md
+    - name: Обучение модели
+      displayName: 'run config, estimator, machine learning pipeline, ml pipeline, train model'
+      href: concept-train-machine-learning-model.md
+    - name: Распределенное обучение
+      displayName: 'parallellization, deep learning, deep neural network, dnn'
+      href: concept-distributed-training.md
+    - name: Глубокое обучение
+      displayName: 'deep learning vs machine learning, deep learning, vs, versus'
+      href: concept-deep-learning-vs-machine-learning.md
+    - name: Служба управления моделями (MLOps)
+      displayName: 'deploy, deployment, publish, production, operationalize, operationalization'
+      href: concept-model-management-and-deployment.md
+    - name: Переносимость модели (ONNX)
+      href: concept-onnx.md
+    - name: Интерпретируемость модели
+      displayName: explainability
+      href: how-to-machine-learning-interpretability.md
     - name: Конвейеры Машинного обучения
       href: concept-ml-pipelines.md
-    - name: ONNX
-      href: concept-onnx.md
     - name: Готовность к работе и безопасность в масштабах предприятия
       items:
         - name: Корпоративная безопасность
@@ -165,11 +172,6 @@
           href: how-to-setup-authentication.md
         - name: Мониторинг Машинного обучения Azure
           href: monitor-azure-machine-learning.md
-    - name: Интеграция с Сеткой событий
-      href: concept-event-grid-integration.md
-    - name: Глубокое обучение
-      displayName: 'deep learning vs machine learning, deep learning, vs, versus'
-      href: concept-deep-learning-vs-machine-learning.md
 - name: Практические руководства
   items:
     - name: Создание рабочих областей и управление ими
@@ -188,6 +190,8 @@
         - name: Настройка сред разработки
           displayName: 'local, remote, azure notebooks, notebook, Jupyter, dsvm, Databricks, ADB'
           href: how-to-configure-environment.md
+        - name: Выполнение Jupyter Notebook
+          href: how-to-run-jupyter-notebooks.md
         - name: Настройка программных сред
           displayName: 'pip, Conda, anaconda'
           href: how-to-use-environments.md
@@ -269,14 +273,14 @@
           href: how-to-train-keras.md
         - name: PyTorch
           href: how-to-train-pytorch.md
-    - name: Описание моделей
+    - name: Анализ и описание моделей
       displayName: interpretability
       items:
-        - name: Описание моделей машинного обучения
-          displayName: 'SDK, interpret'
+        - name: Интерпретация моделей машинного обучения
+          displayName: 'SDK, interpret, explain, explanability, interpretability'
           href: how-to-machine-learning-interpretability-aml.md
         - name: Описание автоматизированных моделей машинного обучения
-          displayName: 'SDK, interpret, automl'
+          displayName: 'SDK, interpret, interpret, explain, explanability, interpretability, automated ML, automl, auto ml'
           href: how-to-machine-learning-interpretability-automl.md
     - name: Автоматизация машинного обучения
       displayName: 'automl, auto ml'
@@ -295,6 +299,9 @@
         - name: Автоматическое обучение прогнозной модели
           displayName: time series
           href: how-to-auto-train-forecast.md
+        - name: Использование автоматизированного машинного обучения в конвейерах машинного обучения (Python)
+          displayName: machine learning automl
+          href: how-to-use-automlstep-in-pipelines.md
         - name: Общие сведения о диаграммах и метриках
           href: how-to-understand-automated-ml.md
     - name: Отслеживание и мониторинг экспериментов
@@ -334,7 +341,7 @@
               displayName: functions app
               href: how-to-deploy-functions.md
             - name: устройство Azure IoT Edge.
-              href: /azure/iot-edge/tutorial-deploy-machine-learning?context=azure/machine-learning/service/context/ml-context
+              href: /azure/iot-edge/tutorial-deploy-machine-learning?context=azure/machine-learning/context/ml-context
             - name: Вывод ППВМ
               href: how-to-deploy-fpga-web-service.md
             - name: Пользовательские образы Docker
@@ -375,7 +382,10 @@
           href: how-to-debug-pipelines-application-insights.md
         - name: Azure Pipelines для CI/CD
           displayName: 'continuous, integration, delivery'
-          href: /azure/devops/pipelines/targets/azure-machine-learning?context=azure/machine-learning/service/context/ml-context
+          href: /azure/devops/pipelines/targets/azure-machine-learning?context=azure/machine-learning/context/ml-context
+        - name: Данные преобразования конструктора
+          displayName: pipeline
+          href: how-to-designer-transform-data.md
         - name: Повторное обучение конструктора с помощью опубликованных конвейеров
           displayName: 'retrain, designer, published pipeline'
           href: how-to-retrain-designer.md
@@ -391,6 +401,9 @@
         - name: Отладка и устранение неполадок с параллельным выполнением шагов
           displayName: debug_batch consume pipeline parallelrunstep inference
           href: how-to-debug-parallel-run-step.md
+        - name: Итерация и доработка конвейеров машинного обучения
+          displayName: modularizing testing
+          href: concept-pipeline-practices-tips.md
     - name: Управление квотами ресурсов
       displayName: limits
       href: how-to-manage-quotas.md
@@ -441,7 +454,7 @@
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-machine-learning-service'
     - name: Сравнить наши продукты Машинного обучения
-      href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure/machine-learning/service/context/ml-context
+      href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure/machine-learning/context/ml-context
     - name: Что произошло с Workbench
       displayName: 'desktop, ui, Workbench, upgrade, update, transfer'
       href: overview-what-happened-to-workbench.md

@@ -3,12 +3,12 @@ title: Использование PowerShell для архивации Windows S
 description: В этой статье описано, как использовать PowerShell для настройки Azure Backup в Windows Server или клиенте Windows, а также для управления резервным копированием и восстановлением.
 ms.topic: conceptual
 ms.date: 12/2/2019
-ms.openlocfilehash: 3b9bcf8e777244cec11383619d145e3a99ff46d2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fde81aba5a2b74ce25c8f3cd70dc24df6f566420
+ms.sourcegitcommit: acc558d79d665c8d6a5f9e1689211da623ded90a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82193026"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82597983"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-windows-serverwindows-client-using-powershell"></a>Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell
 
@@ -111,7 +111,7 @@ MARSAgentInstaller.exe /?
 
 Доступны следующие параметры.
 
-| Параметр | Сведения | Значение по умолчанию |
+| Параметр | Сведения | По умолчанию |
 | --- | --- | --- |
 | /q |Позволяет выполнить тихую установку. |- |
 | /p:"расположение" |Путь к папке установки для агента архивации Azure. |C:\Program Files\Microsoft Azure Recovery Services Agent |
@@ -209,7 +209,12 @@ Server properties updated successfully.
 
 Для защиты конфиденциальности данных резервные копии данных, отправляемые в службу архивации Azure, зашифровываются. Используемая для шифрования парольная фраза является "паролем" для расшифровки данных во время их восстановления.
 
-Чтобы создать ПИН-код безопасности, выберите **создать**в разделе **Параметры** > **Свойства** > **ПИН-код** в **хранилище служб восстановления** портал Azure. Затем используйте его `generatedPIN` в качестве в команде:
+Чтобы создать ПИН-код безопасности, выберите **создать**в разделе **Параметры** > **Свойства** > **ПИН-код** в **хранилище служб восстановления** портал Azure. 
+
+>[!NOTE]
+> ПИН-код безопасности можно создать только с помощью портал Azure.
+
+Затем используйте его `generatedPIN` в качестве в команде:
 
 ```powershell
 $PassPhrase = ConvertTo-SecureString -String "Complex!123_STRING" -AsPlainText -Force

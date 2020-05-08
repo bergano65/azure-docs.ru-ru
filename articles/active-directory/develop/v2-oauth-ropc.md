@@ -3,7 +3,7 @@ title: Вход с использованием учетных данных вл
 titleSuffix: Microsoft identity platform
 description: Поддержка потоков проверки подлинности без браузера с помощью предоставления учетных данных владельца ресурса (РОПК).
 services: active-directory
-author: rwike77
+author: hpsin
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
@@ -13,12 +13,12 @@ ms.date: 11/19/2019
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: a282264ed3e9539bcc96babfc41376d2c6c35628
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 26b3cb343aba2d45d5a14944a7f8856715bca100
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81868653"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82690100"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-resource-owner-password-credentials"></a>Учетные данные пароля владельца ресурса OAuth 2,0 для платформы Microsoft Identity
 
@@ -66,7 +66,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 | Параметр | Условие | Описание |
 | --- | --- | --- |
-| `tenant` | Обязательный | Клиент каталога, в который пользователь выполняет вход. Его можно указать в виде GUID или понятного имени. Этот параметр не может иметь значение `common` или `consumers`, но может быть равен `organizations`. |
+| `tenant` | Обязательно | Клиент каталога, в который пользователь выполняет вход. Его можно указать в виде GUID или понятного имени. Этот параметр не может иметь значение `common` или `consumers`, но может быть равен `organizations`. |
 | `client_id` | Обязательный | Идентификатор приложения (клиента), которому назначена страница [портал Azure регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) приложения. |
 | `grant_type` | Обязательный | Нужно задать значение `password`. |
 | `username` | Обязательный | Адрес электронной почты пользователя. |
@@ -94,7 +94,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 | --------- | ------ | ----------- |
 | `token_type` | Строка | Всегда имеет значение `Bearer`. |
 | `scope` | Строки, разделенные пробелами | Если маркер успешно возвращается, этот параметр будет содержать список областей, для которых этот маркер доступа является допустимым. |
-| `expires_in`| INT | Срок действия прилагаемого маркера доступа (в секундах). |
+| `expires_in`| int | Срок действия прилагаемого маркера доступа (в секундах). |
 | `access_token`| Непрозрачная строка | Выдается для запрошенных [областей](v2-permissions-and-consent.md) . |
 | `id_token` | JWT | Выдается, если исходный параметр `scope` содержит область `openid`. |
 | `refresh_token` | Непрозрачная строка | Выдается, если исходный параметр `scope` содержит `offline_access`. |

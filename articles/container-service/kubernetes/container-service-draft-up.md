@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/14/2017
 ms.author: rasquill
 ms.custom: mvc
-ms.openlocfilehash: 8d688d2918c9100019d033e93e9a3dca9e492de2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 039879cb725c20af3c40698947ea9abe189d08ad
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76271136"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82731769"
 ---
 # <a name="deprecated-use-draft-with-azure-container-service-and-azure-container-registry-to-build-and-deploy-an-application-to-kubernetes"></a>(УСТАРЕЛО) Использование Draft со Службой контейнеров Azure и Реестром контейнеров Azure для создания и развертывания приложения в Kubernetes
 
@@ -102,7 +102,7 @@ waiting for AAD role to propagate.done
 
 
 1. Скачайте черновик для своей среды в https://github.com/Azure/draft/releases и установите его в пути, чтобы можно было использовать команду.
-2. Скачайте Helm для своей среды в https://github.com/kubernetes/helm/releases и [, установите ее в свой путь, чтобы можно было использовать команду ](https://github.com/kubernetes/helm/blob/master/docs/install.md#installing-the-helm-client).
+2. Скачайте Helm для своей среды в https://github.com/kubernetes/helm/releases и [, установите ее в свой путь, чтобы можно было использовать команду ](https://helm.sh/docs/intro/quickstart#install-helm).
 3. Настройте черновик, чтобы использовать реестр и создать поддомены для каждого чарта Helm, который он создает. Чтобы настроить черновик, вам потребуется следующее:
    - имя реестра контейнеров Azure (в этом примере — `draftacsdemo`);
    - раздел реестра или пароль, полученный из `az acr credential show -n <registry name> --output tsv --query "passwords[0].value"`;
@@ -282,7 +282,7 @@ kubernetes                    10.0.0.1       <none>          443/TCP            
    ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда у вас есть кластер ACS Kubernetes, вы можете использовать [реестр контейнеров Azure](../../container-registry/container-registry-intro.md), чтобы создать больше различных развертываний этого сценария. Например, вы можете создать набор записей DNS домена draft._basedomain.toplevel_, с помощью которого можно отключать функции важного поддомена для определенных развертываний ACS.
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/14/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 71ba24784dee7771acbe19bf0261c7dc02478b24
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4bb315991846b115070854b6e81caf16232fef6b
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79127518"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82607187"
 ---
 # <a name="storage-options-for-fslogix-profile-containers-in-windows-virtual-desktop"></a>Варианты хранения для контейнеров профилей Фслогикс в виртуальном рабочем столе Windows
 
@@ -25,7 +25,7 @@ Azure предлагает несколько решений для хранен
 
 ## <a name="azure-platform-details"></a>Сведения о платформе Azure
 
-|Функции|Файлы Azure|Azure NetApp Files|Дисковые пространства прямого подключения|
+|Компоненты|Файлы Azure|Azure NetApp Files|Локальные дисковые пространства|
 |--------|-----------|------------------|---------------------|
 |Вариант использования|Общего назначения|Ultra Performance или миграция из локальной среды NetApp|Кроссплатформенный|
 |Служба платформы|Да, решение Azure Native|Да, решение Azure Native|Нет, самостоятельное управление|
@@ -38,7 +38,7 @@ Azure предлагает несколько решений для хранен
 
 ## <a name="azure-management-details"></a>Сведения об управлении Azure
 
-|Функции|Файлы Azure|Azure NetApp Files|Дисковые пространства прямого подключения|
+|Компоненты|Файлы Azure|Azure NetApp Files|Локальные дисковые пространства|
 |--------|-----------|------------------|---------------------|
 |Доступ|Облако, локальное и гибридное развертывание (служба синхронизации файлов Azure)|Локальное облако (через ExpressRoute)|Локальное облако|
 |Резервное копирование|Интеграция моментальных снимков Azure Backup|Моментальные снимки Azure NetApp Files|Интеграция моментальных снимков Azure Backup|
@@ -47,7 +47,7 @@ Azure предлагает несколько решений для хранен
 
 После выбора метода хранения ознакомьтесь с [ценами на виртуальные рабочие столы Windows](https://azure.microsoft.com/pricing/details/virtual-desktop/) , чтобы получить сведения о наших тарифных планах.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о контейнерах профилей Фслогикс, дисках профилей пользователей и других технологиях профилей пользователей см. в таблице в [контейнерах профилей фслогикс и файлах Azure](fslogix-containers-azure-files.md).
 
@@ -57,4 +57,4 @@ Azure предлагает несколько решений для хранен
 - [Создание контейнера профиля Фслогикс для пула узлов с помощью файлов NetApp для Azure](create-fslogix-profile-container.md)
 - Инструкции по [развертыванию Локальные дисковые пространства масштабируемого файлового сервера для хранилища UPD в Azure](/windows-server/remote/remote-desktop-services/rds-storage-spaces-direct-deployment/) также применяются при использовании контейнера профиля фслогикс вместо диска профиля пользователя.
 
-Вы также можете начать с самого начала и настроить собственное решение Windows для виртуальных рабочих столов на странице [Создание клиента в виртуальном рабочем столе Windows](tenant-setup-azure-active-directory.md).
+Вы также можете начать с самого начала и настроить собственное решение Windows для виртуальных рабочих столов на странице [Создание клиента в виртуальном рабочем столе Windows](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md).

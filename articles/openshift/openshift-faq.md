@@ -6,12 +6,12 @@ ms.author: jzim
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: ef355361516264db95a333dde8a117819ca1a661
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.openlocfilehash: 92529c2d60b32e9c8b57b897008b5333adc2a4d4
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82203698"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82594973"
 ---
 # <a name="azure-red-hat-openshift-faq"></a>Вопросы и ответы об Azure Red Hat OpenShift
 
@@ -135,7 +135,7 @@ oc adm policy \
 
 ## <a name="what-is-the-default-pod-scheduler-configuration-for-aro"></a>Какова конфигурация планировщика Pod по умолчанию для АТО?
 
-АТО использует планировщик по умолчанию, который поставляется в OpenShift. Существует несколько дополнительных механизмов, которые не поддерживаются в АТО. Дополнительные сведения см. в документации [по по умолчанию](https://docs.openshift.com/container-platform/3.11/admin_guide/scheduling/scheduler.html#generic-scheduler) , документации по планировщику и [главному планировщику](https://github.com/openshift/openshift-azure/blob/master/pkg/startup/v6/data/master/etc/origin/master/scheduler.json) .
+АТО использует планировщик по умолчанию, который поставляется в OpenShift. Существует несколько дополнительных механизмов, которые не поддерживаются в АТО. Дополнительные сведения см. в документации [по по умолчанию](https://docs.openshift.com/container-platform/3.11/admin_guide/scheduling/scheduler.html#generic-scheduler) , документации по планировщику и [главному планировщику](https://github.com/openshift/openshift-azure/blob/master/pkg/startup/v16/data/master/etc/origin/master/scheduler.json) .
 
 Расширенное или настраиваемое планирование в настоящее время не поддерживается. Дополнительные сведения см. в [документации по планированию](https://docs.openshift.com/container-platform/3.11/admin_guide/scheduling/index.html) .
 

@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 03/10/2020
-ms.openlocfilehash: 79dc1b188e91028a98f43dc24972228f2d2101be
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 04/27/2020
+ms.openlocfilehash: 9b2114672db755efba1818505c8f399ac01aea71
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81684731"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82983607"
 ---
 # <a name="execute-python-script-module"></a>Выполнить модуль скрипта Python
 
@@ -150,6 +150,8 @@ ms.locfileid: "81684731"
 import os
 os.system(f"pip install scikit-misc")
 ```
+> [!NOTE]
+> Если конвейер содержит несколько модулей выполнения скриптов Python и требуются те же пакеты, которые отсутствуют в списке предварительно установленных, установите пакеты в каждом модуле соответственно. 
 
 ## <a name="upload-files"></a>Отправка файлов
 **Скрипт Execute Python** поддерживает передачу файлов с помощью [пакета SDK для машинное обучение Azure Python](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py#upload-file-name--path-or-stream-).
@@ -218,7 +220,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 5. В текстовом поле **скрипт Python** введите или вставьте допустимый скрипт Python.
 
     > [!NOTE]
-    > Будьте внимательны при написании сценария и убедитесь в отсутствии синтаксических ошибок, таких как использование необъявленного объекта или неимпортированного модуля. Также обратите особое внимание на список предварительно установленных модулей. Чтобы импортировать модули, которых нет в списке, установите соответствующие пакеты в скрипте, например
+    > Будьте внимательны при написании сценария и убедитесь в отсутствии синтаксических ошибок, таких как использование необъявленных объектов или неимпортированных модулей. Также обратите особое внимание на список предварительно установленных модулей. Чтобы импортировать модули, которых нет в списке, установите соответствующие пакеты в скрипте, например
     >  ``` Python
     > import os
     > os.system(f"pip install scikit-misc")
@@ -249,6 +251,6 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 + **Result DataSet 2**, определяемый вторым возвращенным кадром данных Pandas в скрипте Python
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 

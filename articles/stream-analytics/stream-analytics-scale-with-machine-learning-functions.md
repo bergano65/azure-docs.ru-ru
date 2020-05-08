@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/16/2020
-ms.openlocfilehash: 5b08625d055063b3804a35a3344ff01c7edb79de
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4e2c99274df90d232754c862f3174b5767392cec
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80067003"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82929049"
 ---
 # <a name="scale-your-stream-analytics-job-with-azure-machine-learning-studio-classic-functions"></a>Масштабирование задания Stream Analytics с помощью функций Машинное обучение Azure Studio (классическая модель)
 
@@ -58,7 +58,7 @@ ms.locfileid: "80067003"
 
 Можно также настроить параметр "максимальное число одновременных вызовов" в Машинное обучение веб-службе. Рекомендуется присвоить этому параметру максимальное значение (в настоящее время 200).
 
-Дополнительные сведения об этом параметре см. в статье [Масштабирование веб-службы машинного обучения](../machine-learning/studio/scaling-webservice.md).
+Дополнительные сведения об этом параметре см. в статье [Масштабирование веб-службы машинного обучения](../machine-learning/studio/create-endpoint.md).
 
 ## <a name="example--sentiment-analysis"></a>Пример: анализ мнений
 В следующем примере показано задание Stream Analytics с функцией машинного обучения для анализа мнений, как описано в руководстве [Общие сведения о Stream Analytics и интеграции машинного обучения](stream-analytics-machine-learning-integration-tutorial.md).
@@ -142,7 +142,7 @@ ms.locfileid: "80067003"
 
 В качестве примера был использован полностью секционированный запрос Stream Analytics. Если требуется более сложный запрос, посетите [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics). Это превосходный ресурс, на котором можно получить дополнительные сведения от разработчиков Stream Analytics.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о службе Stream Analytics см. в следующих статьях:
 
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)

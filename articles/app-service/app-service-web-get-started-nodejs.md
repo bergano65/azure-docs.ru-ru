@@ -5,14 +5,12 @@ ms.assetid: 582bb3c2-164b-42f5-b081-95bfcb7a502a
 ms.topic: quickstart
 ms.date: 03/04/2020
 ms.custom: mvc, devcenter, seodec18
-experimental: false
-experiment_id: a231f2b4-2625-4d
-ms.openlocfilehash: bcb0ae2457175e7511c3539187d72d48e80baa5b
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: df1e0809c0122eae593543cd193a6477b03d0938
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80047131"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82690793"
 ---
 # <a name="create-a-nodejs-web-app-in-azure"></a>Создание веб-приложений Node.js в Azure 
 
@@ -23,7 +21,7 @@ ms.locfileid: "80047131"
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-app-service-extension&mktingSource=vscode-tutorial-app-service-extension) бесплатно.
 - [Node.js и NPM](https://nodejs.org). Выполнив команду `node --version`, убедитесь, что платформа Node.js установлена.
 - [Visual Studio Code](https://code.visualstudio.com/).
-- [Расширение Службы приложений Azure](vscode:extension/ms-azuretools.vscode-azureappservice) для Visual Studio Code.
+- [Расширение Службы приложений Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) для Visual Studio Code.
 
 ## <a name="clone-and-run-a-local-nodejs-application"></a>Клонирование и запуск локального приложения Node.js
 
@@ -45,7 +43,7 @@ ms.locfileid: "80047131"
     npm start
     ```
     
-1. Откройте веб-браузер и перейдите по адресу [http://localhost:1337](http://localhost:1337). В браузере должно отобразиться сообщение "Hello World!".
+1. Откройте веб-браузер и перейдите по адресу `http://localhost:1337`. В браузере должно отобразиться сообщение "Hello World!".
 
 1. Нажмите **Ctrl**+**C** в терминале, чтобы остановить работу сервера.
 

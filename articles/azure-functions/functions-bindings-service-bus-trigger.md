@@ -6,16 +6,16 @@ ms.assetid: daedacf0-6546-4355-a65c-50873e74f66b
 ms.topic: reference
 ms.date: 02/19/2020
 ms.author: cshoe
-ms.openlocfilehash: 1ead7fcd9d474369e3a62e372a971d88d26f4e9c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b5e7f1b70aca50b4e42d056beb0b17795430091c
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78273563"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82690708"
 ---
 # <a name="azure-service-bus-trigger-for-azure-functions"></a>Триггер служебной шины Azure для функций Azure
 
-Используйте триггер служебной шины для ответа на сообщения из очереди или раздела служебной шины.
+Используйте триггер служебной шины для ответа на сообщения из очереди или раздела служебной шины. Начиная с версии Extension 3.1.0 можно активировать в очереди или разделе с поддержкой сеанса.
 
 Дополнительные сведения об установке и сведениях о конфигурации см. в [обзоре](functions-bindings-service-bus-output.md).
 
@@ -222,7 +222,7 @@ def main(msg: func.ServiceBusMessage):
   }
   ```
 
-  Можно задать `Connection` свойство, чтобы указать имя параметра приложения, содержащего строку подключения служебной шины, которая будет использоваться, как показано в следующем примере:
+  Так как `Connection` свойство не определено, функции ищет параметр приложения с именем `AzureWebJobsServiceBus`, который является именем по умолчанию для строки подключения служебной шины. Можно также задать `Connection` свойство, чтобы указать имя параметра приложения, содержащего строку подключения служебной шины, которая будет использоваться, как показано в следующем примере:
 
   ```csharp
   [FunctionName("ServiceBusQueueTriggerCSharp")]                    
@@ -354,24 +354,27 @@ def main(msg: func.ServiceBusMessage):
 
 ## <a name="message-metadata"></a>Метаданные сообщения
 
-Триггер служебной шины предоставляет несколько [свойств метаданных](./functions-bindings-expressions-patterns.md#trigger-metadata). Эти свойства можно использовать как часть выражений привязки в других привязках или как параметры в коде. Эти свойства являются членами класса [BrokeredMessage](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) .
+Триггер служебной шины предоставляет несколько [свойств метаданных](./functions-bindings-expressions-patterns.md#trigger-metadata). Эти свойства можно использовать как часть выражений привязки в других привязках или как параметры в коде. Эти свойства являются членами класса [Message](/dotnet/api/microsoft.azure.servicebus.message?view=azure-dotnet) .
 
 |Свойство|Type|Описание|
 |--------|----|-----------|
-|`DeliveryCount`|`Int32`|Число доставок.|
-|`DeadLetterSource`|`string`|Источник недоставленных сообщений.|
-|`ExpiresAtUtc`|`DateTime`|Время окончания срока действия в формате UTC.|
-|`EnqueuedTimeUtc`|`DateTime`|Время попадания в очередь в формате UTC.|
-|`MessageId`|`string`|Определяемое пользователем значение, используемое служебной шиной для выявления повторяющихся сообщений.|
 |`ContentType`|`string`|Идентификатор типа содержимого, используемый отправителем и получателем для логики конкретного приложения.|
-|`ReplyTo`|`string`|Адрес очереди для ответа.|
-|`SequenceNumber`|`Int64`|Уникальный номер, назначенный сообщению службой "Служебная шина".|
-|`To`|`string`|Адрес для отправки.|
-|`Label`|`string`|Метка для конкретного приложения.|
 |`CorrelationId`|`string`|Идентификатор корреляции.|
+|`DeadLetterSource`|`string`|Источник недоставленных сообщений.|
+|`DeliveryCount`|`Int32`|Число доставок.|
+|`EnqueuedTimeUtc`|`DateTime`|Время попадания в очередь в формате UTC.|
+|`ExpiresAtUtc`|`DateTime`|Время окончания срока действия в формате UTC.|
+|`Label`|`string`|Метка для конкретного приложения.|
+|`MessageId`|`string`|Определяемое пользователем значение, используемое служебной шиной для выявления повторяющихся сообщений.|
+|`MessageReceiver`|`MessageReceiver`|Получатель сообщений служебной шины. Может использоваться для отмены, завершения или недоставленного сообщения.|
+|`MessageSession`|`MessageSession`|Получатель сообщений специально предназначен для очередей и разделов, использующих сеансы.|
+|`ReplyTo`|`string`|Адрес очереди для ответа.|
+|`SequenceNumber`|`long`|Уникальный номер, назначенный сообщению службой "Служебная шина".|
+|`To`|`string`|Адрес для отправки.|
+|`UserProperties`|`IDictionary<string, object>`|Свойства, заданные отправителем.|
 
 См. [примеры кода](#example), в которых используются эти свойства, в предыдущих разделах этой статьи.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Отправка сообщений служебной шины Azure из функций Azure (Выходная привязка)](./functions-bindings-service-bus-output.md)

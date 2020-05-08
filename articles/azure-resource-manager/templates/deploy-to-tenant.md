@@ -3,12 +3,12 @@ title: Развертывание ресурсов в клиенте
 description: Описывает развертывание ресурсов в области клиента в шаблоне Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 03/16/2020
-ms.openlocfilehash: fcdfc5b1c4333a0d7eeec80a09ad85579a1f8b77
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8a3748c0948238b588a01f7d91780693a2c5bf3a
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79460268"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82930069"
 ---
 # <a name="create-resources-at-the-tenant-level"></a>Создание ресурсов на уровне клиента
 
@@ -19,6 +19,7 @@ ms.locfileid: "79460268"
 На уровне клиента можно развернуть следующие типы ресурсов:
 
 * [развертывания](/azure/templates/microsoft.resources/deployments) — для вложенных шаблонов, которые развертываются в группах управления или подписках.
+* managementGroups
 * [полициассигнментс](/azure/templates/microsoft.authorization/policyassignments)
 * [policyDefinitions](/azure/templates/microsoft.authorization/policydefinitions)
 * [policySetDefinitions](/azure/templates/microsoft.authorization/policysetdefinitions)
@@ -103,13 +104,13 @@ New-AzTenantDeployment `
 * Используйте функцию [тенантресаурцеид ()](template-functions-resource.md#tenantresourceid) , чтобы получить идентификатор ресурса для ресурсов, развернутых на уровне клиента.
 
   Например, чтобы получить идентификатор ресурса для определения политики, используйте:
-  
+
   ```json
   tenantResourceId('Microsoft.Authorization/policyDefinitions/', parameters('policyDefinition'))
   ```
-  
+
   Возвращенный идентификатор ресурса имеет следующий формат:
-  
+
   ```json
   /providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
   ```
@@ -182,7 +183,7 @@ New-AzTenantDeployment `
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о назначении ролей см. в статье [Управление доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager](../../role-based-access-control/role-assignments-template.md).
 * Можно также развертывать шаблоны на уровне [подписки](deploy-to-subscription.md) или [группы управления](deploy-to-management-group.md).
