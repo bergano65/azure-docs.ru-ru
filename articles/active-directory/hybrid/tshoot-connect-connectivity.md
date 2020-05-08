@@ -16,12 +16,13 @@ ms.date: 04/25/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 72dbb404d1b4d3618909e0233f332d2f98b51516
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: has-adal-ref
+ms.openlocfilehash: f55f291575aea40cba8551a5fec535f63a90150c
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80049736"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82610451"
 ---
 # <a name="troubleshoot-azure-ad-connectivity"></a>Устранение неполадок с подключением к Azure AD
 В этой статье рассказывается, как работает подключение между Azure AD Connect и Azure AD и как устранять неполадки подключения. Как правило, проблемы возникают в среде с прокси-сервером.
@@ -31,7 +32,7 @@ Azure AD Connect использует для аутентификации сов
 
 В этой статье показано, как Fabrikam подключается к Azure AD через прокси-сервер. Прокси-сервер имеет имя fabrikamproxy и использует порт 8080.
 
-Во-первых, проверим правильность настройки файла [**machine.config**](how-to-connect-install-prerequisites.md#connectivity) .  
+Во-первых, проверим правильность настройки файла [**machine.config**](how-to-connect-install-prerequisites.md#connectivity) .
 ![machineconfig](./media/tshoot-connect-connectivity/machineconfig.png)
 
 > [!NOTE]
@@ -58,25 +59,24 @@ Azure AD Connect использует для аутентификации сов
 Ниже приведены наиболее распространенные ошибки, которые встречаются в мастере установки.
 
 ### <a name="the-installation-wizard-has-not-been-correctly-configured"></a>Неправильно настроен мастер установки
-Эта ошибка появляется в случае, если мастер не может связаться с прокси-сервером.  
+Эта ошибка появляется в случае, если мастер не может связаться с прокси-сервером.
 ![nomachineconfig](./media/tshoot-connect-connectivity/nomachineconfig.png)
 
 * Если возникает эта ошибка, проверьте конфигурацию в файле [machine.config](how-to-connect-install-prerequisites.md#connectivity).
 * Если конфигурация выглядит нормально, выполните действия, описанные в разделе [Проверка подключения прокси-сервера](#verify-proxy-connectivity) , и убедитесь в том, что проблема возникает не только в мастере.
 
 ### <a name="a-microsoft-account-is-used"></a>Используется учетная запись Майкрософт
-Если использовать **учетную запись Майкрософт** вместо **учебной или рабочей учетной записи**, то возникнет общая ошибка.  
+Если использовать **учетную запись Майкрософт** вместо **учебной или рабочей учетной записи**, то возникнет общая ошибка.
 ![Используется учетная запись Майкрософт](./media/tshoot-connect-connectivity/unknownerror.png)
 
 ### <a name="the-mfa-endpoint-cannot-be-reached"></a>Не удается связаться с конечной точкой многофакторной проверки подлинности
-Эта ошибка возникает, если конечная точка **https://secure.aadcdn.microsoftonline-p.com** недоступна и для глобального администратора включена поддержка mfa.  
+Эта ошибка возникает, если конечная точка **https://secure.aadcdn.microsoftonline-p.com** недоступна и для глобального администратора включена поддержка mfa.
 ![nomachineconfig](./media/tshoot-connect-connectivity/nomicrosoftonlinep.png)
 
 * Если вы видите эту ошибку, то убедитесь, что конечная точка **secure.aadcdn.microsoftonline-p.com** добавлена на прокси-сервер.
 
 ### <a name="the-password-cannot-be-verified"></a>Невозможно проверить пароль
-Если мастер установки успешно подключается к Azure AD, но проверить пароль невозможно, то отображается следующая ошибка:  
-![Неправильный пароль.](./media/tshoot-connect-connectivity/badpassword.png)
+Если мастер установки успешно подключается к Azure AD, но не удается проверить пароль, появится сообщение об ошибке "неправильный ![пароль".](./media/tshoot-connect-connectivity/badpassword.png)
 
 * Проверьте, не используется ли временный пароль, который необходимо сменить. Проверьте, правильно ли указан пароль. Попробуйте войти в систему по адресу `https://login.microsoftonline.com` (на другом компьютере, отличном от сервера Azure AD Connect), и убедитесь, что учетная запись доступна.
 
@@ -93,7 +93,7 @@ Azure AD Connect использует для аутентификации сов
 Если прокси-сервер настроен неправильно, то появляется ошибка: ![proxy200](./media/tshoot-connect-connectivity/invokewebrequest403.png)
 ![proxy407](./media/tshoot-connect-connectivity/invokewebrequest407.png).
 
-| Ошибка | Текст сообщения об ошибке | Добавление примечаний |
+| Error | Текст сообщения об ошибке | Комментарий |
 | --- | --- | --- |
 | 403 |Запрещено |Прокси-сервер не был открыт для запрошенного URL-адреса. Проверьте конфигурацию прокси-сервера и убедитесь, что [URL-адреса](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2) открыты. |
 | 407 |Требуется проверка подлинности прокси-сервера |Для прокси-сервера требуется имя входа, которое не было указано. Если для прокси-сервера требуется проверка подлинности, убедитесь, что этот параметр настроен в файле Machine. config. Также убедитесь, что вы используете учетные записи домена для пользователя, запустившего мастер, и для учетной записи службы. |
@@ -113,7 +113,7 @@ Azure AD Connect использует для аутентификации сов
 
 **Подключение к Azure AD**
 
-| Время | URL-адрес |
+| Time | URL-адрес |
 | --- | --- |
 | 1/11/2016 8:31 |connect://login.microsoftonline.com:443 |
 | 1/11/2016 8:31 |connect://adminwebservice.microsoftonline.com:443 |
@@ -124,7 +124,7 @@ Azure AD Connect использует для аутентификации сов
 
 **Настройка**
 
-| Время | URL-адрес |
+| Time | URL-адрес |
 | --- | --- |
 | 1/11/2016 8:43 |connect://login.microsoftonline.com:443 |
 | 1/11/2016 8:43 |connect://*bba800-anchor*.microsoftonline.com:443 |
@@ -140,7 +140,7 @@ Azure AD Connect использует для аутентификации сов
 
 **Начальная синхронизация**
 
-| Время | URL-адрес |
+| Time | URL-адрес |
 | --- | --- |
 | 1/11/2016 8:48 |connect://login.windows.net:443 |
 | 1/11/2016 8:49 |connect://adminwebservice.microsoftonline.com:443 |
@@ -186,7 +186,7 @@ Azure AD Connect использует для аутентификации сов
 </div>
 
 ### <a name="azure-ad-global-admin-role-needed"></a>"Azure AD Global Admin Role Needed" (Требуется роль глобального администратора Azure AD)
-Пользователь успешно прошел аутентификацию. Однако ему не назначена роль глобального администратора. Вот [как можно назначить роль глобального администратора](../users-groups-roles/directory-assign-admin-roles.md) пользователю. 
+Пользователь успешно прошел аутентификацию. Однако ему не назначена роль глобального администратора. Вот [как можно назначить роль глобального администратора](../users-groups-roles/directory-assign-admin-roles.md) пользователю.
 
 <div id="privileged-identity-management">
 <!--
@@ -224,7 +224,7 @@ Azure AD Connect использует для аутентификации сов
 ## <a name="troubleshooting-steps-for-previous-releases"></a>Действия по устранению неполадок для предыдущих версий.
 Начиная с версии с номером сборки 1.1.105.0 (выпущенной в феврале 2016 г.) помощник по входу более не используется. Этот раздел и конфигурация больше не требуются, но хранятся для ссылки.
 
-Для работы помощника по единому входу необходимо настроить winhttp. Эту настройку можно сделать с помощью [**netsh**](how-to-connect-install-prerequisites.md#connectivity).  
+Для работы помощника по единому входу необходимо настроить winhttp. Эту настройку можно сделать с помощью [**netsh**](how-to-connect-install-prerequisites.md#connectivity).
 ![netsh](./media/tshoot-connect-connectivity/netsh.png)
 
 ### <a name="the-sign-in-assistant-has-not-been-correctly-configured"></a>Неправильно настроен помощник по входу

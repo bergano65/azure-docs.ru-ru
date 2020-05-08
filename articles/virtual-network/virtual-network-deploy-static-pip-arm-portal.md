@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/08/2018
 ms.author: allensu
-ms.openlocfilehash: 0de28fc75d5eb1b0867e4ba6d8eda9f0f42c8498
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3ef96c83b460346ba49051f6f5c4fd0dd5df34ab
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82148017"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82790173"
 ---
 # <a name="create-a-virtual-machine-with-a-static-public-ip-address-using-the-azure-portal"></a>Создание виртуальной машины со статическим общедоступным IP-адресом с помощью портала Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "82148017"
 
    ![Выбор значения "Статический"](./media/virtual-network-deploy-static-pip-arm-portal/select-static.png)
 
-   Если общедоступный IP-адрес должен принадлежать к SKU "Стандартный", выберите **Стандартный** в разделе **SKU**. Дополнительные сведения о [номерах SKU общедоступных IP-адресов](virtual-network-ip-addresses-overview-arm.md#sku). Если виртуальная машина добавляется в серверный пул общедоступной подсистемы Azure Load Balancer, номера SKU общедоступных IP-адресов виртуальной машины и подсистемы балансировки нагрузки должны совпадать. Подробные сведения см. в статье [Что такое Azure Load Balancer](../load-balancer/concepts-limitations.md#skus).
+   Если общедоступный IP-адрес должен принадлежать к SKU "Стандартный", выберите **Стандартный** в разделе **SKU**. Дополнительные сведения о [номерах SKU общедоступных IP-адресов](virtual-network-ip-addresses-overview-arm.md#sku). Если виртуальная машина добавляется в серверный пул общедоступной подсистемы Azure Load Balancer, номера SKU общедоступных IP-адресов виртуальной машины и подсистемы балансировки нагрузки должны совпадать. Подробные сведения см. в статье [Что такое Azure Load Balancer](../load-balancer/skus.md).
 
 6. Выберите порт или оставьте пустое поле в разделе **Выберите общедоступные входящие порты**. Порт 3389 выбран для обеспечения удаленного доступа к виртуальной машине Windows Server из Интернета. Открытие порта 3389 из Интернета не рекомендуется для производственных рабочих нагрузок.
 
@@ -79,7 +79,7 @@ ms.locfileid: "82148017"
 2. Выберите **Удалить группу ресурсов**.
 3. Введите *myResourceGroup* **в поле введите имя группы ресурсов:** и выберите **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об [общедоступных IP-адресах в Azure](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).
 - Дополнительные сведения обо всех [параметрах общедоступных IP-адресов](virtual-network-public-ip-address.md#create-a-public-ip-address).
