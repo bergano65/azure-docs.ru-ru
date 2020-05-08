@@ -7,15 +7,15 @@ ms.service: load-balancer
 ms.topic: article
 ms.date: 02/23/2020
 ms.author: irenehua
-ms.openlocfilehash: 239dc0f3133a5adf59a23d333131c91d3a655597
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: fe9ae8997e05e4ab99dba66de88976342fbabe56
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81770388"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82858366"
 ---
 # <a name="upgrade-azure-internal-load-balancer--no-outbound-connection-required"></a>Обновление внутренней Load Balancer Azure — не требуется исходящее подключение
-[Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](https://docs.microsoft.com/azure/load-balancer/concepts-limitations#skus).
+[Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](https://docs.microsoft.com/azure/load-balancer/skus#skus).
 
 В этой статье представлен сценарий PowerShell, который создает Load Balancer (цен. категория "Стандартный") с той же конфигурацией, что и базовая Load Balancer, а также перенос трафика из базовых Load Balancer в Load Balancer (цен. категория "Стандартный").
 
@@ -33,6 +33,17 @@ ms.locfileid: "81770388"
 * Сценарий поддерживает только внутреннее Load Balancer обновление, когда исходящие подключения не требуются. Если для некоторых виртуальных машин требуется [исходящее подключение](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) , обратитесь к этой [странице](upgrade-InternalBasic-To-PublicStandard.md) за инструкциями. 
 * Если стандартный балансировщик нагрузки создан в другом регионе, вы не сможете связать существующие виртуальные машины в старом регионе с вновь созданной Load Balancer (цен. категория "Стандартный"). Чтобы обойти это ограничение, обязательно создайте новую виртуальную машину в новом регионе.
 * Если у Load Balancer нет внешней IP-конфигурации или серверного пула, то, скорее всего, будет обнаружена ошибка, которая вызвала бы выполнение скрипта. Убедитесь, что они не пусты.
+
+## <a name="change-ip-allocation-method-to-static-for-frontend-ip-configuration-ignore-this-step-if-its-already-static"></a>Измените метод выделения IP-адресов на статический для внешней IP-конфигурации (пропустите этот шаг, если он уже является статическим).
+
+1. Выберите **все службы** в меню слева, выберите **все ресурсы**, а затем выберите базовое Load Balancer из списка ресурсы.
+
+2. В разделе **Параметры**выберите **IP-конфигурация внешнего**интерфейса и выберите первую внешнюю IP-конфигурацию. 
+
+3. Для «Назначение» выберите **значение** **статический** .
+
+4. Повторите шаг 3 для всех интерфейсных IP-конфигураций базового Load Balancer.
+
 
 ## <a name="download-the-script"></a>Скачивание скрипта
 

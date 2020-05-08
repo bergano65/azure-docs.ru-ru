@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 12/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: dcadfcb4c2f8e6bc371b0a70b917c8c1e218fba9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b990db39ffe0623b50a2cfc728da61bc51bdd4da
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81679511"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82855346"
 ---
 # <a name="source-control-integration-in-azure-automation---legacy"></a>Интеграция системы управления версиями со службой автоматизации Azure — старая версия
 
@@ -102,7 +102,7 @@ ms.locfileid: "81679511"
    > [!NOTE]
    > Модули Runbook системы управления версиями — это особые модули Runbook службы автоматизации, недоступные для просмотра и изменения. Они не включаются в список модулей Runbook, но в списке заданий отображаются задачи синхронизации.
 
-5. Имя измененного модуля Runbook передается в возвращаемый модуль в качестве входного параметра. [Сведения о задании можно просмотреть](automation-runbook-execution.md#viewing-job-status-from-the-azure-portal) , развернув Runbook на странице Синхронизация репозитория.  
+5. Имя измененного модуля Runbook передается в возвращаемый модуль в качестве входного параметра. [Сведения о задании можно просмотреть](automation-runbook-execution.md#job-statuses) , развернув Runbook на странице Синхронизация репозитория.  
 
     ![Окно, показывающее входные данные для задания синхронизации](media/source-control-integration-legacy/automation-CheckinInput.png)
 6. Когда задание будет завершено, обновите репозиторий GitHub, чтобы увидеть изменения.  Должна быть выполнена фиксация в репозитории с сообщением о фиксации: **обновленное *имя Runbook* в службе автоматизации Azure.**  
@@ -130,7 +130,7 @@ ms.locfileid: "81679511"
 
   ![Окно, в котором отображается кнопка отключения для отключения системы управления версиями](media/source-control-integration-legacy/automation-Disconnect.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об интеграции системы управления версиями см. в следующих ресурсах:  
 

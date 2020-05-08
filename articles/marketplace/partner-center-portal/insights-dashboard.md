@@ -1,22 +1,22 @@
 ---
-title: Панель мониторинга Marketplace Insights в коммерческой аналитике Marketplace в центре партнеров
-description: Получите доступ к сводке веб-аналитики Marketplace, которая позволяет издателям измерять взаимодействия пользователей в AppSource и витринах Azure Marketplace.
+title: Аналитика Marketplace — коммерческий рынок Майкрософт
+description: Получите доступ к сводке веб-аналитики Marketplace, которая позволяет измерять участие клиентов в Microsoft AppSource и Azure Marketplace.
 author: dsindona
 ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/16/2019
-ms.openlocfilehash: 05389f0aea7e2637dd28281236e7fd7ec2b412fd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cecff7347189c5e5b964e10439297bce405810b7
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81251713"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82857921"
 ---
-# <a name="marketplace-insights-dashboard-in-commercial-marketplace-analytics"></a>Панель мониторинга Marketplace Insights в коммерческой аналитике Marketplace
+# <a name="marketplace-insights-dashboard-in-partner-center"></a>Панель мониторинга Marketplace Insights в центре партнеров
 
-Эта статья содержит сведения о панели мониторинга Marketplace Insights в центре партнеров. На этой панели мониторинга отображается сводка веб-аналитики Marketplace, которая позволяет издателям измерять взаимодействия клиентов с соответствующими страницами сведений о продукте, указанными в витринах Marketplace: AppSource и Azure Marketplace.
+Эта статья содержит сведения о панели мониторинга Marketplace Insights в центре партнеров. На этой панели мониторинга отображается сводка веб-аналитики Marketplace, которая позволяет издателям измерять взаимодействия клиентов с соответствующими страницами сведений о продукте, указанными в витринах Marketplace: Microsoft AppSource и Azure Marketplace.
 
 ## <a name="marketplace-insights-dashboard"></a>Панель мониторинга аналитики Marketplace
 

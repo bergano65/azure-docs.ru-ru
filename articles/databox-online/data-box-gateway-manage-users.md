@@ -8,16 +8,16 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 60fd5476d687d9f44aec885cdf888572e8e523a4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 137531ab0d96c24a3ce19e429a5765d6e4a13c93
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78946121"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82561238"
 ---
 # <a name="use-the-azure-portal-to-manage-users-on-your-azure-data-box-gateway"></a>Управление пользователями в Шлюзе Azure Data Box с помощью портала Azure
 
-В этой статье описывается управление пользователями в Шлюзе Azure Data Box. Вы можете управлять Шлюзом Azure Data Box на портале Azure или с помощью локального пользовательского веб-интерфейса. Используйте портал Azure, чтобы добавлять, изменять или удалять пользователей.
+В этой статье описывается управление пользователями в Шлюзе Azure Data Box. Вы можете управлять Шлюзом Azure Data Box на портале Azure или с помощью локального пользовательского веб-интерфейса. Используйте портал Azure, чтобы добавлять, изменять или удалять пользователей. 
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -77,6 +77,6 @@ ms.locfileid: "78946121"
 ![Удаление пользователя](media/data-box-gateway-manage-users/delete-user-3.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте об [управлении пропускной способностью](data-box-gateway-manage-bandwidth-schedules.md).

@@ -4,14 +4,15 @@ description: Настройка памяти группы серверов, ди
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
+ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 3/16/2020
-ms.openlocfilehash: fa48ca287c248155a0271b5134be782d8db1c785
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f8e8e1672f754e843a3bd1c75d496599d31e5f11
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80063101"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583998"
 ---
 # <a name="scale-a-hyperscale-citus-server-group"></a>Масштабирование группы серверов с горизонтальным масштабированием (Цитус)
 
@@ -41,12 +42,12 @@ SELECT rebalance_table_shards('distributed_table_name');
 ## <a name="increase-or-decrease-vcores-on-nodes"></a>Увеличение или уменьшение виртуальных ядер на узлах
 
 > [!NOTE]
-> Сейчас эта функция доступна в предварительной версии. Чтобы запросить изменение в виртуальных ядер для узлов в группе серверов, [обратитесь в службу поддержки Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+> Эта функция в настоящее время находится на стадии предварительной версии. Чтобы запросить изменение в виртуальных ядер для узлов в группе серверов, [обратитесь в службу поддержки Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
 Помимо добавления новых узлов можно увеличить возможности существующих узлов. Регулировка емкости вычислений может оказаться полезной для экспериментов с производительностью, а также для краткосрочных или долгосрочных изменений в требованиях к трафику.
 
 Чтобы изменить виртуальных ядер для всех рабочих узлов, настройте ползунок **виртуальных ядер** в разделе **Конфигурация (на рабочий узел)**. Виртуальных ядер узла координатора можно изменить независимо. Щелкните ссылку **изменить конфигурацию** в **узле координатор**. Появится диалоговое окно с ползунками для виртуальных ядер и емкостью хранилища координатора. Измените нужные ползунки и нажмите кнопку **ОК**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [параметрах производительности](concepts-hyperscale-configuration-options.md)группы серверов.

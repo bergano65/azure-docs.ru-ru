@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/24/2020
-ms.openlocfilehash: 1eb3da3759f5fca1bc5d675a9b2d61fcf9358bd4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f1bce0a95b672bb23767fce3d5d092221ccd8321
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82195474"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82858333"
 ---
 # <a name="visualize-apache-hive-data-with-microsoft-power-bi-using-odbc-in-azure-hdinsight"></a>Визуализация данных Apache Hive с Microsoft Power BI с использованием ODBC в Azure HDInsight
 
@@ -52,7 +52,7 @@ ms.locfileid: "82195474"
 
 1. В диалоговом окне **Получение данных** выберите **другое** слева, выберите **ODBC** справа, а затем щелкните **подключить** в нижней части экрана.
 
-1. В диалоговом окне **из ODBC** выберите имя источника данных, созданного в последнем разделе из раскрывающегося списка. Нажмите кнопку **ОК**.
+1. В диалоговом окне **из ODBC** выберите имя источника данных, созданного в последнем разделе из раскрывающегося списка. Затем нажмите кнопку **OK**.
 
 1. При первом использовании откроется диалоговое окно **драйвера ODBC** . В меню слева выберите **значение по умолчанию или пользовательский** . Затем выберите **Подключиться** , чтобы открыть **Навигатор**.
 
@@ -70,10 +70,10 @@ ms.locfileid: "82195474"
 
 1. Разверните карту.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Из этой статьи вы узнали, как визуализировать данные HDInsight с помощью Power BI.  Дополнительные сведения см. в следующих статьях:
 
 * [Подключение Excel к Hadoop в Azure HDInsight с помощью Microsoft Hive ODBC Driver](./apache-hadoop-connect-excel-hive-odbc-driver.md)
 * [Подключите Excel к Apache Hadoop с помощью Power Query](apache-hadoop-connect-excel-power-query.md).
-* [Визуализация интерактивных запросов Apache Hive данных с помощью Microsoft Power BI с использованием прямого запроса](/interactive-query/apache-hadoop-connect-hive-power-bi-directquery.md)
+* [Визуализация интерактивных запросов Apache Hive данных с помощью Microsoft Power BI с использованием прямого запроса](../interactive-query/apache-hadoop-connect-hive-power-bi-directquery.md)

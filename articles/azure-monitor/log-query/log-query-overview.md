@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/19/2019
-ms.openlocfilehash: 54a6f875bc33d24d412d2424c634d1019b4af399
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6cd2a28ddbe970385ff44deec2158c257937982e
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77670123"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82591658"
 ---
 # <a name="overview-of-log-queries-in-azure-monitor"></a>Общие сведения о запросах журналов в Azure Monitor
 Запросы журналов позволяют полностью использовать значения данных, собираемых в [журналах Azure Monitor](../platform/data-platform-logs.md). Мощный язык запросов позволяет объединять данные из нескольких таблиц, объединять большие наборы данных и выполнять сложные операции с минимальным кодом. Практически любой вопрос можно ответить и выполнить анализ до тех пор, пока собираются вспомогательные данные, и вы понимаете, как создать правильный запрос.
@@ -81,7 +81,7 @@ Log Analytics является основным инструментом в по
 Вы можете запустить Log Analytics из нескольких мест в портал Azure. Область данных, доступных для Log Analytics, определяется способом запуска. Дополнительные сведения см. в разделе [область запроса](scope.md) .
 
 - Выберите **журналы** в меню **Azure Monitor** или в меню **log Analytics рабочие области** .
-- На странице **обзор** Application Insights приложения выберите **аналитика** .
+- Выберите **журналы** на странице **Обзор** приложения Application Insights.
 - Выберите **журналы** в меню ресурса Azure.
 
 ![Log Analytics](media/log-query-overview/log-analytics.png)

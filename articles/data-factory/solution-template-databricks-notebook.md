@@ -10,17 +10,17 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 03/03/2020
-ms.openlocfilehash: 65b89a13637f5a4e1712995a6ac58d88b4421806
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 04/27/2020
+ms.openlocfilehash: 2503c26ac0348739bbf117c3538af797833ce8b8
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81414847"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82857642"
 ---
 # <a name="transformation-with-azure-databricks"></a>Преобразование с помощью Azure Databricks
 
-[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этом руководстве вы создадите сквозной конвейер, содержащий **проверку**, **копирование данных**и действия **записной книжки** в фабрике данных Azure.
 
@@ -34,7 +34,7 @@ ms.locfileid: "81414847"
 
 ![Схема конвейера](media/solution-template-Databricks-notebook/pipeline-example.png)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись хранилища BLOB-объектов Azure с `sinkdata` контейнером, который вызывается для использования в качестве приемника.
 
@@ -153,6 +153,9 @@ ms.locfileid: "81414847"
 1. Убедитесь, что **Параметры конвейера** соответствуют приведенным на следующем снимке экрана ![: параметры конвейера.](media/solution-template-Databricks-notebook/pipeline-parameters.png)
 
 1. Подключитесь к наборам данных.
+
+    >[!NOTE]
+    >В приведенных ниже наборах данных путь к файлу был автоматически указан в шаблоне. Если требуются какие – либо изменения, убедитесь, что вы указали путь для **контейнера** и **каталога** в случае любой ошибки подключения.
 
    - **Саурцеаваилабилитидатасет** — проверка доступности исходных данных.
 

@@ -10,12 +10,12 @@ author: vijetajo
 ms.author: vijetaj
 ms.topic: overview
 ms.date: 05/08/2018
-ms.openlocfilehash: 1f3a24afb2238c2448cb19b3889467a1b1819724
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 03fdbf6979db3249d1322a3025b48de81b953ae1
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81460551"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82856215"
 ---
 # <a name="data-science-virtual-machine-based-team-analytics-and-ai-environment"></a>Командная среда аналитики и искусственного интеллекта на базе виртуальной машины для обработки и анализа данных 
 [Виртуальная машина для обработки и анализа данных](overview.md) (DSVM) предоставляет среду с широкими возможностями на платформе Azure с предварительно созданным программным обеспечением для задач искусственного интеллекта и аналитики данных.
@@ -43,7 +43,7 @@ ms.locfileid: "81460551"
 * [Контроль доступа на основе ролей](https://docs.microsoft.com/azure/role-based-access-control/overview)
 * [Настройка и применение политик](../../governance/policy/overview.md)
 * [Защита от вредоносных программ](https://docs.microsoft.com/azure/security/fundamentals/antimalware)
-* [Шифрование](https://docs.microsoft.com/azure/virtual-machines/windows/disk-encryption-overview.md)
+* [Шифрование](https://docs.microsoft.com/azure/virtual-machines/windows/disk-encryption-overview)
 * [Обнаружение данных и управление ими](https://docs.microsoft.com/azure/data-catalog/)
 
 И, наконец, [Центр архитектуры Azure](https://docs.microsoft.com/azure/architecture/) предоставляет комплексную архитектуру, а также модели для создания и администрирования инфраструктуры облачной аналитики.

@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2395aa5984de2a9fe41e4778d16aba69bfef5192
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3e21d850f03fdca300085c864a12611acb968aa8
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77559239"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82582965"
 ---
 # <a name="managing-custom-domain-names-in-your-azure-active-directory"></a>Управление личными доменными именами в Azure Active Directory
 
@@ -41,7 +41,7 @@ ms.locfileid: "77559239"
 
 В качестве основного домена для каталога можно указать любой проверенный личный домен, который не является федеративным. При изменении основного домена для каталога имена существующих пользователей не изменятся.
 
-## <a name="add-custom-domain-names-to-your-azure-ad-tenant"></a>Добавление личных доменных имен в клиент Azure AD
+## <a name="add-custom-domain-names-to-your-azure-ad-organization"></a>Добавление пользовательских доменных имен в организацию Azure AD
 
 Можно добавить до 900 имен управляемых доменов. Если вы настраиваете все домены для федерации с локальной службой Active Directory, в каждый каталог можно добавить до 450 доменных имен.
 
@@ -72,7 +72,7 @@ ms.locfileid: "77559239"
 Чтобы вызвать **ForceDelete** на портале Azure, вы должны убедиться, что существует менее 1000 ссылок на доменное имя, а любые ссылки, в которых Exchange является службой подготовки, должны быть обновлены или удалены в [Центре администрирования Exchange](https://outlook.office365.com/ecp/). Сюда входят группы безопасности с поддержкой почты и распределенные списки Exchange. Дополнительные сведения см. в статье [Manage mail-enabled security groups in Exchange Server](https://technet.microsoft.com/library/bb123521(v=exchg.160).aspx#Remove%20mail-enabled%20security%20groups) (Управление группами безопасности с поддержкой почты в Exchange Server). Кроме того, операция **ForceDelete** не будет выполнена, если выполняется любое из следующих условий:
 
 * Вы приобрели домен через службы подписки домена Office 365.
-* Вы являетесь партнером, управляющим от имени другого клиента пользователя.
+* Вы являетесь партнером по администрированию от имени другой организации клиента.
 
 Следующие действия выполняются как часть операции **ForceDelete**:
 
@@ -85,7 +85,7 @@ ms.locfileid: "77559239"
 * Количество объектов, подлежащих переименованию, превышает 1000.
 * Одно из приложений, которое нужно переименовать, является мультитенантным.
 
-### <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+### <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 **В. Удаление домена завершается ошибкой, указывающей, что у меня есть группы Exchange, которые были зарегистрированы в этом доменном имени. Почему?** <br>
 **О.** Сегодня определенные группы, такие как группы безопасности с поддержкой почты и распределенные списки, предоставляются Exchange, и их необходимо вручную удалить в [Центре администрирования Exchange](https://outlook.office365.com/ecp/). Могут существовать устаревшие адреса прокси-серверов, которые ссылаются на имя личного домена. Их необходимо обновить вручную для использования другого доменного имени. 
@@ -109,7 +109,7 @@ ms.locfileid: "77559239"
 * [Управление доменными именами в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#domains)
 * [Тип ресурса домена](https://docs.microsoft.com/graph/api/resources/domain?view=graph-rest-1.0)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Добавление имен личных доменов](/azure/active-directory/fundamentals/add-custom-domain?context=azure/active-directory/users-groups-roles/context/ugr-context)
 * [Сведения об удалении групп безопасности с поддержкой почты Exchange в Центре администрирования Exchange для имени личного домена в Azure AD](https://technet.microsoft.com/library/bb123521(v=exchg.160).aspx#Remove%20mail-enabled%20security%20groups)

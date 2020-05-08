@@ -1,6 +1,6 @@
 ---
-title: включить файл
-description: включить файл
+title: Включить имя файла
+description: Включить файл
 services: storage
 author: twooley
 ms.service: storage

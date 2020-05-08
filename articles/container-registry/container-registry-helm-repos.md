@@ -3,12 +3,12 @@ title: Хранение Helm диаграмм
 description: Узнайте, как хранить диаграммы Helm для приложений Kubernetes с помощью репозиториев в реестре контейнеров Azure.
 ms.topic: article
 ms.date: 03/20/2020
-ms.openlocfilehash: 3f1a68258b758380a66b63e3c3137f1d460d288c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 04ba3aaf312188ab77c04a97ab960cf9b9af078f
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81399377"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82857609"
 ---
 # <a name="push-and-pull-helm-charts-to-an-azure-container-registry"></a>Отправка и извлечение Helm диаграмм в реестр контейнеров Azure
 
@@ -31,12 +31,12 @@ ms.locfileid: "81399377"
 ### <a name="additional-information"></a>Дополнительные сведения
 
 * Для большинства сценариев рекомендуется использовать рабочий процесс Helm 3 с собственными `helm chart` командами для управления диаграммами как артефактами OCI.
-* Вы можете использовать устаревшую команду [AZ helm][az-acr-helm] Azure CLI команды и рабочий процесс с клиентом Helm 3 и диаграммами. Однако некоторые команды, такие как `az acr helm list` , не совместимы с диаграммами Helm 3.
-* Начиная с Helm 3 команды [AZ контроля доступа Helm][az-acr-helm] поддерживаются в основном для обеспечения совместимости с клиентом Helm 2 и форматом диаграммы. Дальнейшая разработка этих команд сейчас не запланирована.
+* Начиная с Helm 3 команды [AZ запись контроля доступа Helm][az-acr-helm] поддерживаются для совместимости с клиентом Helm 2 и форматом диаграммы. Дальнейшая разработка этих команд сейчас не запланирована. См. [план развития продукта](https://github.com/Azure/acr/blob/master/docs/acr-roadmap.md#acr-helm-ga).
+* Helm 2 диаграммы нельзя просматривать или управлять с помощью портал Azure.
 
 ## <a name="use-the-helm-3-client"></a>Использование клиента Helm 3
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 - **Реестр контейнеров Azure** в подписке Azure. При необходимости создайте реестр с помощью [портал Azure](container-registry-get-started-portal.md) или [Azure CLI](container-registry-get-started-azure-cli.md).
 - **Helm Client версии 3.1.0 или более поздней** — выполните команду `helm version` , чтобы найти текущую версию. Дополнительные сведения о том, как установить и обновить Helm, см. [здесь][helm-install].
@@ -178,7 +178,7 @@ az acr repository show \
 }
 ```
 
-Чтобы просмотреть сведения о диаграмме, хранящейся в репозитории, выполните команду AZ запись в [репозитории: Показать-манифесты][az-acr-repository-show-manifests] . Пример:
+Чтобы просмотреть сведения о диаграмме, хранящейся в репозитории, выполните команду AZ запись в [репозитории: Показать-манифесты][az-acr-repository-show-manifests] . Пример.
 
 ```azurecli
 az acr repository show-manifests \
@@ -246,7 +246,7 @@ version: 0.1.0
 
 ### <a name="install-helm-chart"></a>Установить Helm диаграмму
 
-Выполните `helm install` команду, чтобы установить диаграмму Helm, которая была извлечена в локальный кэш и экспортирована. Укажите имя выпуска, например *михелмтест*, или передайте `--generate-name` параметр. Пример:
+Выполните `helm install` команду, чтобы установить диаграмму Helm, которая была извлечена в локальный кэш и экспортирована. Укажите имя выпуска, например *михелмтест*, или передайте `--generate-name` параметр. Пример.
 
 ```console
 helm install myhelmtest ./hello-world
@@ -281,7 +281,7 @@ az acr repository delete --name mycontainerregistry --image helm/hello-world:v1
 
 ## <a name="use-the-helm-2-client"></a>Использование клиента Helm 2
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 - **Реестр контейнеров Azure** в подписке Azure. При необходимости создайте реестр с помощью [портал Azure](container-registry-get-started-portal.md) или [Azure CLI](container-registry-get-started-azure-cli.md).
 - **Клиент Helm начиная с версии 2.11.0 (не релиз-кандидат)**. Выполните команду `helm version`, чтобы узнать свою версию. Вам также потребуется сервер Helm (Tiller), инициализированный в кластере Kubernetes. При необходимости создайте [кластер службы Azure Kubernetes][aks-quickstart]. Дополнительные сведения о том, как установить и обновить Helm, см. [здесь][helm-install-v2].

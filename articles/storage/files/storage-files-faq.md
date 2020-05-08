@@ -7,12 +7,12 @@ ms.date: 02/23/2020
 ms.author: rogarana
 ms.subservice: files
 ms.topic: conceptual
-ms.openlocfilehash: 01b5f87c2557e2195573b90766ee45e001798cca
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 5aee3a19e33204da00483d0f4ee3f6ee97e8a07d
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81537701"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82856273"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Часто задаваемые вопросы о службе файлов Azure
 [Служба файлов Azure](storage-files-introduction.md) предоставляет полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью стандартного отраслевого [протокола SMB](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Общие ресурсы службы файлов Azure можно одновременно подключить к облачным или локальным развертываниям Windows, Linux и macOS. Вы также можете кэшировать общие файловые ресурсы Azure на компьютерах под управлением Windows Server с помощью функции "Синхронизация файлов Azure", чтобы получить быстрый доступ из расположения, где используются данные.
@@ -68,7 +68,7 @@ ms.locfileid: "81537701"
 
 * <a id="redundancy-options"></a>
   **Какие параметры избыточности хранилища поддерживаются в службе "Файлы Azure"?**  
-    Сейчас служба файлов Azure поддерживает локально избыточное хранилище (LRS), хранилище, избыточное в виде зоны (ZRS), геоизбыточное хранилище (GRS) и хранилище, избыточное в геопоясе (ГЗРС) (Предварительная версия). В будущем мы планируем включить поддержку геоизбыточного хранилища с доступом на чтение (RA-GRS), но о конкретных сроках пока говорить рано.
+    Сейчас служба файлов Azure поддерживает локально избыточное хранилище (LRS), хранилище, избыточное в виде зоны (ZRS), геоизбыточное хранилище (GRS) и хранилище, избыточное в геопоясе (ГЗРС). В будущем мы планируем включить поддержку геоизбыточного хранилища с доступом на чтение (RA-GRS), но о конкретных сроках пока говорить рано.
 
 * <a id="tier-options"></a>
   **Какие уровни хранилища поддерживаются службой файлов Azure?**  
@@ -414,7 +414,7 @@ ms.locfileid: "81537701"
 **Как использовать службу файлов Azure с IBM MQ?**  
     Компания IBM выпустила руководство по настройке службы файлов Azure в службе, которую используют пользователи IBM MQ. Дополнительные сведения см. в статье [How to setup IBM MQ Multi instance queue manager with Microsoft Azure File Service](https://github.com/ibm-messaging/mq-azure/wiki/How-to-setup-IBM-MQ-Multi-instance-queue-manager-with-Microsoft-Azure-File-Service) (Настройка службы файлов Microsoft Azure в многоэкземплярном диспетчере очередей IBM MQ).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 * [Устранение неполадок службы файлов Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md)
 * [Устранение неполадок службы файлов Azure в Linux](storage-troubleshoot-linux-file-connection-problems.md)
 * [Устранение неполадок службы "Синхронизация файлов Azure"](storage-sync-files-troubleshoot.md)
