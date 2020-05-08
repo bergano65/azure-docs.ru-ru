@@ -35,8 +35,9 @@
       href: powershell-samples.md
     - name: Шаблоны Resource Manager
       href: template-samples.md
-    - name: Шаблоны для службы "Политика Azure"
-      href: policy-samples.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Непрерывность бизнес-процессов
@@ -390,7 +391,7 @@
     - name: Azure PowerShell
       href: /powershell/module/az.network
     - name: .NET
-      href: /api/overview/azure/virtual-network
+      href: /dotnet/api/overview/azure/virtual-network
     - name: Java
       href: /java/api/
     - name: Node.js

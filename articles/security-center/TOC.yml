@@ -37,6 +37,11 @@
       href: tutorial-security-incident.md
     - name: Обеспечение соответствия нормативным требованиям на высоком уровне
       href: security-center-compliance-dashboard.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Оценка безопасности
@@ -107,7 +112,7 @@
           href: custom-security-policies.md
         - name: "Управление политиками с помощью REST\_API Политики Azure"
           href: configure-security-policy-azure-policy.md
-    - name: Добавление динамических пакетов соответствия
+    - name: Выбор стандартов для панели мониторинга соответствия требованиям
       href: update-regulatory-compliance-packages.md
     - name: Настройка политики защиты информации
       href: security-center-info-protection-policy.md

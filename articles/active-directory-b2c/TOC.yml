@@ -226,7 +226,9 @@
         - name: Управление токенами и сеансами
           items:
             - name: Настройка токенов
-              href: custom-policy-manage-sso-and-token-config.md
+              href: configure-tokens-custom-policy.md
+            - name: Настройка поведения сеанса
+              href: session-behavior-custom-policy.md
         - name: Транзитный внешний токен IdP
           href: idp-pass-through-custom.md
         - name: Адаптивное взаимодействие

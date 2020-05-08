@@ -16,12 +16,12 @@ ms.author: kakern
 ms.reviewer: kakern
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4e5da511aa10432f221b6eb86780aa636723290
-ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.openlocfilehash: 3c0b7070502059eee7f87e82812e06095e56d578
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/29/2020
-ms.locfileid: "82508842"
+ms.locfileid: "82582652"
 ---
 # <a name="product-names-and-service-plan-identifiers-for-licensing"></a>Названия продуктов и идентификаторы планов служб для лицензирования
 
@@ -130,7 +130,7 @@ ms.locfileid: "82508842"
 
 ## <a name="service-plans-that-cannot-be-assigned-at-the-same-time"></a>Планы службы, которые нельзя назначить одновременно
 
-Некоторые продукты содержат планы службы, которые невозможно назначить одному и тому же пользователю в одно и то же время. Например, если в клиенте есть *office 365 E1* и *Office 365 E3* , и вы пытаетесь назначить обе лицензии одному и тому же пользователю, операция завершается ошибкой. Это обусловлено тем, что продукт E3 содержит следующие планы службы, конфликтующие со своими аналогами E1:
+Некоторые продукты содержат планы службы, которые невозможно назначить одному и тому же пользователю в одно и то же время. Например, если в вашей организации Azure AD имеется *office 365 E1* и *Office 365 E3* , и вы пытаетесь назначить обе лицензии одному и тому же пользователю, операция завершается ошибкой. Это обусловлено тем, что продукт E3 содержит следующие планы службы, конфликтующие со своими аналогами E1:
 
 -   SharePoint Online (план 2) конфликтует с SharePoint Online (план 1);
 -   Exchange Online (план 2) конфликтует с Exchange Online (план 1).
@@ -231,7 +231,7 @@ ms.locfileid: "82508842"
 | YAMMER_EDU    | 2078e8df-cff6-4290-98cb-5408261a760a |
 | YAMMER_MIDSIZE    | 41bf139a-4e60-409f-9346-a1361efc6dfb |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о наборе функций для управления лицензиями с помощью групп см. по ссылкам ниже.
 

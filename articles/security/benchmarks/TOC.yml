@@ -33,6 +33,8 @@
   items:
     - name: Сведения о базовых показателях безопасности для Azure
       href: security-baselines-overview.md
+    - name: Базовые показатели безопасности Управления API
+      href: ../../api-management/security-baseline.md
     - name: Базовая конфигурация безопасности для Кэша Azure для Redis
       href: ../../azure-cache-for-redis/security-baseline.md
     - name: Базовые средства безопасности резервного копирования
@@ -45,8 +47,12 @@
       href: ../../cosmos-db/security-baseline.md
     - name: Базовая конфигурация системы безопасности Data Explorer
       href: /azure/data-explorer/security-baseline
+    - name: Базовые показатели безопасности Databricks
+      href: ../../azure-databricks/security-baseline.md
     - name: Базовые показатели безопасности Центров событий
       href: ../../event-hubs/security-baseline.md
+    - name: Базовые показатели безопасности Функций
+      href: ../../azure-functions/security-baseline.md
     - name: Базовый уровень безопасности HDInsight
       href: ../../hdinsight/security-baseline.md
     - name: Базовый уровень безопасности Key Vault

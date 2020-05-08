@@ -5,15 +5,15 @@ services: storage
 author: alkohli
 ms.service: storage
 ms.topic: how-to
-ms.date: 03/12/2020
+ms.date: 05/06/2020
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: d3e4535c05ef077d14ef74310459a84af0f02fd5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 71426d131cdd46b176c387a31e3dc2ca66ae3761
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82176334"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82871165"
 ---
 # <a name="use-customer-managed-keys-in-azure-key-vault-for-importexport-service"></a>Использование управляемых клиентом ключей в Azure Key Vault для службы импорта и экспорта
 
@@ -23,7 +23,7 @@ ms.locfileid: "82176334"
 
 В этой статье показано, как использовать управляемые клиентом ключи с помощью службы импорта и экспорта в [портал Azure](https://portal.azure.com/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Перед тем как начать, убедитесь в следующем:
 
@@ -90,9 +90,8 @@ ms.locfileid: "82176334"
 
 В колонке **Шифрование** можно просмотреть хранилище ключей и ключ, выбранный для управляемого клиентом ключа.
 
-## <a name="disable-keys"></a>Отключить ключи
-
-Вы можете отключить только управляемые ключи Майкрософт и перейти на управляемые ключи клиентов на любом этапе задания импорта и экспорта. Однако нельзя отключить управляемый клиентом ключ после его создания.
+> [!IMPORTANT]
+> Вы можете отключить только управляемые ключи Майкрософт и перейти на управляемые ключи клиентов на любом этапе задания импорта и экспорта. Однако нельзя отключить управляемый клиентом ключ после его создания.
 
 ## <a name="troubleshoot-customer-managed-key-errors"></a>Устранение ошибок управляемых ключей клиентов
 
