@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/21/2020
 ms.author: normesta
 ms.reviewer: jamsbak
-ms.openlocfilehash: 22776d9498676ec77cd71845ca5e39f01926259d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b71d4e0eab0c1c1a7cfaf6e5bf9169776308fd3b
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82137575"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583843"
 ---
 # <a name="filter-data-by-using-azure-data-lake-storage-query-acceleration-preview"></a>Фильтрация данных с помощью ускорения запросов Azure Data Lake Storage (Предварительная версия)
 
@@ -365,8 +365,8 @@ static void QueryMysteryBooks(BlobClient blobClient)
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Форма регистрации ускорения запросов](https://aka.ms/adls/queryaccelerationpreview)    
+- [Форма регистрации ускорения запросов](https://aka.ms/adls/qa-preview-signup)    
 - [Ускорение запросов Azure Data Lake Storage (Предварительная версия)](data-lake-storage-query-acceleration.md)
 - [Справочник по языку SQL для ускорения запросов (Предварительная версия)](query-acceleration-sql-reference.md)

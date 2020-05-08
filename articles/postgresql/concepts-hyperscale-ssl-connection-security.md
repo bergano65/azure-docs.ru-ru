@@ -4,14 +4,15 @@ description: Инструкции и сведения о настройке ба
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
+ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 03/30/2020
-ms.openlocfilehash: 8a691b6d3f28800ab1cb38a72f124e950d485084
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 791eed9419375c7245488b8ec61a1c5481be382e
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80422340"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82580565"
 ---
 # <a name="configure-tls-in-azure-database-for-postgresql---hyperscale-citus"></a>Настройка TLS в базе данных Azure для PostgreSQL — масштабирование (Цитус)
 Для подключений клиентских приложений к узлу координатора Цитус () требуется протокол TLS, который ранее назывался SSL (SSL). Применение TLS-подключений между сервером базы данных и клиентскими приложениями помогает защититься от атак типа "злоумышленник в середине" путем шифрования потока данных между сервером и приложением.
@@ -37,5 +38,5 @@ psql "sslmode=verify-full sslrootcert=DigiCertGlobalRootCA.crt.pem host=mydemose
 > [!TIP]
 > Убедитесь, что значение, передаваемое в `sslrootcert` , соответствует пути к файлу сохраненного сертификата.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Повысьте безопасность с помощью [правил брандмауэра в базе данных Azure для PostgreSQL-Scale (Цитус)](concepts-hyperscale-firewall-rules.md).

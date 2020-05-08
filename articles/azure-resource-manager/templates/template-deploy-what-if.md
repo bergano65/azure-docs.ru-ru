@@ -3,14 +3,14 @@ title: Шаблоны развертывания что если (Предвар
 description: Прежде чем развертывать шаблон Azure Resource Manager, определите, какие изменения будут выполнены для ресурсов.
 author: mumian
 ms.topic: conceptual
-ms.date: 04/28/2020
+ms.date: 04/29/2020
 ms.author: jgao
-ms.openlocfilehash: f13789912e5b801295f1f926a12db50849cd75d8
-ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.openlocfilehash: 70023f4fa5d44c74c7ce14f3a2c09ff14c9d2f8c
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/29/2020
-ms.locfileid: "82509590"
+ms.locfileid: "82581202"
 ---
 # <a name="arm-template-deployment-what-if-operation-preview"></a>Операция "что-если" развертывания шаблона ARM (Предварительная версия)
 
@@ -106,7 +106,7 @@ Resource changes: 1 to modify.
 * `New-AzResourceGroupDeployment -Whatif`для развертываний группы ресурсов
 * `New-AzSubscriptionDeployment -Whatif`и `New-AzDeployment -Whatif` для развертываний на уровне подписки
 
-Можно также использовать параметр `-Confirm` Switch для предварительного просмотра изменений и получения запроса на продолжение развертывания.
+Можно использовать параметр `-Confirm` Switch для предварительного просмотра изменений и получения запроса на продолжение развертывания.
 
 * `New-AzResourceGroupDeployment -Confirm`для развертываний группы ресурсов
 * `New-AzSubscriptionDeployment -Confirm`и `New-AzDeployment -Confirm` для развертываний на уровне подписки
@@ -123,10 +123,10 @@ Resource changes: 1 to modify.
 * `az deployment group what-if`для развертываний группы ресурсов
 * `az deployment sub what-if`для развертываний на уровне подписки
 
-Можно также использовать `--confirm-with-what-if` параметр для предварительного просмотра изменений и получить запрос на продолжение развертывания.
+Можно использовать `--confirm-with-what-if` параметр (или его краткую форму `-c`) для предварительного просмотра изменений и получить запрос на продолжение развертывания.
 
-* `az deployment group create --confirm-with-what-if`для развертываний группы ресурсов
-* `az deployment sub create --confirm-with-what-if`для развертываний на уровне подписки
+* `az deployment group create --confirm-with-what-if`или `-c` для развертываний группы ресурсов
+* `az deployment sub create --confirm-with-what-if`или `-c` для развертываний на уровне подписки
 
 Приведенные выше команды возвращают текстовую сводку, которую можно проверить вручную. Чтобы получить объект JSON, который можно программно проверить на наличие изменений, используйте:
 
@@ -340,7 +340,7 @@ results=$(az deployment group what-if --resource-group ExampleGroup --template-u
 
 Операция "что если" поддерживает использование [режима развертывания](deployment-modes.md). Если задано значение полного режима, ресурсы, отсутствующие в шаблоне, удаляются. В следующем примере выполняется развертывание [шаблона, не имеющего ресурсов, определенных](https://github.com/Azure/azure-docs-json-samples/blob/master/empty-template/azuredeploy.json) в полном режиме.
 
-Чтобы просмотреть изменения перед развертыванием шаблона, используйте параметр `-Confirm` Switch с командой развертывания. Если изменения ожидаемы, подтвердите, что развертывание должно завершиться.
+Чтобы просмотреть изменения перед развертыванием шаблона, используйте параметр Confirm параметра с командой развертывания. Если изменения ожидаемы, подтвердите, что развертывание должно завершиться.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -397,7 +397,7 @@ Are you sure you want to execute the deployment?
 
 Вы увидите ожидаемые изменения и можете подтвердить, что вы хотите выполнить развертывание.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Если вы заметили неверные результаты в предварительной версии, то сообщите о проблемах по адресу [https://aka.ms/whatifissues](https://aka.ms/whatifissues).
 - Сведения о развертывании шаблонов с помощью Azure PowerShell см. в статье [развертывание ресурсов с помощью шаблонов ARM и Azure PowerShell](deploy-powershell.md).

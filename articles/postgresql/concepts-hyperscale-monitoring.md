@@ -4,14 +4,15 @@ description: В этой статье описываются функции мо
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
+ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: d2e9fcd6f6292c1da76e725e90deda4547b3682d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fb24100eaebc54b98adf2f09fa3e557e4d6fa0be
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74975522"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82580653"
 ---
 # <a name="monitor-and-tune-azure-database-for-postgresql---hyperscale-citus"></a>Мониторинг и Настройка базы данных Azure для PostgreSQL — масштабирование (Цитус)
 
@@ -29,9 +30,9 @@ ms.locfileid: "74975522"
 
 |Метрика|Отображаемое имя метрики|Единицы|Описание|
 |---|---|---|---|
-|active_connections|Активные подключения|Count|Число активных подключений к серверу.|
+|active_connections|Активные подключения|Счетчик|Число активных подключений к серверу.|
 |cpu_percent|Нагрузка ЦП|Процент|Процент используемого ЦП.|
-|/|ОПЕРАЦИЙ ВВОДА-ВЫВОДА|Count|Ознакомьтесь с [определением операций ввода-вывода](../virtual-machines/linux/premium-storage-performance.md#iops) и [пропускной способностью масштабирования](concepts-hyperscale-configuration-options.md)|
+|/|ОПЕРАЦИЙ ВВОДА-ВЫВОДА|Счетчик|Ознакомьтесь с [определением операций ввода-вывода](../virtual-machines/linux/premium-storage-performance.md#iops) и [пропускной способностью масштабирования](concepts-hyperscale-configuration-options.md)|
 |memory_percent|Процент памяти|Процент|Процент используемой памяти.|
 |network_bytes_ingress|Сеть (входящий трафик)|Байты|Входящий сетевой трафик по активным подключениям.|
 |network_bytes_egress|Сеть (исходящий трафик)|Байты|Исходящий сетевой трафик по активным подключениям.|

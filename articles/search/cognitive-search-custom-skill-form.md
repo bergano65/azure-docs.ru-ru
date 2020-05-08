@@ -8,12 +8,12 @@ ms.author: pafarley
 ms.service: cognitive-search
 ms.topic: article
 ms.date: 01/21/2020
-ms.openlocfilehash: 713b790c432f0e416392243262aed4b0fcda8892
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 050848b0bff65b19e2b17bd170e1d3e9ff0176f1
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81274579"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792009"
 ---
 # <a name="example-create-a-form-recognizer-custom-skill"></a>Пример. Создание пользовательского навыка распознавателя форм
 
@@ -59,7 +59,7 @@ ms.locfileid: "81274579"
 POST https://localhost:7071/api/analyze-form
 ```
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Начните с шаблона текста запроса ниже.
 
@@ -160,12 +160,12 @@ POST https://localhost:7071/api/analyze-form
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом пошаговом окне вы создали пользовательский навык из службы распознавателя форм Azure. Дополнительные сведения о пользовательских навыках см. в следующих ресурсах. 
 
-* [Навыки работы с поиском Azure: репозиторий пользовательских навыков](https://github.com/*zure-Samples/azure-search-power-skills)
+* [Навыки работы с поиском Azure: репозиторий пользовательских навыков](https://github.com/Azure-Samples/azure-search-power-skills)
 * [Добавление пользовательского навыка в конвейер обогащения искусственного интеллекта](cognitive-search-custom-skill-interface.md)
 * [Определение набора навыков](cognitive-search-defining-skillset.md)
-* [Создание набора навыков (остальное)](https://docs.microsoft.com/rest/api/*earchservice/create-skillset)
+* [Создание набора навыков (остальное)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
 * [Соотнесение обогащенных полей](cognitive-search-output-field-mapping.md)

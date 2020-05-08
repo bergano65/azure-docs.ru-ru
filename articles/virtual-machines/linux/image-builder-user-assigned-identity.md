@@ -4,16 +4,15 @@ description: Создание образа виртуальной машины �
 author: cynthn
 ms.author: cynthn
 ms.date: 05/02/2019
-ms.topic: article
+ms.topic: how-to
 ms.service: virtual-machines-linux
 ms.subservice: imaging
-manager: gwallace
-ms.openlocfilehash: 27f4073efc8647d331faa14afbda0e15f92b8d50
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: d8e897d2736202f1fb6c5cb8a6497c5c886acef8
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80060752"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792434"
 ---
 # <a name="create-an-image-and-use-a-user-assigned-managed-identity-to-access-files-in-azure-storage"></a>Создание образа и использование управляемого удостоверения, назначенного пользователем, для доступа к файлам в службе хранилища Azure 
 
@@ -233,6 +232,6 @@ az group delete -n $imageResourceGroup
 az group delete -n $strResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас возникли проблемы с построителем образов Azure, см. раздел [Устранение неполадок](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md?toc=%2fazure%2fvirtual-machines%context%2ftoc.json).

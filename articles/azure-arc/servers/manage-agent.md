@@ -6,14 +6,14 @@ ms.service: azure-arc
 ms.subservice: azure-arc-servers
 author: mgoedtel
 ms.author: magoedte
-ms.date: 04/14/2020
+ms.date: 04/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5ad2127b4cb9da3ca83aa04bd1885908a88dba62
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 685c56c7ef270acb416d4b76c6aceb8553e9a07f
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81308970"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82581706"
 ---
 # <a name="managing-and-maintaining-the-connected-machine-agent"></a>Управление агентом подключенного компьютера и его обслуживание
 
@@ -25,7 +25,7 @@ ms.locfileid: "81308970"
 
 | Операционная система | Метод перехода |
 |------------------|----------------|
-| Windows | Вручную<br> Центр обновления Windows |
+| Windows | Вручную<br> Центра обновления Windows; |
 | Ubuntu | [APT](https://help.ubuntu.com/lts/serverguide/apt.html) |
 | SUSE Linux Enterprise Server | [zypper](https://en.opensuse.org/SDB:Zypper_usage_11.3) |
 | RedHat Enterprise, Amazon, CentOS Linux | [Yum](https://wiki.centos.org/PackageManagement/Yum) | 
@@ -197,7 +197,7 @@ ms.locfileid: "81308970"
 
 1. Чтобы удалить агент Windows с компьютера, выполните следующие действия:
 
-    a. Войдите в систему компьютера, используя учетную запись с правами администратора.  
+    а. Войдите в систему компьютера, используя учетную запись с правами администратора.  
     b. Откройте **Панель управления**, выберите раздел **Программы и компоненты**.  
     c. В разделе **Программы и компоненты** выберите **Azure Connected Machine Agent** (Агент подключенного компьютера Azure), затем **Удалить**, а затем **Да**.  
 
@@ -261,3 +261,49 @@ ms.locfileid: "81308970"
 1. Перейдите на [портал Azure](https://aka.ms/hybridmachineportal) и откройте Azure Arc для серверов (предварительная версия).
 
 2. Выберите компьютер в списке, щелкните значок с многоточием (**...**), а затем выберите пункт **Удалить**.
+
+## <a name="update-or-remove-proxy-settings"></a>Изменение или удаление параметров прокси-сервера
+
+Чтобы настроить агент для взаимодействия со службой через прокси-сервер или удалить эту конфигурацию после развертывания, или используйте один из следующих методов для выполнения этой задачи.
+
+### <a name="windows"></a>Windows
+
+Чтобы задать переменную среды прокси-сервера, выполните следующую команду:
+
+```powershell
+# If a proxy server is needed, execute these commands with the proxy URL and port.
+[Environment]::SetEnvironmentVariable("https_proxy","http://{proxy-url}:{proxy-port}","Machine")
+$env:https_proxy = [System.Environment]::GetEnvironmentVariable("https_proxy","Machine")
+# For the changes to take effect, the agent service needs to be restarted after the proxy environment variable is set.
+Restart-Service -Name himds
+```
+
+Чтобы настроить агент для отключения связи через прокси-сервер, выполните следующую команду, чтобы удалить переменную среды прокси-сервера и перезапустить службу агента:
+
+```powershell
+[Environment]::SetEnvironmentVariable("https_proxy",$null,"Machine")
+$env:https_proxy = [System.Environment]::GetEnvironmentVariable("https_proxy","Machine")
+# For the changes to take effect, the agent service needs to be restarted after the proxy environment variable removed.
+Restart-Service -Name himds
+```
+
+### <a name="linux"></a>Linux
+
+Чтобы задать прокси-сервер, выполните следующую команду из каталога, скачанного из пакета установки агента, в следующее:
+
+```bash
+# Reconfigure the connected machine agent and set the proxy server.
+bash ~/Install_linux_azcmagent.sh --proxy "{proxy-url}:{proxy-port}"
+```
+
+Чтобы настроить агент для отключения связи через прокси-сервер, выполните следующую команду, чтобы удалить конфигурацию прокси-сервера:
+
+```bash
+sudo azcmagent_proxy remove
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Узнайте, как управлять компьютером с помощью [политики Azure](../../governance/policy/overview.md), например [гостевой конфигурации](../../governance/policy/concepts/guest-configuration.md)виртуальной машины, проверки того, что компьютер сообщает о предполагаемой log Analytics рабочей области, включить мониторинг с помощью [Azure Monitor с виртуальными машинами](../../azure-monitor/insights/vminsights-enable-at-scale-policy.md)и многое другое.
+
+- Дополнительные сведения об [агенте log Analytics](../../azure-monitor/platform/log-analytics-agent.md). Агент Log Analytics для Windows и Linux необходим, если требуется заблаговременно отслеживать ОПЕРАЦИОНную систему и рабочие нагрузки, выполняемые на компьютере, управлять ею с помощью модулей Runbook или функций автоматизации, таких как Управление обновлениями, или использовать другие службы Azure, такие как [Центр безопасности Azure](../../security-center/security-center-intro.md).

@@ -3,12 +3,12 @@ title: Счетчики производительности в Application Insi
 description: Мониторинг системных и пользовательских счетчиков производительности .NET в Application Insights.
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: 94d2520c17867f6d70caffd002a76365a425986f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 201338d3a904030ea961aede094b9877bfee3e36
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77669885"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82855110"
 ---
 # <a name="system-performance-counters-in-application-insights"></a>Системные счетчики производительности в Application Insights
 
@@ -74,7 +74,7 @@ ms.locfileid: "77669885"
 ```csharp
     var perfCollectorModule = new PerformanceCollectorModule();
     perfCollectorModule.Counters.Add(new PerformanceCounterCollectionRequest(
-      @"\Process([replace-with-application-process-name])\Page Faults/sec", "PageFaultsPerfSec")));
+      @"\Process([replace-with-application-process-name])\Page Faults/sec", "PageFaultsPerfSec"));
     perfCollectorModule.Initialize(TelemetryConfiguration.Active);
 ```
 
@@ -146,7 +146,7 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector;
 * Для приложений, предназначенных для .NET Framework, все версии пакетов SDK поддерживают счетчики производительности.
 * Версии пакета SDK 2.8.0 и более поздней поддерживают счетчик ЦП/памяти в Linux. В Linux не поддерживается никакой другой счетчик. Рекомендуемый способ получения системных счетчиков в Linux (и других средах, отличных от Windows) — с помощью [евенткаунтерс](eventcounters.md)
 
-## <a name="alerts"></a>Предупреждения
+## <a name="alerts"></a>видны узлы
 Как и для других метрик, вы можете [установить оповещение](../../azure-monitor/app/alerts.md), которое предупредит о выходе показаний счетчика производительности за установленные пределы. Откройте колонку "Оповещения" и щелкните "Добавить оповещение".
 
 ## <a name="next-steps"></a><a name="next"></a>Следующие шаги

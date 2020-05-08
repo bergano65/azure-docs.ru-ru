@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2019
-ms.openlocfilehash: 75d5203e7c475a44b6a00dbf9286f43114b7b54f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 77fe4b4ffbf7c189a5bf64e662f395fc78e53944
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79480850"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82581500"
 ---
 # <a name="enable-azure-monitor-for-vms-using-azure-powershell-or-resource-manager-templates"></a>Включение Azure Monitor для виртуальных машин с помощью шаблонов Azure PowerShell или диспетчер ресурсов
 
@@ -170,7 +170,7 @@ provisioningState       : Succeeded
 
 ## <a name="enable-with-powershell"></a>Включение с помощью PowerShell
 
-Чтобы включить Azure Monitor для виртуальных машин для нескольких виртуальных машин или масштабируемых наборов виртуальных машин, используйте сценарий PowerShell [Инсталл-вминсигхтс. ps1](https://www.powershellgallery.com/packages/Install-VMInsights/1.0). Он доступен из коллекции Azure PowerShell. Этот сценарий выполняет итерацию:
+Чтобы включить Azure Monitor для виртуальных машин для нескольких виртуальных машин или масштабируемых наборов виртуальных машин, используйте сценарий PowerShell [Инсталл-вминсигхтс. ps1](https://www.powershellgallery.com/packages/Install-VMInsights). Он доступен из коллекции Azure PowerShell. Этот сценарий выполняет итерацию:
 
 - Каждая виртуальная машина и масштабируемый набор виртуальных машин в вашей подписке.
 - Группа ресурсов с областью действия, заданная параметром *ResourceGroup*.
@@ -331,7 +331,7 @@ Not running - start VM to configure: (0)
 Failed: (0)
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда наблюдение включено для виртуальных машин, эти сведения доступны для анализа с Azure Monitor для виртуальных машин.
 

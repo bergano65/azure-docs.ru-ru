@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 04/14/2020
-ms.openlocfilehash: 4955df718dcc8f169232052979ccf4a636c3be80
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c81d70577c5e7b852d315bdb91993d15624a7336
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81390291"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82791499"
 ---
 # <a name="optimize-apache-hive-queries-in-azure-hdinsight"></a>Оптимизация запросов Apache в Hive в Azure HDInsight
 
@@ -193,10 +193,11 @@ set hive.vectorized.execution.enabled = true;
 * **Оптимизация объединений** — это оптимизация выполнения запросов Hive с целью повышения эффективности объединений и сокращения действия пользователя. Для получения дополнительных сведений обратитесь к разделу [Оптимизация объединений](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+JoinOptimization#LanguageManualJoinOptimization-JoinOptimization).
 * **Увеличьте модулей сжатия**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали некоторые распространенные методы оптимизации запросов Hive. Дополнительные сведения см. в следующих статьях:
 
 * [Использование Apache Hive в HDInsight](hadoop/hdinsight-use-hive.md)
+* [Оптимизация Apache Hive](./optimize-hive-ambari.md)
 * [Анализ данных о задержке рейсов с помощью интерактивного запроса в HDInsight](./interactive-query/interactive-query-tutorial-analyze-flight-data.md)
 * [Анализ данных Twitter с помощью Apache Hive в HDInsight](hdinsight-analyze-twitter-data-linux.md)

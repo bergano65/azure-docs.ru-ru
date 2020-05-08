@@ -5,12 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 11/21/2018
 ms.author: srrengar
-ms.openlocfilehash: 720cc157111293146b796f8567f94a4f1f4830c6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ce0cd0866cc6daa36d598767a486faeabac8076d
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75376942"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82791822"
 ---
 # <a name="monitoring-the-cluster"></a>Мониторинг кластера
 
@@ -74,7 +74,7 @@ Service Fabric предоставляет несколько событий ст
 
 ## <a name="measuring-performance"></a>Измерение производительности
 
-Измерение производительности кластера помогает понять, как обрабатывать нагрузку и принимать решения для масштабирования кластера. Дополнительные сведения о масштабировании кластера см. статьях [Масштабирование кластера Service Fabric с помощью правил автомасштабирования](service-fabric-cluster-scale-up-down.md) и [Добавление узлов в автономный кластер Service Fabric под управлением Windows Server или удаление узлов из него](service-fabric-cluster-windows-server-add-remove-nodes.md). Данные о производительности также полезны при сравнении с действиями, которые вы или ваши приложения и службы могли выполнить, для последующего анализа журналов. 
+Измерение производительности кластера помогает понять, как обрабатывать нагрузку и принимать решения для масштабирования кластера. Дополнительные сведения о масштабировании кластера см. статьях [Масштабирование кластера Service Fabric с помощью правил автомасштабирования](service-fabric-cluster-scale-in-out.md) и [Добавление узлов в автономный кластер Service Fabric под управлением Windows Server или удаление узлов из него](service-fabric-cluster-windows-server-add-remove-nodes.md). Данные о производительности также полезны при сравнении с действиями, которые вы или ваши приложения и службы могли выполнить, для последующего анализа журналов. 
 
 Дополнительные сведения о списке счетчиков производительности, данные которых необходимо собрать при использовании Service Fabric, см. в [этой статье](service-fabric-diagnostics-event-generation-perf.md).
 

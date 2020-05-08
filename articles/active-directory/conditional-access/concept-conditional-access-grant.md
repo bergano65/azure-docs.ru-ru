@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 02ec8dace971cd4dc1407c9e8d20839504c9ecc3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 01c625bebbcd2e619a8125fdfb92673cd02966b2
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80331844"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583195"
 ---
 # <a name="conditional-access-grant"></a>Условный доступ: предоставление
 
@@ -83,7 +83,6 @@ ms.locfileid: "80331844"
 - Microsoft Kaizala
 - Microsoft Launcher;
 - Microsoft Office
-- Центр Microsoft Office
 - Microsoft OneDrive
 - Microsoft OneNote;
 - Microsoft Outlook
@@ -138,7 +137,7 @@ ms.locfileid: "80331844"
 
 Если ваша организация создала условия использования, в разделе предоставление элементов управления могут отображаться дополнительные параметры. Эти параметры позволяют администраторам требовать подтверждения условий использования в качестве условия доступа к ресурсам, защищенным политикой. Дополнительные сведения об условиях использования можно найти в статье [Azure Active Directory условия использования](terms-of-use.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Условный доступ: элементы управления сеансом](concept-conditional-access-session.md)
 

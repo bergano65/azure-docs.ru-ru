@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/07/2019
 ms.author: johnkem
 ms.subservice: logs
-ms.openlocfilehash: d2423d04ead9040cce53d847d24efe75be680d94
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4ea29888d4dcf589e3e5d4dfe594f5f4bff2287e
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80397306"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82559980"
 ---
 # <a name="view-and-retrieve-azure-activity-log-events"></a>Просмотр и получение событий журнала действий Azure
 
@@ -71,7 +71,7 @@ ms.locfileid: "80397306"
 Используйте командлет [Get-AzLog](https://docs.microsoft.com/powershell/module/az.monitor/get-azlog) , чтобы получить журнал действий из PowerShell. Ниже приведены некоторые распространенные примеры.
 
 > [!NOTE]
-> `Get-AzLog` предоставляет данные журнала только за 15 дней. Используйте параметр **-MaxEvents** для запроса последних N событий, превышающих 15 дней. Чтобы получить доступ к событиям старше 15 дней, используйте REST API или пакет SDK. Если не указать **StartTime**, то значением **EndTime** по умолчанию будет минус один час. Если не указать **EndTime**, то значением по умолчанию будет текущее время. Все значения времени указаны в формате UTC.
+> `Get-AzLog` предоставляет данные журнала только за 15 дней. Используйте параметр **-максрекорд** для запроса последних N событий, превышающих 15 дней. Чтобы получить доступ к событиям старше 15 дней, используйте REST API или пакет SDK. Если не указать **StartTime**, то значением **EndTime** по умолчанию будет минус один час. Если не указать **EndTime**, то значением по умолчанию будет текущее время. Все значения времени указаны в формате UTC.
 
 
 Получение записей журнала, созданных после определенной даты и времени:
@@ -107,7 +107,7 @@ Get-AzLog -Caller 'myname@company.com'
 Получение последних 1000 событий:
 
 ```powershell
-Get-AzLog -MaxEvents 1000
+Get-AzLog -MaxRecord 1000
 ```
 
 
@@ -170,7 +170,7 @@ GET https://management.azure.com/subscriptions/089bd33f-d4ec-47fe-8ba5-0753aa5c5
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Ознакомьтесь с обзором журналов платформы.](platform-logs-overview.md)
 * [Создание параметра диагностики для отправки журналов действий в другие назначения](diagnostic-settings.md)

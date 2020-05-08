@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 04/21/2020
-ms.openlocfilehash: 9129cb308a364a3ed0654055f8afe9dd8c89010a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 5/4/2020
+ms.openlocfilehash: 6b738fc96a51893d8c0a0e75c5551007da60bdd2
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82024631"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82793199"
 ---
 # <a name="read-replicas-in-azure-database-for-mariadb"></a>Реплики чтения в Базе данных Azure для MariaDB
 
@@ -147,13 +147,15 @@ mysql -h myreplica.mariadb.database.azure.com -u myadmin@myreplica -p
 
 [`event_scheduler`](https://mariadb.com/kb/en/library/server-system-variables/#event_scheduler) Параметр заблокирован на серверах реплик.
 
+Чтобы обновить один из указанных выше параметров на главном сервере, удалите серверы реплики, обновите значение параметра в базе данных master и повторно создайте реплики.
+
 ### <a name="other"></a>Другой
 
 - Создание реплики реплики не поддерживается.
 - Таблицы в памяти могут привести к тому, что реплики не будут синхронизированы. Это ограничение технологии репликации MariaDB.
 - Убедитесь, что у таблиц главного сервера есть первичные ключи. Отсутствие первичных ключей может привести к задержке репликации между главным сервером и репликами.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [создавать реплики чтения и управлять ими с помощью портала Azure](howto-read-replicas-portal.md).
 - Узнайте, как [создавать реплики чтения и управлять ими с помощью Azure CLI и REST API](howto-read-replicas-cli.md)

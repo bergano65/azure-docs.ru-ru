@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 07/24/2018
 ms.author: yushwang
 ms.reviewer: cherylmc
-ms.openlocfilehash: ec3697208434eb971e47136416f2c2cc541b5cea
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 436428c8f4a30706ab16ddace2d491287e620646
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79244645"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82559839"
 ---
 # <a name="configure-active-active-s2s-vpn-connections-with-azure-vpn-gateways"></a>Настройка VPN-подключений типа "сеть — сеть" в режиме "активный — активный" для VPN-шлюзов Azure
 
@@ -36,9 +36,7 @@ ms.locfileid: "79244645"
 Вы можете комбинировать эти блоки для создания более сложной, высокодоступной топологии сети в соответствии со своими задачами.
 
 > [!IMPORTANT]
-> Режим "активный — активный" использует только следующие номера SKU: 
->   * VpnGw1, VpnGw2, VpnGw3
->   * HighPerformance (для устаревших номеров SKU)
+> Режим "активный — активный" доступен для всех номеров SKU, кроме Basic.
 
 ## <a name="part-1---create-and-configure-active-active-vpn-gateways"></a><a name ="aagateway"></a>Часть 1. Создание и настройка VPN-шлюзов в режиме "активный — активный"
 Здесь приведены действия по настройке VPN-шлюза Azure в режиме "активный — активный". Между шлюзами в режиме "активный — активный" и "активный — резервный" существуют такие основные различия:
@@ -82,7 +80,7 @@ $Connection151 = "VNet1toSite5_1"
 $Connection152 = "VNet1toSite5_2"
 ```
 
-#### <a name="2-connect-to-your-subscription-and-create-a-new-resource-group"></a>2. Подключитесь к подписке и создайте новую группу ресурсов
+#### <a name="2-connect-to-your-subscription-and-create-a-new-resource-group"></a>2. Подключение к подписке Azure и создание группы ресурсов
 Для работы с командлетами диспетчера ресурсов необходимо перейти в режим PowerShell. Дополнительные сведения см. в статье [Использование Azure PowerShell с диспетчером ресурсов Azure](../powershell-azure-resource-manager.md).
 
 Откройте консоль PowerShell и подключитесь к своей учетной записи. Для подключения используйте следующий пример.

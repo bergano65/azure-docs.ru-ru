@@ -3,12 +3,12 @@ title: Определение нескольких экземпляров пер
 description: Используйте операцию копирования в шаблоне Azure Resource Manager для многократного прохода при создании переменной.
 ms.topic: conceptual
 ms.date: 02/13/2020
-ms.openlocfilehash: ed0c2d87c48a18b0a065f6c76e1e69142a9df048
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4fbe392e8a0fb477b6986fc9c7584291590eb4e7
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80153307"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583376"
 ---
 # <a name="variable-iteration-in-arm-templates"></a>Итерация переменных в шаблонах ARM
 
@@ -16,7 +16,7 @@ ms.locfileid: "80153307"
 
 Можно также использовать Copy с [ресурсами](copy-resources.md), [свойствами в ресурсе](copy-properties.md)и [выходами](copy-outputs.md).
 
-## <a name="variable-iteration"></a>Итерация переменной
+## <a name="syntax"></a>Синтаксис
 
 Элемент Copy имеет следующий общий формат:
 
@@ -33,6 +33,21 @@ ms.locfileid: "80153307"
 Свойство **Name** — это любое значение, идентифицирующее цикл. Свойство **Count** указывает количество итераций, которое требуется для переменной.
 
 Свойство **input** указывает свойства, которые необходимо повторить. Создается массив элементов, созданных на основе значения **входного** свойства. Это может быть одно свойство (например, строка) или объект с несколькими свойствами.
+
+## <a name="copy-limits"></a>Ограничения копирования
+
+Число не может превышать 800.
+
+Число не может быть отрицательным числом. Если вы развертываете шаблон с помощью последней версии Azure CLI, PowerShell или REST API, он может быть равен нулю. В частности, необходимо использовать:
+
+* Azure PowerShell **2,6** или более поздней версии
+* Azure CLI **2.0.74** или более поздней версии
+* REST API версии **2019-05-10** или более поздней
+* [Связанные развертывания](linked-templates.md) должны использовать API версии **2019-05-10** или более поздней для типа ресурса развертывания.
+
+Более ранние версии PowerShell, CLI и REST API не поддерживают нулевое значение для счетчика.
+
+## <a name="variable-iteration"></a>Итерация переменной
 
 В следующем примере показано, как создать массив строковых значений.
 
@@ -295,12 +310,6 @@ ms.locfileid: "80153307"
 }
 ```
 
-## <a name="copy-limits"></a>Ограничения копирования
-
-Число не может превышать 800.
-
-Число не может быть отрицательным числом. Если вы развертываете шаблон с Azure PowerShell 2,6 или более поздней версии, Azure CLI 2.0.74 или более поздней версии или REST API версию **2019-05-10** или более поздней, можно установить значение счетчика равным нулю. Более ранние версии PowerShell, CLI и REST API не поддерживают нулевое значение для счетчика.
-
 ## <a name="example-templates"></a>Образцы шаблонов
 
 В следующих примерах показаны распространенные сценарии для создания более одного значения для переменной.
@@ -310,7 +319,7 @@ ms.locfileid: "80153307"
 |[Копирование переменных](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/copyvariables.json) |Демонстрирует разные способы итерации переменных. |
 |[Несколько правил безопасности](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.json) |Развертывает несколько правил безопасности в группу безопасности сети. Кроме того, этот шаблон создает правила безопасности на основе параметра. Чтобы узнать параметр, см. [файл параметров нескольких групп безопасности сети](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.parameters.json). |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы пройти обучение, см. раздел [учебник. Создание нескольких экземпляров ресурсов с помощью шаблонов ARM](template-tutorial-create-multiple-instances.md).
 * Другие способы использования элемента copy см. в следующих статьях:

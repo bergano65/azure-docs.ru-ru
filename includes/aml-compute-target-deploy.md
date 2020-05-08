@@ -1,6 +1,6 @@
 ---
 title: Включить имя файла
-description: включить файл
+description: Включить файл
 services: machine-learning
 author: sdgilley
 ms.service: machine-learning
@@ -9,14 +9,14 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 08/23/2019
-ms.openlocfilehash: ba1e0eee5de65364d8e5e762195f7de98384c2a7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9eedc0c3044717360494b222c88d73b3c8999e94
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76122595"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82587845"
 ---
-| Целевой объект вычисления | Назначение | Поддержка GPU | Поддержка FPGA | Описание |
+| Целевой объект вычисления | Используется для | Поддержка GPU | Поддержка FPGA | Описание |
 | ----- | ----- | ----- | ----- | ----- |
 | [&nbsp;Локальная&nbsp;веб-служба](../articles/machine-learning/how-to-deploy-and-where.md#local) | Тестирование и отладка | &nbsp; | &nbsp; | Используется для ограниченного тестирования и устранения неполадок. Аппаратное ускорение зависит от использования библиотек в локальной системе.
 | [Веб-&nbsp;служба&nbsp;машинное обучение Azureного вычислительного экземпляра](../articles/machine-learning/how-to-deploy-and-where.md#notebookvm) | Тестирование и отладка | &nbsp; | &nbsp; | Используется для ограниченного тестирования и устранения неполадок.
@@ -25,7 +25,7 @@ ms.locfileid: "76122595"
 | [вычислительные кластеры Машинного обучения Azure;](../articles/machine-learning/how-to-use-parallel-run-step.md) | Образца Вывод&nbsp;пакета | [Да](../articles/machine-learning/how-to-use-parallel-run-step.md) (конвейер машинного обучения) | &nbsp;  | Выполнение пакетной оценки на бессерверных вычислениях. Поддерживает виртуальные машины с обычным и низким приоритетными уровнями. |
 | [Функции Azure](../articles/machine-learning/how-to-deploy-functions.md) | Образца Вывод в режиме реального времени | &nbsp; | &nbsp; | &nbsp; |
 | [Azure IoT Edge](../articles/machine-learning/how-to-deploy-and-where.md#iotedge) | Образца Модуль&nbsp;IOT |  &nbsp; | &nbsp; | Развертывание и обслуживание моделей машинного обучения на устройствах IoT. |
-| [Что представляет собой Azure Data Box Edge (ознакомительная версия)?](../articles/databox-online/data-box-edge-overview.md)   | Via IoT Edge |  &nbsp; | Да | Развертывание и обслуживание моделей машинного обучения на устройствах IoT. |
+| [Что представляет собой Azure Data Box Edge (ознакомительная версия)?](../articles/databox-online/azure-stack-edge-overview.md)   | Via IoT Edge |  &nbsp; | Да | Развертывание и обслуживание моделей машинного обучения на устройствах IoT. |
 
 > [!NOTE]
 > Хотя целевые объекты вычислений, например локальные, Машинное обучение Azure вычислительных кластеров и Машинное обучение Azure вычислительных кластерах, поддерживают GPU для обучения и экспериментирования, использование GPU для вывода __при развертывании в качестве веб-службы__ поддерживается только в службе Azure Kubernetes.

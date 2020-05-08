@@ -4,14 +4,15 @@ description: В этой статье описываются правила бр
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
+ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 9/12/2019
-ms.openlocfilehash: b843cd1528630a21255053f623356a0379daacf6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 127840738d8fb8db00a7efc0b0d8fe393138488d
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74975573"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82580933"
 ---
 # <a name="firewall-rules-in-azure-database-for-postgresql---hyperscale-citus"></a>Правила брандмауэра в базе данных Azure для PostgreSQL — масштабирование (Цитус)
 Брандмауэр сервера базы данных Azure для PostgreSQL предотвращает доступ к узлу координатора масштабирования (Цитус), пока вы не укажете, какие компьютеры имеют разрешение. Брандмауэр предоставляет доступ к серверу на основе исходного IP-адреса каждого запроса.

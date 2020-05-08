@@ -1,29 +1,29 @@
 ---
-title: Создание технического ресурса виртуальной машины Azure
-description: В этой статье описываются шаги и требования для настройки предложения контейнера в Azure Marketplace.
+title: Технические понятия о предложениях контейнеров Azure. коммерческий рынок Майкрософт
+description: Технические ресурсы и рекомендации, помогающие настроить предложение контейнера в Azure Marketplace.
 author: anbene
 ms.author: mingshen
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/09/2020
-ms.openlocfilehash: e51b8c705533fd74a5e46eaa2570563fef485309
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b3c6f88df151cc497f0de670d5d78a05c7477459
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81730637"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82791890"
 ---
-# <a name="create-an-azure-vm-technical-asset"></a>Создание технического ресурса виртуальной машины Azure
+# <a name="create-an-azure-container-offer"></a>Создание предложения для контейнера Azure
 
 > [!IMPORTANT]
 > Мы переносим Управление предложениями контейнеров Azure из Портал Cloud Partner в центр партнеров. Пока ваши предложения не будут перенесены, следуйте инструкциям в статье [Подготовка технических ресурсов контейнера](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/containers/cpp-create-technical-assets) для портал Cloud Partner для управления вашими предложениями.
 
-В этой статье описываются шаги и требования для настройки предложения контейнера в Azure Marketplace.
+В этой статье приводятся технические ресурсы и рекомендации, которые помогут вам создать предложение контейнера в Azure Marketplace.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
-Краткие руководства, учебники и примеры см. в статье [экземпляры контейнеров Azure](https://docs.microsoft.com/azure/container-instances).
+Краткие руководства, учебники и примеры см. в [документации по службе "экземпляры контейнеров Azure](https://docs.microsoft.com/azure/container-instances)".
 
 ## <a name="fundamental-technical-knowledge"></a>Основные технические знания
 
@@ -61,6 +61,6 @@ ms.locfileid: "81730637"
 - [Руководство. Создание образа контейнера для развертывания в службе "экземпляры контейнеров Azure"](https://docs.microsoft.com/azure/container-instances/container-instances-tutorial-prepare-app)
 - [Руководство. Создание и развертывание образов контейнеров в облаке с помощью задач реестра контейнеров Azure](https://docs.microsoft.com/azure/container-registry/container-registry-tutorial-quick-task).
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создайте предложение контейнера](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-azure-container-offer).

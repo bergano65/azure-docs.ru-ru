@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 03/02/2019
 ms.author: alkohli
-ms.openlocfilehash: e72113313e27949819db567c550401b1f051473f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: dde84f0973cc7e21e57574bbabe398b38581358f
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77022687"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82562420"
 ---
 # <a name="use-cases-for-azure-data-box-gateway"></a>Сценарии использования для шлюза Azure Data Box
 
@@ -77,7 +77,7 @@ ms.locfileid: "77022687"
 
 ### <a name="ongoing-feed-with-data-box-gateway"></a>Постоянный канал передачи через Шлюз Data Box
 
-Выполните описанные ниже действия, чтобы настроить текущий прием данных в Шлюзе Data Box.
+Выполните описанные ниже действия, чтобы настроить текущий прием данных в Шлюзе Data Box. 
 
 1. Создайте общую облачную папку в Шлюзе Data Box. Все данные из этой папки будут автоматически отправляться в учетную запись хранения Azure. Перейдите к **списку общих папок** в ресурсе "Шлюз Data Box" и щелкните **+ Добавить общую папку**.
 
@@ -93,7 +93,7 @@ ms.locfileid: "77022687"
 
     При синхронизации общей папки Шлюз Data Box отправляет все добавочные изменения, которые внесены в файлы на клиентском компьютере.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Просмотрите [системные требования для Шлюза Data Box](data-box-gateway-system-requirements.md).
 - Ознакомьтесь с общими сведениями об [ограничениях Шлюза Data Box](data-box-gateway-limits.md).

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/02/2020
-ms.openlocfilehash: 30cda7a83feddaeb41385252a61d1dc68a881a47
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d7fb7b6b409a4e24be97ee61fc7ba1f0c0a93202
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75646512"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792638"
 ---
 # <a name="migrate-an-apache-hbase-cluster-to-a-new-version"></a>Перенос данных кластера Apache HBase в новую версию
 
@@ -32,16 +32,16 @@ ms.locfileid: "75646512"
 
 | Тип совместимости | Основной номер версии| Дополнительный номер версии | Обновление |
 | --- | --- | --- | --- |
-| Совместимость клиента и сервера на уровне передачи данных | Нет | Да | Да |
-| Совместимость серверов | Нет | Да | Да |
-| Совместимость форматов файлов | Нет | Да | Да |
-| Совместимость API клиента | Нет | Да | Да |
+| Совместимость клиента и сервера на уровне передачи данных | Нет | Да | Y |
+| Совместимость серверов | Нет | Да | Y |
+| Совместимость форматов файлов | Нет | Да | Y |
+| Совместимость API клиента | Нет | Да | Y |
 | Совместимость клиента на уровне двоичного кода | Нет | Нет | Да |
 | **Ограниченная совместимость API на стороне сервера** |  |  |  |
-| объем стабилен | Нет | Да | Да |
+| объем стабилен | Нет | Да | Y |
 | Развитие | Нет | Нет | Да |
 | Работает неустойчиво | Нет | Нет | Нет |
-| Совместимость зависимостей | Нет | Да | Да |
+| Совместимость зависимостей | Нет | Да | Y |
 | Совместимость операций | Нет | Нет | Да |
 
 ## <a name="upgrade-with-same-apache-hbase-major-version"></a>Обновление с тем же основным номером версии Apache HBase
@@ -213,11 +213,11 @@ ms.locfileid: "75646512"
 
 1. Если новый кластер подходит, удалите исходный кластер.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [Apache HBase](https://hbase.apache.org/) и обновлении кластеров HDInsight см. в следующих статьях:
 
 * [Обновление кластера HDInsight до более новой версии](../hdinsight-upgrade-cluster.md)
 * [Управление кластерами HDInsight с помощью веб-интерфейса Apache Ambari](../hdinsight-hadoop-manage-ambari.md)
 * [Компоненты и версии Apache Hadoop](../hdinsight-component-versioning.md)
-* [Оптимизация конфигураций с использованием Apache Ambari](../hdinsight-changing-configs-via-ambari.md#apache-hbase-optimization-with-the-ambari-web-ui)
+* [Оптимизация Apache HBase](../optimize-hbase-ambari.md)

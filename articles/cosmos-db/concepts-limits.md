@@ -6,12 +6,12 @@ ms.author: abpai
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 04/03/2020
-ms.openlocfilehash: 6dcda58652abe51d360748222263f30f337a2251
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e4d578596471153e4fc0e37d3ca093685326ecc7
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82182741"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82791771"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Квоты служб Azure Cosmos DB
 
@@ -138,9 +138,9 @@ Cosmos DB использует HMAC для авторизации. Можно и
 
 Cosmos DB поддерживает выполнение триггеров во время записи. Служба поддерживает максимум один предварительный триггер и один после триггера на операцию записи. 
 
-## <a name="autoscale-mode-limits"></a>Ограничения режима автомасштабирования
+## <a name="limits-for-autoscale-provisioned-throughput"></a>Ограничения для подготовленной пропускной способности автомасштабирования
 
-Пропускная способность и ограничения хранилища в режиме автомасштабирования см. в статье [Автомасштабирование](provision-throughput-autoscale.md#autoscale-limits) .
+Дополнительные сведения о пропускной способности и хранилище с автомасштабированием см. в статье [Автомасштабирование](provision-throughput-autoscale.md#autoscale-limits) .
 
 ## <a name="sql-query-limits"></a>Ограничения запросов SQL
 
@@ -201,7 +201,7 @@ Cosmos DB поддерживает протокол проводной сети 
 
   Помимо указанных выше, [ограничения на учетные записи](#per-account-limits) также применяются к учетным записям бесплатных уровней.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с дополнительными сведениями о базовом [распределении](distribute-data-globally.md) и [секционировании](partitioning-overview.md) и [подготовленной пропускной способности](request-units.md)Cosmos DB.
 
