@@ -4,14 +4,15 @@ description: Включение и отключение высокой дост�
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
+ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: a8d4b5949b34d16191e9ec10a1dd39faff3660dc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 78e6e8c18e67ce2dff0de94d298f06693a40135f
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74977675"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82584051"
 ---
 # <a name="configure-hyperscale-citus-high-availability"></a>Настройка высокой доступности Цитус
 
