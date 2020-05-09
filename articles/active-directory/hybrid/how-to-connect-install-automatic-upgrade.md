@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 02/26/2019
+ms.date: 05/07/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bfd61b78ca3027ade1f2f48dec33e0a8ed508d3d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ae0632fbc3208befe197c15ffdbf2d9a4e7b2d7a
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "60349850"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82926482"
 ---
 # <a name="azure-ad-connect-automatic-upgrade"></a>Azure AD Connect: автоматическое обновление
 Эта функция появилась в сборке [1.1.105.0 (выпущенной в феврале 2016 года)](reference-connect-version-history.md#111050).  Эта функция была обновлена в [сборке 1.1.561](reference-connect-version-history.md#115610) и теперь поддерживает дополнительные, ранее не поддерживаемые, сценарии.
@@ -37,11 +37,11 @@ ms.locfileid: "60349850"
 
 Текущее состояние автоматического обновления можно узнать с помощью командлета PowerShell `Get-ADSyncAutoUpgrade`. Возможны следующие состояния:
 
-| Состояние | Добавление примечаний |
+| Состояние | Комментарий |
 | --- | --- |
 | Активировано |Автоматическое обновление включено. |
 | Приостановлена |Устанавливается только системой. Сейчас система **не имеет возможности** получать автоматические обновления. |
-| Отключен |Автоматическое обновление отключено. |
+| Выключено |Автоматическое обновление отключено. |
 
 Переключаться между состояниями **Включено** и **Отключено** позволяет командлет `Set-ADSyncAutoUpgrade`. Состояние **Приостановлено**может устанавливаться только системой.  До 1.1.750.0 командлет Set-ADSyncAutoUpgrade заблокировал автоматическое обновление, если состояние автоматического обновления было установлено в suspended. Теперь эта функция изменена, поэтому она не блокирует автообновление.
 
@@ -99,7 +99,6 @@ ms.locfileid: "60349850"
 | UpgradeNotSupportedNonLocalDbInstall |Вы не используете базу данных SQL Server Express LocalDB. |
 | UpgradeNotSupportedNonMsolAccount |[Учетная запись соединителя AD DS](reference-connect-accounts-permissions.md#ad-ds-connector-account) больше не является учетной записью MSOL_ по умолчанию. |
 | UpgradeNotSupportedNotConfiguredSignInMethod | При настройке AAD Connect в качестве метода входа вы выбрали параметр *Не настраивать*. |
-| UpgradeNotSupportedPtaSignInMethod | Вы выбрали сквозную проверку подлинности как метод входа. |
 | UpgradeNotSupportedStagingModeEnabled |Сервер настроен для работы в [промежуточном режиме](how-to-connect-sync-staging-server.md). |
 | UpgradeNotSupportedUserWritebackEnabled |Включена функция [обратной записи пользователей](how-to-connect-preview.md#user-writeback) . |
 

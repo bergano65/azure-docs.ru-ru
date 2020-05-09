@@ -7,12 +7,12 @@ ms.service: load-balancer
 ms.topic: article
 ms.date: 02/23/2020
 ms.author: irenehua
-ms.openlocfilehash: fe9ae8997e05e4ab99dba66de88976342fbabe56
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
-ms.translationtype: HT
+ms.openlocfilehash: 960897abca67bf2a43c4c056b8dfa8cce0119faa
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/06/2020
-ms.locfileid: "82858366"
+ms.locfileid: "82871582"
 ---
 # <a name="upgrade-azure-internal-load-balancer--no-outbound-connection-required"></a>Обновление внутренней Load Balancer Azure — не требуется исходящее подключение
 [Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](https://docs.microsoft.com/azure/load-balancer/skus#skus).
@@ -31,6 +31,7 @@ ms.locfileid: "82858366"
 ### <a name="caveatslimitations"></a>кавеатс\лимитатионс
 
 * Сценарий поддерживает только внутреннее Load Balancer обновление, когда исходящие подключения не требуются. Если для некоторых виртуальных машин требуется [исходящее подключение](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections) , обратитесь к этой [странице](upgrade-InternalBasic-To-PublicStandard.md) за инструкциями. 
+* Базовый Load Balancer должен находиться в той же группе ресурсов, что и внутренние виртуальные машины и сетевые карты.
 * Если стандартный балансировщик нагрузки создан в другом регионе, вы не сможете связать существующие виртуальные машины в старом регионе с вновь созданной Load Balancer (цен. категория "Стандартный"). Чтобы обойти это ограничение, обязательно создайте новую виртуальную машину в новом регионе.
 * Если у Load Balancer нет внешней IP-конфигурации или серверного пула, то, скорее всего, будет обнаружена ошибка, которая вызвала бы выполнение скрипта. Убедитесь, что они не пусты.
 
@@ -47,7 +48,7 @@ ms.locfileid: "82858366"
 
 ## <a name="download-the-script"></a>Скачивание скрипта
 
-Скачайте скрипт миграции из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzureILBUpgrade/2.0).
+Скачайте скрипт миграции из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzureILBUpgrade/3.0).
 ## <a name="use-the-script"></a>Использование скрипта
 
 В зависимости от настроек и настроек локальной среды PowerShell существует два варианта.
@@ -105,6 +106,6 @@ ms.locfileid: "82858366"
   
 Вы можете отправить сообщение электронной почты slbupgradesupport@microsoft.com, открыть обращение в службу поддержки Azure или выполнить оба действия.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о Load Balancer (цен. категория "Стандартный")](load-balancer-overview.md)

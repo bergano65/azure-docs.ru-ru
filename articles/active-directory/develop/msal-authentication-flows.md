@@ -13,12 +13,12 @@ ms.date: 01/30/2020
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 25c219bedbbbec9fbc0c5617c7bd9fc482faf49a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: db9937d87692a1221d72bd27cfd653d803b9a1c6
+ms.sourcegitcommit: d815163a1359f0df6ebfbfe985566d4951e38135
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80050506"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82883249"
 ---
 # <a name="authentication-flows"></a>Потоки проверки подлинности
 
@@ -60,7 +60,7 @@ MSAL поддерживает возможность интерактивног�
 Дополнительные сведения об использовании MSAL.NET для интерактивного получения маркеров на конкретных платформах см. в следующих статьях:
 - [Xamarin Android](msal-net-xamarin-android-considerations.md)
 - [Xamarin iOS](msal-net-xamarin-ios-considerations.md)
-- [Универсальная платформа Windows](msal-net-uwp-considerations.md)
+- [универсальная платформа Windows](msal-net-uwp-considerations.md)
 
 Дополнительные сведения о интерактивных вызовах в MSAL. js см. [в статье поведение запросов в интерактивных запросах MSAL. js](msal-js-prompt-behavior.md).
 
@@ -232,4 +232,4 @@ MSAL поддерживает [предоставление учетных да�
 
 ### <a name="azure-ad-b2c-specifics"></a>Особенности Azure AD B2C
 
-Дополнительные сведения об использовании MSAL.NET и Azure AD B2C см. в разделе [Использование ропк с Azure AD B2C (MSAL.NET)](msal-net-aad-b2c-considerations.md#resource-owner-password-credentials-ropc-with-azure-ad-b2c).
+Дополнительные сведения об использовании РОПК в MSAL.NET и Azure AD B2C см. в разделе [Использование ропк с Azure AD B2C](msal-net-aad-b2c-considerations.md#resource-owner-password-credentials-ropc).
