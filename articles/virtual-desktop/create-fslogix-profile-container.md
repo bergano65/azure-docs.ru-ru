@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/13/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 149fb5818ee360c7333997655ea9eb8d7ded346c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 294a59ed94344ecf590eb9b34f991deaaa10db69
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81270899"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82607390"
 ---
 # <a name="create-an-fslogix-profile-container-for-a-host-pool-using-azure-netapp-files"></a>Создание контейнера профиля Фслогикс для пула узлов с помощью Azure NetApp Files
 
@@ -23,7 +23,7 @@ ms.locfileid: "81270899"
 
 В этом руководство показано, как настроить учетную запись Azure NetApp Files и создать контейнеры профилей Фслогикс в виртуальном рабочем столе Windows.
 
-В этой статье предполагается, что [Пулы узлов](create-host-pools-azure-marketplace.md) уже настроены и сгруппированы в один или несколько клиентов в среде виртуальных рабочих столов Windows. Сведения о настройке клиентов см. [в статье Создание клиента в виртуальном рабочем столе Windows и в](tenant-setup-azure-active-directory.md) [нашей записи блога сообщества Tech](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/Getting-started-with-Windows-Virtual-Desktop/ba-p/391054).
+В этой статье предполагается, что [Пулы узлов](create-host-pools-azure-marketplace.md) уже настроены и сгруппированы в один или несколько клиентов в среде виртуальных рабочих столов Windows. Сведения о настройке клиентов см. [в статье Создание клиента в виртуальном рабочем столе Windows и в](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md) [нашей записи блога сообщества Tech](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/Getting-started-with-Windows-Virtual-Desktop/ba-p/391054).
 
 Инструкции в этом разделе предназначены специально для пользователей виртуальных рабочих столов Windows. Если вы ищете общие рекомендации по настройке Azure NetApp Files и созданию контейнеров профилей Фслогикс за пределами виртуального рабочего стола Windows, ознакомьтесь с [кратким руководством по настройке Azure NetApp Files и созданию тома NFS](../azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes.md).
 
@@ -164,7 +164,7 @@ ms.locfileid: "81270899"
 
 5. Установите флажок, чтобы **я принимаю условия лицензии**.
 
-6. Выберите пункт **Установить**.
+6. Нажмите кнопку **Установить**.
 
 7. Перейдите в раздел **C\\: Program\\Files фслогикс\\Apps** , чтобы подтвердить установку агента.
 
@@ -210,7 +210,7 @@ ms.locfileid: "81270899"
 
 ## <a name="make-sure-users-can-access-the-azure-netapp-file-share"></a>Убедитесь, что пользователи имеют доступ к общей папке Azure NetApp
 
-1. Откройте веб – браузер и перейдите по <https://rdweb.wvd.microsoft.com/webclient/index.html>адресу.
+1. Откройте веб – браузер и перейдите по <https://rdweb.wvd.microsoft.com/arm/webclient>адресу.
 
 2. Выполните вход, используя учетные данные пользователя, назначенного группе удаленный рабочий стол.
 
@@ -228,6 +228,6 @@ ms.locfileid: "81270899"
 
    ![Снимок экрана содержимого папки в пути подключения. Внутри — это один VHD-файл с именем "Profile_ssbb".](media/mount-path-folder.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для настройки общего ресурса профиля пользователя можно использовать контейнеры профилей Фслогикс. Сведения о создании общих папок профилей пользователей с помощью новых контейнеров см. в статье [Создание контейнера профилей для пула узлов с использованием общей папки](create-host-pools-user-profile.md).

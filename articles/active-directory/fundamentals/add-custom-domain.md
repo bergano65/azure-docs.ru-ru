@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: elkuzmen
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de91bd7e1e4c5f9909213f663dd3ede0f979d4de
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 69c96d123ebe97ba4a7a6df0395efe698924fef1
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79262156"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82734745"
 ---
 # <a name="add-your-custom-domain-name-using-the-azure-active-directory-portal"></a>Добавление имени личного домена с помощью портала Azure Active Directory
 
@@ -37,7 +37,7 @@ ms.locfileid: "79262156"
 >[!IMPORTANT]
 >Создатель клиента автоматически становится глобальным администратором для этого клиента. Глобальный администратор может добавить дополнительных администраторов для клиента.
 
-Дополнительные сведения о ролях подписки см. в статье [роли RBAC Azure](../../role-based-access-control/rbac-and-directory-admin-roles.md#azure-rbac-roles).
+Дополнительные сведения о ролях подписки см. в статье [роли Azure](../../role-based-access-control/rbac-and-directory-admin-roles.md#azure-roles).
 
 >[!TIP]
 > Если вы планируете объединить локальную службу Windows Server AD с Azure AD, необходимо выбрать параметр **я планирую настроить этот домен для единого входа с помощью локального Active Directory** при запуске средства Azure AD Connect для синхронизации каталогов.

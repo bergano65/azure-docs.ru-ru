@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.date: 03/31/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 595762e6e8f22dddff30f1cff8c4bb79e89624b1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e42a4d738d375b4bceeb32f6159b4476843cf281
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80473852"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82612662"
 ---
 # <a name="troubleshoot-the-remote-desktop-client"></a>Устранение неполадок клиента удаленный рабочий стол
 
@@ -78,10 +78,10 @@ nslookup rdweb.wvd.microsoft.com
 4. Очистите кэш браузера. Дополнительные сведения см. [в разделе Очистка кэша браузера для браузера](https://binged.it/2RKyfdU).
 5. Откройте браузер в частном режиме.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения об устранении неполадок с виртуальным рабочим столом Windows и сведениями о эскалации см. в разделе [Обзор устранения неполадок, обратная связь и поддержка](troubleshoot-set-up-overview.md).
-- Сведения об устранении неполадок при создании клиента и пула узлов в среде виртуальных рабочих столов Windows см. в статье [Создание пула клиентов и узлов](troubleshoot-set-up-issues.md).
+- Сведения об устранении неполадок при создании среды виртуальных рабочих столов Windows и пула узлов в среде виртуальных рабочих столов Windows см. в статье [Создание пула среды и узла](troubleshoot-set-up-issues.md).
 - Сведения об устранении неполадок при настройке виртуальной машины в виртуальном рабочем столе Windows см. в разделе [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).
 - Сведения об устранении неполадок при использовании PowerShell с виртуальным рабочим столом Windows см. в статье [Windows Virtual Desktop PowerShell](troubleshoot-powershell.md).
 - Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](../azure-resource-manager/templates/template-tutorial-troubleshoot.md).

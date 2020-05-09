@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 01/24/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: aa0810818bf7cfea21f925ee639b4b5a50dcb23b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d9cf3d739054422d219bb6536129c5eb22a2994a
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79246127"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82594888"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure
 
@@ -452,7 +452,7 @@ ms.locfileid: "79246127"
 ## <a name="prerequisites"></a><a name="217c5479-5595-4cd8-870d-15ab00d4f84c"></a> Предварительные требования
 Перед началом работы необходимо выполнить все предварительные условия, описанные в следующих разделах. Кроме того, ознакомьтесь со всеми материалами, указанными в разделе [Материалы][sap-ha-guide-2].
 
-В этой статье мы используем шаблоны Azure Resource Manager для [трехуровневой SAP NetWeaver](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-marketplace-image/). Обзор шаблонов представлен в статье о [шаблонах Azure Resource Manager для SAP](https://blogs.msdn.microsoft.com/saponsqlserver/2016/05/16/azure-quickstart-templates-for-sap/).
+В этой статье мы используем шаблоны Azure Resource Manager для [трехуровневой SAP NetWeaver](https://github.com/Azure/azure-quickstart-templates/). Обзор шаблонов представлен в статье о [шаблонах Azure Resource Manager для SAP](https://blogs.msdn.microsoft.com/saponsqlserver/2016/05/16/azure-quickstart-templates-for-sap/).
 
 ## <a name="resources"></a><a name="42b8f600-7ba3-4606-b8a5-53c4f026da08"></a>Источников
 Дополнительные сведения о развертывании SAP в Azure см. в следующих статьях:
@@ -469,7 +469,7 @@ ms.locfileid: "79246127"
 
 Следующие примечания по SAP актуальны для развертывания SAP в Azure.
 
-| Номер примечания | Название |
+| Номер примечания | Заголовок |
 | --- | --- |
 | [1928533] |Приложения SAP в Azure: поддерживаемые продукты и размеры |
 | [2015553] |SAP в Microsoft Azure: требования |
@@ -677,8 +677,8 @@ _**Рис. 10.** Шаблон 3 архитектуры SAP с высоким у�
 
 Шаблоны Azure Resource Manager, описанные в этой статье, доступны здесь:
 
-* [Образ Azure Marketplace](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-marketplace-image)  
-* [Пользовательский образ](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-user-image)
+* [Образ Azure Marketplace](https://github.com/Azure/azure-quickstart-templates/)  
+* [Пользовательский образ](https://github.com/Azure/azure-quickstart-templates/)
 
 Чтобы подготовить инфраструктуру для использования шаблона 1 архитектуры, сделайте следующее:
 
@@ -768,8 +768,8 @@ _**Рис. 11.** Настройка параметров Azure Resource Manager
 
 Шаблоны Azure Resource Manager для сценария развертывания доступны здесь:
 
-* [Образ Azure Marketplace](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-marketplace-image-converged)  
-* [Пользовательский образ](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-user-image-converged)
+* [Образ Azure Marketplace](https://github.com/Azure/azure-quickstart-templates/)  
+* [Пользовательский образ](https://github.com/Azure/azure-quickstart-templates/)
 
 
 ### <a name="prepare-the-infrastructure-for-architectural-template-3"></a>Подготовка инфраструктуры для шаблона 3 архитектуры
@@ -1016,7 +1016,7 @@ _**Рис. 15.** Правила балансировки нагрузки ASCS/
 1. В портал Azure выберите ** < *SID*>-фунтов-ASCS** > **правила балансировки**нагрузки.
 2. Для всех правил балансировки нагрузки, относящихся к экземпляру SAP ASCS или SCS, измените следующие значения.
 
-   * Имя
+   * Название
    * Порт
    * Внутренний порт
 
@@ -1042,22 +1042,22 @@ Azure Load Balancer имеет внутренний балансировщик �
 
 Чтобы добавить записи реестра на обоих узлах кластера экземпляра SAP ASCS/SCS, сначала добавьте эти записи реестра Windows на обоих узлах кластера Windows для SAP ASCS/SCS.
 
-| Path | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
+| Путь | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
 | --- | --- |
 | Имя переменной |`KeepAliveTime` |
 | Тип переменной |REG_DWORD (десятичное) |
-| Значение |120000 |
+| Применение |120000 |
 | Ссылка на документацию |[https://technet.microsoft.com/library/cc957549.aspx](https://technet.microsoft.com/library/cc957549.aspx) |
 
 _**Таблица 3.** Изменение первого параметра TCP/IP_
 
 Затем добавьте следующие записи реестра Windows на обоих узлах кластера Windows для SAP ASCS/SCS.
 
-| Path | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
+| Путь | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
 | --- | --- |
 | Имя переменной |`KeepAliveInterval` |
 | Тип переменной |REG_DWORD (десятичное) |
-| Значение |120000 |
+| Применение |120000 |
 | Ссылка на документацию |[https://technet.microsoft.com/library/cc957548.aspx](https://technet.microsoft.com/library/cc957548.aspx) |
 
 _**Таблица 4.** Изменение второго параметра TCP/IP_
