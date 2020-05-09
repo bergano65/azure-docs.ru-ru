@@ -50,7 +50,7 @@
     - name: Руководство по развертыванию
       items:
         - name: 'Развертывание 30, 90 и выше'
-      href: active-directory-deployment-checklist-p2.md
+          href: active-directory-deployment-checklist-p2.md
     - name: Хранилище данных
       items:
         - name: Хранилище данных удостоверений для Европы
