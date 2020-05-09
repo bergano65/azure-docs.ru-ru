@@ -1,5 +1,6 @@
 ---
-title: Протокол OpenID Connect Connect — платформа Microsoft Identity | Службы
+title: Платформа Microsoft Identity и протокол OpenID Connect Connect | Службы
+titleSuffix: Microsoft identity platform
 description: Создавайте веб-приложения, используя реализацию платформы идентификации Майкрософт протокола проверки подлинности OpenID Connect Connect.
 services: active-directory
 author: hpsin
@@ -8,20 +9,20 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 04/12/2019
+ms.date: 05/06/2020
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: be24c4cfd255b33a38acc1e62763350d3d7e989b
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
-ms.translationtype: HT
+ms.openlocfilehash: 88f647bbb72c92db194407b677e533a867261ce4
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82688226"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82926499"
 ---
 # <a name="microsoft-identity-platform-and-openid-connect-protocol"></a>Платформа Microsoft Identity и протокол OpenID Connect Connect
 
-OpenID Connect — это протокол аутентификации на основе OAuth 2.0, который можно использовать для безопасного входа пользователей в веб-приложение. При использовании реализации OpenID Connect Connect конечной точки платформы Microsoft Identity вы можете добавить доступ для входа и API в веб-приложения. Это руководство не зависит от языка и описывает, как отправлять и получать сообщения HTTP, не используя ни одну из библиотек с открытым кодом корпорации Майкрософт.
+OpenID Connect Connect (OIDC) — это протокол проверки подлинности, созданный на основе OAuth 2,0, который можно использовать для безопасного входа пользователя в веб-приложение. При использовании реализации OpenID Connect Connect конечной точки платформы Microsoft Identity вы можете добавить доступ для входа и API в веб-приложения. Это руководство не зависит от языка и описывает, как отправлять и получать сообщения HTTP, не используя ни одну из библиотек с открытым кодом корпорации Майкрософт.
 
 [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) расширяет возможности протокола *авторизации* OAuth 2.0 и позволяет использовать его в качестве протокола *аутентификации*, что дает возможность выполнять единый вход с помощью OAuth. В OpenID Connect вводится понятие *маркера идентификации*, который представляет собой маркер безопасности, позволяющий клиенту проверять личность пользователя. Маркер идентификации также позволяет получить базовые сведения о профиле пользователя. Так как OpenID Connect является расширением протокола OAuth 2.0, приложения могут безопасно получать *маркеры доступа*, с помощью которых можно получить доступ к ресурсам, защищенным [сервером авторизации](active-directory-v2-protocols.md#the-basics). Конечная точка платформы идентификации Майкрософт также позволяет приложениям сторонних производителей, зарегистрированным в Azure AD, выдавать маркеры доступа для защищенных ресурсов, таких как веб-API. Дополнительные сведения о настройке приложения для выпуска маркеров доступа см. в [статье регистрация приложения с помощью конечной точки платформы Microsoft Identity](quickstart-register-app.md). Мы рекомендуем использовать OpenID Connect для [веб-приложений](v2-app-types.md#web-apps), которые размещаются на сервере и доступны через браузер.
 
@@ -44,7 +45,7 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 
 `{tenant}` может принимать одно из четырех значений.
 
-| Применение | Описание: |
+| Значение | Описание: |
 | --- | --- |
 | `common` |Пользователи с личными учетная запись Майкрософт, а также с рабочей или учебной учетной записью Azure AD могут войти в приложение. |
 | `organizations` |Вход в приложение могут выполнять только пользователи с рабочими или учебными учетными записями Azure AD. |

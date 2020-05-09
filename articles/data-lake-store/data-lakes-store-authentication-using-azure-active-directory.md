@@ -1,22 +1,17 @@
 ---
-title: Аутентификация в ADLS 1-го поколения с помощью Azure Active Directory | Документация Майкрософт
-description: Узнайте, как выполнять аутентификацию в ADLS 1-го поколения с помощью Azure Active Directory.
-services: data-lake-store
-documentationcenter: ''
+title: Проверка подлинности — Data Lake Storage 1-го поколения с Azure AD
+description: Узнайте, как выполнять аутентификацию с помощью Azure Data Lake Storage 1-го поколения Azure Active Directory.
 author: twooley
-manager: mtillman
-editor: cgronlun
 ms.service: data-lake-store
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: f83cf183bee930dd07c707b0eb49125cecd70b84
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: 49e6df417190071e06582be400575e1880f2543a
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "60193600"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82692283"
 ---
 # <a name="authentication-with-azure-data-lake-storage-gen1-using-azure-active-directory"></a>Аутентификация в ADLS 1-го поколения с помощью Azure Active Directory
 
@@ -47,7 +42,7 @@ Azure Data Lake Storage 1-го поколения (ADLS 1-го поколени�
 
 Дополнительные сведения об использовании Azure Active Directory для аутентификации см. в статье [Сценарии аутентификации в Azure Active Directory](../active-directory/develop/authentication-scenarios.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Проверка подлинности конечных пользователей](data-lake-store-end-user-authenticate-using-active-directory.md)
 * [Аутентификация между службами](data-lake-store-service-to-service-authenticate-using-active-directory.md)

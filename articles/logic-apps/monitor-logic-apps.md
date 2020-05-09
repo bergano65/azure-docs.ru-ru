@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: divswa, logicappspm
 ms.topic: article
-ms.date: 01/30/2020
-ms.openlocfilehash: 495877f1c839de2cf3583a37180054c91bd9f139
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 05/04/2020
+ms.openlocfilehash: c2a609266a77293a0e3a5cb9c973a6eb3f7f72a9
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76907777"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82732008"
 ---
 # <a name="monitor-run-status-review-trigger-history-and-set-up-alerts-for-azure-logic-apps"></a>Мониторинг состояния выполнения, Просмотр журнала триггеров и Настройка оповещений для Azure Logic Apps
 
@@ -19,7 +19,8 @@ ms.locfileid: "76907777"
 
 Для наблюдения за событиями в реальном времени и расширенной отладки настройте ведение журнала диагностики для приложения логики с помощью [журналов Azure Monitor](../azure-monitor/overview.md). Эта служба Azure помогает отслеживать облачные и локальные среды, чтобы можно было легко поддерживать доступность и производительность. Затем можно находить и просматривать события, такие как события триггера, события запуска и события действий. Хранение этих сведений в [журналах Azure Monitor](../azure-monitor/platform/data-platform-logs.md)позволяет создавать [запросы журналов](../azure-monitor/log-query/log-query-overview.md) , помогающие находить и анализировать эти сведения. Эти диагностические данные также можно использовать с другими службами Azure, такими как служба хранилища Azure и концентраторы событий Azure. Дополнительные сведения см. в статье [мониторинг приложений логики с помощью Azure Monitor](../logic-apps/monitor-logic-apps-log-analytics.md).
 
-[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
+> [!NOTE]
+> Если приложения логики работают в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) , которая была создана для использования [внутренней конечной точки доступа](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#endpoint-access), вы можете просматривать входные и выходные данные из журнала выполнения приложения логики *только из виртуальной сети*, а также получать доступ к ним. Убедитесь в наличии сетевого подключения между частными конечными точками и компьютером, с которого необходимо получить доступ к журналу запусков. Например, клиентский компьютер может находиться в виртуальной сети ISE или в виртуальной сети, подключенной к виртуальной сети ISE, например через пиринг или виртуальную частную сеть. Дополнительные сведения см. в статье [доступ к конечной точке интегрированной среды сценариев](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#endpoint-access). 
 
 <a name="review-runs-history"></a>
 

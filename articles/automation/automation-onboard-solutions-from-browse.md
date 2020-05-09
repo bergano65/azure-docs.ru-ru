@@ -5,12 +5,12 @@ services: automation
 ms.date: 04/11/2019
 ms.topic: article
 ms.custom: mvc
-ms.openlocfilehash: f5f18e9365b09f06c1bd4f25a8efe909cc308dad
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d97fbe6ac515a2559340474105d73b7c9b9c6ee4
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81537021"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82731923"
 ---
 # <a name="enable-update-management-change-tracking-and-inventory-solutions-on-multiple-vms"></a>Подключение решений для управления обновлениями, отслеживания изменений и инвентаризации на нескольких виртуальных машинах
 
@@ -129,7 +129,7 @@ ms.locfileid: "81537021"
 
 **Причина**. Не все дистрибутивы Linux и версии Windows поддерживают выбранное решение.
 
-**Решение**. См. [список клиентов](automation-update-management.md#clients), которые поддерживает это решение.
+**Решение:** См. [список поддерживаемых клиентов](automation-update-management.md#supported-client-types).
 
 ### <a name="classic-vms-cannot-be-enabled"></a>Невозможно подключить классические виртуальные машины
 

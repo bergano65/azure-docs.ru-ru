@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/25/2019
 ms.author: b-juche
-ms.openlocfilehash: 97e3c6212edd2ade4eabb96db3543e9b3b68e2ae
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.openlocfilehash: 4badf550809df6cc63711c47e6e6f5b3690fdfca
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
-ms.locfileid: "67454143"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82691317"
 ---
 # <a name="performance-considerations-for-azure-netapp-files"></a>Рекомендации по ускорению Azure NetApp Files
 
@@ -34,8 +34,6 @@ ms.locfileid: "67454143"
 Максимальная пропускная способность, которая наблюдалась при тестировании, — 4 500 MiB/с.  На уровне хранилища уровня "Премиум" квота тома, равная 70,31 Тиб, обеспечит высокую пропускную способность, достаточную для достижения этого уровня производительности.  
 
 Если вы планируете назначить объемы квоты тома свыше 70,31 Тиб, для хранения дополнительных данных может быть назначена дополнительная квота. Однако добавленная квота не приведет к увеличению реальной пропускной способности.  
-
-Дополнительные сведения см. в статье [тесты производительности для Azure NetApp Files](azure-netapp-files-performance-benchmarks.md) .
 
 ## <a name="overprovisioning-the-volume-quota"></a>Повторная инициализация квоты тома
 
@@ -61,7 +59,7 @@ ms.locfileid: "67454143"
 
     Размер пула емкости можно настроить динамически и без влияния на доступность или операции ввода-вывода.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)
-- [Тесты производительности для Azure NetApp Files](azure-netapp-files-performance-benchmarks.md)
+- [Тесты производительности для Linux](performance-benchmarks-linux.md)

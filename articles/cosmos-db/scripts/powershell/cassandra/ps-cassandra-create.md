@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: sample
 ms.date: 03/18/2020
 ms.author: mjbrown
-ms.openlocfilehash: 1fcded19731d412a4892e231f4445c51b330b1b4
-ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
+ms.openlocfilehash: c81c2962ef7868394f70bc3ca5f3a147bb4f268b
+ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80366133"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82653077"
 ---
 # <a name="create-a-keyspace-and-table-for-azure-cosmos-db---cassandra-api"></a>Создание пространства ключей и таблицы в Azure Cosmos DB — API Cassandra
 
@@ -38,9 +38,8 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 
 | Get-Help | Примечания |
 |---|---|
-|**Ресурсы Azure**| |
-| [New-AzResource](https://docs.microsoft.com/powershell/module/az.resources/new-azresource) | Создает ресурс. |
 |**Azure Cosmos DB**| |
+| [New-AzCosmosDBAccount](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbaccount) | Создает учетную запись Cosmos DB. |
 | [Set-AzCosmosDBCassandraKeyspace](https://docs.microsoft.com/powershell/module/az.cosmosdb/set-azcosmosdbcassandrakeyspace) | Создает или обновляет пространство ключей API Cassandra в службе Cosmos DB. |
 | [New-AzCosmosDBCassandraClusterKey](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbcassandraclusterkey) | Создает новый ключ кластера Cassandra в службе CosmosDB. |
 | [New-AzCosmosDBCassandraColumn](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbcassandracolumn) | Создает новый столбец Cassandra в службе CosmosDB. |

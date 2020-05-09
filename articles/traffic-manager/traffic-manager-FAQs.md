@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/26/2019
 ms.author: rohink
-ms.openlocfilehash: acdac6e3eafc5251ebd31a34bcb9a4db34f0ebbe
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: ad6acbad57df24e5cd78c72c9d00bcd32a83219a
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79254369"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82731583"
 ---
 # <a name="traffic-manager-frequently-asked-questions-faq"></a>Диспетчер трафика Azure: вопросы и ответы
 
@@ -29,7 +29,7 @@ ms.locfileid: "79254369"
 Следовательно, диспетчер трафика не предоставляет конечную точку или IP-адрес для подключения клиентов. Если вашей службе требуется статический IP-адрес, он должен быть настроен на уровне службы, а не в диспетчере трафика.
 
 ### <a name="what-types-of-traffic-can-be-routed-using-traffic-manager"></a>Какого типа трафик можно маршрутизировать с помощью диспетчера трафика?
-Как описано в статье [Как работает диспетчер трафика](../traffic-manager/traffic-manager-how-it-works.md), конечная точка диспетчера трафика может быть любой интернет-службой, размещенной внутри или за пределами Azure. Таким образом, диспетчер трафика может передавать трафик из общедоступного Интернета в набор конечных точек, также подключенных к Интернету. Если вы используете конечные точки в частной сети (например, если используется внутренняя версия [Azure Load Balancer](../load-balancer/concepts-limitations.md#internalloadbalancer)) или пользователи выполняют запросы DNS из таких внутренних сетей, то диспетчер трафика не может использоваться для данного трафика.
+Как описано в статье [Как работает диспетчер трафика](../traffic-manager/traffic-manager-how-it-works.md), конечная точка диспетчера трафика может быть любой интернет-службой, размещенной внутри или за пределами Azure. Таким образом, диспетчер трафика может передавать трафик из общедоступного Интернета в набор конечных точек, также подключенных к Интернету. Если вы используете конечные точки в частной сети (например, если используется внутренняя версия [Azure Load Balancer](../load-balancer/components.md#frontend-ip-configurations)) или пользователи выполняют запросы DNS из таких внутренних сетей, то диспетчер трафика не может использоваться для данного трафика.
 
 ### <a name="does-traffic-manager-support-sticky-sessions"></a>Поддерживает ли диспетчер трафика "прикрепленные" сеансы?
 

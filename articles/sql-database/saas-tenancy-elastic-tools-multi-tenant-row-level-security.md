@@ -11,12 +11,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: sstein
 ms.date: 12/18/2018
-ms.openlocfilehash: 4cf260620d4e907fdb9190a052155fa22f1c7985
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fc08916967b4d64667065373cf2d0828a05069d0
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80398328"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82890944"
 ---
 # <a name="multi-tenant-applications-with-elastic-database-tools-and-row-level-security"></a>Мультитенантные приложения со средствами эластичных баз данных и безопасностью на уровне строк
 
@@ -341,7 +341,7 @@ GO
 ### <a name="maintenance"></a>Обслуживание
 
 - **Добавление новых сегментов.** Выполните скрипт T-SQL, чтобы включить политику RLS для всех новых сегментов, иначе запросы в таких сегментах фильтроваться не будут.
-- **Добавление новых таблиц.** Добавляйте предикаты FILTER и BLOCK в политику безопасности на всех сегментах при создании любой новой таблицы. Без этого запросы к такой таблице фильтроваться не будут. Добавление предикатов можно автоматизировать с помощью триггера DDL, как это описано в записи об [автоматическом применении безопасности на уровне строк для вновь созданных таблиц](https://blogs.msdn.com/b/sqlsecurity/archive/20../../apply-row-level-security-automatically-to-newly-created-tables.aspx).
+- **Добавление новых таблиц.** Добавляйте предикаты FILTER и BLOCK в политику безопасности на всех сегментах при создании любой новой таблицы. Без этого запросы к такой таблице фильтроваться не будут. Добавление предикатов можно автоматизировать с помощью триггера DDL, как это описано в записи об [автоматическом применении безопасности на уровне строк для вновь созданных таблиц](https://techcommunity.microsoft.com/t5/SQL-Server/Apply-Row-Level-Security-automatically-to-newly-created-tables/ba-p/384393).
 
 ## <a name="summary"></a>Сводка
 

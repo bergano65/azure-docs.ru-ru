@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c2e3219cebcc5e989059c02fec86ba242e1c31cc
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: b8f6691eab7da42c1f82952b3a20df95ab28d97b
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82853876"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891589"
 ---
 # <a name="azure-virtual-machines-planning-and-implementation-for-sap-netweaver"></a>SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению
 
@@ -370,7 +370,7 @@ Microsoft Azure — это созданная корпорацией Майкр
 
 Следующие примечания по SAP актуальны для развертывания SAP в Azure.
 
-| Номер примечания | Название |
+| Номер примечания | Заголовок |
 | --- | --- |
 | [1928533] |Приложения SAP в Azure: поддерживаемые продукты и размеры |
 | [2015553] |SAP в Microsoft Azure: требования |
@@ -487,7 +487,7 @@ Microsoft Azureная платформа — это платформа с нес
 
 Цены на каждое предложение с различными предложениями службы для операционных систем и различных регионов доступны на сайте [виртуальные машины Linux цен](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) и [виртуальные машины Windows цен](https://azure.microsoft.com/pricing/details/virtual-machines/windows/). Дополнительные сведения и гибкость в течение одного года и трех лет зарезервированных экземпляров см. в следующих статьях:
 
-- [Общие сведения о резервированиях в Azure](https://docs.microsoft.com/azure/cost-management-billing/reservations/save-compute-costs-reservations)
+- [Что такое резервирование Azure?](https://docs.microsoft.com/azure/cost-management-billing/reservations/save-compute-costs-reservations)
 - [Гибкость размеров виртуальных машин при использовании зарезервированных экземпляров виртуальных машин](https://docs.microsoft.com/azure/virtual-machines/windows/reserved-vm-instance-size-flexibility)
 - [Применения скидки на резервирование Azure к виртуальным машинам](https://docs.microsoft.com/azure/cost-management-billing/manage/understand-vm-reservation-charges) 
 
@@ -1240,7 +1240,7 @@ sudo service waagent restart
 >
 > * [Настройка программного RAID-массива в Linux][virtual-machines-linux-configure-raid]
 > * [Настройка диспетчера логических томов на виртуальной машине Linux в Azure][virtual-machines-linux-configure-lvm]
-> * [Секреты хранилища Azure и оптимизация ввода-вывода для Linux](https://blogs.msdn.com/b/igorpag/archive/2014/10/23/azure-storage-secrets-and-linux-i-o-optimizations.aspx)
+> * [Секреты хранилища Azure и оптимизация ввода-вывода для Linux](https://docs.microsoft.com/archive/blogs/igorpag/azure-storage-secrets-and-linux-io-optimizations)
 >
 >
 
@@ -2075,7 +2075,7 @@ SAProuter позволяет осуществлять взаимодействи
 * Резервное копирование экземпляров диалогов SAP не имеет особого смысла, так как повторное развертывание простых экземпляров диалогов обычно занимает меньше времени.
 * Создание резервной копии виртуальной машины, содержащей глобальный каталог системы SAP и все профили различных экземпляров, имеет смысл и следует выполнять с помощью резервного копирования Windows или, например, tar в Linux. Так как между Windows Server 2008 (R2) и Windows Server 2012 (R2) существуют различия (в более новой версии Windows Server процесс резервного копирования упрощен), в качестве гостевой ОС мы рекомендуем использовать версию Windows Server 2012 (R2).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со статьями:
 
 - [Развертывание виртуальных машин Azure для SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/deployment-guide)

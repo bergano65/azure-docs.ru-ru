@@ -29,8 +29,6 @@
       href: manage-farms-in-azure-farmbeats.md
     - name: Получение данных от датчиков
       href: get-sensor-data-from-sensor-partner.md
-    - name: Получение сведений о погоде
-      href: get-weather-data-from-weather-partner.md
     - name: Создание карт
       href: generate-maps-in-azure-farmbeats.md
     - name: Настройка правил и управление оповещениями

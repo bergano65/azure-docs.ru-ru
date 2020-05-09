@@ -1,6 +1,6 @@
 ---
-title: Добавление назначений ролей с помощью шаблонов RBAC и Azure Resource Manager
-description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, субъектов-служб или управляемых удостоверений с помощью управления доступом на основе ролей (RBAC) Azure и шаблонов Azure Resource Manager.
+title: Добавление назначений ролей Azure с помощью шаблонов Azure Resource Manager Azure RBAC
+description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, субъектов-служб или управляемых удостоверений с помощью шаблонов Azure Resource Manager и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -13,14 +13,14 @@ ms.workload: identity
 ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 9f817880f938f5d03024e3aacd9b84817a5ac721
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 777d11a129f02d1a2f5c796dea0af438ca81ba8c
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77138299"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82735629"
 ---
-# <a name="add-role-assignments-using-azure-rbac-and-azure-resource-manager-templates"></a>Добавление назначений ролей с помощью Azure RBAC и шаблонов Azure Resource Manager
+# <a name="add-azure-role-assignments-using-azure-resource-manager-templates"></a>Добавление назначений ролей Azure с помощью шаблонов Azure Resource Manager
 
 [!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)]В дополнение к использованию Azure PowerShell или Azure CLI можно назначать роли с помощью [шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md). Шаблоны могут быть полезны для согласованного и многократного развертывания ресурсов. В этой статье описывается назначение ролей с помощью шаблонов.
 
@@ -28,7 +28,7 @@ ms.locfileid: "77138299"
 
 Чтобы назначить роль, необходимо указать идентификатор пользователя, группы или приложения, которым будет назначена роль. Идентификатор имеет формат: `11111111-1111-1111-1111-111111111111`. Идентификатор можно получить с помощью портал Azure, Azure PowerShell или Azure CLI.
 
-### <a name="user"></a>User (Пользователь)
+### <a name="user"></a>Пользователь
 
 Чтобы получить идентификатор пользователя, можно использовать команды [Get-азадусер](/powershell/module/az.resources/get-azaduser) или [AZ AD user показа](/cli/azure/ad/user#az-ad-user-show) .
 
@@ -52,7 +52,7 @@ $objectid = (Get-AzADGroup -DisplayName "{name}").id
 objectid=$(az ad group show --group "{name}" --query objectId --output tsv)
 ```
 
-### <a name="application"></a>Приложение
+### <a name="application"></a>Развертывание
 
 Чтобы получить идентификатор субъекта-службы (удостоверения, используемого приложением), можно использовать команды [Get-азадсервицепринЦипал](/powershell/module/az.resources/get-azadserviceprincipal) или [AZ AD SP List](/cli/azure/ad/sp#az-ad-sp-list) . Для субъекта-службы используйте идентификатор объекта, а **не** идентификатор приложения.
 
@@ -66,7 +66,7 @@ objectid=$(az ad sp list --display-name "{name}" --query [].objectId --output ts
 
 ## <a name="add-a-role-assignment"></a>Добавление назначения роли
 
-В RBAC для предоставления доступа необходимо добавить назначение роли.
+В Azure RBAC для предоставления доступа необходимо добавить назначение роли.
 
 ### <a name="resource-group-without-parameters"></a>Группа ресурсов (без параметров)
 
@@ -359,7 +359,7 @@ az group deployment create --resource-group ExampleGroup2 --template-file rbac-t
 
 ![Назначение ролей для нового субъекта-службы управляемого удостоверения](./media/role-assignments-template/role-assignment-template-msi.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Краткое руководство по созданию и развертыванию шаблонов Azure Resource Manager с помощью портала Azure](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md)
 - [Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md)

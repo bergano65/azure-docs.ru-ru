@@ -1,31 +1,21 @@
 ---
 title: Добавление средств оценки в службу "миграция Azure"
 description: Узнайте, как добавить средства оценки в службу "миграция Azure".
-author: rayne-wiselman
-ms.service: azure-migrate
-ms.topic: article
-ms.manager: carmonm
-ms.date: 11/19/2019
-ms.author: raynew
-ms.openlocfilehash: 64af78abd8f82b41d4a03fbb56c96e3038cef5a5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: how-to
+ms.date: 04/26/2020
+ms.openlocfilehash: 7e7d7cf26cab30cd7449e4643fdfb59faece47f2
+ms.sourcegitcommit: 0fda81f271f1a668ed28c55dcc2d0ba2bb417edd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74185913"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82901070"
 ---
 # <a name="add-assessment-tools"></a>Добавление средств оценки
 
-В этой статье описывается добавление средств оценки в службу " [Миграция Azure](migrate-overview.md)".
+В этой статье описывается добавление средств оценки в службу " [Миграция Azure](migrate-overview.md)". 
 
-Служба "миграция Azure" предоставляет центр средств для оценки и миграции в Azure. Сюда входят средства миграции Azure, а также другие средства и независимые поставщики программного обеспечения (ISV).
-
-Если вы хотите добавить средство оценки и у вас еще нет проекта службы "миграция Azure", следуйте указаниям в этой [статье](how-to-add-tool-first-time.md).
-
-## <a name="select-a-tool"></a>Выбор средства
-
-Если вы выбираете средство для оценки, не предназначенное для миграции Azure, начните с получения лицензии или регистрации для получения бесплатной пробной версии в соответствии с политикой средства. Средства могут подключаться к службе "миграция Azure". Следуйте инструкциям и документации, чтобы подключить средство к службе "миграция Azure". Дополнительные [сведения](migrate-services-overview.md) о средствах.
-
+- Если вы хотите добавить средство оценки и у вас еще нет проекта службы "миграция Azure", следуйте указаниям в этой [статье](how-to-add-tool-first-time.md).
+- Если вы добавили средство ISV или перейдете для оценки, [выполните действия](prepare-isv-movere.md), чтобы подготовиться к работе со средством.
 
 ## <a name="select-an-assessment-scenario"></a>Выбор сценария оценки
 

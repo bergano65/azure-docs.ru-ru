@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 24f83e4f6285d045e67bdaef431ebcff2345ef84
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fe550bb4f5e63761bb645c9904816048584b1bca
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77663902"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82733266"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-by-using-an-azure-resource-manager-template-for-a-windows-virtual-machine-scale-set"></a>Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Azure Resource Manager для масштабируемого набора виртуальных машин Windows
 
@@ -252,7 +252,7 @@ ms.locfileid: "77663902"
    ```
 
    > [!NOTE]  
-   > Не забывайте использовать регион Azure, включенный для пользовательских метрик. Не забывайте использовать [регион Azure, включенный для пользовательских метрик](https://github.com/MicrosoftDocs/azure-docs-pr/pull/metrics-custom-overview.md#supported-regions).
+   > Не забывайте использовать регион Azure, включенный для пользовательских метрик. Не забывайте использовать [регион Azure, включенный для пользовательских метрик](https://github.com/MicrosoftDocs/azure-docs-pr/blob/master/articles/azure-monitor/platform/metrics-custom-overview.md#supported-regions).
  
 1. Выполните следующие команды, чтобы развернуть виртуальную машину.  
 
@@ -291,7 +291,7 @@ ms.locfileid: "77663902"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
 
 

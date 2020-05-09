@@ -1,23 +1,17 @@
 ---
-title: REST API. Операции управления учетными записями в Azure Data Lake Storage 1-го поколения | Документы Майкрософт
-description: Используйте Azure Data Lake Storage 1-го поколения и REST API WebHDFS, чтобы выполнять операции управления учетными записями в Data Lake Storage 1-го поколения
-services: data-lake-store
-documentationcenter: ''
+title: Управление учетной записью Azure Data Lake Storage 1-го поколения с помощью службы "ОСТАВШАЯся"
+description: Используйте REST APIи HDFS для выполнения операций управления учетными записями в учетной записи Azure Data Lake Storage 1-го поколения.
 author: twooley
-manager: mtillman
-editor: cgronlun
-ms.assetid: 57ac6501-cb71-4f75-82c2-acc07c562889
 ms.service: data-lake-store
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: 97fe33309f36cd7545f8c9d6c2d34671641caa1f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8a106b55fb90f320b90c81216a205dd10a9bf934
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "60877113"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82692078"
 ---
 # <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-rest-api"></a>Операции управления учетными записями в Azure Data Lake Storage 1-го поколения c использованием REST API
 > [!div class="op_single_selector"]
@@ -29,7 +23,7 @@ ms.locfileid: "60877113"
 
 В этой статье содержатся сведения о выполнении операций управления учетными записями в Azure Data Lake Storage 1-го поколения с использованием REST API. Операции управления учетными записями включают создание учетной записи Data Lake Storage 1-го поколения, удаление учетной записи Data Lake Storage 1-го поколения и т. д. Инструкции по выполнению операций файловой системы в Data Lake Storage 1-го поколения с помощью REST API см. [в разделе операции файловой системы на Data Lake Storage 1-го поколения с помощью REST API](data-lake-store-data-operations-rest-api.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
 * **[перелистывание](https://curl.haxx.se/)**. В этой статье для демонстрации вызовов REST API к учетной записи Data Lake Storage 1-го поколения используется cURL.
@@ -74,7 +68,7 @@ ms.locfileid: "60877113"
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Операции файловой системы в Data Lake Storage 1-го поколения c использованием REST API](data-lake-store-data-operations-rest-api.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 * [Справочник по REST API для Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/rest/api/datalakestore/)
 * [Приложения больших данных с открытым исходным кодом, которые работают с Azure Data Lake Storage Gen1](data-lake-store-compatible-oss-other-applications.md)
 

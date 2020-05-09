@@ -1,10 +1,10 @@
 ---
 title: Средства контроля сетевого доступа
-description: Обзор управления доступом к сети для базы данных и хранилища данных SQL Azure для управления доступом и настройки отдельной базы данных или в составе пула.
+description: Обзор управления доступом к сети для базы данных SQL Azure и Azure синапсе Analytics для управления доступом и настройки отдельной базы данных или в составе пула.
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
-titleSuffix: Azure SQL Database and SQL Data Warehouse
+titleSuffix: Azure SQL Database and Azure Synapse Analytics
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
@@ -12,17 +12,17 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 03/09/2020
-ms.openlocfilehash: 8b4ee679b21d904f997f727f5f26275c86acc9c5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fdeb8ee3fbb01ea007205e02eb247925fb3baea1
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81414415"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82629581"
 ---
-# <a name="azure-sql-database-and-data-warehouse-network-access-controls"></a>Управление доступом к сети для базы данных SQL Azure и хранилища данных
+# <a name="azure-sql-database-and-azure-synapse-analytics-network-access-controls"></a>Управление доступом к сети для базы данных SQL Azure и Azure синапсе Analytics
 
 > [!NOTE]
-> Эта статья относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере SQL Azure. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.
+> Эта статья относится к Azure SQL Server и к базе данных SQL и базам данных Azure синапсе Analytics, созданным на сервере Azure SQL. Для простоты база данных SQL используется при обращении к базе данных SQL и Azure синапсе Analytics.
 
 > [!IMPORTANT]
 > Эта статья *не* относится к **Управляемому экземпляру Базы данных SQL Azure**. Дополнительные сведения о конфигурации сети см. в разделе [Подключение к управляемый экземпляр](sql-database-managed-instance-connect-app.md) .
@@ -141,7 +141,7 @@ start          end
 ## <a name="private-link"></a>Приватный канал 
 Частная ссылка позволяет подключаться к Azure SQL Server через **закрытую конечную точку**. Частная конечная точка — это частный IP-адрес в определенной [виртуальной сети](../virtual-network/virtual-networks-overview.md) и подсети.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Краткое руководство по созданию правила брандмауэра IP на уровне сервера см. в статье [Создание базы данных SQL Azure](sql-database-single-database-get-started.md).
 

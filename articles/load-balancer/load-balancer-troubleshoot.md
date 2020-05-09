@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/28/2020
 ms.author: allensu
-ms.openlocfilehash: cf9fa48019ab88190175131b27f4a40e29eb5ed0
-ms.sourcegitcommit: c8a0fbfa74ef7d1fd4d5b2f88521c5b619eb25f8
+ms.openlocfilehash: 0db91f3c661ebd3087a4389f4112a7214c992227
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82801728"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82925955"
 ---
 # <a name="troubleshoot-azure-load-balancer"></a>Устранение неполадок Azure Load Balancer
 <p class="alert is-flex is-primary"><span class="has-padding-left-medium has-padding-top-extra-small"><a class="button is-primary" href="https://azurevirtualsupportagent.services.microsoft.com?content=fb23185b-6c56-d9f1-7ce1-758c978e08e1" target='_blank'>Начните</a></span><span class="has-padding-small">использовать наш Виртуальный агент для запуска <b>автоматизированной диагностики</b> , чтобы быстро решить проблему.</span> <span class="has-padding-small"> <sub>Privacy Statement</sub> Заявление <a href="https://privacy.microsoft.com/privacystatement" target='_blank'> <div align="right"></div></a></span></p>
@@ -132,12 +132,16 @@ ms.locfileid: "82801728"
 ### <a name="cause--the-backend-port-cannot-be-modified-for-a-load-balancing-rule-thats-used-by-a-health-probe-for-load-balancer-referenced-by-vm-scale-set"></a>Причина: внутренний порт не может быть изменен для правила балансировки нагрузки, используемого зондом работоспособности для балансировщика нагрузки, на который ссылается масштабируемый набор виртуальных машин.
 **Решение** Чтобы изменить порт, можно удалить пробу работоспособности, обновив масштабируемый набор виртуальных машин, обновив порт, а затем снова настроив проверку работоспособности.
 
+## <a name="symptom-small-traffic-is-still-going-through-load-balancer-after-removing-vms-from-backend-pool-of-the-load-balancer"></a>Симптом. После удаления виртуальных машин из серверного пула подсистемы балансировки нагрузки проходящий трафик по-прежнему проходит через балансировщик нагрузки. 
+### <a name="cause--vms-removed-from-backend-pool-should-no-longer-receive-traffic-the-small-amount-of-network-traffic-could-be-related-to-storage-dns-and-other-functions-within-azure"></a>Причина: виртуальные машины, удаленные из серверного пула, не должны передавать трафик. Небольшой объем сетевого трафика может быть связан с хранилищем, DNS и другими функциями в Azure. 
+Чтобы проверить, можно выполнить трассировку сети. Полное доменное имя, используемое для учетных записей хранения BLOB-объектов, указано в свойствах каждой учетной записи хранения.  С виртуальной машины в подписке Azure можно выполнить команду nslookup, чтобы определить IP-адрес Azure, назначенный этой учетной записи хранения.
+
 ## <a name="additional-network-captures"></a>Запись дополнительных сетевых данных
 Если вы решили обратиться в службу поддержки, то соберите следующие сведения, чтобы ускорить устранение проблемы. Выберите одну виртуальную машину внутреннего пула, чтобы выполнить следующие проверки:
 - Воспользуйтесь командой Psping с одной из виртуальных машин внутреннего пула в виртуальной сети, чтобы проверить ответ порта пробы (пример: psping 10.0.0.4:3389), и запишите результаты. 
 - Если в результате этих проверок связи ответ не получен, то одновременно с выполнением команды PsPing запустите команду netsh trace на виртуальной машине внутреннего пула и тестовой виртуальной машине в виртуальной сети, а затем остановите команду netsh trace. 
-  
-## <a name="next-steps"></a>Следующие шаги
+ 
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если описанные выше шаги не устранят проблему, отправьте [запрос в службу поддержки](https://azure.microsoft.com/support/options/).
 

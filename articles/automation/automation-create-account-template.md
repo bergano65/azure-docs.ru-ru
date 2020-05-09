@@ -7,25 +7,25 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 04/24/2020
-ms.openlocfilehash: 431b89df0ce06736a2e76e58797ded65751bb404
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
-ms.translationtype: MT
+ms.openlocfilehash: 19aee9d5fdf3f4a3d74484bb7cb2e609bc2807b4
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82165830"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82927876"
 ---
-# <a name="create-automation-account-using-azure-resource-manager-template"></a>Создание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager
+# <a name="create-an-automation-account-by-using-an-azure-resource-manager-template"></a>Создание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager
 
-Для создания учетной записи службы автоматизации Azure в группе ресурсов можно использовать [шаблоны Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md) . В этой статье представлен пример шаблона, который автоматизирует следующие задачи:
+Для создания учетной записи службы автоматизации Azure в группе ресурсов можно использовать [шаблоны Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md) . В этой статье представлен пример шаблона, который:
 
-* Создание рабочей области Log Analytics Azure Monitor.
-* Создание учетной записи службы автоматизации Azure.
+* Автоматизирует создание Azure Monitor Log Analytics рабочей области.
+* Автоматизирует создание учетной записи службы автоматизации Azure.
 * Связывает учетную запись службы автоматизации с Log Analytics рабочей областью.
 
-Этот шаблон не автоматизирует подключение одной или нескольких виртуальных машин Azure, не связанных с Azure, или решений. 
+Этот шаблон не автоматизирует подключение виртуальных машин или решений Azure, не относящихся к Azure. 
 
 >[!NOTE]
->Создание учетной записи запуска от имени службы автоматизации не поддерживается при использовании шаблона Azure Resource Manager. Сведения о создании учетной записи запуска от имени вручную с портала или с помощью PowerShell см. в разделе [Управление учетной записью запуска от имени](manage-runas-account.md).
+>Создание учетной записи запуска от имени службы автоматизации не поддерживается, если вы используете шаблон Azure Resource Manager. Сведения о создании учетной записи запуска от имени вручную с портала или с помощью PowerShell см. в разделе [Управление учетными записями запуска от имени](manage-runas-account.md).
 
 ## <a name="api-versions"></a>Версии API
 
@@ -36,40 +36,40 @@ ms.locfileid: "82165830"
 | Рабочая область | workspaces | 2017-03-15-preview |
 | Учетная запись службы автоматизации | служба автоматизации | 2015-10-31 | 
 
-## <a name="before-using-the-template"></a>Перед использованием шаблона
+## <a name="before-you-use-the-template"></a>Перед использованием шаблона
 
-Если вы решили установить и использовать PowerShell локально, для работы с этой статьей требуется модуль Azure PowerShell AZ. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если необходимо выполнить обновление, см. статью об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure. При использовании Azure PowerShell развертывание использует [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment).
+Если вы решили установить и использовать PowerShell локально, для работы с этой статьей требуется модуль Azure PowerShell AZ. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если необходимо выполнить обновление, см. статью об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Connect-AzAccount`, чтобы создать подключение к Azure. При использовании PowerShell в развертывании используется [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment).
 
-Если вы решили установить и использовать CLI локально, для работы с этой статьей требуется Azure CLI версии 2.1.0 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). При использовании Azure CLI в этом развертывании используется команду [AZ Group Deployment Create](https://docs.microsoft.com/cli/azure/group/deployment?view=azure-cli-latest#az-group-deployment-create). 
+Если вы решили установить и использовать Azure CLI локально, для работы с этой статьей требуется версия 2.1.0 или более поздняя. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). При использовании Azure CLI в этом развертывании используется команду [AZ Group Deployment Create](https://docs.microsoft.com/cli/azure/group/deployment?view=azure-cli-latest#az-group-deployment-create). 
 
 Шаблон JSON настроен для запроса:
 
-* Имя рабочей области
-* Регион, в котором создается рабочая область
-* Имя учетной записи службы автоматизации
-* Регион, в котором создается учетная запись
+* Имя рабочей области.
+* Регион, в котором создается рабочая область.
+* Имя учетной записи службы автоматизации.
+* Регион, в котором создается учетная запись.
 
 Для следующих параметров в шаблоне задано значение по умолчанию для рабочей области Log Analytics:
 
-* sku — по умолчанию используется новый тарифный план с платой за гигабайт, выпущенный в апреле 2018 года.
-* срок хранения данных — по умолчанию — 30 дней.
-* резервирование емкости — по умолчанию — 100 ГБ
+* *номер SKU* по умолчанию равен ценовой категории за ГБ, которая выпущена в модели ценообразования за Апрель 2018.
+* значение *retention* по умолчанию — 30 дней.
+* *капаЦитиресерватионлевел* по умолчанию — 100 ГБ.
 
 >[!WARNING]
->При создании или настройке рабочей области Log Analytics в подписке, использующей модель ценообразования от апреля 2018 года, доступна только ценовая категория **PerGB2018**.
+>Если вы хотите создать или настроить Log Analytics рабочую область в подписке, которая выбрала модель ценообразования за Апрель 2018, то единственной допустимой ценовой категорией Log Analytics является *PerGB2018*.
 >
 
-Шаблон JSON определяет значения по умолчанию для других параметров, которые, скорее всего, будут использоваться в качестве стандартной конфигурации в вашей среде. Шаблон можно сохранить в учетной записи хранения Azure для общего доступа в Организации. Дополнительные сведения о работе с шаблонами см. [в статье Развертывание ресурсов с помощью шаблонов диспетчер ресурсов и Azure CLI](../azure-resource-manager/templates/deploy-cli.md).
+Шаблон JSON определяет значения по умолчанию для других параметров, которые, скорее всего, будут использоваться в качестве стандартной конфигурации в вашей среде. Шаблон можно сохранить в учетной записи хранения Azure для общего доступа в Организации. Дополнительные сведения о работе с шаблонами см. [в разделе Развертывание ресурсов с помощью шаблонов диспетчер ресурсов и Azure CLI](../azure-resource-manager/templates/deploy-cli.md).
 
-Если вы не знакомы со службой автоматизации Azure и Azure Monitor, важно понимать следующие сведения о конфигурации, чтобы избежать ошибок при попытке создать, настроить и использовать Log Analytics рабочую область, связанную с новой учетной записью службы автоматизации.
+Если вы не знакомы со службой автоматизации Azure и Azure Monitor, важно понимать следующие сведения о конфигурации. Они могут помочь избежать ошибок при попытке создать, настроить и использовать Log Analytics рабочую область, связанную с новой учетной записью службы автоматизации. 
 
 * Ознакомьтесь с [дополнительными сведениями](../azure-monitor/platform/template-workspace-configuration.md#create-a-log-analytics-workspace) , чтобы полностью понять параметры конфигурации рабочей области, такие как режим управления доступом, ценовая категория, срок хранения и уровень резервирования емкости.
 
-* Так как для связывания рабочей области с Log Analytics и учетной записью службы автоматизации в подписке поддерживаются только определенные регионы, проверьте [сопоставления рабочей области](how-to/region-mappings.md) , чтобы указать поддерживаемые регионы в строке или файле параметров.
+* Проверьте [сопоставления рабочей области](how-to/region-mappings.md) , чтобы указать поддерживаемые регионы в строке или в файле параметров. Для связывания рабочей области Log Analytics и учетной записи службы автоматизации в подписке поддерживаются только определенные регионы.
 
-* Если вы не знакомы с Azure Monitor журналами и еще не развернули рабочую область, ознакомьтесь с руководством по [проектированию рабочей области](../azure-monitor/platform/design-logs-deployment.md) , чтобы узнать об управлении доступом, и Узнайте о стратегиях реализации, которые мы рекомендуем использовать для вашей организации.
+* Если вы не знакомы с Azure Monitor журналами и еще не развернули рабочую область, ознакомьтесь с [руководством по проектированию рабочей области](../azure-monitor/platform/design-logs-deployment.md). Он поможет вам узнать об управлении доступом и ознакомиться с стратегиями реализации разработки, которые мы рекомендуем использовать для вашей организации.
 
-## <a name="deploy-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 1. Скопируйте и вставьте в него следующий синтаксис JSON:
 
@@ -96,7 +96,7 @@ ms.locfileid: "82165830"
             ],
             "defaultValue": "pergb2018",
             "metadata": {
-                "description": "Pricing tier: perGB2018 or legacy tiers (Free, Standalone, PerNode, Standard or Premium) which are not available to all customers."
+                "description": "Pricing tier: perGB2018 or legacy tiers (Free, Standalone, PerNode, Standard or Premium), which are not available to all customers."
             }
         },
         "dataRetention": {
@@ -105,14 +105,14 @@ ms.locfileid: "82165830"
             "minValue": 7,
             "maxValue": 730,
             "metadata": {
-                "description": "Number of days of retention. Workspaces in the legacy Free pricing tier can only have 7 days."
+                "description": "Number of days of retention. Workspaces in the legacy Free pricing tier can have only 7 days."
             }
         },
         "immediatePurgeDataOn30Days": {
             "type": "bool",
             "defaultValue": "[bool('false')]",
             "metadata": {
-                "description": "If set to true when changing retention to 30 days, older data will be immediately deleted. Use this with extreme caution. This only applies when retention is being set to 30 days."
+                "description": "If set to true when changing retention to 30 days, older data will be immediately deleted. Use this with extreme caution. This applies only when retention is being set to 30 days."
             }
         },
         "location": {
@@ -139,7 +139,7 @@ ms.locfileid: "82165830"
             },
             "sampleGraphicalRunbookDescription": {
                 "type": "String",
-                "defaultValue": " An example runbook which gets all the ARM resources using the Run As Account (Service Principal)."
+                "defaultValue": " An example runbook that gets all the Resource Manager resources by using the Run As account (service principal)."
             },
             "sampleGraphicalRunbookContentUri": {
                 "type": "String",
@@ -151,7 +151,7 @@ ms.locfileid: "82165830"
             },
             "samplePowerShellRunbookDescription": {
                 "type": "String",
-                "defaultValue": " An example runbook which gets all the ARM resources using the Run As Account (Service Principal)."
+                "defaultValue": " An example runbook that gets all the Resource Manager resources by using the Run As account (service principal)."
             },
             "samplePowerShellRunbookContentUri": {
                 "type": "String",
@@ -163,7 +163,7 @@ ms.locfileid: "82165830"
             },
             "samplePython2RunbookDescription": {
                 "type": "String",
-                "defaultValue": " An example runbook which gets all the ARM resources using the Run As Account (Service Principal)."
+                "defaultValue": " An example runbook that gets all the Resource Manager resources by using the Run As account (service principal)."
             },
             "samplePython2RunbookContentUri": {
                 "type": "String",
@@ -286,7 +286,7 @@ ms.locfileid: "82165830"
     }
     ```
 
-2. Отредактируйте шаблон с учетом ваших требований. Вместо передачи параметров в виде встроенных значений рекомендуется создать [файл параметров Диспетчер ресурсов](../azure-resource-manager/templates/parameter-files.md) .
+2. Отредактируйте шаблон с учетом ваших требований. Вместо передачи параметров в виде встроенных значений рекомендуется создать [Диспетчер ресурсов файл параметров](../azure-resource-manager/templates/parameter-files.md) .
 
 3. Сохраните этот файл как Деплойазаутоматионаккттемплате. JSON в локальной папке.
 
@@ -304,10 +304,14 @@ ms.locfileid: "82165830"
     az group deployment create --resource-group <my-resource-group> --name <my-deployment-name> --template-file deployAzAutomationAccttemplate.json
     ```
 
-    Развертывание может занять несколько минут. По завершении выполнения появится сообщение с результатами наподобие приведенного ниже.
+    Для завершения развертывания может потребоваться несколько минут. В этом случае вы увидите примерно следующее сообщение, содержащее результат.
 
     ![Пример результатов по завершении развертывания](media/automation-create-account-template/template-output.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда у вас есть учетная запись службы автоматизации, вы можете создавать модули Runbook и автоматизировать ручные процессы.
+
+* Сведения о том, как начать работу с runbook, см. в статье о [создании runbook PowerShell](automation-first-runbook-textual-powershell.md).
+* Чтобы приступить к работе с модулями Runbook рабочих процессов PowerShell, см. статью [Создание Runbook рабочего процесса PowerShell](automation-first-runbook-textual.md).
+* Чтобы приступить к работе с модулями Runbook Python 2, см. статью [Создание Runbook Python](automation-first-runbook-textual-python2.md).

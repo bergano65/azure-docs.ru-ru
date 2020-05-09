@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: mesameki
 author: mesameki
 ms.date: 03/11/2020
-ms.openlocfilehash: e9155104905ae3e686a01b90cbcad2610b6f4c91
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e0ec6cbc4cea926dfc50cdae247aea5d765c20ca
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82086425"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82691224"
 ---
 # <a name="interpretability-model-explanations-in-automated-machine-learning"></a>Интерпретируемость: пояснения к модели в автоматизированном машинном обучении
 
@@ -85,20 +85,21 @@ automl_explainer_setup_obj = automl_setup_model_explanations(fitted_model, X=X_t
 
 - Объект настройки пояснения
 - Рабочая область
-- Модель LightGBM, которая выступает в качестве суррогата для `fitted_model` автоматизированной модели ml
+- Суррогатная модель для объяснения `fitted_model` автоматизированной модели ml
 
 Мимиквраппер также принимает `automl_run` объект, где будут передаваться инженерные объяснения.
 
 ```python
-from azureml.explain.model.mimic.models.lightgbm_model import LGBMExplainableModel
 from azureml.explain.model.mimic_wrapper import MimicWrapper
 
 # Initialize the Mimic Explainer
-explainer = MimicWrapper(ws, automl_explainer_setup_obj.automl_estimator, LGBMExplainableModel, 
+explainer = MimicWrapper(ws, automl_explainer_setup_obj.automl_estimator,
+                         explainable_model=automl_explainer_setup_obj.surrogate_model, 
                          init_dataset=automl_explainer_setup_obj.X_transform, run=automl_run,
                          features=automl_explainer_setup_obj.engineered_feature_names, 
                          feature_maps=[automl_explainer_setup_obj.feature_map],
-                         classes=automl_explainer_setup_obj.classes)
+                         classes=automl_explainer_setup_obj.classes,
+                         explainer_kwargs=automl_explainer_setup_obj.surrogate_model_params)
 ```
 
 ### <a name="use-mimicexplainer-for-computing-and-visualizing-engineered-feature-importance"></a>Использование Мимицексплаинер для вычисления и визуализации важности сконструированных функций
@@ -211,6 +212,6 @@ if service.state == 'Healthy':
 
 [![Архитектура интерпретации Машинное обучение](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png)](./media/how-to-machine-learning-interpretability-automl/automl-explainability.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как включить пояснения к модели и важность признаков в областях пакета SDK Машинное обучение Azure, отличного от автоматизированного машинного обучения, см. в [статье о концепции, посвященной возможностям интерпретации](how-to-machine-learning-interpretability.md).
