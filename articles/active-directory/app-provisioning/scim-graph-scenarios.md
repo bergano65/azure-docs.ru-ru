@@ -10,13 +10,13 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 04/26/2020
 ms.author: mimart
-ms.reviewer: arvinh
-ms.openlocfilehash: ceba22e9289e0a10211ee26a7758238a8b1f06c7
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.reviewer: arvinh, celested
+ms.openlocfilehash: 0b2c8e6bb71e00ccb6eda33ecb1b087d09ce5de7
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82201692"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82626196"
 ---
 # <a name="using-scim-and-microsoft-graph-together-to-provision-users-and-enrich-your-application-with-the-data-it-needs"></a>Использование SCIM и Microsoft Graph вместе для подготовки пользователей и расширения возможностей приложения с помощью необходимых данных
 
@@ -103,8 +103,8 @@ DELETE /Users/5171a35d82074e068ce2 HTTP/1.1
 Мне нужна возможность отслеживанию изменений в командах и сообщениях Outlook и реагирование на них в режиме реального времени. Как можно вернуть эти изменения в приложение?
 
 **Рекомендации:** Microsoft Graph предоставляет [уведомления об изменениях](https://docs.microsoft.com/graph/webhooks) и [Отслеживание изменений](https://docs.microsoft.com/graph/delta-query-overview) для различных ресурсов. Обратите внимание на следующие ограничения уведомлений об изменениях.
-- Если получатель событий подтверждает событие, но не может по какой бы то ни было действовать по какой либо причине, возможно, это событие будет потеряно.
-- Если получатель событий подтверждает событие, но не может по какой бы то ни было действовать по какой либо причине, возможно, это событие будет потеряно.
+- Если получатель событий подтверждает событие, но по какой бы то ни было причине не может действовать по какой бы то ни было причиной, это событие можно потерять.
+- Порядок получения изменений не гарантируется в хронологическом порядке.
 - Уведомления об изменениях не всегда содержат [данные ресурсов](https://docs.microsoft.com/graph/webhooks-with-resource-data) по указанным выше причинам. разработчики часто используют уведомления об изменениях вместе с отслеживанием изменений для сценариев синхронизации. 
 
 ## <a name="scenario-6-provision-users-and-groups-in-azure-ad"></a>Сценарий 6. предоставление пользователей и групп в Azure AD

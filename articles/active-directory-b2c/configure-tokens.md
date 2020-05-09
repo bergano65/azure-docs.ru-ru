@@ -7,25 +7,25 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 04/16/2019
+ms.date: 05/07/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 160898f8535d3dad4811af016ebca779b7ef43a8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a2b9cc0c69f0c559c9561a02de4192974ee7f521
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78189623"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82926193"
 ---
 # <a name="configure-tokens-in-azure-active-directory-b2c"></a>Настройка маркеров в Azure Active Directory B2C
 
 Из этой статьи вы узнаете, как настроить [время существования и совместимость маркера](tokens-overview.md) в Azure Active Directory B2C (Azure AD B2C).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 [Создайте поток пользователя](tutorial-create-user-flows.md), чтобы пользователи могли зарегистрироваться и войти в ваше приложение.
 
-## <a name="configure-token-lifetime"></a>Настройка времени существования токена
+## <a name="configure-jwt-token-lifetime"></a>Настройка времени существования токена JWT
 
 Время существования маркера можно настроить в любом потоке пользователя.
 
@@ -39,9 +39,9 @@ ms.locfileid: "78189623"
 
     ![Параметры свойства "время существования токена" в портал Azure](./media/configure-tokens/token-lifetime.png)
 
-8. Выберите команду **Сохранить**.
+8. Нажмите кнопку **Сохранить**.
 
-## <a name="configure-token-compatibility"></a>Настройка совместимости токенов
+## <a name="configure-jwt-token-compatibility"></a>Настройка совместимости токенов JWT
 
 1. Выберите **потоки пользователя (политики)**.
 2. Откройте созданный ранее поток пользователя.
@@ -50,7 +50,7 @@ ms.locfileid: "78189623"
 
     ![Параметры свойств совместимости маркеров в портал Azure](./media/configure-tokens/token-compatibility.png)
 
-5. Выберите команду **Сохранить**.
+5. Нажмите кнопку **Сохранить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

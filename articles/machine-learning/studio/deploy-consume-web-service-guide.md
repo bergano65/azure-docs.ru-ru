@@ -10,12 +10,12 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 04/19/2017
-ms.openlocfilehash: ff6ae0de0bbd8c47b81fa5066a97eb0b3e0cf6bc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 29852eb0920f7bb32464d91e0be65c7dcb03325c
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79204398"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82627965"
 ---
 # <a name="azure-machine-learning-studio-classic-web-services-deployment-and-consumption"></a>Веб-службы Машинное обучение Azure Studio (классическая модель): развертывание и использование
 
@@ -68,7 +68,7 @@ ms.locfileid: "79204398"
 
 Добавьте их в шаблон JSON в качестве дочерних элементов узла *Properties* на том же уровне, где находится узел *MachineLearningWorkspace*.
 
-Пример:
+Ниже приведен пример:
 
     "StorageAccount": {
             "name": "YourStorageAccountName",
@@ -81,7 +81,6 @@ ms.locfileid: "79204398"
 Дополнительные сведения см. в следующих статьях и примерах кода:
 
 * Справочник по [командлетам машинное обучение Azure Studio (классическая модель)](https://docs.microsoft.com/powershell/module/az.machinelearning) на сайте MSDN
-* Пример [пошагового руководства](https://github.com/raymondlaghaeian/azureml-webservices-arm-powershell/blob/master/sample-commands.txt) на сайте GitHub.
 
 ## <a name="consume-the-web-services"></a>Использование веб-служб
 

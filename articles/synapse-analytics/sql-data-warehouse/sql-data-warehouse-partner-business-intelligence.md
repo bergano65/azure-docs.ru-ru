@@ -11,12 +11,12 @@ ms.date: 03/27/2019
 ms.author: mabasile
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 75020b0dd58a80f989bd03eb92031d904ebf4c82
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cb37efb796ddf41bd1d19e10d22f934590604274
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81313691"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82871709"
 ---
 # <a name="azure-synapse-analytics-business-intelligence-partners"></a>Партнеры по бизнес-аналитике Azure синапсе Analytics
 
@@ -38,12 +38,12 @@ ms.locfileid: "81313691"
 | ![SiSense](./media/sql-data-warehouse-partner-business-intelligence/sisense_logo.png) |**SiSense**<br>SiSense — полноценное программное обеспечение бизнес-аналитики с инструментами, которые нужны компании для анализа и визуализации данных: эффективная база данных, возможность подключаться к разным источникам, простое извлечение данных и визуализация данных в браузере. Начните анализировать и визуализировать большие объемы данных с помощью SiSense BI and Analytics уже сегодня. |[Страница продукта](https://www.sisense.com/product/)<br> |
 | ![Tableau](./media/sql-data-warehouse-partner-business-intelligence/tableau_sparkle_logo.png) |**Tableau**<br>Самостоятельная аналитика Tableau помогает просматривать и понимать свои данные в различных видах данных от неструктурированных файлов до баз данных. Tableau имеет собственный, оптимизированный соединитель для синапсе пула SQL, который поддерживает как динамические данные, так и аналитическую аналитику в памяти. |[Страница продукта](https://www.tableau.com/)<br> [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/tableau/tableau-server/)<br>|
 | ![Targit](./media/sql-data-warehouse-partner-business-intelligence/targit_logo.png) |**Таргит (набор решений)**<br>Targit Decision Suite — это платформа бизнес-аналитики, которая объединяет актуальные панели мониторинга, аналитику, понятные отчеты, превосходные мобильные возможности и простые технологии работы с данными в одном, связанном решении. Targit дает компаниям мужество для действия. |[Страница продукта](https://www.targit.com/targit-decision-suite/analytics)<br> [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/targit/targit-decision-suite/)<br> |
-| ![саугхтспот](./media/sql-data-warehouse-partner-business-intelligence/thoughtspot-logo.png) |**саугхтспот**<br>Самые инновационные предприятия используют Саугхтспот для предоставления каждому сотруднику своей организации, от руководителей C-Suite до переднего плана, с возможностью быстро обнаруживать аналитические данные на основе данных. С помощью Саугхтспот бизнес-люди могут ввести простой поиск для мгновенного анализа миллиардов строк данных и использования искусственного интеллекта для получения доверенных, релевантных ценных сведений, относящихся к ним в качестве ответов на тысячи вопросов, которые они могут не задумать. Саугхтспот достаточно прост для использования любым бизнес-лицом, но достаточно мощным для обработки даже самых крупных, наиболее сложных корпоративных данных без ущерба для скорости, безопасности или управления. Именно поэтому клиенты, такие как Валмарт, 7-11, BT, Даимлер, Ексксон, хулу, Royal Bank of Канада, Bank of Запад и здание по всей территории США, были включены в Саугхтспот, чтобы преобразовать свои языки и региональные параметры, основанные на принятии решений Gartner, с названием Саугхтспот лидера в магическом квадранте 2020. Принимая ценные сведения о каждом диалоге и принятии каждого решения, Саугхтспот переставляя роль данных в создании более управляемого на практике мира. |[Страница продукта](https://www.thoughtspot.com)<br>|
+| ![саугхтспот](./media/sql-data-warehouse-partner-business-intelligence/thoughtspot-logo.png) |**саугхтспот**<br>Используйте поиск, чтобы получить детализированную аналитику из миллиардов строк данных или позволить ИСКУССТВЕНному анализу получать ценные сведения от вопросов, которые, возможно, вас не задумали. Саугхтспот помогает предпринимателей находить ценные сведения, скрытые в данных компании за считаные секунды. Используйте поиск для анализа данных и получения автоматических аналитических сведений по мере необходимости.|[Страница продукта](https://www.thoughtspot.com)<br>|
 | ![Yellowfin](./media/sql-data-warehouse-partner-business-intelligence/yellowfin_logo.png) |**Yellowfin**<br>Yellowfin — это высший рейтинг поставщика облачных бизнес-аналитики для автоматизированной отчетности и панелей мониторинга с помощью BARC; Опрос бизнес-аналитики. Подключайтесь к пулу синапсе SQL, создавайте и делите привлекательные отчеты и панели мониторинга, используя функции совместной работы с бизнес-аналитикой и аналитикой местоположения. |[Страница продукта](https://www.yellowfinbi.com/)<br> [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/yellowfin/yellowfin-for-azure-byol/) |
 
 <!--https://img.youtube.com/vi/0b8sPW2UHrU/0.jpg-->
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 Дополнительные сведения о некоторых других партнерах см. в статьях [Партнеры по интеграции данных хранилища данных SQL](sql-data-warehouse-partner-data-integration.md) и [Партнеры по управлению данными хранилища данных SQL](sql-data-warehouse-partner-data-management.md).
 
  

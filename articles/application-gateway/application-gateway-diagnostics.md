@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 11/22/2019
 ms.author: victorh
-ms.openlocfilehash: b458537c7cf8a254cd188c565ab1925afa202369
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6829efa007e9e67866bdc0efbca4d095155c35e2
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81312652"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82889700"
 ---
 # <a name="back-end-health-and-diagnostic-logs-for-application-gateway"></a>Журналы работоспособности и диагностики серверной части для шлюза приложений
 
@@ -158,7 +158,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 
 Журнал доступа создается, только если он включен для каждого экземпляра шлюза приложений, как описано выше. Данные хранятся в учетной записи хранения, указанной при включении ведения журнала. Каждый доступ к шлюзу приложений заносится в формат JSON, как показано в следующем примере для версии v1:
 
-|Значение  |Описание  |
+|Применение  |Описание  |
 |---------|---------|
 |instanceId     | Экземпляр шлюза приложений, который обрабатывает запрос.        |
 |clientIP     | IP-адрес источника запроса.        |
@@ -202,7 +202,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 ```
 Для шлюза приложений и WAF версии 2 журналы содержат несколько дополнительных сведений:
 
-|Значение  |Описание  |
+|Применение  |Описание  |
 |---------|---------|
 |instanceId     | Экземпляр шлюза приложений, который обрабатывает запрос.        |
 |clientIP     | IP-адрес источника запроса.        |
@@ -256,7 +256,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 Журнал производительности создается, только если он включен для каждого экземпляра шлюза приложений, как описано выше. Данные хранятся в учетной записи хранения, указанной при включении ведения журнала. Данные журнала производительности формируются с интервалом в 1 минуту. Он доступен только для номера SKU версии v1. Для номера SKU версии 2 Используйте [метрики](application-gateway-metrics.md) для данных производительности. В журнал записываются следующие данные:
 
 
-|Значение  |Описание  |
+|Применение  |Описание  |
 |---------|---------|
 |instanceId     |  Экземпляр шлюза приложений, для которого формируются данные о производительности. Если экземпляров шлюза приложений несколько, каждому экземпляру будет соответствовать определенная строка.        |
 |healthyHostCount     | Число работоспособных узлов во внутреннем пуле.        |
@@ -293,7 +293,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 Этот журнал создается, только если он включен для каждого шлюза приложений, как описано выше. Кроме того, в шлюзе приложений должен быть настроен брандмауэр веб-приложения. Данные хранятся в учетной записи хранения, указанной при включении ведения журнала. В журнал записываются следующие данные:
 
 
-|Значение  |Описание  |
+|Применение  |Описание  |
 |---------|---------|
 |instanceId     | Экземпляр шлюза приложений, для которого формируются данные о брандмауэре. Если экземпляров шлюза приложений несколько, каждому экземпляру будет соответствовать определенная строка.         |
 |clientIp     |   IP-адрес источника запроса.      |
@@ -365,10 +365,10 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 
 Мы опубликовали шаблон Resource Manager, который устанавливает и запускает популярный анализатор журналов [GoAccess](https://goaccess.io/) для журналов доступа шлюза приложений. GoAccess предоставляет ценную статистику трафика HTTP, такую как уникальные посетители, запрошенные файлы, узлы, операционные системы, браузеры, коды состояния HTTP и многое другое. Дополнительные сведения см. в [файле сведений в папке шаблона Resource Manager на GitHub](https://aka.ms/appgwgoaccessreadme).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. сведения о визуализации журналов счетчиков и событий с помощью [журналов Azure Monitor](../azure-monitor/insights/azure-networking-analytics.md).
-* [Визуализируйте журнал действий Azure с помощью Power BI](https://blogs.msdn.com/b/powerbi/archive/2015/09/30/monitor-azure-audit-logs-with-power-bi.aspx) записи блога.
+* [Визуализируйте журнал действий Azure с помощью Power BI](https://powerbi.microsoft.com/blog/monitor-azure-audit-logs-with-power-bi/) записи блога.
 * Прочтите запись блога [View and analyze Azure Audit Logs in Power BI and more](https://azure.microsoft.com/blog/analyze-azure-audit-logs-in-powerbi-more/) (Просмотр и анализ журналов аудита Azure с помощью Power BI и других средств).
 
 [1]: ./media/application-gateway-diagnostics/figure1.png

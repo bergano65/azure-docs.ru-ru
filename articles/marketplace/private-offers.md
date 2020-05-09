@@ -1,22 +1,22 @@
 ---
-title: Частные предложения | Azure Marketplace
-description: Частные предложения в Azure Marketplace для издателей приложений и служб.
+title: Частные предложения в коммерческом магазине Майкрософт
+description: Частные предложения в коммерческом магазине Майкрософт для издателей приложений и служб.
 author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/19/2020
 ms.author: dsindona
-ms.openlocfilehash: efda9fb66a65f1f2cd40de8bf32a8a3fa99aea7f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e449f65ca65a679aa6c6823938fa561b84e38368
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81681437"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82872379"
 ---
-# <a name="private-offers"></a>Частные предложения
+# <a name="private-offers-in-the-microsoft-commercial-marketplace"></a>Частные предложения в коммерческом магазине Майкрософт
 
-Частные предложения на [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/) позволяют издателям создавать номера SKU, которые отображаются только для целевых клиентов.
+Частные предложения в [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/) позволяют издателям создавать планы, которые видны только целевым клиентам. В этой статье вы узнаете о вариантах и преимуществах частных предложений.
 
 ## <a name="unlock-enterprise-deals-with-private-offers"></a>Разблокируйте корпоративные сделки с помощью частных предложений
 

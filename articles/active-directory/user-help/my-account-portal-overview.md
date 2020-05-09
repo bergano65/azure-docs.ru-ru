@@ -9,20 +9,20 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: overview
-ms.date: 01/15/2020
+ms.date: 04/20/2020
 ms.author: curtand
-ms.openlocfilehash: 4c9d421fd9ac8305c27dfa798f2869e59a04f9fb
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: fd22f3b9d365bfee543712f680d504bb134f24d7
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77062461"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82625703"
 ---
 # <a name="what-is-the-my-account-portal"></a>Что представляет собой портал "Моя учетная запись"?
 
 Портал **Моя учетная запись** помогает управлять вашей рабочей или учебной учетной записью. На нем вы можете настроить и контролировать сведения для защиты, управлять подключенными организациями и устройствами, а также наблюдать, как ваша организация использует данные.
 
-Вы можете перейти на портал **Моя учетная запись** по ссылке https://myprofile.microsoft.com). Для этого используйте текущую версию любого из следующих браузеров:
+Вы можете перейти на портал **Моя учетная запись** по ссылке https://myaccount.microsoft.com). Для этого используйте текущую версию любого из следующих браузеров:
 
 - Chrome
 - Microsoft Edge

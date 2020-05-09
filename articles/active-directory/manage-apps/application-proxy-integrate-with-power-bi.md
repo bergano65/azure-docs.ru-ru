@@ -14,24 +14,24 @@ ms.topic: conceptual
 ms.date: 07/25/2019
 ms.author: mimart
 ms.reviewer: japere
-ms.custom: it-pro
+ms.custom: it-pro, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc96c94152b39cc70cfc4553690faaa5b9cb8d20
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0a6fab618280f1383e3840c67d85136edc095b9a
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77111574"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82610094"
 ---
 # <a name="enable-remote-access-to-power-bi-mobile-with-azure-ad-application-proxy"></a>Обеспечение удаленного доступа к Power BI Mobile с помощью Azure Active Directory Application Proxy
 
-В этой статье описывается, как использовать AD Application Proxy Azure, чтобы разрешить Power BI мобильного приложения подключаться к Сервер отчетов Power BI (PBIRS) и SQL Server Reporting Services (SSRS) 2016 и более поздних версий. Благодаря этой интеграции пользователи, которые находятся вне корпоративной сети, могут получать доступ к отчетам Power BI из мобильного приложения Power BI и защищать их с помощью проверки подлинности Azure AD. Эта защита включает в себя такие [преимущества безопасности](application-proxy-security.md#security-benefits) , как условный доступ и многофакторная идентификация.  
+В этой статье описывается, как использовать AD Application Proxy Azure, чтобы разрешить Power BI мобильного приложения подключаться к Сервер отчетов Power BI (PBIRS) и SQL Server Reporting Services (SSRS) 2016 и более поздних версий. Благодаря этой интеграции пользователи, которые находятся вне корпоративной сети, могут получать доступ к отчетам Power BI из мобильного приложения Power BI и защищать их с помощью проверки подлинности Azure AD. Эта защита включает в себя такие [преимущества безопасности](application-proxy-security.md#security-benefits) , как условный доступ и многофакторная идентификация.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В этой статье предполагается, что вы уже развернули службы Reporting Services и [включили прокси приложения](application-proxy-add-on-premises-application.md).
 
-- Для включения прокси приложения необходимо установить соединитель на сервере Windows Server и выполнить [необходимые условия](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) , чтобы соединитель мог обмениваться данными со СЛУЖБАМИ Azure AD.  
+- Для включения прокси приложения необходимо установить соединитель на сервере Windows Server и выполнить [необходимые условия](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) , чтобы соединитель мог обмениваться данными со СЛУЖБАМИ Azure AD.
 - При публикации Power BI рекомендуется использовать те же внутренние и внешние домены. Дополнительные сведения о пользовательских доменах см. [в статье работа с пользовательскими доменами в прокси приложения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-custom-domain).
 - Эта интеграция доступна для приложения **Power BI Mobile iOS и Android** .
 
@@ -68,7 +68,7 @@ ms.locfileid: "77111574"
 Чтобы настроить KCD, повторите следующие шаги для каждого компьютера соединителя:
 
 1. Войдите на контроллер домена в качестве администратора домена, а затем откройте **Active Directory пользователи и компьютеры**.
-2. Найдите компьютер, на котором запущен соединитель.  
+2. Найдите компьютер, на котором запущен соединитель.
 3. Дважды щелкните компьютер, а затем выберите вкладку **Делегирование** .
 4. Установите параметры делегирования **доверять компьютеру делегирование указанных служб**. а затем — **Use any authentication protocol** (Использовать любой протокол проверки подлинности).
 5. Нажмите кнопку **Добавить**, а затем выберите **Пользователи или компьютеры**.
@@ -95,7 +95,7 @@ ms.locfileid: "77111574"
 
    b. **В режиме единого входа**выберите **Встроенная проверка подлинности Windows**.
 
-   c. Задайте для параметра **Внутреннее имя субъекта-службы приложения** значение, заданное ранее.  
+   c. Задайте для параметра **Внутреннее имя субъекта-службы приложения** значение, заданное ранее.
 
    d. Выберите **делегированную идентификацию для входа**, которую соединитель сможет использовать от имени пользователей. Дополнительные сведения см. в разделе [Работа с разными локальными и облачными удостоверениями](application-proxy-configure-single-sign-on-with-kcd.md#working-with-different-on-premises-and-cloud-identities).
 
@@ -105,7 +105,7 @@ ms.locfileid: "77111574"
 
 ## <a name="step-3-modify-the-reply-uris-for-the-application"></a>Шаг 3. изменение универсального кода ресурса (URI) ответа для приложения
 
-Прежде чем мобильное приложение Power BI сможет подключиться к службам отчетов и получить к ним доступ, необходимо настроить регистрацию приложения, автоматически созданную на шаге 2. 
+Прежде чем мобильное приложение Power BI сможет подключиться к службам отчетов и получить к ним доступ, необходимо настроить регистрацию приложения, автоматически созданную на шаге 2.
 
 1. На странице **обзор** Azure Active Directory выберите **Регистрация приложений**.
 2. На вкладке **все приложения** найдите приложение, созданное на шаге 2.
@@ -117,11 +117,11 @@ ms.locfileid: "77111574"
    - `msauth://code/mspbi-adalms%3a%2f%2fcom.microsoft.powerbimobilems`
    - `mspbi-adal://com.microsoft.powerbimobile`
    - `mspbi-adalms://com.microsoft.powerbimobilems`
-   
+
    При настройке приложения для Power BI Mobile **Android**добавьте следующие URI перенаправления типа Public Client (мобильный & Desktop):
    - `urn:ietf:wg:oauth:2.0:oob`
    - `mspbi-adal://com.microsoft.powerbimobile`
-   - `msauth://com.microsoft.powerbim/g79ekQEgXBL5foHfTlO2TPawrbI%3D` 
+   - `msauth://com.microsoft.powerbim/g79ekQEgXBL5foHfTlO2TPawrbI%3D`
    - `msauth://com.microsoft.powerbim/izba1HXNWrSmQ7ZvMXgqeZPtNEU%3D`
 
    > [!IMPORTANT]
@@ -144,7 +144,7 @@ Microsoft Intune можно использовать для управления
 1. Перейдите в **Azure Active Directory** и затем **Регистрация приложений**.
 2. При регистрации собственного клиентского приложения выберите приложение, настроенное на шаге 3.
 3. На странице приложения выберите **разрешения API**.
-4. Нажмите кнопку **Добавить разрешение**. 
+4. Нажмите кнопку **Добавить разрешение**.
 5. В разделе API, которые **использует Моя организация**, выполните поиск по фразе "Управление мобильными приложениями Майкрософт" и выберите его.
 6. Добавление разрешения **девицеманажементманажедаппс. ReadWrite** в приложение
 7. Щелкните **предоставить согласие администратора** , чтобы предоставить разрешение на доступ к приложению.

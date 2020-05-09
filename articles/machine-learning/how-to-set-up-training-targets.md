@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 03/13/2020
 ms.custom: seodec18
-ms.openlocfilehash: 4db00fd43095c44a88cc0aae40778ab5b4b751b0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0ac0352fbca73aca7cc8c19a851dad9149af14a1
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82137405"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82872100"
 ---
 # <a name="set-up-and-use-compute-targets-for-model-training"></a>Настройка и использование целевых объектов вычислений для обучения модели 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -365,7 +365,7 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 > [!IMPORTANT]
 > При отправке обучающего запуска создается моментальный снимок каталога, содержащего сценарии обучения, которые отправляются в целевой объект вычислений. Он также хранится в рамках эксперимента в рабочей области. Если изменить файлы и отправить запуск снова, будут отправлены только измененные файлы.
 >
-> Чтобы предотвратить включение файлов в моментальный снимок, создайте [gitignore](https://git-scm.com/docs/gitignore) или `.amlignore` файл в каталоге и добавьте в него файлы. Файл использует тот же синтаксис и шаблоны, что и файл [gitignore.](https://git-scm.com/docs/gitignore) `.amlignore` Если оба файла существуют, приоритет `.amlignore` имеет файл.
+> [!INCLUDE [amlinclude-info](../../includes/machine-learning-amlignore-gitignore.md)]
 > 
 > Дополнительные сведения см. в разделе о [моментальных снимках](concept-azure-machine-learning-architecture.md#snapshots).
 
@@ -499,7 +499,7 @@ az ml run submit-hyperdrive -e <experiment> -c <runconfig> --hyperdrive-configur
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Учебник. Обучение модели](tutorial-train-models-with-aml.md) использует управляемый целевой объект вычислений для обучения модели.
 * Узнайте, как [эффективно настроить параметры](how-to-tune-hyperparameters.md) для создания лучших моделей.

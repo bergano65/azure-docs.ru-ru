@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 10/28/2019
 ms.author: curtand
-ms.openlocfilehash: b68e7b517ddaa9b2aaef00cf87d5b6e63871654b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c828878506ee69e90945d1f4be07eb81541b9757
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77064025"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82625414"
 ---
 # <a name="view-and-search-your-recent-sign-in-activity-from-the-my-sign-ins-preview-page"></a>Просмотр и поиск недавних действий входа на странице Мои входы (Предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "77064025"
 
 ## <a name="view-your-recent-sign-in-activity"></a>Просмотр недавних действий входа в систему
 
-1. Войдите в рабочую или учебную учетную запись, а затем перейдите на страницу https://myprofile.microsoft.com/.
+1. Войдите в рабочую или учебную учетную запись, а затем перейдите на страницу https://myaccount.microsoft.com/.
 
 2. Выберите **мои входы (Предварительная версия)** в левой области навигации или щелкните ссылку **Просмотреть Последнее действие** в блоке **мои входы (Предварительная версия)** .
 
@@ -62,7 +62,7 @@ ms.locfileid: "77064025"
 
     ![Страница "Недавние действия", отображающая выделенную строку поиска, кнопку поиска и результаты](media/my-account-portal/my-account-portal-sign-ins-page-search.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После просмотра последних действий входа вы можете:
 

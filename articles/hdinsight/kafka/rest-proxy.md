@@ -7,12 +7,13 @@ ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/03/2020
-ms.openlocfilehash: 265e15713f8159e370ef22a197ffe931200a88f7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: has-adal-ref
+ms.openlocfilehash: affdbfba125b7e9b3f3fe250a56af30e9efe816e
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81759000"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82611012"
 ---
 # <a name="interact-with-apache-kafka-clusters-in-azure-hdinsight-using-a-rest-proxy"></a>Взаимодействие с кластерами Apache Kafka в Azure HDInsight с помощью прокси-сервера RESTFUL
 
@@ -22,7 +23,7 @@ ms.locfileid: "81759000"
 
 Сведения о операциях, поддерживаемых REST API Kafka, см. в [справочнике по API-интерфейсу HDInsight Kafka](https://docs.microsoft.com/rest/api/hdinsight-kafka-rest-proxy).
 
-## <a name="background"></a>История
+## <a name="background"></a>Историческая справка
 
 ![Структура прокси-сервера Kafka RESTFUL](./media/rest-proxy/rest-proxy-architecture.png)
 
@@ -38,7 +39,7 @@ ms.locfileid: "81759000"
 
 Для запросов конечной точки прокси-сервера RESTFUL клиентские приложения должны получить токен OAuth. Токен используется для проверки членства в группе безопасности. Ниже приведен [Пример клиентского приложения](#client-application-sample) , в котором показано, как получить маркер OAuth. Клиентское приложение передает маркер OAuth в запросе HTTP на прокси-сервер RESTFUL.
 
-> [!NOTE]  
+> [!NOTE]
 > Дополнительные сведения о группах безопасности AAD см. в статье [Управление доступом к приложениям и ресурсам с помощью групп Azure Active Directory](../../active-directory/fundamentals/active-directory-manage-groups.md). Дополнительные сведения о работе маркеров OAuth см. в разделе [авторизация доступа к Azure Active Directory веб-приложениям с помощью потока предоставления кода OAuth 2,0](../../active-directory/develop/v1-protocols-oauth-code.md).
 
 ## <a name="prerequisites"></a>Предварительные условия
@@ -79,8 +80,8 @@ ms.locfileid: "81759000"
 
     |Свойство |Описание |
     |---|---|
-    |Идентификатор клиента|Клиент Azure, на котором находится ваша подписка.|
-    |ИД клиента|Идентификатор приложения, зарегистрированного в группе безопасности.|
+    |Tenant ID|Клиент Azure, на котором находится ваша подписка.|
+    |Идентификатор клиента|Идентификатор приложения, зарегистрированного в группе безопасности.|
     |Секрет клиента|Секрет для приложения, зарегистрированного в группе безопасности.|
     |Kafkarest_endpoint|Получите это значение на вкладке **Свойства** в обзоре кластера, как описано в [разделе Развертывание](#create-a-kafka-cluster-with-rest-proxy-enabled). Он должен иметь следующий формат:`https://<clustername>-kafkarest.azurehdinsight.net`|
 
@@ -144,6 +145,6 @@ print(response.content)
 curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=<clientid>&client_secret=<clientsecret>&grant_type=client_credentials&scope=https://hib.azurehdinsight.net/.default' 'https://login.microsoftonline.com/<tenantid>/oauth2/v2.0/token'
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Справочные документы по API-интерфейсу Kafka RESTFUL](https://docs.microsoft.com/rest/api/hdinsight-kafka-rest-proxy/)

@@ -3,12 +3,12 @@ title: Быстрое выполнение задачи с помощью шаб
 description: Поставить в очередь запуск задачи записи контроля доступа для создания образа с помощью шаблона Azure Resource Manager
 ms.topic: article
 ms.date: 04/22/2020
-ms.openlocfilehash: 6e85e4a3d10ea34d71efde959aa7d179eba69e3b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7ad40d2e925d5e1443af9bce4115d45b0e8c06e1
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82196534"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82927774"
 ---
 # <a name="run-acr-tasks-using-resource-manager-templates"></a>Выполнение задач контроля доступа с помощью шаблонов диспетчер ресурсов
 
@@ -26,7 +26,7 @@ ms.locfileid: "82196534"
 * В качестве [исходного расположения](container-registry-tasks-overview.md#context-locations) для выполнения задачи необходимо указать удаленный контекст, такой как репозиторий GitHub. Нельзя использовать локальный исходный контекст.
 * Для запуска задач с использованием управляемого удостоверения разрешено только управляемое *пользователем* удостоверение.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * **Учетная запись GitHub** . Создайте учетную запись, https://github.com если она еще не создана. 
 * **Пример репозитория разветвления** . для приведенных здесь примеров задач используйте пользовательский интерфейс GitHub, чтобы разбить следующий пример репозитория на учетную запись https://github.com/Azure-Samples/acr-build-helloworld-nodeGitHub:. Этот репозиторий содержит пример файлы dockerfile и исходный код для создания мелких образов контейнеров.
@@ -73,7 +73,7 @@ az acr repository show-tags \
   --repository helloworld-node --output table
 ```
 
-Выходные данные:
+Результат
 
 ```console
 Result
@@ -139,7 +139,7 @@ az acr task logs \
 
 ### <a name="create-new-dockerfile"></a>Создание нового Dockerfile
 
-Создайте Dockerfile, который извлекает базовый образ из базового реестра. Выполните следующие действия в локальном разветвлении репозитория GitHub, например https://github.com/myGitHubID/acr-build-helloworld-node.git*.
+Создайте Dockerfile, который извлекает базовый образ из базового реестра. Выполните следующие действия в локальной вилке репозитория GitHub, например `https://github.com/myGitHubID/acr-build-helloworld-node.git`.
 
 1. В пользовательском интерфейсе GitHub выберите **создать новый файл**.
 1. Присвойте файлу имя *Dockerfile-Test* и вставьте следующее содержимое. Подставьте имя реестра для *мибасерегистри*.
@@ -221,7 +221,7 @@ az acr repository show-tags \
   --repository helloworld-node --output table
 ```
 
-Выходные данные:
+Результат
 
 ```console
 Result

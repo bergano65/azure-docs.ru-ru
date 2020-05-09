@@ -5,13 +5,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 03/28/2019
-ms.openlocfilehash: ceaed0800df01bf2c44fee13d98b01b6e726200d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 05/05/2020
+ms.openlocfilehash: b6b32f9eadc6677bad591f4040981c4c95bf1f76
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77662490"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82871245"
 ---
 # <a name="optimize-your-sql-environment-with-the-sql-server-health-check-solution-in-azure-monitor"></a>Оптимизируйте среду SQL с помощью решения SQL Server проверки работоспособности в Azure Monitor
 
@@ -34,8 +34,8 @@ ms.locfileid: "77662490"
 ## <a name="prerequisites"></a>Предварительные условия
 
 * Для решения "Проверка работоспособности SQL" требуется поддерживаемая версия .NET Framework 4.6.2, установленная на каждом компьютере с установленным Microsoft Monitoring Agent (MMA).  Агент MMA используется решением System Center 2016 Operations Manager и Operations Manager 2012 R2, а также Azure Monitor.  
-* Решение поддерживает SQL Server версий 2012, 2014 и 2016.
-* Рабочая область Log Analytics для добавления решения проверки работоспособности SQL в Azure Marketplace на портале Azure.  Чтобы установить решение, вы должны быть администратором или участником подписки Azure.
+* Решение поддерживает SQL Server версии 2012, 2014, 2016, 2017 и 2019.
+* Рабочая область Log Analytics для добавления решения проверки работоспособности SQL в Azure Marketplace на портале Azure. Чтобы установить решение, вы должны быть администратором или участником подписки Azure.
 
   > [!NOTE]
   > После добавления решения на серверы с агентами добавляется файл AdvisorAssessment.exe. Данные конфигурации считываются и отправляются на обработку в Azure Monitor в облаке. К полученным данным применяется логика и облачная служба записывает данные.
@@ -256,5 +256,5 @@ SQLAssessmentRecommendation
 
 * Да. См. раздел [Игнорирование рекомендаций](#ignore-recommendations) выше в этой статье.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Заносить в журнал запросы](../log-query/log-query-overview.md) , чтобы узнать, как анализировать подробные данные и рекомендации по проверке работоспособности SQL.
