@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/01/2019
 ms.author: thweiss
-ms.openlocfilehash: c5699bb851bd0a818a987228155c62683e93f51a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e5420b9b765fffcf7b4ccd6775d05795b1b13871
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77585906"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82872232"
 ---
 # <a name="find-the-request-unit-charge-in-azure-cosmos-db"></a>Определение расходов в единицах запроса в Azure Cosmos DB
 
@@ -40,7 +40,8 @@ ms.locfileid: "77585906"
 ![Снимок экрана со сведениями о расходах в ЕЗ на SQL-запрос на портале Azure](./media/find-request-unit-charge/portal-sql-query.png)
 
 ### <a name="use-the-net-sdk"></a>Использование пакета SDK для .NET
-### <a name="net-v2-sdk"></a>Пакет SDK для .Net версии 2
+
+# <a name="net-sdk-v2"></a>[ПАКЕТ SDK ДЛЯ .NET ВЕРСИИ 2](#tab/dotnetv2)
 
 Объекты, возвращаемые из [пакета SDK для .NET версии 2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/) предоставляют свойство `RequestCharge`.
 
@@ -75,13 +76,15 @@ while (query.HasMoreResults)
 }
 ```
 
-### <a name="net-v3-sdk"></a>Пакет SDK для .Net версии 3
+# <a name="net-sdk-v3"></a>[ПАКЕТ SDK ДЛЯ .NET V3](#tab/dotnetv3)
 
 Объекты, возвращаемые из [пакета SDK для .NET версии 3](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) предоставляют свойство `RequestCharge`:
 
 [!code-csharp[](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos/tests/Microsoft.Azure.Cosmos.Tests/SampleCodeForDocs/CustomDocsSampleCode.cs?name=GetRequestCharge)]
 
 Дополнительные сведения см. [в разделе Краткое руководство. Создание веб-приложения .NET с помощью учетной записи API SQL в Azure Cosmos DB](create-sql-api-dotnet.md).
+
+---
 
 ### <a name="use-the-java-sdk"></a>Использование пакета SDK для Java
 
@@ -301,7 +304,7 @@ if (tableResult.RequestCharge.HasValue) // would be false when using Azure Stora
 
 Дополнительные сведения см. [в разделе Краткое руководство. создание API таблиц приложения с помощью пакета SDK для .NET и Azure Cosmos DB](create-table-dotnet.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об оптимизации потребления ЕЗ см. в следующих статьях:
 

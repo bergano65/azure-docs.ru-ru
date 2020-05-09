@@ -27,13 +27,16 @@
   items:
     - name: Примеры использования кэша Redis для Azure
       href: cache-redis-samples.md
-    - name: Azure PowerShell
+    - name: Azure
       href: cache-how-to-manage-redis-cache-powershell.md
     - name: Azure CLI
       href: cli-samples.md
+    - name: Встроенные политики службы "Политика Azure"
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Базовые средства безопасности
           href: security-baseline.md
@@ -130,7 +133,7 @@
     - name: .NET
       href: /dotnet/api/microsoft.azure.management.redis
     - name: Java
-      href: /java/api/com.microsoft.azure.management.redis._redis_cache
+      href: /java/api/com.microsoft.azure.management.redis.rediscache
     - name: Клиенты Redis
       href: 'https://redis.io/clients'
     - name: Команды Redis

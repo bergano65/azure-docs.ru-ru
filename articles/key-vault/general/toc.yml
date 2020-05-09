@@ -14,8 +14,13 @@
           href: tutorial-net-windows-virtual-machine.md
         - name: Использование Azure Key Vault с виртуальной машиной Windows на языке Python
           href: tutorial-python-windows-virtual-machine.md
-    - name: Использование Azure Key Vault в веб-приложении Azure (.NET)
+    - name: Подключение Key Vault к веб-приложению с использованием управляемого удостоверения и .NET
       href: tutorial-net-create-vault-azure-web-app.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ../policy-samples.md?toc=/azure/key-vault/general/toc.json&bc=/azure/key-vault/breadcrumb/toc.json
 - name: Основные понятия
   items:
     - name: Основные понятия
@@ -96,6 +101,10 @@
           href: soft-delete-powershell.md
     - name: Перемещение хранилища ключей
       items:
+        - name: Перемещение Key Vault в другую группу ресурсов
+          href: keyvault-moveresourcegroup.md
+        - name: Перемещение Key Vault в другую подписку
+          href: keyvault-move-subscription.md
         - name: Перемещение хранилища ключей в другой регион
           href: keyvault-moveregion.md
     - name: Диагностика
