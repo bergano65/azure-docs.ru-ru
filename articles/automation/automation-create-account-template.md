@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 04/24/2020
-ms.openlocfilehash: 19aee9d5fdf3f4a3d74484bb7cb2e609bc2807b4
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
-ms.translationtype: HT
+ms.openlocfilehash: 949b07a16b2c2b08891d721e46948481cfe572b2
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82927876"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996098"
 ---
 # <a name="create-an-automation-account-by-using-an-azure-resource-manager-template"></a>Создание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager
 
@@ -22,7 +22,7 @@ ms.locfileid: "82927876"
 * Автоматизирует создание учетной записи службы автоматизации Azure.
 * Связывает учетную запись службы автоматизации с Log Analytics рабочей областью.
 
-Этот шаблон не автоматизирует подключение виртуальных машин или решений Azure, не относящихся к Azure. 
+Этот шаблон не позволяет автоматизировать включение виртуальных машин Azure и других устройств. 
 
 >[!NOTE]
 >Создание учетной записи запуска от имени службы автоматизации не поддерживается, если вы используете шаблон Azure Resource Manager. Сведения о создании учетной записи запуска от имени вручную с портала или с помощью PowerShell см. в разделе [Управление учетными записями запуска от имени](manage-runas-account.md).

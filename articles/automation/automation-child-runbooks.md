@@ -5,19 +5,16 @@ services: automation
 ms.subservice: process-automation
 ms.date: 01/17/2019
 ms.topic: conceptual
-ms.openlocfilehash: 42362a170f493afd51a5d4ee139620ad25b54e79
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 21dc14362fed2abf80c2c5ecf57f688541c9c639
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79367369"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82994794"
 ---
 # <a name="child-runbooks-in-azure-automation"></a>Дочерние модули Runbook в службе автоматизации Azure
 
 В службе автоматизации Azure рекомендуется писать повторно используемые модульные модули Runbook с дискретной функцией, которая вызывается другими модулями Runbook. Родительский Runbook часто вызывает один или несколько дочерних Runbook для выполнения требуемых функций. Существует два способа вызова дочернего модуля Runbook, и существуют отдельные отличия, которые необходимо знать, чтобы определить, какой из них лучше всего подходит для ваших сценариев.
-
->[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Чтобы обновить модули в учетной записи службы автоматизации, см. руководство по [обновлению модулей Azure PowerShell в службе автоматизации Azure](automation-update-azure-modules.md).
 
 ## <a name="invoking-a-child-runbook-using-inline-execution"></a>Вызов дочернего Runbook с использованием встроенного выполнения
 
@@ -120,7 +117,7 @@ Start-AzAutomationRunbook `
 | Учетная запись службы автоматизации |Родительский модуль Runbook может использовать только дочерний Runbook в той же учетной записи службы автоматизации. |Родительские модули Runbook могут использовать дочерний модуль Runbook из любой учетной записи службы автоматизации, из той же подписки Azure и даже из другой подписки, к которой у вас есть подключение. |
 | Публикация |Перед публикацией родительского Runbook должен быть опубликован дочерний Runbook. |Дочерний модуль Runbook публикуется в любое время до запуска родительского модуля Runbook. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Запуск модуля Runbook в службе автоматизации Azure](start-runbooks.md)
 * [Выходные данные и сообщения Runbook в службе автоматизации Azure](automation-runbook-output-and-messages.md)

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/14/2020
 ms.topic: conceptual
-ms.openlocfilehash: 1a9a503fd566c9b50f1503e0955bf12f69ac9960
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
-ms.translationtype: HT
+ms.openlocfilehash: 1933688459cd02ee4da448d2e83b0a7a92a1d2c8
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82927927"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82994743"
 ---
 # <a name="runbook-execution-in-azure-automation"></a>Выполнение модуля Runbook в службе автоматизации Azure
 
@@ -68,7 +68,7 @@ ms.locfileid: "82927927"
 
 ## <a name="security"></a>Безопасность
 
-Служба автоматизации Azure использует [Центр безопасности Azure (ASC)](https://docs.microsoft.com/azure/security-center/security-center-introAzure) для обеспечения безопасности ресурсов и выявления компромиссов в системах Linux. Безопасность обеспечивается в рабочих нагрузках, независимо от того, находятся ли ресурсы в Azure. См. статью [Введение в проверку подлинности в службе автоматизации Azure](automation-security-overview.md).
+Служба автоматизации Azure использует [Центр безопасности Azure (ASC)](../security-center/security-center-intro.md) для обеспечения безопасности ресурсов и выявления компромиссов в системах Linux. Безопасность обеспечивается в рабочих нагрузках, независимо от того, находятся ли ресурсы в Azure. См. статью [Введение в проверку подлинности в службе автоматизации Azure](automation-security-overview.md).
 
 ASC накладывает ограничения на пользователей, которые могут выполнять любые сценарии, подписанные или неподписанные, на виртуальной машине. Если вы являетесь пользователем с корневым доступом к виртуальной машине, необходимо явным образом настроить компьютер с помощью цифровой подписи или отключить ее. В противном случае можно запустить сценарий только для применения обновлений операционной системы после создания учетной записи службы автоматизации и включения соответствующей функции.
 

@@ -9,12 +9,12 @@ ms.author: migreene
 ms.topic: conceptual
 ms.date: 07/17/2019
 manager: nirb
-ms.openlocfilehash: dfe62c54bfb10d70f1dbf19daec90eec68e66431
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f871b406793e455c857ca14c83434c9ed3e004df
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81406084"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993843"
 ---
 # <a name="remediate-noncompliant-dsc-servers"></a>Исправлять несоответствующие требованиям серверы DSC
 
@@ -37,11 +37,11 @@ Update-DscConfiguration -Wait -Verbose
 
 Аналогичные функции в настоящее время недоступны для серверов Linux.
 Единственный вариант — повторить процесс регистрации.
-Для узлов Azure можно исправить смещение от портал Azure или с помощью команды AZ Module командлетов. Сведения об этом процессе описаны в статье подключение [компьютеров для управления с помощью конфигурации состояния службы автоматизации Azure](automation-dsc-onboarding.md#onboard-a-vm-using-azure-portal).
+Для узлов Azure можно исправить смещение от портал Azure или с помощью команды AZ Module командлетов. Сведения об этом процессе описаны в статье подключение [компьютеров для управления с помощью конфигурации состояния службы автоматизации Azure](automation-dsc-onboarding.md#enable-a-vm-using-azure-portal).
 Для гибридных узлов можно исправить смещение с помощью прилагаемых скриптов Python.
 См. сведения [о репозитории POWERSHELL DSC для Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
 ).

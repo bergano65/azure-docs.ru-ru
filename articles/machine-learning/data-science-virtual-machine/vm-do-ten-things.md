@@ -5,16 +5,16 @@ description: Выполнение задач по исследованию и м
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: data-science-vm
-author: vijetajo
-ms.author: vijetaj
+author: lobrien
+ms.author: laobri
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: 47663072be0931961d0f2fded938322027148d7a
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
-ms.translationtype: HT
+ms.date: 05/08/2020
+ms.openlocfilehash: a2eba958ca2d4a90cb3706839d726fdd0a48ed4f
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82929287"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82994084"
 ---
 # <a name="ten-things-you-can-do-on-the-windows-data-science-virtual-machine"></a>10 задач, которые можно выполнить на виртуальной машине Windows для обработки и анализа данных
 
@@ -30,7 +30,7 @@ DSVM тесно работает со службами Azure. Он может с
 - Администрирование ресурсов Azure с помощью портал Azure или PowerShell.
 - Расширьте пространство в хранилище и делитесь большими наборами данных и кодом во всей группе, создав файловый ресурс Azure в качестве подключаемого диска в DSVM.
 - Поделитесь кодом с командой с помощью GitHub. Доступ к репозиторию с помощью предварительно установленных клиентов Git: Git Bash и GUI Git.
-- Доступ к службам данных и аналитикам Azure, таким как хранилище BLOB-объектов Azure, Azure Data Lake, Azure HDInsight (Hadoop), Azure Cosmos DB, хранилище данных SQL Azure и база данных SQL Azure.
+- Доступ к службам данных и аналитикам Azure, таким как хранилище BLOB-объектов Azure, Azure Data Lake, Azure Cosmos DB, хранилище данных SQL Azure и база данных SQL Azure.
 - Создание отчетов и панели мониторинга с помощью экземпляра Power BI Desktop, предварительно установленного на DSVM, и развертывание их в облаке.
 - Динамическое масштабирование DSVM в соответствии с потребностями проекта.
 - Установите на виртуальной машине дополнительные средства.   
@@ -40,7 +40,7 @@ DSVM тесно работает со службами Azure. Он может с
 > 
 > 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Вам понадобится подписка Azure. Вы можете [воспользоваться бесплатной пробной версией](https://azure.microsoft.com/free/).
 * Инструкции по подготовке виртуальной машины для обработки и анализа данных на портал Azure доступны при [создании виртуальной машины](https://portal.azure.com/#create/microsoft-dsvm.dsvm-windowsserver-2016).
@@ -127,11 +127,6 @@ pass
 
 IrisPredictor(3,2,3,4)
 ```
-
-> [!NOTE]
-> В настоящее время библиотека Машинное обучение Azure поддерживается только в Python 2,7.   
-> 
-> 
 
 ### <a name="build-and-operationalize-r-models"></a>Создание и эксплуатацию моделей R
 Вы можете развернуть модели R, построенные на виртуальной машине для обработки и анализа данных, или в других местах, Машинное обучение Azure так же, как это делается для Python. Ниже приведены шаги.
@@ -265,11 +260,11 @@ DSVM загружается с помощью клиентских средст�
 ### <a name="azure-blob-storage"></a>Хранилище BLOB-объектов Azure
 Хранилище BLOB-объектов Azure — это надежная и экономичная служба облачного хранилища для больших и малых данных. В этом разделе описывается, как можно переместить данные в хранилище BLOB-объектов и получить доступ к данным, хранящимся в большом двоичном объекте Azure.
 
-#### <a name="prerequisites"></a>Предварительные условия
+#### <a name="prerequisites"></a>Предварительные требования
 
 * Создайте учетную запись хранилища BLOB-объектов Azure из [портал Azure](https://portal.azure.com).
 
-   ![Снимок экрана процесса создания учетной записи хранения в портал Azure](./media/vm-do-ten-things/Create_Azure_Blob.PNG)
+   ![Снимок экрана процесса создания учетной записи хранения в портал Azure](./media/vm-do-ten-things/create-azure-blob.png)
 
 * Убедитесь, что предварительно установлена программа командной строки AzCopy: ```C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\azcopy.exe```. Каталог, содержащий azcopy. exe, уже находится в переменной среды PATH, поэтому при запуске этого средства можно избежать ввода полного пути к команде. Дополнительные сведения о средстве AzCopy см. в [документации по AzCopy](../../storage/common/storage-use-azcopy.md).
 * Запустите инструмент Azure Storage Explorer. Его можно загрузить на [веб-странице Обозреватель службы хранилища](https://storageexplorer.com/). 
@@ -367,11 +362,11 @@ print 'the size of the data is: %d rows and  %d columns' % df1.shape
 ### <a name="azure-data-lake"></a>Azure Data Lake
 Azure Data Lake Storage — это геомасштабируемый репозиторий для рабочих нагрузок анализа больших данных и совместимый с Hadoop распределенная файловая система (HDFS). Оно работает с Hadoop, Spark и Azure Data Lake Analytics. В этом разделе вы узнаете, как перемещать данные в Azure Data Lake Storage и выполнять аналитику с помощью Azure Data Lake Analytics.
 
-#### <a name="prerequisites"></a>Предварительные условия
+#### <a name="prerequisites"></a>Предварительные требования
 
 * Создайте экземпляр Azure Data Lake Analytics в [портал Azure](https://portal.azure.com).
 
-   ![Снимок экрана создания Data Lake Analytics экземпляра из портал Azure](./media/vm-do-ten-things/Azure_Data_Lake_Create_v2.png)
+   ![Снимок экрана создания Data Lake Analytics экземпляра из портал Azure](./media/vm-do-ten-things/azure-data-lake-create-v3.png)
 
 * [Средства Azure Data Lake и Stream Analytics для подключаемого модуля Visual Studio](https://www.microsoft.com/download/details.aspx?id=49504) уже установлены в выпуске Visual Studio Community на виртуальной машине. После запуска Visual Studio и входа в подписку Azure вы увидите учетную запись и хранилище аналитики данных Azure на левой панели Visual Studio.
 
@@ -448,361 +443,6 @@ USING Outputters.Csv();
 Отобразятся сведения о файле:
 
 ![Снимок экрана сводных данных файла](./media/vm-do-ten-things/USQL_tripdata_summary.png)
-
-### <a name="hdinsight-hadoop-clusters"></a>Кластеры HDInsight Hadoop
-Azure HDInsight — это управляемая служба Apache Hadoop, Spark, HBase и в облаке. Вы можете легко работать с кластерами Azure HDInsight из виртуальной машины для обработки и анализа данных.
-
-#### <a name="prerequisites"></a>Предварительные условия
-
-* Создайте учетную запись хранилища BLOB-объектов Azure из [портал Azure](https://portal.azure.com). Она используется для хранения данных кластеров HDInsight.
-
-   ![Снимок экрана создания учетной записи хранения из портал Azure](./media/vm-do-ten-things/Create_Azure_Blob.PNG)
-
-* Настройка Azure HDInsight Hadoop кластеров из [портал Azure](../team-data-science-process/customize-hadoop-cluster.md).
-  
-   Свяжите учетную запись хранения, созданную с помощью кластера HDInsight, при его создании. Эта учетная запись хранения используется для доступа к данным, которые можно обработать в пределах кластера.
-
-   ![Параметры для связывания учетной записи хранения, созданной с помощью кластера HDInsight](./media/vm-do-ten-things/Create_HDI_v4.PNG)
-
-* Включите удаленный рабочий стол доступ к головному узлу кластера после его создания. Запомните указанные здесь учетные данные для удаленного доступа, так как они понадобятся вам в следующей процедуре.
-
-   ![Кнопка удаленный рабочий стол для включения удаленного доступа к кластеру HDInsight](./media/vm-do-ten-things/Create_HDI_dashboard_v3.PNG)
-
-* Создайте рабочую область машинного обучения Azure. Машинное обучение эксперименты хранятся в этой Машинное обучение рабочей области. Выберите выделенные параметры на портале, как показано на следующем снимке экрана:
-
-   ![Создание рабочей области машинного обучения Azure](./media/vm-do-ten-things/Create_ML_Space.PNG)
-
-* Введите параметры для рабочей области.
-
-   ![Ввод параметров рабочей области машинного обучения](./media/vm-do-ten-things/Create_ML_Space_step2_v2.PNG)
-
-* Отправка данных с помощью записной книжки IPython Notebook. Импортируйте необходимые пакеты, подключаемые учетные данные, создайте базу данных в учетной записи хранения, а затем загрузите данные в кластеры HDI.
-
-```python
-# Import required packages
-import pyodbc
-import time as time
-import json
-import os
-import urllib
-import urllib2
-import warnings
-import re
-import pandas as pd
-import matplotlib.pyplot as plt
-from azure.storage.blob import BlobService
-warnings.filterwarnings("ignore", category=UserWarning, module='urllib2')
-
-
-# Create the connection to Hive by using ODBC
-SERVER_NAME = 'xxx.azurehdinsight.net'
-DATABASE_NAME = 'nyctaxidb'
-USERID = 'xxx'
-PASSWORD = 'xxxx'
-DB_DRIVER = 'Microsoft Hive ODBC Driver'
-driver = 'DRIVER={' + DB_DRIVER + '}'
-server = 'Host=' + SERVER_NAME + ';Port=443'
-database = 'Schema=' + DATABASE_NAME
-hiveserv = 'HiveServerType=2'
-auth = 'AuthMech=6'
-uid = 'UID=' + USERID
-pwd = 'PWD=' + PASSWORD
-CONNECTION_STRING = ';'.join(
-    [driver, server, database, hiveserv, auth, uid, pwd])
-connection = pyodbc.connect(CONNECTION_STRING, autocommit=True)
-cursor = connection.cursor()
-
-
-# Create the Hive database and tables
-queryString = "create database if not exists nyctaxidb;"
-cursor.execute(queryString)
-
-queryString = """
-                create external table if not exists nyctaxidb.trip
-                (
-                    medallion string,
-                    hack_license string,
-                    vendor_id string,
-                    rate_code string,
-                    store_and_fwd_flag string,
-                    pickup_datetime string,
-                    dropoff_datetime string,
-                    passenger_count int,
-                    trip_time_in_secs double,
-                    trip_distance double,
-                    pickup_longitude double,
-                    pickup_latitude double,
-                    dropoff_longitude double,
-                    dropoff_latitude double)  
-                PARTITIONED BY (month int)
-                ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' lines terminated by '\\n'
-                STORED AS TEXTFILE LOCATION 'wasb:///nyctaxidbdata/trip' TBLPROPERTIES('skip.header.line.count'='1');
-            """
-cursor.execute(queryString)
-
-queryString = """
-                create external table if not exists nyctaxidb.fare
-                (
-                    medallion string,
-                    hack_license string,
-                    vendor_id string,
-                    pickup_datetime string,
-                    payment_type string,
-                    fare_amount double,
-                    surcharge double,
-                    mta_tax double,
-                    tip_amount double,
-                    tolls_amount double,
-                    total_amount double)
-                PARTITIONED BY (month int)
-                ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' lines terminated by '\\n'
-                STORED AS TEXTFILE LOCATION 'wasb:///nyctaxidbdata/fare' TBLPROPERTIES('skip.header.line.count'='1');
-            """
-cursor.execute(queryString)
-
-
-# Upload data from Blob storage to an HDI cluster
-for i in range(1, 13):
-    queryString = "LOAD DATA INPATH 'wasb:///nyctaxitripraw2/trip_data_%d.csv' INTO TABLE nyctaxidb2.trip PARTITION (month=%d);" % (
-        i, i)
-    cursor.execute(queryString)
-    queryString = "LOAD DATA INPATH 'wasb:///nyctaxifareraw2/trip_fare_%d.csv' INTO TABLE nyctaxidb2.fare PARTITION (month=%d);" % (
-        i, i)
-    cursor.execute(queryString)
-```
-
-Кроме того, вы можете выполнить [это пошаговое руководство](../team-data-science-process/hive-walkthrough.md) , чтобы загрузить данные Нью такси в кластер HDi. Ниже перечислены основные действия.
-  
-* Используйте AzCopy для загрузки ZIP-файла CSV из общедоступного большого двоичного объекта в локальную папку.
-* Используйте AzCopy для отправки распакованного CSV из локальной папки в кластер HDI.
-* Войдите на головной узел кластера Hadoop и подготовьтесь к анализу исследовательских данных.
-
-После загрузки данных в кластер HDI можно проверить данные в Обозреватель службы хранилища Azure. База данных nyctaxidb создана в кластере HDI.
-
-#### <a name="data-exploration-hive-queries-in-python"></a>Просмотр данных: запросы Hive в Python
-
-Так как данные находятся в кластере Hadoop, вы можете использовать пакет pyodbc для подключения к кластерам Hadoop и запросов к базам данных с помощью Hive для изучения и проектирования компонентов. Можно просмотреть существующие таблицы, созданные на этапе предварительных требований.
-
-```python
-queryString = """
-    show tables in nyctaxidb2;
-    """
-pd.read_sql(queryString, connection)
-```
-
-![Просмотр имеющихся таблиц](./media/vm-do-ten-things/Python_View_Existing_Tables_Hive_v3.PNG)
-
-Давайте взглянем в таблице trip на количество записей по каждому месяцу и посмотрим данные по частоте поездок с чаевыми и без.
-
-```python
-queryString = """
-    select month, count(*) from nyctaxidb.trip group by month;
-    """
-results = pd.read_sql(queryString,connection)
-
-%matplotlib inline
-
-results.columns = ['month', 'trip_count']
-df = results.copy()
-df.index = df['month']
-df['trip_count'].plot(kind='bar')
-```
-
-![Диаграмма количества записей за каждый месяц](./media/vm-do-ten-things/Exploration_Number_Records_by_Month_v3.PNG)
-
-```python
-queryString = """
-    SELECT tipped, COUNT(*) AS tip_freq
-    FROM
-    (
-        SELECT if(tip_amount > 0, 1, 0) as tipped, tip_amount
-        FROM nyctaxidb.fare
-    )tc
-    GROUP BY tipped;
-    """
-results = pd.read_sql(queryString, connection)
-
-results.columns = ['tipped', 'trip_count']
-df = results.copy()
-df.index = df['tipped']
-df['trip_count'].plot(kind='bar')
-```
-
-![Диаграмма частотности чаевых](./media/vm-do-ten-things/Exploration_Frequency_tip_or_not_v3.PNG)
-
-Можно также вычислить расстояние между расположением подбора и расположением отсчета, а затем сравнить его с расстоянием поездок.
-
-```python
-queryString = """
-                select pickup_longitude, pickup_latitude, dropoff_longitude, dropoff_latitude, trip_distance, trip_time_in_secs,
-                    3959*2*2*atan((1-sqrt(1-pow(sin((dropoff_latitude-pickup_latitude)
-                    *radians(180)/180/2),2)-cos(pickup_latitude*radians(180)/180)
-                    *cos(dropoff_latitude*radians(180)/180)*pow(sin((dropoff_longitude-pickup_longitude)*radians(180)/180/2),2)))
-                    /sqrt(pow(sin((dropoff_latitude-pickup_latitude)*radians(180)/180/2),2)
-                    +cos(pickup_latitude*radians(180)/180)*cos(dropoff_latitude*radians(180)/180)*
-                    pow(sin((dropoff_longitude-pickup_longitude)*radians(180)/180/2),2))) as direct_distance
-                    from nyctaxidb.trip
-                    where month=1
-                        and pickup_longitude between -90 and -30
-                        and pickup_latitude between 30 and 90
-                        and dropoff_longitude between -90 and -30
-                        and dropoff_latitude between 30 and 90;
-            """
-results = pd.read_sql(queryString, connection)
-results.head(5)
-```
-
-![Верхние строки таблицы раскладки и раскрывающегося списка](./media/vm-do-ten-things/Exploration_compute_pickup_dropoff_distance_v2.PNG)
-
-```python
-results.columns = ['pickup_longitude', 'pickup_latitude', 'dropoff_longitude',
-                   'dropoff_latitude', 'trip_distance', 'trip_time_in_secs', 'direct_distance']
-df = results.loc[results['trip_distance'] <= 100]  # remove outliers
-df = df.loc[df['direct_distance'] <= 100]  # remove outliers
-plt.scatter(df['direct_distance'], df['trip_distance'])
-```
-
-![Отображение расстояния и отбрасывания на расстояние поездок](./media/vm-do-ten-things/Exploration_direct_distance_trip_distance_v2.PNG)
-
-Теперь давайте подготавливаем downsampled (1 процент) набора данных для моделирования. Эти данные можно использовать в модуле модуля чтения Машинное обучение.
-
-```python
-queryString = """
-create  table if not exists nyctaxi_downsampled_dataset_testNEW (
-medallion string,
-hack_license string,
-vendor_id string,
-rate_code string,
-store_and_fwd_flag string,
-pickup_datetime string,
-dropoff_datetime string,
-pickup_hour string,
-pickup_week string,
-weekday string,
-passenger_count int,
-trip_time_in_secs double,
-trip_distance double,
-pickup_longitude double,
-pickup_latitude double,
-dropoff_longitude double,
-dropoff_latitude double,
-direct_distance double,
-payment_type string,
-fare_amount double,
-surcharge double,
-mta_tax double,
-tip_amount double,
-tolls_amount double,
-total_amount double,
-tipped string,
-tip_class string
-)
-row format delimited fields terminated by ','
-lines terminated by '\\n'
-stored as textfile;
-"""
-cursor.execute(queryString)
-```
-
-Теперь вставьте содержимое объединения в предыдущую внутреннюю таблицу.
-
-```python
-queryString = """
-insert overwrite table nyctaxi_downsampled_dataset_testNEW
-select
-t.medallion,
-t.hack_license,
-t.vendor_id,
-t.rate_code,
-t.store_and_fwd_flag,
-t.pickup_datetime,
-t.dropoff_datetime,
-hour(t.pickup_datetime) as pickup_hour,
-weekofyear(t.pickup_datetime) as pickup_week,
-from_unixtime(unix_timestamp(t.pickup_datetime, 'yyyy-MM-dd HH:mm:ss'),'u') as weekday,
-t.passenger_count,
-t.trip_time_in_secs,
-t.trip_distance,
-t.pickup_longitude,
-t.pickup_latitude,
-t.dropoff_longitude,
-t.dropoff_latitude,
-t.direct_distance,
-f.payment_type,
-f.fare_amount,
-f.surcharge,
-f.mta_tax,
-f.tip_amount,
-f.tolls_amount,
-f.total_amount,
-if(tip_amount>0,1,0) as tipped,
-if(tip_amount=0,0,
-if(tip_amount>0 and tip_amount<=5,1,
-if(tip_amount>5 and tip_amount<=10,2,
-if(tip_amount>10 and tip_amount<=20,3,4)))) as tip_class
-from
-(
-select
-medallion,
-hack_license,
-vendor_id,
-rate_code,
-store_and_fwd_flag,
-pickup_datetime,
-dropoff_datetime,
-passenger_count,
-trip_time_in_secs,
-trip_distance,
-pickup_longitude,
-pickup_latitude,
-dropoff_longitude,
-dropoff_latitude,
-3959*2*2*atan((1-sqrt(1-pow(sin((dropoff_latitude-pickup_latitude)
-radians(180)/180/2),2)-cos(pickup_latitude*radians(180)/180)
-*cos(dropoff_latitude*radians(180)/180)*pow(sin((dropoff_longitude-pickup_longitude)*radians(180)/180/2),2)))
-/sqrt(pow(sin((dropoff_latitude-pickup_latitude)*radians(180)/180/2),2)
-+cos(pickup_latitude*radians(180)/180)*cos(dropoff_latitude*radians(180)/180)*pow(sin((dropoff_longitude-pickup_longitude)*radians(180)/180/2),2))) as direct_distance,
-rand() as sample_key
-
-from trip
-where pickup_latitude between 30 and 90
-    and pickup_longitude between -90 and -30
-    and dropoff_latitude between 30 and 90
-    and dropoff_longitude between -90 and -30
-)t
-join
-(
-select
-medallion,
-hack_license,
-vendor_id,
-pickup_datetime,
-payment_type,
-fare_amount,
-surcharge,
-mta_tax,
-tip_amount,
-tolls_amount,
-total_amount
-from fare
-)f
-on t.medallion=f.medallion and t.hack_license=f.hack_license and t.pickup_datetime=f.pickup_datetime
-where t.sample_key<=0.01
-"""
-cursor.execute(queryString)
-```
-
-Через некоторое время можно увидеть, что данные были загружены в кластеры Hadoop:
-
-```python
-queryString = """
-    select * from nyctaxi_downsampled_dataset limit 10;
-    """
-cursor.execute(queryString)
-pd.read_sql(queryString, connection)
-```
-
-![Верхние строки данных из таблицы](./media/vm-do-ten-things/DownSample_Data_For_Modeling_v2.PNG)
 
 ### <a name="azure-sql-data-warehouse-and-databases"></a>Хранилище данных SQL Azure и базы данных
 Хранилище данных SQL Azure — это хранилище эластичных данных как услуга с SQL Server корпоративного класса.

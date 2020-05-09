@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/24/2020
 ms.author: spelluru
-ms.openlocfilehash: de99e9b1e4adceaf08beaf8ad3b5ea114b31a586
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8697c7a82e271919f8d5aaa48160aa93c833809b
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79270788"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996900"
 ---
 # <a name="azure-devtest-labs-faq"></a>Часто задаваемые вопросы об Azure DevTest Labs
 В этой статье содержатся ответы на некоторые самые распространенные вопросы об Azure DevTest Labs.
@@ -42,7 +42,7 @@ ms.locfileid: "79270788"
 ### <a name="twitter"></a>Twitter
 Наш маркер Twitter:[@azlabservices](https://twitter.com/azlabservices)
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 ### <a name="what-if-my-question-isnt-answered-here"></a>Мне не удалось найти ответ на свой вопрос. Что делать?
 Если ваш вопрос не указан здесь, сообщите нам о том, что мы можем помочь вам найти ответ.
 
@@ -209,6 +209,9 @@ $policyRoleDef = New-AzRoleDefinition -Role $policyRoleDef
 ### <a name="can-i-attach-multiple-disks-to-my-vms"></a>Можно ли присоединить к виртуальной машине несколько дисков?
 
 Да, такая возможность поддерживается.
+
+### <a name="are-gen-2-images-supported-by-devtest-labs"></a>Поддерживаются ли образы поколения 2, поддерживаемые DevTest Labs?
+Нет. Служба DevTest Labs не поддерживает [образы поколения 2](../virtual-machines/windows/generation-2.md). Если для образа доступны как поколения 1, так и Gen 2, DevTest Labs показывает только версию образа Gen 1 при создании виртуальной машины. Если доступна только версия для поколения 2, вы не увидите образ. 
 
 ### <a name="if-i-want-to-use-a-windows-os-image-for-my-testing-do-i-have-to-purchase-an-msdn-subscription"></a>Если требуется использовать образ ОС Windows для тестирования, нужно ли приобретать подписку MSDN?
 Чтобы использовать образы клиентской ОС Windows (Windows 7 или более поздней версии) для разработки или тестирования в Azure, выполните одно из следующих действий.

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/07/2019
-ms.openlocfilehash: 70fa66a96291e0c2a638bf69bdce7da531d32bb7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 644d1094ec57e148804941297d50398e36b1b068
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80637472"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996426"
 ---
 # <a name="connect-windows-computers-to-azure-monitor"></a>Подключение компьютеров Windows к Azure Monitor
 
@@ -176,8 +176,8 @@ Configuration MMAgent
 ```
 
 4. Обновите значение `ProductId` в скрипте с кодом продукта, извлеченном из последней версии установленного пакета агента, используя рекомендованные выше методы. 
-5. [Переместите сценарий настройки MMAgent.ps1](../../automation/automation-dsc-getting-started.md#importing-a-configuration-into-azure-automation) в учетную запись автоматизации. 
-5. [Назначьте компьютер Windows или узел](../../automation/automation-dsc-getting-started.md#onboarding-an-azure-vm-for-management-with-azure-automation-state-configuration) конфигурации. В течение 15 минут узел проверит свою конфигурацию, а агент будет помещен в узел.
+5. [Переместите сценарий настройки MMAgent.ps1](../../automation/automation-dsc-getting-started.md#import-a-configuration-into-azure-automation) в учетную запись автоматизации. 
+6. [Назначьте компьютер Windows или узел](../../automation/automation-dsc-getting-started.md#enable-an-azure-resource-manager-vm-for-management-with-state-configuration) конфигурации. В течение 15 минут узел проверит свою конфигурацию, а агент будет помещен в узел.
 
 ## <a name="verify-agent-connectivity-to-log-analytics"></a>Проверка подключения к Log Analytics
 
@@ -199,7 +199,7 @@ Configuration MMAgent
 
 В возвращаемых результатах поиска должны отображаться записи пульса для компьютера, указывающие, что агент успешно подключен и отправляет отчеты в службу.   
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [управлением и обслуживанием агента log Analytics для Windows и Linux](agent-manage.md) , чтобы узнать о том, как перенастроить, обновить или удалить агент с виртуальной машины.
 

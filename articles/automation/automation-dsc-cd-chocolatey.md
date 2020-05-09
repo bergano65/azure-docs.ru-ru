@@ -5,12 +5,12 @@ services: automation
 ms.subservice: dsc
 ms.date: 08/08/2018
 ms.topic: conceptual
-ms.openlocfilehash: 0c61a431b985e494148500ed0a7aeb106534ed2c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 278c6ee05fdf78cbfa8653381b65233fbb513593
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81392117"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996127"
 ---
 # <a name="provide-continuous-deployment-to-virtual-machines-using-automation-state-configuration-and-chocolatey"></a>Обеспечение непрерывного развертывания на виртуальных машинах с помощью настройки состояния автоматизации и шоколадного
 
@@ -21,9 +21,6 @@ ms.locfileid: "81392117"
 В этой статье показано, как настроить непрерывное развертывание (CD) для компьютера Windows. Можно легко расширить прием, включив в роль столько компьютеров Windows, сколько необходимо для роли, например веб-сайта, и перейдем к дополнительным ролям.
 
 ![Непрерывное развертывание для виртуальных машин IaaS](./media/automation-dsc-cd-chocolatey/cdforiaasvm.png)
-
->[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Чтобы обновить модули в учетной записи службы автоматизации, см. руководство по [обновлению модулей Azure PowerShell в службе автоматизации Azure](automation-update-azure-modules.md).
 
 ## <a name="at-a-high-level"></a>На высоком уровне
 
@@ -210,7 +207,7 @@ Get-AzAutomationDscCompilationJob `
 * [Обзор Automation DSC Azure](automation-dsc-overview.md)
 * [Подключение компьютеров для управления с помощью Azure Automation DSC](automation-dsc-onboarding.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения см. в статье [Настройка состояния службы автоматизации Azure](automation-dsc-overview.md).
 - Чтобы приступить к работе, см. статью [Приступая к работе с конфигурацией состояния службы автоматизации Azure](automation-dsc-getting-started.md).

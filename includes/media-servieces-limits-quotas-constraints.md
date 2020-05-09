@@ -4,12 +4,12 @@ ms.service: media-services
 ms.topic: include
 ms.date: 03/31/2020
 ms.author: juliako
-ms.openlocfilehash: 99aeb5384b317d1b4d291c769b5402e829247b30
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d6ff823951e6474a35a514036f02c0aabb17bf01
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80656208"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82997708"
 ---
 > [!NOTE]
 > Для нефиксированных ресурсов откройте запрос в службу поддержки, чтобы запросить увеличение квот. Не создавайте дополнительные учетные записи служб мультимедиа Azure при попытке получить более высокие ограничения.
@@ -66,7 +66,7 @@ ms.locfileid: "80656208"
 | --- | --- | 
 | События Live Events <sup>(4)</sup> на учетную запись служб мультимедиа |5|
 | Динамические выходные данные для события прямой трансляции |3 <sup>(5)</sup> |
-| Максимальная длительность реального выхода | 25 часов |
+| Максимальная длительность реального выхода | [Размер окна DVR](../articles/media-services/latest/live-event-cloud-dvr.md) |
 
 <sup>4</sup> дополнительные сведения об ограничениях на прямые события см. в статье [Сравнение типов событий Live и ограничения](../articles/media-services/latest/live-event-types-comparison.md).
 

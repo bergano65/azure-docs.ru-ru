@@ -9,14 +9,14 @@ ms.author: magoedte
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: badd8ba676ef25c33a5034bb04d616faeb4ef1b0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0b0ee75c39ba87503f150ffb72b7ab95aaf83999
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81392095"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996047"
 ---
-# <a name="forward-azure-automation-state-configuration-reporting-data-to-azure-monitor-logs"></a>Пересылка данных отчетов о настройке состояния службы автоматизации Azure в журналы Azure Monitor
+# <a name="forward-state-configuration-reporting-data-to-azure-monitor-logs"></a>Пересылка данных отчетов State Configuration в журналы Azure Monitor
 
 В конфигурации состояния службы автоматизации Azure данные о состоянии узла сосохранены в течение 30 дней. Вы можете отправить данные о состоянии узла в рабочую область Log Analytics, если вы предпочитаете хранить эти данные в течение более длительного периода. Сведения о состоянии соответствий узлов и отдельных ресурсов DSC в конфигурации узла можно просмотреть на портале Azure или с помощью PowerShell. 
 
@@ -30,8 +30,6 @@ ms.locfileid: "81392095"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
->[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Чтобы обновить модули в учетной записи службы автоматизации, см. руководство по [обновлению модулей Azure PowerShell в службе автоматизации Azure](automation-update-azure-modules.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -195,7 +193,7 @@ ms.locfileid: "81392095"
 | CorrelationId |Идентификатор GUID, который является ИДЕНТИФИКАТОРом корреляции отчета о соответствии. |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения см. в статье [Настройка состояния службы автоматизации Azure](automation-dsc-overview.md).
 - Чтобы приступить к работе, см. статью [Приступая к работе с конфигурацией состояния службы автоматизации Azure](automation-dsc-getting-started.md).

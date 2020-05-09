@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 03/09/2020
 ms.custom: seodec18
-ms.openlocfilehash: 7b268f3efa64c2f1ae78794056fdfda2b27434e8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3c917912e50c864f49abd5afcd28df4633702f0f
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82186935"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993700"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Configure automated ML experiments in Python (Настройка экспериментов автоматизированного машинного обучения на Python)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -113,7 +113,7 @@ automl_config = AutoMLConfig(task = "classification")
 * простое перемещение данных из статических файлов или источников URL-адресов в рабочую область
 * предоставление доступа к данным в сценариях обучения при работе в облачных ресурсах
 
-Пример `Dataset` использования [класса для подключения](how-to-train-with-datasets.md#option-2--mount-files-to-a-remote-compute-target) данных к целевому объекту вычислений см. в разделе.
+Пример `Dataset` использования [класса для подключения](how-to-train-with-datasets.md#mount-files-to-remote-compute-targets) данных к целевому объекту вычислений см. в разделе.
 
 ## <a name="train-and-validation-data"></a>Обучение и проверка данных
 
@@ -386,7 +386,7 @@ best_run, fitted_model = automl_run.get_output()
   >[!Note]
   >Используйте "тимесериестрансформер" для задачи = "прогнозирование"; в противном случае используйте "Преобразователь" для задачи "регрессия" или "Классификация".
 
-  Выходные данные:
+  Результат
   ```
   [{'RawFeatureName': 'A',
     'TypeDetected': 'Numeric',

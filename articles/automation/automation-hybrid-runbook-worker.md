@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: 0b36651a40267ec3ea8bfe7285c5f6c5d5c31562
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.openlocfilehash: c02a61366b05fa2750c581a1dedefb0d6239dada
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82871653"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82994766"
 ---
 # <a name="hybrid-runbook-worker-overview"></a>Обзор гибридной рабочей роли Runbook
 
@@ -42,7 +42,7 @@ ms.locfileid: "82871653"
 
 Рекомендуемый способ установки заключается в том, чтобы полностью автоматизировать процесс настройки компьютера Windows с помощью модуля Runbook службы автоматизации Azure. Второй способ — выполнить пошаговую процедуру установки и настройки роли вручную. Для компьютеров с Linux для установки агента запустите скрипт Python.
 
-## <a name="network-configuration"></a><a name="network-planning"></a>Сетевая конфигурация
+## <a name="network-planning"></a><a name="network-planning"></a>Планирование сети
 
 Чтобы Гибридная Рабочая роль Runbook подключались к службе автоматизации Azure и зарегистрировалась ею, она должна иметь доступ к номеру порта и URL-адресам, описанным в этом разделе. Кроме того, Рабочая роль должна иметь доступ к [портам и URL-адресам, необходимым для подключения агента log Analytics](../azure-monitor/platform/agent-windows.md) к рабочей области Azure Monitor log Analytics.
 

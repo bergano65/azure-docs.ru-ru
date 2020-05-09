@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 05/05/2020
 ms.author: cherylmc
-ms.openlocfilehash: 19457dc7324c509f54a58a2cdaa39561bfc71b4d
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: 9d7476b2bb64c9ed45d543345107008c4cedfb66
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82853342"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996626"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -99,7 +99,7 @@ ms.locfileid: "82853342"
 | **Франкфурт** | [Interxion FRA11](https://www.interxion.com/Locations/frankfurt/) | 1 | Центрально-Западная Германия | 10G, 100G | В&T NetBond, CenturyLink Cloud Connect, Colt, DE-ЦИКС, Equinix, ЖЕАНТ, Interxion, Orange, оранжевый, Телиа-оператор |
 | **Geneva** | [Equinix GV2](https://www.equinix.com/locations/europe-colocation/switzerland-colocation/geneva-data-centers/gv2/) | 1 | Западная Швейцария | 10G, 100G | Equinix, Megaport |
 | **Гонконг, САР** | [Equinix HK1](https://www.equinix.com/locations/asia-colocation/hong-kong-colocation/hong-kong-data-center/hk1/) | 2 | Восточная Азия | н/д | Aryaka сети, Британская телекоммуникации, CenturyLink Cloud Connect, главный телекоммуникации, Международная телекоммуникации, Глобальная, Equinix, взаимосвязь, Orange, NTT Communications, оранжевый, ПККВ глобально ограниченный, Tata связи, Телиа, Verizon |
-| **Гонконг, Kong2** | [МЕГАСИМВОЛОВ-i](https://www.iadvantage.net/index.php/locations/mega-i) | 2 | н/д | 10 | |
+| **Гонконг, Kong2** | Китайская Глобальная телекоммуникации, [мегасимволов-i](https://www.iadvantage.net/index.php/locations/mega-i) | 2 | н/д | 10 | |
 | **Джакарта** | Для абонентов Telkom Индонезия | 4 | н/д | 10 | |
 | **Йоханнесбург** | [Терако JB1](https://www.teraco.co.za/data-centre-locations/johannesburg/#jb1) | 3 | Северная часть ЮАР; | 10 | БККС, Британская телекоммуникации, Интернет-решения — Cloud Connect, жидкостный телекоммуникации, оранжевый, Терако |
 | **Куала-Лумпур** | [ВРЕМЯ, дотком Менара цель](https://www.aims.com.my/co-location/points-of-presence.html) | 2 | н/д | н/д | TIME dotCom |
@@ -183,7 +183,7 @@ ms.locfileid: "82853342"
 
 * Узнайте у своего поставщика услуг подключения, подключен ли он к какому-либо Exchange, указанному в таблице выше. Дополнительные сведения об услугах, предлагаемых поставщиками Exchange, см. по ссылкам ниже. Несколько поставщиков услуг подключения уже подключены к серверам Ethernet Exchange.
   * [Cologix](https://www.cologix.com/)
-  * [CoreSite](https://www.coresite.com/)
+  * [коресите](https://www.coresite.com/)
   * [DE-ЦИКС](https://www.de-cix.net/en/de-cix-service-world/cloud-exchange)
   * [Equnix Cloud Exchange](https://www.equinix.com/services/interconnection-connectivity/cloud-exchange/)
   * [InterXion](https://www.interxion.com/)
@@ -243,7 +243,7 @@ ms.locfileid: "82853342"
 | **Европа** |Avanade Inc., Altogee, Bright Skies GmbH, Inframon, MSG Services, New Signature, Nelite, Orange Networks, sol-tec |
 | **Северная Америка** |Avanade Inc., Equinix Professional Services, FlexManage, Lightstream, Perficient, Presidio |
 | **Южная Америка** |Avanade Inc., Venha Pra Nuvem |
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения об ExpressRoute см. в статье [вопросы и ответы по expressroute](expressroute-faqs.md).
 * Убедитесь, что выполнены все необходимые условия. Ознакомьтесь с разделом [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).
 

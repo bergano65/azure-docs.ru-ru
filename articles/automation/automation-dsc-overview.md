@@ -1,6 +1,6 @@
 ---
 title: Обзор службы "Настройка состояния службы автоматизации Azure"
-description: Общие сведения о конфигурации состояния службы автоматизации Azure (DSC), ее терминах и известных проблемах
+description: Обзор конфигурации состояния службы автоматизации Azure, ее условий и известных проблем
 keywords: PowerShell DSC, настройка требуемого состояния, PowerShell DSC для Azure
 services: automation
 ms.service: automation
@@ -10,20 +10,34 @@ ms.author: magoedte
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: afceb11180662416aa4953b8b58ef03ffaa70eec
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: dbe617e6614eb69f0a7f6e31c89c1f645804fe1b
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81406179"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993853"
 ---
-# <a name="state-configuration-overview"></a>Общие сведения о State Configuration
+# <a name="azure-automation-state-configuration-overview"></a>Обзор службы "Настройка состояния службы автоматизации Azure"
 
-Настройка состояния службы автоматизации Azure — это служба Azure, которая позволяет создавать и компилировать [конфигурации](/powershell/scripting/dsc/configurations/configurations)требуемого состояния (DSC) PowerShell, а также управлять ими. Служба также импортирует [ресурсы DSC](/powershell/scripting/dsc/resources/resources)и назначает конфигурации целевым узлам в облаке.
+Настройка состояния службы автоматизации Azure — это служба управления конфигурацией Azure, которая позволяет создавать, управлять и компилировать конфигурации Desired State Configuration (DSC [) для](/powershell/scripting/dsc/configurations/configurations) узлов в любом облачном или локальном центре обработки данных. Служба также импортирует [ресурсы DSC](/powershell/scripting/dsc/resources/resources)и назначает конфигурации целевым узлам в облаке. Вы можете получить доступ к конфигурации состояния службы автоматизации Azure в портал Azure, выбрав **Configuration State (DSC)** в разделе **Управление конфигурацией**. 
+
+Вы можете использовать конфигурацию состояния службы автоматизации Azure для управления различными компьютерами:
+
+- Виртуальные машины Azure
+- Виртуальные машины Azure (классические).
+- Физические или виртуальные машины Windows в локальной среде или в облаке, отличном от Azure (включая экземпляры AWS EC2).
+- Физические или виртуальные машины под управлением Linux, расположенные локально, в Azure или облачной службе, отличной от Azure.
+
+Если вы не готовы управлять конфигурацией компьютера из облака, можно использовать конфигурацию состояния службы автоматизации Azure в качестве конечной точки только для отчетов. Эта функция позволяет задавать (отправлять) конфигурации через DSC и просматривать сведения о отчетах в службе автоматизации Azure.
+
+> [!NOTE]
+> Управление виртуальными машинами Azure с конфигурацией состояния службы автоматизации Azure включается без дополнительной платы, если установленная версия расширения Desired State Configuration для виртуальной машины Azure превышает 2,70. Дополнительные сведения см. на [**странице с ценами на автоматизацию**](https://azure.microsoft.com/pricing/details/automation/).
 
 ## <a name="why-use-azure-automation-state-configuration"></a>Преимущества службы "Настройка состояния службы автоматизации Azure"
 
-Служба "Настройка состояния службы автоматизации Azure" предоставляет ряд преимуществ по сравнению с использованием DSC за пределами Azure.
+Настройка состояния службы автоматизации Azure предоставляет несколько преимуществ по сравнению с использованием DSC за пределами Azure. Эта служба обеспечивает возможность быстрого и простого масштабирования на тысячах компьютеров из центрального и безопасного расположения. Вы можете легко включить компьютеры, назначить им декларативные конфигурации и просмотреть отчеты, показывающие соответствие каждого компьютера указанному вами состоянию.
+
+Служба настройки состояния службы автоматизации Azure предназначена для DSC, какие модули Runbook в службе автоматизации Azure входят в скрипты PowerShell. Другими словами, служба автоматизации Azure помогает управлять сценариями PowerShell так же, как и конфигурациями DSC. 
 
 ### <a name="built-in-pull-server"></a>Встроенный опрашивающий сервер
 
@@ -41,16 +55,16 @@ ms.locfileid: "81406179"
 
 ## <a name="prerequisites-for-using-azure-automation-state-configuration"></a>Необходимые условия для использования конфигурации состояния службы автоматизации Azure
 
-При использовании конфигурации состояния службы автоматизации Azure для DSC учитывайте следующие требования.
+При использовании конфигурации состояния службы автоматизации Azure учитывайте требования, описанные в этом разделе.
 
 ### <a name="operating-system-requirements"></a>Требования к операционной системе
 
 Для узлов под управлением Windows поддерживаются следующие версии:
 
-- Windows Server 2019
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
-- Windows Server 2012
+- Windows Server 2012
 - Windows Server 2008 R2 с пакетом обновления 1 (SP1)
 - быть под управлением ОС Windows 10;
 - Windows 8.1
@@ -63,9 +77,9 @@ ms.locfileid: "81406179"
 
 ### <a name="dsc-requirements"></a>Требования к DSC
 
-Для всех узлов Windows, работающих в Azure, во время адаптации устанавливается [WMF 5,1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure) . Для узлов под Windows Server 2012 и Windows 7 [Служба WinRM](https://docs.microsoft.com/powershell/scripting/dsc/troubleshooting/troubleshooting#winrm-dependency) включена.
+Для всех узлов Windows, работающих в Azure, при включении компьютеров устанавливается [WMF 5,1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure) . Для узлов под Windows Server 2012 и Windows 7 [Служба WinRM](https://docs.microsoft.com/powershell/scripting/dsc/troubleshooting/troubleshooting#winrm-dependency) включена.
 
-Для всех узлов Linux, работающих в Azure, [POWERSHELL DSC для Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux) устанавливается во время адаптации.
+Для всех узлов Linux, работающих в Azure, при включении компьютеров устанавливается [POWERSHELL DSC для Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux) .
 
 ### <a name="configuration-of-private-networks"></a><a name="network-planning"></a>Настройка частных сетей
 
@@ -80,7 +94,7 @@ ms.locfileid: "81406179"
 
 #### <a name="proxy-support"></a>Поддержка прокси-сервера
 
-Поддержка прокси-сервера для агента DSC доступна в Windows версии 1809 и более поздних версиях. Этот параметр включается путем задания значений для `ProxyURL` и `ProxyCredential` в [скрипте метаконфигурации](automation-dsc-onboarding.md#generating-dsc-metaconfigurations) , используемом для регистрации узлов.
+Поддержка прокси-сервера для агента DSC доступна в Windows версии 1809 и более поздних версиях. Этот параметр включается путем задания значений для `ProxyURL` и `ProxyCredential` в [скрипте метаконфигурации](automation-dsc-onboarding.md#generate-dsc-metaconfigurations) , используемом для регистрации узлов.
 
 >[!NOTE]
 >В конфигурации состояния службы автоматизации Azure не предусмотрена поддержка прокси-сервера DSC для предыдущих версий Windows.
@@ -118,10 +132,10 @@ ms.locfileid: "81406179"
 
 Пользователям Azure ExpressRoute следует обратить внимание, что этот файл используется для того, чтобы обновлять протокол BGP в пространстве Azure в первую неделю каждого месяца.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы приступить к работе с DSC в конфигурации состояния службы автоматизации Azure, см. статью [Приступая к работе с конфигурацией состояния службы автоматизации Azure](automation-dsc-getting-started.md).
-- Сведения о подключении узлов см. в статье подключение [компьютеров для управления с помощью конфигурации состояния службы автоматизации Azure](automation-dsc-onboarding.md).
+- Сведения о том, как включить узлы, см. в разделе [Включение управления для компьютеров с помощью конфигурации состояния службы автоматизации Azure](automation-dsc-onboarding.md).
 - Дополнительные сведения о компиляции конфигураций DSC с целью назначения их целевым узлам см. [в разделе Компиляция конфигураций в конфигурации состояния службы автоматизации Azure](automation-dsc-compile.md).
 - Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
 ).

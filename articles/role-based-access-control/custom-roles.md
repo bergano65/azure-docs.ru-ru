@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/30/2020
+ms.date: 05/08/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5030fb50313e1db2173990c55930c22fdf58f559
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
-ms.translationtype: HT
+ms.openlocfilehash: 3a30ea70c623c8456ae97c8ca9475e4989784edf
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82734796"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82995853"
 ---
 # <a name="azure-custom-roles"></a>Пользовательские роли Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "82734796"
 
 ## <a name="custom-role-example"></a>Пример пользовательской роли
 
-Ниже представлена пользовательская роль, отображаемая в формате JSON. Эта пользовательская роль позволяет выполнять мониторинг и перезапуск виртуальных машин.
+Ниже показано, как выглядит пользовательская роль, отображаемая с помощью Azure PowerShell в формате JSON. Эта пользовательская роль позволяет выполнять мониторинг и перезапуск виртуальных машин.
 
 ```json
 {
@@ -67,45 +67,85 @@ ms.locfileid: "82734796"
 }
 ```
 
+Ниже показана та же самая настраиваемая роль, которая отображается с помощью Azure CLI.
+
+```json
+[
+  {
+    "assignableScopes": [
+      "/subscriptions/{subscriptionId1}",
+      "/subscriptions/{subscriptionId2}",
+      "/providers/Microsoft.Management/managementGroups/{groupId1}"
+    ],
+    "description": "Can monitor and restart virtual machines.",
+    "id": "/subscriptions/{subscriptionId1}/providers/Microsoft.Authorization/roleDefinitions/88888888-8888-8888-8888-888888888888",
+    "name": "88888888-8888-8888-8888-888888888888",
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.Storage/*/read",
+          "Microsoft.Network/*/read",
+          "Microsoft.Compute/*/read",
+          "Microsoft.Compute/virtualMachines/start/action",
+          "Microsoft.Compute/virtualMachines/restart/action",
+          "Microsoft.Authorization/*/read",
+          "Microsoft.ResourceHealth/availabilityStatuses/read",
+          "Microsoft.Resources/subscriptions/resourceGroups/read",
+          "Microsoft.Insights/alertRules/*",
+          "Microsoft.Insights/diagnosticSettings/*",
+          "Microsoft.Support/*"
+        ],
+        "dataActions": [],
+        "notActions": [],
+        "notDataActions": []
+      }
+    ],
+    "roleName": "Virtual Machine Operator",
+    "roleType": "CustomRole",
+    "type": "Microsoft.Authorization/roleDefinitions"
+  }
+]
+```
+
 После создания пользовательская роль отображается на портале Azure с оранжевым значком ресурса.
 
 ![Имя пользовательской роли](./media/custom-roles/roles-custom-role-icon.png)
 
-## <a name="steps-to-create-a-custom-role"></a>Процедура создания пользовательской роли
-
-1. Выбор способа создания пользовательской роли
-
-    Пользовательские роли можно создавать с помощью [портал Azure](custom-roles-portal.md), [Azure PowerShell](custom-roles-powershell.md), [Azure CLI](custom-roles-cli.md)или [REST API](custom-roles-rest.md).
-
-1. Определение требуемых разрешений
-
-    При создании пользовательской роли вам нужно знать, какие операции поставщика ресурсов доступны, чтобы определить разрешения. Чтобы просмотреть список операций, см. [Azure Resource Manager операции с поставщиком ресурсов](resource-provider-operations.md). Вы добавите операции в свойства `Actions` или `NotActions` [определения роли](role-definitions.md). Если у вас есть операции с данными, вы добавите их `DataActions` в `NotDataActions` свойства или.
-
-1. Создание настраиваемой роли
-
-    В общем случае вы начинаете с существующей встроенной роли и видоизменяете ее под свои потребности. После этого можно воспользоваться командой [New-AzRoleDefinition](/powershell/module/az.resources/new-azroledefinition) или [az role definition create](/cli/azure/role/definition#az-role-definition-create) для создания настраиваемой роли. Чтобы создать пользовательскую роль, нужно иметь разрешение `Microsoft.Authorization/roleDefinitions/write` для всех объектов `AssignableScopes`, таких как [Владелец](built-in-roles.md#owner) или [Администратор доступа пользователей](built-in-roles.md#user-access-administrator).
-
-1. Проверка пользовательской роли
-
-    Создав пользовательскую роль, нужно проверить правильность ее работы. Если позже потребуется корректировка, вы можете обновить пользовательскую роль.
-
-Пошаговое руководство по созданию настраиваемой роли см. в разделе [учебник. Создание настраиваемой роли Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md) или [учебника. Создание настраиваемой роли azure с помощью Azure CLI](tutorial-custom-role-cli.md).
-
 ## <a name="custom-role-properties"></a>Свойства пользовательской роли
 
-Пользовательская роль имеет указанные ниже свойства.
+В следующей таблице описано, что означают свойства пользовательской роли.
 
 | Свойство | Обязательно | Тип | Описание |
 | --- | --- | --- | --- |
-| `Name` | Да | Строка | Отображаемое имя пользовательской роли. Хотя определение роли — это группа управления или ресурс уровня подписки, определение роли можно использовать в нескольких подписках, использующих один каталог Azure AD. Это отображаемое имя должно быть уникальным в рамках каталога Azure AD. Может содержать буквы, цифры, пробелы и специальные знаки. Максимальное количество знаков — 128. |
-| `Id` | Да | Строка | Уникальный идентификатор настраиваемой роли. Для Azure PowerShell и Azure CLI этот идентификатор формируется автоматически при создании роли. |
-| `IsCustom` | Да | Строка | Указывает, является ли эта роль настраиваемой. Для настраиваемых пролей задайте значение `true`. |
-| `Description` | Да | Строка | Описание пользовательской роли. Может содержать буквы, цифры, пробелы и специальные знаки. Максимальное количество знаков — 1024. |
-| `Actions` | Да | String[] | Массив строк, описывающий операции управления, которые роль разрешает выполнять. Дополнительные сведения см. в разделе [Actions](role-definitions.md#actions). |
-| `NotActions` | нет | String[] | Массив строк, указывающий операции управления, которые исключаются из разрешенных `Actions`. Дополнительные сведения см. в разделе [NotActions](role-definitions.md#notactions). |
-| `DataActions` | нет | String[] | Массив строк, указывающий операции с данными, которые роль разрешает выполнять с вашими данными внутри этого объекта. Если создать пользовательскую роль с `DataActions`, эту роль нельзя будет назначить в области группы управления. Дополнительные сведения см. в разделе [действия](role-definitions.md#dataactions)с данными. |
-| `NotDataActions` | нет | String[] | Массив строк, указывающий операции с данными, которые исключаются из разрешенных `DataActions`. Дополнительные сведения см. в разделе [нотдатаактионс](role-definitions.md#notdataactions). |
-| `AssignableScopes` | Да | String[] | Массив строк, который указывает области, в которых пользовательская роль может быть назначена. В `AssignableScopes` пользовательской роли можно определить только одну группу управления. Добавление группы управления в сейчас `AssignableScopes` находится на этапе предварительной версии. Дополнительные сведения см. в разделе [AssignableScopes](role-definitions.md#assignablescopes). |
+| `Name`</br>`roleName` | Да | Строка | Отображаемое имя пользовательской роли. Хотя определение роли — это группа управления или ресурс уровня подписки, определение роли можно использовать в нескольких подписках, использующих один каталог Azure AD. Это отображаемое имя должно быть уникальным в рамках каталога Azure AD. Может содержать буквы, цифры, пробелы и специальные знаки. Максимальное количество знаков — 128. |
+| `Id`</br>`name` | Да | Строка | Уникальный идентификатор настраиваемой роли. Для Azure PowerShell и Azure CLI этот идентификатор формируется автоматически при создании роли. |
+| `IsCustom`</br>`roleType` | Да | Строка | Указывает, является ли эта роль настраиваемой. Задайте для `true` параметра `CustomRole` значение или для пользовательских ролей. Задайте значение `false` или `BuiltInRole` для встроенных ролей. |
+| `Description`</br>`description` | Да | Строка | Описание пользовательской роли. Может содержать буквы, цифры, пробелы и специальные знаки. Максимальное количество знаков — 1024. |
+| `Actions`</br>`actions` | Да | String[] | Массив строк, описывающий операции управления, которые роль разрешает выполнять. Дополнительные сведения см. в разделе [Actions](role-definitions.md#actions). |
+| `NotActions`</br>`notActions` | нет | String[] | Массив строк, указывающий операции управления, которые исключаются из разрешенных `Actions`. Дополнительные сведения см. в разделе [NotActions](role-definitions.md#notactions). |
+| `DataActions`</br>`dataActions` | нет | String[] | Массив строк, указывающий операции с данными, которые роль разрешает выполнять с вашими данными внутри этого объекта. Если создать пользовательскую роль с `DataActions`, эту роль нельзя будет назначить в области группы управления. Дополнительные сведения см. в разделе [действия](role-definitions.md#dataactions)с данными. |
+| `NotDataActions`</br>`notDataActions` | нет | String[] | Массив строк, указывающий операции с данными, которые исключаются из разрешенных `DataActions`. Дополнительные сведения см. в разделе [нотдатаактионс](role-definitions.md#notdataactions). |
+| `AssignableScopes`</br>`assignableScopes` | Да | String[] | Массив строк, который указывает области, в которых пользовательская роль может быть назначена. В `AssignableScopes` пользовательской роли можно определить только одну группу управления. Добавление группы управления в сейчас `AssignableScopes` находится на этапе предварительной версии. Дополнительные сведения см. в разделе [AssignableScopes](role-definitions.md#assignablescopes). |
+
+## <a name="steps-to-create-a-custom-role"></a>Процедура создания пользовательской роли
+
+Чтобы создать настраиваемую роль, выполните приведенные ниже основные действия.
+
+1. Выберите способ создания настраиваемой роли.
+
+    Пользовательские роли можно создавать с помощью портал Azure, Azure PowerShell, Azure CLI или REST API.
+
+1. Определите необходимые разрешения.
+
+    При создании пользовательской роли необходимо знать, какие операции доступны для определения разрешений. Чтобы просмотреть список операций, см. [Azure Resource Manager операции с поставщиком ресурсов](resource-provider-operations.md). Вы добавите операции в свойства `Actions` или `NotActions` [определения роли](role-definitions.md). Если у вас есть операции с данными, вы добавите их `DataActions` в `NotDataActions` свойства или.
+
+1. Создайте настраиваемую роль.
+
+    В общем случае вы начинаете с существующей встроенной роли и видоизменяете ее под свои потребности. Самый простой способ — использовать портал Azure. Инструкции по созданию настраиваемой роли с помощью портал Azure см. в разделе [Создание или обновление пользовательских ролей Azure с помощью портал Azure](custom-roles-portal.md).
+
+1. Проверьте пользовательскую роль.
+
+    Создав пользовательскую роль, нужно проверить правильность ее работы. Если позже потребуется корректировка, вы можете обновить пользовательскую роль.
 
 ## <a name="who-can-create-delete-update-or-view-a-custom-role"></a>Кто может создавать, удалять, обновлять или просматривать пользовательскую роль
 
@@ -130,7 +170,150 @@ ms.locfileid: "82734796"
 
 Дополнительные сведения о настраиваемых ролях и группах управления см. в статье [организация ресурсов с помощью групп управления Azure](../governance/management-groups/overview.md#custom-rbac-role-definition-and-assignment).
 
+## <a name="input-and-output-formats"></a>Форматы входных и выходных данных
+
+Для создания пользовательской роли с помощью командной строки, как правило, используется JSON для указания нужных свойств настраиваемой роли. В зависимости от используемых средств форматы входных и выходных данных будут немного отличаться. В этом разделе перечислены форматы ввода и вывода в зависимости от инструмента.
+
+### <a name="azure-powershell"></a>Azure PowerShell
+
+Чтобы создать настраиваемую роль с помощью Azure PowerShell, необходимо указать следующие входные данные.
+
+```json
+{
+  "Name": "",
+  "Description": "",
+  "Actions": [],
+  "NotActions": [],
+  "DataActions": [],
+  "NotDataActions": [],
+  "AssignableScopes": []
+}
+```
+
+Чтобы обновить пользовательскую роль с помощью Azure PowerShell, необходимо указать следующие входные данные. Обратите внимание `Id` , что свойство добавлено. 
+
+```json
+{
+  "Name": "",
+  "Id": "",
+  "Description": "",
+  "Actions": [],
+  "NotActions": [],
+  "DataActions": [],
+  "NotDataActions": [],
+  "AssignableScopes": []
+}
+```
+
+Ниже приведен пример выходных данных при перечислении пользовательской роли с помощью Azure PowerShell и команды [ConvertTo-JSON](/powershell/module/microsoft.powershell.utility/convertto-json) . 
+
+```json
+{
+  "Name": "",
+  "Id": "",
+  "IsCustom": true,
+  "Description": "",
+  "Actions": [],
+  "NotActions": [],
+  "DataActions": [],
+  "NotDataActions": [],
+  "AssignableScopes": []
+}
+```
+
+### <a name="azure-cli"></a>Azure CLI
+
+Чтобы создать или обновить настраиваемую роль с помощью Azure CLI, необходимо указать следующие входные данные. Этот формат имеет тот же формат при создании пользовательской роли с помощью Azure PowerShell.
+
+```json
+{
+  "Name": "",
+  "Description": "",
+  "Actions": [],
+  "NotActions": [],
+  "DataActions": [],
+  "NotDataActions": [],
+  "AssignableScopes": []
+}
+```
+
+Ниже приведен пример выходных данных при перечислении пользовательской роли с помощью Azure CLI.
+
+```json
+[
+  {
+    "assignableScopes": [],
+    "description": "",
+    "id": "",
+    "name": "",
+    "permissions": [
+      {
+        "actions": [],
+        "dataActions": [],
+        "notActions": [],
+        "notDataActions": []
+      }
+    ],
+    "roleName": "",
+    "roleType": "CustomRole",
+    "type": "Microsoft.Authorization/roleDefinitions"
+  }
+]
+```
+
+### <a name="rest-api"></a>REST API
+
+Чтобы создать или обновить настраиваемую роль с помощью REST API, необходимо указать следующие входные данные. Этот формат имеет тот же формат, который создается при создании пользовательской роли с помощью портал Azure.
+
+```json
+{
+  "properties": {
+    "roleName": "",
+    "description": "",
+    "assignableScopes": [],
+    "permissions": [
+      {
+        "actions": [],
+        "notActions": [],
+        "dataActions": [],
+        "notDataActions": []
+      }
+    ]
+  }
+}
+```
+
+Ниже приведен пример выходных данных при перечислении пользовательской роли с помощью REST API.
+
+```json
+{
+    "properties": {
+        "roleName": "",
+        "type": "CustomRole",
+        "description": "",
+        "assignableScopes": [],
+        "permissions": [
+            {
+                "actions": [],
+                "notActions": [],
+                "dataActions": [],
+                "notDataActions": []
+            }
+        ],
+        "createdOn": "",
+        "updatedOn": "",
+        "createdBy": "",
+        "updatedBy": ""
+    },
+    "id": "",
+    "type": "Microsoft.Authorization/roleDefinitions",
+    "name": ""
+}
+```
+
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Создание или обновление пользовательских ролей Azure с помощью портал Azure](custom-roles-portal.md)
+
+- [Руководство. Создание настраиваемой роли Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
+- [Руководство. Создание настраиваемой роли Azure с помощью Azure CLI](tutorial-custom-role-cli.md)
 - [Общие сведения о определениях ролей Azure](role-definitions.md)
 - [Устранение неполадок в Azure RBAC](troubleshooting.md)

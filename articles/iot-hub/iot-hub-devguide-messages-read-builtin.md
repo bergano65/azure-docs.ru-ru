@@ -9,12 +9,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/08/2019
 ms.custom: amqp
-ms.openlocfilehash: 169d926e466559bc83ba64ce9e976e0d725f614d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bf7c4118e17727c6c8141570ab146026d5383059
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81729990"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996933"
 ---
 # <a name="read-device-to-cloud-messages-from-the-built-in-endpoint"></a>Чтение сообщений, пересылаемых с устройства в облако, из встроенной конечной точки
 
@@ -61,12 +61,12 @@ ms.locfileid: "81729990"
 
 Пакеты SDK, которые можно использовать для подключения к встроенной конечной точке, совместимой с концентратором событий, которые предоставляет центр Интернета вещей:
 
-| Язык | SDK | Пример | Примечания |
-| -------- | --- | ------ | ----- |
-| .NET | https://github.com/Azure/azure-event-hubs-dotnet | [Краткое руководство](quickstart-send-telemetry-dotnet.md) | Использует сведения, совместимые с концентраторами событий |
- Java | https://github.com/Azure/azure-event-hubs-java | [Краткое руководство](quickstart-send-telemetry-java.md) | Использует сведения, совместимые с концентраторами событий |
-| Node.js | https://github.com/Azure/azure-event-hubs-node | [Краткое руководство](quickstart-send-telemetry-node.md) | Использует строку подключения центра Интернета вещей |
-| Python | https://github.com/Azure/azure-event-hubs-python | https://github.com/Azure/azure-event-hubs-python/blob/master/examples/iothub_recv.py | Использует строку подключения центра Интернета вещей |
+| Язык | SDK | Пример |
+| -------- | --- | ------ |
+| .NET | https://github.com/Azure/azure-event-hubs-dotnet | [Краткое руководство](quickstart-send-telemetry-dotnet.md) |
+ Java | https://github.com/Azure/azure-event-hubs-java | [Краткое руководство](quickstart-send-telemetry-java.md) |
+| Node.js | https://www.npmjs.com/package/@azure/event-hubs | [Краткое руководство](quickstart-send-telemetry-node.md) |
+| Python | https://pypi.org/project/azure-eventhub/ | https://github.com/Azure-Samples/azure-iot-samples-python/tree/master/iot-hub/Quickstarts/read-d2c-messages |
 
 Интеграции продукта, которые можно использовать со встроенной конечной точкой, совместимой с концентраторами событий, включают в себя:
 
@@ -77,7 +77,7 @@ ms.locfileid: "81729990"
 * [интеграция Apache Spark.](../hdinsight/spark/apache-spark-eventhub-streaming.md)
 * [Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о конечных точках Центра Интернета вещей см. в статье [Руководство. Конечные точки Центра Интернета вещей](iot-hub-devguide-endpoints.md).
 

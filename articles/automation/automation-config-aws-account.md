@@ -6,12 +6,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/23/2020
 ms.topic: conceptual
-ms.openlocfilehash: 1bf60d17af1d9866de6a62ac538fa0bd9a15ce52
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 92919d2e0cc7ca685d2b60a8e7a8cf20433bbefc
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82113397"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82994712"
 ---
 # <a name="authenticate-azure-automation-runbooks-with-amazon-web-services"></a>Аутентификация модулей runbook службы автоматизации Azure с помощью Amazon Web Services
 
@@ -31,6 +31,6 @@ ms.locfileid: "82113397"
 1. В поле **Имя** введите **AWScred** или другое значение, соответствующее вашим стандартам именования.
 2. В поле **Имя пользователя** введите **идентификатор доступа**, а в полях **Пароль** и **Подтверждение пароля** — **секретный ключ доступа**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о создании модулей Runbook для автоматизации задач в AWS см. в статье [Сценарий службы автоматизации Azure: подготовка виртуальной машины AWS](automation-scenario-aws-deployment.md).
+* Ознакомьтесь со сведениями об [автоматизации развертывания виртуальной машины в Amazon Web Services](automation-scenario-aws-deployment.md) , чтобы узнать, как создавать модули Runbook для автоматизации задач в AWS.

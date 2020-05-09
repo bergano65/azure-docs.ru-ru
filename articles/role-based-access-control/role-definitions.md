@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/17/2020
+ms.date: 05/08/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
-ms.openlocfilehash: 03edb8e5c58f0fe746921d50ab3f657f291d16da
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
-ms.translationtype: HT
+ms.openlocfilehash: 3dc2834af501d3ecc2ff44c2511916447f27cfae
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82735544"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996613"
 ---
 # <a name="understand-azure-role-definitions"></a>Общие сведения о определениях ролей Azure
 
@@ -28,7 +28,9 @@ ms.locfileid: "82735544"
 
 ## <a name="role-definition"></a>Определение роли
 
-*Определение роли* представляет собой коллекцию разрешений. Иногда оно называется просто *ролью*. В определении роли перечисляются операции, которые можно выполнить, например чтение, запись и удаление. В ней также перечисляются операции, которые нельзя выполнить, или операции, которые относятся к базовым данным. Определение роли имеет следующие свойства.
+*Определение роли* представляет собой коллекцию разрешений. Иногда оно называется просто *ролью*. В определении роли перечисляются операции, которые можно выполнить, например чтение, запись и удаление. Он также может выводить список операций, исключаемых из разрешенных операций или операций, связанных с базовыми данными.
+
+Ниже приведен пример свойств в определении роли при отображении с помощью Azure PowerShell.
 
 ```
 Name
@@ -42,17 +44,33 @@ NotDataActions []
 AssignableScopes []
 ```
 
+Ниже приведен пример свойств в определении роли при отображении с использованием портал Azure, Azure CLI или REST API:
+
+```
+roleName
+name
+type
+description
+actions []
+notActions []
+dataActions []
+notDataActions []
+assignableScopes []
+```
+
+В следующей таблице описано, что означают свойства роли.
+
 | Свойство | Описание |
 | --- | --- |
-| `Name` | Отображаемое имя роли. |
-| `Id` | Уникальный идентификатор роли. |
-| `IsCustom` | Указывает, является ли эта роль настраиваемой. Для настраиваемых пролей задайте значение `true`. |
-| `Description` | Описание роли. |
-| `Actions` | Массив строк, описывающий операции управления, которые роль разрешает выполнять. |
-| `NotActions` | Массив строк, указывающий операции управления, которые исключаются из разрешенных `Actions`. |
-| `DataActions` | Массив строк, указывающий операции с данными, которые роль разрешает выполнять с вашими данными внутри этого объекта. |
-| `NotDataActions` | Массив строк, указывающий операции с данными, которые исключаются из разрешенных `DataActions`. |
-| `AssignableScopes` | Массив строк, указывающий области, доступные для назначения роли. |
+| `Name`</br>`roleName` | Отображаемое имя роли. |
+| `Id`</br>`name` | Уникальный идентификатор роли. |
+| `IsCustom`</br>`roleType` | Указывает, является ли эта роль настраиваемой. Задайте для `true` параметра `CustomRole` значение или для пользовательских ролей. Задайте значение `false` или `BuiltInRole` для встроенных ролей. |
+| `Description`</br>`description` | Описание роли. |
+| `Actions`</br>`actions` | Массив строк, описывающий операции управления, которые роль разрешает выполнять. |
+| `NotActions`</br>`notActions` | Массив строк, указывающий операции управления, которые исключаются из разрешенных `Actions`. |
+| `DataActions`</br>`dataActions` | Массив строк, указывающий операции с данными, которые роль разрешает выполнять с вашими данными внутри этого объекта. |
+| `NotDataActions`</br>`notDataActions` | Массив строк, указывающий операции с данными, которые исключаются из разрешенных `DataActions`. |
+| `AssignableScopes`</br>`assignableScopes` | Массив строк, указывающий области, доступные для назначения роли. |
 
 ### <a name="operations-format"></a>Формат операций
 
@@ -72,7 +90,9 @@ AssignableScopes []
 
 ### <a name="role-definition-example"></a>Пример определения роли
 
-Здесь приведено определение роли [Участник](built-in-roles.md#contributor) в формате JSON. Операция подстановочного знака (`*`) в разделе `Actions` указывает, что субъект, которому назначена эта роль, может выполнять все действия или, иными словами, осуществлять полное управление. Сюда входят и действия, определяемые в будущем (по мере добавления новых типов ресурсов в Azure). Операции, указанные в разделе `NotActions`, вычитаются из раздела `Actions`. При использовании роли [Участник](built-in-roles.md#contributor)`NotActions` удаляет для этой роли возможность управлять доступом к ресурсам, а также назначать доступ к ресурсам.
+Вот определение роли [участника](built-in-roles.md#contributor) , отображаемое в Azure PowerShell и Azure CLI. Операция подстановочного знака (`*`) в разделе `Actions` указывает, что субъект, которому назначена эта роль, может выполнять все действия или, иными словами, осуществлять полное управление. Сюда входят и действия, определяемые в будущем (по мере добавления новых типов ресурсов в Azure). Операции, указанные в разделе `NotActions`, вычитаются из раздела `Actions`. При использовании роли [Участник](built-in-roles.md#contributor)`NotActions` удаляет для этой роли возможность управлять доступом к ресурсам, а также назначать доступ к ресурсам.
+
+Роль участника, отображаемая в Azure PowerShell:
 
 ```json
 {
@@ -86,13 +106,47 @@ AssignableScopes []
   "NotActions": [
     "Microsoft.Authorization/*/Delete",
     "Microsoft.Authorization/*/Write",
-    "Microsoft.Authorization/elevateAccess/Action"
+    "Microsoft.Authorization/elevateAccess/Action",
+    "Microsoft.Blueprint/blueprintAssignments/write",
+    "Microsoft.Blueprint/blueprintAssignments/delete"
   ],
   "DataActions": [],
   "NotDataActions": [],
   "AssignableScopes": [
     "/"
   ]
+}
+```
+
+Роль участника, отображаемая в Azure CLI:
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Lets you manage everything except access to resources.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
+  "name": "b24988ac-6180-42a0-ab88-20f7382dd24c",
+  "permissions": [
+    {
+      "actions": [
+        "*"
+      ],
+      "notActions": [
+        "Microsoft.Authorization/*/Delete",
+        "Microsoft.Authorization/*/Write",
+        "Microsoft.Authorization/elevateAccess/Action",
+        "Microsoft.Blueprint/blueprintAssignments/write",
+        "Microsoft.Blueprint/blueprintAssignments/delete"
+      ],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
 }
 ```
 
@@ -116,6 +170,8 @@ AssignableScopes []
 
 Ниже приведено определение роли [читателя данных BLOB-объекта хранилища](built-in-roles.md#storage-blob-data-reader) , которое включает операции в `Actions` свойствах и `DataActions` . Эта роль позволяет считывать контейнер больших двоичных объектов, а также базовые данные большого двоичного объекта.
 
+Роль модуля чтения данных BLOB-объекта хранилища, отображаемая в Azure PowerShell:
+
 ```json
 {
   "Name": "Storage Blob Data Reader",
@@ -123,7 +179,8 @@ AssignableScopes []
   "IsCustom": false,
   "Description": "Allows for read access to Azure Storage blob containers and data",
   "Actions": [
-    "Microsoft.Storage/storageAccounts/blobServices/containers/read"
+    "Microsoft.Storage/storageAccounts/blobServices/containers/read",
+    "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action"
   ],
   "NotActions": [],
   "DataActions": [
@@ -133,6 +190,35 @@ AssignableScopes []
   "AssignableScopes": [
     "/"
   ]
+}
+```
+
+Роль модуля чтения данных BLOB-объекта хранилища, отображаемая в Azure CLI:
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Allows for read access to Azure Storage blob containers and data",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/2a2b9908-6ea1-4ae2-8e65-a410df84e7d1",
+  "name": "2a2b9908-6ea1-4ae2-8e65-a410df84e7d1",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Storage/storageAccounts/blobServices/containers/read",
+        "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Storage Blob Data Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
 }
 ```
 
@@ -159,9 +245,11 @@ AssignableScopes []
 &nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/containers/delete`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/containers/read`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/containers/write`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Действия с данными<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/containers/blobs/move/action`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write`
 
 Так как Алиса имеет действие с`*`подстановочным знаком () в области действия подписки, его разрешения наследуются, чтобы позволить им выполнять все действия по управлению. Алиса может выполнять чтение, запись и удаление контейнеров. Однако она не может производить операции с данными без выполнения дополнительных шагов. Например, по умолчанию Алиса не может считывать большие двоичные объекты в контейнере. Чтобы выполнять чтение больших двоичных объектов, Алиса должна извлечь ключи доступа к хранилищу и использовать их для получения доступа к большим двоичным объектам.
@@ -174,7 +262,7 @@ AssignableScopes []
 
 Для просмотра операций с данными и работы с ними необходимо иметь правильные версии средств или пакетов SDK:
 
-| Инструмент  | Version  |
+| Инструмент  | Версия  |
 |---------|---------|
 | [Azure PowerShell](/powershell/azure/install-az-ps) | 1.1.0 или более поздней версии |
 | [Azure CLI](/cli/azure/install-azure-cli) | 2.0.30 или более поздней версии |
@@ -247,7 +335,7 @@ AssignableScopes []
 
 Дополнительные сведения о `AssignableScopes` пользовательских ролях см. в статье [пользовательские роли Azure](custom-roles.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Встроенные роли Azure](built-in-roles.md)
 * [Пользовательские роли Azure](custom-roles.md)

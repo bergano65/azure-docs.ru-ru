@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: cc12cc9a4828404e960aee239bd388af5b1ea3b7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 854a489f6381514f80f16665f89042a0e8ed7470
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81431908"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82995762"
 ---
 # <a name="monitoring-key-vault-with-azure-event-grid-preview"></a>мониторингу Key Vault с помощью службы "Сетка событий Azure" (предварительная версия)
 
@@ -30,8 +30,6 @@ ms.locfileid: "81431908"
 
 > [!WARNING]
 > События уведомления активируются только для новых версий секретов, ключей и сертификатов, и, чтобы получать эти уведомления, сначала необходимо подписываться на событие в хранилище ключей.
-> 
-> Уведомления о событиях будут приходить на сертификаты, только если сертификат автоматически обновляется в соответствии с политикой, указанной для сертификата.
 
 ## <a name="practices-for-consuming-events"></a>Рекомендации по потреблению событий
 
@@ -46,7 +44,7 @@ ms.locfileid: "81431908"
 
 - [Общие сведения об Azure Key Vault](overview.md)
 - [Обзор службы "Сетка событий Azure"](../../event-grid/overview.md)
-- Руководство. [Получение уведомлений хранилища ключей и реагирование на них с помощью Сетки событий Azure (предварительная версия)](event-grid-tutorial.md).
+- Как [перенаправлять Key Vault события в модуль Runbook службы автоматизации (Предварительная версия)](event-grid-tutorial.md).
 - Руководство. [Получение сообщения электронной почты при изменении секрета в хранилище ключей](event-grid-logicapps.md)
 - [Схема событий службы "Сетка событий Azure" для Azure Key Vault (предварительная версия)](../../event-grid/event-schema-key-vault.md)
 - [Обзор службы автоматизации Azure](../../automation/index.yml)
