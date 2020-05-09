@@ -1,22 +1,17 @@
 ---
-title: Проверка подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory и REST API | Документы Майкрософт
+title: Проверка подлинности конечным пользователем — остальное с Data Lake Storage 1-го поколения — Azure
 description: Узнайте, как реализовать проверку подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory и REST API.
-services: data-lake-store
-documentationcenter: ''
 author: twooley
-manager: mtillman
-editor: cgronlun
 ms.service: data-lake-store
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: 0ef65c23ee1bf4f064695779b71c8616427da204
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ac06c9ef355eeba489d2006c435a48b7efcfd7f0
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "60877828"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82688066"
 ---
 # <a name="end-user-authentication-with-azure-data-lake-storage-gen1-using-rest-api"></a>Проверка подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью REST API
 > [!div class="op_single_selector"]
@@ -29,7 +24,7 @@ ms.locfileid: "60877828"
 
 В этой статье описывается, как использовать REST API для проверки подлинности пользователей с помощью Azure Data Lake Storage 1-го поколения. См. дополнительные сведения о [проверке подлинности между службами в Data Lake Storage 1-го поколения с помощью REST API](data-lake-store-service-to-service-authenticate-rest-api.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 

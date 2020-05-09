@@ -8,13 +8,13 @@ ms.assetid: d5750b3e-bfbd-4fa0-b888-ebfab7d9c9ae
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: quickstart
-ms.date: 12/05/2019
-ms.openlocfilehash: bcb6cd7393419fb8fc75decb00a8f4165d15668c
-ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
+ms.date: 04/27/2020
+ms.openlocfilehash: d4e7077c338586298c5e7f0805c3d47b08a7a108
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82025277"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82184339"
 ---
 # <a name="quickstart-on-board-azure-sentinel"></a>Краткое руководство. Подключение к Azure Sentinel
 
@@ -55,7 +55,7 @@ ms.locfileid: "82025277"
 
    >[!NOTE] 
    > - Рабочие области по умолчанию, созданные Центром безопасности Azure, не будут отображаться в списке. Установить Azure Sentinel в них нельзя.
-   > - Sentinel Azure можно запускать в рабочих областях в любом [общедоступном регионе Log Analytics](https://azure.microsoft.com/global-infrastructure/services/?products=monitor) за исключением Китая, Германии и регионов Azure для государственных организаций. Данные, созданные Sentinel Azure (например, инциденты, закладки и правила генерации оповещений, которые могут содержать данные о клиентах из этих рабочих областей), сохраняются либо в регионе "Западная Европа" (для рабочих областей, расположенных в Европе), либо в регионе "Восточная часть США" (для всех рабочих областей в США, а также в любом другом регионе, кроме Европы).
+   > - Azure Sentinel можно запускать в рабочих областях в любом [общедоступном регионе Log Analytics](https://azure.microsoft.com/global-infrastructure/services/?products=monitor) за исключением Китая и Германии (независимых регионов). Данные, созданные Azure Sentinel (например, инциденты, закладки и правила генерации оповещений, которые могут содержать данные о клиентах из этих рабочих областей), сохраняются либо в регионе "Европа" (для рабочих областей, расположенных в Европе), либо в регионе "Австралия" (для рабочих областей, расположенных в Австралии), либо в регионе "Восточная часть США" (для рабочих областей, расположенных в любом другом регионе).
 
 1. Щелкните **Добавить Azure Sentinel**.
   

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 05/17/2019
 ms.topic: conceptual
-ms.openlocfilehash: 00cde5255f9c9a2baa7c7042ae2a8f73448da0ae
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f55ebb3270fdd97a1fdbbf5a56f9703c08933f9f
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81679990"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82855337"
 ---
 # <a name="manage-pre-scripts-and-post-scripts"></a>Управление предварительными и пост-скриптами
 
@@ -21,7 +21,7 @@ ms.locfileid: "81679990"
 
 ## <a name="pre-script-and-post-script-requirements"></a>Требования к предварительному и завершающему сценариям
 
-Чтобы модуль Runbook использовался как сценарий предварительного или последующей публикации, его необходимо импортировать в учетную запись службы автоматизации и [опубликовать](manage-runbooks.md#publishing-a-runbook).
+Чтобы модуль Runbook использовался как сценарий предварительного или последующей публикации, его необходимо импортировать в учетную запись службы автоматизации и [опубликовать](manage-runbooks.md#publish-a-runbook).
 
 ## <a name="pre-script-and-post-script-parameters"></a>Параметры перед скриптом и после него
 
@@ -248,7 +248,7 @@ $variable = Get-AutomationVariable -Name $runId
 > [!NOTE]
 > Для неграфических модулей Runbook PowerShell `Add-AzAccount` и `Add-AzureRMAccount` являются псевдонимами для [Connect-азаккаунт](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-3.5.0). Вы можете использовать эти командлеты или [обновить модули](automation-update-azure-modules.md) в учетной записи службы автоматизации до последних версий. Обновление модулей может потребоваться, даже если учетная запись службы автоматизации только что создана.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать, как управлять обновлениями для виртуальных машин Windows, перейдите к следующему учебнику:
 

@@ -10,14 +10,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 08/01/2019
+ms.date: 04/22/2020
 ms.author: apimpm
-ms.openlocfilehash: 4077187fe04e3be914a6f7fba84c03df1b79d06a
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b6cb0fa3611da44726dabd879c37fec357fc3031
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74108393"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82202780"
 ---
 # <a name="import-a-logic-app-as-an-api"></a>импорт приложения логики в виде API;
 
@@ -31,16 +31,16 @@ ms.locfileid: "74108393"
 > -   проверка API на портале Azure;
 > -   проверка API на портале разработчика.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
--   Выполните задачи из краткого руководства по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md)
+-   Выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md)
 -   Убедитесь, что в вашей подписке есть приложение логики, которое предоставляет конечную точку HTTP. Дополнительные сведения см. в статье [Вызовы, срабатывания триггеров и создание вложенных рабочих процессов в приложениях логики](../logic-apps/logic-apps-http-endpoint.md).
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
 
 ## <a name="import-and-publish-a-back-end-api"></a><a name="create-api"> </a>Импорт и публикация API серверной части
 
-1. Выберите **Интерфейсы API** в разделе **УПРАВЛЕНИЕ API**.
+1. На портале Azure перейдите к службе "Управление API" и в меню выберите **Интерфейсы API**.
 2. Выберите **Приложение логики** в списке **Add a new API** (Добавление нового API).
 
     ![Приложение логики](./media/import-logic-app-as-api/logic-app-api.png)
@@ -57,7 +57,8 @@ ms.locfileid: "74108393"
     - **Starter**
     - **Unlimited**
 
-7. Нажмите кнопку **Создать**.
+7. Введите другие параметры API. Вы можете задать значения во время создания или настроить их позже, перейдя на вкладку **Параметры**. Эти параметры описаны в руководстве [Импорт и публикация первого интерфейса API](import-and-publish.md#-import-and-publish-a-backend-api).
+8. Нажмите кнопку **создания**.
 
 ## <a name="test-the-api-in-the-azure-portal"></a>проверка API на портале Azure;
 

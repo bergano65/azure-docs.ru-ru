@@ -10,14 +10,16 @@ ms.technology: integration-services
 author: swinarko
 ms.author: sawinark
 ms.reviewer: maghan
-ms.openlocfilehash: 0c4cdc3481fb58efd8eaa4cd83e1d6167f203a4e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6f2983b375e3eeb73a0372e123d4d2763b3c65ec
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81760190"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82629394"
 ---
 # <a name="access-data-stores-and-file-shares-with-windows-authentication-from-ssis-packages-in-azure"></a>Доступ к хранилищам данных и общим папкам из пакетов служб Integration Services в Azure с использованием проверки подлинности Windows
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Можно использовать проверку подлинности Windows для доступа к хранилищам данных, таким как серверы SQL Server, общие папки, Файлы Azure и т. д., из пакетов служб Integration Services, запущенных в среде выполнения интеграции Azure-SSIS Integration Runtime в Фабрике данных Azure (ADF). Хранилища данных могут быть локальными, размещаться на виртуальных машинах Azure или выполняться в Azure в качестве управляемых служб. Если они находятся в локальной среде, необходимо присоединить Azure-SSIS IR к виртуальной сети (виртуальная сеть Microsoft Azure), подключенной к локальной сети, см. в разделе [соединение Azure-SSIS IR с виртуальная сеть Microsoft Azure](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network). Есть четыре способа доступа к хранилищам данных с использованием проверки подлинности Windows из пакетов служб Integration Services, выполняющихся в Azure-SSIS IR.
 

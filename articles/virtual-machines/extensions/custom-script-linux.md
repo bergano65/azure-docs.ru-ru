@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/25/2018
 ms.author: mimckitt
-ms.openlocfilehash: 959e473cb52e23c9d04586f0b24da34537f4e660
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 92bb254873669ae7c0894d633f17b5701b7ddc97
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82115607"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82594735"
 ---
 # <a name="use-the-azure-custom-script-extension-version-2-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 2 на виртуальных машинах Linux
 Расширение настраиваемых скриптов версии 2 скачивает и выполняет скрипты на виртуальных машинах Azure. Это расширение можно использовать для настройки после развертывания, установки программного обеспечения и других задач настройки или управления. Сценарии можно скачать из службы хранилища Azure или другого расположения, доступного из Интернета, или передать в среду выполнения расширения. 
@@ -110,16 +110,16 @@ ms.locfileid: "82115607"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Имя | Значение и пример | Тип данных | 
+| Название | Значение и пример | Тип данных | 
 | ---- | ---- | ---- |
 | версия_API | 2019-03-01 | Дата |
 | publisher | Microsoft.Compute.Extensions | строка |
 | type | CustomScript | строка |
-| typeHandlerVersion | 2.1 | INT |
-| fileUris (пример) | https://github.com/MyProject/Archive/MyPythonScript.py | массиве |
+| typeHandlerVersion | 2.1 | int |
+| fileUris (пример) | `https://github.com/MyProject/Archive/MyPythonScript.py` | массиве |
 | commandToExecute (пример) | > " \<My-Param1" Python MyPythonScript.py | строка |
 | скрипт | IyEvYmluL3NoCmVjaG8gIlVwZGF0aW5nIHBhY2thZ2VzIC4uLiIKYXB0IHVwZGF0ZQphcHQgdXBncmFkZSAteQo= | строка |
-| skipDos2Unix (например) | false | Логическое |
+| skipDos2Unix (например) | false | boolean |
 | метка времени (например) | 123456789 | 32-разрядное целое число |
 | storageAccountName (пример) | examplestorageacct | строка |
 | storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | строка |
@@ -218,7 +218,7 @@ CustomScript (начиная с версии 2,1) поддерживает [уп
 
 Чтобы использовать назначенное системой удостоверение на целевой виртуальной машине или VMSS, задайте для поля "managedidentity" пустой объект JSON. 
 
-> Пример:
+> Пример
 >
 > ```json
 > {
@@ -230,7 +230,7 @@ CustomScript (начиная с версии 2,1) поддерживает [уп
 
 Чтобы использовать назначенное пользователем удостоверение на целевой виртуальной машине или VMSS, настройте в поле "managedidentity" идентификатор клиента или идентификатор объекта управляемого удостоверения.
 
-> Примеры
+> Примеры:
 >
 > ```json
 > {
@@ -497,5 +497,5 @@ az vm extension list -g myResourceGroup --vm-name myVM
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Код, текущие проблемы и версии доступны в [репозитории расширения CustomScript](https://github.com/Azure/custom-script-extension-linux).
