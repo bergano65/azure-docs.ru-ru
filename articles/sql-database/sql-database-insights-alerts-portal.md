@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: aamalvea
 ms.author: aamalvea
 ms.reviewer: jrasnik, carlrab
-ms.date: 03/10/2020
-ms.openlocfilehash: 67c47b35e84a93d7d9032ad55b425ae2bb6971fe
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 05/04/2020
+ms.openlocfilehash: 37eabd4b2f61a82388b1c8d0aaf4aef2320f008e
+ms.sourcegitcommit: c8a0fbfa74ef7d1fd4d5b2f88521c5b619eb25f8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79209482"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82801813"
 ---
 # <a name="create-alerts-for-azure-sql-database-and-azure-synapse-analytics-databases-using-azure-portal"></a>Создание оповещений для базы данных SQL Azure и баз данных Azure синапсе Analytics с помощью портал Azure
 
@@ -24,8 +24,8 @@ ms.locfileid: "79209482"
 
 В этой статье показано, как настроить оповещения для баз данных с единым пулом и хранилища данных в базе данных SQL Azure и Azure синапсе Analytics (ранее — хранилище данных SQL Azure) с помощью портал Azure. Оповещения могут отправить электронное сообщение или вызвать веб-перехватчик, когда какая-либо метрика достигает порога (например, размер базы данных или использование ЦП). В этой статье также приведены рекомендации по настройке периодов оповещений.
 
-> [!IMPORTANT]
-> В Управляемом экземпляре эта функция пока недоступна. В качестве альтернативы можно использовать агент SQL, чтобы отправлять оповещения по электронной почте для некоторых метрик на основе [динамических административных представлений](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views).
+> [!NOTE]
+> Инструкции по работе с управляемыми экземплярами SQL см. в статье [Создание оповещений для управляемый экземпляр Azure SQL](sql-database-managed-instance-alerts.md).
 
 Вы можете получать оповещения на основе отслеживания метрик или событий в службах Azure.
 
@@ -50,7 +50,7 @@ ms.locfileid: "79209482"
 1. На [портале](https://portal.azure.com/)найдите ресурс, который нужно отслеживать, и выберите его.
 2. В разделе Мониторинг выберите **оповещения** . Текст и значок для разных ресурсов могут незначительно отличаться.  
 
-   ![Мониторинг](media/sql-database-insights-alerts-portal/Alerts.png)
+   ![Наблюдение](media/sql-database-insights-alerts-portal/Alerts.png)
   
 3. Нажмите кнопку **создать правило генерации оповещений** , чтобы открыть страницу **Создание правила** .
   ![Создать правило](media/sql-database-insights-alerts-portal/create-rule.png)
@@ -69,6 +69,6 @@ ms.locfileid: "79209482"
 
 В течение 10 минут оповещение активно и активируется, как описано выше.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../azure-monitor/platform/alerts-webhooks.md).

@@ -59,6 +59,11 @@
       href: tutorial-kubernetes-app-update.md
     - name: "7.\_Обновление кластера"
       href: tutorial-kubernetes-upgrade-cluster.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Кластеры и рабочие нагрузки

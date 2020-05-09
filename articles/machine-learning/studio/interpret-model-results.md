@@ -8,21 +8,18 @@ ms.subservice: studio
 ms.topic: conceptual
 author: likebupt
 ms.author: keli19
-ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 11/29/2017
-ms.openlocfilehash: 9a0b855f48085138b28e02e0a5d01c5dd0f666be
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 23a201ef63a9a1a6bb5bd078867ccc1200893049
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79218067"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82982026"
 ---
 # <a name="interpret-model-results-in-azure-machine-learning-studio-classic"></a>Интерпретация результатов модели в Студии машинного обучения Azure (классическая версия)
 
 [!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 В этом разделе объясняется, как визуализировать и интерпретировать результаты прогноза в Машинное обучение Azure Studio (классическая модель). Когда вы обучите модель и получите с ее помощью прогнозы (оценки модели), этот результат нужно интерпретировать.
-
-
 
 Существует четыре основных типа моделей машинного обучения в Машинное обучение Azure Studio (классическая модель):
 
@@ -37,11 +34,11 @@ ms.locfileid: "79218067"
 * модуль [Assign to Clusters][assign-to-clusters] (Назначить в кластеры) для кластеризации;
 * модуль [Score Matchbox Recommender][score-matchbox-recommender] (Оценка модели рекомендаций Matchbox) для систем рекомендаций.
 
-В этом документе объясняется интерпретация результатов прогнозирования для каждого из этих модулей. Общие сведения об этих модулях см. в разделе [Выбор параметров для оптимизации алгоритмов в машинное обучение Azure Studio (классическая модель)](algorithm-parameters-optimize.md).
+Узнайте, как [выбрать параметры для оптимизации алгоритмов в студии машинного обучения (классическая модель)](algorithm-parameters-optimize.md).
 
-В этом разделе рассматривается интерпретация прогноза, а не оценка модели. Дополнительные сведения о том, как оценить модель, см. [в статье Оценка производительности модели в машинное обучение Azure Studio (классическая модель)](evaluate-model-performance.md).
+Сведения о том, как оценивать модели, см. в разделе [Оценка производительности модели](evaluate-model-performance.md).
 
-Если вы не знакомы с Машинное обучение Azure Studio (классической) и вам нужна помощь с созданием простого эксперимента, чтобы приступить к работе, см. статью [Создание простого эксперимента в машинное обучение Azure Studio (классическая модель)](create-experiment.md).
+Если вы не знакомы с ML Studio (классическая модель), [Узнайте, как создать простой эксперимент](create-experiment.md).
 
 ## <a name="classification"></a>Классификация
 Существует две подкатегории задач классификации:
