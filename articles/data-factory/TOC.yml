@@ -675,6 +675,8 @@
           href: how-to-fixed-width.md
         - name: Обработка строк ошибок
           href: how-to-data-flow-error-rows.md
+        - name: Миграция из Базы данных SQL Azure в CosmosDB
+          href: how-to-sqldb-to-cosmosdb.md
     - name: Перенос рабочих нагрузок SSIS из локальных систем
       items:
         - name: Обзор переноса рабочих нагрузок SSIS

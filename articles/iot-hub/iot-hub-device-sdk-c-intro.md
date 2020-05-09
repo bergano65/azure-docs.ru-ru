@@ -11,12 +11,12 @@ ms.author: robinsh
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: b9b27bb142cb729536a3b7a561ed8b8ff5e0ccf5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a2c2a1d817dbe88bebc36f66b441e609b5faea2a
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81731306"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82629360"
 ---
 # <a name="azure-iot-device-sdk-for-c"></a>Пакет SDK для устройств Azure IoT для C
 
@@ -88,7 +88,7 @@ ms.locfileid: "81731306"
 
 Если вы еще не знакомы с обозревателем устройств, изучите процедуру, представленную ниже, в которой описывается добавление устройства и получение строки подключения устройства.
 
-1. Дополнительные сведения об установке обозревателя устройств см. на странице об [использовании обозревателя устройств для устройств Центра Интернета вещей](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer).
+1. Дополнительные сведения об установке обозревателя устройств см. на странице об [использовании обозревателя устройств для устройств Центра Интернета вещей](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/).
 
 1. При выполнении программы вы увидите следующий интерфейс:
 
@@ -577,7 +577,7 @@ serializer_deinit();
 
 Каждая из этих трех функций соответствуют трем функциям инициализации, описанным ранее. Вызов этих API позволит освободить выделенные ранее ресурсы.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 
 В этой статье были рассмотрены основы использования библиотек в **пакете SDK для устройств Azure IOT для C**. Он предоставил достаточно информации, чтобы понять, что входит в пакет SDK, его архитектуру и как приступить к работе с примерами Windows. В следующей статье также рассказывается о пакете SDK и приводятся [дополнительные сведения о библиотеке IoTHubClient](iot-hub-device-sdk-c-iothubclient.md).
 
