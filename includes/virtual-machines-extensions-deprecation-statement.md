@@ -1,6 +1,6 @@
 ---
 title: Включить имя файла
-description: включить файл
+description: Включить файл
 services: virtual-machines-linux
 author: cynthn
 ms.service: virtual-machines-linux

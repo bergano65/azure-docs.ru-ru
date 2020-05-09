@@ -11,18 +11,21 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b0d7816dc83a7c3536e44ff2461d85ea6178ff1
-ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
-ms.translationtype: HT
+ms.openlocfilehash: a108c952c4f1f9b8298e57c8fd94c767bb065f00
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82778487"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82981779"
 ---
 # <a name="what-are-service-dependencies-in-azure-active-directory-conditional-access"></a>Что такое зависимости служб в Azure Active Directory условном доступе? 
 
 С помощью политик условного доступа можно указать требования доступа к веб-сайтам и службам. Например, требования к доступу могут включать в себя требование многофакторной проверки подлинности (MFA) или [управляемых устройств](require-managed-devices.md). 
 
 При непосредственном доступе к сайту или службе влияние связанной политики обычно легко оценивается. Например, если имеется политика, для которой требуется многофакторная проверка подлинности (MFA) для SharePoint Online, для каждого входа на веб-портал SharePoint применяется сервер MFA. Однако это не всегда прямо вперед, чтобы оценить влияние политики, поскольку существуют облачные приложения с зависимостями от других облачных приложений. Например, Microsoft Teams может предоставить доступ к ресурсам в SharePoint Online. Таким образом, при обращении к Microsoft Teams в нашем текущем сценарии вы также налагаетесь на политику MFA SharePoint. 
+
+> [!TIP]
+> Использование приложения [office 365 (Предварительная версия)](concept-conditional-access-cloud-apps.md#office-365-preview) предназначено для всех приложений Office во избежание проблем с зависимостями служб в стеке Office.
 
 ## <a name="policy-enforcement"></a>Принудительное применение политики 
 

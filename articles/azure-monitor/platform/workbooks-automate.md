@@ -9,12 +9,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/30/2020
 ms.author: mbullwin
-ms.openlocfilehash: d62fa84711bd8cba57d07f3464c21344bc5c32c6
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
-ms.translationtype: HT
+ms.openlocfilehash: 76ecc3ee17353ebd0bbead1bba959f85d521d0df
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82731749"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82982145"
 ---
 # <a name="programmatically-manage-workbooks"></a>Программное управление книгами
 
@@ -42,7 +42,7 @@ ms.locfileid: "82731749"
 2. Ниже приведен пример шаблона Azure Resource Manager, который развертывает шаблон книги для Azure Monitor коллекции книг. Вставьте код JSON, скопированный вместо `<PASTE-COPIED-WORKBOOK_TEMPLATE_HERE>`. Справочный шаблон Azure Resource Manager, создающий шаблон книги, можно найти [здесь](https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Documentation/ARM-template-for-creating-workbook-template).
 
     ```json
-          {
+    {
         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
         "contentVersion": "1.0.0.0",
         "parameters": {
@@ -114,7 +114,7 @@ ms.locfileid: "82731749"
 | Книги в группах ресурсов                   | `microsoft.resources/subscriptions/resourcegroups` | `workbook`    |
 | Книги в Azure Active Directory            | `microsoft.aadiam/tenant`                          | `workbook`    |
 | Аналитика ВМ на виртуальных машинах                | `microsoft.compute/virtualmachines`                | `insights`    |
-| Аналитика ВМ в масштабируемых наборах виртуальных машин                   | `microsoft.compute/virtualmachinescalesets`        | `insights`    |
+| Аналитика ВМ в масштабируемых наборах виртуальных машин      | `microsoft.compute/virtualmachinescalesets`        | `insights`    |
 
 ## <a name="azure-resource-manager-template-for-deploying-a-workbook-instance"></a>Шаблон Azure Resource Manager для развертывания экземпляра книги
 

@@ -122,6 +122,8 @@
       href: remotefx-graphics-performance-counters.md
 - name: Справочник
   items:
+    - name: Лучшие методики обеспечения безопасности
+      href: security-guide.md
     - name: Поддержка Linux
       href: linux-overview.md
     - name: Поддерживаемые параметры RDP-файла
