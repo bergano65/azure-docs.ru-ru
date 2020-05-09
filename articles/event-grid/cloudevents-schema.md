@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 01/21/2020
 ms.author: babanisa
-ms.openlocfilehash: 404052984cb99e37f7404a47f3ac374088d32d6c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2e4de91034de0d036cd99e265949ba85a5939180
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81393477"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82629333"
 ---
 # <a name="use-cloudevents-v10-schema-with-event-grid"></a>Использование схемы Клаудевентс v 1.0 со службой "Сетка событий"
 В дополнение к [схеме событий по умолчанию](event-schema.md)служба "Сетка событий Azure" изначально поддерживает события в [реализации JSON клаудевентс v 1.0](https://github.com/cloudevents/spec/blob/v1.0/json-format.md) и [привязки протокола HTTP](https://github.com/cloudevents/spec/blob/v1.0/http-protocol-binding.md). [CloudEvents](https://cloudevents.io/) — [открытая спецификация](https://github.com/cloudevents/spec/blob/v1.0/spec.md) для описания данных о событиях.
@@ -139,7 +139,7 @@ New-AzureRmEventGridSubscription `
 
  ## <a name="endpoint-validation-with-cloudevents-v10"></a>Проверка конечной точки с помощью Клаудевентс v 1.0
 
-Если вы уже знакомы со службой "Сетка событий", то, возможно, знаете, что подтверждение конечной точки сетки событий не позволяет избежать нарушения. Клаудевентс v 1.0 реализует собственную [семантику защиты от](security-authentication.md#webhook-event-delivery) нарушений с помощью метода HTTP Options. Дополнительные сведения можно прочитать [здесь](https://github.com/cloudevents/spec/blob/v1.0/http-webhook.md#4-abuse-protection). При использовании схемы Клаудевентс для вывода в службе "Сетка событий" используется с защитой Клаудевентс v 1.0 вместо механизма событий проверки сетки событий.
+Если вы уже знакомы со службой "Сетка событий", то, возможно, знаете, что подтверждение конечной точки сетки событий не позволяет избежать нарушения. Клаудевентс v 1.0 реализует собственную [семантику защиты от](webhook-event-delivery.md) нарушений с помощью метода HTTP Options. Дополнительные сведения можно прочитать [здесь](https://github.com/cloudevents/spec/blob/v1.0/http-webhook.md#4-abuse-protection). При использовании схемы Клаудевентс для вывода в службе "Сетка событий" используется с защитой Клаудевентс v 1.0 вместо механизма событий проверки сетки событий.
 
 <a name="azure-functions"></a>
 
@@ -147,7 +147,7 @@ New-AzureRmEventGridSubscription `
 
 [Привязка сетки событий функций Azure](../azure-functions/functions-bindings-event-grid.md) изначально не поддерживает клаудевентс, поэтому для чтения сообщений клаудевентс используются функции, активируемые HTTP. При использовании триггера HTTP для чтения Клаудевентс необходимо написать код для автоматического запуска триггера сетки событий:
 
-* Отправляет запрос проверки в [запрос подтверждения подписки](../event-grid/security-authentication.md#webhook-event-delivery).
+* Отправляет запрос проверки в [запрос подтверждения подписки](../event-grid/webhook-event-delivery.md).
 * Вызывает функцию один раз для каждого элемента массива событий, содержащихся в тексте запроса.
 
 Дополнительные сведения об URL-адресе, используемом для вызова функции, выполняемой локально или в Azure, см. в [справочной документации по привязке триггера HTTP](../azure-functions/functions-bindings-http-webhook.md).
@@ -211,7 +211,7 @@ module.exports = function (context, req) {
 };
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со сведениями о [мониторинге доставки сообщений в службе "Сетка событий"](monitor-event-delivery.md).
 * Мы рекомендуем вам протестировать CloudEvents и [внести свой вклад](https://github.com/cloudevents/spec/blob/master/CONTRIBUTING.md) в усовершенствование схемы, оставляя комментарии.

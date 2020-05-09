@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 07/18/2019
 ms.author: curtand
-ms.openlocfilehash: ee868ded0dc3a46f2ec20d0141aa2576cbf71f45
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 016a09432499c5fd2be8fd488c7ef7a644c00bca
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77062342"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82628339"
 ---
 # <a name="set-up-a-security-key-as-your-verification-method"></a>Настройка ключа безопасности в качестве метода проверки
 
@@ -49,7 +49,7 @@ ms.locfileid: "77062342"
 > [!Note]
 > Если вы не можете использовать ключ безопасности FIDO2, можно использовать другие методы проверки, не имеющие пароля, такие как Microsoft Authenticatorное приложение или Windows Hello. Дополнительные сведения о Microsoft Authenticator приложении см. в разделе [что такое Microsoft Authenticator приложение?](user-help-auth-app-overview.md). Дополнительные сведения о Windows Hello см. в статье [Общие сведения о Windows Hello](https://www.microsoft.com/windows/windows-hello).
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Прежде чем вы сможете зарегистрировать ключ безопасности, должны выполняться следующие условия.
 
@@ -63,7 +63,7 @@ ms.locfileid: "77062342"
 
 Чтобы войти в рабочую или учебную учетную запись с помощью ключа, необходимо создать свой ключ безопасности и присвоить ему уникальный ПИН-код. У вас может быть до 10 ключей, зарегистрированных в вашей учетной записи. 
 
-1. Перейдите на страницу " **Мой профиль** " https://myprofile.microsoft.com и войдите в нее, если вы еще этого не сделали.
+1. Перейдите на страницу " **Мой профиль** " https://myaccount.microsoft.com и войдите в нее, если вы еще этого не сделали.
 
 2. Выберите **сведения о безопасности**, нажмите кнопку **Добавить метод**, а затем выберите **ключ безопасности** из раскрывающегося списка **Добавить метод** .
 
@@ -160,7 +160,7 @@ ms.locfileid: "77062342"
 
 Чтобы зарегистрировать ключ безопасности, необходимо зарегистрировать по крайней мере один дополнительный метод проверки безопасности. Дополнительные сведения см. в [разделе Обзор](security-info-add-update-methods-overview.md) . 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о методах проверки, не прошедших проверку пароля, см. в статье [Microsoft Azure AD: начало общедоступной предварительной версии ключей безопасности FIDO2, включение](https://www.onmsft.com/news/microsofts-azure-ad-begins-public-preview-of-fido2-security-keys-enabling-passwordless-logins) блога для входа в систему с помощью пароля или чтение сведений о [Microsoft Authenticator приложении](user-help-auth-app-overview.md) и [обзорных статьях Windows Hello](https://www.microsoft.com/windows/windows-hello) .
 

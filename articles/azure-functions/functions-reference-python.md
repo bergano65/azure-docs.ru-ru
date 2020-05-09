@@ -3,12 +3,12 @@ title: Справочник разработчика Python. Функции Azur
 description: Сведения о разработке функций на языке Python
 ms.topic: article
 ms.date: 12/13/2019
-ms.openlocfilehash: 936d6455f448e0243c7d4de2b9f1b88673a32798
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ea128fc7c68b49fc14d796e9a3b91a9dbddd9b26
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82185988"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82780051"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Справочник разработчика Python. Функции Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "82185988"
 
 Данные из триггеров и привязок привязываются к функции через атрибуты метода с `name` помощью свойства, определенного в файле *Function. JSON* . Например, приведенная ниже _функция Function. JSON_ описывает простую функцию, АКТИВИРУЕМУЮ HTTP-запросом с именем `req`:
 
-:::code language="son" source="~/functions-quickstart-templates/Functions.Templates/Templates/HttpTrigger-Python/function.json":::
+:::code language="json" source="~/functions-quickstart-templates/Functions.Templates/Templates/HttpTrigger-Python/function.json":::
 
 На основе этого определения `__init__.py` файл, содержащий код функции, может выглядеть, как в следующем примере:
 
@@ -77,6 +77,7 @@ def main(req: azure.functions.HttpRequest) -> str:
  | | - my_second_helper_function.py
  | - host.json
  | - requirements.txt
+ | - Dockerfile
  tests
 ```
 Основная\_\_папка проекта (App\_\_) может содержать следующие файлы:
@@ -86,6 +87,7 @@ def main(req: azure.functions.HttpRequest) -> str:
 * *Host. JSON*: содержит глобальные параметры конфигурации, влияющие на все функции в приложении-функции. Этот файл не публикуется в Azure. При локальном запуске поддерживаются не все параметры. Дополнительные сведения см. в разделе [Host. JSON](functions-host-json.md).
 * *. фунЦигноре*(необязательный). объявляет файлы, которые не должны публиковаться в Azure.
 * *. gitignore*: (необязательный) объявляет файлы, исключаемые из репозитория Git, например Local. Settings. JSON.
+* *Dockerfile*. используется при публикации проекта в [пользовательском контейнере](functions-create-function-linux-custom-image.md)(необязательно).
 
 У каждой функции есть собственный файл кода и файл конфигурации привязки. 
 
@@ -232,7 +234,7 @@ def main(req: func.HttpRequest,
     return message
 ```
 
-## <a name="logging"></a>Logging
+## <a name="logging"></a>Ведение журнала
 
 Доступ к средству ведения журнала среды выполнения функций Azure можно получить [`logging`](https://docs.python.org/3/library/logging.html#module-logging) с помощью корневого обработчика в приложении-функции. Это средство ведения журнала привязано к Application Insights и позволяет отмечать предупреждения и ошибки, возникшие во время выполнения функции.
 
@@ -639,7 +641,7 @@ CORS полностью поддерживается для приложений
 
 Все известные проблемы и запросы возможностей отслеживаются в [списке проблем на GitHub](https://github.com/Azure/azure-functions-python-worker/issues). Если вы столкнулись с проблемой и не можете найти ее решение на GitHub, откройте новую проблему и укажите ее подробное описание.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих ресурсах:
 

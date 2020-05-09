@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 06/26/2019
 ms.reviewer: nieberts, jomore
-ms.openlocfilehash: 01b2f3baefc2320ec11f9cb7f29392ebb0841289
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
-ms.translationtype: HT
+ms.openlocfilehash: 09fd5326c2532e115dbab0752af31a809488f04c
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82207485"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82559690"
 ---
 # <a name="use-kubenet-networking-with-your-own-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Использование сети kubenet с пользовательскими диапазонами IP-адресов в Службе Azure Kubernetes (AKS)
 
@@ -32,7 +32,7 @@ ms.locfileid: "82207485"
 > [!WARNING]
 > Для использования пулов узлов Windows Server необходимо использовать Azure CNI. Использование кубенет в качестве сетевой модели недоступно для контейнеров Windows Server.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Требуется Azure CLI версии 2.0.65 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
@@ -197,9 +197,9 @@ az aks create \
 
 При создании кластера AKS создается группа безопасности сети и таблица маршрутов. Эти сетевые ресурсы управляются плоскостью управления AKS. Группа безопасности сети автоматически связывается с виртуальными сетевыми адаптерами на узлах. Таблица маршрутов автоматически связывается с подсетью виртуальной сети. Правила групп безопасности сети и таблицы маршрутов автоматически обновляются по мере создания и предоставления служб.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-При развертывании кластера AKS в подсети существующей виртуальной сети его можно использовать в обычном режиме. Начните [создавать приложения с помощью Azure Dev Spaces][dev-spaces] или [с помощью Draft][use-draft] либо [развертывать приложения с помощью Helm][use-helm].
+При развертывании кластера AKS в подсети существующей виртуальной сети его можно использовать в обычном режиме. Приступите к [созданию приложений с помощью Azure dev Spaces][dev-spaces], [развертыванию существующих приложений с помощью Helm][use-helm]или [созданию новых приложений с помощью Helm][develop-helm].
 
 <!-- LINKS - External -->
 [dev-spaces]: https://docs.microsoft.com/azure/dev-spaces/
@@ -217,8 +217,8 @@ az aks create \
 [az-network-vnet-subnet-show]: /cli/azure/network/vnet/subnet#az-network-vnet-subnet-show
 [az-role-assignment-create]: /cli/azure/role/assignment#az-role-assignment-create
 [az-aks-create]: /cli/azure/aks#az-aks-create
+[develop-helm]: quickstart-helm.md
 [use-helm]: kubernetes-helm.md
-[use-draft]: kubernetes-draft.md
 [virtual-nodes]: virtual-nodes-cli.md
 [vnet-peering]: ../virtual-network/virtual-network-peering-overview.md
 [express-route]: ../expressroute/expressroute-introduction.md

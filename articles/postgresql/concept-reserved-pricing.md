@@ -5,13 +5,13 @@ author: kummanish
 ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 10/17/2019
-ms.openlocfilehash: 66d7228e78f03196da0b26249e7f1f86e79d79fd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 05/02/2020
+ms.openlocfilehash: 7f671e2a77a0a00fd1cc4338e29c14f7b8fca4f2
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80159019"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82734728"
 ---
 # <a name="prepay-for-azure-database-for-postgresql-compute-resources-with-reserved-capacity"></a>Предоплата за базу данных Azure для PostgreSQL. Вычисление ресурсов с зарезервированной емкостью
 
@@ -22,7 +22,7 @@ ms.locfileid: "80159019"
 > [!IMPORTANT]
 > Цены на зарезервированные ресурсы доступны только для развертывания с [одним сервером](https://docs.microsoft.com/azure/postgresql/overview#azure-database-for-postgresql---single-server) в базе данных Azure для PostgreSQL, а не для развертывания [Цитус](https://docs.microsoft.com/azure/postgresql/overview#azure-database-for-postgresql---hyperscale-citus) .
 
-Вы можете купить зарезервированную емкость базы данных Azure для PostgreSQL в [портал Azure](https://portal.azure.com/). Чтобы приобрести зарезервированную емкость, сделайте следующее:
+Вы можете купить зарезервированную емкость базы данных Azure для PostgreSQL в [портал Azure](https://portal.azure.com/). Платите за резервирование [наперед или ежемесячными платежами](../cost-management-billing/reservations/monthly-payments-reservations.md). Чтобы приобрести зарезервированную емкость, сделайте следующее:
 
 * Необходимо быть в роли владельца по крайней мере для одной корпоративной или отдельной подписки с тарифами с оплатой по мере использования.
 * Для подписок с соглашением Enterprise параметр **Добавить зарезервированные экземпляры** следует включить на [портале EA](https://ea.azure.com/). Или, если этот параметр отключен, необходимо быть администратором подписки EA.

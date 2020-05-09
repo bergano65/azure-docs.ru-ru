@@ -11,14 +11,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 4/7/2020
-ms.openlocfilehash: 6e357e98d6c5190c6dfef675dc1ab9cf30a717c1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b27fe2abc50396b527e61487acf9797db59c1cce
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81455093"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82627591"
 ---
 # <a name="migrate-sql-server-agent-jobs-to-adf-with-ssms"></a>Перенос заданий агент SQL Server в ADF с помощью SSMS
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 При [переносе локальных рабочих нагрузок SQL Server Integration Services (SSIS) в службы SSIS в ADF](scenario-ssis-migration-overview.md)после переноса пакетов служб SSIS можно выполнить пакетную миграцию заданий агент SQL Server с типом шага задания SQL Server Integration Services пакета в конвейеры и действия в фабрике данных Azure (ADF), а также триггеры расписания через SQL Server Management Studio (SSMS) **Мастер миграции заданий служб SSIS**.
 
@@ -78,6 +80,6 @@ ms.locfileid: "81455093"
 1. Выполните миграцию, а затем проверьте результаты.
 ![Шаг 5](media/how-to-migrate-ssis-job-ssms/step5.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Запуск и мониторинг конвейера](how-to-invoke-ssis-package-ssis-activity.md)

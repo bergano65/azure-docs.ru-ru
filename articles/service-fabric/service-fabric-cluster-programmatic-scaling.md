@@ -5,16 +5,16 @@ author: mjrousos
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: mikerou
-ms.openlocfilehash: ffe07960c6d32bea8ec31b1fe8248b6abc2b63af
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bd7c57f3089115e4da861fc8fd20331ab92bc33e
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75458284"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82787147"
 ---
 # <a name="scale-a-service-fabric-cluster-programmatically"></a>Программное масштабирование кластера Service Fabric 
 
-В основе кластеров Service Fabric кластеры, запущенных в Azure, лежат масштабируемые наборы виртуальных машин.  Вы можете узнать, как выполнять [масштабирование кластеров](./service-fabric-cluster-scale-up-down.md) вручную или с помощью правил автомасштабирования. В этой статье описывается, как управлять учетными данными и масштабировать кластер с помощью свободного пакета SDK для вычислений Azure, что является более сложным сценарием. См. дополнительные сведения о [программных методах выполнения операций](service-fabric-cluster-scaling.md#programmatic-scaling). 
+В основе кластеров Service Fabric кластеры, запущенных в Azure, лежат масштабируемые наборы виртуальных машин.  Вы можете узнать, как выполнять [масштабирование кластеров](./service-fabric-cluster-scale-in-out.md) вручную или с помощью правил автомасштабирования. В этой статье описывается, как управлять учетными данными и масштабировать кластер с помощью свободного пакета SDK для вычислений Azure, что является более сложным сценарием. См. дополнительные сведения о [программных методах выполнения операций](service-fabric-cluster-scaling.md#programmatic-scaling). 
 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
@@ -115,10 +115,10 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 await client.ClusterManager.RemoveNodeStateAsync(mostRecentLiveNode.NodeName);
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы внедрить собственную логику автомасштабирования, ознакомьтесь со следующими понятиями и полезными API-интерфейсами:
 
-- [Масштабирование кластера Service Fabric с помощью правил автомасштабирования](./service-fabric-cluster-scale-up-down.md)
+- [Масштабирование кластера Service Fabric с помощью правил автомасштабирования](./service-fabric-cluster-scale-in-out.md)
 - [Свободные библиотеки управления Azure для .NET](https://github.com/Azure/azure-sdk-for-net/tree/Fluent) (для взаимодействия с базовыми масштабируемыми наборами виртуальных машин для кластеров Service Fabric)
 - [System.Fabric.FabricClient](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient) (для взаимодействия с кластером Service Fabric и его узлами)

@@ -655,7 +655,7 @@
             - name: Масштабирование
               items:
                 - name: Горизонтальное увеличение масштаба вручную
-                  href: service-fabric-cluster-scale-up-down.md
+                  href: service-fabric-cluster-scale-in-out.md
                 - name: Горизонтальное увеличение масштаба программными средствами
                   href: service-fabric-cluster-programmatic-scaling.md
                 - name: Масштабирование типа первичного узла

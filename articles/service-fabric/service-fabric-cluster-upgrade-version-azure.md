@@ -3,12 +3,12 @@ title: Обновление версии Service Fabric Azure кластера
 description: Обновление кода и (или) конфигурации Service Fabric, под управлением которой работает кластер Service Fabric, в том числе изменение режима обновления кластера, обновление сертификатов, добавление портов приложений, применение исправлений для ОС и т. д. Чего можно ожидать при выполнении обновлений?
 ms.topic: conceptual
 ms.date: 11/12/2018
-ms.openlocfilehash: c3ffcbd4296385623ff5e2c1ee001c27598ff3fb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 802e7402f60370b7151c5e373c8a4921a5af7c80
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75451804"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82789606"
 ---
 # <a name="upgrade-the-service-fabric-version-of-a-cluster"></a>Изменение версии Service Fabric в кластере
 
@@ -108,9 +108,9 @@ Output:
                 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как настроить некоторые [Параметры структуры кластера Service Fabric](service-fabric-cluster-fabric-settings.md) .
-* Узнайте, как выполнять [масштабирование кластера](service-fabric-cluster-scale-up-down.md)
+* Узнайте, как выполнять [масштабирование кластера](service-fabric-cluster-scale-in-out.md)
 * Дополнительные сведения об [обновлении приложений](service-fabric-application-upgrade.md)
 
 <!--Image references-->

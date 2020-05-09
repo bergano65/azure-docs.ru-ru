@@ -1,0 +1,36 @@
+### YamlMime:Landing
+title: Документация по решению Azure VMware (AVS)
+summary: Узнайте, как использовать решение Azure VMware (AVS) для развертывания частного облака VMware в Azure
+metadata:
+  title: Документация по решению Azure VMware (AVS)
+  description: Узнайте, как использовать решение Azure VMware (AVS) для развертывания частного облака VMware в Azure
+  ms.service: azure-vmware
+  ms.topic: landing-page
+  author: dikamath
+  ms.author: dikamath
+  ms.date: 05/04/2020
+  ms.openlocfilehash: 2ae8f6bc5257dc4d7383516201912c504c4d6038
+  ms.sourcegitcommit: d9cd51c3a7ac46f256db575c1dfe1303b6460d04
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 05/04/2020
+  ms.locfileid: "82739456"
+landingContent:
+- title: О решении Azure VMware (AVS)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое решение Azure VMware (AVS)
+      url: introduction.md
+  - linkListType: get-started
+    links:
+    - text: Контрольный список для сети
+      url: tutorial-network-checklist.md
+  - linkListType: tutorial
+    links:
+    - text: Создание частного облака AVS
+      url: tutorial-create-private-cloud.md
+    - text: Настройка сети
+      url: tutorial-configure-networking.md
+    - text: Получение доступа к частному облаку
+      url: tutorial-access-private-cloud.md
