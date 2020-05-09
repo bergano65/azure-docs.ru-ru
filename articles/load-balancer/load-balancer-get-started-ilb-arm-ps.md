@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: allensu
-ms.openlocfilehash: da564f8d49675ba0d51c5120768028e9d333e2fd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 485afaa4b7009731784cf5da6f8c28e0a787c1d9
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76045474"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82629428"
 ---
 # <a name="create-an-internal-load-balancer-by-using-the-azure-powershell-module"></a>Создание внутренней подсистемы балансировки нагрузки с помощью модуля Azure PowerShell
 
@@ -48,7 +48,7 @@ ms.locfileid: "76045474"
 * Конфигурация проверки: проверки состояния работоспособности для виртуальных машин.
 * Правила NAT для входящих подключений: правила порта для прямого доступа к виртуальным машинам.
 
-Дополнительные сведения о компонентах подсистемы балансировки нагрузки см. в разделе [Azure Load Balancer Components](concepts-limitations.md#load-balancer-components).
+Дополнительные сведения о компонентах подсистемы балансировки нагрузки см. в разделе [Azure Load Balancer Components](components.md).
 
 Далее описана настройка балансировщика нагрузки для двух виртуальных машин.
 

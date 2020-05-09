@@ -95,6 +95,6 @@ static string BuildSharedAccessSignature(string resource, DateTime expirationUtc
 > [!IMPORTANT]
 Служба "Сетка событий Azure" поддерживает только конечные точки веб-перехватчика **HTTPS** . 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения о сетке событий см. в статье [о сетке событий](overview.md) .

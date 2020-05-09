@@ -1,18 +1,18 @@
 ---
 title: На узле кластера заканчивается свободное место на диске в Azure HDInsight
 description: Устранение неполадок, связанных с Apache Hadoop места на диске узла кластера в Azure HDInsight.
-ms.service: hdinsight
-ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
-ms.date: 08/05/2019
-ms.openlocfilehash: fbfd82473b68f5032d19834ac809191d498a5a67
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.service: hdinsight
+ms.topic: troubleshooting
+ms.date: 04/30/2020
+ms.openlocfilehash: ead79ca0a37a270f03a305064c80426553db59ca
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75894128"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82628543"
 ---
 # <a name="scenario-cluster-node-runs-out-of-disk-space-in-azure-hdinsight"></a>Сценарий: на узле кластера заканчивается свободное место на диске в Azure HDInsight
 
@@ -24,11 +24,11 @@ ms.locfileid: "75894128"
 
 Или вы можете получить предупреждение Apache Ambari, похожее `local-dirs usable space is below configured utilization percentage`на:.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Кэш приложения Apache Yarn мог потреблять все доступное место на диске. Скорее всего, приложение Spark работает неэффективно.
 
-## <a name="resolution"></a>Разрешение
+## <a name="resolution"></a>Решение
 
 1. Используйте пользовательский интерфейс Ambari, чтобы определить, на каком узле заканчивается свободное место.
 
@@ -36,7 +36,17 @@ ms.locfileid: "75894128"
 
 1. Чтобы устранить эту ошибку, завершите работу приложения, которое освободит место на диске, используемое этим приложением.
 
-1. Чтобы решить проблему в конечном итоге, оптимизируйте приложение.
+1. Если эта ошибка часто возникает на рабочих узлах, можно настроить параметры локального кэша YARN в кластере.
+
+    Откройте пользовательский интерфейс Ambari, перейдите в раздел YARN--> configs (> Advanced).  
+    Добавьте следующие 2 свойства в раздел Custom Yarn-site. XML и сохраните:
+
+    ```
+    yarn.nodemanager.localizer.cache.target-size-mb=2048
+    yarn.nodemanager.localizer.cache.cleanup.interval-ms=300000
+    ```
+
+1. Если описанная выше проблема не устраняет проблему постоянно, оптимизируйте приложение.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

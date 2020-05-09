@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 4/25/2019
 ms.author: victorh
-ms.openlocfilehash: 934cf854b0c526ed994c7dc91763f65de64fd14b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 780f2774cb37e3d6d43ed5137c29119c0f63fd0a
+ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81617510"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82743697"
 ---
 # <a name="tls-termination-with-key-vault-certificates"></a>Завершение TLS с сертификатами Key Vault
 
@@ -50,7 +50,21 @@ ms.locfileid: "81617510"
    Затем импортируйте существующий сертификат или создайте новый в хранилище ключей. Сертификат будет использоваться приложениями, которые выполняются через шлюз приложений. На этом шаге можно также использовать секрет хранилища ключей, который хранится в виде PFX-файла в формате "без пароля", с основанием 64. Рекомендуется использовать тип сертификата из-за возможности автопродления, доступной для объектов типа сертификата в хранилище ключей. После создания сертификата или секрета вы определяете политики доступа в хранилище ключей, *чтобы предоставить удостоверению доступ к* секрету.
    
    > [!NOTE]
-   > Если вы развертываете шлюз приложений с помощью шаблона ARM, используя Azure CLI или PowerShell или через приложение Azure, развернутое из портал Azure, SSL-сертификат, хранящийся в хранилище ключей в качестве PFX-файла в кодировке Base 64, **должен быть без пароля**. Кроме того, необходимо выполнить действия, описанные в разделе [использование Azure Key Vault для передачи безопасного значения параметра во время развертывания](../azure-resource-manager/templates/key-vault-parameter.md). Особенно важно установить для `enabledForTemplateDeployment` `true`значение.
+   > Если вы развертываете шлюз приложений с помощью шаблона ARM, используя Azure CLI или PowerShell или с помощью приложения Azure, развернутого из портал Azure, SSL-сертификат хранится в хранилище ключей в виде файла PFX в кодировке Base64. [Для передачи безопасного значения параметра во время развертывания](../azure-resource-manager/templates/key-vault-parameter.md)необходимо выполнить действия, описанные в разделе Использование Azure Key Vault. 
+   >
+   > Особенно важно установить для `enabledForTemplateDeployment` `true`значение. Сертификат может быть незащищенным паролем или иметь пароль. В случае сертификата с паролем в следующем примере показана возможная конфигурация `sslCertificates` записи в `properties` для конфигурации шаблона ARM для шлюза приложений. Значения `appGatewaySSLCertificateData` и `appGatewaySSLCertificatePassword` ищутся из хранилища ключей, как описано в разделе [эталонные секреты с динамическим идентификатором](../azure-resource-manager/templates/key-vault-parameter.md#reference-secrets-with-dynamic-id). `parameters('secretName')` Чтобы увидеть, как выполняется поиск, перейдите по ссылке назад. Если сертификат не защищен паролем, пропустите `password` запись.
+   >   
+   > ```
+   > "sslCertificates": [
+   >     {
+   >         "name": "appGwSslCertificate",
+   >         "properties": {
+   >             "data": "[parameters('appGatewaySSLCertificateData')]",
+   >             "password": "[parameters('appGatewaySSLCertificatePassword')]"
+   >         }
+   >     }
+   > ]
+   > ```
 
 1. **Настройка шлюза приложений**
 
@@ -58,6 +72,6 @@ ms.locfileid: "81617510"
 
    ![Сертификаты хранилища ключей](media/key-vault-certs/ag-kv.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка завершения TLS с использованием Key Vault сертификатов с помощью Azure PowerShell](configure-keyvault-ps.md)

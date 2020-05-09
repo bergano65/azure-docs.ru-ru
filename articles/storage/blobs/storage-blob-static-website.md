@@ -8,12 +8,12 @@ ms.author: normesta
 ms.reviewer: dineshm
 ms.date: 05/29/2019
 ms.subservice: blobs
-ms.openlocfilehash: 848fd89444281d82d6d0d1bfc4df15d499c09ee0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 57ba59288cbf65c1ef588302965d480ee357ea4d
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79370497"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82779983"
 ---
 # <a name="static-website-hosting-in-azure-storage"></a>Размещение статических веб-сайтов в службе хранилища Azure
 
@@ -41,8 +41,8 @@ ms.locfileid: "79370497"
 Вы можете использовать любое из этих средств для отправки содержимого в контейнер **$Web** :
 
 > [!div class="checklist"]
-> * [Azure CLI](storage-blob-static-website-how-to.md#cli)
-> * [модуль Azure PowerShell;](storage-blob-static-website-how-to.md#powershell)
+> * [Azure CLI](storage-blob-static-website-how-to.md?tabs=azure-cli)
+> * [модуль Azure PowerShell;](storage-blob-static-website-how-to.md?tabs=azure-powershell)
 > * [AzCopy](../common/storage-use-azcopy-v10.md)
 > * [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/)
 > * [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/)
@@ -110,11 +110,11 @@ URL-адрес сайта содержит региональный код. На
 
 Сведения о включении метрик на статических страницах веб-сайта см. в разделе [Включение метрик на статических страницах веб-сайта](storage-blob-static-website-how-to.md#metrics).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Размещение статического веб-сайта в службе хранилища Azure](storage-blob-static-website-how-to.md)
 * [Map a custom domain to an Azure Blob Storage endpoint](storage-custom-domain-name.md) (Сопоставление личного домена с конечной точкой хранилища BLOB-объектов Azure)
 * [Функции Azure](/azure/azure-functions/functions-overview)
-* [Служба приложений Azure](/azure/app-service/overview)
+* [служба приложений Azure](/azure/app-service/overview);
 * [Создание первого бессерверного веб-приложения](https://docs.microsoft.com/azure/functions/tutorial-static-website-serverless-api-with-database)
 * [Руководство. Размещение домена в Azure DNS](../../dns/dns-delegate-domain-azure-dns.md)

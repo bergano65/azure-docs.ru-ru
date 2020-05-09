@@ -165,8 +165,6 @@
               href: azure-to-azure-about-networking.md
             - name: Настройка сетевых конфигураций целевой виртуальной машины Azure
               href: azure-to-azure-customize-networking.md
-            - name: Настройка параметров прокси-сервера службы "Мобильность"
-              href: configure-mobility-service-proxy-settings.md
             - name: Настройка сетевого сопоставления и сохранение IP-адресов после отработки отказа
               href: azure-to-azure-network-mapping.md
             - name: Примеры для сохранения IP-адресов после отработки отказа
@@ -191,6 +189,8 @@
               href: azure-to-azure-how-to-reprotect.md
             - name: Настройка аварийного восстановления виртуальных машин Azure после миграции в Azure
               href: azure-to-azure-replicate-after-migration.md
+            - name: Включение аварийного восстановления между зонами
+              href: azure-to-azure-how-to-enable-zone-to-zone-disaster-recovery.md
         - name: Управление
           items:
             - name: Обновление Службы мобильности для виртуальных машин Azure
@@ -241,7 +241,7 @@
               href: vmware-azure-set-up-replication.md
             - name: Развертывание Службы мобильности
               items:
-                - name: Сведения об установке службы Mobility Service
+                - name: Обзор и установка Службы мобильности
                   href: vmware-physical-mobility-service-overview.md
                 - name: Подготовка к принудительной установке
                   href: vmware-azure-install-mobility-service.md

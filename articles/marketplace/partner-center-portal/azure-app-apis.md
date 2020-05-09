@@ -1,20 +1,20 @@
 ---
-title: API адаптации для приложений Azure в коммерческом магазине
-description: Необходимые компоненты API для приложений Azure на коммерческом рынке в центре партнеров Майкрософт.
+title: API отправки центра партнеров для подключения приложений Azure в коммерческом магазине Майкрософт
+description: Ознакомьтесь с предварительными требованиями для использования API отправки центра партнеров для приложений Azure в коммерческом магазине в центре партнеров Майкрософт.
 author: dsindona
 ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/10/2019
-ms.openlocfilehash: cc4d56058ce3985ec3a1d9124ef4ec73ff6be1a2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2c37e51ad0c6618e20d9445fab7472b1a3a72ab9
+ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80279765"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82744897"
 ---
-# <a name="api-for-onboarding-azure-apps-in-partner-center"></a>API для адаптации приложений Azure в центре партнеров
+# <a name="partner-center-submission-api-to-onboard-azure-apps-in-partner-center"></a>API отправки центра партнеров для подключения приложений Azure в центре партнеров
 
 Используйте *API отправки центра партнеров* для программного запроса, создания отправок и публикации предложений Azure.  Этот API полезен, если ваша учетная запись управляет множеством предложений и вы хотите автоматизировать и оптимизировать процесс отправки для этих предложений.
 
@@ -70,3 +70,8 @@ grant_type=client_credentials
 После получения маркера доступа Azure AD вы можете вызвать методы в API отправки центра партнеров. Для создания или обновления отправок обычно вызывается несколько методов в API отправки центра партнеров в определенном порядке. Сведения о каждом сценарии и синтаксисе каждого метода см. в разделе Swagger API приема.
 
 https://apidocs.microsoft.com/services/partneringestion/
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+* Узнайте, как создать [технический ресурс виртуальной машины Azure](create-azure-container-technical-assets.md) .
+* Узнайте, описывается создать [предложение контейнера Azure](create-azure-container-offer.md)

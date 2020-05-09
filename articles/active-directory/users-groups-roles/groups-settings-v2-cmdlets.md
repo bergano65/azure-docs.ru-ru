@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a218e956c72f8005e533db7b8800e98ee72ce223
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cc12e571ca955a0ddc47e1c1dd73c2717161df4b
+ms.sourcegitcommit: d9cd51c3a7ac46f256db575c1dfe1303b6460d04
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74233114"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82739319"
 ---
 # <a name="azure-active-directory-version-2-cmdlets-for-group-management"></a>Командлеты Azure Active Directory версии 2 для управления группами
 
@@ -52,6 +52,10 @@ ms.locfileid: "74233114"
 
 Теперь можно начать использование командлетов в модуле. Полное описание командлетов в модуле Azure AD см. в электронной справочной документации по [PowerShell версии 2 для Azure Active Directory](/powershell/azure/install-adv2?view=azureadps-2.0).
 
+> [!NOTE]
+> Командлеты Azure AD PowerShell не работают с новой оболочкой PowerShell 7, так как она основана на .NET Core. Мы осведомлены, что в процессе обновления. Теперь мы рекомендуем использовать модуль Windows PowerShell 5. x, который будет использоваться для операций Azure AD PowerShell. 
+
+
 ## <a name="connect-to-the-directory"></a>Подключение к каталогу
 
 Прежде чем приступить к управлению группами с помощью командлетов Azure AD PowerShell, необходимо подключить сеанс PowerShell к каталогу, которым вы хотите управлять. Используйте следующую команду:
@@ -63,8 +67,8 @@ ms.locfileid: "74233114"
 Командлет запросит ввести учетные данные, которые вы хотите использовать для доступа к каталогу. В этом примере для доступа к демонстрационному каталогу используется karen@drumkit.onmicrosoft.com . Командлет возвращает подтверждение, показывающее, что сеанс был успешно подключен к каталогу:
 
 ```powershell
-    Account                       Environment Tenant
-    -------                       ----------- ------
+    Account                       Environment Tenant ID
+    -------                       ----------- ---------
     Karen@drumkit.onmicrosoft.com AzureCloud  85b5ff1e-0402-400c-9e3c-0f…
 ```
 
@@ -318,7 +322,7 @@ ms.locfileid: "74233114"
 * postmaster
 * root
 * secure
-* security
+* безопасность
 * ssl-admin
 * webmaster
 

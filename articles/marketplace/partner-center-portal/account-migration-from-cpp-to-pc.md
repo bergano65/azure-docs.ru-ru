@@ -1,20 +1,20 @@
 ---
-title: Миграция учетных записей из Портал Cloud Partner в центр партнеров — коммерческий магазин для Azure
-description: Как перенести учетную запись из CPP в центр партнеров — коммерческий рынок для Azure
+title: Перенос учетных записей с Портал Cloud Partner на коммерческий рынок Майкрософт
+description: Узнайте, как перенести учетную запись из Портал Cloud Partner в центр партнеров в коммерческом магазине Майкрософт для Azure.
 author: dsindona
 ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 49fb2da05b7284fff10e6271de177551000995ed
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 033b603630fc219fc378556a2ccbaef4eae524e4
+ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82024427"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82743530"
 ---
-# <a name="account-migration-from-cloud-partner-portal-to-partner-center"></a>Статья о переносе учетной записи с Портала Cloud Partner в Центр партнеров
+# <a name="how-to-migrate-your-account-from-cloud-partner-portal-to-partner-center"></a>Как перенести учетную запись из Портал Cloud Partner в центр партнеров
 
 Если у вас уже есть учетная запись Портал Cloud Partner (CPP), параметры учетной записи необходимо перенести в центр партнеров.
 
@@ -87,6 +87,6 @@ ms.locfileid: "82024427"
 
 Если вам нужна помощь в публикации, сертификации или управлении предложениями Marketplace, [отправьте запрос в службу поддержки](https://partner.microsoft.com/support/v2/?stage=1).
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 - [Управление учетной записью коммерческого магазина в центре партнеров](./manage-account.md)

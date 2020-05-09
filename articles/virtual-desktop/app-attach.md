@@ -8,27 +8,27 @@ ms.topic: conceptual
 ms.date: 12/14/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 20a82cbd7de4b5678648bac19ab9b59bf557b0ff
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ec69a9906eabb4ce56f79b1b88c2b5f2440f84b1
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79128315"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82612475"
 ---
 # <a name="set-up-msix-app-attach"></a>Настройка присоединения приложения MSIX
 
 > [!IMPORTANT]
 > Присоединение приложения MSIX в настоящее время находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания, и мы не рекомендуем использовать ее для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 В этом разделе описано, как настроить подключение приложения MSIX в среде виртуальных рабочих столов Windows.
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 
 Прежде чем приступить к работе, необходимо настроить присоединение приложения MSIX:
 
 - Доступ к порталу программы предварительной оценки Windows для получения версии Windows 10 с поддержкой API-интерфейсов подключения приложения MSIX.
-- Работающее развертывание виртуальных рабочих столов Windows. Дополнительные сведения см. [в статье Создание клиента в виртуальном рабочем столе Windows](tenant-setup-azure-active-directory.md).
+- Работающее развертывание виртуальных рабочих столов Windows. Дополнительные сведения см. [в статье Создание клиента в виртуальном рабочем столе Windows](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md).
 - Средство упаковки MSIX
 - Сетевая папка в развертывании виртуальных рабочих столов Windows, где будет храниться пакет MSIX
 
@@ -448,7 +448,7 @@ catch [Exception]
 }  
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В настоящее время эта функция не поддерживается, но вы можете задать вопросы в сообществе на странице [виртуальных рабочих столов Windows течкоммунити](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop).
 

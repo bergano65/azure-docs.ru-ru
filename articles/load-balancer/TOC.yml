@@ -4,6 +4,8 @@
   items:
     - name: Что такое Azure Load Balancer?
       href: load-balancer-overview.md
+    - name: Часто задаваемые вопросы
+      href: load-balancer-faqs.md
 - name: Краткое руководство
   items:
     - name: "Создание подсистемы балансировки нагрузки\_— портал"
