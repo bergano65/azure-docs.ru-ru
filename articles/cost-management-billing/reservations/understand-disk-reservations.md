@@ -1,20 +1,17 @@
 ---
-title: Общие сведения о применении скидки на резервирование в службе "Хранилище дисков Azure"
+title: Общие сведения о скидке на резервирование для хранилища дисков Azure
 description: Сведения о применении скидки на зарезервированные диски Azure к управляемым дискам SSD уровня "Премиум".
 author: roygara
-ms.service: cost-management-billing
-ms.devlang: na
-ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/30/2020
 ms.author: rogarana
-ms.openlocfilehash: 18fdda3e28761fcf912b716f51b5e270a9b224d0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.service: cost-management-billing
+ms.topic: conceptual
+ms.date: 01/30/2020
+ms.openlocfilehash: 3541e3f12a6d0b1beecdd67821d31f71b47f6c68
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77586654"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509471"
 ---
 # <a name="understand-how-your-reservation-discount-is-applied-to-azure-disk-storage"></a>Общие сведения о применении скидки на резервирование в службе "Хранилище дисков Azure"
 
