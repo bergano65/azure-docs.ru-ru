@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 03/31/2020
-ms.openlocfilehash: 2760033cd66e99a7a7f6d331e03c6f98c486d286
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 93015da810f163a48529704e69e1747ac1aec401
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82231974"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82889393"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning"></a>Известные проблемы и устранение неполадок Машинное обучение Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "82231974"
 Дополнительные сведения о квотах ресурсов в службе "Машинное обучение Azure" см. [здесь](how-to-manage-quotas.md).
 
 ## <a name="installation-and-import"></a>Установка и импорт
-
+                           
 * **Установка PIP: не гарантируется совместимость зависимостей с однострочной установкой**: 
 
    Это известное ограничение PIP, так как в нем отсутствует действующий сопоставитель зависимостей при установке в виде одной строки. Первая уникальная зависимость — это единственная из них. 
@@ -56,7 +56,29 @@ ms.locfileid: "82231974"
         pip install azure-ml-datadrift
         pip install azureml-train-automl 
      ```
-
+     
+* **Объяснение пакет не гуаратид для установки при установке azureml-Training-аутомл-Client:** 
+   
+   При запуске удаленной аутомл с описанием модели Enabled вы увидите сообщение об ошибке "" установите пакет azureml-объяснить-Model для объяснения модели ". Это известная проблема. в качестве обходного решения выполните одно из следующих действий.
+  
+  1. Установка azureml-объяснить-Model на локальном компьютере.
+   ```
+      pip install azureml-explain-model
+   ```
+  2. Полностью отключите функцию объяснения, передав model_explainability = false в конфигурации аутомл.
+   ```
+      automl_config = AutoMLConfig(task = 'classification',
+                             path = '.',
+                             debug_log = 'automated_ml_errors.log',
+                             compute_target = compute_target,
+                             run_configuration = aml_run_config,
+                             featurization = 'auto',
+                             model_explainability=False,
+                             training_data = prepped_data,
+                             label_column_name = 'Survived',
+                             **automl_settings)
+    ``` 
+    
 * **Ошибки Panda: обычно встречаются во время Аутомл эксперимента:**
    
    При ручной настройке енвиронмнет с помощью PIP вы увидите ошибки атрибутов (особенно от PANDAS) из-за установки неподдерживаемых версий пакета. Чтобы предотвратить такие ошибки, [установите пакет SDK для аутомл с помощью automl_setup. cmd](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/README.md):
@@ -83,7 +105,7 @@ ms.locfileid: "82231974"
 
 * **Ошибка при установке пакетов в модулях**
 
-    Сбой установки пакета SDK Машинное обучение Azure на Azure Databricks при установке дополнительных пакетов. Некоторые пакеты, такие как `psutil`, могут приводить к конфликтам. Чтобы избежать ошибок установки, установите пакеты, зафиксировать версию библиотеки. Эта проблема связана с модулями связи, а не с пакетом SDK для Машинное обучение Azure. Эта проблема также может возникнуть и в других библиотеках. Пример:
+    Сбой установки пакета SDK Машинное обучение Azure на Azure Databricks при установке дополнительных пакетов. Некоторые пакеты, такие как `psutil`, могут приводить к конфликтам. Чтобы избежать ошибок установки, установите пакеты, зафиксировать версию библиотеки. Эта проблема связана с модулями связи, а не с пакетом SDK для Машинное обучение Azure. Эта проблема также может возникнуть и в других библиотеках. Пример
     
     ```python
     psutil cryptography==1.5 pyopenssl==16.0.0 ipython==2.2.0
@@ -214,7 +236,7 @@ ms.locfileid: "82231974"
 
 Выполните следующие действия для следующих ошибок:
 
-|Ошибка  | Решение  |
+|Error  | Решение  |
 |---------|---------|
 |Ошибка при создании образа при развертывании веб-службы     |  Добавьте "Пинакл = = 1.2.1" в качестве зависимости PIP к файлу Conda для конфигурации образа.       |
 |`['DaskOnBatch:context_managers.DaskOnBatch', 'setup.py']' died with <Signals.SIGKILL: 9>`     |   Измените номер SKU для виртуальных машин, используемых в развертывании, на один с большим объемом памяти. |

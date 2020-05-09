@@ -112,8 +112,6 @@
           href: platform/alerts-unified-log.md
         - name: Оповещения журнала действий
           href: platform/activity-log-alerts.md
-        - name: Анализ изменений
-          href: app/change-analysis.md
     - name: Визуализируйте данные
       href: visualizations.md
     - name: Интеграция с партнерскими решениями
@@ -528,6 +526,8 @@
               href: platform/resource-logs-blob-format.md
         - name: Потоковая передача данных в Центры событий
           href: platform/stream-monitoring-data-event-hubs.md
+        - name: Анализ изменений
+          href: app/change-analysis.md
     - name: Мониторинг виртуальных машин и гостевой ОС
       items:
         - name: Мониторинг виртуальных машин Azure

@@ -38,6 +38,8 @@
           href: relay-authentication-and-authorization.md
         - name: Встроенные средства управления безопасностью
           href: service-bus-relay-security-controls.md
+        - name: Безопасность сети
+          href: network-security.md
     - name: Протокол гибридных подключений
       href: relay-hybrid-connections-protocol.md
 - name: Инструкции
@@ -59,6 +61,12 @@
               href: relay-hybrid-connections-dotnet-api-overview.md
             - name: Узел
               href: relay-hybrid-connections-node-ws-api-overview.md
+    - name: Безопасность
+      items:
+        - name: Настройка брандмауэра IP-адресов (предварительная версия)
+          href: ip-firewall-virtual-networks.md
+        - name: Настройка частных конечных точек (предварительная версия)
+          href: private-link-service.md
     - name: Управление и мониторинг
       items:
         - name: Мониторинг Azure Relay с помощью Azure Monitor

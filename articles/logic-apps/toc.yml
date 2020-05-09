@@ -206,13 +206,15 @@
           href: ../connectors/connectors-create-api-bingsearch.md
         - name: Box
           href: ../connectors/connectors-create-api-box.md
+        - name: Common Data Service
+          href: ../connectors/connect-common-data-service.md
         - name: Настраиваемые API-интерфейсы и веб-приложения
           href: logic-apps-create-api-app.md
         - name: Задержка
           href: ../connectors/connectors-native-delay.md
         - name: DropBox
           href: ../connectors/connectors-create-api-dropbox.md
-        - name: "Dynamics\_365 CRM Online"
+        - name: "Dynamics\_365"
           href: ../connectors/connectors-create-api-crmonline.md
         - name: EDIFACT
           href: logic-apps-enterprise-integration-edifact.md

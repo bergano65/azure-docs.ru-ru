@@ -199,19 +199,7 @@
             - name: Обновление существующего предложения
               href: ./cloud-partner-portal/azure-applications/cpp-update-existing-offer.md
         - name: Консультационные услуги
-          href: ./cloud-partner-portal/consulting-services/cloud-partner-portal-consulting-services-publishing-offer.md
-          items:
-            - name: Предварительные требования
-              href: ./cloud-partner-portal/consulting-services/cpp-consulting-service-prerequisites.md
-            - name: Создание предложения консультационных услуг
-              href: ./cloud-partner-portal/consulting-services/cpp-consulting-service-create-offer.md
-              items:
-                - name: Вкладка "Параметры предложения"
-                  href: ./cloud-partner-portal/consulting-services/cpp-consulting-service-define-offer-settings.md
-                - name: Вкладка "Сведения об онлайн-магазине"
-                  href: ./cloud-partner-portal/consulting-services/cpp-consulting-service-storefront-details.md
-            - name: Публикация предложения консультационных услуг
-              href: ./cloud-partner-portal/consulting-services/cpp-consulting-service-publish-offer.md
+          href: ./cloud-partner-portal/consulting-services/consulting-services-offer.md
         - name: Предложение "Контейнеры"
           href: ./cloud-partner-portal/containers/cpp-containers-offer.md
           items:

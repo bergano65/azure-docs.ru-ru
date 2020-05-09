@@ -11,17 +11,17 @@ ms.author: jordane
 author: jpe316
 ms.date: 03/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: 870f7b0ab0f1d7b247435cdbb74e21801b3b052a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8569f4751c54d7b37aa15737a9b3f7f394c7e26e
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81257187"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82983590"
 ---
 # <a name="what-are-field-programmable-gate-arrays-fpga-and-how-to-deploy"></a>Что такое программируемые массивы вентиля (FPGA) и как развернуть
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-В этой статье содержатся общие сведения о программируемых массивах шлюзов (FPGA) и показано, как развертывать модели с помощью Машинное обучение Azure в Azure FPGA.
+В этой статье содержатся общие сведения о программируемых массивах шлюзов (FPGA) и показано, как развертывать модели с помощью [машинное обучение Azure](overview-what-is-azure-ml.md) в Azure FPGA.
 
 ППВМ содержат массив программируемых логических блоков и иерархию настраиваемых взаимоподключений. Взаимоподключения позволяют настраивать эти блоки различными способами после производства. В отличие от других микросхем, ППВМ обеспечивают сочетание программируемости и производительности.
 
@@ -81,9 +81,9 @@ Azure FPGAs интегрируется с Машинное обучение Azur
 
 + [Сопоставление земельного покрытия](https://blogs.technet.microsoft.com/machinelearning/2018/05/29/how-to-use-fpgas-for-deep-learning-inference-to-perform-land-cover-mapping-on-terabytes-of-aerial-images/)
 
-## <a name="example-deploy-models-on-fpgas"></a>Пример. Развертывание моделей на FPGA
+## <a name="deploy-models-on-fpgas"></a>Развертывание моделей в ППВМ
 
-Вы можете развернуть модель как веб-службу на FPGA с помощью Машинное обучение Azure Модели с аппаратным ускорением. Использование FPGA обеспечивает немалое определение задержки, даже с одним размером пакета. Вывод или оценка модели — это этап, в котором развернутая модель используется для прогнозирования, чаще всего в рабочих данных.
+Вы можете развернуть модель как веб-службу на FPGA с помощью [Машинное обучение Azure модели с аппаратным ускорением](https://docs.microsoft.com/python/api/azureml-accel-models/azureml.accel?view=azure-ml-py). Использование FPGA обеспечивает немалое определение задержки, даже с одним размером пакета. Вывод или оценка модели — это этап, в котором развернутая модель используется для прогнозирования, чаще всего в рабочих данных.
 
 ### <a name="prerequisites"></a>Предварительные требования
 
@@ -118,7 +118,7 @@ Azure FPGAs интегрируется с Машинное обучение Azur
     pip install --upgrade azureml-accel-models[cpu]
     ```
 
-## <a name="1-create-and-containerize-models"></a>1. Создание и контейнеризовать моделей
+### <a name="1-create-and-containerize-models"></a>1. Создание и контейнеризовать моделей
 
 В этом документе описывается, как создать граф TensorFlow для предварительной обработки входного образа, сделать его характеризатора с помощью ResNet 50 для FPGA, а затем запустить функции с помощью классификатора, обученного в наборе данных ImageNet.
 
@@ -132,189 +132,170 @@ Azure FPGAs интегрируется с Машинное обучение Azur
 
 Используйте [пакет SDK Машинного обучения Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py), чтобы создать определение службы. Определение службы представляет собой файл, описывающий конвейер графов (входящие данные, характеризатор и классификатор) на основе TensorFlow. Команда развертывания автоматически выполняет сжатие определения и графов в ZIP-файл и передает этот файл в хранилище BLOB-объектов Azure. DNN уже развернут для запуска в FPGA.
 
-### <a name="load-azure-machine-learning-workspace"></a>Рабочая область Машинное обучение Azure нагрузки
+1. Рабочая область Машинное обучение Azure нагрузки
 
-Загрузите рабочую область Машинное обучение Azure.
+   ```python
+   import os
+   import tensorflow as tf
+   
+   from azureml.core import Workspace
+  
+   ws = Workspace.from_config()
+   print(ws.name, ws.resource_group, ws.location, ws.subscription_id, sep='\n')
+   ```
 
-```python
-import os
-import tensorflow as tf
+2. Предварительная обработка образа. Входными данными для веб-службы являются изображения JPEG.  Первым шагом является декодирование изображения JPEG и его предварительная обработка.  Изображения JPEG обрабатываются как строки, а результатом являются десятки, которые будут входными данными для модели ResNet 50.
 
-from azureml.core import Workspace
+   ```python
+   # Input images as a two-dimensional tensor containing an arbitrary number of images represented a strings
+   import azureml.accel.models.utils as utils
+   tf.reset_default_graph()
+   
+   in_images = tf.placeholder(tf.string)
+   image_tensors = utils.preprocess_array(in_images)
+   print(image_tensors.shape)
+   ```
 
-ws = Workspace.from_config()
-print(ws.name, ws.resource_group, ws.location, ws.subscription_id, sep='\n')
-```
+1. Загрузите характеризатора. Инициализируйте модель и загрузите контрольную точку TensorFlow квантованной версии ResNet50 для использования в качестве характеризатора.  Вы можете заменить "QuantizedResnet50" в приведенном ниже фрагменте кода, импортировав другие глубокие нейронные сети:
 
-### <a name="preprocess-image"></a>Предварительная обработка изображения
+   - QuantizedResnet152
+   - QuantizedVgg16
+   - Densenet121
 
-Входными данными для веб-службы являются изображения JPEG.  Первым шагом является декодирование изображения JPEG и его предварительная обработка.  Изображения JPEG обрабатываются как строки, а результатом являются десятки, которые будут входными данными для модели ResNet 50.
+   ```python
+   from azureml.accel.models import QuantizedResnet50
+   save_path = os.path.expanduser('~/models')
+   model_graph = QuantizedResnet50(save_path, is_frozen=True)
+   feature_tensor = model_graph.import_graph_def(image_tensors)
+   print(model_graph.version)
+   print(feature_tensor.name)
+   print(feature_tensor.shape)
+   ```
 
-```python
-# Input images as a two-dimensional tensor containing an arbitrary number of images represented a strings
-import azureml.accel.models.utils as utils
-tf.reset_default_graph()
+1. Добавьте классификатор. Этот классификатор обучен с помощью набора данных ImageNet.  Примеры для перемещения обучения и обучения с помощью настраиваемых весов доступны в наборе [примеров записных книжек](https://aka.ms/aml-notebooks).
 
-in_images = tf.placeholder(tf.string)
-image_tensors = utils.preprocess_array(in_images)
-print(image_tensors.shape)
-```
+   ```python
+   classifier_output = model_graph.get_default_classifier(feature_tensor)
+   print(classifier_output)
+   ```
 
-### <a name="load-featurizer"></a>Загрузить характеризатора
+1. Сохранение модели. Теперь, когда препроцессор, ResNet 50 характеризатора и классификатор загружены, сохраните граф и связанные с ним переменные в качестве модели.
 
-Инициализируйте модель и загрузите контрольную точку TensorFlow квантованной версии ResNet50 для использования в качестве характеризатора.  Вы можете заменить "QuantizedResnet50" в приведенном ниже фрагменте кода, импортировав другие глубокие нейронные сети:
+   ```python
+   model_name = "resnet50"
+   model_save_path = os.path.join(save_path, model_name)
+   print("Saving model in {}".format(model_save_path))
+   
+   with tf.Session() as sess:
+       model_graph.restore_weights(sess)
+       tf.saved_model.simple_save(sess, model_save_path,
+                                  inputs={'images': in_images},
+                                  outputs={'output_alias': classifier_output})
+   ```
 
-- QuantizedResnet152
-- QuantizedVgg16
-- Densenet121
+1. Сохранение входных и выходных десятков. Входные и выходные десятки, созданные во время предварительной обработки и выполнения шагов классификатора, необходимы для преобразования и вывода модели.
 
-```python
-from azureml.accel.models import QuantizedResnet50
-save_path = os.path.expanduser('~/models')
-model_graph = QuantizedResnet50(save_path, is_frozen=True)
-feature_tensor = model_graph.import_graph_def(image_tensors)
-print(model_graph.version)
-print(feature_tensor.name)
-print(feature_tensor.shape)
-```
+   ```python
+   input_tensors = in_images.name
+   output_tensors = classifier_output.name
 
-### <a name="add-classifier"></a>Добавить классификатор
+   print(input_tensors)
+   print(output_tensors)
+   ```
 
-Этот классификатор обучен с помощью набора данных ImageNet.  Примеры для перемещения обучения и обучения с помощью настраиваемых весов доступны в наборе [примеров записных книжек](https://aka.ms/aml-notebooks).
+   > [!IMPORTANT]
+   > Сохраните входные и выходные десятки, так как они понадобятся для преобразования модели и запросов вывода.
 
-```python
-classifier_output = model_graph.get_default_classifier(feature_tensor)
-print(classifier_output)
-```
+   Доступны модели и соответствующие дополнительные десятки выходных данных классификатора по умолчанию, которые используются для вывода при использовании классификатора по умолчанию.
 
-### <a name="save-the-model"></a>Сохранение модели
+   + Resnet50, QuantizedResnet50
+     ```python
+     output_tensors = "classifier_1/resnet_v1_50/predictions/Softmax:0"
+     ```
+   + Resnet152, QuantizedResnet152
+     ```python
+     output_tensors = "classifier/resnet_v1_152/predictions/Softmax:0"
+     ```
+   + Densenet121, QuantizedDensenet121
+     ```python
+     output_tensors = "classifier/densenet121/predictions/Softmax:0"
+     ```
+   + Vgg16, QuantizedVgg16
+     ```python
+     output_tensors = "classifier/vgg_16/fc8/squeezed:0"
+     ```
+   + Ссдвгг, Куантизедссдвгг
+     ```python
+     output_tensors = ['ssd_300_vgg/block4_box/Reshape_1:0', 'ssd_300_vgg/block7_box/Reshape_1:0', 'ssd_300_vgg/block8_box/Reshape_1:0', 'ssd_300_vgg/block9_box/Reshape_1:0', 'ssd_300_vgg/block10_box/Reshape_1:0', 'ssd_300_vgg/block11_box/Reshape_1:0', 'ssd_300_vgg/block4_box/Reshape:0', 'ssd_300_vgg/block7_box/Reshape:0', 'ssd_300_vgg/block8_box/Reshape:0', 'ssd_300_vgg/block9_box/Reshape:0', 'ssd_300_vgg/block10_box/Reshape:0', 'ssd_300_vgg/block11_box/Reshape:0']
+     ```
 
-Теперь, когда препроцессор, ResNet 50 характеризатора и классификатор загружены, сохраните граф и связанные с ним переменные в качестве модели.
+1. [Зарегистрируйте](concept-model-management-and-deployment.md) модель с помощью пакета SDK и ZIP-файла в хранилище BLOB-объектов Azure. Добавление тегов и других метаданных о модели помогает контролировать обученные модели.
 
-```python
-model_name = "resnet50"
-model_save_path = os.path.join(save_path, model_name)
-print("Saving model in {}".format(model_save_path))
+   ```python
+   from azureml.core.model import Model
 
-with tf.Session() as sess:
-    model_graph.restore_weights(sess)
-    tf.saved_model.simple_save(sess, model_save_path,
-                               inputs={'images': in_images},
-                               outputs={'output_alias': classifier_output})
-```
+   registered_model = Model.register(workspace=ws,
+                                     model_path=model_save_path,
+                                     model_name=model_name)
 
-### <a name="save-input-and-output-tensors"></a>Сохранение входных и выходных десятков
-Входные и выходные десятки, созданные во время предварительной обработки и выполнения шагов классификатора, необходимы для преобразования и вывода модели.
+   print("Successfully registered: ", registered_model.name,
+         registered_model.description, registered_model.version, sep='\t')
+   ```
 
-```python
-input_tensors = in_images.name
-output_tensors = classifier_output.name
+   Если вы уже зарегистрировали модель и хотите загрузить ее, вы можете получить ее.
 
-print(input_tensors)
-print(output_tensors)
-```
+   ```python
+   from azureml.core.model import Model
+   model_name = "resnet50"
+   # By default, the latest version is retrieved. You can specify the version, i.e. version=1
+   registered_model = Model(ws, name="resnet50")
+   print(registered_model.name, registered_model.description,
+         registered_model.version, sep='\t')
+   ```
 
-> [!IMPORTANT]
-> Сохраните входные и выходные десятки, так как они понадобятся для преобразования модели и запросов вывода.
+1. Преобразуйте граф TensorFlow в формат открытого нейронного сетевого обмена ([ONNX](https://onnx.ai/)).  Вам потребуется указать имена десятков входных и выходных данных, и эти имена будут использоваться клиентом при использовании веб-службы.
 
-Доступны модели и соответствующие дополнительные десятки выходных данных классификатора по умолчанию, которые используются для вывода при использовании классификатора по умолчанию.
+   ```python
+   from azureml.accel import AccelOnnxConverter
 
-+ Resnet50, QuantizedResnet50
-  ```python
-  output_tensors = "classifier_1/resnet_v1_50/predictions/Softmax:0"
-  ```
-+ Resnet152, QuantizedResnet152
-  ```python
-  output_tensors = "classifier/resnet_v1_152/predictions/Softmax:0"
-  ```
-+ Densenet121, QuantizedDensenet121
-  ```python
-  output_tensors = "classifier/densenet121/predictions/Softmax:0"
-  ```
-+ Vgg16, QuantizedVgg16
-  ```python
-  output_tensors = "classifier/vgg_16/fc8/squeezed:0"
-  ```
-+ Ссдвгг, Куантизедссдвгг
-  ```python
-  output_tensors = ['ssd_300_vgg/block4_box/Reshape_1:0', 'ssd_300_vgg/block7_box/Reshape_1:0', 'ssd_300_vgg/block8_box/Reshape_1:0', 'ssd_300_vgg/block9_box/Reshape_1:0', 'ssd_300_vgg/block10_box/Reshape_1:0', 'ssd_300_vgg/block11_box/Reshape_1:0', 'ssd_300_vgg/block4_box/Reshape:0', 'ssd_300_vgg/block7_box/Reshape:0', 'ssd_300_vgg/block8_box/Reshape:0', 'ssd_300_vgg/block9_box/Reshape:0', 'ssd_300_vgg/block10_box/Reshape:0', 'ssd_300_vgg/block11_box/Reshape:0']
-  ```
+   convert_request = AccelOnnxConverter.convert_tf_model(
+       ws, registered_model, input_tensors, output_tensors)
 
-### <a name="register-model"></a>Регистрация модели
+   # If it fails, you can run wait_for_completion again with show_output=True.
+   convert_request.wait_for_completion(show_output=False)
 
-[Зарегистрируйте](concept-model-management-and-deployment.md) модель с помощью пакета SDK и ZIP-файла в хранилище BLOB-объектов Azure. Добавление тегов и других метаданных о модели помогает контролировать обученные модели.
+   # If the above call succeeded, get the converted model
+   converted_model = convert_request.result
+   print("\nSuccessfully converted: ", converted_model.name, converted_model.url, converted_model.version,
+         converted_model.id, converted_model.created_time, '\n')
+   ```
 
-```python
-from azureml.core.model import Model
+1. Создание образа DOCKER из преобразованной модели и всех зависимостей.  После этого образ DOCKER можно развернуть и создать экземпляр.  Поддерживаемые целевые объекты развертывания включают AKS в облаке или пограничном устройстве, например [Azure Data Box Edge](https://docs.microsoft.com/azure/databox-online/data-box-edge-overview).  Вы также можете добавить теги и описания для зарегистрированного образа DOCKER.
 
-registered_model = Model.register(workspace=ws,
-                                  model_path=model_save_path,
-                                  model_name=model_name)
+   ```python
+   from azureml.core.image import Image
+   from azureml.accel import AccelContainerImage
 
-print("Successfully registered: ", registered_model.name,
-      registered_model.description, registered_model.version, sep='\t')
-```
+   image_config = AccelContainerImage.image_configuration()
+   # Image name must be lowercase
+   image_name = "{}-image".format(model_name)
 
-Если вы уже зарегистрировали модель и хотите загрузить ее, вы можете получить ее.
+   image = Image.create(name=image_name,
+                        models=[converted_model],
+                        image_config=image_config,
+                        workspace=ws)
+   image.wait_for_creation(show_output=False)
+   ```
 
-```python
-from azureml.core.model import Model
-model_name = "resnet50"
-# By default, the latest version is retrieved. You can specify the version, i.e. version=1
-registered_model = Model(ws, name="resnet50")
-print(registered_model.name, registered_model.description,
-      registered_model.version, sep='\t')
-```
+   Выведите список образов по тегу и получите подробные журналы для любой отладки.
 
-### <a name="convert-model"></a>Преобразование модели
+   ```python
+   for i in Image.list(workspace=ws):
+       print('{}(v.{} [{}]) stored at {} with build log {}'.format(
+           i.name, i.version, i.creation_state, i.image_location, i.image_build_log_uri))
+   ```
 
-Преобразуйте граф TensorFlow в формат открытого нейронного сетевого обмена ([ONNX](https://onnx.ai/)).  Вам потребуется указать имена десятков входных и выходных данных, и эти имена будут использоваться клиентом при использовании веб-службы.
-
-```python
-from azureml.accel import AccelOnnxConverter
-
-convert_request = AccelOnnxConverter.convert_tf_model(
-    ws, registered_model, input_tensors, output_tensors)
-
-# If it fails, you can run wait_for_completion again with show_output=True.
-convert_request.wait_for_completion(show_output=False)
-
-# If the above call succeeded, get the converted model
-converted_model = convert_request.result
-print("\nSuccessfully converted: ", converted_model.name, converted_model.url, converted_model.version,
-      converted_model.id, converted_model.created_time, '\n')
-```
-
-### <a name="create-docker-image"></a>Создание образа Docker
-
-Преобразованная модель и все зависимости добавляются в образ DOCKER.  После этого образ DOCKER можно развернуть и создать экземпляр.  Поддерживаемые целевые объекты развертывания включают AKS в облаке или пограничном устройстве, например [Azure Data Box Edge](https://docs.microsoft.com/azure/databox-online/data-box-edge-overview).  Вы также можете добавить теги и описания для зарегистрированного образа DOCKER.
-
-```python
-from azureml.core.image import Image
-from azureml.accel import AccelContainerImage
-
-image_config = AccelContainerImage.image_configuration()
-# Image name must be lowercase
-image_name = "{}-image".format(model_name)
-
-image = Image.create(name=image_name,
-                     models=[converted_model],
-                     image_config=image_config,
-                     workspace=ws)
-image.wait_for_creation(show_output=False)
-```
-
-Выведите список образов по тегу и получите подробные журналы для любой отладки.
-
-```python
-for i in Image.list(workspace=ws):
-    print('{}(v.{} [{}]) stored at {} with build log {}'.format(
-        i.name, i.version, i.creation_state, i.image_location, i.image_build_log_uri))
-```
-
-## <a name="2-deploy-to-cloud-or-edge"></a>2. Развертывание в облаке или на границе
-
-### <a name="deploy-to-the-cloud"></a>Развертывание в облаке
+### <a name="2-deploy-to-cloud-or-edge"></a>2. Развертывание в облаке или на границе
 
 Для развертывания модели в качестве крупномасштабной рабочей веб-службы используется Служба Azure Kubernetes (AKS). Создать новую можно с помощью Машинное обучение Azure пакета SDK, интерфейса командной строки или [машинное обучение Azure Studio](https://ml.azure.com).
 
@@ -424,7 +405,7 @@ converted_model.delete()
 
 Сведения о защите веб-служб FPGA см. в документе [Защита веб-служб](how-to-secure-web-service.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с этими записными книжками, видео и блогами:
 

@@ -4,10 +4,10 @@ description: Узнайте, как просматривать, сохранят
 ms.date: 04/15/2020
 ms.topic: conceptual
 ms.openlocfilehash: 423d1837c3d5710e24abb94f5411200319e8a8aa
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 05/01/2020
 ms.locfileid: "81381681"
 ---
 # <a name="manage-your-resources-with-management-groups"></a>Управление ресурсами с помощью групп управления
@@ -43,7 +43,7 @@ ms.locfileid: "81381681"
 
    :::image type="content" source="./media/rename_context.png" alt-text="Переименование области группы для переименования группы управления" border="false":::
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ### <a name="change-the-name-in-powershell"></a>Изменение имени в PowerShell
 
@@ -93,7 +93,7 @@ az account management-group update --name 'Contoso' --display-name 'Contoso Grou
 
    :::image type="content" source="./media/delete_confirm.png" alt-text="Окно подтверждения удаления группы" border="false":::
 
-1. Выберите **Да**.
+1. Выберите ответ **Да**.
 
 ### <a name="delete-in-powershell"></a>Удаление в PowerShell
 
@@ -253,7 +253,7 @@ az account management-group show --name 'Contoso' -e -r
 
    :::image type="content" source="./media/move_small_context.png" alt-text="Переместить панель, чтобы изменить родительскую группу" border="false":::
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ### <a name="move-subscriptions-in-powershell"></a>Перемещение подписок в PowerShell
 
@@ -302,7 +302,7 @@ az account management-group subscription remove --name 'Contoso' --subscription 
 
    :::image type="content" source="./media/add_context_MG.png" alt-text="Перемещение группы управления в новую или существующую группу" border="false":::
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ### <a name="move-management-groups-in-powershell"></a>Перемещение групп управления в PowerShell
 
