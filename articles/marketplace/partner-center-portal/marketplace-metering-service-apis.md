@@ -1,18 +1,18 @@
 ---
-title: API-интерфейсы службы измерения Marketplace | Azure Marketplace
-description: Событие использования для предложений SaaS в Azure Marketplace.
+title: API-интерфейсы службы контроля использования. Microsoft для коммерческого рынка
+description: API событий использования позволяет выдавать события использования для предложений SaaS в Microsoft AppSource и Azure Marketplace.
 author: dsindona
 ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 07/11/2019
-ms.openlocfilehash: 315f36e5aed9dee0a89e1f9f504b18a6bed806e0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 159d2c60fc1fc5ad1f21f2b948208eaae0d06208
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80275753"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82857866"
 ---
 # <a name="marketplace-metering-service-apis"></a>API-интерфейсы службы из Marketplace для контроля потребления
 

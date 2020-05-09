@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/16/2020
 ms.author: shvija
-ms.openlocfilehash: bf90120157bf64bd62a3b5ec9d8a6b2c6260e024
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e7f17c589b043a055bd541a0850d9efc8e1d96be
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80398296"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82628867"
 ---
 # <a name="balance-partition-load-across-multiple-instances-of-your-application"></a>Балансировка нагрузки секций между несколькими экземплярами приложения
 Чтобы масштабировать приложение обработки событий, можно запустить несколько экземпляров приложения и распределить нагрузку между ними. В более ранних версиях [EventProcessorHost](event-hubs-event-processor-host.md) позволили сбалансировать нагрузку между несколькими экземплярами программы и событиями контрольной точки при получении. В более новых версиях (5,0 и выше) **евентпроцессорклиент** (.NET и Java) или **евенсубконсумерклиент** (Python и JavaScript) позволяют делать то же самое. Модель разработки упрощается с помощью событий. Подпишитесь на интересующие вас события, зарегистрировав обработчик событий.
@@ -86,15 +86,15 @@ ms.locfileid: "80398296"
 > [!NOTE]
 > Если вы используете хранилище BLOB-объектов Azure в качестве хранилища контрольных точек в среде, которая поддерживает другую версию пакета SDK для большого двоичного объекта хранилища, чем обычно доступно в Azure, необходимо использовать код, чтобы изменить версию API службы хранилища до определенной версии, поддерживаемой этой средой. Например, если вы используете [концентраторы событий в Azure Stack Hub версии 2002](https://docs.microsoft.com/azure-stack/user/event-hubs-overview), самая высокая доступная версия для службы хранилища — версия 2017-11-09. В этом случае необходимо использовать код для настройки API службы хранилища до версии 2017-11-09. Пример назначения конкретной версии API хранилища см. в следующих примерах на сайте GitHub: 
 > - [.NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample10_RunningWithDifferentStorageVersion.cs). 
-> - [Java](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/src/samples/java/com/azure/messaging/eventhubs/checkpointstore/blob/EventProcessorWithOlderStorageVersion.java)
-> - [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/receiveEventsWithDownleveledStorage.js) или [TypeScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/receiveEventsWithDownleveledStorage.ts)
-> - [Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob-aio/samples/event_processor_blob_storage_example_with_storage_api_version.py)
+> - [Java](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/src/samples/java/com/azure/messaging/eventhubs/checkpointstore/blob/)
+> - [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/javascript) или [TypeScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/typescript)
+> - [Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub-checkpointstoreblob-aio/samples/)
 
 ## <a name="thread-safety-and-processor-instances"></a>Потокобезопасность и экземпляры процессора
 
 По умолчанию обработчик событий или потребитель является потокобезопасным и ведет себя синхронно. При получении события для секции вызывается функция, которая обрабатывает события. Последующие сообщения и вызовы этой функции помещаются в очередь в фоновом режиме, так как конвейер сообщений по мере продолжения выполняется в фоне других потоков. Потокобезопасность устраняет потребность в потокобезопасной коллекции и значительно повышает производительность.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующие краткие руководства.
 
 - [.NET Core](get-started-dotnet-standard-send-v2.md)

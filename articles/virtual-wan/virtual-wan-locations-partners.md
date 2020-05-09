@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to find a Virtual WAN partner
-ms.openlocfilehash: 3976f4114df6222d34f19e2bb44fd05d53057321
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e56da52823de169ccb1fc28a0bd7f3ac7efacf49
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80123264"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891038"
 ---
 # <a name="virtual-wan-partners-and-virtual-hub-locations"></a>Расположения партнеров и виртуального концентратора Виртуальной глобальной сети
 
@@ -40,13 +40,13 @@ ms.locfileid: "80123264"
 
 [!INCLUDE [partners](../../includes/virtual-wan-partners-include.md)]
 
-Следующие партнеры посвящены нашей стратегии в ближайшем будущем: 128 технологии, Ариста, Aruba HPE, Cisco Systems, сети F5, открытые системы, Oracle SD-WAN, Шарплинк и VMWare Велоклауд.
+Следующие партнеры посвящены нашей стратегии в ближайшем будущем: 128 технологии, Ариста, Aruba HPE, Cisco Systems, сети F5, открытые системы, Oracle SD-WAN и Шарплинк.
 
 ## <a name="locations"></a><a name="locations"></a>Расположения
 
 [!INCLUDE [regions](../../includes/virtual-wan-regions-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о Виртуальной глобальной сети см. в статье [Часто задаваемые вопросы по виртуальным глобальным сетям (предварительная версия)](virtual-wan-faq.md).
 

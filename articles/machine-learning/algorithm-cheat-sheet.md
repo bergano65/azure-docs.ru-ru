@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: FrancescaLazzeri
 ms.author: lazzeri
 ms.date: 03/05/2020
-ms.openlocfilehash: accc4766f25f5d58ba2f31c153fe1c5d23413170
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b824604ce9d0171b5612ab559eace4b35fd01eb8
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81399082"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82890981"
 ---
 # <a name="machine-learning-algorithm-cheat-sheet-for-azure-machine-learning-designer"></a>Лист Машинное обучение алгоритм Памятка по для конструктора Машинное обучение Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "81399082"
 
 В обучении с подкреплением алгоритм выбирает действие в ответ на каждую точку данных. Это наиболее распространенный подход в робототехнике, где набор показаний датчиков в один момент времени представляет собой точку данных, а алгоритму необходимо выбрать следующее действие робота. Кроме того, он естественным образом подходит для приложений из Интернета вещей. Алгоритм обучения также вскоре получает сигнал, оповещающий об успехе, который дает понять, насколько удачно было принято решение. На основе этого сигнала алгоритм изменяет свою стратегию для достижения наивысшей награды. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. Дополнительные рекомендации по [выбору алгоритмов](how-to-select-algorithms.md) .
 
