@@ -7,12 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 10/20/2019
-ms.openlocfilehash: c2a26f2f40e0312fbfa0962e69ddfd0cfdabad5f
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 3087b964ff5f9754d6552fc95625541ce94a6535
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77191280"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82148002"
 ---
 # <a name="quickstart-create-your-first-workflow-by-using-azure-logic-apps---azure-portal"></a>Краткое руководство. Создание первого рабочего процесса с помощью Azure Logic Apps — портал Azure
 
@@ -20,9 +20,10 @@ ms.locfileid: "77191280"
 
 ![Пример рабочего процесса приложения логики](./media/quickstart-create-first-logic-app-workflow/quickstart-workflow-overview.png)
 
-Для выполнения данного сценария необходима учетная запись электронной почты в службе, поддерживаемой Logic Apps, например Office 365 Outlook, Outlook.com или Gmail. Сведения о других поддерживаемых службах электронной почты см. в [приведенном здесь списке соединителей](https://docs.microsoft.com/connectors/). В этом примере приложение логики использует Office 365 Outlook. Если вы используете другую службу электронной почты, действия в целом будут теми же, но пользовательский интерфейс может немного отличаться.
+Для выполнения данного сценария необходима подписка Azure (вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/)), учетная запись электронной почты в службе, поддерживаемой Azure Logic Apps, например Office 365 Outlook, Outlook.com или Gmail. Сведения о других поддерживаемых службах электронной почты см. в [приведенном здесь списке соединителей](https://docs.microsoft.com/connectors/). В этом примере приложение логики использует учетную запись Office 365 Outlook. Если вы используете другую службу электронной почты, действия в целом будут теми же, но пользовательский интерфейс может немного отличаться.
 
-Кроме того, если у вас еще нет подписки Azure, [подпишитесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
+> [!IMPORTANT]
+> Только учетные записи для бизнеса G-Suite могут использовать соединитель Gmail без ограничений в приложениях логики. Если у вас есть учетная запись потребителя Gmail, вы можете использовать этот соединитель только с определенными утвержденными Google службами. Кроме того, вы можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности в соединителе Gmail](https://docs.microsoft.com/connectors/gmail/#authentication-and-bring-your-own-application). Дополнительные сведения см. в статье [Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 

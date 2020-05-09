@@ -6,16 +6,18 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: thvankra
-ms.openlocfilehash: 9b771a82d88f9902aeb6022f07811ded8a6e0e62
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7d4618382c31f0b1f2efa42fe87a6efe4bc85319
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82192839"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82608257"
 ---
-# <a name="frequently-asked-questions-about-the-cassandra-api-for-azure-cosmos-db"></a>Часто задаваемые вопросы о API Cassandra для Azure Cosmos DB
+# <a name="frequently-asked-questions-about-the-cassandra-api-in-azure-cosmos-db"></a>Часто задаваемые вопросы о API Cassandra в Azure Cosmos DB
 
-## <a name="what-are-some-key-differences-between-apache-cassandra-and-the-cassandra-api"></a>Какие основные различия между Apache Cassandra и API Cassandra?
+В этой статье описаны различия в функциональных возможностях Apache Cassandra и API Cassandra в Azure Cosmos DB. Здесь также содержатся ответы на часто задаваемые вопросы о API Cassandra в Azure Cosmos DB.
+
+## <a name="key-differences-between-apache-cassandra-and-the-cassandra-api"></a>Основные различия между Apache Cassandra и API Cassandra
 
 - Apache Cassandra рекомендует ограничение размера ключа секции — 100 МБ. API Cassandra для Azure Cosmos DB допускает до 20 ГБ на секцию.
 - Apache Cassandra позволяет отключить устойчивые фиксации. Вы можете пропустить запись в журнал фиксации и перейти непосредственно к мемтаблес. Это может привести к утрате данных, если узел выйдет из строя, прежде чем мемтаблес будет сброшен в Сстаблес на диске. Azure Cosmos DB всегда выполняет устойчивые фиксации, чтобы помочь предотвратить потери данных.
@@ -131,7 +133,7 @@ Azure Cosmos DB предоставляет гарантии производит
 
 ### <a name="how-can-i-monitor-infrastructure-along-with-throughput"></a>Как можно отслеживать инфраструктуру и пропускную способность?
 
-Служба платформы Azure Cosmos DB помогает повысить производительность и не беспокоиться об управлении инфраструктурой и ее мониторинге. Например, вам не нужно отслеживать состояние узла, состояние реплики, GC и параметры ОС ранее с помощью различных средств. Вам нужно просто проделать пропускную способность, доступную в метриках портала, чтобы узнать, выполняется ли регулирование, а затем увеличить или уменьшить эту пропускную способность. Можно выполнить следующие действия.
+Служба платформы Azure Cosmos DB помогает повысить производительность и не беспокоиться об управлении инфраструктурой и ее мониторинге. Например, вам не нужно отслеживать состояние узла, состояние реплики, GC и параметры ОС ранее с помощью различных средств. Вам нужно просто проделать пропускную способность, доступную в метриках портала, чтобы узнать, выполняется ли регулирование, а затем увеличить или уменьшить эту пропускную способность. Можно сделать следующее:
 
 - Мониторинг [соглашений об уровне обслуживания](monitor-accounts.md)
 - Использование [метрик](use-metrics.md)

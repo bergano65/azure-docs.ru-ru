@@ -1,25 +1,19 @@
 ---
 title: Учебник по созданию виртуальных машин Windows и управлению ими с помощью Azure PowerShell
 description: В этом руководстве описано, как с помощью Azure PowerShell создать и администрировать виртуальные машины Windows в Azure.
-services: virtual-machines-windows
-documentationcenter: virtual-machines
 author: cynthn
-manager: gwallace
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-windows
 ms.topic: tutorial
-ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 06/06/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: d9db21fd350ccd3b860742877a958a6ee9377404
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: 229df5d2f5186ad7cec08952f2a44790f9220dfe
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81455603"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82100317"
 ---
 # <a name="tutorial-create-and-manage-windows-vms-with-azure-powershell"></a>Руководство. Создание и администрирование виртуальных машин Windows с помощью Azure PowerShell
 

@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 03/24/2020
+ms.date: 05/06/2020
 ms.author: jingwang
-ms.openlocfilehash: 5ce1b85394a7bb604841f7fb941bdebf12c0bca2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a1527195296237eb8c9c309f8ac4a5911136cf77
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81414150"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891751"
 ---
 #  <a name="preserve-metadata-and-acls-using-copy-activity-in-azure-data-factory"></a>Сохранение метаданных и ACL с помощью действия копирования в фабрике данных Azure
 
@@ -32,6 +32,8 @@ ms.locfileid: "81414150"
 
 - **Все указанные клиентом метаданные** 
 - И следующие **пять встроенных системных свойств хранилища данных** `contentType`:, `contentLanguage` (за исключением Amazon S3) `contentEncoding` `contentDisposition`,,. `cacheControl`
+
+**Обработку различий в метаданных:** Amazon S3 и служба хранилища Azure позволяют использовать разные наборы символов в ключах указанных пользователем метаданных. Если вы решили сохранить метаданные с помощью команды Copy действий, ADF автоматически заменит недопустимые символы символом "_".
 
 При копировании файлов "как есть" из Amazon S3/Azure Data Lake Storage 2-го поколения или большого двоичного объекта Azure в Azure Data Lake Storage 2-го поколения или BLOB-объект Azure с двоичным форматом можно найти параметр " **сохранить** " на вкладке " > **Параметры** **действия копирования**" для создания действий или на странице " **Параметры** " в копирование данных средстве.
 
@@ -143,7 +145,7 @@ ms.locfileid: "81414150"
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. другие статьи о действиях копирования:
 

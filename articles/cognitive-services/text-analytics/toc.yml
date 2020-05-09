@@ -52,6 +52,8 @@
       href: language-support.md
     - name: Смещение текста
       href: concepts/text-offsets.md
+    - name: Ограничения данных
+      href: concepts/data-limits.md
 - name: Практические руководства
   items:
     - name: Вызов API "Анализ текста"
