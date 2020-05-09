@@ -1,5 +1,5 @@
 ---
-title: Скачивает панель мониторинга в средстве анализа коммерческих рынков в центре партнеров
+title: Скачивает панель мониторинга в Microsoft коммерческого рынка аналитика в центре партнеров
 description: Узнайте, как получить доступ к запросам на загрузку для предложений Marketplace.
 author: dsindona
 ms.author: dsindona
@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: f81b8ae927df6c95bbc34be7ad9916c88aeba03b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 136a65e47327007d7a28c2777051be61f475323e
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81251679"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82732724"
 ---
 # <a name="downloads-dashboard-in-commercial-marketplace-analytics"></a>Загрузка панели мониторинга в коммерческом Analytics Marketplace
 
@@ -29,7 +29,7 @@ ms.locfileid: "81251679"
 
 При запросе загрузки с более чем 1000 строками данных вы получите всплывающее уведомление и сообщение электронной почты со ссылкой на панель мониторинга **загрузки** . Эти загружаемые данные будут доступны в течение 30 дней, а затем удалены.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Обзор аналитических отчетов, доступных в коммерческом рынке центра партнеров, см. в статье [аналитика для коммерческого рынка в центре партнеров](./analytics.md).
 - Для диаграмм, тенденций и значений статистических данных, суммирующих действия Marketplace для вашего предложения, см. раздел [Сводная панель мониторинга в коммерческом Analytics Marketplace](./summary-dashboard.md).

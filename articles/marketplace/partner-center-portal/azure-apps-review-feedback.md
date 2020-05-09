@@ -1,20 +1,20 @@
 ---
-title: Обработка отзывов о предложениях по проверке приложений Azure в коммерческом магазине
-description: Сведения о том, как с помощью портала коммерческого рынка в центре партнеров Майкрософт работать с отзывом о просмотре приложений Azure для получения списка или продажи в Azure Marketplace, AppSource или с помощью программы поставщика облачных решений (CSP).
+title: Обработка отзывов о предложениях по проверке приложений Azure в коммерческом магазине Майкрософт
+description: Сведения о том, как с помощью портала коммерческого рынка в центре партнеров Майкрософт работать с отзывами по проверке для приложений Azure, можно получить список или продать в Azure Marketplace, AppSource или с помощью программы поставщика облачных решений (CSP).
 author: dsindona
 ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/11/2019
-ms.openlocfilehash: 3932f3fc71dc6427b6cdf93d3a7bc58534a9981c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 464f4d5434c8c0b8615e24eb1a323ae66a52273c
+ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80279799"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82744867"
 ---
-# <a name="handling-review-feedback"></a>Обработка отзывов по результатам проверки
+# <a name="handling-review-feedback-for-azure-apps-offer-before-publishing-in-the-azure-marketplace"></a>Обработка отзыва проверки для приложений Azure перед публикацией в Azure Marketplace
 
 В этой статье объясняется, как получить доступ к среде Azure DevOps, которая используется командой проверки Microsoft Azure Marketplace. Если в вашем предложении приложения Azure во время **проверки корпорацией Майкрософт** будут обнаружены критические ошибки, вы можете войти в эту систему и просмотреть подробные сведения об обнаруженных проблемах (отзывы по результатам проверки). Устранив все эти проблемы, повторно отправьте предложение, чтобы продолжить процесс публикации в Azure Marketplace. На следующей схеме показано, как процесс получения обратной связи связан с процессом публикации.
 
@@ -72,6 +72,6 @@ If the incident creation was successful, a confirmation page is displayed. Save 
 
    ![Первый ответ с исправлением и комментарием](./media/first-comment-reply.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Завершив исправление всех критических проблем, описанных в запросе на вытягивание по результатам проверки, необходимо [повторно опубликовать предложение приложения Azure](./create-new-azure-apps-offer.md#publish).
