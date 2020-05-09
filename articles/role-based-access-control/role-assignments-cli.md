@@ -1,6 +1,6 @@
 ---
-title: Добавление и удаление назначений ролей с помощью Azure RBAC и Azure CLI
-description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, субъектов-служб или управляемых удостоверений с помощью управления доступом на основе ролей (RBAC) Azure и Azure CLI.
+title: Добавление или удаление назначений ролей Azure с помощью Azure CLI — Azure RBAC
+description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, субъектов-служб или управляемых удостоверений с помощью Azure CLI и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,14 +14,14 @@ ms.workload: identity
 ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: b32df50715d5e7276861e0696df1bd6ceb3f684e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3a66482aeee7832baa91fe98357b870e2a280912
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79245672"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82735782"
 ---
-# <a name="add-or-remove-role-assignments-using-azure-rbac-and-azure-cli"></a>Добавление и удаление назначений ролей с помощью Azure RBAC и Azure CLI
+# <a name="add-or-remove-azure-role-assignments-using-azure-cli"></a>Добавление или удаление назначений ролей Azure с помощью Azure CLI
 
 [!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)]В этой статье описывается назначение ролей с помощью Azure CLI.
 
@@ -36,7 +36,7 @@ ms.locfileid: "79245672"
 
 Для добавления или удаления назначений ролей может потребоваться указать уникальный идентификатор объекта. Идентификатор имеет формат: `11111111-1111-1111-1111-111111111111`. Идентификатор можно получить с помощью портал Azure или Azure CLI.
 
-### <a name="user"></a>User (Пользователь)
+### <a name="user"></a>Пользователь
 
 Чтобы получить идентификатор объекта для пользователя Azure AD, можно использовать команду [AZ AD user демонстрация](/cli/azure/ad/user#az-ad-user-show).
 
@@ -52,7 +52,7 @@ az ad user show --id "{email}" --query objectId --output tsv
 az ad group show --group "{name}" --query objectId --output tsv
 ```
 
-### <a name="application"></a>Приложение
+### <a name="application"></a>Развертывание
 
 Чтобы получить идентификатор объекта для субъекта-службы Azure AD (удостоверения, используемого приложением), можно использовать команду [AZ AD SP List](/cli/azure/ad/sp#az-ad-sp-list). Для субъекта-службы используйте идентификатор объекта, а **не** идентификатор приложения.
 
@@ -62,7 +62,7 @@ az ad sp list --display-name "{name}" --query [].objectId --output tsv
 
 ## <a name="add-a-role-assignment"></a>Добавление назначения роли
 
-В RBAC для предоставления доступа необходимо добавить назначение роли.
+В Azure RBAC для предоставления доступа необходимо добавить назначение роли.
 
 ### <a name="user-at-a-resource-group-scope"></a>Пользователь в области группы ресурсов
 
@@ -97,7 +97,7 @@ az role assignment create --role "Virtual Machine Contributor" --assignee patlon
 az role assignment create --role <role_id> --assignee <assignee> --resource-group <resource_group>
 ```
 
-В следующем примере роль [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) назначается пользователю *\@патлонг contoso.com* в области группы ресурсов *Pharma-Sales* . Чтобы получить уникальный идентификатор роли, можно использовать команду [AZ Role Definition List](/cli/azure/role/definition#az-role-definition-list) или ознакомиться со [встроенными ролями для ресурсов Azure](built-in-roles.md).
+В следующем примере роль [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) назначается пользователю *\@патлонг contoso.com* в области группы ресурсов *Pharma-Sales* . Чтобы получить уникальный идентификатор роли, можно использовать команду [AZ Role Definition List](/cli/azure/role/definition#az-role-definition-list) или ознакомиться со [встроенными ролями Azure](built-in-roles.md).
 
 ```azurecli
 az role assignment create --role 9980e02c-c2be-4d73-94e8-173b1dc7cf3c --assignee patlong@contoso.com --resource-group pharma-sales
@@ -187,7 +187,7 @@ az role assignment create --role "Virtual Machine Contributor" --assignee-object
 
 ## <a name="remove-a-role-assignment"></a>Удаление назначения ролей
 
-При использовании RBAC, чтобы удалить доступ, нужно удалить назначение роли с помощью команды [az role assignment delete](/cli/azure/role/assignment#az-role-assignment-delete):
+Чтобы удалить доступ в Azure RBAC, необходимо удалить назначение роли с помощью команды [AZ Role назначение Delete](/cli/azure/role/assignment#az-role-assignment-delete).
 
 ```azurecli
 az role assignment delete --assignee <assignee> --role <role_name_or_id> --resource-group <resource_group>
@@ -211,7 +211,7 @@ az role assignment delete --assignee 22222222-2222-2222-2222-222222222222 --role
 az role assignment delete --assignee alain@example.com --role "Billing Reader" --scope /providers/Microsoft.Management/managementGroups/marketing-group
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Вывод списка назначений ролей с помощью Azure RBAC и Azure CLI](role-assignments-list-cli.md)
+- [Вывод списка назначений ролей Azure с помощью Azure CLI](role-assignments-list-cli.md)
 - [Управление ресурсами и группами ресурсов Azure с помощью интерфейса командной строки Azure](../azure-resource-manager/cli-azure-resource-manager.md)

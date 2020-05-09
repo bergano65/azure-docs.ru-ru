@@ -3,13 +3,12 @@ title: Мониторинг производительности служб пр
 description: Мониторинг производительности приложений для служб приложений Azure. Загрузка диаграммы и время отклика, сведения о зависимостях и Настройка оповещений о производительности.
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.custom: fasttrack-edit
-ms.openlocfilehash: dd0d3be6ed7e5185183618cc2bdeff5ee8d749f3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0f4d4dedab30839db56cb47ac7ac103413f2d4be
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81729797"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82733470"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Мониторинг производительности Службы приложений Azure
 
@@ -71,7 +70,7 @@ ms.locfileid: "81729797"
 
     * Например, чтобы изменить начальную долю выборки, можно создать параметр приложения: `MicrosoftAppInsights_AdaptiveSamplingTelemetryProcessor_InitialSamplingPercentage` и значение. `100`
 
-    * Список поддерживаемых параметров обработчика данных телеметрии адаптивной выборки можно найти в [коде](https://github.com/Microsoft/ApplicationInsights-dotnet/blob/master/src/ServerTelemetryChannel/AdaptiveSamplingTelemetryProcessor.cs) и [связанной документации](https://docs.microsoft.com/azure/azure-monitor/app/sampling).
+    * Список поддерживаемых параметров обработчика данных телеметрии адаптивной выборки можно найти в [коде](https://github.com/microsoft/ApplicationInsights-dotnet/blob/master/BASE/Test/ServerTelemetryChannel.Test/TelemetryChannel.Tests/AdaptiveSamplingTelemetryProcessorTest.cs) и [связанной документации](https://docs.microsoft.com/azure/azure-monitor/app/sampling).
 
 # <a name="net-core"></a>[.NET Core](#tab/netcore)
 
@@ -166,7 +165,7 @@ ms.locfileid: "81729797"
 
 ### <a name="application-settings-definitions"></a>Определения параметров приложения
 
-|Имя параметра приложения |  Определение | Значение |
+|Имя параметра приложения |  Определение | Применение |
 |-----------------|:------------|-------------:|
 |ApplicationInsightsAgent_EXTENSION_VERSION | Главное расширение, которое управляет мониторингом среды выполнения. | `~2` |
 |XDT_MicrosoftApplicationInsights_Mode |  В режиме по умолчанию для обеспечения оптимальной производительности включены только функции, обеспечивающие их работу. | `default` или `recommended`. |
@@ -399,9 +398,13 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 
 ### <a name="php-and-wordpress-are-not-supported"></a>PHP и WordPress не поддерживаются
 
-Сайты PHP и WordPress не поддерживаются. В настоящее время официально поддерживаемый пакет SDK или агент не поддерживается для наблюдения за этими рабочими нагрузками на стороне сервера. Однако ручное инструментирование транзакций на стороне клиента на сайте PHP или WordPress путем добавления клиентского сценария JavaScript к веб-страницам можно выполнить с помощью [пакета SDK для JavaScript](https://docs.microsoft.com/azure/azure-monitor/app/javascript). 
+Сайты PHP и WordPress не поддерживаются. В настоящее время официально поддерживаемый пакет SDK или агент не поддерживается для наблюдения за этими рабочими нагрузками на стороне сервера. Однако ручное инструментирование транзакций на стороне клиента на сайте PHP или WordPress путем добавления клиентского сценария JavaScript к веб-страницам можно выполнить с помощью [пакета SDK для JavaScript](https://docs.microsoft.com/azure/azure-monitor/app/javascript).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+### <a name="connection-string-and-instrumentation-key"></a>Строка подключения и ключ инструментирования
+
+При использовании мониторинга без кода требуется только строка подключения. Однако мы по-прежнему рекомендуем задать ключ инструментирования, чтобы сохранить обратную совместимость с более старыми версиями пакета SDK при выполнении инструментирования вручную.
+
+## <a name="next-steps"></a>Дальнейшие действия
 * [Запуск профилировщика в живом приложении](../app/profiler.md).
 * [Функции Azure.](https://github.com/christopheranderson/azure-functions-app-insights-sample) Отслеживайте функции Azure с помощью Application Insights.
 * [Включите отправку данных диагностики Azure](../platform/diagnostics-extension-to-application-insights.md) в Application Insights.

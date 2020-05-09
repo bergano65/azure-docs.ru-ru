@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 05/21/2019
 ms.author: apimpm
-ms.openlocfilehash: 300f44daeeea5e8a774575dabcb00686906bb5de
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b212316970b77d325552956cfacded2dc570234f
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80804373"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82778980"
 ---
 # <a name="protect-an-api-by-using-oauth-20-with-azure-active-directory-and-api-management"></a>Защита API с помощью протокола OAuth 2.0 и службы управления API в Azure Active Directory
 
@@ -27,7 +27,7 @@ ms.locfileid: "80804373"
 > [!NOTE]
 > Эта функция доступна на уровнях **Developer**, **Standard** и **Premium** интерфейса управления API.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы выполнить шаги в этой статье, необходимо иметь следующее:
 * Экземпляр управления API.
 * Публикуемый API, использующий экземпляр управления API (APIM).
@@ -79,7 +79,7 @@ ms.locfileid: "80804373"
     - В разделе **имя** введите понятное имя приложения, которое будет отображаться для пользователей приложения, например *клиент-приложение*. 
     - В разделе **Поддерживаемые типы учетных записей** выберите **учетные записи в любом каталоге организации (любой каталог Azure AD — клиент)**. 
 
-1. В разделе **URI перенаправления** выберите `Web` и введите URL-адрес `https://contoso5.portal.azure-api.net/signin`.
+1. В разделе **URI перенаправления** выберите `Web` и оставьте поле URL-адрес пустым для Now.
 
 1. Выберите **Зарегистрировать**, чтобы создать приложение. 
 
@@ -149,9 +149,9 @@ ms.locfileid: "80804373"
 
 1. Щелкните **Создать**.
 
-1. Вернитесь к клиентскому приложению и выберите **Проверка подлинности**.
+1. Вернитесь к регистрации клиентского приложения в Azure Active Directory и выберите **Проверка подлинности**.
 
-1. В разделе **URI перенаправления**выберите тип **веб**, вставьте **Redirect_url** в разделе **URI перенаправления**, а затем сохраните.
+1. В разделе **конфигурации платформы** щелкните **Добавить платформу**и выберите тип **веб**, вставьте **redirect_url** в разделе **URI перенаправления**, а затем нажмите кнопку **настроить** , чтобы сохранить.
 
 Теперь, когда сервер авторизации OAuth 2.0 настроен, консоль разработчика должна получать маркеры доступа от Azure Active Directory. 
 
@@ -214,7 +214,7 @@ ms.locfileid: "80804373"
 
 В этом руководстве мы использовали консоль разработчика в APIM как пример клиентского приложения для вызова `Echo API`, защищенного OAuth 2.0. Чтобы узнать больше о том, как создать приложение и реализовать OAuth 2.0, изучите [примеры кода Azure Active Directory](../active-directory/develop/sample-v2-code.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте больше об [Azure Active Directory и OAuth 2.0](../active-directory/develop/authentication-scenarios.md).
 * См. другие [видео](https://azure.microsoft.com/documentation/videos/index/?services=api-management) об управлении API.
 * Другие способы защиты внутренней серверной службы см. в разделе [Взаимная проверка подлинности на основе сертификата](api-management-howto-mutual-certificates.md).

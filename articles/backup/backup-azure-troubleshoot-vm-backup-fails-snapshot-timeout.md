@@ -5,12 +5,12 @@ ms.reviewer: saurse
 ms.topic: troubleshooting
 ms.date: 07/05/2019
 ms.service: backup
-ms.openlocfilehash: a3eedb5440711c7a45a13dcd53dd489c490588fc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3ee84c0c868f47dca1aee0401865563a326df3db
+ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81677410"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82864408"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -44,6 +44,8 @@ ms.locfileid: "81677410"
 **Причина 3. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)**.
 
 **Причина 4. [Параметры конфигурации агента виртуальной машины не заданы (для виртуальных машин Linux)](#vm-agent-configuration-options-are-not-set-for-linux-vms)**
+
+**Причина 5. [решение "Управление приложениями" блокирует иаасбкдрекстенсион. exe](#application-control-solution-is-blocking-iaasbcdrextensionexe)**
 
 ## <a name="usererrorvmprovisioningstatefailed---the-vm-is-in-failed-provisioning-state"></a>Усереррорвмпровисионингстатефаилед — виртуальная машина находится в состоянии "сбой подготовки"
 
@@ -200,8 +202,16 @@ ms.locfileid: "81677410"
 
 ### <a name="vm-agent-configuration-options-are-not-set-for-linux-vms"></a>Параметры конфигурации агента виртуальной машины не заданы (для виртуальных машин Linux)
 
-Файл конфигурации (/ etc/waagent.conf) определяет действия waagent. Расширения параметров файла конфигурации **. Включите** и **подготавливаете.** чтобы резервное копирование работало, агент должен иметь значение **y** .
+Файл конфигурации (/ etc/waagent.conf) определяет действия waagent. Для параметров файла конфигурации **Extensions. Enable** должно быть задано значение **y** и **подготовка.** для работы резервного копирования агент должен иметь значение **Авто** .
 Полный список параметров файла конфигурации агента виртуальной машины см. в разделе.<https://github.com/Azure/WALinuxAgent#configuration-file-options>
+
+### <a name="application-control-solution-is-blocking-iaasbcdrextensionexe"></a>Решение "Управление приложениями" блокирует Иаасбкдрекстенсион. exe
+
+Если вы используете [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/what-is-applocker) (или другое решение для управления приложениями), а правила — на основе издателя или пути, они могут заблокировать запуск исполняемого файла **иаасбкдрекстенсион. exe** .
+
+#### <a name="solution"></a>Решение
+
+Исключите `/var/lib` путь или исполняемый файл **иаасбкдрекстенсион. exe** из AppLocker (или другого программного обеспечения для управления приложениями).
 
 ### <a name="the-snapshot-status-cant-be-retrieved-or-a-snapshot-cant-be-taken"></a><a name="the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken"></a>Не удалось получить состояние моментального снимка или создать моментальный снимок
 

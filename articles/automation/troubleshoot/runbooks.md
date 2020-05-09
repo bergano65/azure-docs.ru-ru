@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: automation
 manager: carmonm
 ms.custom: has-adal-ref
-ms.openlocfilehash: 08325c8163073c083e927f84fecbde9a9d104572
-ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
-ms.translationtype: HT
+ms.openlocfilehash: 70f3c52adc10556c358ed75a75fd023ffb21a813
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82652797"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82855094"
 ---
 # <a name="troubleshoot-runbook-errors"></a>Устранение ошибок модуля Runbook
 
@@ -49,7 +49,7 @@ ms.locfileid: "82652797"
     * [Обновите веб-перехватчик](../automation-webhooks.md#renew-a-webhook) , если вы пытаетесь использовать веб-перехватчик с истекшим сроком действия для запуска модуля Runbook.
     * [Проверьте состояния заданий](../automation-runbook-execution.md#job-statuses) , чтобы определить текущие состояния Runbook и некоторые возможные причины проблемы.
     * [Добавьте дополнительные выходные данные](../automation-runbook-output-and-messages.md#message-streams) в модуль Runbook, чтобы определить, что происходит перед приостановкой модуля Runbook.
-    * [Обрабатывает все исключения](../automation-runbook-execution.md#handling-exceptions) , создаваемые заданием.
+    * [Обрабатывает все исключения](../automation-runbook-execution.md#exceptions) , создаваемые заданием.
 
 1. Выполните этот шаг, если задание Runbook или окружение в гибридной рабочей роли Runbook не отвечает.
 
@@ -234,7 +234,7 @@ The subscription named <subscription name> cannot be found.
 
 ### <a name="resolution"></a>Решение
 
-Контекст подписки может быть потерян, если модуль Runbook вызывает несколько модулей Runbook. Чтобы убедиться в том, что контекст подписки передается в модули Runbook, клиент Runbook должен передать контекст в `Start-AzureRmAutomationRunbook` командлет в `AzureRmContext` параметре. Используйте `Disable-AzureRmContextAutosave` командлет с `Scope` параметром, имеющим значение `Process` , чтобы убедиться, что указанные учетные данные используются только для текущего модуля Runbook. Дополнительные сведения см. в разделе [Работа с несколькими подписками](../automation-runbook-execution.md#working-with-multiple-subscriptions).
+Контекст подписки может быть потерян, если модуль Runbook вызывает несколько модулей Runbook. Чтобы убедиться в том, что контекст подписки передается в модули Runbook, клиент Runbook должен передать контекст в `Start-AzureRmAutomationRunbook` командлет в `AzureRmContext` параметре. Используйте `Disable-AzureRmContextAutosave` командлет с `Scope` параметром, имеющим значение `Process` , чтобы убедиться, что указанные учетные данные используются только для текущего модуля Runbook. Дополнительные сведения см. на странице о [подписках](../automation-runbook-execution.md#subscriptions).
 
 ```azurepowershell-interactive
 # Ensures that any credentials apply only to the execution of this runbook
@@ -634,7 +634,7 @@ At line:16 char:1
 
 ### <a name="resolution"></a>Решение
 
-Дополнительные сведения об использовании изолированных программ Azure см. [в статье выполнение Runbook в службе автоматизации Azure](../automation-runbook-execution.md#where-to-run-your-runbooks).
+Дополнительные сведения об использовании изолированных программ Azure см. в разделе [Среда выполнения Runbook](../automation-runbook-execution.md#runbook-execution-environment).
 
 ## <a name="scenario-invalid-forbidden-status-code-when-using-key-vault-inside-a-runbook"></a>Сценарий: недопустимый код состояния запрета при использовании Key Vault в модуле Runbook
 
@@ -668,7 +668,7 @@ Operation returned an invalid status code 'Forbidden'
 * [Выполнение модуля Runbook в службе автоматизации Azure](../automation-runbook-execution.md)
 * [Запуск модуля Runbook в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-starting-a-runbook)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не нашли здесь проблему или не можете решить проблему, попробуйте использовать один из следующих каналов для получения дополнительной поддержки:
 

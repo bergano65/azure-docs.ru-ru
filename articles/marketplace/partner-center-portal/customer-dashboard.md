@@ -1,5 +1,5 @@
 ---
-title: Панель мониторинга клиентов в службе анализа коммерческих рынков в центре партнеров
+title: Панель мониторинга клиентов в службе анализа коммерческих рынков Майкрософт в центре партнеров
 description: Узнайте, как получить доступ к информации о клиентах, в том числе о тенденциях роста, с помощью панели мониторинга клиентов в коммерческом аналитике Marketplace.
 author: dsindona
 ms.author: dsindona
@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: a8379ed883311d219bb6eeb56bd4424dfb470bc9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4d9dc0315a5c87ed67390e8edb23d44ee55f242b
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81251645"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82732773"
 ---
 # <a name="customer-dashboard-in-commercial-marketplace-analytics"></a>Панель мониторинга клиентов в аналитике коммерческого рынка
 
@@ -106,7 +106,7 @@ ms.locfileid: "81251645"
 >[!NOTE]
 > Подробные определения для каждого поля в клиентской сетке, фильтры страниц и их возможные варианты выбора находятся в [часто задаваемых вопросах и терминологии для коммерческого анализа коммерческих рынков](./faq-terminology.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Обзор аналитических отчетов, доступных в коммерческом рынке центра партнеров, см. в статье [аналитика для коммерческого рынка в центре партнеров](./analytics.md).
 - Для диаграмм, тенденций и значений статистических данных, суммирующих действия Marketplace для вашего предложения, см. раздел [Сводная панель мониторинга в коммерческом Analytics Marketplace](./summary-dashboard.md).
