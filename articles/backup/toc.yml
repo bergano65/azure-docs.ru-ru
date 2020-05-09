@@ -44,6 +44,11 @@
           href: tutorial-sap-hana-restore-cli.md
         - name: Управление резервными копиями баз данных SAP HANA с помощью CLI
           href: tutorial-sap-hana-manage-cli.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Таблицы поддержки
@@ -342,10 +347,18 @@
           href: security-overview.md
         - name: Управление доступом на основе ролей
           href: backup-rbac-rs-vault.md
-        - name: Безопасность облачных рабочих нагрузок
-          href: backup-azure-security-feature-cloud.md
+        - name: Обратимое удаление
+          items:
+            - name: Обзор
+              href: backup-azure-security-feature-cloud.md
+            - name: Для виртуальных машин
+              href: soft-delete-virtual-machines.md
+            - name: Для SQL Server и SAP HANA на виртуальных машинах Azure
+              href: soft-delete-sql-saphana-in-azure-vm.md
         - name: Безопасность гибридных резервных копий
           href: backup-azure-security-feature.md
+        - name: Шифрование
+          href: backup-encryption.md
         - name: Встроенные средства управления безопасностью
           href: backup-security-controls.md
         - name: Базовые средства безопасности
