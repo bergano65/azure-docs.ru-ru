@@ -3,12 +3,12 @@ title: Руководство по созданию политик для обе
 description: В этом учебнике используются политики для применения стандартов, управления затратами, обеспечения безопасности и реализации принципов проектирования на уровне предприятия.
 ms.date: 03/24/2020
 ms.topic: tutorial
-ms.openlocfilehash: 15a6c3df26938332d42ecbcfff43f958577062c4
-ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+ms.openlocfilehash: dcebbbfcc2f86ace7ea4400a2fdb6f1392f4efe6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80239963"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82190832"
 ---
 # <a name="tutorial-create-and-manage-policies-to-enforce-compliance"></a>Руководство по Создание политик и управление ими для обеспечения соответствия требованиям
 
@@ -126,7 +126,7 @@ ms.locfileid: "80239963"
 
    Свойство _field_ в правиле политики должно иметь одно из поддерживаемых значений. Полный список допустимых значений вы найдете в описании [полей структуры определения политики](../concepts/definition-structure.md#fields). Вот пример псевдонима: `"Microsoft.Compute/VirtualMachines/Size"`.
 
-   Больше примеров по службе Политика Azure см. в статье [Примеры для Политики Azure](../samples/index.md).
+   Больше примеров для службы "Политика Azure" см. в статье [Примеры для Политики Azure](../samples/index.md).
 
 1. Щелкните **Сохранить**.
 
