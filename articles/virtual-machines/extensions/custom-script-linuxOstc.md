@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: danis
-ms.openlocfilehash: a3eae08510e57227b91deeeb7a7a608a6652cb4a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1ca20f2c8cda84c241391f67ac542faa4a1f5ecd
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79535414"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82594718"
 ---
 # <a name="use-the-azure-custom-script-extension-version-1-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 1 на виртуальных машинах Linux
 
@@ -118,15 +118,15 @@ ms.locfileid: "79535414"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Имя | Значение и пример | Тип данных |
+| Название | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | версия_API | 2015-06-15 | Дата |
 | publisher | Microsoft.OSTCExtensions | строка |
 | type | CustomScriptForLinux | строка |
-| typeHandlerVersion | 1.5 | INT |
-| fileUris (пример) | https://github.com/MyProject/Archive/MyPythonScript.py | массиве |
+| typeHandlerVersion | 1.5 | int |
+| fileUris (пример) | `https://github.com/MyProject/Archive/MyPythonScript.py` | массиве |
 | commandToExecute (пример) | python MyPythonScript.py \<my-param1\> | строка |
-| enableInternalDNSCheck | Да | Логическое |
+| enableInternalDNSCheck | true | boolean |
 | storageAccountName (пример) | examplestorageacct | строка |
 | storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | строка |
 
@@ -353,6 +353,6 @@ Name                  ProvisioningState    Publisher                   Version  
 CustomScriptForLinux  Succeeded            Microsoft.OSTCExtensions        1.5  True
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Код, текущие проблемы и версии доступны в [репозитории расширения CustomScript](https://github.com/Azure/azure-linux-extensions/tree/master/CustomScript).

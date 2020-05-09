@@ -3,16 +3,16 @@ title: Элементы управления примера схемы Azure Sec
 description: Сопоставление элементов управления примера схемы Azure Security Benchmark и Политики Azure.
 ms.date: 04/16/2020
 ms.topic: sample
-ms.openlocfilehash: 0f2d24d7d8c9f7ce2568f11b15e65ed1fcd02afb
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: f80b72f06532adef28bf5e5afd1eb94c2e34ee2d
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81538666"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82691306"
 ---
 # <a name="control-mapping-of-the-azure-security-benchmark-blueprint-sample"></a>Сопоставление элементов управления примера схемы Azure Security Benchmark
 
-В следующей статье пример схемы Azure Security Benchmark, представленной в Azure Blueprints, сопоставляется с элементами управления Azure Security Benchmark. См. сведения об элементах управления в руководстве по [Azure Security Benchmark](https://docs.microsoft.com/azure/security/benchmarks/overview).
+В следующей статье пример схемы Azure Security Benchmark, представленной в Azure Blueprints, сопоставляется с элементами управления Azure Security Benchmark. См. сведения об элементах управления в руководстве по [Azure Security Benchmark](../../../../security/benchmarks/overview.md).
 
 Далее представлены сопоставления элементов управления **Azure Security Benchmark**. Используйте панель навигации справа для перехода непосредственно к сопоставлению конкретных элементов управления. Сопоставленные элементы управления реализуются с помощью инициативы [Политики Azure](../../../policy/overview.md). Чтобы просмотреть полную инициативу, откройте раздел **Политика** на портале Azure и перейдите на страницу **Определения**. Найдите и выберите функцию **\[Предварительная версия\]: аудит рекомендаций Azure Security Benchmark и развертывание определенных соответствующих расширений виртуальных машин** (встроенная инициатива политики).
 

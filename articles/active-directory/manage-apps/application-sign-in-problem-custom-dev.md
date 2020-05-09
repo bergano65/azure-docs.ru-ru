@@ -16,12 +16,12 @@ ms.date: 07/11/2017
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8ad2499aea8bf4e41ca00d6c78d76e112f0493e
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.openlocfilehash: 01a424129abf88c18500c96bd1889fc6dcce2ec6
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
-ms.locfileid: "65825240"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82890701"
 ---
 # <a name="problems-signing-in-to-a-custom-developed-application"></a>Проблемы при входе в специально разработанное приложение
 
@@ -35,12 +35,12 @@ ms.locfileid: "65825240"
 
 * Сведения об аналогичных ошибках или проблемах см. в разделе [StackOverflow в Azure AD](https://stackoverflow.com/questions/tagged/azure-active-directory).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Руководство разработчика по Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-developers-guide)<br>
 
 [Согласие и интеграция приложений с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications)<br>
 
-[Согласие и разрешения для конвергированных приложений в Azure AD версии 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes)<br>
+[Разрешения и согласие для конечной точки платформы удостоверений Майкрософт](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes)<br>
 
 [StackOverflow в Azure AD](https://stackoverflow.com/questions/tagged/azure-active-directory>)

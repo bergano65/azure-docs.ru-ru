@@ -5,12 +5,12 @@ ms.subservice: B2C
 ms.topic: include
 ms.date: 04/07/2020
 ms.author: mimart
-ms.openlocfilehash: 31a6d116ae1afce9afdd3786747490980963d823
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 818f33abfdb0655d96c0a8873a43903ee972b3bf
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81678043"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82925429"
 ---
 ## <a name="register-an-azure-ad-app"></a>Регистрация приложения Azure AD
 
@@ -36,7 +36,7 @@ ms.locfileid: "81678043"
 
 ### <a name="configuring-optional-claims"></a>Настройка необязательных утверждений
 
-Если вы хотите получать утверждения `family_name` и `given_name` заявки из Azure AD, можно настроить необязательные утверждения для приложения в пользовательском интерфейсе портал Azure или манифесте приложения. Дополнительные сведения см. в статье [предоставление дополнительных утверждений для приложения Azure AD](/active-directory/develop/active-directory-optional-claims.md).
+Если вы хотите получать утверждения `family_name` и `given_name` заявки из Azure AD, можно настроить необязательные утверждения для приложения в пользовательском интерфейсе портал Azure или манифесте приложения. Дополнительные сведения см. в статье [предоставление дополнительных утверждений для приложения Azure AD](/azure/active-directory/develop/active-directory-optional-claims).
 
 1. Войдите на [портал Azure](https://portal.azure.com). Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений**.

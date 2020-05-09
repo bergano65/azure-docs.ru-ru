@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 184b60f6147089cbdfd855b473b3346d021f7fbc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 92f2102d8d6353da2002a4ee9d5bfbe57a774e10
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82176606"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792077"
 ---
 # <a name="azure-security-baseline-for-azure-storage"></a>Базовые показатели безопасности Azure для службы хранилища Azure
 
@@ -82,7 +82,7 @@ ms.locfileid: "82176606"
 
 **Руководство**. запись пакетов наблюдателя за сетями позволяет создавать сеансы записи для отслеживания трафика между учетной записью хранения и виртуальной машиной. Для сеанса записи предоставляются фильтры, которые позволяют убедиться, что записывается только требуемый трафик. Запись пакетов позволяет выявлять аномалии в работе сети в случае их возникновения или заранее. Также она помогают выполнять сбор сетевой статистики, получать сведения о сетевых вторжениях, выполнять отладку обмена данных между клиентом и сервером и многое другое. Так как запись пакетов активируется удаленно, ее не нужно запускать вручную на требуемой виртуальной машине, что также позволяет сэкономить ценное время. 
 
-- [Управление записью пакетов с помощью Наблюдателя за сетями Azure на портале Azure](https://docs.microsoft.comazure/network-watcher/network-watcher-packet-capture-manage-portal)
+- [Управление записью пакетов с помощью Наблюдателя за сетями Azure на портале Azure](https://docs.microsoft.com/azure/network-watcher/network-watcher-packet-capture-manage-portal)
 
 **Мониторинг центра безопасности Azure**: Да
 
@@ -240,7 +240,7 @@ ms.locfileid: "82176606"
 
 - [Как оповещать данные журнала Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response)
 
-- [Ведение журнала Аналитики Службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-analytics-logging)
+- [Ведение журнала аналитики службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-analytics-logging)
 
 **Мониторинг центра безопасности Azure**: Да
 
@@ -428,7 +428,7 @@ ms.locfileid: "82176606"
 
 Создайте параметры диагностики для Azure Active Directory учетных записей пользователей, отправив журналы аудита и журналы входа в рабочую область Log Analytics. Вы можете настроить нужные оповещения в Log Analytics рабочей области. Чтобы отслеживать ошибки проверки подлинности в учетных записях хранения Azure, можно создавать оповещения, уведомляющие вас о достижении определенных пороговых значений для метрик ресурсов хранилища. Кроме того, используйте Azure Monitor, чтобы оповещать об анонимном доступе учетных записей хранения, используя условия анонимной проверки подлинности.
 
-- [Ведение журнала Аналитики Службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-analytics-logging)
+- [Ведение журнала аналитики службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-analytics-logging)
 
 - [Как интегрировать журналы действий Azure в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
 
@@ -574,7 +574,7 @@ ms.locfileid: "82176606"
 
 - [Создание оповещений для событий журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
 
-- [Ведение журнала Аналитики Службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-analytics-logging)
+- [Ведение журнала аналитики службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-analytics-logging)
 
 - [Настройка оповещений метрик для учетных записей хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account)
 
@@ -887,7 +887,7 @@ ms.locfileid: "82176606"
 
 Кроме того, можно периодически менять ключи учетной записи хранения, чтобы ограничить влияние потери или раскрытия ключей учетной записи хранения.
 
-- [Шифрование неактивных данных в службе хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)
+- [Шифрование службы хранилища Azure для неактивных данных](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)
 
 - [Управление ключами доступа к учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-account-keys-manage)
 

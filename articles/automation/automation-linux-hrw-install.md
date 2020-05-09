@@ -5,18 +5,18 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: f2584a8d4e68b7c16b3acdc29f64f0a19d83d735
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 82f6d9e56e5d5745077ef512cb3392c16b95961f
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81457677"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82872185"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Linux
 
 Гибридную рабочую роль Runbook службы автоматизации Azure можно использовать для выполнения модулей runbook непосредственно на компьютере, размещающем роль, для работы с ресурсами в среде, что позволяет управлять этими локальными ресурсами. Гибридная рабочая роль Runbook Linux запускает модули runbook от имени особого пользователя, для которого можно повысить разрешения, чтобы выполнить команды, требующие повышения разрешений. Для хранения модулей runbook и управления ими используется служба автоматизации Azure, затем они передаются на один или несколько целевых компьютеров.
 
-В этой статье описано, как установить гибридную рабочую роль Runbook на компьютере Linux.
+В этой статье описывается, как установить гибридную рабочую роль Runbook на компьютере Linux, как удалить рабочую роль и как удалить группу гибридных рабочих ролей Runbook.
 
 ## <a name="supported-linux-operating-systems"></a>Поддерживаемые операционные системы Linux
 
@@ -48,9 +48,7 @@ ms.locfileid: "81457677"
 * Графический
 * графический модуль рабочего процесса PowerShell.
 
-## <a name="installing-a-linux-hybrid-runbook-worker"></a>Установка гибридной рабочей роли Runbook для Linux
-
-Чтобы установить и настроить гибридную рабочую роль Runbook на компьютере Linux, выполните простой ручной процесс. Для этого необходимо включить решение гибридной рабочей роли службы автоматизации в рабочей области Azure Log Analytics, а затем выполнить несколько команд для регистрации компьютера в качестве рабочей роли и его добавления в имеющуюся группу.
+## <a name="deployment-requirements"></a>Требования к развертыванию
 
 Минимальные требования для гибридной рабочей роли Runbook Linux:
 
@@ -63,16 +61,21 @@ ms.locfileid: "81457677"
 | **Требуемый пакет** | **Описание** | **Минимальная версия**|
 |--------------------- | --------------------- | -------------------|
 |Glibc |Библиотека C GNU| 2.5-12 |
-|Openssl| Библиотеки OpenSSL | 1.0 (поддерживается TLS 1.1 и TLS 1.2)|
+|Openssl| Библиотеки OpenSSL | 1,0 (поддерживаются TLS 1,1 и TLS 1,2)|
 |Curl | Веб-клиент cURL | 7.15.5|
 |Python-ctypes | Требуется Python 2. x |
 |PAM | Подключаемые модули аутентификации|
 | **Дополнительный пакет** | **Описание** | **Минимальная версия**|
 | PowerShell Core | Для запуска модулей runbook необходимо установить PowerShell (дополнительные сведения об установке см. в статье [Установка PowerShell Core в Linux](/powershell/scripting/install/installing-powershell-core-on-linux)).  | 6.0.0 |
 
-### <a name="installation"></a>Установка
+## <a name="install-a-linux-hybrid-runbook-worker"></a>Установка гибридной рабочей роли Runbook Linux
+
+Чтобы установить и настроить гибридную рабочую роль Runbook на компьютере Linux, выполните простой ручной процесс. Для этого необходимо включить решение гибридной рабочей роли службы автоматизации в рабочей области Azure Log Analytics, а затем выполнить несколько команд для регистрации компьютера в качестве рабочей роли и его добавления в имеющуюся группу.
 
 Прежде чем продолжить, запишите рабочую область Log Analytics, связанную с вашей учетной записью службы автоматизации. Запишите также первичный ключ учетной записи службы автоматизации. Эти данные можно найти на портале Azure, выбрав учетную запись службы автоматизации, а затем указав **Workspace** в качестве идентификатора рабочей области и **Keys** в качестве первичного ключа. Сведения о портах и адресах, которые требуются для гибридной рабочей роли Runbook, см. в разделе [Настройка сети](automation-hybrid-runbook-worker.md#network-planning).
+
+>[!NOTE]
+> [Учетная запись нксаутоматион](automation-runbook-execution.md#log-analytics-agent-for-linux) с соответствующими разрешениями sudo должна присутствовать во время установки гибридной рабочей роли Linux. Если вы попытаетесь установить рабочую роль, а учетная запись отсутствует или не имеет соответствующих разрешений, установка завершится сбоем.
 
 1. Включите решение Гибридная рабочая роль службы автоматизации в Azure одним из следующих методов:
 
@@ -102,7 +105,7 @@ ms.locfileid: "81457677"
 > [!NOTE]
 > Если вы используете Azure Monitor расширение виртуальной машины для Linux для виртуальной машины Azure, мы рекомендуем задать `autoUpgradeMinorVersion` значение false в качестве версии автоматического обновления, которая может вызвать проблемы гибридной рабочей роли Runbook. Сведения об обновлении расширения вручную см. в разделе [Azure CLI Deployment](../virtual-machines/extensions/oms-linux.md#azure-cli-deployment).
 
-## <a name="turning-off-signature-validation"></a>Отключение проверки подписи
+## <a name="turn-off-signature-validation"></a>Отключить проверку подписи
 
 По умолчанию для гибридных рабочих ролей Runbook Linux требуется проверка подписи. При запуске неподписанного модуля Runbook для рабочей роли отображается `Signature validation failed` сообщение об ошибке. Чтобы отключить проверку подписи, выполните следующую команду. Замените второй параметр идентификатором вашей рабочей области Log Analytics.
 
@@ -110,8 +113,22 @@ ms.locfileid: "81457677"
  sudo python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/scripts/require_runbook_signature.py --false <LogAnalyticsworkspaceId>
  ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="remove-the-hybrid-runbook-worker-from-an-on-premises-linux-computer"></a><a name="remove-linux-hybrid-runbook-worker"></a>Удаление гибридной рабочей роли Runbook с локального компьютера Linux
+
+Для получения идентификатора рабочей области `ls /var/opt/microsoft/omsagent` можно использовать команду в гибридной рабочей роли Runbook. Создается папка с именем и ИДЕНТИФИКАТОРом рабочей области.
+
+```bash
+sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessKey>" --groupname="Example" --workspaceid="<workspaceId>"
+```
+
+> [!NOTE]
+> Этот код не удаляет агент Log Analytics для Linux с компьютера. Она удаляет только функциональные возможности и настройку гибридной рабочей роли Runbook.
+
+## <a name="remove-a-hybrid-worker-group"></a>Удаление группы гибридных рабочих ролей
+
+Чтобы удалить группу гибридных рабочих ролей Runbook на компьютерах Linux, используйте те же действия, что и для группы гибридных рабочих ролей Windows. См. раздел [Удаление группы гибридных рабочих ролей](automation-windows-hrw-install.md#remove-a-hybrid-worker-group).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде, см. статью [Запуск модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md).
-* Инструкции по удалению гибридных рабочих ролей Runbook см. в разделе [Удаление гибридных рабочих ролей Runbook в службе автоматизации Azure](automation-hybrid-runbook-worker.md#remove-a-hybrid-runbook-worker) статьи "Автоматизация ресурсов в центре обработки данных или облаке с помощью гибридной рабочей роли Runbook".
 * Инструкции см. в руководстве по [поиску и устранению неполадок с гибридными рабочими ролями Runbook](troubleshoot/hybrid-runbook-worker.md#linux) (раздел для Linux)

@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: curtand
-ms.openlocfilehash: e85be9140aabe5b66e63d3ccdd4a3ea907a1d6fc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 63774f2f6b600b1f60aefea84e1d5ea0abd63cbb
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77062410"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82628390"
 ---
 # <a name="set-up-a-phone-number-as-your-verification-method"></a>Настройка номера телефона в качестве метода проверки
 
@@ -53,7 +53,7 @@ ms.locfileid: "77062410"
 
 ### <a name="to-set-up-phone-calls"></a>Настройка телефонных звонков
 
-1. Войдите в рабочую или учебную учетную запись, а затем перейдите на страницу https://myprofile.microsoft.com/.
+1. Войдите в рабочую или учебную учетную запись, а затем перейдите на страницу https://myaccount.microsoft.com/.
 
     ![Страница "Мой профиль" с выделенными ссылками на сведения для защиты](media/security-info/securityinfo-myprofile-page.png)
 
@@ -125,7 +125,7 @@ ms.locfileid: "77062410"
     >[!Note]
     >Если некоторые из этих параметров отсутствуют, скорее всего, ваша организация не разрешает данные методы. Если это так, вам нужно выбрать доступный метод или обратиться за помощью к администратору.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Если вы забыли свой пароль, сбросьте его на [портале сброса пароля](https://passwordreset.microsoftonline.com/) или выполните действия, описанные в статье о [сбросе пароля рабочей или учебной учетной записи](active-directory-passwords-update-your-own-password.md).
 

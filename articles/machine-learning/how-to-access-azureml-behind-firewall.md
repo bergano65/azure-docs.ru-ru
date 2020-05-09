@@ -1,7 +1,7 @@
 ---
-title: Использование Машинное обучение Azure за брандмауэром
+title: Использование брандмауэра
 titleSuffix: Azure Machine Learning
-description: Безопасно используйте Машинное обучение Azure за брандмауэром Azure. Сведения об узлах, которые необходимо разрешить в брандмауэре для правильной работы Машинное обучение Azure.
+description: Контролируйте доступ к рабочим областям Машинное обучение Azure с помощью брандмауэров Azure. Сведения об узлах, которые необходимо разрешить в брандмауэре для правильной работы Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,16 +10,16 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 04/27/2020
-ms.openlocfilehash: 2c5fe9d46ef408775cc4b99d4820a652a91683c4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 40c25dda3fefa9c54df832e16149a68a4aa5a33b
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82196326"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82981971"
 ---
-# <a name="use-azure-machine-learning-workspace-behind-azure-firewall"></a>Использование рабочей области Машинное обучение Azure за брандмауэром Azure
+# <a name="use-workspace-behind-azure-firewall-for-azure-machine-learning"></a>Использование рабочей области за брандмауэром Azure для Машинное обучение Azure
 
-Эта статья содержит сведения о настройке брандмауэра Azure для использования с Машинное обучение Azure.
+Из этой статьи вы узнаете, как настроить брандмауэр Azure для использования с рабочей областью Машинное обучение Azure.
 
 Брандмауэр Azure можно использовать для управления доступом к рабочей области Машинное обучение Azure и к общедоступному Интернету. Если настройка не настроена должным образом, брандмауэр может вызвать проблемы с использованием рабочей области.
 

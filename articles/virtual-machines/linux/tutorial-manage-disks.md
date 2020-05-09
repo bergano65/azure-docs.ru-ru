@@ -15,12 +15,12 @@ ms.date: 11/14/2018
 ms.author: cynthn
 ms.custom: mvc
 ms.subservice: disks
-ms.openlocfilehash: 1949b66ee48036163e92cb37c275e9117d6a74b4
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: be2a52f1a9071e9d4bb77ab4439291fd58cd828b
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81460024"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82129369"
 ---
 # <a name="tutorial---manage-azure-disks-with-the-azure-cli"></a>Руководство по управлению дисками Azure с помощью Azure CLI.
 
@@ -32,7 +32,6 @@ ms.locfileid: "81460024"
 > * дисками уровня "Стандартный" и "Премиум";
 > * производительностью дисков;
 > * присоединением и подготовкой дисков данных;
-> * изменением размеров дисков;
 > * моментальными снимками дисков.
 
 
@@ -265,7 +264,6 @@ az vm disk attach \
 > * дисками уровня "Стандартный" и "Премиум";
 > * производительностью дисков;
 > * присоединением и подготовкой дисков данных;
-> * изменением размеров дисков;
 > * моментальными снимками дисков.
 
 Перейдите к следующему руководству, чтобы узнать об автоматической настройке виртуальных машин.

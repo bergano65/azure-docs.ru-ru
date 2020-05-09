@@ -3,12 +3,12 @@ title: Индекс примеров схем
 description: Индексы соответствия и стандартные примеры для развертывания сред, политик и базовых решений Cloud Adoption Framework с помощью Azure Blueprints.
 ms.date: 02/26/2020
 ms.topic: sample
-ms.openlocfilehash: 745b16f8aff8fe003ec65449cdf3dc0d629ba6ff
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: 582a4bbc1ec21e231d2a9f1feb1cfef34b3cce37
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81383529"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82594276"
 ---
 # <a name="azure-blueprints-samples"></a>Примеры для Azure Blueprints
 
@@ -18,6 +18,7 @@ ms.locfileid: "81383529"
 
 |  |  |
 |---------|---------|
+| [Australian Government ISM PROTECTED](./ism-protected/control-mapping.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям Australian Government ISM PROTECTED. |
 | [Canada Federal PBMM](./canada-federal-pbmm/index.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям Canada Federal Protected B, Medium Integrity, Medium Availability (PBMM). |
 | [Тест производительности CIS для платформ Microsoft Azure](./cis-azure-1.1.0/index.md)| Набор политик, которые помогут обеспечить соответствие рекомендациям по использованию тестов производительности от CIS для платформ Microsoft Azure. |
 | [Уровень влияния DoD 4](./dod-impact-level-4/index.md) | Набор политик, которые помогут обеспечить соответствие требованиям уровня влияния DoD 4. |

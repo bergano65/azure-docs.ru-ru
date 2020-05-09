@@ -13,13 +13,12 @@ ms.date: 10/30/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad26a4d619a7984f08a8decc87f9339adae47cdd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8e37d443d75dccae8704bc1ff7856e1d24131766
+ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77132616"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82652703"
 ---
 #  <a name="xamarin-android-system-browser-considerations-for-using-msalnet"></a>Рекомендации по использованию MSAL.NET в браузере системы Xamarin Android
 
@@ -33,7 +32,7 @@ ms.locfileid: "77132616"
 |------| ------- |
 |Chrome | com.android.chrome|
 |Microsoft Edge | com. Microsoft. еммкс|
-|Firefox | org. Mozilla. Firefox|
+|FireFox | org. Mozilla. Firefox|
 |екосиа | com. екосиа. Android|
 |Киви | com. кивибровсер. browser|
 |Дивный | com. дивный. browser|
@@ -46,8 +45,8 @@ ms.locfileid: "77132616"
 | Устройство | Браузер     |  Результат  | 
 | ------------- |:-------------:|:-----:|
 | Huawei/один + | Chrome\* | Успех|
-| Huawei/один + | Edge\* | Успех|
-| Huawei/один + | Firefox\* | Успех|
+| Huawei/один + | Угловой\* | Успех|
+| Huawei/один + | FireFox\* | Успех|
 | Huawei/один + | Дивный\* | Успех|
 | Один + | екосиа\* | Успех|
 | Один + | Киви\* | Успех|
