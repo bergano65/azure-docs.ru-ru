@@ -1,23 +1,17 @@
 ---
-title: Пакет SDK для Java. Операции файловой системы в Azure Data Lake Storage 1-го поколения | Документы Майкрософт
-description: Использование пакета Java SDK для Azure Data Lake Storage 1-го поколения для выполнения операций файловой системы в Data Lake Storage 1-го поколения, таких как создание папок и т. д.
-services: data-lake-store
-documentationcenter: ''
+title: Пакет SDK для Java — операции файловой системы в Data Lake Storage 1-го поколения — Azure
+description: Используйте пакет SDK для Java для Azure Data Lake Storage 1-го поколения выполнения операций файловой системы на Data Lake Storage 1-го поколения таких как создание папок, а также загрузка и скачивание файлов данных.
 author: twooley
-manager: mtillman
-editor: cgronlun
-ms.assetid: d10e09db-5232-4e84-bb50-52efc2c21887
 ms.service: data-lake-store
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: bc6e0718cdc4ccb18480dc760279da9c177db4cb
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: 6f97443e4bcf6689f0bf49917774f662d5462566
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "60877470"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82691775"
 ---
 # <a name="filesystem-operations-on-azure-data-lake-storage-gen1-using-java-sdk"></a>Операции файловой системы в Azure Data Lake Storage 1-го поколения с использованием Java SDK
 > [!div class="op_single_selector"]
@@ -58,7 +52,7 @@ ms.locfileid: "60877470"
           </dependency>
         </dependencies>
    
-    Первая зависимость предназначена для использования пакета SDK для Data Lake Storage 1-го поколения (`azure-data-lake-store-sdk`) из репозитория Maven. Вторая зависимость нужна, чтобы указать, какие платформы ведения журналов (`slf4j-nop`) будут использоваться для этого приложения. Пакет SDK для Data Lake Storage 1-го поколения использует библиотеку [slf4j](https://www.slf4j.org/), которая позволяет выбрать любую из ряда популярных платформ ведения журналов, таких как Log4j, платформа для Java, Logback и др., или отключить ведение журнала. В этом примере мы отключим ведение журнала, так как используем привязку **slf4j-nop**. Сведения о других вариантах ведения журнала в приложении см. [здесь](https://www.slf4j.org/manual.html#projectDep).
+    Первая зависимость предназначена для использования пакета SDK для Data Lake Storage 1-го поколения (`azure-data-lake-store-sdk`) из репозитория Maven. Вторая зависимость нужна, чтобы указать, какие платформы ведения журналов (`slf4j-nop`) будут использоваться для этого приложения. Пакет SDK для Data Lake Storage 1-го поколения использует [SLF4J](https://www.slf4j.org/) Logging фасадной, который позволяет выбирать из ряда популярных платформ ведения журналов, таких как log4j, ведение журнала Java, Logback и т. д., а также без ведения журнала. В этом примере мы отключим ведение журнала, так как используем привязку **slf4j-nop**. Сведения о других вариантах ведения журнала в приложении см. [здесь](https://www.slf4j.org/manual.html#projectDep).
 
 3. Добавьте следующие инструкции импорта в приложение.
 
@@ -208,7 +202,7 @@ ms.locfileid: "60877470"
 1. Для запуска из среды IDE найдите и нажмите кнопку **запуска**. Для запуска из Maven выполните команду [exec:exec](https://www.mojohaus.org/exec-maven-plugin/exec-mojo.html).
 2. Чтобы получить автономный JAR-файл, который можно запустить из командной строки, создайте такой файл со всеми зависимостями с помощью [подключаемого модуля сборки Maven](https://maven.apache.org/plugins/maven-assembly-plugin/usage.html). Пример содержится в файле pom.xml в [исходном коде на сайте GitHub](https://github.com/Azure-Samples/data-lake-store-java-upload-download-get-started/blob/master/pom.xml).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Документация по пакету SDK для Java](https://azure.github.io/azure-data-lake-store-java/javadoc/)
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
 

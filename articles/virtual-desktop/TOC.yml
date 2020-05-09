@@ -1,22 +1,20 @@
-- name: Виртуальный рабочий стол Windows
+- name: "Виртуальный рабочий стол Windows, выпуск за весну 2020\_года"
   href: index.yml
 - name: Обзор
   items:
     - name: Что такое Виртуальный рабочий стол Windows
       href: overview.md
+    - name: "Документация по выпуску за осень 2019\_года"
+      href: ./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md
 - name: Учебники
   items:
-    - name: 1. Создание клиента в Виртуальном рабочем столе Windows
-      href: tenant-setup-azure-active-directory.md
-    - name: 2. Создание субъектов-служб и назначений ролей с использованием PowerShell
-      href: create-service-principal-role-powershell.md
-    - name: 3. Создание пула узлов с использованием Azure Marketplace
+    - name: 1. Создание пула узлов на портале Azure
       href: create-host-pools-azure-marketplace.md
-    - name: 4. Управление группами приложений
+    - name: 2. Управление группами приложений
       href: manage-app-groups.md
-    - name: 5. Создание пула узлов для проверки обновлений службы
+    - name: 3. Создание пула узлов для проверки обновлений службы
       href: create-validation-host-pool.md
-    - name: 6. Настройка оповещений служб
+    - name: 4. Настройка оповещений служб
       href: set-up-service-alerts.md
 - name: Практическое руководство
   items:
@@ -32,18 +30,18 @@
           href: connect-macos.md
         - name: Подключение с помощью клиента iOS
           href: connect-ios.md
+    - name: Настройка модуля PowerShell
+      href: powershell-module.md
     - name: Создание пула узлов и узлов сеансов
       items:
-        - name: Шаблон Azure Resource Manager
-          href: create-host-pools-arm-template.md
         - name: PowerShell
           href: create-host-pools-powershell.md
-        - name: "Развертывание виртуальной машины Windows\_7"
-          href: deploy-windows-7-virtual-machine.md
         - name: Развертывание узла сеансов на основе GPU
           href: configure-vm-gpu.md
         - name: Развертывание существующего пула узлов
           href: expand-existing-host-pool.md
+        - name: Управление группами приложений с помощью PowerShell
+          href: manage-app-groups-powershell.md
     - name: Создание контейнера профилей
       items:
         - name: Использование файлового ресурса на основе виртуальной машины
@@ -68,20 +66,10 @@
           href: set-up-customize-master-image.md
         - name: Установка Office в главный образ VHD
           href: install-office-on-wvd-master-image.md
-    - name: Автоматическое масштабирование узлов сеанса
-      href: set-up-scaling-script.md
     - name: Настройка веб-канала
       href: customize-feed-for-virtual-desktop-users.md
-    - name: Развертывание средства управления
-      items:
-        - name: Шаблон Azure Resource Manager
-          href: manage-resources-using-ui.md
-        - name: PowerShell
-          href: manage-resources-using-ui-powershell.md
     - name: Использование функций диагностики службы
       items:
-        - name: Развертывание средства диагностики
-          href: deploy-diagnostics.md
         - name: Использование функций диагностики в Log Analytics
           href: diagnostics-log-analytics.md
     - name: Публикация встроенных приложений
@@ -124,10 +112,6 @@
       href: troubleshoot-set-up-issues.md
     - name: Конфигурация виртуальной машины узла сеанса
       href: troubleshoot-vm-configuration.md
-    - name: "Устранение неполадок с виртуальной машиной Windows\_7 в службе \"Виртуальный рабочий стол Windows\""
-      href: troubleshoot-windows-7-vm.md
-    - name: Устранение неполадок со средством управления Виртуального рабочего стола Windows
-      href: troubleshoot-management-tool.md
     - name: Подключения службы удаленного рабочего стола
       href: troubleshoot-service-connection.md
     - name: Проблемы с клиентом удаленного рабочего стола
@@ -140,10 +124,6 @@
   items:
     - name: Поддержка Linux
       href: linux-overview.md
-    - name: PowerShell
-      href: /powershell/windows-virtual-desktop/overview
-    - name: REST API
-      href: /rest/api/virtual-desktop/
     - name: Поддерживаемые параметры RDP-файла
       href: 'https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/rdp-files?context=/azure/virtual-desktop/context/context'
     - name: Руководство по сети

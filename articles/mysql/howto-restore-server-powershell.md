@@ -7,14 +7,14 @@ ms.service: mysql
 ms.devlang: azurepowershel
 ms.topic: conceptual
 ms.date: 4/28/2020
-ms.openlocfilehash: 1e63a6e57e1dc929c78e5278df6ef0e4ab2a17d7
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 871b1ba81f672459378b23705ad5b96213667a73
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82230851"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82609091"
 ---
-# <a name="how-to-back-up-and-restore-a-server-in-azure-database-for-mysql-using-powershell"></a>Как создать резервную копию и восстановить сервер в базе данных Azure для MySQL с помощью PowerShell
+# <a name="how-to-back-up-and-restore-an-azure-database-for-mysql-server-using-powershell"></a>Как создать резервную копию и восстановить сервер базы данных Azure для MySQL с помощью PowerShell
 
 Для серверов базы данных Azure для MySQL периодически создается резервная копия, чтобы включить функции восстановления. С помощью этой функции можно восстановить сервер и все его базы данных до более ранней точки во времени на новом сервере.
 
@@ -77,7 +77,7 @@ Get-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 | Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
 | ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
-| Имя | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
+| Название | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
 | ресторепоинтинтиме | 2020-03-13T13:59:00Z | Выберите точку во времени для восстановления. Значения даты и времени должны находиться в пределах срока хранения резервной копии исходного сервера. Используйте формат даты и времени ISO8601. Например, можно использовать собственный местный часовой пояс, например **2020-03-13T05:59:00-08:00**. Можно также использовать формат UTC Zulu, например **2018-03-13T13:59:00Z**. |
 | усепоинтинтимересторе | `<SwitchParameter>` | Используйте режим "на момент времени" для восстановления. |
 
@@ -119,7 +119,7 @@ Get-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 | Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
 |ResourceGroupName | myresourcegroup | Имя группы ресурсов, к которой принадлежит новый сервер.|
-|Имя | mydemoserver-georestored | Имя нового сервера. |
+|Название | mydemoserver-georestored | Имя нового сервера. |
 |Расположение | eastus | Расположение нового сервера. |
 |усежеоресторе | `<SwitchParameter>` | Используйте географический режим для восстановления. |
 
@@ -129,8 +129,7 @@ Get-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 
 На новом сервере, созданном во время восстановления, отсутствуют конечные точки службы виртуальной сети, существовавшие на исходном сервере. Эти правила должны быть настроены отдельно для этого нового сервера. Восстанавливаются правила брандмауэра с исходного сервера.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о [резервных копиях](concepts-backup.md) службы
-- Дополнительные сведения о [репликах](concepts-read-replicas.md)
-- Дополнительные сведения о возможностях обеспечения [непрерывности бизнес-процессов](concepts-business-continuity.md)
+> [!div class="nextstepaction"]
+> [Настройка параметров сервера базы данных Azure для MySQL с помощью PowerShell](howto-configure-server-parameters-using-powershell.md)

@@ -5,12 +5,12 @@ ms.assetid: cd1d15d3-2d9e-4502-9f11-a306dac4453a
 ms.topic: article
 ms.date: 10/01/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2f6dd455024aba184cbb16b5b9c7cfffd032dc70
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 143317cd424428d7f480f4880d3aab750853890b
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80811729"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82592372"
 ---
 # <a name="configure-tls-mutual-authentication-for-azure-app-service"></a>Настройка взаимной проверки подлинности TLS для службы приложений Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "80811729"
 
 ## <a name="enable-client-certificates"></a>Включение сертификатов клиента
 
-Чтобы настроить приложение для запроса сертификатов клиента, необходимо задать для приложения `clientCertEnabled` параметр. `true` Чтобы задать параметр, выполните следующую команду в [Cloud Shell](https://shell.azure.com).
+Чтобы настроить приложение для получения сертификатов клиента, можно переключиться **на** "требовать входящий сертификат", выбрав **Конфигурация** > **Общие параметры** на портале Azure или `clientCertEnabled` задав для приложения параметр. `true` Чтобы задать параметр, выполните следующую команду в [Cloud Shell](https://shell.azure.com).
 
 ```azurecli-interactive
 az webapp update --set clientCertEnabled=true --name <app_name> --resource-group <group_name>

@@ -6,12 +6,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/29/2016
 ms.custom: seodec18
-ms.openlocfilehash: cb68860af56914acede6c9cbf04d3e8ad3edbe04
-ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
-ms.translationtype: HT
+ms.openlocfilehash: 516c7f50f7ff9fe947475b12120a527fc69353bc
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82891057"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82926856"
 ---
 # <a name="troubleshoot-an-app-in-azure-app-service-using-visual-studio"></a>Устранение неполадок приложения в Cлужбе приложений Azure с помощью Visual Studio
 ## <a name="overview"></a>Обзор
@@ -634,7 +634,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 * [Общие сведения об удаленной отладке Службы приложений Azure (часть 3) — среда с несколькими экземплярами и GIT](https://azure.microsoft.com/blog/2014/05/08/introduction-to-remote-debugging-on-azure-web-sites-part-3-multi-instance-environment-and-git/)
 * [Отладка веб-заданий (видео)](https://www.youtube.com/watch?v=ncQm9q5ZFZs&list=UU_SjTh-ZltPmTYzAybypB-g&index=1)
 
-Если в вашем приложении используется веб-API Azure или серверная часть мобильных служб, вы можете получить дополнительные сведения об отладке в разделе [Отладка серверной части .NET в Visual Studio](https://blogs.msdn.com/b/azuremobile/archive/2014/03/14/debugging-net-backend-in-visual-studio.aspx).
+Если в вашем приложении используется веб-API Azure или серверная часть мобильных служб, вы можете получить дополнительные сведения об отладке в разделе [Отладка серверной части .NET в Visual Studio](/archive/blogs/azuremobile/debugging-net-backend-in-visual-studio).
 
 ### <a name="tracing-in-aspnet-applications"></a>Трассировка в приложениях ASP.NET
 В Интернете отсутствуют обновленные и подробные вводные данные по трассировке ASP.NET. Лучшее, что можно сделать, это начать со старых вводных материалов, написанных для Web Forms, так как тогда MVC еще не существовало. А также дополнить эти сведения новыми постами из блогов, посвященных тем или иным конкретным вопросам. Можно также продуктивно начать изучение со следующих ресурсов:
@@ -647,7 +647,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
   Сведения о прослушивателях трассировки, но без упоминания [WebPageTraceListener](/dotnet/api/system.web.webpagetracelistener).
 * [Пошаговое руководство: интеграция трассировки ASP.NET с трассировкой System.Diagnostics](/previous-versions/b0ectfxd(v=vs.140))<br/>
   Это также старая статья, которая, однако, содержит некоторые дополнительные сведения, которые не освещаются во вводной статье.
-* [Трассировка в представлениях ASP.NET MVC Razor](https://blogs.msdn.com/b/webdev/archive/2013/07/16/tracing-in-asp-net-mvc-razor-views.aspx)<br/>
+* [Трассировка в представлениях ASP.NET MVC Razor](https://devblogs.microsoft.com/aspnet/tracing-in-asp-net-mvc-razor-views/)<br/>
   Помимо трассировки в представлениях Razor, в этом посте также описывается, как создать фильтр ошибок, чтобы регистрировать все необработанные исключения в приложении MVC. Сведения о записи в журнал всех необработанных исключений в приложении Web Forms представлены в примере Global.asax в разделе [Полный пример для обработчиков ошибок](/previous-versions/bb397417(v=vs.140)) на сайте MSDN. Если в MVC или Web Forms понадобится зарегистрировать определенные исключения, но позволить платформе их обрабатывать, можно перехватить и повторно создать элементы, как показано на следующем примере:
 
     ```csharp

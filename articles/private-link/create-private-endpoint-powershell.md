@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: 60032677594537f1e7791b7108eebd5d4cfad5b4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8af33e95c92cf51bdabe3325bd9249b4662b7d28
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75430345"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583768"
 ---
 # <a name="create-a-private-endpoint-using-azure-powershell"></a>Создание частной конечной точки с помощью Azure PowerShell
 Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки. 
@@ -137,7 +137,7 @@ $subnet = $virtualNetwork `
 $privateEndpoint = New-AzPrivateEndpoint -ResourceGroupName "myResourceGroup" `
   -Name "myPrivateEndpoint" `
   -Location "westcentralus" `
-  -Subnet  $subnet`
+  -Subnet  $subnet `
   -PrivateLinkServiceConnection $privateEndpointConnection
 ``` 
 
@@ -198,9 +198,10 @@ mstsc /v:<publicIpAddress>
 ## <a name="access-sql-database-server-privately-from-the-vm"></a>Доступ с виртуальной машины к серверу базы данных SQL в частном порядке
 
 1. Откройте PowerShell на удаленном рабочем столе myVm.
-2. Введите `nslookup myserver.database.windows.net`. 
+2. Введите `nslookup myserver.database.windows.net`. Не забудьте `myserver` заменить на имя SQL Server.
 
     Должно появиться сообщение следующего вида:
+    
     ```azurepowershell
     Server:  UnKnown
     Address:  168.63.129.16
@@ -209,14 +210,21 @@ mstsc /v:<publicIpAddress>
     Address:  10.0.0.5
     Aliases:   myserver.database.windows.net
     ```
-3. Установите SQL Server Management Studio
-4. В окне Подключение к серверу введите или выберите эту информацию: Настройка значения тип сервера выберите ядро СУБД.
-      Имя сервера выберите myserver.database.windows.net Username введите имя пользователя, указанное во время создания.
-      Пароль введите пароль, указанный во время создания.
-      Запомнить пароль выберите Да.
-5. Выберите Подключиться.
-6. Просмотр баз данных из левого меню. 
-7. При необходимости Создание или запрос информации из MyDatabase
+    
+3. Установите SQL Server Management Studio.
+4. В окне **Подключение к серверу** введите или выберите следующую информацию:
+
+    | Параметр | Значение |
+    | --- | --- |
+    | Тип сервера | Компонент Database Engine |
+    | Имя сервера | myserver.database.windows.net |
+    | Имя пользователя | Введите имя пользователя, указанное при создании |
+    | Пароль | Введите пароль, указанный при создании |
+    | Запомнить пароль | Да |
+    
+5. Выберите **Подключиться**.
+6. Просмотрите **базы данных** в меню слева. 
+7. (Дополнительно) Создание или запрос информации из базы данных mydatabase.
 8. Закройте подключение к удаленному рабочему столу *myVM*. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов 

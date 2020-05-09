@@ -206,7 +206,11 @@
         - name: Подключаемый модуль IoT Edge для Jenkins
           href: how-to-devops-plugins.md
     - name: Диагностика
-      href: troubleshoot.md
+      items:
+        - name: Стандартные действия диагностики
+          href: troubleshoot.md
+        - name: Распространенные способы устранения ошибок
+          href: troubleshoot-common-errors.md
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки

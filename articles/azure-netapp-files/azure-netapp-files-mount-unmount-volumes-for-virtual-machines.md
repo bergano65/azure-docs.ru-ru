@@ -6,17 +6,20 @@ ms.author: b-juche
 ms.service: azure-netapp-files
 ms.workload: storage
 ms.topic: conceptual
-ms.date: 04/22/2020
-ms.openlocfilehash: c439ff8df95d759e96d2fc82356bda8551507e8d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 04/30/2020
+ms.openlocfilehash: d02ceda9dc2c6a822d45c2a31fe91a976610292b
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82084946"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82610859"
 ---
 # <a name="mount-or-unmount-a-volume-for-windows-or-linux-virtual-machines"></a>Подключение или отключение тома для виртуальных машин Windows или Linux 
 
 При необходимости вы можете подключить или отключить том для виртуальных машин Windows или Linux.  Инструкции по подключению для виртуальных машин Linux доступны в службе Azure NetApp Files.  
+
+> [!IMPORTANT] 
+> Чтобы получить доступ к тому NFS, необходимо иметь хотя бы одну политику экспорта.
 
 1. Щелкните колонку **тома** , а затем выберите том, для которого необходимо установить подключение. 
 2. Нажмите кнопку **подключить инструкции** из выбранного тома, а затем следуйте инструкциям по подключению тома. 
@@ -37,11 +40,11 @@ ms.locfileid: "82084946"
 
 4. Если вы хотите подключить том к Windows с помощью NFS:
 
-    a. Сначала подключите том на виртуальной машине UNIX или Linux.  
+    а. Сначала подключите том на виртуальной машине UNIX или Linux.  
     b. Выполните команду `chmod 777` или `chmod 775` для тома.  
     c. Подключите том через клиент NFS в Windows.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка домена по умолчанию NFSv4.1 для Azure NetApp Files](azure-netapp-files-configure-nfsv41-domain.md)
 * [Вопросы и ответы по NFS](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-faqs#nfs-faqs)

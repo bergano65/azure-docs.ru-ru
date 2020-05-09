@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/09/2019
 ms.author: donkim
-ms.openlocfilehash: 9e324af0b90f595b5b7af2a417a562efb193d854
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 186b684cc7e4442d1a8ce14f06e16c839e117a26
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76156783"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82872480"
 ---
 # <a name="quickstart-connect-to-a-custom-commands-application-with-the-speech-sdk-preview"></a>Краткое руководство. подключение к приложению настраиваемых команд с помощью речевого пакета SDK (Предварительная версия)
 
@@ -24,19 +24,20 @@ ms.locfileid: "76156783"
 В этой статье вы выполните следующие действия:
 
 - Публикация приложения настраиваемых команд и получение идентификатора приложения (идентификатор приложения)
-- Создание клиентского приложения с помощью речевого пакета SDK для взаимодействия с приложением пользовательских команд
+- Создание клиентского приложения универсальная платформа Windows (UWP) с помощью речевого пакета SDK, позволяющего взаимодействовать с приложением пользовательских команд.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этой статьи требуется приложение с пользовательскими командами. Если вы еще не создали приложение с пользовательскими командами, это можно сделать в предыдущих кратких руководствах:
-
-- [Краткое руководство. Создание настраиваемой команды (Предварительная версия)](./quickstart-custom-speech-commands-create-new.md)
-- [Краткое руководство. Создание настраиваемой команды с параметрами (Предварительная версия)](./quickstart-custom-speech-commands-create-parameters.md)
+> [!div class = "checklist"]
+> * [Краткое руководство. Создание настраиваемой команды (Предварительная версия)](./quickstart-custom-speech-commands-create-new.md)
+> * [Краткое руководство. Создание настраиваемой команды с параметрами (Предварительная версия)](./quickstart-custom-speech-commands-create-parameters.md)
 
 Вам также потребуется:
-
-- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
-- Ключ подписки Azure для служб "Речь". [Получите его бесплатно](get-started.md) или создайте его на [портал Azure](https://portal.azure.com)
+> [!div class = "checklist"]
+> * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
+> * Ключ подписки Azure для служб "Речь". [Получите его бесплатно](get-started.md) или создайте его на [портал Azure](https://portal.azure.com)
+> * [Включение устройства для разработки](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
 
 ## <a name="optional-get-started-fast"></a>Необязательно: быстрое начало работы
 
@@ -44,12 +45,13 @@ ms.locfileid: "76156783"
 
 ## <a name="step-1-publish-custom-commands-application"></a>Шаг 1. Публикация приложения настраиваемых команд
 
-1. Откройте [созданное ранее приложение пользовательских команд](./quickstart-custom-speech-commands-create-new.md) и выберите **опубликовать** .
+1. Откройте [созданное ранее приложение настраиваемых команд (Предварительная версия)](./quickstart-custom-speech-commands-create-new.md) и выберите **опубликовать** .
 
    > [!div class="mx-imgBorder"]
    > ![публикации приложения](media/custom-speech-commands/fulfill-sdk-publish-application.png)
 
 1. Скопируйте идентификатор приложения из уведомления об опубликовании для последующего использования
+1. Копирование ключа ресурса речи для последующего использования
 
 ## <a name="step-2-create-a-visual-studio-project"></a>Шаг 2. Создание проекта Visual Studio
 
@@ -129,7 +131,7 @@ ms.locfileid: "76156783"
 
 1. В **Обозреватель решений**откройте исходный файл `MainPage.xaml.cs` кода программной части (сгруппированный в разделе `MainPage.xaml`).
 
-1. Замените содержимое файла следующим кодом:
+1. Замените содержимое файла следующим кодом: 
 
    ```csharp
    using Microsoft.CognitiveServices.Speech;
@@ -298,6 +300,11 @@ ms.locfileid: "76156783"
        }
    }
    ```
+    > [!NOTE]
+    > Если отображается ошибка: "тип" Object "определен в сборке, на которую нет ссылок"
+    > 1. Щелкните правой кнопкой мыши клиентское решение.
+    > 1. Выберите **Управление пакетами NuGet для решения**, а затем — **обновления** . 
+    > 1. Если в списке обновлений отображается **Microsoft. NETCore. UniversalWindowsPlatform** , обновите **Microsoft. NETCore. UniversalWindowsPlatform** до последней версии.
 
 1. Добавьте следующий код в тело метода`InitializeDialogServiceConnector`
 
@@ -414,8 +421,11 @@ ms.locfileid: "76156783"
 
 1. Выберите **разговор**и говорите в микрофоне устройства фразу на английском языке или предложение. Ваша речь передастся в канал "Речь Direct Line" и преобразуется в текст, который появится в том же окне.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Как выполнять команды на клиенте с помощью пакета SDK для распознавания речи (Предварительная версия)](./how-to-custom-speech-commands-fulfill-sdk.md)
 > [. Добавление проверок в параметры пользовательской команды (Предварительная версия)](./how-to-custom-speech-commands-validations.md)
+
+## <a name="sample-source-code"></a>Исходный код примера
+Ознакомьтесь с примерами кода клиента на сайте [GitHub-воицеассистант](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant)

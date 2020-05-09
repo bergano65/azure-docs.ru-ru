@@ -7,12 +7,12 @@ ms.date: 11/22/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 55512491121aee28404ab5f85b4223c67a2f0e1e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 588926a90d9a40c00bca4914dc1d5ed08301ff75
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80236060"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82780799"
 ---
 # <a name="understand-extended-offline-capabilities-for-iot-edge-devices-modules-and-child-devices"></a>Общие сведения о расширенных возможностях автономного режима для IoT Edge устройств, модулей и дочерних устройств
 
@@ -108,7 +108,7 @@ az iot hub device-identity add-children \
 
 ## <a name="specify-dns-servers"></a>Указание DNS-серверов
 
-Для повышения надежности настоятельно рекомендуется указать адреса DNS-серверов, используемые в вашей среде. Сведения о настройке DNS-сервера для IoT Edge см. в разделе разрешение [модуля агента ребра непрерывно сообщает о пустом файле конфигурации и не запускайте модули на устройстве](troubleshoot.md#edge-agent-module-continually-reports-empty-config-file-and-no-modules-start-on-the-device) в статье Устранение неполадок.
+Для повышения надежности настоятельно рекомендуется указать адреса DNS-серверов, используемые в вашей среде. Сведения о настройке DNS-сервера для IoT Edge см. в разделе разрешение [модуля агента ребра непрерывно сообщает о пустом файле конфигурации и не запускайте модули на устройстве](troubleshoot-common-errors.md#edge-agent-module-reports-empty-config-file-and-no-modules-start-on-the-device) в статье Устранение неполадок.
 
 ## <a name="optional-offline-settings"></a>Дополнительные параметры автономной работы
 
@@ -138,7 +138,7 @@ az iot hub device-identity add-children \
 
 Сообщения и сведения о состоянии модуля хранятся в локальной файловой системе контейнера IoT Edge по умолчанию. Для повышения надежности, особенно при работе в автономном режиме, можно также выделить хранилище на узле IoT Edge устройстве. Дополнительные сведения см. в разделе [предоставление модулям доступа к локальному хранилищу устройства](how-to-access-host-storage-from-module.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о настройке прозрачного шлюза для подключений между родительскими и дочерними устройствами:
 

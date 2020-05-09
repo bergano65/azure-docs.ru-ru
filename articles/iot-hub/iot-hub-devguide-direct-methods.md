@@ -10,12 +10,12 @@ ms.author: rezas
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 13936a55baed59d5b6257f13f69305a1ce72927a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: HT
+ms.openlocfilehash: 9fb2242f6e3f8ce78a0e5043a53ce3055819725b
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81730403"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583678"
 ---
 # <a name="understand-and-invoke-direct-methods-from-iot-hub"></a>Общие сведения о прямых методах и информация о вызове этих методов из Центра Интернета вещей
 
@@ -83,11 +83,19 @@ ms.locfileid: "81730403"
 
 #### <a name="example"></a>Пример
 
-Ниже приведен базовый пример использования `curl`. 
+Этот пример позволит безопасно инициировать запрос на вызов прямого метода на устройстве IoT, зарегистрированном в центре Интернета вещей Azure.
+
+Для начала используйте [расширение Интернета вещей Microsoft Azure для Azure CLI](https://github.com/Azure/azure-iot-cli-extension) , чтобы создать SharedAccessSignature. 
+
+```bash
+az iot hub generate-sas-token -n <iothubName> -du <duration>
+```
+
+Затем замените заголовок Authorization вновь `iothubName`созданным SharedAccessSignature, а затем измените параметры, `deviceId` `methodName` и `payload` в соответствии с вашей реализацией в приведенной ниже команде `curl` example.  
 
 ```bash
 curl -X POST \
-  https://iothubname.azure-devices.net/twins/myfirstdevice/methods?api-version=2018-06-30 \
+  https://<iothubName>.azure-devices.net/twins/<deviceId>/methods?api-version=2018-06-30 \
   -H 'Authorization: SharedAccessSignature sr=iothubname.azure-devices.net&sig=x&se=x&skn=iothubowner' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -100,6 +108,14 @@ curl -X POST \
 }'
 ```
 
+Выполните измененную команду, чтобы вызвать указанный прямой метод. Успешные запросы будут возвращать код состояния HTTP 200.
+
+> [!NOTE]
+> В приведенном выше примере демонстрируется вызов прямого метода на устройстве.  Если вы хотите вызвать прямой метод в модуле IoT Edge, вам потребуется изменить запрос URL-адреса, как показано ниже:
+
+```bash
+https://<iothubName>.azure-devices.net/twins/<deviceId>/modules/<moduleName>/methods?api-version=2018-06
+```
 ### <a name="response"></a>Ответ
 
 Внутреннее приложение получает ответ, включающий в себя следующие элементы:
@@ -203,7 +219,7 @@ curl -X POST \
 
 * Статья [Поддержка MQTT в Центре Интернета вещей](iot-hub-mqtt-support.md) содержит дополнительные сведения о поддержке протокола MQTT в Центре Интернета вещей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как использовать прямые методы, вас может заинтересовать следующая статья в руководстве разработчика для Центра Интернета вещей:
 

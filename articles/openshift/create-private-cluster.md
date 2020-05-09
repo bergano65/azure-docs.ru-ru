@@ -8,16 +8,16 @@ author: ms-jasondel
 ms.author: jasondel
 keywords: АТО, openshift, AZ АТО, Red Hat, CLI
 ms.custom: mvc
-ms.openlocfilehash: a0f726d32f2f63cf85101254fded005fc0b5a1db
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: cfc28577f089ef22457e9f66ff08106969a5a4b2
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82233556"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82857392"
 ---
 # <a name="create-an-azure-red-hat-openshift-4-private-cluster"></a>Создание частного кластера Azure Red Hat OpenShift 4
 
-В этой статье вы подготовите среду для создания частных кластеров Azure Red Hat OpenShift с OpenShift 4. Вы узнаете, как:
+В этой статье вы подготовите среду для создания частных кластеров Azure Red Hat OpenShift с OpenShift 4. Вы научитесь:
 
 > [!div class="checklist"]
 > * Настройте необходимые компоненты и создайте необходимую виртуальную сеть и подсети.
@@ -65,15 +65,21 @@ aro                                1.0.0
 ...
 ```
 
-### <a name="obtain-a-red-hat-pull-secret-optional"></a>Получение секрета по запросу Red Hat (необязательно)
+### <a name="get-a-red-hat-pull-secret-optional"></a>Получение секрета по запросу Red Hat (необязательно)
 
 Секретный ключ Red Hat позволяет вашему кластеру получать доступ к реестрам контейнеров Red Hat вместе с дополнительным содержимым. Этот шаг необязателен, но мы рекомендуем его выполнить.
 
-Получите секрет опрашивающего запроса, перейдя по https://cloud.redhat.com/openshift/install/azure/aro-provisioned адресу и щелкнув *скачать опрашивающий секрет*.
+1. **[Перейдите на портал диспетчера кластеров Red Hat OpenShift](https://cloud.redhat.com/openshift/install/azure/aro-provisioned) и выполните вход.**
 
-Вам потребуется войти в учетную запись Red Hat или создать новую учетную запись Red Hat с бизнес-почтой и принять условия.
+   Вам потребуется войти в учетную запись Red Hat или создать новую учетную запись Red Hat с бизнес-почтой и принять условия.
+
+2. **Щелкните скачать опрашивающий секрет.**
 
 Сохранить сохраненный `pull-secret.txt` файл в безопасном месте — он будет использоваться при каждом создании кластера.
+
+При выполнении `az aro create` команды можно ссылаться на секрет по `--pull-secret @pull-secret.txt` запросу с помощью параметра. Выполните `az aro create` из каталога, в котором сохранен `pull-secret.txt` файл. В противном `@pull-secret.txt` случае `@<path-to-my-pull-secret-file`замените на.
+
+Если вы копируете свой опрашивающий секрет или ссылаетсяе на него в других скриптах, секретный код должен быть отформатирован в виде допустимой строки JSON.
 
 ### <a name="create-a-virtual-network-containing-two-empty-subnets"></a>Создание виртуальной сети, содержащей две пустые подсети
 
@@ -177,7 +183,10 @@ aro                                1.0.0
 
 ## <a name="create-the-cluster"></a>Создайте кластер.
 
-Выполните следующую команду, чтобы создать кластер. Обратите `apiserver-visibility` внимание на `ingress-visibility` параметры и. При необходимости можно передать опрашивающий секрет, который позволяет кластеру получать доступ к реестрам контейнеров Red Hat вместе с дополнительным содержимым. Чтобы получить доступ к запросу на получение секрета, перейдите к [диспетчеру кластеров Red Hat OpenShift](https://cloud.redhat.com/openshift/install/azure/installer-provisioned) и щелкните Копировать опрашивающий секрет.
+Выполните следующую команду, чтобы создать кластер. При необходимости можно передать запрос [на получение секрета Red Hat](#get-a-red-hat-pull-secret-optional) , который позволяет кластеру получать доступ к реестрам контейнеров Red Hat вместе с дополнительным содержимым.
+
+>[!NOTE]
+> При копировании и вставлении команд и использовании одного из необязательных параметров убедитесь, что удалены исходные хэш-Теги и текст комментария в конце. Кроме того, закройте аргумент в предыдущей строке команды с завершающей обратной косой чертой.
 
 ```azurecli-interactive
 az aro create \
@@ -185,15 +194,12 @@ az aro create \
   --name $CLUSTER \
   --vnet aro-vnet \
   --master-subnet master-subnet \
-  --worker-subnet worker-subnet \
-  --apiserver-visibility Private \
-  --ingress-visibility Private
-  # --domain aro.example.com # [OPTIONAL] custom domain
-  # --pull-secret 'Pull secret from https://cloud.redhat.com/openshift/install/azure/installer-provisioned/' # [OPTIONAL]
+  --worker-subnet worker-subnet
+  # --domain foo.example.com # [OPTIONAL] custom domain
+  # --pull-secret @pull-secret.txt # [OPTIONAL]
 ```
 
->[!NOTE]
-> Для создания кластера обычно требуется около 35 минут.
+После выполнения `az aro create` команды для создания кластера обычно требуется около 35 минут.
 
 >[!IMPORTANT]
 > Если вы решили указать личный домен, например **foo.example.com**, консоль OpenShift будет доступна по URL-адресу `https://console-openshift-console.apps.foo.example.com`, например, вместо встроенного домена. `https://console-openshift-console.apps.<random>.<location>.aroapp.io`
@@ -260,7 +266,7 @@ apiServer=$(az aro show -g $RESOURCEGROUP -n $CLUSTER --query apiserverProfile.u
 oc login $apiServer -u kubeadmin -p <kubeadmin password>
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье был развернут кластер Azure Red Hat OpenShift с запущенным OpenShift 4. Вы ознакомились с выполнением следующих задач:
 

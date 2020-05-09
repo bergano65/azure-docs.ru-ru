@@ -6,13 +6,13 @@ ms.author: nimoolen
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 04/13/2020
-ms.openlocfilehash: e0042960c25d58b72bc0ab884de5a2db62e566d9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 05/06/2020
+ms.openlocfilehash: 0ac33a0912d52405cf3d2ae18d5102930a94f3ff
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81413446"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82890871"
 ---
 # <a name="data-flow-script-dfs"></a>Сценарий потока данных (DFS)
 
@@ -179,6 +179,21 @@ aggregate(groupBy(movie),
 derive(DWhash = sha1(Name,ProductNumber,Color))
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+Этот скрипт также можно использовать для создания хэша строки с использованием всех столбцов, имеющихся в вашем потоке, без необходимости присвоить каждому столбцу имя.
+
+```
+derive(DWhash = sha1(columns()))
+```
+
+### <a name="string_agg-equivalent"></a>Эквивалент String_agg
+Этот код будет действовать как функция T-SQL ```string_agg()``` и будет объединять строковые значения в массив. Затем этот массив можно привести в строку для использования с назначениями SQL.
+
+```
+source1 aggregate(groupBy(year),
+    string_agg = collect(title)) ~> Aggregate1
+Aggregate1 derive(string_agg = toString(string_agg)) ~> DerivedColumn2
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Проанализируйте потоки данных, начав с помощью [статьи общие сведения о потоках данных](concepts-data-flow-overview.md)

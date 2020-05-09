@@ -2,15 +2,15 @@
 title: Использование условия в шаблонах
 description: Узнайте, как развернуть ресурсы Azure на основе условий. В этой статье также объясняется, как развернуть новый ресурс либо использовать существующий.
 author: mumian
-ms.date: 05/21/2019
+ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 8f51c65489efeed1fa18e70bd75e7370a9e59903
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: b73598da2b34847a38485db9952302f7c5b33c98
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81260661"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82185036"
 ---
 # <a name="tutorial-use-condition-in-arm-templates"></a>Руководство по Использование условия в шаблонах ARM
 
@@ -23,7 +23,7 @@ ms.locfileid: "81260661"
 В рамках этого руководства рассматриваются следующие задачи:
 
 > [!div class="checklist"]
-> * открытие шаблона быстрого запуска;
+> * Открытие шаблона быстрого запуска
 > * Изменение шаблона
 > * Развертывание шаблона
 > * Очистка ресурсов
@@ -134,37 +134,45 @@ ms.locfileid: "81260661"
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Следуйте инструкциям из раздела о [развертывании шаблона](./template-tutorial-create-templates-with-dependent-resources.md#deploy-the-template), чтобы открыть Cloud Shell и отправить измененный шаблон, а затем выполните скрипт PowerShell для развертывания шаблона.
+1. Войдите в [Azure Cloud Shell](https://shell.azure.com).
 
-> [!IMPORTANT]
-> Имя учетной записи хранения должно быть уникальным в среде Azure. Имя должно содержать только строчные буквы или цифры. Оно должно содержать не больше 24 знаков. Имя учетной записи хранения — это имя проекта, к которому добавлено слово store. Убедитесь, что имя проекта и созданное имя учетной записи хранения соответствуют требованиям к имени учетной записи хранения.
+1. В левом верхнем углу выберите используемую среду — **PowerShell** или **Bash** (для CLI).  После переключения желательно перезагрузить оболочку.
 
-```azurepowershell
-$projectName = Read-Host -Prompt "Enter a project name that is used to generate resource group name and resource names"
-$newOrExisting = Read-Host -Prompt "Create new or use existing (Enter new or existing)"
-$location = Read-Host -Prompt "Enter the Azure location (i.e. centralus)"
-$vmAdmin = Read-Host -Prompt "Enter the admin username"
-$vmPassword = Read-Host -Prompt "Enter the admin password" -AsSecureString
-$dnsLabelPrefix = Read-Host -Prompt "Enter the DNS Label prefix"
+    ![Файл отправки Cloud Shell на портале Azure](./media/template-tutorial-use-template-reference/azure-portal-cloud-shell-upload-file.png)
 
-$resourceGroupName = "${projectName}rg"
-$storageAccountName = "${projectName}store"
+1. Выберите **Отправка и скачивание файлов**, а затем **Отправить**. См. предыдущий снимок экрана. Выберите файл, сохраненный ранее. После отправки вы можете использовать команды **ls** и **cat**, чтобы проверить отправку файла.
 
-New-AzResourceGroup -Name $resourceGroupName -Location $location
-New-AzResourceGroupDeployment `
-    -ResourceGroupName $resourceGroupName `
-    -adminUsername $vmAdmin `
-    -adminPassword $vmPassword `
-    -dnsLabelPrefix $dnsLabelPrefix `
-    -storageAccountName $storageAccountName `
-    -newOrExisting $newOrExisting `
-    -TemplateFile "$HOME/azuredeploy.json"
+1. а затем выполните следующий сценарий PowerShell для его развертывания.
 
-Write-Host "Press [ENTER] to continue ..."
-```
+    > [!IMPORTANT]
+    > Имя учетной записи хранения должно быть уникальным в среде Azure. Имя должно содержать только строчные буквы или цифры. Оно должно содержать не больше 24 знаков. Имя учетной записи хранения — это имя проекта, к которому добавлено слово store. Убедитесь, что имя проекта и созданное имя учетной записи хранения соответствуют требованиям к имени учетной записи хранения.
 
-> [!NOTE]
-> Развертывание завершается сбоем, если **newOrExisting** — **new**, а учетная запись хранения с указанным именем уже существует.
+    ```azurepowershell
+    $projectName = Read-Host -Prompt "Enter a project name that is used to generate resource group name and resource names"
+    $newOrExisting = Read-Host -Prompt "Create new or use existing (Enter new or existing)"
+    $location = Read-Host -Prompt "Enter the Azure location (i.e. centralus)"
+    $vmAdmin = Read-Host -Prompt "Enter the admin username"
+    $vmPassword = Read-Host -Prompt "Enter the admin password" -AsSecureString
+    $dnsLabelPrefix = Read-Host -Prompt "Enter the DNS Label prefix"
+
+    $resourceGroupName = "${projectName}rg"
+    $storageAccountName = "${projectName}store"
+
+    New-AzResourceGroup -Name $resourceGroupName -Location $location
+    New-AzResourceGroupDeployment `
+        -ResourceGroupName $resourceGroupName `
+        -adminUsername $vmAdmin `
+        -adminPassword $vmPassword `
+        -dnsLabelPrefix $dnsLabelPrefix `
+        -storageAccountName $storageAccountName `
+        -newOrExisting $newOrExisting `
+        -TemplateFile "$HOME/azuredeploy.json"
+
+    Write-Host "Press [ENTER] to continue ..."
+    ```
+
+    > [!NOTE]
+    > Развертывание завершается сбоем, если **newOrExisting** — **new**, а учетная запись хранения с указанным именем уже существует.
 
 Попробуйте сделать другое развертывания, задав для **newOrExisting** значение "existing" и указав имеющуюся учетную запись хранения. Чтобы создать учетную запись хранения, обратитесь к [этой статье](../../storage/common/storage-account-create.md).
 

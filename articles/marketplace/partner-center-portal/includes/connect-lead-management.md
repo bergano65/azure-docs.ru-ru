@@ -1,6 +1,6 @@
 ---
-title: включить файл
-description: включить файл
+title: Включить имя файла
+description: Включить файл
 documentationcenter: partner-center-commercial-marketplace
 author: qianw211
 ms.service: marketplace
@@ -10,10 +10,10 @@ ms.date: 08/16/2019
 ms.author: dsindona
 ms.custom: include file
 ms.openlocfilehash: cf6a5730f92eba8f0a4e63bf40a4d2b50f76eb3a
-ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "82131090"
 ---
 При публикации предложения в Marketplace через центр партнеров необходимо подключить ваше предложение к системе CRM. Таким образом вы можете получить контактные данные клиента сразу после того, как клиент выражает интерес или развертывает продукт.

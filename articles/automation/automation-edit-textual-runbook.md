@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 08/01/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 2ef7db244057bc8b3b2e4d938b9f3bdd11c7940a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: aef6a58d18c0d9c1b18915786dd6e3359c31eda0
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81406025"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82855794"
 ---
 # <a name="editing-textual-runbooks-in-azure-automation"></a>Изменение текстовых модулей Runbook в службе автоматизации Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "81406025"
 
 Текстовый редактор включает функцию, позволяющую вставлять в модуль runbook код для командлетов, ресурсов и дочерних модулей. Вместо того чтобы вводить код самостоятельно, можно выбрать из списка доступных ресурсов, и редактор вставит соответствующий код в модуль Runbook.
 
-У каждого модуля Runbook в службе автоматизации Azure есть черновая и опубликованная версия. Вы можете изменить черновую версию модуля Runbook, а затем опубликовать ее для последующего использования. Опубликованную версию изменить нельзя. Дополнительные сведения см. в разделе [Publishing a runbook](manage-runbooks.md#publishing-a-runbook) (Публикация модуля runbook).
+У каждого модуля Runbook в службе автоматизации Azure есть черновая и опубликованная версия. Вы можете изменить черновую версию модуля Runbook, а затем опубликовать ее для последующего использования. Опубликованную версию изменить нельзя. Дополнительные сведения см. [в статье публикация модуля Runbook](manage-runbooks.md#publish-a-runbook).
 
 В этой статье подробно описано, как использовать этот редактор для выполнения разнообразных задач. Они неприменимы к [графическим модулям Runbook](automation-runbook-types.md#graphical-runbooks). Сведения о работе с этими модулями Runbook см. [в разделе графическая разработка в службе автоматизации Azure](automation-graphical-authoring-intro.md).
 
@@ -84,7 +84,7 @@ Export-AzAutomationRunbook -Name $runbookName -AutomationAccountName $automation
 
 ### <a name="change-the-contents-of-a-runbook-using-windows-powershell"></a>Изменение содержимого модуля Runbook с помощью Windows PowerShell
 
-Команды в приведенном ниже примере показывают, как заменить существующее содержимое модуля Runbook на содержимое файла сценария. Эта же процедура используется для примера в статье [об импорте модуля runbook из файла сценария с помощью Windows PowerShell](manage-runbooks.md#importing-a-runbook).
+Команды в приведенном ниже примере показывают, как заменить существующее содержимое модуля Runbook на содержимое файла сценария. 
 
 ```powershell-interactive
 $resourceGroupName = "MyResourceGroup"
@@ -105,5 +105,5 @@ Publish-AzAutomationRunbook -Name $runbookName -AutomationAccountName $automatio
 * [Подключения](automation-connections.md)
 * [Учетные данные](automation-credentials.md)
 * [Расписания](automation-schedules.md)
-* [Переменные](automation-variables.md)
+* [Среды](automation-variables.md)
 * [Справочник по командлетам PowerShell](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation)
