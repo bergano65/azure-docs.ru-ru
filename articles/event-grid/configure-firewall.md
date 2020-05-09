@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 04/22/2020
 ms.author: spelluru
-ms.openlocfilehash: 4aa86b3619897c310473f12e1c28101185ebf3ab
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0db6c2c346a6eb6ef016340fcfc2974c85958e6c
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82100997"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82858108"
 ---
 # <a name="configure-ip-firewall-for-azure-event-grid-topics-or-domains-preview"></a>Настройка брандмауэра IP для разделов или доменов службы "Сетка событий Azure" (Предварительная версия)
 По умолчанию раздел и домен доступны через Интернет, если запрос сопровождается действительной проверкой подлинности и авторизацией. С помощью IP-брандмауэра вы можете ограничить его более ограниченным набором адресов IPv4 или диапазонами IPv4-адресов в нотации [CIDR (без класса для маршрутизации между доменами)](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) . Издатели, исходящие из любого другого IP-адреса, будут отклонены и получат ответ 403 (запрещено). Дополнительные сведения о функциях сетевой безопасности, поддерживаемых службой "Сетка событий", см. в разделе [Сетевая безопасность для сетки событий](network-security.md).
@@ -39,7 +39,7 @@ ms.locfileid: "82100997"
 В этом разделе показано, как использовать команды Azure CLI для создания разделов с правилами входящих IP-адресов. Действия, приведенные в этом разделе, предназначены для разделов. Аналогичные действия можно использовать для создания правил IP для входящего трафика для **доменов**. 
 
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 Обновите расширение службы "Сетка событий Azure" для интерфейса командной строки, выполнив следующую команду: 
 
 ```azurecli-interactive
@@ -166,7 +166,7 @@ az eventgrid topic update \
 ## <a name="use-powershell"></a>Использование PowerShell
 В этом разделе показано, как использовать команды Azure PowerShell для создания разделов сетки событий Azure с правилами брандмауэра для входящих IP-адресов. Действия, приведенные в этом разделе, предназначены для разделов. Аналогичные действия можно использовать для создания правил IP для входящего трафика для **доменов**. 
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 Следуйте инструкциям из [руководства. Использование портала для создания приложения Azure AD и субъекта-службы, которые могут получать доступ к ресурсам](../active-directory/develop/howto-create-service-principal-portal.md) для создания Azure Active Directory приложения и заметок следующих значений:
 
 - Идентификатор каталога (клиента)
@@ -258,7 +258,7 @@ Invoke-RestMethod -Method 'Get' `
     -Headers $Headers `
     | ConvertTo-Json -Depth 5
 
-# prepare the body for REST PUT method. Notice that it includes inbound IP rules now. This feature available in both basic and premium tiers.
+# prepare the body for REST PUT method. Notice that it includes inbound IP rules now. This feature is available in both basic and premium tiers.
 $body = @{"location"="<LOCATION>"; "sku"= @{"name"="basic"}; "properties"=@{"publicNetworkAccess"="enabled"; "inboundIpRules"=@(@{"ipmask"="<IP ADDR or CIDR MASK>";"action"="allow"}, @{"ipmask"="<IP ADDR or CIDR MASK>";"action"="allow"})}} | ConvertTo-Json -Depth 5
 
 # update the topic with inbound IP rules

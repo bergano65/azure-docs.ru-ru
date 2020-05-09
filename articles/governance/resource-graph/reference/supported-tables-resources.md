@@ -1,14 +1,14 @@
 ---
 title: Поддерживаемые типы ресурсов диспетчер ресурсов
 description: Укажите список типов ресурсов диспетчер ресурсов, поддерживаемых графиком ресурсов Azure и журналом изменений.
-ms.date: 04/24/2020
+ms.date: 04/29/2020
 ms.topic: reference
-ms.openlocfilehash: 7092a6dccc2870c7fd7b6dc6feb3af16f0fd3b7a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0ab079bcd1e7e8558d754a413068ca9f0ae276c6
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82141895"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82594259"
 ---
 # <a name="azure-resource-graph-table-and-resource-type-reference"></a>Таблица Graph ресурсов Azure и Справочник по типам ресурсов
 
@@ -62,6 +62,7 @@ ms.locfileid: "82141895"
 - Microsoft. аппконфигуратион/конфигуратионсторес
 - Microsoft. аппплатформ/пружина
 - Microsoft. Archive/Collections
+- Microsoft. Аттестация/аттестатионпровидерс
 - Microsoft. Automation/automationaccounts
 - Microsoft. Automation/automationaccounts/конфигурации
 - Microsoft. Automation/automationaccounts/модули Runbook
@@ -75,6 +76,7 @@ ms.locfileid: "82141895"
 - Microsoft. азуредата/склинстанцес
 - Microsoft. азуредата/склсерверрегистратионс
 - Microsoft. azurestack/регистрации
+- Microsoft. азурестаккхЦи/кластеры
 - Microsoft. baremetal/консолеконнектионс
 - Microsoft. baremetal/крайсерверс
 - Microsoft. baremetal/мониторингсерверс
@@ -146,6 +148,7 @@ ms.locfileid: "82141895"
 - Microsoft. кирпичы и рабочие области
 - Microsoft. catalog/каталоги
 - Каталог Microsoft.
+- Microsoft. datadog/monitors
 - Microsoft. в.
 - Фабрика Microsoft.
 - Microsoft. Data Lake Analytics/учетные записи
@@ -482,7 +485,7 @@ ms.locfileid: "82141895"
 - Microsoft. Security/секуритистатусес/virtualmachines
 - Microsoft. Security/секуритистатусессуммариес
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [языке запросов](../concepts/query-language.md).
 - Узнайте больше о том, как [изучать ресурсы](../concepts/explore-resources.md).

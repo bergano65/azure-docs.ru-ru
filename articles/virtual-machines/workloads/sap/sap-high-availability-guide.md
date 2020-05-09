@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 65037ec0cc8b10b176622a7047beb7d912c7f701
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8a881f1cbc93d4774e25833a5c57b4727cc2e4be
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77617551"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82594837"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver"></a>Руководство по обеспечению высокого уровня доступности SAP NetWeaver на виртуальных машинах Azure
 
@@ -188,7 +188,7 @@ ms.locfileid: "77617551"
 
 Следующие примечания по SAP актуальны для развертывания SAP в Azure.
 
-| Номер примечания | Название |
+| Номер примечания | Заголовок |
 | --- | --- |
 | [1928533] |Приложения SAP в Azure: поддерживаемые продукты и размеры |
 | [2015553] |SAP в Microsoft Azure: требования |
@@ -397,9 +397,9 @@ _**Рис. 10.** Шаблон 3 архитектуры SAP с высоким у�
 
 Шаблоны Azure Resource Manager, описанные в этой статье, доступны здесь:
 
-* [Образ Azure Marketplace](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-marketplace-image)  
+* [Образ Azure Marketplace](https://github.com/Azure/azure-quickstart-templates/)  
 * [Образ Azure Marketplace, использующий управляемые диски](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-marketplace-image-md)  
-* [Пользовательский образ](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-user-image)
+* [Пользовательский образ](https://github.com/Azure/azure-quickstart-templates/)
 * [Пользовательский образ, использующий управляемые диски](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-user-image-md)
 
 Чтобы подготовить инфраструктуру для использования шаблона 1 архитектуры, сделайте следующее:
@@ -490,9 +490,9 @@ _**Рис. 11.** Настройка параметров Azure Resource Manager
 
 Шаблоны Azure Resource Manager для сценария развертывания доступны здесь:
 
-* [Образ Azure Marketplace](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-marketplace-image-converged)  
+* [Образ Azure Marketplace](https://github.com/Azure/azure-quickstart-templates/)  
 * [Образ Azure Marketplace, использующий управляемые диски](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-marketplace-image-converged-md)  
-* [Пользовательский образ](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-user-image-converged)
+* [Пользовательский образ](https://github.com/Azure/azure-quickstart-templates/)
 * [Пользовательский образ, использующий управляемые диски](https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-user-image-converged-md)
 
 
@@ -740,7 +740,7 @@ _**Рис. 15.** Правила балансировки нагрузки ASCS/
 1. В портал Azure выберите ** < *SID*>-фунтов-ASCS** > **правила балансировки**нагрузки.
 2. Для всех правил балансировки нагрузки, относящихся к экземпляру SAP ASCS или SCS, измените следующие значения.
 
-   * Имя
+   * Название
    * Порт
    * Внутренний порт
 
@@ -766,22 +766,22 @@ Azure Load Balancer имеет внутренний балансировщик �
 
 Чтобы добавить записи реестра на обоих узлах кластера экземпляра SAP ASCS/SCS, сначала добавьте эти записи реестра Windows на обоих узлах кластера Windows для SAP ASCS/SCS.
 
-| Path | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
+| Путь | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
 | --- | --- |
 | Имя переменной |`KeepAliveTime` |
 | Тип переменной |REG_DWORD (десятичное) |
-| Значение |120000 |
+| Применение |120000 |
 | Ссылка на документацию |[https://technet.microsoft.com/library/cc957549.aspx](https://technet.microsoft.com/library/cc957549.aspx) |
 
 _**Таблица 3.** Изменение первого параметра TCP/IP_
 
 Затем добавьте следующие записи реестра Windows на обоих узлах кластера Windows для SAP ASCS/SCS.
 
-| Path | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
+| Путь | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
 | --- | --- |
 | Имя переменной |`KeepAliveInterval` |
 | Тип переменной |REG_DWORD (десятичное) |
-| Значение |120000 |
+| Применение |120000 |
 | Ссылка на документацию |[https://technet.microsoft.com/library/cc957548.aspx](https://technet.microsoft.com/library/cc957548.aspx) |
 
 _**Таблица 4.** Изменение второго параметра TCP/IP_

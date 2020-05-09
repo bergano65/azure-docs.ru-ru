@@ -7,12 +7,12 @@ ms.subservice: diagnostic-extension
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.author: bwren
-ms.openlocfilehash: 929ab4109eb8d0e90b6c561a2135c0b7dd4205bb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: dd18fd484ac456f0c38cd6d9b73a2395a08ad5d0
+ms.sourcegitcommit: d815163a1359f0df6ebfbfe985566d4951e38135
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77672265"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82883113"
 ---
 # <a name="install-and-configure-windows-azure-diagnostics-extension-wad"></a>Установка и настройка расширения системы диагностики Microsoft Azure (WAD)
 Расширение системы диагностики Azure — это агент в Azure Monitor, собирающий данные мониторинга из операционной системы на виртуальной машине и рабочих нагрузок виртуальных машин Azure и других ресурсов вычислений. В этой статье приводятся сведения об установке и настройке расширения системы диагностики Windows, а также описание того, как данные хранятся в учетной записи хранения и Azure.
@@ -124,28 +124,28 @@ Set-AzVMDiagnosticsExtension -ResourceGroupName "myvmresourcegroup" `
     "PublicConfig": {
         "WadCfg": {
             "DiagnosticMonitorConfiguration": {
-                "overallQuotaInMB": 10000
-            },
-            "DiagnosticInfrastructureLogs": {
-                "scheduledTransferLogLevelFilter": "Error"
-            },
-            "PerformanceCounters": {
-                "scheduledTransferPeriod": "PT1M",
-                "PerformanceCounterConfiguration": [
-                    {
-                        "counterSpecifier": "\\Processor(_Total)\\% Processor Time",
-                        "sampleRate": "PT3M",
-                        "unit": "percent"
-                    }
-                ]
-            },
-            "WindowsEventLog": {
-                "scheduledTransferPeriod": "PT1M",
-                    "DataSource": [
-                    {
-                        "name": "Application!*[System[(Level=1 or Level=2 or Level=3)]]"
-                    }
-                ]
+                "overallQuotaInMB": 10000,
+                "DiagnosticInfrastructureLogs": {
+                    "scheduledTransferLogLevelFilter": "Error"
+                },
+                "PerformanceCounters": {
+                    "scheduledTransferPeriod": "PT1M",
+                    "PerformanceCounterConfiguration": [
+                        {
+                            "counterSpecifier": "\\Processor(_Total)\\% Processor Time",
+                            "sampleRate": "PT3M",
+                            "unit": "percent"
+                        }
+                    ]
+                },
+                "WindowsEventLog": {
+                    "scheduledTransferPeriod": "PT1M",
+                        "DataSource": [
+                        {
+                            "name": "Application!*[System[(Level=1 or Level=2 or Level=3)]]"
+                        }
+                    ]
+                }
             }
         },
         "StorageAccount": "mystorageaccount",
@@ -165,7 +165,7 @@ Set-AzVMDiagnosticsExtension -ResourceGroupName "myvmresourcegroup" `
 В следующей таблице перечислены различные типы данных, собираемых из расширения диагностики, а также хранятся ли они в виде таблицы или большого двоичного объекта. Данные, хранящиеся в таблицах, также могут храниться в больших двоичных объектах в зависимости от [параметра StorageType](diagnostics-extension-schema-windows.md#publicconfig-element) в общедоступной конфигурации.
 
 
-| Данные | Тип хранилища | Описание |
+| Данные  | Тип хранилища | Описание |
 |:---|:---|:---|
 | WADDiagnosticInfrastructureLogsTable | Таблица | Изменения в мониторе диагностики и конфигурации. |
 | ваддиректориестабле | Таблица | Каталоги, отслеживаемые монитором диагностики.  Сюда входят журналы IIS, журналы неудачно завершенных запросов IIS и пользовательские папки.  Расположение файла журнала BLOB-объекта указано в поле Container, а имя большого двоичного объекта — в поле RelativePath.  В поле AbsolutePath указано расположение и имя файла на виртуальной машине Azure. |
@@ -183,5 +183,5 @@ Set-AzVMDiagnosticsExtension -ResourceGroupName "myvmresourcegroup" `
 * [Обозреватель службы хранилища Microsoft Azure](../../vs-azure-tools-storage-manage-with-storage-explorer.md) — это автономное приложение, которое упрощает работу с данными из службы хранилища Azure на платформе Windows, OSX и Linux.
 * [Azure Management Studio](https://www.cerebrata.com/products/azure-management-studio/introduction) содержит диспетчер диагностики Azure, который позволяет просматривать и скачивать данные диагностики, которые собирают выполняемые в Azure приложения, а также управлять этими данными.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 - Дополнительные сведения о пересылке данных мониторинга в концентраторы событий Azure см. в статье [Отправка данных из расширения системы диагностики Windows Azure в концентраторы событий](diagnostics-extension-stream-event-hubs.md) .
