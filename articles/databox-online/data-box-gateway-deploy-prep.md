@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: tutorial
 ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 74fec059bdffb91f5a7774d430e2f1897f0e863c
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 553d6f716bbb6e98aa64ef07cb80d2d6cba370b6
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79474464"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82561533"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-data-box-gateway"></a>Руководство по Подготовка Шлюза Azure Data Box к развертыванию
 
@@ -51,8 +51,8 @@ ms.locfileid: "79474464"
 Перед тем как начать, убедитесь в следующем.
 
 * Подписка Microsoft Azure включена для ресурса Azure Stack Edge. Убедитесь, что используется поддерживаемая подписка, например, подписка с [Соглашением Microsoft Enterprise (EA)](https://azure.microsoft.com/overview/sales-number/), подписка в рамках программы [Поставщик облачных решений (CSP)](https://docs.microsoft.com/partner-center/azure-plan-lp) или подписка со [спонсорским предложением Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/).
-* У вас должен быть доступ с правами владельца или участника к Data Box Edge или Шлюзу Azure Data Box, Центру Интернета вещей и ресурсам службы хранилища Azure.
-    - Для создания ресурсов Data Box Edge или Шлюза Azure Data Box необходимы разрешения с правами, начиная с участника, действующие на уровне группы ресурсов. Необходимо также убедиться, что зарегистрирован поставщик `Microsoft.DataBoxEdge`. Сведения о том, как выполнить регистрацию, см. в разделе о [регистрации поставщика ресурсов](data-box-gateway-manage-access-power-connectivity-mode.md#register-resource-providers).
+* У вас должен быть доступ с правами владельца или участника к Azure Stack Edge или Шлюзу Azure Data Box, Центру Интернета вещей и ресурсам службы хранилища Azure.
+    - Для создания ресурсов Azure Stack Edge или Шлюза Azure Data Box необходимы разрешения с правами не ниже участника, действующие на уровне группы ресурсов. Необходимо также убедиться, что зарегистрирован поставщик `Microsoft.DataBoxEdge`. Сведения о том, как выполнить регистрацию, см. в разделе о [регистрации поставщика ресурсов](data-box-gateway-manage-access-power-connectivity-mode.md#register-resource-providers).
     - Чтобы создать ресурс учетной записи хранения, также необходимы разрешения с правами, начиная с участника, действующие на уровне группы ресурсов. Хранилище Azure по умолчанию является зарегистрированным поставщиком ресурсов.
 - У вас есть права администратора или пользователя на доступ к API Microsoft Graph. См. сведения о [разрешениях Microsoft Graph](https://docs.microsoft.com/graph/permissions-reference).
 - Имеется учетная запись хранения Microsoft Azure и данные для доступа к ней.
@@ -91,8 +91,7 @@ ms.locfileid: "79474464"
 
     - на портал Azure по URL-адресу [https://portal.azure.com](https://portal.azure.com);
     - или на портал Azure для государственных организаций по URL-адресу [https://portal.azure.us](https://portal.azure.us). Дополнительные сведения см. в статье о [ подключении к Azure для государственных организаций с помощью портала](https://docs.microsoft.com/azure/azure-government/documentation-government-get-started-connect-with-portal).
-
-2. В левой области выберите **+ Создать ресурс**. Выполните поиск по запросу **Data Box Edge / Шлюз Data Box**. Выберите Data Box Edge / Шлюз Data Box. Нажмите кнопку **создания**.
+2. В левой области выберите **+ Создать ресурс**. Выполните поиск по запросу **Azure Stack Edge / Шлюз Data Box**. Выберите "Azure Stack Edge / Шлюз Data Box". Нажмите кнопку **создания**.
 3. Выберите подписку, которую вы хотите использовать для работы с устройством Шлюза Data Box. Выберите регион, в котором нужно развернуть ресурс Шлюза Data Box. Список всех регионов, в которых доступны ресурсы Azure Stack Edge, приведен на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all). Выберите расположение, ближайшее к географическому региону, в котором вы хотите развернуть устройство. В области **Шлюз Data Box** выберите **Создать**.
 
     ![Поиск службы Шлюза Data Box](media/data-box-gateway-deploy-prep/data-box-gateway-edge-sku.png)

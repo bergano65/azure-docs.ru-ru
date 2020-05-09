@@ -1,0 +1,104 @@
+- name: "Виртуальный рабочий стол Windows, выпуск за осень 2019\_года"
+  href: ../index.yml
+- name: Обзор
+  items:
+    - name: Что такое Виртуальный рабочий стол Windows
+      href: ../overview.md
+    - name: "Документация по выпуску за весну 2020\_года"
+      href: ../create-host-pools-azure-marketplace.md
+- name: Учебники
+  items:
+    - name: 1. Создание клиента
+      href: tenant-setup-azure-active-directory.md
+    - name: 2. Создание субъектов-служб и назначений ролей с помощью PowerShell
+      href: create-service-principal-role-powershell.md
+    - name: 3. Создание пула узлов с помощью Azure Marketplace
+      href: create-host-pools-azure-marketplace-2019.md
+    - name: 4. Управление группами приложений
+      href: manage-app-groups-2019.md
+    - name: 5. Создание пула узлов для проверки обновлений службы
+      href: create-validation-host-pool-2019.md
+    - name: 6. Настройка оповещений служб
+      href: set-up-service-alerts-2019.md
+- name: Практическое руководство
+  items:
+    - name: Подключение к ресурсам Виртуального рабочего стола Windows
+      items:
+        - name: Подключение к веб-клиенту
+          href: connect-web-2019.md
+        - name: Подключение к клиенту Android
+          href: connect-android-2019.md
+        - name: Подключение с помощью клиента macOS
+          href: connect-macos-2019.md
+        - name: Подключение с помощью клиента iOS
+          href: connect-ios-2019.md
+    - name: Создание пула узлов и узлов сеансов
+      items:
+        - name: Шаблон Azure Resource Manager
+          href: create-host-pools-arm-template.md
+        - name: PowerShell
+          href: create-host-pools-powershell-2019.md
+        - name: "Развертывание виртуальной машины Windows\_7"
+          href: deploy-windows-7-virtual-machine.md
+        - name: Развертывание узла сеансов на основе GPU
+          href: configure-vm-gpu-2019.md
+        - name: Развертывание существующего пула узлов
+          href: expand-existing-host-pool-2019.md
+    - name: Настройка параметров пула узлов
+      items:
+        - name: Свойства RDP
+          href: customize-rdp-properties-2019.md
+        - name: Тип назначения персонального рабочего стола
+          href: configure-host-pool-personal-desktop-assignment-type-2019.md
+    - name: Автоматическое масштабирование узлов сеанса
+      href: set-up-scaling-script.md
+    - name: Настройка веб-канала
+      href: customize-feed-virtual-desktop-users-2019.md
+    - name: Развертывание средства управления
+      items:
+        - name: Шаблон Azure Resource Manager
+          href: manage-resources-using-ui.md
+        - name: PowerShell
+          href: manage-resources-using-ui-powershell.md
+    - name: Использование функций диагностики службы
+      items:
+        - name: Развертывание средства диагностики
+          href: deploy-diagnostics.md
+        - name: Использование функций диагностики в Log Analytics
+          href: diagnostics-log-analytics-2019.md
+    - name: Публикация встроенных приложений
+      href: publish-apps-2019.md
+- name: Основные понятия
+  items:
+    - name: Среда Виртуального рабочего стола Windows
+      href: environment-setup-2019.md
+    - name: Делегированный доступ в Виртуальном рабочем столе Windows
+      href: delegated-access-virtual-desktop-2019.md
+    - name: Методы балансировки нагрузки пула узлов
+      href: host-pool-load-balancing-2019.md
+    - name: Расположения данных
+      href: data-locations-2019.md
+- name: Диагностика
+  items:
+    - name: 'Общие сведения об устранении неисправностей, отзывы и поддержка'
+      href: troubleshoot-set-up-overview-2019.md
+    - name: Выявление и диагностика неполадок
+      href: diagnostics-role-service-2019.md
+    - name: Создание пула узлов и клиента
+      href: troubleshoot-set-up-issues-2019.md
+    - name: Конфигурация виртуальной машины узла сеанса
+      href: troubleshoot-vm-configuration-2019.md
+    - name: "Устранение неполадок с виртуальными машинами Windows\_7"
+      href: troubleshoot-windows-7-vm.md
+    - name: Устранение неполадок со средством управления
+      href: troubleshoot-management-tool.md
+    - name: Подключения службы удаленного рабочего стола
+      href: troubleshoot-service-connection-2019.md
+    - name: "Виртуальный рабочий стол Windows\_— PowerShell"
+      href: troubleshoot-powershell-2019.md
+- name: Справочник
+  items:
+    - name: PowerShell
+      href: /powershell/windows-virtual-desktop/overview
+    - name: REST API
+      href: /rest/api/virtual-desktop/

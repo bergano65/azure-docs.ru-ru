@@ -11,12 +11,13 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 330363a78aa9b642f4794cee40bbf040d3484b4b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: has-adal-ref
+ms.openlocfilehash: 09468272397925d9afd1d3014f4fcc1d6a222198
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80653714"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82611387"
 ---
 # <a name="resolve-error-messages-from-the-nps-extension-for-azure-multi-factor-authentication"></a>Устранение ошибок, связанных с расширением NPS для Многофакторной идентификации Azure.
 
@@ -66,9 +67,9 @@ ms.locfileid: "80653714"
 
 В некоторых случаях пользователи могут получить сообщения от службы Многофакторной идентификации из-за сбоя запроса проверки подлинности. Эти не ошибки конфигурации продукта, а предупреждения, которые объясняют причину сбоя запроса проверки подлинности.
 
-| Код ошибки | Сообщение об ошибке | Рекомендуемые действия | 
+| Код ошибки | Сообщение об ошибке | Рекомендуемые действия |
 | ---------- | ------------- | ----------------- |
-| **OathCodeIncorrect** | Введен неправильный код. Неправильный OATH-код. | Пользователь ввел неправильный код. Пользователь должен повторить попытку ввода. | 
+| **OathCodeIncorrect** | Введен неправильный код. Неправильный OATH-код. | Пользователь ввел неправильный код. Пользователь должен повторить попытку ввода. |
 | **SMSAuthFailedMaxAllowedCodeRetryReached** | Достигнуто максимальное число попыток ввода кода. | Слишком много неудачных попыток ввода кода. В зависимости от параметров может потребоваться помощь администратора.  |
 | **SMSAuthFailedWrongCodeEntered** | Введен неправильный код. SMS: неверный OTP. | Пользователь ввел неправильный код. Пользователь должен повторить попытку ввода. |
 

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/14/2020
 ms.topic: conceptual
-ms.openlocfilehash: ace701a6c19f4fe3af1c9ae6f5e63097dd59d405
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.openlocfilehash: 1a9a503fd566c9b50f1503e0955bf12f69ac9960
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82871690"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82927927"
 ---
 # <a name="runbook-execution-in-azure-automation"></a>Выполнение модуля Runbook в службе автоматизации Azure
 
@@ -86,7 +86,7 @@ ASC накладывает ограничения на пользователе�
 
 ### <a name="log-analytics-agent-for-windows"></a>агент Log Analytics для Windows.
 
-[Агент log Analytics для Windows](https://docs.microsoft.com/azure/azure-monitor/platform/agent-windowsmonitor) работает с Azure Monitor для управления виртуальными машинами Windows и физическими компьютерами. Компьютеры могут работать либо в Azure, либо в среде, отличной от Azure, например в локальном центре обработки данных. Необходимо настроить агент для передачи отчетов в одну или несколько рабочих областей Log Analytics. 
+[Агент log Analytics для Windows](https://docs.microsoft.com/azure/azure-monitor/platform/agent-windows) работает с Azure Monitor для управления виртуальными машинами Windows и физическими компьютерами. Компьютеры могут работать либо в Azure, либо в среде, отличной от Azure, например в локальном центре обработки данных. Необходимо настроить агент для передачи отчетов в одну или несколько рабочих областей Log Analytics. 
 
 >[!NOTE]
 >Агент Log Analytics для Windows ранее назывался Microsoft Monitoring Agent (MMA).
