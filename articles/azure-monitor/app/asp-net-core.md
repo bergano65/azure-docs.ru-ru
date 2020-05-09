@@ -2,19 +2,19 @@
 title: Application Insights Azure для ASP.NET Core приложений | Документация Майкрософт
 description: Отслеживайте доступность, производительность и использование веб-приложений ASP.NET Core.
 ms.topic: conceptual
-ms.date: 05/22/2019
-ms.openlocfilehash: e8ace92c39ed6b7bdcca0bae14cc0ae95aced2c2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 04/30/2020
+ms.openlocfilehash: 9c7c2e22d2befb503a388df1fa8a42c3d6eb07c5
+ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82145263"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82652770"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights для ASP.NET Core приложений
 
 В этой статье описано, как включить Application Insights для [ASP.NET Core](https://docs.microsoft.com/aspnet/core) приложения. После выполнения инструкций, описанных в этой статье, Application Insights соберет запросы, зависимости, исключения, счетчики производительности, пульсы и журналы из приложения ASP.NET Core.
 
-В качестве примера мы будем использовать [приложение MVC](https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app) , предназначенное `netcoreapp2.2`для. Эти инструкции можно применить ко всем ASP.NET Coreным приложениям.
+В качестве примера мы будем использовать [приложение MVC](https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app) , предназначенное `netcoreapp3.0`для. Эти инструкции можно применить ко всем ASP.NET Coreным приложениям.
 
 ## <a name="supported-scenarios"></a>Поддерживаемые сценарии
 
@@ -28,9 +28,9 @@ ms.locfileid: "82145263"
 * **Интегрированная среда разработки**: Visual Studio, VS Code или Командная строка.
 
 > [!NOTE]
-> Если вы используете ASP.NET Core 3. X вместе с Application Insights, используйте версию [2.8.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.8.0) или более позднюю. Это единственная версия, которая поддерживает ASP.NET Core 3. X.
+> ASP.NET Core 3. X требует [Application Insights 2.8.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.8.0) или более поздней версии.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Работающее приложение ASP.NET Core. Если необходимо создать ASP.NET Core приложение, следуйте указаниям в этом [ASP.NET Coreном руководстве](https://docs.microsoft.com/aspnet/core/getting-started/).
 - Допустимый ключ инструментирования Application Insights. Этот ключ необходим для отправки любых данных телеметрии в Application Insights. Если необходимо создать новый Application Insights ресурс для получения ключа инструментирования, см. раздел [Создание ресурса Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource).
@@ -109,7 +109,9 @@ ms.locfileid: "82145263"
 
     * `SET APPINSIGHTS_INSTRUMENTATIONKEY=putinstrumentationkeyhere`
 
-    Как правило `APPINSIGHTS_INSTRUMENTATIONKEY` , указывает ключ инструментирования для приложений, развернутых в веб-приложениях Azure.
+    * `APPINSIGHTS_INSTRUMENTATIONKEY`обычно используется в [веб-приложениях Azure](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps?tabs=net), но также может использоваться во всех местах, где поддерживается этот пакет SDK. (Если вы выполняете мониторинг веб-приложений без кода, этот формат необходим, если не используются строки подключения.)
+
+    Вместо настройки ключей инструментирования теперь можно использовать [строки подключения](https://docs.microsoft.com/azure/azure-monitor/app/sdk-connection-string?tabs=net).
 
     > [!NOTE]
     > Ключ инструментирования, указанный в коде, передается через `APPINSIGHTS_INSTRUMENTATIONKEY`переменную среды, которая WINS поверх других параметров.
@@ -201,16 +203,16 @@ public void ConfigureServices(IServiceCollection services)
 
 |Параметр | Описание | По умолчанию
 |---------------|-------|-------
-|енаблеперформанцекаунтерколлектионмодуле  | Включить или отключить`PerformanceCounterCollectionModule` | Да
-|енаблерекуесттраккингтелеметримодуле   | Включить или отключить`RequestTrackingTelemetryModule` | Да
-|енабливенткаунтерколлектионмодуле   | Включить или отключить`EventCounterCollectionModule` | Да
-|енабледепенденцитраккингтелеметримодуле   | Включить или отключить`DependencyTrackingTelemetryModule` | Да
-|енаблеаппсервицешеартбеаттелеметримодуле  |  Включить или отключить`AppServicesHeartbeatTelemetryModule` | Да
-|енаблеазуреинстанцеметадатателеметримодуле   |  Включить или отключить`AzureInstanceMetadataTelemetryModule` | Да
-|енаблекуиккпулсеметрикстреам | Включить или отключить функцию Ливеметрикс | Да
-|енаблеадаптивесамплинг | Включение или отключение адаптивной выборки | Да
-|енаблехеартбеат | Функция "включить/отключить пульс", которая периодически (по умолчанию составляет 15 минут) отправляет пользовательскую метрику "Хеартбеатстате" со сведениями о среде выполнения, такими как версия .NET, сведения о среде Azure, если применимо, и т. д. | Да
-|аддаутоколлектедметрицекстрактор | Включите или отключите средство извлечения Аутоколлектедметрикс, которое представляет собой Телеметрипроцессор, который отправляет предварительно агрегированные метрики о запросах и зависимостях перед выполнением выборки. | Да
+|енаблеперформанцекаунтерколлектионмодуле  | Включить или отключить`PerformanceCounterCollectionModule` | true
+|енаблерекуесттраккингтелеметримодуле   | Включить или отключить`RequestTrackingTelemetryModule` | true
+|енабливенткаунтерколлектионмодуле   | Включить или отключить`EventCounterCollectionModule` | true
+|енабледепенденцитраккингтелеметримодуле   | Включить или отключить`DependencyTrackingTelemetryModule` | true
+|енаблеаппсервицешеартбеаттелеметримодуле  |  Включить или отключить`AppServicesHeartbeatTelemetryModule` | true
+|енаблеазуреинстанцеметадатателеметримодуле   |  Включить или отключить`AzureInstanceMetadataTelemetryModule` | true
+|енаблекуиккпулсеметрикстреам | Включить или отключить функцию Ливеметрикс | true
+|енаблеадаптивесамплинг | Включение или отключение адаптивной выборки | true
+|енаблехеартбеат | Функция "включить/отключить пульс", которая периодически (по умолчанию составляет 15 минут) отправляет пользовательскую метрику "Хеартбеатстате" со сведениями о среде выполнения, такими как версия .NET, сведения о среде Azure, если применимо, и т. д. | true
+|аддаутоколлектедметрицекстрактор | Включите или отключите средство извлечения Аутоколлектедметрикс, которое представляет собой Телеметрипроцессор, который отправляет предварительно агрегированные метрики о запросах и зависимостях перед выполнением выборки. | true
 |Рекуестколлектионоптионс. Траккексцептионс | Включение и отключение отчетов о необработанном отслеживании исключений модулем сбора запросов. | false в NETSTANDARD 2.0 (поскольку исключения отправляются с помощью Аппликатионинсигхтслогжерпровидер), в противном случае — значение true.
 
 См. список [настраиваемых параметров `ApplicationInsightsServiceOptions` в](https://github.com/microsoft/ApplicationInsights-dotnet/blob/develop/NETCORE/src/Shared/Extensions/ApplicationInsightsServiceOptions.cs) для наиболее актуального списка.
@@ -361,7 +363,7 @@ using Microsoft.ApplicationInsights.Channel;
 
 Указанные выше данные не предотвращают сбор данных телеметрии для модулей автоматического сбора данных. С помощью описанного выше подхода отключается только отправка данных телеметрии в Application Insights. Если не требуется определенный модуль автоматической коллекции, рекомендуется [удалить модуль телеметрии](#configuring-or-removing-default-telemetrymodules) .
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 ### <a name="does-application-insights-support-aspnet-core-3x"></a>Поддерживает ли Application Insights ASP.NET Core 3. X?
 
@@ -455,7 +457,7 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 
 [Чтение кода и внесение в него вклада](https://github.com/microsoft/ApplicationInsights-dotnet#recent-updates).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Изучите потоки пользователей](../../azure-monitor/app/usage-flows.md) , чтобы понять, как пользователи переходят через приложение.
 * [Настройте сбор моментальных снимков](https://docs.microsoft.com/azure/application-insights/app-insights-snapshot-debugger) для просмотра состояния исходного кода и переменных в момент возникновения исключения.

@@ -7,12 +7,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.author: normesta
 ms.date: 03/04/2020
-ms.openlocfilehash: 056e23f0f0cf1a3a1c70042cef3c92dd41f14f82
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 23a5d2c0e52a22872a8b9a64503d61493018b611
+ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80247016"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82839170"
 ---
 # <a name="host-a-static-website-in-azure-storage"></a>Размещение статического веб-сайта в службе хранилища Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "80247016"
 
    Страница ошибки по умолчанию отображается, когда пользователь пытается перейти на страницу, которой не существует на вашем статическом веб-сайте.
 
-7. Нажмите кнопку **Сохранить**. Теперь портал Azure отображает конечную точку вашего статического веб-сайта. 
+7. Выберите команду **Сохранить**. Теперь портал Azure отображает конечную точку вашего статического веб-сайта. 
 
     ![Включение размещения статического веб-сайта в учетной записи хранения](media/storage-blob-static-website-host/enable-static-website-hosting.png)
 
@@ -159,8 +159,11 @@ ms.locfileid: "80247016"
 В этом примере предполагается, что вы используете команды из сеанса Azure Cloud Shell.
 
 ```azurecli-interactive
-az storage blob upload-batch -s <source-path> -d \$web --account-name <storage-account-name> --content-type 'text/html; charset=utf-8'
+az storage blob upload-batch -s <source-path> -d \$web --account-name <storage-account-name>
 ```
+
+> [!NOTE] 
+> Если браузер запрашивает у пользователей команду на загрузку файла вместо отображения содержимого, можно добавить `--content-type 'text/html; charset=utf-8'` к команде. 
 
 * Замените значение заполнителя `<storage-account-name>` именем вашей учетной записи хранения.
 
@@ -178,11 +181,13 @@ az storage blob upload-batch -s <source-path> -d \$web --account-name <storage-a
 ```powershell
 # upload a file
 set-AzStorageblobcontent -File "<path-to-file>" `
--Properties @{ ContentType = "text/html; charset=utf-8";} `
 -Container `$web `
 -Blob "<blob-name>" `
 -Context $ctx
 ```
+
+> [!NOTE] 
+> Если браузер запрашивает у пользователей команду на загрузку файла вместо отображения содержимого, можно добавить `-Properties @{ ContentType = "text/html; charset=utf-8";}` к команде.
 
 * Замените значение `<path-to-file>` заполнителя полным путем к файлу, который требуется передать (например, `C:\temp\index.html`).
 
@@ -274,7 +279,7 @@ Write-Output $storageAccount.PrimaryEndpoints.Web
    >[!NOTE]
    > Флажок **жетвебконтент** отображается только в том случае, если этот элемент API использовался в течение заданного промежутка времени. На портале отображаются только элементы API, используемые в течение заданного промежутка времени, чтобы сосредоточиться только на тех элементах, которые возвращают данные. Если вы не можете найти конкретный член API в этом списке, разверните интервал времени.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как настроить личный домен со статическим веб-сайтом. См. раздел [сопоставьте личный домен с конечной точкой хранилища BLOB-объектов Azure](storage-custom-domain-name.md).
 
