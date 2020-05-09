@@ -9,12 +9,19 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Создание базы данных с помощью портала
-      href: quickstart-create-mysql-server-database-using-azure-portal.md
-    - name: Создание базы данных с помощью Azure CLI
-      href: quickstart-create-mysql-server-database-using-azure-cli.md
-    - name: "Создание базы данных с помощью команды az mysql up в Azure\_CLI"
-      href: quickstart-create-server-up-azure-cli.md
+    - name: Создание базы данных
+      items:
+        - name: Создание базы данных с помощью портала
+          href: quickstart-create-mysql-server-database-using-azure-portal.md
+        - name: Создание базы данных с помощью Azure CLI
+          href: quickstart-create-mysql-server-database-using-azure-cli.md
+        - name: "Создание базы данных с помощью команды az mysql up в Azure\_CLI"
+          href: quickstart-create-server-up-azure-cli.md
+        - name: Создание базы данных с помощью Azure PowerShell
+          href: quickstart-create-mysql-server-database-using-azure-powershell.md
+        - name: Создание базы данных с помощью шаблона ARM
+          href: quickstart-create-mysql-server-database-using-arm-template.md
+          displayName: deploy azure resource manager template
     - name: Подключение и запросы
       items:
         - name: PHP
@@ -43,6 +50,8 @@
           href: tutorial-design-database-using-portal.md
         - name: Azure CLI
           href: tutorial-design-database-using-cli.md
+        - name: Azure PowerShell
+          href: tutorial-design-database-using-powershell.md
         - name: Шаблон Azure Resource Manager
           href: tutorial-provision-mysql-server-using-Azure-Resource-Manager-templates.md
     - name: "2.\_Создание веб-приложения"
@@ -59,6 +68,9 @@
       href: sample-scripts-azure-cli.md
     - name: Пулы подключений Java
       href: sample-scripts-java-connection-pooling.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Серверы и базы данных
@@ -160,6 +172,8 @@
           href: howto-restore-server-portal.md
         - name: Azure CLI
           href: howto-restore-server-cli.md
+        - name: Azure PowerShell
+          href: howto-restore-server-powershell.md
     - name: Перенос базы данных
       items:
         - name: Дамп и восстановление
@@ -186,12 +200,16 @@
           href: howto-server-parameters.md
         - name: Azure CLI
           href: howto-configure-server-parameters-using-cli.md
+        - name: Azure PowerShell
+          href: howto-configure-server-parameters-using-powershell.md
     - name: Автоматическое увеличение хранилища
       items:
         - name: Портал Azure
           href: howto-auto-grow-storage-portal.md
         - name: Azure CLI
           href: howto-auto-grow-storage-cli.md
+        - name: Azure PowerShell
+          href: howto-auto-grow-storage-powershell.md
     - name: Доступ к журналам сервера
       items:
         - name: Журналы медленных запросов
@@ -218,6 +236,8 @@
           href: howto-read-replicas-portal.md
         - name: Создание реплик чтения с помощью Azure CLI и REST API
           href: howto-read-replicas-cli.md
+        - name: Создание реплик чтения с помощью Azure PowerShell
+          href: howto-read-replicas-powershell.md
     - name: Диагностика
       items:
         - name: Устранение ошибок подключения
@@ -250,6 +270,8 @@
           href: howto-data-encryption-portal.md
         - name: Azure CLI
           href: howto-data-encryption-cli.md
+        - name: Проверка шифрования данных
+          href: howto-data-encryption-validation.md
     - name: "Интеграция с Azure\_AD"
       items:
         - name: Настройка интеграции Azure AD
@@ -264,6 +286,8 @@
           href: howto-restart-server-portal.md
         - name: Azure CLI
           href: howto-restart-server-cli.md
+        - name: Azure PowerShell
+          href: howto-restart-server-powershell.md
 - name: Справочник
   items:
     - name: Azure CLI
