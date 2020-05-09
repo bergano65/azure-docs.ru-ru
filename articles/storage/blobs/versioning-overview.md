@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 05/05/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 64e0de153aa33bac17c2bed75b211ddca1bbd28c
-ms.sourcegitcommit: d815163a1359f0df6ebfbfe985566d4951e38135
+ms.openlocfilehash: 77af321b74a47306a7202c1fddf6e81edc0ee02a
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82884401"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82926074"
 ---
 # <a name="blob-versioning-preview"></a>Управление версиями BLOB-объектов (Предварительная версия)
 
@@ -227,6 +227,9 @@ ms.locfileid: "82884401"
 ```powershell
 Register-AzProviderFeature -ProviderNamespace Microsoft.Storage `
     -FeatureName Versioning
+    
+# Refresh the Azure Storage provider namespace
+Register-AzResourceProvider -ProviderNamespace Microsoft.Storage
 ```
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
@@ -251,9 +254,6 @@ az feature register --namespace Microsoft.Storage \
 ```powershell
 Get-AzProviderFeature -ProviderNamespace Microsoft.Storage `
     -FeatureName Versioning
-
-# Refresh the Azure Storage provider namespace
-Register-AzResourceProvider -ProviderNamespace Microsoft.Storage
 ```
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
@@ -315,6 +315,6 @@ az feature show --namespace Microsoft.Storage \
 
 ## <a name="see-also"></a>См. также раздел
 
-- [Включить управление версиями BLOB-объектов](versioning-enable.md)
+- [Включение управления версиями BLOB-объектов](versioning-enable.md)
 - [Создание моментального снимка большого двоичного объекта](/rest/api/storageservices/creating-a-snapshot-of-a-blob)
 - [Обратимое удаление для больших двоичных объектов службы хранилища Azure](storage-blob-soft-delete.md)
