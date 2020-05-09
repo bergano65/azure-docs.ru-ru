@@ -51,8 +51,10 @@
           href: api-management-howto-policies.md
         - name: Индекс справочника по политикам
           href: api-management-policies.md
-    - name: безопасность
+    - name: Безопасность
       items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
         - name: Встроенные средства управления безопасностью
           href: api-management-security-controls.md
     - name: Подписки
@@ -101,10 +103,12 @@
           href: api-management-howto-deploy-multi-region.md
         - name: Предоставление независимого шлюза
           href: api-management-howto-provision-self-hosted-gateway.md
+        - name: Развертывание локального шлюза в Службе Azure Kubernetes
+          href: how-to-deploy-self-hosted-gateway-azure-kubernetes-service.md
         - name: Развертывание независимого шлюза в Kubernetes
-          href: api-management-howto-deploy-self-hosted-gateway-to-k8s.md
+          href: how-to-deploy-self-hosted-gateway-kubernetes.md
         - name: Развертывание независимого шлюза в Docker
-          href: api-management-howto-deploy-self-hosted-gateway-to-docker.md
+          href: how-to-deploy-self-hosted-gateway-docker.md
         - name: Настройка личного домена для независимого шлюза
           href: api-management-howto-configure-custom-domain-gateway.md
     - name: Кэш
@@ -209,12 +213,20 @@
           href: api-management-transformation-policies.md
     - name: Управление в производственной среде
       items:
+        - name: Экспорт интерфейсов API в Power Platform
+          href: export-api-power-platform.md
         - name: Управление группами
           href: api-management-howto-create-groups.md
         - name: Получение IP-адресов
           href: api-management-howto-ip-addresses.md
         - name: Регистрация событий в Центрах событий Azure
           href: api-management-howto-log-event-hubs.md
+        - name: Ведение журнала запросов с использованием Azure Application Insights
+          href: api-management-howto-app-insights.md
+        - name: Настройка метрик и журналов в облаке для локального шлюза
+          href: how-to-configure-cloud-metrics-logs.md
+        - name: Настройка метрик и журналов в локальной среде для локального шлюза
+          href: how-to-configure-local-metrics-logs.md
         - name: Ведение журнала запросов с использованием Azure Application Insights
           href: api-management-howto-app-insights.md
         - name: Настройка аварийного восстановления с помощью резервного копирования и восстановления

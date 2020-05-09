@@ -4,6 +4,11 @@
   items:
     - name: Что собой представляет Azure Arc для серверов?
       href: ./servers/overview.md
+- name: Примеры
+  items:
+    - name: Встроенные политики службы "Политика Azure"
+      displayName: 'samples, policies, definitions'
+      href: ./servers/policy-samples.md
 - name: Практические руководства
   items:
     - name: Подключение к Azure Arc

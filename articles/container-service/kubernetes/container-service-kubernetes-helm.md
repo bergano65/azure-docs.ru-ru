@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/10/2017
 ms.author: saudas
 ms.custom: mvc
-ms.openlocfilehash: a32c9fab3877a693d2df26571b9fae4aa7b4380c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2a3423b908ac5e089faa30b19914d3b74ae9a547
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76271085"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82735425"
 ---
 # <a name="deprecated-use-helm-to-deploy-containers-on-a-kubernetes-cluster"></a>(УСТАРЕЛО) Использование Helm для развертывания контейнеров в кластере Kubernetes
 
@@ -34,7 +34,7 @@ Helm состоит из двух компонентов:
 
 * [Установка и настройка`kubectl`](../container-service-connect.md) на локальном компьютере
 
-* [Установка Helm](https://github.com/kubernetes/helm/blob/master/docs/install.md) на локальном компьютере
+* [Установка Helm](https://helm.sh/docs/intro/quickstart/) на локальном компьютере
 
 ## <a name="helm-basics"></a>Основы использования Helm 
 
@@ -149,5 +149,5 @@ sudo mysql –h v1-mariadb
  
 ## <a name="next-steps"></a>Следующие шаги
 
-* Дополнительные сведения об управлении чартами Kubernetes см. в [документации по Helm](https://github.com/kubernetes/helm/blob/master/docs/index.md). 
+* Дополнительные сведения об управлении чартами Kubernetes см. в [документации по Helm](https://helm.sh/docs/). 
 

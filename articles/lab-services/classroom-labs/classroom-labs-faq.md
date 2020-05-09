@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/01/2020
+ms.date: 05/07/2020
 ms.author: spelluru
-ms.openlocfilehash: ee64f26d0ff685a83718c5d5e3d6f6eaf9230807
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
-ms.translationtype: HT
+ms.openlocfilehash: 2c8cc4c01b172cd11c13558cd195673d21499b41
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82691816"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82983913"
 ---
 # <a name="classroom-labs-in-azure-lab-services--frequently-asked-questions-faq"></a>Учебные лаборатории в службах лаборатории Azure — часто задаваемые вопросы
 Получите ответы на некоторые наиболее распространенные вопросы о занятиях лаборатории в службах лаборатории Azure. 
@@ -67,7 +67,7 @@ ms.locfileid: "82691816"
 В лабораторную работу можно добавить до 400 пользователей. 
 
 ## <a name="blog-post"></a>Запись блога
-Подпишитесь на [блог служб лаборатории Azure](https://azure.microsoft.com/blog/tag/azure-lab-services/).
+Подпишитесь на [блог служб лаборатории Azure](https://aka.ms/azlabs-blog).
 
 ## <a name="update-notifications"></a>Уведомления об обновлениях
 Подпишитесь на [обновления служб лаборатории](https://azure.microsoft.com/updates/?product=lab-services) , чтобы следить за новыми функциями служб лаборатории.

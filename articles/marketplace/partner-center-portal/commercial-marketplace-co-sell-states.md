@@ -1,22 +1,22 @@
 ---
-title: Коды штата и провинции для совместной продажи | Azure Marketplace
-description: Используйте эти коды штата и провинции при предоставлении контактной информации на странице предложения с коллегами.
+title: Коды штата и провинции для совместной продажи в Azure Marketplace
+description: Получите доступные коды штата и провинций при предоставлении контактных сведений на странице предложения совместной продажи в Azure Marketplace.
 author: dsindona
 ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/01/2020
-ms.openlocfilehash: 782f2d6facb28630989f086a68c551314e02e48e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a39cb5f49c9f038f567b7f3322b5962bc1dc9fc8
+ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80619362"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82744699"
 ---
-# <a name="co-sell-state-and-province-codes"></a>Коды штата и провинции для совместной продажи
+# <a name="co-sell-state-and-province-codes-in-azure-marketplace"></a>Коды штата и провинции для совместной продажи в Azure Marketplace
 
-Если применимо, используйте эти коды, чтобы предоставить сведения о штате или крае при [предоставлении контактных сведений на странице предложения совместной продажи](commercial-marketplace-co-sell.md#contacts).
+В этой статье перечислены доступные коды штата и провинции при предоставлении контактных данных на странице совместной продажи вашего предложения. Если применимо, используйте эти коды, чтобы предоставить сведения о штате или крае при [предоставлении контактных сведений на странице предложения совместной продажи](commercial-marketplace-co-sell.md#contacts).
 
 ## <a name="us-states-and-territories"></a>США и территории США
 
@@ -113,6 +113,6 @@ ms.locfileid: "80619362"
 | Northern Territory                  |  AU-NT    |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о [параметрах совместной продажи в центре партнеров](./commercial-marketplace-co-sell.md).

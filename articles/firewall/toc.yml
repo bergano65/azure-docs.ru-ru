@@ -23,6 +23,9 @@
     - name: Развертывание с несколькими адресами
       displayName: Resource Manager
       href: quick-create-multiple-ip-template.md
+    - name: Развертывание с использованием Зон доступности
+      displayName: Resource Manager
+      href: deploy-template.md
 - name: Примеры
   items:
     - name: Azure PowerShell
@@ -61,8 +64,6 @@
       href: tutorial-hybrid-ps.md
     - name: Развертывание с помощью Azure CLI
       href: deploy-cli.md
-    - name: Развертывание с помощью шаблона
-      href: deploy-template.md
     - name: Развертывание с помощью нескольких общедоступных IP-адресов
       href: deploy-multi-public-ip-powershell.md
     - name: Развертывание с использованием Зон доступности
@@ -75,6 +76,8 @@
       href: snat-private-range.md
     - name: Создание групп IP-адресов
       href: create-ip-group.md
+    - name: Защита Виртуального рабочего стола Windows
+      href: protect-windows-virtual-desktop.md
 - name: Справочник
   items:
     - name: Azure CLI
