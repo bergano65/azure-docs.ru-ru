@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: c1b5b9ac5d7c3f04dd3ae2e843425a5ead0d4c07
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 059e77c063d00ef850a171507ca2e06422ade426
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81419808"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82191776"
 ---
 # <a name="azure-synapse-analytics-preview-release-notes"></a>Заметки о выпуске Azure Synapse Analytics (предварительная версия)
 
@@ -29,7 +29,8 @@ ms.locfileid: "81419808"
 - Проблема и последствия для клиентов: Рабочие области, созданные пакетом SDK, не могут запустить Synapse Studio
 
 - Обходное решение. Необходимо выполнить следующие шаги. 
-  1.    Создайте рабочую область, выполнив команду `az synapse workspace create`.    Извлеките идентификатор управляемого удостоверения, выполнив команду `$identity=$(az synapse workspace show --name {workspace name}  --resource-group {resource group name} --query "identity.principalId")`.
+  1.    Создайте рабочую область, выполнив команду `az synapse workspace create`.
+  2.    Извлеките идентификатор управляемого удостоверения, выполнив команду `$identity=$(az synapse workspace show --name {workspace name}  --resource-group {resource group name} --query "identity.principalId")`.
   3.    Добавьте рабочую область в качестве роли в учетную запись хранения, выполнив команду ` az role assignment create --role "Storage Blob Data Contributor" --assignee-object-id {identity } --scope {storage account resource id}`.
   4.    Добавьте правило брандмауэра, выполнив команду ` az synapse firewall-rule create --name allowAll --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255 `.
 

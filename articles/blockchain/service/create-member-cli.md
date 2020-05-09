@@ -4,18 +4,22 @@ description: Создание участника службы "Блокчейн 
 ms.date: 03/30/2020
 ms.topic: quickstart
 ms.reviewer: ravastra
-ms.openlocfilehash: 322b1884726b6dfe322560032ed1b8a98c600154
-ms.sourcegitcommit: c5661c5cab5f6f13b19ce5203ac2159883b30c0e
+ms.openlocfilehash: 1561f485917ecbb64d51ffbe045ab4120fbf58ad
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80529625"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82116831"
 ---
 # <a name="quickstart-create-an-azure-blockchain-service-blockchain-member-using-azure-cli"></a>Краткое руководство. Создание участника блокчейн-сети службы "Блокчейн Azure" с помощью Azure CLI
 
 В этом кратком руководстве вы развернете нового участника блокчейн-сети и консорциум в службе "Блокчейн Azure" с помощью Azure CLI.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Нет.
 
 ## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
 
