@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 03/09/2020
 ms.author: iainfou
-ms.openlocfilehash: 86b68b794928900717bea25623e7eb833c23e86c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 92b3fd2453a4fb121c97f8f25f1d3ca129826092
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80655350"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82926975"
 ---
 # <a name="frequently-asked-questions-faqs"></a>Часто задаваемые вопросы (FAQ)
 
@@ -91,6 +91,7 @@ ms.locfileid: "80655350"
 * [Можно ли изменять или добавлять записи DNS в управляемом домене?](#can-i-modify-or-add-dns-records-in-my-managed-domain)
 * [Что из себя представляет политика времени существования пароля в управляемом домене?](#what-is-the-password-lifetime-policy-on-a-managed-domain)
 * [Предоставляют ли доменные службы Azure AD защиту учетной записи AD с помощью блокировки?](#does-azure-ad-domain-services-provide-ad-account-lockout-protection)
+* [Можно ли настроить распределенная файловая система (DFS) и репликацию в доменных службах Azure AD?](#can-i-configure-distributed-file-system-and-replication-within-azure-ad-domain-services)
 
 ### <a name="can-i-connect-to-the-domain-controller-for-my-managed-domain-using-remote-desktop"></a>Можно ли подключиться к контроллеру управляемого домена с помощью удаленного рабочего стола?
 Нет. У вас нет разрешений на подключение к контроллерам домена для управляемого домена с помощью удаленный рабочий стол. Члены группы *администраторов контроллера домена AAD* могут администрировать управляемый домен с помощью средств администрирования AD, таких как центр администрирования Active Directory (ADAC) или AD PowerShell. Эти средства устанавливаются с помощью функции *средства удаленного администрирования сервера* на сервере Windows, присоединенном к управляемому домену. Дополнительные сведения см. [в статье Создание виртуальной машины управления для настройки и администрирования управляемого домена доменных служб Azure AD](tutorial-create-management-vm.md).
@@ -118,6 +119,9 @@ ms.locfileid: "80655350"
 
 ### <a name="does-azure-ad-domain-services-provide-ad-account-lockout-protection"></a>Предоставляют ли доменные службы Azure AD защиту учетной записи AD с помощью блокировки?
 Да. При пяти недействительных попытках ввода пароля в течение 2 минут в управляемом домене происходит блокировка учетной записи пользователя на 30 минут. Через 30 минут учетная запись пользователя будет автоматически разблокирована. Недопустимые попытки ввода пароля в управляемом домене не блокируют учетную запись пользователя в Azure AD. Учетная запись пользователя заблокирована только в управляемом домене доменных служб Azure AD. Дополнительные сведения см. [в статье политики блокировки паролей и учетных записей в управляемых доменах](password-policy.md).
+
+### <a name="can-i-configure-distributed-file-system-and-replication-within-azure-ad-domain-services"></a>Можно ли настроить распределенная файловая система и репликацию в доменных службах Azure AD?
+Нет. Распределенная файловая система (DFS) и репликация недоступны при использовании доменных служб Azure AD.
 
 ## <a name="billing-and-availability"></a>Выставление счетов и доступность
 
@@ -150,7 +154,7 @@ ms.locfileid: "80655350"
 
 Ознакомьтесь с нашим [руководством по устранению неполадок](troubleshoot.md) для решения распространенных проблем при настройке или администрировании доменных служб Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о доменных службах Azure AD см. в статье [что такое Azure Active Directory доменных служб?](overview.md).
 

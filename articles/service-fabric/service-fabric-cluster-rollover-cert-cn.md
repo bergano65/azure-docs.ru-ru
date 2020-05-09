@@ -3,12 +3,12 @@ title: Переносите сертификат кластера Azure Service 
 description: Узнайте, как выполнить переработку Service Fabric сертификата кластера, определяемого общим именем сертификата.
 ms.topic: conceptual
 ms.date: 09/06/2019
-ms.openlocfilehash: 94cc6841886b1b0eb4271ac0f727a2e3561e0081
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7a5fe2a7f2a05295605ef0e1d5db321a83b96712
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75451964"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82611914"
 ---
 # <a name="manually-roll-over-a-service-fabric-cluster-certificate"></a>Смена сертификата для кластера Service Fabric вручную
 Если срок действия для сертификата кластера Service Fabric подходит к концу, необходимо обновить сертификат.  Сменить сертификат не сложно, если кластер [настроен для использования сертификатов на основе общего имени](service-fabric-cluster-change-cert-thumbprint-to-cn.md) (вместо отпечатка).  Получите новый сертификат из центра сертификации с новой датой окончания срока действия.  Самозаверяющие сертификаты не поддерживаются производственными кластерами Service Fabric, включая сертификаты, созданные при выполнении рабочего процесса создания кластера на портале Azure. Новый сертификат должен иметь то же общее имя, что и старый. 
@@ -64,7 +64,7 @@ $certConfig = New-AzVmssVaultCertificateConfig -CertificateUrl $CertificateURL -
 $vmss = Get-AzVmss -ResourceGroupName $VmssResourceGroupName -VMScaleSetName $VmssName
 
 # Add new secret to the VM scale set.
-$vmss = Add-AzVmssSecret -VirtualMachineScaleSet $vmss -SourceVaultId $SourceVault -VaultCertificate $certConfig
+$vmss.VirtualMachineProfile.OsProfile.Secrets[0].VaultCertificates.Add($newVaultCertificate)
 
 # Update the VM scale set 
 Update-AzVmss -ResourceGroupName $VmssResourceGroupName -Name $VmssName -VirtualMachineScaleSet $vmss  -Verbose
@@ -73,7 +73,7 @@ Update-AzVmss -ResourceGroupName $VmssResourceGroupName -Name $VmssName -Virtual
 >[!NOTE]
 > Так как каждый секрет является уникальным ресурсом с контролем версий, секреты масштабируемого набора виртуальных машин в Вычислительных средах не поддерживают один идентификатор ресурса для двух отдельных секретов. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 
 * Сведения о [безопасности кластера](service-fabric-cluster-security.md).
 * [Обновление сертификатов кластера и управление ими](service-fabric-cluster-security-update-certs-azure.md)

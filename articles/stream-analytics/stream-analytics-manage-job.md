@@ -7,12 +7,12 @@ ms.service: stream-analytics
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 06/03/2019
-ms.openlocfilehash: 488664b028568b3014b9b839122705d35104861e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 79b8cfd3f50ffd9f1c6b36dd73942ed3ddc5929f
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79223271"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82594922"
 ---
 # <a name="tutorial-analyze-phone-call-data-with-stream-analytics-and-visualize-results-in-power-bi-dashboard"></a>Руководство по Анализа данных телефонных звонков с помощью Stream Analytics и визуализация результатов на панели мониторинга Power BI
 
@@ -264,7 +264,7 @@ ms.locfileid: "79223271"
 
 В этой части руководства для внедрения панели мониторинга используется пример веб-приложения [ASP.NET](https://asp.net/), созданный командой Power BI. Дополнительные сведения о внедрении панелей мониторинга см. в [этой статье](https://docs.microsoft.com/power-bi/developer/embedding).
 
-Чтобы настроить приложение, перейдите к репозиторию GitHub [PowerBI-Developer-Samples](https://github.com/Microsoft/PowerBI-Developer-Samples) и следуйте инструкциям из раздела о **владении данными** (используйте URL-адреса переадресации и домашней страницы в подразделе **integrate-web-app**). Так как мы используем пример панели мониторинга, используйте пример кода **integrate-web-app**, который находится в [репозитории GitHub](https://github.com/Microsoft/PowerBI-Developer-Samples/tree/master/User%20Owns%20Data/integrate-web-app).
+Чтобы настроить приложение, перейдите к репозиторию GitHub [PowerBI-Developer-Samples](https://github.com/Microsoft/PowerBI-Developer-Samples) и следуйте инструкциям из раздела о **владении данными** (используйте URL-адреса переадресации и домашней страницы в подразделе **integrate-web-app**). Так как мы используем пример панели мониторинга, используйте пример кода **integrate-web-app**, который находится в [репозитории GitHub](https://github.com/microsoft/PowerBI-Developer-Samples/tree/master/.NET%20Framework/User%20Owns%20Data/integrate-web-app).
 Когда приложение будет запущено в браузере, выполните следующие действия, чтобы вставить созданную ранее панель инструментов на веб-страницу:
 
 1. Выберите **Sign in to Power BI** (Вход в Power BI), что предоставит приложению доступ к панелям мониторинга в учетной записи Power BI.

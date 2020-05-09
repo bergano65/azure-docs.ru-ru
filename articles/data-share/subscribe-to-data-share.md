@@ -6,12 +6,12 @@ ms.author: joanpo
 ms.service: data-share
 ms.topic: tutorial
 ms.date: 07/10/2019
-ms.openlocfilehash: 5b7d9cd7e7d438cf2beac76d5d8bcc78d377a8f4
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4dff48f909cd3febbbb7e92dcf96070020b8f57c
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77083107"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82145135"
 ---
 # <a name="tutorial-accept-and-receive-data-using-azure-data-share"></a>Руководство по Прием и получение данных с помощью Azure Data Share  
 
@@ -72,9 +72,11 @@ ms.locfileid: "77083107"
 
 ## <a name="open-invitation"></a>Открытие приглашения
 
-1. Проверьте папку "Входящие" на наличие приглашения от вашего поставщика данных. Это должно быть приглашение от Microsoft Azure с названием **Приглашение Azure Data Share от <yourdataprovider@domain.com>** . Запишите имя общего ресурса, чтобы принять правильную общую папку при наличии нескольких приглашений. 
+1. Вы можете открыть приглашение из электронной почты или непосредственно из портала Azure. 
 
-1. Выберите **View invitation** (Просмотреть приглашение), чтобы увидеть ваше приглашение в Azure. После этого откроется представление полученных общих ресурсов.
+   Чтобы открыть приглашение из электронной почты, проверьте папку "Входящие" на наличие приглашения от поставщика данных. Это должно быть приглашение от Microsoft Azure с названием **Приглашение Azure Data Share от <yourdataprovider@domain.com>** . Выберите **Просмотреть приглашение**, чтобы увидеть ваше приглашение в Azure. 
+
+   Чтобы открыть приглашение непосредственно из портала Azure, найдите на портале параметр **Приглашения Data Share**. Вы перейдете к списку приглашений Data Share.
 
    ![Приглашения](./media/invitations.png "Список приглашений") 
 

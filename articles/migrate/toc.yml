@@ -92,6 +92,8 @@
       href: create-manage-projects.md
     - name: Добавление средства впервые
       href: how-to-add-tool-first-time.md
+    - name: Подготовка к работе с помощью средств независимых поставщиков программного обеспечения (Movere)
+      href: prepare-isv-movere.md
     - name: Добавление средств оценки
       href: how-to-assess.md
     - name: Развертывание устройства службы "Миграция Azure"

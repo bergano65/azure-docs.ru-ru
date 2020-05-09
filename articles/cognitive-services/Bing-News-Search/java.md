@@ -12,10 +12,10 @@ ms.date: 12/16/2019
 ms.author: aahi
 ms.custom: seodec2018
 ms.openlocfilehash: 1a3e98afacf85bde8180253078cb53eae9a03d2f
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75383618"
 ---
 # <a name="quickstart-perform-a-news-search-using-java-and-the-bing-news-search-rest-api"></a>Краткое руководство. Поиск новостей с помощью Java и REST API Bing для поиска новостей

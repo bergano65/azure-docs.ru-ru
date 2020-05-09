@@ -8,12 +8,12 @@ ms.date: 12/02/2019
 author: sakash279
 ms.author: akshanka
 ms.reviewer: sngun
-ms.openlocfilehash: 82397e49e473b8660dfada54a0e05cafe0da4120
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 65cc378ab5b6fd7d2ed724f56a68bdf989ced48c
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76770670"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82611727"
 ---
 # <a name="developing-with-azure-cosmos-db-table-api-and-azure-table-storage"></a>Разработка с использованием API таблиц Azure Cosmos DB и хранилища таблиц Azure
 
@@ -34,7 +34,7 @@ API таблиц Azure Cosmos DB и хранилище таблиц Azure исп
 * [Пакет SDK для Node.js](table-sdk-nodejs.md). Этот пакет SDK для службы хранилища Azure может подключаться к учетным записям Azure Cosmos DB с помощью API таблиц.
 
 
-Дополнительные сведения о работе с API таблиц доступны в статье [Часто задаваемые вопросы о различных API в службе Azure Cosmos DB](faq.md#table).
+Дополнительные сведения о работе с API таблиц доступны в статье [Часто задаваемые вопросы о различных API в службе Azure Cosmos DB](table-api-faq.md).
 
 ## <a name="developing-with-azure-table-storage"></a>Разработка с использованием хранилища таблиц Azure
 

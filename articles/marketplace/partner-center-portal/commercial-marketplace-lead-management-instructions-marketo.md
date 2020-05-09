@@ -1,22 +1,22 @@
 ---
-title: Настройка управления интересами в Marketo | Azure Marketplace
-description: Настройка управления интересами для Marketo для клиентов Azure Marketplace.
+title: Управление интересами в Marketo — коммерческий рынок Майкрософт
+description: Узнайте, как использовать систему Marketo CRM для управления интересами из Microsoft AppSource и Azure Marketplace.
 author: qianw211
 ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 03/30/2020
-ms.openlocfilehash: b142e0ab1aaa242157e207ceecf958be51bb1721
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1f3a097629f8c5f4a3f0ecefa5ee50f2d3e62162
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82133659"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82789884"
 ---
-# <a name="configure-lead-management-in-marketo"></a>Настройка управления интересами в Marketo
+# <a name="use-marketo-to-manage-commercial-marketplace-leads"></a>Использование Marketo для управления интересами коммерческого рынка
 
-В этой статье описывается, как настроить систему Marketo CRM для обработки интересов продаж из коммерческого предложения Marketplace.
+В этой статье описывается, как настроить систему Marketo CRM для обработки интересов продаж из ваших предложений в Microsoft AppSource и Azure Marketplace.
 
 ## <a name="set-up-your-marketo-crm-system"></a>Настройка системы Marketo CRM
 
@@ -67,9 +67,11 @@ ms.locfileid: "82133659"
 
 Когда вы будете готовы к настройке сведений об управлении интересами для вашего предложения на портале публикации, выполните следующие действия. 
 
-1. Перейдите на страницу **настройки предложения** для вашего предложения.
+1. Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard/home).
 
-1. Выберите **Подключиться** в разделе **управление интересами** . 
+1. Выберите свое предложение и перейдите на вкладку **Настройка предложения** .
+
+1. В разделе **управление интересами** выберите **подключить**. 
 
     ![Кнопка подключения раздела управления интересами](./media/commercial-marketplace-lead-management-instructions-marketo/lead-management-connect.png)
 
@@ -84,8 +86,8 @@ ms.locfileid: "82133659"
 
 1. В разделе **Контактная электронная почта**введите адреса электронной почты сотрудников Организации, которые должны получать уведомления по электронной почте при получении нового интереса. Вы можете указать несколько адресов электронной почты, разделив их точкой с запятой.
 
-1. Нажмите кнопку **OK**.
+1. Щелкните **ОК**.
 
-   Чтобы убедиться, что вы успешно подключились к цели назначения, нажмите кнопку **проверить** . В случае успеха вы получите руководителя тестирования в целевом месте назначения.
+   Чтобы убедиться, что вы успешно подключились к цели назначения, выберите **проверить**. В случае успеха вы получите руководителя тестирования в целевом месте назначения.
 
    ![Всплывающее окно "сведения о подключении"](./media/commercial-marketplace-lead-management-instructions-marketo/marketo-connection-details.png)

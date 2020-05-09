@@ -1,16 +1,14 @@
 ---
 title: Управление секретами приложения Service Fabric Azure
 description: Узнайте, как защитить значения секретов в приложении Service Fabric (не зависимо от платформы).
-author: vturecek
 ms.topic: conceptual
 ms.date: 01/04/2019
-ms.author: vturecek
-ms.openlocfilehash: 4d2138935122b9e08b21963519fce3f72466ab1f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 18090dd3e4046da2069e3035be4edb4d2f979204
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81414511"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583236"
 ---
 # <a name="manage-encrypted-secrets-in-service-fabric-applications"></a>Управление зашифрованными секретами в приложениях Service Fabric
 В этом руководстве описаны шаги по управлению секретами в приложении Service Fabric. Секретом может считаться любая конфиденциальная информации, например строка подключения к хранилищу, пароль или другое значение, которое не должно обрабатываться в виде обычного текста.
@@ -142,7 +140,7 @@ if (MySecretIsEncrypted)
 string MyEnvVariable = Environment.GetEnvironmentVariable("MyEnvVariable");
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Service Fabricное [хранилище секретов](service-fabric-application-secret-store.md) 
 * Ознакомьтесь с дополнительными сведениями о [безопасности приложений и служб](service-fabric-application-and-service-security.md).
 

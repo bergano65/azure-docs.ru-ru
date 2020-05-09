@@ -2,13 +2,13 @@
 title: Автоматизация Azure Application Insights с помощью PowerShell | Документация Майкрософт
 description: Автоматизируйте создание ресурсов, оповещений и тестов доступности в PowerShell и управление ими с помощью шаблона Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 10/17/2019
-ms.openlocfilehash: 9494b659b5b4357f3190c45d8cc72c4e130f0ecc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 05/02/2020
+ms.openlocfilehash: fba85981f32611164c328945e45de4032ad949eb
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79275884"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82780510"
 ---
 #  <a name="manage-application-insights-resources-using-powershell"></a>Управление ресурсами Application Insights с помощью PowerShell
 
@@ -21,7 +21,7 @@ ms.locfileid: "79275884"
 ## <a name="one-time-setup"></a>Однократная настройка
 Если вы ранее не использовали PowerShell для подписки Azure:
 
-Установите модуль Azure Powershell на компьютере, где требуется выполнять сценарии.
+Установите модуль Azure PowerShell на компьютере, на котором нужно выполнить скрипты:
 
 1. Установите [установщик веб-платформы Майкрософт (версии 5 или более поздней)](https://www.microsoft.com/web/downloads/platform.aspx).
 2. Используйте его для установки Microsoft Azure PowerShell.
@@ -229,7 +229,21 @@ Get-AzApplicationInsights -ResourceGroupName Fabrikam -Name FabrikamProd | Forma
 
 Дополнительные сведения о параметрах этих командлетов см. в [подробной документации](https://docs.microsoft.com/powershell/module/az.applicationinsights) .  
 
-## <a name="set-the-data-retention"></a>Задание срока хранения данных 
+## <a name="set-the-data-retention"></a>Задание срока хранения данных
+
+Ниже приведены три способа программно задать срок хранения данных для ресурса Application Insights.
+
+### <a name="setting-data-retention-using-a-powershell-commands"></a>Настройка хранения данных с помощью команд PowerShell
+
+Ниже приведен простой набор команд PowerShell для задания срока хранения данных для ресурса Application Insights.
+
+```PS
+$Resource = Get-AzResource -ResourceType Microsoft.Insights/components -ResourceGroupName MyResourceGroupName -ResourceName MyResourceName
+$Resource.Properties.RetentionInDays = 365
+$Resource | Set-AzResource -Force
+```
+
+### <a name="setting-data-retention-using-rest"></a>Настройка хранения данных с помощью функции "ОСТАВШАЯся"
 
 Чтобы получить текущий срок хранения данных для Application Insights ресурса, можно использовать средство OSS [ARMClient](https://github.com/projectkudu/ARMClient).  (Дополнительные сведения о ARMClient из статей по [Дэвид эббо](http://blog.davidebbo.com/2015/01/azure-resource-manager-client.html) и [Даниэль бовбес](https://blog.bowbyes.co.nz/2016/11/02/using-armclient-to-directly-access-azure-arm-rest-apis-and-list-arm-policy-details/).)  Ниже приведен пример использования `ARMClient`для получения текущего хранения:
 
@@ -251,6 +265,8 @@ New-AzResourceGroupDeployment -ResourceGroupName "<resource group>" `
        -retentionInDays 365 `
        -appName myApp
 ```
+
+### <a name="setting-data-retention-using-a-powershell-script"></a>Настройка хранения данных с помощью сценария PowerShell
 
 Для изменения срока хранения можно также использовать следующий скрипт. Скопируйте этот скрипт, чтобы сохранить `Set-ApplicationInsightsRetention.ps1`его как.
 
@@ -450,7 +466,7 @@ armclient PUT /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Другие статьи об автоматизации:
 
 * [Создание ресурса Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource#creating-a-resource-automatically) — быстрый метод без использования шаблона.

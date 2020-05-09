@@ -1,5 +1,5 @@
 ---
-title: Запуск конвейера машинного обучения из приложения логики
+title: Активировать конвейер машинного обучения для новых данных
 titleSuffix: Azure Machine Learning
 description: Узнайте, как активировать выполнение конвейера машинного обучения с помощью Azure Logic Apps.
 services: machine-learning
@@ -10,18 +10,19 @@ ms.subservice: core
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 02/07/2020
-ms.openlocfilehash: 6bb976b8b310fb3eb4d0247a8d745599f688d7b5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: contperfq4
+ms.openlocfilehash: 32b3e153a98ca7de91e0dd05258414780b39dec4
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77122861"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82857959"
 ---
 # <a name="trigger-a-run-of-a-machine-learning-pipeline-from-a-logic-app"></a>Запуск конвейера Машинное обучение из приложения логики
 
 Запуск конвейера Машинное обучение Azure при появлении новых данных. Например, может потребоваться активировать конвейер для обучения новой модели при появлении новых данных в учетной записи хранения BLOB-объектов. Настройте триггер с помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 

@@ -3,13 +3,13 @@ title: Ограничение доступа к kubeconfig в Службе Azure
 description: Узнайте, как управлять доступом к файлу конфигурации Kubernetes (kubeconfig) для администраторов и пользователей кластера.
 services: container-service
 ms.topic: article
-ms.date: 01/28/2020
-ms.openlocfilehash: 25c710cce2855d6af985d3f46082f47573bbc101
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 05/06/2020
+ms.openlocfilehash: 87f4dc18fc595242117e10233d4fecd77e66373f
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79259556"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82890893"
 ---
 # <a name="use-azure-role-based-access-controls-to-define-access-to-the-kubernetes-configuration-file-in-azure-kubernetes-service-aks"></a>Чтобы определить доступ к файлу конфигурации Kubernetes в службе Azure Kubernetes (AKS), используйте элементы управления доступом на основе ролей.
 
@@ -17,7 +17,7 @@ ms.locfileid: "79259556"
 
 В этой статье показано, как назначить роли RBAC, чтобы ограничить доступ к сведениям о конфигурации для кластера AKS.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
@@ -40,7 +40,8 @@ ms.locfileid: "79259556"
 
 Эти роли RBAC можно применять к пользователю или группе Azure Active Directory (AD).
 
-> ! МЕТИМ В кластерах, использующих Azure AD, пользователи с ролью *клустерусер* имеют пустой файл *kubeconfig* , который запрашивает вход в систему. После входа пользователи получают доступ на основе параметров пользователя или группы Azure AD. Пользователи с ролью *клустерадмин* имеют доступ администратора.
+> [!NOTE]
+> В кластерах, использующих Azure AD, пользователи с ролью *клустерусер* имеют пустой файл *kubeconfig* , который запрашивает вход в систему. После входа пользователи получают доступ на основе параметров пользователя или группы Azure AD. Пользователи с ролью *клустерадмин* имеют доступ администратора.
 >
 > Кластеры, не использующие Azure AD, используют только роль *клустерадмин* .
 
@@ -132,7 +133,7 @@ users:
 az role assignment delete --assignee $ACCOUNT_ID --scope $AKS_CLUSTER
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы повысить уровень безопасности при доступе к кластерам AKS, [интегрируйте аутентификацию Azure Active Directory][aad-integration].
 

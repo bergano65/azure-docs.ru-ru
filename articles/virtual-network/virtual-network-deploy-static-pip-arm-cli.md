@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/08/2018
 ms.author: kumud
-ms.openlocfilehash: 4b8f91d7d9fc414ed0ae6387c25f71b1601e0b6c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8e3e37347c8c23ccc9746bbb98ef6a822743848b
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76043409"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82790292"
 ---
 # <a name="create-a-virtual-machine-with-a-static-public-ip-address-using-the-azure-cli"></a>Создание виртуальной машины со статическим общедоступным IP-адресом с помощью Azure CLI
 
@@ -50,7 +50,7 @@ ms.locfileid: "76043409"
      --public-ip-address-allocation static
    ```
 
-   Если для общедоступного IP-адреса должен использоваться SKU "Стандартный", добавьте `--public-ip-sku Standard` к предыдущей команде. Дополнительные сведения о [номерах SKU общедоступных IP-адресов](virtual-network-ip-addresses-overview-arm.md#sku). Если виртуальная машина добавляется в серверный пул общедоступной подсистемы Azure Load Balancer, номера SKU общедоступных IP-адресов виртуальной машины и подсистемы балансировки нагрузки должны совпадать. Подробные сведения см. в статье [Что такое Azure Load Balancer](../load-balancer/concepts-limitations.md#skus).
+   Если для общедоступного IP-адреса должен использоваться SKU "Стандартный", добавьте `--public-ip-sku Standard` к предыдущей команде. Дополнительные сведения о [номерах SKU общедоступных IP-адресов](virtual-network-ip-addresses-overview-arm.md#sku). Если виртуальная машина добавляется в серверный пул общедоступной подсистемы Azure Load Balancer, номера SKU общедоступных IP-адресов виртуальной машины и подсистемы балансировки нагрузки должны совпадать. Подробные сведения см. в статье [Что такое Azure Load Balancer](../load-balancer/skus.md).
 
 4. Просмотрите общедоступный IP-адрес и убедитесь, что он был создан в качестве статического адреса с SKU "Базовый" с помощью команды [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show):
 
