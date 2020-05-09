@@ -8,10 +8,10 @@
       href: cdn-features.md
 - name: Краткие руководства
   items:
-    - name: Создание профиля и конечной точки
-      href: cdn-create-new-endpoint.md
     - name: Интеграция учетной записи хранения
       href: cdn-create-a-storage-account-with-cdn.md
+    - name: Создание профиля и конечной точки
+      href: cdn-create-new-endpoint.md
     - name: Создание профиля с помощью шаблона Azure Resource Manager
       href: create-profile-resource-manager-template.md
 - name: Учебники
