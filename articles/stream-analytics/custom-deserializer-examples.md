@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 1/28/2020
-ms.openlocfilehash: 4f4cc5cefe8090e9e95f80b8b74bf15591cb7887
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5cde80bf3205557884dfe8f2b8f5e79031bbca69
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82133070"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82612067"
 ---
 # <a name="read-input-in-any-format-using-net-custom-deserializers"></a>Чтение входных данных в любом формате с помощью пользовательских десериализаторов .NET
 
@@ -234,7 +234,7 @@ namespace ExampleCustomCode.Serialization
 
 Вы можете [запросить поддержку](https://aka.ms/ccodereqregion) для дополнительных регионов.
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 ### <a name="when-will-this-feature-be-available-in-all-azure-regions"></a>Когда эта функция будет доступна во всех регионах Azure?
 
@@ -248,6 +248,10 @@ namespace ExampleCustomCode.Serialization
 
 После реализации десериализатора вы можете помочь другим пользователям, чтобы поделиться им с сообществом. Отправьте код в [репозиторий Azure Stream Analytics GitHub](https://github.com/Azure/azure-stream-analytics/tree/master/CustomDeserializers).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+### <a name="what-are-the-other-limitation-of-using-custom-deserializers-in-stream-analytics"></a>Каковы другие ограничения использования пользовательских десериализаторов в Stream Analytics?
+
+Если входные данные имеют формат protobuf с схемой, содержащей тип Мапфиелд, то реализовать пользовательский десериализатор будет невозможно. Мы работаем над тем, чтобы поддерживать этот тип вперед.
+
+## <a name="next-steps"></a>Next Steps
 
 * [Пользовательские десериализаторы .NET для Azure Stream Analytics облачных заданий](custom-deserializer.md)

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 04/28/2020
-ms.openlocfilehash: 6d0d05f13f592fc981d3df52d107b385bdbbb21e
-ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.openlocfilehash: 94525ce901a89935c4ee7800ada44a9dff84b27a
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82515291"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82927910"
 ---
 # <a name="custom-metric-collection-in-net-and-net-core"></a>Настраиваемая коллекция метрик в .NET и .NET Core
 
@@ -20,7 +20,7 @@ ms.locfileid: "82515291"
 
 ## <a name="trackmetric-versus-getmetric"></a>Сравнение TrackMetric и неметрики
 
-`TrackMetric()`отправляет необработанные данные телеметрии, обозначая метрику. Отправка одного элемента телеметрии для каждого значения неэффективна. `TrackMetric()`отправляет необработанные данные телеметрии, обозначая метрику. Отправка одного элемента телеметрии для каждого значения неэффективна. `TrackMetric()`также является неэффективным в плане производительности, поскольку каждый `TrackMetric(item)` из них проходит полный конвейер инициализаторов телеметрии и процессоров. В отличие `TrackMetric()`от `GetMetric()` , обрабатывает локальное предварительное агрегирование для вас, а затем отправляет агрегированную сводную метрику только через фиксированный интервал, равный одной минуте. Поэтому, если необходимо тщательно отслеживать какую – либо пользовательскую метрику на втором или даже миллисекунде, это можно сделать, если только объем хранилища и сетевой трафик отслеживаются каждую минуту. Это также значительно снижает риск регулирования, поскольку общее число элементов телеметрии, которые необходимо отправить для агрегированной метрики, значительно сокращается.
+`TrackMetric()`отправляет необработанные данные телеметрии, обозначая метрику. Отправка одного элемента телеметрии для каждого значения неэффективна. `TrackMetric()`также является неэффективным в плане производительности, поскольку каждый `TrackMetric(item)` из них проходит полный конвейер инициализаторов телеметрии и процессоров. В отличие `TrackMetric()`от `GetMetric()` , обрабатывает локальное предварительное агрегирование для вас, а затем отправляет агрегированную сводную метрику только через фиксированный интервал, равный одной минуте. Поэтому, если необходимо тщательно отслеживать какую – либо пользовательскую метрику на втором или даже миллисекунде, это можно сделать, если только объем хранилища и сетевой трафик отслеживаются каждую минуту. Это также значительно снижает риск регулирования, поскольку общее число элементов телеметрии, которые необходимо отправить для агрегированной метрики, значительно сокращается.
 
 В Application Insights пользовательские метрики, собранные `TrackMetric()` с `GetMetric()` помощью и, не подчиняются [выборки](https://docs.microsoft.com/azure/azure-monitor/app/sampling). Важные метрики выборки могут привести к ситуациям, когда предупреждения, которые могут быть созданы на основе этих метрик, станут ненадежными. Не выполнив выборку пользовательских метрик, вы, как правило, должны быть уверены, что при нарушении порогов оповещений будет срабатывать предупреждение.  Но поскольку пользовательские метрики не вычисляются, существуют некоторые потенциальные проблемы.
 
@@ -186,23 +186,11 @@ Application Insights Telemetry: {"name":"Microsoft.ApplicationInsights.Dev.00000
 
 ![Поддержка разбиения](./media/get-metric/splitting-support.png)
 
-По умолчанию многомерные метрики в обозревателе метрик не включены в Application Insightsных ресурсах. Чтобы включить это поведение, перейдите на вкладку "использование и предполагаемые затраты", установив флажок ["включить предупреждения для пользовательских измерений метрик"](pre-aggregated-metrics-log-metrics.md#custom-metrics-dimensions-and-pre-aggregation).
-
-### <a name="how-to-use-metricidentifier-when-there-are-more-than-three-dimensions"></a>Использование МетриЦидентифиер при наличии более трех измерений
-
-В настоящее время 10 измерений поддерживаются, однако для `metricIdentifier`более трех измерений требуется, чтобы пользователь:
-
-```csharp
-// Add "using Microsoft.ApplicationInsights.Metrics;" to use MetricIdentifier
-// MetricIdentifier id = new MetricIdentifier("[metricNamespace]","[metricId],"[dim1]","[dim2]","[dim3]","[dim4]","[dim5]");
-MetricIdentifier id = new MetricIdentifier("CustomMetricNamespace","ComputerSold", "FormFactor", "GraphicsCard", "MemorySpeed", "BatteryCapacity", "StorageCapacity");
-Metric computersSold  = _telemetryClient.GetMetric(id);
-computersSold.TrackValue(110,"Laptop", "Nvidia", "DDR4", "39Wh", "1TB");
-```
+По умолчанию многомерные метрики в обозревателе метрик не включены в Application Insightsных ресурсах.
 
 ### <a name="enable-multi-dimensional-metrics"></a>Включить многомерные метрики
 
-Чтобы включить многомерные метрики для ресурса Application Insights, выберите **использование и оценочные затраты** > **Настраиваемые метрики** > **Включить оповещения для пользовательских измерений** > метрики**ОК**.
+Чтобы включить многомерные метрики для ресурса Application Insights, выберите **использование и оценочные затраты** > **Настраиваемые метрики** > **Включить оповещения для пользовательских измерений** > метрики**ОК**. Дополнительные сведения об этом можно найти [здесь](pre-aggregated-metrics-log-metrics.md#custom-metrics-dimensions-and-pre-aggregation).
 
 После внесения этого изменения и отправки новой многомерной телеметрии можно будет **Применить разделение**.
 
@@ -214,6 +202,18 @@ computersSold.TrackValue(110,"Laptop", "Nvidia", "DDR4", "39Wh", "1TB");
 И просмотрите агрегаты метрик для каждого измерения _формфактор_ :
 
 ![Конструктивные факторы](./media/get-metric/formfactor.png)
+
+### <a name="how-to-use-metricidentifier-when-there-are-more-than-three-dimensions"></a>Использование МетриЦидентифиер при наличии более трех измерений
+
+Сейчас поддерживаются 10 измерений, однако более трех измерений требует использования следующих элементов `MetricIdentifier`:
+
+```csharp
+// Add "using Microsoft.ApplicationInsights.Metrics;" to use MetricIdentifier
+// MetricIdentifier id = new MetricIdentifier("[metricNamespace]","[metricId],"[dim1]","[dim2]","[dim3]","[dim4]","[dim5]");
+MetricIdentifier id = new MetricIdentifier("CustomMetricNamespace","ComputerSold", "FormFactor", "GraphicsCard", "MemorySpeed", "BatteryCapacity", "StorageCapacity");
+Metric computersSold  = _telemetryClient.GetMetric(id);
+computersSold.TrackValue(110,"Laptop", "Nvidia", "DDR4", "39Wh", "1TB");
+```
 
 ## <a name="custom-metric-configuration"></a>Настраиваемая конфигурация метрики
 
@@ -300,7 +300,7 @@ SeverityLevel.Error);
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные [сведения ](https://docs.microsoft.com/azure/azure-monitor/app/worker-service)о мониторинге приложений службы рабочей роли.
 * Дополнительные сведения о [метриках на основе журналов и предварительно агрегированных](https://docs.microsoft.com/azure/azure-monitor/app/pre-aggregated-metrics-log-metrics)данных.

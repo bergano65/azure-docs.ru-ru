@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 06/22/2019
-ms.openlocfilehash: 521a0ef4053be55e6c7322da5af26ccfc6c844e5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c8cbfb619c9eed325161503f705bf5c4c0746265
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74790736"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82612339"
 ---
 # <a name="create-and-manage-trading-partner-agreements-in-azure-logic-apps"></a>Создавайте торговые партнерские соглашения и управляйте ими в Azure Logic Apps
 
@@ -57,7 +57,7 @@ ms.locfileid: "74790736"
 
    ![Кнопка "Добавить"](./media/logic-apps-enterprise-integration-agreements/agreement-2.png)
 
-   | Свойство | Обязательно | Значение | Описание |
+   | Свойство | Обязательно | Применение | Описание |
    |----------|----------|-------|-------------|
    | **имя**; | Да | <*имя соглашения*> | Имя соглашения |
    | **Тип соглашения** | Да | **AS2**, **X12**или **EDIFACT** | Тип протокола для вашего соглашения. При создании файла соглашения содержимое этого файла должно соответствовать типу соглашения. | |  
@@ -68,6 +68,14 @@ ms.locfileid: "74790736"
    | **"Receive Settings" (Параметры получения)** | Различается | Различается | Эти свойства определяют, как главный партнер получает все входящие сообщения от гостевого партнера в соглашении. Дополнительные сведения см. в соответствующем типе соглашения: <p>- [Параметры сообщений AS2](../logic-apps/logic-apps-enterprise-integration-as2-message-settings.md) <br>- [Параметры сообщений EDIFACT](logic-apps-enterprise-integration-edifact.md) <br>- [Параметры сообщений X12](logic-apps-enterprise-integration-x12.md) |
    | **"Send Settings" (Параметры отправки)** | Различается | Различается | Эти свойства определяют, как главный партнер отправляет все исходящие сообщения гостевому партнеру в рамках соглашения. Дополнительные сведения см. в соответствующем типе соглашения: <p>- [Параметры сообщений AS2](../logic-apps/logic-apps-enterprise-integration-as2-message-settings.md) <br>- [Параметры сообщений EDIFACT](logic-apps-enterprise-integration-edifact.md) <br>- [Параметры сообщений X12](logic-apps-enterprise-integration-x12.md) |
    |||||
+
+   > [!IMPORTANT]
+   > Разрешение соглашения зависит от соответствующих элементов, определенных в партнере и входящем сообщении:
+   >
+   > * Квалификатор и идентификатор отправителя
+   > * Квалификатор и идентификатор получателя
+   >
+   > Если эти значения изменятся для вашего партнера, убедитесь, что вы обновляете соглашение.
 
 1. Завершив создание соглашения, на странице **Добавить** нажмите кнопку **ОК**и вернитесь к учетной записи интеграции.
 

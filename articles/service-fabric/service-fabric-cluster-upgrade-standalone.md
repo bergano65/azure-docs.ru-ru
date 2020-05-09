@@ -36,7 +36,7 @@ ms.locfileid: "82790649"
 Приложение для управления исправлениями — это приложение Service Fabric, которое позволяет автоматизировать установку исправлений операционной системы в кластере Service Fabric и избегать простоев. [Приложение для управления исправлениями для Windows](service-fabric-patch-orchestration-application.md) можно развернуть в кластере, чтобы установить исправления контролируемым образом без простоев служб. 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как настроить некоторые [Параметры структуры кластера Service Fabric](service-fabric-cluster-fabric-settings.md) .
 * Узнайте, как выполнять [масштабирование кластера](service-fabric-cluster-scale-in-out.md)
 * Дополнительные сведения об [обновлении приложений](service-fabric-application-upgrade.md)

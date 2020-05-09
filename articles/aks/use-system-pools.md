@@ -3,13 +3,13 @@ title: Использование пулов системных узлов в с
 description: Узнайте, как создавать пулы системных узлов и управлять ими в службе Kubernetes Azure (AKS).
 services: container-service
 ms.topic: article
-ms.date: 04/06/2020
-ms.openlocfilehash: b567d9e618877463e1e659f368d35fbb787a4ef2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 04/28/2020
+ms.openlocfilehash: 04322bdaa2e0e72c5fbdbadb07f2608ee360e1e3
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81259074"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82790564"
 ---
 # <a name="manage-system-node-pools-in-azure-kubernetes-service-aks"></a>Управление пулами системных узлов в службе Kubernetes Azure (AKS)
 
@@ -18,7 +18,7 @@ ms.locfileid: "81259074"
 > [!Important]
 > При запуске одного пула системных узлов для кластера AKS в рабочей среде мы рекомендуем использовать по крайней мере три узла для пула узлов.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 * Необходимо установить или настроить Azure CLI версии 2.3.1 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
@@ -29,6 +29,8 @@ ms.locfileid: "81259074"
 * См. раздел [квоты, ограничения размера виртуальной машины и доступность регионов в службе Azure Kubernetes (AKS)][quotas-skus-regions].
 * Кластер AKS должен быть построен с масштабируемыми наборами виртуальных машин в качестве типа виртуальной машины.
 * Имя пула узлов может содержать только буквы в нижнем регистре и должно начинаться с буквы в нижнем регистре. Для пулов узлов Linux длина должна составлять от 1 до 12 символов. Для пулов узлов Windows длина должна составлять от 1 до 6 символов.
+* Для установки режима пула узлов необходимо использовать API версии 2020-03-01 или более поздней.
+* Режим пула узлов является обязательным свойством и должен быть задан явно при использовании шаблонов ARM или прямых вызовов API.
 
 ## <a name="system-and-user-node-pools"></a>Пулы системных и пользовательских узлов
 
@@ -139,7 +141,7 @@ az aks nodepool update -g myResourceGroup --cluster-name myAKSCluster -n mynodep
 az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster -n mynodepool
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как создавать пулы узлов системы в кластере AKS и управлять ими. Дополнительные сведения об использовании нескольких пулов узлов см. в статье [Использование пулов с несколькими][use-multiple-node-pools]узлами.
 
@@ -175,4 +177,4 @@ az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster -n mynodep
 [taints-tolerations]: operator-best-practices-advanced-scheduler.md#provide-dedicated-nodes-using-taints-and-tolerations
 [vm-sizes]: ../virtual-machines/linux/sizes.md
 [use-multiple-node-pools]: use-multiple-node-pools.md
-[maximum-pods]: faq.md#why-cant-i-set-maxpods-below-30
+[maximum-pods]: configure-azure-cni.md#maximum-pods-per-node

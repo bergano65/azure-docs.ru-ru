@@ -180,6 +180,9 @@
     - name: Azure NetApp Files
       tocHref: /azure/azure-netapp-files/
       topicHref: /azure/azure-netapp-files/
+    - name: Решение Azure VMware
+      tocHref: /azure/azure-vmware/
+      topicHref: /azure/azure-vmware/
     - name: Решение VMware в Azure от CloudSimple
       tocHref: /azure/vmware-cloudsimple/
       topicHref: /azure/vmware-cloudsimple/

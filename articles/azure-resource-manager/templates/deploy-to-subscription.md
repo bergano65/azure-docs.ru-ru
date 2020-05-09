@@ -2,13 +2,13 @@
 title: Развертывание ресурсов в подписке
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 ms.topic: conceptual
-ms.date: 04/30/2020
-ms.openlocfilehash: 80fe451f696480ec24b3d8eced64941de9492fef
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
-ms.translationtype: HT
+ms.date: 05/07/2020
+ms.openlocfilehash: a48bc2fd4efb383b42fd0889df079c9a6f700dda
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82610825"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82929066"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
@@ -35,6 +35,7 @@ ms.locfileid: "82610825"
 * [скопеассигнментс](/azure/templates/microsoft.managednetwork/scopeassignments)
 * [суппортплантипес](/azure/templates/microsoft.addons/supportproviders/supportplantypes)
 * [Тэги](/azure/templates/microsoft.resources/tags)
+* [воркспацесеттингс](/azure/templates/microsoft.security/workspacesettings)
 
 ### <a name="schema"></a>схема
 
@@ -96,11 +97,11 @@ New-AzSubscriptionDeployment `
 * Используйте функцию [субскриптионресаурцеид ()](template-functions-resource.md#subscriptionresourceid) , чтобы получить идентификатор ресурса для ресурсов, развернутых на уровне подписки.
 
   Например, чтобы получить идентификатор ресурса для определения политики, используйте:
-  
+
   ```json
   subscriptionResourceId('Microsoft.Authorization/roleDefinitions/', parameters('roleDefinition'))
   ```
-  
+
   Возвращенный идентификатор ресурса имеет следующий формат:
 
   ```json

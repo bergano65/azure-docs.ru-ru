@@ -11,13 +11,13 @@ ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 04/14/2020
-ms.custom: seodec18
-ms.openlocfilehash: beefad41a270233336bb9134268c98341e81a7cd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: seodec18, has-adal-ref
+ms.openlocfilehash: bf959a7ac8c1038c4306a45ba4519374c5d85f29
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81380805"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82612288"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Проверка подлинности и авторизация для API Azure Time Series Insights
 
@@ -70,7 +70,7 @@ ms.locfileid: "81380805"
 
    [![Поиск приложения в диалоговом окне "Выбор пользователя"](media/authentication-and-authorization/time-series-insights-data-access-policies-select-user.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-select-user.png#lightbox)
 
-1. Выберите роль. Выберите **читатель** , чтобы запросить данные или **участника** для запроса данных и изменения ссылочных данных. Нажмите кнопку **OK**.
+1. Выберите роль. Выберите **читатель** , чтобы запросить данные или **участника** для запроса данных и изменения ссылочных данных. Щелкните **ОК**.
 
    [![Выбор читателя или участника в диалоговом окне "Выбор роли пользователя"](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png#lightbox)
 
@@ -93,7 +93,7 @@ ms.locfileid: "81380805"
 
    1. Затем маркер безопасности можно передать в заголовок `Authorization`, когда приложение вызывает API Time Series Insights.
 
-* Кроме того, разработчики могут использовать проверку подлинности с помощью MSAL. Дополнительные сведения о [миграции в MSAL](https://docs.microsoft.com/azure/active-directory/develop/msal-net-migration) см. в статье Управление общедоступными [справочными данными для среды Azure Time Series Insights с помощью C#](time-series-insights-manage-reference-data-csharp.md) . 
+* Кроме того, разработчики могут использовать проверку подлинности с помощью MSAL. Дополнительные сведения о [миграции в MSAL](https://docs.microsoft.com/azure/active-directory/develop/msal-net-migration) см. в статье Управление общедоступными [справочными данными для среды Azure Time Series Insights с помощью C#](time-series-insights-manage-reference-data-csharp.md) .
 
 ## <a name="common-headers-and-parameters"></a>Общие заголовки и параметры
 
@@ -102,20 +102,20 @@ ms.locfileid: "81380805"
 > [!TIP]
 > Ознакомьтесь со [справочником по REST API Azure](https://docs.microsoft.com/rest/api/azure/) , чтобы узнать больше о том, как использовать интерфейсы API, выполнять HTTP-запросы и обрабатывать HTTP-ответы.
 
-### <a name="authentication"></a>Проверка подлинности
+### <a name="authentication"></a>Аутентификация
 
-Для выполнения запросов с проверкой подлинности к [API-интерфейсам "аналитика временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/)" необходимо передать допустимый токен носителя OAuth 2,0 в [заголовок авторизации](/rest/api/apimanagement/2019-12-01/authorizationserver/createorupdate) с помощью клиента произвольного выбора (POST, JavaScript, C#). 
+Для выполнения запросов с проверкой подлинности к [API-интерфейсам "аналитика временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/)" необходимо передать допустимый токен носителя OAuth 2,0 в [заголовок авторизации](/rest/api/apimanagement/2019-12-01/authorizationserver/createorupdate) с помощью клиента произвольного выбора (POST, JavaScript, C#).
 
 > [!TIP]
 > Ознакомьтесь с [примером визуализации клиентского пакета SDK](https://tsiclientsample.azurewebsites.net/) для службы "аналитика временных рядов Azure", чтобы узнать, как программным способом проверить подлинность с помощью API-интерфейсов "аналитика временных рядов", используя [клиентский пакет SDK для JavaScript](https://github.com/microsoft/tsiclient/blob/master/docs/API.md) и диаграммы и графики.
 
-### <a name="http-headers"></a>HTTP-заголовки
+### <a name="http-headers"></a>Заголовки HTTP
 
 Обязательные заголовки запроса описаны ниже.
 
 | Заголовок требуемого запроса | Описание |
 | --- | --- |
-| Авторизация | Для проверки подлинности с помощью Time Series Insights в заголовке **авторизации** должен быть передан допустимый токен носителя OAuth 2,0. | 
+| Авторизация | Для проверки подлинности с помощью Time Series Insights в заголовке **авторизации** должен быть передан допустимый токен носителя OAuth 2,0. |
 
 > [!IMPORTANT]
 > Маркер должен быть полностью выдан `https://api.timeseries.azure.com/` ресурсу (также известен как "аудитория" маркера).
@@ -146,20 +146,20 @@ ms.locfileid: "81380805"
 
 Требуемые параметры строки запроса URL-адреса зависят от версии API.
 
-| Выпуск | Возможные значения версии API |
+| Release | Возможные значения версии API |
 | --- |  --- |
 | Общедоступная версия | `api-version=2016-12-12`|
-| Preview (Предварительный просмотр) | `api-version=2018-11-01-preview` |
-| Preview (Предварительный просмотр) | `api-version=2018-08-15-preview` |
+| Предварительный просмотр | `api-version=2018-11-01-preview` |
+| Предварительный просмотр | `api-version=2018-08-15-preview` |
 
 Необязательные параметры строки запроса URL-адреса включают установку времени ожидания для времени выполнения HTTP-запроса.
 
 | Необязательный параметр запроса | Описание | Версия |
 | --- |  --- | --- |
 | `timeout=<timeout>` | Время ожидания на стороне сервера для выполнения HTTP-запроса. Применяется только к [событиям "получить среду](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-api) " и " [получить агрегаты среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-api) ". Значение времени ожидания должно быть в формате длительности ISO 8601, `"PT20S"` например и должно находиться в диапазоне `1-30 s`. Значение по умолчанию — `30 s`. | GA |
-| `storeType=<storeType>` | Для сред предварительного просмотра с включенным горячим сохранением запрос можно выполнить либо в `WarmStore` , `ColdStore`либо в. Этот параметр в запросе определяет, в каком хранилище должен выполняться запрос. Если этот параметр не определен, запрос будет выполнен в холодном хранилище. Чтобы запросить горячий магазин, **storeType** необходимо установить в `WarmStore`значение. Если этот параметр не определен, запрос будет выполнен для холодного хранилища. | Preview (Предварительный просмотр) |
+| `storeType=<storeType>` | Для сред предварительного просмотра с включенным горячим сохранением запрос можно выполнить либо в `WarmStore` , `ColdStore`либо в. Этот параметр в запросе определяет, в каком хранилище должен выполняться запрос. Если этот параметр не определен, запрос будет выполнен в холодном хранилище. Чтобы запросить горячий магазин, **storeType** необходимо установить в `WarmStore`значение. Если этот параметр не определен, запрос будет выполнен для холодного хранилища. | Предварительный просмотр |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Пример кода, который вызывает API-интерфейс "аналитика временных рядов", считывает [данные запросов с помощью C#](./time-series-insights-query-data-csharp.md).
 

@@ -10,12 +10,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 12/17/2019
-ms.openlocfilehash: fcaa7a0c44851d6b48b40b01af4c8ec992c330b8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: has-adal-ref
+ms.openlocfilehash: 6b2cfa85ea412a5ef8bda47a7ff6e99970ba6b0e
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79283541"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82611846"
 ---
 # <a name="set-up-authentication-for-azure-machine-learning-resources-and-workflows"></a>Настройка проверки подлинности для ресурсов Машинное обучение Azure и рабочих процессов
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -125,7 +126,7 @@ az ad sp show --id your-client-id
 }
 ```
 
-Затем используйте следующую команду, чтобы назначить субъекту-службе доступ к рабочей области машинного обучения. Вам потребуется имя рабочей области и имя группы ресурсов для параметров `-w` и `-g` соответственно. Для `--user` параметра используйте `objectId` значение из предыдущего шага. `--role` Параметр позволяет задать роль доступа для субъекта-службы, и в общем случае вы будете использовать либо **владельца** , либо **участника**. Оба имеют доступ на запись к существующим ресурсам, таким как COMPUTE CLUSTERS и хранилища данных, но только **владелец** может подготавливать эти ресурсы. 
+Затем используйте следующую команду, чтобы назначить субъекту-службе доступ к рабочей области машинного обучения. Вам потребуется имя рабочей области и имя группы ресурсов для параметров `-w` и `-g` соответственно. Для `--user` параметра используйте `objectId` значение из предыдущего шага. `--role` Параметр позволяет задать роль доступа для субъекта-службы, и в общем случае вы будете использовать либо **владельца** , либо **участника**. Оба имеют доступ на запись к существующим ресурсам, таким как COMPUTE CLUSTERS и хранилища данных, но только **владелец** может подготавливать эти ресурсы.
 
 ```azurecli-interactive
 az ml workspace share -w your-workspace-name -g your-resource-group-name --user your-sp-object-id --role owner
@@ -148,7 +149,7 @@ sp = ServicePrincipalAuthentication(tenant_id="your-tenant-id", # tenantID
 Теперь `sp` переменная содержит объект проверки подлинности, который вы используете непосредственно в пакете SDK. Как правило, рекомендуется хранить идентификаторы и секреты, используемые выше, в переменных среды, как показано в следующем коде.
 
 ```python
-import os 
+import os
 
 sp = ServicePrincipalAuthentication(tenant_id=os.environ['AML_TENANT_ID'],
                                     service_principal_id=os.environ['AML_PRINCIPAL_ID'],
@@ -160,7 +161,7 @@ sp = ServicePrincipalAuthentication(tenant_id=os.environ['AML_TENANT_ID'],
 ```python
 from azureml.core import Workspace
 
-ws = Workspace.get(name="ml-example", 
+ws = Workspace.get(name="ml-example",
                    auth=sp,
                    subscription_id="your-sub-id")
 ws.get_details()
@@ -168,7 +169,7 @@ ws.get_details()
 
 ## <a name="azure-machine-learning-rest-api-auth"></a>Проверка подлинности Машинное обучение Azure REST API
 
-Субъект-службу, созданную в описанных выше шагах, также можно использовать для проверки подлинности Машинное обучение Azure [REST API](https://docs.microsoft.com/rest/api/azureml/). Вы используете [поток предоставления учетных данных клиента](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow)Azure Active Directory, который разрешает вызовы между службами для бездисплейной проверки подлинности в автоматизированных рабочих процессах. Примеры реализуются с помощью [библиотеки ADAL](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries) в Python и Node. js, но также можно использовать любую библиотеку с открытым исходным кодом, поддерживающую openid connect Connect 1,0. 
+Субъект-службу, созданную в описанных выше шагах, также можно использовать для проверки подлинности Машинное обучение Azure [REST API](https://docs.microsoft.com/rest/api/azureml/). Вы используете [поток предоставления учетных данных клиента](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow)Azure Active Directory, который разрешает вызовы между службами для бездисплейной проверки подлинности в автоматизированных рабочих процессах. Примеры реализуются с помощью [библиотеки ADAL](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries) в Python и Node. js, но также можно использовать любую библиотеку с открытым исходным кодом, поддерживающую openid connect Connect 1,0.
 
 > [!NOTE]
 > MSAL. js — это более новая библиотека, чем ADAL, но нельзя выполнять проверку подлинности между службами с помощью учетных данных клиента с MSAL. js, так как это, в первую очередь, клиентская библиотека, предназначенная для интерактивной проверки подлинности или пользовательского интерфейса, привязанной к конкретному пользователю. Мы рекомендуем использовать ADAL, как показано ниже, чтобы создать автоматические рабочие процессы с REST API.
@@ -206,7 +207,7 @@ context.acquireTokenWithClientCredentials(
 Переменная `tokenResponse` представляет собой объект, включающий маркер и связанные метаданные, такие как время истечения срока действия. Токены допустимы в течение 1 часа и могут быть обновлены путем повторного выполнения одного вызова для получения нового маркера. Ниже приведен пример ответа.
 
 ```javascript
-{ 
+{
     tokenType: 'Bearer',
     expiresIn: 3599,
     expiresOn: 2019-12-17T19:15:56.326Z,
@@ -214,13 +215,13 @@ context.acquireTokenWithClientCredentials(
     accessToken: "random-oauth-token",
     isMRRT: true,
     _clientId: 'your-client-id',
-    _authority: 'https://login.microsoftonline.com/your-tenant-id' 
+    _authority: 'https://login.microsoftonline.com/your-tenant-id'
 }
 ```
 
 Используйте `accessToken` свойство для выборки токена проверки подлинности. Примеры использования маркера для выполнения вызовов API см. в [документации по REST API](https://github.com/microsoft/MLOps/tree/master/examples/AzureML-REST-API) .
 
-### <a name="python"></a>Python 
+### <a name="python"></a>Python
 
 Чтобы создать маркер проверки подлинности с помощью Python, выполните следующие действия. В среде выполните команду `pip install adal`. Затем используйте `tenantId`, `clientId`и `clientSecret` из субъекта-службы, созданного в приведенных выше шагах, в качестве значений для соответствующих переменных в следующем скрипте.
 
@@ -242,13 +243,13 @@ print(token_response)
 
 ```python
 {
-    'tokenType': 'Bearer', 
-    'expiresIn': 3599, 
-    'expiresOn': '2019-12-17 19:47:15.150205', 
-    'resource': 'https://management.azure.com/', 
-    'accessToken': 'random-oauth-token', 
-    'isMRRT': True, 
-    '_clientId': 'your-client-id', 
+    'tokenType': 'Bearer',
+    'expiresIn': 3599,
+    'expiresOn': '2019-12-17 19:47:15.150205',
+    'resource': 'https://management.azure.com/',
+    'accessToken': 'random-oauth-token',
+    'isMRRT': True,
+    '_clientId': 'your-client-id',
     '_authority': 'https://login.microsoftonline.com/your-tenant-id'
 }
 ```
@@ -314,13 +315,13 @@ print(token)
 > [!IMPORTANT]
 > После `refresh_by` времени маркера необходимо запросить новый токен. Если необходимо обновить маркеры за пределами пакета SDK для Python, можно использовать REST API с проверкой подлинности субъекта-службы для периодического выполнения `service.get_token()` вызова, как обсуждалось ранее.
 >
-> Настоятельно рекомендуется создать рабочую область Машинное обучение Azure в том же регионе, что и кластер службы Azure Kubernetes. 
+> Настоятельно рекомендуется создать рабочую область Машинное обучение Azure в том же регионе, что и кластер службы Azure Kubernetes.
 >
-> Для проверки подлинности с помощью маркера веб-служба выполнит вызов региона, в котором создана Рабочая область Машинное обучение Azure. Если регион рабочей области недоступен, вы не сможете получить маркер для веб-службы, даже если ваш кластер находится в другом регионе из рабочей области. В результате аутентификация Azure AD недоступна, пока регион рабочей области не будет снова доступен. 
+> Для проверки подлинности с помощью маркера веб-служба выполнит вызов региона, в котором создана Рабочая область Машинное обучение Azure. Если регион рабочей области недоступен, вы не сможете получить маркер для веб-службы, даже если ваш кластер находится в другом регионе из рабочей области. В результате аутентификация Azure AD недоступна, пока регион рабочей области не будет снова доступен.
 >
 > Кроме того, чем больше расстояние между регионом кластера и регионом рабочей области, тем дольше будет получена лексема.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обучение и развертывание модели классификации изображений](tutorial-train-models-with-aml.md).
 * [Использование модели машинное обучение Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md).

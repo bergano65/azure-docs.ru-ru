@@ -6,12 +6,12 @@ ms.service: analysis-services
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: chlound
-ms.openlocfilehash: a79123d57f80474e1871ef68f9a92ea9417089ac
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
-ms.translationtype: MT
+ms.openlocfilehash: 7908b168adcaa00819990d7ced04ba4888d67d63
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "73572357"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82871316"
 ---
 # <a name="refresh-with-azure-automation"></a>Обновление с помощью службы автоматизации Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "73572357"
 
 Дополнительные сведения о создании субъекта-службы см. в разделе [Создание субъекта-службы с помощью портал Azure](../active-directory/develop/howto-create-service-principal-portal.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 > [!IMPORTANT]
 > В следующем примере предполагается, что Azure Analysis Services брандмауэр отключен. Если брандмауэр включен, общедоступный IP-адрес инициатора запроса необходимо будет список разрешений в брандмауэре.
@@ -72,7 +72,7 @@ ms.locfileid: "73572357"
 
     ![Импортировать модуль Runbook](./media/analysis-services-refresh-azure-automation/9.png)
 
-5. Когда модуль Runbook создан, он автоматически переходит в режим редактирования.  Нажмите кнопку **Опубликовать**.
+5. Когда модуль Runbook создан, он автоматически переходит в режим редактирования.  Нажмите **Публиковать**.
 
     ![Публикация модуля Runbook](./media/analysis-services-refresh-azure-automation/10.png)
 
@@ -144,7 +144,7 @@ ms.locfileid: "73572357"
 **Текст** — это документ JSON, который должен содержать следующие свойства:
 
 
-|Свойство  |Значение  |
+|Свойство  |Применение  |
 |---------|---------|
 |**аналисиссервицесдатабасе**     |Имя базы данных Azure Analysis Services <br/> Пример: AdventureWorksDB         |
 |**аналисиссервицессервер**     |Имя сервера Azure Analysis Services. <br/> Пример: https:\//westus.asazure.Windows.NET/Servers/MyServer/Models/AdventureWorks/         |
@@ -173,7 +173,7 @@ ms.locfileid: "73572357"
 > [!IMPORTANT]
 > Убедитесь, что общедоступный IP-адрес виртуальной машины настроен как статический.
 >
->Дополнительные сведения о настройке гибридных рабочих ролей службы автоматизации Azure см. в статье [Автоматизация ресурсов в центре обработки данных или в облаке с помощью гибридной рабочей роли Runbook](../automation/automation-hybrid-runbook-worker.md#install-a-hybrid-runbook-worker).
+>Дополнительные сведения о настройке гибридных рабочих ролей службы автоматизации Azure см. в статье [Установка гибридной рабочей роли Runbook](../automation/automation-hybrid-runbook-worker.md#hybrid-runbook-worker-installation).
 
 После настройки гибридной рабочей роли создайте веб-перехватчик, как описано в разделе [Использование фабрики данных](#consume-with-data-factory).  Единственное отличие заключается в том, что при настройке веб-перехватчика необходимо выбрать параметр **запускать в** > **гибридной рабочей роли** .
 

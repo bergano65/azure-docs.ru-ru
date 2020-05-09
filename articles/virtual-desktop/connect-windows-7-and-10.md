@@ -8,18 +8,21 @@ ms.topic: conceptual
 ms.date: 03/19/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: b6436059cc8b3637edfc2a146d0aab3e2beae6a8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2b16818856ca8196b82eb8f618cf22b5fc1b6854
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80154344"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82612696"
 ---
 # <a name="connect-with-the-windows-desktop-client"></a>Подключение к клиенту Windows Desktop
 
 > Область применения: Windows 7, Windows 10 и Windows 10 IoT Корпоративная
 
 Вы можете получить доступ к ресурсам виртуальных рабочих столов Windows на устройствах с Windows 7, Windows 10 и Windows 10 IoT Корпоративная с помощью настольного клиента Windows.
+
+>[!NOTE]
+>Клиент Windows по умолчанию будет выдавать значение 2019 для виртуальных рабочих столов Windows. Однако если клиент обнаруживает, что у пользователя также есть Azure Resource Manager ресурсы, он автоматически добавляет ресурсы или уведомляет пользователя о том, что они доступны. 
 
 > [!IMPORTANT]
 > Виртуальный рабочий стол Windows не поддерживает клиент Подключения к удаленным рабочим столам и приложениям RemoteApp (RADC) или клиент Подключения к удаленному рабочему столу (MSTSC).
@@ -59,6 +62,6 @@ ms.locfileid: "80154344"
 
 После подписки на веб-канал содержимое веб-канала автоматически обновляется на регулярной основе. Ресурсы можно добавлять, изменять или удалять в зависимости от изменений, внесенных администратором.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании настольного клиента Windows см. в статье Начало [работы с настольным клиентом Windows](/windows-server/remote/remote-desktop-services/clients/windowsdesktop/).

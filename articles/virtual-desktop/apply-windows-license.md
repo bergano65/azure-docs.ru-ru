@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 08/14/2019
 ms.author: chrimo
-ms.openlocfilehash: 2543dd12e8a75a038a1fc04371b8c562ef696e25
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 994edf26e43c7ad67d4f8822d4ed0d18d53b510b
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79254239"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82612458"
 ---
 # <a name="apply-windows-license-to-session-host-virtual-machines"></a>Применение лицензии Windows к виртуальным машинам узла сеансов
 
@@ -23,7 +23,7 @@ ms.locfileid: "79254239"
 
 Существует несколько способов использования лицензии на виртуальные рабочие столы Windows.
 - Вы можете создать пул узлов и виртуальные машины узла сеансов с помощью [предложения Azure Marketplace](./create-host-pools-azure-marketplace.md). Виртуальные машины, созданные таким образом, автоматически применяют лицензию.
-- Пул узлов и виртуальные машины узла сеансов можно создать с помощью [шаблона Azure Resource Manager GitHub](./create-host-pools-arm-template.md). Виртуальные машины, созданные таким образом, автоматически применяют лицензию.
+- Пул узлов и виртуальные машины узла сеансов можно создать с помощью [шаблона Azure Resource Manager GitHub](./virtual-desktop-fall-2019/create-host-pools-arm-template.md). Виртуальные машины, созданные таким образом, автоматически применяют лицензию.
 - Вы можете применить лицензию к существующей виртуальной машине узла сеансов. Для этого сначала следуйте инструкциям в разделе [Создание пула узлов с помощью PowerShell](./create-host-pools-powershell.md) для создания пула узлов и связанных виртуальных машин, а затем вернитесь к этой статье, чтобы узнать, как применить эту лицензию.
 
 ## <a name="apply-a-windows-license-to-a-session-host-vm"></a>Применение лицензии Windows к виртуальной машине узла сеансов

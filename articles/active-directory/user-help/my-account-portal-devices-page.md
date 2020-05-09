@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 10/28/2019
 ms.author: curtand
-ms.openlocfilehash: e273a44c1cbc5a6a6161f059038c7e87973a33d5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d43b2bd5912375c3bb2010f0f2ae75a119512f03
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77062495"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82625839"
 ---
 # <a name="manage-your-connected-devices-from-the-devices-page"></a>Управление подключенными устройствами с помощью страницы "устройства"
 
@@ -31,7 +31,7 @@ ms.locfileid: "77062495"
 
 ## <a name="view-your-connected-devices"></a>Обзор подключенных устройств
 
-1. Войдите в рабочую или учебную учетную запись, а затем перейдите наhttps://myprofile.microsoft.com/) страницу **Моя учетная запись** .
+1. Войдите в рабочую или учебную учетную запись, а затем перейдите наhttps://myaccount.microsoft.com/) страницу **Моя учетная запись** .
 
 2. На левой навигационной панели выберите **Устройства** или выберите ссылку **Управление устройствами** в блоке **Устройства**.
 
@@ -64,7 +64,7 @@ ms.locfileid: "77062495"
 
 2. Выберите **Просмотреть ключи BitLocker** для заблокированного устройства и запишите ключ BitLocker для заблокированного устройства.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После просмотра подключенных устройств вы можете:
 

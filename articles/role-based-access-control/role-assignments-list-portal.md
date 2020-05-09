@@ -1,6 +1,6 @@
 ---
-title: Вывод списка назначений ролей с помощью Azure RBAC и портал Azure
-description: Узнайте, как определить, к каким ресурсам пользователи, группы, субъекты-службы или управляемые удостоверения имеют доступ с помощью управления доступом на основе ролей (RBAC) Azure и портал Azure.
+title: Вывод списка назначений ролей Azure с помощью портал Azure Azure RBAC
+description: Узнайте, как определить, к каким ресурсам пользователи, группы, субъекты-службы или управляемые удостоверения имеют доступ с помощью портал Azure и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,14 +14,14 @@ ms.workload: identity
 ms.date: 03/18/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 03a3d3c7d572d7ec5b8d3ac3d527d0d59e649bc2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ed7f2b57df97a99a73ad191e45fb900a04f8021f
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80062240"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82983029"
 ---
-# <a name="list-role-assignments-using-azure-rbac-and-the-azure-portal"></a>Вывод списка назначений ролей с помощью Azure RBAC и портал Azure
+# <a name="list-azure-role-assignments-using-the-azure-portal"></a>Вывод списка назначений ролей Azure с помощью портал Azure
 
 [!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control-definition-list.md)]В этой статье описывается, как вывести список назначений ролей с помощью портал Azure.
 
@@ -32,7 +32,9 @@ ms.locfileid: "80062240"
 
 Самый простой способ просмотреть роли, назначенные пользователю или группе в подписке, — использовать панель **ресурсы Azure** .
 
-1. В портал Azure щелкните **все службы** , а затем выберите **Пользователи** или **группы**.
+1. В портал Azure выберите **все службы** в меню портал Azure.
+
+1. Выберите **Azure Active Directory** а затем выберите **Пользователи** или **группы**.
 
 1. Выберите пользователя или группу, для которой требуется перечислить назначения ролей.
 
@@ -136,7 +138,7 @@ ms.locfileid: "80062240"
 
 ![Управление доступом — предупреждение о добавлении роли](./media/role-assignments-list-portal/add-role-assignment-warning.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Добавление и удаление назначений ролей с помощью Azure RBAC и портал Azure](role-assignments-portal.md)
-- [Устранение неполадок RBAC в Azure](troubleshooting.md)
+- [Добавление или удаление назначений ролей Azure с помощью портал Azure](role-assignments-portal.md)
+- [Устранение неполадок в Azure RBAC](troubleshooting.md)
