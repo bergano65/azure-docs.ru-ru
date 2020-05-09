@@ -4,14 +4,14 @@ description: Узнайте, как управлять ресурсами Azure 
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 12/02/2019
+ms.date: 04/30/2020
 ms.author: mjbrown
-ms.openlocfilehash: 61670d757611bd0c1dd11c389282b18edb3d7fa1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 24eec27f0bc6357942420595a1318e3eb0945a5f
+ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79247388"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82745028"
 ---
 # <a name="manage-an-azure-cosmos-account"></a>Управление учетной записью Azure Cosmos
 
@@ -33,7 +33,7 @@ ms.locfileid: "79247388"
 
 ### <a name="azure-resource-manager-template"></a><a id="create-database-account-via-arm-template"></a>Шаблон Azure Resource Manager
 
-Этот шаблон Azure Resource Manager создаст учетную запись Azure Cosmos для API SQL, настроенную с двумя регионами и параметрами для выбора уровня согласованности, автоматической отработки отказа и нескольких хозяев. Чтобы развернуть этот шаблон, нажмите кнопку "Deploy to Azure" (Развернуть в Azure) на странице файла сведений в разделе о [создании учетной записи Azure Cosmos](https://github.com/Azure/azure-quickstart-templates/tree/master/101-cosmosdb-sql).
+См. раздел [Создание учетной записи Azure Cosmos DB с помощью шаблонов Azure Resource Manager](manage-sql-with-resource-manager.md)
 
 ## <a name="addremove-regions-from-your-database-account"></a>Добавление и удаление регионов из учетной записи базы данных
 
@@ -153,7 +153,7 @@ ms.locfileid: "79247388"
 
 3. На панели **Автоматический переход на другой ресурс** убедитесь, что для параметра **Включить автоматическую отработку отказа** установлено значение **ВКЛ**. 
 
-4. Нажмите кнопку **Сохранить**.
+4. Щелкните **Сохранить**.
 
    ![Меню автоматического перехода на другой ресурс на портале](./media/how-to-manage-database-account/automatic-failover.png)
 
@@ -184,7 +184,7 @@ ms.locfileid: "79247388"
 
 4. Чтобы изменить приоритет при отработке отказа, щелкните и перетащите регионы чтения, щелкнув три точки в левой части строки, которые появляются при наведении указателя мыши на строку.
 
-5. Нажмите кнопку **Сохранить**.
+5. Щелкните **Сохранить**.
 
    ![Меню автоматического перехода на другой ресурс на портале](./media/how-to-manage-database-account/automatic-failover.png)
 
@@ -228,7 +228,7 @@ ms.locfileid: "79247388"
 
 См. раздел [Активация перехода на другой ресурс вручную с помощью PowerShell](manage-with-powershell.md#trigger-manual-failover) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения и примеры по управлению учетной записью Azure Cosmos, а также базами данных и контейнерами см. в следующих статьях:
 

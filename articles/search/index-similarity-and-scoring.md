@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: 9f9cc4c29b117c83595a36c4e28b1edb428c3cde
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 4b02039c86f43e6bebed58dfff475816f09a3da1
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82254126"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82890139"
 ---
 # <a name="similarity-and-scoring-in-azure-cognitive-search"></a>Сходство и оценка в Azure Когнитивный поиск
 
@@ -59,18 +59,11 @@ Azure Когнитивный поиск поддерживает два разн
 
 Сейчас можно указать алгоритм ранжирования сходства, который вы хотите использовать. Дополнительные сведения см. в разделе [алгоритм ранжирования](index-ranking-similarity.md).
 
-## <a name="watch-this-video"></a>Рекомендуемый видеоролик
+Следующий сегмент видео быстро пересылает объяснение алгоритмов ранжирования, используемых в Azure Когнитивный поиск. Вы можете просмотреть полный видеоролик, чтобы получить дополнительные сведения.
 
-В этом 16-минутном видео инженер по Раауф Мерауче объясняет процесс индексирования, выполнения запросов и создания профилей оценки. Это дает хорошее представление о том, что происходит в процессе индексирования и извлечения документов.
+> [!VIDEO https://www.youtube.com/embed/Y_X6USgvB1g?version=3&start=322&end=643]
 
->[!VIDEO https://channel9.msdn.com/Shows/AI-Show/Similarity-and-Scoring-in-Azure-Cognitive-Search/player]
-
-+ 2-3 минут обсудим индексирование: обработка текста и лексический анализ.
-+ 3-4 минут обсудим индексирование: Инвертированные индексы.
-+ 4-6 минут, охватывающих запросы: получение и ранжирование.
-+ 7-16 минут охватывает профили оценки.
-
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
  [REST API Справочник](https://docs.microsoft.com/rest/api/searchservice/) по [профилям оценки](index-add-scoring-profiles.md)   
  [API поиска документов](https://docs.microsoft.com/rest/api/searchservice/search-documents)   

@@ -8,14 +8,20 @@ ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 193821ed0df09b87f19e45a82ca42026405a0dc4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 15d50033a1316601dd8c36bd5748c659f4397d66
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79127861"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82612050"
 ---
 # <a name="host-pool-load-balancing-methods"></a>Методы балансировки нагрузки пула узлов
+
+>[!IMPORTANT]
+>Это содержимое относится к обновлению пружины 2020 с Azure Resource Manager объектов виртуальных рабочих столов Windows. Если вы используете виртуальный рабочий стол Windows в выпуске 2019 без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/host-pool-load-balancing-2019.md).
+>
+> Обновление 2020 виртуального рабочего стола Windows в настоящее время находится в общедоступной предварительной версии. Эта предварительная версия предоставляется без соглашения об уровне обслуживания, и мы не рекомендуем использовать ее для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. 
+> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Виртуальный рабочий стол Windows поддерживает два метода балансировки нагрузки. Каждый метод определяет, на каком узле сеансов будет размещаться сеанс пользователя при подключении к ресурсу в пуле узлов.
 

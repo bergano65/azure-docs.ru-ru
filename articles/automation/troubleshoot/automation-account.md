@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок с учетной записью службы автоматизации
+title: Устранение неполадок учетной записи службы автоматизации Azure
 description: Узнайте, как устранять неполадки и устранять проблемы с учетной записью Azure.
 services: automation
 author: mgoedtel
@@ -8,16 +8,16 @@ ms.date: 03/24/2020
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 7b5e7171ac679384966e9dce79425cd1fa881c53
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6a7defdaa9b4b0f0b3580a3ac6b1a0487434a97c
+ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81679381"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82864136"
 ---
-# <a name="troubleshoot-the-automation-account"></a>Устранение неполадок учетной записи службы автоматизации
+# <a name="troubleshoot-an-azure-automation-account"></a>Устранение неполадок учетной записи службы автоматизации Azure
 
-В этой статье рассматриваются решения проблем, которые могут возникнуть при использовании учетной записи службы автоматизации. В следующих разделах выделяются конкретные сообщения об ошибках и возможные способы их устранения. Общие сведения об учетных записях службы автоматизации см. [в статье Создание учетной записи Azure](../automation-quickstart-create-account.md).
+В этой статье рассматриваются решения проблем, которые могут возникнуть при использовании учетной записи службы автоматизации Azure. Общие сведения об учетных записях службы автоматизации см. [в статье Создание учетной записи Azure](../automation-quickstart-create-account.md).
 
 ## <a name="scenario-unable-to-register-automation-resource-provider-for-subscriptions"></a><a name="rp-register"></a>Сценарий: не удалось зарегистрировать поставщик ресурсов службы автоматизации для подписок
 
@@ -39,7 +39,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 1. В браузере перейдите на [портал Azure](https://portal.azure.com).
 
-2. Перейдите к разделу **подписки** и выберите подписку на странице подписки.   
+2. Перейдите к разделу **подписки**и выберите свою подписку.   
 
 3. В разделе **Параметры**выберите **поставщики ресурсов**.
 
@@ -47,10 +47,10 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 5. Если поставщик отсутствует в списке, зарегистрируйте его, как описано в разделе [Устранение ошибок при регистрации поставщика ресурсов](/azure/azure-resource-manager/resource-manager-register-provider-errors).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы не видите проблему выше или не можете устранить проблему, воспользуйтесь одним из следующих каналов для получения дополнительной поддержки:
+Если эта статья не решает проблему, попробуйте использовать один из следующих каналов для получения дополнительной поддержки:
 
 * Получите ответы от экспертов Azure на [форумах Azure](https://azure.microsoft.com/support/forums/).
-* Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport)помощью официальной учетной записи Microsoft Azure для улучшения качества работы клиентов, подключив сообщество Azure к нужным ресурсам: ответы, поддержка и эксперты.
-* Отправьте запрос в службу поддержки Azure Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **получить поддержку**.
+* Подключитесь [@AzureSupport](https://twitter.com/azuresupport)к. Это официальная учетная запись Microsoft Azure для подключения сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Отправьте запрос в службу поддержки Azure Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/)и выберите **получить поддержку**.
