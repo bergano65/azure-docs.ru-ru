@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: daperlov
 ms.reviewer: jrasnick
-ms.openlocfilehash: fbd8e03b1f8af7802133c35ae4860116aaea0c3c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ab25b2e300f9fe9b0b1d077a42538c69fa543af2
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81430569"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82982706"
 ---
 # <a name="ingesting-data-into-a-sql-pool"></a>Прием данных в пул SQL
 
@@ -39,7 +39,7 @@ ms.locfileid: "81430569"
 
 ## <a name="create-pipeline"></a>Создание конвейера
 
-Конвейер содержит логический поток для выполнения набора действий. В этом разделе вы создадите конвейер, содержащий действие копирования, которое принимает данные из ADLS Gen 2 в пул SQL.
+Конвейер содержит логический поток для выполнения набора действий. В этом разделе вы создадите конвейер, содержащий действие копирования, которое принимает данные из ADLS 2-го поколения в пул SQL.
 
 1. Перейдите на вкладку " **orchestration** ". Щелкните значок "плюс" рядом с заголовком конвейеров и выберите **конвейер**.
 1. В разделе **Перемещение и преобразование** на панели действия перетащите элемент **Копировать данные** на холст конвейера.
@@ -71,6 +71,6 @@ ms.locfileid: "81430569"
 1. Убедитесь, что данные правильно написаны в пуле SQL.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об интеграции данных для синапсе Analytics см. в статье прием [данных в Azure Data Lake Storage 2-го поколения](data-integration-data-lake.md) .

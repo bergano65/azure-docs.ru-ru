@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 383a28e90c093c0885c34af03371608261ece110
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
-ms.translationtype: HT
+ms.openlocfilehash: 88e58fbf6acc15b71fd135184cf8806a793140f3
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82692636"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82983216"
 ---
 # <a name="secure-your-synapse-workspace-preview"></a>Защита рабочей области синапсе (Предварительная версия)
 
@@ -145,7 +145,7 @@ ms.locfileid: "82692636"
 | Открыть синапсе Studio | YES | YES | YES |
 | Просмотреть домашний центр | YES | YES | YES |
 | Просмотр концентратора данных | YES | YES | YES |
-| Центр данных: см. связанные учетные записи ADLSGen2 и контейнеры | ДА [1] | ДА [1] | ДА [1] |
+| Концентратор данных: см. связанные учетные записи ADLS 2-го поколения и контейнеры | ДА [1] | ДА [1] | ДА [1] |
 | Концентратор данных/см. базы данных | YES | YES | YES |
 | Концентратор данных/Просмотр объектов в базах данных | YES | YES | YES |
 | Данные концентратора данных и доступа к ним в базах данных пула SQL | YES   | NO   | YES   |
@@ -179,8 +179,8 @@ ms.locfileid: "82692636"
 
 
 > [!NOTE]
-> [1] доступ к данным в контейнерах зависит от контроля доступа в ADLSGen2. </br>
-> [2] таблицы SQL OD и таблицы Spark хранят свои данные в ADLSGen2, и доступ требует наличия соответствующих разрешений на ADLSGen2.
+> [1] доступ к данным в контейнерах зависит от контроля доступа в ADLS 2-го поколения. </br>
+> [2] таблицы SQL OD и таблицы Spark хранят свои данные в ADLS 2-го поколения и доступ требует наличия соответствующих разрешений на ADLS 2-го поколения.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

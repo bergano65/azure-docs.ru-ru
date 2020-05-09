@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 08/08/2019
+ms.date: 04/27/2020
 ms.author: absha
-ms.openlocfilehash: ced807b25cd1e829988a1e6b7621a5f73e0edfc2
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
-ms.translationtype: HT
+ms.openlocfilehash: 421c1f4d1abe9be5f5081235e78ebe77b1813e6e
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82202436"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82562242"
 ---
 # <a name="rewrite-http-headers-with-application-gateway"></a>Перезапись HTTP-заголовков с помощью шлюза приложений
 
@@ -158,11 +158,13 @@ ms.locfileid: "82202436"
 
 - Если в ответе несколько заголовков с одним и тем же именем, то перезапись значения одного из этих заголовков приведет к удалению других заголовков в ответе. Обычно это происходит с заголовком Set-cookie, так как в ответе может быть несколько заголовков Set-cookie. Одним из таких сценариев является ситуация, когда вы используете службу приложений с шлюзом приложений и настроили сходство сеансов на основе файлов cookie в шлюзе приложений. В этом случае ответ будет содержать два заголовка Set-Cookie: один используется службой приложений, например: `Set-Cookie: ARRAffinity=ba127f1caf6ac822b2347cc18bba0364d699ca1ad44d20e0ec01ea80cda2a735;Path=/;HttpOnly;Domain=sitename.azurewebsites.net` и другой для сходства шлюза приложений, например. `Set-Cookie: ApplicationGatewayAffinity=c1a2bd51lfd396387f96bl9cc3d2c516; Path=/` Перезапись одного из заголовков Set-cookie в этом сценарии может привести к удалению другого заголовка Set-cookie из ответа.
 
+- Перезапись не поддерживается, если шлюз приложений настроен для перенаправления запросов или для отображения настраиваемой страницы ошибок.
+
 - Перезапись подключения, обновления и заголовков узлов в настоящее время не поддерживается.
 
 - Имена заголовков могут содержать любые буквенно-цифровые символы и специальные символы, как определено в [RFC 7230](https://tools.ietf.org/html/rfc7230#page-27). В настоящее время не поддерживается специальный символ подчеркивания (\_) в именах заголовков.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о перезаписи HTTP-заголовков см. в следующих статьях:
 
