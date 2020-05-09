@@ -6,12 +6,12 @@ ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
 keywords: powershell, runbook, json, служба автоматизации azure
-ms.openlocfilehash: 2a6652c988eb77a1c5c7dbf800586b1c5fb756c4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1bf381499ac31fafc8aaeef2b4ee488cfa1aa5c1
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81392211"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82994684"
 ---
 # <a name="deploy-an-azure-resource-manager-template-in-an-azure-automation-powershell-runbook"></a>Развертывание шаблона Azure Resource Manager в runbook PowerShell службы автоматизации Azure
 
@@ -20,9 +20,6 @@ ms.locfileid: "81392211"
 Таким образом можно автоматизировать развертывание ресурсов Azure. Можно хранить шаблоны Resource Manager в центральном безопасном сетевом расположении, например в службе хранилища Azure.
 
 В этой статье мы создадим runbook PowerShell, использующий шаблон Resource Manager, который расположен в [службе хранилища Azure](../storage/common/storage-introduction.md), для развертывания новой учетной записи хранения Azure.
-
->[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Чтобы обновить модули в учетной записи службы автоматизации, см. руководство по [обновлению модулей Azure PowerShell в службе автоматизации Azure](automation-update-azure-modules.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -238,7 +235,7 @@ Get-AzStorageAccount
 
 Вот и все! Теперь вы можете использовать службу автоматизации Azure и службу хранилища Azure с шаблонами диспетчер ресурсов для развертывания всех ресурсов Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о диспетчер ресурсов шаблонах см. в разделе [Общие сведения о Azure Resource Manager](../azure-resource-manager/management/overview.md).
 * Чтобы приступить к работе со службой хранилища Azure, изучите раздел [Введение в хранилище Microsoft Azure](../storage/common/storage-introduction.md).

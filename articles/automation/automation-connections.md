@@ -6,12 +6,12 @@ ms.subservice: shared-capabilities
 ms.date: 01/13/2020
 ms.topic: conceptual
 ms.custom: has-adal-ref
-ms.openlocfilehash: b00dd226306ed639757666cc4f826b0d7a0e5711
-ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
-ms.translationtype: HT
+ms.openlocfilehash: 1a50c5d3d6e068054cfc8381b220d38471a7eb6c
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82651830"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996578"
 ---
 # <a name="manage-connections-in-azure-automation"></a>Управление подключениями в службе автоматизации Azure
 
@@ -26,9 +26,6 @@ ms.locfileid: "82651830"
 
 >[!NOTE]
 >Безопасные средства в службе автоматизации Azure включают учетные данные, сертификаты, подключения и зашифрованные переменные. Эти ресурсы шифруются и хранятся в службе автоматизации Azure с помощью уникального ключа, который создается для каждой учетной записи службы автоматизации. Служба автоматизации Azure сохраняет ключ в управляемом системой Key Vault. Перед сохранением защищенного ресурса Автоматизация загружает ключ из Key Vault и затем использует его для шифрования ресурса. 
-
->[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Чтобы обновить модули в учетной записи службы автоматизации, см. руководство по [обновлению модулей Azure PowerShell в службе автоматизации Azure](automation-update-azure-modules.md).
 
 ## <a name="connection-types"></a>Типы подключений
 

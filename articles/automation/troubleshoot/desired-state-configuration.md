@@ -9,19 +9,16 @@ ms.author: magoedte
 ms.date: 04/16/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: d0801bb44fc0c08df1adee1f817e8fccab166fb5
-ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
-ms.translationtype: HT
+ms.openlocfilehash: 4c9e7b6d93fb4bbc3e3b05d9346ec84197665a55
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82652809"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82995308"
 ---
-# <a name="troubleshoot-issues-with-azure-automation-state-configuration"></a>Устранение неполадок с конфигурацией состояния службы автоматизации Azure
+# <a name="troubleshoot-azure-automation-state-configuration-issues"></a>Устранение неполадок конфигурации состояния службы автоматизации Azure
 
 Эта статья содержит сведения об устранении неполадок, возникающих при компиляции или развертывании конфигураций в конфигурации состояния службы автоматизации Azure.
-
->[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Для учетной записи службы автоматизации можно обновить модули до последней версии, выполнив действия, описанные в статье [обновление модулей Azure PowerShell в службе автоматизации Azure](../automation-update-azure-modules.md).
 
 ## <a name="diagnose-an-issue"></a>Диагностика проблемы
 
@@ -63,7 +60,7 @@ DSC зависит от модулей, установленных на узле
 An error occurred while deleting the DSC configuration '<name>'.  Error-details: The argument configurationName with the value <name> is not valid.  Valid configuration names can contain only letters,  numbers, and underscores.  The name must start with a letter.  The length of the name must be between 1 and 64 characters.
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта ошибка является временной проблемой, которую планируется устранить.
 
@@ -88,7 +85,7 @@ ps://<location>-agentservice-prod-1.azure-automation.net/accounts/00000000-0000-
     + PSComputerName        : <computerName>
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта ошибка обычно вызвана брандмауэром, компьютером, который находится за прокси-сервером, или другими сетевыми ошибками.
 
@@ -110,9 +107,9 @@ The attempt to send status report to the server https://{your Automation account
 VM has reported a failure when processing extension 'Microsoft.Powershell.DSC / Registration of the Dsc Agent with the server failed.
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
-Эта проблема вызвана неверным или просроченным сертификатом. См. статью [истечение срока действия сертификата и](../automation-dsc-onboarding.md#re-registering-a-node)повторная регистрация.
+Эта проблема вызвана неверным или просроченным сертификатом. См. раздел [Повторная регистрация узла](../automation-dsc-onboarding.md#re-register-a-node).
 
 Эта проблема также может быть вызвана конфигурацией прокси-сервера, которая не разрешает доступ к ***. Azure-Automation.NET**. Дополнительные сведения см. в разделе [Настройка частных сетей](../automation-dsc-overview.md#network-planning). 
 
@@ -170,7 +167,7 @@ If (($certs.Count) -gt 0)
 The attempt to get the action from server https://<url>//accounts/<account-id>/Nodes(AgentId=<agent-id>)/GetDscAction failed because a valid configuration <guid> cannot be found.
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта ошибка обычно возникает, когда узлу назначается имя конфигурации, например **ABC**, а не имя файла конфигурации узла (MOF), например **abc. Сервер**.
 
@@ -192,7 +189,7 @@ The attempt to get the action from server https://<url>//accounts/<account-id>/N
 Compilation completed successfully, but no node configuration **.mof** files were generated.
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Когда выражение `$null`, следующее за `Node` ключевым словом в конфигурации DSC, принимает значение, конфигурации узлов не создаются.
 
@@ -213,7 +210,7 @@ Compilation completed successfully, but no node configuration **.mof** files wer
 No instance found with given property values
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Вы обновили версию Windows Management Framework (WMF) и повреждены инструментарий управления Windows (WMI) (WMI).
 
@@ -231,7 +228,7 @@ No instance found with given property values
 System.InvalidOperationException error processing property 'Credential' of type <some resource name>: Converting and storing an encrypted password as plaintext is allowed only if PSDscAllowPlainTextPassword is set to true.
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Вы использовали учетные данные в конфигурации, но не указали `ConfigurationData` `PSDscAllowPlainTextPassword` значение true для каждой конфигурации узла.
 
@@ -239,24 +236,24 @@ System.InvalidOperationException error processing property 'Credential' of type 
 
 Обязательно передавайте `ConfigurationData` `PSDscAllowPlainTextPassword` значение true для каждой конфигурации узла, указанной в конфигурации. См. раздел [Компиляция конфигураций DSC в конфигурации состояния службы автоматизации Azure](../automation-dsc-compile.md).
 
-## <a name="scenario-failure-processing-extension-error-when-onboarding-from-a-dsc-extension"></a><a name="failure-processing-extension"></a>Сценарий: ошибка "сбой при обработке расширения" при подключении из расширения DSC
+## <a name="scenario-failure-processing-extension-error-when-enabling-a-machine-from-a-dsc-extension"></a><a name="failure-processing-extension"></a>Сценарий: ошибка "сбой обработки расширения" при включении компьютера из расширения DSC
 
 ### <a name="issue"></a>Проблема
 
-При подключении с помощью расширения DSC происходит сбой, который содержит ошибку:
+При включении компьютера с помощью расширения DSC происходит сбой, который содержит ошибку:
 
 ```error
 VM has reported a failure when processing extension 'Microsoft.Powershell.DSC'. Error message: \"DSC COnfiguration 'RegistrationMetaConfigV2' completed with error(s). Following are the first few: Registration of the Dsc Agent with the server <url> failed. The underlying error is: The attempt to register Dsc Agent with Agent Id <ID> with the server <url> return unexpected response code BadRequest. .\".
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта ошибка обычно возникает, когда узлу назначено имя конфигурации узла, которое не существует в службе.
 
 ### <a name="resolution"></a>Решение
 
 * Убедитесь, что вы назначаете узлу имя, которое точно соответствует имени в службе.
-* Можно выбрать не включать имя конфигурации узла, что приводит к адаптации узла, но не назначению конфигурации узла.
+* Можно выбрать не включать имя конфигурации узла, что приведет к включению узла, но не назначению конфигурации узла.
 
 ## <a name="scenario-one-or-more-errors-occurred-error-when-registering-a-node-by-using-powershell"></a><a name="cross-subscription"></a>Сценарий: ошибка "произошла одна или несколько ошибок" при регистрации узла с помощью PowerShell
 
@@ -268,16 +265,16 @@ VM has reported a failure when processing extension 'Microsoft.Powershell.DSC'. 
 One or more errors occurred.
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта ошибка возникает при попытке зарегистрировать узел в отдельной подписке, которая используется учетной записью службы автоматизации.
 
 ### <a name="resolution"></a>Решение
 
-Рассматривайте узел перекрестной подписки так, как если бы он был определен для отдельного облака или локальной среды. Зарегистрируйте узел, используя один из следующих вариантов адаптации:
+Рассматривайте узел перекрестной подписки так, как если бы он был определен для отдельного облака или локальной среды. Зарегистрируйте узел, используя один из следующих параметров для включения компьютеров:
 
-* Windows: [физические или виртуальные машины Windows в локальной среде или в облаке, отличном от Azure/AWS](../automation-dsc-onboarding.md#onboarding-physicalvirtual-windows-machines).
-* Linux: [физические или виртуальные машины Linux в локальной среде или в облаке, отличном от Azure](../automation-dsc-onboarding.md#onboarding-physicalvirtual-linux-machines).
+* Windows: [физические или виртуальные машины Windows в локальной среде или в облаке, отличном от Azure/AWS](../automation-dsc-onboarding.md#enable-physicalvirtual-windows-machines).
+* Linux: [физические или виртуальные машины Linux в локальной среде или в облаке, отличном от Azure](../automation-dsc-onboarding.md#enable-physicalvirtual-linux-machines).
 
 ## <a name="scenario-provisioning-has-failed-error-message"></a><a name="agent-has-a-problem"></a>Сценарий: сообщение об ошибке "подготовка не выполнена"
 
@@ -289,7 +286,7 @@ One or more errors occurred.
 Provisioning has failed
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Это сообщение появляется при наличии проблем с подключением между узлом и Azure.
 
@@ -307,7 +304,7 @@ Provisioning has failed
 This event indicates that failure happens when LCM is processing the configuration. ErrorId is 1. ErrorDetail is The SendConfigurationApply function did not succeed.. ResourceId is [resource]name and SourceInfo is ::nnn::n::resource. ErrorMessage is A general error occurred, not covered by a more specific error code..
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Если для **/tmp** `noexec`расположения/tmp задано значение, то текущей версии DSC не удается применить конфигурации.
 
@@ -321,7 +318,7 @@ This event indicates that failure happens when LCM is processing the configurati
 
 При использовании одного скрипта конфигурации для создания нескольких конфигураций узлов, а некоторые имена конфигураций узлов являются подмножествами других имен, служба компиляции может назначить неправильную конфигурацию. Эта проблема возникает только при использовании одного сценария для создания конфигураций с данными конфигурации на узле и только в том случае, если имя перекрывается в начале строки. Примером является один скрипт конфигурации, используемый для создания конфигураций на основе данных узла, передаваемых в виде хэш-таблицы с помощью командлетов, а данные узла включают серверы с именами **Server** и **1server**.
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Это известная проблема со службой компиляции.
 
@@ -335,7 +332,7 @@ This event indicates that failure happens when LCM is processing the configurati
 
 При отправке `GatewayTimeout` конфигурации DSC появляется сообщение об ошибке. 
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта ошибка может быть вызвана настройками DSC, которые занимают много времени для компиляции.
 

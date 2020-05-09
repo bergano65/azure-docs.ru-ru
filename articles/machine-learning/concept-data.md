@@ -10,12 +10,12 @@ ms.reviewer: nibaccam
 author: nibaccam
 ms.author: nibaccam
 ms.date: 04/24/2020
-ms.openlocfilehash: 614cc866529cd4ead8a6ea798526d59aff13d4d0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e41d00a31a0065e2923259cbb0bb36986cbb2ec8
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82144486"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82995073"
 ---
 # <a name="secure-data-access-in-azure-machine-learning"></a>Защита доступа к данным в Машинное обучение Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "82144486"
 3. Чтобы использовать этот набор данных в эксперименте машинного обучения, можно либо
     1. Подключите его к целевому объекту вычислений эксперимента для обучения модели.
 
-        **НИ** 
+        **OR** 
 
     1. Его следует использовать непосредственно в Машинное обучение Azureных решениях, таких как Автоматизированные запуски экспериментов машинного обучения, конвейеры машинного обучения или [конструктор машинное обучение Azure](concept-designer.md).
 
@@ -73,7 +73,7 @@ ms.locfileid: "82144486"
 Поддерживаются два типа наборов данных: 
 + [Табулардатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py) представляет данные в табличном формате путем синтаксического анализа указанного файла или списка файлов. Вы можете загрузить Табулардатасет в кадр данных Pandas или Spark для дальнейшей обработки и очистки. Полный список форматов данных, которые можно создать Табулардатасетс из, см. в разделе [класс табулардатасетфактори](https://aka.ms/tabulardataset-api-reference).
 
-+ [Филедатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.file_dataset.filedataset?view=azure-ml-py) ссылается на один или несколько файлов в хранилищах данных или общедоступных URL-адресах. Вы можете [скачать или подключить](how-to-train-with-datasets.md#option-2--mount-files-to-a-remote-compute-target) к целевому объекту вычислений файлы, на которые ссылается филедатасетс.
++ [Филедатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.file_dataset.filedataset?view=azure-ml-py) ссылается на один или несколько файлов в хранилищах данных или общедоступных URL-адресах. Вы можете [скачать или подключить](how-to-train-with-datasets.md#mount-files-to-remote-compute-targets) к целевому объекту вычислений файлы, на которые ссылается филедатасетс.
 
 Дополнительные возможности наборов данных можно найти в следующей документации:
 
@@ -111,7 +111,7 @@ ms.locfileid: "82144486"
 
 Дополнительные сведения о способах обнаружения и оповещения о смещении данных для новых данных в наборе данных см. в статье [Создание монитора набора данных](how-to-monitor-datasets.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 + Создайте набор данных в Машинное обучение Azure Studio или с помощью пакета SDK для Python, [выполнив следующие действия.](how-to-create-register-datasets.md)
 + Испытайте примеры обучения наборов данных с помощью [примеров записных книжек](https://aka.ms/dataset-tutorial).
