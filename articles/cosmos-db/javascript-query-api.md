@@ -1,18 +1,18 @@
 ---
 title: Работа с API интегрированных запросов JavaScript в Azure Cosmos DB хранимых процедурах и триггерах
 description: В этой статье рассматриваются понятия, связанные с API запросов на основе языка JavaScript и необходимые, чтобы создать хранимые процедуры и триггеры в Azure Cosmos DB.
-author: markjbrown
+author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 08/01/2019
-ms.author: mjbrown
+ms.date: 05/07/2020
+ms.author: tisande
 ms.reviewer: sngun
-ms.openlocfilehash: 7b7ad470b3330224e80a7160fc1a37bb5ee1cde8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 785c430347bc62a00eee80c977f2d6ce440c08db
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76901839"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82982281"
 ---
 # <a name="javascript-query-api-in-azure-cosmos-db"></a>API для выполнения запросов JavaScript в Azure Cosmos DB
 
@@ -40,7 +40,7 @@ ms.locfileid: "76901839"
 Следующие конструкции JavaScript не оптимизированы для использования в индексах Azure Cosmos DB:
 
 - Поток управления (например if, for или while)
-- вызовы функций.
+- Вызовы функций
 
 Более подробные сведения см. в [документации по серверному пакету JavaScript для Cosmos DB](https://azure.github.io/azure-cosmosdb-js-server/).
 
@@ -60,7 +60,7 @@ ms.locfileid: "76901839"
 |SELECT<br>&nbsp;&nbsp;&nbsp;docs.id,<br>&nbsp;&nbsp;&nbsp;docs.message AS msg<br>FROM docs<br>WHERE<br>&nbsp;&nbsp;&nbsp;docs.id="X998_Y998"|__.chain()<br>&nbsp;&nbsp;&nbsp;&nbsp;.filter(function(doc) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return doc.id ==="X998_Y998";<br>&nbsp;&nbsp;&nbsp;&nbsp;})<br>&nbsp;&nbsp;&nbsp;&nbsp;.map(function(doc) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id: doc.id,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg: doc.message<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>&nbsp;&nbsp;&nbsp;&nbsp;})<br>.value();|Запрашивает документы с предикатом id = "X998_Y998" и затем выполняет проекцию идентификатора и сообщения (msg).|
 |SELECT VALUE tag<br>FROM docs<br>JOIN tag IN docs.Tags<br>ORDER BY docs._ts|__.chain()<br>&nbsp;&nbsp;&nbsp;&nbsp;.filter(function(doc) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return doc.Tags && Array.isArray(doc.Tags);<br>&nbsp;&nbsp;&nbsp;&nbsp;})<br>&nbsp;&nbsp;&nbsp;&nbsp;.sortBy(function(doc) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return doc._ts;<br>&nbsp;&nbsp;&nbsp;&nbsp;})<br>&nbsp;&nbsp;&nbsp;&nbsp;.pluck("Tags")<br>&nbsp;&nbsp;&nbsp;&nbsp;.flatten()<br>&nbsp;&nbsp;&nbsp;&nbsp;.value()|Выполняет фильтрацию для получения документов, у которых есть свойство массива Tags, и сортирует отобранные документы по системному свойству метки отметки _ts, после чего выполняет проекцию и объединение массива Tags.|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как записать и использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB, см. в статьях ниже:
 

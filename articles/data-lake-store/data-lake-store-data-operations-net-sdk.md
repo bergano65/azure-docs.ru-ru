@@ -1,17 +1,17 @@
 ---
-title: 'Пакет SDK для .NET: операции файловой системы в Azure Data Lake Storage 1-го поколения'
+title: Пакет SDK для .NET — операции файловой системы в Data Lake Storage 1-го поколения — Azure
 description: Используйте пакет SDK для Azure Data Lake Storage 1-го поколения .NET для операций файловой системы на Data Lake Storage 1-го поколения таких как создание папок и т. д.
 author: twooley
 ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 01/03/2020
 ms.author: twooley
-ms.openlocfilehash: 7e33ecbbb49fc2b0683d0757da36deec72796806
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9e52a3cb8d31b5fccc9a0b5a3a76d4e9b43de123
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75638907"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82690966"
 ---
 # <a name="filesystem-operations-on-data-lake-storage-gen1-using-the-net-sdk"></a>Операции файловой системы на Data Lake Storage 1-го поколения с помощью пакета SDK для .NET
 
@@ -27,7 +27,7 @@ ms.locfileid: "75638907"
 
 Инструкции по выполнению операций управления учетными записями в Data Lake Storage 1-го поколения с помощью пакета SDK для .NET см. в разделе [операции управления учетными записями в Data Lake Storage 1-го поколения с помощью пакета SDK для .NET](data-lake-store-get-started-net-sdk.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * **Visual Studio 2013 или более поздней версии**. В инструкциях этой статьи используется Visual Studio 2019.
 
@@ -198,7 +198,7 @@ client.DeleteRecursive("/Test");
 * [Базовый пример на GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-get-started/tree/master/AdlsSDKGettingStarted)
 * [Расширенный пример на GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-samples)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Операции управления учетными записями в Data Lake Storage 1-го поколения c использованием пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)
 * [Библиотеки Azure Data Lake Store для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)

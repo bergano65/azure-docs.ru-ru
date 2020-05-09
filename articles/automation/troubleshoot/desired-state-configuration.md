@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок с конфигурацией состояния службы автоматизации Azure (DSC)
-description: В этой статье содержатся сведения об устранении неполадок с конфигурацией службы автоматизации Azure (DSC).
+title: Устранение неполадок конфигурации состояния службы автоматизации Azure
+description: В этой статье содержатся сведения об устранении неполадок в конфигурации состояния службы автоматизации Azure.
 services: automation
 ms.service: automation
 ms.subservice: ''
@@ -9,33 +9,33 @@ ms.author: magoedte
 ms.date: 04/16/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 4c045e110e21ed201278dcd84f38cb4a376ae8db
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d0801bb44fc0c08df1adee1f817e8fccab166fb5
+ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81679312"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82652809"
 ---
-# <a name="troubleshoot-issues-with-azure-automation-state-configuration-dsc"></a>Устранение неполадок с конфигурацией состояния службы автоматизации Azure (DSC)
+# <a name="troubleshoot-issues-with-azure-automation-state-configuration"></a>Устранение неполадок с конфигурацией состояния службы автоматизации Azure
 
-Эта статья содержит сведения об устранении неполадок, возникающих при компиляции или развертывании конфигураций в службе настройки состояния службы автоматизации Azure (DSC).
+Эта статья содержит сведения об устранении неполадок, возникающих при компиляции или развертывании конфигураций в конфигурации состояния службы автоматизации Azure.
 
 >[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Чтобы обновить модули в учетной записи службы автоматизации, см. руководство по [обновлению модулей Azure PowerShell в службе автоматизации Azure](../automation-update-azure-modules.md).
+>Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Для учетной записи службы автоматизации можно обновить модули до последней версии, выполнив действия, описанные в статье [обновление модулей Azure PowerShell в службе автоматизации Azure](../automation-update-azure-modules.md).
 
-## <a name="diagnosing-an-issue"></a>Диагностика проблемы
+## <a name="diagnose-an-issue"></a>Диагностика проблемы
 
 При возникновении ошибки компиляции или развертывания для настройки выполните следующие действия, чтобы помочь в диагностике проблемы.
 
 ### <a name="1-ensure-that-your-configuration-compiles-successfully-on-the-local-machine"></a>1. Убедитесь, что конфигурация успешно компилируется на локальном компьютере.
 
-Настройка состояния службы автоматизации Azure (DSC) основана на службе настройки требуемого состояния PowerShell (DSC). Документацию по языку DSC и синтаксису можно найти в документации по [DSC PowerShell](https://docs.microsoft.com/powershell/scripting/overview).
+Конфигурация состояния службы автоматизации Azure построена на основе настройки требуемого состояния (DSC) PowerShell. Документацию по языку DSC и синтаксису можно найти в документации по [DSC PowerShell](https://docs.microsoft.com/powershell/scripting/overview).
 
 Компиляция конфигурации DSC на локальном компьютере позволяет обнаружить и устранить распространенные ошибки, например:
 
-   - Отсутствующие модули
-   - Синтаксические ошибки
-   - Логические ошибки
+   - Отсутствуют модули.
+   - Синтаксические ошибки.
+   - Логические ошибки.
 
 ### <a name="2-view-dsc-logs-on-your-node"></a>2. Просмотр журналов DSC на узле
 
@@ -43,7 +43,7 @@ ms.locfileid: "81679312"
 
 Модуль [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics) может помочь при анализе подробных сведений из журналов DSC. При обращении в службу поддержки эти журналы необходимы для диагностики проблемы.
 
-`xDscDiagnostics` Модуль можно установить на локальном компьютере с помощью инструкций, приведенных в разделе [Установка стабильной версии модуля](https://github.com/PowerShell/xDscDiagnostics#install-the-stable-version-module).
+Вы можете установить `xDscDiagnostics` модуль на локальном компьютере, следуя инструкциям в [статье Установка стабильной версии модуля](https://github.com/PowerShell/xDscDiagnostics#install-the-stable-version-module).
 
 Чтобы установить `xDscDiagnostics` модуль на компьютере Azure, используйте [командлет Invoke-азвмрункомманд](https://docs.microsoft.com/powershell/module/az.compute/invoke-azvmruncommand?view=azps-3.7.0). Можно также использовать параметр **выполнить команду** в портал Azure, выполнив действия, описанные в разделе [Запуск сценариев PowerShell в виртуальной машине Windows с помощью команды Run](../../virtual-machines/windows/run-command.md).
 
@@ -51,9 +51,9 @@ ms.locfileid: "81679312"
 
 ### <a name="3-ensure-that-nodes-and-the-automation-workspace-have-required-modules"></a>3. Убедитесь, что узлы и Рабочая область автоматизации имеют необходимые модули
 
-DSC зависит от модулей, установленных на узле. При использовании конфигурации состояния службы автоматизации Azure импортируйте необходимые модули в учетную запись службы автоматизации, выполнив действия, описанные в разделе [Импорт модулей](../shared-resources/modules.md#importing-modules). Конфигурации могут также иметь зависимость от конкретных версий модулей. Дополнительные сведения см. в разделе [Устранение неполадок модулей](shared-resources.md#modules).
+DSC зависит от модулей, установленных на узле. При использовании конфигурации состояния службы автоматизации Azure импортируйте необходимые модули в учетную запись службы автоматизации, выполнив действия, описанные в разделе [Импорт модулей](../shared-resources/modules.md#import-modules). Конфигурации могут также иметь зависимость от конкретных версий модулей. Дополнительные сведения см. в разделе [Устранение неполадок модулей](shared-resources.md#modules).
 
-## <a name="scenario-a-configuration-with-special-characters-cannot-be-deleted-from-the-portal"></a><a name="unsupported-characters"></a>Сценарий: невозможно удалить конфигурацию с специальными символами с портала
+## <a name="scenario-a-configuration-with-special-characters-cant-be-deleted-from-the-portal"></a><a name="unsupported-characters"></a>Сценарий: невозможно удалить конфигурацию с специальными символами с портала
 
 ### <a name="issue"></a>Проблема
 
@@ -65,13 +65,13 @@ An error occurred while deleting the DSC configuration '<name>'.  Error-details:
 
 ### <a name="cause"></a>Причина
 
-Эта ошибка является временной проблемой, которая планируется разрешить.
+Эта ошибка является временной проблемой, которую планируется устранить.
 
 ### <a name="resolution"></a>Решение
 
 Используйте командлет [Remove-Азаутоматиондскконфигуратион]https://docs.microsoft.com/powershell/module/Az.Automation/Remove-AzAutomationDscConfiguration?view=azps-3.7.0 (для удаления конфигурации).
 
-### <a name="scenario-failed-to-register-dsc-agent"></a><a name="failed-to-register-agent"></a>Сценарий: не удалось зарегистрировать агент DSC
+## <a name="scenario-failed-to-register-the-dsc-agent"></a><a name="failed-to-register-agent"></a>Сценарий: не удалось зарегистрировать агент DSC
 
 ### <a name="issue"></a>Проблема
 
@@ -94,9 +94,9 @@ ps://<location>-agentservice-prod-1.azure-automation.net/accounts/00000000-0000-
 
 ### <a name="resolution"></a>Решение
 
-Убедитесь, что у компьютера есть доступ к соответствующим конечным точкам DSC, и повторите попытку. Список требуемых портов и адресов см. в разделе [планирование сети](../automation-dsc-overview.md#network-planning) .
+Убедитесь, что у компьютера есть доступ к соответствующим конечным точкам DSC, и повторите попытку. Список требуемых портов и адресов см. в разделе [планирование сети](../automation-dsc-overview.md#network-planning).
 
-## <a name="a-nameunauthorizedscenario-status-reports-return-response-code-unauthorized"></a><a name="unauthorized"><a/>Сценарий: отчеты о состоянии, возвращающие код ответа, не санкционированы
+## <a name="a-nameunauthorizedscenario-status-reports-return-the-response-code-unauthorized"></a><a name="unauthorized"><a/>Сценарий: отчеты о состоянии возвращают несанкционированный код ответа
 
 ### <a name="issue"></a>Проблема
 
@@ -118,21 +118,21 @@ VM has reported a failure when processing extension 'Microsoft.Powershell.DSC / 
 
 ### <a name="resolution"></a>Решение
 
-Чтобы повторно зарегистрировать неисправный узел DSC, выполните приведенные ниже действия.
+Чтобы повторно зарегистрировать неисправный узел DSC, выполните следующие действия.
 
-Шаг 1. Отмена регистрации узла.
+#### <a name="step-1-unregister-the-node"></a>Шаг 1. Отмена регистрации узла
 
-1. В портал Azure перейдите к **домашним** -> **учетным записям службы автоматизации** — > (ваша учетная запись службы автоматизации) — > **State Configuration (DSC)**.
-2. Выберите **узлы**и щелкните узел с проблемами.
-3. Нажмите кнопку **отменить регистрацию** , чтобы отменить регистрацию узла.
+1. В портал Azure перейдите на **главную страницу** > **службы автоматизации** > (ваша учетная запись службы автоматизации) > **Configuration State (DSC)**.
+1. Выберите **узлы**и выберите узел с проблемами.
+1. Нажмите кнопку **отменить регистрацию** , чтобы отменить регистрацию узла.
 
-Шаг 2. Удалите расширение DSC с узла.
+#### <a name="step-2-uninstall-the-dsc-extension-from-the-node"></a>Шаг 2. Удаление расширения DSC с узла
 
-1. В портал Azure перейдите к **домашней** -> **виртуальной машине** — > (неисправный узел) — > **расширения**.
-2. Выберите **Microsoft. PowerShell. DSC**, расширение PowerShell DSC.
-3. Нажмите кнопку **Удалить** , чтобы удалить расширение.
+1. В портал Azure перейдите в раздел **Домашняя** > **Виртуальная машина** > (узел сбоя) > **расширения**.
+1. Выберите **Microsoft. PowerShell. DSC**, расширение PowerShell DSC.
+1. Выберите **Удалить** , чтобы удалить расширение.
 
-Шаг 3. Удалите из узла все неправильные или просроченные сертификаты.
+#### <a name="step-3-remove-all-bad-or-expired-certificates-from-the-node"></a>Шаг 3. Удаление всех испорченных или истекших сертификатов с узла
 
 На узле, на котором произошел сбой, в командной строке PowerShell с повышенными привилегиями выполните следующие команды:
 
@@ -152,19 +152,19 @@ If (($certs.Count) -gt 0)
 }
 ```
 
-Шаг 4. повторно зарегистрируйте неисправный узел.
+#### <a name="step-4-reregister-the-failing-node"></a>Шаг 4. Повторная регистрация узла, на котором произошел сбой
 
-1. В портал Azure перейдите к **домашней** -> **учетной записи службы автоматизации** — > (ваша учетная запись службы автоматизации) — **Конфигурация > состояния (DSC)** .
-2. Выберите **узлы**.
-3. Нажмите кнопку **Добавить**.
-4. Выберите узел, на котором произошел сбой.
-5. Нажмите кнопку **подключить** и выберите нужные параметры.
+1. В портал Azure перейдите на **главную страницу** > **службы автоматизации** > (ваша учетная запись службы автоматизации) > **Configuration State (DSC)**.
+1. Выберите **узлы**.
+1. Нажмите **Добавить**.
+1. Выберите узел, на котором произошел сбой.
+1. Нажмите кнопку **подключить**и выберите нужные параметры.
 
 ## <a name="scenario-node-is-in-failed-status-with-a-not-found-error"></a><a name="failed-not-found"></a>Сценарий: узел находится в состоянии сбоя с ошибкой "Не найден"
 
 ### <a name="issue"></a>Проблема
 
-В отчете об узле указано состояние сбоя и содержится сообщение об ошибке:
+Узел имеет отчет с состоянием сбоя и содержит ошибку:
 
 ```error
 The attempt to get the action from server https://<url>//accounts/<account-id>/Nodes(AgentId=<agent-id>)/GetDscAction failed because a valid configuration <guid> cannot be found.
@@ -177,9 +177,9 @@ The attempt to get the action from server https://<url>//accounts/<account-id>/N
 ### <a name="resolution"></a>Решение
 
 * Убедитесь, что вы назначаете узлу имя конфигурации узла, а не имя конфигурации.
-* Конфигурацию узла можно назначить узлу с помощью портала Azure или с помощью командлета PowerShell.
+* Конфигурацию узла можно назначить узлу с помощью портал Azure или командлета PowerShell.
 
-  * В портал Azure перейдите к **домашней** -> **учетной записи службы автоматизации** — > (учетная запись службы автоматизации) — > **состояния (DSC)**, затем выберите узел и щелкните **назначить конфигурацию узла**.
+  * В портал Azure перейдите на **главную страницу** > **службы автоматизации** > (ваша учетная запись службы автоматизации) > **Configuration State (DSC)**. Затем выберите узел и щелкните **назначить конфигурацию узла**.
   * Используйте командлет [Set-азаутоматиондскноде](https://docs.microsoft.com/powershell/module/Az.Automation/Set-AzAutomationDscNode?view=azps-3.7.0) .
 
 ## <a name="scenario-no-node-configurations-mof-files-were-produced-when-a-configuration-was-compiled"></a><a name="no-mof-files"></a>Сценарий: при компиляции конфигурации не создавались конфигурации узлов (MOF-файлы)
@@ -203,7 +203,7 @@ Compilation completed successfully, but no node configuration **.mof** files wer
 * Убедитесь, что выражение рядом с `Node` ключевым словом в определении конфигурации не оценивается как null.
 * Если вы передаете [ConfigurationData](../automation-dsc-compile.md) при компиляции конфигурации, убедитесь, что вы передаете значения, которые требуется настроить из данных конфигурации.
 
-### <a name="scenario-the-dsc-node-report-becomes-stuck-in-the-in-progress-state"></a><a name="dsc-in-progress"></a>Сценарий: отчет узла DSC перестает оставаться в состоянии "выполняется"
+## <a name="scenario-the-dsc-node-report-becomes-stuck-in-the-in-progress-state"></a><a name="dsc-in-progress"></a>Сценарий: отчет узла DSC перестает оставаться в состоянии "выполняется"
 
 ### <a name="issue"></a>Проблема
 
@@ -239,11 +239,11 @@ System.InvalidOperationException error processing property 'Credential' of type 
 
 Обязательно передавайте `ConfigurationData` `PSDscAllowPlainTextPassword` значение true для каждой конфигурации узла, указанной в конфигурации. См. раздел [Компиляция конфигураций DSC в конфигурации состояния службы автоматизации Azure](../automation-dsc-compile.md).
 
-## <a name="scenario-failure-processing-extension-error-when-onboarding-from-dsc-extension"></a><a name="failure-processing-extension"></a>Сценарий: ошибка "сбой обработки расширения" при подключении из расширения DSC
+## <a name="scenario-failure-processing-extension-error-when-onboarding-from-a-dsc-extension"></a><a name="failure-processing-extension"></a>Сценарий: ошибка "сбой при обработке расширения" при подключении из расширения DSC
 
 ### <a name="issue"></a>Проблема
 
-При подключении с помощью расширения DSC происходит сбой, содержащий ошибку:
+При подключении с помощью расширения DSC происходит сбой, который содержит ошибку:
 
 ```error
 VM has reported a failure when processing extension 'Microsoft.Powershell.DSC'. Error message: \"DSC COnfiguration 'RegistrationMetaConfigV2' completed with error(s). Following are the first few: Registration of the Dsc Agent with the server <url> failed. The underlying error is: The attempt to register Dsc Agent with Agent Id <ID> with the server <url> return unexpected response code BadRequest. .\".
@@ -258,7 +258,7 @@ VM has reported a failure when processing extension 'Microsoft.Powershell.DSC'. 
 * Убедитесь, что вы назначаете узлу имя, которое точно соответствует имени в службе.
 * Можно выбрать не включать имя конфигурации узла, что приводит к адаптации узла, но не назначению конфигурации узла.
 
-## <a name="scenario-one-or-more-errors-occurred-error-when-registering-a-node-using-powershell"></a><a name="cross-subscription"></a>Сценарий: ошибка "произошла одна или несколько ошибок" при регистрации узла с помощью PowerShell
+## <a name="scenario-one-or-more-errors-occurred-error-when-registering-a-node-by-using-powershell"></a><a name="cross-subscription"></a>Сценарий: ошибка "произошла одна или несколько ошибок" при регистрации узла с помощью PowerShell
 
 ### <a name="issue"></a>Проблема
 
@@ -276,10 +276,10 @@ One or more errors occurred.
 
 Рассматривайте узел перекрестной подписки так, как если бы он был определен для отдельного облака или локальной среды. Зарегистрируйте узел, используя один из следующих вариантов адаптации:
 
-* Физические или [виртуальные машины Windows в локальной среде или в облаке, отличном от Azure/AWS](../automation-dsc-onboarding.md#onboarding-physicalvirtual-windows-machines).
-* [Виртуальные машины Linux — физические или виртуальных машин Linux — локально или в облаке, отличном от Azure](../automation-dsc-onboarding.md#onboarding-physicalvirtual-linux-machines).
+* Windows: [физические или виртуальные машины Windows в локальной среде или в облаке, отличном от Azure/AWS](../automation-dsc-onboarding.md#onboarding-physicalvirtual-windows-machines).
+* Linux: [физические или виртуальные машины Linux в локальной среде или в облаке, отличном от Azure](../automation-dsc-onboarding.md#onboarding-physicalvirtual-linux-machines).
 
-## <a name="scenario-error-message---provisioning-failed"></a><a name="agent-has-a-problem"></a>Сценарий: сообщение об ошибке-"сбой подготовки"
+## <a name="scenario-provisioning-has-failed-error-message"></a><a name="agent-has-a-problem"></a>Сценарий: сообщение об ошибке "подготовка не выполнена"
 
 ### <a name="issue"></a>Проблема
 
@@ -301,7 +301,7 @@ Provisioning has failed
 
 ### <a name="issue"></a>Проблема
 
-При применении конфигурации в Linux происходит сбой, содержащий ошибку:
+При применении конфигурации в Linux происходит сбой, который содержит ошибку:
 
 ```error
 This event indicates that failure happens when LCM is processing the configuration. ErrorId is 1. ErrorDetail is The SendConfigurationApply function did not succeed.. ResourceId is [resource]name and SourceInfo is ::nnn::n::resource. ErrorMessage is A general error occurred, not covered by a more specific error code..
@@ -315,7 +315,7 @@ This event indicates that failure happens when LCM is processing the configurati
 
 Удалите `noexec` параметр из расположения **/tmp** .
 
-## <a name="scenario-node-configuration-names-that-overlap-can-result-in-bad-release"></a><a name="compilation-node-name-overlap"></a>Сценарий. имена конфигураций узлов, которые перекрываются, могут привести к повреждению выпуска
+## <a name="scenario-node-configuration-names-that-overlap-can-result-in-a-bad-release"></a><a name="compilation-node-name-overlap"></a>Сценарий. имена конфигураций узлов, которые перекрываются, могут привести к повреждению выпуска
 
 ### <a name="issue"></a>Проблема
 
@@ -343,10 +343,10 @@ This event indicates that failure happens when LCM is processing the configurati
 
 Можно выполнить синтаксический анализ конфигураций DSC, явно включив `ModuleName` параметр для всех вызовов [Import-DSCResource](https://docs.microsoft.com/powershell/scripting/dsc/configurations/import-dscresource?view=powershell-5.1) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы не видите проблему выше или не можете устранить проблему, воспользуйтесь одним из следующих каналов для получения дополнительной поддержки:
+Если вы не видите проблему здесь или вы не можете решить проблему, попробуйте использовать один из следующих каналов для получения дополнительной поддержки:
 
 * Получите ответы от экспертов Azure на [форумах Azure](https://azure.microsoft.com/support/forums/).
-* Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport)помощью официальной учетной записи Microsoft Azure для улучшения качества работы клиентов, подключив сообщество Azure к нужным ресурсам: ответы, поддержка и эксперты.
-* Отправьте запрос в службу поддержки Azure Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **получить поддержку**.
+* Подключайтесь с помощью официальной учетной записи Microsoft Azure для улучшения качества взаимодействия с [@AzureSupport](https://twitter.com/azuresupport)клиентами. Служба поддержки Azure подключается к сообществу Azure для получения ответов, поддержки и экспертов.
+* Отправьте запрос в службу поддержки Azure Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/)и выберите **получить поддержку**.

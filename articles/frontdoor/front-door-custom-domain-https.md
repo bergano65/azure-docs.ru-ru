@@ -12,18 +12,18 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/05/2018
 ms.author: sharadag
-ms.openlocfilehash: efe2c96c619aaf92efc5b4abf76b6b89c96ebd37
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.openlocfilehash: 56a2246b4f1da51d9b18a34279eff04264530ef5
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80878040"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82160091"
 ---
 # <a name="tutorial-configure-https-on-a-front-door-custom-domain"></a>Руководство по Настройка протокола HTTPS на личном домене Front Door
 
 В этом руководстве показано, как включить протокол HTTPS для личного домена, связанного со службой Front Door, в разделе интерфейсных узлов. С помощью протокола HTTPS в личном домене (например, https:\//www.contoso.com) вы гарантируете безопасную доставку конфиденциальных данных с TLS/SSL-шифрованием при отправке через Интернет. При подключении веб-браузера к веб-сайту по протоколу HTTPS он выполняет проверку сертификата безопасности веб-сайта и подтверждает, что он выдан правомочным центром сертификации. Этот процесс обеспечивает безопасность и защиту веб-приложений от атак.
 
-По умолчанию Azure Front Door поддерживает HTTPS в стандартном имени узла Front Door. Например, при создании службы Front Door (скажем, https:\//contoso.azureedge.net) протокол HTTPS включен по умолчанию для запросов к https://contoso.azurefd.net. Тем не менее после развертывания личного домена 'www.contoso.com' потребуется дополнительно включить протокол HTTPS для этого интерфейсного узла.   
+По умолчанию Azure Front Door поддерживает HTTPS в стандартном имени узла Front Door. Например, при создании службы Front Door (скажем, `https://contoso.azurefd.net`) протокол HTTPS включен по умолчанию для запросов к `https://contoso.azurefd.net`. Тем не менее после развертывания личного домена 'www.contoso.com' потребуется дополнительно включить протокол HTTPS для этого интерфейсного узла.   
 
 Ниже приведены некоторые ключевые характеристики настраиваемой функции HTTPS:
 

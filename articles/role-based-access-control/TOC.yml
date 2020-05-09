@@ -26,6 +26,11 @@
       href: tutorial-custom-role-powershell.md
     - name: "Создание настраиваемой роли\_— CLI"
       href: tutorial-custom-role-cli.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Рекомендации

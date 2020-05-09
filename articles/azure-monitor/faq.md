@@ -7,18 +7,18 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/26/2020
-ms.openlocfilehash: db63ce2d56eb78bf6b361d530511b6902c1cb6d5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 728c8605dca183d8eb733b5e674868592d920d03
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80637771"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82732042"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor часто задаваемые вопросы
 
 Этот список часто задаваемых вопросов о Azure Monitor см. в этой статье.
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 
 ### <a name="what-is-azure-monitor"></a>Общие сведения об Azure Monitor
 [Azure Monitor](overview.md) — это служба в Azure, которая обеспечивает мониторинг производительности и доступности для приложений и служб в Azure, в других облачных средах или в локальной среде. Azure Monitor собирает данные из нескольких источников в общую платформу данных, где их можно проанализировать на предмет тенденций и аномалий. Широкие возможности Azure Monitor помогают быстро определять и реагировать на критические ситуации, которые могут повлиять на работу приложения.
@@ -255,11 +255,15 @@ WireData
 ### <a name="how-can-i-change-which-azure-resource-my-project-sends-data-to"></a><a name="update"></a>Как изменить ресурс Azure, в который проект отправляет данные?
 В обозревателе решений щелкните правой кнопкой мыши `ApplicationInsights.config` и выберите **Обновить Application Insights**. Данные можно отправлять на существующий или новый ресурс в Azure. Мастер обновления изменяет ключ инструментирования в файле ApplicationInsights.config, который определяет, куда сервер SDK должен отправлять ваши данные. Если отменить выбор параметра "Обновить все", это также приведет к изменению ключа, отображаемого на ваших веб-страницах.
 
+### <a name="can-i-use-providersmicrosoftinsights-componentsapiversions0-in-my-azure-resource-manager-deployments"></a>Можно ли использовать `providers('Microsoft.Insights', 'components').apiVersions[0]` в развертываниях Azure Resource Manager?
+
+Не рекомендуется использовать этот метод для заполнения версии API. Последняя версия может представлять предварительные выпуски, которые могут содержать критические изменения. Даже в более новых выпусках, не являющихся предварительными, версии API не всегда обратно совместимы с существующими шаблонами, или в некоторых случаях версия API может быть недоступна для всех подписок.
+
 ### <a name="what-is-status-monitor"></a>Что такое монитор состояния?
 
 Это классическое приложение, которое можно использовать на веб-сервере IIS для настройки Application Insights в веб-приложениях. Оно не собирает телеметрию: его можно остановить, когда вы не настраиваете приложение. 
 
-[Подробнее](app/monitor-performance-live-website-now.md#questions).
+[Дополнительные сведения](app/monitor-performance-live-website-now.md#questions).
 
 ### <a name="what-telemetry-is-collected-by-application-insights"></a>Какую телеметрию собирает Application Insights?
 
@@ -305,7 +309,7 @@ WireData
 * Дополнительные сведения о сборе IP-адресов и данных географического расположения в Application Insights см. в этой [статье](https://docs.microsoft.com/azure/azure-monitor/app/ip-collection).
 
 
-Вы можете настроить `ClientIpHeaderTelemetryInitializer` для получения IP-адреса из другого заголовка. Например, в некоторых системах он переносится прокси-сервером, балансировщиком нагрузки или сетью CDN в `X-Originating-IP`. [Подробнее](https://apmtips.com/blog/2016/07/05/client-ip-address/).
+Вы можете настроить `ClientIpHeaderTelemetryInitializer` для получения IP-адреса из другого заголовка. Например, в некоторых системах он переносится прокси-сервером, балансировщиком нагрузки или сетью CDN в `X-Originating-IP`. [Дополнительные сведения](https://apmtips.com/blog/2016/07/05/client-ip-address/).
 
 Вы можете [использовать Power BI](app/export-power-bi.md ) для отображения данных телеметрии по запросам на карте.
 
@@ -333,7 +337,7 @@ WireData
 
 Вы можете:
 
-* Используйте два отдельных ключа инструментирования (отдельные ресурсы Application Insights) для данных клиента и сервера. Или
+* Используйте два отдельных ключа инструментирования (отдельные ресурсы Application Insights) для данных клиента и сервера. либо
 * создать прокси-сервер, работающий на вашем сервере, и передавать данные веб-клиента через него.
 
 ### <a name="how-do-i-see-post-data-in-diagnostic-search"></a><a name="post"></a>Как просмотреть данные POST в колонке «Поиск по журналу диагностики»?
@@ -412,7 +416,7 @@ WireData
 
 ### <a name="can-i-send-telemetry-to-the-application-insights-portal"></a>Можно ли отправлять данные телеметрии на портал Application Insights?
 
-Мы рекомендуем использовать наши пакеты SDK, а также [API пакета SDK](app/api-custom-events-metrics.md). Существуют разновидности пакетов SDK для разных [платформ](app/platforms.md). Эти пакеты SDK управляют буферизацией, сжатием, регулированием, повторными попытками и другими операциями. Однако [схема приема](https://github.com/Microsoft/ApplicationInsights-dotnet/tree/develop/Schema/PublicSchema) и [протокол конечной точки](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/EndpointSpecs/ENDPOINT-PROTOCOL.md) являются открытыми.
+Мы рекомендуем использовать наши пакеты SDK, а также [API пакета SDK](app/api-custom-events-metrics.md). Существуют разновидности пакетов SDK для разных [платформ](app/platforms.md). Эти пакеты SDK управляют буферизацией, сжатием, регулированием, повторными попытками и другими операциями. Однако [схема приема](https://github.com/microsoft/ApplicationInsights-dotnet/tree/master/BASE/Schema/PublicSchema) и [протокол конечной точки](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/EndpointSpecs/ENDPOINT-PROTOCOL.md) являются открытыми.
 
 ### <a name="can-i-monitor-an-intranet-web-server"></a>Можно ли отслеживать веб-сервер в интрасети?
 
@@ -715,7 +719,7 @@ LogEntry : ({"Hello": "This example has multiple lines:","Docker/Moby": "will no
 В этом случае при открытии виртуальной машины и выборе **аналитической информации** из левой панели будет выводиться запрос с предложением " **попробовать сейчас** " даже после того, как она уже установлена на виртуальной машине.  Предложение не отобразится, если эта виртуальная машина не подключена к Azure Monitor для виртуальных машин. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Если вы не ответили на этот вопрос, вы можете обратиться к следующим форумам, чтобы получить дополнительные вопросы и ответы.
 
 - [Log Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=opinsights)

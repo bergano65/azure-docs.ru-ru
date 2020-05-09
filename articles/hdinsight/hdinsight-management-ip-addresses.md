@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 03/03/2020
-ms.openlocfilehash: 5e8f39b58f258742108fe323d9395efd87bc288f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f1a539096ac1a154ca37bbe6703f820787f927fb
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78271818"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82778266"
 ---
 # <a name="hdinsight-management-ip-addresses"></a>IP-адреса управления HDInsight
 
@@ -82,11 +82,11 @@ ms.locfileid: "78271818"
 
 Сведения об IP-адресах для Azure для государственных организаций см. в документе [Аналитика Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/documentation-government-services-intelligenceandanalytics).
 
-Дополнительные сведения см. в разделе [Управление сетевым трафиком](hdinsight-plan-virtual-network-deployment.md#networktraffic) .
+Дополнительные сведения см. в разделе [Управление сетевым трафиком](./control-network-traffic.md).
 
 Если вы используете определяемые пользователем маршруты (определяемые пользователем маршруты), укажите маршрут и разрешите исходящий трафик из виртуальной сети на указанные выше IP-адреса со следующим прыжком в значение "Интернет".
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание виртуальных сетей для кластеров Azure HDInsight](hdinsight-create-virtual-network.md)
 * [Теги службы группы безопасности сети (NSG) для Azure HDInsight](hdinsight-service-tags.md)
