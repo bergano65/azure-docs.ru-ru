@@ -2,19 +2,19 @@
 title: Шаблон с зависимыми ресурсами
 description: Узнайте, как создавать шаблон Azure Resource Manager с несколькими ресурсами, а также, как развертывать его, используя портал Azure
 author: mumian
-ms.date: 03/04/2019
+ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 5db2fb34a6d9330e745a9b4d1f5fed538e96c557
-ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+ms.openlocfilehash: cf876d3c7c100f001ba81082d792e81a777c7315
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80239305"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82193043"
 ---
 # <a name="tutorial-create-arm-templates-with-dependent-resources"></a>Руководство по созданию шаблонов Resource Manager с зависимыми ресурсами
 
-Узнайте, как создать шаблон Azure Resource Manager (ARM) для развертывания нескольких ресурсов и настроить порядок развертывания. После создания шаблона можно развернуть шаблон с помощью Cloud Shell с портала Azure.
+Узнайте, как создать шаблон Azure Resource Manager (ARM) для развертывания нескольких ресурсов и настроить порядок развертывания. После создания шаблон можно развернуть с помощью Cloud Shell, используя портал Azure.
 
 В рамках этого руководства вы создадите учетную запись хранения, виртуальную машину, виртуальную сеть и другие зависимые ресурсы. Некоторые ресурсы невозможно развернуть до тех пор, пока не будет существовать другой ресурс. Например, невозможно создать виртуальную машину, пока не существуют ее учетная запись хранения и сетевой интерфейс. Эта связь определяется путем пометки зависимости одного ресурса от других. Диспетчер ресурсов оценивает зависимости между ресурсами и развертывает эти ресурсы согласно установленным зависимостям. Если ресурсы не зависят друг от друга, диспетчер ресурсов развертывает их параллельно. Дополнительные сведения см. в статье [Определение порядка развертывания ресурсов в шаблонах ARM](./define-resource-dependency.md).
 
@@ -23,7 +23,7 @@ ms.locfileid: "80239305"
 В рамках этого руководства рассматриваются следующие задачи:
 
 > [!div class="checklist"]
-> * открытие шаблона быстрого запуска;
+> * Открытие шаблона быстрого запуска
 > * Обзор шаблона
 > * Развертывание шаблона
 
@@ -39,6 +39,7 @@ ms.locfileid: "80239305"
     ```console
     openssl rand -base64 32
     ```
+
     Для защиты криптографических ключей и других секретов используйте Azure Key Vault. Дополнительные сведения см. в статье [Учебник. Интеграция с Azure Key Vault при развертывании шаблона ARM](./template-tutorial-use-key-vault.md). Мы также рекомендуем обновлять пароль каждые три месяца.
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
@@ -51,6 +52,7 @@ ms.locfileid: "80239305"
     ```url
     https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-windows/azuredeploy.json
     ```
+
 3. Чтобы открыть файл, выберите **Открыть**.
 4. Выберите **Файл**>**Сохранить как**, чтобы сохранить файл на локальный компьютер с именем **azuredeploy.json**.
 
@@ -67,33 +69,43 @@ ms.locfileid: "80239305"
 
     ![Шаблоны Azure Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-visual-studio-code.png)
 
-    Шаблоном определено пять ресурсов:
+    Шаблоном определено шесть ресурсов:
 
-   * `Microsoft.Storage/storageAccounts`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/Microsoft.Storage/storageAccounts).
-   * `Microsoft.Network/publicIPAddresses`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.network/publicipaddresses).
-   * `Microsoft.Network/virtualNetworks`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.network/virtualnetworks).
-   * `Microsoft.Network/networkInterfaces`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.network/networkinterfaces).
-   * `Microsoft.Compute/virtualMachines`. Ознакомьтесь со статьей о [справочнике по шаблонам](https://docs.microsoft.com/azure/templates/microsoft.compute/virtualmachines).
+   * [**Microsoft.Storage/storageAccounts**](/azure/templates/Microsoft.Storage/storageAccounts).
+   * [**Microsoft.Network/publicIPAddresses**](/azure/templates/microsoft.network/publicipaddresses).
+   * [**Microsoft.Network/networkSecurityGroups**](/azure/templates/microsoft.network/networksecuritygroups).
+   * [**Microsoft.Network/virtualNetworks**](/azure/templates/microsoft.network/virtualnetworks).
+   * [**Microsoft.Network/networkInterfaces**](/azure/templates/microsoft.network/networkinterfaces).
+   * [**Microsoft.Compute/virtualMachines**](/azure/templates/microsoft.compute/virtualmachines).
 
-     Прежде чем настраивать шаблон, рекомендуется получить основные сведения о нем.
+     Перед настройкой шаблона рекомендуется ознакомиться с его справочником.
 
-2. Разверните первый ресурс. Это учетная запись хранения. Сравните определение ресурса с определением в [справочнике по шаблону](https://docs.microsoft.com/azure/templates/Microsoft.Storage/storageAccounts).
+1. Разверните первый ресурс. Это учетная запись хранения. Сравните определение ресурса с определением в [справочнике по шаблону](/azure/templates/Microsoft.Storage/storageAccounts).
 
     ![Определение учетной записи хранения для шаблонов Azure Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-storage-account-definition.png)
 
-3. Разверните второй ресурс. В качестве типа ресурса используйте `Microsoft.Network/publicIPAddresses`. Сравните определение ресурса с определением в [справочнике по шаблону](https://docs.microsoft.com/azure/templates/microsoft.network/publicipaddresses).
+1. Разверните второй ресурс. В качестве типа ресурса используйте `Microsoft.Network/publicIPAddresses`. Сравните определение ресурса с определением в [справочнике по шаблону](/azure/templates/microsoft.network/publicipaddresses).
 
     ![Определение общедоступного IP-адреса для шаблонов Azure Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-public-ip-address-definition.png)
-4. Разверните четвертый ресурс: В качестве типа ресурса используйте `Microsoft.Network/networkInterfaces`.
 
-    ![Шаблоны Azure Resource Manager в Visual Studio Code для элемента dependsOn](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-visual-studio-code-dependson.png)
+1. Разверните третий ресурс. В качестве типа ресурса используйте `Microsoft.Network/networkSecurityGroups`. Сравните определение ресурса с определением в [справочнике по шаблону](/azure/templates/microsoft.network/networksecuritygroups).
 
-    Элемент dependsOn позволяет определить один ресурс как зависимый от одного или нескольких ресурсов. Этот ресурс зависит от двух других ресурсов:
+    ![Определение группы безопасности сети для шаблонов Azure Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-network-security-group-definition.png)
+
+1. Разверните четвертый ресурс: В качестве типа ресурса используйте `Microsoft.Network/virtualNetworks`.
+
+    ![Элемент dependsOn для виртуальной сети для шаблонов Azure Resource Manager в Visual Studio Code](./media/template-tutorial-create-templates-with-dependent-resources/resource-manager-template-virtual-network-definition.png)
+
+    Элемент dependsOn позволяет определить один ресурс как зависимый от одного или нескольких ресурсов. Этот ресурс зависит от одного из этих ресурсов:
+
+    * `Microsoft.Network/networkSecurityGroups`
+
+1. Разверните пятый ресурс. В качестве типа ресурса используйте `Microsoft.Network/networkInterfaces`. Этот ресурс зависит от двух других ресурсов:
 
     * `Microsoft.Network/publicIPAddresses`
     * `Microsoft.Network/virtualNetworks`
 
-5. Разверните пятый ресурс. Этот ресурс — это виртуальная машина. Он зависит от двух других ресурсов:
+1. Разверните шестой ресурс. Этот ресурс — это виртуальная машина. Он зависит от двух других ресурсов:
 
     * `Microsoft.Storage/storageAccounts`
     * `Microsoft.Network/networkInterfaces`
@@ -106,27 +118,41 @@ ms.locfileid: "80239305"
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+1. Войдите в [Azure Cloud Shell](https://shell.azure.com).
 
-Существует множество методов по развертыванию шаблонов.  В этом руководстве используется Cloud Shell на портале Azure.
+1. В левом верхнем углу выберите используемую среду — **PowerShell** или **Bash** (для CLI).  После переключения желательно перезагрузить оболочку.
 
-1. Войдите в [Cloud Shell](https://shell.azure.com).
-1. Выберите **PowerShell** в верхнем левом углу Cloud Shell и нажмите **Confirm** (Подтвердить).  В этом руководстве используется PowerShell.
-1. Выберите **Отправить файл** из Cloud Shell.
+    ![Файл отправки Cloud Shell на портале Azure](./media/template-tutorial-use-template-reference/azure-portal-cloud-shell-upload-file.png)
 
-    ![Файл отправки Cloud Shell портале Azure](./media/template-tutorial-create-templates-with-dependent-resources/azure-portal-cloud-shell-upload-file.png)
-1. Выберите шаблон, сохраненный ранее при выполнении этого руководства. **azuredeploy.json** — имя по умолчанию.  Если файл с тем же именем уже существует, он будет перезаписан без уведомления.
+1. Выберите **Отправка и скачивание файлов**, а затем **Отправить**. См. предыдущий снимок экрана. Выберите файл, сохраненный ранее. После отправки вы можете использовать команды **ls** и **cat**, чтобы проверить отправку файла.
 
-    При необходимости можно использовать команды **ls $HOME** и **cat $HOME/azuredeploy.json**, чтобы проверить отправку файлов.
+1. а затем выполните следующий сценарий PowerShell для его развертывания.
 
-1. Выполните следующие команды PowerShell в командной строке Cloud Shell. Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. См. раздел [Предварительные требования](#prerequisites).
+    # <a name="cli"></a>[CLI](#tab/CLI)
+
+    ```azurecli
+    echo "Enter a project name that is used to generate resource group name:" &&
+    read projectName &&
+    echo "Enter the location (i.e. centralus):" &&
+    read location &&
+    echo "Enter the virtual machine admin username:" &&
+    read adminUsername &&
+    echo "Enter the DNS label prefix:" &&
+    read dnsLabelPrefix &&
+    resourceGroupName="${projectName}rg" &&
+    az group create --name $resourceGroupName --location $location &&
+    az deployment group create --resource-group $resourceGroupName --template-file "$HOME/azuredeploy.json" --parameters adminUsername=$adminUsername dnsLabelPrefix=$dnsLabelPrefix
+    ```
+
+    # <a name="powershell"></a>[PowerShell](#tab/PowerShell)
 
     ```azurepowershell
-    $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
+    $projectName = Read-Host -Prompt "Enter a project name that is used to generate resource group name"
     $location = Read-Host -Prompt "Enter the location (i.e. centralus)"
     $adminUsername = Read-Host -Prompt "Enter the virtual machine admin username"
     $adminPassword = Read-Host -Prompt "Enter the admin password" -AsSecureString
     $dnsLabelPrefix = Read-Host -Prompt "Enter the DNS label prefix"
+    $resourceGroupName = "${projectName}rg"
 
     New-AzResourceGroup -Name $resourceGroupName -Location "$location"
     New-AzResourceGroupDeployment `
@@ -135,18 +161,11 @@ ms.locfileid: "80239305"
         -adminPassword $adminPassword `
         -dnsLabelPrefix $dnsLabelPrefix `
         -TemplateFile "$HOME/azuredeploy.json"
+
     Write-Host "Press [ENTER] to continue ..."
     ```
 
-1. Для отображения вновь созданной виртуальной машины выполните следующую команду PowerShell.
-
-    ```azurepowershell
-    $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
-    Get-AzVM -Name SimpleWinVM -ResourceGroupName $resourceGroupName
-    Write-Host "Press [ENTER] to continue ..."
-    ```
-
-    Имя виртуальной машины внутри шаблона жестко закодировано как **SimpleWinVM**.
+    ---
 
 1. RDP-подключение к виртуальной машине для ее проверки успешно установлено.
 
@@ -156,7 +175,7 @@ ms.locfileid: "80239305"
 
 1. На портале Azure в меню слева выберите **Группа ресурсов**.
 2. В поле **Фильтровать по имени** введите имя группы ресурсов.
-3. Выберите имя группы ресурсов.  В группе ресурсов должно появится шесть ресурсов.
+3. Выберите имя группы ресурсов. В группе ресурсов должно появиться шесть ресурсов.
 4. В главном меню выберите **Удалить группу ресурсов**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
