@@ -972,10 +972,14 @@
               href: sql-api-query-metrics.md
             - name: Советы по повышению производительности при использовании пакета SDK для .NET
               href: performance-tips.md
-            - name: Советы по повышению производительности при использовании пакета SDK для Java
-              href: performance-tips-java.md
-            - name: Советы по повышению производительности при использовании пакета SDK для Async Java
-              href: performance-tips-async-java.md
+            - name: "Советы по повышению производительности при использовании пакета SDK для Java версии\_4"
+              href: performance-tips-java-sdk-v4-sql.md
+            - name: Советы по повышению производительности при использовании пакета SDK для Java более ранних версий
+              items:
+                - name: "Пакет SDK для Async Java версии\_2"
+                  href: performance-tips-async-java.md
+                - name: "Пакет SDK для Sync Java версии\_2"
+                  href: performance-tips-java.md
             - name: "Тест производительности\_— пример приложения"
               href: performance-testing.md
         - name: Экономичные операции чтения и записи
@@ -984,8 +988,12 @@
       items:
         - name: Решение проблем с производительностью запросов
           href: troubleshoot-query-performance.md
-        - name: Устранение неполадок с пакетом SDK для Java Async
-          href: troubleshoot-java-async-sdk.md
+        - name: "Устранение неполадок с пакетом SDK для Java версии\_4"
+          href: troubleshoot-java-sdk-v4-sql.md
+        - name: Устранение неполадок с пакетами SDK для Java более ранних версий
+          items:
+            - name: "Пакет SDK для Async Java версии\_2"
+              href: troubleshoot-java-async-sdk.md
         - name: Устранение неполадок с пакетом SDK для .NET
           href: troubleshoot-dot-net-sdk.md
     - name: Канал изменений

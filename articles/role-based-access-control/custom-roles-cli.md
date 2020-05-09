@@ -1,6 +1,6 @@
 ---
-title: Создание или обновление пользовательских ролей для ресурсов Azure с помощью Azure CLI | Документация Майкрософт
-description: Узнайте, как перечислять, создавать, обновлять и удалять пользовательские роли с помощью управления доступом на основе ролей (RBAC) для ресурсов Azure, используя Azure CLI.
+title: Создание или обновление пользовательских ролей Azure с помощью Azure CLI — Azure RBAC
+description: Узнайте, как перечислять, создавать, обновлять или удалять пользовательские роли Azure с помощью Azure CLI и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,23 +14,23 @@ ms.workload: identity
 ms.date: 03/18/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 44676f7b92c2bcd30612295840054ab2f0c0cf12
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cac0116cf7a068e63cb54698f7273b8c063ff854
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80062230"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82734847"
 ---
-# <a name="create-or-update-custom-roles-for-azure-resources-using-azure-cli"></a>Создание или обновление пользовательских ролей для ресурсов Azure с помощью Azure CLI
+# <a name="create-or-update-azure-custom-roles-using-azure-cli"></a>Создание или обновление пользовательских ролей Azure с помощью Azure CLI
 
 > [!IMPORTANT]
 > Добавление группы управления в сейчас `AssignableScopes` находится на этапе предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Если [встроенные роли для ресурсов Azure](built-in-roles.md) не соответствуют конкретным потребностям Организации, можно создать собственные пользовательские роли. В этой статье описывается, как получить список, создать, обновить или удалить пользовательские роли с помощью Azure CLI.
+Если [встроенные роли Azure](built-in-roles.md) не отвечают конкретным потребностям Организации, можно создать собственные пользовательские роли. В этой статье описывается, как получить список, создать, обновить или удалить пользовательские роли с помощью Azure CLI.
 
-Пошаговое руководство по созданию настраиваемой роли см. в разделе [учебник. Создание пользовательской роли для ресурсов Azure с помощью Azure CLI](tutorial-custom-role-cli.md).
+Пошаговое руководство по созданию настраиваемой роли см. в разделе [учебник. Создание настраиваемой роли Azure с помощью Azure CLI](tutorial-custom-role-cli.md).
 
 ## <a name="prerequisites"></a>Предварительные условия
 
@@ -242,8 +242,8 @@ az role definition delete --name <role_name or role_id>
 az role definition delete --name "Virtual Machine Operator"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Руководство. Создание настраиваемой роли для ресурсов Azure с помощью Azure CLI](tutorial-custom-role-cli.md)
-- [Пользовательские роли для ресурсов Azure](custom-roles.md)
+- [Руководство. Создание настраиваемой роли Azure с помощью Azure CLI](tutorial-custom-role-cli.md)
+- [Пользовательские роли Azure](custom-roles.md)
 - [Операции поставщика ресурсов Azure Resource Manager](resource-provider-operations.md)

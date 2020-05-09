@@ -6,14 +6,14 @@ ms.author: tisande
 ms.service: cosmos-db
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 4/29/2020
+ms.date: 05/06/2020
 ms.reviewer: sngun
-ms.openlocfilehash: d069df0a095cc0356cd61155dde875a5d92ed18d
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.openlocfilehash: aa9b090627b6f27a54b67c361b45b6f99e3a6338
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82594157"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82982383"
 ---
 # <a name="change-feed-processor-in-azure-cosmos-db"></a>Обработчик канала изменений в Azure Cosmos DB
 
@@ -100,6 +100,7 @@ ms.locfileid: "82594157"
 Вы можете продолжить знакомство с обработчиком канала изменений, перейдя к следующим статьям:
 
 * [Работа с поддержкой веб-канала изменений в Azure Cosmos DB](change-feed.md)
+* [Изменить модель извлечения веб-канала](change-feed-pull-model.md)
 * [Как выполнить миграцию из библиотеки обработчика веб-канала изменений](how-to-migrate-from-change-feed-library.md)
 * [Использование оценщика канала изменений](how-to-use-change-feed-estimator.md)
 * [Время запуска обработчика канала изменений](how-to-configure-change-feed-start-time.md)

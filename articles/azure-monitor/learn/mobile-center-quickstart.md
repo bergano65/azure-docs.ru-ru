@@ -8,12 +8,12 @@ ms.author: mbullwin
 ms.date: 06/26/2019
 ms.reviewer: daviste
 ms.custom: mvc
-ms.openlocfilehash: a59a6841a1db3cecfe52c54135b42f5b6a095ce3
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: c31083c5e0591d5a49f878ba24a7fd2f0ef6c84d
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77660297"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82731957"
 ---
 # <a name="start-analyzing-your-mobile-app-with-app-center-and-application-insights"></a>Анализ мобильного приложения с помощью App Center и Application Insights
 
@@ -33,7 +33,7 @@ ms.locfileid: "77660297"
 
 ## <a name="onboard-to-app-center"></a>Знакомство с App Center
 
-Прежде чем использовать службу Application Insights в мобильном приложении, ее необходимо подключить к [App Center](https://docs.microsoft.com/mobile-center/). Application Insights не получает данные телеметрии из мобильного приложения напрямую. Вместо этого приложение отправляет данные телеметрии пользовательских событий в App Center. После этого App Center экспортирует копии этих пользовательских событий в Application Insights по мере их получения. (Это не относится к [пакету SDK Application Insights для JS](https://github.com/Microsoft/ApplicationInsights-JS) или [подключаемому модулю React Native](https://github.com/Microsoft/ApplicationInsights-JS/tree/master/vNext/extensions/applicationinsights-react-native), которые отправляют данные телеметрии непосредственно в Application Insights.)
+Прежде чем использовать службу Application Insights в мобильном приложении, ее необходимо подключить к [App Center](https://docs.microsoft.com/mobile-center/). Application Insights не получает данные телеметрии из мобильного приложения напрямую. Вместо этого приложение отправляет данные телеметрии пользовательских событий в App Center. После этого App Center экспортирует копии этих пользовательских событий в Application Insights по мере их получения. (Это не относится к [пакету SDK Application Insights для JS](https://github.com/Microsoft/ApplicationInsights-JS) или [подключаемому модулю React Native](https://github.com/Microsoft/ApplicationInsights-JS/tree/master/extensions/applicationinsights-react-native), которые отправляют данные телеметрии непосредственно в Application Insights.)
 
 Чтобы подключить приложение, выполните действия из краткого руководства по App Center для каждой платформы, которую поддерживает ваше приложение. Создайте отдельные экземпляры App Center для каждой платформы:
 

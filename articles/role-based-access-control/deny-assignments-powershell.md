@@ -1,6 +1,6 @@
 ---
-title: Список запрещенных назначений для ресурсов Azure с Azure PowerShell
-description: Узнайте, как получить список пользователей, групп, субъектов-служб и управляемых удостоверений, которым запрещен доступ к определенным действиям ресурсов Azure в определенных областях с помощью Azure PowerShell.
+title: Список запрещенных назначений Azure с помощью Azure PowerShell — Azure RBAC
+description: Узнайте, как получить список пользователей, групп, субъектов-служб и управляемых удостоверений, которым запрещен доступ к определенным действиям ресурсов Azure в определенных областях с помощью Azure PowerShell и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -13,25 +13,25 @@ ms.workload: identity
 ms.date: 06/12/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 5ba18b89bd37dbd55350321c503e37ab0590ab87
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cd852d19b284f97995855fe06c97ea0ea69be293
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77137392"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82733968"
 ---
-# <a name="list-deny-assignments-for-azure-resources-using-azure-powershell"></a>Список запрещенных назначений для ресурсов Azure с помощью Azure PowerShell
+# <a name="list-azure-deny-assignments-using-azure-powershell"></a>Список запрещенных назначений в Azure с помощью Azure PowerShell
 
-[Запрет назначений](deny-assignments.md) запрещает пользователям выполнять определенные действия с ресурсами Azure, даже если назначение ролей предоставляет им доступ. В этой статье описывается, как вывести список запрещенных назначений с помощью Azure PowerShell.
+[Запрещенные назначения Azure](deny-assignments.md) запрещают пользователям выполнять определенные действия с ресурсами Azure, даже если назначение ролей предоставляет им доступ. В этой статье описывается, как вывести список запрещенных назначений с помощью Azure PowerShell.
 
 > [!NOTE]
-> Вы не можете напрямую создавать собственные назначения Deny. Дополнительные сведения о создании назначений Deny см. в разделе [Deny назначений](deny-assignments.md).
+> Вы не можете напрямую создавать собственные назначения Deny. Дополнительные сведения о создании назначений Deny см. в статье [запрещение назначений в Azure](deny-assignments.md).
 
 ## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы получить сведения о назначении Deny, необходимо следующее:
 
-- `Microsoft.Authorization/denyAssignments/read`разрешение, которое входит в большинство [встроенных ролей для ресурсов Azure](built-in-roles.md) .
+- `Microsoft.Authorization/denyAssignments/read`разрешение, которое входит в большинство [встроенных ролей Azure](built-in-roles.md)
 - [PowerShell в Azure Cloud Shell](/azure/cloud-shell/overview) или [Azure PowerShell](/powershell/azure/install-az-ps)
 
 ## <a name="list-deny-assignments"></a>Отображение списка запрещенных назначений
@@ -123,8 +123,8 @@ Get-AzDenyAssignment -Scope /subscriptions/<subscription_id>
 PS C:\> Get-AzDenyAssignment -Scope /subscriptions/11111111-1111-1111-1111-111111111111
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Запрет назначений для ресурсов Azure](deny-assignments.md)
-- [Список запрещенных назначений для ресурсов Azure с помощью портал Azure](deny-assignments-portal.md)
-- [Вывод списка запретов назначений для ресурсов Azure с помощью REST API](deny-assignments-rest.md)
+- [Общие сведения о назначении Deny в Azure](deny-assignments.md)
+- [Список запрещенных назначений в Azure с помощью портал Azure](deny-assignments-portal.md)
+- [Список запрещенных назначений в Azure с помощью REST API](deny-assignments-rest.md)
