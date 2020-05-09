@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 01/16/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8cb641f95e7327e80f42df86a56eba8c34e7e598
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cbe43b298c57d266f0b031b5192f25fe3df07c05
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79367029"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82582431"
 ---
 # <a name="starting-an-azure-automation-runbook-with-a-webhook"></a>Запуск Runbook службы автоматизации Azure с помощью объекта webhook
 
@@ -88,7 +88,7 @@ ms.locfileid: "79367029"
 
 Другая стратегия заключается в том, чтобы модуль Runbook выполнил некоторую проверку внешнего условия при получении запроса веб-перехватчика. Например, рассмотрим модуль Runbook, который вызывается GitHub каждый раз, когда в репозиторий GitHub зафиксируется новая фиксация. Модуль Runbook может подключиться к GitHub, чтобы убедиться, что перед продолжением была выполнена новая фиксация.
 
-## <a name="creating-a-webhook"></a>Создание объекта Webhook
+## <a name="create-a-webhook"></a>Создание веб-перехватчика
 
 Чтобы создать новый веб-перехватчик, связанный с модулем Runbook, на портале Azure, воспользуйтесь следующей процедурой.
 
@@ -106,7 +106,7 @@ ms.locfileid: "79367029"
 1. Щелкните **Параметры**, чтобы указать значения для параметров модуля Runbook. Если у модуля Runbook есть обязательные параметры, вы не сможете создать веб-перехватчик, если не указать значения.
 1. Щелкните **Создать**, чтобы создать объект Webhook.
 
-## <a name="using-a-webhook"></a>Использование объекта Webhook
+## <a name="use-a-webhook"></a>Использование веб-перехватчика
 
 Чтобы использовать веб-перехватчик после создания, клиент должен отправить запрос HTTP `POST` с URL-адресом. Синтаксис:
 
@@ -116,7 +116,7 @@ http://<Webhook Server>/token?=<Token Value>
 
 Клиент получает один из следующих кодов возврата из `POST` запроса.
 
-| Код | Text | Описание |
+| Код | текст | Описание |
 |:--- |:--- |:--- |
 | 202 |Принято |Запрос был принят, и модуль Runbook успешно поставлен в очередь. |
 | 400 |Ошибка запроса |Запрос не был принят по одной из следующих причин: <ul> <li>Срок действия объекта webhook истек.</li> <li>Объект webhook отключен.</li> <li>Недопустимый токен в URL-адресе.</li>  </ul> |
@@ -131,7 +131,7 @@ http://<Webhook Server>/token?=<Token Value>
 
 Клиент не может определить момент завершения задания Runbook и состояние его завершения из веб-перехватчика. Эти сведения можно найти с помощью идентификатора задания с другим механизмом, например [Windows PowerShell](https://docs.microsoft.com/powershell/module/servicemanagement/azure/get-azureautomationjob) или [API службы автоматизации Azure](/rest/api/automation/job).
 
-## <a name="renewing-a-webhook"></a><a name="renew-webhook"></a>Обновление веб-перехватчика
+## <a name="renew-a-webhook"></a>Обновление веб-перехватчика
 
 При создании веб-перехватчика он имеет период действия 10 лет, по истечении которого он автоматически истечет. После истечения срока действия веб-перехватчика его нельзя будет активировать повторно. Вы можете удалить только, а затем создать его заново. 
 
@@ -200,7 +200,7 @@ else {
 }
 ```
 
-## <a name="testing-the-sample"></a>Тестирование примера
+## <a name="test-the-sample"></a>Тестирование примера
 
 В следующем примере модуль Runbook запускается с помощью Webhook из Windows PowerShell. Любой язык, с помощью которого можно сделать HTTP-запрос, может использовать этот веб-перехватчик. В качестве примера используется Windows PowerShell.
 
@@ -238,6 +238,6 @@ $jobid = (ConvertFrom-Json ($response.Content)).jobids[0]
 
 ![Кнопка Webhook](media/automation-webhooks/webhook-request-response.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об использовании службы автоматизации Azure для выполнения действий с оповещениями Azure см. в статье [Использование оповещения для активации модуля Runbook службы автоматизации](automation-create-alert-triggered-runbook.md)Azure.

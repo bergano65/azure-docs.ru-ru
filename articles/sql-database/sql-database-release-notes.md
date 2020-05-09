@@ -9,12 +9,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: sstein
-ms.openlocfilehash: aa8d1634c015f338053a4d167db34ef0b5a83505
-ms.sourcegitcommit: c8a0fbfa74ef7d1fd4d5b2f88521c5b619eb25f8
-ms.translationtype: HT
+ms.openlocfilehash: 2d89320b4e5237017b51d19495c60c03ce6288f7
+ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/05/2020
-ms.locfileid: "82801694"
+ms.locfileid: "82838490"
 ---
 # <a name="sql-database-release-notes"></a>Заметки о выпуске базы данных SQL
 
@@ -93,12 +93,12 @@ ms.locfileid: "82801694"
 |[@queryпараметр не поддерживается в sp_send_db_mail](#-parameter-not-supported-in-sp_send_db_mail)|Апр 2019|Обходной путь отсутствует| |
 |[После географической отработки отказа необходимо перенастроить репликацию транзакций](#transactional-replication-must-be-reconfigured-after-geo-failover)|Мар 2019|Обходной путь отсутствует| |
 |[Во время операции восстановления используется временная база данных](#temporary-database-is-used-during-restore-operation)||Есть обходной путь| |
-|[Структура и содержимое базы данных TEMPDB создано повторно](#tempdb-structure-and-content-is-re-created)||Обходной путь отсутствует| |
-|[Превышение дискового пространства с небольшими файлами баз данных](#exceeding-storage-space-with-small-database-files)||Есть обходной путь| |
-|[Значения GUID, отображаемые вместо имен баз данных](#guid-values-shown-instead-of-database-names)||Есть обходной путь| |
+|[Структура и содержимое базы данных TEMPDB создано повторно](#tempdb-structure-and-content-is-re-created)| |Обходной путь отсутствует| |
+|[Превышение дискового пространства с небольшими файлами баз данных](#exceeding-storage-space-with-small-database-files)| |Есть обходной путь| |
+|[Значения GUID, отображаемые вместо имен баз данных](#guid-values-shown-instead-of-database-names) ||Есть обходной путь| |
 |[Журналы ошибок не сохраняются](#error-logs-arent-persisted)||Обходной путь отсутствует| |
-|[Область транзакций в двух базах данных в одном и том же экземпляре не поддерживается](#transaction-scope-on-two-databases-within-the-same-instance-isnt-supported)||Есть обходной путь|Мар 2020|
-|[Модули CLR и связанные серверы иногда не могут ссылаться на локальный IP-адрес.](#clr-modules-and-linked-servers-sometimes-cant-reference-a-local-ip-address)||Есть обходной путь| |
+|[Модули CLR и связанные серверы иногда не могут ссылаться на локальный IP-адрес.](#clr-modules-and-linked-servers-sometimes-cant-reference-a-local-ip-address)| |Есть обходной путь| |
+|[Область транзакций в двух базах данных в одном и том же экземпляре не поддерживается](#transaction-scope-on-two-databases-within-the-same-instance-isnt-supported)| |"Разрешено"|Мар 2020|
 |Согласованность базы данных не проверена с помощью инструкции DBCC CHECKDB после восстановления базы данных из хранилища BLOB-объектов Azure.| |"Разрешено"|2019 ноября|
 |Восстановление базы данных на момент времени с уровня критически важный для бизнеса на уровень общего назначения не будет выполняться, если база данных-источник содержит объекты OLTP в памяти.| |"Разрешено"|Октябрь 2019|
 |Database Mailная функция с внешними (не Azure) почтовыми серверами с использованием безопасного подключения| |"Разрешено"|Октябрь 2019|

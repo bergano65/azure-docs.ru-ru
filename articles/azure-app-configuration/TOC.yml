@@ -62,6 +62,9 @@
   items:
     - name: Azure CLI
       href: cli-samples.md
+    - name: Встроенные политики службы "Политика Azure"
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Хранилище ключ-значение
