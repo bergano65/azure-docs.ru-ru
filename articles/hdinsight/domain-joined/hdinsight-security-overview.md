@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: overview
 ms.custom: seoapr2020
 ms.date: 04/20/2020
-ms.openlocfilehash: 492c248b9a68b39b37984b978944b4f7ef34d756
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 91a3c71ecaa8af58e13cb96571fc7afdf618fcdd
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82190118"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82780085"
 ---
 # <a name="overview-of-enterprise-security-in-azure-hdinsight"></a>Общие сведения о корпоративной безопасности в Azure HDInsight
 
@@ -87,7 +87,7 @@ Azure HDInsight предлагает ряд методов для соответ
 | Безопасность операционной системы | Создание кластеров с помощью последних безопасных базовых образов | Customer |
 |  | Обеспечение [установки исправлений для ОС](../hdinsight-os-patching.md) через регулярные интервалы | Customer |
 | Безопасность сети | Настройка [виртуальной сети](../hdinsight-plan-virtual-network-deployment.md) |
-|  | Настройка [правил для входящего трафика группы безопасности сети (NSG)](../hdinsight-plan-virtual-network-deployment.md#networktraffic) | Customer |
+|  | Настройка [правил для входящего трафика группы безопасности сети (NSG)](../control-network-traffic.md) | Customer |
 |  | Настройка [ограничения исходящего трафика](../hdinsight-restrict-outbound-traffic.md) с помощью брандмауэра | Customer |
 | Виртуализированная инфраструктура | Недоступно | HDInsight (поставщик облачных служб) |
 | Безопасность физической инфраструктуры | Недоступно | HDInsight (поставщик облачных служб) |

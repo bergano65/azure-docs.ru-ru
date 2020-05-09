@@ -3,12 +3,12 @@ title: Повышение уровня доступности приложени
 description: Использование Azure Advisor для повышения уровня доступности развернутых служб Azure.
 ms.topic: article
 ms.date: 01/29/2019
-ms.openlocfilehash: 997681ed62fa9985e3122ece22565dbae0e65b53
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5e38a1fb5e07e3811c53e24a5e324575d6774a75
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75443112"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82788031"
 ---
 # <a name="improve-availability-of-your-application-with-azure-advisor"></a>Повышение уровня доступности приложения с использованием Помощника по Azure
 
@@ -28,6 +28,10 @@ ms.locfileid: "75443112"
 ## <a name="use-managed-disks-to-improve-data-reliability"></a>Использование управляемых дисков для повышения надежности данных
 
 Виртуальные машины, которые находятся в группе доступности с дисками с общими учетными записями хранения или единицами масштабирования хранилища, не устойчивы к сбоям блока масштабирования во время простоев. Помощник определит эти группы доступности и порекомендует перейти на Управляемые диски Azure. Это обеспечит достаточную изоляцию дисков различных виртуальных машин в группе доступности, чтобы избавиться от единой точки отказа. 
+
+## <a name="known-issue-with-check-point-network-virtual-appliance-image-version"></a>Известная ошибка с версией образа виртуального устройства для проверки сети Check Point
+
+Помощник может определить, может ли ваша виртуальная машина работать под управлением версии образа контрольной точки, которая в случае операции обслуживания платформы прекратила подключение к сети. Рекомендации Advisor помогут выполнить обновление до более новой версии образа, устраняющего эту ошибку. Это обеспечит непрерывность бизнес-процессов благодаря улучшенному подключению к сети.
 
 ## <a name="ensure-application-gateway-fault-tolerance"></a>Обеспечение отказоустойчивости шлюза приложений
 
@@ -83,7 +87,7 @@ Azure Cosmos DB контейнеры, настроенные с отложенн
 
 ## <a name="upgrade-your-azure-cosmos-db-java-sdk-to-the-latest-version-from-maven"></a>Обновите пакет SDK Java для Azure Cosmos DB до последней версии с сайта Maven
 
-Помощник Azure определит Azure Cosmos DB учетные записи, использующие старые версии пакета SDK для Java, и рекомендует обновление до последней версии с Maven для последних исправлений, повышения производительности и новых возможностей. [Дополнительные сведения о пакете SDK для Cosmos DB Java](https://aka.ms/cosmosdb/sql-api-sdk-dotnet)
+Помощник Azure определит Azure Cosmos DB учетные записи, использующие старые версии пакета SDK для Java, и рекомендует обновление до последней версии с Maven для последних исправлений, повышения производительности и новых возможностей. [Дополнительные сведения о пакете SDK для Cosmos DB Java](https://aka.ms/cosmosdb/sql-api-sdk-async-java)
 
 ## <a name="upgrade-your-azure-cosmos-db-spark-connector-to-the-latest-version-from-maven"></a>Обновите соединитель Spark для Azure Cosmos DB до последней версии с сайта Maven
 

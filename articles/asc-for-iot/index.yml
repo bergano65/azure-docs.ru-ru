@@ -2,7 +2,7 @@
 title: Документация по Центру безопасности Azure для Интернета вещей
 summary: Центр безопасности Azure для Интернета вещей — это облачная служба безопасности на основе Azure, которая обеспечивает комплексную защиту от угроз для устройств Интернета вещей.
 metadata:
-  title: Документация
+  title: Документация по Центру безопасности Azure для Интернета вещей
   description: Узнайте, как Центр безопасности Azure для Интернета вещей (облачная служба безопасности на основе Azure) обеспечивает комплексную защиту от угроз для устройств Интернета вещей.
   services: service
   ms.service: asc-for-iot
@@ -11,12 +11,12 @@ metadata:
   author: mlottner
   ms.author: mlottner
   ms.date: 09/23/2019
-  ms.openlocfilehash: f5b399ad604918f7644b90e7b5f852bb27c46be0
-  ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+  ms.openlocfilehash: 5a9f5c9d919c6c30c6318749ad2a62d40865e573
+  ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/14/2020
-  ms.locfileid: "81310970"
+  ms.lasthandoff: 05/07/2020
+  ms.locfileid: "82890905"
 landingContent:
 - title: Сведения о Центре безопасности Azure для Интернета вещей
   linkLists:

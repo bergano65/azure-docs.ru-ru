@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 10/28/2019
 ms.author: curtand
-ms.openlocfilehash: 94187cc7c0c3500a86d47a5f244457ee020581a3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a97b79f7927c56a737723060cd9cb3218b12bf55
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77062444"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82625499"
 ---
 # <a name="view-how-your-organization-uses-your-privacy-related-data"></a>Просмотр сведений о том, как организация использует ваши данные о конфиденциальности
 
@@ -24,7 +24,7 @@ ms.locfileid: "77062444"
 
 ## <a name="view-your-privacy-related-info"></a>Просмотр сведений, связанных с конфиденциальностью
 
-1. Войдите в рабочую или учебную учетную запись, а затем перейдите на страницу https://myprofile.microsoft.com/.
+1. Войдите в рабочую или учебную учетную запись, а затем перейдите на страницу https://myaccount.microsoft.com/.
 
 2. Выберите **Конфиденциальность** на левой панели навигации или выберите ссылку **Просмотр конфиденциальности** в блоке **Конфиденциальность**.
 
@@ -36,7 +36,7 @@ ms.locfileid: "77062444"
 
     - **Условия использования**. Условия использования в вашей организации.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После просмотра того, как ваша организация использует ваши данные, вы можете:
 

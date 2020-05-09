@@ -11,6 +11,9 @@
   items:
     - name: Репликация виртуальной машины Azure в другой регион
       href: azure-to-azure-quickstart.md
+    - name: "Создание хранилища\_— шаблон Resource Manager"
+      displayName: Resource Manager
+      href: quickstart-create-vault-template.md
 - name: Учебники
   items:
     - name: Аварийное восстановление виртуальной машины Azure в Azure

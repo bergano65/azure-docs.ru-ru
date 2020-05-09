@@ -7,16 +7,16 @@ ms.reviewer: gamal
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/01/2019
-ms.openlocfilehash: 71df574602518fdc252d9d86859ed772a17be443
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3b8632eaf7662d705235adaad7cd03d2e7e4904b
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81408977"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82626877"
 ---
 # <a name="what-are-wrangling-data-flows"></a>Что такое потоки данных структурирование?
 
-[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Организациям необходимо выполнять подготовку данных и структурирование для точного анализа сложных данных, которые постоянно растут каждый день. Подготовка данных необходима, чтобы организации могли использовать данные в различных бизнес-процессах и сократить время на ценность.
 
@@ -45,7 +45,7 @@ ms.locfileid: "81408977"
 | Соединитель | Формат данных | Authentication type (Тип проверки подлинности) |
 | -- | -- | --|
 | [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md) | CSV, Parquet | Ключ учетной записи |
-| [Хранилище Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md) | CSV | Субъект-служба |
+| [Хранилище Azure Data Lake Gen1](connector-azure-data-lake-store.md) | CSV | Субъект-служба |
 | [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | CSV, Parquet | Ключ учетной записи, субъект-служба |
 | [База данных SQL Azure](connector-azure-sql-database.md) | - | Проверка подлинности SQL |
 | [Azure Synapse Analytics](connector-azure-sql-data-warehouse.md) | - | Проверка подлинности SQL |
@@ -64,6 +64,6 @@ ms.locfileid: "81408977"
 
 В настоящее время поток данных структурирование поддерживает запись только в один приемник.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [создать поток данных структурирование](wrangling-data-flow-tutorial.md).

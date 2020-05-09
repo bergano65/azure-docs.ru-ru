@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 04/24/2020
-ms.openlocfilehash: 45045cb1360658d394e5469d022ac03033d11aff
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: dd8706c1e95e6b1e4ca4a38d4a336f6186464696
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82165796"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82872203"
 ---
 # <a name="onboard-update-management-solution-using-azure-resource-manager-template"></a>Подключение Управление обновленияминого решения с помощью шаблона Azure Resource Manager
 
@@ -26,6 +26,9 @@ ms.locfileid: "82165796"
 Шаблон не автоматизирует подключение одной или нескольких виртуальных машин Azure или других.
 
 Если у вас уже есть рабочая область Log Analytics и учетная запись службы автоматизации, развернутая в поддерживаемом регионе в вашей подписке, они не будут связаны. В рабочей области еще не развернуто решение Управление обновлениями. Использование этого шаблона позволяет успешно создать ссылку и развернуть решение Управление обновлениями. 
+
+>[!NOTE]
+>Пользователь **нксаутоматион** , встроенный в состав Управление обновлениями в Linux, выполняет только подписанные модули Runbook.
 
 >[!NOTE]
 >Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Чтобы обновить модули в учетной записи службы автоматизации, см. руководство по [обновлению модулей Azure PowerShell в службе автоматизации Azure](automation-update-azure-modules.md).
