@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: troubleshooting
 ms.date: 04/14/2020
-ms.openlocfilehash: 3af7515995a305f41fb9b9f85deb9107de51c622
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 14b449590f6ffc5e735faa26baadfcc4e526450c
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81453495"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996412"
 ---
 # <a name="troubleshoot-cluster-creation-failures-with-azure-hdinsight"></a>Устранение сбоев при создании кластера с помощью Azure HDInsight
 
@@ -68,7 +68,7 @@ ms.locfileid: "81453495"
 
 ## <a name="unsupported-component-versions"></a>Неподдерживаемые версии компонентов
 
-Убедитесь, что вы используете [поддерживаемую версию Azure HDInsight](../hdinsight-component-versioning.md) и все [компоненты Apache Hadoop](../hdinsight-component-versioning.md#apache-hadoop-components-available-with-different-hdinsight-versions) в решении.  
+Убедитесь, что вы используете [поддерживаемую версию Azure HDInsight](../hdinsight-component-versioning.md) и все [компоненты Apache Hadoop](../hdinsight-component-versioning.md#apache-components-available-with-different-hdinsight-versions) в решении.  
 
 ## <a name="storage-account-name-restrictions"></a>Ограничения имен учетных записей хранения
 
@@ -80,9 +80,9 @@ ms.locfileid: "81453495"
 
 Проверьте [состояние Azure](https://status.azure.com) на наличие потенциальных сбоев или проблем со службой.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Расширение Azure HDInsight с помощью виртуальной сети Azure](../hdinsight-plan-virtual-network-deployment.md)
-* [Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md)  
+* [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md)  
 * [Использование службы хранилища Azure с кластерами Azure HDInsight](../hdinsight-hadoop-use-blob-storage.md)
 * [Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий](../hdinsight-hadoop-provision-linux-clusters.md)

@@ -9,16 +9,16 @@ ms.topic: article
 ms.service: active-directory
 ms.subservice: user-help
 ms.workload: identity
-ms.date: 05/01/2020
+ms.date: 05/08/2020
 ms.author: curtand
 ms.reviewer: sahenry
 ms.custom: oldportal;it-pro;
-ms.openlocfilehash: b88f4aad650d77fea12677e61d3f249a77367e6f
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
+ms.openlocfilehash: 791f2e9bf825bb0a1d1ce555c9fbd879106213df
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82690692"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82995823"
 ---
 # <a name="manage-your-users-with-my-staff-preview"></a>Управляйте своими пользователями с помощью моих сотрудников (Предварительная версия)
 
@@ -32,7 +32,7 @@ ms.locfileid: "82690692"
 
 Мои сотрудники основаны на административных единицах (Au), которые являются контейнерами ресурсов, которые можно использовать для ограничения области административного управления назначением ролей. В моем отделе используется для определения подмножества пользователей организации, таких как магазин или отдел. Например, руководитель группы может быть назначен роли, область которой составляет один или несколько единиц управления. В приведенном ниже примере пользователю была предоставлена административная роль проверки подлинности, а три уровня управления — область действия роли. Дополнительные сведения об административных единицах см. [в статье Управление административными единицами в Azure Active Directory](directory-administrative-units.md).
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для работы с этой статьей необходимы следующие ресурсы и привилегии:
 

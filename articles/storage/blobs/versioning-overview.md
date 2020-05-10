@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 05/05/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 77af321b74a47306a7202c1fddf6e81edc0ee02a
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
-ms.translationtype: HT
+ms.openlocfilehash: fa28e07c28c36c03ab9e85d8436e3f1a2b36ad1c
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82926074"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993958"
 ---
 # <a name="blob-versioning-preview"></a>Управление версиями BLOB-объектов (Предварительная версия)
 
@@ -195,7 +195,6 @@ ms.locfileid: "82926074"
 
 Управление версиями BLOB-объектов доступно в предварительной версии в следующих регионах:
 
-- Южная Франция
 - Центральная Франция
 - Восточная Канада
 - Центральная Канада
@@ -313,7 +312,7 @@ az feature show --namespace Microsoft.Storage \
 
 ![Ресурсы хранилища Azure](./media/versioning-overview/versions-billing-scenario-4.png)
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 - [Включение управления версиями BLOB-объектов](versioning-enable.md)
 - [Создание моментального снимка большого двоичного объекта](/rest/api/storageservices/creating-a-snapshot-of-a-blob)

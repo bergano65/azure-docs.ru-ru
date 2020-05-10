@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 05/05/2020
 ms.author: cherylmc
-ms.openlocfilehash: 63226089a0a87660f0796cdfef2b729070ca01e3
-ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
+ms.openlocfilehash: d7af6bd0f36f5a1fc11acbd7906088d7d5c17d32
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82837861"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996797"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -92,13 +92,13 @@ ms.locfileid: "82837861"
 | **[CenturyLink Cloud Connect](https://www.centurylink.com/cloudconnect)** |Поддерживается |Поддерживается |Amsterdam2, Чикаго, Франкфурт, Гонконг, Лас деньги, London2, Нью Йорк, Париж, Сан Сан Антонио, Silicon впадина, Токио, Торонто, Вашингтон (округ Колумбия), штат Вашингтон |
 | **[Chief Telecom](https://www.chief.com.tw/dispPageBox/ct.aspx?ddsPageID=ENCLOUDSERVICE&dbid=4852937342)** |Поддерживается |Поддерживается |Гонконг, Тайбэй |
 | **Китайский (Международная)** |Поддерживается |Поддерживается | Сингапур |
-| **China Telecom Global** |Поддерживается |Поддерживается |Гонконг, САР |
+| **China Telecom Global** |Поддерживается |Поддерживается |Гонконг, Гонконг, Kong2 |
 | **Уником (Китайская, Глобальная)** |Поддерживается |Поддерживается | Сингапур 2 |
 | **[Телекоммуникации чунгхва](https://www.cht.com.tw/en/home/cht/about-cht/products-and-services/International/Cloud-Service)** |Поддерживается |Поддерживается |Тайбэй |
 | **[Cologix](https://www.cologix.com/hyperscale/microsoft-azure/)** |Поддерживается |Поддерживается |Чикаго, Далласе, Монреаль, Торонто, Vancouver, Вашингтон (округ Колумбия) |
 | **[Colt](https://www.colt.net/uk/en/news/colt-announces-dedicated-cloud-access-for-microsoft-azure-services-en.htm)** |Поддерживается |Поддерживается |Амстердам, Amsterdam2, Чикаго, Дублин, Франкфурт, Лондон, London2, Ньюпорт, Нью Йорк, Осака, Париж, впадина, Silicon Valley2, Сингапур 2, Токио, Вашингтон (округ Колумбия) |
 | **[Comcast](https://business.comcast.com/landingpage/microsoft-azure)** |Поддерживается |Поддерживается |Чикаго, Кремниевая долина, Вашингтон, округ Колумбия |
-| **[CoreSite](https://www.coresite.com/solutions/cloud-services/public-cloud-providers/microsoft-azure-expressroute)** |Поддерживается |Поддерживается |Чикаго, Денвер, Лос-Анджелес, Нью-Йорк, Санкт-Петербург, Silicon Valley2, Вашингтон (округ Колумбия), Вашингтон |
+| **[коресите](https://www.coresite.com/solutions/cloud-services/public-cloud-providers/microsoft-azure-expressroute)** |Поддерживается |Поддерживается |Чикаго, Денвер, Лос-Анджелес, Нью-Йорк, Санкт-Петербург, Silicon Valley2, Вашингтон (округ Колумбия), Вашингтон |
 | **[DE-ЦИКС](https://www.de-cix.net/en/de-cix-service-world/cloud-exchange/find-a-cloud-service/detail/microsoft-azure)** | Поддерживается |Поддерживается |Amsterdam2, Франкфурт, Марселе|
 | **[деволи](https://devoli.com/expressroute)** | Поддерживается |Поддерживается | Г., Мельбурн, Сидней |
 | **Du датамена** |Поддерживается |Поддерживается | Dubai2 |
@@ -212,7 +212,7 @@ ms.locfileid: "82837861"
 
 * Узнайте у своего поставщика услуг подключения, подключен ли он к какому-либо Exchange, указанному в таблице выше. Дополнительные сведения об услугах, предлагаемых поставщиками Exchange, см. по ссылкам ниже. Несколько поставщиков услуг подключения уже подключены к серверам Ethernet Exchange.
   * [Cologix](https://www.cologix.com/)
-  * [CoreSite](https://www.coresite.com/)
+  * [коресите](https://www.coresite.com/)
   * [DE-ЦИКС](https://www.de-cix.net/en/de-cix-service-world/cloud-exchange)
   * [Equnix Cloud Exchange](https://www.equinix.com/services/interconnection-connectivity/cloud-exchange/)
   * [Interxion](https://www.interxion.com/products/interconnection/cloud-connect/)

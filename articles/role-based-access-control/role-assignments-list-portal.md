@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 03/18/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: ed7f2b57df97a99a73ad191e45fb900a04f8021f
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: 04a13b2b3b8cd6e696f0ac6601b5f23b9d6cb24d
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82983029"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996640"
 ---
 # <a name="list-azure-role-assignments-using-the-azure-portal"></a>Вывод списка назначений ролей Azure с помощью портал Azure
 
@@ -130,7 +130,7 @@ ms.locfileid: "82983029"
 
 ## <a name="list-number-of-role-assignments"></a>Перечисление количества назначений ролей
 
-В каждой подписке может быть до **2000** назначений ролей. Чтобы помочь вам в отслеживании этого предела, вкладка **назначения ролей** содержит диаграмму, в которой указано количество назначений ролей для текущей подписки.
+В каждой подписке может быть до **2000** назначений ролей. Это ограничение включает назначения ролей в областях подписки, группы ресурсов и ресурсов. Чтобы помочь вам в отслеживании этого предела, вкладка **назначения ролей** содержит диаграмму, в которой указано количество назначений ролей для текущей подписки.
 
 ![Управление доступом — диаграмма назначений ролей](./media/role-assignments-list-portal/access-control-role-assignments-chart.png)
 

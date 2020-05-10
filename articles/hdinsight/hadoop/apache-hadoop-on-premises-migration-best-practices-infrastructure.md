@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/06/2019
-ms.openlocfilehash: 61d7d2a52f58162d288b1155f9724c7912e451f3
-ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
+ms.openlocfilehash: 8407aafdb9b9dadcbc8e220ac42e5d7856116959
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82780102"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996784"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---infrastructure-best-practices"></a>Миграция локальных кластеров Apache Hadoop в HDInsight Azure — рекомендации по использованию инфраструктуры
 
@@ -76,7 +76,7 @@ ms.locfileid: "82780102"
 |Palantir|IaaS 
 |Sailpoint|IaaS 
 
-Дополнительные сведения см. в статье [Компоненты Hadoop, доступные в разных версиях HDInsight](../hdinsight-component-versioning.md#apache-hadoop-components-available-with-different-hdinsight-versions)
+Дополнительные сведения см. в статье [Компоненты Hadoop, доступные в разных версиях HDInsight](../hdinsight-component-versioning.md#apache-components-available-with-different-hdinsight-versions)
 
 ## <a name="customize-hdinsight-clusters-using-script-actions"></a>Настройка кластеров HDInsight с помощью действий сценариев
 
@@ -152,7 +152,7 @@ New—AzHDInsightCluster `
 
 ## <a name="use-scale-up-and-scale-down-feature-of-clusters"></a>Использование функции увеличения и уменьшения масштаба кластеров
 
-HDInsight обеспечивает гибкость, предоставляя возможность увеличивать и уменьшать масштаб определенного количества рабочих узлов в кластерах. Эта функция позволяет сжимать кластер в нерабочие часы или в выходные дни, а также разворачивать его при пиковых бизнес-требованиях. Дополнительные сведения см. в разделе:
+HDInsight обеспечивает гибкость, предоставляя возможность увеличивать и уменьшать масштаб определенного количества рабочих узлов в кластерах. Эта функция позволяет сжимать кластер в нерабочие часы или в выходные дни, а также разворачивать его при пиковых бизнес-требованиях. Дополнительные сведения можно найти в разделе 
 
 * [Масштабирование кластеров HDInsight](../hdinsight-scaling-best-practices.md).
 * [Масштабирование кластеров](../hdinsight-administer-use-portal-linux.md#scale-clusters).
@@ -196,6 +196,6 @@ HDInsight можно подключить к локальной сети с по
 
 Дополнительные сведения см. в статье [Подключение HDInsight к локальной сети](../connect-on-premises-network.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь со следующей статьей в этой серии: рекомендации по [хранению в локальной среде для Azure HDInsight Hadoop миграции](apache-hadoop-on-premises-migration-best-practices-storage.md).

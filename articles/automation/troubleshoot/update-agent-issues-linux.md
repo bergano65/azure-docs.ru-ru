@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: automation
 ms.subservice: update-management
 manager: carmonm
-ms.openlocfilehash: 1f9c8d449fb060d5b1a5f810f9e387057eac3252
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.openlocfilehash: a4082ddfd8c092a6f9223a0894f21bc734b6efb6
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82927978"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82997013"
 ---
 # <a name="troubleshoot-linux-update-agent-issues"></a>Устранение проблем с агентом обновления Linux
 
@@ -82,14 +82,14 @@ sudo /opt/microsoft/omsagent/bin/service_control restart
 
 ### <a name="hybrid-runbook-worker"></a>Гибридная рабочая роль Runbook
 
-Эта проверка проверяет, имеет ли агент Log Analytics для Linux пакет гибридной рабочей роли Runbook. Этот пакет необходим для работы службы "Управление обновлениями".
+Эта проверка проверяет, имеет ли агент Log Analytics для Linux пакет гибридной рабочей роли Runbook. Этот пакет необходим для работы службы "Управление обновлениями". Дополнительные сведения см. [в статье агент log Analytics для Linux не работает](hybrid-runbook-worker.md#oms-agent-not-running).
+
+Управление обновлениями скачивает пакеты гибридных рабочих ролей Runbook из конечной точки операций. Таким образом, если Гибридная Рабочая роль Runbook не запущена и [Конечная точка операций](#operations-endpoint) завершается сбоем, обновление может завершиться ошибкой.
 
 ### <a name="hybrid-runbook-worker-status"></a>Состояние гибридной рабочей роли Runbook
 
-Эта проверка гарантирует, что гибридная рабочая роль Runbook выполняется на компьютере. Следующие процессы должны присутствовать, если гибридная рабочая роль Runbook работает правильно. Дополнительные сведения см. в разделе [Устранение неполадок агента log Analytics для Linux](hybrid-runbook-worker.md#oms-agent-not-running).
+Эта проверка гарантирует, что гибридная рабочая роль Runbook выполняется на компьютере. Процессы в приведенном ниже примере должны присутствовать, если Гибридная Рабочая роль Runbook работает правильно.
 
-> [!NOTE]
-> Если Гибридная Рабочая роль Runbook не запущена, а конечная точка операций завершилась сбоем, обновление может завершиться ошибкой. Управление обновлениями скачивает пакеты гибридных рабочих ролей из конечной точки операций.
 
 ```bash
 nxautom+   8567      1  0 14:45 ?        00:00:00 python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/worker/main.py /var/opt/microsoft/omsagent/state/automationworker/oms.conf rworkspace:<workspaceId> <Linux hybrid worker version>
@@ -107,13 +107,13 @@ nxautom+   8595      1  0 14:45 ?        00:00:02 python /opt/microsoft/omsconfi
 
 Эта проверка определяет, может ли Гибридная Рабочая роль Runbook правильно взаимодействовать со службой автоматизации Azure в рабочей области Log Analytics.
 
-В конфигурации прокси-сервера и брандмауэра необходимо разрешить агенту гибридной рабочей роли Runbook взаимодействовать с конечной точкой регистрации. Список адресов и портов для открытия см. в статье [сетевое планирование для гибридных рабочих ролей](../automation-hybrid-runbook-worker.md#network-planning).
+В конфигурации прокси-сервера и брандмауэра необходимо разрешить агенту гибридной рабочей роли Runbook взаимодействовать с конечной точкой регистрации. Список адресов и портов для открытия см. в разделе [сетевое планирование](../automation-hybrid-runbook-worker.md#network-planning).
 
 ### <a name="operations-endpoint"></a>Конечная точка операций
 
-Эта проверка определяет, может ли агент правильно взаимодействовать со службой Job Runtime Data.
+Эта проверка определяет, может ли агент Log Analytics правильно взаимодействовать со службой данных среды выполнения заданий.
 
-В конфигурации прокси-сервера и брандмауэра необходимо разрешить агенту гибридной рабочей роли Runbook взаимодействовать со службой Job Runtime Data. Список адресов и портов для открытия см. в статье [сетевое планирование для гибридных рабочих ролей](../automation-hybrid-runbook-worker.md#network-planning).
+В конфигурации прокси-сервера и брандмауэра необходимо разрешить агенту гибридной рабочей роли Runbook взаимодействовать со службой Job Runtime Data. Список адресов и портов для открытия см. в разделе [сетевое планирование](../automation-hybrid-runbook-worker.md#network-planning).
 
 ### <a name="log-analytics-endpoint-1"></a>Конечная точка 1 Log Analytics
 

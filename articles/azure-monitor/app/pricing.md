@@ -4,14 +4,14 @@ description: Управление объемом данных телеметри
 ms.topic: conceptual
 author: DaleKoetke
 ms.author: dalek
-ms.date: 11/27/2019
+ms.date: 5/7/2020
 ms.reviewer: mbullwin
-ms.openlocfilehash: 0225484de06ae4e595f1dcbcdd520f4e0e4d53f5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6c597ea559e7337c9c84914d168f1055e0631886
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81405387"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82995534"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Управление использованием и затратами для Application Insights
 
@@ -52,8 +52,8 @@ Application Insights предназначен для получения всех
 
 ![Выбор цен](./media/pricing/pricing-001.png)
 
-А) Просмотрите сведения об объеме данных на месяц. К ним относятся все полученные и сохраненные данные (после любой [выборки](../../azure-monitor/app/sampling.md) из серверных и клиентских приложений, а также с тестов доступности).  
-Б) Отдельно плата взимается за [многошаговые веб-тесты](../../azure-monitor/app/availability-multistep.md). (К ним не относятся простые тесты доступности, плата за которые взимается при выставлении счетов за используемый объем данных.)  
+A. Просмотрите сведения об объеме данных на месяц. К ним относятся все полученные и сохраненные данные (после любой [выборки](../../azure-monitor/app/sampling.md) из серверных и клиентских приложений, а также с тестов доступности).  
+Б. Отдельно плата взимается за [многошаговые веб-тесты](../../azure-monitor/app/availability-multistep.md). (К ним не относятся простые тесты доступности, плата за которые взимается при выставлении счетов за используемый объем данных.)  
 В. Просмотр тенденций объемов данных за последний месяц.  
 Г. [Выборка](../../azure-monitor/app/sampling.md) при приеме данных.
 Д. Настройка ежедневного ограничения объема данных.  
@@ -62,7 +62,7 @@ Application Insights предназначен для получения всех
 
 Для получения более детальных сведений об использовании Application Insights откройте страницу **Метрики**, добавьте метрику "Объем точки данных", а затем выберите *Применить разделение*, чтобы разделить данные по типу элемента телеметрии.
 
-Оплата за использование Application Insights добавляется в счет Azure. Дополнительную информацию о счете за подписку на Azure можно просмотреть в разделе **Выставление счетов** портала Azure или на [портале выставления счетов Azure](https://account.windowsazure.com/Subscriptions).
+Оплата за использование Application Insights добавляется в счет Azure. Сведения о счете за использование Azure можно просмотреть в разделе " **Управление затратами и выставление счетов** " портал Azure или на [портале выставления счетов Azure](https://account.windowsazure.com/Subscriptions).  Дополнительные сведения об использовании этой функции для Application Insights [см. ниже](https://docs.microsoft.com/azure/azure-monitor/app/pricing#viewing-application-insights-usage-on-your-azure-bill) . 
 
 ![В меню слева выберите "Выставление счетов".](./media/pricing/02-billing.png)
 
@@ -129,7 +129,7 @@ dependencies
 
 ## <a name="viewing-application-insights-usage-on-your-azure-bill"></a>Просмотр Application Insights использования в счете Azure
 
-Azure предоставляет большое количество полезных функций в центре [управления затратами Azure и центра выставления счетов](https://docs.microsoft.com/azure/cost-management/quick-acm-cost-analysis?toc=/azure/billing/TOC.json) . Например, функция "анализ затрат" позволяет просматривать расходы на ресурсы Azure. Добавление фильтра по типу ресурсов (в Microsoft. Insights/Components для Application Insights) позволит вам относить расходы.
+Azure предоставляет большое количество полезных функций в центре [управления затратами Azure и центра выставления счетов](https://docs.microsoft.com/azure/cost-management/quick-acm-cost-analysis?toc=/azure/billing/TOC.json) . Например, функция "анализ затрат" позволяет просматривать расходы на ресурсы Azure. Добавление фильтра по типу ресурсов (в Microsoft. Insights/Components для Application Insights) позволит вам относить расходы. Затем для "Group By" выберите "Категория счетчиков" или "Измеритель".  Для Application Insightsных ресурсов по текущим тарифным тарифам в большинстве случаев используется Log Analytics для категории счетчиков, так как для всех Azure Monitor компонентов существует одна серверная часть журналов. 
 
 Чтобы получить более полное представление об использовании, [Скачайте сведения об использовании из портал Azure](https://docs.microsoft.com/azure/billing/billing-download-azure-invoice-daily-usage-date#download-usage-in-azure-portal).
 В скачанной электронной таблице вы можете просмотреть сведения об использовании каждого ресурса Azure в день. В этой таблице Excel использование ресурсов Application Insights можно найти с помощью первой фильтрации в столбце "Категория счетчиков", чтобы отобразить "Application Insights" и "Log Analytics", а затем добавить фильтр для столбца "идентификатор экземпляра", который содержит Microsoft. Insights/Components.  Большая часть Application Insights используется на метрах с категорией счетчика Log Analytics, так как для всех Azure Monitor компонентов существует одна серверная часть журналов.  С категорией счетчиков Application Insights могут сообщаться только Application Insights ресурсы на устаревших ценовых категориях и многошаговых веб-тестах.  Использование отображается в столбце "потребленное количество", а единица для каждой записи отображается в столбце "единица измерения".  Дополнительные сведения помогут вам [разобраться с Microsoft Azureным счетом](https://docs.microsoft.com/azure/billing/billing-understand-your-bill).
@@ -212,7 +212,7 @@ Application Insights ежедневное ограничение создает 
 
 ## <a name="change-the-data-retention-period"></a>Изменение срока хранения данных
 
-Срок хранения по умолчанию для ресурсов Application Insights составляет 90 дней. Для каждого Application Insightsного ресурса можно выбрать разные периоды хранения. Полный набор доступных периодов хранения составляет 30, 60, 90, 120, 180, 270, 365, 550 или 730 дней.
+Срок хранения по умолчанию для ресурсов Application Insights составляет 90 дней. Для каждого Application Insightsного ресурса можно выбрать разные периоды хранения. Полный набор доступных периодов хранения составляет 30, 60, 90, 120, 180, 270, 365, 550 или 730 дней. Дополнительные [сведения](https://azure.microsoft.com/pricing/details/monitor/) о ценах на более длительное хранение данных. 
 
 Чтобы изменить период удержания, в ресурсе Application Insights перейдите на страницу **использование и предполагаемые затраты** и выберите параметр **хранения данных** :
 
@@ -290,7 +290,7 @@ Application Insights ежедневное ограничение создает 
 
 Вы можете написать сценарий для настройки ценовой категории с помощью управления ресурсами Azure. [Подробнее](powershell.md#price).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Выборка](../../azure-monitor/app/sampling.md)
 

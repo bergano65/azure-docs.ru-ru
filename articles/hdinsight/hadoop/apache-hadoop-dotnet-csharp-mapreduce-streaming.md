@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: c8c4e35fb14d834721a29037c9ac12d8160507d9
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 28817489af535ee45a6cc06cc5fe9d4fde9da8eb
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82209100"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996838"
 ---
 # <a name="use-c-with-mapreduce-streaming-on-apache-hadoop-in-hdinsight"></a>Использование C# для потоковой передачи MapReduce в Apache Hadoop в HDInsight
 
@@ -23,7 +23,7 @@ Apache Hadoop потоковая передача позволяет выпол�
 
 ## <a name="net-on-hdinsight"></a>.NET в HDInsight
 
-Кластеры HDInsight используют [Monohttps://mono-project.com) (](https://mono-project.com) для запуска приложений .NET). Mono версии 4.2.1 входит в состав HDInsight версии 3.6. Дополнительные сведения о версии Mono, включенной в HDInsight, см. в разделе [Apache Hadoop компоненты, доступные в разных версиях hdinsight](../hdinsight-component-versioning.md#apache-hadoop-components-available-with-different-hdinsight-versions).
+Кластеры HDInsight используют [Monohttps://mono-project.com) (](https://mono-project.com) для запуска приложений .NET). Mono версии 4.2.1 входит в состав HDInsight версии 3.6. Дополнительные сведения о версии Mono, включенной в HDInsight, см. в разделе [Apache Hadoop компоненты, доступные в разных версиях hdinsight](../hdinsight-component-versioning.md#apache-components-available-with-different-hdinsight-versions).
 
 Дополнительные сведения о совместимости Mono с различными версиями платформы .NET Framework см. в разделе [Compatibility](https://www.mono-project.com/docs/about-mono/compatibility/) (Совместимость).
 
@@ -39,7 +39,7 @@ Apache Hadoop потоковая передача позволяет выпол�
 
 Дополнительные сведения см. в разделе [Потоковая передача Hadoop](https://hadoop.apache.org/docs/r2.7.1/hadoop-streaming/HadoopStreaming.html).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * приведенному.
 
@@ -267,7 +267,7 @@ yourselves      3
 youth   17
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Используйте MapReduce в Apache Hadoop в HDInsight](hdinsight-use-mapreduce.md).
 * [Используйте определяемую пользователем функцию C# с Apache Hive и Apache Pig](apache-hadoop-hive-pig-udf-dotnet-csharp.md).
