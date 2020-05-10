@@ -8,12 +8,12 @@ ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: f2fd8f4b7d03be8822c3ec12e2be589054942ce3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 13c85dff40e266287d893d9e45b32a66a33f027e
+ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74270600"
+ms.lasthandoff: 05/10/2020
+ms.locfileid: "83006018"
 ---
 # <a name="anchor-relationships-and-way-finding-in-azure-spatial-anchors"></a>Связи привязки и способ поиска в пространственных привязках Azure
 
@@ -73,7 +73,7 @@ ms.locfileid: "74270600"
 
 ### <a name="verify-anchor-connections"></a>Проверка подключений привязки
 
-Приложение может проверить соединение двух привязок, выполнив запрос для ближайших привязок. Если результат запроса содержит целевую привязку, подключение привязки проверяется. Если привязки не подключены, приложение может повторить попытку подключения.
+Приложение может проверить, что две привязки подключены, выполнив запрос для ближайших привязок, что можно сделать, задав `NearAnchorCriteria` для. `CloudSpatialAnchorWatcher` Если результат запроса содержит целевую привязку, подключение привязки проверяется. Если привязки не подключены, приложение может повторить попытку подключения.
 
 Ниже приведены некоторые причины, по которым привязки могут не подключаться:
 

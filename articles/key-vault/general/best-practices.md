@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 03/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: cf8d461485cefd37b9508031f5cce7ae0a070ef5
-ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
+ms.openlocfilehash: 2a81d28998c531339a1b719e37e4b90004157edf
+ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82653198"
+ms.lasthandoff: 05/10/2020
+ms.locfileid: "83005847"
 ---
 # <a name="best-practices-to-use-key-vault"></a>Рекомендации по использованию Key Vault
 
@@ -35,7 +35,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 ## <a name="backup"></a>Резервное копирование
 
-Убедитесь, что вы регулярно создаете резервные копии [хранилища](https://blogs.technet.microsoft.com/kv/2018/07/20/announcing-backup-and-restore-of-keys-secrets-and-certificates/) на стороне обновления, удаления или создания объектов в хранилище.
+Убедитесь, что вы регулярно создаете резервные копии хранилища на стороне обновления, удаления или создания объектов в хранилище.
 
 ## <a name="turn-on-logging"></a>Включить ведение журнала
 

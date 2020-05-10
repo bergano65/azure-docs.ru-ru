@@ -8,18 +8,21 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: f0537af684632a08a39e3e681900d62238365073
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fc1f1b5f7015efc604d461a5e292184398cba44f
+ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74280967"
+ms.lasthandoff: 05/10/2020
+ms.locfileid: "83005489"
 ---
 # <a name="how-to-map-ai-enriched-fields-to-a-searchable-index"></a>Как сопоставлять ИСКУССТВЕНные поля с индексом с возможностью поиска
 
 В этой статье вы узнаете, как сопоставлять обогащенные поля входных данных с полями выходных данных в индексе, поддерживающем поиск. После [определения набора навыков](cognitive-search-defining-skillset.md) вы должны сопоставить поля выходных данных любого навыка, который напрямую вносит значения в заданное поле в ваш индекс поиска. 
 
 Сопоставления полей вывода необходимы для перемещения содержимого из обогащенных документов в индекс.  Обогащенный документ на самом деле представляет собой дерево информации, и несмотря на то, что в индексе имеется поддержка сложных типов, иногда может потребоваться преобразовать данные из расширенного дерева в более простой тип (например, массив строк). Сопоставления полей вывода позволяют выполнять преобразования фигур данных, образуя данные.
+
+> [!NOTE]
+> Недавно мы включили функции сопоставления для сопоставления полей вывода. Дополнительные сведения о функциях сопоставления см. в разделе [функции сопоставления полей](https://docs.microsoft.com/azure/search/search-indexer-field-mappings#field-mapping-functions) .
 
 ## <a name="use-outputfieldmappings"></a>Использование outputFieldMappings
 Чтобы сопоставить поля, добавьте `outputFieldMappings` в определение индексатора, как показано ниже.
@@ -50,7 +53,10 @@ Content-Type: application/json
     "outputFieldMappings": [
         {
             "sourceFieldName": "/document/content/organizations/*/description",
-            "targetFieldName": "descriptions"
+            "targetFieldName": "descriptions",
+            "mappingFunction": {
+                "name": "base64Decode"
+            }
         },
         {
             "sourceFieldName": "/document/content/organizations",

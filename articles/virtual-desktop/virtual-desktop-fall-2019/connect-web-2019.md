@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 357687a80325554c7dbb28eae6e42d946bb012dc
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: c264006d51f8f0f9ee2a56e994a0dc52d24bd7a8
+ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82614867"
+ms.lasthandoff: 05/10/2020
+ms.locfileid: "83006038"
 ---
 # <a name="connect-with-the-web-client"></a>Подключение к веб-клиенту
 
@@ -40,6 +40,9 @@ ms.locfileid: "82614867"
 ## <a name="access-remote-resources-feed"></a>Доступ к веб-каналу удаленных ресурсов
 
 В браузере перейдите к [веб-клиенту виртуальных рабочих столов Windows](https://rdweb.wvd.microsoft.com/webclient) и выполните вход с помощью учетной записи пользователя.
+
+>[!NOTE]
+>Если вы используете выпуск Windows Virtual Desktop пружины 2020, используйте ссылку на веб-клиент в [этой статье](../connect-web.md) для подключения к ресурсам.
 
 >[!NOTE]
 >Если вы уже вошли с учетной записью Azure Active Directory, отличной от той, которую вы хотите использовать для виртуальных рабочих столов Windows, необходимо выйти из системы или использовать частное окно браузера.

@@ -7,19 +7,19 @@ ms.service: load-balancer
 ms.topic: article
 ms.date: 04/22/2020
 ms.author: errobin
-ms.openlocfilehash: 3648bb102d539156067cdc259c1cf9b6e73d6a49
-ms.sourcegitcommit: d815163a1359f0df6ebfbfe985566d4951e38135
+ms.openlocfilehash: 3be8ce241817b3b2fa03976eebe3147c1dc9c877
+ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82884492"
+ms.lasthandoff: 05/10/2020
+ms.locfileid: "83005159"
 ---
-# <a name="frequently-asked-questions"></a>Вопросы и ответы
+# <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
 ## <a name="what-types-of-load-balancer-exist"></a>Какие типы Load Balancer существуют?
-Внутренние подсистемы балансировки нагрузки, которые балансируют трафик в виртуальной сети и внешних подсистемах балансировки нагрузки, которые сбалансировать трафик между конечной точкой, подключенной к Интернету, и из нее Дополнительные сведения см. в разделе [типы Load Balancer]https://docs.microsoft.com/azure/load-balancer/concepts-limitations#load-balancer-types)(. 
+Внутренние подсистемы балансировки нагрузки, которые балансируют трафик в виртуальной сети и внешних подсистемах балансировки нагрузки, которые сбалансировать трафик между конечной точкой, подключенной к Интернету, и из нее Дополнительные сведения см. в разделе [типы Load Balancer](components.md#frontend-ip-configurations). 
 
-Для обоих этих типов Azure предлагает базовый SKU и SKU уровня "Стандартный", которые имеют различные возможности для работы, производительности, безопасности и отслеживания работоспособности. Эти различия объясняются в [сравнении номеров SKU]https://docs.microsoft.com/azure/load-balancer/concepts-limitations#skus) (статья.
+Для обоих этих типов Azure предлагает базовый SKU и SKU уровня "Стандартный", которые имеют различные возможности для работы, производительности, безопасности и отслеживания работоспособности. Эти различия описаны в статье [Сравнение номеров SKU](skus.md) .
 
  ## <a name="how-can-i-upgrade-from-a-basic-to-a-standard-load-balancer"></a>Как выполнить обновление с базовой на Load Balancer (цен. категория "Стандартный")?
 Инструкции по обновлению SKU Load Balancer см. в статье [обновление с уровня "базовый" до "Стандартный](upgrade-basic-standard.md) " для автоматизированного сценария.

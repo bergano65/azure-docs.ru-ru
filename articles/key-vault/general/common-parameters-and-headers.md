@@ -10,17 +10,18 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: d0ada9c1e6b45b1be17b15b67f67fc64fc266203
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d1d93bcd84fd9460e658b221089a4b24d46b0429
+ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81430881"
+ms.lasthandoff: 05/10/2020
+ms.locfileid: "83005813"
 ---
 # <a name="common-parameters-and-headers"></a>Распространенные параметры и заголовки
 
 Следующие сведения относятся ко всем операциям, которые можно выполнять для ресурсов Key Vault.
 
+- Заголовок HTTP `Host` всегда должен присутствовать и должен указывать имя узла хранилища. Например, `Host: contoso.vault.azure.net`. Обратите внимание, что большинство клиентских технологий `Host` заполняют заголовок URI. Например, `GET https://contoso.vault.azure.net/secrets/mysecret{...}` задаст `Host` значение. `contoso.vault.azure.net` Это означает, что если вы обращаетесь к Key Vault с использованием `GET https://10.0.0.23/secrets/mysecret{...}`необработанного IP- `Host` адреса, например, автоматическое значение заголовка будет неправильным, и вам придется `Host` вручную убедиться, что заголовок содержит имя узла хранилища.
 - Замена `{api-version}` на api-version в универсальном коде ресурса (URI).
 - Замена `{subscription-id}` на идентификатор подписки в URI.
 - Замена `{resource-group-name}` на группу ресурсов. Дополнительные сведения см. в статье об использовании групп ресурсов для управления ресурсами Azure.
@@ -47,5 +48,5 @@ ms.locfileid: "81430881"
 
 
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
  [Azure Key Vault REST API reference](/rest/api/keyvault/) (Справочник по REST API для Azure Key Vault)

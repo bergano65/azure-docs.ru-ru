@@ -3,15 +3,15 @@ title: Создание веб-API & интерфейсов API RESTFUL для A
 description: Создание интерфейсов веб-API и REST API для вызова API, служб или систем для интеграции систем в Azure Logic Apps.
 services: logic-apps
 ms.suite: integration
-ms.reviewer: klam, jehollan, logicappspm
-ms.topic: article
+ms.reviewer: jonfan, logicappspm
+ms.topic: conceptual
 ms.date: 05/26/2017
-ms.openlocfilehash: bb6c99ea12e5b53631d42a04b36b7bfef2337e42
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d892dc75d4e745912ceaf444b56494a2e0ed2a19
+ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79270541"
+ms.lasthandoff: 05/10/2020
+ms.locfileid: "83005252"
 ---
 # <a name="create-custom-apis-you-can-call-from-azure-logic-apps"></a>Создание пользовательских API, которые можно вызывать из Azure Logic Apps
 
@@ -136,11 +136,13 @@ API-интерфейсы можно разместить в [службе при
 
 ![Модель действия веб-перехватчика](./media/logic-apps-create-api-app/custom-api-webhook-action-pattern.png)
 
-> [!NOTE]
-> В настоящее время конструктор приложений логики не поддерживает обнаружение конечных точек веб-перехватчика с помощью Swagger. Поэтому для модели необходимо добавить [действие **веб-перехватчика**](../connectors/connectors-native-webhook.md) и указать URL-адрес, заголовки и текст запроса. Также см. раздел [Действия и триггеры рабочего процесса](logic-apps-workflow-actions-triggers.md#apiconnection-webhook-action). Чтобы передать URL-адрес обратного вызова, можно при необходимости использовать функцию рабочего процесса `@listCallbackUrl()` в любом предыдущем поле.
+В настоящее время конструктор приложений логики не поддерживает обнаружение конечных точек веб-перехватчика с помощью Swagger. Поэтому для модели необходимо добавить [действие **веб-перехватчика**](../connectors/connectors-native-webhook.md) и указать URL-адрес, заголовки и текст запроса. Также см. раздел [Действия и триггеры рабочего процесса](logic-apps-workflow-actions-triggers.md#apiconnection-webhook-action). Пример модели веб-перехватчика см. в [образце триггера веб-перехватчика в GitHub](https://github.com/logicappsio/LogicAppTriggersExample/blob/master/LogicAppTriggers/Controllers/WebhookTriggerController.cs).
 
-> [!TIP]
-> Пример модели веб-перехватчика см. в [образце триггера веб-перехватчика в GitHub](https://github.com/logicappsio/LogicAppTriggersExample/blob/master/LogicAppTriggers/Controllers/WebhookTriggerController.cs).
+Вот еще несколько советов и примечаний.
+
+* Чтобы передать URL-адрес обратного вызова, можно при необходимости использовать функцию рабочего процесса `@listCallbackUrl()` в любом предыдущем поле.
+
+* Если вы владеете приложением логики и подписанной службой, вам не нужно вызывать `unsubscribe` конечную точку после вызова URL-адреса обратного вызова. В противном случае Logic Apps среде выполнения необходимо вызвать `unsubscribe` конечную точку, чтобы сообщить о том, что больше нет ожидаемых вызовов и разрешить очистку ресурса на стороне сервера.
 
 <a name="triggers"></a>
 
@@ -171,7 +173,7 @@ API-интерфейсы можно разместить в [службе при
 
 | Включает ли запрос `triggerState`? | Ответ API | 
 | -------------------------------- | -------------| 
-| Нет | Возврат данных состояния HTTP `202 ACCEPTED` и заголовка `location` (для `triggerState` установлено текущее время, а для `retry-after` — интервал в 15 секунд). | 
+| нет | Возврат данных состояния HTTP `202 ACCEPTED` и заголовка `location` (для `triggerState` установлено текущее время, а для `retry-after` — интервал в 15 секунд). | 
 | Да | Проверка службы на наличие файлов, добавленных после `DateTime` для `triggerState`. | 
 ||| 
 
@@ -198,13 +200,15 @@ API-интерфейсы можно разместить в [службе при
 
 ![Модель триггера веб-перехватчика](./media/logic-apps-create-api-app/custom-api-webhook-trigger-pattern.png)
 
-> [!NOTE]
-> В настоящее время конструктор приложений логики не поддерживает обнаружение конечных точек веб-перехватчика с помощью Swagger. Поэтому для модели необходимо добавить [**триггер** веб-перехватчика](../connectors/connectors-native-webhook.md) и указать URL-адрес, заголовки и текст для запроса. См. раздел [Триггер httpWebhook](logic-apps-workflow-actions-triggers.md#httpwebhook-trigger). Чтобы передать URL-адрес обратного вызова, можно при необходимости использовать функцию рабочего процесса `@listCallbackUrl()` в любом предыдущем поле.
->
-> Чтобы предотвратить повторную обработку данных, триггер должен удалять данные, которые уже считаны и переданы в приложение логики.
+В настоящее время конструктор приложений логики не поддерживает обнаружение конечных точек веб-перехватчика с помощью Swagger. Поэтому для модели необходимо добавить [**триггер** веб-перехватчика](../connectors/connectors-native-webhook.md) и указать URL-адрес, заголовки и текст для запроса. См. раздел [Триггер httpWebhook](logic-apps-workflow-actions-triggers.md#httpwebhook-trigger). Пример модели веб-перехватчика см. в [образце контроллера триггера веб-перехватчика в GitHub](https://github.com/logicappsio/LogicAppTriggersExample/blob/master/LogicAppTriggers/Controllers/WebhookTriggerController.cs).
 
-> [!TIP]
-> Пример модели веб-перехватчика см. в [образце контроллера триггера веб-перехватчика в GitHub](https://github.com/logicappsio/LogicAppTriggersExample/blob/master/LogicAppTriggers/Controllers/WebhookTriggerController.cs).
+Вот еще несколько советов и примечаний.
+
+* Чтобы передать URL-адрес обратного вызова, можно при необходимости использовать функцию рабочего процесса `@listCallbackUrl()` в любом предыдущем поле.
+
+* Чтобы предотвратить повторную обработку данных, триггер должен удалять данные, которые уже считаны и переданы в приложение логики.
+
+* Если вы владеете приложением логики и подписанной службой, вам не нужно вызывать `unsubscribe` конечную точку после вызова URL-адреса обратного вызова. В противном случае Logic Apps среде выполнения необходимо вызвать `unsubscribe` конечную точку, чтобы сообщить о том, что больше нет ожидаемых вызовов и разрешить очистку ресурса на стороне сервера.
 
 ## <a name="improve-security-for-calls-to-your-apis-from-logic-apps"></a>Повышение безопасности при вызовах API из приложений логики
 
@@ -228,7 +232,7 @@ API-интерфейсы можно разместить в [службе при
 
 * Чтобы улучшить Logic Apps, голосуйте за идеи или предлагайте собственные на [сайте обратной связи Logic Apps](https://aka.ms/logicapps-wish). 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обработка ошибок и исключений](../logic-apps/logic-apps-exception-handling.md)
 * [Вызовы, срабатывания триггеров и создание вложенных приложений логики с конечными точками HTTP](../logic-apps/logic-apps-http-endpoint.md)

@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 05/08/2020
 ms.author: juliako
-ms.openlocfilehash: 2093132abaa7aed06113b1856c85ac54fd7ae60d
-ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.openlocfilehash: 405533aad8247350d45cc53009abe6b58a511264
+ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82995718"
+ms.lasthandoff: 05/10/2020
+ms.locfileid: "83005926"
 ---
 # <a name="create-a-video-indexer-account-connected-to-azure"></a>Создание учетной записи Индексатора видео, подключенной к Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "82995718"
 
 В этой статье объясняется, как создать учетную запись Индексатора видео, связанную с подпиской Azure и учетной записью Служб мультимедиа Azure. В этой статье описаны действия по подключению к Azure с помощью автоматического потока (вариант по умолчанию). Также вы узнаете, как подключиться к Azure вручную (вариант для продвинутых пользователей).
 
-При переходе с *пробной* учетной записи индексатора на *оплату* видео можно скопировать все видео и настройку модели в новую учетную запись, как описано в разделе [Импорт содержимого из пробной учетной записи](#import-your-content-from-the-trial-account).
+Если вы переходите с *пробной* учетной записи индексатора *видео,* вы можете скопировать все видео и настройку модели в новую учетную запись, как описано в разделе [Импорт содержимого из пробной учетной записи](#import-your-content-from-the-trial-account) .
 
 ## <a name="prerequisites"></a>Предварительные требования
 

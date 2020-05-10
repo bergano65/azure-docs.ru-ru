@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: a5820856f7d4c51e41162f01a9687304cb223088
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: fa815d9fb653ee61d647023f7867549aa8d655aa
+ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82791924"
+ms.lasthandoff: 05/10/2020
+ms.locfileid: "83005803"
 ---
 # <a name="field-mappings-and-transformations-using-azure-cognitive-search-indexers"></a>Сопоставления полей и преобразования с помощью индексаторов Когнитивный поиск Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "82791924"
 
 1. Параметр `sourceFieldName`— представляет поле в источнике данных. Это — обязательное свойство.
 2. Необязательный параметр `targetFieldName`— представляет поле в индексе поиска. Если этот параметр опущен, используется такое же имя, как в источнике данных.
-3. Необязательный параметр `mappingFunction`— позволяет преобразовывать данные, используя одну из нескольких предопределенных функций. Полный список функций представлен [ниже](#mappingFunctions).
+3. Необязательный параметр `mappingFunction`— позволяет преобразовывать данные, используя одну из нескольких предопределенных функций. Это можно применить как к входным, так и к выходным сопоставлениям полей. Полный список функций представлен [ниже](#mappingFunctions).
 
 Сопоставления полей добавляются в `fieldMappings` массив определения индексатора.
 

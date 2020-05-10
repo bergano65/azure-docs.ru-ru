@@ -13,16 +13,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/28/2020
 ms.author: allensu
-ms.openlocfilehash: 0db91f3c661ebd3087a4389f4112a7214c992227
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.openlocfilehash: 3959dd115e340a3407c4f30a22ff4b6b51dab4e7
+ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82925955"
+ms.lasthandoff: 05/10/2020
+ms.locfileid: "83005775"
 ---
 # <a name="troubleshoot-azure-load-balancer"></a>Устранение неполадок Azure Load Balancer
 <p class="alert is-flex is-primary"><span class="has-padding-left-medium has-padding-top-extra-small"><a class="button is-primary" href="https://azurevirtualsupportagent.services.microsoft.com?content=fb23185b-6c56-d9f1-7ce1-758c978e08e1" target='_blank'>Начните</a></span><span class="has-padding-small">использовать наш Виртуальный агент для запуска <b>автоматизированной диагностики</b> , чтобы быстро решить проблему.</span> <span class="has-padding-small"> <sub>Privacy Statement</sub> Заявление <a href="https://privacy.microsoft.com/privacystatement" target='_blank'> <div align="right"></div></a></span></p>
-На этой странице содержатся сведения об устранении неполадок для основных и стандартных вопросов Azure Load Balancer. См. дополнительные сведения в статье [Обзор Azure Load Balancer уровня "Стандартный" (предварительная версия)](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-diagnostics).
+
+На этой странице содержатся сведения об устранении неполадок для основных и стандартных вопросов Azure Load Balancer. См. дополнительные сведения в статье [Обзор Azure Load Balancer уровня "Стандартный" (предварительная версия)](load-balancer-standard-diagnostics.md).
 
 Когда подключение к подсистеме балансировки нагрузки недоступно, наиболее распространенными симптомами являются следующие: 
 

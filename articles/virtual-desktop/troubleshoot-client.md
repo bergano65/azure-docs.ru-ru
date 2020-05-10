@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.date: 03/31/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: e42a4d738d375b4bceeb32f6159b4476843cf281
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: 76348a0aee48cc6d768e8233e376f266eca31917
+ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82612662"
+ms.lasthandoff: 05/10/2020
+ms.locfileid: "83006000"
 ---
 # <a name="troubleshoot-the-remote-desktop-client"></a>Устранение неполадок клиента удаленный рабочий стол
 
@@ -59,6 +59,12 @@ nslookup rdweb.wvd.microsoft.com
 2. Очистите файлы cookie браузера. См. раздел [Удаление файлов cookie в Internet Explorer](https://support.microsoft.com/help/278835/how-to-delete-cookie-files-in-internet-explorer).
 3. Очистите кэш браузера. См. раздел [Очистка кэша браузера для браузера](https://binged.it/2RKyfdU).
 4. Откройте браузер в частном режиме.
+
+## <a name="web-client-does-not-show-my-resources"></a>Веб-клиент не отображает мои ресурсы
+
+Сначала проверьте используемую учетную запись Azure Active Directory. Если вы уже вошли в систему с учетной записью Azure Active Directory, отличной от той, которую вы хотите использовать для виртуального рабочего стола запуск, то следует либо подписать наш или использовать частное окно браузера.
+
+Если вы используете выпуск 2019 для виртуальных рабочих столов Windows, используйте ссылку на веб-клиент в [этой статье](./virtual-desktop-fall-2019/connect-web-2019.md) для подключения к ресурсам.
 
 ## <a name="web-client-stops-responding-or-disconnects"></a>Веб-клиент перестает отвечать или отключается
 
