@@ -1,17 +1,20 @@
 ---
 title: Последовательное шифрование дисков Azure и масштабируемых наборов виртуальных машин Azure
 description: В этой статье приведены инструкции по включению шифрования дисков Microsoft Azure для виртуальных машин IaaS под управлением Linux.
-author: msmbaldwin
+author: ju-shim
+ms.author: jushiman
+ms.topic: how-to
 ms.service: virtual-machine-scale-sets
-ms.topic: conceptual
-ms.author: mbaldwin
+ms.subservice: disks
 ms.date: 10/10/2019
-ms.openlocfilehash: aa638b86b0788b8c274f9dcb3c04c1fc385b4ae1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.reviewer: mimckitt
+ms.custom: mimckitt
+ms.openlocfilehash: 1c93359486379ecfc8bf6df1f29978ba369f551a
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76279034"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83117263"
 ---
 # <a name="use-azure-disk-encryption-with-virtual-machine-scale-set-extension-sequencing"></a>Use Azure Disk Encryption with virtual machine scale set extension sequencing (Использование шифрования дисков Azure с помощью виртуализации расширения масштабируемого набора виртуальных машин)
 
@@ -26,7 +29,7 @@ ms.locfileid: "76279034"
 
 ## <a name="sample-azure-templates"></a>Примеры шаблонов Azure
 
-Если вы хотите, чтобы шифрование дисков Azure применялось после другого расширения, `provisionAfterExtensions` поставьте свойство в блок расширения AzureDiskEncryption. 
+Если вы хотите, чтобы шифрование дисков Azure применялось после другого расширения, поставьте `provisionAfterExtensions` свойство в блок расширения AzureDiskEncryption. 
 
 Ниже приведен пример с использованием "CustomScriptExtension" — скрипт PowerShell, который инициализирует и форматирует диск Windows, за которым следует "AzureDiskEncryption":
 
@@ -84,7 +87,7 @@ ms.locfileid: "76279034"
 }
 ```
 
-Если вы хотите, чтобы шифрование дисков Azure применялось перед другим расширением, `provisionAfterExtensions` поставьте свойство в блок расширения, чтобы следовать ему.
+Если вы хотите, чтобы шифрование дисков Azure применялось перед другим расширением, поставьте `provisionAfterExtensions` свойство в блок расширения, чтобы следовать ему.
 
 Ниже приведен пример с использованием "AzureDiskEncryption", за которым следует "VMDiagnosticsSettings", расширение, которое предоставляет возможности мониторинга и диагностики на виртуальной машине Azure под управлением Windows:
 

@@ -6,14 +6,14 @@ ms.author: tisande
 ms.service: cosmos-db
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 05/06/2020
+ms.date: 05/10/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 2854e3d92462ced3958afd1cf1e7e99d7e9892f6
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: 0e6e243ceb73ca2a1180e59ba6c6b4095ed6069a
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82984685"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83116719"
 ---
 # <a name="change-feed-pull-model-in-azure-cosmos-db"></a>Изменить модель извлечения веб-канала в Azure Cosmos DB
 
@@ -24,23 +24,23 @@ ms.locfileid: "82984685"
 
 ## <a name="consuming-an-entire-containers-changes"></a>Использование изменений всего контейнера
 
-Можно создать для обработки `FeedIterator` веб-канала изменений с помощью модели извлечения. При первоначальном создании `FeedIterator`можно указать необязательный `StartTime` объект в. `ChangeFeedRequestOptions` Если параметр `StartTime` left не указан, будет использоваться текущее время.
+Можно создать `FeedIterator` для обработки веб-канала изменений с помощью модели извлечения. При первоначальном создании `FeedIterator` можно указать необязательный объект `StartTime` в `ChangeFeedRequestOptions` . Если параметр left не указан, `StartTime` будет использоваться текущее время.
 
-`FeedIterator` Имеет две разновидности. Помимо приведенных ниже примеров, возвращающих объекты сущностей, можно также получить ответ с `Stream` поддержкой. Потоки позволяют считывать данные без их десериализации, сохраняя на клиентских ресурсах.
+`FeedIterator`Имеет две разновидности. Помимо приведенных ниже примеров, возвращающих объекты сущностей, можно также получить ответ с `Stream` поддержкой. Потоки позволяют считывать данные без их десериализации, сохраняя на клиентских ресурсах.
 
-Ниже приведен пример получения `FeedIterator` `User` объекта, который возвращает объекты сущности, в данном случае объект:
+Ниже приведен пример получения `FeedIterator` объекта, который возвращает объекты сущности, в данном случае `User` объект:
 
 ```csharp
 FeedIterator<User> iteratorWithPOCOS = container.GetChangeFeedIterator<User>();
 ```
 
-Ниже приведен пример получения объекта `FeedIterator` , который возвращает: `Stream`
+Ниже приведен пример получения объекта `FeedIterator` , который возвращает `Stream` :
 
 ```csharp
 FeedIterator iteratorWithStreams = container.GetChangeFeedStreamIterator();
 ```
 
-С помощью `FeedIterator`можно легко обработать весь веб-канал изменений контейнера в удобном для вас темпе. Ниже приведен пример:
+С помощью `FeedIterator` можно легко обработать весь веб-канал изменений контейнера в удобном для вас темпе. Ниже приведен пример:
 
 ```csharp
 FeedIterator<User> iteratorForTheEntireContainer= container.GetChangeFeedIterator(new ChangeFeedRequestOptions{StartTime = DateTime.MinValue});
@@ -76,7 +76,7 @@ while (iteratorForThePartitionKey.HasMoreResults)
 
 ## <a name="using-feedrange-for-parallelization"></a>Использование Фидранже для параллелизации
 
-В [обработчике веб-канала изменений](change-feed-processor.md)работа автоматически распределяется между несколькими потребителями. В модели извлечения веб-канала изменений можно использовать `FeedRange` для параллелизации обработки веб-канала изменений. `FeedRange` Представляет диапазон значений ключа секции.
+В [обработчике веб-канала изменений](change-feed-processor.md)работа автоматически распределяется между несколькими потребителями. В модели извлечения веб-канала изменений можно использовать `FeedRange` для параллелизации обработки веб-канала изменений. `FeedRange`Представляет диапазон значений ключа секции.
 
 Ниже приведен пример, демонстрирующий получение списка диапазонов для контейнера.
 
@@ -84,14 +84,14 @@ while (iteratorForThePartitionKey.HasMoreResults)
 IReadOnlyList<FeedRange> ranges = await container.GetFeedRangesAsync();
 ```
 
-При получении списка Фидранжес для контейнера вы получите по одному `FeedRange` на [физический раздел](partition-data.md#physical-partitions).
+При получении списка Фидранжес для контейнера вы получите `FeedRange` по одному на [физический раздел](partition-data.md#physical-partitions).
 
-`FeedRange`С помощью можно создать для параллелизации обработки веб `FeedIterator` -канала изменений на нескольких компьютерах или в потоках. В отличие от предыдущего примера, в котором показано, как получить `FeedIterator` один объект для всего контейнера, можно использовать `FeedRange` для получения нескольких фидитераторс, которые могут обрабатывать веб-канал изменений параллельно.
+С помощью `FeedRange` можно создать `FeedIterator` для параллелизации обработки веб-канала изменений на нескольких компьютерах или в потоках. В отличие от предыдущего примера, в котором показано, как получить один объект `FeedIterator` для всего контейнера, можно использовать `FeedRange` для получения нескольких фидитераторс, которые могут обрабатывать веб-канал изменений параллельно.
 
 Если вы хотите использовать Фидранжес, необходимо иметь процесс Orchestrator, который получает Фидранжес и распространяет их на эти компьютеры. Это распространение может быть следующим:
 
 * Использование `FeedRange.ToJsonString` и распространение этого строкового значения. Потребители могут использовать это значение с`FeedRange.FromJsonString`
-* Если распределение выполняется в процессе, передача ссылки на `FeedRange` объект.
+* Если распределение выполняется в процессе, передача `FeedRange` ссылки на объект.
 
 Ниже приведен пример, демонстрирующий чтение с начала веб-канала изменений контейнера с использованием двух гипотетических отдельных машин, считываемых параллельно.
 
@@ -137,9 +137,9 @@ string continuation = null;
 while (iterator.HasMoreResults)
 {
    FeedResponse<User> users = await iterator.ReadNextAsync();
-   continuation = orders.ContinuationToken;
+   continuation = users.ContinuationToken;
 
-   foreach (User user in Users)
+   foreach (User user in users)
     {
         Console.WriteLine($"Detected change for user with id {user.id}");
     }

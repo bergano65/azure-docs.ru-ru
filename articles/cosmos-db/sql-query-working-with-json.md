@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: tisande
-ms.openlocfilehash: a8f32ad69d32844305c1cc785afc9f1df3c102b8
-ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
+ms.openlocfilehash: d0b11cdb0cf2719b576b7a4c4f3fa534ae09dfa8
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2020
-ms.locfileid: "83006356"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83117025"
 ---
 # <a name="working-with-json-in-azure-cosmos-db"></a>Работа с JSON в Azure Cosmos DB
 
@@ -45,9 +45,9 @@ ms.locfileid: "83006356"
 }
 ```
 
-В этом случае `state`свойства, `country`и `city` все вложены в `address` свойство.
+В этом случае `state` `country` свойства, и `city` все вложены в `address` свойство.
 
-В следующем примере проецируется два вложенных `f.address.state` свойства `f.address.city`: и.
+В следующем примере проецируется два вложенных свойства: `f.address.state` и `f.address.city` .
 
 ```sql
     SELECT f.address.state, f.address.city
@@ -141,7 +141,7 @@ WHERE EXISTS(
 
 ## <a name="reserved-keywords-and-special-characters-in-json"></a>Зарезервированные ключевые слова и специальные символы в JSON
 
-Доступ к свойствам можно получить с помощью оператора `[]`заключенного в кавычки свойства. Например, выражение `SELECT c.grade` and `SELECT c["grade"]` являются эквивалентными. Этот синтаксис полезен для экранирования свойства, которое содержит пробелы, Специальные символы или имеет то же имя, что и ключевое слово SQL или зарезервированное слово.
+Доступ к свойствам можно получить с помощью оператора заключенного в кавычки свойства `[]` . Например, выражение `SELECT c.grade` and `SELECT c["grade"]` являются эквивалентными. Этот синтаксис полезен для экранирования свойства, которое содержит пробелы, Специальные символы или имеет то же имя, что и ключевое слово SQL или зарезервированное слово.
 
 Например, вот документ со свойством с именем `order` и свойством `price($)` , содержащим специальные символы:
 
@@ -208,7 +208,7 @@ SELECT * FROM c WHERE c["order"]["price($)"] > 50
     }]
 ```
 
-В предыдущем примере `SELECT` предложение должно создать объект JSON, а так как в примере нет ключа, предложение использует неявное имя `$1`переменной аргумента. Следующий запрос возвращает две неявные переменные `$1` аргумента `$2`: и.
+В предыдущем примере `SELECT` предложение должно создать объект JSON, а так как в примере нет ключа, предложение использует неявное имя переменной аргумента `$1` . Следующий запрос возвращает две неявные переменные аргумента: `$1` и `$2` .
 
 ```sql
     SELECT { "state": f.address.state, "city": f.address.city },
@@ -237,7 +237,7 @@ SELECT * FROM c WHERE c["order"]["price($)"] > 50
 
 ### <a name="examples"></a>Примеры
 
-`AS` Ключевое слово, используемое для присвоения псевдонимов, является необязательным, как показано в следующем примере при `NameInfo`проецировании второго значения на:
+`AS`Ключевое слово, используемое для присвоения псевдонимов, является необязательным, как показано в следующем примере при проецировании второго значения на `NameInfo` :
 
 ```sql
     SELECT
@@ -270,7 +270,7 @@ SELECT * FROM c WHERE c["order"]["price($)"] > 50
 ```sql
     SELECT
            {"JSON expression with a space": { "state": f.address.state, "city": f.address.city }},
-           { "JSON expression with a special character": { "name": f.id }}
+           {"JSON expression with a special character!": { "name": f.id }}
     FROM Families f
     WHERE f.id = "AndersenFamily"
 ```

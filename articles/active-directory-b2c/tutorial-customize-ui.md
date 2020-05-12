@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 02/01/2019
+ms.date: 05/11/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: b2b2bc8dd4e60348553228b8b418df252a8c426a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e023e9c8c4c6f0021eabccad8783c27eba98d0d5
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78186256"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83116532"
 ---
 # <a name="tutorial-customize-the-interface-of-user-experiences-in-azure-active-directory-b2c"></a>Руководство. Настройка интерфейса взаимодействия с пользователем в Azure Active Directory B2C
 
@@ -64,7 +64,7 @@ ms.locfileid: "78186256"
 
 1. В меню выберите **CORS**.
 2. В поле **Допустимые источники** введите `https://your-tenant-name.b2clogin.com`. Замените `your-tenant-name` именем вашего клиента Azure AD B2C. Например, `https://fabrikam.b2clogin.com`. Необходимо использовать только строчные буквы в имени вашего клиента.
-3. Для **разрешенных методов**выберите `GET`,`PUT`и `OPTIONS`.
+3. Для **разрешенных методов**выберите `GET` , `PUT` и `OPTIONS` .
 4. В поле **Допустимые заголовки** введите звездочку (*).
 5. В поле **Доступные заголовки** введите звездочку (*).
 6. В поле **Максимальный возраст** введите 200.
@@ -166,4 +166,4 @@ ms.locfileid: "78186256"
 > * Тестирование настраиваемого пользовательского интерфейса.
 
 > [!div class="nextstepaction"]
-> [Настройка языка в Azure Active Directory B2C](user-flow-language-customization.md)
+> [Настройка пользовательского интерфейса в Azure Active Directory B2C](customize-ui-overview.md)

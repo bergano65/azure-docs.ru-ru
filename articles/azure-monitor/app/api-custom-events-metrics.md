@@ -2,13 +2,13 @@
 title: API Application Insights для пользовательских событий и метрик | Документация Майкрософт
 description: Вставьте несколько строк кода в свое устройство или классическое приложение, на веб-страницу или в службу, чтобы отслеживать использование приложения и диагностировать неполадки.
 ms.topic: conceptual
-ms.date: 03/27/2019
-ms.openlocfilehash: 74ca6d6a13967c2139d3d47dd425b6cb1a3ee31a
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.date: 05/11/2020
+ms.openlocfilehash: ae96609446818802b70cab9c31f6527264046eb9
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82927944"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83115665"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
 
@@ -147,7 +147,7 @@ telemetry.trackEvent({name: "WinGame"});
 
 Данные телеметрии доступны в таблице `customEvents` в [службе аналитики Application Insights](analytics.md). Каждая строка представляет собой вызов `trackEvent(..)` в приложении.
 
-Если действует [выборка](../../azure-monitor/app/sampling.md), свойство itemCount имеет значение больше 1. Например, itemCount==10 означает, что из 10 вызовов trackEvent() процесс выборки передал только один. Чтобы получить правильное количество пользовательских событий, необходимо использовать код, такой как `customEvents | summarize sum(itemCount)`.
+Если действует [выборка](../../azure-monitor/app/sampling.md), свойство itemCount имеет значение больше 1. Например, itemCount==10 означает, что из 10 вызовов trackEvent() процесс выборки передал только один. Чтобы получить правильное количество пользовательских событий, необходимо использовать код, такой как `customEvents | summarize sum(itemCount)` .
 
 ## <a name="getmetric"></a>GetMetric
 
@@ -991,7 +991,7 @@ TelemetryConfiguration.Active.TelemetryChannel.DeveloperMode = True
 
 *Node.js*
 
-Для Node. js можно включить режим разработчика, включив внутреннее ведение журнала с помощью `setInternalLogging` и установив `maxBatchSize` значение 0, что приводит к отправке данных телеметрии сразу после сбора.
+Для Node. js можно включить режим разработчика, включив внутреннее ведение журнала с помощью `setInternalLogging` и установив значение `maxBatchSize` 0, что приводит к отправке данных телеметрии сразу после сбора.
 
 ```js
 applicationInsights.setup("ikey")
@@ -1096,22 +1096,20 @@ telemetry.Context.Operation.Name = "MyOperationName";
 * [Справочник по Java](https://docs.microsoft.com/java/api/overview/azure/appinsights?view=azure-java-stable/)
 * [Справочник по JavaScript](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md)
 
-
 ## <a name="sdk-code"></a>Код пакета SDK
 
-* [Базовый пакет SDK для ASP.NET](https://github.com/Microsoft/ApplicationInsights-aspnetcore)
+* [Базовый пакет SDK для ASP.NET](https://github.com/Microsoft/ApplicationInsights-dotnet)
 * [ASP.NET](https://github.com/Microsoft/ApplicationInsights-dotnet)
-* [Пакеты Windows Server](https://github.com/Microsoft/applicationInsights-dotnet-server)
+* [Пакеты Windows Server](https://github.com/Microsoft/ApplicationInsights-dotnet)
 * [Пакет SDK для Java](https://github.com/Microsoft/ApplicationInsights-Java)
 * [Пакет SDK для Node.js](https://github.com/Microsoft/ApplicationInsights-Node.js)
 * [Пакет SDK для JavaScript](https://github.com/Microsoft/ApplicationInsights-JS)
-
 
 ## <a name="questions"></a>Вопросы
 
 * *Какие исключения могут создаваться при вызовах Track_()?*
 
-    Отсутствует. Вам не нужно помещать их в предложения try-catch. Если пакет SDK сталкивается с проблемами, он добавляет в журнал сообщения, которые отображаются в консоли отладки и, если сообщения проходят, — в поиске по журналу диагностики.
+    Нет. Вам не нужно помещать их в предложения try-catch. Если пакет SDK сталкивается с проблемами, он добавляет в журнал сообщения, которые отображаются в консоли отладки и, если сообщения проходят, — в поиске по журналу диагностики.
 * *Существует ли REST API для получения данных из портала?*
 
     Да, [API доступа к данным](https://dev.applicationinsights.io/). К другим способам извлечения данных относятся [экспорт из Analytics в Power BI](../../azure-monitor/app/export-power-bi.md ) и [непрерывный экспорт](../../azure-monitor/app/export-telemetry.md).

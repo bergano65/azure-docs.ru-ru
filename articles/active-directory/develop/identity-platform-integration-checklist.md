@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 09/11/2019
+ms.date: 05/08/2020
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: 56975cebbfe4f6dd6452c850c338d431faea27bb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c7c26780cdba37a2bddc201928dbcbd5f86e0170
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80050501"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83115903"
 ---
 # <a name="microsoft-identity-platform-best-practices-and-recommendations"></a>Рекомендации и рекомендации по платформе Microsoft Identity
 
@@ -26,6 +26,9 @@ ms.locfileid: "80050501"
 Если вы только начинаете работу, ознакомьтесь с [документацией по платформе идентификации Майкрософт](index.yml) , чтобы узнать об основах проверки подлинности, сценариях приложений на платформе Microsoft Identity и многом другое.
 
 Используйте следующий контрольный список, чтобы убедиться, что приложение эффективно интегрировано с [платформой Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/).
+
+> [!TIP]
+> *Помощник по интеграции* в портал Azure может помочь в применении многих из этих рекомендаций и рекомендаций. Выберите любую из [регистраций приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в портал Azure, а затем выберите пункт меню **Помощник по интеграции (Предварительная версия)** , чтобы начать работу с помощником.
 
 ## <a name="basics"></a>Основы
 
@@ -39,7 +42,7 @@ ms.locfileid: "80050501"
 |---|---|
 | ![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) | Убедитесь, что сведения, связанные с учетной записью, используемой для регистрации и управления приложениями, обновлены. |
 
-## <a name="branding"></a>Фирменная символика
+## <a name="branding"></a>Branding
 
 |   |   |
 |---|---|
@@ -56,7 +59,7 @@ ms.locfileid: "80050501"
 
 |   |   |
 |---|---|
-| ![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) | Управление URI перенаправления: <ul><li>Обеспечьте владение всеми URI перенаправления и обеспечьте актуальность записей DNS.</li><li>Не используйте подстановочные знаки (*) в URI.</li><li>Для веб-приложений убедитесь, что все URI безопасны и зашифрованы (например, с помощью схем HTTPS).</li><li>Для общедоступных клиентов используйте зависящие от платформы URI перенаправления, если это применимо (в основном для iOS и Android). В противном случае используйте URI перенаправления с большим количеством случайных значений, чтобы избежать конфликтов при обратном вызове приложения.</li><li>Если приложение используется изолированным веб-агентом, вы можете использовать `https://login.microsoftonline.com/common/oauth2/nativeclient`.</li><li>Регулярно просматривайте и обрежьте все неиспользуемые или ненужные URI перенаправления.</li></ul> |
+| ![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) | Управление URI перенаправления: <ul><li>Обеспечьте владение всеми URI перенаправления и обеспечьте актуальность записей DNS.</li><li>Не используйте подстановочные знаки (*) в URI.</li><li>Для веб-приложений убедитесь, что все URI безопасны и зашифрованы (например, с помощью схем HTTPS).</li><li>Для общедоступных клиентов используйте зависящие от платформы URI перенаправления, если это применимо (в основном для iOS и Android). В противном случае используйте URI перенаправления с большим количеством случайных значений, чтобы избежать конфликтов при обратном вызове приложения.</li><li>Если приложение используется изолированным веб-агентом, вы можете использовать `https://login.microsoftonline.com/common/oauth2/nativeclient` .</li><li>Регулярно просматривайте и обрежьте все неиспользуемые или ненужные URI перенаправления.</li></ul> |
 | ![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) | Если приложение зарегистрировано в каталоге, сократите и вручную проведите наблюдение за списком владельцев регистрации приложений. |
 | ![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) | Не включайте поддержку [потока неявного предоставления OAuth2](v2-oauth2-implicit-grant-flow.md) , если это не требуется явным образом. Сведения о допустимом сценарии см. [здесь](v2-oauth2-implicit-grant-flow.md#suitable-scenarios-for-the-oauth2-implicit-grant). |
 | ![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) | Переместитесь за пределы имени пользователя и пароля. Не используйте [поток учетных данных пароля владельца ресурса (ропк)](v2-oauth-ropc.md), который напрямую обрабатывает пароли пользователей. Этот поток требует высокого уровня доверия и раскрытия пользователей, и его следует использовать, только если другие, более безопасные, потоки использовать нельзя. Этот поток по-прежнему необходим в некоторых сценариях (например, DevOps), но следует помнить, что его использование накладывает ограничения на приложение.  Для более современных подходов прочитайте [потоки проверки подлинности и сценарии приложений](authentication-flows-app-scenarios.md).|
@@ -76,7 +79,7 @@ ms.locfileid: "80050501"
 | ![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) | Если данные, необходимые для приложения, доступны через [Microsoft Graph](https://developer.microsoft.com/graph), запросите разрешения для этих данных, используя конечную точку Microsoft Graph, а не отдельный API. |
 | ![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) |Не Проанализируйте значение маркера доступа или попытайтесь проанализировать его как клиент.  Они могут изменять значения, форматы и даже быть зашифрованными без предупреждения. всегда используйте id_token, если клиенту необходимо узнать о пользователе или вызвать Microsoft Graph.  Только веб-API должны анализировать маркеры доступа (поскольку они определяют формат и устанавливают ключи шифрования). |
 
-## <a name="end-user-experience"></a>Возможности для пользователей
+## <a name="end-user-experience"></a>Взаимодействие с конечным пользователем
 
 |   |   |
 |---|---|

@@ -15,12 +15,12 @@ ms.date: 03/02/2019
 ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 21caec50bf9c20ec60194976b1bfbf16e4815914
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1874a2f2cf96aaa905616bddcc6cb83c60c1d279
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81261046"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83115614"
 ---
 # <a name="centralize-application-management-with-azure-ad"></a>Централизованное управление приложениями с помощью Azure AD
 
@@ -53,7 +53,7 @@ ms.locfileid: "81261046"
 
 |Компонент  |Описание|Рекомендация |
 |---------|---------|---------|
-|Подготовка SCIM|[Scim](https://aka.ms/SICMOverview) — это лучшая в отрасли методика автоматизации подготовки пользователей. Любое приложение, совместимое с SCIM, можно интегрировать с Azure AD. Автоматическое создание, обновление и удаление учетных записей пользователей без необходимости сохранять CSV-файлы, пользовательские сценарии или локальные решения.|Ознакомьтесь со всем растущем списком [предварительно интегрированных](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list) приложений в коллекции приложений Azure AD.|
+|Подготовка SCIM|[Scim](https://aka.ms/SCIMOverview) — это лучшая в отрасли методика автоматизации подготовки пользователей. Любое приложение, совместимое с SCIM, можно интегрировать с Azure AD. Автоматическое создание, обновление и удаление учетных записей пользователей без необходимости сохранять CSV-файлы, пользовательские сценарии или локальные решения.|Ознакомьтесь со всем растущем списком [предварительно интегрированных](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list) приложений в коллекции приложений Azure AD.|
 |Microsoft Graph|Используйте вздохните и глубину данных, которые служба Azure AD должна расширить для приложения с помощью необходимых данных.|Используйте [Microsoft Graph](https://developer.microsoft.com/graph/) для получения данных из экосистемы корпорации Майкрософт. |
 
 
