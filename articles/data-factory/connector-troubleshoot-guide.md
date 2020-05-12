@@ -8,12 +8,13 @@ ms.topic: troubleshooting
 ms.date: 01/09/2020
 ms.author: jingwang
 ms.reviewer: craigg
-ms.openlocfilehash: 62ad337646cf3fc0bbe4305dccad5adb56f8ee15
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: has-adal-ref
+ms.openlocfilehash: 50f76d9b4f3061e6e9a1e4a0b510146dbded422a
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81410231"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83199009"
 ---
 # <a name="troubleshoot-azure-data-factory-connectors"></a>Устранение неполадок с соединителями Фабрики данных Azure
 
@@ -30,7 +31,7 @@ ms.locfileid: "81410231"
 
 - **Причина**: ошибка при обращении к операции хранилища BLOB-объектов.
 
-- **Рекомендация**: Проверьте сведения об ошибке в подробностях. См. справочный документ по https://docs.microsoft.com/rest/api/storageservices/blob-service-error-codesбольшому двоичному объекту:. Обратитесь в службу хранилища, если вам нужна помощь.
+- **Рекомендация**: Проверьте сведения об ошибке в подробностях. См. справочный документ по большому двоичному объекту: https://docs.microsoft.com/rest/api/storageservices/blob-service-error-codes . Обратитесь в службу хранилища, если вам нужна помощь.
 
 
 ### <a name="error-code--azureblobservicenotreturnexpecteddatalength"></a>Код ошибки: Азуреблобсервиценотретурнекспектеддаталенгс
@@ -134,7 +135,7 @@ ms.locfileid: "81410231"
 
 - **Причина**: Если сообщение об ошибке содержит "запрещено", возможно, субъект-служба или управляемое удостоверение, которые вы используете, не имеют достаточных разрешений для доступа к ADLS 2-го поколения.
 
-- **Рекомендация**: см. справочный документ: https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication.
+- **Рекомендация**: см. справочный документ: https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication .
 
 - **Причина**: Если сообщение об ошибке содержит "InternalServerError", то ошибка возвращается ADLS 2-го поколения.
 
@@ -198,11 +199,11 @@ ms.locfileid: "81410231"
 
 - **Причина**: Если сообщение об ошибке содержит "SqlException", то база данных SQL выдает ошибку, указывающую на сбой некоторой конкретной операции.
 
-- **Рекомендация**: выполните поиск по коду ошибки SQL в этом справочном документе для получения дополнительных https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errorsсведений:. Если вам нужна дополнительная помощь, обратитесь в службу поддержки SQL Azure.
+- **Рекомендация**: выполните поиск по коду ошибки SQL в этом справочном документе для получения дополнительных сведений: https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors . Если вам нужна дополнительная помощь, обратитесь в службу поддержки SQL Azure.
 
 - **Причина**: Если сообщение об ошибке содержит "клиент с IP-адресом"... " не разрешен доступ к серверу ", и вы пытаетесь подключиться к базе данных SQL Azure, обычно это вызвано проблемой с брандмауэром базы данных SQL Azure.
 
-- **Рекомендация**. в конфигурации брандмауэра Azure SQL Server включите параметр "разрешить доступ к службам Azure и ресурсам для доступа к этому серверу". Справочный документ https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure:.
+- **Рекомендация**. в конфигурации брандмауэра Azure SQL Server включите параметр "разрешить доступ к службам Azure и ресурсам для доступа к этому серверу". Справочный документ: https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure .
 
 
 ### <a name="error-code--sqloperationfailed"></a>Код ошибки: Склоператионфаилед
@@ -211,8 +212,8 @@ ms.locfileid: "81410231"
 
 - **Причина**: Если сообщение об ошибке содержит "SqlException", то база данных SQL выдает ошибку, указывающую на сбой некоторой конкретной операции.
 
-- **Рекомендация**: Если ошибка SQL непонятна, попробуйте изменить базу данных на последний уровень совместимости "150". Он может вызвать ошибки SQL последней версии. Дополнительные сведения см. в документе https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-ver15#backwardCompat:.
-        Для устранения неполадок, связанных с SQL, выполните поиск по коду ошибки SQL в этом справочном документе https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errorsдля получения дополнительных сведений:. Если вам нужна дополнительная помощь, обратитесь в службу поддержки SQL Azure.
+- **Рекомендация**: Если ошибка SQL непонятна, попробуйте изменить базу данных на последний уровень совместимости "150". Он может вызвать ошибки SQL последней версии. Дополнительные сведения см. в документе: https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-ver15#backwardCompat .
+        Для устранения неполадок, связанных с SQL, выполните поиск по коду ошибки SQL в этом справочном документе для получения дополнительных сведений: https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors . Если вам нужна дополнительная помощь, обратитесь в службу поддержки SQL Azure.
 
 - **Причина**: Если сообщение об ошибке содержит "пдвманажедтонативеинтеропексцептион", обычно это вызвано несоответствием размеров столбцов источника и приемника.
 
@@ -220,7 +221,7 @@ ms.locfileid: "81410231"
 
 - **Причина**: Если сообщение об ошибке содержит "InvalidOperationException", обычно это вызвано недопустимыми входными данными.
 
-- **Рекомендация**: чтобы узнать, какая строка сталкивается с проблемой, включите функцию отказоустойчивости в действии копирования, которая может переназначать проблемные строки в хранилище для дальнейшего изучения. Справочный документ https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance:.
+- **Рекомендация**: чтобы узнать, какая строка сталкивается с проблемой, включите функцию отказоустойчивости в действии копирования, которая может переназначать проблемные строки в хранилище для дальнейшего изучения. Справочный документ: https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance .
 
 
 ### <a name="error-code--sqlunauthorizedaccess"></a>Код ошибки: Склунаусоризедакцесс
@@ -323,7 +324,7 @@ ms.locfileid: "81410231"
 
 - **Причина**: не удалось выполнить групповое копирование SQL из-за получения недопустимой длины столбца от клиента bcp.
 
-- **Рекомендация**: чтобы узнать, какая строка сталкивается с проблемой, включите функцию отказоустойчивости в действии копирования, которая может переназначать проблемные строки в хранилище для дальнейшего изучения. Справочный документ https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance:.
+- **Рекомендация**: чтобы узнать, какая строка сталкивается с проблемой, включите функцию отказоустойчивости в действии копирования, которая может переназначать проблемные строки в хранилище для дальнейшего изучения. Справочный документ: https://docs.microsoft.com/azure/data-factory/copy-activity-fault-tolerance .
 
 
 ### <a name="error-code--sqlconnectionisclosed"></a>Код ошибки: Склконнектионисклосед
@@ -545,7 +546,7 @@ ms.locfileid: "81410231"
 
 - **Причина**: формат Parquet не поддерживается в фабрике данных Azure.
 
-- **Рекомендация**: дважды проверьте исходные данные. См. документ: https://docs.microsoft.com/azure/data-factory/supported-file-formats-and-compression-codecs.
+- **Рекомендация**: дважды проверьте исходные данные. См. документ: https://docs.microsoft.com/azure/data-factory/supported-file-formats-and-compression-codecs .
 
 
 ### <a name="error-code--parquetmisseddecimalprecisionscale"></a>Код ошибки: ПаркуетмисседдеЦималпреЦисионскале
@@ -581,7 +582,7 @@ ms.locfileid: "81410231"
 
 - **Причина**: данные не могут быть преобразованы в тип, указанный в сопоставлениях. источник
 
-- **Рекомендация**: дважды проверьте исходные данные или укажите правильный тип данных для этого столбца в сопоставлении столбцов действия копирования. См. документ: https://docs.microsoft.com/azure/data-factory/supported-file-formats-and-compression-codecs.
+- **Рекомендация**: дважды проверьте исходные данные или укажите правильный тип данных для этого столбца в сопоставлении столбцов действия копирования. См. документ: https://docs.microsoft.com/azure/data-factory/supported-file-formats-and-compression-codecs .
 
 
 ### <a name="error-code--parquetdatacountnotmatchcolumncount"></a>Код ошибки: Паркуетдатакаунтнотматчколумнкаунт
@@ -670,7 +671,7 @@ ms.locfileid: "81410231"
 - **Сообщение**:`Invalid 'ordinal' property for sink column under 'mappings' property. Ordinal: %Ordinal;.`
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений об устранении неполадок воспользуйтесь следующими ресурсами:
 

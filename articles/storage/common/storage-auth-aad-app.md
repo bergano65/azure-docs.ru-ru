@@ -9,12 +9,13 @@ ms.topic: how-to
 ms.date: 12/04/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: d3ee211298598d78f423d88fd4df1c58ed4bfa29
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: has-adal-ref
+ms.openlocfilehash: 0cda75469edaa183ed6553a431b9ad13b611db7d
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79268487"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83201073"
 ---
 # <a name="acquire-a-token-from-azure-ad-for-authorizing-requests-from-a-client-application"></a>Получение маркера из Azure AD для авторизации запросов из клиентского приложения
 
@@ -202,7 +203,7 @@ public async Task<IActionResult> Blob()
 }
 ```
 
-Согласие — это процесс предоставления пользователем разрешения приложению получать доступ к защищенным ресурсам от имени пользователя. Платформа Microsoft Identity Platform 2,0 поддерживает последовательное согласие, а это значит, что участник безопасности может сначала запросить минимальный набор разрешений, а при необходимости добавить разрешения. Когда код запрашивает маркер доступа, укажите в `scope` параметре область разрешений, необходимых приложению в любое заданное время. Дополнительные сведения о последовательном согласии см. в разделе, посвященном **добавочному и динамическому согласию** по поводу [обновления платформы Microsoft Identity Platform (v 2.0)](../../active-directory/azuread-dev/azure-ad-endpoint-comparison.md#incremental-and-dynamic-consent).
+Согласие — это процесс предоставления пользователем разрешения приложению получать доступ к защищенным ресурсам от имени пользователя. Платформа Microsoft Identity Platform 2,0 поддерживает последовательное согласие, а это значит, что участник безопасности может сначала запросить минимальный набор разрешений, а при необходимости добавить разрешения. Когда код запрашивает маркер доступа, укажите в параметре область разрешений, необходимых приложению в любое заданное время `scope` . Дополнительные сведения о последовательном согласии см. в разделе, посвященном **добавочному и динамическому согласию** по поводу [обновления платформы Microsoft Identity Platform (v 2.0)](../../active-directory/azuread-dev/azure-ad-endpoint-comparison.md#incremental-and-dynamic-consent).
 
 Следующий метод конструирует свойства проверки подлинности для запроса добавочного согласия:
 
@@ -298,7 +299,7 @@ CloudBlockBlob blob = new CloudBlockBlob(
 
     ![Снимок экрана, показывающий URI перенаправления для регистрации приложения](media/storage-auth-aad-app/redirect-uri.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о платформе Microsoft Identity см. в разделе [платформа Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/).
 - Дополнительные сведения о ролях RBAC для службы хранилища Azure см. в статье [Управление правами доступа к данным хранилища с помощью RBAC](storage-auth-aad-rbac.md).

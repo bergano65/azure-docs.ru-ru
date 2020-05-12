@@ -5,15 +5,15 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 04/08/2020
+ms.date: 05/11/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: dfb094bc9f84e7129a3e1c733a054c5f6cd96372
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 10b3a6bb9592c955d16b070ae412374b8a1f4444
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81008653"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83196966"
 ---
 Высокопроизводительные диски Azure обеспечивают высокую пропускную способность, высокую скорость операций ввода-вывода и постоянную задержку на диске для виртуальных машин Azure IaaS. Это новое предложение обеспечивает первоклассную производительность с тем же уровнем доступности, что и имеющиеся предложения дисков. Одним из основных преимуществ использования Ultra Disks является возможность динамического изменения производительности SSD вместе с рабочими нагрузками без необходимости перезапуска виртуальных машин. Диски категории "Ультра" подходят для рабочих нагрузок, предполагающих интенсивную работу с данными, например SAP HANA, базы данных верхнего уровня и рабочие нагрузки с большим количеством транзакций.
 
@@ -62,7 +62,7 @@ $vmSize = "Standard_E64s_v3"
 
 ### <a name="vms-with-no-redundancy-options"></a>Виртуальные машины без параметров избыточности
 
-В настоящее же отсутствие параметров избыточности, развернутых в западной части США, должно быть развернуто. Однако в этом регионе может находиться не каждый размер диска, поддерживающий Ultra Disks. Чтобы определить, какие из них в западной части США поддерживают Ultra Disks, можно использовать любой из следующих фрагментов кода. Обязательно замените значения `vmSize` и `subscription` первыми:
+В настоящее же отсутствие параметров избыточности, развернутых в западной части США, должно быть развернуто. Однако в этом регионе может находиться не каждый размер диска, поддерживающий Ultra Disks. Чтобы определить, какие из них в западной части США поддерживают Ultra Disks, можно использовать любой из следующих фрагментов кода. Обязательно замените `vmSize` `subscription` значения и первыми:
 
 ```azurecli
 $subscription = "<yourSubID>"
@@ -79,7 +79,7 @@ $vmSize = "Standard_E64s_v3"
 (Get-AzComputeResourceSku | where {$_.Locations.Contains($region) -and ($_.Name -eq $vmSize) })[0].Capabilities
 ```
 
-Ответ будет похож на следующий вид: указывает, `UltraSSDAvailable   True` поддерживает ли размер виртуальной машины Ultra Disks в этом регионе.
+Ответ будет похож на следующий вид: `UltraSSDAvailable   True` указывает, поддерживает ли размер виртуальной машины Ultra Disks в этом регионе.
 
 ```
 Name                                         Value
@@ -160,7 +160,7 @@ UltraSSDAvailable                            True
 
 ![ултра-оптионс-ЕС-енабле. png](media/virtual-machines-disks-getting-started-ultra-ssd/ultra-options-yes-enable.png)
 
-- Нажмите кнопку **Сохранить**.
+- Щелкните **Сохранить**.
 - Выберите **Добавить диск данных** , а затем в раскрывающемся списке **имя** выберите **создать диск**.
 
 ![креате-Анд-аттач-Нев-ултра-диск. png](media/virtual-machines-disks-getting-started-ultra-ssd/create-and-attach-new-ultra-disk.png)
@@ -186,7 +186,7 @@ Ultra Disks предлагает уникальную возможность, п
 ![селектинг-ултра-диск-то-модифи. png](media/virtual-machines-disks-getting-started-ultra-ssd/selecting-ultra-disk-to-modify.png)
 
 - Выберите **Конфигурация** и внесите необходимые изменения.
-- Нажмите кнопку **Сохранить**.
+- Щелкните **Сохранить**.
 
 ![конфигуринг-ултра-диск-перформанце-Анд-сизе. png](media/virtual-machines-disks-getting-started-ultra-ssd/configuring-ultra-disk-performance-and-size.png)
 
