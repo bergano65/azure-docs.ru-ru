@@ -5,15 +5,15 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 03/20/2020
+ms.date: 05/10/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: dfa4d65464192b90d4a6f74255faaf8b664ce118
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e80d1a05765d224dc4682c6f64faccc8c81f8ebd
+ms.sourcegitcommit: 801a551e047e933e5e844ea4e735d044d170d99a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81767978"
+ms.lasthandoff: 05/11/2020
+ms.locfileid: "83007472"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -43,7 +43,7 @@ API больших двоичных объектов и интерфейсы API
 
 * Для записи в один и тот же экземпляр файла нельзя использовать интерфейсы API BLOB и Data Lake Storage API. При записи в файл с помощью Data Lake Storage 2-го поколения API, блоки этого файла не будут видны для вызовов API [получения списка блоков](https://docs.microsoft.com/rest/api/storageservices/get-block-list) . Файл можно перезаписать с помощью Data Lake Storage 2-го поколения API или API больших двоичных объектов. Это не повлияет на свойства файла.
 
-* При использовании операции " [список больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/list-blobs) " без указания разделителя в результаты будут включены как каталоги, так и большие двоичные объекты. Если вы решили использовать разделитель, используйте только косую черту (`/`). Это единственный поддерживаемый разделитель.
+* При использовании операции " [список больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/list-blobs) " без указания разделителя в результаты будут включены как каталоги, так и большие двоичные объекты. Если вы решили использовать разделитель, используйте только косую черту ( `/` ). Это единственный поддерживаемый разделитель.
 
 * Если удалить каталог с помощью API [удаления BLOB-объектов](https://docs.microsoft.com/rest/api/storageservices/delete-blob) , этот каталог будет удален только в том случае, если он пуст. Это означает, что вы не сможете рекурсивно использовать API удаления каталогов.
 
@@ -70,12 +70,11 @@ API-интерфейсы RESTFUL для больших двоичных объе
 
 ## <a name="lifecycle-management-policies"></a>Политики управления жизненным циклом
 
-* Удаление моментальных снимков BLOB-объектов пока не поддерживается.  
+Удаление моментальных снимков BLOB-объектов пока не поддерживается. 
 
 ## <a name="archive-tier"></a>Уровень архива
 
 В настоящее время существует ошибка, влияющая на уровень доступа к архиву.
-
 
 ## <a name="blobfuse"></a>Blobfuse
 
@@ -91,7 +90,7 @@ Blobfuse не поддерживается.
 
 ## <a name="azure-storage-explorer"></a>Обозреватель службы хранилища Azure
 
-Используйте только версии `1.6.0` или выше.
+Используйте только версии  `1.6.0`   или выше.
 
 <a id="explorer-in-portal" />
 
@@ -108,6 +107,39 @@ Blobfuse не поддерживается.
 ## <a name="access-control-lists-acl-and-anonymous-read-access"></a>Списки управления доступом (ACL) и анонимный доступ на чтение
 
 Если контейнеру предоставлен [анонимный доступ на чтение](storage-manage-access-to-resources.md) , ACL не влияют на этот контейнер или файлы в этом контейнере.
+
+## <a name="premium-performance-block-blob-storage-accounts"></a>Учетные записи хранения для блочных BLOB-объектов уровня "Премиум"
+
+### <a name="diagnostic-logs"></a>Журналы диагностики
+
+Журналы диагностики еще нельзя включить с помощью портал Azure. Их можно включить с помощью PowerShell. Пример:
+
+```powershell
+#To login
+Connect-AzAccount
+
+#Set default block blob storage account.
+Set-AzCurrentStorageAccount -Name premiumGen2Account -ResourceGroupName PremiumGen2Group
+
+#Enable logging
+Set-AzStorageServiceLoggingProperty -ServiceType Blob -LoggingOperations read,write,delete -RetentionDays 14
+```
+
+### <a name="lifecycle-management-policies"></a>Политики управления жизненным циклом
+
+- Политики управления жизненным циклом еще не поддерживаются в учетных записях хранения блочных BLOB-объектов класса Premium 
+
+- Перемещение данных с уровня "Премиум" на более низкие уровни невозможно. 
+
+- Действие " **Удалить BLOB-объект** " сейчас не поддерживается. 
+
+### <a name="hdinsight-support"></a>Поддержка HDInsight
+
+При создании кластера HDInsight невозможно выбрать учетную запись хранения блочных BLOB-объектов, для которой включена функция иерархического пространства имен. Тем не менее учетную запись можно подключить к кластеру после ее создания.
+
+### <a name="dremio-support"></a>Поддержка дремио
+
+Дремио еще не подключается к учетной записи хранения блочных BLOB-объектов, для которой включена функция иерархического пространства имен. 
 
 ## <a name="windows-azure-storage-blob-wasb-driver-unsupported-with-data-lake-storage-gen2"></a>Драйвер Windows Azure Storage Blob (WASB) (не поддерживается в Data Lake Storage 2-го поколения)
 
