@@ -5,12 +5,12 @@ author: tfitzmac
 ms.topic: quickstart
 ms.date: 04/14/2020
 ms.author: tomfitz
-ms.openlocfilehash: 48aaca64949aafecff27c76ad7572b3c2fa44732
-ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
+ms.openlocfilehash: 47eda62810b1098fcaca5b734be4f74edc0db49a
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81391507"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82609363"
 ---
 # <a name="quickstart-create-and-publish-a-managed-application-definition"></a>Краткое руководство. Создание и публикация определения управляемого приложения
 
@@ -290,7 +290,7 @@ az managedapp definition create \
 
 * **Группа ресурсов**. Имя группы ресурсов, в которой создается определение управляемого приложения.
 * **Уровень блокировки**. Тип блокировки группы управляемых ресурсов. Этот параметр предотвращает выполнение нежелательных операций в группе ресурсов. Сейчас поддерживается только тип блокировки ReadOnly. Если указать этот тип, пользователь будет иметь только доступ на чтение к ресурсам в управляемой группе ресурсов. Удостоверения издателей, которым предоставлен доступ к группе управляемых ресурсов, исключаются из блокировки.
-* **authorizations**. Содержит идентификатор субъекта и идентификатор определения роли, используемые для предоставления разрешения группе управляемых ресурсов. Это свойство указывается в формате `<principalId>:<roleDefinitionId>`. Если требуется более одного значения, укажите их в формате `<principalId1>:<roleDefinitionId1> <principalId2>:<roleDefinitionId2>`. Значения разделяются пробелами.
+* **authorizations**. Содержит идентификатор субъекта и идентификатор определения роли, используемые для предоставления разрешения группе управляемых ресурсов. Это свойство указывается в формате `<principalId>:<roleDefinitionId>`. Если требуется более одного значения, укажите их в формате `<principalId1>:<roleDefinitionId1>,<principalId2>:<roleDefinitionId2>`. Значения разделяются запятыми.
 * **URI файла пакета**. Расположение пакета ZIP, содержащего необходимые файлы.
 
 ## <a name="bring-your-own-storage-for-the-managed-application-definition"></a>Предоставление собственного хранилища для определения управляемого приложения

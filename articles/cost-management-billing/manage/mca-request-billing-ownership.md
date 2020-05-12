@@ -5,14 +5,14 @@ author: amberbhargava
 tags: billing
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 02/13/2020
+ms.date: 05/01/2020
 ms.author: banders
-ms.openlocfilehash: 10f1052f9acf9bf91c1d7fb0b64a1d3285487cf3
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 3aaf2a949d5b3e6670e7885adea4579ac2802428
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77200733"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82692328"
 ---
 # <a name="get-billing-ownership-of-azure-subscriptions-from-other-accounts"></a>Получение права владения на выставление счетов в подписках Azure от других пользователей
 
@@ -177,7 +177,7 @@ ms.locfileid: "77200733"
 
 ### <a name="azure-reservations-transfer"></a>Перемещение Azure Reserved Virtual Machine Instances
 
-Azure Reserved Virtual Machine Instances не перемещаются с подписками автоматически. Чтобы переместить резервирования, [обратитесь в службу поддержки Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+Если вы переносите подписки EA (Соглашение Enterprise), резервирование Azure не будет автоматически перемещаться вместе с подписками. Чтобы переместить резервирования, [обратитесь в службу поддержки Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
 ### <a name="access-to-azure-services"></a>Доступ к службам Azure
 

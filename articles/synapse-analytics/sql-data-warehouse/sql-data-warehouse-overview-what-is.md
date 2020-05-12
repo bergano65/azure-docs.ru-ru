@@ -10,14 +10,19 @@ ms.subservice: ''
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: a9506d45350a567e3643b6edd6afc7668662f6e5
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 27e6c7beb8c88a29b90b30e0c77e35e493f2480a
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81416030"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82690909"
 ---
 # <a name="what-is-azure-synapse-analytics-formerly-sql-dw"></a>Что такое Azure Synapse Analytics (ранее — Хранилище данных SQL)?
+
+> [!NOTE] 
+> Опробуйте новейшие функции Azure Synapse, такие как рабочие области, Spark, SQL по запросу и интегрированная среда Synapse Studio, [запросив доступ к Azure Synapse (предварительная версия рабочих областей)](https://aka.ms/synapsepreview). 
+>
+>Также изучите [документацию по Azure Synapse (предварительная версия рабочих областей)](../overview-what-is.md).
 
 Azure Synapse — это служба аналитики, которая объединяет корпоративные хранилища данных и аналитику больших данных. Служба позволяет вам запрашивать данные на своих условиях, используя бессерверные ресурсы по запросу или подготовленные ресурсы в любом масштабе. Azure Synapse объединяет эти две возможности вместе, предоставляя единый интерфейс для приема, подготовки, контроля и обслуживания данных для насущных потребностей бизнес-аналитики и машинного обучения.
 
@@ -30,10 +35,7 @@ Azure Synapse — это служба аналитики, которая объ
 - Конвейеры Synapse: Гибридная интеграция данных (предварительная версия)
 - Studio. Унифицированное взаимодействие с пользователем.  (предварительная версия)
 
-> [!NOTE]
-> Чтобы получить доступ к функциям предварительной версии Azure Synapse, запросите доступ [здесь](https://aka.ms/synapsepreview). Корпорация Майкрософт будет рассматривать все запросы и реагировать как можно скорее.
->
-> Ознакомьтесь с [ документацией по предварительной версии Azure Synapse](../overview-what-is.md).
+
 
 ## <a name="synapse-sql-pool-in-azure-synapse"></a>Пул SQL Synapse в Azure Synapse
 

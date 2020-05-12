@@ -7,12 +7,12 @@ services: web-application-firewall
 ms.topic: tutorial
 ms.date: 03/18/2020
 ms.author: victorh
-ms.openlocfilehash: 738be1361bfbd944575abceb08781b241336f6e8
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7a9e0cc3977892fd899b4a25e17ad72f13481506
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79472546"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82608819"
 ---
 # <a name="tutorial-create-a-waf-policy-on-azure-cdn-using-the-azure-portal"></a>Руководство по созданию политики WAF в Azure CDN при помощи портала Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "79472546"
 
 > [!div class="checklist"]
 > * Создание политики WAF
-> * Связывание ее с конечной точкой CDN
+> * Связывание ее с конечной точкой CDN. Политику WAF можно связать только с конечными точками, размещенными на SKU **Azure CDN уровня "Стандартный" от Майкрософт**.
 > * настройка правил WAF.
 
 ## <a name="prerequisites"></a>Предварительные требования

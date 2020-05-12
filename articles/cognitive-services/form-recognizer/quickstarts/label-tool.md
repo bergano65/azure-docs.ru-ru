@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 790e2a148385f9da54df82f597c2ca52124dc2be
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: ac4cacd8233935362ed155dab22a66459ed9126d
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81529878"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82691333"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-the-sample-labeling-tool"></a>Обучение модели Распознавателя документов по примерам с метками с помощью средства маркировки данных
 
@@ -37,7 +37,7 @@ ms.locfileid: "81529878"
 Для запуска средства маркировки данных используется модуль Docker. Чтобы настроить контейнер Docker, сделайте следующее. Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).
 
 > [!TIP]
-> Средство маркировки документов OCR также доступно в виде проекта с открытым исходным кодом на сайте GitHub. Средство — это веб-приложение, созданное с помощью команды React + Redux и написанное в TypeScript. Чтобы узнать больше или внести свой вклад, см. статью [Средство маркировки документов OCR](https://github.com/microsoft/OCR-Form-Tools/blob/master/README.md#run-as-web-application).
+> Средство маркировки документов OCR также доступно в виде проекта с открытым исходным кодом на сайте GitHub. Это средство представляет собой веб-приложение TypeScript, созданное с помощью React + Redux. Чтобы узнать больше или внести свой вклад, см. репозиторий [средства маркировки документов OCR](https://github.com/microsoft/OCR-Form-Tools/blob/master/README.md#run-as-web-application). Чтобы испытать средство в Интернете, перейдите на [веб-сайт FOTT](https://fott.azurewebsites.net/).   
 
 1. Для начала установите Docker на главный компьютер. В этом руководстве показано, как использовать локальный компьютер в качестве узла. Если вы хотите использовать службу размещения Docker в Azure, ознакомьтесь с руководством [Развертывание примера средства создания меток](../deploy-label-tool.md). 
 
@@ -61,7 +61,7 @@ ms.locfileid: "81529878"
     docker run -it -p 3000:80 mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool eula=accept
     ```
 
-   Так средство маркировки данных станет доступным в веб-браузере. Перейдите на сайт [http://localhost:3000](http://localhost:3000).
+   Так средство маркировки данных станет доступным в веб-браузере. Перейдите к `http://localhost:3000`.
 
 > [!NOTE]
 > Вы также можете присваивать документам метки и обучать модели с помощью REST API Распознавателя документов. См. сведения о том, как [выполнять обучение на основе меток и анализ с использованием REST API и Python](./python-labeled-data.md).

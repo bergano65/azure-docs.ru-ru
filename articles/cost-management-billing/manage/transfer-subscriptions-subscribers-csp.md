@@ -5,14 +5,14 @@ author: bandersmsft
 ms.reviewer: dhgandhi
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 01/27/2020
+ms.date: 05/04/2020
 ms.author: banders
-ms.openlocfilehash: 4e7e9ea61d74eb38f3c225d66a39906bc18fe6d2
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b198a781da6e18c363e90d8bd5314dafc563dcca
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77200526"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82791159"
 ---
 # <a name="transfer-azure-subscriptions-between-subscribers-and-csps"></a>Перенос подписок Azure между подписчиками и CSP
 
@@ -50,6 +50,7 @@ ms.locfileid: "77200526"
 
 1. Создайте целевые подписки Azure.
 1. Убедитесь, что исходная и целевая подписки находятся в одном арендаторе Azure Active Directory (Azure AD). Дополнительные сведения об изменении клиента Azure AD см. в разделе [Associate or add an Azure subscription to your Azure Active Directory tenant](../../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md) (Связывание или добавление подписки Azure в клиент Azure Active Directory).
+    Обратите внимание, что целевой каталог не имеет подписки CSP. Например, если вы переносите данные из CSP в подписку с оплатой по мере использования, вам потребуется изменить каталог подписки с оплатой по мере использования, чтобы она соответствовала каталогу.
 
     > [!IMPORTANT]
     >  - При связывании подписки с другим каталогом, пользователи, которым назначены роли с помощью [управления доступом на основе ролей](../../role-based-access-control/role-assignments-portal.md), теряют доступ. Администраторы классической подписки, включая администратора служб и соадминистраторов, также теряют доступ.

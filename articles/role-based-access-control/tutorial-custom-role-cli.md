@@ -1,6 +1,6 @@
 ---
-title: Руководство по Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI
-description: Приступите к созданию пользовательской роли для ресурсов Azure с помощью Azure CLI.
+title: Руководство по Создание настраиваемой роли Azure с помощью Azure CLI — Azure RBAC
+description: Из этой статьи вы узнаете, как создать настраиваемую роль Azure с помощью Azure CLI и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 documentationCenter: ''
 author: rolyon
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/20/2019
 ms.author: rolyon
-ms.openlocfilehash: f1a6e72e1444a26b675379d9948217a7773c4a1c
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 3efe9670d03a754cc90689c4b66d0843de4e275f
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79224071"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82735510"
 ---
-# <a name="tutorial-create-a-custom-role-for-azure-resources-using-azure-cli"></a>Руководство по Создание пользовательской роли для ресурсов Azure с помощью Azure CLI
+# <a name="tutorial-create-an-azure-custom-role-using-azure-cli"></a>Руководство по Создание настраиваемой роли Azure с помощью Azure CLI
 
-Если [встроенные роли для ресурсов Azure](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. С помощью этого руководства и Azure CLI вы создадите настраиваемую роль с именем "Запросы в службу поддержки от читателя". Она позволяет пользователю просматривать все объекты в плоскости управления подписки, а также делать запросы в службу поддержки.
+Если [встроенные роли Azure](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные настраиваемые роли. С помощью этого руководства и Azure CLI вы создадите настраиваемую роль с именем "Запросы в службу поддержки от читателя". Она позволяет пользователю просматривать все объекты в плоскости управления подписки, а также делать запросы в службу поддержки.
 
 В этом руководстве описано следующее:
 
@@ -61,7 +61,7 @@ ms.locfileid: "79224071"
 
 1. Откройте роль ReaderSupportRole.json в редакторе и добавьте приведенный ниже код JSON.
 
-    Дополнительные сведения о свойствах см. в статье [Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI](custom-roles.md).
+    См. дополнительные сведения о [различных свойствах настраиваемых ролей](custom-roles.md).
 
     ```json
     {
@@ -269,4 +269,4 @@ ms.locfileid: "79224071"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI](custom-roles-cli.md).
+> [Создание или изменение настраиваемых ролей Azure с помощью Azure CLI](custom-roles-cli.md)
