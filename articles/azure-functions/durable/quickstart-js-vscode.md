@@ -3,20 +3,18 @@ title: Создание устойчивой функции в Azure с помо
 description: Создание и публикация устойчивой функции Azure с помощью Visual Studio Code.
 author: anthonychu
 ms.topic: quickstart
-ms.date: 03/24/2020
+ms.date: 05/07/2020
 ms.reviewer: azfuncdf, antchu
-ms.openlocfilehash: 55098daa69d3e878140b20095b0a3e08811269e1
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 6544cd115dbae2268492a8775a780d2f045f4e4a
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80257654"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82889671"
 ---
 # <a name="create-your-first-durable-function-in-javascript"></a>Создание устойчивой функции с помощью JavaScript
 
 *Устойчивые функции* — это расширение [Функций Azure](../functions-overview.md), которое позволяет писать функции с отслеживанием состояния в беcсерверной среде. Расширение автоматически управляет состоянием, создает контрольные точки и перезагружается.
-
-[!INCLUDE [v1-note](../../../includes/functions-durable-v1-tutorial-note.md)]
 
 В этой статье описано, как использовать расширение Функций Azure в Visual Studio Code, чтобы локально создать и тестировать устойчивую функцию hello world.  Эта функция будет организовывать и объединять в цепочку вызовы других функций. Затем вы опубликуете код функции в Azure.
 
@@ -61,7 +59,7 @@ ms.locfileid: "80257654"
 
 В корневой папке также создается файл package.json.
 
-### <a name="enable-azure-functions-v2-compatibility-mode"></a>Включение режима совместимости с Функциями Azure версии 2
+### <a name="enable-compatibility-mode"></a>Включение режима совместимости
 
 Сейчас для Устойчивых функций JavaScript требуется включить режим совместимости с Функциями Azure версии 2.
 
@@ -204,7 +202,7 @@ ms.locfileid: "80257654"
 
 [!INCLUDE [functions-publish-project-vscode](../../../includes/functions-publish-project-vscode.md)]
 
-### <a name="enable-azure-functions-v2-compatibility-mode"></a>Включение режима совместимости с Функциями Azure версии 2
+### <a name="enable-compatibility-mode"></a>Включение режима совместимости
 
 Режим совместимости с Функциями Azure версии 2, который вы уже включили локально, должен поддерживаться и в приложении Azure.
 

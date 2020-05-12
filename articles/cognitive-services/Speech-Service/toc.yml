@@ -426,13 +426,31 @@
           items:
             - name: 'Голосовые помощники: часто задаваемые вопросы'
               href: faq-voice-assistants.md
+    - name: Голосовые помощники в Windows
+      items:
+        - name: Обзор голосовых помощников в Windows
+          href: windows-voice-assistants-overview.md
+        - name: Практические руководства
+          items:
+            - name: Начало разработки помощника в Windows
+              href: how-to-windows-voice-assistants-get-started.md
+            - name: Включение голосовой активации
+              href: windows-voice-assistants-implementation-guide.md
+        - name: Ресурсы
+          items:
+            - name: Требования к обеспечению конфиденциальности и рекомендации
+              href: windows-voice-assistants-automatic-enablement-guidelines.md
+            - name: Рекомендации по работе с помощником
+              href: windows-voice-assistants-best-practices.md
+            - name: Примеры и часто задаваемые вопросы
+              href: windows-voice-assistants-faq.md
     - name: Пользовательское ключевое слово
       items:
         - name: Общие сведения о настраиваемых ключевых словах
           href: custom-keyword-overview.md
         - name: Рекомендации по именованию настраиваемых ключевых слов
           href: speech-devices-sdk-kws-guidelines.md
-        - name: Выявление пользовательских ключевых слов
+        - name: Настройка распознавания ключевых слов
           href: speech-devices-sdk-create-kws.md
 - name: Hosting
   items:
