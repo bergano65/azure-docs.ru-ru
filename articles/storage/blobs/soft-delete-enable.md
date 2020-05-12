@@ -1,24 +1,30 @@
 ---
-title: Включить обратимое удаление для больших двоичных объектов
+title: Включение обратимого удаления для больших двоичных объектов и управление им
 titleSuffix: Azure Storage
 description: Включите обратимое удаление для объектов BLOB, чтобы упростить восстановление данных при ошибочном изменении или удалении.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 04/02/2020
+ms.date: 05/11/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 26a16d0eeb81c12faede1c00bdf5a0d724f7a6c6
-ms.sourcegitcommit: d815163a1359f0df6ebfbfe985566d4951e38135
+ms.openlocfilehash: bbefa2a5d40d047d8885e4a0db8239d79a24feae
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82884687"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83120119"
 ---
-# <a name="enable-soft-delete-for-blobs"></a>Включить обратимое удаление для больших двоичных объектов
+# <a name="enable-and-manage-soft-delete-for-blobs"></a>Включение обратимого удаления для больших двоичных объектов и управление им
 
-Ниже показано, как приступить к работе с обратимым удалением.
+Обратимое удаление защищает данные большого двоичного объекта от случайного или ошибочного изменения или удаления. Если обратимое удаление включено для учетной записи хранения, большие двоичные объекты, версии больших двоичных объектов (Предварительная версия) и моментальные снимки в этой учетной записи хранения могут быть восстановлены после их удаления в течение указанного срока хранения.
+
+Если есть вероятность, что данные могут быть случайно изменены или удалены приложением или другим пользователем учетной записи хранения, корпорация Майкрософт рекомендует включить обратимое удаление.
+
+В этой статье показано, как начать обратимое удаление.
+
+## <a name="enable-soft-delete"></a>Включение обратимого удаления
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
@@ -71,6 +77,7 @@ Set-AzContext -Subscription "<subscription-name>"
 $MatchingAccounts = Get-AzStorageAccount | where-object{$_.StorageAccountName -match "<matching-regex>"}
 $MatchingAccounts | Enable-AzStorageDeleteRetentionPolicy -RetentionDays 7
 ```
+
 Убедиться, что обратимое удаление включено, можно с помощью следующей команды:
 
 ```powershell
@@ -174,3 +181,7 @@ blockBlob.StartCopy(copySource);
 
 ---
 
+## <a name="next-steps"></a>Дальнейшие действия
+
+- [Обратимое удаление для хранилища BLOB-объектов](soft-delete-overview.md)
+- [Управление версиями BLOB-объектов (Предварительная версия)](versioning-overview.md)

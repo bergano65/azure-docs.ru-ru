@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: kanshiG
 ms.author: govindk
 ms.date: 04/09/2020
-ms.openlocfilehash: bc39ef199a5d40d3eaa75023277d3e00b93e131a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4ea195dfbf9eddbf10680196c9c75646b45380ae
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81115434"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83119004"
 ---
 # <a name="how-to-monitor-throughput-or-request-unit-usage-of-an-operation-in-azure-cosmos-db"></a>Мониторинг пропускной способности или использования единиц запросов для операции в Azure Cosmos DB
 
@@ -60,7 +60,7 @@ Azure Monitor для Azure Cosmos DB предоставляет представ
 
    ![Cosmos DB единиц запросов для всех операций коллекции в Azure Monitor](./media/monitor-request-unit-usage/request-unit-usage-collection.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Отслеживайте Azure Cosmos DB данные с помощью [параметров диагностики](cosmosdb-monitor-resource-logs.md) в Azure.
 * [Аудит операций Azure Cosmos DB плоскости управления](audit-control-plane-logs.md)

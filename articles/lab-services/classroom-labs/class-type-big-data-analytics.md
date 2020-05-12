@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 4/15/2020
 ms.author: nicolela
-ms.openlocfilehash: c499b7a0f1cd16bf57fef21742b01bda71249916
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3035b9debdd46c1a8ba246882312e28d1a2087e4
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81538782"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83118436"
 ---
 # <a name="set-up-a-lab-to-big-data-analytics-using-docker-deployment-of-hortonworks-data-platform"></a>Настройка лаборатории для анализа больших данных с помощью развертывания DOCKER платформы HortonWorks Data Platform
 
@@ -38,7 +38,7 @@ ms.locfileid: "81538782"
 
 Включите параметры, описанные в таблице ниже, для учетной записи лаборатории. Дополнительные сведения о том, как включить образы Marketplace, см. [в разделе Указание образов Marketplace, доступных авторам лабораторий](https://docs.microsoft.com/azure/lab-services/classroom-labs/specify-marketplace-images).
 
-| Параметр учетной записи лаборатории | Instructions |
+| Параметр учетной записи лаборатории | Инструкции |
 | ------------------- | ------------ |
 |Образ Marketplace| Включите образ Windows 10 Pro для использования в учетной записи лаборатории.|
 
@@ -102,7 +102,7 @@ ms.locfileid: "81538782"
 1. После развертывания и запуска контейнеров DOCKER для песочницы HDP можно получить доступ к среде, запустив браузер и следуя инструкциям Cloudera для открытия [страницы приветствия "песочницы"](https://www.cloudera.com/tutorials/learning-the-ropes-of-the-hdp-sandbox.html#welcome-page) и запуска панели мониторинга HDP.
 
     > [!NOTE] 
-    > В этих инструкциях предполагается, что сначала вы сопоставили локальный IP-адрес среды "песочницы" с sandbox-hdp.hortonworks.com в файле узла на виртуальной машине шаблона.  Если вы **не** выполняете это сопоставление, вы можете открыть страницу приветствия "песочницы", [http://localhost:8080](http://localhost:8080)перейдя по адресу.
+    > В этих инструкциях предполагается, что сначала вы сопоставили локальный IP-адрес среды "песочницы" с sandbox-hdp.hortonworks.com в файле узла на виртуальной машине шаблона.  Если вы **не** выполняете это сопоставление, вы можете открыть страницу приветствия "песочницы", перейдя по адресу `http://localhost:8080` .
 
 ### <a name="automatically-start-docker-containers-when-students-log-in"></a>Автоматически запускать контейнеры DOCKER при входе учащихся
 

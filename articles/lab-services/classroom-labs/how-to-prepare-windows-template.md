@@ -10,12 +10,12 @@ ms.service: lab-services
 ms.topic: article
 ms.date: 11/21/2019
 ms.author: enewman
-ms.openlocfilehash: c1aaf588f61b329fa3b838b8a92f3e287897315b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7ed2a506fc4446f78685c6cd6ae9dec2b65e1743
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80521188"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83119303"
 ---
 # <a name="guide-to-setting-up-a-windows-template-machine-in-azure-lab-services"></a>Инструкции по настройке компьютера шаблона Windows в службах лаборатории Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "80521188"
 
 Чтобы вручную скачать и установить OneDrive, см. страницы скачивания [onedrive](https://onedrive.live.com/about/download/) или [onedrive для бизнеса](https://onedrive.live.com/about/business/) .
 
-Можно также использовать следующий сценарий PowerShell.  Будет автоматически загружена и установлена последняя версия OneDrive.  После установки клиента OneDrive запустите установщик.  В нашем примере мы используем `/allUsers` параметр, чтобы установить OneDrive для всех пользователей на компьютере. Мы также используем `/silent` параметр для автоматической установки OneDrive.
+Можно также использовать следующий сценарий PowerShell.  Будет автоматически загружена и установлена последняя версия OneDrive.  После установки клиента OneDrive запустите установщик.  В нашем примере мы используем параметр, `/allUsers` чтобы установить OneDrive для всех пользователей на компьютере. Мы также используем `/silent` параметр для автоматической установки OneDrive.
 
 ```powershell
 Write-Host "Downloading OneDrive Client..."
@@ -136,9 +136,9 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\OneDrive\DiskSpaceChec
 Если компьютеру-шаблону требуется Office, рекомендуется установить Office с помощью [средства развертывания Office (ODT)](https://www.microsoft.com/download/details.aspx?id=49117 ). Необходимо создать файл конфигурации с возможностью повторного использования с помощью [службы настройки клиента Office 365](https://config.office.com/) , чтобы выбрать архитектуру, функции, необходимые для Office, и частоту обновления.
 
 1. Перейдите в [службу настройки клиента Office 365](https://config.office.com/) и скачайте собственный файл конфигурации.
-2. Загрузите [средство развертывания Office](https://www.microsoft.com/download/details.aspx?id=49117).  Скачанный файл будет `setup.exe`иметь расширение.
+2. Загрузите [средство развертывания Office](https://www.microsoft.com/download/details.aspx?id=49117).  Скачанный файл будет иметь расширение `setup.exe` .
 3. Запустите `setup.exe /download configuration.xml` , чтобы скачать компоненты Office.
-4. Выполните `setup.exe /configure configuration.xml` команду, чтобы установить компоненты Office.
+4. Выполните команду `setup.exe /configure configuration.xml` , чтобы установить компоненты Office.
 
 ### <a name="change-the-microsoft-office-365-update-channel"></a>Изменение канала обновления Microsoft Office 365
 
@@ -211,11 +211,11 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AU"
 2. Выполните поиск по фразе "языковой пакет"
 3. Выберите язык для установки
 
-Если вы уже выполнили вход в виртуальную машину шаблона, воспользуйтесь [ярлыком "установить языковой пакет"](ms-settings:regionlanguage?activationSource=SMC-IA-4027670) , чтобы перейти непосредственно к соответствующей странице параметров.
+Если вы уже выполнили вход в виртуальную машину шаблона, воспользуйтесь сочетанием клавиш "установить языковой пакет" ( `ms-settings:regionlanguage?activationSource=SMC-IA-4027670` ), чтобы перейти непосредственно к соответствующей странице параметров.
 
 ## <a name="remove-unneeded-built-in-apps"></a>Удаление ненужных встроенных приложений
 
-В состав Windows 10 входит множество встроенных приложений, которые могут не потребоваться для конкретного класса. Чтобы упростить образ компьютера для учащихся, может потребоваться удалить некоторые приложения с компьютера с шаблоном.  Чтобы просмотреть список установленных приложений, используйте командлет PowerShell `Get-AppxPackage` .  В следующем примере показаны все установленные приложения, которые можно удалить.
+В состав Windows 10 входит множество встроенных приложений, которые могут не потребоваться для конкретного класса. Чтобы упростить образ компьютера для учащихся, может потребоваться удалить некоторые приложения с компьютера с шаблоном.  Чтобы просмотреть список установленных приложений, используйте `Get-AppxPackage` командлет PowerShell.  В следующем примере показаны все установленные приложения, которые можно удалить.
 
 ```powershell
 Get-AppxPackage | Where {$_.NonRemovable -eq $false} | select Name
@@ -235,5 +235,5 @@ Get-AppxPackage -Name *xbox* | foreach { if (-not $_.NonRemovable) { Remove-Appx
 
 В этой статье показаны необязательные шаги по подготовке виртуальной машины шаблона Windows для эффективного класса.  Шаги включают установку OneDrive и установку Office 365, установку обновлений для Windows и установку обновлений для Microsoft Store приложений.  Мы также рассмотрели, как настроить обновления по расписанию, которое лучше подходит для вашего класса.  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. статью о том, как управлять поведением завершения работы Windows, чтобы упростить управление затратами: [руководство по управлению работой при завершении работы Windows](how-to-windows-shutdown.md)

@@ -1,20 +1,20 @@
 ---
 title: Добавление HTML-маркера к сопоставлению | Карты Microsoft Azure
 description: В этой статье вы узнаете, как добавить маркер HTML к карте с помощью веб-пакета SDK Microsoft Azure Maps.
-author: jinzh-azureiot
-ms.author: jinzh
+author: Philmea
+ms.author: philmea
 ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 2700d42c25d58911fb275ad9ce6c5610cd22624d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 30d9cf9848a8d99505bf9f9c97bef5aaa31065ee
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79536774"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83119277"
 ---
 # <a name="add-html-markers-to-the-map"></a>Добавление маркеров HTML на карту
 
@@ -28,9 +28,9 @@ ms.locfileid: "79536774"
 
 ## <a name="add-an-html-marker"></a>Добавление маркера HTML
 
-Класс [хтмлмаркер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.htmlmarker?view=azure-iot-typescript-latest) имеет стиль по умолчанию. Маркер можно настроить, задав параметры цвета и текста маркера. Стилем по умолчанию для класса маркеров HTML является шаблон SVG, который имеет `{color}` заполнитель и `{text}` . Задайте свойства цвета и текста в параметрах маркера HTML для быстрой настройки. 
+Класс [хтмлмаркер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.htmlmarker?view=azure-iot-typescript-latest) имеет стиль по умолчанию. Маркер можно настроить, задав параметры цвета и текста маркера. Стилем по умолчанию для класса маркеров HTML является шаблон SVG, который имеет `{color}` `{text}` заполнитель и. Задайте свойства цвета и текста в параметрах маркера HTML для быстрой настройки. 
 
-Следующий код создает HTML-маркер и присваивает свойству Color значение «Доджерблуе», а свойству Text — значение «10». К маркеру и `click` событию применяется всплывающее окно, которое позволяет переключать видимость всплывающего окна.
+Следующий код создает HTML-маркер и присваивает свойству Color значение «Доджерблуе», а свойству Text — значение «10». К маркеру и событию применяется всплывающее окно, `click` которое позволяет переключать видимость всплывающего окна.
 
 ```javascript
 //Create an HTML marker and add it to the map.
@@ -82,7 +82,7 @@ map.events.add('click',marker, () => {
 
 ## <a name="draggable-html-markers"></a>Перетаскиваемые маркеры HTML
 
-В этом примере показано, как сделать перетаскиваемый маркер HTML. Маркеры HTML поддерживают `drag`события `dragstart`, и `dragend` .
+В этом примере показано, как сделать перетаскиваемый маркер HTML. Маркеры HTML поддерживают `drag` `dragstart` события, и `dragend` .
 
 <br/>
 
@@ -98,7 +98,7 @@ map.events.add('click',marker, () => {
 <iframe height='500' scrolling='no' title='Добавление событий мыши к маркерам HTML' src='//codepen.io/azuremaps/embed/RqOKRz/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/RqOKRz/'>Добавление событий мыши к маркерам HTML</a> службы Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

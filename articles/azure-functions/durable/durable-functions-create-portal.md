@@ -2,14 +2,14 @@
 title: Создание Устойчивых функций с помощью портала Azure
 description: Сведения о том, как установить расширение Устойчивых функций для Функций Azure для разработки с помощью портала.
 ms.topic: conceptual
-ms.date: 10/23/2018
+ms.date: 04/10/2020
 ms.reviewer: azfuncdf
-ms.openlocfilehash: 0060088acb100036c094406e01d0d736a4af88eb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6416ae4aba8b045c6c4fb0fe6557bdcd1efb3a9b
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75769648"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83120164"
 ---
 # <a name="create-durable-functions-using-the-azure-portal"></a>Создание Устойчивых функций с помощью портала Azure
 
@@ -30,15 +30,17 @@ ms.locfileid: "75769648"
 
 ## <a name="install-the-durable-functions-npm-package-javascript-only"></a>Установка пакета npm для расширения "Устойчивые функции" (только JavaScript)
 
-При создании устойчивые функции JavaScript необходимо установить [ `durable-functions` пакет NPM](https://www.npmjs.com/package/durable-functions).
+При создании Устойчивые функции JavaScript необходимо установить [ `durable-functions` пакет NPM](https://www.npmjs.com/package/durable-functions):
 
-1. Выберите имя приложения-функции, а затем — **Функции платформы** и **Дополнительные инструменты (Kudu)**.
+1. На странице приложения-функции выберите **дополнительные средства** в разделе **средства разработки** на панели слева.
 
-   ![Выбор Функций, элемента "Функции платформы" и "Дополнительные инструменты (Kudu)"](./media/durable-functions-create-portal/function-app-platform-features-choose-kudu.png)
+   :::image type="content" source="./media/durable-functions-create-portal/function-app-platform-features-choose-kudu.png" alt-text="Выбор Функций, элемента "Функции платформы" и "Дополнительные инструменты (Kudu)"":::
 
-2. В консоли Kudu выберите **Консоль отладки**, а затем — **CMD**.
+2. На странице **Дополнительные инструменты** выберите **Go**.
 
-   ![Консоль отладки Kudu](./media/durable-functions-create-portal/kudu-choose-debug-console.png)
+3. В консоли KUDU выберите **консоль отладки**, а затем **cmd**.
+
+   :::image type="content" source="./media/durable-functions-create-portal/kudu-choose-debug-console.png" alt-text="Консоль отладки Kudu":::
 
 3. Появится структура каталогов файлов приложения-функции. Перейдите в папку `site/wwwroot`. Из нее вы можете отправить файл `package.json`, перетащив его в окно каталогов файлов. Ниже приведен пример файла `package.json`.
 
@@ -50,7 +52,7 @@ ms.locfileid: "75769648"
     }
     ```
 
-   ![Отправка файла package.json в Kudu](./media/durable-functions-create-portal/kudu-choose-debug-console.png)
+   :::image type="content" source="./media/durable-functions-create-portal/kudu-choose-debug-console.png" alt-text="Отправка файла package.json в Kudu":::
 
 4. Когда файл `package.json` будет передан, запустите команду `npm install` в консоли удаленного выполнения Kudu.
 
@@ -58,29 +60,23 @@ ms.locfileid: "75769648"
 
 ## <a name="create-an-orchestrator-function"></a>Создание функции оркестратора
 
-1. Разверните приложение функции и нажмите **+** кнопку рядом с пунктом **функции**. Если это первая функция в приложении-функции, последовательно выберите **На портале** и **Продолжить**. Если нет, перейдите к шагу 3.
+1. В приложении функции выберите **функции** в левой области, а затем в верхнем меню выберите **Добавить** . 
 
-   ![Страница быстрого начала работы с функциями на портале Azure](./media/durable-functions-create-portal/function-app-quickstart-choose-portal.png)
+1. В поле поиска на странице **Новая функция** введите `durable` , а затем выберите шаблон **устойчивые функции HTTP Starter** .
 
-1. Последовательно выберите **Дополнительные шаблоны** и **Finish and view templates** (Закончить и просмотреть шаблоны).
+   :::image type="content" source="./media/durable-functions-create-portal/durable-functions-http-starter-template.png" alt-text="Выберите Устойчивые функции HTTP Starter":::
 
-    ![Быстрый запуск функций: просмотр дополнительных шаблонов](./media/durable-functions-create-portal/add-first-function.png)
+1. В качестве имени **новой функции** введите `HttpStart` , а затем выберите **создать функцию**.
 
-1. В поле поиска введите `durable` и выберите шаблон **Начальный объект HTTP устойчивых функций**.
+   Созданная функция используется для запуска оркестрации.
 
-1. При появлении запроса выберите **установить** , чтобы установить расширение Azure DurableTask и все зависимости в приложении функции. Установить расширение для приложения-функции необходимо всего один раз. По завершении установки щелкните **Продолжить**.
+1. Создайте другую функцию в приложении функции, на этот раз используя шаблон **устойчивые функции Orchestrator** . Присвойте новой функции оркестрации имя `HelloSequence`.
 
-    ![Установка расширений привязки](./media/durable-functions-create-portal/install-durabletask-extension.png)
-
-1. После завершения установки присвойте новой функции имя `HttpStart` и выберите **Создать**. Созданная функция используется для запуска оркестрации.
-
-1. Создайте другую функцию в приложении-функции, но на этот раз используя шаблон **Оркестратор устойчивых функций**. Присвойте новой функции оркестрации имя `HelloSequence`.
-
-1. Создайте третью функцию с именем `Hello`, используя шаблон **Действие устойчивых функций**.
+1. Создайте третью функцию с именем с `Hello` помощью шаблона **действия устойчивые функции** .
 
 ## <a name="test-the-durable-function-orchestration"></a>Тестирование оркестрации устойчивых функций
 
-1. Вернитесь к функции **HttpStart**, выберите **</> Получить URL-адрес функции** и щелкните **Копировать**, чтобы скопировать URL-адрес. С помощью этого URL-адреса можно запустить функцию **HelloSequence**.
+1. Вернитесь к функции **HttpStart** , выберите **получить URL-адрес функции**и щелкните значок **Копировать в буфер обмена** , чтобы скопировать URL-адрес. С помощью этого URL-адреса можно запустить функцию **HelloSequence**.
 
 1. Используя средство HTTP, например Postman или cURL, отправьте запрос POST к скопированному URL-адресу. В следующем примере представлена команда cURL, которая отправляет запрос POST к устойчивой функции:
 
@@ -133,4 +129,4 @@ ms.locfileid: "75769648"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Подробные сведения о распространенных шаблонах устойчивых функций](durable-functions-overview.md#application-patterns)
+> [Дополнительные сведения о распространенных шаблонах устойчивых функций](durable-functions-overview.md#application-patterns)
