@@ -1,16 +1,17 @@
 ---
-title: Проверка подлинности
+title: Аутентификация
 description: Описание принципа работы проверки подлинности
 author: florianborn71
 ms.author: flborn
 ms.date: 02/12/2019
 ms.topic: how-to
-ms.openlocfilehash: fbc27f2fa3b7517151c4bcdbec5b146e83dd868e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: has-adal-ref
+ms.openlocfilehash: 34874e01b526a4d88ff4402edb0c3771c75a3726
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80681640"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83195308"
 ---
 # <a name="configure-authentication"></a>Настройка аутентификации
 
@@ -29,7 +30,7 @@ ms.locfileid: "80681640"
 * **Администратор удаленной подготовки отчетов**. предоставляет пользователю возможность преобразования, управления сеансами, подготовки к просмотру и диагностики для удаленной подготовки к просмотру Azure.
 * **Клиент удаленной отрисовки**: предоставляет пользователю возможность управления сеансами, отрисовкой и диагностикой для удаленной подготовки к просмотру Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание учетной записи](create-an-account.md)
 * [Использование интерфейсов API интерфейса Azure для проверки подлинности](frontend-apis.md)

@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4abae94ded92aca075fcb41a7cd42491e92d41d6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2ccaf662488203e346065cfee082018128f37d95
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77591546"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83201668"
 ---
 # <a name="prepare-azure-infrastructure-for-sap-high-availability-by-using-a-windows-failover-cluster-and-file-share-for-sap-ascsscs-instances"></a>Подготовка высокодоступной инфраструктуры Azure для SAP с помощью отказоустойчивого кластера Windows и файлового ресурса для экземпляров SAP ASCS/SCS
 
@@ -348,10 +348,10 @@ _**Рис. 2**. экран пользовательского интерфейс
 
 - Самесубнетделай = 2000
 - SameSubNetThreshold = 15
-- Раутингхисториленгс = 30
+- Раутехисториленгс = 30
 
 Эти параметры были протестированы у клиентов, они обеспечивают удачный компромисс. Они достаточно устойчивы, но они также обеспечивают достаточную отработку отказа в реальных условиях возникновения ошибок или сбоя виртуальной машины.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Установка высокодоступной системы SAP NetWeaver в отказоустойчивом кластере Windows с файловым ресурсом для экземпляров SAP ASCS/SCS][sap-high-availability-installation-wsfc-file-share]

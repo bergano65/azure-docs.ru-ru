@@ -1,17 +1,20 @@
 ---
 title: Элементы управления безопасностью для масштабируемых наборов виртуальных машин Azure
 description: Контрольный список средств управления безопасностью для оценки масштабируемых наборов виртуальных машин Azure
-ms.service: virtual-machine-scale-sets
-author: msmbaldwin
+author: mimckitt
+ms.author: mimckitt
 ms.topic: conceptual
+ms.service: virtual-machine-scale-sets
+ms.subservice: security
 ms.date: 09/05/2019
-ms.author: mbaldwin
-ms.openlocfilehash: 4007f4adeee065fe32492d3bd16f3a06d24e7d96
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.reviewer: jushiman
+ms.custom: mimckitt
+ms.openlocfilehash: 030e2c23d68a3fbbc96dd7591583cb27b650d011
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77190607"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83200016"
 ---
 # <a name="security-controls-for-azure-virtual-machine-scale-sets"></a>Элементы управления безопасностью для масштабируемых наборов виртуальных машин Azure
 
@@ -40,7 +43,7 @@ ms.locfileid: "77190607"
 
 | Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
-| Проверка подлинности| Да |  |
+| Аутентификация| Да |  |
 | Авторизация| Да |  |
 
 ## <a name="data-protection"></a>Защита данных
@@ -50,7 +53,7 @@ ms.locfileid: "77190607"
 | Шифрование неактивных на стороне сервера: ключи, управляемые корпорацией Майкрософт | Да | См. раздел [Шифрование дисков Azure для масштабируемых наборов виртуальных машин](disk-encryption-overview.md). |
 | Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Да | Виртуальные машины Azure поддерживают шифрование [ExpressRoute](/azure/expressroute) и виртуальной сети. См. раздел [Шифрование транзитного пути в виртуальных машинах](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms). |
 | Шифрование неактивных на стороне сервера: ключи, управляемые клиентом (BYOK) | Да | Ключи, управляемые клиентом, являются поддерживаемым сценарием шифрования Azure. см. раздел [о шифровании дисков Azure для масштабируемых наборов виртуальных машин](disk-encryption-overview.md) .|
-| Шифрование на уровне столбцов (службы данных Azure)| Недоступно | |
+| Шифрование на уровне столбцов (службы данных Azure)| Н/Д | |
 | Вызовы API в зашифрованном виде| Да | Через HTTPS и TLS. |
 
 ## <a name="configuration-management"></a>Управление конфигурацией
@@ -59,6 +62,6 @@ ms.locfileid: "77190607"
 |---|---|--|
 | Поддержка управления конфигурацией (управление версиями конфигураций и т. д.)| Да |  | 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [встроенных средствах управления безопасностью в службах Azure](../security/fundamentals/security-controls.md).

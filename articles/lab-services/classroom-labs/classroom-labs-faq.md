@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/07/2020
 ms.author: spelluru
-ms.openlocfilehash: 2c8cc4c01b172cd11c13558cd195673d21499b41
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: cb645b5adfcd937758a950eaf596bc60e4d55f3f
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82983913"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83115155"
 ---
 # <a name="classroom-labs-in-azure-lab-services--frequently-asked-questions-faq"></a>Учебные лаборатории в службах лаборатории Azure — часто задаваемые вопросы
 Получите ответы на некоторые наиболее распространенные вопросы о занятиях лаборатории в службах лаборатории Azure. 
@@ -72,11 +72,11 @@ ms.locfileid: "82983913"
 ## <a name="update-notifications"></a>Уведомления об обновлениях
 Подпишитесь на [обновления служб лаборатории](https://azure.microsoft.com/updates/?product=lab-services) , чтобы следить за новыми функциями служб лаборатории.
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общие
 ### <a name="what-if-my-question-isnt-answered-here"></a>Мне не удалось найти ответ на свой вопрос. Что делать?
 Если ваш вопрос не указан здесь, сообщите нам о том, что мы можем помочь вам найти ответ.
 
 - Опубликуйте вопрос в конце этой статьи 
-- Чтобы достичь более широкой аудитории, опубликуйте вопрос в [службах лаборатории Azure — Stack overflow форуме](https://stackoverflow.com/questions/tagged/azure-lab-services). 
+- Чтобы достичь более широкой аудитории, опубликуйте вопрос в [службах лаборатории Azure — на форуме технического сообщества](https://techcommunity.microsoft.com/t5/azure-lab-services/bd-p/AzureLabServices). 
 - Для запросов к функциям отправьте свои запросы и идеи в [службы лаборатории Azure — пользовательская речь](https://feedback.azure.com/forums/320373-lab-services?category_id=352774).
 

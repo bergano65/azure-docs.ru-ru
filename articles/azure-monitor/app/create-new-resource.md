@@ -3,12 +3,12 @@ title: Создание ресурса Azure Application Insights | Докуме
 description: Вручную настройте мониторинг Application Insights для нового работающего приложения.
 ms.topic: conceptual
 ms.date: 12/02/2019
-ms.openlocfilehash: 0c8b9ccaa70a2fd1bf46c6f4537f54d702ecc48f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4d8979469ca83dfd6b81aab10191e8fbf36104ff
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81537582"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83200663"
 ---
 # <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 
@@ -26,9 +26,10 @@ Azure Application Insights отображает данные о приложен
 
    | "Настройки"        |  Значение           | Описание  |
    | ------------- |:-------------|:-----|
-   | **имя**;      | Уникальное значение | Имя, идентифицирующее отслеживаемое приложение. |
-   | **Группа ресурсов**     | myResourceGroup      | Имя новой или существующей группы ресурсов для размещения данных App Insights. |
-   | **Расположение** | Восточная часть США | Выберите расположение рядом с вами или рядом с ним, где размещено ваше приложение. |
+   | **имя**;      | `Unique value` | Имя, идентифицирующее отслеживаемое приложение. |
+   | **Группа ресурсов**     | `myResourceGroup`      | Имя новой или существующей группы ресурсов для размещения данных App Insights. |
+   | **Регион** | `East US` | Выберите расположение рядом с вами или рядом с ним, где размещено ваше приложение. |
+   | **Режим ресурсов** | `Classic` или `Workspace-based` | Ресурсы на основе рабочей области в настоящее время доступны в общедоступной предварительной версии и позволяют отправить данные телеметрии Application Insights в общую рабочую область Log Analytics. Дополнительные сведения см. в [статье о ресурсах на основе рабочей области](create-workspace-resource.md).
 
 > [!NOTE]
 > Хотя одно и то же имя ресурса можно использовать в разных группах ресурсов, может быть полезно использовать глобально уникальное имя. Это может быть полезно, если планируется [выполнять запросы перекрестных запросов](https://docs.microsoft.com/azure/azure-monitor/log-query/cross-workspace-query#identifying-an-application) , так как это упрощает необходимый синтаксис.
@@ -96,7 +97,7 @@ TenantId           : {subid}
 
 ### <a name="azure-cli-preview"></a>Azure CLI (Предварительная версия)
 
-Чтобы получить доступ к предварительной версии Application Insights Azure CLI, необходимо выполнить первую команду:
+Чтобы получить доступ к командам предварительной версии Application Insights Azure CLI, сначала необходимо выполнить следующие действия.
 
 ```azurecli
  az extension add -n application-insights
@@ -151,7 +152,7 @@ az monitor app-insights component create --app demoApp --location eastus --kind 
 
 Полный Azure CLI документации по этой команде и сведения о получении ключа инструментирования см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest#ext-application-insights-az-monitor-app-insights-component-create).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Поиск по журналу диагностики](../../azure-monitor/app/diagnostic-search.md)
 * [Просмотр метрик](../../azure-monitor/platform/metrics-charts.md)
 * [Написание запросов аналитики](../../azure-monitor/app/analytics.md)

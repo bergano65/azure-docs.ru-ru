@@ -1,19 +1,19 @@
 ---
 title: Покрытие отрисовки | Карты Microsoft Azure
 description: В этой статье вы узнаете о регионах с картами Microsoft Azure, а также об их уровне подготовки к просмотру.
-author: jinzh-azureiot
-ms.author: jinzh
+author: Philmea
+ms.author: philmea
 ms.date: 03/22/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.openlocfilehash: ddc53111cd69072322f37fdfb25c37665c852c23
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e7fffa0e5ab75767ab36c83542ac0e3a9ffb1231
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79536757"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83123944"
 ---
 # <a name="azure-maps-render-coverage"></a>Покрытие для отображения в службе "Карты Azure"
 
@@ -257,7 +257,7 @@ ms.locfileid: "79536757"
 | Фарерские о-ва             | ✓ | Ø |
 | Финляндия                   | ✓ | ✓ |
 | Франция                    | ✓ | ✓ |
-| Джорджия                   | ✓ | Ø |
+| Грузия                   | ✓ | Ø |
 | Германия                   | ✓ | ✓ |
 | Гибралтар                 | ✓ | ✓ |
 | Греция                    | ✓ | ✓ |
@@ -298,7 +298,7 @@ ms.locfileid: "79536757"
 | United Kingdom            | ✓ | ✓ |
 | Ватикан              | ✓ | ✓ |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об отображении данных в службе "Карты Azure" см. в статье [Zoom levels and tile grid](zoom-levels-and-tile-grid.md) (Возможности масштабирования и параметры сетки).
 

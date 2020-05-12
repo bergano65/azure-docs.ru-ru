@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 5e725df5c875f23d82da1fda19bcdf28db548fc8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3a8839609856bda5304712405ec57accb4afb095
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81428567"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83201678"
 ---
 # <a name="connect-to-synapse-sql-with-visual-studio-and-ssdt"></a>Подключение к синапсе SQL с помощью Visual Studio и SSDT
 > [!div class="op_single_selector"]
@@ -28,11 +28,10 @@ ms.locfileid: "81428567"
 
 Используйте Visual Studio для запроса пула SQL с помощью Azure синапсе Analytics. Этот метод использует расширение SQL Server Data Tools (SSDT) в Visual Studio 2019. 
 
-### <a name="supported-tools-for-sql-on-demand-preview"></a>Поддерживаемые средства для использования SQL по запросу (предварительная версия)
+> [!NOTE]
+> SQL по запросу (Предварительная версия) не поддерживается SSDT.
 
-Visual Studio в настоящее время не поддерживается для SQL по запросу (Предварительная версия). Однако Студи данных Azure (Предварительная версия) o — это полностью поддерживаемое средство. SQL Server Management Studio частично поддерживается в версии 18,4 и имеет ограниченные функции, такие как подключение и запросы.
-
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим руководством необходимо иметь следующие компоненты:
 
 * Существующий пул SQL. Если у вас ее нет, см. раздел [Создание пула SQL](../sql-data-warehouse/create-data-warehouse-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) для выполнения этого предварительного требования.
@@ -41,7 +40,7 @@ Visual Studio в настоящее время не поддерживается
 
 ## <a name="1-connect-to-sql-pool"></a>1. подключение к пулу SQL
 1. Запустите Visual Studio 2019.
-2. Откройте обозреватель объектов SQL Server. Для этого выберите **Просмотреть** > **Обозреватель объектов SQL Server**.
+2. Откройте обозреватель объектов SQL Server. Для этого выберите **Просмотреть**  >  **Обозреватель объектов SQL Server**.
    
     ![Обозреватель объектов SQL Server](./media/get-started-visual-studio/open-ssdt.png)
 3. Щелкните значок **Добавить SQL Server** .

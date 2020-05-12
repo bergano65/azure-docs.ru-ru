@@ -3,12 +3,12 @@ title: Восстановление файлов Azure с помощью PowerSh
 description: Из этой статьи вы узнаете, как восстановить файлы Azure с помощью службы Azure Backup и PowerShell.
 ms.topic: conceptual
 ms.date: 1/27/2020
-ms.openlocfilehash: bcd85635dbacceb7d1c125bb550feedbdb57e04a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 63c318b66ec8f876a260b3c5b8db38bb088fb862
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82097648"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83201954"
 ---
 # <a name="restore-azure-files-with-powershell"></a>Восстановление файлов Azure с помощью PowerShell
 
@@ -17,7 +17,7 @@ ms.locfileid: "82097648"
 Можно восстановить весь файловый ресурс или отдельные файлы в общей папке. Можно выполнить восстановление в исходное расположение или в другое расположение.
 
 > [!WARNING]
-> Убедитесь, что версия PS обновлена до минимальной версии для "az. RecoveryServices 2.6.0" для резервных копий AFS. Дополнительные сведения см. [в разделе](backup-azure-afs-automation.md#important-notice---backup-item-identification-for-afs-backups) Структурирование требований к этому изменению.
+> Убедитесь, что версия PS обновлена до минимальной версии для "az. RecoveryServices 2.6.0" для резервных копий AFS. Дополнительные сведения см. [в разделе](backup-azure-afs-automation.md#important-notice-backup-item-identification) Структурирование требований к этому изменению.
 
 >[!NOTE]
 >Azure Backup теперь поддерживает восстановление нескольких файлов или папок в исходное или альтернативное расположение с помощью PowerShell. Обратитесь к [этому разделу](#restore-multiple-files-or-folders-to-original-or-alternate-location) документа, чтобы узнать, как это делать.
@@ -169,6 +169,6 @@ azurefiles           Restore           InProgress      4/5/2020 8:01:24 AM      
 
 Если вы хотите восстановить несколько файлов или папок в альтернативное расположение, используйте приведенные выше сценарии, указав значения параметров, связанные с целевым расположением, как описано выше в примере [восстановления файла Azure в альтернативное расположение](#restore-an-azure-file-to-an-alternate-location).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о](restore-afs.md) восстановлении файлов Azure в портал Azure.

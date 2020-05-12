@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/30/2019
 ms.author: spelluru
-ms.openlocfilehash: 27619a69a1f7fbded8ce6430afc2b8e9a8b4a00c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 45043718664eb1b3b6b865821b3f6b2a51199194
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79296733"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83115036"
 ---
 # <a name="class-types-overview---azure-lab-services"></a>Общие сведения о типах классов — Службы лабораторий Azure
 
@@ -61,8 +61,12 @@ ms.locfileid: "79296733"
 
 Подробные сведения о том, как настроить такого рода лабораторию, см. в статье [Set up a lab to teach data mobile application development with Android Studio](class-type-mobile-dev-android-studio.md) (Настройка лаборатории для обучения разработке мобильных приложений с Android Studio).
 
+## <a name="big-data-analytics"></a>Аналитика больших данных
+Вы можете настроить лабораторию для изучения класса анализа больших данных. С классом этого типа учащиеся узнают, как работать с большими объемами данных и применять алгоритмы машинного и статистического обучения для получения аналитических данных. Ключевым показателем для учащихся является обучение использованию средств анализа данных, таких как программный пакет с открытым исходным кодом Apache Hadoop, который предоставляет средства для хранения больших данных, управления ими и их обработки. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+Подробные сведения о настройке этого типа лабораторий см. в статье [Настройка лаборатории для анализа больших данных с помощью развертывания DOCKER платформы HortonWorks Data Platform](class-type-big-data-analytics.md).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. следующие статьи:
 

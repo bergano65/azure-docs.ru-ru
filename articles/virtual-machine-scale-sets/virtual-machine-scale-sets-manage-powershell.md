@@ -2,18 +2,19 @@
 title: Управление масштабируемыми наборами виртуальных машин с помощью Azure PowerShell
 description: Стандартные командлеты Azure PowerShell для управления масштабируемыми наборами виртуальных машин, в том числе команды для запуска и остановки экземпляра, а также для изменения емкости масштабируемого набора.
 author: ju-shim
-tags: azure-resource-manager
-ms.assetid: d35fa77a-de96-4ccd-a332-eb181d1f4273
-ms.service: virtual-machine-scale-sets
-ms.topic: conceptual
-ms.date: 05/29/2018
 ms.author: jushiman
-ms.openlocfilehash: 5794fb40b49a575c12f6855292c41014fabf3b8c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: how-to
+ms.service: virtual-machine-scale-sets
+ms.subservice: management
+ms.date: 05/29/2018
+ms.reviewer: mimckitt
+ms.custom: mimckitt
+ms.openlocfilehash: 68b5aa21f861009dd78f48428fa0ffdc5b5ae3a3
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81011605"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124876"
 ---
 # <a name="manage-a-virtual-machine-scale-set-with-azure-powershell"></a>Управление масштабируемым набором виртуальных машин с помощью Azure PowerShell
 
@@ -104,5 +105,5 @@ Remove-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" 
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 К другим типичным задачам управления масштабируемым набором относятся [развертывание приложения](virtual-machine-scale-sets-deploy-app.md) и [обновление экземпляров виртуальных машин](virtual-machine-scale-sets-upgrade-scale-set.md). Можно также использовать Azure PowerShell для [настройки правил автомасштабирования](virtual-machine-scale-sets-autoscale-overview.md).

@@ -1,19 +1,20 @@
 ---
 title: Уведомления об обслуживании для масштабируемых наборов виртуальных машин в Azure
 description: Сведения о просмотре уведомлений об обслуживании и запуске самообслуживания для масштабируемых наборов виртуальных машин в Azure.
-author: shants123
-tags: azure-service-management,azure-resource-manager
-ms.service: virtual-machine-scale-sets
-ms.workload: infrastructure-services
+author: mimckitt
+ms.author: mimckitt
 ms.topic: conceptual
+ms.service: virtual-machine-scale-sets
+ms.subservice: management
 ms.date: 08/20/2019
-ms.author: shants
-ms.openlocfilehash: 53ebb7c4710c5455ef90701dc7e94f1b846a874a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.reviewer: jushiman
+ms.custom: mimckitt
+ms.openlocfilehash: c4b0cb8204891538ef9c4eef3fa0ff5fd9686536
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80062704"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83200089"
 ---
 # <a name="planned-maintenance-notifications-for-virtual-machine-scale-sets"></a>Уведомления о плановом обслуживании для масштабируемых наборов виртуальных машин
 
@@ -170,7 +171,7 @@ az vmss list-instances -g rgName -n vmssName --expand instanceView
 az vmss perform-maintenance -g rgName -n vmssName --instance-ids id
 ```
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 **Вопрос. Зачем вам нужно перезагружать мою виртуальную машину?**
 
@@ -213,6 +214,6 @@ az vmss perform-maintenance -g rgName -n vmssName --instance-ids id
    - Вы решили остановить (отменить распределение) и перезапустить виртуальную машину.
    - Вы настроили **автоматическое завершение работы** для виртуальной машины.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как получать события обслуживания с виртуальной машины с помощью службы [Запланированные события](../virtual-machines/windows/scheduled-events.md).

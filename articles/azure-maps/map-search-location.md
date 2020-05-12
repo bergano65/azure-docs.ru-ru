@@ -1,20 +1,20 @@
 ---
 title: Отображение результатов поиска на карте | Карты Microsoft Azure
 description: В этой статье вы узнаете, как выполнить запрос поиска с помощью веб-пакета SDK Microsoft Azure Maps и отобразить результаты на карте.
-author: jinzh-azureiot
-ms.author: jinzh
+author: Philmea
+ms.author: philmea
 ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: e82a1daee381c7bad19c83fa735d0028bef2010e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: da67c27f590e60c7ae4eecbe8e139c5519e39e31
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80371395"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83123961"
 ---
 # <a name="show-search-results-on-the-map"></a>Отображение результатов поиска на карте
 
@@ -57,7 +57,7 @@ ms.locfileid: "80371395"
 
 Поисковый запрос, источник данных, уровень символа и границы камеры задаются в [прослушивателе событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) сопоставлений, чтобы убедиться, что результаты отображаются после полной загрузки схемы.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Рекомендации по использованию службы поиска Azure Maps](how-to-use-best-practices-for-search.md)
@@ -70,7 +70,7 @@ ms.locfileid: "80371395"
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Таблица](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
+> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
 
 Полные примеры кода см. в следующих статьях:
 

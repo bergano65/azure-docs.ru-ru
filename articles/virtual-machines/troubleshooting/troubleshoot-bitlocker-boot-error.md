@@ -12,12 +12,13 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 08/23/2019
 ms.author: genli
-ms.openlocfilehash: 80fd91106530c0150a85d508b24041b2263da925
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: has-adal-ref
+ms.openlocfilehash: 67a3ba99e29582c5681d69cd0c6db377a258020a
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79250014"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83201349"
 ---
 # <a name="bitlocker-boot-errors-on-an-azure-vm"></a>Ошибки загрузки BitLocker на виртуальной машине Azure
 
@@ -36,7 +37,7 @@ ms.locfileid: "79250014"
 - Введите пароль для разблокировки этого диска [ ]. Нажмите клавишу Insert для просмотра пароля при вводе.
 - Введите ключ восстановления. Загрузите ключ восстановления с USB-устройства.
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Эта проблема может возникнуть если виртуальная машина не сможет найти файл ключа восстановления BitLocker (BEK) для дешифрования зашифрованного диска.
 
@@ -273,13 +274,13 @@ ms.locfileid: "79250014"
 
 **Ошибка: не удалось загрузить файл или сборку**
 
-Эта ошибка возникает из-за неправильных путей к сборкам ADAL. Если модуль AZ установлен только для текущего пользователя, сборки ADAL будут находиться в `C:\Users\<username>\Documents\WindowsPowerShell\Modules\Az.Accounts\<version>`папке.
+Эта ошибка возникает из-за неправильных путей к сборкам ADAL. Если модуль AZ установлен только для текущего пользователя, сборки ADAL будут находиться в папке `C:\Users\<username>\Documents\WindowsPowerShell\Modules\Az.Accounts\<version>` .
 
 Можно также выполнить поиск `Az.Accounts` папки, чтобы найти правильный путь.
 
 **Ошибка: Get-Азкэйваултсекрет или Get-Азкэйваултсекрет не распознан как имя командлета**
 
-Если вы используете старый модуль AZ PowerShell, необходимо изменить две команды на `Get-AzureKeyVaultSecret` и. `Get-AzureKeyVaultSecret`
+Если вы используете старый модуль AZ PowerShell, необходимо изменить две команды на `Get-AzureKeyVaultSecret` и `Get-AzureKeyVaultSecret` .
 
 **Примеры параметров**
 

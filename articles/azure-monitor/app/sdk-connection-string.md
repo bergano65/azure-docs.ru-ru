@@ -6,12 +6,12 @@ author: timothymothra
 ms.author: tilee
 ms.date: 01/17/2020
 ms.reviewer: mbullwin
-ms.openlocfilehash: 25eda0ae2b0d873fe9850e5b886489a5f2590e69
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 92c4ccf7246c4e763cbf92aee3c48398d79e0ecc
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80410613"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83125712"
 ---
 # <a name="connection-strings"></a>Строки подключения
 
@@ -64,10 +64,10 @@ ms.locfileid: "80410613"
 - `EndpointSuffix`(пример: applicationinsights.azure.cn) При настройке суффикса конечной точки будет указано, к какому пакету SDK подключается облако Azure. Пакет SDK будет собирать оставшуюся часть конечной точки для отдельных служб.
 - Явные конечные точки.
   Любая служба может быть явно переопределена в строке подключения.
-   - `IngestionEndpoint`символаhttps://dc.applicationinsights.azure.com)
-   - `LiveEndpoint`символаhttps://live.applicationinsights.azure.com)
-   - `ProfilerEndpoint`символаhttps://profiler.applicationinsights.azure.com)
-   - `SnapshotEndpoint`символаhttps://snapshot.applicationinsights.azure.com)
+   - `IngestionEndpoint`(пример: `https://dc.applicationinsights.azure.com` )
+   - `LiveEndpoint`(пример: `https://live.applicationinsights.azure.com` )
+   - `ProfilerEndpoint`(пример: `https://profiler.applicationinsights.azure.com` )
+   - `SnapshotEndpoint`(пример: `https://snapshot.applicationinsights.azure.com` )
 
 #### <a name="endpoint-schema"></a>Схема конечной точки
 
@@ -106,10 +106,10 @@ ms.locfileid: "80410613"
 - По умолчанию используется схема авторизации "iKey" 
 - Ключ инструментирования: 00000000-0000-0000-0000-000000000000
 - Коды URI региональных служб основаны на [стандартах SDK](https://github.com/microsoft/ApplicationInsights-dotnet/blob/e50d569cebf485e72e98f4a08a0bc0e30cdf42bc/BASE/src/Microsoft.ApplicationInsights/Extensibility/Implementation/Endpoints/Constants.cs#L6) и будут подключаться к общедоступному глобальному серверу Azure:
-   - Приемаhttps://dc.services.visualstudio.com/
-   - Динамические метрики:https://rt.services.visualstudio.com/
-   - Profilerhttps://agent.azureserviceprofiler.net/
-   - Отладчикhttps://agent.azureserviceprofiler.net/  
+   - Приема`https://dc.services.visualstudio.com/`
+   - Динамические метрики:`https://rt.services.visualstudio.com/`
+   - Profiler`https://agent.azureserviceprofiler.net/`
+   - Отладчик`https://agent.azureserviceprofiler.net/`
 
 
 
@@ -122,10 +122,10 @@ ms.locfileid: "80410613"
 - По умолчанию используется схема авторизации "iKey" 
 - Ключ инструментирования: 00000000-0000-0000-0000-000000000000
 - Коды URI региональных служб основаны на указанном суффиксе конечной точки: 
-   - Приемаhttps://dc.ai.contoso.com
-   - Динамические метрики:https://live.ai.contoso.com
-   - Profilerhttps://profiler.ai.contoso.com 
-   - Отладчикhttps://snapshot.ai.contoso.com   
+   - Приема`https://dc.ai.contoso.com`
+   - Динамические метрики:`https://live.ai.contoso.com`
+   - Profiler`https://profiler.ai.contoso.com`
+   - Отладчик`https://snapshot.ai.contoso.com`  
 
 
 
@@ -138,10 +138,10 @@ ms.locfileid: "80410613"
 - По умолчанию используется схема авторизации "iKey" 
 - Ключ инструментирования: 00000000-0000-0000-0000-000000000000
 - Региональные URI служб основаны на явных значениях переопределения: 
-   - Прием: https:\//Custom.com:111/
-   - Динамические метрики: https:\//Custom.com:222/
-   - Профилировщик: https:\//Custom.com:333/ 
-   - Отладчик: https:\//Custom.com:444/   
+   - Приема`https://custom.com:111/`
+   - Динамические метрики:`https://custom.com:222/`
+   - Profiler`https://custom.com:333/`
+   - Отладчик`https://custom.com:444/`  
 
 
 ## <a name="how-to-set-a-connection-string"></a>Как задать строку подключения
@@ -262,7 +262,7 @@ tracer = Tracer(exporter=AzureExporter(connection_string='InstrumentationKey=000
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Приступите к работе во время выполнения с помощью:
 
