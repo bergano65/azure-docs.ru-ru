@@ -3,24 +3,24 @@ title: Приватный канал
 description: Общие сведения о возможности частной конечной точки
 author: rohitnayakmsft
 ms.author: rohitna
-titleSuffix: Azure SQL Database and SQL Data Warehouse
+titleSuffix: Azure SQL Database and Azure Synapse Analytics
 ms.service: sql-database
 ms.topic: overview
 ms.reviewer: vanto
 ms.date: 03/09/2020
-ms.openlocfilehash: ab9c5c5c1134d2e09a790a788a3b7e55f807dd9b
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: dd717d653e57fbb8c540e4ef023011c64778a3b0
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78945370"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82629003"
 ---
-# <a name="private-link-for-azure-sql-database-and-data-warehouse"></a>Приватный канал для Базы данных и Хранилища данных SQL Azure
+# <a name="private-link-for-azure-sql-database-and-azure-synapse-analytics"></a>Приватный канал для Базы данных SQL Azure и Azure Synapse Analytics
 
 Приватный канал позволяет подключаться к различным службам PaaS в Azure через **частную конечную точку**. Чтобы получить список служб PaaS, поддерживающих функции Приватного канала, перейдите на страницу [документации по Приватному каналу](../private-link/index.yml). Частная конечная точка — это частный IP-адрес в определенной [виртуальной сети](../virtual-network/virtual-networks-overview.md) и подсети. 
 
 > [!IMPORTANT]
-> Эта статья относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере SQL Azure. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL. Эта статья *не* относится к развертыванию **управляемого экземпляра** в Базе данных SQL Azure.
+> Эта статья относится к Azure SQL Server, а также к базам данных SQL и Azure Synapse Analytics, создаваемым на сервере SQL Azure. Для простоты база данных SQL используется как для базы данных SQL, так и для Azure Synapse Analytics. Эта статья *не* относится к развертыванию **управляемого экземпляра** в Базе данных SQL Azure.
 
 ## <a name="data-exfiltration-prevention"></a>Предотвращение кражи данных
 
@@ -28,7 +28,7 @@ ms.locfileid: "78945370"
 
 Рассмотрим сценарий с пользователем, запускающим SQL Server Management Studio (SSMS) в виртуальной машине Azure, подключенной к Базе данных SQL. Эта База данных SQL находится в центре обработки данных в западной части США. В приведенном ниже примере показано, как ограничить доступ к общедоступным конечным точкам в Базе данных SQL с помощью средств контроля сетевого доступа.
 
-1. Отключите весь трафик службы Azure к Базе данных SQL, проходящий через общедоступную конечную точку, установив для параметра Allow Azure Services (Разрешить использование служб Azure) значение **Выкл**. Убедитесь, что в правилах брандмауэра на уровне сервера и базы данных не разрешены никакие IP-адреса. Дополнительные сведения см. в статье [Azure SQL Database and Data Warehouse network access controls](sql-database-networkaccess-overview.md) (Средства контроля сетевого доступа Базы данных и Хранилища данных SQL Azure).
+1. Отключите весь трафик службы Azure к Базе данных SQL, проходящий через общедоступную конечную точку, установив для параметра Allow Azure Services (Разрешить использование служб Azure) значение **Выкл**. Убедитесь, что в правилах брандмауэра на уровне сервера и базы данных не разрешены никакие IP-адреса. Дополнительные сведения см. в статье [Средства контроля сетевого доступа Базы данных SQL Azure и Azure Synapse Analytics](sql-database-networkaccess-overview.md).
 1. Разрешите трафик в Базу данных SQL с использованием только частного IP-адреса виртуальной машины. Дополнительные сведения см. в статьях, посвященных [конечной точке службы](sql-database-vnet-service-endpoint-rule-overview.md) и [правилам брандмауэра виртуальной сети](sql-database-firewall-configure.md).
 1. На виртуальной машине Azure ограничьте область исходящего подключения, используя [группы безопасности сети (NSG)](../virtual-network/manage-network-security-group.md) и теги службы, как показано ниже:
     - укажите правило NSG, разрешающее трафик для тега службы = SQL.WestUs — разрешение подключения к Базе данных SQL только в западной части США;
@@ -142,7 +142,6 @@ Nmap done: 256 IP addresses (1 host up) scanned in 207.00 seconds
 
 В результате отображается, что работает один IP-адрес, который соответствует IP-адресу частной конечной точки.
 
-
 ### <a name="check-connectivity-using-sql-server-management-studio-ssms"></a>Проверка подключения с помощью SQL Server Management Studio (SSMS)
 > [!NOTE]
 > Используйте **полное доменное имя (FQDN)** сервера в строках подключения для клиентов. Любые попытки входа, выполненные непосредственно на IP-адресе, будут завершаться ошибкой. Такое поведение предусмотрено, так как частная конечная точка направляет трафик в шлюз SQL в регионе. При этом для успешного входа нужно указать FQDN.
@@ -174,11 +173,9 @@ where session_id=@@SPID
 - [Канал ExpressRoute](../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md)
 
 
-## <a name="connecting-from-an-azure-sql-data-warehouse-to-azure-storage-using-polybase"></a>Подключение из Хранилища данных SQL Azure к службе хранилища Azure с помощью Polybase
+## <a name="connecting-from-azure-synapse-analytics-to-azure-storage-using-polybase"></a>Подключение из Azure Synapse Analytics к службе хранилища Azure с помощью Polybase
 
-PolyBase часто используют для загрузки данных в Хранилище данных SQL Azure из учетных записей службы хранилища Azure. Если учетная запись службы хранилища Azure, из которой загружаются данные, предоставляет доступ только к набору подсетей виртуальной сети через частные конечные точки, конечные точки службы или брандмауэры на основе IP-адресов, подключение из PolyBase к учетной записи будет прервано. Чтобы обеспечить возможность импорта и экспорта PolyBase в Хранилище данных SQL Azure, подключенное к службе хранилища Azure, прикрепленной к виртуальной сети, выполните действия, описанные [здесь](sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage): 
-
-
+PolyBase часто используют для загрузки данных в Azure Synapse Analytics из учетных записей службы хранилища Azure. Если учетная запись службы хранилища Azure, из которой загружаются данные, предоставляет доступ только к набору подсетей виртуальной сети через частные конечные точки, конечные точки службы или брандмауэры на основе IP-адресов, подключение из PolyBase к учетной записи будет прервано. Чтобы обеспечить возможность импорта и экспорта PolyBase в хранилище Azure Synapse Analytics, подключенное к службе хранилища Azure, которая прикреплена к виртуальной сети, выполните действия, описанные [здесь](sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

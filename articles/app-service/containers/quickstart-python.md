@@ -4,14 +4,12 @@ description: Начните работу с приложениями Linux в С
 ms.topic: quickstart
 ms.date: 04/03/2020
 ms.custom: seo-python-october2019, cli-validate
-experimental: true
-experiment_id: 01a9132f-eaab-4c
-ms.openlocfilehash: 7f8d21cbccc1a6eec7f62ab5d129f3f0637b8d13
-ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.openlocfilehash: 5b055c3ed93d5f093295b52c7a28a73e242bfe75
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82085133"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82690880"
 ---
 # <a name="quickstart-create-a-python-app-in-azure-app-service-on-linux"></a>Краткое руководство. Создание приложения Python в Службе приложений Azure в Linux
 
@@ -104,6 +102,11 @@ az login
 ```azurecli
 az webapp up --sku F1 -n <app-name>
 ```
+> [!CAUTION]
+> Если вы используете **Azure CLI версии 2.5.0**, в `az webapp up` проявляется регрессия, при которой определенные сценарии завершаются со сбоем в случае отсутствия параметра `-l <location-name>`. Эта проблема [отслеживается здесь](https://github.com/Azure/azure-cli/issues/13257).  
+> 
+>Вы можете проверить свою версию Azure CLI с помощью команды `az --version`.
+>
 
 Аргумент `--sku F1` создает веб-приложение в ценовой категории "Бесплатный". Этот аргумент можно опустить, чтобы использовать ценовую категорию "Премиум" с почасовой стоимостью.
 

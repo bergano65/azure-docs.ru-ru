@@ -3,26 +3,44 @@ title: Создание функции в Azure с помощью Visual Studio 
 description: Создание и публикация в Azure простой функции, активируемой по HTTP, с помощью расширения "Функции Azure" для Visual Studio Code.
 ms.topic: quickstart
 ms.date: 01/10/2020
-ms.custom: mvc, devcenter
+ms.custom: mvc, devcenter, seo
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: 08575164334db965a9e5592b761a06205208de9e
-ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
+ms.openlocfilehash: 64c2e813743a772692efcb1d966c8ab7b52cc66d
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81732773"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82628203"
 ---
-# <a name="quickstart-create-an-azure-functions-project-using-visual-studio-code"></a>Краткое руководство. Создание проекта Функций Azure в Visual Studio Code
+# <a name="quickstart-create-a-function-in-azure-using-visual-studio-code"></a>Краткое руководство. Создание функции в Azure с помощью Visual Studio Code
 
-В этой статье вы узнаете, как создать функцию, которая отвечает на HTTP-запросы, используя Visual Studio Code. После тестирования кода в локальной среде его необходимо развернуть в бессерверной среде Функций Azure. Выполнение этого краткого руководства предполагает небольшую дополнительную плату в несколько центов США в учетной записи Azure. 
-
-::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-typescript,programming-language-powershell,programming-language-python" 
-Существует также версия этой статьи для [интерфейса командной строки](functions-create-first-azure-function-azure-cli.md).
+::: zone pivot="programming-language-csharp"  
+Из этой статьи вы узнаете, как создать функцию класса C# на основе библиотеки, которая отвечает на HTTP-запросы, используя Visual Studio Code. После тестирования кода в локальной среде его необходимо развернуть в бессерверной среде Функций Azure. 
 ::: zone-end  
+::: zone pivot="programming-language-javascript"
+Из этой статьи вы узнаете, как создать функцию JavaScript, которая отвечает на HTTP-запросы, используя Visual Studio Code. После тестирования кода в локальной среде его необходимо развернуть в бессерверной среде Функций Azure. 
+::: zone-end
+::: zone pivot="programming-language-typescript"
+Из этой статьи вы узнаете, как создать функцию TypeScript, которая отвечает на HTTP-запросы, используя Visual Studio Code. После тестирования кода в локальной среде его необходимо развернуть в бессерверной среде Функций Azure. 
+::: zone-end   
+::: zone pivot="programming-language-powershell"
+Из этой статьи вы узнаете, как создать функцию PowerShell, которая отвечает на HTTP-запросы, используя Visual Studio Code. После тестирования кода в локальной среде его необходимо развернуть в бессерверной среде Функций Azure. 
+::: zone-end  
+::: zone pivot="programming-language-python" 
+Из этой статьи вы узнаете, как создать функцию Python, которая отвечает на HTTP-запросы, используя Visual Studio Code. После тестирования кода в локальной среде его необходимо развернуть в бессерверной среде Функций Azure. 
+::: zone-end  
+::: zone pivot="programming-language-java" 
+Из этой статьи вы узнаете, как создать функцию Java, которая отвечает на HTTP-запросы, используя Visual Studio Code. После тестирования кода в локальной среде его необходимо развернуть в бессерверной среде Функций Azure. 
+::: zone-end
 
+Выполнение этого краткого руководства предполагает небольшую дополнительную плату в несколько центов США в учетной записи Azure. 
+
+::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-typescript,programming-language-powershell,programming-language-python"
+Существует также версия этой статьи для [интерфейса командной строки](functions-create-first-azure-function-azure-cli.md).
+::: zone-end
 ::: zone pivot="programming-language-java"  
 > [!NOTE]
-> Если вы не хотите использовать VS Code в качестве средства разработки, ознакомьтесь с аналогичными руководствами для разработчиков Java по использованию [Maven](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-java), [Gradle](/azure/azure-functions/functions-create-first-java-gradle) и [IntelliJ IDEA](/azure/developer/java/toolkit-for-intellij/quickstart-functions).
+> Если вы не хотите использовать Visual Studio Code в качестве средства разработки, ознакомьтесь с аналогичными руководствами для разработчиков Java по использованию [Maven](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-java), [Gradle](/azure/azure-functions/functions-create-first-java-gradle) и [IntelliJ IDEA](/azure/developer/java/toolkit-for-intellij/quickstart-functions).
 ::: zone-end  
 
 ## <a name="configure-your-environment"></a>Настройка среды

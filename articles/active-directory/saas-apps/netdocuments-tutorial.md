@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71e5e13485c4a10664d98363e8e99bfd3b4f4bcf
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 79038152dd40b213b92a379c4b50ddd840eb8e6c
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "72035703"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82732597"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-netdocuments"></a>Руководство по Интеграция единого входа Azure Active Directory с NetDocuments
 
@@ -137,49 +137,48 @@ ms.locfileid: "72035703"
 
 1. В другом окне веб-браузера войдите на сайт NetDocuments вашей компании в качестве администратора.
 
-2. Откройте страницу **Администратор**.
+2. В правом верхнем углу выберите свое имя > **Администратор**.
 
-3. Щелкните **Добавление и удаление пользователей и групп**.
+3. Выберите **Центр безопасности**.
    
-    ![Репозиторий](./media/netdocuments-tutorial/ic795047.png "Хранилище")
+    ![Репозиторий](./media/netdocuments-tutorial/security-center.png "Центр безопасности")
 
-4. Щелкните **Настройка дополнительных параметров аутентификации**.
+4. Выберите **Расширенные политики проверки подлинности**.
     
-    ![Настройка дополнительных параметров аутентификации](./media/netdocuments-tutorial/ic795048.png "Настройка дополнительных параметров аутентификации")
+    ![Настройка дополнительных параметров аутентификации](./media/netdocuments-tutorial/advance-authentication.png "Настройка дополнительных параметров аутентификации")
 
-5. В диалоговом окне **Federated Identity** (Федеративное удостоверение) выполните следующие действия:
+5.  На вкладке **Федеративный идентификатор** выполните следующие действия:   
    
-    ![Федеративная идентификация](./media/netdocuments-tutorial/ic795049.png "Федеративная идентификация")
+    ![Федеративная идентификация](./media/netdocuments-tutorial/federated-id.png "Федеративная идентификация")
    
     а. Для параметра **Federated identity server type** (Тип сервера федеративных удостоверений) выберите **Службы федерации Active Directory**.
-   
-    b. Щелкните **Выбрать файл**, чтобы отправить скачанный файл метаданных, который вы скачали с портала Azure.
-   
-    c. Нажмите кнопку **ОК**.
+    
+    b.  Нажмите **Выбрать файл**, чтобы отправить файл метаданных, который вы скачали с портала Azure.
+    
+    c.  Щелкните **Сохранить**.
 
 ### <a name="create-netdocuments-test-user"></a>Создание тестового пользователя NetDocuments
 
-Чтобы разрешить пользователям Azure AD вход в NetDocuments, их необходимо подготовить для NetDocuments.  
-В случае с NetDocuments подготовка выполняется вручную.
+Чтобы разрешить пользователям Azure AD вход в NetDocuments, их необходимо подготовить для NetDocuments. В случае с NetDocuments подготовка выполняется вручную.
 
 **Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Войдите на сайт компании **NetDocuments** от имени администратора.
 
-2. В верхнем меню щелкните **Администратор**.
+2. В правом верхнем углу выберите свое имя > **Администратор**.
    
-    ![Администратор](./media/netdocuments-tutorial/ic795051.png "Административный")
+    ![Администратор](./media/netdocuments-tutorial/user-admin.png "Административный")
 
-3. Щелкните **Добавление и удаление пользователей и групп**.
+3. Выберите **Пользователи и группы**.
    
-    ![Репозиторий](./media/netdocuments-tutorial/ic795047.png "Хранилище")
+    ![Репозиторий](./media/netdocuments-tutorial/users-groups.png "Хранилище")
 
 4. В текстовом поле **Электронная почта** введите адрес электронной почты действующей учетной записи Azure Active Directory, которую вы хотите подготовить, а затем нажмите кнопку **Добавить пользователя**.
    
-    ![Электронная почта](./media/netdocuments-tutorial/ic795053.png "Электронная почта")
+    ![Электронная почта](./media/netdocuments-tutorial/user-mail.png "Электронная почта")
    
-    >[!NOTE]
-    >Владелец учетной записи Azure Active Directory получит электронное сообщение со ссылкой для подтверждения учетной записи перед ее активацией. Вы можете использовать любые другие инструменты создания учетных записей пользователя NetDocuments или API, предоставляемые NetDocuments для подготовки учетных записей пользователя Azure Active Directory.
+    > [!NOTE]
+    > Владелец учетной записи Azure Active Directory получит электронное сообщение со ссылкой для подтверждения учетной записи перед ее активацией. Вы можете использовать любые другие инструменты создания учетных записей пользователя NetDocuments или API, предоставляемые NetDocuments для подготовки учетных записей пользователя Azure Active Directory.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
@@ -196,4 +195,3 @@ ms.locfileid: "72035703"
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Пробное использование NetDocuments с Azure AD](https://aad.portal.azure.com/)
-

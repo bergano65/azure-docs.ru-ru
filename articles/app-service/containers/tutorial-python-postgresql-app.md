@@ -9,12 +9,12 @@ ms.custom:
 - seodec18
 - seo-python-october2019
 - cli-validate
-ms.openlocfilehash: 0c9329b46d096df1afab6f7e457d143f9c6504be
-ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.openlocfilehash: 504e2f7c07d8d29e4fe4dad52dc008c895517a3d
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82085762"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82609788"
 ---
 # <a name="tutorial-deploy-a-python-django-web-app-with-postgresql-in-azure-app-service"></a>Руководство по развертыванию веб-приложения Python (Django) с PostgreSQL в Службе приложений Azure
 
@@ -133,7 +133,7 @@ az postgres up --resource-group myResourceGroup --location westus2 --server-name
 
 <!-- not all locations support az postgres up -->
 > [!TIP]
-> Чтобы указать расположение сервера Postgres, добавьте аргумент `--location <location-name>`, где `<location_name>` соответствует одному из [регионов Azure](https://azure.microsoft.com/global-infrastructure/regions/). Список регионов, доступных для вашей подписки, можно получить с помощью команды [`az account list-locations`](/cli/azure/account#az-account-list-locations).
+> Для параметра `--location <location-name>` можно указать любой из [регионов Azure](https://azure.microsoft.com/global-infrastructure/regions/). Список регионов, доступных для вашей подписки, можно получить с помощью команды [`az account list-locations`](/cli/azure/account#az-account-list-locations). Для рабочих приложений разместите базу данных и приложение в одном месте.
 
 ## <a name="deploy-the-app-service-app"></a>Развертывание приложения Службы приложений
 
@@ -149,7 +149,7 @@ az postgres up --resource-group myResourceGroup --location westus2 --server-name
 Создайте приложение Службы приложений с помощью команды [`az webapp up`](/cli/azure/webapp#az-webapp-up), как показано в приведенном ниже примере. Замените *\<app-name>* *уникальным* именем (конечная точка сервера — *https://\<app-name>.azurewebsites.net*). Для *\<app-name>* допускаются символы `A`-`Z`, `0`-`9` и `-`.
 
 ```azurecli
-az webapp up --plan myAppServicePlan --sku B1 --name <app-name>
+az webapp up --plan myAppServicePlan --location westus2 --sku B1 --name <app-name>
 ```
 <!-- !!! without --sku creates PremiumV2 plan!! -->
 
@@ -183,10 +183,10 @@ az webapp up --plan myAppServicePlan --sku B1 --name <app-name>
 Скопируйте значение *\<app-resource-goup>* . Оно вам потребуется позже для настройки приложения. 
 
 > [!TIP]
-> Вы можете применить ту же команду позже, чтобы развернуть изменения и немедленно включить ведение журналов диагностики:
+> Соответствующие параметры сохраняются в скрытом каталоге *.azure* в репозитории. Вы можете применить эту простую команду позже, чтобы повторно развернуть изменения и немедленно включить ведение журналов диагностики:
 > 
 > ```azurecli
-> az webapp up --name <app-name>
+> az webapp up
 > ```
 
 Теперь пример кода развернут, но приложение еще не подключено к базе данных Postgres в Azure. Это вы сделаете прямо сейчас.
@@ -219,8 +219,6 @@ cd site/wwwroot
 
 # Activate default virtual environment in App Service container
 source /antenv/bin/activate
-# Install requirements in environment
-pip install -r requirements.txt
 # Run database migrations
 python manage.py migrate
 # Create the super user (follow prompts)
@@ -358,7 +356,7 @@ python manage.py runserver
 Чтобы развернуть изменения, выполните следующую команду в корне репозитория:
 
 ```azurecli
-az webapp up --name <app-name>
+az webapp up
 ```
 
 Служба приложений обнаружит, что приложение уже существует и просто развернет в нем код.

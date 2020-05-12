@@ -1,6 +1,6 @@
 ---
-title: Руководство по Предоставление пользователям доступа к ресурсам Azure с помощью RBAC и Azure PowerShell
-description: Узнайте, как предоставить пользователю доступ к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и Azure PowerShell.
+title: Руководство по Предоставление доступа пользователям к ресурсам Azure с помощью Azure PowerShell — Azure RBAC
+description: Узнайте, как предоставить пользователям доступ к ресурсам Azure с помощью Azure PowerShell и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 documentationCenter: ''
 author: rolyon
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/02/2019
 ms.author: rolyon
-ms.openlocfilehash: f4ba56bf79d707200bf361ab4c717bb63d081953
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 9c35c08889892e877ecfac20910607ddf85b2282
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77138227"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82735493"
 ---
-# <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-azure-powershell"></a>Руководство по Предоставление доступа пользователям с помощью RBAC и Azure PowerShell
+# <a name="tutorial-grant-a-user-access-to-azure-resources-using-azure-powershell"></a>Руководство по Предоставление доступа пользователям к ресурсам Azure с помощью Azure PowerShell
 
-[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом руководстве описано, как предоставлять пользователям доступ для просмотра любого содержимого в рамках подписки и обеспечивать полное управление в группе ресурсов с помощью Azure PowerShell.
+[Управление доступом на основе ролей Azure (Azure RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом руководстве описано, как предоставлять пользователям доступ для просмотра любого содержимого в рамках подписки и обеспечивать полное управление в группе ресурсов с помощью Azure PowerShell.
 
 В этом руководстве описано следующее:
 
@@ -44,7 +44,7 @@ ms.locfileid: "77138227"
 
 ## <a name="role-assignments"></a>Назначения ролей
 
-При использовании RBAC, чтобы предоставить доступ, нужно создать назначение ролей. Назначение ролей состоит из трех элементов: субъект безопасности, определение роли и область действия. Ниже приведены два варианта назначения роли, которые мы выполним в ходе работы с этим руководством.
+При использовании Azure RBAC для предоставления доступа нужно создать назначение ролей. Назначение ролей состоит из трех элементов: субъект безопасности, определение роли и область действия. Ниже приведены два варианта назначения роли, которые мы выполним в ходе работы с этим руководством.
 
 | Субъект безопасности | Определение роли | Область |
 | --- | --- | --- |
@@ -279,4 +279,4 @@ ms.locfileid: "77138227"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Управление доступом с помощью RBAC и Azure PowerShell](role-assignments-powershell.md)
+> [Добавление и удаление назначений ролей Azure с помощью Azure PowerShell](role-assignments-powershell.md)

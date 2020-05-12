@@ -5,14 +5,14 @@ author: markjbrown
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: sample
-ms.date: 03/17/2020
+ms.date: 05/01/2020
 ms.author: mjbrown
-ms.openlocfilehash: 719e2cd831a982c62ab965cd7dc8a37c4cb41265
-ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
+ms.openlocfilehash: 434cc6df326a0028f327c6d9e2eda0d19989ca01
+ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80365619"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82653165"
 ---
 # <a name="create-a-database-and-container-for-azure-cosmos-db---sql-api"></a>Создание базы данных и контейнера в Azure Cosmos DB — API SQL
 
@@ -41,15 +41,16 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 | Get-Help | Примечания |
 |---|---|
 |**Azure Cosmos DB**| |
-| [New-AzCosmosDBAccount](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbaccount) | Создание учетной записи Cosmos DB. |
+| [New-AzCosmosDBAccount](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbaccount) | Создает учетную запись Cosmos DB. |
 | [Set-AzCosmosDBSqlDatabase](https://docs.microsoft.com/powershell/module/az.cosmosdb/set-azcosmosdbsqldatabase) | Создание новой или обновление существующей базы данных SQL службы Cosmos DB. |
-| [New-AzCosmosDBSqlUniqueKey](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbsqluniquekey) | Создание объекта UniqueKey SQL службы Cosmos DB. |
-| [New-AzCosmosDBSqlUniqueKeyPolicy](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbsqluniquekeypolicy) | Создание объекта UniqueKeyPolicy SQL службы Cosmos DB. |
+| [New-AzCosmosDBSqlUniqueKey](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbsqluniquekey) | Создает объект PSSqlUniqueKey для SQL в Cosmos DB, который используется в качестве параметра для командлета New-AzCosmosDBSqlUniqueKeyPolicy. |
+| [New-AzCosmosDBSqlUniqueKeyPolicy](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbsqluniquekeypolicy) | Создает объект PSSqlUniqueKeyPolicy для SQL в Cosmos DB, который используется в качестве параметра для командлета Set-AzCosmosDBSqlContainer. |
+| [New-AzCosmosDBSqlCompositePath](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbsqlcompositepath) | Создает объект PSCompositePath для SQL в Cosmos DB, который используется в качестве параметра для командлета New-AzCosmosDBSqlIndexingPolicy. |
 | [New-AzCosmosDBSqlIncludedPathIndex](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbsqlincludedpathindex) | Создание объекта типа PSIndexes, используемого в качестве параметра для Set-AzCosmosDBSqlIncludedPath. |
 | [New-AzCosmosDBSqlIncludedPath](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbsqlincludedpath) | Создание объекта типа PSIncludedPath, используемого в качестве параметра для New-AzCosmosDBSqlIndexingPolicy. |
 | [New-AzCosmosDBSqlIndexingPolicy](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbsqlindexingpolicy) | Создание объекта типа PSSqlIndexingPolicy, используемого в качестве параметра для Set-AzCosmosDBSqlContainer. |
 | [New-AzCosmosDBSqlConflictResolutionPolicy](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbsqlconflictresolutionpolicy) | Создание объекта типа PSSqlConflictResolutionPolicy, используемого в качестве параметра для Set-AzCosmosDBSqlContainer. |
-| [Set-AzCosmosDBSqlContainer](https://docs.microsoft.com/powershell/module/az.cosmosdb/set-azcosmosdbsqlcontainer) | Создание нового или обновление существующего контейнера SQL службы Cosmos DB. |
+| [Set-AzCosmosDBSqlContainer](https://docs.microsoft.com/powershell/module/az.cosmosdb/set-azcosmosdbsqlcontainer) | Создает новый или обновляет существующий контейнер SQL службы Cosmos DB. |
 |**Группы ресурсов Azure**| |
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||

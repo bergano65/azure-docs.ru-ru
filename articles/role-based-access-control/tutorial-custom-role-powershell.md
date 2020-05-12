@@ -1,6 +1,6 @@
 ---
-title: Руководство по Создание пользовательских ролей для ресурсов Azure с помощью Azure PowerShell
-description: Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell.
+title: Руководство по Создание настраиваемой роли Azure с помощью Azure PowerShell — Azure RBAC
+description: Из этой статьи вы узнаете, как создать настраиваемую роль Azure с помощью Azure PowerShell и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 documentationCenter: ''
 author: rolyon
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/20/2019
 ms.author: rolyon
-ms.openlocfilehash: d337e31f554c0aabbb94771aa7bfca4afb19a431
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8aedc59fc34278bf84983d78bf0e9a31fe38ee93
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77138282"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82735595"
 ---
-# <a name="tutorial-create-a-custom-role-for-azure-resources-using-azure-powershell"></a>Руководство по Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell
+# <a name="tutorial-create-an-azure-custom-role-using-azure-powershell"></a>Руководство по Создание настраиваемой роли Azure с помощью Azure PowerShell
 
-Если [встроенные роли для ресурсов Azure](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. С помощью этого руководства и Azure PowerShell вы создадите настраиваемую роль с именем "Запросы в службу поддержки от читателя". Она позволяет пользователю просматривать все объекты в плоскости управления подписки, а также делать запросы в службу поддержки.
+Если [встроенные роли Azure](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные настраиваемые роли. С помощью этого руководства и Azure PowerShell вы создадите настраиваемую роль с именем "Запросы в службу поддержки от читателя". Она позволяет пользователю просматривать все объекты в плоскости управления подписки, а также делать запросы в службу поддержки.
 
 В этом руководстве описано следующее:
 
@@ -73,7 +73,7 @@ ms.locfileid: "77138282"
 
 1. Откройте в редакторе файл **ReaderSupportRole.json**.
 
-    Ниже приведены выходные данные JSON. См. дополнительные сведения о [различных свойствах пользовательских ролей](custom-roles.md).
+    Ниже приведены выходные данные JSON. См. дополнительные сведения о [различных свойствах настраиваемых ролей](custom-roles.md).
 
     ```json
     {
@@ -277,4 +277,4 @@ ms.locfileid: "77138282"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Создание пользовательских ролей для ресурсов Azure с помощью Azure PowerShell](custom-roles-powershell.md).
+> [Создание или изменение настраиваемых ролей Azure с помощью Azure PowerShell](custom-roles-powershell.md)
