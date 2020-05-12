@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: a29fd66cf264b09cc5e0db7ac1a329be3f297bb8
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 64895e5f48168305aea3e83596cdbcae982a6cb9
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82096339"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82692426"
 ---
 # <a name="quickstart-using-synapse-studio-preview"></a>Краткое руководство. Использование Synapse Studio (предварительная версия)
 
@@ -56,7 +56,7 @@ ms.locfileid: "82096339"
 
    ![Файлы запросов в хранилище](./media/quickstart-synapse-studio/query-files-on-storage.png)
 
-3. Запустите созданный запрос или записную книжку, чтобы просмотреть содержимое файла:
+3. Запустите созданный запрос или записную книжку, чтобы просмотреть содержимое файла.
 
    ![Просмотр содержимого файла](./media/quickstart-synapse-studio/query-files-on-storage-result.png)
 
@@ -64,7 +64,7 @@ ms.locfileid: "82096339"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Включение пользователей Azure AD для запроса файлов [путем назначения для **Модуля чтения данных BLOB-объектов хранилища** или **Участника для данных BLOB-объектов хранилища** разрешений RBAC в службе хранилища Azure](../storage/common/storage-auth-aad-rbac-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#assign-a-built-in-rbac-role)
+- Включение пользователей Azure AD для запроса файлов путем назначения для [**модуля чтения данных BLOB-объектов хранилища** или **участника для данных BLOB-объектов хранилища** разрешений RBAC в службе хранилища Azure](../storage/common/storage-auth-aad-rbac-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#assign-a-built-in-rbac-role)
 - [Запросы к файлам в службе хранилища Azure с помощью SQL по запросу](sql/on-demand-workspace-overview.md)
-- [Создание пула Apache Spark](quickstart-create-apache-spark-pool.md)
+- [Создание пула Apache Spark с помощью портала Azure](quickstart-create-apache-spark-pool.md)
 - [Создание отчета Power BI о файлах, хранящихся в службе хранилища Azure](sql/tutorial-connect-power-bi-desktop.md)

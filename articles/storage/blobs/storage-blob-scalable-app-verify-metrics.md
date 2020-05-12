@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 02/20/2018
 ms.author: rogarana
 ms.subservice: blobs
-ms.openlocfilehash: dc0f8171e18598e4f805a03a4bc6d17de220fbe1
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: cfc3c445595bec046de4256a57d566067fe3d29e
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68698978"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82692437"
 ---
 # <a name="verify-throughput-and-latency-metrics-for-a-storage-account"></a>Проверка метрик пропускной способности и задержки для учетной записи хранения
 
@@ -24,7 +24,7 @@ ms.locfileid: "68698978"
 > * Настройка диаграмм на портале Azure.
 > * Проверка метрик пропускной способности и задержки
 
-[Метрики службы хранилища Azure](../common/storage-metrics-in-azure-monitor.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) используют Azure Monitor для предоставления общего представления о производительности и доступности учетной записи хранения.
+[Метрики службы хранилища Azure](../common/monitor-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) используют Azure Monitor для предоставления общего представления о производительности и доступности учетной записи хранения.
 
 ## <a name="configure-metrics"></a>Настройка метрик
 
@@ -52,7 +52,7 @@ ms.locfileid: "68698978"
 
 ## <a name="dimensions"></a>Измерения
 
-[Измерения](../common/storage-metrics-in-azure-monitor.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#metrics-dimensions) используются, чтобы представить на диаграммах более подробные сведения. Различные метрики имеют разные измерения. Одно из доступных измерений — **Имя API**. Это измерение разделяет диаграмму на несколько отдельных вызовов API. На первом изображении ниже показан пример диаграммы с общим количеством транзакций для учетной записи хранения. На втором изображении показана та же диаграмма, но с выбранным измерением "Имя API". Как видно, каждая транзакция предоставляет дополнительные сведения о количестве вызовов, выполненных определенным API.
+[Измерения](../common/monitor-storage-reference.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#metrics-dimensions) используются, чтобы представить на диаграммах более подробные сведения. Различные метрики имеют разные измерения. Одно из доступных измерений — **Имя API**. Это измерение разделяет диаграмму на несколько отдельных вызовов API. На первом изображении ниже показан пример диаграммы с общим количеством транзакций для учетной записи хранения. На втором изображении показана та же диаграмма, но с выбранным измерением "Имя API". Как видно, каждая транзакция предоставляет дополнительные сведения о количестве вызовов, выполненных определенным API.
 
 ![Метрики учетной записи хранения — транзакции без измерения](./media/storage-blob-scalable-app-verify-metrics/transactionsnodimensions.png)
 

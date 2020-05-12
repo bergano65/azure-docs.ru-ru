@@ -7,12 +7,12 @@ ms.service: virtual-machines-linux
 ms.subservice: security
 ms.topic: quickstart
 ms.date: 10/02/2019
-ms.openlocfilehash: 9f09f28dc63e7f061946a66beb59bd4c62be70aa
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 6e32bfdf8c4b2dd7ce61393ab545770cafc73cf5
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78970558"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792536"
 ---
 # <a name="quickstart-create-and-encrypt-a-virtual-machine-with-the-azure-portal"></a>Краткое руководство. Создание и шифрование виртуальной машины на портале Azure
 
@@ -34,8 +34,19 @@ ms.locfileid: "78970558"
 1. Для параметра **регион** выберите тот же регион, который использовался при создании хранилища ключей выше (например, **Восточная часть США**).
 1. Убедитесь, что для параметра **Размер** выбрано значение *Standard D2s v3*.
 1. В разделе **Учетная запись администратора** выберите **Пароль**. Введите имя пользователя и пароль.
-    ![Экран создания группы ресурсов](./media/disk-encryption/portal-qs-vm-creation.png)
-1. Выберите вкладку "Управление" и убедитесь, что у вас есть учетная запись хранения для диагностики. Если у вас нет учетных записей хранения, выберите "Создать", укажите имя новой учетной записи и нажмите кнопку "ОК". ![Экран создания группы ресурсов](./media/disk-encryption/portal-qs-vm-creation-storage.png)
+
+    :::image type="content" source="./media/disk-encryption/portal-qs-vm-creation.png" alt-text="Экран создания группы ресурсов":::
+
+
+    > [!WARNING]
+    > На вкладке "Диски" доступно поле "Тип шифрования" в разделе **Параметры диска**. Это поле используется для указания параметров шифрования для [управляемых дисков](managed-disks-overview.md) и CMK, а не для службы "Шифрование дисков Azure". 
+    >
+    > Чтобы избежать путаницы, мы рекомендуем пропустить вкладку *Диски* в ходе работы с этим руководством. 
+
+1. Выберите вкладку "Управление" и убедитесь, что у вас есть учетная запись хранения для диагностики. Если у вас нет учетных записей хранения, выберите "Создать", укажите имя новой учетной записи и нажмите кнопку "ОК".
+
+    :::image type="content" source="./media/disk-encryption/portal-qs-vm-creation-storage.png" alt-text="Экран создания группы ресурсов":::
+
 1. Щелкните "Проверить и создать".
 1. На странице **Создание виртуальной машины** отображаются сведения о создаваемой виртуальной машине. Когда вы будете готовы, нажмите **Создать**.
 
@@ -47,19 +58,19 @@ ms.locfileid: "78970558"
 1. На боковой панели слева выберите **Диски**.
 1. На экране "Диски" выберите **Шифрование**. 
 
-    ![Выбор дисков и шифрования](../media/disk-encryption/portal-qs-disks-to-encryption.png)
+    :::image type="content" source="../media/disk-encryption/portal-qs-disks-to-encryption.png" alt-text="Выбор дисков и шифрования":::
 
 1. На экране шифрования в разделе **Disks to Encrypt** (Шифруемые диски) выберите **OS and data disks** (ОС и диски данных).
 1. В разделе **Настройки шифрования** щелкните **Выберите хранилище ключей и ключ для шифрования**.
 1. На экране **Select key from Azure Key Vault** (Выбор ключа из Azure Key Vault) нажмите кнопку **Создать**.
 
-    ![Выбор дисков и шифрования](../media/disk-encryption/portal-qs-keyvault-create.png)
+    :::image type="content" source="../media/disk-encryption/portal-qs-keyvault-create.png" alt-text="Выбор дисков и шифрования":::
 
 1. На экране **Создать хранилище ключей** убедитесь, что группа ресурсов совпадает с той, которая использовалась для создания виртуальной машины.
 1. Присвойте своему хранилищу ключей имя.  Каждое хранилище ключей в Azure должно иметь уникальное имя.
 1. На вкладке **Политики доступа** установите флажок **Шифрование дисков Azure для шифрования томов**.
 
-    ![Выбор дисков и шифрования](../media/disk-encryption/portal-qs-keyvault-enable.png)
+    :::image type="content" source="../media/disk-encryption/portal-qs-keyvault-enable.png" alt-text="Выбор дисков и шифрования":::
 
 1. Выберите **Review + create** (Просмотреть и создать).  
 1. После того как хранилище ключей пройдет проверку, нажмите кнопку **Создать**. Вы вернетесь на экран **Select key from Azure Key Vault** (Выбор ключа из Azure Key Vault).

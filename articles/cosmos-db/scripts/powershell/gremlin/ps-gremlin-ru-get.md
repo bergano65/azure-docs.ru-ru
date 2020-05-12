@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-graph
 ms.topic: sample
 ms.date: 03/18/2020
 ms.author: mjbrown
-ms.openlocfilehash: fa376aff9c127d5792da9e0489079ca3a1c67cf2
-ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
+ms.openlocfilehash: 0b260bbc92a5c9505f7b28e876668444882ddcc4
+ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80366031"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82653044"
 ---
 # <a name="get-throughput-rus-for-a-database-or-graph-for-azure-cosmos-db---gremlin-api"></a>Оценка пропускной способности (ЕЗ/с) для базы данных или графа в Azure Cosmos DB — API Gremlin
 
@@ -39,8 +39,8 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 | Get-Help | Примечания |
 |---|---|
 |**Azure Cosmos DB**| |
-| [Get-AzCosmosDBGremlinDatabaseThroughput](https://docs.microsoft.com/powershell/module/az.cosmosdb/get-azcosmosdbgremlindatabasethroughput) | Возвращает значение пропускной способности указанной базы данных API Gremlin. |
-| [Get-AzCosmosDBGremlinGraphThroughput](https://docs.microsoft.com/powershell/module/az.cosmosdb/get-azcosmosdbgremlingraphthroughput) | Возвращает значение пропускной способности указанного графа API Gremlin. |
+| [Get-AzCosmosDBGremlinDatabaseThroughput](https://docs.microsoft.com/powershell/module/az.cosmosdb/get-azcosmosdbgremlindatabasethroughput) | Возвращает значение пропускной способности базы данных API Gremlin. |
+| [Get-AzCosmosDBGremlinGraphThroughput](https://docs.microsoft.com/powershell/module/az.cosmosdb/get-azcosmosdbgremlingraphthroughput) | Возвращает значение пропускной способности графа API Gremlin. |
 |**Группы ресурсов Azure**| |
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||

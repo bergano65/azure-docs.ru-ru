@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: sample
 ms.date: 03/18/2020
 ms.author: mjbrown
-ms.openlocfilehash: f1cae958fce1de000ee4349a2fe8229d69f1a0ae
-ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
+ms.openlocfilehash: c5e177aca446d9a81db1a339cb8d81f0486a91e5
+ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80366165"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82653062"
 ---
 # <a name="get-throughput-rus-for-a-keyspace-or-table-for-azure-cosmos-db---cassandra-api"></a>Оценка пропускной способности (ЕЗ/с) для пространства ключей или таблицы в Azure Cosmos DB — API Cassandra
 
@@ -39,8 +39,8 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 | Get-Help | Примечания |
 |---|---|
 |**Azure Cosmos DB**| |
-| [Get-AzCosmosDBCassandraKeyspaceThroughput](https://docs.microsoft.com/powershell/module/az.cosmosdb/get-azcosmosdbcassandrakeyspacethroughput) | Возвращает значение пропускной способности указанного пространства ключей API Cassandra. |
-| [Get-AzCosmosDBCassandraTableThroughput](https://docs.microsoft.com/powershell/module/az.cosmosdb/get-azcosmosdbcassandratablethroughput) | Возвращает значение пропускной способности указанной таблицы API Cassandra. |
+| [Get-AzCosmosDBCassandraKeyspaceThroughput](https://docs.microsoft.com/powershell/module/az.cosmosdb/get-azcosmosdbcassandrakeyspacethroughput) | Возвращает значение пропускной способности пространства ключей API Cassandra. |
+| [Get-AzCosmosDBCassandraTableThroughput](https://docs.microsoft.com/powershell/module/az.cosmosdb/get-azcosmosdbcassandratablethroughput) | Возвращает значение пропускной способности таблицы API Cassandra. |
 |**Группы ресурсов Azure**| |
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||

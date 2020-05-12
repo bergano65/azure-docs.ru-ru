@@ -1,21 +1,21 @@
 ---
-title: Автозаполнение и предложения
+title: Руководство по C#. Функция автозаполнения и предложений
 titleSuffix: Azure Cognitive Search
-description: В руководстве показано, как добавить функцию автозаполнения и показа предложений в виде раскрывающегося списка для сбора поисковых запросов пользователей. В основе учебника лежит имеющийся проект гостиниц.
+description: Добавьте функцию автозаполнения и показа предложений в виде раскрывающегося списка для сбора поисковых запросов пользователей. В основе учебника лежит имеющийся проект гостиниц.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 04/15/2020
-ms.openlocfilehash: 6b74c3bbb811c122950fd969a8797e87f8f77f86
-ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
+ms.openlocfilehash: 63c098ccd42a438f8daab787afb54cf13cd053c3
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2020
-ms.locfileid: "81641074"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82780561"
 ---
-# <a name="c-tutorial-add-autocomplete-and-suggestions---azure-cognitive-search"></a>Руководство по C#. Добавление функции автозаполнения и показа предложений — Когнитивный поиск Azure
+# <a name="tutorial-add-autocomplete-and-suggestions-using-the-net-sdk"></a>Руководство по Добавление автозаполнения и предложений с помощью пакета SDK для .NET
 
 Узнайте, как реализовать функцию автозаполнения (упреждающий ввод поисковых запросов и показ предложений), срабатывающую, когда пользователь начинает вводить информацию в поле поиска. В этом руководстве мы покажем автоматически завершенные запросы и результаты предложений по отдельности, а затем вместе. Пользователю может быть достаточно ввести два или три символа, чтобы увидеть все доступные результаты.
 
