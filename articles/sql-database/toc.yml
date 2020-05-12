@@ -127,6 +127,8 @@
               items:
                 - name: Оценка уязвимостей
                   href: sql-vulnerability-assessment.md
+                - name: Правила оценки уязвимостей
+                  href: sql-database-vulnerability-assessment-rules.md
                 - name: Хранение результатов проверки для оценки уязвимостей за брандмауэром и виртуальными сетями
                   href: sql-database-vulnerability-assessment-storage.md
             - name: Расширенная защита от угроз

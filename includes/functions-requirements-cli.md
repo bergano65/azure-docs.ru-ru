@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 03/25/2020
 ms.author: glenga
-ms.openlocfilehash: a84f0a92703d1b626710cfc4dcfa2820bc58bda6
-ms.sourcegitcommit: b129186667a696134d3b93363f8f92d175d51475
+ms.openlocfilehash: 3929ffa81a8b558d8cb0dbd74135acc9cf1ea47b
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80673198"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82876003"
 ---
 ## <a name="configure-your-local-environment"></a>Настройка локальной среды
 
@@ -24,7 +24,7 @@ ms.locfileid: "80673198"
 + Для Python 3.6 и 3.7 требуется [Azure Functions Core Tools](../articles/azure-functions/functions-run-local.md#v2) 2.7.1846 или версии, более поздней, чем 2.x. Для Python 3.8 требуется Core Tools [версии 3.x](../articles/azure-functions/functions-run-local.md#v2).
 ::: zone-end
 
-+ Для его работы требуется [Azure CLI](/cli/azure/install-azure-cli) 2.0.76 или более поздней версии. 
++ [Azure CLI](/cli/azure/install-azure-cli) 2.4 или более поздней версии. 
 ::: zone pivot="programming-language-javascript,programming-language-typescript"
 + [Node.js](https://nodejs.org/), активная версия LTS и версия Maintenance LTS (рекомендуются версии 8.11.1 и 10.14.1).
 ::: zone-end

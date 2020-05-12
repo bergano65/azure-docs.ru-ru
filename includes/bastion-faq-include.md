@@ -5,15 +5,15 @@ services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: include
-ms.date: 03/25/2020
+ms.date: 05/04/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 57a764b62fcda333f042794e176c24c8e6cc5526
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: b8d30e7fe3138a26d9b64ec35d18260933df7999
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80374065"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82780319"
 ---
 ### <a name="which-regions-are-available"></a><a name="regions"></a>Какие регионы доступны?
 
@@ -31,17 +31,19 @@ ms.locfileid: "80374065"
 
 Для подключения по протоколу RDP или SSH к виртуальной машине Azure на портале Azure клиент RDP или SSH не нужен. Используйте [портал Azure](https://portal.azure.com), чтобы подключиться к своей виртуальной машине по протоколу RDP или SSH непосредственно в браузере.
 
-### <a name="does-azure-bastion-require-an-rds-cal-for-administrative-purposes-on-azure-hosted-vms"></a><a name="rdscal"></a>Требуется ли для службы "Бастион Azure" клиентская лицензия RDS для администрирования на размещенных в Azure виртуальных машинах?
-Нет, для предоставления службе "Бастион Azure" доступа к виртуальным машинам Windows Server [клиентская лицензия RDS](https://www.microsoft.com/en-us/p/windows-server-remote-desktop-services-cal/dg7gmgf0dvsv?activetab=pivot:overviewtab) не нужна при использовании исключительно для администрирования.
+### <a name="do-i-need-an-agent-running-in-the-azure-virtual-machine"></a><a name="agent"></a>Нужно ли запускать агент на виртуальной машине Azure?
+
+В браузере или на виртуальной машине Azure не нужно устанавливать агент или другое программное обеспечение. Бастион работает без агента и не требует дополнительного программного обеспечения для RDP и SSH.
 
 ### <a name="how-many-concurrent-rdp-and-ssh-sessions-does-each-azure-bastion-support"></a><a name="limits"></a>Сколько параллельных сеансов RDP и SSH поддерживает каждый бастион Azure?
+
 RDP и SSH — протоколы на основе использования. При высоком уровне использования сеансов узел-бастион поддерживает меньше сеансов. Ниже приведены показатели, характерные для стандартных ежедневных процессов.
 
 [!INCLUDE [limits](bastion-limits.md)]
 
-### <a name="do-i-need-an-agent-running-in-the-azure-virtual-machine"></a><a name="agent"></a>Нужно ли запускать агент на виртуальной машине Azure?
+### <a name="what-features-are-supported-in-an-rdp-session"></a><a name="rdpfeaturesupport"></a>Какие функции поддерживаются в сеансе RDP?
 
-В браузере или на виртуальной машине Azure не нужно устанавливать агент или другое программное обеспечение. Бастион работает без агента и не требует дополнительного программного обеспечения для RDP и SSH.
+Сейчас поддерживаются только операции копирования и вставки текста. Такие операции, как копирование файлов, не поддерживаются. Вы можете поделиться своими отзывами о новых возможностях на странице, посвященной [Бастиону Azure](https://feedback.azure.com/forums/217313-networking?category_id=367303).
 
 ### <a name="which-browsers-are-supported"></a><a name="browsers"></a>Какие браузеры поддерживаются?
 
@@ -59,9 +61,8 @@ RDP и SSH — протоколы на основе использования.
 
 Дополнительные сведения см. на [странице с расценками](https://aka.ms/BastionHostPricing).
 
-### <a name="why-do-i-get-your-session-has-expired-error-message-before-the-bastion-session-starts"></a><a name="session"></a>Почему я получаю сообщение об ошибке "ваш сеанс истек" до начала сеанса Бастиона?
-
-Сеанс должен быть инициирован только на портале Azure. Войдите на портал Azure и заново начните сеанс. Если вы перешли по URL-адресу непосредственно из другого сеанса браузера или вкладки, эта ошибка закономерна. Она призвана обеспечивать безопасность сеанса и возможность его запуска только на портале Azure.
+### <a name="does-azure-bastion-require-an-rds-cal-for-administrative-purposes-on-azure-hosted-vms"></a><a name="rdscal"></a>Требуется ли для службы "Бастион Azure" клиентская лицензия RDS для администрирования на размещенных в Azure виртуальных машинах?
+Нет, для предоставления службе "Бастион Azure" доступа к виртуальным машинам Windows Server [клиентская лицензия RDS](https://www.microsoft.com/en-us/p/windows-server-remote-desktop-services-cal/dg7gmgf0dvsv?activetab=pivot:overviewtab) не нужна при использовании исключительно для администрирования.
 
 ### <a name="what-keyboard-layouts-are-supported-during-the-bastion-remote-session"></a><a name="keyboard"></a>Какие раскладки клавиатуры поддерживаются во время удаленного сеанса с использованием службы "Бастион"?
 
@@ -72,9 +73,9 @@ RDP и SSH — протоколы на основе использования.
 Нет. Определяемые пользователем маршруты не поддерживаются в подсети Бастиона Azure.
 В сценариях, в которых Бастион Azure и Брандмауэр Azure или виртуальный сетевой модуль (NVA) находятся в одной виртуальной сети, не нужно принудительно перенаправлять трафик из подсети Бастиона Azure в Брандмауэр Azure, так как обмен данными между Бастионом Azure и виртуальными машинами выполняется по частному каналу. См. сведения руководство по [получению доступа к виртуальным машинам за Брандмауэром Azure с помощью Бастиона](https://azure.microsoft.com/blog/accessing-virtual-machines-behind-azure-firewall-with-azure-bastion/).
 
-### <a name="is-file-transfer-supported-with-azure-bastion-rdp-session"></a><a name="filetransfer"></a>Поддерживается ли перенос файлов с помощью сеанса RDP Бастиона Azure?
+### <a name="why-do-i-get-your-session-has-expired-error-message-before-the-bastion-session-starts"></a><a name="session"></a>Почему я получаю сообщение об ошибке "ваш сеанс истек" до начала сеанса Бастиона?
 
-Мы работаем над добавлением новых функций. Сейчас перенос файлов не поддерживается, но мы планируем реализовать эту возможность. Вы можете поделиться своими отзывами о новых возможностях на странице, посвященной [Бастиону Azure](https://feedback.azure.com/forums/217313-networking?category_id=367303).
+Сеанс должен быть инициирован только на портале Azure. Войдите на портал Azure и заново начните сеанс. Если вы перешли по URL-адресу непосредственно из другого сеанса браузера или вкладки, эта ошибка закономерна. Она призвана обеспечивать безопасность сеанса и возможность его запуска только на портале Azure.
 
 ### <a name="how-do-i-handle-deployment-failures"></a><a name="udr"></a>Как устранить сбои развертывания?
 

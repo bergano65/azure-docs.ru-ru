@@ -74,6 +74,8 @@
           href: alerts-schemas.md
         - name: Управление оповещениями системы безопасности
           href: security-center-managing-and-responding-alerts.md
+        - name: Правила подавления оповещений системы безопасности
+          href: alerts-suppression-rules.md
         - name: Управление инцидентами безопасности
           href: security-center-incident.md
         - name: Корреляция интеллектуальных оповещений в облаке (инциденты)

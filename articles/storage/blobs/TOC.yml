@@ -59,6 +59,8 @@
               href: storage-quickstart-blobs-php.md
             - name: Ruby
               href: storage-quickstart-blobs-ruby.md
+            - name: Xamarin
+              href: storage-quickstart-blobs-xamarin.md
     - name: Учебники
       items:
         - name: Передача и обработка изображения
@@ -702,6 +704,8 @@
           items:
             - name: "Создание учетной записи хранения общего назначения версии\_2"
               href: ../common/storage-account-create.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Создание учетной записи хранения блочных BLOB-объектов
+              href: storage-blob-create-account-block-blob.md
         - name: Миграция
           items:
             - name: Миграция из Data Lake Storage 1-го поколения
