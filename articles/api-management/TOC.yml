@@ -227,8 +227,6 @@
           href: how-to-configure-cloud-metrics-logs.md
         - name: Настройка метрик и журналов в локальной среде для локального шлюза
           href: how-to-configure-local-metrics-logs.md
-        - name: Ведение журнала запросов с использованием Azure Application Insights
-          href: api-management-howto-app-insights.md
         - name: Настройка аварийного восстановления с помощью резервного копирования и восстановления
           href: api-management-howto-disaster-recovery-backup-restore.md
         - name: Управление учетными записями пользователей

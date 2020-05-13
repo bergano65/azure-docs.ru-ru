@@ -605,7 +605,7 @@
         - name: Обмен сообщениями через Служебную шину
           tocHref: /azure/service-bus-messaging/
           topicHref: /azure/service-bus-messaging/
-        - name: Ретрансляция Служебной шины
+        - name: Ретранслятор Azure
           tocHref: /azure/service-bus-relay/
           topicHref: /azure/service-bus-relay/
     - name: Миграция

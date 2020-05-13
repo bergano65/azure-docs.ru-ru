@@ -212,6 +212,8 @@
     - name: Диагностика
       items:
         - name: Руководство по устранению неполадок
+          href: troubleshooting-guide.md
+        - name: Исключения .NET
           href: event-hubs-messaging-exceptions.md
         - name: Исключения Resource Manager
           href: resource-manager-exceptions.md

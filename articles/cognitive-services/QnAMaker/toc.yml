@@ -227,6 +227,8 @@
       href: 'https://azure.microsoft.com/global-infrastructure/services/'
     - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
+    - name: Шифрование
+      href: qna-maker-encryption-of-data-at-rest.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Цены и ограничения
