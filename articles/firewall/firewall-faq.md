@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 04/10/2020
+ms.date: 05/11/2020
 ms.author: victorh
-ms.openlocfilehash: ea94e452b463fffc1800e09fa1302abacdf015cc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cb065f10664f46578f84e59501d75d510ccb3c6a
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81383076"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83201581"
 ---
 # <a name="azure-firewall-faq"></a>Часто задаваемые вопросы о службе "Брандмауэр Azure"
 
@@ -129,7 +129,7 @@ Set-AzFirewall -AzureFirewall $azfw
 
 ## <a name="is-forced-tunnelingchaining-to-a-network-virtual-appliance-supported"></a>Поддерживается ли принудительное туннелирование или привязка к сетевому виртуальному устройству?
 
-Поддерживается принудительное туннелирование. Дополнительные сведения см. в статье [принудительное туннелирование брандмауэра Azure (Предварительная версия)](forced-tunneling.md). 
+Поддерживается принудительное туннелирование. Дополнительные сведения см. в статье [принудительное туннелирование в брандмауэре Azure](forced-tunneling.md). 
 
 Брандмауэр Azure должен быть напрямую подключен к Интернету. Если сеть AzureFirewallSubnet использует стандартный маршрут к локальной сети через BGP, установите пользовательский маршрут 0.0.0.0/0 и задайте для параметра **NextHopType** значение **Интернет**, чтобы обеспечить прямое подключение к Интернету.
 
