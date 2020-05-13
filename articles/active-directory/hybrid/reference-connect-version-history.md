@@ -12,12 +12,13 @@ ms.date: 04/23/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08f142a270cae525571ae414602a89b2538c17d0
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.custom: has-adal-ref
+ms.openlocfilehash: bc3c572aeb72328bc4708d27052756623ccd7701
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82981992"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83200974"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect. История выпусков версий
 Команда Azure Active Directory (Azure AD) регулярно обновляет службу Azure AD Connect, добавляя новые функции и возможности. Не все эти дополнения применимы для всех пользователей.
@@ -26,7 +27,7 @@ ms.locfileid: "82981992"
 
 В таблице ниже приведен список связанных разделов.
 
-Раздел |  Сведения
+Раздел |  Подробности
 --------- | --------- |
 Действия по переходу с Azure AD Connect | Различные методы [обновления предыдущей версии до последней версии](how-to-upgrade-previous-version.md) Azure AD Connect.
 Необходимые разрешения | Разрешения, необходимые для применения обновления, см. в разделе [учетные записи и разрешения](reference-connect-accounts-permissions.md#upgrade).
@@ -87,9 +88,9 @@ ms.locfileid: "82981992"
 > Если вы выполнили клонирование правила синхронизации " **в из AD-Group Join** " и не выполнили клонирование из общего правила синхронизации " **в из AD-Group** " и планируете обновление, выполните следующие действия в процессе обновления.
 > 1. Во время обновления снимите флажок **запустить процесс синхронизации после завершения настройки**.
 > 2. Измените правило синхронизации клонированного объединения и добавьте следующие два преобразования:
->     - Задайте для `sourceAnchorBinary`параметра `objectGUID` прямой поток значение.
->     - Задайте для `sourceAnchor`параметра `ConvertToBase64([objectGUID])` поток выражения значение.     
-> 3. Включите планировщик с помощью `Set-ADSyncScheduler -SyncCycleEnabled $true`.
+>     - Задайте для параметра прямой поток значение `objectGUID` `sourceAnchorBinary` .
+>     - Задайте для параметра поток выражения значение `ConvertToBase64([objectGUID])` `sourceAnchor` .     
+> 3. Включите планировщик с помощью `Set-ADSyncScheduler -SyncCycleEnabled $true` .
 
 
 
@@ -209,11 +210,11 @@ ms.locfileid: "82981992"
 >[!IMPORTANT]
 >Существует известная ошибка обновления Azure AD Connect от более ранней версии до 1.3.21.0, где портал Office 365 не отражает обновленную версию, несмотря на то, что Azure AD Connect успешно обновлен.
 >
-> Чтобы устранить эту проблему, необходимо импортировать модуль **AdSync** , а затем запустить командлет`Set-ADSyncDirSyncConfiguration` PowerShell на Azure AD Connect сервере.  Можно выполнить следующие действия.
+> Чтобы устранить эту проблему, необходимо импортировать модуль **AdSync** , а затем запустить `Set-ADSyncDirSyncConfiguration` командлет PowerShell на Azure AD Connect сервере.  Можно выполнить следующие действия.
 >
 >1. Откройте PowerShell в режиме администратора.
->2. Запустите `Import-Module "ADSync"`.
->3. Запустите `Set-ADSyncDirSyncConfiguration -AnchorAttribute ""`.
+>2. Выполните команду `Import-Module "ADSync"`.
+>3. Выполните команду `Set-ADSyncDirSyncConfiguration -AnchorAttribute ""`.
  
 ### <a name="release-status"></a>Состояние выпуска 
 
@@ -566,7 +567,7 @@ ms.locfileid: "82981992"
 *   Удаление всех элементов управления доступом в конкретном объекте, кроме элементов управления доступом, характерных для SELF. При работе с SELF нужно сохранять разрешения по умолчанию без изменений.
 *   Назначение указанных ниже специальных разрешений.
 
-Type     | Название                          | Доступ               | Применяется к
+Type     | Имя                          | Доступ               | Применяется к
 ---------|-------------------------------|----------------------|--------------|
 Allow    | SYSTEM                        | Полный доступ         | этому объекту  |
 Allow    | Администраторы предприятия             | Полный доступ         | этому объекту  |
@@ -940,8 +941,8 @@ CBool(
 #### <a name="issues-fixed"></a>Исправленные проблемы
 
 * Чтобы повысить устойчивость к сбоям проверки подлинности, в Azure AD представлены следующие URL-адреса в качестве новых конечных точек WS-Federation, которые будут добавлены в локальную конфигурацию AD FS для отношения доверия с проверяющей стороной:
-  * HTTPS:\//ESTs.Login.microsoftonline.com/login.srf
-  * HTTPS:\//stamp2.Login.microsoftonline.com/login.srf
+  * HTTPS: \/ /ESTs.Login.microsoftonline.com/login.srf
+  * HTTPS: \/ /stamp2.Login.microsoftonline.com/login.srf
   * https://ccs.login.microsoftonline.com/login.srf
   * https://ccs-sdf.login.microsoftonline.com/login.srf
   

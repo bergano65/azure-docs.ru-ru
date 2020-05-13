@@ -5,7 +5,7 @@ services: sql-database
 ms.service: sql-database
 ms.subservice: security
 titleSuffix: Azure SQL Database and Azure Synapse
-ms.custom: seoapril2019
+ms.custom: seoapril2019, has-adal-ref
 ms.devlang: ''
 ms.topic: conceptual
 author: GithubMirek
@@ -13,12 +13,12 @@ ms.author: mireks
 ms.reviewer: vanto
 ms.date: 02/06/2020
 tags: azure-synapse
-ms.openlocfilehash: 137e1919f460d2f5631810edbc09b6e213bfe651
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 611a238fd829d9b1beb391da967c0f6c6d3b46ed
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82133192"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83198536"
 ---
 # <a name="using-multi-factor-aad-authentication-with-azure-sql-database-and-azure-synapse-analytics-ssms-support-for-mfa"></a>Использование многофакторной проверки подлинности AAD с базой данных SQL Azure и Azure синапсе Analytics (поддержка SSMS для MFA)
 Служба "база данных SQL Azure" и Azure синапсе поддерживают подключения из SQL Server Management Studio (SSMS), используя *Active Directory универсальную проверку подлинности*. В этой статье обсуждаются отличия между различными вариантами проверки подлинности, а также ограничения, связанные с использованием универсальной проверки подлинности. 
@@ -59,7 +59,7 @@ Azure MFA помогает защитить доступ к данным и пр
    ![mfa-tenant-ssms](./media/sql-database-ssms-mfa-auth/mfa-no-tenant-ssms.png)
 
 ### <a name="azure-ad-business-to-business-support"></a>Поддержка Azure AD B2B   
-Пользователи Azure AD, которые поддерживаются в сценариях Azure AD B2B в качестве гостевых пользователей (см. раздел [что такое служба совместной работы Azure B2B](../active-directory/active-directory-b2b-what-is-azure-ad-b2b.md)), могут подключаться к базе данных SQL и Azure синапсе только как часть членов группы, созданной `CREATE USER` в текущем Azure AD, и сопоставляться вручную с помощью инструкции Transact-SQL в данной базе данных. Например, `steve@gmail.com` если приглашен в Azure AD `contosotest` (с доменом `contosotest.onmicrosoft.com`Azure AD), Группа Azure AD, например, `usergroup` должна быть создана в Azure AD, содержащей `steve@gmail.com` член. Затем эту группу для конкретной базы данных (т. е. MyDatabase) должен создать администратор SQL Azure AD или владелец базы данных Azure AD, выполнив инструкцию `CREATE USER [usergroup] FROM EXTERNAL PROVIDER` Transact-SQL. После создания пользователя базы данных пользователь `steve@gmail.com` сможет войти в `MyDatabase` с помощью параметра аутентификации SSMS `Active Directory – Universal with MFA support`. Группа пользователей по умолчанию имеет только разрешение на подключение, и дополнительные возможности доступа к данным потребуется предоставить обычным способом. Обратите внимание на то, что пользователь `steve@gmail.com` как гость должен установить флажок и добавить доменное имя AD `contosotest.onmicrosoft.com` в диалоговом окне **Свойства соединения** SSMS. Параметр **Доменное имя AD или идентификатор клиента** поддерживается только для параметра Universal with MFA connection (Универсальная с подключением MFA), в противном случае он неактивен.
+Пользователи Azure AD, которые поддерживаются в сценариях Azure AD B2B в качестве гостевых пользователей (см. раздел [что такое служба совместной работы Azure B2B](../active-directory/active-directory-b2b-what-is-azure-ad-b2b.md)), могут подключаться к базе данных SQL и Azure синапсе только как часть членов группы, созданной в текущем Azure AD, и сопоставляться вручную с помощью инструкции TRANSACT-SQL `CREATE USER` в данной базе данных. Например, если `steve@gmail.com` приглашен в Azure AD `contosotest` (с доменом Azure AD `contosotest.onmicrosoft.com` ), Группа Azure AD, например, `usergroup` должна быть создана в Azure AD, содержащей `steve@gmail.com` член. Затем эту группу для конкретной базы данных (т. е. MyDatabase) должен создать администратор SQL Azure AD или владелец базы данных Azure AD, выполнив инструкцию `CREATE USER [usergroup] FROM EXTERNAL PROVIDER` Transact-SQL. После создания пользователя базы данных пользователь `steve@gmail.com` сможет войти в `MyDatabase` с помощью параметра аутентификации SSMS `Active Directory – Universal with MFA support`. Группа пользователей по умолчанию имеет только разрешение на подключение, и дополнительные возможности доступа к данным потребуется предоставить обычным способом. Обратите внимание на то, что пользователь `steve@gmail.com` как гость должен установить флажок и добавить доменное имя AD `contosotest.onmicrosoft.com` в диалоговом окне **Свойства соединения** SSMS. Параметр **Доменное имя AD или идентификатор клиента** поддерживается только для параметра Universal with MFA connection (Универсальная с подключением MFA), в противном случае он неактивен.
 
 ## <a name="universal-authentication-limitations-for-sql-database-and-azure-synapse"></a>Ограничения универсальной проверки подлинности для базы данных SQL и Azure синапсе
 - SSMS и SqlPackage.exe — единственные инструменты, в настоящее время поддерживающее MFA с помощью универсальной аутентификации Active Directory.

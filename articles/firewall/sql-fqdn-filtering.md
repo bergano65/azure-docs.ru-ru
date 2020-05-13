@@ -5,21 +5,16 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 07/19/2019
+ms.date: 05/11/2020
 ms.author: victorh
-ms.openlocfilehash: 858cfc9a8c15f1e33e688bb5086a58f194e7173f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 28252b42264dc6c1be403e99689f845d7143b1f7
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79501493"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83200467"
 ---
 # <a name="configure-azure-firewall-application-rules-with-sql-fqdns"></a>Настройка правил приложения брандмауэра Azure с помощью полных доменных имен SQL
-
-> [!IMPORTANT]
-> Правила приложений брандмауэра Azure с полным доменным имен SQL в настоящее время находятся в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Теперь правила приложения брандмауэра Azure можно настроить с помощью полных доменных имен SQL. Это позволяет ограничить доступ в виртуальных сетях только указанными экземплярами SQL Server.
 
@@ -29,7 +24,7 @@ ms.locfileid: "79501493"
 - Из локальной среды в управляемые экземпляры SQL Azure или SQL IaaS, работающие в виртуальных сетей.
 - От периферийных серверов до управляемых экземпляров SQL Azure или SQL IaaS, работающих в виртуальных сетей.
 
-В общедоступной предварительной версии Фильтрация полного доменного имени SQL поддерживается только в [прокси-режиме](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-architecture#connection-policy) (порт 1433). При использовании SQL в режиме перенаправления по умолчанию можно отфильтровать доступ с помощью тега службы SQL в рамках [сетевых правил](overview.md#network-traffic-filtering-rules).
+Фильтрация полных доменных имен SQL поддерживается только в [прокси-режиме](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-architecture#connection-policy) (порт 1433). При использовании SQL в режиме перенаправления по умолчанию можно отфильтровать доступ с помощью тега службы SQL в рамках [сетевых правил](overview.md#network-traffic-filtering-rules).
 Если для трафика IaaS SQL используются порты не по умолчанию, эти порты можно настроить в правилах брандмауэра приложения.
 
 Правила приложений с полным доменным имен SQL в настоящее время доступны во всех регионах с помощью портал Azure, Azure CLI, других и шаблонов.
@@ -68,6 +63,6 @@ ms.locfileid: "79501493"
 4. Получите доступ к SQL из виртуальной машины в виртуальной сети, которая фильтрует трафик через брандмауэр. 
 5. Убедитесь, что в [журналах брандмауэра Azure](log-analytics-samples.md) разрешено отображение трафика.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о прокси-сервере SQL и режимах перенаправления см. в статье [Архитектура подключения к базе данных SQL Azure](../sql-database/sql-database-connectivity-architecture.md).

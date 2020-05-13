@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/16/2020
 ms.author: spelluru
-ms.openlocfilehash: fb6092b7ccb3d1a4214f8d26119d9dc50b0ed317
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6e780268d4b8c1a512ce82b1ca10a2f6b7b894b7
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81482068"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83125763"
 ---
 # <a name="topic-filters-and-actions"></a>Фильтры и действия разделов
 
@@ -29,7 +29,7 @@ ms.locfileid: "81482068"
 
 -   *Логические фильтры*. **TrueFilter** отбирает все поступившие сообщения (**true**), а **FalseFilter** не отбирает ни одного сообщения (**false**).
 
--   *Фильтры SQL*. **SqlFilter** содержит SQL-подобное условное выражение, которое вычисляется в брокере для определяемых пользователем свойств и системных свойств каждого поступившего сообщения. Все системные свойства в условном выражении предваряются префиксом `sys.`. [Подмножество языка SQL для условий фильтра](service-bus-messaging-sql-filter.md) проверяет наличие свойств (`EXISTS`), значений NULL (`IS NULL`), ЛОГИЧЕСКИХ операторов Not/and/or, операторам отношения, простой числовой арифметической операции и простому текстовому шаблону, `LIKE`совпадающему с.
+-   *Фильтры SQL*. **SqlFilter** содержит SQL-подобное условное выражение, которое вычисляется в брокере для определяемых пользователем свойств и системных свойств каждого поступившего сообщения. Все системные свойства в условном выражении предваряются префиксом `sys.`. [Подмножество языка SQL для условий фильтра](service-bus-messaging-sql-filter.md) проверяет наличие свойств ( `EXISTS` ), значений NULL ( `IS NULL` ), ЛОГИЧЕСКИХ операторов Not/and/or, операторам отношения, простой числовой арифметической операции и простому текстовому шаблону, совпадающему с `LIKE` .
 
 -   *Фильтры корреляции*. **CorrelationFilter** содержит набор условий, которые сопоставляются с одним или несколькими из пользовательских и системных свойств для каждого поступающего сообщения. Обычно используется для сопоставления со свойством **correlationId** , но приложение также может выбрать сопоставление со следующими свойствами:
 
@@ -66,13 +66,11 @@ ms.locfileid: "81482068"
 > [!NOTE]
 > В настоящее время портал Azure не позволяет указывать правила фильтрации для подписок. Для определения правил подписки можно использовать любой из поддерживаемых пакетов SDK или шаблонов Azure Resource Manager. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующие примеры: 
 
 - [.NET — руководство по отправке и получению с фильтрами](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/GettingStarted/BasicSendReceiveTutorialwithFilters/BasicSendReceiveTutorialWithFilters)
 - [Фильтры разделов .NET](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/TopicFilters)
-- [JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/servicebus/service-bus/samples/javascript/advanced/topicFilters.js)
-- [Сценарий типа](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/servicebus/service-bus/samples/typescript/src/advanced/topicFilters.ts)
 - [Шаблон Azure Resource Manager](https://docs.microsoft.com/azure/templates/microsoft.servicebus/2017-04-01/namespaces/topics/subscriptions/rules)
 
 

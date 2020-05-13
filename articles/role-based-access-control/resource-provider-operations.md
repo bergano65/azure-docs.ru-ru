@@ -13,20 +13,18 @@ ms.workload: identity
 ms.date: 05/04/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 1be7ceb9b0560b87d0917fdb57b2c21e0b050db9
-ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
+ms.openlocfilehash: 3d8851004c5d976961d96ca7d9f315780765fcde
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82839102"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83199565"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
-В этой статье перечислены операции, доступные в каждом поставщике ресурсов Azure Resource Manager. Эти операции можно использовать в [пользовательских ролях Azure](custom-roles.md) , чтобы обеспечить детализированный контроль доступа к ресурсам в Azure. Строки операций имеют следующий формат: `{Company}.{ProviderName}/{resourceType}/{action}`. Сведения о том, как пространства имен поставщиков ресурсов сопоставляются со службами Azure, см. [в разделе Сопоставление поставщика ресурсов со службой](../azure-resource-manager/management/azure-services-resource-providers.md).
+В этой статье перечислены операции, доступные в каждом поставщике ресурсов Azure Resource Manager. Эти операции можно использовать в [пользовательских ролях Azure](custom-roles.md) , чтобы обеспечить детализированный контроль доступа к ресурсам в Azure. Строки операций имеют следующий формат: `{Company}.{ProviderName}/{resourceType}/{action}` . Сведения о том, как пространства имен поставщиков ресурсов сопоставляются со службами Azure, см. [в разделе Сопоставление поставщика ресурсов со службой](../azure-resource-manager/management/azure-services-resource-providers.md).
 
 Операции в поставщиках ресурсов всегда развиваются. Чтобы получить список последних операций, используйте команду [Get-AzProviderOperation](/powershell/module/az.resources/get-azprovideroperation) или [az provider operation list](/cli/azure/provider/operation#az-provider-operation-list).
-
-[!INCLUDE [GDPR-related guidance](../../includes/gdpr-intro-sentence.md)]
 
 ## <a name="microsoftaad"></a>Microsoft.AAD
 
@@ -93,7 +91,7 @@ Azure Active Directory
 > | Тип действия | Операция | Описание |
 > | --- | --- | --- |
 > | Действие | Microsoft.Addons/register/action | Регистрирует указанную подписку в Microsoft.Addons. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Addons/operations/read | Получает поддерживаемые операции RP. |
 > |  | **supportProviders** |  |
 > | Действие | Microsoft.Addons/supportProviders/listsupportplaninfo/action | Выводит сведения о текущем плане поддержки для указанной подписки. |
@@ -154,7 +152,7 @@ Azure Active Directory
 > | Действие | Microsoft.ADHybridHealthService/logs/read | Получает журналы установки и регистрации агента для клиента. |
 > |  | **журналы и содержимое** |  |
 > | Действие | Microsoft.ADHybridHealthService/logs/contents/read | Получает содержимое журналов установки и регистрации агента, хранимых в большом двоичном объекте. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.ADHybridHealthService/operations/read | Возвращает список операций, поддерживаемых системой. |
 > |  | **Reports/аваилабледеплойментс** |  |
 > | Действие | Microsoft.ADHybridHealthService/reports/availabledeployments/read | Получает список доступных регионов, используемых командой DevOps для поддержки инцидентов клиентов. |
@@ -253,7 +251,7 @@ Azure Active Directory
 > | Действие | Microsoft.Advisor/generateRecommendations/read | Возвращает состояние создания рекомендаций. |
 > |  | **метаданных** |  |
 > | Действие | Microsoft. Advisor/метаданные/чтение | Получить метаданные |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Advisor/operations/read | Получение операций для Microsoft Advisor. |
 > |  | **проектирован** |  |
 > | Действие | Microsoft.Advisor/recommendations/read | Считывает рекомендации. |
@@ -320,7 +318,7 @@ Azure Active Directory
 > | Действие | Microsoft.AnalysisServices/locations/operationresults/read | Получение сведений о результате указанной операции. |
 > |  | **расположения и оператионстатусес** |  |
 > | Действие | Microsoft.AnalysisServices/locations/operationstatuses/read | Извлечение сведений о состоянии указанной операции. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.AnalysisServices/operations/read | Извлечение сведений об операциях. |
 > |  | **серверах** |  |
 > | Действие | Microsoft.AnalysisServices/servers/read | Извлекает информацию об указанном сервере анализа данных. |
@@ -345,7 +343,7 @@ Azure Active Directory
 > | Действие | Microsoft.ApiManagement/unregister/action | Отменяет регистрацию подписки для поставщика ресурсов Microsoft.ApiManagement. |
 > |  | **чеккнамеаваилабилити** |  |
 > | Действие | Microsoft.ApiManagement/checkNameAvailability/read | Проверяет, доступно ли указанное имя службы. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.ApiManagement/operations/read | Чтение всех операций API для ресурса Microsoft.ApiManagement. |
 > |  | **отчеты** |  |
 > | Действие | Microsoft.ApiManagement/reports/read | Получение отчетов, объединенных по периодам времени, географическим регионам, разработчикам, продуктам, API-интерфейсам, операциям, подпискам и запросам. |
@@ -672,7 +670,7 @@ Azure Active Directory
 > | Действие | Microsoft. Аппконфигуратион/Конфигуратионсторес/providers/Microsoft. Insights/metricDefinitions/Read | Получение всех определений метрик для конфигурации приложения Майкрософт. |
 > |  | **расположения и Оператионсстатус** |  |
 > | Действие | Microsoft. Аппконфигуратион/Locations/Оператионсстатус/Read | Получение состояния операции. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. Аппконфигуратион/операции/чтение | Список всех операций, поддерживаемых конфигурацией приложения Майкрософт. |
 > |  | **Конфигуратионсторес/Кэйвалуес** |  |
 > | DataAction | Microsoft. Аппконфигуратион/Конфигуратионсторес/Кэйвалуес/Read | Считывает значение ключа из хранилища конфигураций. |
@@ -701,7 +699,7 @@ Azure Active Directory
 > | Действие | Microsoft.Authorization/locks/read | Возвращает блокировки в указанной области. |
 > | Действие | Microsoft.Authorization/locks/write | Добавляет блокировки в указанной области. |
 > | Действие | Microsoft.Authorization/locks/delete | Удаляет блокировки в указанной области. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Authorization/operations/read | Получает список операций. |
 > |  | **разрешения** |  |
 > | Действие | Microsoft.Authorization/permissions/read | Выводит список всех разрешений, которые есть у вызывающего в заданной области. |
@@ -911,7 +909,7 @@ Azure Active Directory
 > | Действие | Microsoft.Automation/automationAccounts/webhooks/read | Считывает runbook службы автоматизации Azure. |
 > | Действие | Microsoft.Automation/automationAccounts/webhooks/write | Создает или обновляет webhook службы автоматизации Azure. |
 > | Действие | Microsoft.Automation/automationAccounts/webhooks/delete | Удаляет webhook службы автоматизации Azure.  |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Automation/operations/read | Получает доступные операции для ресурсов службы автоматизации Azure. |
 
 ## <a name="microsoftazureactivedirectory"></a>Microsoft.AzureActiveDirectory
@@ -928,7 +926,7 @@ Azure Active Directory
 > | Действие | Microsoft.AzureActiveDirectory/b2cDirectories/delete | Удаление ресурса каталога B2C. |
 > |  | **b2ctenants** |  |
 > | Действие | Microsoft. AzureActiveDirectory/b2ctenants/Read | Список всех клиентов B2C, членом которых является пользователь |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.AzureActiveDirectory/operations/read | Чтение всех операций API, доступных для поставщика ресурсов Microsoft.AzureActiveDirectory. |
 
 ## <a name="microsoftazurestack"></a>Microsoft.AzureStack
@@ -1014,7 +1012,7 @@ Azure Active Directory
 > | Действие | Microsoft.Batch/locations/accountOperationResults/read | Получение результатов длительных операций в учетной записи пакетной службы. |
 > |  | **расположения и квоты** |  |
 > | Действие | Microsoft.Batch/locations/quotas/read | Возвращает квоты пакетной службы для указанной подписки в заданном регионе Azure. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Batch/operations/read | Перечисляет операции, доступные в поставщике ресурсов Microsoft.Batch. |
 > |  | **Батчаккаунтс и задания** |  |
 > | DataAction | Microsoft. Batch/Батчаккаунтс/задания/чтение | Выводит список заданий в учетной записи пакетной службы или получает свойства задания. |
@@ -1091,7 +1089,7 @@ Azure Active Directory
 > | Действие | Microsoft. выставление счетов/счета/Загрузка/действие | Скачать накладную с помощью ссылки для скачивания из списка |
 > | Действие | Microsoft. выставление счетов/счета/Загрузка/действие | Скачать накладную с помощью ссылки для скачивания из списка |
 > | Действие | Microsoft.Billing/invoices/read |  |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. выставление счетов/операции/чтение |  |
 
 ## <a name="microsoftbingmaps"></a>Microsoft.BingMaps
@@ -1139,7 +1137,7 @@ Azure Active Directory
 > | Действие | Microsoft. Блокчейн/Locations/Чеккнамеаваилабилити/Action | Проверяет, является ли имя ресурса допустимым и не используется. |
 > |  | **расположения и Блоккчаинмембероператионресултс** |  |
 > | Действие | Microsoft. Блокчейн/Locations/Блоккчаинмембероператионресултс/Read | Возвращает результаты операции для элементов Блокчейн. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. Блокчейн/операции/чтение | Вывод списка всех операций в поставщике ресурсов Microsoft Блокчейн. |
 > |  | **Блоккчаинмемберс/Трансактионнодес** |  |
 > | DataAction | Microsoft. Блокчейн/Блоккчаинмемберс/Трансактионнодес/Connect/Action | Подключается к узлу транзакции-члена Блокчейн. |
@@ -1215,7 +1213,7 @@ Azure Active Directory
 > | Действие | Microsoft.Cache/unregister/action | Отменяет регистрацию поставщика ресурсов Microsoft.Cache для подписки. |
 > |  | **расположения и оператионресултс** |  |
 > | Действие | Microsoft.Cache/locations/operationresults/read | Получение результата длительных операций, для которых заголовок Location был ранее возвращен клиенту. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Cache/operations/read | Вывод списка операций, которые поддерживает поставщик Microsoft.Cache. |
 > |  | **Redis** |  |
 > | Действие | Microsoft.Cache/redis/write | Изменяет параметры и конфигурацию кэша Redis на портале управления. |
@@ -1265,7 +1263,7 @@ Azure Active Directory
 > | Действие | Microsoft.Capacity/catalogs/read | Чтение каталога резервирования. |
 > |  | **коммерЦиалресерватионордерс** |  |
 > | Действие | Microsoft.Capacity/commercialreservationorders/read | Получение заказов на резервирование, созданных в любом клиенте. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Capacity/operations/read | Чтение любой операции. |
 > |  | **ресерватионордерс** |  |
 > | Действие | Microsoft.Capacity/reservationorders/availablescopes/action | Поиск любой доступной области. |
@@ -1342,7 +1340,7 @@ Azure Active Directory
 > | Действие | Microsoft.Cdn/operationresults/profileresults/endpointresults/originresults/read |  |
 > | Действие | Microsoft.Cdn/operationresults/profileresults/endpointresults/originresults/write |  |
 > | Действие | Microsoft.Cdn/operationresults/profileresults/endpointresults/originresults/delete |  |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Cdn/operations/read |  |
 > |  | **profiles**; |  |
 > | Действие | Microsoft.Cdn/profiles/read |  |
@@ -1402,7 +1400,7 @@ Azure Active Directory
 > | Действие | Microsoft.CertificateRegistration/certificateOrders/certificates/Write | Добавляет новый сертификат или обновляет существующий. |
 > | Действие | Microsoft.CertificateRegistration/certificateOrders/certificates/Delete | Удаляет существующий сертификат. |
 > | Действие | Microsoft.CertificateRegistration/certificateOrders/certificates/Read | Возвращает список сертификатов. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.CertificateRegistration/operations/Read | Вывод списка всех операций из регистрации сертификата службы приложений. |
 
 ## <a name="microsoftclassiccompute"></a>Microsoft.ClassicCompute
@@ -1522,7 +1520,7 @@ Azure Active Directory
 > | Действие | Microsoft.ClassicCompute/operatingSystemFamilies/read | Вывод списка семейств гостевых операционных систем, доступных в Microsoft Azure, а также версий операционных систем в каждом таком семействе. |
 > |  | **operatingSystems** |  |
 > | Действие | Microsoft.ClassicCompute/operatingSystems/read | Выводит список версий гостевой операционной системы, доступных в Microsoft Azure. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.ClassicCompute/operations/read | Получает список операций. |
 > |  | **оператионстатусес** |  |
 > | Действие | Microsoft.ClassicCompute/operationStatuses/read | Считывает состояние операции ресурса. |
@@ -1617,7 +1615,7 @@ Azure Active Directory
 > | Действие | Microsoft.ClassicNetwork/networkSecurityGroups/securityRules/delete | Удаляет правило безопасности. |
 > |  | **networkSecurityGroups/securityRules/Оператионстатусес** |  |
 > | Действие | Microsoft.ClassicNetwork/networkSecurityGroups/securityRules/operationStatuses/read | Считывает состояние операции правил безопасности группы безопасности сети. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.ClassicNetwork/operations/read | Получение операций классической сети. |
 > |  | **квоты** |  |
 > | Действие | Microsoft.ClassicNetwork/quotas/read | Возвращает квоту для подписки. |
@@ -1705,7 +1703,7 @@ Azure Active Directory
 > | Действие | Microsoft.ClassicStorage/images/read | Возвращает образ. |
 > |  | **Images/оператионстатусес** |  |
 > | Действие | Microsoft.ClassicStorage/images/operationstatuses/read | Получает состояние операции создания образа. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.ClassicStorage/operations/read | Получает операции классического хранилища. |
 > |  | **osImages** |  |
 > | Действие | Microsoft.ClassicStorage/osImages/read | Возвращает образ операционной системы. |
@@ -2137,7 +2135,7 @@ Azure Active Directory
 > | DataAction | Microsoft. CognitiveServices/Accounts/проверкой орфографии/действие | Получение результата запроса проверки орфографии с помощью GET или POST. |
 > |  | **Accounts/Текстаналитикс** |  |
 > | DataAction | Microsoft. CognitiveServices/Accounts/Текстаналитикс/Languages/Action | API возвращает обнаруженный язык и числовой показатель от 0 до 1. Если оценка приближается к 1, существует стопроцентная уверенность, что язык определен правильно. Поддерживается всего 120 языков. |
-> | DataAction | Microsoft. CognitiveServices/Accounts/Текстаналитикс/сущности/действие | API возвращает список известных сущностей и общие именованные сущности\"(пользователь\", \"расположение\", \"организация\" и т. д.) в определенном документе. |
+> | DataAction | Microsoft. CognitiveServices/Accounts/Текстаналитикс/сущности/действие | API возвращает список известных сущностей и общие именованные сущности ( \" пользователь \" , \" расположение \" , \" Организация \" и т. д.) в определенном документе. |
 > | DataAction | Microsoft. CognitiveServices/Accounts/Текстаналитикс/фраз/Action | API возвращает список строк с обозначением ключевых тем разговора во входном тексте. |
 > | DataAction | Microsoft. CognitiveServices/Accounts/Текстаналитикс/тональности/Action | API возвращает числовую оценку в диапазоне от 0 до 1.<br>Если оценка приближается к 1, то у текста позитивная тональность, а если к 0, то негативная.<br>Оценка 0,5 указывает на отсутствие тональности (например,<br>Инструкция фактоид). |
 > |  | **Accounts/Видеосеарч** |  |
@@ -2265,7 +2263,7 @@ Azure Active Directory
 > | Действие | Microsoft.Compute/locations/vmSizes/read | Выводит список доступных размеров виртуальных машин в расположении. |
 > |  | **расположения и Всмоператионс** |  |
 > | Действие | Microsoft. COMPUTE/Locations/Всмоператионс/Read | Получает состояние асинхронной операции для масштабируемого набора виртуальных машин с помощью расширения службы среды выполнения виртуальной машины. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Compute/operations/read | Выводит список операций, доступных в поставщике ресурсов Microsoft.Compute. |
 > |  | **проксимитиплацементграупс** |  |
 > | Действие | Microsoft. COMPUTE/Проксимитиплацементграупс/чтение | Получение свойств группы размещения с учетом расположения |
@@ -2437,7 +2435,7 @@ Azure Active Directory
 > | Действие | Microsoft.Consumption/marketplaces/read | Вывод сведений об использовании ресурсов Marketplace для области подписок EA и WebDirect. |
 > |  | **оператионресултс** |  |
 > | Действие | Microsoft.Consumption/operationresults/read | Вывод списка результатов операций. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Consumption/operations/read | Вывод списка всех поддерживаемых операций для поставщика ресурсов Microsoft.Consumption. |
 > |  | **значение operationstatus** |  |
 > | Действие | Microsoft.Consumption/operationstatus/read | Вывод списка состояний операций. |
@@ -2499,7 +2497,7 @@ Azure Active Directory
 > | Действие | Microsoft. Контаинеринстанце/Locations/Operations/Read | Перечислите операции для службы экземпляра контейнера Azure. |
 > |  | **расположения и использование** |  |
 > | Действие | Microsoft.ContainerInstance/locations/usages/read | Получение данных об использовании для определенного региона. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. Контаинеринстанце/операции/чтение | Перечислите операции для службы экземпляра контейнера Azure. |
 > |  | **сервицеассоЦиатионлинкс** |  |
 > | Действие | Microsoft. Контаинеринстанце/сервицеассоЦиатионлинкс/Delete | Удалите ссылку на ассоциацию службы, созданную поставщиком ресурсов экземпляра контейнера Azure в подсети. |
@@ -2518,7 +2516,7 @@ Azure Active Directory
 > | Действие | Microsoft.ContainerRegistry/locations/deleteVirtualNetworkOrSubnets/action | Уведомляет Microsoft.ContainerRegistry о том, что удаляется виртуальная сеть или подсеть. |
 > |  | **расположения и Оператионресултс** |  |
 > | Действие | Microsoft.ContainerRegistry/locations/operationResults/read | Получение результата асинхронной операции. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.ContainerRegistry/operations/read | Вывод списка всех доступных операций API REST реестра контейнеров Azure. |
 > |  | **registries** |  |
 > | Действие | Microsoft.ContainerRegistry/registries/read | Получение свойств указанного реестра контейнеров или вывод списка всех реестров контейнеров в указанной группе ресурсов или подписке. |
@@ -2677,7 +2675,7 @@ Azure Active Directory
 > | Действие | Microsoft.ContainerService/openShiftManagedClusters/read | Получение управляемого кластера с открытым сдвигом |
 > | Действие | Microsoft.ContainerService/openShiftManagedClusters/write | Создание нового управляемого кластера Open Shift или обновление имеющегося |
 > | Действие | Microsoft.ContainerService/openShiftManagedClusters/delete | Удаление управляемого кластера с открытым сдвигом |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.ContainerService/operations/read | Выводит список операций, доступных в поставщике ресурсов Microsoft.ContainerService. |
 
 ## <a name="microsoftcostmanagement"></a>Microsoft.CostManagement
@@ -2731,7 +2729,7 @@ Azure Active Directory
 > | Действие | Microsoft. Костманажемент/Екстерналсубскриптионс/запрос/чтение | Запрос данных об использовании для внешней подписки. |
 > |  | **грешно** |  |
 > | Действие | Microsoft. Костманажемент/прогноз/чтение | Прогнозирование данных об использовании по области. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. Костманажемент/операции/чтение | Перечислите все поддерживаемые операции с помощью поставщика ресурсов Microsoft. Костманажемент. |
 > |  | **запрос** |  |
 > | Действие | Microsoft.CostManagement/query/read | Запрос данных об использовании в области. |
@@ -2769,7 +2767,7 @@ Azure Active Directory
 > | Действие | Microsoft. Датабокс/Locations/Аваилаблескус/Read | Перечисление или получение доступных номеров SKU |
 > |  | **расположения и Оператионресултс** |  |
 > | Действие | Microsoft.DataBox/locations/operationResults/read | Вывод списка или получение результатов операции. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. Датабокс/операции/чтение | Перечисление или получение операций |
 > |  | **подписки и resourceGroups** |  |
 > | Действие | Microsoft. Датабокс/Subscriptions/resourceGroups/Мовересаурцес/Action | Этот метод выполняет перемещение ресурса. |
@@ -2893,7 +2891,7 @@ Azure Active Directory
 > | Действие | Microsoft. кирпичы/расположения/ЖетнетворкполиЦиес/действие | Получение политик намерения сети для подсети в зависимости от расположения, используемого NRP |
 > |  | **расположения и оператионстатусес** |  |
 > | Действие | Microsoft. кирпичы/расположения/оператионстатусес/чтение | Считывает состояние операции ресурса. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. кирпичы/операции/чтение | Получает список операций. |
 > |  | **рабочие области** |  |
 > | Действие | Microsoft.Databricks/workspaces/read | Извлечение списка рабочих областей Databricks. |
@@ -2936,7 +2934,7 @@ Azure Active Directory
 > | Действие | Microsoft. catalog/Каталогизация/чтение | Чтение ресурса каталога данных для поставщика ресурсов каталога. |
 > | Действие | Microsoft. catalog/Каталогизация/запись | Запись ресурса каталога данных для поставщика ресурсов каталога. |
 > | Действие | Microsoft. catalog/Каталогизация/удаление | Удаление ресурса каталога данных для поставщика ресурсов каталога. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.DataCatalog/operations/read | Считывает все доступные операции в поставщике ресурсов каталога данных. |
 
 ## <a name="microsoftdatafactory"></a>Microsoft.DataFactory
@@ -3108,7 +3106,7 @@ Azure Active Directory
 > | Действие | Microsoft.DataFactory/locations/getFeatureValue/action | Получает значение функции управления раскрытием для конкретного расположения. |
 > |  | **расположения и Жетфеатуревалуе** |  |
 > | Действие | Microsoft.DataFactory/locations/getFeatureValue/read | Считывает значение функции управления раскрытием для конкретного расположения. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.DataFactory/operations/read | Считывает все операции в поставщике Фабрики данных Майкрософт. |
 
 ## <a name="microsoftdatalakeanalytics"></a>Microsoft.DataLakeAnalytics
@@ -3158,7 +3156,7 @@ Azure Active Directory
 > | Действие | Microsoft.DataLakeAnalytics/locations/operationResults/read | Получение результата операции учетной записи Data Lake Analytics. |
 > |  | **расположения и использование** |  |
 > | Действие | Microsoft.DataLakeAnalytics/locations/usages/read | Получение сведений об использовании квот подписки, относящихся к Data Lake Analytics. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.DataLakeAnalytics/operations/read | Получение доступных операций Data Lake Analytics. |
 
 ## <a name="microsoftdatalakestore"></a>Microsoft.DataLakeStore
@@ -3205,7 +3203,7 @@ Azure Active Directory
 > | Действие | Microsoft.DataLakeStore/locations/operationResults/read | Получение результата операции учетной записи Data Lake Store. |
 > |  | **расположения и использование** |  |
 > | Действие | Microsoft.DataLakeStore/locations/usages/read | Получение сведений об использовании квот подписки, относящихся к Data Lake Store. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.DataLakeStore/operations/read | Получение доступных операций Data Lake Store. |
 
 ## <a name="microsoftdatamigration"></a>Microsoft.DataMigration
@@ -3286,7 +3284,7 @@ Azure Active Directory
 > | Действие | Microsoft. Дбформариадб/Locations/Серверкэйазуреасинкоператион/Read | Возвращает выполняемые операции с ключами сервера прозрачного шифрования данных |
 > |  | **расположения и Серверкэйоператионресултс** |  |
 > | Действие | Microsoft. Дбформариадб/Locations/Серверкэйоператионресултс/Read | Возвращает выполняемые операции с ключами сервера прозрачного шифрования данных |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. Дбформариадб/операции/чтение | Возвращает список операций MariaDB. |
 > |  | **перформанцетиерс** |  |
 > | Действие | Microsoft.DBforMariaDB/performanceTiers/read | Получение списка доступных уровней производительности. |
@@ -3395,7 +3393,7 @@ Azure Active Directory
 > | Действие | Microsoft. Дбформискл/Locations/Серверкэйазуреасинкоператион/Read | Возвращает выполняемые операции с ключами сервера прозрачного шифрования данных |
 > |  | **расположения и Серверкэйоператионресултс** |  |
 > | Действие | Microsoft. Дбформискл/Locations/Серверкэйоператионресултс/Read | Возвращает выполняемые операции с ключами сервера прозрачного шифрования данных |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. Дбформискл/операции/чтение | Возврат списка операций MySQL. |
 > |  | **перформанцетиерс** |  |
 > | Действие | Microsoft.DBforMySQL/performanceTiers/read | Получение списка доступных уровней производительности. |
@@ -3504,7 +3502,7 @@ Azure Active Directory
 > | Действие | Microsoft. Дбфорпостгрескл/Locations/Серверкэйазуреасинкоператион/Read | Возвращает выполняемые операции с ключами сервера прозрачного шифрования данных |
 > |  | **расположения и Серверкэйоператионресултс** |  |
 > | Действие | Microsoft. Дбфорпостгрескл/Locations/Серверкэйоператионресултс/Read | Возвращает выполняемые операции с ключами сервера прозрачного шифрования данных |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. Дбфорпостгрескл/операции/чтение | Возвращает список операций PostgreSQL. |
 > |  | **перформанцетиерс** |  |
 > | Действие | Microsoft.DBforPostgreSQL/performanceTiers/read | Получение списка доступных уровней производительности. |
@@ -3768,7 +3766,7 @@ Azure Active Directory
 > |  | **оператионресултс** |  |
 > | Действие | Microsoft.Devices/operationresults/Read | Получение результата операции. |
 > | Действие | Microsoft.Devices/operationresults/Read | Получение результата операции. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Devices/operations/Read | Возвращает все операции поставщика ресурсов. |
 > | Действие | Microsoft.Devices/operations/Read | Возвращает все операции поставщика ресурсов. |
 > |  | **Iothubs** |  |
@@ -4266,7 +4264,7 @@ Azure Active Directory
 > | Действие | Microsoft. DocumentDB/Locations/Оператионсстатус/Read | Чтение состояния асинхронных операций |
 > |  | **оператионресултс** |  |
 > | Действие | Microsoft.DocumentDB/operationResults/read | Чтение состояния асинхронной операции. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.DocumentDB/operations/read | Чтение операций, доступных для Microsoft DocumentDB.  |
 
 ## <a name="microsoftdomainregistration"></a>Microsoft.DomainRegistration
@@ -4294,7 +4292,7 @@ Azure Active Directory
 > | Действие | Microsoft.DomainRegistration/domains/domainownershipidentifiers/Delete | Удаление идентификатора владения. |
 > |  | **домены/оператионресултс** |  |
 > | Действие | Microsoft.DomainRegistration/domains/operationresults/Read | Возвращает операцию домена. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.DomainRegistration/operations/Read | Вывод списка всех операций из регистрации домена службы приложений. |
 > |  | **topLevelDomains** |  |
 > | Действие | Microsoft.DomainRegistration/topLevelDomains/Read | Получение доменов верхнего уровня. |
@@ -4362,7 +4360,7 @@ Azure Active Directory
 > | Действие | Microsoft.EventGrid/locations/topictypes/eventSubscriptions/read | Создание списка подписок на события в регионе по типу темы |
 > |  | **оператионресултс** |  |
 > | Действие | Microsoft.EventGrid/operationResults/read | Чтение результата операции |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.EventGrid/operations/read | Вывод списка операций EventGrid. |
 > |  | **оператионсстатус** |  |
 > | Действие | Microsoft.EventGrid/operationsStatus/read | Чтение состояния операции |
@@ -4525,7 +4523,7 @@ Azure Active Directory
 > | Действие | Microsoft.EventHub/namespaces/virtualNetworkRules/read | Получение ресурса правила виртуальной сети |
 > | Действие | Microsoft.EventHub/namespaces/virtualNetworkRules/write | Создание ресурса правила виртуальной сети |
 > | Действие | Microsoft.EventHub/namespaces/virtualNetworkRules/delete | Удаление ресурса правила виртуальной сети |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.EventHub/operations/read | Получение операций. |
 > |  | **SKU** |  |
 > | Действие | Microsoft.EventHub/sku/read | Получение списка описаний ресурсов номеров SKU. |
@@ -4545,7 +4543,7 @@ Azure Active Directory
 > | Действие | Microsoft.Features/register/action | Регистрирует компонент подписки. |
 > |  | **особенностей** |  |
 > | Действие | Microsoft.Features/features/read | Возвращает функции подписки. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Features/operations/read | Получает список операций. |
 > |  | **поставщики и компоненты** |  |
 > | Действие | Microsoft.Features/providers/features/read | Возвращает функцию подписки в заданном поставщике ресурсов. |
@@ -4566,7 +4564,7 @@ Azure Active Directory
 > | Действие | Microsoft. Гуестконфигуратион/Гуестконфигуратионассигнментс/Delete | Удаление назначения конфигурации гостя. |
 > |  | **Гуестконфигуратионассигнментс/отчеты** |  |
 > | Действие | Microsoft.GuestConfiguration/guestConfigurationAssignments/reports/read | Получение отчета о назначении конфигурации гостевой системы. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. Гуестконфигуратион/операции/чтение | Возвращает операции для поставщика ресурсов Microsoft. Гуестконфигуратион. |
 
 ## <a name="microsofthdinsight"></a>Microsoft.HDInsight
@@ -4628,7 +4626,7 @@ Azure Active Directory
 > | Действие | Microsoft. Хибридкомпуте/Machines/Extensions/Read | Считывает все расширения Azure Arc |
 > | Действие | Microsoft. Хибридкомпуте/Machines/Extensions/Write | Устанавливает или обновляет расширения Arc Azure. |
 > | Действие | Microsoft. Хибридкомпуте/Machines/Extensions/Delete | Удаляет расширения Azure ARC. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. Хибридкомпуте/операции/чтение | Чтение всех операций для службы "Дуга" для серверов Azure |
 
 ## <a name="microsoftimportexport"></a>Microsoft.ImportExport
@@ -4646,7 +4644,7 @@ Azure Active Directory
 > | Действие | Microsoft.ImportExport/jobs/delete | Удаляет существующее задание. |
 > |  | **расположения** |  |
 > | Действие | Microsoft.ImportExport/locations/read | Возвращает свойства для указанного расположения или возвращает список расположений. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. ImportExport/операции/чтение | Возвращает операции, поддерживаемые поставщиком ресурсов. |
 
 ## <a name="microsoftinsights"></a>Microsoft.Insights
@@ -4695,11 +4693,11 @@ Azure Active Directory
 > | Действие | Microsoft.Insights/AutoscaleSettings/providers/Microsoft.Insights/logDefinitions/Read | Считывает определения журналов. |
 > |  | **AutoscaleSettings/providers/Microsoft. Insights/MetricDefinitions** |  |
 > | Действие | Microsoft.Insights/AutoscaleSettings/providers/Microsoft.Insights/MetricDefinitions/Read | Считывает определения метрик. |
-> |  | **Базовый** |  |
+> |  | **Базовая версия** |  |
 > | Действие | Microsoft. Insights/базовый/чтение | Чтение базового показателя метрики (Предварительная версия) |
 > |  | **калкулатебаселине** |  |
 > | Действие | Microsoft. Insights/Калкулатебаселине/чтение | Вычисление базового показателя для значений метрик (Предварительная версия) |
-> |  | **Компонента** |  |
+> |  | **Компоненты** |  |
 > | Действие | Microsoft.Insights/Components/AnalyticsTables/Action | Действие таблицы аналитики Application Insights. |
 > | Действие | Microsoft.Insights/Components/ApiKeys/Action | Создание ключа API Application Insights. |
 > | Действие | Microsoft.Insights/Components/Purge/Action | Очистка данных Application Insights. |
@@ -5215,7 +5213,7 @@ Azure Active Directory
 > | Действие | Microsoft.IoTCentral/IoTApps/read | Получение одного приложения IoT Central |
 > | Действие | Microsoft.IoTCentral/IoTApps/write | Создание или обновлений приложений IoT Central |
 > | Действие | Microsoft.IoTCentral/IoTApps/delete | Удаление приложений IoT Central |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.IoTCentral/operations/read | Получение всех доступных операций в приложениях IoT Central |
 
 ## <a name="microsoftiotspaces"></a>Microsoft.IoTSpaces
@@ -5256,7 +5254,7 @@ Azure Active Directory
 > | Действие | Microsoft.KeyVault/locations/deletedVaults/purge/action | Очищает обратимо удаленное хранилище Key Vault. |
 > |  | **расположения и Оператионресултс** |  |
 > | Действие | Microsoft.KeyVault/locations/operationResults/read | Проверяет результат длительной операции. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.KeyVault/operations/read | Получение списка операций, доступных в поставщике ресурсов Microsoft.KeyVault. |
 > |  | **хранилищ** |  |
 > | Действие | Microsoft.KeyVault/vaults/read | Отображает свойства Key Vault. |
@@ -5544,7 +5542,7 @@ Azure Active Directory
 > |  | **расположения и рабочие процессы** |  |
 > | Действие | Microsoft.Logic/locations/workflows/validate/action | Проверяет рабочий процесс. |
 > | Действие | Microsoft.Logic/locations/workflows/recommendOperationGroups/action | Получает рекомендуемые группы операций для рабочего процесса. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Logic/operations/read | Получение операции. |
 > |  | **nЭто** |  |
 > | Действие | Microsoft.Logic/workflows/read | Считывает рабочий процесс. |
@@ -5627,7 +5625,7 @@ Azure Active Directory
 > | Действие | Microsoft.MachineLearning/locations/operationresults/read | Получение результата операции машинного обучения. |
 > |  | **расположения и оператионсстатус** |  |
 > | Действие | Microsoft.MachineLearning/locations/operationsstatus/read | Получение состояния текущей операции машинного обучения. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.MachineLearning/operations/read | Получение операций машинного обучения. |
 > |  | **входят** |  |
 > | Действие | Microsoft.MachineLearning/skus/read | Получение номеров SKU плана предложения машинного обучения. |
@@ -5806,7 +5804,7 @@ Azure Active Directory
 > | Действие | Microsoft.ManagedIdentity/register/action | Регистрирует подписку для поставщика ресурсов управляемых удостоверений. |
 > |  | **идентификаци** |  |
 > | Действие | Microsoft. ManagedIdentity/удостоверения/чтение | Возвращает существующее удостоверение, назначенное системой |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. ManagedIdentity/операции/чтение | Список операций, доступных в поставщике ресурсов Microsoft. ManagedIdentity |
 > |  | **userAssignedIdentities** |  |
 > | Действие | Microsoft.ManagedIdentity/userAssignedIdentities/read | Получение существующего пользовательского удостоверения. |
@@ -5825,7 +5823,7 @@ Azure Active Directory
 > | Действие | Microsoft. ManagedServices/отменить регистрацию или действие | Отмените регистрацию в управляемых службах. |
 > |  | **маркетплацерегистратиондефинитионс** |  |
 > | Действие | Microsoft. ManagedServices/Маркетплацерегистратиондефинитионс/Read | Извлекает список определений регистрации управляемых служб. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. ManagedServices/операции/чтение | Возвращает список операций управляемых служб. |
 > |  | **оператионстатусес** |  |
 > | Действие | Microsoft. ManagedServices/Оператионстатусес/Read | Считывает состояние операции ресурса. |
@@ -5884,7 +5882,7 @@ Azure Active Directory
 > | Действие | Microsoft. Maps/Accounts/Приватеатласес/Delete | Удаление закрытой Atlas |
 > | Действие | Microsoft. Maps/Accounts/Приватеатласес/Read | Получить закрытую Atlas |
 > | Действие | Microsoft. Maps/Accounts/Приватеатласес/Write | Создание или обновление закрытой Atlas |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. Maps/Operations/Read | Чтение операций поставщика |
 > |  | **учетные записи и данные** |  |
 > | DataAction | Microsoft.Maps/accounts/data/read | Предоставляет доступ на чтение данных учетных записей карт. |
@@ -5946,7 +5944,7 @@ Azure Active Directory
 > |  | **оффертипес/Publishers/Offers/Plans/Agreement** |  |
 > | Действие | Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read | Получение соглашения для заданного элемента виртуальной машины Marketplace. |
 > | Действие | Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write | Подписывание соглашения или его отмена для заданного элемента виртуальной машины Marketplace. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. Маркетплацеордеринг/операции/чтение | Вывод списка всех возможных операций в API |
 
 ## <a name="microsoftmedia"></a>Microsoft.Media
@@ -6079,7 +6077,7 @@ Azure Active Directory
 > | Действие | Microsoft.Media/mediaservices/transforms/jobs/write | Создание или обновление задания. |
 > | Действие | Microsoft.Media/mediaservices/transforms/jobs/delete | Удаление задания. |
 > | Действие | Microsoft.Media/mediaservices/transforms/jobs/cancelJob/action | Отменяет задание. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Media/operations/read | Возвращает доступные операции. |
 
 ## <a name="microsoftmigrate"></a>Microsoft.Migrate
@@ -6717,7 +6715,7 @@ Azure Active Directory
 > | Действие | Microsoft.Network/networkWatchers/pingMeshes/read | Получает сведения о PingMesh. |
 > | Действие | Microsoft.Network/networkWatchers/pingMeshes/write | Создает PingMesh. |
 > | Действие | Microsoft.Network/networkWatchers/pingMeshes/delete | Удаляет PingMesh. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Network/operations/read | Возвращает доступные операции. |
 > |  | **p2sVpnGateways** |  |
 > | Действие | Microsoft.Network/p2sVpnGateways/read | Возвращает P2SVpnGateway. |
@@ -7023,7 +7021,7 @@ Azure Active Directory
 > | Действие | Microsoft.NotificationHubs/Namespaces/NotificationHubs/metricDefinitions/read | Возвращает список описаний ресурсов метрик пространства имен. |
 > |  | **оператионресултс** |  |
 > | Действие | Microsoft.NotificationHubs/operationResults/read | Возвращает результаты операции для поставщика концентраторов уведомлений |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.NotificationHubs/operations/read | Возвращает список поддерживаемых операций для поставщика Центров уведомлений |
 
 ## <a name="microsoftoffazure"></a>Microsoft.OffAzure
@@ -7318,7 +7316,7 @@ Azure Active Directory
 > | Действие | Microsoft.OperationalInsights/linkTargets/read | Выводит список существующих учетных записей, которые не связаны с подпиской Azure. Чтобы связать эту подписку Azure с рабочей областью, укажите идентификатор клиента, возвращаемый этой операцией, в свойстве идентификатора клиента в операции создания рабочей области. |
 > |  | **расположения и Оператионстатусес** |  |
 > | Действие | Microsoft. operationalinsights/Locations/Оператионстатусес/Read | Получение состояния асинхронной операции Azure Log Analytics. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | microsoft.operationalinsights/operations/read | Отображение списка всех доступных операций REST API OperationalInsights. |
 > |  | **рабочие области** |  |
 > | Действие | Microsoft.OperationalInsights/workspaces/write | Создает новую рабочую область или устанавливает связь с существующей рабочей областью с помощью указанного идентификатора клиента, полученного из нее. |
@@ -7998,7 +7996,7 @@ Azure Active Directory
 > | Действие | Microsoft. Полициинсигхтс/отменить регистрацию или действие | Отменяет регистрацию поставщика ресурсов Microsoft Policy Insights. |
 > |  | **асинкоператионресултс** |  |
 > | Действие | Microsoft.PolicyInsights/asyncOperationResults/read | Получает результат асинхронной операции. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. Полициинсигхтс/операции/чтение | Получение поддерживаемых операций для пространства имен Microsoft. Полициинсигхтс |
 > |  | **policyEvents** |  |
 > | Действие | Microsoft.PolicyInsights/policyEvents/queryResults/action | Запрашивает сведения о событиях политики. |
@@ -8070,7 +8068,7 @@ Azure Active Directory
 > | Действие | Microsoft.PowerBIDedicated/locations/operationresults/read | Получение сведений о результате указанной операции. |
 > |  | **расположения и оператионстатусес** |  |
 > | Действие | Microsoft.PowerBIDedicated/locations/operationstatuses/read | Извлечение сведений о состоянии указанной операции. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.PowerBIDedicated/operations/read | Извлечение сведений об операциях. |
 > |  | **входят** |  |
 > | Действие | Microsoft.PowerBIDedicated/skus/read | Извлечение сведений о номерах SKU. |
@@ -8097,7 +8095,7 @@ Azure Active Directory
 > | Действие | Microsoft. RecoveryServices/Locations/Баккуппротектедитемс/Read | Возвращает список всех защищенных элементов. |
 > |  | **расположения и значение operationstatus** |  |
 > | Действие | Microsoft.RecoveryServices/locations/operationStatus/read | Возвращает состояние операции для данной операции |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.RecoveryServices/operations/read | Получение списка операций для поставщика ресурсов. |
 > |  | **Хранилища** |  |
 > | Действие | Microsoft.RecoveryServices/Vaults/backupJobsExport/action | Экспортирует задания. |
@@ -8454,7 +8452,7 @@ Azure Active Directory
 > | Действие | Microsoft.Relay/namespaces/WcfRelays/authorizationRules/delete | Операция удаления правил авторизации ретранслятора WCF. |
 > | Действие | Microsoft.Relay/namespaces/WcfRelays/authorizationRules/listkeys/action | Возвращает строку подключения к ретранслятору WCF. |
 > | Действие | Microsoft.Relay/namespaces/WcfRelays/authorizationRules/regeneratekeys/action | Повторно создает первичный или вторичный ключ для ресурса. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Relay/operations/read | Получение операций. |
 
 ## <a name="microsoftresourcehealth"></a>Microsoft.ResourceHealth
@@ -8600,7 +8598,7 @@ Azure Active Directory
 > | --- | --- | --- |
 > | Действие | Microsoft.Search/register/action | Регистрирует подписку для поставщика ресурсов службы поиска и позволяет создавать службы поиска. |
 > | Действие | Microsoft.Search/checkNameAvailability/action | Проверяет доступность имени службы. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Search/operations/read | Выводит список всех доступных операций поставщика Microsoft.Search. |
 > |  | **сеарчсервицес** |  |
 > | Действие | Microsoft.Search/searchServices/write | Создает или обновляет службу поиска. |
@@ -8914,7 +8912,7 @@ Azure Active Directory
 > | Действие | Microsoft.ServiceBus/namespaces/virtualNetworkRules/read | Получение ресурса правила виртуальной сети |
 > | Действие | Microsoft.ServiceBus/namespaces/virtualNetworkRules/write | Создание ресурса правила виртуальной сети |
 > | Действие | Microsoft.ServiceBus/namespaces/virtualNetworkRules/delete | Удаление ресурса правила виртуальной сети |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.ServiceBus/operations/read | Получение операций. |
 > |  | **SKU** |  |
 > | Действие | Microsoft.ServiceBus/sku/read | Получение списка описаний ресурсов номеров SKU. |
@@ -8970,7 +8968,7 @@ Azure Active Directory
 > | Действие | Microsoft.ServiceFabric/locations/operationresults/read | Чтение результатов операций. |
 > |  | **расположения и операции** |  |
 > | Действие | Microsoft.ServiceFabric/locations/operations/read | Чтение операций по расположению. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.ServiceFabric/operations/read | Чтение доступных операций. |
 
 ## <a name="microsoftsignalrservice"></a>Microsoft.SignalRService
@@ -8992,7 +8990,7 @@ Azure Active Directory
 > | Действие | Microsoft.SignalRService/locations/usages/read | Получение сведений об использовании квот для службы Azure SignalR. |
 > |  | **оператионресултс** |  |
 > | Действие | Microsoft.SignalRService/operationresults/read | Запрос результата асинхронной операции на уровне поставщика |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. Сигналрсервице/операции/чтение | Перечислите операции для службы Azure SignalR. |
 > |  | **значение operationstatus** |  |
 > | Действие | Microsoft. Сигналрсервице/значение operationstatus/Read | Запрос состояния асинхронной операции на уровне поставщика |
@@ -9052,7 +9050,7 @@ Azure Active Directory
 > | Действие | Microsoft.Solutions/jitRequests/delete | Удаление запросов Jit |
 > |  | **расположения и Оператионстатусес** |  |
 > | Действие | Microsoft.Solutions/locations/operationStatuses/read | Считывает состояние операции ресурса. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. Solutions/Operations/Read | Получает список операций. |
 
 ## <a name="microsoftsql"></a>Microsoft.Sql
@@ -9331,7 +9329,7 @@ Azure Active Directory
 > | Действие | Microsoft.Sql/managedInstances/vulnerabilityAssessments/write | Изменение оценки уязвимости для указанного управляемого экземпляра |
 > | Действие | Microsoft.Sql/managedInstances/vulnerabilityAssessments/delete | Удаление оценки уязвимости для указанного управляемого экземпляра |
 > | Действие | Microsoft.Sql/managedInstances/vulnerabilityAssessments/read | Получение политик оценки уязвимости для конкретного управляемого экземпляра |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Sql/operations/read | Получение доступных операций REST. |
 > |  | **серверах** |  |
 > | Действие | Microsoft.Sql/servers/tdeCertificates/action | Создание или обновление сертификата TDE |
@@ -9716,7 +9714,7 @@ Azure Active Directory
 > | Действие | Microsoft. Склвиртуалмачине/Locations/Склвиртуалмачинеграупоператионресултс/Read | Получение результата операции группы виртуальных машин SQL |
 > |  | **расположения и Склвиртуалмачинеоператионресултс** |  |
 > | Действие | Microsoft. Склвиртуалмачине/Locations/Склвиртуалмачинеоператионресултс/Read | Получение результата работы виртуальной машины SQL |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. Склвиртуалмачине/операции/чтение |  |
 > |  | **склвиртуалмачинеграупс** |  |
 > | Действие | Microsoft. Склвиртуалмачине/Склвиртуалмачинеграупс/Read | Дополнительные сведения о группе виртуальных машин SQL |
@@ -9749,7 +9747,7 @@ Azure Active Directory
 > | Действие | Microsoft. Storage/Locations/чеккнамеаваилабилити/Read | Проверяет, является ли имя учетной записи допустимым и неиспользуемым. |
 > |  | **расположения и использование** |  |
 > | Действие | Microsoft.Storage/locations/usages/read | Возвращает предельное и текущее число используемых ресурсов для указанной подписки. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.Storage/operations/read | Опрашивает состояние асинхронной операции. |
 > |  | **входят** |  |
 > | Действие | Microsoft.Storage/skus/read | Выводит список номеров SKU, поддерживаемых Microsoft.Storage. |
@@ -9885,7 +9883,7 @@ Azure Active Directory
 > | Действие | microsoft.storagesync/locations/checkNameAvailability/action | Проверяет, является ли имя службы синхронизации хранилища допустимым и неиспользуемым. |
 > |  | **расположения, рабочие процессы и операции** |  |
 > | Действие | microsoft.storagesync/locations/workflows/operations/read | Возвращает состояние асинхронной операции. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. storagesync/операции/чтение | Возвращает список поддерживаемых операций. |
 > |  | **сторажесинксервицес** |  |
 > | Действие | microsoft.storagesync/storageSyncServices/read | Чтение служб синхронизации хранилища. |
@@ -10193,7 +10191,7 @@ Azure Active Directory
 > | Действие | Microsoft.StorSimple/managers/storageDomains/delete | Удаляет домены хранилища. |
 > |  | **Managers/Сторажедомаинс/Оператионресултс** |  |
 > | Действие | Microsoft.StorSimple/managers/storageDomains/operationResults/read | Выводит или возвращает результаты операции. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.StorSimple/operations/read | Выводит или возвращает операции. |
 
 ## <a name="microsoftstreamanalytics"></a>Microsoft.StreamAnalytics
@@ -10206,7 +10204,7 @@ Azure Active Directory
 > | Действие | Microsoft.StreamAnalytics/Register/action | Регистрация подписки в поставщике ресурсов Stream Analytics. |
 > |  | **расположения и квоты** |  |
 > | Действие | Microsoft.StreamAnalytics/locations/quotas/Read | Чтение квоты подписки Stream Analytics. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.StreamAnalytics/operations/Read | Чтение операций Stream Analytics. |
 > |  | **streamingjobs** |  |
 > | Действие | Microsoft.StreamAnalytics/streamingjobs/Delete | Удаляет задание Stream Analytics. |
@@ -10281,7 +10279,7 @@ Azure Active Directory
 > | Действие | Microsoft. support/Чеккнамеаваилабилити/действие | Проверяет, является ли имя допустимым и не используется для типа ресурса |
 > |  | **оператионресултс** |  |
 > | Действие | Microsoft. support/оператионресултс/чтение | Возвращает результат асинхронной операции. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft. support/Operations/Read | Список всех операций, доступных в поставщике ресурсов Microsoft. support. |
 > |  | **оператионсстатус** |  |
 > | Действие | Microsoft. support/оператионсстатус/чтение | Возвращает состояние асинхронной операции. |
@@ -10509,7 +10507,7 @@ Azure Active Directory
 > | Действие | Microsoft. Web/Locations/Оператионресултс/Read | Возвращает операции. |
 > |  | **расположения и операции** |  |
 > | Действие | Microsoft. Web/Locations/Operations/Read | Возвращает операции. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | microsoft.web/operations/read | Возвращает операции. |
 > |  | **публишингусерс** |  |
 > | Действие | microsoft.web/publishingusers/read | Возвращает публикующих пользователей. |
@@ -11029,7 +11027,7 @@ Azure Active Directory
 > |  | **notificationSettings** |  |
 > | Действие | Microsoft.WorkloadMonitor/notificationSettings/read | Получает параметры уведомлений для ресурса. |
 > | Действие | Microsoft.WorkloadMonitor/notificationSettings/write | Настройка параметров уведомлений для ресурса. |
-> |  | **Операции** |  |
+> |  | **Operations** |  |
 > | Действие | Microsoft.WorkloadMonitor/operations/read | Получает поддерживаемые операции. |
 
 ## <a name="next-steps"></a>Дальнейшие действия

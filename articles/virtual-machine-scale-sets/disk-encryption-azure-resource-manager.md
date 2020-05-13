@@ -1,17 +1,20 @@
 ---
 title: Создание и шифрование масштабируемого набора виртуальных машин с помощью шаблонов Azure Resource Manager
 description: С помощью этого краткого руководства вы узнаете, как создать и зашифровать масштабируемый набор виртуальных машин, используя шаблоны Azure Resource Manager
-author: msmbaldwin
-ms.author: mbaldwin
+author: ju-shim
+ms.author: jushiman
+ms.topic: how-to
 ms.service: virtual-machine-scale-sets
-ms.topic: quickstart
+ms.subservice: disks
 ms.date: 10/10/2019
-ms.openlocfilehash: aeba9aee8dd10b1245fb0a1e1cc98a1951382c72
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
-ms.translationtype: HT
+ms.reviewer: mimckitt
+ms.custom: mimckitt
+ms.openlocfilehash: c2b49a7e7e14bfbefcca64133ff23fdfabe53e7b
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "72530942"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83198421"
 ---
 # <a name="encrypt-virtual-machine-scale-sets-with-azure-resource-manager"></a>Шифрование масштабируемых наборов виртуальных машин с помощью Azure Resource Manager
 

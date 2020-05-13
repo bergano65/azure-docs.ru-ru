@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 04/11/2019
+ms.date: 05/11/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7fb10863334392b207c7cfd2172dc9260cf15e2d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2f69069b0c62f1e96c16441e99fbadac45728743
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74272900"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83199433"
 ---
 # <a name="enable-b2b-external-collaboration-and-manage-who-can-invite-guests"></a>Включение внешней совместной работы B2B и управление пользователями, которые могут приглашать гостей
 
@@ -36,11 +36,9 @@ ms.locfileid: "74272900"
 ### <a name="to-configure-external-collaboration-settings"></a>Чтобы настроить параметры внешней совместной работы:
 
 1. Войдите в [портал Azure](https://portal.azure.com) в качестве администратора клиента.
-2. Выберите **Azure Active Directory** > **Пользователи** > **Параметры пользователя**.
-3. В разделе **внешние пользователи**выберите **Управление внешними параметрами совместной работы**.
-   > [!NOTE]
-   > **Параметры внешнего взаимодействия** также доступны на странице **Организационные связи**. В Azure Active Directory в разделе **Управление** в меню выберите **Организационные связи** > **Параметры**.
-4. На странице **внешние параметры совместной работы** выберите политики, которые необходимо включить.
+2. Выберите **Azure Active Directory**.
+3. Выберите **Параметры организационные отношения**  >  **Settings** (или выберите **Внешние удостоверения**  >  **внешние параметры совместной работы**).
+6. На странице **внешние параметры совместной работы** выберите политики, которые необходимо включить.
 
    ![Параметры внешнего взаимодействия](./media/delegate-invitations/control-who-to-invite.png)
 

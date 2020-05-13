@@ -12,12 +12,13 @@ ms.date: 05/22/2019
 ms.author: baselden
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92496fa572c5c1cae4588f82ac61c18de3024045
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: has-adal-ref
+ms.openlocfilehash: 4b5836ffe721aa3e329651c3709ce64344363728
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76512833"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83197874"
 ---
 # <a name="plan-a-single-sign-on-deployment"></a>Планирование развертывания единого входа
 
@@ -236,11 +237,11 @@ Microsoft Cloud App Security (МКАС) — это решение брокера
 
 | Описания| Роли | Роль Azure AD (при необходимости) |
 |--------|-------|-----------------------------|
-| Администратор службы поддержки | Поддержка уровня 1 | None |
+| Администратор службы поддержки | Поддержка уровня 1 | Нет |
 | Администратор удостоверений | Настройка и отладка при проблемах, влияющих на Azure AD | Глобальный администратор |
-| Администратор приложения | Аттестация пользователей в приложении, Настройка для пользователей с разрешениями | None |
+| Администратор приложения | Аттестация пользователей в приложении, Настройка для пользователей с разрешениями | Нет |
 | Администраторы инфраструктуры | Владелец смены сертификата | Глобальный администратор |
-| Владелец или заинтересованный бизнес | Аттестация пользователей в приложении, Настройка для пользователей с разрешениями | None |
+| Владелец или заинтересованный бизнес | Аттестация пользователей в приложении, Настройка для пользователей с разрешениями | Нет |
 
 Для управления ролями рекомендуется использовать [Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/active-directory-privileged-identity-management-configure) (PIM), чтобы обеспечить дополнительный аудит, контроль и проверку доступа для пользователей с разрешениями каталога.
 
@@ -304,7 +305,7 @@ Microsoft Cloud App Security (МКАС) — это решение брокера
 
 - [Проблема с федеративным SSO для приложений, не перечисленных в коллекции приложений Azure](https://docs.microsoft.com/azure/active-directory/manage-apps/application-sign-in-problem-federated-sso-non-gallery)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Отладка единого входа на основе SAML](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-debugging)
 

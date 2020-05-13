@@ -3,19 +3,19 @@ title: Рекомендации по проектированию для мас�
 description: Узнайте о вопросах проектирования для масштабируемых наборов виртуальных машин Azure. Сравните функции масштабируемых наборов с функциями виртуальных машин.
 keywords: Виртуальная машина Linux, наборы масштабирования виртуальных машин
 author: mimckitt
-tags: azure-resource-manager
-ms.assetid: c27c6a59-a0ab-4117-a01b-42b049464ca1
-ms.service: virtual-machine-scale-sets
-ms.tgt_pltfrm: vm-linux
-ms.topic: conceptual
-ms.date: 06/01/2017
 ms.author: mimckitt
-ms.openlocfilehash: 20f6cb08781c7c6aca7a4022e75a7be8640ef18a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: conceptual
+ms.service: virtual-machine-scale-sets
+ms.subservice: management
+ms.date: 06/01/2017
+ms.reviewer: jushiman
+ms.custom: mimckitt
+ms.openlocfilehash: 0676a7d31d141e0c264119a54b77ec29a527374b
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81273772"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83200197"
 ---
 # <a name="design-considerations-for-scale-sets"></a>Рекомендации по проектированию масштабируемых наборов
 В этой статье рассматриваются вопросы проектирования масштабируемых наборов виртуальных машин. Сведения о том, что такое масштабируемые наборы виртуальных машин, см. в статье [Обзор масштабируемых наборов виртуальных машин](virtual-machine-scale-sets-overview.md).

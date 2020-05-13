@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/29/2020
-ms.openlocfilehash: f41a15fb52698eaa17d6f76b991cbd31a56ba14f
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+ms.openlocfilehash: 8354be28203f1d466df6a22159fef87c9ae6f803
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82731979"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83199739"
 ---
 # <a name="automatically-scale-azure-hdinsight-clusters"></a>Автоматическое масштабирование кластеров Azure HDInsight
 
@@ -22,6 +22,11 @@ ms.locfileid: "82731979"
 ## <a name="how-it-works"></a>Принцип работы
 
 Функция автомасштабирования использует два типа условий для запуска событий масштабирования: пороговые значения для различных метрик производительности кластера (называемые *масштабированием на основе загрузки*) и триггеры на основе времени (под названием *масштабирование на основе расписания*). Масштабирование на основе загрузки изменяет количество узлов в кластере в пределах заданного диапазона для обеспечения оптимального использования ЦП и снижения затрат на выполнение. Масштабирование на основе расписания изменяет количество узлов в кластере на основе операций, связанных с конкретными датами и временем.
+
+В следующем видео представлен обзор проблем, решаемых с помощью автоматического масштабирования и способов управления затратами в HDInsight.
+
+
+> [!VIDEO https://www.youtube.com/embed/UlZcDGGFlZ0?WT.mc_id=dataexposed-c9-niner]
 
 ### <a name="choosing-load-based-or-schedule-based-scaling"></a>Выбор масштаба на основе нагрузки или по расписанию
 
@@ -69,14 +74,14 @@ ms.locfileid: "82731979"
 
 | Версия | Spark | Hive | LLAP | HBase | Kafka | Storm | ML |
 |---|---|---|---|---|---|---|---|
-| HDInsight 3,6 без ESP | Да | Да | Да | Да* | нет | нет | нет |
-| HDInsight 4,0 без ESP | Да | Да | Да | Да* | нет | нет | нет |
-| HDInsight 3,6 с ESP | Да | Да | Да | Да* | нет | нет | нет |
-| HDInsight 4,0 с ESP | Да | Да | Да | Да* | нет | нет | нет |
+| HDInsight 3,6 без ESP | Да | Да | Да | Да* | Нет | Нет | Нет |
+| HDInsight 4,0 без ESP | Да | Да | Да | Да* | Нет | Нет | Нет |
+| HDInsight 3,6 с ESP | Да | Да | Да | Да* | Нет | Нет | Нет |
+| HDInsight 4,0 с ESP | Да | Да | Да | Да* | Нет | Нет | Нет |
 
 \*Кластеры HBase можно настроить только для масштабирования на основе расписания, но не для загрузки.
 
-## <a name="get-started"></a>Приступая к работе
+## <a name="get-started"></a>Начало работы
 
 ### <a name="create-a-cluster-with-load-based-autoscaling"></a>Создание кластера с автомасштабированием на основе нагрузки
 
@@ -156,7 +161,7 @@ ms.locfileid: "82731979"
 
 #### <a name="schedule-based-autoscaling"></a>Автомасштабирование на основе расписания
 
-Вы можете создать кластер HDInsight с автомасштабированием на основе расписания, используя шаблон Azure Resource Manager, добавив `autoscale` узел в `computeProfile`  >  `workernode` раздел. `autoscale` Узел содержит объект `recurrence` с `timezone` и `schedule` , описывающий, когда будет выполнено изменение.
+Вы можете создать кластер HDInsight с автомасштабированием на основе расписания, используя шаблон Azure Resource Manager, добавив `autoscale` узел в `computeProfile`  >  `workernode` раздел. `autoscale`Узел содержит объект с `recurrence` `timezone` и `schedule` , описывающий, когда будет выполнено изменение.
 
 ```json
 {

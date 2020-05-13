@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 03/05/2020
+ms.date: 05/11/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 72c18e48c27942c7bea47931ec79a31af941064e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b1ca4ff3ed35371fe7454c242da8c9107badc659
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79126661"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83199533"
 ---
 # <a name="add-google-as-an-identity-provider-for-b2b-guest-users"></a>Добавление Google в качестве поставщика удостоверений для гостевых пользователей B2B
 
@@ -37,16 +37,16 @@ ms.locfileid: "79126661"
 
 ## <a name="limitations"></a>Ограничения
 
-Группы полностью поддерживают гостевых пользователей Google на всех устройствах. Пользователи Google могут входить в команды из общей конечной точки, например `https://teams.microsoft.com`.
+Группы полностью поддерживают гостевых пользователей Google на всех устройствах. Пользователи Google могут входить в команды из общей конечной точки, например `https://teams.microsoft.com` .
 
 Общие конечные точки других приложений могут не поддерживать пользователей Google. Пользователи Google Guest должны войти, используя ссылку, содержащую сведения о клиенте. Примеры:
   * `https://myapps.microsoft.com/?tenantid=<your tenant id>`
   * `https://portal.azure.com/<your tenant id>`
   * `https://myapps.microsoft.com/<your verified domain>.onmicrosoft.com`
 
-   Если гостевые пользователи Google пытаются использовать такую ссылку, `https://myapps.microsoft.com` как `https://portal.azure.com`или, то они получат сообщение об ошибке.
+   Если гостевые пользователи Google пытаются использовать такую ссылку `https://myapps.microsoft.com` , как или `https://portal.azure.com` , то они получат сообщение об ошибке.
 
-Вы также можете предоставить гостевым пользователям Google прямую ссылку на приложение или ресурс, если эта ссылка включает сведения о клиенте, например `https://myapps.microsoft.com/signin/Twitter/<application ID?tenantId=<your tenant ID>`. 
+Вы также можете предоставить гостевым пользователям Google прямую ссылку на приложение или ресурс, если эта ссылка включает сведения о клиенте, например `https://myapps.microsoft.com/signin/Twitter/<application ID?tenantId=<your tenant ID>` . 
 
 ## <a name="step-1-configure-a-google-developer-project"></a>Шаг 1. Настройка проекта разработчика Google
 Сначала создайте новый проект в консоли разработчиков Google, чтобы получить идентификатор и секрет клиента, которые впоследствии можно добавить в Azure AD. 
@@ -66,7 +66,7 @@ ms.locfileid: "79126661"
 
    ![Снимок экрана, показывающий раздел "полномочные домены"](media/google-federation/google-oauth-authorized-domains.png)
 
-7. Нажмите кнопку **Сохранить**.
+7. Щелкните **Сохранить**.
 
 8. Выберите **учетные данные**. В меню **Создать учетные данные** выберите **Идентификатор клиента OAuth**.
 
@@ -81,7 +81,7 @@ ms.locfileid: "79126661"
 
    ![Снимок экрана, показывающий раздел идентификаторов URI для подправки](media/google-federation/google-create-oauth-client-id.png)
 
-10. Щелкните **Создать**. Скопируйте идентификатор и секрет клиента, которые будут использоваться при добавлении поставщика удостоверений на портале Azure AD.
+10. Нажмите кнопку **создания**. Скопируйте идентификатор и секрет клиента, которые будут использоваться при добавлении поставщика удостоверений на портале Azure AD.
 
    ![Снимок экрана, показывающий идентификатор клиента OAuth и секрет клиента](media/google-federation/google-auth-client-id-secret.png)
 
@@ -90,9 +90,9 @@ ms.locfileid: "79126661"
 
 #### <a name="to-configure-google-federation-in-the-azure-ad-portal"></a>Настройка федерации с Google на портале Azure AD 
 1. Перейдите на [портал Azure](https://portal.azure.com). В области слева выберите **Azure Active Directory**. 
-2. Выберите **Организационные связи**.
-3. Выберите **Поставщики удостоверений**, а затем нажмите кнопку **Google**.
-4. Введите имя. Затем введите идентификатор и секрет клиента, полученные ранее. Нажмите кнопку **Сохранить**. 
+2. Выберите **организационные отношения** (или **Внешние удостоверения**).
+3. Выберите **все поставщики удостоверений**, а затем нажмите кнопку **Google** .
+4. Введите имя. Затем введите идентификатор и секрет клиента, полученные ранее. Щелкните **Сохранить**. 
 
    ![Снимок экрана, показывающий страницу добавления поставщика удостоверений Google](media/google-federation/google-identity-provider.png)
 
@@ -112,8 +112,8 @@ ms.locfileid: "79126661"
  
 ### <a name="to-delete-google-federation-in-the-azure-ad-portal"></a>Чтобы удалить федерацию с Google на портале Azure AD: 
 1. Перейдите на [портал Azure](https://portal.azure.com). В области слева выберите **Azure Active Directory**. 
-2. Выберите **Организационные связи**.
-3. Выберите **поставщики удостоверений**.
+2. Выберите **организационные отношения** (или **Внешние удостоверения**).
+3. Выберите **все поставщики удостоверений**.
 4. В строке **Google** выберите контекстное меню (**...**) и нажмите кнопку **Удалить**. 
    
    ![Снимок экрана с параметром "Удалить" для поставщика удостоверений социальных сетей](media/google-federation/google-social-identity-providers.png)
