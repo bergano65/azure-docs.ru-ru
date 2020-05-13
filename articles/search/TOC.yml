@@ -315,6 +315,8 @@
           href: search-security-overview.md
         - name: Создание частной конечной точки
           href: service-create-private-endpoint.md
+        - name: Настройка брандмауэра IP-адресов
+          href: service-configure-firewall.md
         - name: Управление ключами службы
           href: search-security-api-keys.md
         - name: Доступ администратора на основе ролей

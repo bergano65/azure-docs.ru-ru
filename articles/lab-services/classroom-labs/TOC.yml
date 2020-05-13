@@ -22,6 +22,8 @@
   items:
     - name: 'Основные понятия, используемые при работе с лабораториями для аудитории'
       href: classroom-labs-concepts.md
+    - name: Основные понятия об архитектурах при работе с лабораториями для аудитории
+      href: classroom-labs-fundamentals.md
     - name: Сценарии
       items:
         - name: Использование лабораторий для проведения учебных занятий
@@ -136,7 +138,7 @@
       href: 'https://azure.microsoft.com/updates/?product=lab-services'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/lab-services/'
-    - name: Stack Overflow
-      href: 'https://stackoverflow.com/questions/tagged/azure-lab-services'
+    - name: Форум технического сообщества
+      href: 'https://techcommunity.microsoft.com/t5/azure-lab-services/bd-p/AzureLabServices'
     - name: Часто задаваемые вопросы
       href: classroom-labs-faq.md

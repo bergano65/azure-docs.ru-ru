@@ -63,7 +63,7 @@
       href: cli-samples.md
     - name: PowerShell
       href: powershell-samples.md
-    - name: Встроенные политики службы "Политика Azure"
+    - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./policy-samples.md
 - name: Основные понятия
@@ -234,6 +234,11 @@
                       href: instance-generalized-image-version-cli.md
                 - name: Обновление ресурсов образа
                   href: ../virtual-machines/update-image-resources-cli.md
+            - name: Устранение неполадок с общими образами
+              href: ../virtual-machines/troubleshooting-shared-images.md
+            - name: Использование управляемых клиентом ключей
+              displayName: 'SSE, CMK, encrypt'
+              href: ../virtual-machines/image-version-encryption.md
     - name: Создание шаблона
       items:
         - name: Сведения о шаблонах масштабируемых наборов

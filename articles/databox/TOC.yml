@@ -56,6 +56,8 @@
               href: data-box-portal-admin.md
             - name: Управление с помощью локального пользовательского веб-интерфейса
               href: data-box-local-web-ui-admin.md
+            - name: Включение управляемого клиентом ключа
+              href: data-box-customer-managed-encryption-key-portal.md
             - name: Перемещение данных на уровень больших двоичных объектов
               href: data-box-how-to-set-data-tier.md
             - name: Подключение кабелей к устройству
@@ -173,6 +175,8 @@
               href: data-box-portal-admin.md
             - name: Управление с помощью локального пользовательского веб-интерфейса
               href: data-box-local-web-ui-admin.md
+            - name: Включение управляемого клиентом ключа
+              href: data-box-customer-managed-encryption-key-portal.md
             - name: Устранение неполадок с устройствами
               href: data-box-troubleshoot.md
             - name: Перемещение данных на уровень больших двоичных объектов

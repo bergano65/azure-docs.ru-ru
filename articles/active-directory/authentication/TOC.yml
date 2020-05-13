@@ -15,7 +15,7 @@
       href: tutorial-enable-sspr-writeback.md
     - name: Настройка пользовательских списков заблокированных паролей
       href: tutorial-configure-custom-password-protection.md
-    - name: Интеграция службы защиты идентификации Azure AD
+    - name: Включение защиты при входе на основе рисков
       href: tutorial-risk-based-sspr-mfa.md
 - name: Основные понятия
   expanded: true

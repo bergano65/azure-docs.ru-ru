@@ -25,6 +25,8 @@
       href: quickstart-create-data-factory-rest-api.md
     - name: Создание фабрики данных с помощью шаблона Resource Manager
       href: quickstart-create-data-factory-resource-manager-template.md
+    - name: Безопасность. Включение шифрования на базе управляемых клиентом ключей
+      href: quickstart-enable-customer-managed-key.md
     - name: Создание потока данных
       href: data-flow-create.md
 - name: Учебники

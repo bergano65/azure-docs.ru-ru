@@ -12,6 +12,8 @@
           href: security-center-services.md
         - name: Покрытие компонентов для ресурсов Azure PaaS
           href: features-paas.md
+    - name: Новые возможности в Центре безопасности
+      href: release-notes.md
     - name: Рекомендации по обеспечению безопасности
       href: recommendations-reference.md
     - name: Оповещения системы безопасности и цепочка нарушения безопасности намерений
@@ -188,7 +190,9 @@
           href: faq-vms.md
         - name: Существующие пользователи Azure Log Analytics
           href: faq-azure-monitor-logs.md
-    - name: Заметки о выпуске
+    - name: Архив новых возможностей Центра безопасности
+      href: release-notes-archive.md
+    - name: Блог о стратегии развития Azure
       href: 'https://azure.microsoft.com/updates/?product=security-center'
     - name: "Прекращение поддержки компонентов и API (июль 2019\_г.)"
       href: security-center-features-retirement-july2019.md

@@ -18,6 +18,8 @@
       href: quickstart-create-workspace.md
     - name: Использование Azure Synapse Studio
       href: quickstart-synapse-studio.md
+    - name: "Связывание рабочей области Power\_BI"
+      href: quickstart-power-bi.md
     - name: Создание пулов
       items:
         - name: Создание записной книжки Apache Spark с помощью веб-средств
@@ -30,6 +32,8 @@
       items:
         - name: Инструкция COPY
           href: ./sql-data-warehouse/quickstart-bulk-load-copy-tsql.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+        - name: Synapse Studio
+          href: quickstart-load-studio-sql-pool.md
     - name: Использование службы SQL по запросу
       href: quickstart-sql-on-demand.md
 - name: Учебники
@@ -116,7 +120,7 @@
               href: ./security/synapse-workspace-managed-identity.md
             - name: Пул и операции по запросу
               href: ./sql/access-control.md
-            - name: 'Данные '
+            - name: Данные
               items:
                 - name: Защита на уровне столбцов
                   href: ./sql-data-warehouse/column-level-security.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
@@ -188,6 +192,8 @@
               href: ./spark/apache-spark-what-is-delta-lake.md
             - name: Производительность Apache Spark
               href: ./spark/apache-spark-performance.md
+            - name: "Принцип работы автоматического масштабирования Apache\_Spark"
+              href: ./spark/apache-spark-autoscale.md
         - name: Разработка
           items:
             - name: Записные книжки Azure Synapse Studio

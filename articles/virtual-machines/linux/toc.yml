@@ -303,6 +303,113 @@
           href: ../windows/migration-classic-resource-manager-community-tools.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: ВОПРОСЫ И ОТВЕТЫ
           href: migration-classic-resource-manager-faq.md
+    - name: Использование образов
+      displayName: 'SIG, AMI, image'
+      items:
+        - name: Общая коллекция образов
+          items:
+            - name: CLI
+              items:
+                - name: Создание коллекции
+                  href: ../shared-images-cli.md
+                - name: Создание образа
+                  items:
+                    - name: Из виртуальной машины
+                      href: ../image-version-vm-cli.md
+                    - name: Перенос из управляемого образа
+                      href: ../image-version-managed-image-cli.md
+                    - name: Копирование из другой коллекции
+                      href: ../image-version-another-gallery-cli.md
+                - name: Создание виртуальной машины
+                  items:
+                    - name: Универсальный
+                      href: ../vm-generalized-image-version-cli.md
+                - name: Обновление ресурсов образа
+                  href: ../update-image-resources-cli.md
+                - name: Регистрация приложения для совместного использования
+                  href: share-images-across-tenants.md
+            - name: PowerShell
+              items:
+                - name: Создание коллекции
+                  href: ../shared-images-powershell.md
+                - name: Создание версии образа
+                  items:
+                    - name: Из виртуальной машины
+                      href: ../image-version-vm-powershell.md
+                    - name: Перенос из управляемого образа
+                      href: ../image-version-managed-image-powershell.md
+                    - name: Копирование из другой коллекции
+                      href: ../image-version-another-gallery-powershell.md
+                - name: Создание виртуальной машины
+                  items:
+                    - name: Универсальный
+                      href: ../vm-generalized-image-version-powershell.md
+                    - name: Специализированный
+                      href: ../vm-specialized-image-version-powershell.md
+                - name: Обновление ресурсов образа
+                  href: ../update-image-resources-powershell.md
+            - name: Портал
+              items:
+                - name: 'Создание коллекции, образа и виртуальной машины'
+                  href: shared-images-portal.md
+            - name: Шаблоны Resource Manager
+              items:
+                - name: Создание Общей коллекции образов.
+                  href: 'https://azure.microsoft.com/resources/templates/101-sig-create/'
+                - name: Создание определения образа в Общей коллекции образов
+                  href: 'https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/'
+                - name: Создание версии образа в Общей коллекции образов
+                  href: 'https://azure.microsoft.com/resources/templates/101-sig-image-version-create/'
+                - name: Создание виртуальной машины из версии образа
+                  href: 'https://azure.microsoft.com/resources/templates/101-vm-from-sig/'
+            - name: Устранение неполадок с общими образами
+              href: troubleshooting-shared-images.md
+            - name: Использование управляемых клиентом ключей
+              displayName: 'SSE, CMK, encrypt'
+              href: ../image-version-encryption.md
+        - name: Конструктор изображений (предварительная версия)
+          items:
+            - name: Обзор
+              href: image-builder-overview.md
+            - name: Использование Azure CLI
+              href: image-builder.md
+            - name: Справочник по шаблонам ARM
+              href: image-builder-json.md
+              displayName: 'ARM,Resource Manager'
+            - name: Сборка для коллекций образов
+              href: image-builder-gallery.md
+            - name: Обновление существующего образа
+              href: image-builder-gallery-update-image-version.md
+            - name: Диагностика
+              href: 'https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md'
+        - name: Поиск и использование образов
+          href: cli-ps-findimage.md
+        - name: Создание пользовательского образа
+          items:
+            - name: Общие инструкции
+              href: create-upload-generic.md
+            - name: Ubuntu
+              href: create-upload-ubuntu.md
+            - name: CentOS
+              href: create-upload-centos.md
+            - name: Red Hat
+              href: redhat-create-upload-vhd.md
+            - name: Debian
+              href: debian-create-upload-vhd.md
+            - name: SUSE
+              href: suse-create-upload-vhd.md
+            - name: Oracle Linux
+              href: oracle-create-upload-vhd.md
+            - name: OpenBSD
+              href: create-upload-openbsd.md
+            - name: FreeBSD
+              href: freebsd-intro-on-azure.md
+        - name: Запись образа виртуальной машины
+          href: capture-image.md
+        - name: Создание образа с помощью Packer
+          href: build-image-with-packer.md
+        - name: Скачивание существующего диска
+          href: download-vhd.md
     - name: Защита виртуальных машин
       items:
         - name: Рекомендации
@@ -461,110 +568,6 @@
           href: ../../azure-monitor/platform/alerts-metric.md
         - name: Создание оповещений журнала
           href: ../../azure-monitor/platform/alerts-log.md
-    - name: Использование образов
-      displayName: 'SIG, AMI, image'
-      items:
-        - name: Общая коллекция образов
-          items:
-            - name: CLI
-              items:
-                - name: Создание коллекции
-                  href: ../shared-images-cli.md
-                - name: Создание образа
-                  items:
-                    - name: Из виртуальной машины
-                      href: ../image-version-vm-cli.md
-                    - name: Перенос из управляемого образа
-                      href: ../image-version-managed-image-cli.md
-                    - name: Копирование из другой коллекции
-                      href: ../image-version-another-gallery-cli.md
-                - name: Создание виртуальной машины
-                  items:
-                    - name: Универсальный
-                      href: ../vm-generalized-image-version-cli.md
-                - name: Обновление ресурсов образа
-                  href: ../update-image-resources-cli.md
-                - name: Регистрация приложения для совместного использования
-                  href: share-images-across-tenants.md
-            - name: PowerShell
-              items:
-                - name: Создание коллекции
-                  href: ../shared-images-powershell.md
-                - name: Создание версии образа
-                  items:
-                    - name: Из виртуальной машины
-                      href: ../image-version-vm-powershell.md
-                    - name: Перенос из управляемого образа
-                      href: ../image-version-managed-image-powershell.md
-                    - name: Копирование из другой коллекции
-                      href: ../image-version-another-gallery-powershell.md
-                - name: Создание виртуальной машины
-                  items:
-                    - name: Универсальный
-                      href: ../vm-generalized-image-version-powershell.md
-                    - name: Специализированный
-                      href: ../vm-specialized-image-version-powershell.md
-                - name: Обновление ресурсов образа
-                  href: ../update-image-resources-powershell.md
-            - name: Портал
-              items:
-                - name: 'Создание коллекции, образа и виртуальной машины'
-                  href: shared-images-portal.md
-            - name: Шаблоны Resource Manager
-              items:
-                - name: Создание Общей коллекции образов.
-                  href: 'https://azure.microsoft.com/resources/templates/101-sig-create/'
-                - name: Создание определения образа в Общей коллекции образов
-                  href: 'https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/'
-                - name: Создание версии образа в Общей коллекции образов
-                  href: 'https://azure.microsoft.com/resources/templates/101-sig-image-version-create/'
-                - name: Создание виртуальной машины из версии образа
-                  href: 'https://azure.microsoft.com/resources/templates/101-vm-from-sig/'
-            - name: Устранение неполадок с общими образами
-              href: troubleshooting-shared-images.md
-        - name: Конструктор изображений (предварительная версия)
-          items:
-            - name: Обзор
-              href: image-builder-overview.md
-            - name: Использование Azure CLI
-              href: image-builder.md
-            - name: Справочник по шаблонам ARM
-              href: image-builder-json.md
-              displayName: 'ARM,Resource Manager'
-            - name: Сборка для коллекций образов
-              href: image-builder-gallery.md
-            - name: Обновление существующего образа
-              href: image-builder-gallery-update-image-version.md
-            - name: Диагностика
-              href: 'https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md'
-        - name: Поиск и использование образов
-          href: cli-ps-findimage.md
-        - name: Создание пользовательского образа
-          items:
-            - name: Общие инструкции
-              href: create-upload-generic.md
-            - name: Ubuntu
-              href: create-upload-ubuntu.md
-            - name: CentOS
-              href: create-upload-centos.md
-            - name: Red Hat
-              href: redhat-create-upload-vhd.md
-            - name: Debian
-              href: debian-create-upload-vhd.md
-            - name: SUSE
-              href: suse-create-upload-vhd.md
-            - name: Oracle Linux
-              href: oracle-create-upload-vhd.md
-            - name: OpenBSD
-              href: create-upload-openbsd.md
-            - name: FreeBSD
-              href: freebsd-intro-on-azure.md
-        - name: Запись образа виртуальной машины
-          href: capture-image.md
-        - name: Создание образа с помощью Packer
-          href: build-image-with-packer.md
-        - name: Скачивание существующего диска
-          href: download-vhd.md
     - name: Высокая доступность и масштабирование
       items:
         - name: Автомасштабирование

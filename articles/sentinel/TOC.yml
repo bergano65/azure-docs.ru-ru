@@ -94,11 +94,11 @@
                   items:
                     - name: Check Point
                       href: connect-checkpoint.md
-                    - name: Cisco
+                    - name: Cisco ASA
                       href: connect-cisco.md
                     - name: ExtraHop Reveal(x)
                       href: connect-extrahop.md
-                    - name: F5
+                    - name: F5 ASM
                       href: connect-f5.md
                     - name: Продукты Forcepoint
                       href: connect-forcepoint-casb-ngfw.md
@@ -120,6 +120,8 @@
           href: connect-azure-stack.md
     - name: Использование нескольких клиентов (MSSP)
       href: multiple-tenants-service-providers.md
+    - name: Работа с инцидентами в нескольких рабочих областях
+      href: multiple-workspace-view.md
     - name: Настройка управляемых клиентом ключей (CMK)
       href: customer-managed-keys.md
     - name: Создание инцидентов на основе оповещений
@@ -145,3 +147,5 @@
       href: 'https://blogs.msdn.com/b/azuresecurity/'
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
+    - name: Цены
+      href: 'https://azure.microsoft.com/en-us/pricing/details/azure-sentinel/'

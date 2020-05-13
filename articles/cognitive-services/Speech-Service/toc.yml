@@ -557,6 +557,20 @@
       items:
         - name: 'Заметки о выпуске пакета SDK для устройств, подключаемых к службе "Речь"'
           href: devices-sdk-release-notes.md
+- name: Инструменты
+  items:
+    - name: SPX
+      items:
+        - name: Что такое SPX?
+          href: spx-overview.md
+        - name: Основные сведения об SPX
+          href: spx-basics.md
+    - name: Speech Studio
+      items:
+        - name: Что такое Speech Studio?
+          href: 'https://speech.microsoft.com'
+        - name: Создание приложения пользовательских команд с помощью Speech Studio
+          href: quickstart-custom-speech-commands-create-new.md
 - name: Миграция
   items:
     - name: Из Распознавания речи Bing

@@ -7,18 +7,26 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Приложение ASP.NET
-      href: cache-web-app-howto.md
-    - name: Приложение .NET Core
-      href: cache-dotnet-core-quickstart.md
-    - name: Приложение .NET
-      href: cache-dotnet-how-to-use-azure-redis-cache.md
-    - name: Приложение Java
-      href: cache-java-get-started.md
-    - name: Приложение Node.js
-      href: cache-nodejs-get-started.md
-    - name: Приложение Python
-      href: cache-python-get-started.md
+    - name: Создание кэша
+      items:
+        - name: 'Категории "Базовый", "Стандартный" и "Премиум"'
+          href: quickstart-create-redis.md
+        - name: Категории "Корпоративный"
+          href: quickstart-create-redis-enterprise.md
+    - name: Использование кэша
+      items:
+        - name: Приложение ASP.NET
+          href: cache-web-app-howto.md
+        - name: Приложение .NET Core
+          href: cache-dotnet-core-quickstart.md
+        - name: Приложение .NET
+          href: cache-dotnet-how-to-use-azure-redis-cache.md
+        - name: Приложение Java
+          href: cache-java-get-started.md
+        - name: Приложение Node.js
+          href: cache-nodejs-get-started.md
+        - name: Приложение Python
+          href: cache-python-get-started.md
 - name: Учебники
   items:
     - name: Использование кэширования со списками лидеров

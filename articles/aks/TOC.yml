@@ -129,6 +129,8 @@
           href: scale-cluster.md
         - name: Обновление кластера AKS
           href: upgrade-cluster.md
+        - name: Использование соглашения об уровне обслуживания с гарантией времени непрерывной работы
+          href: uptime-sla.md
         - name: Обновления ОС узла процесса
           href: node-updates-kured.md
         - name: Настройка кластера AKS.
@@ -231,7 +233,7 @@
         - name: Включение интеграции с Azure Active Directory
           items:
             - name: "Интеграция Azure\_AD (предварительная версия)"
-              href: azure-ad-v2.md
+              href: managed-aad.md
             - name: Использование Azure CLI
               href: azure-ad-integration-cli.md
             - name: Использование портала Azure

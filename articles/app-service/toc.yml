@@ -200,6 +200,8 @@
           href: web-sites-monitor.md
         - name: Включение журналов
           href: troubleshoot-diagnostic-logs.md
+        - name: Получение данных о событиях ресурса
+          href: get-resource-events.md
     - name: Управление приложением
       items:
         - name: Управление планом размещения
