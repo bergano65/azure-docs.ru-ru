@@ -2,20 +2,19 @@
 title: Автоматическое восстановление экземпляра с помощью масштабируемых наборов виртуальных машин Azure
 description: Узнайте, как настроить политику автоматического восстановления для экземпляров виртуальных машин в масштабируемом наборе.
 author: avirishuv
-manager: vashan
-tags: azure-resource-manager
-ms.service: virtual-machine-scale-sets
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm
-ms.topic: conceptual
-ms.date: 02/28/2020
 ms.author: avverma
-ms.openlocfilehash: 8156c563573183e51e06650914117f8787922e93
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: conceptual
+ms.service: virtual-machine-scale-sets
+ms.subservice: availability
+ms.date: 02/28/2020
+ms.reviewer: jushiman
+ms.custom: avverma
+ms.openlocfilehash: 9e2b15eceff9bca4cee960fa462eb5148e3716dd
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81603678"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83197038"
 ---
 # <a name="automatic-instance-repairs-for-azure-virtual-machine-scale-sets"></a>Автоматическое восстановление экземпляра для масштабируемых наборов виртуальных машин Azure
 
@@ -154,7 +153,7 @@ az vmss create \
   --generate-ssh-keys \
   --load-balancer <existingLoadBalancer> \
   --health-probe <existingHealthProbeUnderLoaderBalancer> \
-  --automatic-repairs-period 30
+  --automatic-repairs-grace-period 30
 ```
 
 В приведенном выше примере используется имеющаяся подсистема балансировки нагрузки и проверка работоспособности для наблюдения за состоянием работоспособности приложений экземпляров. Если вместо этого вы предпочитаете использовать расширение работоспособности приложения для мониторинга, можно создать масштабируемый набор, настроить расширение работоспособности приложения, а затем включить политику автоматического восстановления экземпляра с помощью команды *AZ vmss Update*, как описано в следующем разделе.
@@ -217,7 +216,7 @@ az vmss update \
   --resource-group <myResourceGroup> \
   --name <myVMScaleSet> \
   --enable-automatic-repairs true \
-  --automatic-repairs-period 30
+  --automatic-repairs-grace-period 30
 ```
 
 ## <a name="viewing-and-updating-the-service-state-of-automatic-instance-repairs-policy"></a>Просмотр и обновление состояния службы политика восстановления автоматического экземпляра
@@ -314,6 +313,6 @@ Set-AzVmssOrchestrationServiceState `
 
 В портал Azure также можно просмотреть состояние работоспособности. Перейдите к существующему масштабируемому набору, выберите **экземпляры** в меню слева и просмотрите столбец **состояние работоспособности** для состояния работоспособности каждого экземпляра масштабируемого набора. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как настроить [расширение работоспособности приложения](./virtual-machine-scale-sets-health-extension.md) или [пробы работоспособности подсистемы балансировки нагрузки](../load-balancer/load-balancer-custom-probe-overview.md) для масштабируемых наборов.

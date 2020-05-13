@@ -8,19 +8,19 @@ ms.topic: conceptual
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 54501e7e00ba8a28dd7cb421232b9a9587604338
-ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
+ms.openlocfilehash: 6741c034351099f544c20749eb7c7a39e7932181
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82653136"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83195134"
 ---
 # <a name="set-up-the-powershell-module-for-windows-virtual-desktop"></a>Настройка модуля PowerShell для виртуального рабочего стола Windows
 
 >[!IMPORTANT]
->Это содержимое относится к обновлению пружины 2020 с Azure Resource Manager объектов виртуальных рабочих столов Windows.
+>Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows.
 >
-> Обновление 2020 виртуального рабочего стола Windows в настоящее время находится в общедоступной предварительной версии. Эта предварительная версия предоставляется без соглашения об уровне обслуживания, и мы не рекомендуем использовать ее для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. 
+> Обновление Виртуального рабочего стола Windows за весну 2020 года пока предоставляется как общедоступная предварительная версия. Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для выполнения производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. 
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Модуль PowerShell для виртуальных рабочих столов Windows интегрирован в модуль Azure PowerShell. В этой статье вы узнаете, как настроить модуль PowerShell, чтобы можно было выполнять командлеты для виртуальных рабочих столов Windows.
@@ -46,7 +46,7 @@ Install-Module -Name Az.DesktopVirtualization
 Connect-AzAccount
 ```
 
-Для входа в учетную запись Azure требуется код, который создается при выполнении командлета Connect. Чтобы войти, перейдите по <https://microsoft.com/devicelogin>адресу, введите код, а затем выполните вход с помощью учетных данных администратора Azure.
+Для входа в учетную запись Azure требуется код, который создается при выполнении командлета Connect. Чтобы войти, перейдите по адресу, <https://microsoft.com/devicelogin> Введите код, а затем выполните вход с помощью учетных данных администратора Azure.
 
 ```powershell
 Account SubscriptionName TenantId Environment
@@ -63,7 +63,7 @@ Youradminupn subscriptionname AzureADTenantID AzureCloud
 Если вы хотите изменить подписку по умолчанию после входа, выполните следующий командлет:
 
 ```powershell
-Select-AzureSubscription -SubscriptionName <preferredsubscriptionname>
+Select-AzSubscription -SubscriptionName <preferredsubscriptionname>
 ```
 
 При выборе новой подписки не нужно указывать идентификатор подписки в запускаемых командлетах. Например, следующий командлет извлекает конкретный узел сеанса, не требуя идентификатора подписки:
@@ -131,7 +131,7 @@ New-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> -W
 Теперь, когда вы настроили модуль PowerShell, командлеты можно использовать для выполнения всех видов действий в виртуальном рабочем столе Windows. Ниже приведены некоторые из мест, которые можно использовать в вашем модуле.
 
 - С помощью наших [руководств по виртуальному рабочему столу Windows]() можно настроить собственную среду виртуальных рабочих столов Windows.
-- [Создание пула узлов с помощью PowerShell](create-host-pools-powershell.md)
+- [Create a host pool with PowerShell](create-host-pools-powershell.md) (Создание пула узлов с помощью PowerShell)
 - [Настройка метода балансировки нагрузки Виртуального рабочего стола Windows](configure-host-pool-load-balancing.md)
 - [Настройка типа назначения пула узлов личного рабочего стола](configure-host-pool-personal-desktop-assignment-type.md)
 - И это еще не все!

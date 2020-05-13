@@ -10,14 +10,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 04/27/2020
+ms.date: 05/11/2020
 ms.author: apimpm
-ms.openlocfilehash: cf65cd757655b496ceb87fa1ff8121ac6209d869
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.openlocfilehash: 93f66f3c030b9845b58083a992e1e1f11aa37f9c
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82203222"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83196984"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure позволяют размещать любые ресурсы Azure в сети, недоступной из Интернета, доступом к которой управляете вы сами. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Обзор виртуальной сети](../virtual-network/virtual-networks-overview.md).
@@ -31,7 +31,7 @@ ms.locfileid: "82203222"
 
 [!INCLUDE [premium-dev.md](../../includes/api-management-availability-premium-dev.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
 
@@ -108,7 +108,7 @@ ms.locfileid: "82203222"
 
 <a name="required-ports"> </a> Если экземпляр службы управления API размещается в виртуальной сети, используются порты в следующей таблице.
 
-| Исходные и конечные порты | Направление          | Транспортный протокол |   [Теги службы](../virtual-network/security-overview.md#service-tags) <br> Ресурс и назначение   | Назначение (\*)                                                 | Тип виртуальной сети |
+| Исходные и конечные порты | Направление          | Транспортный протокол |   [Теги службы](../virtual-network/security-overview.md#service-tags) <br> Ресурс и назначение   | Назначение ( \* )                                                 | Тип виртуальной сети |
 |------------------------------|--------------------|--------------------|---------------------------------------|-------------------------------------------------------------|----------------------|
 | */[80], 443                  | Входящий трафик            | TCP                | INTERNET — VIRTUAL_NETWORK            | Подключения клиентов к службе управления API                      | External             |
 | * / 3443                     | Входящий трафик            | TCP                | ApiManagement / VIRTUAL_NETWORK       | Конечная точка управления для портал Azure и PowerShell         | Внешний и внутренний  |
@@ -136,22 +136,22 @@ ms.locfileid: "82203222"
 
     | Среда Azure | Конечные точки                                                                                                                                                                                                                                                                                                                                                              |
     |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | Azure Public      | <ul><li>gcs.prod.monitoring.core.windows.net (**новое**)</li><li>prod.warmpath.msftcloudes.com (**не рекомендуется к использованию**)</li><li>shoebox2.metrics.microsoftmetrics.com (**новое**)</li><li>shoebox2.metrics.nsatc.net (**не рекомендуется к использованию**)</li><li>prod3.metrics.microsoftmetrics.com (**новое**)</li><li>prod3.metrics.nsatc.net (**не рекомендуется к использованию**)</li><li>prod3-black.prod3.metrics.microsoftmetrics.com (**новое**)</li><li>prod3-black.prod3.metrics.nsatc.net (**не рекомендуется к использованию**)</li><li>prod3-red.prod3.metrics.microsoftmetrics.com (**новое**)</li><li>prod3-red.prod3.metrics.nsatc.net (**не рекомендуется к использованию**)</li><li>prod.warm.ingestion.msftcloudes.com</li><li>`azure region`.warm.ingestion.msftcloudes.com где `East US 2` является eastus2.warm.ingestion.msftcloudes.com</li></ul> |
-    | Azure для государственных организаций  | <ul><li>fairfax.warmpath.usgovcloudapi.net;</li><li>shoebox2.metrics.microsoftmetrics.com (**новое**)</li><li>shoebox2.metrics.nsatc.net (**не рекомендуется к использованию**)</li><li>prod3.metrics.microsoftmetrics.com (**новое**)</li><li>prod3.metrics.nsatc.net (**не рекомендуется к использованию**)</li><li>prod5.prod.microsoftmetrics.com</li></ul>                                                                                                                                                                                                                                                |
-    | Azure China 21Vianet     | <ul><li>mooncake.warmpath.chinacloudapi.cn;</li><li>shoebox2.metrics.microsoftmetrics.com (**новое**)</li><li>shoebox2.metrics.nsatc.net (**не рекомендуется к использованию**)</li><li>prod3.metrics.microsoftmetrics.com (**новое**)</li><li>prod3.metrics.nsatc.net (**не рекомендуется к использованию**)</li><li>prod5.prod.microsoftmetrics.com</li></ul>                                                                                                                                                                                                                                                |
+    | Azure Public      | <ul><li>gcs.prod.monitoring.core.windows.net (**новое**)</li><li>prod.warmpath.msftcloudes.com (**не рекомендуется к использованию**)</li><li>shoebox2.metrics.microsoftmetrics.com (**новое**)</li><li>shoebox2.metrics.nsatc.net (**не рекомендуется к использованию**)</li><li>prod3.metrics.microsoftmetrics.com (**новое**)</li><li>prod3.metrics.nsatc.net (**не рекомендуется к использованию**)</li><li>prod3-black.prod.metrics.microsoftmetrics.com (**новое**)</li><li>prod3-black.prod3.metrics.nsatc.net (**не рекомендуется к использованию**)</li><li>prod3-red.prod.metrics.microsoftmetrics.com (**новое**)</li><li>prod3-red.prod3.metrics.nsatc.net (**не рекомендуется к использованию**)</li><li>gcs.prod.warm.ingestion.monitoring.azure.com</li></ul> |
+    | Azure для государственных организаций  | <ul><li>fairfax.warmpath.usgovcloudapi.net;</li><li>shoebox2.metrics.microsoftmetrics.com (**новое**)</li><li>shoebox2.metrics.nsatc.net (**не рекомендуется к использованию**)</li><li>prod3.metrics.microsoftmetrics.com (**новое**)</li><li>prod3.metrics.nsatc.net (**не рекомендуется к использованию**)</li><li>prod5.prod.microsoftmetrics.com</li><li>prod5-black.prod.metrics.microsoftmetrics.com</li><li>prod5-red.prod.metrics.microsoftmetrics.com</li><li>gcs.prod.warm.ingestion.monitoring.azure.us</li></ul>                                                                                                                                                                                                                                                |
+    | Azure China 21Vianet     | <ul><li>mooncake.warmpath.chinacloudapi.cn;</li><li>shoebox2.metrics.microsoftmetrics.com (**новое**)</li><li>shoebox2.metrics.nsatc.net (**не рекомендуется к использованию**)</li><li>prod3.metrics.microsoftmetrics.com (**новое**)</li><li>prod3.metrics.nsatc.net (**не рекомендуется к использованию**)</li><li>prod5.prod.microsoftmetrics.com</li><li>prod5-black.prod.metrics.microsoftmetrics.com</li><li>prod5-red.prod.metrics.microsoftmetrics.com</li><li>gcs.prod.warm.ingestion.monitoring.azure.cn</li></ul>                                                                                                                                                                                                                                                |
 
   >[!IMPORTANT]
   > Изменение кластеров выше с зоной DNS **. nsatc.NET** до **. microsoftmetrics.com** — это, в основном, изменение DNS. IP-адрес кластера не изменится.
 
 + **Теги региональных служб**. правила NSG, разрешающие исходящие подключения к тегам службы хранилища, SQL и служб концентраторов событий, могут использовать региональные версии этих тегов, соответствующие региону, содержащему экземпляр службы управления API (например, Storage. WestUS для экземпляра службы управления API в регионе "Западная часть США"). В развертываниях с несколькими регионами NSG в каждом регионе должен разрешать передачу трафика в теги службы для этого региона и основного региона.
 
-+ **Ретранслятор SMTP**. исходящее сетевое подключение для ретранслятора SMTP, которое разрешается в `smtpi-co1.msn.com`узле `smtpi-ch1.msn.com`, `smtpi-db3.msn.com`, `smtpi-sin.msn.com` и`ies.global.microsoft.com`
++ **Ретранслятор SMTP**. исходящее сетевое подключение для ретранслятора SMTP, которое разрешается в узле `smtpi-co1.msn.com` ,, `smtpi-ch1.msn.com` `smtpi-db3.msn.com` `smtpi-sin.msn.com` и`ies.global.microsoft.com`
 
-+ **Портал РАЗРАБОТЧИКА CAPTCHA**: исходящее сетевое подключение для CAPTCHA портала разработчика, которое разрешается в узлах `client.hip.live.com` и. `partner.hip.live.com`
++ **Портал РАЗРАБОТЧИКА CAPTCHA**: исходящее сетевое подключение для CAPTCHA портала разработчика, которое разрешается в узлах `client.hip.live.com` и `partner.hip.live.com` .
 
 + **Портал Azure Diagnostics** — включает поток журналов диагностики на портале Azure, при использовании модуля из службы управления API в виртуальной сети исходящий доступ к `dc.services.visualstudio.com` на порт 443 не требуется. Это помогает в устранении неполадок, которые могут возникнуть при использовании расширения.
 
-+ **Azure Load Balancer**: разрешение входящего запроса от тега `AZURE_LOAD_BALANCER` службы не является обязательным для `Developer` SKU, так как мы развертываем только одну единицу вычислений за ее пределами. Но входящие от [168.63.129.16](../virtual-network/what-is-ip-address-168-63-129-16.md) становятся критически важными при масштабировании до более `Premium`высокого SKU, например в случае сбоя проверки работоспособности из Load Balancer, завершается ошибкой развертывания.
++ **Azure Load Balancer**: разрешение входящего запроса от тега службы `AZURE_LOAD_BALANCER` не является обязательным для `Developer` SKU, так как мы развертываем только одну единицу вычислений за ее пределами. Но входящие от [168.63.129.16](../virtual-network/what-is-ip-address-168-63-129-16.md) становятся критически важными при масштабировании до более высокого SKU `Premium` , например в случае сбоя проверки работоспособности из Load Balancer, завершается ошибкой развертывания.
 
 + **Принудительное туннелирование трафика к локальному брандмауэру с помощью Express Route или сетевого виртуального устройства**. распространенная Конфигурация клиента — определение собственного маршрута по умолчанию (0.0.0.0/0), который заставляет весь трафик из делегированной подсети управления API проходить через локальный брандмауэр или виртуальный сетевой модуль. Этот поток трафика неизменно прерывает подключение к службе управления API Azure, так как исходящий трафик или блокируется локально, или преобразуется с помощью NAT в нераспознаваемый набор адресов, которые больше не относятся к различным конечным точкам Azure. Для решения требуется выполнить несколько действий:
 

@@ -1,20 +1,20 @@
 ---
 title: Создание масштабируемого набора Azure, использующего Зоны доступности
 description: Узнайте, как создавать масштабируемые наборы виртуальных машин Azure, которые используют зоны доступности для повышения избыточности и минимизации простоев
-author: ju-shim
-tags: azure-resource-manager
-ms.service: virtual-machine-scale-sets
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm
+author: mimckitt
+ms.author: mimckitt
 ms.topic: conceptual
+ms.service: virtual-machine-scale-sets
+ms.subservice: availability
 ms.date: 08/08/2018
-ms.author: jushiman
-ms.openlocfilehash: a23164215376bee291c07d49c88bd9e916d710bf
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.reviewer: jushiman
+ms.custom: mimckitt
+ms.openlocfilehash: daa469bef999f33feb44983e3b5a7073b4df655e
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82207842"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83197351"
 ---
 # <a name="create-a-virtual-machine-scale-set-that-uses-availability-zones"></a>Создание масштабируемого набора Azure, который использует зоны доступности
 
@@ -213,6 +213,6 @@ New-AzVmss `
 
 Полный пример масштабируемого набора, избыточного между зонами, и сетевых ресурсов см. в этом [примере шаблона Resource Manager](https://github.com/Azure/vm-scale-sets/blob/master/preview/zones/multizone.json).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания масштабируемого набора в зоне доступности см. статьи [Развертывание приложения в масштабируемых наборах виртуальных машин](tutorial-install-apps-cli.md) или [Обзор автомасштабирования с помощью масштабируемых наборов виртуальных машин Azure](tutorial-autoscale-cli.md).

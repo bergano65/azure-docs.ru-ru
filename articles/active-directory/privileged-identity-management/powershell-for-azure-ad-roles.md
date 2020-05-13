@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/28/2020
+ms.date: 05/11/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99a6c0153105627e272d05af5514a030577431f7
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: c42c0dd3848ec913f991e4b07612669c5a25c9f1
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82233998"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83197271"
 ---
 # <a name="powershell-for-azure-ad-roles-in-privileged-identity-management"></a>PowerShell для ролей Azure AD в управление привилегированными пользователями
 
@@ -45,12 +45,12 @@ ms.locfileid: "82233998"
         $AzureAdCred = Get-Credential  
         Connect-AzureAD -Credential $AzureAdCred
 
-1. Найдите идентификатор клиента для вашей организации Azure AD, выбрав **Azure Active Directory** > **Свойства** > **идентификатор каталога**. В разделе командлеты используйте этот идентификатор всякий раз, когда необходимо указать resourceId.
+1. Найдите идентификатор клиента для вашей организации Azure AD, выбрав **Azure Active Directory**  >  **Свойства**  >  **идентификатор каталога**. В разделе командлеты используйте этот идентификатор всякий раз, когда необходимо указать resourceId.
 
     ![Найдите идентификатор организации в свойствах для Организации Azure AD.](./media/powershell-for-azure-ad-roles/tenant-id-for-Azure-ad-org.png)
 
 > [!Note]
-> В следующих разделах приведены простые примеры, которые помогут вам приступить к работе. Более подробную документацию по следующим командлетам можно найти https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview#privileged_role_managementпо адресу. Тем не менее, необходимо заменить "Азурересаурцес" в параметре providerID на "Аадролес". Кроме того, необходимо будет использовать идентификатор организации для вашей организации Azure AD в качестве параметра resourceId.
+> В следующих разделах приведены простые примеры, которые помогут вам приступить к работе. Более подробную документацию по следующим командлетам можно найти по адресу https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview#privileged_role_management . Тем не менее, необходимо заменить "Азурересаурцес" в параметре providerID на "Аадролес". Кроме того, необходимо будет использовать идентификатор организации для вашей организации Azure AD в качестве параметра resourceId.
 
 ## <a name="retrieving-role-definitions"></a>Получение определений ролей
 
@@ -60,7 +60,7 @@ RoleDefinitionId зависит от вашей организации Azure AD 
 
     Get-AzureADMSPrivilegedRoleDefinition -ProviderId aadRoles -ResourceId 926d99e7-117c-4a6a-8031-0cc481e9da26
 
-Результат:
+Результат: ;
 
 ![Получение всех ролей для Организации Azure AD](./media/powershell-for-azure-ad-roles/get-all-roles-result.png)
 
@@ -80,7 +80,7 @@ RoleDefinitionId зависит от вашей организации Azure AD 
 
 Командлеты приводят к отображению списка объектов назначения ролей, показанных ниже. ИДЕНТИФИКАТОР субъекта — это идентификатор пользователя, которому назначена роль. Состояние назначения может быть либо активным, либо допустимым. Если пользователь активен и в поле Линкеделигиблеролеассигнментид есть идентификатор, это означает, что роль в данный момент активирована.
 
-Результат:
+Результат: ;
 
 ![Получение всех назначений ролей для Организации Azure AD](./media/powershell-for-azure-ad-roles/get-all-role-assignments-result.png)
 
@@ -122,17 +122,16 @@ RoleDefinitionId зависит от вашей организации Azure AD 
 
 [![](media/powershell-for-azure-ad-roles/get-update-role-settings-result.png "Get and update role settings")](media/powershell-for-azure-ad-roles/get-update-role-settings-result.png#lightbox)
 
-Чтобы обновить параметр роли, необходимо сначала определить объект параметра следующим образом:
+Чтобы обновить параметр роли, необходимо получить существующий объект параметров для конкретной роли и внести в него изменения:
 
-    $setting = New-Object Microsoft.Open.MSGraph.Model.AzureADMSPrivilegedRuleSetting 
-    $setting.RuleIdentifier = "JustificationRule"
-    $setting.Setting = "{'required':false}"
+    $setting = Get-AzureADMSPrivilegedRoleSetting -ProviderId 'aadRoles' -Filter "roleDefinitionId eq 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'"
+    $setting.UserMemberSetting.justificationRule = '{"required":false}'
 
 Затем можно применить параметр к одному из объектов для конкретной роли, как показано ниже. ИДЕНТИФИКАТОРом является идентификатор параметра роли, который можно получить из результата выполнения командлета List Role Settings.
 
     Set-AzureADMSPrivilegedRoleSetting -ProviderId 'aadRoles' -Id 'ff518d09-47f5-45a9-bb32-71916d9aeadf' -ResourceId '3f5887ed-dd6e-4821-8bde-c813ec508cf9' -RoleDefinitionId '2387ced3-4e95-4c36-a915-73d803f93702' -UserMemberSettings $setting 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Назначение настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)
 - [Update or remove an assigned Azure AD custom role in Privileged Identity Management](azure-ad-custom-roles-update-remove.md) (Обновление или удаление назначенной настраиваемой роли AAD в Privileged Identity Management)

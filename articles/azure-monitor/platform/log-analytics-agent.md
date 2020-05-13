@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/04/2020
-ms.openlocfilehash: 658543dc96f23fc86ea50f64d7a3265ba64150e7
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: 0a29ee1536c7c808fe7d15c0abe26f27042bc962
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82982213"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83196247"
 ---
 # <a name="log-analytics-agent-overview"></a>Обзор агента Log Analytics
 Агент Azure Log Analytics был разработан для комплексного управления виртуальными машинами в любых облачных и локальных компьютерах, а также для тех, которые отслеживаются [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/). Агенты Windows и Linux отправляют собранные данные из разных источников в рабочую область Log Analytics в Azure Monitor, а также любые уникальные журналы или метрики, как определено в решении для мониторинга. Агент Log Analytics также поддерживает аналитические сведения и другие службы в Azure Monitor, такие как [Azure Monitor для виртуальных машин](../insights/vminsights-enable-overview.md), [Центр безопасности Azure](/azure/security-center/)и служба [автоматизации Azure](../../automation/automation-intro.md).
@@ -115,11 +115,11 @@ ms.locfileid: "82982213"
 >Если вы используете дистрибутив или версию, которые в настоящее время не поддерживаются и не соответствуют нашей модели поддержки, мы рекомендуем вам сделать вилку этого репозитория, согласившись, что специалисты службы поддержки Майкрософт не будут предоставлять помощь при работе с версиями разветвленных агентов.
 
 * Amazon Linux 2017.09 (x64)
-* CentOS Linux 6 (x86/x64) и 7 (x64)  
-* Oracle Linux 6 и 7 (x86/x64) 
-* Red Hat Enterprise Linux Server 6 (x86/x64) и 7 (x64)
-* Debian GNU/Linux 8 и 9 (x86/x64)
-* Ubuntu 14.04 LTS (x86/x64), 16.04 LTS (x86/x64) и 18.04 LTS (x64)
+* CentOS Linux 6 (x64) и 7 (x64)  
+* Oracle Linux 6 и 7 (x64) 
+* Red Hat Enterprise Linux Server 6 (x64), 7 (x64) и 8 (x64)
+* Debian GNU/Linux 8 и 9 (x64)
+* Ubuntu 14,04 LTS (x86/x64), 16,04 LTS (x64) и 18,04 LTS (x64)
 * SUSE Linux Enterprise Server 12 (x64) и 15 (x64)
 
 >[!NOTE]
@@ -168,7 +168,7 @@ ms.locfileid: "82982213"
 
 ### <a name="firewall-requirements"></a>Требования к брандмауэру
 
-|Ресурс агента|Порты |Направление |Обход проверки HTTPS|
+|Ресурс агента|порты; |Направление |Обход проверки HTTPS|
 |------|---------|--------|--------|   
 |*.ods.opinsights.azure.com |Порт 443 |Входящий и исходящий|Да |  
 |*.oms.opinsights.azure.com |Порт 443 |Входящий и исходящий|Да |  
@@ -201,7 +201,7 @@ ms.locfileid: "82982213"
 Например: `https://user01:password@proxy01.contoso.com:30443`
 
 > [!NOTE]
-> Если в пароле используются специальные символы,\@например "", возникает ошибка подключения прокси-сервера, так как значение анализируется неправильно.  Чтобы обойти эту проблему, закодируйте пароль в URL-адрес, используя специальные инструменты (например, [URLDecode](https://www.urldecoder.org/)).  
+> Если в пароле используются специальные символы, например " \@ ", возникает ошибка подключения прокси-сервера, так как значение анализируется неправильно.  Чтобы обойти эту проблему, закодируйте пароль в URL-адрес, используя специальные инструменты (например, [URLDecode](https://www.urldecoder.org/)).  
 
 
 

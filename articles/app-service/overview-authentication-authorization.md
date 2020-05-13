@@ -5,15 +5,13 @@ ms.assetid: b7151b57-09e5-4c77-a10c-375a262f17e5
 ms.topic: article
 ms.date: 04/15/2020
 ms.reviewer: mahender
-ms.custom:
-- seodec18
-- fasttrack-edit
-ms.openlocfilehash: a4ceed0d897f069a7895a3eb6b10c327566afbe5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: seodec18, fasttrack-edit, has-adal-ref
+ms.openlocfilehash: f51a396e997a9e6392f3e86a6f77e581753d6ada
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81457864"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83196439"
 ---
 # <a name="authentication-and-authorization-in-azure-app-service-and-azure-functions"></a>Проверка подлинности и авторизация в службе приложений Azure и функциях Azure
 
@@ -52,7 +50,7 @@ ms.locfileid: "81457864"
 
 Для всех языковых платформ служба приложений делает утверждения в входящем токене (от пользователя, прошедшего проверку подлинности или клиентское приложение) доступным для кода путем их вставки в заголовки запроса. Для приложений ASP.NET 4.6 служба приложений заполняет свойство [ClaimsPrincipal.Current](/dotnet/api/system.security.claims.claimsprincipal.current) утверждениями пользователя, прошедшими проверку подлинности, поэтому вы можете следовать стандартным шаблонам кода .NET, включая атрибут `[Authorize]`. Аналогичным образом для приложений PHP служба приложений заполняет переменную `_SERVER['REMOTE_USER']`. Для приложений Java утверждения доступны в [Tomcat сервлета](containers/configure-language-java.md#authenticate-users-easy-auth).
 
-`ClaimsPrincipal.Current` Для [функций Azure](../azure-functions/functions-overview.md)не заполняется для кода .NET, но вы по-прежнему можете найти утверждения пользователя в заголовках запроса или получить `ClaimsPrincipal` объект из контекста запроса или даже через параметр привязки. Дополнительные сведения см. [в разделе Работа с удостоверениями клиентов](../azure-functions/functions-bindings-http-webhook-trigger.md#working-with-client-identities) .
+Для [функций Azure](../azure-functions/functions-overview.md) `ClaimsPrincipal.Current` не заполняется для кода .NET, но вы по-прежнему можете найти утверждения пользователя в заголовках запроса или получить `ClaimsPrincipal` объект из контекста запроса или даже через параметр привязки. Дополнительные сведения см. [в разделе Работа с удостоверениями клиентов](../azure-functions/functions-bindings-http-webhook-trigger.md#working-with-client-identities) .
 
 Дополнительные сведения см. в разделе [Access user claims](app-service-authentication-how-to.md#access-user-claims) (Доступ к утверждениям пользователя).
 
@@ -142,9 +140,9 @@ ms.locfileid: "81457864"
 
 [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Windows)](app-service-web-tutorial-auth-aad.md)  
 [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Linux)](containers/tutorial-auth-aad.md)  
-[Настройка проверки подлинности и авторизации в службе](app-service-authentication-how-to.md)
-приложений[.NET Core интеграция Azure AppService еасяус (третья сторона)](https://github.com/MaximRouiller/MaximeRouiller.Azure.AppService.EasyAuth)
-[Получение проверки подлинности службы приложений Azure с помощью .NET Core (третья сторона)](https://github.com/kirkone/KK.AspNetCore.EasyAuthAuthentication)
+[Настройка проверки подлинности и авторизации в службе приложений](app-service-authentication-how-to.md) 
+ [Интеграция .NET Core с Azure AppService еасяус (третья сторона)](https://github.com/MaximRouiller/MaximeRouiller.Azure.AppService.EasyAuth) 
+ [Получение проверки подлинности службы приложений Azure с помощью .NET Core (третья сторона)](https://github.com/kirkone/KK.AspNetCore.EasyAuthAuthentication)
 
 Практические руководства для поставщика:
 

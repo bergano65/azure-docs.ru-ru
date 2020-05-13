@@ -5,15 +5,15 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 04/08/2020
+ms.date: 05/11/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: a5e0e459800e7cb57672518597f3d04a74f53118
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5f14a269478541eaa5852697a917afb3d771841a
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81008655"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83196927"
 ---
 Сейчас у Ultra Disks есть дополнительные ограничения:
 
@@ -22,23 +22,30 @@ ms.locfileid: "81008655"
 В следующей таблице представлены регионы, в которых доступны диски Ultra, а также соответствующие параметры доступности.
 
 > [!NOTE]
-> В некоторых зонах доступности в этих регионах не предлагаются Ultra Disks.
+> Если в регионе, указанном в списке ниже, нет зон доступности Ultra Disk, то виртуальные машины в этом регионе должны быть развернуты без параметров избыточности инфраструктуры, чтобы подключить диск Ultra.
 
-|Регионы  |Без избыточности инфраструктуры  |Зоны доступности  |
-|---------|---------|---------|
-|западная часть США     |Да         |Нет         |
-|западная часть США 2    |Нет         |Да         |
-|Восточная часть США     |Нет         |Да         |
-|восточная часть США 2     |Нет         |Да         |
-|Юго-Восточная Азия     |Нет         |Да         |
-|Северная Европа     |Нет         |Да         |
-|Западная Европа     |Нет         |Да         |
-|южная часть Соединенного Королевства     |Нет         |Да         |
+|Регионы  |Число зон доступности, поддерживающих Ultra Disks  |
+|---------|---------|
+|US Gov (Вирджиния)     |Нет         |
+|Центрально-южная часть США     |Нет         |
+|Центральная часть США     |Три зоны         |
+|западная часть США     |Нет         |
+|западная часть США 2    |Три зоны         |
+|Восточная часть США     |Три зоны         |
+|восточная часть США 2     |Две зоны         |
+|Юго-Восточная Азия     |Три зоны         |
+|Северная Европа     |Три зоны          |
+|Западная Европа     |Три зоны          |
+|южная часть Соединенного Королевства     |Три зоны          |
+|Восточная Япония     |Две зоны         |
+
+
 
 - Поддерживаются только в следующей серии виртуальных машин:
-    - [ESv3](https://azure.microsoft.com/blog/introducing-the-new-dv3-and-ev3-vm-sizes/)
-    - [DSv3](https://azure.microsoft.com/blog/introducing-the-new-dv3-and-ev3-vm-sizes/)
-    - Серия fsv2
+    - [ESv3](../articles/virtual-machines/ev3-esv3-series.md#esv3-series)
+    - [DSv3](../articles/virtual-machines/dv3-dsv3-series.md#dsv3-series)
+    - [Серия fsv2](../articles/virtual-machines/fsv2-series.md)
+    - [LSv2](../articles/virtual-machines/lsv2-series.md)
     - [M](../articles/virtual-machines/workloads/sap/hana-vm-operations-storage.md)
     - [Mv2](../articles/virtual-machines/workloads/sap/hana-vm-operations-storage.md)
 - Не каждый размер виртуальной машины доступен в каждом поддерживаемом регионе с Ultra Disks.
