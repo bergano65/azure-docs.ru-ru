@@ -4,12 +4,12 @@ description: Используйте функции непрерывного ра
 ms.assetid: 361daf37-598c-4703-8d78-c77dbef91643
 ms.topic: conceptual
 ms.date: 09/25/2019
-ms.openlocfilehash: cc1e100a0c2e652ab081869409fd24dbf88017a3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e49c235e11eea17fdd1a7ff7751cc0493934d725
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79277028"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83123697"
 ---
 # <a name="continuous-deployment-for-azure-functions"></a>Непрерывное развертывание для Функций Azure
 
@@ -32,55 +32,39 @@ ms.locfileid: "79277028"
 >[!NOTE]  
 > Непрерывное развертывание пока не поддерживается для приложений Linux, работающих в плане потребления. 
 
-## <a name="set-up-continuous-deployment"></a><a name="credentials"></a>Непрерывное развертывание с использованием GIT в службе приложений Azure
+## <a name="set-up-continuous-deployment"></a><a name="credentials"></a>Настройка непрерывного развертывания
 
 Чтобы настроить непрерывное развертывание для существующего приложения функции, выполните следующие действия. Шаги демонстрируют интеграцию с репозиторием GitHub, но аналогичные действия применяются для Azure Repos или других репозиториев исходного кода.
 
-1. В приложении функции в [портал Azure](https://portal.azure.com)выберите пункт **компоненты** > платформы**центр развертывания**.
+1. В приложении функции в [портал Azure](https://portal.azure.com)выберите **центр развертывания**, выберите **GitHub**и щелкните **авторизовать**. Если у вас уже есть авторизация GitHub, нажмите кнопку **продолжить** и перейдите к следующему шагу. 
 
-    ![Открыть центр развертывания](./media/functions-continuous-deployment/platform-features.png)
+    :::image type="content" source="./media/functions-continuous-deployment/github.png" alt-text="Центр развертывания службы приложений Azure":::
 
-2. В **центре развертывания**выберите **GitHub**и щелкните **авторизовать**. Если у вас уже есть авторизация GitHub, нажмите кнопку **продолжить**. 
+3. В GitHub выберите **авторизовать AzureAppService**.
 
-    ![Центр развертывания службы приложений Azure](./media/functions-continuous-deployment/github.png)
+    :::image type="content" source="./media/functions-continuous-deployment/authorize.png" alt-text="Авторизация службы приложений Azure":::
 
-3. В GitHub нажмите кнопку **авторизовать AzureAppService** . 
-
-    ![Авторизация службы приложений Azure](./media/functions-continuous-deployment/authorize.png)
-    
-    В **центре развертывания** в портал Azure выберите **продолжить**.
+    Введите пароль GitHub и нажмите кнопку **продолжить**.
 
 4. Выберите один из следующих поставщиков сборки:
 
     * **Служба сборок службы приложений**: лучше, если сборка не нужна или если требуется универсальная сборка.
     * **Azure pipelines (Предварительная версия)**. рекомендуется, если требуется больший контроль над сборкой. Сейчас этот поставщик находится на этапе предварительной версии.
 
-    ![Выбор поставщика сборки](./media/functions-continuous-deployment/build.png)
+    Щелкните **Продолжить**.
 
 5. Настройте сведения, относящиеся к указанному параметру системы управления версиями. Для GitHub необходимо ввести или выбрать значения для параметров **Организация**, **репозиторий**и **ветвь**. Значения основаны на расположении кода. Затем выберите **продолжить**.
 
-    ![Настройка GitHub](./media/functions-continuous-deployment/github-specifics.png)
+    :::image type="content" source="./media/functions-continuous-deployment/github-specifics.png" alt-text="Настройка GitHub":::
 
 6. Просмотрите все сведения, а затем нажмите кнопку **Готово** , чтобы завершить настройку развертывания.
 
-    ![Сводка](./media/functions-continuous-deployment/summary.png)
-
 По завершении процесса весь код из указанного источника развертывается в приложении. В этот момент изменения в источнике развертывания активируют развертывание этих изменений в приложении-функции в Azure.
-
-## <a name="deployment-scenarios"></a>Сценарии развертывания
-
-<a name="existing"></a>
-
-### <a name="move-existing-functions-to-continuous-deployment"></a>Перемещение имеющихся функций в среду непрерывного развертывания
-
-Если вы уже написали функции в [портал Azure](https://portal.azure.com) и хотите скачать содержимое приложения перед переключением на непрерывное развертывание, перейдите на вкладку **Обзор** приложения функции. Нажмите кнопку **скачать содержимое приложения** .
-
-![Скачать содержимое приложения](./media/functions-continuous-deployment/download.png)
 
 > [!NOTE]
 > После настройки непрерывной интеграции вы больше не сможете изменять исходные файлы на портале функций.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Рекомендации по функциям Azure](functions-best-practices.md)

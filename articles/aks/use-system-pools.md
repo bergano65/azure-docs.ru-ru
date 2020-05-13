@@ -4,12 +4,12 @@ description: Узнайте, как создавать пулы системны
 services: container-service
 ms.topic: article
 ms.date: 04/28/2020
-ms.openlocfilehash: 04322bdaa2e0e72c5fbdbadb07f2608ee360e1e3
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: 85cc699d6ef8c632663775e91f2b5cad6ca7a7b6
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82790564"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83125253"
 ---
 # <a name="manage-system-node-pools-in-azure-kubernetes-service-aks"></a>Управление пулами системных узлов в службе Kubernetes Azure (AKS)
 
@@ -50,6 +50,7 @@ ms.locfileid: "82790564"
 * Удаление пулов узлов пользователей.
 * Пулы системных узлов можно удалить при условии, что в кластере AKS имеется другой пул узлов системы.
 * Кластер AKS может иметь несколько пулов системных узлов и требует по крайней мере одного пула системных узлов.
+* Если вы хотите изменить различные неизменяемые параметры для существующих пулов узлов, можно создать новые пулы узлов, чтобы заменить их. Одним из примеров является добавление нового пула узлов с новым параметром Максподс и удаление старого пула узлов.
 
 ## <a name="create-a-new-aks-cluster-with-a-system-node-pool"></a>Создание нового кластера AKS с пулом системных узлов
 

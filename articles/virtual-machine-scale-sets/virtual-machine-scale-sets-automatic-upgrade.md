@@ -1,18 +1,20 @@
 ---
 title: Автоматическое обновление образа ОС с помощью масштабируемых наборов виртуальных машин Azure
 description: Узнайте, как автоматически обновить образ ОС на экземплярах виртуальных машин в масштабируемом наборе
-author: mimckitt
-tags: azure-resource-manager
-ms.service: virtual-machine-scale-sets
+author: avirishuv
+ms.author: avverma
 ms.topic: conceptual
+ms.service: virtual-machine-scale-sets
+ms.subservice: management
 ms.date: 04/14/2020
-ms.author: mimckitt
-ms.openlocfilehash: 70810b21def1672758683abd49f92b86776c9d7b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.reviewer: jushiman
+ms.custom: avverma
+ms.openlocfilehash: c06ad5ab2688bd62fdf898950a8f64cd655a9fcc
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81458987"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124981"
 ---
 # <a name="azure-virtual-machine-scale-set-automatic-os-image-upgrades"></a>Автоматические обновления образа ОС масштабируемого набора виртуальных машин Azure
 
@@ -355,5 +357,5 @@ az vmss rolling-upgrade start --resource-group "myResourceGroup" --name "myScale
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fvm-scale-sets%2Fmaster%2Fpreview%2Fupgrade%2Fautoupdate.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"/></a>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные примеры использования автоматических обновлений ОС с масштабируемыми наборами см. в [репозитории GitHub](https://github.com/Azure/vm-scale-sets/tree/master/preview/upgrade).

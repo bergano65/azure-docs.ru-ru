@@ -1,18 +1,20 @@
 ---
 title: Использование виртуализации расширения с масштабируемыми наборами виртуальных машин Azure
 description: Узнайте, как упорядочить подготовку расширений при развертывании нескольких расширений в масштабируемых наборах виртуальных машин.
-author: mimckitt
-tags: azure-resource-manager
+author: ju-shim
+ms.author: jushiman
+ms.topic: how-to
 ms.service: virtual-machine-scale-sets
-ms.topic: conceptual
+ms.subservice: extensions
 ms.date: 01/30/2019
-ms.author: mimckitt
-ms.openlocfilehash: 737040699dd62d722b9a9ad4d8915ccb270c2d06
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.reviewer: mimckitt
+ms.custom: mimckitt
+ms.openlocfilehash: 3271041b9f4db100cd05588129c7d714d4478f10
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81273755"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83121037"
 ---
 # <a name="sequence-extension-provisioning-in-virtual-machine-scale-sets"></a>Подготовка последовательности расширений в масштабируемых наборах виртуальных машин
 Расширения виртуальных машин Azure предоставляют такие возможности, как настройка и управление после развертывания, мониторинг, безопасность и многое другое. Для достижения желаемых результатов в рабочих развертываниях обычно используется сочетание нескольких расширений, настроенных для экземпляров виртуальной машины.
@@ -21,7 +23,7 @@ ms.locfileid: "81273755"
 
 В этой статье описывается порядок настройки расширений для экземпляров виртуальных машин в масштабируемых наборах виртуальных машин.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с этой статьей нужны знания в следующих областях:
 -   [Расширения](../virtual-machines/extensions/overview.md) виртуальной машины Azure
 -   [Изменением](virtual-machine-scale-sets-upgrade-scale-set.md) масштабируемых наборов виртуальных машин.
@@ -237,7 +239,7 @@ az vmss extension set \
 ```
 
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 ### <a name="not-able-to-add-extension-with-dependencies"></a>Не удается добавить расширение с зависимостями
 1. Убедитесь, что расширения, указанные в provisionAfterExtensions, определены в модели масштабируемого набора.
@@ -247,5 +249,5 @@ az vmss extension set \
 ### <a name="not-able-to-remove-extensions"></a>Не удается удалить расширения
 Убедитесь, что удаляемые расширения не перечислены в разделе provisionAfterExtensions для других расширений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как [развертывать приложение](virtual-machine-scale-sets-deploy-app.md) в масштабируемых наборах виртуальных машин.

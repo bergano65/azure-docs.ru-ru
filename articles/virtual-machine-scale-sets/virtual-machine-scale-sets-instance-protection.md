@@ -2,17 +2,19 @@
 title: Защита экземпляра для экземпляров масштабируемых наборов виртуальных машин Azure
 description: Узнайте, как защитить экземпляры масштабируемых наборов виртуальных машин Azure из операций масштабирования и масштабирования.
 author: avirishuv
-tags: azure-resource-manager
-ms.service: virtual-machine-scale-sets
-ms.topic: conceptual
-ms.date: 02/26/2020
 ms.author: avverma
-ms.openlocfilehash: 021faad28fb575c4ffeb4d895ad451d8cd82b1a5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: conceptual
+ms.service: virtual-machine-scale-sets
+ms.subservice: availability
+ms.date: 02/26/2020
+ms.reviewer: jushiman
+ms.custom: avverma
+ms.openlocfilehash: 8c4944da8ffcaa75e6448483918a29809c32830b
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79254122"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124063"
 ---
 # <a name="instance-protection-for-azure-virtual-machine-scale-set-instances"></a>Защита экземпляра для экземпляров масштабируемых наборов виртуальных машин Azure
 
@@ -52,7 +54,7 @@ ms.locfileid: "79254122"
 1. Выберите имя экземпляра, который необходимо защитить.
 1. Перейдите на вкладку **Политика защиты** .
 1. В колонке **Политика защиты** выберите параметр **защитить от масштабирования** .
-1. Нажмите кнопку **Сохранить**. 
+1. Щелкните **Сохранить**. 
 
 ### <a name="rest-api"></a>REST API
 
@@ -120,7 +122,7 @@ az vmss update \
 1. Выберите имя экземпляра, который необходимо защитить.
 1. Перейдите на вкладку **Политика защиты** .
 1. В колонке **Политика защиты** выберите параметр **защитить от действий масштабируемого набора** .
-1. Нажмите кнопку **Сохранить**. 
+1. Щелкните **Сохранить**. 
 
 ### <a name="rest-api"></a>REST API
 
@@ -188,5 +190,5 @@ az vmss update \
 ### <a name="not-able-to-apply-instance-protection"></a>Не удается применить защиту экземпляра
 Защита экземпляра поддерживается только в API версии 2019-03-01 и выше. Проверьте используемую версию API и обновите ее при необходимости. Вам также может потребоваться обновить PowerShell или CLI до последней версии.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как [развертывать приложение](virtual-machine-scale-sets-deploy-app.md) в масштабируемых наборах виртуальных машин.

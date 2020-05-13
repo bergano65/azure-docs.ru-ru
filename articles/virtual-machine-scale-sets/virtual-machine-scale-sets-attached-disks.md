@@ -1,19 +1,20 @@
 ---
 title: Масштабируемые наборы виртуальных машин Azure, подключенные диски данных
 description: Узнайте, как использовать подключенные диски данных с масштабируемыми наборами виртуальных машин с помощью конкретных вариантов использования.
-author: avirishuv
-tags: azure-resource-manager
-ms.assetid: 76ac7fd7-2e05-4762-88ca-3b499e87906e
+author: ju-shim
+ms.author: jushiman
+ms.topic: how-to
 ms.service: virtual-machine-scale-sets
-ms.topic: conceptual
+ms.subservice: disks
 ms.date: 4/25/2017
-ms.author: avverma
-ms.openlocfilehash: 6e39a8ffb24b0cca720890e3d00a55d1e58fadc2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.reviewer: mimckitt
+ms.custom: mimckitt
+ms.openlocfilehash: e5bdb30929b4d93b05d850a56c9a6baf32f9856b
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80123376"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83125015"
 ---
 # <a name="azure-virtual-machine-scale-sets-and-attached-data-disks"></a>Масштабируемые наборы виртуальных машин Azure и подключенные диски данных
 Для развертывания доступного хранилища в [масштабируемых наборах виртуальных машин](/azure/virtual-machine-scale-sets/) Azure поддерживаются экземпляры виртуальных машин с подключенными дисками данных. Вы можете подключить диски данных к создаваемому или существующему масштабируемому набору.
@@ -89,7 +90,7 @@ ms.locfileid: "80123376"
 Диски данных, указанные в модели масштабируемого набора, всегда являются пустыми. Тем не менее вы можете подключить существующий диск данных к определенной виртуальной машине в масштабируемом наборе. Если вы хотите распространить данные по всем виртуальным машинам в масштабируемом наборе, вы можете дублировать диск данных и присоединить его к каждой виртуальной машине в масштабируемом наборе или создать пользовательский образ, содержащий данные и подготавливающий масштабируемый набор из этого пользовательского образа, либо использовать службы файлов Azure или аналогичное предложение хранилища данных.
 
 
-## <a name="additional-notes"></a>Дополнительные сведения
+## <a name="additional-notes"></a>Дополнительные замечания
 Поддержка Управляемых дисков Azure и дисков данных, подключенных к масштабируемым наборам, доступны в версии API [_30-04-2016-preview_](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/compute/resource-manager/Microsoft.Compute/preview/2016-04-30-preview/compute.json) или более поздней версии API Microsoft.Compute.
 
 Поддержка портал Azure для подключенных дисков данных в масштабируемых наборах ограничена. В зависимости от требований для управления подключенными дисками можно использовать шаблоны Azure, интерфейс командной строки, PowerShell, пакеты SDK и REST API.

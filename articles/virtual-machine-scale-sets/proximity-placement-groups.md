@@ -1,19 +1,20 @@
 ---
 title: Предварительная версия групп размещения с учетом расположения для масштабируемых наборов виртуальных машин
 description: Сведения о создании и использовании групп размещения с учетом расположения для масштабируемых наборов виртуальных машин Windows в Azure.
-author: cynthn
+author: ju-shim
+ms.author: jushiman
+ms.topic: how-to
 ms.service: virtual-machine-scale-sets
-ms.topic: conceptual
-ms.tgt_pltfrm: vm-windows
-ms.workload: infrastructure-services
+ms.subservice: availability
 ms.date: 07/01/2019
-ms.author: cynthn
-ms.openlocfilehash: 4fa2949e2a7e1b99ac26caa35f967e9dc9cf359a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.reviewer: mimckitt
+ms.custom: mimckitt
+ms.openlocfilehash: 18cb1ae3e549995d7b4732025906329bc609f360
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76273621"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124352"
 ---
 # <a name="preview-creating-and-using-proximity-placement-groups-using-powershell"></a>Предварительная версия: создание и использование групп размещения с помощью PowerShell
 

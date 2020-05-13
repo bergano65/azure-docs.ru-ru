@@ -1,17 +1,17 @@
 ---
 title: Изменение размера виртуальной машины Linux с помощью Azure CLI
 description: В статье рассматривается, как увеличить и уменьшить масштаб виртуальной машины Linux, изменяя ее размер.
-author: mikewasson
+author: DavidCBerry13
 ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 02/10/2017
-ms.author: mwasson
-ms.openlocfilehash: 20e7db80b55347c4a4a76b7c95d4d8bec368abda
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.author: daberry
+ms.openlocfilehash: cf2716ce5d24aa86e32f6f521134590c671d5011
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78969264"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83120986"
 ---
 # <a name="resize-a-linux-virtual-machine-using-azure-cli"></a>Изменение размера виртуальной машины Linux с помощью интерфейса командной строки Azure 
 
@@ -45,7 +45,7 @@ ms.locfileid: "78969264"
    > [!WARNING]
    > Освобождение виртуальной машины также освобождает все назначенные ей динамические IP-адреса. Это не влияет на диски ОС и данных.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Для повышения масштабируемости запустите несколько экземпляров виртуальных машин и выполните горизонтальное масштабирование. Дополнительные сведения см. [в статье Автоматическое масштабирование компьютеров Linux в масштабируемом наборе виртуальных машин][scale-set]. 
 
 <!-- links -->

@@ -1,21 +1,20 @@
 ---
 title: Развертывание набора масштабирования виртуальных машин с помощью Visual Studio
 description: Развертывание набора масштабирования виртуальных машин с помощью Visual Studio и шаблона Resource Manager
-ms.custom: vs-azure, H1Hack27Feb2017
-ms.workload: azure-vs
-author: mimckitt
-tags: azure-resource-manager
-ms.assetid: ed0786b8-34b2-49a8-85b5-2a628128ead6
+author: ju-shim
+ms.author: jushiman
+ms.topic: how-to
 ms.service: virtual-machine-scale-sets
-ms.topic: conceptual
+ms.subservice: visual-studio
 ms.date: 09/09/2019
-ms.author: mimckitt
-ms.openlocfilehash: adc91d5f4f79be8a85dfed7d10a882493f6427b0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.reviewer: mimckitt
+ms.custom: mimckitt
+ms.openlocfilehash: 826dc1858984508e54e160675dd10f6dfad88af8
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81273347"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124369"
 ---
 # <a name="how-to-create-a-virtual-machine-scale-set-with-visual-studio"></a>Как создать масштабируемый набор виртуальных машин с помощью Visual Studio
 
@@ -25,7 +24,7 @@ ms.locfileid: "81273347"
 
 Развертывания группы ресурсов Azure позволяют сгруппировать несколько связанных ресурсов Azure и опубликовать их в одной операции развертывания. Дополнительные сведения см. в статье [Создание и развертывание групп ресурсов Azure с помощью Visual Studio](../vs-azure-tools-resource-groups-deployment-projects-create-deploy.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы приступить к развертыванию масштабируемых наборов виртуальных машин в Visual Studio, необходимы следующие компоненты:
 
@@ -45,7 +44,7 @@ ms.locfileid: "81273347"
 
     ![Присвойте имя и создайте проект](media/virtual-machine-scale-sets-vs-create/configure-azure-resource-group.png)
 
-1. В списке шаблонов выберите шаблон масштабируемый **набор виртуальных машин Windows** или **масштабируемый набор виртуальных машин Linux** . Нажмите кнопку **OK**.
+1. В списке шаблонов выберите шаблон масштабируемый **набор виртуальных машин Windows** или **масштабируемый набор виртуальных машин Linux** . Нажмите кнопку **ОК**.
 
    ![Выберите шаблон виртуальной машины](media/virtual-machine-scale-sets-vs-create/select-vm-template.png)
 
@@ -65,7 +64,7 @@ ms.locfileid: "81273347"
 
 Разверните шаблон Azure Resource Manager, чтобы создать ресурс масштабируемого набора виртуальных машин:
 
-1. В **Обозреватель решений**щелкните правой кнопкой мыши проект и выберите **развернуть** > **создать**.
+1. В **Обозреватель решений**щелкните правой кнопкой мыши проект и выберите **развернуть**  >  **создать**.
 
     ![Развертывание проекта](media/virtual-machine-scale-sets-vs-create/deploy-new-project.png)
 
@@ -85,7 +84,7 @@ ms.locfileid: "81273347"
 
 ## <a name="explore-your-virtual-machine-scale-set"></a>Изучение масштабируемого набора виртуальных машин<a name="exploring-your-virtual-machine-scale-set"></a>
 
-Выберите **Просмотреть** > **Cloud Explorer** , чтобы просмотреть новый масштабируемый набор виртуальных машин. При необходимости используйте **Обновить все**.
+Выберите **Просмотреть**  >  **Cloud Explorer** , чтобы просмотреть новый масштабируемый набор виртуальных машин. При необходимости используйте **Обновить все**.
 
 ![Cloud Explorer](media/virtual-machine-scale-sets-vs-create/cloud-explorer.png)
 
@@ -93,6 +92,6 @@ ms.locfileid: "81273347"
 
  Портал предоставляет лучший способ управления инфраструктурой Azure с помощью веб-браузера. Обозреватель ресурсов Azure предоставляет простой способ просмотра и отладки ресурсов Azure. Обозреватель ресурсов Azure предлагает представление экземпляров, а также команды PowerShell для ресурсов, которые вы ищете.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-После успешного развертывания масштабируемых наборов виртуальных машин с помощью Visual Studio можно выполнить дальнейшую настройку проекта в соответствии с требованиями приложения. Например, настройте Автомасштабирование, добавив ресурс **Insights** . Вы можете добавить инфраструктуру в шаблон, например автономные виртуальные машины, или развернуть приложения с помощью расширения пользовательских сценариев. Хорошим примером шаблонов можно найти в репозитории [шаблонов](https://github.com/Azure/azure-quickstart-templates) быстрого запуска Azure. Найдите параметр `vmss`.
+После успешного развертывания масштабируемых наборов виртуальных машин с помощью Visual Studio можно выполнить дальнейшую настройку проекта в соответствии с требованиями приложения. Например, настройте Автомасштабирование, добавив ресурс **Insights** . Вы можете добавить инфраструктуру в шаблон, например автономные виртуальные машины, или развернуть приложения с помощью расширения пользовательских сценариев. Хорошим примером шаблонов можно найти в репозитории [шаблонов](https://github.com/Azure/azure-quickstart-templates) быстрого запуска Azure. Найдите `vmss`.

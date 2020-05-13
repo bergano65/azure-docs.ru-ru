@@ -1,19 +1,20 @@
 ---
 title: Изменение масштабируемого набора виртуальных машин Azure
 description: Узнайте, как изменить и обновить масштабируемый набор виртуальных машин Azure с помощью интерфейсов REST API, Azure PowerShell и Azure CLI.
-author: mimckitt
-tags: azure-resource-manager
-ms.assetid: e229664e-ee4e-4f12-9d2e-a4f456989e5d
+author: ju-shim
+ms.author: jushiman
+ms.topic: how-to
 ms.service: virtual-machine-scale-sets
-ms.topic: conceptual
+ms.subservice: management
 ms.date: 03/10/2020
-ms.author: mimckitt
-ms.openlocfilehash: af5998a4207521d49ea4fd7956256aa6c880e6e9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.reviewer: mimckitt
+ms.custom: mimckitt
+ms.openlocfilehash: 9498babd9605c46d752c5fe1eb1b077f6d911351
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79476830"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83121020"
 ---
 # <a name="modify-a-virtual-machine-scale-set"></a>Изменение масштабируемого набора виртуальных машин
 
@@ -449,5 +450,5 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
 > Эти команды предполагают наличие только одной конфигурации IP и балансировщика нагрузки в масштабируемом наборе. Если их несколько, может потребоваться использовать индекс списка, отличный от *0*.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Общие задачи управления масштабируемыми наборами можно также выполнять с помощью [Azure CLI](virtual-machine-scale-sets-manage-cli.md) или [Azure PowerShell](virtual-machine-scale-sets-manage-powershell.md).

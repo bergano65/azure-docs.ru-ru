@@ -3,12 +3,12 @@ title: Вопросы и ответы о Службе Azure Kubernetes (AKS)
 description: Найдите ответы на некоторые распространенные вопросы о службе Azure Kubernetes (AKS).
 ms.topic: conceptual
 ms.date: 05/04/2020
-ms.openlocfilehash: 112060e72f36bfe5d11a997fc4161e26c36259ff
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: 5ba776424462b3a8b586b1f90e83f409770e5597
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82854240"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83123825"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Вопросы и ответы о Службе Azure Kubernetes (AKS)
 
@@ -127,6 +127,8 @@ namespaceSelector:
 
 ## <a name="does-aks-offer-a-service-level-agreement"></a>Предлагает ли AKS соглашение об уровне обслуживания?
 
+AKS обеспечивает возможность достижения 99,95% доступности для сервера API с помощью [соглашения об уровне обслуживания] [время работы — sla.md].
+
 В соглашении об уровне обслуживания (SLA) поставщик соглашается платить клиенту на стоимость службы, если опубликованный уровень обслуживания не будет удовлетворен. Так как AKS бесплатно, затраты на возмещение не предоставляются, поэтому AKS не имеет формального соглашения об уровне обслуживания. Однако AKS ищет доступность по крайней мере 99,5% для сервера API Kubernetes.
 
 Важно понимать различие между доступностью службы AKS, которая относится к бесперебойной работе плоскости управления Kubernetes и доступности конкретной рабочей нагрузки, работающей на виртуальных машинах Azure. Хотя плоскость управления может быть недоступна, если плоскость управления не готова, рабочие нагрузки кластера, работающие на виртуальных машинах Azure, по-прежнему могут работать. На виртуальных машинах Azure оплачиваются такие ресурсы, которые поддерживаются финансовым соглашением об уровне обслуживания. [Дополнительные сведения](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/) о соглашении об уровне обслуживания для виртуальной машины Azure и о том, как повысить доступность, можно получить с помощью таких функций, как [зоны доступности][availability-zones].
@@ -137,7 +139,7 @@ namespaceSelector:
 
 ## <a name="can-i-movemigrate-my-cluster-between-azure-tenants"></a>Можно ли переместить или перенести кластер между клиентами Azure?
 
-`az aks update-credentials` Команду можно использовать для перемещения кластера AKS между клиентами Azure. Следуйте инструкциям в разделе [выберите, чтобы обновить или создать субъект-службу](https://docs.microsoft.com/azure/aks/update-credentials) , а затем [Обновите кластер AKS с новыми учетными данными](https://docs.microsoft.com/azure/aks/update-credentials#update-aks-cluster-with-new-service-principal-credentials).
+`az aks update-credentials`Команду можно использовать для перемещения кластера AKS между клиентами Azure. Следуйте инструкциям в разделе [выберите, чтобы обновить или создать субъект-службу](https://docs.microsoft.com/azure/aks/update-credentials) , а затем [Обновите кластер AKS с новыми учетными данными](https://docs.microsoft.com/azure/aks/update-credentials#update-aks-cluster-with-new-service-principal-credentials).
 
 ## <a name="can-i-movemigrate-my-cluster-between-subscriptions"></a>Можно ли переместить или перенести кластер между подписками?
 
@@ -173,7 +175,7 @@ namespaceSelector:
 
 ## <a name="can-i-use-the-virtual-machine-scale-set-apis-to-scale-manually"></a>Можно ли использовать API-интерфейсы масштабируемого набора виртуальных машин для масштабирования вручную?
 
-Нет, операции масштабирования с использованием API-интерфейсов масштабируемого набора виртуальных машин не поддерживаются. Используйте API-интерфейсы AKS`az aks scale`().
+Нет, операции масштабирования с использованием API-интерфейсов масштабируемого набора виртуальных машин не поддерживаются. Используйте API-интерфейсы AKS ( `az aks scale` ).
 
 ## <a name="can-i-use-virtual-machine-scale-sets-to-manually-scale-to-0-nodes"></a>Можно ли использовать масштабируемые наборы виртуальных машин для ручного масштабирования в 0 узлов?
 
@@ -209,6 +211,7 @@ AKS не является управляемой службой, и управл
 [bcdr-bestpractices]: ./operator-best-practices-multi-region.md#plan-for-multiregion-deployment
 [availability-zones]: ./availability-zones.md
 [az-regions]: ../availability-zones/az-region.md
+[время работы — соглашение об уровне обслуживания]./uptime-sla.mdd
 
 <!-- LINKS - external -->
 [aks-regions]: https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service

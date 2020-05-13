@@ -1,18 +1,20 @@
 ---
 title: Использование расширения работоспособности приложений с масштабируемыми наборами виртуальных машин Azure
 description: Узнайте, как использовать расширение "Работоспособность приложения" для наблюдения за работоспособностью приложений, развернутых в масштабируемых наборах виртуальных машин.
-author: mimckitt
-tags: azure-resource-manager
+author: ju-shim
+ms.author: jushiman
+ms.topic: how-to
 ms.service: virtual-machine-scale-sets
-ms.topic: conceptual
+ms.subservice: extensions
 ms.date: 05/06/2020
-ms.author: mimckitt
-ms.openlocfilehash: 30f68d22a228e6de596e6999490ea7789ab21547
-ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
+ms.reviewer: mimckitt
+ms.custom: mimckitt
+ms.openlocfilehash: 4710d03c4d5b2f2679a0d6b65f38ec584f9a056c
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82864374"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124114"
 ---
 # <a name="using-application-health-extension-with-virtual-machine-scale-sets"></a>Использование расширения "Работоспособность приложения" с масштабируемыми наборами виртуальных машин
 Мониторинг работоспособности приложения предоставляет важные сведения, которые позволяют определить, когда требуется администрирование и обновление развертывания. Масштабируемые наборы виртуальных машин Azure поддерживают [последовательные обновления](virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model), включая [автоматические обновления образа ОС](virtual-machine-scale-sets-automatic-upgrade.md), которые зависят от мониторинга работоспособности отдельных экземпляров для обновления развертывания. Расширение работоспособности также можно использовать для отслеживания работоспособности приложений каждого экземпляра в масштабируемом наборе и выполнения восстановления экземпляров с помощью [автоматического восстановления экземпляров](virtual-machine-scale-sets-automatic-instance-repairs.md).
@@ -60,15 +62,15 @@ ms.locfileid: "82864374"
 | версия_API | `2018-10-01` | Дата |
 | publisher | `Microsoft.ManagedServices` | строка |
 | type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | строка |
-| typeHandlerVersion | `1.0` | int |
+| typeHandlerVersion | `1.0` | INT |
 
 ### <a name="settings"></a>"Настройки"
 
 | Имя | Значение и пример | Тип данных
 | ---- | ---- | ----
 | protocol | `http`, `https` или `tcp` | строка |
-| порт | Необязательно, если `http` параметр `https`Protocol имеет или, является обязательным, если используется протокол`tcp` | int |
-| requestPath | Обязательно, если параметр `http` Protocol `https`имеет или, не разрешен, если используется протокол`tcp` | строка |
+| порт | Необязательно, если параметр Protocol имеет `http` или `https` , является обязательным, если используется протокол`tcp` | INT |
+| requestPath | Обязательно, если параметр Protocol имеет `http` или `https` , не разрешен, если используется протокол`tcp` | строка |
 
 ## <a name="deploy-the-application-health-extension"></a>Развертывание расширение "Работоспособность приложения"
 Существует несколько способов развертывания расширения "Работоспособность приложения" в масштабируемые наборы, которые описаны в приведенных ниже примерах.

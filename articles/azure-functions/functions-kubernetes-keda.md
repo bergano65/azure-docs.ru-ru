@@ -5,12 +5,12 @@ author: jeffhollan
 ms.topic: conceptual
 ms.date: 11/18/2019
 ms.author: jehollan
-ms.openlocfilehash: 2c06fdba8f60243acf4e0fabd23df8b832c210db
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5c050eb38e47ce2ab9d11e5c92eb7bdd3ac8e572
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78301681"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83121700"
 ---
 # <a name="azure-functions-on-kubernetes-with-keda"></a>Функции Azure в Kubernetes с Кеда
 
@@ -28,11 +28,11 @@ ms.locfileid: "78301681"
 
 ### <a name="installing-with-helm"></a>Установка с помощью Helm
 
-Существует несколько способов установки Кеда в любом кластере Kubernetes, включая Helm.  Параметры развертывания описаны на [сайте Кеда](https://keda.sh/deploy/).
+Существует несколько способов установки Кеда в любом кластере Kubernetes, включая Helm.  Параметры развертывания описаны на [сайте Кеда](https://keda.sh/docs/deploy/).
 
 ## <a name="deploying-a-function-app-to-kubernetes"></a>Развертывание приложения-функции в Kubernetes
 
-Вы можете развернуть любое приложение-функцию в кластере Kubernetes, работающем под Кеда.  Так как функции выполняются в контейнере DOCKER, вашему проекту требуется `Dockerfile`.  Если у вас ее еще нет, можно добавить Dockerfile, выполнив следующую команду в корне проекта функций:
+Вы можете развернуть любое приложение-функцию в кластере Kubernetes, работающем под Кеда.  Так как функции выполняются в контейнере DOCKER, вашему проекту требуется `Dockerfile` .  Если у вас ее еще нет, можно добавить Dockerfile, выполнив следующую команду в корне проекта функций:
 
 ```cli
 func init --docker-only
@@ -41,7 +41,7 @@ func init --docker-only
 Чтобы создать образ и развернуть функции в Kubernetes, выполните следующую команду:
 
 > [!NOTE]
-> Основные инструменты будут использовать DOCKER CLI для создания и публикации образа. Убедитесь, что DOCKER уже установлен и подключен к вашей учетной записи с `docker login`помощью.
+> Основные инструменты будут использовать DOCKER CLI для создания и публикации образа. Убедитесь, что DOCKER уже установлен и подключен к вашей учетной записи с помощью `docker login` .
 
 ```cli
 func kubernetes deploy --name <name-of-function-deployment> --registry <container-registry-username>
@@ -49,15 +49,15 @@ func kubernetes deploy --name <name-of-function-deployment> --registry <containe
 
 > Замените `<name-of-function-deployment>` на имя приложения-функции.
 
-При этом создается ресурс `Deployment` Kubernetes, `ScaledObject` ресурс и `Secrets`, который включает переменные среды, импортированные из `local.settings.json` файла.
+При этом создается `Deployment` ресурс Kubernetes, `ScaledObject` ресурс и `Secrets` , который включает переменные среды, импортированные из `local.settings.json` файла.
 
 ### <a name="deploying-a-function-app-from-a-private-registry"></a>Развертывание приложения-функции из частного реестра
 
-Приведенный выше поток работает и для закрытых реестров.  Если вы извлекаете образ контейнера из частного реестра, включите `--pull-secret` флаг, который ссылается на секрет Kubernetes, содержащий частные учетные данные реестра при запуске `func kubernetes deploy`.
+Приведенный выше поток работает и для закрытых реестров.  Если вы извлекаете образ контейнера из частного реестра, включите `--pull-secret` флаг, который ссылается на секрет Kubernetes, содержащий частные учетные данные реестра при запуске `func kubernetes deploy` .
 
 ## <a name="removing-a-function-app-from-kubernetes"></a>Удаление приложения-функции из Kubernetes
 
-После развертывания можно удалить функцию, удалив связанную `Deployment`, `ScaledObject` `Secrets` созданную.
+После развертывания можно удалить функцию, удалив связанную `Deployment` , `ScaledObject` `Secrets` созданную.
 
 ```cli
 kubectl delete deploy <name-of-function-deployment>
@@ -83,8 +83,8 @@ kubectl delete secret <name-of-function-deployment>
 
 Вы можете использовать функции Azure, которые предоставляют триггеры HTTP, но Кеда не управляют ими напрямую.  Вы можете использовать триггер Prometheus Кеда для [масштабирования функций HTTP Azure от 1 до *n* экземпляров](https://dev.to/anirudhgarg_99/scale-up-and-down-a-http-triggered-function-app-in-kubernetes-using-keda-4m42).
 
-## <a name="next-steps"></a>Дальнейшие шаги
-Дополнительные сведения см. в следующих ресурсах:
+## <a name="next-steps"></a>Next Steps
+Для получения дополнительных сведений см. следующие ресурсы:
 
 * [Создание функции с помощью пользовательского образа](functions-create-function-linux-custom-image.md)
 * [Как программировать и тестировать функции Azure в локальной среде](functions-develop-local.md)

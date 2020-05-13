@@ -13,12 +13,12 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 02/06/2020
 tags: azure-synpase
-ms.openlocfilehash: e5b281d59245d8fbd32b18f4ac5fe577fc7ff309
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2759644c68d65e76de222a0ac74f1d4900caddc0
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78192920"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83121258"
 ---
 # <a name="dynamic-data-masking-for-azure-sql-database-and-azure-synapse-analytics"></a>Динамическое маскирование данных для базы данных SQL Azure и Azure синапсе Analytics
 
@@ -44,7 +44,7 @@ ms.locfileid: "78192920"
 
 | Функция маскирования | Логика маскирования |
 | --- | --- |
-| **По умолчанию** |**Полное маскирование в соответствии с типами данных предопределенных полей**<br/><br/>• Для строковых типов данных (nchar, ntext, nvarchar) используется XXXX или меньшее количество символов "X", если размер поля меньше 4 символов.<br/>• Для числовых типов данных (bigint, bit, decimal, int, money, numeric, smallint, smallmoney, tinyint, float, real) используется нулевое значение.<br/>• Для типов данных даты и времени (date, datetime2, datetime, datetimeoffset, smalldatetime, time) используется формат 01-01-1900.<br/>• Для варианта SQL используется значение по умолчанию текущего типа.<br/>• Для XML используется маскированный документ \</>.<br/>.• Используйте пустое значение для специальных типов данных (таблица меток времени, hierarchyid, GUID, binary, image, пространственные типы varbinary). |
+| **Значение по умолчанию** |**Полное маскирование в соответствии с типами данных предопределенных полей**<br/><br/>• Для строковых типов данных (nchar, ntext, nvarchar) используется XXXX или меньшее количество символов "X", если размер поля меньше 4 символов.<br/>• Для числовых типов данных (bigint, bit, decimal, int, money, numeric, smallint, smallmoney, tinyint, float, real) используется нулевое значение.<br/>• Для типов данных даты и времени (date, datetime2, datetime, datetimeoffset, smalldatetime, time) используется формат 01-01-1900.<br/>• Для варианта SQL используется значение по умолчанию текущего типа.<br/>• Для XML \< используется маскированный документ/>.<br/>.• Используйте пустое значение для специальных типов данных (таблица меток времени, hierarchyid, GUID, binary, image, пространственные типы varbinary). |
 | **Кредитная карта** |**Метод маскирования, который предоставляет последние четыре цифры назначенных полей** и добавляет строковую константу в качестве префикса в формате номера кредитной карты.<br/><br/>XXXX-XXXX-XXXX-1234 |
 | **Электронная почта** |**Метод маскирования, который предоставляет первую букву и заменяет домен на XXX.com,** используя префикс постоянной строки в форме адреса электронной почты.<br/><br/>aXX@XXXX.com |
 | **Случайное число** |**Метод маскирования, который формирует случайное число** в соответствии с выбранными границами и типами фактических данных. Если установленные границы равны, то функция маскирования будет постоянным числом.<br/><br/>![Область навигации](./media/sql-database-dynamic-data-masking-get-started/1_DDM_Random_number.png) |
@@ -58,8 +58,28 @@ ms.locfileid: "78192920"
 
 ## <a name="set-up-dynamic-data-masking-for-your-database-using-powershell-cmdlets"></a>Настройка динамического маскирования данных для базы данных с помощью командлетов PowerShell
 
-См. статью с описанием [командлетов Базы данных SQL Azure](https://docs.microsoft.com/powershell/module/az.sql).
+### <a name="data-masking-policy"></a>Политика маскирования данных
+
+- [Get-Азсклдатабаседатамаскингполици](https://docs.microsoft.com/powershell/module/az.sql/Get-AzSqlDatabaseDataMaskingPolicy)
+- [Set-Азсклдатабаседатамаскингполици](https://docs.microsoft.com/powershell/module/az.sql/Set-AzSqlDatabaseDataMaskingPolicy)
+
+### <a name="data-masking-rules"></a>Правила маскирования данных
+
+- [Get-Азсклдатабаседатамаскингруле](https://docs.microsoft.com/powershell/module/az.sql/Get-AzSqlDatabaseDataMaskingRule)
+- [New-Азсклдатабаседатамаскингруле](https://docs.microsoft.com/powershell/module/az.sql/New-AzSqlDatabaseDataMaskingRule)
+- [Remove-Азсклдатабаседатамаскингруле](https://docs.microsoft.com/powershell/module/az.sql/Remove-AzSqlDatabaseDataMaskingRule)
+- [Set-Азсклдатабаседатамаскингруле](https://docs.microsoft.com/powershell/module/az.sql/Set-AzSqlDatabaseDataMaskingRule)
 
 ## <a name="set-up-dynamic-data-masking-for-your-database-using-rest-api"></a>Настройка динамической маскировки данных для базы данных с помощью REST API
 
-Дополнительные сведения см. в статье с описанием [операций для Базы данных SQL Azure](https://docs.microsoft.com/rest/api/sql/).
+REST API можно использовать для программного управления политикой маскирования данных и правилами. Опубликованная REST API поддерживает следующие операции:
+
+### <a name="data-masking-policies"></a>Политики маскирования данных
+
+- [Создать или обновить](https://docs.microsoft.com/rest/api/sql/datamaskingpolicies/createorupdate): создает или обновляет метку чувствительности указанного столбца.
+- [Get](https://docs.microsoft.com/rest/api/sql/datamaskingpolicies/get): получает политику маскирования данных базы данных. 
+
+### <a name="data-masking-rules"></a>Правила маскирования данных
+
+- [Создать или обновить](https://docs.microsoft.com/rest/api/sql/datamaskingrules/createorupdate): создает или обновляет правило маскирования данных в базе данных.
+- [Список по базе данных](https://docs.microsoft.com/rest/api/sql/datamaskingrules/listbydatabase): Возвращает список правил маскирования данных базы данных.

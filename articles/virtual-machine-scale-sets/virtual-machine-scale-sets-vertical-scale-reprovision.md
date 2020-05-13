@@ -1,21 +1,20 @@
 ---
 title: Вертикальное масштабирование масштабируемых наборов виртуальных машин Azure
 description: Сведения о вертикальном масштабировании виртуальной машины в ответ на оповещения c помощью службы автоматизации Azure
-author: mimckitt
-tags: azure-resource-manager
-ms.assetid: 16b17421-6b8f-483e-8a84-26327c44e9d3
+author: ju-shim
+ms.author: jushiman
+ms.topic: how-to
 ms.service: virtual-machine-scale-sets
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-multiple
-ms.topic: conceptual
+ms.subservice: autoscale
 ms.date: 04/18/2019
-ms.author: mimckitt
-ms.openlocfilehash: c28c50ef78f67daa6adc4022d8feb559f5c1c1f0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.reviewer: avverma
+ms.custom: avverma
+ms.openlocfilehash: 69c613de02b9601966cae2d36c13428ca6c7becc
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81273364"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83121003"
 ---
 # <a name="vertical-autoscale-with-virtual-machine-scale-sets"></a>Вертикальное автомасштабирование масштабируемых наборов виртуальных машин
 
@@ -88,7 +87,7 @@ ms.locfileid: "81273364"
 > 
 
 ## <a name="create-an-azure-automation-account-with-run-as-capability"></a>Создание учетной записи службы автоматизации Azure с возможностью запуска от имени
-Сначала необходимо создать учетную запись службы автоматизации Azure, в которой будут размещаться модули runbook, используемые в масштабируемых наборах виртуальных машин. Недавно в [службе автоматизации Azure](https://azure.microsoft.com/services/automation/) появился компонент "Учетная запись запуска от имени". Этот компонент позволяет настраивать субъект-службу для автоматического запуска модулей runbook от имени пользователя. Дополнительные сведения можно найти в разделе
+Сначала необходимо создать учетную запись службы автоматизации Azure, в которой будут размещаться модули runbook, используемые в масштабируемых наборах виртуальных машин. Недавно в [службе автоматизации Azure](https://azure.microsoft.com/services/automation/) появился компонент "Учетная запись запуска от имени". Этот компонент позволяет настраивать субъект-службу для автоматического запуска модулей runbook от имени пользователя. Дополнительные сведения можно найти в разделе 
 
 * [Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](../automation/automation-sec-configure-azure-runas-account.md)
 

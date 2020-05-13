@@ -2,17 +2,19 @@
 title: Управление масштабируемыми наборами виртуальных машин с помощью Azure CLI
 description: Стандартные команды Azure CLI для управления масштабируемыми наборами виртуальных машин, в том числе команды для запуска и остановки экземпляра, а также для изменения емкости масштабируемого набора.
 author: ju-shim
-tags: azure-resource-manager
-ms.service: virtual-machine-scale-sets
-ms.topic: conceptual
-ms.date: 05/29/2018
 ms.author: jushiman
-ms.openlocfilehash: ad07a237dd40d836705b332c6c10356720901481
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: how-to
+ms.service: virtual-machine-scale-sets
+ms.subservice: management
+ms.date: 05/29/2018
+ms.reviewer: mimckitt
+ms.custom: mimckitt
+ms.openlocfilehash: 2742b0b73d4143159fd1ed1338988b01a2171041
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81011588"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124335"
 ---
 # <a name="manage-a-virtual-machine-scale-set-with-the-azure-cli"></a>Управление масштабируемым набором виртуальных машин с помощью Azure CLI
 На протяжении жизненного цикла масштабируемого набора виртуальных машин может возникнуть необходимость выполнить одну или несколько задач управления. Кроме того, можно создавать сценарии для автоматизации различных задач жизненного цикла. В этой статье подробно рассматриваются некоторые стандартные команды Azure CLI, которые позволяют выполнять эти задачи.
@@ -129,5 +131,5 @@ az vmss delete-instances --resource-group myResourceGroup --name myScaleSet --in
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 К другим типичным задачам управления масштабируемым набором относятся [развертывание приложения](virtual-machine-scale-sets-deploy-app.md) и [обновление экземпляров виртуальных машин](virtual-machine-scale-sets-upgrade-scale-set.md). Можно также использовать Azure CLI для [настройки правил автомасштабирования](virtual-machine-scale-sets-autoscale-overview.md).

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/05/2020
 ms.author: sudbalas
 Customer intent: As a key vault administrator, I want to move my vault to another subscription.
-ms.openlocfilehash: 4046d4ec5f62ffc4fab50e8c5a4a08fad326aa04
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: 450aa58d4ad9cbb721e621ec3db8b4ca7e914aa1
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82796958"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83121207"
 ---
 # <a name="moving-an-azure-key-vault-to-another-subscription"></a>Перемещение Azure Key Vault в другую подписку
 
@@ -50,7 +50,7 @@ ms.locfileid: "82796958"
 
 Перейдите на страницу политики Azure на портал Azure и просмотрите назначения политик для текущей подписки, а также подписку, на которую вы перемещаетесь, и убедитесь в отсутствии несоответствий.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Уровень участника доступа или выше текущей подписки, в которой существует хранилище ключей.
 * Доступ на уровне участника или более высокий уровень к подписке, в которую необходимо переместить хранилище ключей.
@@ -83,6 +83,9 @@ $vault.Properties.AccessPolicies = @()                                     # Acc
                                                                            # applications/users/rights so that it does not need to be                             # done after this whole activity. Here we are not setting 
                                                                            # any access policies. 
 Set-AzResource -ResourceId $vaultResourceId -Properties $vault.Properties  # Modifies the key vault's properties.
+
+Clear-AzContext                                                            #Clear the context from PowerShell
+Connect-AzAccount                                                          #Log in again to confirm you have the correct tenant id
 ````
 
 ```azurecli

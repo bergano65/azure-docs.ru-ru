@@ -3,14 +3,14 @@ title: Настройка параметров приложения функци
 description: Узнайте, как настроить параметры приложения-функции Azure.
 ms.assetid: 81eb04f8-9a27-45bb-bf24-9ab6c30d205c
 ms.topic: conceptual
-ms.date: 08/14/2019
+ms.date: 04/13/2020
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 662a04dbcc39f3fa95b0098eb8fe556b18b3495b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 057c030b060343d5bc6f85c38d61feee0b01dfde
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79276950"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83122309"
 ---
 # <a name="manage-your-function-app"></a>Управление приложением функции 
 
@@ -27,13 +27,15 @@ ms.locfileid: "79276950"
 
 ## <a name="get-started-in-the-azure-portal"></a>Начало работы на портале Azure
 
-Для начала перейдите на [портал Azure] и войдите, используя свою учетную запись Azure. На панели поиска в верхней части портала введите имя приложения-функции и выберите его в списке. После выбора приложения-функции появляется следующая страница:
+1. Для начала перейдите на [портал Azure] и войдите, используя свою учетную запись Azure. В строке поиска в верхней части портала введите имя приложения функции и выберите его из списка. 
 
-![Обзор приложения-функции на портале Azure](./media/functions-how-to-use-azure-function-app-settings/azure-function-app-main.png)
+2. В разделе **Параметры** в левой области выберите **Конфигурация**.
+
+    :::image type="content" source="./media/functions-how-to-use-azure-function-app-settings/azure-function-app-main.png" alt-text="Обзор приложения-функции на портале Azure":::
 
 Вы можете выбрать все необходимое для управления приложением-функцией на странице Обзор, в частности **[Параметры приложения](#settings)** и **[функции платформы](#platform-features)**.
 
-## <a name="application-settings"></a><a name="settings"></a>Параметры приложения
+## <a name="application-settings"></a><a name="settings"></a>Параметры приложений
 
 На вкладке **Параметры приложения** хранятся параметры, используемые приложением функции. Эти параметры хранятся в зашифрованном виде, поэтому необходимо выбрать параметр **Показать значения** , чтобы просмотреть значения на портале. Вы также можете получить доступ к параметрам приложения с помощью Azure CLI.
 
@@ -45,14 +47,14 @@ ms.locfileid: "79276950"
 
 ### <a name="azure-cli"></a>Azure CLI
 
-[`az functionapp config appsettings list`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-list) Команда возвращает существующие параметры приложения, как показано в следующем примере:
+[`az functionapp config appsettings list`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-list)Команда возвращает существующие параметры приложения, как показано в следующем примере:
 
 ```azurecli-interactive
 az functionapp config appsettings list --name <FUNCTION_APP_NAME> \
 --resource-group <RESOURCE_GROUP_NAME>
 ```
 
-[`az functionapp config appsettings set`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set) Команда добавляет или обновляет параметр приложения. В следующем примере создается параметр с именем `CUSTOM_FUNCTION_APP_SETTING` ключа и значением: `12345`
+[`az functionapp config appsettings set`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set)Команда добавляет или обновляет параметр приложения. В следующем примере создается параметр с именем ключа `CUSTOM_FUNCTION_APP_SETTING` и значением `12345` :
 
 
 ```azurecli-interactive
@@ -69,9 +71,7 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 
 ## <a name="platform-features"></a>Функции платформы
 
-![Вкладка функций платформы для приложения-функции](./media/functions-how-to-use-azure-function-app-settings/azure-function-app-features-tab.png)
-
-Приложения-функции выполняются на платформе службы приложения Azure и обслуживаются ею. Поэтому они имеют доступ к большинству функций базовой платформы веб-хостинга Azure. Вкладка **Функции платформы** предоставляет доступ ко многим функциям платформы службы приложений, которые можно использовать в приложениях-функциях. 
+Приложения функций выполняются в и обслуживаются платформой службы приложений Azure. Поэтому они имеют доступ к большинству функций базовой платформы веб-хостинга Azure. В левой области вы можете получить доступ ко многим функциям платформы службы приложений, которые можно использовать в приложениях-функциях. 
 
 > [!NOTE]
 > Не все функции службы приложений доступны при выполнении приложения с планом размещения потребления.
@@ -83,7 +83,7 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 + [Дополнительные инструменты (Kudu)](#kudu)
 + [Варианты развертывания](#deployment)
 + [CORS](#cors)
-+ [Аутентификация](#auth)
++ [Authentication](#auth)
 
 Дополнительные сведения о работе с параметрами службы приложений см. в статье [Настройка параметров в службе приложений Azure](../app-service/configure-common.md).
 
@@ -120,11 +120,11 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 
 #### <a name="portal"></a>Портал
 
-При настройке списка **разрешенных источников** для приложения-функции `Access-Control-Allow-Origin` заголовок автоматически добавляется ко всем ответам из конечных точек HTTP в приложении функции. 
+При настройке списка **разрешенных источников** для приложения `Access-Control-Allow-Origin` -функции заголовок автоматически добавляется ко всем ответам из конечных точек HTTP в приложении функции. 
 
 ![Настройка списка CORS приложения функции](./media/functions-how-to-use-azure-function-app-settings/configure-function-app-cors.png)
 
-При использовании подстановочного`*`знака () все остальные домены игнорируются. 
+При использовании подстановочного знака ( `*` ) все остальные домены игнорируются. 
 
 Используйте [`az functionapp cors add`](/cli/azure/functionapp/cors#az-functionapp-cors-add) команду, чтобы добавить домен в список разрешенных источников. В следующем примере добавляется домен contoso.com:
 
@@ -136,14 +136,14 @@ az functionapp cors add --name <FUNCTION_APP_NAME> \
 
 Используйте [`az functionapp cors show`](/cli/azure/functionapp/cors#az-functionapp-cors-show) команду для вывода списка текущих разрешенных источников.
 
-### <a name="authentication"></a><a name="auth"></a>Проверка подлинности
+### <a name="authentication"></a><a name="auth"></a>Аутентификация
 
 ![Настройка проверки подлинности для приложения-функции](./media/functions-how-to-use-azure-function-app-settings/configure-function-app-authentication.png)
 
 Если функции используют триггер HTTP, можно настроить обязательную предварительную проверку подлинности для вызовов. Служба приложений поддерживает Azure Active Directory проверку подлинности и вход с помощью поставщиков социальных сетей, таких как Facebook, Microsoft и Twitter. Дополнительные сведения о настройке определенных поставщиков аутентификации см. в разделе [Проверка подлинности и авторизация в службе приложений Azure](../app-service/overview-authentication-authorization.md). 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 + [Настройка параметров службы приложений Azure](../app-service/configure-common.md)
 + [Непрерывное развертывание для Функций Azure](functions-continuous-deployment.md)

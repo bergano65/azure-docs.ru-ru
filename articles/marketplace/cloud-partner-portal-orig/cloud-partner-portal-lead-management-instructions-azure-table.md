@@ -7,12 +7,12 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: dsindona
-ms.openlocfilehash: cee28c65b97d4ac163f78b746dc7be9ee210843c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e65f2041cdb2e25341bfd63783c70ec09c1216b5
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80280360"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124709"
 ---
 # <a name="lead-management-instructions-for-table-storage"></a>Инструкции по управлению интересами для хранилища таблиц
 
@@ -98,7 +98,7 @@ ms.locfileid: "80280360"
 
    - **Фильтрация запроса**. при выборе этого поля в всплывающем окне отображается значок **получить время** работы. Выберите **время в прошлом** , чтобы использовать это значение в качестве метки времени для фильтрации запроса. Также можно вставить в поле следующую функцию:
    
-      `CreatedTime Timestamp gt datetime'@{body('Get_past_time')}'` 
+      `CreatedTime Timestamp gt '@{body('Get_past_time')}'` 
 
      ![Настройка функции фильтрации запросов](./media/cloud-partner-portal-lead-management-instructions-azure-table/msflow-getentities-filterquery.png)
 
@@ -161,6 +161,6 @@ ms.locfileid: "80280360"
 
  ![Уведомление по электронной почте о сбое потока](./media/cloud-partner-portal-lead-management-instructions-azure-table/msflow-failure-note.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка потенциальных клиентов](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads)

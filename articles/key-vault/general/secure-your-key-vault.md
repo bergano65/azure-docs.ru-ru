@@ -2,20 +2,20 @@
 title: Безопасный доступ к хранилищу ключей — Azure Key Vault | Документация Майкрософт
 description: Управление правами доступа для Azure Key Vault, ключей и секретов. Описание модели проверки подлинности и авторизации для Key Vault и обеспечения защиты вашего хранилища ключей.
 services: key-vault
-author: amitbapat
-manager: rkarlin
+author: ShaneBala-keyvault
+manager: ravijan
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-ms.date: 01/07/2019
-ms.author: ambapat
-ms.openlocfilehash: 0ae1b26bb2e01d388f3f91d94134bb9723a5a305
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 05/11/2020
+ms.author: sudbalas
+ms.openlocfilehash: 6a838455bfda47dee55e8726e5eab071d2dfe4f7
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81432025"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83121156"
 ---
 # <a name="secure-access-to-a-key-vault"></a>Безопасный доступ к хранилищу ключей
 
@@ -129,13 +129,13 @@ Azure Key Vault — это облачная служба, которая обе
 | Группа безопасности | Участник Key Vault | Ключи: резервное копирование, создание, удаление, получение, импорт, перечисление, восстановление<br>Секреты: все операции |
 | Разработчики и&nbsp;операторы | Разрешение на развертывание Key Vault<br><br> **Примечание**. это разрешение позволяет развернутым виртуальным машинам получать секреты из хранилища ключей. | Нет |
 | Аудиторы | Нет | Ключи: перечисление<br>Секреты: перечисление<br><br> **Примечание**. это разрешение позволяет аудиторам проверять атрибуты (Теги, даты активации, сроки действия) для ключей и секретов, не выдаваемых в журналах. |
-| Приложение | Нет | Ключи: подписывание<br>Секреты: получение |
+| Развертывание | Нет | Ключи: подписывание<br>Секреты: получение |
 
 Трем ролям группы требуется доступ к другим ресурсам вместе с разрешениями Key Vault. Чтобы иметь возможность развернуть виртуальные машины (или компонент "Веб-приложения" Службы приложений Azure), разработчикам и операторам необходим доступ `Contributor` к таким типам ресурсов. Аудиторам требуется доступ на чтение к учетной записи хранения, где хранятся журналы Key Vault.
 
 Дополнительные сведения о программном развертывании сертификатов, ключей доступа и секретов см. в следующих ресурсах:
 - Запись блога о том, [как развернуть сертификаты на виртуальных машинах из хранилища ключей, управляемого клиентом](https://blogs.technet.microsoft.com/kv/2016/09/14/updated-deploy-certificates-to-vms-from-customer-managed-key-vault/).
-- Скачайте [примеры клиента Azure Key Vault](https://www.microsoft.com/download/details.aspx?id=45343). В них показано, как с помощью сертификата начальной загрузки выполнить аутентификацию в Azure AD и получить доступ к хранилищу ключей.
+- Просмотр [примеров клиента Azure Key Vault](https://docs.microsoft.com/samples/browse/?term=Key%20Vault). В них показано, как с помощью сертификата начальной загрузки выполнить аутентификацию в Azure AD и получить доступ к хранилищу ключей.
 
 Большую часть разрешений на доступ можно предоставить с помощью портала Azure. Чтобы предоставить подробные разрешения, можно использовать Azure PowerShell или Azure CLI.
 
@@ -223,7 +223,7 @@ Set-AzKeyVaultAccessPolicy -VaultName ContosoKeyVault -ObjectId (Get-AzADGroup -
 
 * Сведения о [настройке](/powershell/module/az.keyvault/Set-azKeyVaultAccessPolicy) и [удалении](/powershell/module/az.keyvault/Remove-azKeyVaultAccessPolicy) политики доступа к Key Vault с помощью PowerShell.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка брандмауэров и виртуальных сетей Azure Key Vault](network-security.md)
 

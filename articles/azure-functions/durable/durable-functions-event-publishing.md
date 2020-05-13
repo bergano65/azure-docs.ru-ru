@@ -2,13 +2,13 @@
 title: Публикации устойчивых функций в службе "Сетка событий Azure" (предварительная версия)
 description: Узнайте, как настроить автоматическую публикацию в службе "Сетка событий Azure" для устойчивых функций.
 ms.topic: conceptual
-ms.date: 03/14/2019
-ms.openlocfilehash: 671f7bd5221a936ea9dad0f0cece895bdbe9512f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 04/25/2020
+ms.openlocfilehash: c0106f3754e0cdcbf1f295fbe3f1b5def8dc3ca1
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81535491"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124319"
 ---
 # <a name="durable-functions-publishing-to-azure-event-grid-preview"></a>Публикации устойчивых функций в службе "Сетка событий Azure" (предварительная версия)
 
@@ -22,7 +22,7 @@ ms.locfileid: "81535491"
 
 * **Продолжительное фоновое действие**. При использовании устойчивых функций для продолжительного фонового действия эта функция позволяет вам узнать текущее состояние.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Установите [Microsoft. Azure. веб-jobs. Extensions. DurableTask](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask) в проекте устойчивые функции.
 * Установите [эмулятор хранения Azure](../../storage/common/storage-use-emulator.md) (только для Windows) или используйте существующую учетную запись хранения Azure.
@@ -30,7 +30,7 @@ ms.locfileid: "81535491"
 
 ## <a name="create-a-custom-event-grid-topic"></a>Создание пользовательского раздела сетки событий
 
-Создайте раздел сетки событий для отправки событий из устойчивых функций. Ниже показано, как создать раздел с помощью Azure CLI. Это также можно сделать с [помощью PowerShell](../../event-grid/custom-event-quickstart-powershell.md) или [портал Azure](../../event-grid/custom-event-quickstart-portal.md).
+Создайте раздел сетки событий для отправки событий из устойчивых функций. Ниже показано, как создать раздел с помощью Azure CLI. Вы также можете создать раздел с [помощью PowerShell](../../event-grid/custom-event-quickstart-powershell.md) или [портал Azure](../../event-grid/custom-event-quickstart-portal.md).
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -83,7 +83,7 @@ az eventgrid topic key list --name <topic_name> -g eventResourceGroup --query "k
 
 ### <a name="durable-functions-2x"></a>Устойчивые функции 2. x
 
-Добавьте `notifications` раздел к `durableTask` свойству файла, заменив `<topic_name>` выбранным именем. Если свойства `durableTask` или `extensions` не существуют, создайте их, как показано в следующем примере:
+Добавьте `notifications` раздел к `durableTask` свойству файла, заменив выбранным `<topic_name>` именем. Если `durableTask` свойства или `extensions` не существуют, создайте их, как показано в следующем примере:
 
 ```json
 {
@@ -101,7 +101,7 @@ az eventgrid topic key list --name <topic_name> -g eventResourceGroup --query "k
 }
 ```
 
-Возможные свойства конфигурации службы "Сетка событий Azure" можно найти в [документации Host. JSON](../functions-host-json.md#durabletask). После настройки `host.json` файла приложение функции отправляет события жизненного цикла в сетку событий. Это работает при запуске приложения функции как локально, так и в Azure.
+Возможные свойства конфигурации службы "Сетка событий Azure" можно найти в [документации Host. JSON](../functions-host-json.md#durabletask). После настройки `host.json` файла приложение функции отправляет события жизненного цикла в сетку событий. Это действие запускается при запуске приложения функции как локально, так и в Azure.
 
 Установите параметр приложения для ключа раздела в приложении-функции и `local.settings.json`. Следующий код JSON является примером `local.settings.json` для локальной отладки. Замените `<topic_key>` на ключ раздела.  
 
@@ -116,7 +116,7 @@ az eventgrid topic key list --name <topic_name> -g eventResourceGroup --query "k
 }
 ```
 
-Если используется [эмулятор хранения](../../storage/common/storage-use-emulator.md) (только для Windows), убедитесь, что он работает. Рекомендуется запустить команду `AzureStorageEmulator.exe clear all` перед выполнением.
+Если вы используете [эмулятор хранения](../../storage/common/storage-use-emulator.md) (только для Windows), убедитесь, что он работает. Рекомендуется запустить команду `AzureStorageEmulator.exe clear all` перед выполнением.
 
 Если вы используете существующую учетную запись хранения Azure, замените `UseDevelopmentStorage=true` в `local.settings.json` своей строкой подключения.
 
@@ -126,58 +126,71 @@ az eventgrid topic key list --name <topic_name> -g eventResourceGroup --query "k
 
 ### <a name="create-an-event-grid-trigger-function"></a>Создание функции триггера сетки событий
 
-Создайте функцию для получения событий жизненного цикла. Выберите **Пользовательская функция**.
+1. В приложении функции выберите **функции**, а затем выберите **+ Добавить** . 
 
-![Выберите создание пользовательской функции.](./media/durable-functions-event-publishing/functions-portal.png)
+   :::image type="content" source="./media/durable-functions-event-publishing/function-add-function.png" alt-text="Добавьте функцию в портал Azure." border="true":::
 
-Выберите триггер сетки событий и выберите язык.
+1. Выполните поиск по запросу **Сетка событий**, а затем выберите шаблон триггер службы " **Сетка событий Azure** ". 
 
-![Выберите триггер сетки событий.](./media/durable-functions-event-publishing/eventgrid-trigger.png)
+    :::image type="content" source="./media/durable-functions-event-publishing/function-select-event-grid-trigger.png" alt-text="Выберите шаблон триггера сетки событий в портал Azure." border="true":::
 
-Введите имя функции, а затем выберите `Create`.
+1. Присвойте новому триггеру имя, а затем выберите **создать функцию**.
 
-![Создайте триггер сетки событий.](./media/durable-functions-event-publishing/eventgrid-trigger-creation.png)
+    :::image type="content" source="./media/durable-functions-event-publishing/function-name-event-grid-trigger.png" alt-text="Назовите триггер сетки событий в портал Azure." border="true":::
 
-Будет создана функция со следующим кодом:
 
-# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
+    Будет создана функция со следующим кодом:
 
-```csharp
-#r "Newtonsoft.Json"
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Microsoft.Extensions.Logging;
+    # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-public static void Run(JObject eventGridEvent, ILogger log)
-{
-    log.LogInformation(eventGridEvent.ToString(Formatting.Indented));
-}
-```
+    ```csharp
+    #r "Newtonsoft.Json"
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using Microsoft.Extensions.Logging;
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
+    public static void Run(JObject eventGridEvent, ILogger log)
+    {
+        log.LogInformation(eventGridEvent.ToString(Formatting.Indented));
+    }
+    ```
 
-```javascript
-module.exports = async function(context, eventGridEvent) {
-    context.log(typeof eventGridEvent);
-    context.log(eventGridEvent);
-}
-```
+   # <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+   ```javascript
+   module.exports = async function(context, eventGridEvent) {
+       context.log(typeof eventGridEvent);
+       context.log(eventGridEvent);
+   }
+   ```
 
 ---
 
-Выберите `Add Event Grid Subscription`. Эта операция добавляет подписку службы "Сетка событий" для созданного вами раздела. Дополнительные сведения см. в разделе [Основные понятия в службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/concepts).
+### <a name="add-an-event-grid-subscription"></a>Добавить подписку на сетку событий
 
-![Выберите ссылку на триггер сетки событий.](./media/durable-functions-event-publishing/eventgrid-trigger-link.png)
+Теперь вы можете добавить подписку на сетку событий для созданного раздела сетки событий. Дополнительные сведения см. [в статье основные понятия в службе "Сетка событий Azure](https://docs.microsoft.com/azure/event-grid/concepts)".
 
-Выберите `Event Grid Topics` в качестве **типа раздела**. Выберите для раздела сетки событий созданную вами группу ресурсов. Затем выберите экземпляр раздела сетки событий. Нажмите кнопку `Create`.
+1. В новой функции выберите **Интеграция** , а затем выберите **триггер сетки событий (евентгридевент)**. 
 
-![создание подписки в службе "Сетка событий";](./media/durable-functions-event-publishing/eventsubscription.png)
+    :::image type="content" source="./media/durable-functions-event-publishing/eventgrid-trigger-link.png" alt-text="Выберите ссылку на триггер сетки событий." border="true":::
+
+1. Выберите **создать описание сетки событий**.
+
+    :::image type="content" source="./media/durable-functions-event-publishing/create-event-grid-subscription.png" alt-text="Создайте подписку на сетку событий." border="true":::
+
+1. Назовите свою подписку на события и выберите тип раздела **темы сетки событий** . 
+
+1. Выберите подписку. Затем выберите группу ресурсов и ресурс, созданные для раздела сетка событий. 
+
+1. Нажмите кнопку **создания**.
+
+    :::image type="content" source="./media/durable-functions-event-publishing/event-grid-subscription-details.png" alt-text="Создание подписки на сетку событий." border="true":::
 
 Теперь все готово для получения событий жизненного цикла.
 
 ## <a name="run-durable-functions-app-to-send-the-events"></a>Запуск Устойчивые функции приложения для отправки событий
 
-В проекте Устойчивые функции, который вы настроили ранее, запустите отладку на локальном компьютере и начните согласование. Приложение публикует события жизненного цикла Устойчивые функции в сетке событий. Убедитесь, что функция "Сетка событий" запускает созданную функцию прослушивателя, проверив ее журналы в портал Azure.
+В проекте Устойчивые функции, который вы настроили ранее, запустите отладку на локальном компьютере и начните согласование. Приложение публикует события жизненного цикла Устойчивые функции в сетке событий. Убедитесь, что функция "Сетка событий" активирует функцию прослушивателя, созданную путем проверки журналов в портал Azure.
 
 ```
 2019-04-20T09:28:21.041 [Info] Function started (Id=3301c3ef-625f-40ce-ad4c-9ba2916b162d)
@@ -241,7 +254,7 @@ module.exports = async function(context, eventGridEvent) {
 
 Для локального тестирования прочтите [таблицу событий функции Azure локальная отладка](../functions-debug-event-grid-trigger-local.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Управление экземплярами в устойчивых функциях (Функции Azure)](durable-functions-instance-management.md)

@@ -12,16 +12,16 @@ ms.workload: na
 ms.topic: article
 ms.date: 04/20/2020
 ms.author: juliako
-ms.openlocfilehash: 8a9c1ba8e6316ea79941fbec1fbd339893afdb35
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d78390aac51ea6fa70e1285b15dcc7ade74434ee
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82131205"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124590"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Заметки о выпуске индексатора видео служб мультимедиа Azure
 
->Получите уведомления о том, когда следует повторно посетить эту страницу для получения обновлений путем копирования и вставления `https://docs.microsoft.com/api/search/rss?search=%22Azure+Media+Services+Video+Indexer+release+notes%22&locale=en-us` этого URL-адреса в средство чтения канала RSS.
+>Получите уведомления о том, когда следует повторно посетить эту страницу для получения обновлений путем копирования и вставления этого URL-адреса `https://docs.microsoft.com/api/search/rss?search=%22Azure+Media+Services+Video+Indexer+release+notes%22&locale=en-us` в средство чтения канала RSS.
 
 Чтобы вы оставались в курсе последних разработок, в этой статье предоставлены такие сведения:
 
@@ -34,9 +34,9 @@ ms.locfileid: "82131205"
 
 ### <a name="new-widget-parameters-capabilities"></a>Новые возможности параметров мини-приложения
 
-Мини-приложение **Insights** содержит новые параметры: `language` и `control`.
+Мини-приложение **Insights** содержит новые параметры: `language` и `control` .
 
-В мини-приложении **проигрывателя** есть `locale` новый параметр. `locale` И параметры `language` , и управляют языком проигрывателя.
+В мини-приложении **проигрывателя** есть новый `locale` параметр. `locale`И параметры, и `language` управляют языком проигрывателя.
 
 Дополнительные сведения см. в разделе [типы мини](video-indexer-embed-widgets.md#widget-types) -приложений. 
 
@@ -53,12 +53,12 @@ ms.locfileid: "82131205"
     * [Get-Accounts-Authorization](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Get-Accounts-Authorization)
     * [Get-Accounts-with-Token](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Get-Accounts-With-Token)
  
-    Объект Account содержит `Url` поле, указывающее на расположение [веб-сайта индексатора видео](https://www.videoindexer.ai/).
+    Объект Account содержит поле, `Url` указывающее на расположение [веб-сайта индексатора видео](https://www.videoindexer.ai/).
 Для платных счетов `Url` поле в настоящий момент указывает на внутренний URL-адрес, а не на общедоступный веб-сайт.
 В ближайшие недели мы изменим его и возвращаем URL-адрес [веб-сайта индексатора видео](https://www.videoindexer.ai/) для всех учетных записей (пробная и платная).
 
     Не используйте внутренние URL-адреса. Вы должны использовать [общедоступные API индексатора видео](https://api-portal.videoindexer.ai/).
-* Если вы внедряет в приложения URL-адреса индексатора видео, а URL-адреса не указывают на [веб-сайт индексатора видео](https://www.videoindexer.ai/) или на [конечную точку API индексатора видео](https://api.videoindexer.ai) , а не в региональную конечную точку (например, `https://wus2.videoindexer.ai`), повторно создайте URL-адреса.
+* Если вы внедряет в приложения URL-адреса индексатора видео, а URL-адреса не указывают на [веб-сайт индексатора видео](https://www.videoindexer.ai/) или конечную точку API индексатора видео ( `https://api.videoindexer.ai` ), а не в региональную конечную точку (например, `https://wus2.videoindexer.ai` ), создайте URL-адреса заново.
 
    Это можно сделать одним из следующих:
 
@@ -73,7 +73,7 @@ ms.locfileid: "82131205"
  
 ### <a name="custom-language-support-for-additional-languages"></a>Поддержка пользовательского языка для дополнительных языков
 
-Индексатор видео теперь поддерживает пользовательские языковые модели для `ar-SY` , `en-UK`и `en-AU` (только для API).
+Индексатор видео теперь поддерживает пользовательские языковые модели для `ar-SY` , `en-UK` и `en-AU` (только для API).
  
 ### <a name="delete-account-timeframe-action-update"></a>Обновление действия временных рамок для удаления учетной записи
 
@@ -127,7 +127,7 @@ ms.locfileid: "82131205"
  
 * Поддержка пользовательских языковых моделей на корейском языке
 
-    Индексатор видео теперь поддерживает пользовательские языковые модели в корейском`ko-KR`языке () как в API, так и на портале. 
+    Индексатор видео теперь поддерживает пользовательские языковые модели в корейском языке ( `ko-KR` ) как в API, так и на портале. 
 * Новые языки, поддерживаемые для преобразования речи в текст (САМОНАСТРАИВАЮЩИХСЯ ПОРОГОВЫХ значений)
 
     API-интерфейсы индексатора видео теперь поддерживают САМОНАСТРАИВАЮЩИХСЯ ПОРОГОВЫХ значений в арабском Левантине (AR-SY), английском Великобритании (EN-GB) и диалекте English Австралии (en-AU).
@@ -241,6 +241,6 @@ ms.locfileid: "82131205"
 
 В дополнение к уже поддерживаемому формату субтитров (SRT, ВТТ и TTML), индексатор видео теперь поддерживает загрузку записи в форматах TXT и CSV.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Обзор](video-indexer-overview.md)

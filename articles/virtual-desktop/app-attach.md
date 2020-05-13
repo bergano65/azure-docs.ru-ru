@@ -5,21 +5,21 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 12/14/2019
+ms.date: 05/11/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ec69a9906eabb4ce56f79b1b88c2b5f2440f84b1
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: 94ec85ae658ca6012cd1f1594b431d12bb73013d
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82612475"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83121071"
 ---
 # <a name="set-up-msix-app-attach"></a>Настройка присоединения приложения MSIX
 
 > [!IMPORTANT]
 > Присоединение приложения MSIX в настоящее время находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания, и мы не рекомендуем использовать ее для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для выполнения производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 В этом разделе описано, как настроить подключение приложения MSIX в среде виртуальных рабочих столов Windows.
 
@@ -41,7 +41,7 @@ ms.locfileid: "82612475"
      >[!NOTE]
      >Для доступа к порталу предварительной оценки Windows необходимо быть членом программы предварительной оценки Windows. Дополнительные сведения о программе предварительной оценки Windows см. в [документации по предварительной проверке Windows](/windows-insider/at-home/).
 
-2. Прокрутите вниз до раздела **Выбор выпуска** и выберите **Windows 10 Предварительная версия Microsoft Enterprise (быстрая) — сборка 19035** или более поздняя версия.
+2. Прокрутите вниз до раздела **Выбор выпуска** и выберите **Windows 10 Предварительная версия Microsoft Enterprise (быстрая) — сборка 19041** или более поздняя версия.
 
 3. Выберите **подтвердить**, затем выберите нужный язык и нажмите кнопку **подтвердить** еще раз.
     
@@ -73,6 +73,14 @@ rem Disable Windows Update:
 
 sc config wuauserv start=disabled
 ```
+
+После отключения автоматического обновления необходимо включить Hyper-V, так как вы будете использовать команду Маунд-VHD для промежуточного размещения и отключения виртуального жесткого диска для отмены размещения. 
+
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All
+```
+>[!NOTE]
+>Для этого изменения потребуется перезапустить виртуальную машину.
 
 Затем подготовьте виртуальный жесткий диск виртуальной машины для Azure и отправьте полученный VHD-файл в Azure. Дополнительные сведения см. в статье [Подготовка и настройка главного образа VHD](set-up-customize-master-image.md).
 
@@ -211,7 +219,7 @@ sc config wuauserv start=disabled
 
 5.  Откройте командную строку и введите команду **mountvol**. Эта команда отобразит список томов и их идентификаторы GUID. Скопируйте идентификатор GUID тома, где буква диска совпадает с диском, к которому подключен виртуальный жесткий диск, на шаге 2.
 
-    Например, в этом примере выходных данных для команды mountvol при подключении виртуального жесткого диска к диску C необходимо скопировать приведенное выше `C:\`значение:
+    Например, в этом примере выходных данных для команды mountvol при подключении виртуального жесткого диска к диску C необходимо скопировать приведенное выше значение `C:\` :
 
     ```cmd
     Possible values for VolumeName along with current mount points are:
@@ -257,7 +265,7 @@ sc config wuauserv start=disabled
 
     {
 
-    Mount-Diskimage -ImagePath $vhdSrc -NoDriveLetter -Access ReadOnly
+    Mount-VHD -Path $vhdSrc -NoDriveLetter -ReadOnly
 
     Write-Host ("Mounting of " + $vhdSrc + " was completed!") -BackgroundColor Green
 

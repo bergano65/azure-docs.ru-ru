@@ -2,18 +2,19 @@
 title: Развертывание приложения в масштабируемом наборе виртуальных машин Azure
 description: Узнайте, как развертывать приложения в экземплярах виртуальных машин Windows и Linux, размещенных в масштабируемом наборе.
 author: ju-shim
-tags: azure-resource-manager
-ms.assetid: f8892199-f2e2-4b82-988a-28ca8a7fd1eb
-ms.service: virtual-machine-scale-sets
-ms.topic: conceptual
-ms.date: 05/29/2018
 ms.author: jushiman
-ms.openlocfilehash: e157db79f1835a8ca891dd360a99e3319565d1d4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: how-to
+ms.service: virtual-machine-scale-sets
+ms.subservice: management
+ms.date: 05/29/2018
+ms.reviewer: avverma
+ms.custom: avverma
+ms.openlocfilehash: 7c39088890680b6cfc903083283ed09cb7618d16
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81011469"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124930"
 ---
 # <a name="deploy-your-application-on-virtual-machine-scale-sets"></a>Развертывание приложения в масштабируемых наборах виртуальных машин
 
@@ -111,5 +112,5 @@ az vmss create \
 При использовании настраиваемого образа виртуальной машины с предварительно установленным приложением обновления приложения можно интегрировать в конвейер развертывания, чтобы создавать новые образы и развертывать обновления ОС в масштабируемом наборе. Такой подход позволяет конвейеру извлечь последние сборки приложения, создать и проверить образ виртуальной машины, а затем обновить экземпляры виртуальных машин в масштабируемом наборе. Чтобы запустить конвейер развертывания, который выполняет сборку обновлений приложения и развертывает их в настраиваемых образах виртуальных машин, можно [создать образ Packer и развернуть его с помощью Azure DevOps Services](/azure/devops/pipelines/apps/cd/azure/deploy-azure-scaleset) или использовать другую платформу (например, [Spinnaker](https://www.spinnaker.io/) или [Jenkins](https://jenkins.io/)).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о создании и развертывании приложений в масштабируемых наборах вы можете получить из раздела [Рекомендации по проектированию масштабируемых наборов](virtual-machine-scale-sets-design-overview.md). Дополнительные сведения об управлении масштабируемым набором см. в разделе [Управление масштабируемым набором виртуальных машин с помощью Azure PowerShell](virtual-machine-scale-sets-windows-manage.md).

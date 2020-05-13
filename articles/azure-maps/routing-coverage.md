@@ -1,19 +1,19 @@
 ---
 title: Покрытие маршрутизации | Карты Microsoft Azure
 description: В этой статье вы узнаете о регионах с покрытием маршрутизации для Microsoft Azureных карт.
-author: jinzh-azureiot
-ms.author: jinzh
+author: Philmea
+ms.author: philmea
 ms.date: 04/04/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.openlocfilehash: b59816abf0cd03450c9fc4ebb8417c62df7e3288
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e04f3d2f5ed575e9401c53faebd91b3bde004601
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79529397"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83123893"
 ---
 # <a name="azure-maps-routing-coverage"></a>Покрытие для маршрутизации в службе "Карты Azure"
 
@@ -177,7 +177,7 @@ ms.locfileid: "79529397"
 | + St. Бартельми                |        ✓       |                      |             |
 | + Сен-Мартен                    |        ✓       |                      |             |
 | + Сен-Пьер & Микелон         |        ✓       |                      |             |
-| Джорджия                        |        ✓       |                      |             |
+| Грузия                        |        ✓       |                      |             |
 | Германия                        |        ✓       |         ✓            |     ✓      | 
 | Греция                         |        ✓       |         ✓            |     ✓      |  
 | Гернси                       |        ✓       |                      |             |
@@ -243,6 +243,6 @@ ms.locfileid: "79529397"
 | Йемен                          |        ✓       |                      |             |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о маршрутизации Azure Maps см. на страницах справочника по [маршрутизации](https://docs.microsoft.com/rest/api/maps/route) .

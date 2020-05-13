@@ -1,20 +1,20 @@
 ---
 title: Отображение сведений об координатах на карте | Карты Microsoft Azure
 description: Сведения о том, как отображать сведения об адресе на карте, когда пользователь выбирает координату.
-author: jinzh-azureiot
-ms.author: jinzh
+author: Philmea
+ms.author: philmea
 ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 174bdc496e52a6ac8f2a2d631db92e0f21a819be
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 274d1102649dade1b3295bd02feba03f64a26ad5
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80371433"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83123995"
 ---
 # <a name="get-information-from-a-coordinate"></a>Получение сведений из координат
 
@@ -54,7 +54,7 @@ ms.locfileid: "80371433"
 
 Изменения курсора, всплывающего объекта и события щелчка создаются в [прослушивателе событий загрузки](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events)на карте. Эта структура кода обеспечивает полную загрузку Map перед получением сведений о координатах.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Рекомендации по использованию службы поиска Azure Maps](how-to-use-best-practices-for-search.md)
@@ -62,7 +62,7 @@ ms.locfileid: "80371433"
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Таблица](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
+> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"]
 > [Контекстное меню](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest)

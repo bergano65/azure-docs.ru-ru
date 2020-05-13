@@ -2,17 +2,19 @@
 title: Завершение уведомления для экземпляров масштабируемых наборов виртуальных машин Azure
 description: Узнайте, как включить уведомление об увольнении для экземпляров масштабируемых наборов виртуальных машин Azure.
 author: avirishuv
-tags: azure-resource-manager
-ms.service: virtual-machine-scale-sets
-ms.topic: conceptual
-ms.date: 02/26/2020
 ms.author: avverma
-ms.openlocfilehash: 6023e9bf7539b79446d0135ba731b61be166dd6e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: conceptual
+ms.service: virtual-machine-scale-sets
+ms.subservice: management
+ms.date: 02/26/2020
+ms.reviewer: jushiman
+ms.custom: avverma
+ms.openlocfilehash: 695fd03d7c1856ad39b7672d826f85bc4c68a99c
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79250755"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83125185"
 ---
 # <a name="terminate-notification-for-azure-virtual-machine-scale-set-instances"></a>Завершение уведомления для экземпляров масштабируемых наборов виртуальных машин Azure
 Экземпляры масштабируемых наборов могут использовать для получения уведомлений об увольнении экземпляра и задать предопределенное время ожидания задержки для операции завершения. Уведомление об увольнении отправляется через службу метаданных Azure — [запланированные события](../virtual-machines/windows/scheduled-events.md), которая предоставляет уведомления для и задержки таких операций, как перезагрузка и повторное развертывание. Решение добавляет еще одно событие — завершение — в список Запланированные события, а связанная задержка события завершения будет зависеть от предельной задержки, заданной пользователями в конфигурации модели масштабируемого набора.
@@ -197,5 +199,5 @@ az vmss update \
 ### <a name="getting-terminate-event-with-incorrect-notbefore-time"></a>Получение события завершения с неправильным временем NotBefore  
 После включения *счедуледевентспрофиле* в модели масштабируемого набора и установки *нотбефоретимеаут*обновите отдельные экземпляры до [последней модели](virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model) , чтобы отразить изменения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как [развертывать приложение](virtual-machine-scale-sets-deploy-app.md) в масштабируемых наборах виртуальных машин.
