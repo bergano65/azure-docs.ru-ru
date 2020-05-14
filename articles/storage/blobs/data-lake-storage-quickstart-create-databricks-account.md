@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 02/17/2020
 ms.reviewer: jeking
-ms.openlocfilehash: 346795b79a78589d949b035a803a67a9e5a2e8e5
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: b6dd1aab4c0ce6c656600d7cc7c71233d256aa0b
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77470740"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82780544"
 ---
 # <a name="quickstart-analyze-data-with-databricks"></a>Краткое руководство. Анализ данных с помощью Databricks
 
@@ -78,7 +78,7 @@ ms.locfileid: "77470740"
 
 Дополнительные сведения о создании кластеров см. в статье [о создании кластера Spark в Azure Databricks](https://docs.azuredatabricks.net/user-guide/clusters/create.html).
 
-## <a name="create-storage-account-container"></a>Создание контейнера учетной записи хранения
+## <a name="create-notebook"></a>Создание записной книжки
 
 В этом разделе показано создание записной книжки в рабочей области Azure Databricks и выполнение фрагментов кода для настройки учетной записи хранения.
 

@@ -3,13 +3,13 @@ author: erhopf
 ms.author: erhopf
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 07/23/2019
-ms.openlocfilehash: 8754504655cdd08c9bf9f89311cb6c5d1057f0e6
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.date: 05/11/2020
+ms.openlocfilehash: ddc61a0d0cb5a630282a9ba0589cef6fda29c4b5
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "78262026"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83343469"
 ---
 ## <a name="authenticate-with-azure-active-directory"></a>Проверка подлинности с помощью Azure Active Directory
 
@@ -101,3 +101,19 @@ ms.locfileid: "78262026"
    ```
 
 Кроме того, можно проверить подлинность субъекта-службы с помощью сертификата. Кроме субъекта-службы, субъект пользователя также поддерживается путем делегирования разрешений через другое приложение AAD. В этом случае вместо паролей или сертификатов пользователям будет предложено использовать двухфакторную проверку подлинности при получении маркера.
+
+## <a name="authorize-access-to-managed-identities"></a>Авторизация доступа к управляемым удостоверениям
+ 
+Cognitive Services поддерживает проверку подлинности Azure Active Directory (Azure AD) с помощью [управляемых удостоверений для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview). Управляемые удостоверения для ресурсов Azure могут авторизовать доступ к ресурсам Cognitive Services с помощью учетных данных Azure AD из приложений, работающих на виртуальных машинах Azure, приложений-функций, масштабируемых наборов виртуальных машин и других служб. Используя управляемые удостоверения для ресурсов Azure вместе с проверкой подлинности Azure AD, можно избежать хранения учетных данных в приложениях, выполняемых в облаке.  
+
+### <a name="enable-managed-identities-on-a-vm"></a>Включение управляемых удостоверений на виртуальной машине
+
+Прежде чем использовать управляемые удостоверения для ресурсов Azure для авторизации доступа к ресурсам Cognitive Services из виртуальной машины, необходимо включить управляемые удостоверения для ресурсов Azure на виртуальной машине. Сведения о том, как включить управляемые удостоверения для ресурсов Azure, см. в следующих статьях:
+
+- [Портал Azure](https://docs.microsoft.com/azure/active-directory/managed-service-identity/qs-configure-portal-windows-vm)
+- [Azure PowerShell](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm)
+- [Azure CLI](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm)
+- [Шаблон Azure Resource Manager](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm)
+- [Клиентские библиотеки Azure Resource Manager](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm)
+
+Дополнительные сведения об управляемых удостоверениях см. в статье [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
