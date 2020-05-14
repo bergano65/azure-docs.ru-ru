@@ -6,14 +6,14 @@ ms.reviewer: adwise
 tags: billing
 ms.service: cost-management-billing
 ms.topic: reference
-ms.date: 04/01/2020
+ms.date: 05/04/2020
 ms.author: banders
-ms.openlocfilehash: a9e1d838e7d3322ddf218c5cbec40b652709b5d7
-ms.sourcegitcommit: 3c318f6c2a46e0d062a725d88cc8eb2d3fa2f96a
+ms.openlocfilehash: 633ca5cd16b8e730225900c30c575e74a0956ada
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80586378"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82791686"
 ---
 # <a name="manage-costs-with-azure-budgets"></a>Управление затратами с помощью API управления бюджетом Azure
 
@@ -273,7 +273,7 @@ Logic Apps помогает создавать, планировать и авт
 1. Для параметра **Value** (Значение) задайте маркер, созданный с помощью ArmClient в конце последнего раздела.
 1. Выберите вкладку **Body** (Текст) в Postman.
 1. Установите переключатель **raw** (необработанный).
-1. В текстовом поле вставьте приведенный ниже пример определения бюджета, заменив значения параметров **subscriptionID**, **budgetname** и **actiongroupname** вашим идентификатором подписки, уникальным именем бюджета и именем созданной группы действий в URL-адресе и тексте запроса:
+1. В текстовом поле вставьте приведенный ниже пример определения бюджета, заменив значения параметров `subscriptionID`, `resourcegroupname``actiongroupname` вашим идентификатором подписки, уникальным именем группы ресурсов именем созданной группы действий в URL-адресе и тексте запроса:
 
     ```
         {

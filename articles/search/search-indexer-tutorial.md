@@ -1,5 +1,5 @@
 ---
-title: 'Руководство по индексированию данных из баз данных SQL Azure на C# '
+title: Руководство по C#. Индексирование данных SQL Azure
 titleSuffix: Azure Cognitive Search
 description: В этом учебнике по C# описано, как подключить базу данных SQL Azure, извлечь доступные для поиска данные и отправить их в индекс в службе "Когнитивный поиск Azure".
 manager: nitinme
@@ -8,14 +8,14 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 02/28/2020
-ms.openlocfilehash: 7660c89032ea3ef8371655b94b75c1f60603ee32
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: cab996eb7c0bfccf31ed49294c6aa4b3e8cefc8f
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78193974"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82780765"
 ---
-# <a name="tutorial-use-c-to-index-data-from-sql-databases-in-azure-cognitive-search"></a>Руководство по использованию C# для индексирования данных из баз данных SQL в Когнитивном поиске Azure
+# <a name="tutorial-index-azure-sql-data-using-the-net-sdk"></a>Руководство по Индексирование данных SQL Azure с помощью пакета SDK для .NET
 
 Вы можете настроить [индексатор](search-indexer-overview.md) извлекать из базы данных Azure SQL данные, доступные для поиска, и отправлять их для создания индекса поиска в службу "Когнитивный поиск Azure". 
 

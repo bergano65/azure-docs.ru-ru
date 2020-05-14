@@ -11,12 +11,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/10/2020
   ms.author: trbye
-  ms.openlocfilehash: 83bf5f9e623d1d777834e5efdd26fa4cdbc42819
-  ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+  ms.openlocfilehash: a0bf8a89fa34f8a7d22979f4b42faaf94db60281
+  ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
   ms.translationtype: MT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/29/2020
-  ms.locfileid: "81401468"
+  ms.lasthandoff: 05/12/2020
+  ms.locfileid: "83200624"
 landingContent:
 - title: О тексте в речь
   linkLists:
@@ -26,6 +26,8 @@ landingContent:
       url: text-to-speech.md
     - text: Основные сведения о синтезе речи
       url: text-to-speech-basics.md
+    - text: Использование SPX для преобразования текста в речь без кода
+      url: spx-overview.md
   - linkListType: quickstart
     links:
     - text: Синтезирование речи в виде речи докладчика

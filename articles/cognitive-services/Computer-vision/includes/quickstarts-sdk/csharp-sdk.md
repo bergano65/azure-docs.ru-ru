@@ -9,12 +9,12 @@ ms.subservice: computer-vision
 ms.topic: include
 ms.date: 12/05/2019
 ms.author: pafarley
-ms.openlocfilehash: 522adc0f07f4ab21e391b952284dff97b089dccc
-ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
+ms.openlocfilehash: 5a2de6cb4c7de6f789041d8df7ca562e97ee0863
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81791640"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82595335"
 ---
 <a name="HOLTop"></a>
 
@@ -23,7 +23,7 @@ ms.locfileid: "81791640"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Текущая версия [.NET Core](https://dotnet.microsoft.com/download/dotnet-core).
+* Последняя версия [пакета SDK для .NET Core](https://dotnet.microsoft.com/download/).
 
 ## <a name="setting-up"></a>Настройка
 
@@ -42,13 +42,13 @@ ms.locfileid: "81791640"
 
 В окне консоли (cmd, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение с именем `computer-vision-quickstart`. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: *ComputerVisionQuickstart.cs*.
 
-```console
+```dotnetcli
 dotnet new console -n computer-vision-quickstart
 ```
 
 Измените каталог на созданную папку приложения. Чтобы создать приложение, выполните следующую команду:
 
-```console
+```dotnetcli
 dotnet build
 ```
 
@@ -74,7 +74,7 @@ Build succeeded.
 
 В каталоге приложения установите клиентскую библиотеку службы "Компьютерное зрение" для .NET с помощью следующей команды:
 
-```console
+```dotnetcli
 dotnet add package Microsoft.Azure.CognitiveServices.Vision.ComputerVision --version 5.0.0
 ```
 
@@ -253,7 +253,7 @@ API "Компьютерное зрение" может использовать 
 
 Запустите приложение из каталога приложения с помощью команды `dotnet run`.
 
-```dotnet
+```dotnetcli
 dotnet run
 ```
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по C#. Индексирование нескольких источников данных
+title: Руководство по C#. Индексирование нескольких источников данных Azure
 titleSuffix: Azure Cognitive Search
 description: Узнайте, как импортировать данные из нескольких источников данных в один индекс службы "Когнитивный поиск Azure" с помощью индексаторов. В этом учебнике и примере кода используется язык C#.
 manager: nitinme
@@ -8,14 +8,14 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 02/28/2020
-ms.openlocfilehash: 8e75d9de45c64813ac75de635371d2435fb9261f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: eb1824e41fe9fc5185ae4e914b4828cddb2c42db
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78271479"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82780527"
 ---
-# <a name="tutorial-index-data-from-multiple-data-sources-in-c"></a>Руководство по индексированию данных из нескольких источников данных в C#
+# <a name="tutorial-index-from-multiple-data-sources-using-the-net-sdk"></a>Руководство по Индексирование из нескольких источников данных с помощью пакета SDK для .NET
 
 Когнитивный поиск Azure позволяет импортировать, анализировать и индексировать данные из нескольких источников данных в объединенный индекс для поиска. Это нужно для тех ситуаций, когда структурированные данные объединяются с менее структурированными данными или даже простым текстом из других источников, таких как текстовые документы, код HTML и JSON.
 
