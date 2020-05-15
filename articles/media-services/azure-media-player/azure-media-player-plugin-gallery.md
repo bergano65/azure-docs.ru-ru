@@ -6,12 +6,12 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: overview
 ms.date: 04/20/2020
-ms.openlocfilehash: 206200f3ba0757cd738439b58c8b94874cf5a938
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.openlocfilehash: ee29d1c45896583ef5aa5837e8383159db855d52
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81727501"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124624"
 ---
 # <a name="azure-media-player-plugin-gallery"></a>Коллекция подключаемых модулей Проигрывателя мультимедиа Azure #
 
@@ -26,7 +26,7 @@ ms.locfileid: "81727501"
 | Калькулятор частоты кадров и кода времени | [Демонстрация](http://mconvertitest001.blob.core.windows.net/public/example.html)                        | [GitHub](https://github.com/mconverti/media-services-javascript-azure-media-player-framerate-timecode-calculator-plugin)                     | Этот подключаемый модуль вычисляет частоту кадров в видео на основе контейнеров MP4 `tfhd`/`trun` в первом фрагменте видео MPEG-DASH, анализирует значение шкалы времени из манифеста клиента MPEG-DASH, а также предоставляет возможность получить код времени для полученного от проигрывателя абсолютного значения времени (и наоборот). |
 | <strike>Скорость воспроизведения</strike>                      | [Демонстрация](https://azure-samples.github.io/media-services-javascript-Azure-Media-Player-playback-rate-plugin/)                        | [GitHub](https://github.com/Azure-Samples/media-services-javascript-azure-media-player-time-tip-plugin)                     | Этот подключаемый модуль позволяет зрителям управлять скоростью воспроизведения видео. *Обратите внимание, что эта функция автоматически предоставляется в AMP версии 2.0.0 или более поздней, но по умолчанию она отключена.* Сведения о том, как включить ее, можно получить в [наших примерах](https://github.com/Azure-Samples/azure-media-player-samples). |
 | Всплывающее изображение времени при наведении указателя                      | [Демонстрация](http://sr-test.azurewebsites.net/Tests/Plugin%20Gallery/plugins/timetip/example.html)                        | [GitHub](https://github.com/Azure-Samples/media-services-javascript-azure-media-player-time-tip-plugin)                     | Отображение всплывающей подсказки с информацией о времени при наведении указателя мыши на индикатор выполнения, что позволяет выполнять точный поиск по времени. *Примечание. Этот подключаемый модуль уже интегрирован с AMP*, но здесь вы можете узнать, как он устроен на программном уровне.                                                                                                                       |
-| Наложение заголовка                       | [Демонстрация](https://azure-samples.github.io/media-services-javascript-azure-media-player-title-overlay-plugin/")                        | [GitHub](https://github.com/Azure-Samples/media-services-javascript-azure-media-player-title-overlay-plugin)                     | Помещает настраиваемый заголовок видео поверх изображения на экране. |
+| Наложение заголовка                       | [Демонстрация](https://azure-samples.github.io/media-services-javascript-azure-media-player-title-overlay-plugin/)                        | [GitHub](https://github.com/Azure-Samples/media-services-javascript-azure-media-player-title-overlay-plugin)                     | Помещает настраиваемый заголовок видео поверх изображения на экране. |
 | Маркеры временной шкалы                    | [Демонстрация](http://sr-test.azurewebsites.net/Tests/Plugin%20Gallery/plugins/timelinemarkers/example.html)                        | [GitHub](https://github.com/Azure-Samples/media-services-javascript-azure-media-player-timeline-markers-plugin)                     | Этот подключаемый модуль принимает массив значений времени и накладывает небольшие маркеры на индикатор выполнения в положениях, которые соответствуют этим моментам времени. |
 | Analytics                           | | | |
 | Application Insights                | [Запись блога](https://azure.microsoft.com/blog/player-analytics-azure-media-player-plugin/)                   | [GitHub](https://github.com/Azure-Samples/media-services-javascript-azure-media-player-application-insights-plugin)                     | Этот подключаемый модуль отслеживает метрики проигрывателя и передает их в Power BI для создания интуитивно понятного графического представления взаимодействия зрителей с проигрывателем. |

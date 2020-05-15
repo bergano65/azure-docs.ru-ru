@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 11/19/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: c9cea52e04a991e6e3ac64426f0443939f8aaa3a
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 7b02560d1e7b7c34a4d87dbdc468a85362aca4f7
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77914387"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993804"
 ---
 # <a name="work-with-the-previous-version-of-azure-migrate"></a>Работа с предыдущей версией службы "Миграция Azure"
 
@@ -216,7 +216,7 @@ Linux | Azure рекомендует эти [операционные систе
 4. Скопируйте идентификатор и ключ рабочей области. Они требуются для установки MMA на локальном компьютере.
 
 > [!NOTE]
-> Чтобы автоматизировать установку агентов, можно воспользоваться средством развертывания, например Configuration Manager, или средством нашего партнера, таким как [Intigua](https://www.intigua.com/getting-started-intigua-for-azure-migration), который предоставляет решение развертывания агентов для службы "Миграция Azure".
+> Чтобы автоматизировать установку агентов, можно воспользоваться средством развертывания, например Configuration Manager, или средством нашего партнера, таким как [Intigua](https://www.intigua.com/intigua-for-azure-migration), который предоставляет решение развертывания агентов для службы "Миграция Azure".
 
 
 #### <a name="install-the-mma-agent-on-a-windows-machine"></a>Установка агента MMA на компьютере Windows

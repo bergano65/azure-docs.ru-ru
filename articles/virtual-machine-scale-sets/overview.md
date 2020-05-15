@@ -2,18 +2,19 @@
 title: Общие сведения о масштабируемых наборах виртуальных машин в Azure
 description: Обзор масштабируемых наборов виртуальных машин Azure и сведения о том, как автоматически масштабировать приложения
 author: mimckitt
-tags: azure-resource-manager
-ms.service: virtual-machine-scale-sets
-ms.topic: overview
-ms.custom: mvc
-ms.date: 09/26/2019
 ms.author: mimckitt
-ms.openlocfilehash: 03e3c7b5c0696069729d3067faad8ceb91fc611f
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.topic: overview
+ms.service: virtual-machine-scale-sets
+ms.subservice: ''
+ms.date: 09/26/2019
+ms.reviewer: jushiman
+ms.custom: mimckitt
+ms.openlocfilehash: 986a2722515ac49aad9e655d1dcef06f5ce2e3dc
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81272548"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83198408"
 ---
 # <a name="what-are-virtual-machine-scale-sets"></a>Что такое наборы масштабирования виртуальных машин?
 Масштабируемые наборы виртуальных машин Azure позволяют создавать и администрировать группы идентичных виртуальных машин с балансировкой нагрузки. Число экземпляров виртуальных машин может автоматически увеличиваться или уменьшаться в зависимости от спроса или по определенному расписанию. Масштабируемые наборы обеспечивают высокий уровень доступности приложений и позволяют централизовать управление, настройку и обновление большого числа виртуальных машин. С помощью масштабируемых наборов виртуальных машин можно создавать крупномасштабные службы для таких областей, как вычисления, большие данные и контейнерные рабочие нагрузки.
