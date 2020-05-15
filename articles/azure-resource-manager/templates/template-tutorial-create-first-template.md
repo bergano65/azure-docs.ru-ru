@@ -2,15 +2,15 @@
 title: Учебник. Создание шаблона и его развертывание
 description: Создайте свой первый шаблон Azure Resource Manager. В этом учебнике вы узнаете о синтаксисе файла шаблона и о том, как развернуть учетную запись хранения.
 author: mumian
-ms.date: 03/27/2020
+ms.date: 05/12/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 8b05bccf10ef5f273a74ca49e02162fd0408230f
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.openlocfilehash: c07f587b8b200a6f9d686c77e5ffefa399c6e179
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80411725"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83199926"
 ---
 # <a name="tutorial-create-and-deploy-your-first-arm-template"></a>Руководство по Создание и развертывание шаблона ARM
 
@@ -92,6 +92,24 @@ az login
 ```
 
 ---
+
+Если у вас несколько подписок Azure, выберите ту, которую хотите использовать.
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+```azurepowershell
+Select-AzSubscription [SubscriptionID/SubscriptionName]
+```
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```azurecli
+az account set --subscription [SubscriptionID/SubscriptionName]
+```
+
+---
+
+
 ## <a name="create-resource-group"></a>Создать группу ресурсов
 
 При развертывании шаблона необходимо указать группу ресурсов, которая будет содержать развернутые ресурсы. Перед выполнением команды развертывания создайте группу ресурсов с помощью Azure CLI или Azure PowerShell. Выберите вкладки в следующем разделе кода, чтобы выбрать между Azure PowerShell и Azure CLI. Примеры интерфейса командной строки в этой статье написаны для оболочки bash.
@@ -125,7 +143,7 @@ $templateFile = "{provide-the-path-to-the-template-file}"
 New-AzResourceGroupDeployment `
   -Name blanktemplate `
   -ResourceGroupName myResourceGroup `
-  -TemplateFile $templateFile 
+  -TemplateFile $templateFile
 ```
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)

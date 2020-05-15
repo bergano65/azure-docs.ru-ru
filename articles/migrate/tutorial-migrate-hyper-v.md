@@ -6,12 +6,12 @@ ms.date: 04/15/2020
 ms.custom:
 - MVC
 - fasttrack-edit
-ms.openlocfilehash: 6b9732aab9e3fe0d26b4c572efe87c3a9d3e29f6
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 87f746108599928d3e1b4a022abc1b3a3779ef29
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81535355"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82853552"
 ---
 # <a name="migrate-hyper-v-vms-to-azure"></a>Перенос виртуальных машин Hyper-V в Azure 
 
@@ -56,7 +56,7 @@ ms.locfileid: "81535355"
 
 Добавьте средство "Миграция сервера" службы "Миграция Azure".
 
-- Если вы выполнили инструкции из второго руководства по [оценке виртуальных машин VMware](/tutorial-assess-hyper-v.md), значит вы настроили проект службы "Миграция Azure" и можете добавить это средство сейчас.
+- Если вы выполнили инструкции из второго руководства по [оценке виртуальных машин VMware](tutorial-assess-hyper-v.md), значит вы настроили проект службы "Миграция Azure" и можете добавить это средство сейчас.
 - В противном случае [выполните следующие инструкции](how-to-add-tool-first-time.md), чтобы настроить проект службы "Миграция Azure". При создании проекта вы добавите средство "Миграция сервера" службы "Миграция Azure".
 
 Если вы уже настроили проект, добавьте это средство следующим образом:

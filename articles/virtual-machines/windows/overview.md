@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: e304841d09913aac59f5e6ba082d3e76ec791e81
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 7973ef9c56b70b6b43256db947e7f6f7210c178f
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81869342"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82930443"
 ---
 # <a name="windows-virtual-machines-in-azure"></a>Виртуальные машины Windows в Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "81869342"
 
 В этой таблице приведены некоторые способы, с помощью которых можно получить список доступных расположений.
 
-| Метод | Description |
+| Метод | Описание |
 | --- | --- |
 | Портал Azure |Выберите расположение из списка при создании виртуальной машины. |
 | Azure PowerShell |Используйте команду [Get-AzLocation](https://docs.microsoft.com/powershell/module/az.resources/get-azlocation). |
@@ -67,11 +67,11 @@ Azure взимает [почасовую оплату](https://azure.microsoft.c
 ### <a name="operating-system-disks-and-images"></a>Диски и образы операционной системы
 Для хранения операционной системы и данных виртуальные машины используют [виртуальные жесткие диски](managed-disks-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Они также используются для образов, которые доступны для установки операционной системы. 
 
-Azure предоставляет множество [образов из Marketplace](https://azure.microsoft.com/marketplace/virtual-machines/) для различных версий и типов операционных систем Windows Server. Образы из Marketplace определяются по издателю, предложению, SKU и версии (обычно указывается последняя версия). Поддерживаются только 64-разрядные операционные системы. Дополнительные сведения о поддерживаемых гостевых операционных системах, ролях и возможностях см. в статье [Поддержка серверного ПО Майкрософт для виртуальных машин Microsoft Azure](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines).
+Azure предоставляет множество [образов из Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps?filters=virtual-machine-images%3Bwindows&page=1) для различных версий и типов операционных систем Windows Server. Образы из Marketplace определяются по издателю, предложению, SKU и версии (обычно указывается последняя версия). Поддерживаются только 64-разрядные операционные системы. Дополнительные сведения о поддерживаемых гостевых операционных системах, ролях и возможностях см. в статье [Поддержка серверного ПО Майкрософт для виртуальных машин Microsoft Azure](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines).
 
 В этой таблице указано, как можно найти сведения об образе.
 
-| Метод | Description |
+| Метод | Описание |
 | --- | --- |
 | Портал Azure |При выборе используемого образа значения задаются автоматически. |
 | Azure PowerShell |[Get-AzVMImagePublisher](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagepublisher). Параметр *location* указывает расположение.<BR>[Get-AzVMImageOffer](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimageoffer). Параметр *location* указывает расположение, *publisherName* — имя издателя.<BR>[Get-AzVMImageSku](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagesku). Параметр *location* указывает расположение, *publisherName* — имя издателя, *offerName* — имя предложения. |
@@ -92,9 +92,9 @@ Azure предоставляет множество [образов из Marketp
 ### <a name="related-resources"></a>Связанные ресурсы
 Ресурсы в этой таблице используются в виртуальной машине. Они должны существовать или создаваться вместе с виртуальной машиной.
 
-| Ресурс | Обязательно | Description |
+| Ресурс | Обязательно | Описание |
 | --- | --- | --- |
-| [группа ресурсов](../../azure-resource-manager/management/overview.md) |Да |Виртуальная машина должна входить в группу ресурсов. |
+| [Группа ресурсов](../../azure-resource-manager/management/overview.md) |Да |Виртуальная машина должна входить в группу ресурсов. |
 | [Учетная запись хранения](../../storage/common/storage-create-storage-account.md) |Да |Виртуальной машине требуется учетная запись хранения для хранения виртуальных жестких дисков. |
 | [Виртуальная сеть](../../virtual-network/virtual-networks-overview.md) |Да |Виртуальная машина должна быть подключена к виртуальной сети. |
 | [Общедоступный IP-адрес](../../virtual-network/virtual-network-ip-addresses-overview-arm.md) |нет |Для удаленного доступа к виртуальной машине ей можно назначить общедоступный IP-адрес. |

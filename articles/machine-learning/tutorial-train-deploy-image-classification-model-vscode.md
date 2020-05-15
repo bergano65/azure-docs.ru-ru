@@ -1,5 +1,5 @@
 ---
-title: Руководство по обучению и развертыванию модели с использованием расширения Visual Studio Code
+title: 'Руководство по Обучение и развертывание моделей: VS Code'
 titleSuffix: Azure Machine Learning
 description: Узнайте о том, как обучать и развертывать модель классификации изображений с использованием TensorFlow и расширения Visual Studio Code для Машинного обучения Azure
 services: machine-learning
@@ -9,12 +9,13 @@ ms.topic: tutorial
 author: luisquintanilla
 ms.author: luquinta
 ms.date: 04/13/2020
-ms.openlocfilehash: f793f8c4cb84f821c098cc5ce98e693d272e725f
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.custom: contperfq4
+ms.openlocfilehash: 05857641df22e03362eeee1590fef62fa3a45530
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81272826"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82857715"
 ---
 # <a name="train-and-deploy-an-image-classification-tensorflow-model-using-the-azure-machine-learning-visual-studio-code-extension"></a>Обучение и развертывание модели TensorFlow для классификации изображений с использованием расширения Visual Studio Code для Машинного обучения Azure
 

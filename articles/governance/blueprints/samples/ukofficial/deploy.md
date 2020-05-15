@@ -1,14 +1,14 @@
 ---
 title: Развертывание примеров схем UK OFFICIAL и UK NHS
 description: Процедура развертывания для примера схемы UK OFFICIAL и UK NHS и сведения о параметрах артефактов схемы.
-ms.date: 06/26/2019
+ms.date: 05/08/2020
 ms.topic: sample
-ms.openlocfilehash: 3d69f4477163618aa225150ac6352a16e901f826
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 7fa78eab463c9a3202b2ec08e1952e275e51b20d
+ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74546401"
+ms.lasthandoff: 05/10/2020
+ms.locfileid: "83005586"
 ---
 # <a name="deploy-the-uk-official-and-uk-nhs-blueprint-samples"></a>Развертывание примеров схем UK OFFICIAL и UK NHS
 

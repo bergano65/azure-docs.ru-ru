@@ -8,13 +8,12 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: sngun
-Customer intent: As a developer, I want to build a Node.js web application to access and manage SQL API account resources in Azure Cosmos DB, so that customers can better use the service.
-ms.openlocfilehash: 3c50e82647b22a18edee92f47abc1d136670cacc
-ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
+ms.openlocfilehash: 9257a87c69e98db1107528551fe9ce0553c50f75
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80519675"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82858151"
 ---
 # <a name="tutorial-build-a-nodejs-web-app-using-the-javascript-sdk-to-manage-a-sql-api-account-in-azure-cosmos-db"></a>Руководство по Создание веб-приложения Node.js с помощью пакета SDK для JavaScript для управления учетной записью API SQL в Azure Cosmos DB 
 
@@ -437,7 +436,7 @@ ms.locfileid: "80519675"
 
 Теперь, когда вы создали приложение, можете запустить его локально, используя следующие действия:  
 
-1. Чтобы протестировать приложение на локальном компьютере, выполните `npm start` в терминале для запуска приложения, а затем обновите в браузере страницу [http://localhost:3000](http://localhost:3000). Теперь страница будет выглядеть, как показано на следующем снимке экрана:
+1. Чтобы протестировать приложение на локальном компьютере, выполните `npm start` в терминале для запуска приложения, а затем обновите в браузере страницу `http://localhost:3000`. Теперь страница будет выглядеть, как показано на следующем снимке экрана:
    
     ![Снимок экрана приложения «Мой список дел» в окне браузера](./media/sql-api-nodejs-application/cosmos-db-node-js-localhost.png)
 

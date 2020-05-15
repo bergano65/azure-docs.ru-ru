@@ -6,13 +6,13 @@ ms.service: open-datasets
 ms.topic: overview
 author: cjgronlund
 ms.author: cgronlun
-ms.date: 11/04/2019
-ms.openlocfilehash: fd5697f9c325dc4ad866c333ce1b20e008ebfa24
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.date: 05/06/2020
+ms.openlocfilehash: 24f5a671076a44db382ac37e2f6532e5f0f2a3ae
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "73606154"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82930392"
 ---
 # <a name="what-are-azure-open-datasets-and-how-can-you-use-them"></a>Что представляют собой Открытые наборы данных Azure и как их использовать?
 
@@ -24,6 +24,8 @@ ms.locfileid: "73606154"
 
 ## <a name="curated-prepared-datasets"></a>Проверенные и подготовленные наборы данных
 Проверенные открытые общедоступные наборы данных в Azure оптимизированы для рабочих процессов машинного обучения. 
+
+Чтобы просмотреть все доступные наборы данных, перейдите в каталог [Открытые наборы данных Azure](https://azure.microsoft.com/services/open-datasets/catalog/).
 
 Специалисты по анализу данных часто тратят большую часть своего времени на очистку и подготовку данных для расширенной аналитики. Открытые наборы данных копируются в облако Azure и проходят предварительную подготовку, что позволяет вам сэкономить время. Данные регулярно извлекаются из источников, например через FTP-подключение к Национальному управлению океанических и атмосферных исследований (NOAA). Затем данные анализируются и преобразуются в структурированный формат, после чего они дополняются необходимыми данными, например почтовым индексом или расположением ближайшей метеорологической станции.
 
@@ -57,5 +59,5 @@ ms.locfileid: "73606154"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Пример записной книжки](samples.md)
-* [Руководство. по моделированию регрессии с данными о такси Нью-Йорка](/azure/machine-learning/service/tutorial-auto-train-models?context=azure/open-datasets/context/open-datasets-context)
+* [Руководство. по моделированию регрессии с данными о такси Нью-Йорка](/azure/machine-learning/tutorial-auto-train-models?context=azure/open-datasets/context/open-datasets-context)
 * [Пакет SDK для Python для открытых наборов данных](/python/api/azureml-opendatasets/?view=azure-ml-py)

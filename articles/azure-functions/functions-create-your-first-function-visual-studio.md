@@ -5,12 +5,12 @@ ms.assetid: 82db1177-2295-4e39-bd42-763f6082e796
 ms.topic: quickstart
 ms.date: 03/06/2020
 ms.custom: mvc, devcenter, vs-azure, 23113853-34f2-4f
-ms.openlocfilehash: e58414fa94a4ef54eb2f288b2cd636c10611460d
-ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
+ms.openlocfilehash: a4549bd2947332d7140f4f440a5344f417430554
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81308936"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83122754"
 ---
 # <a name="quickstart-create-your-first-function-in-azure-using-visual-studio"></a>Краткое руководство. Создание первой функции в Azure с помощью Visual Studio
 
@@ -38,7 +38,7 @@ Visual Studio создает проект и класс, содержащий с
 
 Расширьте возможности функции с помощью входных и выходных привязок данных, применив для метода соответствующие атрибуты. Дополнительные сведения см. в разделе [Триггеры и привязки](functions-dotnet-class-library.md#triggers-and-bindings) в статье [Справочник разработчика C# по функциям Azure](functions-dotnet-class-library.md).
 
-Созданный проект функции и функцию, активируемую HTTP, можно протестировать на локальном компьютере.
+Созданные проект функции и функцию, активируемую HTTP-запросом, можно протестировать на локальном компьютере.
 
 ## <a name="run-the-function-locally"></a>Локальное выполнение функции
 
