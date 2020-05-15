@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 07/15/2019
 ms.topic: tutorial
-ms.openlocfilehash: d4b35458c76da82b33dfcb530cfdc71ee3da3bb6
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.openlocfilehash: 4d825dee469497cbb56a91c913ff3ac51963058b
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81604785"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82855688"
 ---
 # <a name="tutorial-send-an-email-from-an-azure-automation-runbook"></a>Руководство по Отправка электронной почты из модуля Runbook службы автоматизации Azure
 
@@ -150,7 +150,7 @@ Set-AzKeyVaultAccessPolicy -VaultName $VaultName -ServicePrincipalName $appID -P
 
 7. Нажмите кнопку **Опубликовать**, чтобы сохранить и опубликовать runbook.
 
-Чтобы убедиться, что модуль Runbook выполняется успешно, выполните действия, описанные в статье [Тестирование модуля Runbook](manage-runbooks.md#testing-a-runbook) или [Start a runbook in Azure Automation](start-runbooks.md) (Запуск модуля Runbook в службе автоматизации Azure).
+Чтобы убедиться, что модуль Runbook выполняется успешно, выполните действия, описанные в статье [Тестирование модуля Runbook](manage-runbooks.md#test-a-runbook) или [Start a runbook in Azure Automation](start-runbooks.md) (Запуск модуля Runbook в службе автоматизации Azure).
 Если тестовое сообщение электронной почты не видно изначально, проверьте папки **Нежелательная почта** и **Спам**.
 
 ## <a name="clean-up"></a>Очистка
