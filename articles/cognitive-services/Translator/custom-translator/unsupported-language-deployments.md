@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 04/24/2019
 ms.author: swmachan
-ms.openlocfilehash: 3c5c74fc853b5a2425a58e1704aad43350cba212
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 252759139de7f53cd7875efeb7f477219092aa0b
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73837454"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83584707"
 ---
 # <a name="unsupported-language-deployments"></a>Развертывания неподдерживаемых языков
 
@@ -54,7 +54,7 @@ ms.locfileid: "73837454"
 
 В отличие от стандартных пользовательских моделей транслятора, модели концентраторов будут доступны только в одном регионе, поэтому плата за размещение в нескольких регионах не будет взиматься.  После развертывания вы сможете в любое время отменить развертывание модели концентратора с помощью перенесенного пользовательского проекта переводчика.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обучение модели](how-to-train-model.md).
-- Начните использовать развернутую пользовательскую модель перевода с помощью [API перевода текстов Майкрософт версии 3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl).
+- Приступите к работе с развернутой настраиваемой моделью преобразования через [Translator v3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl).

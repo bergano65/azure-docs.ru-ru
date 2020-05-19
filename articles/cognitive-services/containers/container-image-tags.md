@@ -9,35 +9,33 @@ ms.service: cognitive-services
 ms.topic: reference
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: 850d7b9732ad547d502b042e7eaad5d3b471030e
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.openlocfilehash: cabc3d2a0f8eb3a75938d1768bb0085aab528391
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82926006"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83584609"
 ---
 # <a name="azure-cognitive-services-container-image-tags"></a>Теги образа контейнера Cognitive Services Azure
 
 Azure Cognitive Services предлагает множество образов контейнеров. Реестры контейнеров и соответствующие репозитории зависят от образов контейнеров. Каждое имя образа контейнера предлагает несколько тегов. Тег образа контейнера — это механизм управления версиями образа контейнера. Эта статья предназначена для использования в качестве исчерпывающего справочника по перечислению всех Cognitive Services образов контейнеров и их доступных тегов.
 
 > [!TIP]
-> При использовании [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/)следует уделять особое внимание Регистру реестра контейнеров, репозитория, имени образа контейнера и соответствующего тега, так как они **чувствительны к регистру**.
+> При использовании [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/) следует уделять особое внимание Регистру реестра контейнеров, репозитория, имени образа контейнера и соответствующего тега, так как они **чувствительны к регистру**.
 
 ## <a name="anomaly-detector"></a>Детектор аномалий
 
-Образ контейнера [детектора аномалий][ad-containers] можно найти в реестре `containerpreview.azurecr.io` контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-anomaly-detector`. Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-anomaly-detector`.
+Образ контейнера [детектора аномалий][ad-containers] можно найти в разделе " `mcr.microsoft.com` Открытие реестра контейнеров". Он находится в `azure-cognitive-services` репозитории и называется `anomaly-detector` . Полное имя образа контейнера —, `mcr.microsoft.com/azure-cognitive-services/anomaly-detector` .
 
 Этот образ контейнера имеет следующие доступные Теги:
 
 | Теги изображений                    | Примечания |
 |-------------------------------|:------|
 | `latest`                      |       |
-| `1.1.009301-amd64-preview`    |       |
-| `1.1.008500001-amd64-preview` |       |
 
-## <a name="computer-vision"></a>API Компьютерного зрения
+## <a name="computer-vision"></a>Компьютерное зрение
 
-Образ контейнера [компьютерное зрение][cv-containers] можно найти в реестре `containerpreview.azurecr.io` контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-read`. Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-read`.
+Образ контейнера [компьютерное зрение][cv-containers] можно найти в `containerpreview.azurecr.io` реестре контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-read` . Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-read` .
 
 Этот образ контейнера имеет следующие доступные Теги:
 
@@ -50,7 +48,7 @@ Azure Cognitive Services предлагает множество образов 
 
 ## <a name="face"></a>Распознавание лиц
 
-Образ контейнера [лиц][fa-containers] можно найти в реестре `containerpreview.azurecr.io` контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-face`. Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-face`.
+Образ контейнера [лиц][fa-containers] можно найти в `containerpreview.azurecr.io` реестре контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-face` . Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-face` .
 
 Этот образ контейнера имеет следующие доступные Теги:
 
@@ -68,7 +66,7 @@ Azure Cognitive Services предлагает множество образов 
 
 ## <a name="form-recognizer"></a>Распознаватель документов
 
-Образ контейнера [распознавателя форм][fr-containers] можно найти в реестре `containerpreview.azurecr.io` контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-form-recognizer`. Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer`.
+Образ контейнера [распознавателя форм][fr-containers] можно найти в `containerpreview.azurecr.io` реестре контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-form-recognizer` . Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer` .
 
 Этот образ контейнера имеет следующие доступные Теги:
 
@@ -81,7 +79,7 @@ Azure Cognitive Services предлагает множество образов 
 
 ## <a name="language-understanding-luis"></a>Распознавание речи (LUIS)
 
-Образ контейнера [Luis][lu-containers] можно найти в разделе "Открытие `mcr.microsoft.com` реестра контейнеров". Он находится в `azure-cognitive-services` репозитории и называется `luis`. Полное имя образа контейнера —, `mcr.microsoft.com/azure-cognitive-services/luis`.
+Образ контейнера [Luis][lu-containers] можно найти в `mcr.microsoft.com` разделе "Открытие реестра контейнеров". Он находится в `azure-cognitive-services` репозитории и называется `luis` . Полное имя образа контейнера —, `mcr.microsoft.com/azure-cognitive-services/luis` .
 
 Этот образ контейнера имеет следующие доступные Теги:
 
@@ -99,7 +97,7 @@ Azure Cognitive Services предлагает множество образов 
 
 ## <a name="custom-speech-to-text"></a>Пользовательское распознавание речи к тексту
 
-Образ контейнера [пользовательское распознавание речи в текст][sp-cstt] можно найти в реестре `containerpreview.azurecr.io` контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-custom-speech-to-text`. Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-custom-speech-to-text`.
+Образ контейнера [пользовательское распознавание речи в текст][sp-cstt] можно найти в `containerpreview.azurecr.io` реестре контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-custom-speech-to-text` . Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-custom-speech-to-text` .
 
 Этот образ контейнера имеет следующие доступные Теги:
 
@@ -114,7 +112,7 @@ Azure Cognitive Services предлагает множество образов 
 
 ## <a name="custom-text-to-speech"></a>Пользовательский текст в речь
 
-Пользовательский образ контейнера преобразования [текста в речь][sp-ctts] можно найти в реестре `containerpreview.azurecr.io` контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-custom-text-to-speech`. Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-custom-text-to-speech`.
+Пользовательский образ контейнера преобразования [текста в речь][sp-ctts] можно найти в `containerpreview.azurecr.io` реестре контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-custom-text-to-speech` . Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-custom-text-to-speech` .
 
 Этот образ контейнера имеет следующие доступные Теги:
 
@@ -125,7 +123,7 @@ Azure Cognitive Services предлагает множество образов 
 
 ## <a name="speech-to-text"></a>Преобразование речи в текст
 
-Образ контейнера [для преобразования речи в текст][sp-stt] можно найти в реестре `containerpreview.azurecr.io` контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-speech-to-text`. Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text`.
+Образ контейнера [для преобразования речи в текст][sp-stt] можно найти в `containerpreview.azurecr.io` реестре контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-speech-to-text` . Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text` .
 
 Этот образ контейнера имеет следующие доступные Теги:
 
@@ -447,7 +445,7 @@ Azure Cognitive Services предлагает множество образов 
 
 ## <a name="text-to-speech"></a>Преобразование текста в речь
 
-Образ контейнера преобразования [текста в речь][sp-tts] можно найти в реестре `containerpreview.azurecr.io` контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-text-to-speech`. Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-text-to-speech`.
+Образ контейнера преобразования [текста в речь][sp-tts] можно найти в `containerpreview.azurecr.io` реестре контейнеров. Он находится в `microsoft` репозитории и называется `cognitive-services-text-to-speech` . Полное имя образа контейнера —, `containerpreview.azurecr.io/microsoft/cognitive-services-text-to-speech` .
 
 Этот образ контейнера имеет следующие доступные Теги:
 
@@ -623,7 +621,7 @@ Azure Cognitive Services предлагает множество образов 
 
 ## <a name="key-phrase-extraction"></a>Извлечение ключевых фраз
 
-Образ контейнера [Извлечение ключевых фраз][ta-kp] можно найти в разделе "Открытие `mcr.microsoft.com` реестра контейнеров". Он находится в `azure-cognitive-services` репозитории и называется `keyphrase`. Полное имя образа контейнера —, `mcr.microsoft.com/azure-cognitive-services/keyphrase`.
+Образ контейнера [Извлечение ключевых фраз][ta-kp] можно найти в `mcr.microsoft.com` разделе "Открытие реестра контейнеров". Он находится в `azure-cognitive-services` репозитории и называется `keyphrase` . Полное имя образа контейнера —, `mcr.microsoft.com/azure-cognitive-services/keyphrase` .
 
 Этот образ контейнера имеет следующие доступные Теги:
 
@@ -638,7 +636,7 @@ Azure Cognitive Services предлагает множество образов 
 
 ## <a name="language-detection"></a>Распознавание языка
 
-Образ контейнера [распознавание языка][ta-la] можно найти в разделе "Открытие `mcr.microsoft.com` реестра контейнеров". Он находится в `azure-cognitive-services` репозитории и называется `language`. Полное имя образа контейнера —, `mcr.microsoft.com/azure-cognitive-services/language`.
+Образ контейнера [распознавание языка][ta-la] можно найти в `mcr.microsoft.com` разделе "Открытие реестра контейнеров". Он находится в `azure-cognitive-services` репозитории и называется `language` . Полное имя образа контейнера —, `mcr.microsoft.com/azure-cognitive-services/language` .
 
 Этот образ контейнера имеет следующие доступные Теги:
 
@@ -653,14 +651,24 @@ Azure Cognitive Services предлагает множество образов 
 
 ## <a name="sentiment-analysis"></a>Анализ тональности
 
-Образ контейнера [Анализ тональности][ta-se] можно найти в разделе "Открытие `mcr.microsoft.com` реестра контейнеров". Он находится в `azure-cognitive-services` репозитории и называется `sentiment`. Полное имя образа контейнера —, `mcr.microsoft.com/azure-cognitive-services/sentiment`.
+Образ контейнера [Анализ тональности][ta-se] можно найти в `mcr.microsoft.com` разделе "Открытие реестра контейнеров". Он находится в `azure-cognitive-services` репозитории и называется `sentiment` . Полное имя образа контейнера —, `mcr.microsoft.com/azure-cognitive-services/sentiment` .
 
 Этот образ контейнера имеет следующие доступные Теги:
 
-| Теги изображений                    | Примечания |
-|-------------------------------|:------|
-| `latest`                      |       |
-| `1.1.009301-amd64-preview`    |       |
+| Теги изображений | Примечания                                         |
+|------------|:----------------------------------------------|
+| `latest`   |                                               |
+| `3.0-en`   | Анализ тональности v3 (английский)               |
+| `3.0-es`   | Анализ тональности v3 (Испанский)               |
+| `3.0-fr`   | Анализ тональности v3 (французский)                |
+| `3.0-it`   | Анализ тональности v3 (Итальянский)               |
+| `3.0-de`   | Анализ тональности v3 (немецкий)                |
+| `3.0-zh`   | Анализ тональности v3 (упрощенное письмо)  |
+| `3.0-zht`  | Анализ тональности v3 (китайский (традиционное письмо)) |
+| `3.0-ja`   | Анализ тональности v3 (японский)              |
+| `3.0-pt`   | Анализ тональности v3 (Португальский)            |
+| `3.0-nl`   | Анализ тональности v3 (Голландский)                 |
+| `1.1.009301-amd64-preview`    | Анализ тональности версии 2      |
 | `1.1.008510001-amd64-preview` |       |
 | `1.1.007750002-amd64-preview` |       |
 | `1.1.007360001-amd64-preview` |       |

@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 08/22/2019
 ms.author: diberry
-ms.openlocfilehash: cde505e4c95de9b9693a0e9d260d7fa84f3e905b
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: ec997c802f83b0d1eea54c0710b0ebc4684397fe
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75531485"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83584626"
 ---
 # <a name="cognitive-services-and-machine-learning"></a>Cognitive Services и машинное обучение
 
@@ -93,7 +93,7 @@ Cognitive Services как группа служб, для обученной м�
 |--|--|--|--|
 |[Детектор аномалий](./Anomaly-Detector/overview.md)|x|x|x|
 |Поиск Bing |x|||
-|[API Компьютерного зрения](./Computer-vision/Home.md)|x|||
+|[Компьютерное зрение](./Computer-vision/Home.md)|x|||
 |[Content Moderator](./Content-Moderator/overview.md)|x||x|
 |[Custom Vision](./Custom-Vision-Service/home.md)||x||
 |[Распознавание лиц](./Face/Overview.md)|x|x||
@@ -108,8 +108,8 @@ Cognitive Services как группа служб, для обученной м�
 |[Речевое преобразование речи в текст (САМОНАСТРАИВАЮЩИХСЯ ПОРОГОВЫХ значений)](speech-service/speech-to-text.md)|x|x||
 |[Перевод речи](speech-service/speech-translation.md)|x|||
 |[Анализ текста](./text-analytics/overview.md)|x|||
-|[Перевод текстов](./translator/translator-info-overview.md)|x|||
-|[Перевод текстов-пользовательский переводчик](./translator/custom-translator/overview.md)||x||
+|[API перевода](./translator/translator-info-overview.md)|x|||
+|[Переводчик — настраиваемый переводчик](./translator/custom-translator/overview.md)||x||
 
 * Персонализация требует только обучающих данных, собираемых службой (в режиме реального времени) для вычисления политики и данных. Персонализация не требует больших исторических наборов данных для подготовки к началу или пакетному обучению. 
 
@@ -136,7 +136,7 @@ Cognitive Services, которые предоставляют экспортир
 * [Рекомендации по архитектуре: какие продукты машинного обучения корпорация Майкрософт используют?](https://docs.microsoft.com/azure/architecture/data-guide/technology-choices/data-science-and-machine-learning)
 * [Машинное обучение — введение в глубокое обучение и машинное обучение](../machine-learning/concept-deep-learning-vs-machine-learning.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Создайте свою учетную запись службы в [портал Azure](cognitive-services-apis-create-account.md) или с помощью [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli).
 * Узнайте, как [пройти проверку подлинности](authentication.md) для работы со службой.

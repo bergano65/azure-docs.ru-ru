@@ -1,7 +1,7 @@
 ---
-title: Метод Translate в API перевода текстов
+title: Метод преобразования переводчика
 titleSuffix: Azure Cognitive Services
-description: Общие сведения о параметрах, заголовках и сообщениях текста для метода перевода API перевода текстов Cognitive Services Azure для перевода текста.
+description: Сведения о параметрах, заголовках и тексте сообщений для метода преобразования в Azure Cognitive Services Translator для перевода текста.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -10,18 +10,18 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 04/17/2020
 ms.author: swmachan
-ms.openlocfilehash: 14d1f042240fd045925afe1725b32ddade490dfe
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: 563f4693c358c570caa2566f58002ddfe6c7bc69
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82858540"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83584643"
 ---
-# <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Translate
+# <a name="translator-30-translate"></a>Переводчик 3,0: преобразование
 
 Этот интерфейс позволяет переводить текст.
 
-## <a name="request-url"></a>Request URL (URL-адрес запроса)
+## <a name="request-url"></a>URL-адрес запроса
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -43,7 +43,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
     <td><em>Обязательный параметр</em>.<br/>Версия API, запрошенная клиентом. Необходимое значение: <code>3.0</code>.</td>
   </tr>
   <tr>
-    <td>значение</td>
+    <td>в</td>
     <td><em>Обязательный параметр</em>.<br/>Определяет язык выходного текста. Целевой язык должен быть одним из <a href="./v3-0-languages.md">поддерживаемых языков</a>, включенных в область <code>translation</code>. Например, используйте параметр <code>to=de</code>, чтобы перевести на немецкий.<br/>Вы можете одновременно переводить на различные языки, использовав этот параметр в строке запроса несколько раз. Например, используйте параметр <code>to=de&to=it</code>, чтобы перевести на немецкий и итальянский.</td>
   </tr>
 </table>
@@ -55,7 +55,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   <th>Описание</th>
   <tr>
     <td>из</td>
-    <td><em>Необязательный параметр</em>.<br/>Определяет язык оригинального текста. Чтобы просмотреть, какие языки доступны для перевода, выполните поиск <a href="./v3-0-languages.md">поддерживаемых языков</a>, используя область <code>translation</code>. Если параметр <code>from</code> не указан, исходный язык определяется автоматически. <br/><br/>При использовании функции <code>from</code> <a href="https://docs.microsoft.com/azure/cognitive-services/translator/dynamic-dictionary">динамического словаря</a> необходимо использовать параметр, а не автообнаружение.</td>
+    <td><em>Необязательный параметр</em>.<br/>Определяет язык оригинального текста. Чтобы просмотреть, какие языки доступны для перевода, выполните поиск <a href="./v3-0-languages.md">поддерживаемых языков</a>, используя область <code>translation</code>. Если параметр <code>from</code> не указан, исходный язык определяется автоматически. <br/><br/><code>from</code>При использовании функции <a href="https://docs.microsoft.com/azure/cognitive-services/translator/dynamic-dictionary">динамического словаря</a> необходимо использовать параметр, а не автообнаружение.</td>
   </tr>  
   <tr>
     <td>textType</td>
@@ -111,7 +111,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>Content-Type</td>
-    <td><em>Обязательный заголовок запроса</em>.<br/>Указывает тип содержимого для полезных данных.<br/> Принятое значение <code>application/json; charset=UTF-8</code>—.</td>
+    <td><em>Обязательный заголовок запроса</em>.<br/>Указывает тип содержимого для полезных данных.<br/> Принятое значение — <code>application/json; charset=UTF-8</code> .</td>
   </tr>
   <tr>
     <td>Content-Length</td>
@@ -123,7 +123,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
 </table> 
 
-## <a name="request-body"></a>Текст запроса
+## <a name="request-body"></a>Тело запроса
 
 Текст запроса является массивом в формате JSON. Каждый элемент этого массива представляет собой объект JSON со строковым свойством `Text`, который являет собой строку для перевода.
 
@@ -234,7 +234,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
 </table> 
 
-Если возникнет ошибка, запрос также вернет ответ JSON с ошибкой. Код ошибки представляет собой число из 6 знаков, первые 3 из которых являются кодом состояния HTTP, а оставшиеся 3 цифры определяют категорию ошибки. Коды распространенных ошибок можно найти на [странице справочника по API перевода текстов версии 3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors). 
+Если возникнет ошибка, запрос также вернет ответ JSON с ошибкой. Код ошибки представляет собой число из 6 знаков, первые 3 из которых являются кодом состояния HTTP, а оставшиеся 3 цифры определяют категорию ошибки. Общие коды ошибок можно найти на [странице справочника по транслятору v3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors). 
 
 ## <a name="examples"></a>Примеры
 
@@ -366,7 +366,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
   <th>Действие</th>
   <tr>
     <td><code>NoAction</code></td>
-    <td>Это поведение установлено по умолчанию. Ненормативная лексика оригинального текста сохранится в переводе.<br/><br/>
+    <td>Это поведение по умолчанию. Ненормативная лексика оригинального текста сохранится в переводе.<br/><br/>
     <strong>Пример исходного текста (японский).</strong> 彼はジャッカスです。<br/>
     <strong>Пример перевода (на русский).</strong> Он — придурок.
     </td>
@@ -383,7 +383,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
     <td>Нецензурную лексику в выходных данных заменяют маркеры. Маркер зависит от параметра <code>ProfanityMarker</code>.<br/><br/>
 Если установлен параметр <code>ProfanityMarker=Asterisk</code>, нецензурную лексику заменяют символы <code>***</code>:<br/>
     <strong>Пример исходного текста (японский).</strong> 彼はジャッカスです。<br/>
-    <strong>Пример перевода (английский)</strong> \* \* \*.<br/><br/>
+    <strong>Пример перевода (английский)</strong> \* \* \* .<br/><br/>
 Если установлен параметр <code>ProfanityMarker=Tag</code>, нецензурная лексика выделяется XML-тегами &lt;profanity&gt; и &lt;/profanity/&gt;:<br/>
     <strong>Пример исходного текста (японский).</strong> 彼はジャッカスです。<br/>
     <strong>Пример перевода (на русский).</strong>Он – &lt;profanity&gt;придурок&lt;/profanity&gt;.

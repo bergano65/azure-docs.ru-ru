@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: f5e1a21f24fdd2458d4803d6ed1675455fa5037d
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: eee2271b6d1fb51ff4b27c0d612306b1f7f8747a
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68595597"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83584728"
 ---
 # <a name="view-system-test-results"></a>Просмотр результатов теста системы
 
@@ -100,8 +100,8 @@ ms.locfileid: "68595597"
 >[!Note]
 >При выборе **Не развернуто** во всех регионах отменяется развертывание модели для всех регионов и модель переводится в неразвернутое состояние. После этого модель недоступна для использования.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Начните использовать развернутую пользовательскую модель перевода с помощью [API перевода текстов Майкрософт версии 3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl).
+- Приступите к работе с развернутой настраиваемой моделью преобразования через [Translator v3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl).
 - Узнайте, как [настроить параметры](how-to-manage-settings.md) для предоставления общего доступа к рабочей области и управлять ключом подписки.
 - Узнайте, как [перенести рабочую область и проект](how-to-migrate.md) из [Microsoft Translator Hub](https://hub.microsofttranslator.com).
