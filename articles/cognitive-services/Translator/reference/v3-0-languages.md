@@ -1,7 +1,7 @@
 ---
-title: Метод Languages в API перевода текстов
+title: Метод языков переводчиков
 titleSuffix: Azure Cognitive Services
-description: Метод Languages получает набор языков, которые в настоящее время поддерживаются другими операциями API перевода текстов.
+description: Метод Languages получает набор языков, которые в настоящее время поддерживаются другими операциями транслятора.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -10,18 +10,18 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: swmachan
-ms.openlocfilehash: 37f70399e8125db559098869cdfffdf4533498d7
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 1f4dfc4b80aff01e4b7fe7ebae4850b28cd6a498
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73835829"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83588604"
 ---
-# <a name="translator-text-api-30-languages"></a>API перевода текстов 3.0: Languages
+# <a name="translator-30-languages"></a>Переводчик 3,0: языки
 
-Возвращает набор языков, поддерживаемых в настоящее время другими операциями API перевода текстов. 
+Возвращает набор языков, которые в настоящее время поддерживаются другими операциями транслятора. 
 
-## <a name="request-url"></a>Request URL (URL-адрес запроса)
+## <a name="request-url"></a>URL-адрес запроса
 
 Отправьте запрос `GET` на следующий адрес.
 ```HTTP
@@ -63,7 +63,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
 
 Для получения языковых ресурсов аутентификация не требуется.
 
-## <a name="response-body"></a>Тело ответа
+## <a name="response-body"></a>Текст ответа
 
 С помощью параметра `scope` клиент может указать, какие группы языков его интересуют.
 
@@ -259,7 +259,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
   </tr>
   <tr>
     <td>400</td>
-    <td>Один из параметров запроса отсутствует или имеет недопустимое значение. Исправьте параметры запроса и повторите попытку.</td>
+    <td>Один из параметров запроса отсутствует или является недопустимым. Исправьте параметры запроса и повторите попытку.</td>
   </tr>
   <tr>
     <td>429</td>
@@ -275,7 +275,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
   </tr>
 </table> 
 
-Если возникнет ошибка, запрос также вернет ответ JSON с ошибкой. Код ошибки представляет собой число из 6 знаков, первые 3 из которых являются кодом состояния HTTP, а оставшиеся 3 цифры определяют категорию ошибки. Коды распространенных ошибок можно найти на [странице справочника по API перевода текстов версии 3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors). 
+Если возникнет ошибка, запрос также вернет ответ JSON с ошибкой. Код ошибки представляет собой число из 6 знаков, первые 3 из которых являются кодом состояния HTTP, а оставшиеся 3 цифры определяют категорию ошибки. Общие коды ошибок можно найти на [странице справочника по транслятору v3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors). 
 
 ## <a name="examples"></a>Примеры
 

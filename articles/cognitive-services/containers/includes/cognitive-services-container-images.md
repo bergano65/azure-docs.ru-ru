@@ -6,41 +6,67 @@ manager: nitinme
 description: Две таблицы, представляющие реестры контейнеров, репозитории и имена образов для всех предложений службы.
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 04/01/2020
+ms.date: 04/24/2020
 ms.author: aahi
-ms.openlocfilehash: a854a090af908da691e9b26f5b0714c6560fc0ba
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 9025e016725a966061c557f16b610d8897c04c11
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80876844"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83590675"
 ---
 ### <a name="container-repositories-and-images"></a>Репозитории и образы контейнеров
 
-Приведенные ниже таблицы представляют собой список доступных образов контейнеров, предлагаемых Azure Cognitive Services. Полный список доступных имен образов контейнеров и их доступных тегов см. в разделе [Cognitive Services Теги образа контейнера](../container-image-tags.md). В настоящее время отсутствуют общедоступные Cognitive Servicesные контейнеры. В течение этого времени, пока не сделаны дальнейшие объявления — контейнеры доступны в виде *общедоступного* или общедоступного *предварительного просмотра*.
+Приведенные ниже таблицы представляют собой список доступных образов контейнеров, предлагаемых Azure Cognitive Services. Полный список доступных имен образов контейнеров и их доступных тегов см. в разделе [Cognitive Services Теги образа контейнера](../container-image-tags.md). 
 
- - *Общедоступная*неконтролируемая: контейнеры доступны в общедоступном виде без механизма ограничения.
- - *Общедоступная Предварительная версия*: контейнеры доступны в общедоступной версии, но сначала требуются формальный запрос на доступ к реестру контейнеров.
+#### <a name="generally-available"></a>Общедоступная версия 
 
-#### <a name="public-ungated-container-registry-mcrmicrosoftcom"></a>Открытый "неусловный" (реестр контейнеров: `mcr.microsoft.com`)
+Реестр контейнеров (Майкрософт) (мкр) выйдет все общедоступные контейнеры для Cognitive Services. Контейнеры также доступны непосредственно из [центра DOCKER](https://hub.docker.com/_/microsoft-azure-cognitive-services).
 
-Реестр контейнеров (Майкрософт) (мкр) синдикации все общедоступные контейнеры с неконтролируемым доступом для Cognitive Services. Контейнеры также доступны непосредственно из [центра DOCKER](https://hub.docker.com/_/microsoft-azure-cognitive-services).
+#### <a name="luis"></a>[LUIS](#tab/luis)
+
+| Контейнер LUIS | Реестр контейнеров, имя репозитория или образа |
+|--|--|
+| LUIS | `mcr.microsoft.com/azure-cognitive-services/luis` |
+
+Дополнительные сведения см. [в разделе Запуск и установка контейнеров Luis](../../LUIS/luis-container-howto.md) .
+
+#### <a name="text-analytics"></a>[Анализ текста](#tab/text-analytics)
+
+| Контейнер Анализ текста | Реестр контейнеров, имя репозитория или образа |
+|--|--|
+| Анализ тональности v3 (английский) | `mcr.microsoft.com/azure-cognitive-services/sentiment:3.0-en` |
+| Анализ тональности v3 (Испанский) | `mcr.microsoft.com/azure-cognitive-services/sentiment:3.0-es` |
+| Анализ тональности v3 (французский) | `mcr.microsoft.com/azure-cognitive-services/sentiment:3.0-fr` |
+| Анализ тональности v3 (Итальянский) | `mcr.microsoft.com/azure-cognitive-services/sentiment:3.0-it` |
+| Анализ тональности v3 (немецкий) | `mcr.microsoft.com/azure-cognitive-services/sentiment:3.0-de` |
+| Анализ тональности v3 (упрощенное письмо) | `mcr.microsoft.com/azure-cognitive-services/sentiment:3.0-zh` |
+| Анализ тональности v3 (китайский (традиционное письмо)) | `mcr.microsoft.com/azure-cognitive-services/sentiment:3.0-zht` |
+| Анализ тональности v3 (японский) | `mcr.microsoft.com/azure-cognitive-services/sentiment:3.0-ja` |
+| Анализ тональности v3 (Португальский) | `mcr.microsoft.com/azure-cognitive-services/sentiment:3.0-pt` |
+| Анализ тональности v3 (Голландский) | `mcr.microsoft.com/azure-cognitive-services/sentiment:3.0-nl` |
+
+Дополнительные сведения см. [в разделе Запуск и установка контейнеров анализ текста](../../text-analytics/how-tos/text-analytics-how-to-install-containers.md) .
+
+---
+
+#### <a name="public-ungated-preview-container-registry-mcrmicrosoftcom"></a>Общедоступная Предварительная версия (реестр контейнеров: `mcr.microsoft.com` )
+
+Следующие предварительные версии контейнеров доступны в общем доступе. В реестре контейнеров (Майкрософт) (мкр) опубликованы все общедоступные неусловные контейнеры для Cognitive Services. Контейнеры также доступны непосредственно из [центра DOCKER](https://hub.docker.com/_/microsoft-azure-cognitive-services).
 
 | Служба | Контейнер | Реестр контейнеров, имя репозитория или образа |
 |--|--|--|
-| [LUIS](../../LUIS/luis-container-howto.md) | LUIS | `mcr.microsoft.com/azure-cogni'ive-services/luis` |
 | [Анализ текста](../../text-analytics/how-tos/text-analytics-how-to-install-containers.md) | Извлечение ключевых фраз | `mcr.microsoft.com/azure-cognitive-services/keyphrase` |
 | [Анализ текста](../../text-analytics/how-tos/text-analytics-how-to-install-containers.md) | Распознавание языка | `mcr.microsoft.com/azure-cognitive-services/language` |
-| [Анализ текста](../../text-analytics/how-tos/text-analytics-how-to-install-containers.md) | Анализ тональности | `mcr.microsoft.com/azure-cognitive-services/sentiment` |
+| [Детектор аномалий](../../anomaly-detector/anomaly-detector-container-howto.md) | Детектор аномалий | `mcr.microsoft.com/azure-cognitive-services/anomaly-detector` |
 
-#### <a name="public-gated-preview-container-registry-containerpreviewazurecrio"></a>Общедоступная Предварительная версия (реестр контейнеров: `containerpreview.azurecr.io`)
+#### <a name="public-gated-preview-container-registry-containerpreviewazurecrio"></a>Общедоступная Предварительная версия (реестр контейнеров: `containerpreview.azurecr.io` )
 
-В реестре предварительного просмотра контейнера размещаются все общедоступные контейнеры с проверкой поCognitive Services. Для этих контейнеров необходим формальный запрос на доступ к ним через реестр контейнеров.
+Следующие контейнеры с условным просмотром размещаются в реестре предварительной версии контейнера и должны иметь доступ к приложению. Дополнительные сведения см. в разделе [Cognitive Servicesная процедура](../../cognitive-services-gating-process.md) ограничения.
 
 | Служба | Контейнер | Реестр контейнеров, имя репозитория или образа |
 |--|--|--|
-| [Детектор аномалий](../../anomaly-detector/anomaly-detector-container-howto.md) | Детектор аномалий | `containerpreview.azurecr.io/microsoft/cognitive-services-anomaly-detector` |
-| [API Компьютерного зрения](../../Computer-vision/computer-vision-how-to-install-containers.md) | Чтение | `containerpreview.azurecr.io/microsoft/cognitive-services-read` |
+| [Компьютерное зрение](../../Computer-vision/computer-vision-how-to-install-containers.md) | Чтение | `containerpreview.azurecr.io/microsoft/cognitive-services-read` |
 | [Распознавание лиц](../../face/face-how-to-install-containers.md) | Распознавание лиц | `containerpreview.azurecr.io/microsoft/cognitive-services-face` |
 | [Распознаватель форм](https://go.microsoft.com/fwlink/?linkid=2083826&clcid=0x409) | Распознаватель документов | `containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer` |
 | [API службы "Речь"](../../speech-service/speech-container-howto.md?tab=stt) | Преобразование речи в текст | `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text` |

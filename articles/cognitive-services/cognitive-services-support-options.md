@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 11/22/2019
 ms.author: dapine
-ms.openlocfilehash: 00e966dbee6c1993256a94d734bcc6261aea00af
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 0bf4750d5db5961ff8c572c3aa52cc06faf697c1
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81258439"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83590542"
 ---
 # <a name="azure-cognitive-services-support-and-feedback-options"></a>Параметры поддержки и отзывов Azure Cognitive Services
 
@@ -28,7 +28,7 @@ ms.locfileid: "81258439"
     <img alt='Azure support' src='https://docs.microsoft.com/media/logos/logo_azure.svg'>
 </div>
 
-Изучите различные [варианты поддержки Azure и выберите план](https://azure.microsoft.com/support/plans), который лучше всего отвечает вашим потребностям. Мы предлагаем варианты для широкого круга пользователей — от разработчиков, которые только начинают пользоваться облаком, до крупных организаций, развертывающих стратегические и критически важные для бизнеса приложения. Клиенты Azure могут создавать запросы на получение поддержки и управлять ими на портале Azure.
+Изучите диапазон [вариантов поддержки Azure и выберите](https://azure.microsoft.com/support/plans) оптимальный план, будь то разработчик, который просто запускает облачный или крупную организацию, развертывая критически важные для бизнеса приложения. Клиенты Azure могут создавать запросы на получение поддержки и управлять ими на портале Azure.
 
 * [Портал Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
 * [Портал Azure для государственных учреждений США](https://portal.azure.us)
@@ -39,7 +39,7 @@ ms.locfileid: "81258439"
     <img alt='Search' src='https://docs.microsoft.com/media/common/i_search.svg'>
 </div>
 
-Для ускорения результатов выполните поиск на соответствующих сайтах, например [Stack overflow](https://stackoverflow.com/), [документация Майкрософт](https://docs.microsoft.com/azure/cognitive-services/)или [примеры кода GitHub](https://github.com/azure-samples). Используйте нотацию `site:` запроса в [избранной подсистеме поиска](https://bing.com), например:
+Для ускорения результатов выполните поиск на соответствующих сайтах, например [Stack overflow](https://stackoverflow.com/), [документация Майкрософт](https://docs.microsoft.com/azure/cognitive-services/)или [примеры кода GitHub](https://github.com/azure-samples). Используйте `site:` нотацию запроса в [избранной подсистеме поиска](https://bing.com), например:
 
 ```
 {search keywords} site:stackoverflow.com
@@ -81,7 +81,7 @@ ms.locfileid: "81258439"
  - [Custom Vision](custom-vision-service/release-notes.md)
  - [Распознавание лиц](face/releasenotes.md)
  - [Распознавание речи (LUIS)](LUIS/whats-new.md)
- - [Речевые службы](speech-service/releasenotes.md)
+ - [Службы речи](speech-service/releasenotes.md)
  - [Пакет SDK для речевых служб](speech-service/devices-sdk-release-notes.md)
  - [Анализ текста](text-analytics/whats-new.md)
  - [Индексатор видео](../media-services/video-indexer/release-notes.md)
@@ -102,7 +102,7 @@ ms.locfileid: "81258439"
 
 Reddit — это управляемый сообществом веб-сайт обсуждений, предлагающий последние беседы с новостями [Cognitive Services Azure](https://www.reddit.com/r/AZURE/search/?q=Cognitive%20Services&restrict_sr=1) , справкой, информацией, советами и приемами. Зарегистрированные участники могут отправлять содержимое, и другие пользователи могут проголосовать за него, что соответствующим образом повышает уровень наиболее подходящего содержимого до верхней части своих каналов.
 
-## <a name="give-feedback"></a>Обратная связь
+## <a name="give-feedback"></a>Оставить отзыв
 
 ### <a name="uservoice-forum"></a>Форум UserVoice
 
@@ -120,7 +120,7 @@ Reddit — это управляемый сообществом веб-сайт 
 |-------------------------------|---------------|
 | Детектор аномалий              | https://cognitive.uservoice.com/forums/912196-anomaly-detector |
 | Службы Bing                 | https://cognitive.uservoice.com/forums/555907-bing-search |
-| API Компьютерного зрения               | https://cognitive.uservoice.com/forums/430309-computer-vision |
+| Компьютерное зрение               | https://cognitive.uservoice.com/forums/430309-computer-vision |
 | Content Moderator             | https://cognitive.uservoice.com/forums/559960-content-moderator |
 | Custom Vision                 | https://cognitive.uservoice.com/forums/598141-custom-vision-service |
 | Распознавание лиц                          | https://cognitive.uservoice.com/forums/430315-face |
@@ -129,10 +129,10 @@ Reddit — это управляемый сообществом веб-сайт 
 | Распознавание речи (LUIS) | https://cognitive.uservoice.com/forums/551524-luis |
 | Персонализатор                  | https://cognitive.uservoice.com/forums/921562-personalizer |
 | QnA Maker                     | https://cognitive.uservoice.com/forums/578689-qna-maker |
-| Службы "Речь"               | https://cognitive.uservoice.com/forums/912208-speech-service |
+| Службы речи               | https://cognitive.uservoice.com/forums/912208-speech-service |
 | Пользовательское распознавание речи                 | https://cognitive.uservoice.com/forums/555934-custom-speech-service |
 | Анализ текста                | https://cognitive.uservoice.com/forums/555922-text-analytics |
-| Перевод текстов               | https://cognitive.uservoice.com/forums/558796-translator |
+| API перевода               | https://cognitive.uservoice.com/forums/558796-translator |
 | Индексатор видео                 | https://cognitive.uservoice.com/forums/598144-video-indexer |
 
 ## <a name="report-bugs"></a>Сообщать об ошибках
@@ -177,7 +177,7 @@ Reddit — это управляемый сообществом веб-сайт 
 
 [MicrosoftDocs](https://github.com/MicrosoftDocs/azure-docs/tree/master/articles/cognitive-services)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Общие сведения об Azure Cognitive Services](welcome.md)

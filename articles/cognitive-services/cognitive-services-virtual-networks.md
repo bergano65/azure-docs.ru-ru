@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: dapine
-ms.openlocfilehash: 96108053e6b68a71532d1cf25f8a352b3e0e5ca7
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 885f92bfb7a49fb90f68d3d5c5a2a93e5880afbc
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83202076"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83588349"
 ---
 # <a name="configure-azure-cognitive-services-virtual-networks"></a>Настройка виртуальных сетей Azure Cognitive Services
 
@@ -43,7 +43,7 @@ Azure Cognitive Services предоставляет многоуровневую
 
 > [!div class="checklist"]
 > * [Детектор аномалий](./anomaly-detector/index.yml)
-> * [API Компьютерного зрения](./computer-vision/index.yml)
+> * [Компьютерное зрение](./computer-vision/index.yml)
 > * [Content Moderator](./content-moderator/index.yml)
 > * [Custom Vision](./custom-vision-service/index.yml)
 > * [Распознавание лиц](./face/index.yml)
@@ -61,7 +61,7 @@ Azure Cognitive Services предоставляет многоуровневую
 Помимо поддержки конечных точек службы виртуальной сети для указанных выше служб, Cognitive Services также поддерживает тег службы для конфигурации исходящих сетевых правил. В тег службы Когнитивесервицесманажемент включены следующие службы.
 > [!div class="checklist"]
 > * [Детектор аномалий](./anomaly-detector/index.yml)
-> * [API Компьютерного зрения](./computer-vision/index.yml)
+> * [Компьютерное зрение](./computer-vision/index.yml)
 > * [Content Moderator](./content-moderator/index.yml)
 > * [Custom Vision](./custom-vision-service/index.yml)
 > * [Распознавание лиц](./face/index.yml)
@@ -70,7 +70,7 @@ Azure Cognitive Services предоставляет многоуровневую
 > * [Персонализатор](./personalizer/index.yml)
 > * [Анализ текста](./text-analytics/index.yml)
 > * [QnA Maker](./qnamaker/index.yml)
-> * [Перевод текстов](./translator/index.yml)
+> * [API перевода](./translator/index.yml)
 > * [Служба "Речь"](./speech-service/index.yml)
 
 ## <a name="change-the-default-network-access-rule"></a>Изменение сетевого правила доступа по умолчанию

@@ -2,13 +2,13 @@
 title: Тип сущности List — LUIS
 description: Сущности списка представляют фиксированный, закрытый набор связанных слов вместе с их синонимами. LUIS не обнаруживает дополнительные значения для сущностей списка. Посмотреть предложения для новых слов на основе текущего списка можно с помощью функции Рекомендовать.
 ms.topic: reference
-ms.date: 03/12/2020
-ms.openlocfilehash: 273fabae38f6682cfaaffcdcc19e62adc41b7a47
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.date: 04/14/2020
+ms.openlocfilehash: 339fb832ef4af069b6f040c5264426002189f93f
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82097580"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83588893"
 ---
 # <a name="list-entity"></a>Сущность списка
 
@@ -125,11 +125,14 @@ ms.locfileid: "82097580"
 
 * * *
 
-|Объект данных|Имя сущности|Применение|
+|Объект данных|Имя сущности|Значение|
 |--|--|--|
 |Сущность списка|`Cities`|`paris`|
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом [руководстве](tutorial-list-entity.md)описано, как использовать **сущность списка** для извлечения точных совпадений текста из списка известных элементов.
+Дополнительные сведения о сущностях:
+
+* [Концепции](luis-concept-entity-types.md)
+* [Создание](luis-how-to-add-entities.md)

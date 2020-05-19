@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: conceptual
-ms.date: 04/01/2020
+ms.date: 05/07/2020
 ms.author: aahi
-ms.openlocfilehash: fa25d27e99a9516d461a84dde184e2a6412baa0b
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 40906c97dc088687bbd960fecc91921a3eb888a6
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80875061"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83589981"
 ---
 # <a name="install-and-run-anomaly-detector-containers-preview"></a>Установка и запуск контейнеров детекторов аномалий (Предварительная версия)
 
 Средство обнаружения аномалий имеет следующие функциональные возможности контейнера:
 
-| Функция | Функции |
+| Функция | Компоненты |
 |--|--|
 | Детектор аномалий | <li> Обнаруживает аномалии по мере их возникновения в режиме реального времени. <li> Обнаруживает аномалии во всем наборе данных как пакет. <li> Выводит ожидаемый нормальный диапазон данных. <li> Поддерживает настройку чувствительности к обнаружению аномалий, чтобы лучше соответствовать вашим данным. |
 
@@ -42,14 +42,6 @@ ms.locfileid: "80875061"
 
 [!INCLUDE [Gathering required container parameters](../containers/includes/container-gathering-required-parameters.md)]
 
-## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
-
-Сначала необходимо завершить и отправить [форму запроса контейнера детектора аномалий](https://aka.ms/adcontainer) , чтобы запросить доступ к контейнеру.
-
-[!INCLUDE [Request access to the container registry](../../../includes/cognitive-services-containers-request-access-only.md)]
-
-[!INCLUDE [Authenticate to the container registry](../../../includes/cognitive-services-containers-access-registry.md)]
-
 ## <a name="the-host-computer"></a>Главный компьютер
 
 [!INCLUDE [Host Computer requirements](../../../includes/cognitive-services-containers-host-computer.md)]
@@ -60,7 +52,7 @@ ms.locfileid: "80875061"
 
 В следующей таблице описаны минимальные и Рекомендуемые ядра ЦП и память, выделяемые для контейнера детекторов обнаружения аномалий.
 
-| QPS (запросов в секунду) | Минимальные | Рекомендуемая |
+| QPS (запросов в секунду) | Минимальные требования | Рекомендуется |
 |-----------|---------|-------------|
 | 10 QPS | 4 ядра, 1 ГБ памяти | 8-ядерный 2 ГБ памяти |
 | 20 QPS | 8 ядер, 2 ГБ памяти | 16-ядерный 4 ГБ памяти |
@@ -75,7 +67,7 @@ ms.locfileid: "80875061"
 
 | Контейнер | Хранилище |
 |-----------|------------|
-| обнаружение аномалий-службы-детектор | `containerpreview.azurecr.io/microsoft/cognitive-services-anomaly-detector:latest` |
+| обнаружение аномалий-службы-детектор | `mcr.microsoft.com/azure-cognitive-services/anomaly-detector:latest` |
 
 <!--
 For a full description of available tags, such as `latest` used in the preceding command, see [anomaly-detector](https://go.microsoft.com/fwlink/?linkid=2083827&clcid=0x409) on Docker Hub.
@@ -85,7 +77,7 @@ For a full description of available tags, such as `latest` used in the preceding
 ### <a name="docker-pull-for-the-anomaly-detector-container"></a>Извлечение DOCKER для контейнера детекторов аномалий
 
 ```Docker
-docker pull containerpreview.azurecr.io/microsoft/cognitive-services-anomaly-detector:latest
+docker pull mcr.microsoft.com/azure-cognitive-services/anomaly-detector:latest
 ```
 
 ## <a name="how-to-use-the-container"></a>Использование контейнера
@@ -97,13 +89,13 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-anomaly-det
 
 ## <a name="run-the-container-with-docker-run"></a>Запуск контейнера с помощью команды `docker run`
 
-Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Дополнительные сведения о том, как получить значения и `{ENDPOINT_URI}` `{API_KEY}` , см. в разделе [сбор обязательных параметров](#gathering-required-parameters) .
+Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Дополнительные сведения о том, как получить значения и, см. в разделе [сбор обязательных параметров](#gathering-required-parameters) `{ENDPOINT_URI}` `{API_KEY}` .
 
 Доступны [примеры](anomaly-detector-container-configuration.md#example-docker-run-commands) `docker run` команд.
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
-containerpreview.azurecr.io/microsoft/cognitive-services-anomaly-detector:latest \
+mcr.microsoft.com/azure-cognitive-services/anomaly-detector:latest \
 Eula=accept \
 Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
@@ -193,7 +185,7 @@ ApiKey={API_KEY}
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Cognitive Services контейнеры не отправляют данные клиента (например, анализируемые данные временных рядов) в корпорацию Майкрософт.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со статьей о [конфигурации контейнеров](anomaly-detector-container-configuration.md).
 * [Развертывание контейнера детекторов аномалий в службе "экземпляры контейнеров Azure"](how-to/deploy-anomaly-detection-on-container-instances.md)

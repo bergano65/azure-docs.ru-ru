@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/02/2020
 ms.author: pankopon
-ms.openlocfilehash: dc09d517d95b5a3f2a88504a14f1451d1de5ffc9
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: ba531164e024f96d3bdd23912f3f6e90275edda4
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80639166"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83589743"
 ---
 # <a name="configure-rhelcentos-7-for-speech-sdk"></a>Настройка RHEL/CentOS 7 для Speech SDK
 
@@ -45,7 +45,7 @@ ldconfig -p | grep libstdc++
 
 Выходные данные в обычный RHEL/CentOS 7 (x64):
 
-```
+```bash
 libstdc++.so.6 (libc6,x86-64) => /lib64/libstdc++.so.6
 ```
 
@@ -57,7 +57,7 @@ strings /lib64/libstdc++.so.6 | egrep "GLIBCXX_|CXXABI_"
 
 Результат должен выглядеть примерно так:
 
-```
+```bash
 ...
 GLIBCXX_3.4.19
 ...
@@ -72,7 +72,11 @@ CXXABI_1.3.7
 
 ## <a name="example"></a>Пример
 
-Ниже приведен пример команды, в которой показано, как настроить RHEL/CentOS 7 x64 для разработки (C++, C#, Java, Python) с помощью пакета SDK для Speech 1.10.0 или более поздней версии:
+Это пример набора команд, демонстрирующий настройку RHEL/CentOS 7 x64 для разработки (C++, C#, Java, Python) с помощью пакета SDK для Speech 1.10.0 или более поздней версии:
+
+### <a name="1-general-setup"></a>1. Общая Настройка
+
+Сначала установите все общие зависимости:
 
 ```bash
 # Only run ONE of the following two commands
@@ -86,16 +90,53 @@ sudo yum update -y
 sudo yum groupinstall -y "Development tools"
 sudo yum install -y alsa-lib dotnet-sdk-2.1 java-1.8.0-openjdk-devel openssl python3
 sudo yum install -y gstreamer1 gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free
+```
 
-# Build GCC 5.4.0 and runtimes and install them under /usr/local
+### <a name="2-cc-compiler-and-runtime-libraries"></a>2. компилятор C/C++ и библиотеки времени выполнения
+
+Установите необходимые пакеты с помощью следующей команды:
+
+```bash
 sudo yum install -y gmp-devel mpfr-devel libmpc-devel
+```
+
+> [!NOTE]
+> Пакет либмпк-которые устарел в обновлении RHEL 7,8. Если выходные данные предыдущей команды содержат сообщение
+>
+> ```bash
+> No package libmpc-devel available.
+> ```
+>
+> Затем необходимо установить необходимые файлы из исходных источников. Выполните следующие команды:
+>
+> ```bash
+> curl https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz -O
+> tar zxf mpc-1.1.0.tar.gz
+> mkdir mpc-1.1.0-build && cd mpc-1.1.0-build
+> ../mpc-1.1.0/configure --prefix=/usr/local --libdir=/usr/local/lib64
+> make -j$(nproc)
+> sudo make install-strip
+> ```
+
+Затем обновите библиотеки компилятора и среды выполнения:
+
+```bash
+# Build GCC 5.4.0 and runtimes and install them under /usr/local
 curl https://ftp.gnu.org/gnu/gcc/gcc-5.4.0/gcc-5.4.0.tar.bz2 -O
 tar jxf gcc-5.4.0.tar.bz2
 mkdir gcc-5.4.0-build && cd gcc-5.4.0-build
 ../gcc-5.4.0/configure --enable-languages=c,c++ --disable-bootstrap --disable-multilib --prefix=/usr/local
 make -j$(nproc)
 sudo make install-strip
+```
 
+Если обновленный компилятор и библиотеки необходимо развернуть на нескольких компьютерах, можно просто скопировать их из раздела в `/usr/local` другие компьютеры. Если требуются только библиотеки времени выполнения, файлы в `/usr/local/lib64` будут достаточно.
+
+### <a name="3-environment-settings"></a>3. параметры среды
+
+Выполните следующие команды, чтобы завершить настройку:
+
+```bash
 # Set SSL cert file location
 # (this is required for any development/testing with Speech SDK)
 export SSL_CERT_FILE=/etc/pki/tls/certs/ca-bundle.crt
@@ -117,7 +158,7 @@ export LD_LIBRARY_PATH=/path/to/extracted/SpeechSDK-Linux-1.10.0/lib/x64:$LD_LIB
 python3 -m pip install azure-cognitiveservices-speech --user
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Сведения о пакете SDK службы "Речь"](speech-sdk.md)
