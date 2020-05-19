@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 11/22/2019
 ms.author: erhopf
-ms.openlocfilehash: 1c13c2cc4d4e562d3512de90338d874091dfeef6
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: d36961a12162a587def76b1ffeb2109f9ed63f4d
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74423945"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83587686"
 ---
 # <a name="authenticate-requests-to-azure-cognitive-services"></a>Проверка подлинности запросов к Azure Cognitive Services
 
@@ -38,12 +38,12 @@ ms.locfileid: "74423945"
 | Заголовок | Описание |
 |--------|-------------|
 | Ocp-Apim-Subscription-Key | Используйте этот заголовок для проверки подлинности по ключу подписки для конкретной службы или для нескольких служб. |
-| Ocp-Apim-Subscription-Region | Этот заголовок является обязательным, только если используется ключ подписки для нескольких служб с [API перевода текстов](./Translator/reference/v3-0-reference.md). Используйте этот заголовок, чтобы указать регион подписки. |
+| Ocp-Apim-Subscription-Region | Этот заголовок необходим только при использовании ключа подписки с несколькими службами в [службе переводчиков](./Translator/reference/v3-0-reference.md). Используйте этот заголовок, чтобы указать регион подписки. |
 | Авторизация | Используйте этот заголовок, если вы применяете маркер проверки подлинности. В следующих разделах подробно описан процесс обмена маркерами. Значение предоставляется в следующем формате: `Bearer <TOKEN>`. |
 
 ## <a name="authenticate-with-a-single-service-subscription-key"></a>Проверка подлинности по ключу подписки для одной службы
 
-Первый вариант — проверка подлинности запроса по ключу подписки для конкретной службы, например для службы перевода текста. Ключи можно получить на портале Azure для каждого созданного ресурса. Чтобы использовать ключ подписки для проверки подлинности запроса, этот ключ следует передать в заголовке `Ocp-Apim-Subscription-Key`.
+Первый вариант — Проверка подлинности запроса с ключом подписки для определенной службы, например транслятора. Ключи можно получить на портале Azure для каждого созданного ресурса. Чтобы использовать ключ подписки для проверки подлинности запроса, этот ключ следует передать в заголовке `Ocp-Apim-Subscription-Key`.
 
 В этих примерах запросов показано использование заголовка `Ocp-Apim-Subscription-Key`. Учтите, что для работы с этим примером вам потребуется действительный ключ подписки.
 
@@ -53,7 +53,7 @@ curl -X GET 'https://api.cognitive.microsoft.com/bing/v7.0/search?q=Welsch%20Pem
 -H 'Ocp-Apim-Subscription-Key: YOUR_SUBSCRIPTION_KEY' | json_pp
 ```
 
-Вот пример вызова к API перевода текстов:
+Это пример вызова службы переводчика:
 ```cURL
 curl -X POST 'https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de' \
 -H 'Ocp-Apim-Subscription-Key: YOUR_SUBSCRIPTION_KEY' \
@@ -76,9 +76,9 @@ curl -X POST 'https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 ### <a name="supported-regions"></a>Поддерживаемые регионы
 
-Если вы используете ключ подписки для нескольких служб в запросе к `api.cognitive.microsoft.com`, необходимо указать регион в URL-адресе. Например: `westus.api.cognitive.microsoft.com`.
+Если вы используете ключ подписки для нескольких служб в запросе к `api.cognitive.microsoft.com`, необходимо указать регион в URL-адресе. Например: `westus.api.cognitive.microsoft.com`
 
-Если вы используете ключ подписки для нескольких служб в запросе к API перевода текстов, необходимо указать регион в заголовке `Ocp-Apim-Subscription-Region`.
+При использовании ключа подписки с несколькими службами в службе переводчика необходимо указать регион подписки с `Ocp-Apim-Subscription-Region` заголовком.
 
 Проверка подлинности по ключу для нескольких служб поддерживается в следующих регионах:
 
@@ -100,7 +100,7 @@ curl -X GET 'https://YOUR-REGION.api.cognitive.microsoft.com/bing/v7.0/search?q=
 -H 'Ocp-Apim-Subscription-Key: YOUR_SUBSCRIPTION_KEY' | json_pp
 ```
 
-Вот пример вызова к API перевода текстов:
+Это пример вызова службы переводчика:
 
 ```cURL
 curl -X POST 'https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de' \
@@ -150,7 +150,7 @@ curl -v -X POST \
 | `southeastasia` | `uksouth` | `westcentralus` |
 | `westeurope` | `westus` | `westus2` |
 
-Получив маркер проверки подлинности, его следует включать в каждый запрос в заголовке `Authorization`. Вот пример вызова к API перевода текстов:
+Получив маркер проверки подлинности, его следует включать в каждый запрос в заголовке `Authorization`. Это пример вызова службы переводчика:
 
 ```cURL
 curl -X POST 'https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de' \

@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: f90ada6b6cd1760b3b779010625f252533fa611d
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: fe2c0eed2d476d01dffd22a61dd431140f26c475
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79219514"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83587254"
 ---
 # <a name="how-to-manage-settings"></a>Как управлять параметрами
 
@@ -29,11 +29,11 @@ ms.locfileid: "79219514"
 
 ## <a name="associating-microsoft-translator-subscription"></a>Связывание с подпиской Microsoft Translator
 
-Необходимо иметь ключ подписки API перевода текстов Microsoft Translator, связанный с рабочей областью для обучения или развертыванием модели.
+Для обучения и развертывания моделей необходимо иметь ключ подписки Translator, связанный с рабочей областью.
 
 Если у вас нет подписки, выполните следующие действия:
 
-1. Подписка на API перевода текстов Microsoft Translator. В этой статье показано, как подписаться на API перевода текстов Microsoft Translator.
+1. Подпишитесь на переводчик. В этой статье показано, как подписываться на транслятор.
 2. Запишите ключ для вашей подписки переводчика. Приемлемым является либо Key1, либо Key2.
 3. Вернитесь обратно на портал Custom Translator.
 
@@ -101,6 +101,6 @@ ms.locfileid: "79219514"
 
     ![Общий доступ к параметрам разрешения](media/how-to/sharing-permission-settings.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [перенести рабочую область и проект](how-to-migrate.md) из [Microsoft Translator Hub](https://hub.microsofttranslator.com).

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
-ms.date: 12/30/2019
+ms.date: 04/30/2020
 ms.author: diberry
-ms.openlocfilehash: aac4ba3ec63d425cac782f5db65bba923d24ed71
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 5f663379939f24d16fb63e8e5b002fe088a2d9f8
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75552004"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83585595"
 ---
 # <a name="machine-learned-entity"></a>Сущность, прошедшая машинное обучение
 
@@ -38,7 +38,7 @@ ms.locfileid: "75552004"
 
 #### <a name="v3-prediction-endpoint-response"></a>[Отклик конечной точки прогнозирования V3](#tab/V3)
 
-Поскольку сущность, предназначенная для компьютера, может иметь множество компонентов с ограничениями и дескрипторами, это только пример. Он должен рассматриваться как пошаговое описание того, что будет возвращено сущностью.
+Поскольку сущность, предназначенная для компьютера, может иметь множество вложенных сущностей с необходимыми функциями, это только пример. Он должен рассматриваться как пошаговое описание того, что будет возвращено сущностью.
 
 Рассмотрим запрос:
 
@@ -346,7 +346,7 @@ ms.locfileid: "75552004"
 Эта сущность недоступна в среде выполнения прогнозирования версии 2.
 * * *
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о сущности, занятой компьютером, включая [учебник](tutorial-machine-learned-entity.md), [Основные понятия](luis-concept-entity-types.md#design-entities-for-decomposition)и [руководство](luis-how-to-add-entities.md#create-a-machine-learned-entity).
 

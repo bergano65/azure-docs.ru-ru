@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 2fa90a8099778bf37ce8534e968a2b1b4345c2d8
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 5705e5f29bc851d615f91d902fd505a69b5cfd12
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75446784"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83587009"
 ---
 # <a name="migrate-hub-workspace-and-projects-to-custom-translator"></a>Перенос рабочей области и проектов центра в Custom Translator
 
@@ -80,11 +80,11 @@ ms.locfileid: "75446784"
 
 4. На следующей странице выберите любой из этих двух параметров:
 
-    a. Только развернутые учебные курсы: при выборе этого параметра будут перенесены только развернутые системы и связанные документы.
+    а. Только развернутые учебные курсы: при выборе этого параметра будут перенесены только развернутые системы и связанные документы.
 
-    b. Все успешные учебные курсы: при выборе этого параметра будут перенесены все успешные учебные курсы и связанные документы.
+    б. Все успешные учебные курсы: при выборе этого параметра будут перенесены все успешные учебные курсы и связанные документы.
 
-    c. Введите идентификатор рабочей области назначения в Custom Translator.
+    в. Введите идентификатор рабочей области назначения в Custom Translator.
 
     ![Перенос из центра](media/how-to/how-to-migrate-from-hub-screen.png)
 
@@ -141,9 +141,9 @@ ms.locfileid: "75446784"
 
 ## <a name="new-languages"></a>Новые языки
 
-Если вы являетесь сообществом или организацией, работающими над созданием новой языковой системы для Microsoft Translator [custommt@microsoft.com](mailto:custommt@microsoft.com) , обращайтесь к для получения дополнительных сведений.
+Если вы являетесь сообществом или организацией, работающими над созданием новой языковой системы для Microsoft Translator, обращайтесь к [custommt@microsoft.com](mailto:custommt@microsoft.com) для получения дополнительных сведений.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обучение модели](how-to-train-model.md).
-- Начните использовать развернутую пользовательскую модель перевода с помощью [API перевода текстов Майкрософт версии 3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl).
+- Приступите к работе с развернутой настраиваемой моделью преобразования через [Translator v3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl).
