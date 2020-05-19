@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 04/01/2020
+ms.date: 05/05/2020
 ms.author: aahi
 ms.custom: seodec18
-ms.openlocfilehash: 5f36c429041a8182551d1f077f0a1229f520e8c1
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 838b759f6b175b478dcd9b0559784975b5d24f70
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80879349"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83593344"
 ---
 # <a name="install-and-run-read-containers-preview"></a>Установка и запуск контейнеров чтения (Предварительная версия)
 
@@ -87,7 +87,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-read:latest
 
 ## <a name="run-the-container-with-docker-run"></a>Запуск контейнера с помощью команды `docker run`
 
-Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Дополнительные сведения о том, как получить значения и `{ENDPOINT_URI}` `{API_KEY}` , см. в разделе [сбор обязательных параметров](#gathering-required-parameters) .
+Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Дополнительные сведения о том, как получить значения и, см. в разделе [сбор обязательных параметров](#gathering-required-parameters) `{ENDPOINT_URI}` `{API_KEY}` .
 
 Доступны [примеры](computer-vision-resource-container-config.md#example-docker-run-commands) `docker run` команд.
 
@@ -125,9 +125,9 @@ ApiKey={API_KEY}
 
 ### <a name="asynchronous-read"></a>Асинхронное чтение
 
-Операции `POST /vision/v2.0/read/core/asyncBatchAnalyze` и `GET /vision/v2.0/read/operations/{operationId}` можно использовать совместно для асинхронного чтения образа, аналогично тому, как служба компьютерное зрение использует соответствующие операции RESTful. Асинхронный метод POST возвратит объект `operationId` , который используется в качестве идентификатора для HTTP-запроса GET.
+Операции и можно использовать `POST /vision/v2.0/read/core/asyncBatchAnalyze` `GET /vision/v2.0/read/operations/{operationId}` совместно для асинхронного чтения образа, аналогично тому, как служба компьютерное зрение использует соответствующие операции RESTful. Асинхронный метод POST возвратит объект `operationId` , который используется в качестве идентификатора для HTTP-запроса GET.
 
-В пользовательском интерфейсе Swagger выберите, `asyncBatchAnalyze` чтобы развернуть его в браузере. Нажмите кнопку **попробовать** > **выбрать файл**. В этом примере мы будем использовать следующее изображение:
+В пользовательском интерфейсе Swagger выберите, `asyncBatchAnalyze` чтобы развернуть его в браузере. Нажмите кнопку **попробовать**  >  **выбрать файл**. В этом примере мы будем использовать следующее изображение:
 
 ![символы табуляции и пробелы](media/tabs-vs-spaces.png)
 
@@ -140,7 +140,7 @@ ApiKey={API_KEY}
  server: Kestrel
 ```
 
-`operation-location` — Это полный URL-адрес, доступ к которому осуществляется через HTTP GET. Ниже приведен ответ JSON, посвященный `operation-location` выполнению URL-адреса из предыдущего изображения:
+`operation-location`— Это полный URL-адрес, доступ к которому осуществляется через HTTP GET. Ниже приведен ответ JSON, посвященный выполнению `operation-location` URL-адреса из предыдущего изображения:
 
 ```json
 {
@@ -186,7 +186,7 @@ ApiKey={API_KEY}
 
 ### <a name="synchronous-read"></a>Синхронное чтение
 
-Для синхронного считывания изображения можно использовать `POST /vision/v2.0/read/core/Analyze` операцию. Когда изображение считывается целиком, тогда API возвращает ответ JSON. Единственное исключение — при возникновении ошибки. При возникновении ошибки возвращается следующий код JSON:
+`POST /vision/v2.0/read/core/Analyze`Для синхронного считывания изображения можно использовать операцию. Когда изображение считывается целиком, тогда API возвращает ответ JSON. Единственное исключение — при возникновении ошибки. При возникновении ошибки возвращается следующий код JSON:
 
 ```json
 {
@@ -278,7 +278,7 @@ export interface Word {
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например анализируемые изображения или тексты).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со статьей о [конфигурации контейнеров](computer-vision-resource-container-config.md).
 * Дополнительные сведения о распознавании печатного и рукописного текста см. в статье [Обзор компьютерного зрения](Home.md).
