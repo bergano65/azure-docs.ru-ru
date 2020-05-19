@@ -1,7 +1,7 @@
 ---
-title: Метод Detect в API перевода текстов
+title: Метод обнаружения транслятора
 titleSuffix: Azure Cognitive Services
-description: Определите язык фрагмента текста с помощью метода обнаружения API перевода текстов Azure Cognitive Services.
+description: Определение языка фрагмента текста с помощью метода обнаружения Azure Cognitive Services Translator.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -10,18 +10,18 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: swmachan
-ms.openlocfilehash: 370f3b14c12fc05f181d6497b7069bbf1cf3c9cc
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: adfd91a3f82a83f6bb5e076247f1539029d5a04e
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73837297"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83592293"
 ---
-# <a name="translator-text-api-30-detect"></a>API перевода текстов 3.0: Detect
+# <a name="translator-30-detect"></a>Переводчик 3,0: обнаружение
 
 Определяет язык для фрагмента текста.
 
-## <a name="request-url"></a>Request URL (URL-адрес запроса)
+## <a name="request-url"></a>URL-адрес запроса
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -81,7 +81,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
 * Длина текстового значения в одном элементе массива не должна превышать 10 000 символов, включая пробелы.
 * Общий объем текста запроса не должен превышать 50 000 символов, включая пробелы.
 
-## <a name="response-body"></a>Тело ответа
+## <a name="response-body"></a>Текст ответа
 
 Успешный ответ возвращается в формате массива JSON с одним результатом для каждой строки входного массива. Объект результата содержит следующие свойства.
 
@@ -146,7 +146,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
   </tr>
   <tr>
     <td>400</td>
-    <td>Один из параметров запроса отсутствует или имеет недопустимое значение. Исправьте параметры запроса и повторите попытку.</td>
+    <td>Один из параметров запроса отсутствует или является недопустимым. Исправьте параметры запроса и повторите попытку.</td>
   </tr>
   <tr>
     <td>401</td>
@@ -170,7 +170,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
   </tr>
 </table> 
 
-Если возникнет ошибка, запрос также вернет ответ JSON с ошибкой. Код ошибки представляет собой число из 6 знаков, первые 3 из которых являются кодом состояния HTTP, а оставшиеся 3 цифры определяют категорию ошибки. Коды распространенных ошибок можно найти на [странице справочника по API перевода текстов версии 3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors). 
+Если возникнет ошибка, запрос также вернет ответ JSON с ошибкой. Код ошибки представляет собой число из 6 знаков, первые 3 из которых являются кодом состояния HTTP, а оставшиеся 3 цифры определяют категорию ошибки. Общие коды ошибок можно найти на [странице справочника по транслятору v3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors). 
 
 ## <a name="examples"></a>Примеры
 

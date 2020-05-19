@@ -3,12 +3,12 @@ title: Регионы публикации & конечные точки — LUI
 description: Регион, указанный в портал Azure, совпадает с областью, в которой будет опубликовано приложение LUIS, а для этого же региона создается URL-адрес конечной точки.
 ms.topic: reference
 ms.date: 11/19/2019
-ms.openlocfilehash: a7709d15a51637772d7a4775cd71c307dc21c52b
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 680887ecda0843bf770c62a4b9a4d88305ea9e73
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80292091"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83590916"
 ---
 # <a name="authoring-and-publishing-regions-and-the-associated-keys"></a>Регионы создания и публикации и связанные ключи
 
@@ -21,9 +21,9 @@ ms.locfileid: "80292091"
 
 |LUIS|Регион разработки|Имя региона Azure|
 |--|--|--|
-|[www.luis.ai][www.luis.ai] <br>[preview.luis.ai](https://preview.luis.ai)|США<br>не Европа<br>не Австралия| `westus`|
-|[au.luis.ai][au.luis.ai] <br>[preview.au.luis.ai](https://preview.au.luis.ai)|Австралия| `australiaeast`|
-|[eu.luis.ai][eu.luis.ai] <br>[preview.eu.luis.ai](https://preview.eu.luis.ai)|Европа|`westeurope`|
+|[www.luis.ai][www.luis.ai] <br>[previous.luis.ai](https://previous.luis.ai)|США<br>не Европа<br>не Австралия| `westus`|
+|[au.luis.ai][au.luis.ai] <br>[previous.au.luis.ai](https://previous.au.luis.ai)|Австралия| `australiaeast`|
+|[eu.luis.ai][eu.luis.ai] <br>[previous.eu.luis.ai](https://previous.eu.luis.ai)|Европа|`westeurope`|
 
 Области разработки имеют [парные регионы отработки отказа](https://docs.microsoft.com/azure/best-practices-availability-paired-regions).
 
@@ -45,7 +45,7 @@ ms.locfileid: "80292091"
 
 ## <a name="publishing-to-europe"></a>Публикация в Европе
 
-Для публикации в европейские регионы приложения LUIS нужно создавать только по адресу https://eu.luis.ai. При попытке выполнить публикацию в другое место с помощью ключа в европейском регионе LUIS отображает предупреждающее сообщение. Вместо этого используйте https://eu.luis.ai. Приложения LUIS, созданные [https://eu.luis.ai][eu.luis.ai] в, не переносятся автоматически в другие регионы. Чтобы перенести приложение LUIS, экспортируйте, а затем импортируйте его.
+Для публикации в европейские регионы приложения LUIS нужно создавать только по адресу https://eu.luis.ai. При попытке выполнить публикацию в другое место с помощью ключа в европейском регионе LUIS отображает предупреждающее сообщение. Вместо этого используйте https://eu.luis.ai. Приложения LUIS, созданные в, [https://eu.luis.ai][eu.luis.ai] не переносятся автоматически в другие регионы. Чтобы перенести приложение LUIS, экспортируйте, а затем импортируйте его.
 
 ## <a name="europe-publishing-regions"></a>Регионы публикации в Европе
 
@@ -58,7 +58,7 @@ ms.locfileid: "80292091"
 
 ## <a name="publishing-to-australia"></a>Публикация в Австралии
 
-Для публикации в австралийские регионы приложения LUIS нужно создавать только по адресу https://au.luis.ai. При попытке выполнить публикацию в другое место с помощью ключа в австралийском регионе LUIS отображает предупреждающее сообщение. Вместо этого используйте https://au.luis.ai. Приложения LUIS, созданные [https://au.luis.ai][au.luis.ai] в, не переносятся автоматически в другие регионы. Чтобы перенести приложение LUIS, экспортируйте, а затем импортируйте его.
+Для публикации в австралийские регионы приложения LUIS нужно создавать только по адресу https://au.luis.ai. При попытке выполнить публикацию в другое место с помощью ключа в австралийском регионе LUIS отображает предупреждающее сообщение. Вместо этого используйте https://au.luis.ai. Приложения LUIS, созданные в, [https://au.luis.ai][au.luis.ai] не переносятся автоматически в другие регионы. Чтобы перенести приложение LUIS, экспортируйте, а затем импортируйте его.
 
 ## <a name="australia-publishing-regions"></a>Регионы публикации Австралии
 
@@ -68,7 +68,7 @@ ms.locfileid: "80292091"
 
 ## <a name="publishing-to-other-regions"></a>Публикация в других регионах
 
-Для публикации в других регионах вы создаете приложения LUIS только по [https://www.luis.ai](https://www.luis.ai) адресу.
+Для публикации в других регионах вы создаете приложения LUIS только по адресу [https://www.luis.ai](https://www.luis.ai) .
 
 ## <a name="other-publishing-regions"></a>Другие регионы публикации
 
@@ -102,7 +102,7 @@ ms.locfileid: "80292091"
 
 Области разработки имеют [парные регионы отработки отказа](https://docs.microsoft.com/azure/best-practices-availability-paired-regions).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Справочник по предварительно созданным сущностям](./luis-reference-prebuilt-entities.md)

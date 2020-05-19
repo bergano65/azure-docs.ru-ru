@@ -8,20 +8,26 @@ services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
-ms.date: 03/01/2019
+ms.date: 04/23/2020
 ms.author: diberry
-ms.openlocfilehash: 21e1be094716ac1d43e1f4458b41e855315d1779
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 21669a214ff1646a8f331cbe2871b7d8c756f22f
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82192992"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83591766"
 ---
 # <a name="whats-new-in-personalizer"></a>Новые возможности в персонализации
 
 Узнайте о новых возможностях службы. Эти элементы могут включать заметки о выпуске, видео, записи в блоге и другие типы информации. Создайте закладку для этой страницы, чтобы получать последние сведения об обновлениях службы.
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="may-2020---build-conference"></a>Май 2020-//Build Конференция
+
+В **общедоступной предварительной версии**доступны следующие возможности.
+
+ * [Режим области](concept-apprentice-mode.md) в качестве режима обучения.
 
 ### <a name="march-2020"></a>Март 2020 г.
 
@@ -38,7 +44,7 @@ ms.locfileid: "82192992"
 
 * [Цикл обучения по рангам и наградам](what-is-personalizer.md)
 
-## <a name="videos"></a>Видео
+## <a name="videos"></a>Видеоролики
 
 ### <a name="2019-build-videos"></a>видео о сборке 2019
 
@@ -48,7 +54,7 @@ ms.locfileid: "82192992"
 
 [Объявление об обновлениях Azure для Cognitive Services](https://azure.microsoft.com/updates/?product=cognitive-services)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство. создание цикла обратной связи на языке C #](csharp-quickstart-commandline-feedback-loop.md)
 * [Использование интерактивной демонстрации](https://personalizationdemo.azurewebsites.net/)

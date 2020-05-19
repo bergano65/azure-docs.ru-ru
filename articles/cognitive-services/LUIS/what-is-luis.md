@@ -2,13 +2,13 @@
 title: Что такое служба "Распознавание речи" (LUIS)?
 description: Распознавание речи (LUIS) — это облачная служба API, которая применяет пользовательскую аналитику машинного обучения к тексту пользователя в разговорном стиле и на естественном языке, чтобы предсказать общий смысл и извлечь соответствующую подробную информацию.
 ms.topic: overview
-ms.date: 02/23/2020
-ms.openlocfilehash: 98fb936422f8e23e728efea19fa2cd75d90fac57
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.date: 05/05/2020
+ms.openlocfilehash: d09aaabeec1d22132843ba98472e1cd89ba95815
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80053354"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83592820"
 ---
 # <a name="what-is-language-understanding-luis"></a>Что такое служба "Распознавание речи" (LUIS)?
 
@@ -55,9 +55,9 @@ ms.locfileid: "80053354"
 
 |Пример фразы пользователя|Блокировка с намерением|Извлеченные данные|
 |-----------|-----------|-----------|
-|`Book a flight to __Seattle__?`|BookFlight|Seattle|
-|`When does your store __open__?`|StoreHoursAndLocation|открыт|
-|`Schedule a meeting at __1pm__ with __Bob__ in Distribution`|ScheduleMeeting|13:00, Боб|
+|`Book a flight to Seattle?`|BookFlight|Seattle|
+|`When does your store open?`|StoreHoursAndLocation|открыт|
+|`Schedule a meeting at 1pm with Bob in Distribution`|ScheduleMeeting|13:00, Боб|
 
 ## <a name="query-prediction-endpoint"></a>Запрос конечной точки прогнозирования
 

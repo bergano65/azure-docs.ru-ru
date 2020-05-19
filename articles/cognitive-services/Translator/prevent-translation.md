@@ -1,7 +1,7 @@
 ---
-title: Запрет перевода содержимого — API перевода текстов
+title: Запретить перевод содержимого — переводчик
 titleSuffix: Azure Cognitive Services
-description: Запрет перевода содержимого с помощью API перевода текстов. API перевода текстов позволяет помечать содержимое тегами, чтобы оно не переводилось.
+description: Запрет перевода содержимого с помощью транслятора. Переводчик позволяет пометить содержимое так, чтобы оно не переводилось.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -10,22 +10,22 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 03/20/2020
 ms.author: swmachan
-ms.openlocfilehash: c7be4a0ea1a9d24a8b262132632a0bbb63ae1b96
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 33939976a0824ce8afeb2e6f6fb19e7033098683
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80052491"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83592701"
 ---
-# <a name="how-to-prevent-translation-of-content-with-the-translator-text-api"></a>Запрет перевода содержимого с помощью API перевода текстов
+# <a name="how-to-prevent-translation-of-content-with-the-translator"></a>Как предотвратить перевод содержимого с помощью транслятора
 
-API перевода текстов позволяет помечать содержимое тегами, чтобы оно не переводилось. Например, можно пометить тегами код, название торговой марки, а также слово или фразу, которая не имеет смысла при локализации.
+Переводчик позволяет пометить содержимое так, чтобы оно не переводилось. Например, можно пометить тегами код, название торговой марки, а также слово или фразу, которая не имеет смысла при локализации.
 
 ## <a name="methods-for-preventing-translation"></a>Способы запрета перевода
 
 1. Пометьте содержимое с помощью `notranslate`. Это можно сделать, только если входные Тексттипе заданы в формате HTML.
 
-   Пример:
+   Пример.
 
    ```html
    <span class="notranslate">This will not be translated.</span>
@@ -39,11 +39,11 @@ API перевода текстов позволяет помечать соде
 
 2. Используйте [динамический словарь](dynamic-dictionary.md), чтобы настроить требуемый перевод.
 
-3. Не передавайте строку в API перевода текстов для перевода.
+3. Не передавайте строку транслятору для перевода.
 
 4. Пользовательский переводчик. Используйте [словарь в пользовательском трансляторе](custom-translator/what-is-dictionary.md) , чтобы предписывает перевод фразы с вероятностью 100%.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
-> [Запрет перевода при вызове API перевода текстов](reference/v3-0-translate.md)
+> [Избегайте перевода в вызове переводчика](reference/v3-0-translate.md)

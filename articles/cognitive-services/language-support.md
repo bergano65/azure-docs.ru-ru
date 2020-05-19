@@ -1,5 +1,5 @@
 ---
-title: Поддержка языков
+title: Языковая поддержка
 titleSuffix: Azure Cognitive Services
 description: Azure Cognitive Services позволяет создавать приложения, которые видят, слышат, понимают пользователя и говорят с ним. Эти службы поддерживают более трех десятков языков, предоставляя пользователям возможность общения с вашим приложением естественным образом.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/31/2020
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: d103b22338672f031fa4f91349a8376f86b703c8
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 50c6d3ff6e1e8b979b3544c423a15ae8e1e42f6f
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81530982"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83592157"
 ---
 # <a name="natural-language-support-for-azure-cognitive-services"></a>Поддержка естественного языка в Azure Cognitive Services
 
@@ -30,7 +30,7 @@ Azure Cognitive Services позволяет создавать приложен�
 
 ## <a name="vision"></a>Концепция
 
-* [API Компьютерного зрения](./computer-vision/language-support.md)
+* [Компьютерное зрение](./computer-vision/language-support.md)
 * [Распознаватель документов (предварительная версия)](./form-recognizer/language-support.md)
 * [Распознаватель рукописного текста (предварительная версия)](./ink-recognizer/language-support.md)
 * [Индексатор видео](https://docs.microsoft.com/azure/media-services/video-indexer/language-identification-model#guidelines-and-limitations)
@@ -41,7 +41,7 @@ Azure Cognitive Services позволяет создавать приложен�
 * [Распознавание речи (LUIS)](./luis/luis-supported-languages.md)
 * [QnA Maker](./qnamaker/overview/languages-supported.md)
 * [Анализ текста](./text-analytics/text-analytics-supported-languages.md)
-* [Перевод текстов](./translator/languages.md)
+* [API перевода](./translator/languages.md)
 
 ## <a name="speech"></a>Речь
 
@@ -52,12 +52,12 @@ Azure Cognitive Services позволяет создавать приложен�
 ## <a name="search"></a>Поиск
 
 * [Пользовательский поиск Bing](./bing-custom-search/supported-countries-markets.md)
-* [API Поиска изображений Bing](./bing-image-search/supported-countries-markets.md)
-* [API Поиска новостей Bing](./bing-news-search/supported-countries-markets.md)
-* [API Автозаполнения Bing](./Bing-Autosuggest/bing-autosuggest-supported-languages.md)
-* [API Проверки орфографии Bing](./bing-spell-check/bing-spell-check-supported-languages.md)
+* [Поиск изображений Bing](./bing-image-search/supported-countries-markets.md)
+* [Поиск новостей Bing](./bing-news-search/supported-countries-markets.md)
+* [Автозаполнение Bing](./Bing-Autosuggest/bing-autosuggest-supported-languages.md)
+* [Проверка орфографии Bing](./bing-spell-check/bing-spell-check-supported-languages.md)
 * [Визуальный поиск Bing](./bing-visual-search/supported-countries-markets.md)
-* [API Поиска в Интернете Bing](./bing-web-search/supported-countries-markets.md)
+* [Поиск в Интернете Bing](./bing-web-search/supported-countries-markets.md)
 
 ## <a name="decision"></a>Решение
 

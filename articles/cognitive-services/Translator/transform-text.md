@@ -1,7 +1,7 @@
 ---
-title: Преобразование текста — API перевода текстов
+title: Преобразование текста-переводчика
 titleSuffix: Azure Cognitive Services
-description: Преобразование текста с помощью API перевода текстов.
+description: Преобразование текста с помощью переводчика.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -10,17 +10,17 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: swmachan
-ms.openlocfilehash: 533f09b09b7f5899833669b5f0ad4ffa5efa3a43
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: ba8cf9a25a12ecc261845477c4e32a86f585906e
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68594906"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83592208"
 ---
 # <a name="how-to-use-the-transformtext-method"></a>Использование метода TransformText
 
 > [!NOTE]
-> Этот метод является устаревшим. Он недоступен в версии API перевода текстов 3.0.
+> Этот метод является устаревшим. Эта версия недоступна в версии 3.0 транслятора.
 
 Метод TransformText представляет собой функцию нормализации текста для социальных сетей, которая возвращает нормализованную форму входных данных. Этот метод может использоваться как один из этапов предварительной обработки при машинном переводе или в других приложениях, ожидающих чистый входной текст, который обычно не находится в социальных сетях или содержимом, созданном пользователем. Функция пока работает только с входными данными на английском языке.
 

@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 03/13/2020
 ms.author: egeaney
-ms.openlocfilehash: 44bb223dbc944be1b8769aa2572f1b88b916528b
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 82b294cbda6e9d4b4cfa5ec560d802c8e5c6c51c
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79372241"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83590899"
 ---
 # <a name="translator-encryption-of-data-at-rest"></a>Шифрование неактивных данных в преобразователе
 
@@ -41,7 +41,7 @@ ms.locfileid: "79372241"
 
 Выполните следующие действия, чтобы включить управляемые клиентом ключи для переводчика:
 
-1. Создайте новый региональный Перевод текстов или региональный Cognitive Services ресурс. Это не будет работать с глобальным ресурсом.
+1. Создайте новый региональный переводчик или региональный Cognitive Services ресурс. Это не будет работать с глобальным ресурсом.
 2. Включить управляемое удостоверение в портал Azure и добавить сведения о ключе, управляемом клиентом.
 3. Создайте новую рабочую область в пользовательском трансляторе и свяжите эту информацию о подписке.
 
@@ -79,6 +79,6 @@ ms.locfileid: "79372241"
 Чтобы отозвать доступ к ключам, управляемым клиентом, используйте PowerShell или Azure CLI. Дополнительные сведения см. в разделе [Azure Key Vault PowerShell](https://docs.microsoft.com/powershell/module/az.keyvault//) или [Azure Key Vault CLI](https://docs.microsoft.com/cli/azure/keyvault). Отзыв доступа блокирует доступ ко всем данным в Cognitive Services ресурсе, и ваши модели будут развернуты, так как ключ шифрования недоступен для Cognitive Services. Все отправленные данные также будут удалены из пользовательского транслятора.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения о Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)
