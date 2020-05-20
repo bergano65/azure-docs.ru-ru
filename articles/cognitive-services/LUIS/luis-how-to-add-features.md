@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 05/06/2020
+ms.date: 05/17/2020
 ms.author: diberry
-ms.openlocfilehash: 12445ec5b14f4c274e471bf1b061a3b221664d20
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 8b52102ec26ec94097e4b5b9aa1b1730787cfa4b
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/19/2020
-ms.locfileid: "83592310"
+ms.locfileid: "83654108"
 ---
 # <a name="use-features-to-boost-signal-of-word-list"></a>Использование функций для повышения сигнала списка слов
 
@@ -49,9 +49,24 @@ ms.locfileid: "83592310"
 <a name="delete-phrase-list"></a>
 <a name="deactivate-phrase-list"></a>
 
+
 > [!Note]
 > Список фраз можно удалить или отключить из контекстной панели инструментов на странице **функций ML** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="global-phrase-list-applies-to-entire-app"></a>Список глобальных фраз применяется ко всему приложению
+
+Список фраз должен быть применен к намерениям или сущности, которые он может помочь, но могут возникнуть ситуации, когда список фраз должен быть применен ко всему приложению как к **глобальному** компоненту.
+
+На странице функции ML выберите список фраза, а затем в верхней контекстной панели инструментов выберите **сделать глобальным** .
+
+## <a name="model-as-a-feature"></a>Модель как функция
+
+Сущность может быть [функцией для цели или сущности](luis-concept-feature.md).
+
+Чтобы добавить сущность в качестве функции к намерению, выберите цель на странице «цели», а затем щелкните **+ Добавить функцию** над контекстной панелью инструментов. Список будет включать все списки фраз и сущности, которые можно применить в качестве функций.
+
+Чтобы добавить сущность в качестве функции в другую сущность, можно добавить эту функцию на странице сведений о намерениях с помощью [палитры сущностей](label-entity-example-utterance.md#adding-entity-as-a-feature-from-the-entity-palette) или [Добавить эту функцию](luis-how-to-add-entities.md#add-a-feature-to-a-machine-learned-entity) на странице сведений о сущности.
+
+## <a name="next-steps"></a>Следующие шаги
 
 После добавления, изменения, удаления или деактивации функции выполните [обучение и тестирование приложения](luis-interactive-test.md) еще раз, чтобы узнать, не улучшилась ли производительность.
