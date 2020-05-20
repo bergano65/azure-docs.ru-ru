@@ -58,6 +58,7 @@
       items:
         - name: Общие сведения о выходных данных
           href: stream-analytics-define-outputs.md
+          displayName: 'adls, sql, blob, event hubs, power bi, table, service bus, cosmos, functions'
         - name: Вывод в Cosmos DB
           href: stream-analytics-documentdb-output.md
         - name: "Вывод в базу данных SQL\_Azure"
@@ -127,14 +128,22 @@
           href: copy-job.md
         - name: Связывание заданий для обеспечения надежности
           href: stream-analytics-job-reliability.md
-        - name: "Аутентификация на основе управляемых удостоверений\_— выходные данные ADLS 1-го поколения"
-          href: stream-analytics-managed-identities-adls.md
         - name: Использование эталонных данных SQL
           href: sql-reference-data.md
-        - name: "Аутентификация на основе управляемых удостоверений\_— выходные данные хранилища BLOB-объектов"
-          href: blob-output-managed-identity.md
-        - name: "Аутентификация на основе управляемых удостоверений в Power\_BI"
-          href: powerbi-output-managed-identity.md
+        - name: Аутентификация на основе управляемых удостоверений
+          items:
+            - name: "ADLS 1-го\_поколения"
+              href: stream-analytics-managed-identities-adls.md
+              displayName: 'managed identity, identities, authenticate'
+            - name: Хранилище BLOB-объектов
+              href: blob-output-managed-identity.md
+              displayName: 'managed identity, identities, authenticate'
+            - name: Power BI
+              href: powerbi-output-managed-identity.md
+              displayName: 'managed identity, identities, authenticate'
+            - name: БД SQL Azure
+              href: sql-database-output-managed-identity.md
+              displayName: 'managed identity, identities, authenticate'
         - name: Шифрование данных
           href: data-protection.md
     - name: Создание решений
@@ -226,7 +235,19 @@
           href: stream-analytics-job-diagnostic-logs.md
         - name: Ошибки данных
           href: data-errors.md
-    - name: Интеграция с машинным обучением
+        - name: Коды ошибок
+          items:
+            - name: Ошибки конфигурации
+              href: configuration-error-codes.md
+            - name: Ошибки данных
+              href: data-error-codes.md
+            - name: Ошибки с внешним доступом
+              href: external-availability-error-codes.md
+            - name: Внешние ошибки
+              href: external-error-codes.md
+            - name: Внутренние ошибки
+              href: internal-error-codes.md
+    - name: Интеграция с решениями для машинного обучения
       items:
         - name: Анализ тональности с помощью моделей Машинного обучения
           href: stream-analytics-machine-learning-integration-tutorial.md

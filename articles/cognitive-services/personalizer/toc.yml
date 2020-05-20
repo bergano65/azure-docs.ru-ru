@@ -39,6 +39,8 @@
         - name: Политики обучения
           href: concept-active-learning.md
           displayName: 'active, inactive'
+        - name: Режим ученика
+          href: concept-apprentice-mode.md
         - name: Активные и неактивные события
           href: concept-active-inactive-events.md
         - name: Вознаграждения
@@ -62,9 +64,11 @@
   items:
     - name: Создание ресурса Персонализатора
       href: how-to-create-resource.md
-    - name: Создание цикла обучения
+    - name: Настройка Персонализатора
       href: how-to-settings.md
       displayName: 'azure, portal, settings, evaluation, offline, policy, export, model, configure'
+    - name: Использование режима ученика
+      href: how-to-learning-behavior.md
     - name: Управление параметрами модели и обучения
       href: how-to-manage-model.md
     - name: Анализ с помощью автономной оценки

@@ -28,6 +28,24 @@
       items:
         - name: Использование лабораторий для проведения учебных занятий
           href: classroom-labs-scenarios.md
+        - name: "Лаборатории для аудитории\_— типы классов"
+          items:
+            - name: Общие сведения о типах классов
+              href: class-types.md
+            - name: Глубокое обучение при обработке естественного языка
+              href: class-type-deep-learning-natural-language-processing.md
+            - name: Создание скриптов оболочки в Linux
+              href: class-type-shell-scripting-linux.md
+            - name: Этичный взлом
+              href: class-type-ethical-hacking.md
+            - name: Управление базами данных
+              href: class-type-database-management.md
+            - name: Использование Python с Jupyter Notebook
+              href: class-type-jupyter-notebook.md
+            - name: Разработка мобильных приложений с помощью Android Studio
+              href: class-type-mobile-dev-android-studio.md
+            - name: Аналитика больших данных
+              href: class-type-big-data-analytics.md
 - name: Практические руководства
   items:
     - name: Руководство для администратора
@@ -36,29 +54,13 @@
       href: account-setup-guide.md
     - name: Руководство по ускоренной настройке лаборатории
       href: setup-guide.md
-    - name: "Лаборатории для аудитории\_— типы классов"
-      items:
-        - name: Общие сведения о типах классов
-          href: class-types.md
-        - name: Глубокое обучение при обработке естественного языка
-          href: class-type-deep-learning-natural-language-processing.md
-        - name: Создание скриптов оболочки в Linux
-          href: class-type-shell-scripting-linux.md
-        - name: Этичный взлом
-          href: class-type-ethical-hacking.md
-        - name: Управление базами данных
-          href: class-type-database-management.md
-        - name: Использование Python с Jupyter Notebook
-          href: class-type-jupyter-notebook.md
-        - name: Разработка мобильных приложений с помощью Android Studio
-          href: class-type-mobile-dev-android-studio.md
-        - name: Аналитика больших данных
-          href: class-type-big-data-analytics.md
     - name: Создание и настройка учетных записей лаборатории (владелец учетной записи лаборатории)
       items:
         - name: Создание и администрирование учетных записей лаборатории
           href: how-to-manage-lab-accounts.md
-        - name: Настройка учетных записей лаборатории
+        - name: Управление лабораториями в учетной записи лаборатории
+          href: manage-labs.md
+        - name: Настройка автоматического завершения работы виртуальных машин
           href: how-to-configure-lab-accounts.md
         - name: Добавление создателя лаборатории
           href: add-lab-creator.md
@@ -76,7 +78,7 @@
           href: specify-marketplace-images.md
         - name: Указание сведений о поддержке (владелец учетной записи лаборатории)
           href: lab-account-owner-support-information.md
-    - name: Создание и настройка лаборатории для аудитории (инструктор)
+    - name: Создание и настройка лабораторий для аудитории (преподаватель)
       items:
         - name: Создание и администрирование лабораторий для аудитории
           href: how-to-manage-classroom-labs.md
@@ -108,7 +110,7 @@
           href: how-to-prepare-windows-template.md
         - name: Управление поведением завершения работы Windows
           href: how-to-windows-shutdown.md
-        - name: Просмотр сведений о поддержке (инструктор)
+        - name: Просмотр сведений о поддержке (преподаватель)
           href: lab-creator-support-information.md
         - name: Доступ к виртуальным машинам учащихся из представления преподавателя
           href: instructor-access-virtual-machines.md

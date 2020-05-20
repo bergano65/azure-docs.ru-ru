@@ -41,21 +41,9 @@
           href: tutorial-intents-only.md
         - name: 2. Извлечение данных пользователя
           href: tutorial-machine-learned-entity.md
-          displayName: 'n-depth, constraint, descriptor, phrase list, entity'
+          displayName: 'n-depth, constraint, descriptor, phrase list, entity, feature'
         - name: 3. Определение тональности высказываний пользователя
           href: tutorial-publish-settings.md
-    - name: Создание и использование сущностей
-      items:
-        - name: Сущности регулярного выражения
-          href: tutorial-regex-entity.md
-        - name: Отображение сущностей
-          href: tutorial-list-entity.md
-        - name: Роли сущности
-          href: tutorial-entity-roles.md
-          displayName: 'roles, geographyV2, context'
-        - name: Группирование и извлечение связанных данных с помощью составных сущностей
-          href: luis-tutorial-composite-entity.md
-          displayName: roles
     - name: Улучшение приложения
       items:
         - name: Исправление неточных прогнозов
@@ -79,17 +67,19 @@
     - name: Планирование приложения
       displayName: 'simple, composite, prebuilt, list, regex, regular expression'
       href: luis-how-plan-your-app.md
+    - name: сбор данных
+      href: data-collection.md
     - name: Модели приложений
       items:
         - name: Типы
           href: luis-concept-model.md
-        - name: Намерения
+        - name: Классификация речевых фрагментов по намерениям
           href: luis-concept-intent.md
-        - name: Высказывания
-          href: luis-concept-utterance.md
-        - name: Сущности
+        - name: Извлечение данных с использованием сущностей
           displayName: 'prebuilt, custom, regular expression, regex, simple, list, pattern.any, composite, machine-learn, exact, mixed, roles'
           href: luis-concept-entity-types.md
+        - name: Примеры высказываний
+          href: luis-concept-utterance.md
         - name: Предварительно созданные модели
           href: luis-concept-prebuilt-model.md
         - name: Шаблоны
@@ -97,7 +87,7 @@
           displayName: roles
         - name: Компоненты
           href: luis-concept-feature.md
-          displayName: 'descriptor, phrase list'
+          displayName: 'descriptor, phrase list, feature'
         - name: Расширение приложения в среде выполнения
           href: schema-change-prediction-runtime.md
     - name: Оценка прогнозирования
@@ -153,15 +143,13 @@
           href: howto-add-prebuilt-models.md
         - name: Добавление метки к сущности в речевом фрагменте
           href: label-entity-example-utterance.md
-        - name: Добавление дескриптора
-          displayName: 'synonym, interchange, phrase list, descriptor'
+        - name: Добавление функции
+          displayName: 'synonym, interchange, phrase list, descriptor, feature'
           href: luis-how-to-add-features.md
         - name: С использованием REST API
           items:
             - name: Создание приложения программным способом с помощью Node.js
               href: luis-tutorial-node-import-utterances-csv.md
-            - name: Использование сущности списка для поиска точного соответствия тексту с помощью Node.js
-              href: luis-tutorial-list-entity.md
     - name: Интеграция
       items:
         - name: "С API Проверки орфографии Bing версии\_7"
@@ -193,11 +181,25 @@
       href: luis-how-to-publish-app.md
     - name: Среда выполнения прогнозирующих запросов
       href: luis-get-started-get-intent-from-browser.md
+    - name: Миграция
+      items:
+        - name: Миграция из составного объекта
+          href: migrate-from-composite-entity.md
+        - name: Миграция на ресурс для разработки
+          items:
+            - name: Обзор
+              href: luis-migration-authoring.md
+            - name: Как осуществить переход
+              href: luis-migration-authoring-steps.md
+        - name: "Переход на API версии\_3"
+          href: luis-migration-api-v3.md
     - name: Управление приложением
       items:
         - name: Ресурсы Azure
           displayName: 'azure portal, resource, assign key, add key, out of quota, 403, 429, luis portal, key assignment, subscription, authoring, endpoint, prediction'
           href: luis-how-to-azure-subscription.md
+        - name: Параметры приложения и версии
+          href: how-to-application-settings-portal.md
         - name: Миграция на ресурс для разработки
           items:
             - name: Обзор
@@ -216,6 +218,8 @@
       items:
         - name: Для разработчиков
           href: developer-reference-resource.md
+        - name: Схема приложения
+          href: app-schema-definition.md
         - name: "Переход на версию\_3 интерфейсов API для разработки"
           href: luis-migration-authoring-entities.md
         - name: "Переход на версию\_3 интерфейсов API для прогнозирования"
@@ -259,6 +263,8 @@
         - name: Обзор
           href: developer-reference-resource.md
           displayName: 'SDK, API, quickstart, REST, cli, powershell, azure, rm, resource manager, samples, package, module, tool, dispatch, bot'
+        - name: Схема приложения
+          href: app-schema-definition.md
         - name: Azure CLI
           href: 'https://go.microsoft.com/fwlink/?linkid=2092156'
         - name: Azure RM PowerShell
@@ -329,7 +335,7 @@
       displayName: 'failover, fail-over, fail over, Europe, EU, Australia, business continuity, bcdr'
     - name: Ограничения
       href: luis-limits.md
-    - name: Параметры приложения
+    - name: Параметры приложения и версии
       href: luis-reference-application-settings.md
     - name: Справочник по предварительно созданным сущностям
       items:
@@ -387,7 +393,7 @@
           href: reference-entity-simple.md
     - name: Синтаксис шаблона
       href: reference-pattern-syntax.md
-    - name: Мнение
+    - name: Справочник по тональности
       href: luis-reference-prebuilt-sentiment.md
 - name: Ресурсы
   items:

@@ -118,7 +118,7 @@
     - name: Целевой объект вычисления
       displayName: 'resource, dsvm, AKS, kubernetes, amlcompute, Data Science Virtual Machine, local, cluster, ACI, container instance, ADB, Databricks, data lake, lake, HDI, HDInsight'
       href: concept-compute-target.md
-    - name: 'Данные '
+    - name: Данные
       items:
         - name: Доступ к данным
           href: concept-data.md
@@ -138,9 +138,6 @@
       href: concept-model-management-and-deployment.md
     - name: Переносимость модели (ONNX)
       href: concept-onnx.md
-    - name: Интерпретируемость модели
-      displayName: explainability
-      href: how-to-machine-learning-interpretability.md
     - name: Конвейеры Машинного обучения
       href: concept-ml-pipelines.md
     - name: Готовность к работе и безопасность в масштабах предприятия
@@ -172,6 +169,20 @@
           href: how-to-setup-authentication.md
         - name: Мониторинг Машинного обучения Azure
           href: monitor-azure-machine-learning.md
+    - name: Ответственный подход к машинному обучению
+      items:
+        - name: Общие сведения об ответственном подходе к машинному обучению
+          displayName: 'responsible,ml'
+          href: concept-responsible-ml.md
+        - name: Интерпретируемость модели
+          displayName: explainability
+          href: how-to-machine-learning-interpretability.md
+        - name: Объективность в машинном обучении
+          displayName: fairness
+          href: concept-fairness-ml.md
+        - name: Дифференциальная конфиденциальность
+          displayName: 'differential,privacy'
+          href: concept-differential-privacy.md
 - name: Практические руководства
   items:
     - name: Создание рабочих областей и управление ими
@@ -273,6 +284,8 @@
           href: how-to-train-keras.md
         - name: PyTorch
           href: how-to-train-pytorch.md
+        - name: Обучение с подкреплением
+          href: how-to-use-reinforcement-learning.md
     - name: Анализ и описание моделей
       displayName: interpretability
       items:

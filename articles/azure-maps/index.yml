@@ -9,12 +9,12 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 1/15/2020
-  ms.openlocfilehash: 852a01416b52c6a7b98c3b4883210749bf3cc509
-  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.openlocfilehash: b3e986c67c55af467ea6534dd7484a307ec08227
+  ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/25/2020
-  ms.locfileid: "80132448"
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83589267"
 landingContent:
 - title: Использование службы "Карты Azure"
   linkLists:
@@ -56,6 +56,36 @@ landingContent:
       url: how-to-manage-pricing-tier.md
     - text: Просмотр метрик использования API Azure Maps
       url: how-to-view-api-usage.md
+- title: Разработка с использованием Creator
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Основные понятия о схемах помещений
+      url: creator-indoor-maps.md
+  - linkListType: tutorial
+    links:
+    - text: Использование Creator для создания данных схем помещений
+      url: tutorial-creator-indoor-maps.md
+  - linkListType: how-to-guide
+    links:
+    - text: Управление схемами помещений в Creator
+      url: how-to-manage-creator.md
+    - text: Реализация динамического стиля для схем помещений
+      url: indoor-map-dynamic-styling.md
+    - text: Использование визуализатора ошибок рисования в Azure Maps
+      url: drawing-error-visualizer.md
+    - text: Использование модуля схем помещений
+      url: how-to-use-indoor-module.md
+  - linkListType: reference
+    links:
+    - text: Служба преобразования
+      url: https://docs.microsoft.com/rest/api/maps/conversion
+    - text: Служба набора данных
+      url: https://docs.microsoft.com/rest/api/maps/dataset
+    - text: Служба набора фрагментов
+      url: https://docs.microsoft.com/rest/api/maps/tileset
+    - text: Служба набора состояний функций
+      url: https://docs.microsoft.com/rest/api/maps/featurestate
 - title: Разработка с использованием веб-пакета SDK
   linkLists:
   - linkListType: concept

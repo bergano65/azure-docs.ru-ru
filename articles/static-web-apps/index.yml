@@ -1,0 +1,70 @@
+### YamlMime:Landing
+title: Документация по службе "Статические веб-приложения Azure"
+summary: Служба "Статические веб-приложения Azure" позволяет создавать веб-приложения JavaScript, которые автоматически публикуются при внесении изменений в GitHub.
+metadata:
+  title: Документация по службе "Статические веб-приложения Azure"
+  description: Служба "Статические веб-приложения Azure" позволяет создавать веб-приложения JavaScript, которые автоматически публикуются при внесении изменений в GitHub.
+  ms.topic: landing-page
+  ms.service: static-web-apps
+  author: craigshoemaker
+  ms.author: cshoe
+  ms.date: 04/09/2020
+  ms.openlocfilehash: 8dd4f7420c4b58d621312f361beede1e48bc17b5
+  ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83593075"
+landingContent:
+- title: Сведения о службе "Статические веб-приложения"
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Статические веб-приложения Azure?
+      url: overview.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание первого приложения Angular
+      url: /azure/static-web-apps/getting-started?tabs=angular
+    - text: Создание первого приложения React
+      url: /azure/static-web-apps/getting-started?tabs=react
+    - text: Создание первого приложения Vue
+      url: /azure/static-web-apps/getting-started?tabs=vue
+    - text: Создание первого приложения (без платформы)
+      url: /azure/static-web-apps/getting-started?tabs=vanilla-javascript
+  - linkListType: learn
+    links:
+    - text: Публикация приложения Angular, React, Svelte или Vue JavaScript и API
+      url: /learn/modules/publish-app-service-static-web-app-api
+- title: Основные понятия
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Маршруты
+      url: routes.md
+    - text: Общедоступные интерфейсы API
+      url: apis.md
+    - text: Промежуточная
+      url: review-publish-pull-requests.md
+    - text: Ограничение доступа
+      url: authentication-authorization.md
+- title: Сценарии публикации
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Публикация из Gatsby
+      url: publish-gatsby.md
+    - text: Публикация из Hugo
+      url: publish-hugo.md
+    - text: Публикация из VuePress
+      url: publish-vuepress.md
+    - text: Развертывание из Next.js
+      url: deploy-nextjs.md
+    - text: Развертывание из Nuxt.js
+      url: deploy-nuxtjs.md
+  - linkListType: learn
+    links:
+    - text: Публикация статического веб-приложения с помощью Gatsby
+      url: /learn/modules/create-deploy-static-webapp-gatsby-app-service

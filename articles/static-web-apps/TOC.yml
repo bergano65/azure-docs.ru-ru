@@ -1,0 +1,61 @@
+- name: Документация по службе "Статические веб-приложения Azure"
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Сведения о службе "Статические веб-приложения"
+      href: overview.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: Создание первого статического веб-приложения
+      href: getting-started.md
+- name: Основные понятия
+  items:
+    - name: Поддержка API с помощью Функций Azure
+      href: apis.md
+    - name: Маршруты
+      href: routes.md
+    - name: Аутентификация и авторизация
+      href: authentication-authorization.md
+    - name: Доступ к сведениям о пользователе
+      href: user-information.md
+    - name: Проверка запросов на вытягивание в подготовительных средах
+      href: review-publish-pull-requests.md
+    - name: Личный домен
+      href: custom-domain.md
+    - name: Конфигурация сборки и рабочего процесса
+      href: github-actions-workflow.md
+- name: Практические руководства
+  items:
+    - name: Настройка для локальной разработки
+      href: local-development.md
+    - name: Добавление API
+      href: add-api.md
+    - name: Настройка параметров приложения
+      href: application-settings.md
+- name: Учебники
+  items:
+    - name: Публикация из генератора статических сайтов
+      items:
+        - name: Gatsby
+          href: publish-gatsby.md
+        - name: Hugo
+          href: publish-hugo.md
+        - name: VuePress
+          href: publish-vuepress.md
+    - name: Развертывание с платформы
+      items:
+        - name: Next.js
+          href: deploy-nextjs.md
+        - name: Nuxt.js
+          href: deploy-nuxtjs.md
+- name: Ресурсы
+  items:
+    - name: Развитие навыков с помощью Microsoft Learn
+      items:
+        - name: 'Публикация приложения Angular, React, Svelte или Vue JavaScript и API'
+          href: /learn/modules/publish-app-service-static-web-app-api
+        - name: Создание и публикация статического веб-приложения с помощью Gatsby
+          href: /learn/modules/create-deploy-static-webapp-gatsby-app-service
+    - name: Квоты
+      href: quotas.md

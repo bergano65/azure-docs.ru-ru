@@ -1,0 +1,75 @@
+- name: Документация по SQL для пограничных вычислений
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что такое SQL для пограничных вычислений?
+      href: overview.md
+    - name: Поддерживаемые выпуски и функции
+      href: features.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: Развертывание SQL для пограничных вычислений
+      href: deploy-portal.md
+    - name: Развертывание моделей ONNX в SQL для пограничных вычислений
+      href: deploy-onnx.md
+- name: Учебники
+  items:
+    - name: Синхронизация данных с помощью Фабрики данных Azure
+      href: tutorial-sync-data-factory.md
+    - name: Синхронизация данных с помощью Синхронизации данных SQL
+      href: tutorial-sync-data-sync.md
+    - name: Создание комплексного решения для Интернета вещей с помощью SQL для пограничных вычислений
+      items:
+        - name: Настройка ресурсов Azure
+          href: tutorial-deploy-azure-resources.md
+        - name: Настройка модулей IoT Edge
+          href: tutorial-set-up-iot-edge-modules.md
+        - name: Развертывание модели в SQL для пограничных вычислений
+          href: tutorial-run-ml-model-on-sql-edge.md
+- name: Практическое руководство
+  items:
+    - name: Пакеты приложения уровня данных и задания Stream Analytics
+      href: stream-analytics.md
+    - name: Настройка репликации
+      href: configure-replication.md
+    - name: Отслеживание изменений данных
+      href: track-data-changes.md
+    - name: Управление заданиями потоковой передачи T-SQL
+      href: create-stream-analytics-job.md
+    - name: Подключение к SQL для пограничных вычислений
+      href: connect.md
+    - name: Настройка SQL для пограничных вычислений
+      href: configure.md
+    - name: Развертывание пакета приложения уровня данных
+      href: deploy-dacpac.md
+- name: Основные понятия
+  items:
+    - name: Использование Машинного обучения и ИИ с ONNX
+      href: onnx-overview.md
+    - name: Резервное копирование и восстановление
+      href: backup-restore.md
+    - name: Потоковая передача данных в SQL для пограничных вычислений
+      items:
+        - name: Потоковая передача данных
+          href: stream-data.md
+        - name: Создание внешнего потока (Transact-SQL)
+          href: create-external-stream-transact-sql.md
+        - name: Изменение внешнего потока (Transact-SQL)
+          href: alter-external-stream-transact-sql.md
+        - name: Удаление внешнего потока (Transact-SQL)
+          href: drop-external-stream-transact-sql.md
+        - name: Потоковые представления и динамические административные представления
+          items:
+            - name: Потоковые представления и динамические административные представления
+              href: streaming-catalog-views.md
+            - name: sys.external_job_streams (Transact-SQL)
+              href: sys-external-job-streams.md
+            - name: sys.external-streaming_jobs (Transact-SQL)
+              href: sys-external-streaming-jobs.md
+            - name: sys.external_streams (Transact-SQL)
+              href: sys-external-streams.md
+    - name: Обработка данных временных рядов
+      items:
+        - name: Date_Bucket (Transact-SQL)
+          href: date-bucket-tsql.md

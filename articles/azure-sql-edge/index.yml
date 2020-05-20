@@ -1,0 +1,55 @@
+### YamlMime:Landing
+title: Документация по SQL Azure для пограничных вычислений (предварительная версия)
+summary: SQL Azure для пограничных вычислений — это оптимизированное ядро реляционной СУБД, предназначенное для развертываний в Интернете вещей и пограничных средах.
+metadata:
+  title: Документация по SQL Azure для пограничных вычислений (предварительная версия)
+  meta.description: Learn how to use Azure SQL Edge (Preview).
+  services: sql-database-edge
+  ms.service: sql-database-edge
+  ms.topic: landing-page
+  author: stevestein
+  ms.author: sstein
+  ms.date: 05/19/2020
+  ms.openlocfilehash: a2e26d4bfbec3a139987e2a7a0fe21c429c740a5
+  ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83593143"
+landingContent:
+- title: SQL для пограничных вычислений
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое SQL для пограничных вычислений?
+      url: overview.md
+  - linkListType: deploy
+    links:
+    - text: Развертывание SQL для пограничных вычислений
+      url: deploy-portal.md
+- title: Синхронизация данных
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Синхронизация данных из SQL для пограничных вычислений с помощью Фабрики данных Azure
+      url: tutorial-sync-data-factory.md
+    - text: Синхронизация данных из SQL для пограничных вычислений с помощью Базы данных SQL
+      url: tutorial-sync-data-sync.md
+- title: Потоковая передача данных
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Потоковая передача данных
+      url: stream-data.md
+    - text: Представления каталога потоковой передачи
+      url: streaming-catalog-views.md
+- title: Машинное обучение
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Машинное обучение и искусственный интеллект
+      url: onnx-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Развертывание ONNX в SQL для пограничных вычислений
+      url: deploy-onnx.md

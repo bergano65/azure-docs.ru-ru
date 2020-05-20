@@ -1,20 +1,20 @@
 ---
-author: IEvangelist
-ms.author: dapine
+author: aahill
+ms.author: aahi
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 03/04/2020
-ms.openlocfilehash: 88d83676de1e7fa18c4c1dcbf347da8d685ba2fa
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.date: 05/18/2020
+ms.openlocfilehash: 66bd78c94e6c54d26959778cc059730c13d02629
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83593343"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83698563"
 ---
-Заполните и отправьте [форму запроса Cognitive Services контейнеров](https://aka.ms/cognitivegate) , чтобы запросить доступ к контейнеру. В форме нужно указать сведения о себе, компании и пользовательском сценарии, для которого будет использоваться контейнер. После отправки формы команда Azure Cognitive Services проверит ее, чтобы убедиться, что вы отвечаете критериям доступа к частному реестру контейнеров.
+В форме нужно указать сведения о себе, компании и пользовательском сценарии, для которого будет использоваться контейнер. После отправки формы команда Azure Cognitive Services проверит ее, чтобы убедиться, что вы отвечаете критериям доступа к частному реестру контейнеров.
 
 > [!IMPORTANT]
-> Необходимо использовать адрес электронной почты, связанный с учетной записью Майкрософт (MSA) или учетной записью Azure Active Directory (Azure AD) в форме. Дополнительные сведения о критериях приемки см. в разделе [процесс Cognitive Servicesности](../articles/cognitive-services/cognitive-services-gating-process.md).
+> Необходимо использовать адрес электронной почты, связанный с учетной записью Майкрософт (MSA) или учетной записью Azure Active Directory (Azure AD) в форме.
 
 Если запрос утвержден, вы получите сообщение электронной почты с инструкциями, которые описывают, как получить учетные данные и получить доступ к частному реестру контейнеров.
 

@@ -141,8 +141,21 @@
         - name: Схема событий облака
           href: cloud-event-schema.md
     - name: Обработчики событий
-      displayName: 'Azure Automation, Functions, Event Hubs, Hybrid Connections, Logic Apps, Service Bus, Queue Storage, Webhooks'
       href: event-handlers.md
+      items:
+        - name: Веб-перехватчики
+          displayName: 'Azure Automation, Webhooks, Logic Apps'
+          href: handler-webhooks.md
+        - name: Функции Azure
+          href: handler-functions.md
+        - name: Центры событий
+          href: handler-event-hubs.md
+        - name: Служебная шина
+          href: handler-service-bus.md
+        - name: Гибридные подключения Relay
+          href: handler-relay-hybrid-connections.md
+        - name: Очереди службы хранилища
+          href: handler-storage-queues.md
     - name: Доставка событий
       items:
         - name: Фильтрация событий
@@ -227,6 +240,8 @@
       href: /python/api/overview/azure/event-grid
     - name: Node.js
       href: /javascript/api/overview/azure/eventgrid
+    - name: Квоты и ограничения
+      href: quotas-limits.md
     - name: Схема подписки
       href: subscription-creation-schema.md
     - name: Ресурсы шаблона

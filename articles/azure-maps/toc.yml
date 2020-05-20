@@ -23,6 +23,8 @@
           href: tutorial-create-store-locator.md
     - name: Руководства по REST API
       items:
+        - name: Создание схем помещений
+          href: tutorial-creator-indoor-maps.md
         - name: Настройка геозоны
           href: tutorial-geofence.md
         - name: Пространственная аналитика
@@ -49,6 +51,12 @@
       href: azure-maps-event-grid-integration.md
     - name: Выбор ценовой категории
       href: choose-pricing-tier.md
+    - name: Creator для схем помещений
+      items:
+        - name: Основные понятия о схемах помещений
+          href: creator-indoor-maps.md
+        - name: 'Ошибки и предупреждения, связанные с преобразованием рисунков'
+          href: drawing-conversion-error-codes.md
     - name: Покрытие
       items:
         - name: Наличие информации о геокодировании
@@ -83,6 +91,8 @@
           href: how-to-manage-authentication.md
         - name: Управление ценовой категорией
           href: how-to-manage-pricing-tier.md
+        - name: Управление Creator
+          href: how-to-manage-creator.md
         - name: Просмотр метрик использования
           href: how-to-view-api-usage.md
     - name: Получение данных карты из REST API
@@ -201,12 +211,22 @@
           href: how-to-add-tile-layer-android-map.md
         - name: Отображение данных о трафике
           href: how-to-show-traffic-android.md
+    - name: Разработка схем помещений с помощью Creator
+      items:
+        - name: Модуль схем помещений
+          href: how-to-use-indoor-module.md
+        - name: Динамический стиль для схем помещений
+          href: indoor-map-dynamic-styling.md
+        - name: Визуализатор ошибок рисования
+          href: drawing-error-visualizer.md
     - name: Предоставление отзывов о данных
       href: how-to-use-feedback-tool.md
 - name: Справочник
   items:
     - name: Расширения параметров и API
       items:
+        - name: Требования к пакету рисунков
+          href: drawing-requirements.md
         - name: Модель использования транспорта
           href: consumption-model.md
         - name: Расширение формата GeoJSON
@@ -251,6 +271,8 @@
           href: 'https://docs.microsoft.com/javascript/api/azure-maps-rest/'
         - name: Модуль пространственного ввода-вывода
           href: 'https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/'
+        - name: Модуль для помещений
+          href: 'https://aka.ms/am-indoor-module-websdk/'
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.maps/accounts
 - name: Ресурсы

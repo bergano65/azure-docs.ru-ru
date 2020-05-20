@@ -9,6 +9,8 @@
       href: cognitive-services-and-machine-learning.md
     - name: Пользовательские поддомены для Cognitive Services
       href: cognitive-services-custom-subdomains.md
+    - name: Процесс проверки для доступа к Cognitive Services
+      href: cognitive-services-gating-process.md
     - name: Поддержка языков
       href: language-support.md
 - name: Краткие руководства
