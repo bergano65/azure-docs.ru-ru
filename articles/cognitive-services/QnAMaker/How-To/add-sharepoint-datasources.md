@@ -3,12 +3,12 @@ title: Файлы SharePoint — QnA Maker
 description: Добавьте защищенные источники данных SharePoint в базу знаний, чтобы расширить базу знаний с вопросами и ответами, которые могут быть защищены с помощью Active Directory.
 ms.topic: conceptual
 ms.date: 02/20/2020
-ms.openlocfilehash: 6f05079e39c8afb001bd4ba09d68f435c18efad5
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 93f17e79834b412ce0babf220ba13649ae07718c
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80294877"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83660313"
 ---
 # <a name="add-a-secured-sharepoint-data-source-to-your-knowledge-base"></a>Добавление защищенного источника данных SharePoint в базу знаний
 
@@ -27,12 +27,12 @@ ms.locfileid: "80294877"
 
 В базу знаний можно добавить все [типы файлов](../Concepts/content-types.md) , поддерживаемые QnA Maker, с сайта SharePoint. Если файловый ресурс защищен, может потребоваться предоставить [разрешения](#permissions) .
 
-1. В библиотеке с сайтом SharePoint выберите меню с многоточием для файла, `...`.
+1. В библиотеке с сайтом SharePoint выберите меню с многоточием для файла, `...` .
 1. Скопируйте URL-адрес файла.
 
    ![Получите URL-адрес файла SharePoint, выбрав меню с многоточием файла, а затем скопировав URL-адрес.](../media/add-sharepoint-datasources/get-sharepoint-file-url.png)
 
-1. На портале QnA Maker на странице **Параметры** [добавьте URL-адрес](manage-knowledge-bases.md#edit-knowledge-base) базы знаний.
+1. На портале QnA Maker на странице **Параметры** добавьте URL-адрес базы знаний.
 
 ### <a name="images-with-sharepoint-files"></a>Изображения с файлами SharePoint
 
@@ -44,7 +44,7 @@ ms.locfileid: "80294877"
 ![Explanation or description of image](URL of public image)
 ```
 
-Текст в квадратных скобках `[]`, посвященный изображению. URL-адрес в круглых скобках, `()`— это прямая ссылка на изображение.
+Текст в квадратных скобках, `[]` посвященный изображению. URL-адрес в круглых скобках, `()` — это прямая ссылка на изображение.
 
 При проверке пары QnA на интерактивной панели тестирования на QnA Maker портале отображается изображение вместо текста Markdown. Это позволит получить общий доступ к образу из клиентского приложения.
 

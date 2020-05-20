@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/27/2020
 ms.author: trbye
-ms.openlocfilehash: 57de7f1e7c37fec66cda666d3f144e52849a026f
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: d9c6062e7106f764058d6c96c6f730d235b2ef0c
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81399971"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83673039"
 ---
 При разработке для macOS доступно три пакета SDK для распознавания речи.
 
@@ -18,7 +18,7 @@ ms.locfileid: "81399971"
 - Пакет SDK для распознавания речи Python доступен в виде модуля PyPI
 
 > [!TIP]
-> Дополнительные сведения об использовании речевого пакета "объектив-C" с помощью SWIFT см. в разделе <a href="https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_objective-c_into_swift" target="_blank">Импорт цели-c в SWIFT <span class="docon docon-navigate-external x-hidden-focus"> </span> </a>.
+> Дополнительные сведения об использовании речевого пакета "объектив-C" с помощью SWIFT см. в разделе <a href="https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_objective-c_into_swift" target="_blank">Импорт цели-c в SWIFT <span class="docon docon-navigate-external x-hidden-focus"></span> </a>.
 
 ### <a name="system-requirements"></a>Требования к системе
 
@@ -28,7 +28,7 @@ ms.locfileid: "81399971"
 
 :::row:::
     :::column span="3":::
-        Пакет macOS кокоапод доступен для загрузки и использования в интегрированной среде разработки (IDE) <a href="https://apps.apple.com/us/app/xcode/id497799835" target="_blank">Xcode 9.4.1 <span class="docon docon-navigate-external x-hidden-focus"></span> (или более поздней версии)</a> . Сначала <a href="https://aka.ms/csspeech/macosbinary" target="_blank">Скачайте двоичный кокоапод <span class="docon docon-navigate-external x-hidden-focus"> </span> </a>. Извлеките модуль Pod в том же каталоге, в котором он использовался, создайте *Podfile* и `pod` перечислите его как `target`.
+        Пакет macOS Кокоапод доступен для загрузки и использования в интегрированной среде разработки (IDE) <a href="https://apps.apple.com/us/app/xcode/id497799835" target="_blank">Xcode 9.4.1 <span class="docon docon-navigate-external x-hidden-focus"></span> (или более поздней версии)</a> . Сначала <a href="https://aka.ms/csspeech/macosbinary" target="_blank">Скачайте двоичный кокоапод <span class="docon docon-navigate-external x-hidden-focus"></span> </a>. Извлеките модуль Pod в том же каталоге, в котором он использовался, создайте *Podfile* и перечислите его `pod` как `target` .
     :::column-end:::
     :::column:::
         <br>
@@ -43,15 +43,15 @@ platform :ios, '9.3'
 use_frameworks!
 
 target 'MyApp' do
-  pod 'MicrosoftCognitiveServicesSpeech', '~> 1.11.0'
+  pod 'MicrosoftCognitiveServicesSpeech', '~> 1.12.0'
 end
 ```
 
-# <a name="xamarinmac"></a>[Xamarin. Mac](#tab/mac-xamarin)
+# <a name="xamarinmac"></a>[Xamarin.Mac](#tab/mac-xamarin)
 
 :::row:::
     :::column span="3":::
-        Xamarin. Mac предоставляет полный пакет SDK для macOS для разработчиков .NET, позволяющий создавать собственные приложения Mac на C#. Дополнительные сведения см. в разделе <a href="https://docs.microsoft.com/xamarin/mac/" target="_blank">Xamarin. <span class="docon docon-navigate-external x-hidden-focus"> </span>Mac </a>.
+        Xamarin. Mac предоставляет полный пакет SDK для macOS для разработчиков .NET, позволяющий создавать собственные приложения Mac на C#. Дополнительные сведения см. в разделе <a href="https://docs.microsoft.com/xamarin/mac/" target="_blank">Xamarin. <span class="docon docon-navigate-external x-hidden-focus"></span> Mac </a>.
     :::column-end:::
     :::column:::
         <br>
