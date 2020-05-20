@@ -4,6 +4,14 @@
   items:
     - name: Сведения о Службе пиринга
       href: about.md
+- name: Учебники
+  items:
+    - name: Регистрация подключения Службы пиринга
+      href: azure-portal.md
+    - name: Создание подключения Службы пиринга
+      href: create-connection.md
+    - name: Измерение телеметрии подключений Службы пиринга
+      href: measure-connection-telemetry.md
 - name: Основные понятия
   items:
     - name: Расположения и партнеры
@@ -18,14 +26,10 @@
   items:
     - name: Регистрация в Службе пиринга
       items:
-        - name: Портал Azure
-          href: azure-portal.md
         - name: Azure PowerShell
           href: powershell.md
         - name: Azure CLI
           href: cli.md
-    - name: Измерение телеметрии подключения
-      href: measure-connection-telemetry.md
 - name: Ссылки
   items:
     - name: Azure PowerShell

@@ -47,6 +47,8 @@
           items:
             - name: Низкая задержка в сети (Azure)
               href: azure-network-latency.md
+            - name: Выбор маршрутизации через Интернет в качестве предпочтительного варианта в Azure
+              href: ../virtual-network/routing-preference-overview.md
         - name: Виртуальные сети
           href: ../virtual-network/virtual-networks-overview.md?toc=%2fazure%2fnetworking%2ftoc.json
         - name: Балансировка сетевой нагрузки

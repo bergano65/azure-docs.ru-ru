@@ -11,12 +11,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: 74465bddb57c14af4d02c1d3bfdc46f3ac25bef3
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: bd1449501cdc9483621a5408a3a4926afe90212f
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80878550"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83702148"
 ---
 # <a name="install-and-run-face-containers-preview"></a>Установка и запуск контейнеров лиц (Предварительная версия)
 
@@ -38,6 +38,8 @@ ms.locfileid: "80878550"
 
 ## <a name="request-access-to-the-private-container-registry"></a>Запрос доступа к частному реестру контейнеров
 
+Заполните [форму запроса](https://aka.ms/VisionContainersPreview) и отправьте ее, чтобы запросить доступ к контейнеру. 
+
 [!INCLUDE [Request access to private container registry](../../../includes/cognitive-services-containers-request-access.md)]
 
 ### <a name="the-host-computer"></a>Главный компьютер
@@ -48,7 +50,7 @@ ms.locfileid: "80878550"
 
 В следующей таблице описаны минимальные и Рекомендуемые ядра ЦП и память, выделяемые для каждого контейнера службы лиц.
 
-| Контейнер | Минимальные | Рекомендуемая | Транзакций в секунду<br>(Минимум, максимум)|
+| Контейнер | Минимальные | Рекомендуется | Транзакций в секунду<br>(Минимум, максимум)|
 |-----------|---------|-------------|--|
 |Распознавание лиц | 1 ядро, 2 ГБ памяти | 1 ядро, 4 ГБ памяти |10, 20|
 
@@ -82,7 +84,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-face:latest
 
 ## <a name="run-the-container-with-docker-run"></a>Запуск контейнера с помощью запуска DOCKER
 
-Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Дополнительные сведения о том, как получить значения и `{ENDPOINT_URI}` `{API_KEY}` , см. в разделе [сбор обязательных параметров](#gathering-required-parameters) .
+Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Дополнительные сведения о том, как получить значения и, см. в разделе [сбор обязательных параметров](#gathering-required-parameters) `{ENDPOINT_URI}` `{API_KEY}` .
 
 Доступны [примеры](face-resource-container-config.md#example-docker-run-commands) `docker run` команд.
 
@@ -104,7 +106,7 @@ ApiKey={API_KEY}
 Доступны дополнительные [примеры](./face-resource-container-config.md#example-docker-run-commands) команды `docker run`. 
 
 > [!IMPORTANT]
-> Для `Eula`запуска `Billing`контейнера необходимо `ApiKey` указать параметры, и, чтобы контейнер не запускался. Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
+> `Eula` `Billing` `ApiKey` Для запуска контейнера необходимо указать параметры, и, чтобы контейнер не запускался. Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
 
 [!INCLUDE [Running multiple containers on the same host](../../../includes/cognitive-services-containers-run-multiple-same-host.md)]
 
@@ -154,7 +156,7 @@ ApiKey={API_KEY}
 > [!IMPORTANT]
 > Cognitive Services контейнеры не лицензированы для запуска без подключения к Azure для измерения. Клиенты должны включить контейнеры для передачи сведений о выставлении счетов в службу контроля использования в любое время. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента, например анализируемые изображения или тексты.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Параметры конфигурации см. в разделе [Configure Containers](face-resource-container-config.md).
 * Дополнительные сведения об обнаружении и определении лиц см. в разделе [Обзор лиц](Overview.md).

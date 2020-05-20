@@ -123,7 +123,7 @@ ms.locfileid: "73159369"
 
 ### <a name="configure-compliance-elf-single-sign-on"></a>Настройка единого входа Compliance ELF
 
-Чтобы настроить единый вход на стороне **Compliance ELF**, отправьте **группе поддержки Compliance ELF**[URL-адрес метаданных федерации приложения](mailto:support@complianceelf.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Compliance ELF**, отправьте [группе поддержки Compliance ELF](mailto:support@complianceelf.com)**URL-адрес метаданных федерации приложения**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 

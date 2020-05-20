@@ -119,8 +119,6 @@
           href: global-dist-under-the-hood.md
         - name: Присутствие в регионах
           href: regional-presence.md
-        - name: Транзакционное и аналитическое хранилище
-          href: globally-distributed-transactional-analytical-storage.md
     - name: Секционирование
       items:
         - name: Общие сведения о секционировании
@@ -494,14 +492,16 @@
           href: change-feed-functions.md
         - name: Модель извлечения данных канала изменений
           href: change-feed-pull-model.md
-    - name: Глобально распределенная аналитика и ИИ
+    - name: Аналитика с использованием Synapse Link
       items:
-        - name: Варианты использования средств аналитики
-          href: analytics-usecases.md
-        - name: "Analytics\_— архитектуры решений"
-          href: analytics-solution-architectures.md
-        - name: Лямбда-архитектура
-          href: lambda-architecture.md
+        - name: Synapse Link для Azure Cosmos DB
+          href: synapse-link.md
+        - name: Общие сведения об аналитическом хранилище
+          href: analytical-store-introduction.md
+        - name: Часто задаваемые вопросы о Synapse Link
+          href: synapse-link-frequently-asked-questions.md
+        - name: Варианты использования Synapse Link
+          href: synapse-link-use-cases.md
     - name: Встроенные записные книжки Jupyter
       items:
         - name: Общие сведения о записных книжках Jupyter
@@ -1020,6 +1020,10 @@
           href: how-to-migrate-from-change-feed-library.md
         - name: "Канал изменений\_— пример Async Java"
           href: create-sql-api-java-changefeed.md
+    - name: Аналитика с использованием Synapse Link
+      items:
+        - name: Настройка Synapse Link
+          href: configure-synapse-link.md
     - name: Встроенная аналитика с помощью Apache Spark
       items:
         - name: Соединитель Spark для Azure Databricks
