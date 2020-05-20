@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 03/31/2020
 ms.author: diberry
-ms.openlocfilehash: 9beb6dbbba1c5855b8bfa97fc02f50aa59225d78
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 8785484efec119f15ef53feefbd6e94181cd159a
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80474858"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83659563"
 ---
 # <a name="get-an-answer-with-the-generateanswer-api-and-metadata"></a>Получение ответа с помощью API и метаданных Женератеансвер
 
@@ -64,7 +64,7 @@ QnA Maker позволяет добавлять метаданные в виде
 Запрос POST использует:
 
 * Обязательные [Параметры URI](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/train#uri-parameters)
-* Обязательное свойство заголовка `Authorization`,, для безопасности
+* Обязательное свойство заголовка, `Authorization` , для безопасности
 * Обязательные [Свойства текста](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/train#feedbackrecorddto).
 
 URL-адрес Женератеансвер имеет следующий формат:
@@ -73,7 +73,7 @@ URL-адрес Женератеансвер имеет следующий фор
 https://{QnA-Maker-endpoint}/knowledgebases/{knowledge-base-ID}/generateAnswer
 ```
 
-Не забудьте задать в качестве значения свойства `Authorization` "заголовок HTTP" значение строки `EndpointKey` с конечным пробелом, а затем ключ конечной точки, найденный на странице **параметров** .
+Не забудьте задать в качестве значения свойства "заголовок HTTP" `Authorization` значение строки `EndpointKey` с конечным пробелом, а затем ключ конечной точки, найденный на странице **параметров** .
 
 Пример текста JSON выглядит следующим образом:
 
@@ -168,7 +168,7 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 
 ## <a name="use-metadata-to-filter-answers-by-custom-metadata-tags"></a>Использование метаданных для фильтрации ответов по тегам пользовательских метаданных
 
-Добавление метаданных позволяет фильтровать ответы по этим тегам метаданных. Добавьте столбец метаданных из меню **Параметры представления** . Добавьте метаданные в базу знаний, щелкнув значок метаданных **+** , чтобы добавить пару метаданных. Эта пара состоит из одного ключа и одного значения.
+Добавление метаданных позволяет фильтровать ответы по этим тегам метаданных. Добавьте столбец метаданных из меню **Параметры представления** . Добавьте метаданные в базу знаний, щелкнув значок метаданных, **+** чтобы добавить пару метаданных. Эта пара состоит из одного ключа и одного значения.
 
 ![Снимок экрана: Добавление метаданных](../media/qnamaker-how-to-metadata-usage/add-metadata.png)
 
@@ -228,7 +228,7 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 
 По умолчанию QnA Maker выполняет поиск по вопросам и ответам. Если вы хотите выполнять поиск только по вопросам, используйте `RankerType=QuestionOnly` в тексте сообщения запроса женератеансвер.
 
-Можно выполнять поиск в опубликованной базе знаний, `isTest=false`с помощью или в тесте базы `isTest=true`знаний с помощью.
+Можно выполнять поиск в опубликованной базе знаний, с помощью `isTest=false` или в тесте базы знаний с помощью `isTest=true` .
 
 ```json
 {
@@ -243,7 +243,7 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 
 |Код|Объяснение|
 |:--|--|
-|"2xx"|Успех|
+|"2xx"|Успешно|
 |400|Параметры запроса указаны неправильно. Это означает, что требуемые параметры отсутствуют, имеют неправильный формат или слишком большой размер|
 |400|Текст запроса указан неправильно. Это означает, что JSON отсутствует, имеет неправильный формат или слишком большой размер|
 |401|Недопустимый ключ|
@@ -256,4 +256,4 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 На странице **Публикация** также содержатся сведения для [создания ответа](../Quickstarts/get-answer-from-knowledge-base-using-url-tool.md) с помощью POST-или перелистывания.
 
 > [!div class="nextstepaction"]
-> [Создание чат-бота базы знаний](../tutorials/integrate-qnamaker-luis.md)
+> [Анализ базы знаний](../how-to/get-analytics-knowledge-base.md)

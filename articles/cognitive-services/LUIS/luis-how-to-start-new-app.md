@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 05/07/2020
+ms.date: 05/18/2020
 ms.author: diberry
-ms.openlocfilehash: fc9f44739cd57eb46179ff17eba1d4f73d968799
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 3b9466bf52b3650216408a8f0906f3208dfae42d
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/19/2020
-ms.locfileid: "83585629"
+ms.locfileid: "83653914"
 ---
 # <a name="create-a-new-luis-app-in-the-luis-portal"></a>Создание приложения LUIS на портале LUIS
 Создать приложение LUIS можно двумя способами: на портале LUIS или с помощью [API-интерфейсов](developer-reference-resource.md) разработки LUIS.
@@ -45,10 +45,10 @@ ms.locfileid: "83585629"
 
 ## <a name="create-new-app-in-luis"></a>Создание приложения в LUIS
 
-1. На странице **Мои приложения** выберите подписку и создайте ресурс, а затем — **создать**. Если вы используете ключ бесплатной пробной версии, Узнайте, как [создать ресурс для разработки](luis-how-to-azure-subscription.md#create-resources-in-the-azure-portal).
+1. На странице **Мои приложения** выберите **подписку**и создайте **ресурс** , а затем — **создать**. Если вы используете ключ бесплатной пробной версии, Узнайте, как [создать ресурс для разработки](luis-how-to-azure-subscription.md#create-resources-in-the-azure-portal).
 
-    ![Список приложений LUIS](./media/create-app-in-portal.png)
-
+> [!div class="mx-imgBorder"]
+> ![Список приложений LUIS](./media/create-app-in-portal.png)
 
 1. В диалоговом окне введите имя приложения, например `Pizza Tutorial` .
 
@@ -64,7 +64,7 @@ ms.locfileid: "83585629"
     > [!div class="mx-imgBorder"]
     > ![Список целей с намерением «нет», созданный без примеров фразы продолжительностью.](media/pizza-tutorial-new-app-empty-intent-list.png)
 
-## <a name="other-actions-available"></a>Другие доступные действия
+## <a name="other-actions-available-on-my-apps-page"></a>Другие действия, доступные на странице "Мои приложения"
 
 Контекстная панель инструментов предоставляет другие действия:
 
@@ -75,6 +75,6 @@ ms.locfileid: "83585629"
 * Экспорт журналов конечных точек как `.csv` для автономного анализа
 * Удаление приложения
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если проект приложения включает обнаружение намерения, [Создайте новые](luis-how-to-add-intents.md)цели и добавьте пример фразы продолжительностью. Если проект приложения предназначен только для извлечения данных, добавьте пример фразы продолжительностью к намерению None, затем [Создайте сущности](luis-how-to-add-example-utterances.md)и пометка примера фразы продолжительностью с этими сущностями.

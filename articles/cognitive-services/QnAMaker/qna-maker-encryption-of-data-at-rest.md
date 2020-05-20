@@ -9,12 +9,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 03/13/2020
 ms.author: egeaney
-ms.openlocfilehash: bd64321a6a7afbac61a63365c77a75120f837e83
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 99c21ece202f8d9867045d506574dd7718bd455e
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79372098"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83653664"
 ---
 # <a name="qna-maker-encryption-of-data-at-rest"></a>QnA Maker шифрование неактивных данных
 
@@ -52,6 +52,11 @@ QnA Maker использует поддержку CMK из службы поис
 ## <a name="regional-availability"></a>Доступность по регионам
 
 Ключи, управляемые клиентом, доступны во всех регионах поиска Azure.
+
+## <a name="encryption-of-data-in-transit"></a>Шифрование передаваемых данных
+
+QnA Maker портал работает в браузере пользователя. Каждое действие активирует прямой вызов соответствующего API-интерфейса службы. Таким образом, QnA Maker соответствует данным при передаче.
+Однако, поскольку служба QnA Maker Portal размещена в западной части США, она по-прежнему не идеально подходит для клиентов, не являющихся клиентами США. 
 
 ## <a name="next-steps"></a>Следующие шаги
 

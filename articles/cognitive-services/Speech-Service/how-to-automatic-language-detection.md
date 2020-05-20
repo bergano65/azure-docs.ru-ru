@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 03/16/2020
+ms.date: 05/19/2020
 ms.author: trbye
-zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: fefbe793fa4a6b90ba9bf8d468d42dcbd315759c
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+zone_pivot_groups: programming-languages-set-nineteen
+ms.openlocfilehash: 311c85e254711a219ac93424b77f35c2662008b7
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81402211"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83658451"
 ---
 # <a name="automatic-language-detection-for-speech-to-text"></a>Автоматическое определение языка для речи в текст
 
@@ -25,11 +25,11 @@ ms.locfileid: "81402211"
 В этой статье вы узнаете, как использовать `AutoDetectSourceLanguageConfig` для создания `SpeechRecognizer` объекта и получения обнаруженного языка.
 
 > [!IMPORTANT]
-> Эта функция доступна только для речевого пакета SDK для C#, C++, Java и Python.
+> Эта функция доступна только для речевого пакета SDK на C#, C++, Java, Python и цели-C.
 
 ## <a name="automatic-language-detection-with-the-speech-sdk"></a>Автоматическое определение языка с помощью пакета SDK для распознавания речи
 
-Автоматическое определение языка в настоящее время имеет ограничение на два языка на стороне служб для каждого обнаружения. При создании `AudoDetectSourceLanguageConfig` объекта учитывайте это ограничение. В примерах ниже мы создадим `AutoDetectSourceLanguageConfig`, а затем используем его для создания. `SpeechRecognizer`
+Автоматическое определение языка в настоящее время имеет ограничение на два языка на стороне служб для каждого обнаружения. При создании объекта учитывайте это ограничение `AudoDetectSourceLanguageConfig` . В примерах ниже мы создадим `AutoDetectSourceLanguageConfig` , а затем используем его для создания `SpeechRecognizer` .
 
 > [!TIP]
 > Можно также указать пользовательскую модель, которая будет использоваться при выполнении преобразования речи в текст. Дополнительные сведения см. [в разделе Использование настраиваемой модели для автоматического определения языка](#use-a-custom-model-for-automatic-language-detection).
@@ -118,11 +118,28 @@ detected_language = auto_detect_source_language_result.language
 
 ::: zone-end
 
+::: zone pivot="programming-language-objectivec"
+
+```Objective-C
+NSArray *languages = @[@"zh-CN", @"de-DE"];
+SPXAutoDetectSourceLanguageConfiguration* autoDetectSourceLanguageConfig = \
+        [[SPXAutoDetectSourceLanguageConfiguration alloc]init:languages];
+SPXSpeechRecognizer* speechRecognizer = \
+        [[SPXSpeechRecognizer alloc] initWithSpeechConfiguration:speechConfig
+                           autoDetectSourceLanguageConfiguration:autoDetectSourceLanguageConfig
+                                              audioConfiguration:audioConfig];
+SPXSpeechRecognitionResult *result = [speechRecognizer recognizeOnce];
+SPXAutoDetectSourceLanguageResult *languageDetectionResult = [[SPXAutoDetectSourceLanguageResult alloc] init:result];
+NSString *detectedLanguage = [languageDetectionResult language];
+```
+
+::: zone-end
+
 ## <a name="use-a-custom-model-for-automatic-language-detection"></a>Использование настраиваемой модели для автоматического определения языка
 
 Помимо определения языка с помощью моделей речевых служб, можно указать пользовательскую модель для расширенного распознавания. Если пользовательская модель не указана, служба будет использовать языковую модель по умолчанию.
 
-В приведенных ниже фрагментах кода показано, как указать пользовательскую модель в вызове службы распознавания речи. Если обнаруженный язык имеет `en-US`значение, используется модель по умолчанию. Если обнаруженный язык имеет `fr-FR`значение, используется конечная точка для настраиваемой модели:
+В приведенных ниже фрагментах кода показано, как указать пользовательскую модель в вызове службы распознавания речи. Если обнаруженный язык имеет значение `en-US` , используется модель по умолчанию. Если обнаруженный язык имеет значение `fr-FR` , используется конечная точка для настраиваемой модели:
 
 ::: zone pivot="programming-language-csharp"
 
@@ -178,6 +195,20 @@ AutoDetectSourceLanguageConfig autoDetectSourceLanguageConfig =
  fr_language_config = speechsdk.languageconfig.SourceLanguageConfig("fr-FR", "The Endpoint Id for custom model of fr-FR")
  auto_detect_source_language_config = speechsdk.languageconfig.AutoDetectSourceLanguageConfig(
         sourceLanguageConfigs=[en_language_config, fr_language_config])
+```
+
+::: zone-end
+
+::: zone pivot="programming-language-objectivec"
+
+```Objective-C
+SPXSourceLanguageConfiguration* enLanguageConfig = [[SPXSourceLanguageConfiguration alloc]init:@"en-US"];
+SPXSourceLanguageConfiguration* frLanguageConfig = \
+        [[SPXSourceLanguageConfiguration alloc]initWithLanguage:@"fr-FR"
+                                                     endpointId:@"The Endpoint Id for custom model of fr-FR"];
+NSArray *languageConfigs = @[enLanguageConfig, frLanguageConfig];
+SPXAutoDetectSourceLanguageConfiguration* autoDetectSourceLanguageConfig = \
+        [[SPXAutoDetectSourceLanguageConfiguration alloc]initWithSourceLanguageConfigurations:languageConfigs];
 ```
 
 ::: zone-end

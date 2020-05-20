@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Документация по преобразованию речи в текст
-summary: Преобразование речи в текст из речевой службы, известной также как распознавание речи, позволяет в режиме реального времени и пакетной транскрипции проголосовать текстовые потоки в текст.
+summary: Преобразование речи в текст из речевой службы, известной также как распознавание речи, позволяет в режиме реального времени и пакетной транскрипции проголосовать текстовые потоки в текст. С помощью дополнительного ввода справочных данных он также обеспечивает оценку произношения в режиме реального времени и дает отзывы о точности и владение речевого звука.
 metadata:
   title: Документация по голосовым функциям в тексте. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
   titleSuffix: Azure Cognitive Services
@@ -11,12 +11,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/19/2020
   ms.author: trbye
-  ms.openlocfilehash: f496ba72f4f649a3ed5146f0b74caf3d8110adf9
-  ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+  ms.openlocfilehash: be34def3c7aacc5419071028a3d3085fe69103fa
+  ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
   ms.translationtype: MT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/12/2020
-  ms.locfileid: "83201926"
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83653474"
 landingContent:
 - title: О распознавании речи в текст
   linkLists:
@@ -38,6 +38,8 @@ landingContent:
       url: quickstarts/speech-to-text-from-file.md
     - text: Распознавание речи из файлов, находящихся в хранилище BLOB-объектов
       url: quickstarts/from-blob.md
+    - text: Оценка произношения с вводом ссылок
+      url: rest-speech-to-text.md#pronunciation-assessment-parameters
 - title: Разработка с помощью преобразования речи в текст
   linkLists:
   - linkListType: how-to-guide
@@ -66,7 +68,7 @@ landingContent:
   linkLists:
   - linkListType: reference
     links:
-    - text: Поддержка языков
+    - text: Языковая поддержка
       url: language-support.md#speech-to-text
     - text: Вопросы и ответы. Преобразование речи в текст
       url: faq-stt.md

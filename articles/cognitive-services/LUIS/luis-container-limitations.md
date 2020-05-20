@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: e50dd636c1bd9403d5eca2157e4e46772418f92c
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 2f4751440d719a542d39f8d8e83260c8cb628de0
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/19/2020
-ms.locfileid: "83592905"
+ms.locfileid: "83659287"
 ---
 # <a name="language-understanding-luis-container-limitations"></a>Ограничения контейнеров Language Understanding (LUIS)
 
@@ -35,7 +35,7 @@ ms.locfileid: "83592905"
 
 Неподдерживаемые конфигурации приложения|Сведения|
 |--|--|
-|Неподдерживаемые языки и региональные параметры контейнеров| Голландский ( `nl-NL` )<br>Японская ( `ja-JP` )<br>Немецкий поддерживается только с помощью подсчета [1.0.2](luis-language-support.md#custom-tokenizer-versions).|
+|Неподдерживаемые языки и региональные параметры контейнеров| Языки нидерландского языка ( `nl-NL` ), японского ( `ja-JP` ) и немецкого ( `de-DE` ) поддерживаются только с помощью подсчета [1.0.2](luis-language-support.md#custom-tokenizer-versions).|
 |Неподдерживаемые сущности для всех языков и региональных параметров|Предварительно созданная сущность [KeyPhrase](luis-reference-prebuilt-keyphrase.md) для всех языков и региональных параметров|
 |Неподдерживаемые сущности для `en-US` языка и региональных параметров "Английский ()"|Предварительно созданные сущности [GeographyV2](luis-reference-prebuilt-geographyV2.md)|
 |Подготовка речи|Внешние зависимости не поддерживаются в контейнере.|
