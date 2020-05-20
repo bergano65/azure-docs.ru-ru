@@ -65,7 +65,7 @@ ms.locfileid: "75434660"
 
 3. Выполните действия, описанные в статье [Managing test CA certificates for samples and tutorials](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md) (Управление тестовыми сертификатами ЦС для образцов и руководств).
 
-Помимо средств в [пакете SDK для Центра Интернета вещей Microsoft Azure для .NET](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/service/GroupCertificateVerificationSample) в *примере проверки сертификата группы* показано, как подтвердить владение в C# с помощью имеющегося промежуточного или корневого сертификата ЦС X.509.
+Помимо средств в *пакете SDK для Центра Интернета вещей Microsoft Azure для .NET* в [примере проверки сертификата группы](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/service/GroupCertificateVerificationSample) показано, как подтвердить владение в C# с помощью имеющегося промежуточного или корневого сертификата ЦС X.509.
 
 ## <a name="get-the-connection-string-for-your-provisioning-service"></a>Получение строки подключения к службе подготовки
 
