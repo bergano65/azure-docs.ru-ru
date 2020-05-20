@@ -1,7 +1,7 @@
 ---
-title: Тип сущности, изученной компьютером — LUIS
+title: Тип сущности машинного обучения — LUIS
 titleSuffix: Azure Cognitive Services
-description: Сущность, занятая компьютером, является предпочтительной сущностью для создания LUIS приложений.
+description: Сущность машинного обучения — это предпочтительная сущность для создания LUIS приложений.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -10,16 +10,16 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 04/30/2020
 ms.author: diberry
-ms.openlocfilehash: 5f663379939f24d16fb63e8e5b002fe088a2d9f8
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: ddaf5c921f92aeaefd8a8b0cb13602bc70a4dd5d
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83585595"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83684575"
 ---
-# <a name="machine-learned-entity"></a>Сущность, прошедшая машинное обучение
+# <a name="machine-learning-entity"></a>Сущность машинного обучения
 
-Сущность, занятая компьютером, является предпочтительной сущностью для создания LUIS приложений.
+Сущность машинного обучения — это предпочтительная сущность для создания LUIS приложений.
 
 
 ## <a name="example-json"></a>Пример JSON
@@ -38,7 +38,7 @@ ms.locfileid: "83585595"
 
 #### <a name="v3-prediction-endpoint-response"></a>[Отклик конечной точки прогнозирования V3](#tab/V3)
 
-Поскольку сущность, предназначенная для компьютера, может иметь множество вложенных сущностей с необходимыми функциями, это только пример. Он должен рассматриваться как пошаговое описание того, что будет возвращено сущностью.
+Поскольку сущность машинного обучения может иметь множество вложенных сущностей с необходимыми функциями, это только пример. Он должен рассматриваться как пошаговое описание того, что будет возвращено сущностью.
 
 Рассмотрим запрос:
 
@@ -346,8 +346,8 @@ ms.locfileid: "83585595"
 Эта сущность недоступна в среде выполнения прогнозирования версии 2.
 * * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Узнайте больше о сущности, занятой компьютером, включая [учебник](tutorial-machine-learned-entity.md), [Основные понятия](luis-concept-entity-types.md#design-entities-for-decomposition)и [руководство](luis-how-to-add-entities.md#create-a-machine-learned-entity).
+Узнайте больше о сущности машинного обучения, включая [учебник](tutorial-machine-learned-entity.md), [Основные понятия](luis-concept-entity-types.md#design-entities-for-decomposition)и [руководство](luis-how-to-add-entities.md#create-a-machine-learned-entity).
 
 Сведения о сущности [списка](reference-entity-list.md) и сущности [регулярного выражения](reference-entity-regular-expression.md) .

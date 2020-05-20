@@ -3,12 +3,12 @@ title: Определение схемы приложения
 description: Приложение LUIS представляется в `.json` или, а также `.lu` включает все объекты, сущности, пример фразы продолжительностью, функции и параметры.
 ms.topic: reference
 ms.date: 05/05/2020
-ms.openlocfilehash: 21b58f79ffd2baf553c6f8b07daa84473e620f77
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: dbbeb4eacbe8e07cf080b3a1527ca39c2b9a5991
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83599373"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83684358"
 ---
 # <a name="app-schema-definition"></a>Определение схемы приложения
 
@@ -25,8 +25,8 @@ ms.locfileid: "83599373"
 
 ## <a name="version-7x"></a>Версия 7. x
 
-* При переходе к версии 7. x сущности представляются как вложенные сущности, изученные компьютером.
-* Поддержка создания вложенных объектов, занятых компьютером, с помощью `enableNestedChildren` свойства для следующих API-интерфейсов разработки:
+* При переходе к версии 7. x сущности представляются как вложенные сущности машинного обучения.
+* Поддержка создания вложенных сущностей машинного обучения с помощью `enableNestedChildren` свойства для следующих API-интерфейсов разработки:
     * [Добавление метки](https://westus.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview/operations/5890b47c39e2bb052c5b9c08)
     * [Добавить метку пакета](https://westus.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview/operations/5890b47c39e2bb052c5b9c09)
     * [Метки проверки](https://westus.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview/operations/5890b47c39e2bb052c5b9c0a)
@@ -64,7 +64,7 @@ ms.locfileid: "83599373"
 
 ## <a name="version-6x"></a>Версия 6. x
 
-* При переходе к версии 6. x для представления сущностей используется новая [сущность](reference-entity-machine-learned-entity.md) , предназначенная для компьютера.
+* Переходя к версии 6. x, используйте новую [сущность машинного обучения](reference-entity-machine-learned-entity.md) для представления сущностей.
 
 ```json
 {
@@ -124,6 +124,6 @@ ms.locfileid: "83599373"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Переход к [API-интерфейсам разработки версии 3](luis-migration-authoring-entities.md)

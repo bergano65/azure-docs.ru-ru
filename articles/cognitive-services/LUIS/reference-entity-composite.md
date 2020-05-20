@@ -10,19 +10,19 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 04/14/2020
 ms.author: diberry
-ms.openlocfilehash: bac37e91933d16f36f2d8917760968122a4f5619
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 81299751affe5f59e1132950ccb80844fcc1fae3
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83588910"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83681395"
 ---
 # <a name="composite-entity"></a>Составная сущность
 
 Составная сущность состоит из других сущностей, например готовых сущностей, простых, регулярных выражений и сущностей списка. Эти отдельные сущности формируют единую сущность.
 
 > [!CAUTION]
-> Эта сущность является **устаревшей**. Выполните миграцию в [сущность, занятую компьютером](reference-entity-machine-learned-entity.md).
+> Эта сущность является **устаревшей**. Выполните миграцию в [сущность машинного обучения](reference-entity-machine-learned-entity.md).
 
 **Эта сущность оптимальна для данных в таких случаях.**
 
@@ -180,7 +180,7 @@ ms.locfileid: "83588910"
 |Предварительно созданная сущность — число|"builtin.number"|"2"|
 |Предварительно созданная сущность — GeographyV2|"Location::ToLocation"|Каиро|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о сущностях:
 
