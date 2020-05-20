@@ -98,7 +98,7 @@ azds space select --name scott
 Давайте посмотрим на это в действии.
 
 ### <a name="make-a-code-change"></a>Измените код
-В окне VS Code перейдите к `mywebapi` и в `string Get(int id)` измените код на метод `Controllers/ValuesController.cs`, например так:
+В окне VS Code перейдите к `mywebapi` и в `Controllers/ValuesController.cs` измените код на метод `string Get(int id)`, например так:
 
 ```csharp
 [HttpGet("{id}")]

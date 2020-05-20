@@ -98,7 +98,7 @@ azds space select --name scott
 Давайте посмотрим на это в действии.
 
 ### <a name="make-a-code-change"></a>Измените код
-В окне VS Code перейдите к `mywebapi` и в `/` измените код в обработчике GET по умолчанию `server.js`, например так:
+В окне VS Code перейдите к `mywebapi` и в `server.js` измените код в обработчике GET по умолчанию `/`, например так:
 
 ```javascript
 app.get('/', function (req, res) {

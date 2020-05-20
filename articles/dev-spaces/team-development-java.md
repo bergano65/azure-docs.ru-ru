@@ -101,7 +101,7 @@ azds space select --name scott
 Давайте посмотрим на это в действии.
 
 ### <a name="make-a-code-change"></a>Измените код
-В окне VS Code перейдите к `mywebapi` и в `String index()` измените код на метод `src/main/java/com/ms/sample/mywebapi/Application.java`, например так:
+В окне VS Code перейдите к `mywebapi` и в `src/main/java/com/ms/sample/mywebapi/Application.java` измените код на метод `String index()`, например так:
 
 ```java
 @RequestMapping(value = "/", produces = "text/plain")

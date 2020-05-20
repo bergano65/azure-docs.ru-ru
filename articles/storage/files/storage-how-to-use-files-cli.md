@@ -222,7 +222,7 @@ snapshot=$(az storage share snapshot \
 ```
 
 ### <a name="browse-share-snapshot-contents"></a>Просмотр содержимого моментального снимка общих ресурсов
-Чтобы просмотреть содержимое моментального снимка общего ресурса, передайте его метку времени команде `$snapshot` в атрибуте переменной `az storage file list`.
+Чтобы просмотреть содержимое моментального снимка общего ресурса, передайте его метку времени команде `az storage file list` в атрибуте переменной `$snapshot`.
 
 ```azurecli-interactive
 az storage file list \
