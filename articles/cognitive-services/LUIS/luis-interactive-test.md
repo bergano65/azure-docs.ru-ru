@@ -2,13 +2,13 @@
 title: Тестирование приложения на портале LUIS
 description: Используйте службу "Распознавание речи" (LUIS) для постоянной работы над приложением, чтобы усовершенствовать его и улучшить функции распознавания речи.
 ms.topic: conceptual
-ms.date: 05/17/2020
-ms.openlocfilehash: 3608bb17b6d1ea8c9095fa54324993a9e40355b6
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.date: 05/20/2020
+ms.openlocfilehash: 91994418b50eb112582bbed1853dd85e9db3599d
+ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83653876"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83714434"
 ---
 # <a name="test-your-luis-app-in-the-luis-portal"></a>Тестирование приложения LUIS на портале LUIS
 
@@ -42,7 +42,8 @@ ms.locfileid: "83653876"
 
 1. Высказывание, его основное намерение и оценка добавляются в список высказываний под текстовым полем.
 
-    ![Интерактивное тестирование определяет неправильное намерение](./media/luis-how-to-interactive-test/test-weather-1.png)
+    > [!div class="mx-imgBorder"]
+    > ![Интерактивное тестирование определяет неправильное намерение](./media/luis-how-to-interactive-test/test-weather-1.png)
 
 ## <a name="inspect-the-prediction"></a>Проверка прогноза
 
@@ -50,9 +51,13 @@ ms.locfileid: "83653876"
 
 1. На открытой выдвигающейся панели **Test** (Тестирование) нажмите кнопку **Inspect** (Проверить) рядом с высказыванием, которое нужно сравнить.
 
-    ![Нажмите кнопку "Инспектировать" для получения дополнительных сведений о результатах теста.](./media/luis-how-to-interactive-test/inspect.png)
+    > [!div class="mx-imgBorder"]
+    > ![Нажмите кнопку "Инспектировать" для получения дополнительных сведений о результатах теста.](./media/luis-how-to-interactive-test/inspect.png)
 
 1. Появится панель **проверки** . На панели находится намерение с высокой оценкой, а также любые идентифицированные сущности. На панели показан прогноз выбранного utterance.
+
+    > [!div class="mx-imgBorder"]
+    > ![Частичный снимок экрана: панель проверки](./media/luis-how-to-interactive-test/inspect-panel.png)
 
 ## <a name="add-to-example-utterances"></a>Добавить к примеру фразы продолжительностью
 
@@ -76,12 +81,14 @@ ms.locfileid: "83653876"
 
 Можно протестировать активную версию приложения с опубликованной версией [конечной точки](luis-glossary.md#endpoint). На панели **Inspect** (Проверка) выберите **Compare with published** (Сравнить с опубликованной). Средства на тестирование на соответствие опубликованной модели вычитаются из суммы квоты на подписку Azure.
 
-![Сравнение с опубликованной версией](./media/luis-how-to-interactive-test/inspect-panel-compare.png)
+> [!div class="mx-imgBorder"]
+> ![Сравнение с опубликованной версией](./media/luis-how-to-interactive-test/inspect-panel-compare.png)
 
 ## <a name="view-endpoint-json-in-test-panel"></a>Просмотр JSON конечной точки на панели тестирования
 Чтобы просмотреть JSON конечной точки, возвращенный для сравнения, выберите **Show JSON view** (Показать представление JSON).
 
-![Опубликованный ответ JSON](./media/luis-how-to-interactive-test/inspect-panel-compare-json.png)
+> [!div class="mx-imgBorder"]
+> ![Опубликованный ответ JSON](./media/luis-how-to-interactive-test/inspect-panel-compare-json.png)
 
 ## <a name="additional-settings-in-test-panel"></a>Дополнительные параметры на панели тестирования
 
@@ -96,7 +103,7 @@ ms.locfileid: "83653876"
 ## <a name="batch-testing"></a>Пакетное тестирование
 Ознакомьтесь с [принципами](luis-concept-batch-test.md) пакетного тестирования и узнайте, [как](luis-how-to-batch-test.md) протестировать пакет высказываний.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если тестирование показывает, что приложение LUIS не распознает правильные намерения и сущности, вы можете повысить точность приложения LUIS путем пометки дополнительных высказываний или добавления функций.
 
