@@ -202,26 +202,6 @@
           href: ./cloud-partner-portal/consulting-services/consulting-services-offer.md
         - name: Предложение "Контейнеры"
           href: ./cloud-partner-portal/containers/cpp-containers-offer.md
-          items:
-            - name: Предварительные требования
-              href: ./cloud-partner-portal/containers/cpp-prerequisites.md
-            - name: Создание предложения контейнера
-              href: ./cloud-partner-portal/containers/cpp-create-offer.md
-              items:
-                - name: Вкладка "Параметры предложения"
-                  href: ./cloud-partner-portal/containers/cpp-offer-settings-tab.md
-                - name: Вкладка "Номера SKU"
-                  href: ./cloud-partner-portal/containers/cpp-skus-tab.md
-                - name: Вкладка "Marketplace"
-                  href: ./cloud-partner-portal/containers/cpp-marketplace-tab.md
-                - name: Вкладка "Поддержка"
-                  href: ./cloud-partner-portal/containers/cpp-support-tab.md
-            - name: Создание технических ресурсов для контейнера
-              href: ./cloud-partner-portal/containers/cpp-create-technical-assets.md
-            - name: Публикация предложения контейнера
-              href: ./cloud-partner-portal/containers/cpp-publish-offer.md
-            - name: Обновление существующего предложения
-              href: ./cloud-partner-portal/containers/cpp-update-existing-offer.md
         - name: "Предложение Dynamics\_365 for Business Central"
           href: ./cloud-partner-portal-orig/cpp-business-central-offer.md
           items:

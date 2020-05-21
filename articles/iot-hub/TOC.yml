@@ -81,6 +81,11 @@
       href: tutorial-firmware-update.md
     - name: Проверка подключения устройства
       href: tutorial-connectivity.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Поддержка TLS

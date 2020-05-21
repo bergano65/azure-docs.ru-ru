@@ -1,14 +1,14 @@
 ---
 title: Краткое описание примера схемы SWIFT CSP-CSCF v2020
 description: Обзор примера схемы SWIFT CSP-CSCF v2020. Этот пример схемы помогает клиентам оценить определенные средства управления SWIFT CSP-CSCF.
-ms.date: 09/24/2019
+ms.date: 05/13/2020
 ms.topic: sample
-ms.openlocfilehash: ee8670522bc4549dbb687a9ebe35bb20d53b0f17
-ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+ms.openlocfilehash: 04afbe2b0ef3b632d81b832e6a94bce2618fc851
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "74546452"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83657046"
 ---
 # <a name="overview-of-the-swift-csp-cscf-v2020-blueprint-sample"></a>Обзор примера схемы SWIFT CSP-CSCF v2020
 

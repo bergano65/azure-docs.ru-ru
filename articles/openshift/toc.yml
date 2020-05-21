@@ -16,7 +16,7 @@
   expanded: true
   items:
     - name: Создание частного кластера Azure Red Hat OpenShift 4
-      href: create-private-cluster.md
+      href: howto-create-private-cluster-4x.md
     - name: Настройка перенаправления DNS для кластера Azure Red Hat OpenShift 4
       href: dns-forwarding.md
     - name: Настройка аутентификации Azure Active Directory для кластера Azure Red Hat OpenShift 4
@@ -48,7 +48,7 @@
         - name: Управление проектами в кластере Azure Red Hat OpenShift 3.11
           href: howto-manage-projects.md
         - name: Создание частного кластера Azure Red Hat OpenShift 3.11
-          href: howto-create-private-cluster.md
+          href: howto-create-private-cluster-3x.md
         - name: Мониторинг и ведение журнала для Azure Red Hat OpenShift 3.11
           items:
             - name: Azure Monitor для контейнеров в Azure Red Hat OpenShift 3.11 (предварительная версия)

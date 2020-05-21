@@ -50,6 +50,8 @@
           href: ./samples/pattern-parameters.md
         - name: Сведения о действиях
           href: ./samples/pattern-effect-details.md
+        - name: Теги
+          href: ./samples/pattern-tags.md
         - name: Оператор value
           href: ./samples/pattern-value-operator.md
         - name: Оператор count
@@ -76,13 +78,8 @@
       displayName: 'devops, infrastructure as code, iac, release, continuous, delivery, deploy'
       href: ./concepts/policy-as-code.md
     - name: Политика Azure для Kubernetes
-      items:
-        - name: Политика для AKS
-          displayName: 'aks, rego, k8s, opa, open policy agent, gatekeeper, v3, crd, constraints'
-          href: ./concepts/rego-for-aks.md
-        - name: Политика для обработчика AKS
-          displayName: 'aks, k8s, opa, open policy agent, gatekeeper, v3, crd, constraints'
-          href: ./concepts/aks-engine.md
+      displayName: 'aks, engine, k8s, rego, opa, open policy agent, gatekeeper, v3, crd, constraints, arc'
+      href: ./concepts/policy-for-kubernetes.md
     - name: Аудит виртуальных машин с гостевой конфигурацией
       displayName: 'provider, tools, definition'
       href: ./concepts/guest-configuration.md
