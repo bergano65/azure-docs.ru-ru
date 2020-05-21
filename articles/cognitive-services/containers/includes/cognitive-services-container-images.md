@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/24/2020
 ms.author: aahi
-ms.openlocfilehash: 9025e016725a966061c557f16b610d8897c04c11
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 6d47829d32ed0b7ded545c73748cda1019d94bde
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83590675"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721552"
 ---
 ### <a name="container-repositories-and-images"></a>Репозитории и образы контейнеров
 
@@ -62,7 +62,7 @@ ms.locfileid: "83590675"
 
 #### <a name="public-gated-preview-container-registry-containerpreviewazurecrio"></a>Общедоступная Предварительная версия (реестр контейнеров: `containerpreview.azurecr.io` )
 
-Следующие контейнеры с условным просмотром размещаются в реестре предварительной версии контейнера и должны иметь доступ к приложению. Дополнительные сведения см. в разделе [Cognitive Servicesная процедура](../../cognitive-services-gating-process.md) ограничения.
+Следующие контейнеры с условным просмотром размещаются в реестре предварительной версии контейнера и должны иметь доступ к приложению. Дополнительные сведения см. в следующих статьях о контейнерах.
 
 | Служба | Контейнер | Реестр контейнеров, имя репозитория или образа |
 |--|--|--|
