@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/25/2020
 ms.author: trbye
-ms.openlocfilehash: cb016ec490dc14cbde1a1cb3f34caf39e4740961
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+ms.openlocfilehash: c55d81db848dcb1aebe9dacb03387565b3d8db48
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82732377"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83745615"
 ---
 # <a name="tutorial-voice-enable-your-bot-using-the-speech-sdk"></a>Учебник. Включение программы-робота с помощью речевого пакета SDK
 
@@ -104,7 +104,7 @@ ms.locfileid: "82732377"
 
 На этом этапе убедитесь, что в группе ресурсов (**спичечоботтуториал-ResourceGroup**) есть ресурс речи:
 
-| Имя | Type  | Расположение |
+| Название | Type  | Расположение |
 |------|-------|----------|
 | Спичечоботтуториал — речь | Cognitive Services | западная часть США |
 
@@ -125,7 +125,7 @@ ms.locfileid: "82732377"
 
 На этом этапе убедитесь, что ваша группа ресурсов (**спичечоботтуториал-ResourceGroup**) имеет два ресурса:
 
-| Имя | Type  | Расположение |
+| Название | Type  | Расположение |
 |------|-------|----------|
 | Спичечоботтуториал — AppServicePlan | План обслуживания приложения | западная часть США |
 | Спичечоботтуториал — речь | Cognitive Services | западная часть США |
@@ -146,7 +146,7 @@ ms.locfileid: "82732377"
    ```
 
 2. Запустите Visual Studio.
-3. На панели инструментов выберите **файл** > **Открыть** > **проект/решение**и откройте решение Echo Bot проекта:
+3. На панели инструментов выберите **файл**  >  **Открыть**  >  **проект/решение**и откройте решение Echo Bot проекта:
 
    ```
    samples\csharp_dotnetcore\02.echo-bot\EchoBot.sln
@@ -163,7 +163,7 @@ ms.locfileid: "82732377"
 
 1. Установка [эмулятора Bot Framework](https://github.com/Microsoft/BotFramework-Emulator/releases/latest) версии 4.3.0 или более поздней
 2. Запустите эмулятор Bot Framework и откройте программу Bot:
-   * **Файл** -> **Открыть Bot**.
+   * **Файл**  ->  **Откройте Bot**.
 3. Введите URL-адрес для Bot. Пример:
 
    ```
@@ -178,7 +178,7 @@ ms.locfileid: "82732377"
 Следующим шагом является развертывание эхо-робота в Azure. Существует несколько способов развертывания программы-робота, но в этом учебнике мы рассмотрим публикацию непосредственно из Visual Studio.
 
 > [!NOTE]
-> Кроме того, программу-робот можно развернуть с помощью шаблонов [Azure CLI](https://docs.microsoft.com/azure/bot-service/bot-builder-deploy-az-cli) и [развертывания](https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/adaptive-dialog/csharp_dotnetcore/04.core-bot/deploymentTemplates).
+> Кроме того, программу-робот можно развернуть с помощью шаблонов [Azure CLI](https://docs.microsoft.com/azure/bot-service/bot-builder-deploy-az-cli) и [развертывания](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/adaptive-dialog/03.core-bot).
 
 1. В Visual Studio откройте эхо-робот, настроенный для использования с прямым каналом речи:
 
@@ -207,7 +207,7 @@ ms.locfileid: "82732377"
 1. Браузер по умолчанию должен открыть и отобразить страницу, которая читает: "ваш робот готов!".
 1. На этом этапе проверьте группу ресурсов **спичечоботтуториал-ResourceGroup** в портал Azure и убедитесь в наличии трех ресурсов:
 
-| Имя | Type  | Расположение |
+| Название | Type  | Расположение |
 |------|-------|----------|
 | EchoBot20190805125647 | Служба приложений | западная часть США |
 | Спичечоботтуториал — AppServicePlan | План службы приложений | западная часть США |
@@ -241,14 +241,14 @@ ms.locfileid: "82732377"
    * В качестве **группы ресурсов**выберите **спичечоботтуториал-ResourceGroup**.
    * В качестве **расположения**выберите **Западная часть США**.
      * В качестве **ценовой**категории выберите **F0**.
-     * В поле **Конечная точка обмена сообщениями**введите URL-адрес для `/api/messages` веб – приложения, к которому добавляется путь в конце. Например, если глобально уникальное имя приложения было **EchoBot20190805125647**, конечная точка обмена сообщениями будет `https://EchoBot20190805125647.azurewebsites.net/api/messages/`выглядеть так:.
+     * В поле **Конечная точка обмена сообщениями**введите URL-адрес для веб – приложения, `/api/messages` к которому добавляется путь в конце. Например, если глобально уникальное имя приложения было **EchoBot20190805125647**, конечная точка обмена сообщениями будет выглядеть так: `https://EchoBot20190805125647.azurewebsites.net/api/messages/` .
      * Для **Application Insights**можно установить значение **Off**. Дополнительные сведения см. в статье [Bot Analytics](https://docs.microsoft.com/azure/bot-service/bot-service-manage-analytics?view=azure-bot-service-4.0).
      * Игнорировать **Автоматическое создание идентификатора приложения и пароля**.
 5. В нижней части колонки **регистрации каналов Bot** щелкните **создать**.
 
 На этом этапе проверьте группу ресурсов **спичечоботтуториал-ResourceGroup** в портал Azure. Теперь он должен показывать четыре ресурса:
 
-| Имя | Type  | Расположение |
+| Название | Type  | Расположение |
 |------|-------|----------|
 | EchoBot20190805125647 | Служба приложений | западная часть США |
 | Спичечоботтуториал — AppServicePlan | План службы приложений | западная часть США |
@@ -298,7 +298,7 @@ ms.locfileid: "82732377"
 
 Если в главном окне приложения появляется сообщение об ошибке, используйте следующую таблицу для обнаружения и устранения ошибки:
 
-| Error | Что следует сделать? |
+| Ошибка | Что следует сделать? |
 |-------|----------------------|
 |Ошибка Аусентикатионфаилуре: сбой обновления WebSocket с ошибкой проверки подлинности (401). Проверьте правильность ключа подписки (или маркера авторизации) и имя региона.| На странице Параметры приложения убедитесь, что вы правильно указали ключ подписки на речь и его регион.<br>Убедитесь, что ваш ключ речи и область ключей введены правильно. |
 |Ошибка Коннектионфаилуре: подключение было закрыто удаленным узлом. Код ошибки: 1011. Сведения об ошибке: не удалось подключиться к Bot перед отправкой сообщения | Убедитесь, что [установлен флажок "включить конечную точку потоковой передачи"](#register-the-direct-line-speech-channel) и/или [переключаемые **веб-сокеты** ](#enable-web-sockets) .<br>Убедитесь, что служба приложений Azure запущена. Если это так, попробуйте перезапустить службу приложений.|
@@ -351,7 +351,7 @@ ms.locfileid: "82732377"
 
 ### <a name="view-client-source-code-for-calls-to-the-speech-sdk"></a>Просмотр исходного кода клиента для вызовов пакета SDK для распознавания речи
 
-Клиент помощника по Windows Voice использует пакет NuGet [Microsoft. CognitiveServices. Speech](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech/), который содержит РЕЧЕВОЙ пакет SDK. Хорошим местом для начала рассмотрения примера кода является метод Инитспичконнектор () в файле [`VoiceAssistantClient\MainWindow.xaml.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/MainWindow.xaml.cs), который создает эти два объекта SDK для речи:
+Клиент помощника по Windows Voice использует пакет NuGet [Microsoft. CognitiveServices. Speech](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech/), который содержит РЕЧЕВОЙ пакет SDK. Хорошим местом для начала рассмотрения примера кода является метод Инитспичконнектор () в файле [`VoiceAssistantClient\MainWindow.xaml.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/MainWindow.xaml.cs) , который создает эти два объекта SDK для речи:
 - [`DialogServiceConfig`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconfig)— Для параметров конфигурации (например, ключа подписки на речь, региона ключей);
 - [`DialogServiceConnector`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.-ctor)— Управление подключением канала и событиями клиентской подписки для обработки распознанных речевых ответов и сообщений Bot.
 
@@ -367,7 +367,7 @@ ms.locfileid: "82732377"
 Выполните следующие действия, чтобы создать модель ключевых слов, настроить клиент помощника по Windows Voice для использования этой модели и, наконец, проверить ее с помощью программы Bot.
 
 1. Выполните эти инструкции, чтобы [создать настраиваемое ключевое слово с помощью службы распознавания речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-devices-sdk-create-kws).
-2. Распакуйте файл модели, скачанный на предыдущем шаге. Он должен называться для ключевого слова. Выполняется поиск файла с именем `kws.table`.
+2. Распакуйте файл модели, скачанный на предыдущем шаге. Он должен называться для ключевого слова. Выполняется поиск файла с именем `kws.table` .
 3. В клиенте Windows Voice Assistant найдите меню **Параметры** (найдите значок шестеренки в правом верхнем углу). Выберите **путь к файлу модели** и введите полный путь к `kws.table` файлу из шага 2.
 4. Убедитесь, что установлен флажок **включено**. Это сообщение должно появиться рядом с флажком: "будет прослушивать ключевое слово при следующем соединении". Если вы указали неправильный файл или недопустимый путь, появится сообщение об ошибке.
 5. Введите **ключ подписки**на речь и **регион ключа подписки**, а затем нажмите кнопку **ОК** , чтобы закрыть меню **параметров** .
@@ -384,18 +384,18 @@ ms.locfileid: "82732377"
 
 В исходном коде клиента помощника Windows Voice просмотрите эти файлы, чтобы просмотреть код, используемый для включения обнаружения ключевых слов:
 
-1. [`VoiceAssistantClient\Models.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/Models.cs)включает вызов метода [`KeywordRecognitionModel.fromFile()`](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/keywordrecognitionmodel?view=azure-node-latest#fromfile-string-)Speech SDK, который используется для создания экземпляра модели из локального файла на диске.
-1. [`VoiceAssistantClient\MainWindow.xaml.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/MainWindow.xaml.cs)включает в себя вызов метода [`DialogServiceConnector.StartKeywordRecognitionAsync()`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.startkeywordrecognitionasync)Speech SDK, который активирует непрерывное обнаружение ключевых слов.
+1. [`VoiceAssistantClient\Models.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/Models.cs)включает вызов метода Speech SDK [`KeywordRecognitionModel.fromFile()`](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/keywordrecognitionmodel?view=azure-node-latest#fromfile-string-) , который используется для создания экземпляра модели из локального файла на диске.
+1. [`VoiceAssistantClient\MainWindow.xaml.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/MainWindow.xaml.cs)включает в себя вызов метода Speech SDK [`DialogServiceConnector.StartKeywordRecognitionAsync()`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.startkeywordrecognitionasync) , который активирует непрерывное обнаружение ключевых слов.
 
 ## <a name="optional-change-the-language-and-bot-voice"></a>Используемых Изменение языка и Bot-голоса
 
-Созданная программа-робот будет прослушивать и отвечать на английском языке с голосовым стандартом американского английского текста в речь. Однако вы не ограничены использованием английского языка или голоса по умолчанию. В этом разделе вы узнаете, как изменить язык, который будет прослушивать Bot и реагировать на него. Вы также узнаете, как выбрать другой голоса для этого языка.
+Созданная программа-робот будет прослушивать и отвечать на английском языке, а также по умолчанию голосовая речь для английского языка (США). Однако вы не ограничены использованием английского языка или голоса по умолчанию. В этом разделе вы узнаете, как изменить язык, который будет прослушивать Bot и реагировать на него. Вы также узнаете, как выбрать другой голоса для этого языка.
 
 ### <a name="change-the-language"></a>Изменение языка
 
 Вы можете выбрать один из языков, упомянутых в таблице преобразования [речи в текст](language-support.md#speech-to-text) . В приведенном ниже примере мы изменим язык на немецкий.
 
-1. Откройте клиентское приложение голосового помощника Windows, нажмите кнопку параметров (значок с правом верхнего правого значка) `de-de` и введите в поле Language (это значение локали, указанное в таблице преобразования [речи в текст](language-support.md#speech-to-text) ). Это задает распознавание речевого языка, переопределяя значение по умолчанию `en-us`. Это также указывает каналу прямого перевода строки на использование немецкого голоса по умолчанию для ответа Bot.
+1. Откройте клиентское приложение голосового помощника Windows, нажмите кнопку параметров (значок с правом верхнего правого значка) и введите `de-de` в поле Language (это значение локали, указанное в таблице преобразования [речи в текст](language-support.md#speech-to-text) ). Это задает распознавание речевого языка, переопределяя значение по умолчанию `en-us` . Это также указывает каналу прямого перевода строки на использование немецкого голоса по умолчанию для ответа Bot.
 2. Закройте страницу параметры и нажмите кнопку повторного подключения, чтобы установить новое подключение к роботу Echo.
 3. Нажмите кнопку микрофон и скажите фразу на немецком языке. Вы увидите распознанный текст и эхо-робот, отвечающий на немецком языке по умолчанию.
 
@@ -403,7 +403,7 @@ ms.locfileid: "82732377"
 
 Выбор голоса для преобразования текста в речь и контроль произношения можно выполнить, если программа-робот задает ответ в виде [языка разметки речи](speech-synthesis-markup.md) (SSML) вместо простого текста. Программа Echo Bot не использует SSML, но можно легко изменить код, чтобы сделать это. В приведенном ниже примере мы добавим SSML к ответу эхо-робота, чтобы вместо розетки по умолчанию использовался немецкий Voice Стефан Apollo (папа). См. список [стандартных голосов](language-support.md#standard-voices) и [нейронных голосов](language-support.md#neural-voices) , поддерживаемых для вашего языка.
 
-1. Начнем с открытия `samples\csharp_dotnetcore\02.echo-bot\echo-bot.cs`.
+1. Начнем с открытия `samples\csharp_dotnetcore\02.echo-bot\echo-bot.cs` .
 2. Нахождение следующих двух строк:
     ```csharp
     var replyText = $"Echo: {turnContext.Activity.Text}";
@@ -439,7 +439,7 @@ ms.locfileid: "82732377"
 2. Найдите группу ресурсов с именем: **спичечоботтуториал-ResourceGroup**. Щелкните три точки (...).
 3. Выберите **Удалить группу ресурсов**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание собственного клиентского приложения с помощью пакета SDK для распознавания речи](quickstart-voice-assistant-csharp-uwp.md)

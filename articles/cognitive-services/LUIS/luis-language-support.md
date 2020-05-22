@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 12/09/2019
 ms.author: diberry
-ms.openlocfilehash: e859ac18276d10960a5a8488a6051252d90e0fcd
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 69ff3aa3f649b054192f9dd001af83dc8dbc2317
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83591052"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83745694"
 ---
 # <a name="language-and-region-support-for-luis"></a>Поддержка языков и регионов в LUIS
 
@@ -30,7 +30,7 @@ ms.locfileid: "83591052"
 
 Служба LUIS распознает фрагменты речи на следующих языках:
 
-| Язык |Языковой стандарт  |  Предварительно созданная предметная область | Предварительно созданная сущность | Рекомендации по списку фраз | **[Текстовая аналитика](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages)<br>(Тональность и<br>ключевые слова)|
+| Язык |Locale  |  Предварительно созданная предметная область | Предварительно созданная сущность | Рекомендации по списку фраз | **[Текстовая аналитика](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages)<br>(Тональность и<br>ключевые слова)|
 |--|--|:--:|:--:|:--:|:--:|
 | Английский (США) |`en-US` | ✔ | ✔  |✔|✔|
 | Арабский (Предварительная версия — современные стандартные арабские) |`ar-AR`|-|-|-|-|
@@ -111,7 +111,7 @@ ms.locfileid: "83591052"
 
 Следующие языки и региональные параметры имеют пользовательские версии маркеров:
 
-|Язык и региональные параметры|Version|Назначение|
+|Язык и региональные параметры|Версия|Назначение|
 |--|--|--|
 |Немецкий<br>`de-de`|1.0.0|Разделяет слова, разделив их с помощью токена на основе машинного обучения, который пытается разбить составные слова на отдельные компоненты.<br>Если пользователь введет в `Ich fahre einen krankenwagen` качестве utterance, он будет включен `Ich fahre einen kranken wagen` . Разрешение пометки и независимо от того, `kranken` `wagen` как разные сущности.|
 |Немецкий<br>`de-de`|1.0.2|Разделяет слова, разбивая их на пробелы.<br> Если пользователь вводит `Ich fahre einen krankenwagen` в качестве utterance, он остается единственным маркером. Таким образом `krankenwagen` , помечается как единая сущность. |

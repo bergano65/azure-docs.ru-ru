@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/26/2020
 ms.author: trbye
 ms.custom: seodec18
-ms.openlocfilehash: 93dc831fa631a28b918ef5015a3c9ff107d41541
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.openlocfilehash: 423d65cc77cb06a6084ad9ad56f3d7274e057ffb
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/21/2020
-ms.locfileid: "83726083"
+ms.locfileid: "83746510"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Поддержка языка и голоса для службы речи
 
@@ -38,7 +38,7 @@ To get pronunciation bits:
 https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronunciation Datasets" -> Click on Import -> Locale: the list of locales there correspond to the supported locales
 -->
 
-| Языковой стандарт  | Язык                          | Поддерживается | Настройки                                    |
+| Locale  | Язык                          | Поддерживается | Настройки                                    |
 |---------|-----------------------------------|-----------|---------------------------------------------------|
 | `ar-AE` | Арабский (ОАЭ)                      | Да       | Нет                                                |
 | `ar-BH` | Арабский (Бахрейн), современный стандарт | Да       | Языковая модель                                    |
@@ -99,7 +99,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 
 Дополнительные сведения о доступности по регионам см. на [этой странице](regions.md#standard-and-neural-voices).
 
-|Языковой стандарт  | Язык            | пол; | Имя голоса | Поддержка стиля |
+|Locale  | Язык            | пол; | Имя голоса | Поддержка стиля |
 |--|--|--|--|--|
 | `de-DE` | Немецкий (Германия)                | Жен. | "de-DE-Катжанеурал"      | Общие сведения |
 | `en-AU` | Английский (Австралия)             | Жен. | "en-AU-Наташанеурал"    | Общие сведения |
@@ -135,12 +135,12 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 
 Свыше 75 стандартных голосовых моделей доступны в более 45 языках и языковых стандартах, что позволит вам преобразовать текст в синтезированную речь. Дополнительные сведения о доступности по регионам см. на [этой странице](regions.md#standard-and-neural-voices).
 
-| Языковой стандарт | Язык | пол; | Имя голоса |
+| Locale | Язык | пол; | Имя голоса |
 |--|--|--|--|
 | <sup>одного</sup>`ar-EG` | Арабский (Египет) | Жен. | "ar-EG-хода" |
 | `ar-SA` | Арабский (Саудовская Аравия) | Муж. | "AR-SA-Наайф" |
 | `bg-BG` | Болгарский | Муж. |  "bg-BG-Иван" |
-| `ca-ES` | каталанский (Испания) | Жен. |  "CA-ES-Херенарус" |
+| `ca-ES` | Каталонский | Жен. |  "CA-ES-Херенарус" |
 | `cs-CZ` | Чешский | Муж. | "cs-CZ-Жакуб" |
 | `da-DK` | Датский | Жен. |  "da-DK-Хеллерус" |
 | `de-AT` | Немецкий (Австрия) | Муж. | "de-AT-Майкл" |
