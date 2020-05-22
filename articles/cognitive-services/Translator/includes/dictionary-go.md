@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: b646f1994c83dba18b246dc3738729058ce6922d
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 1802a8d68030dbc882b4687cae28668f5a1e7a29
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "69907072"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83587055"
 ---
 [!INCLUDE [Prerequisites](prerequisites-go.md)]
 
@@ -35,7 +35,7 @@ import (
 
 ## <a name="create-the-main-function"></a>Создание функции main
 
-В этом примере будет предпринята попытка считать ключ подписки API "Перевод текстов" из переменных среды `TRANSLATOR_TEXT_SUBSCRIPTION_KEY` и `TRANSLATOR_TEXT_ENDPOINT`. Если вы не знакомы с переменными среды, можно задать `subscriptionKey` и `endpoint` в виде строк и закомментировать условные операторы.
+В этом примере будет предпринята попытка считать ключ подписки Переводчика из переменных среды `TRANSLATOR_TEXT_SUBSCRIPTION_KEY` и `TRANSLATOR_TEXT_ENDPOINT`. Если вы не знакомы с переменными среды, можно задать `subscriptionKey` и `endpoint` в виде строк и закомментировать условные операторы.
 
 Скопируйте в проект следующий код:
 
@@ -67,7 +67,7 @@ func main() {
 
 ## <a name="create-a-function-to-get-alternate-translations"></a>Создание функции для поиска вариантов перевода
 
-Давайте создадим функцию для поиска вариантов перевода. Эта функция будет принимать один аргумент — ключ подписки API перевода текстов.
+Давайте создадим функцию для поиска вариантов перевода. Эта функция будет принимать один аргумент — ключ подписки Переводчика.
 
 ```go
 func dictionaryLookup(subscriptionKey string, uri string) {
@@ -92,7 +92,7 @@ u.RawQuery = q.Encode()
 ```
 
 >[!NOTE]
-> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в статье [API перевода текстов 3.0: Dictionary Lookup](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-dictionary-lookup).
+> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в руководстве по [Переводчику 3.0. поиск по словарю](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-dictionary-lookup).
 
 ## <a name="create-a-struct-for-your-request-body"></a>Создание структуры для текста запроса
 
@@ -110,7 +110,7 @@ b, _ := json.Marshal(body)
 
 ## <a name="build-the-request"></a>Создание запроса
 
-Теперь, когда вы закодировали текст запроса в формате JSON, можно создать запрос POST и вызвать API перевода текстов.
+Теперь, когда вы закодировали текст запроса в формате JSON, можно создать запрос POST и вызвать Переводчика.
 
 ```go
 // Build the HTTP POST request
@@ -122,7 +122,7 @@ if err != nil {
 req.Header.Add("Ocp-Apim-Subscription-Key", subscriptionKey)
 req.Header.Add("Content-Type", "application/json")
 
-// Call the Translator Text API
+// Call the Translator
 res, err := http.DefaultClient.Do(req)
 if err != nil {
     log.Fatal(err)
@@ -148,7 +148,7 @@ fmt.Printf("%s\n", prettyJSON)
 
 ## <a name="put-it-all-together"></a>Сборка
 
-Вот и все. Вы собрали простую программу, которая вызовет API перевода текстов и вернет ответ JSON. Теперь пришло время запустить ее.
+Вот и все. Вы собрали простую программу, которая вызовет Переводчика и вернет ответ в формате JSON. Теперь пришло время запустить ее.
 
 ```console
 go run dictionaryLookup.go
@@ -219,7 +219,7 @@ go run dictionaryLookup.go
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Просмотрите справочник по API, чтобы составить представление обо всех возможностях API "Перевод текстов".
+Просмотрите справочник по API, чтобы получить представление обо всех возможностях Переводчика.
 
 > [!div class="nextstepaction"]
 > [Справочник по API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference)

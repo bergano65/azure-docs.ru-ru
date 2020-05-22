@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Поиск слов в двуязычном словаре — API Перевода текстов
+title: Краткое руководство. Поиск слов в двуязычном словаре — Переводчик
 titleSuffix: Azure Cognitive Services
-description: Из этого краткого руководства вы узнаете, как с помощью API перевода текстов найти варианты перевода определенного термина и примеры их использования.
+description: Из этого краткого руководства вы узнаете, как найти варианты перевода определенного термина и примеры их использования с помощью Переводчика.
 services: cognitive-services
 author: erhopf
 manager: nitinme
@@ -11,18 +11,18 @@ ms.topic: quickstart
 ms.date: 02/10/2020
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-one
-ms.openlocfilehash: 07fd984f72628ac4f6d6736bf0ab903619e96c72
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: fe2f4f2bea52650c2baa2ac3380b5b92f01c15eb
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77525164"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83587054"
 ---
 # <a name="quickstart-look-up-words-with-bilingual-dictionary"></a>Краткое руководство. Поиск слов в двуязычном словаре
 
-Из этого краткого руководства вы узнаете, как с помощью API перевода текстов найти варианты перевода определенного термина и примеры их использования.
+Из этого краткого руководства вы узнаете, как найти варианты перевода определенного термина и примеры их использования с помощью Переводчика.
 
-Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом API перевода текстов. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
+Для работы с этим кратким руководством требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом Переводчика. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [C# quickstart](includes/dictionary-csharp.md)]

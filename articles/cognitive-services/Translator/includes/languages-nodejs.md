@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: fd8b4ae06018de1d03ca60e836534a535c8f5df8
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 649af0d3b1503a5607717c4ccbadd8f1d822be32
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "69906928"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83586905"
 ---
 [!INCLUDE [Prerequisites](prerequisites-nodejs.md)]
 
@@ -31,7 +31,7 @@ const uuidv4 = require('uuid/v4');
 
 ## <a name="set-the-endpoint"></a>Задание конечной точки
 
-В этом примере будет предпринята попытка считать конечную точку API "Перевод текстов" из переменной среды `TRANSLATOR_TEXT_ENDPOINT`. Если вы не знакомы с переменными среды, можно задать `endpoint` в виде строки и закомментировать условный оператор.
+В этом примере будет предпринята попытка считать конечную точку Переводчика из переменной среды `TRANSLATOR_TEXT_ENDPOINT`. Если вы не знакомы с переменными среды, можно задать `endpoint` в виде строки и закомментировать условный оператор.
 
 ```javascript
 lorum ipsum
@@ -42,7 +42,7 @@ lorum ipsum
 Метод `request()`, доступный через модуль запросов, позволяет передавать метод HTTP, URL-адрес, параметры запроса, заголовки и текст JSON как объект `options`. В этом фрагменте кода мы настроим запрос:
 
 >[!NOTE]
-> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в статье [API перевода текстов 3.0: Languages](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages).
+> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в руководстве по [Переводчику 3.0. Languages](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages).
 
 ```javascript
 let options = {
@@ -77,7 +77,7 @@ request(options, function(err, res, body){
 
 ## <a name="put-it-all-together"></a>Сборка
 
-Вот и все. Вы собрали простую программу, которая вызовет API перевода текстов и вернет ответ JSON. Теперь пришло время запустить ее.
+Вот и все. Вы собрали простую программу, которая вызовет Переводчика и вернет ответ в формате JSON. Теперь пришло время запустить ее.
 
 ```console
 node get-languages.js
@@ -181,7 +181,7 @@ node get-languages.js
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Просмотрите справочник по API, чтобы составить представление обо всех возможностях API "Перевод текстов".
+Просмотрите справочник по API, чтобы получить представление обо всех возможностях Переводчика.
 
 > [!div class="nextstepaction"]
 > [Справочник по API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference)

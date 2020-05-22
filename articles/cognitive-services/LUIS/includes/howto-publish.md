@@ -6,30 +6,26 @@ author: diberry
 manager: nitinme
 ms.custom: include file
 ms.service: cognitive-services
-ms.date: 02/14/2020
+ms.date: 05/06/2020
 ms.subservice: language-understanding
 ms.topic: include
 ms.author: diberry
-ms.openlocfilehash: 3b18e185480cc5275b97bba474f1c054c7bd1276
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 4067b4439c166a4d3af02b3448bbe7edd98a0a07
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80286716"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83585103"
 ---
 Чтобы получить результат прогнозирования LUIS в чат-боте или другом приложении, необходимо опубликовать приложение в конечной точке.
 
 1. Выберите **Опубликовать** на правой верхней панели навигации.
 
-    ![Кнопка для публикации в конечной точке в правом верхнем меню LUIS](../media/howto-publish/publish-button.png)
+    ![Снимок экрана: кнопка публикации в конечной точке в правом верхнем меню на портале LUIS](../media/howto-publish/publish-button.png)
 
-2. Выберите слот **Рабочий** и нажмите кнопку **Готово**.
+1. Выберите слот **Рабочий** и нажмите кнопку **Готово**.
 
     > [!div class="mx-imgBorder"]
-    > ![Публикация в конечной точке с помощью LUIS](../media/howto-publish/publish-app-popup.png)
+    > ![Снимок экрана: публикация в конечной точке с помощью LUIS](../media/howto-publish/publish-app-popup.png)
 
-3. Публикация считается завершенной, когда отобразится уведомление с подтверждением успеха.
-
-    ![Публикация в конечной точке с помощью LUIS](../media/howto-publish/publish-endpoint-success.png)
-
-4. Перейдите по ссылке **Получить доступ к URL-адресам конечных точек** в уведомлении, чтобы открыть страницу **Ресурсы Azure**. URL-адреса конечных точек перечислены в **примере запроса**.
+1. Перейдите по ссылке **Получить доступ к URL-адресам конечных точек** в уведомлении, чтобы открыть страницу **Ресурсы Azure**. URL-адреса конечных точек перечислены в **примере запроса**.

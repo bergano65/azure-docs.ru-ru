@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: 0c263ed1f18ceaa2db976632ea31b9fe1eb47a93
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 513de6d990884f9abf2378ea208ec1dbe556d397
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "69907196"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83587190"
 ---
 [!INCLUDE [Prerequisites](prerequisites-csharp.md)]
 
@@ -59,11 +59,11 @@ using Newtonsoft.Json;
 
 ## <a name="create-classes-for-the-json-response"></a>Создание классов для ответа JSON
 
-Далее мы создадим класс, используемый при десериализации ответа JSON, возвращенного с помощью API Перевода текстов.
+Далее мы создадим класс, который используется при десериализации ответа JSON, возвращаемого Переводчиком.
 
 ```csharp
 /// <summary>
-/// The C# classes that represents the JSON returned by the Translator Text API.
+/// The C# classes that represents the JSON returned by the Translator.
 /// </summary>
 public class DetectResult
 {
@@ -270,7 +270,7 @@ Transliteration supported: False.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Просмотрите справочник по API, чтобы составить представление обо всех возможностях API "Перевод текстов".
+Просмотрите справочник по API, чтобы получить представление обо всех возможностях Переводчика.
 
 > [!div class="nextstepaction"]
 > [Справочник по API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference)

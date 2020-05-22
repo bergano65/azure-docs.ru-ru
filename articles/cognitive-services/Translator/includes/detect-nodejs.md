@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: c180a5d751b44346760706b1bd3d1e8acb70099d
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: cd5a375460bbedcca5a370d86a1b43493e75f844
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "71837523"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83587194"
 ---
 [!INCLUDE [Prerequisites](prerequisites-nodejs.md)]
 
@@ -31,7 +31,7 @@ const uuidv4 = require('uuid/v4');
 
 ## <a name="set-the-subscription-key-and-endpoint"></a>Выбор ключа подписки и конечной точки
 
-В этом примере будет предпринята попытка считать ключ подписки API "Перевод текстов" из переменных среды `TRANSLATOR_TEXT_SUBSCRIPTION_KEY` и `TRANSLATOR_TEXT_ENDPOINT`. Если вы не знакомы с переменными среды, можно задать `subscriptionKey` и `endpoint` в виде строк и закомментировать условные операторы.
+В этом примере будет предпринята попытка считать ключ подписки Переводчика из переменных среды `TRANSLATOR_TEXT_SUBSCRIPTION_KEY` и `TRANSLATOR_TEXT_ENDPOINT`. Если вы не знакомы с переменными среды, можно задать `subscriptionKey` и `endpoint` в виде строк и закомментировать условные операторы.
 
 Скопируйте в проект следующий код:
 
@@ -92,7 +92,7 @@ request(options, function(err, res, body){
 
 ## <a name="put-it-all-together"></a>Сборка
 
-Вот и все. Вы собрали простую программу, которая вызовет API перевода текстов и вернет ответ JSON. Теперь пришло время запустить ее.
+Вот и все. Вы собрали простую программу, которая вызовет Переводчика и вернет ответ в формате JSON. Теперь пришло время запустить ее.
 
 ```console
 node detect.js
@@ -136,7 +136,7 @@ node detect.js
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Просмотрите справочник по API, чтобы составить представление обо всех возможностях API "Перевод текстов".
+Просмотрите справочник по API, чтобы получить представление обо всех возможностях Переводчика.
 
 > [!div class="nextstepaction"]
 > [Справочник по API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference)

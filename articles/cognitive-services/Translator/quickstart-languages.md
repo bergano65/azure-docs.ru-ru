@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Получение списка поддерживаемых языков — API Перевода текстов
+title: Краткое руководство. Получение списка поддерживаемых языков — Переводчик
 titleSuffix: Azure Cognitive Services
-description: Из этого краткого руководства вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, а также результаты поиска по словарю с помощью API перевода текстов.
+description: Из этого краткого руководства вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, а также результаты поиска по словарю с помощью Переводчика.
 services: cognitive-services
 author: erhopf
 manager: nitinme
@@ -11,16 +11,16 @@ ms.topic: quickstart
 ms.date: 02/10/2020
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-one
-ms.openlocfilehash: d992fcec6071ea9883f2db61d6c54f41a9615867
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: bfb8b9d81496d10601bf6e6cfeb26d18b57e3eca
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77525147"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83586906"
 ---
-# <a name="quickstart-use-the-translator-text-api-to-get-a-list-of-supported-languages"></a>Краткое руководство. Получение списка поддерживаемых языков с помощью API Перевода текстов
+# <a name="quickstart-use-the-translator-to-get-a-list-of-supported-languages"></a>Краткое руководство. Получение списка поддерживаемых языков с помощью Переводчика
 
-Из этого краткого руководства вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, а также результаты поиска по словарю с помощью API перевода текстов.
+Из этого краткого руководства вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, а также результаты поиска по словарю с помощью Переводчика.
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [C# quickstart](includes/languages-csharp.md)]

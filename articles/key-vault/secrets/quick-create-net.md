@@ -7,12 +7,12 @@ ms.date: 03/12/2020
 ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
-ms.openlocfilehash: 5e62e8c3883ad8414d1fb550dd4221eb8b9e4056
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 355ca9b5a96367bbe84fb8abf998f13032dc004a
+ms.sourcegitcommit: 90d2d95f2ae972046b1cb13d9956d6668756a02e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81421488"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83402518"
 ---
 # <a name="quickstart-azure-key-vault-client-library-for-net-sdk-v4"></a>Краткое руководство. Использование клиентской библиотеки Azure Key Vault для .NET (пакет SDK версии 4)
 
@@ -31,7 +31,7 @@ ms.locfileid: "81421488"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Пакет SDK для .NET Core 2.1 или более поздней версии](https://dotnet.microsoft.com/download/dotnet-core/2.1).
+* [Пакет SDK для .NET Core 3.1 или более поздней версии](https://dotnet.microsoft.com/download/dotnet-core/3.1).
 * [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) или [Azure PowerShell](/powershell/azure/overview).
 
 В этом кратком руководстве предполагается, что вы выполняете команды `dotnet`, [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) и Windows в терминале Windows (например, [PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-6), [Windows PowerShell](/powershell/scripting/install/installing-windows-powershell?view=powershell-6) или [Azure Cloud Shell](https://shell.azure.com/)).
@@ -95,12 +95,14 @@ New-AzKeyVault -Name <your-unique-keyvault-name> -ResourceGroupName myResourceGr
 
 ### <a name="create-a-service-principal"></a>Создание субъекта-службы
 
-Самый простой способ проверить подлинность облачного приложения NET — с помощью управляемых удостоверений. Дополнительные сведения см. в статье [Provide Key Vault authentication with a managed identity](../general/managed-identity.md) (Предоставление проверки подлинности Key Vault с помощью управляемого удостоверения). Но для простоты в рамках этого краткого руководства создается консольное приложение .NET. Для проверки подлинности в Azure приложение рабочего стола должно использовать субъект-службу и политику управления доступом.
+Самый простой способ проверить подлинность облачного приложения NET — с помощью управляемых удостоверений. Дополнительные сведения см. в статье [Provide Key Vault authentication with a managed identity](../general/managed-identity.md) (Предоставление проверки подлинности Key Vault с помощью управляемого удостоверения). 
+
+Но для простоты с помощью этого краткого руководства создается консольное приложение .NET, для которого требуется использовать субъект-службу и политику управления доступом. Для участника службы требуется уникальное имя в формате http://&lt;уникальное_имя_субъекта-службы&gt;.
 
 Создайте субъект-службу с помощью команды Azure CLI [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac):
 
 ```azurecli
-az ad sp create-for-rbac -n "http://mySP" --sdk-auth
+az ad sp create-for-rbac -n "http://&lt;my-unique-service-principle-name&gt;" --sdk-auth
 ```
 
 Эта операция возвращает ряд пар "ключ — значение". 
@@ -123,7 +125,7 @@ az ad sp create-for-rbac -n "http://mySP" --sdk-auth
 
 ```azurepowershell
 # Create a new service principal
-$spn = New-AzADServicePrincipal -DisplayName "http://mySP"
+$spn = New-AzADServicePrincipal -DisplayName "http://&lt;my-unique-service-principle-name&gt;"
 
 # Get the tenant ID and subscription ID of the service principal
 $tenantId = (Get-AzContext).Tenant.Id
