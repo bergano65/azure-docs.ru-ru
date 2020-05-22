@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 02/06/2020
 ms.author: aahi
-ms.openlocfilehash: ba516a548fc8385ca86526a7f2dd082b27e53208
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 60cd6b8ba2cbfca497ae1b92113b12e85a34bf26
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77211454"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83778217"
 ---
 ## <a name="general-entity-types"></a>Общие типы сущностей:
 
@@ -22,11 +22,11 @@ ms.locfileid: "77211454"
 Распознавание имен пользователей в тексте.
 
 Языки:
-* Общедоступная `Arabic`Предварительная версия: `Dutch`, `English` `Finnish` `French` `German` `Hungarian` `Italian` `Japanese` `Korean` `Norwegian (Bokmål)` `Polish` `Portuguese (Portugal)` `Portuguese (Brazil)` `Russian` `Spanish` `Swedish` ,,,,,,,,,,,,,,,,, и `Danish` `Czech` `Chinese-Simplified``Turkish`
+* Общедоступная Предварительная версия: `Arabic` , `Czech` , `Chinese-Simplified` , `Danish` , `Dutch` ,, `English` `Finnish` , `French` , `German` , `Hungarian` ,, `Italian` `Japanese` , `Korean` , `Norwegian (Bokmål)` , `Polish` , `Portuguese (Portugal)` ,,, `Portuguese (Brazil)` `Russian` `Spanish` `Swedish` и`Turkish`
 
 | Имя подтипа | Описание                                                      | Доступно начиная с версии модели |
 |--------------|------------------------------------------------------------------|---------------------------------------|
-| Недоступно          | Распознаваемые имена людей, например `Bill Gates``Marie Curie` | `2019-10-01`                          | 
+| Недоступно          | Распознаваемые имена людей `Bill Gates` , например`Marie Curie` | `2019-10-01`                          | 
 
 ### <a name="persontype"></a>персонтипе
 Тип задания или роль, удерживаемая лицом.
@@ -36,7 +36,7 @@ ms.locfileid: "77211454"
 
 | Имя подтипа | Описание                                                                                | Доступно начиная с версии модели |
 |--------------|--------------------------------------------------------------------------------------------|----------------------------------------|
-| Недоступно          | Типы заданий, например `civil engineer` `salesperson` `chef`,,, `librarian`,`nursing aide` | `2020-02-01`                           |
+| Недоступно          | Типы заданий, например,,, `civil engineer` `salesperson` `chef` `librarian` ,`nursing aide` | `2020-02-01`                           |
 
 ### <a name="location"></a>Расположение
 
@@ -44,24 +44,24 @@ ms.locfileid: "77211454"
 
 Языки:
 
-* Общедоступная `Arabic`Предварительная версия: `Dutch`, `English` `Finnish` `French` `German` `Hungarian` `Italian` `Japanese` `Korean` `Norwegian (Bokmål)` `Polish` `Portuguese (Portugal)` `Portuguese (Brazil)` `Russian` `Spanish` `Swedish` ,,,,,,,,,,,,,,,,, и `Danish` `Czech` `Chinese-Simplified``Turkish`
+* Общедоступная Предварительная версия: `Arabic` , `Czech` , `Chinese-Simplified` , `Danish` , `Dutch` ,, `English` `Finnish` , `French` , `German` , `Hungarian` ,, `Italian` `Japanese` , `Korean` , `Norwegian (Bokmål)` , `Polish` , `Portuguese (Portugal)` ,,, `Portuguese (Brazil)` `Russian` `Spanish` `Swedish` и`Turkish`
 
 | Имя подтипа              | Описание                                                                              | Доступно начиная с версии модели |
 |---------------------------|------------------------------------------------------------------------------------------|----------------------------------------|
-| Недоступно                       | расположения, `Atlantic Ocean` `library` `Eiffel Tower`например,,`Statue of Liberty`  | `2019-10-01`                           |
-| Геоадминистративная сущность (ГПЕ) — только на английском языке| Города, страны, Штаты, например `Seattle` `Pennsylvania` `South Africa`,,,`Tokyo` | `2020-02-01`                           |
+| Недоступно                       | расположения `Atlantic Ocean` , например,, `library` `Eiffel Tower``Statue of Liberty`  | `2019-10-01`                           |
+| Геоадминистративная сущность (ГПЕ) — только на английском языке| Города, страны и регионы, Штаты, например,, `Seattle` `Pennsylvania` `South Africa` ,`Tokyo` | `2020-02-01`                           |
 
-### <a name="organization"></a>План  
+### <a name="organization"></a>Организация  
 
 Признанные организации, Организации, учреждения и другие группы людей. Например: компании, «неправительственные» группы, музыкальные зоны, спортивные треф, государственные органы и общедоступные Организации. Национальные и религионсы не включаются в этот тип сущности. 
 
 Языки: 
 
-* Общедоступная `Arabic`Предварительная версия: `Dutch`, `English` `Finnish` `French` `German` `Hungarian` `Italian` `Japanese` `Korean` `Norwegian (Bokmål)` `Polish` `Portuguese (Portugal)` `Portuguese (Brazil)` `Russian` `Spanish` `Swedish` ,,,,,,,,,,,,,,,,, и `Danish` `Czech` `Chinese-Simplified``Turkish`
+* Общедоступная Предварительная версия: `Arabic` , `Czech` , `Chinese-Simplified` , `Danish` , `Dutch` ,, `English` `Finnish` , `French` , `German` , `Hungarian` ,, `Italian` `Japanese` , `Korean` , `Norwegian (Bokmål)` , `Polish` , `Portuguese (Portugal)` ,,, `Portuguese (Brazil)` `Russian` `Spanish` `Swedish` и`Turkish`
 
 | Имя подтипа | Описание                                                                                             | Доступно начиная с версии модели |
 |--------------|---------------------------------------------------------------------------------------------------------|----------------------------------------|
-| Недоступно          | Организации, `Microsoft` `NASA` `National Oceanic and Atmospheric Administration`например,,`VOA` | `2019-10-01`                           |
+| Недоступно          | Организации `Microsoft` , например,, `NASA` `National Oceanic and Atmospheric Administration``VOA` | `2019-10-01`                           |
 
 ### <a name="event"></a>Событие  
 
@@ -73,7 +73,7 @@ ms.locfileid: "77211454"
 
 | Имя подтипа | Описание                                                            | Доступно начиная с версии модели |
 |--------------|------------------------------------------------------------------------|----------------------------------------|
-| Недоступно          | Такие события, `wedding`как `hurricane`, `car accident`, `solar eclipse`,,`American Revolution` | `2020-02-01`                           |
+| Недоступно          | Такие события, как,,, `wedding` `hurricane` `car accident` `solar eclipse` ,`American Revolution` | `2020-02-01`                           |
 
 ### <a name="product"></a>Продукт  
 
@@ -85,7 +85,7 @@ ms.locfileid: "77211454"
 
 | Имя подтипа | Описание                                                                        | Доступно начиная с версии модели |
 |--------------|------------------------------------------------------------------------------------|----------------------------------------|
-| Недоступно          | Например,,,, `bag` `Microsoft Surface laptop` `sunglasses` `motorcycle``Xbox` | `2020-02-01`                           |
+| Недоступно          | Например,,,, `Microsoft Surface laptop` `sunglasses` `motorcycle` `bag` ,`Xbox` | `2020-02-01`                           |
 | Вычисления    | `Azure Cosmos DB`, `Azure Kubernetes Service`                                     | `2020-02-01`                           |
 
 ### <a name="skill"></a>Навык  
@@ -112,7 +112,7 @@ ms.locfileid: "77211454"
 |--------------|------------------------------------------------|----------------------------------------|
 | Недоступно          | Номера телефонов США, например`(312) 555-0176` | `2019-10-01`                           |
 
-### <a name="email"></a>Электронная почта
+### <a name="email"></a>Адрес электронной почты
 
 Электронная почта. 
 
@@ -156,13 +156,13 @@ URL-адреса в Интернете.
 
 Языки:
 
-* Общедоступная `Chinese-Simplified`Предварительная `French`версия `German` :, `English`, и`Spanish`
+* Общедоступная Предварительная версия: `Chinese-Simplified` , `English` , `French` и `German``Spanish`
 
 | Имя подтипа    | Примеры                     |
 |-------------|------------------------------|
 | Недоступно         | `6:30PM February 4, 2012`, `4/1/2011 2:45`                   |
 | Дата  | `May 2nd, 2017`, `05/02/2017`       |
-| Время     | `8:15`, `6AM`              |
+| Time     | `8:15`, `6AM`              |
 | Диапазон дат    | `August 2nd to August 5th`         |
 | Диапазон времени   | `4-6PM`, `10:00AM to Noon`          |
 | Duration | `2.5 minutes`, `one and a half hours`         |
@@ -176,14 +176,14 @@ URL-адреса в Интернете.
 
 Языки:
 
-* Общедоступная `Chinese-Simplified`Предварительная `French`версия `German` :, `English`, и`Spanish`
+* Общедоступная Предварительная версия: `Chinese-Simplified` , `English` , `French` и `German``Spanish`
 
 | Имя подтипа    | Примеры                     |
 |-------------|------------------------------|
-| Номер         | `6`, `six`                   |
+| Число         | `6`, `six`                   |
 | Процент  | `50%`, `fifty percent`       |
 | Ordinal     | `2nd`, `second`              |
 | Возраст         | `90 day old`, `30 years old` |
-| Валюта    | `$10.99`, `€30.00`           |
+| Валюта    | `$10.99`, `&euro;30.00`           |
 | Измерение   | `10 miles`, `40 cm`          |
-| температура; | `32 degrees`, `10°C`         |
+| Температура | `32 degrees`, `10°C`         |

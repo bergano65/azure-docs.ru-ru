@@ -1623,20 +1623,6 @@
                     - name: Общие сведения об аутентификации на основе токенов Azure AD
                       href: /azure/databricks/dev-tools/api/latest/aad/index
                       maintainContext: true
-                    - name: Получение токена Azure AD с помощью библиотеки аутентификации Azure AD
-                      href: /azure/databricks/dev-tools/api/latest/aad/app-aad-token
-                      maintainContext: true
-                    - name: Получение токена Azure AD с помощью субъекта-службы
-                      href: /azure/databricks/dev-tools/api/latest/aad/service-prin-aad-token
-                      maintainContext: true
-                    - name: Устранение неполадок с маркерами доступа Azure AD
-                      href: /azure/databricks/dev-tools/api/latest/aad/troubleshoot-aad-token
-                  maintainContext: true
-                - name: Токены Azure Active Directory
-                  items:
-                    - name: Общие сведения об аутентификации на основе токенов Azure AD
-                      href: /azure/databricks/dev-tools/api/latest/aad/index
-                      maintainContext: true
                     - name: Получение токена Azure AD с помощью библиотеки аутентификации AAD
                       href: /azure/databricks/dev-tools/api/latest/aad/app-aad-token
                       maintainContext: true
