@@ -278,6 +278,8 @@
           href: how-to-connect-sync-feature-scheduler.md
         - name: Создание и настройка правила синхронизации
           href: how-to-connect-create-custom-sync-rule.md
+        - name: "API конечной точки версии\_2 для синхронизации Azure AD Connect"
+          href: how-to-connect-sync-endpoint-api-v2.md
         - name: "Диспетчер службы синхронизации Azure\_AD Connect"
           items:
             - name: Управление вкладкой операций в диспетчере служб

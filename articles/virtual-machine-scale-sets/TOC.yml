@@ -60,9 +60,39 @@
 - name: Примеры
   items:
     - name: Azure CLI
-      href: cli-samples.md
+      items:
+        - name: создавать масштабируемый набор виртуальных машин;
+          href: ./scripts/cli-sample-create-simple-scale-set.md
+        - name: Создание масштабируемого набора на основе пользовательского образа виртуальной машины
+          href: ./scripts/cli-sample-create-scale-set-from-custom-image.md
+        - name: Установка приложений в масштабируемом наборе
+          href: ./scripts/cli-sample-install-apps.md
+        - name: Создание дисков и их подключение к масштабируемому набору
+          href: ./scripts/cli-sample-attach-disks.md
+        - name: Включение автомасштабирования на основе узла
+          href: ./scripts/cli-sample-enable-autoscale.md
+        - name: Создание однозонного масштабируемого набора
+          href: ./scripts/cli-sample-single-availability-zone-scale-set.md
+        - name: 'Создание масштабируемого набора, избыточного между зонами'
+          href: ./scripts/cli-sample-zone-redundant-scale-set.md
     - name: PowerShell
-      href: powershell-samples.md
+      items:
+        - name: Создание простого масштабируемого набора виртуальных машин
+          href: ./scripts/powershell-sample-create-simple-scale-set.md
+        - name: Создание полного масштабируемого набора виртуальных машин
+          href: ./scripts/powershell-sample-create-complete-scale-set.md
+        - name: Создание масштабируемого набора на основе пользовательского образа виртуальной машины
+          href: ./scripts/powershell-sample-create-scale-set-from-custom-image.md
+        - name: Установка приложений в масштабируемом наборе
+          href: ./scripts/powershell-sample-install-apps.md
+        - name: Создание дисков и их подключение к масштабируемому набору
+          href: ./scripts/powershell-sample-attach-disks.md
+        - name: Включение автомасштабирования на основе узла
+          href: ./scripts/powershell-sample-enable-autoscale.md
+        - name: Создание однозонного масштабируемого набора
+          href: ./scripts/powershell-single-av-zone-scale-set.md
+        - name: 'Создание масштабируемого набора, избыточного между зонами'
+          href: ./scripts/powershell-sample-zone-redundant-scale-set.md
     - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./policy-samples.md

@@ -13,6 +13,8 @@
       href: create-notification-hub-portal.md
     - name: "Создание центра уведомлений с помощью Azure\_CLI"
       href: create-notification-hub-azure-cli.md
+    - name: Создание центра уведомлений с помощью шаблона Azure Resource Manager
+      href: create-notification-hub-template.md
     - name: Настройка центра уведомлений
       href: configure-notification-hub-portal-pns-settings.md
 - name: Учебники

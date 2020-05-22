@@ -77,6 +77,10 @@
           href: troubleshoot-guide-critical-process-died.md
         - name: Сбой критически важной службы
           href: troubleshoot-critical-service-failed-boot-error.md
+        - name: "Устранение ошибки загрузки\_— состояние не найдено"
+          href: boot-error-status-not-found.md
+        - name: 'Устранение неполадок в Центре обновления Windows, связанных с нехваткой места для установки'
+          href: windows-update-installation-capacity.md
         - name: При применении политик локальных пользователей и групп виртуальная машина не отвечает
           href: troubleshoot-vm-unresponsive-group-policy-local-users.md
         - name: 'Диск, не поддерживающий загрузку'

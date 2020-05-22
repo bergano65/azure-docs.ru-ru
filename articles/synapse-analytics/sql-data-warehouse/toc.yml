@@ -366,7 +366,7 @@
         - name: Создание панелей мониторинга и отчетов
           items:
             - name: Визуализация с помощью Power BI
-              href: /power-bi/service-azure-sql-data-warehouse-with-direct-connect.md
+              href: /power-bi/service-azure-sql-data-warehouse-with-direct-connect
     - name: Диагностика
       items:
         - name: Соединение
@@ -417,3 +417,5 @@
           href: sql-data-warehouse-partner-data-integration.md
         - name: Управление данными
           href: sql-data-warehouse-partner-data-management.md
+        - name: 'Партнеры, поддержавшие выпуск общедоступной предварительной версии'
+          href: sql-data-warehouse-partner-launch.md

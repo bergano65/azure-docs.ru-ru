@@ -276,6 +276,8 @@
       items:
         - name: Настройка интеграции Azure AD
           href: howto-configure-sign-in-azure-ad-authentication.md
+        - name: Подключение с использованием управляемого удостоверения
+          href: howto-connect-with-managed-identity.md
     - name: Запрет доступа к общедоступной сети
       items:
         - name: Портал Azure

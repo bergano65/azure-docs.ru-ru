@@ -190,6 +190,14 @@
           href: storage-files-identity-auth-active-directory-domain-service-enable.md
         - name: Включение безопасного TLS для клиента службы хранилища Azure
           href: ../common/storage-security-tls.md
+    - name: Перенос
+      items:
+        - name: "Начало работы\_— AzCopy"
+          href: ../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+        - name: Использование со службой "Файлы"
+          href: ../common/storage-use-azcopy-files.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+        - name: "Настройка, оптимизация и устранение неполадок\_— AzCopy"
+          href: ../common/storage-use-azcopy-configure.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Диагностика
       items:
         - name: Устранение неполадок в работе службы "Файлы Azure" в Windows

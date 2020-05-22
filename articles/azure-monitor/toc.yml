@@ -240,10 +240,7 @@
               displayname: 'functions, monitor functions, automation'
               href: ../azure-functions/functions-monitoring.md
             - name: Служба Azure Kubernetes
-              items:
-                - name: Kubernetes (не рекомендуется)
-                  displayname: 'aks, microservice, istio, service mesh, application monitoring, monitor kubernetes, monitor aks'
-                  href: app/kubernetes.md
+              href: app/kubernetes-codeless.md
             - name: Автономные (любая среда)
               items:
                 - name: Java (предварительная версия)
@@ -1000,8 +997,6 @@
           items:
             - name: Доступность
               href: app/monitor-web-app-availability.md
-            - name: Оповещения о метриках
-              href: app/alerts.md
         - name: Правила генерации оповещений метрик
           items:
             - name: Управление оповещениями метрик
@@ -1268,6 +1263,8 @@
           href: insights/azure-web-apps-analytics.md
         - name: Соединитель Application Insights
           href: platform/app-insights-connector.md
+        - name: Application Insights для мониторинга AKS без написания кода
+          href: app/kubernetes.md
         - name: Мониторинг приложений Docker
           href: app/docker.md
         - name: Прекращение поддержки портала OMS

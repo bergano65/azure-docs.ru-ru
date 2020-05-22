@@ -4,15 +4,12 @@
   items:
     - name: Что собой представляет Azure Arc для серверов?
       href: ./servers/overview.md
-- name: Примеры
-  items:
-    - name: Встроенные политики службы "Политика Azure"
-      displayName: 'samples, policies, definitions'
-      href: ./servers/policy-samples.md
 - name: Практические руководства
   items:
     - name: Подключение к Azure Arc
       items:
+        - name: Общие сведения об агенте Connected Machine
+          href: ./servers/agent-overview.md
         - name: Подключение компьютеров к Azure Arc на портале Azure
           href: ./servers/onboard-portal.md
         - name: Подключение компьютеров в большом масштабе с помощью субъекта-службы
@@ -23,3 +20,8 @@
       items:
         - name: Управление агентом
           href: ./servers/manage-agent.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./servers/policy-samples.md

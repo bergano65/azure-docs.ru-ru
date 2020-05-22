@@ -32,6 +32,8 @@
           href: quickstarts/speech-to-text-from-file.md
         - name: 'Распознавание речи из файлов, находящихся в хранилище BLOB-объектов'
           href: quickstarts/from-blob.md
+        - name: Оценка произношения с использованием эталонных входных данных
+          href: 'rest-speech-to-text.md#pronunciation-assessment-parameters'
     - name: Практические руководства
       items:
         - name: Выбор режима распознавания речи
@@ -61,6 +63,8 @@
           href: how-to-custom-speech-inspect-data.md
         - name: Оценка точности службы пользовательского распознавание речи
           href: how-to-custom-speech-evaluate-data.md
+        - name: Повышение точности результатов службы "Пользовательское распознавание речи"
+          href: how-to-custom-speech-improve-accuracy.md
         - name: Обучение модели для службы пользовательского распознавания речи
           href: how-to-custom-speech-train-model.md
         - name: Развертывание пользовательской модели

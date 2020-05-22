@@ -4,6 +4,8 @@
       href: oracle-overview.md
     - name: Решения для виртуальных машин Azure
       href: oracle-vm-solutions.md
+    - name: Приложения Azure для WebLogic Server
+      href: oracle-weblogic.md
     - name: Решения с использованием OCI
       href: oracle-oci-overview.md
 - name: Краткие руководства

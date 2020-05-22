@@ -42,8 +42,6 @@
         - name: 2. Извлечение данных пользователя
           href: tutorial-machine-learned-entity.md
           displayName: 'n-depth, constraint, descriptor, phrase list, entity, feature'
-        - name: 3. Определение тональности высказываний пользователя
-          href: tutorial-publish-settings.md
     - name: Улучшение приложения
       items:
         - name: Исправление неточных прогнозов
@@ -379,7 +377,7 @@
       displayName: 'Calendar, Communication,Email,HomeAutomation,Note,Places, RestaurantReservation,ToDo,Utilities,Weather,Web'
     - name: Справочник по настраиваемым сущностям
       items:
-        - name: 'Сущность, прошедшая машинное обучение'
+        - name: Сущность машинного обучения
           href: reference-entity-machine-learned-entity.md
         - name: Составная сущность
           href: reference-entity-composite.md

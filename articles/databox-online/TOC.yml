@@ -88,7 +88,11 @@
         - name: Общие сведения о безопасности
           href: azure-stack-edge-security.md
         - name: Просмотр спецификаций
-          href: azure-stack-edge-technical-specifications-compliance.md
+          items:
+            - name: Характеристики устройства
+              href: azure-stack-edge-technical-specifications-compliance.md
+            - name: Характеристики кабелей питания
+              href: azure-stack-edge-technical-specifications-power-cords-regional.md
     - name: Практическое руководство
       items:
         - name: 'Разработка модуля C#'

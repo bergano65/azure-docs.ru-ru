@@ -6,8 +6,14 @@
       href: overview-iot-central.md
     - name: Обзор пользовательского интерфейса
       href: overview-iot-central-tour.md
+    - name: Разработка устройств
+      href: overview-iot-central-developer.md
     - name: Последние обновления
       items:
+        - name: "Новые функции в версии за апрель 2020\_г."
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-april-2020-new-features/'
+        - name: "Обновления за апрель 2020\_г."
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-april-2020-updates/'
         - name: "Март 2020\_г."
           href: 'https://azure.microsoft.com/updates/azure-iot-central-march-2020-updates/'
 - name: Краткие руководства
@@ -81,6 +87,8 @@
           href: howto-manage-devices.md
         - name: Настройка правил
           href: howto-configure-rules.md
+        - name: Использование рабочих процессов для интеграции с другими службами
+          href: howto-configure-rules-advanced.md
         - name: Анализ данных устройства
           href: howto-create-analytics.md
         - name: Добавление плиток на панель мониторинга

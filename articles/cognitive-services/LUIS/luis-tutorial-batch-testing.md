@@ -2,13 +2,13 @@
 title: Руководство по пакетному тестированию для поиска проблем — LUIS
 description: В этом учебнике показано, как использовать пакетное тестирование для проверки качества приложения службы "Распознавания речи" (LUIS).
 ms.topic: tutorial
-ms.date: 03/02/2020
-ms.openlocfilehash: c276f0b52f83937fbe3b6fd9e0b7c1a66f665095
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.date: 05/07/2020
+ms.openlocfilehash: c823cbd854c28ab356dd9968e6f8f1a12b6421be
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "78250477"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83592599"
 ---
 # <a name="tutorial-batch-test-data-sets"></a>Руководство по Пакетное тестирование наборов данных
 
@@ -41,7 +41,9 @@ ms.locfileid: "78250477"
 
 1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/luis/apps/pizza-with-machine-learned-entity.json?raw=true).
 
-1. Из [предварительной версии портала LUIS](https://preview.luis.ai/) импортируйте файл JSON в новое приложение. Присвойте этому приложению имя `Pizza app`.
+1. Войдите на портал [LUIS](https://www.luis.ai) и выберите **Подписка** и **Ресурс для разработки**, чтобы просмотреть приложения, назначенные этому ресурсу для разработки.
+1. Импортируйте JSON-файл в новое приложение с именем `Pizza app`.
+
 
 1. Выберите **Обучение** в правом верхнем углу области навигации, чтобы обучить приложение.
 

@@ -118,10 +118,12 @@
       items:
         - name: Доступ к лабораториям для аудитории
           href: how-to-use-classroom-lab.md
-        - name: Использование подключения с удаленным рабочим столом для виртуальных машин Linux
+        - name: Подключение к виртуальным машинам Linux
           href: how-to-use-remote-desktop-linux-student.md
         - name: Подключение к виртуальной машине с компьютера Mac с помощью RDP
-          href: connect-virtual-machine-mac-rdp.md
+          href: connect-virtual-machine-mac-remote-desktop.md
+        - name: Подключение к виртуальной машине с компьютера Chromebook с помощью RDP
+          href: connect-virtual-machine-chromebook-remote-desktop.md
         - name: Установка или сброс паролей для виртуальных машин
           href: how-to-set-virtual-machine-passwords-student.md
         - name: Просмотр сведений о поддержке (учащийся)

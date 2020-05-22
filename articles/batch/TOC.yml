@@ -15,6 +15,9 @@
       href: quick-run-dotnet.md
     - name: Выполнение пакетного задания — Python
       href: quick-run-python.md
+    - name: "Создание учетной записи пакетной службы\_— шаблон ARM"
+      href: quick-create-template.md
+      displayName: Resource Manager
 - name: Учебники
   items:
     - name: Параллельная обработка файлов — .NET
@@ -169,32 +172,32 @@
               href: batch-cli-templates.md
     - name: Использование пакета SDK Node.js для пакетной службы
       href: batch-nodejs-get-started.md
-- name: Выполнение рабочих нагрузок
-  items:
-    - name: Задания MPI
-      href: batch-mpi.md
-    - name: Контейнерные рабочие нагрузки
-      href: batch-docker-container-workloads.md
-    - name: Отрисовка
+    - name: Выполнение рабочих нагрузок
       items:
-        - name: Рендеринг с помощью Azure
-          href: batch-rendering-service.md
-        - name: Образы виртуальных машин для рендеринга
-          href: batch-rendering-applications.md
-        - name: Возможности рендеринга в пакетной службе
-          href: batch-rendering-functionality.md
-        - name: Использование рендеринга в пакетной службе
-          href: batch-rendering-using.md
-        - name: Использование диспетчеров рендеринга
-          href: batch-rendering-render-managers.md
-        - name: Справочник по приложениям для рендеринга
-          href: batch-rendering-application-reference.md
-        - name: Хранение и перемещение данных
-          href: batch-rendering-storage-data-movement.md
-        - name: Архитектура для рендеринга
-          href: batch-rendering-architectures.md
-    - name: Обработка данных с помощью пакетной службы и Фабрики данных
-      href: ../data-factory/transform-data-using-dotnet-custom-activity.md?toc=%2fazure%2fbatch%2ftoc.json
+        - name: Задания MPI
+          href: batch-mpi.md
+        - name: Контейнерные рабочие нагрузки
+          href: batch-docker-container-workloads.md
+        - name: Отрисовка
+          items:
+            - name: Рендеринг с помощью Azure
+              href: batch-rendering-service.md
+            - name: Образы виртуальных машин для рендеринга
+              href: batch-rendering-applications.md
+            - name: Возможности рендеринга в пакетной службе
+              href: batch-rendering-functionality.md
+            - name: Использование рендеринга в пакетной службе
+              href: batch-rendering-using.md
+            - name: Использование диспетчеров рендеринга
+              href: batch-rendering-render-managers.md
+            - name: Справочник по приложениям для рендеринга
+              href: batch-rendering-application-reference.md
+            - name: Хранение и перемещение данных
+              href: batch-rendering-storage-data-movement.md
+            - name: Архитектура для рендеринга
+              href: batch-rendering-architectures.md
+        - name: Обработка данных с помощью пакетной службы и Фабрики данных
+          href: ../data-factory/transform-data-using-dotnet-custom-activity.md?toc=%2fazure%2fbatch%2ftoc.json
 - name: Справочник
   items:
     - name: Azure CLI

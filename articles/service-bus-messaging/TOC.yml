@@ -184,6 +184,8 @@
           href: service-bus-nodejs-how-to-use-topics-subscriptions.md
     - name: Управление
       items:
+        - name: Автоматическое обновление единиц обмена сообщениями
+          href: automate-update-messaging-units.md
         - name: Подготовка сущностей с помощью Azure PowerShell
           href: service-bus-manage-with-ps.md
         - name: Мониторинг Служебной шины с помощью Azure Monitor
@@ -209,7 +211,7 @@
           href: service-bus-ip-filtering.md
         - name: Настройка конечных точек служб для виртуальной сети
           href: service-bus-service-endpoints.md
-        - name: Настройка частных конечных точек (предварительная версия)
+        - name: Настройка частных конечных точек
           href: private-link-service.md
         - name: 'Настройка ключей, управляемых клиентом'
           href: configure-customer-managed-key.md

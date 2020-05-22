@@ -259,6 +259,20 @@
           href: 'https://docs.microsoft.com/rest/api/maps/traffic'
         - name: Служба погоды
           href: 'https://docs.microsoft.com/rest/api/maps/weather'
+        - name: Служба Maps Creator
+          items:
+            - name: Служба псевдонимов
+              href: 'https://docs.microsoft.com/rest/api/maps/alias'
+            - name: Служба преобразования
+              href: 'https://docs.microsoft.com/rest/api/maps/conversion'
+            - name: Служба набора данных
+              href: 'https://docs.microsoft.com/rest/api/maps/dataset'
+            - name: Служба состояний функций
+              href: 'https://docs.microsoft.com/rest/api/maps/featurestate'
+            - name: Служба набора фрагментов
+              href: 'https://docs.microsoft.com/rest/api/maps/tileset'
+            - name: Служба WFS
+              href: 'https://docs.microsoft.com/rest/api/maps/wfs'
         - name: Управление учетными записями службы Maps
           href: 'https://docs.microsoft.com/rest/api/maps-management'
     - name: JavaScript

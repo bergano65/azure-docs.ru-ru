@@ -4,8 +4,13 @@
   items:
     - name: Что такое Диспетчер брандмауэра Azure?
       href: overview.md
-- name: Учебники
+- name: Краткие руководства
   expanded: true
+  items:
+    - name: Защищенный виртуальный концентратор
+      displayName: Resource Manager
+      href: quick-secure-virtual-hub.md
+- name: Учебники
   items:
     - name: Защита глобальной сети с помощью портала
       href: secure-cloud-network.md

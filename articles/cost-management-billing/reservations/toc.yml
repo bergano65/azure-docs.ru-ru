@@ -6,7 +6,6 @@
     - name: Общие сведения о резервированиях в Azure
       href: save-compute-costs-reservations.md
 - name: Практические руководства
-  expanded: true
   items:
     - name: Выбор приобретаемых ресурсов
       items:
@@ -56,12 +55,17 @@
           href: 'manage-reserved-vm-instance.md#change-optimize-setting-for-reserved-vm-instances'
         - name: Обмена и возврат резервирований
           href: exchange-and-refund-azure-reservations.md
+    - name: Отчет о затратах
+      items:
+        - name: Просмотр транзакций резервирования
+          href: view-purchase-refunds.md
+        - name: Возврат средств за резервирование
+          href: charge-back-usage.md
     - name: Возобновление резервирований
       items:
         - name: Возобновление резервирования
           href: reservation-renew.md
 - name: Основные понятия
-  expanded: true
   items:
     - name: Создание рекомендаций по резервированию
       href: reserved-instance-purchase-recommendations.md

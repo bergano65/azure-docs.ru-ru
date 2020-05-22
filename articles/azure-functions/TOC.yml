@@ -127,6 +127,9 @@
           href: 'functions-reference-node.md#typescript'
     - name: Безопасность
       items:
+        - name: Общие сведения о безопасности
+          href: security-concepts.md
+          displayName: 'secure, ssl'
         - name: Базовые средства безопасности
           href: security-baseline.md
     - name: Диагностика
@@ -332,6 +335,8 @@
       items:
         - name: Устранение неполадок с хранилищем
           href: functions-recover-storage-account.md
+        - name: Устранение неполадок с зависимостями Python
+          href: recover-module-not-found.md
 - name: Справочник
   items:
     - name: Справочники по API
@@ -347,12 +352,16 @@
         - name: Хранилище BLOB-объектов
           items:
             - name: Обзор
+              displayName: Blob storage
               href: functions-bindings-storage-blob.md
             - name: Триггер
+              displayName: Blob storage
               href: functions-bindings-storage-blob-trigger.md
             - name: Входные данные
+              displayName: Blob storage
               href: functions-bindings-storage-blob-input.md
             - name: Выходные данные
+              displayName: Blob storage
               href: functions-bindings-storage-blob-output.md
         - name: Azure Cosmos DB
           items:
@@ -378,10 +387,13 @@
           items:
             - name: Обзор
               href: functions-bindings-event-grid.md
+              displayName: Event Grid
             - name: Триггер
               href: functions-bindings-event-grid-trigger.md
+              displayName: Event Grid
             - name: Выходные данные
               href: functions-bindings-event-grid-output.md
+              displayName: Event Grid
         - name: Центры событий
           items:
             - name: Обзор
@@ -408,10 +420,13 @@
           items:
             - name: Обзор
               href: functions-bindings-http-webhook.md
+              displayName: HTTP
             - name: Триггер
               href: functions-bindings-http-webhook-trigger.md
+              displayName: HTTP
             - name: Выходные данные
               href: functions-bindings-http-webhook-output.md
+              displayName: HTTP
         - name: Microsoft Graph
           href: functions-bindings-microsoft-graph.md
         - name: Мобильные приложения
@@ -422,20 +437,26 @@
           items:
             - name: Обзор
               href: functions-bindings-storage-queue.md
+              displayName: Queue storage
             - name: Триггер
               href: functions-bindings-storage-queue-trigger.md
+              displayName: Queue storage
             - name: Выходные данные
               href: functions-bindings-storage-queue-output.md
+              displayName: Queue storage
         - name: SendGrid
           href: functions-bindings-sendgrid.md
         - name: Служебная шина
           items:
             - name: Обзор
               href: functions-bindings-service-bus.md
+              displayName: Service Bus
             - name: Триггер
               href: functions-bindings-service-bus-trigger.md
+              displayName: Service Bus
             - name: Выходные данные
               href: functions-bindings-service-bus-output.md
+              displayName: Service Bus
         - name: Служба SignalR
           items:
             - name: Обзор

@@ -407,8 +407,8 @@
       href: compliance-offerings.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowsazureonlinebackup'
+    - name: Раздел часто задаваемых вопросов (Майкрософт) о Azure Backup
+      href: 'https://docs.microsoft.com/answers/topics/azure-backup.html'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Обновления службы

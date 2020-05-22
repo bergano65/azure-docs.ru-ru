@@ -132,6 +132,14 @@
               href: event-schema-azure-signalr.md
             - name: Подписки Azure
               href: event-schema-subscriptions.md
+    - name: Партнерские разделы
+      items:
+        - name: Общие сведения о партнерских разделах
+          href: partner-topics-overview.md
+        - name: Auth0
+          href: auth0-overview.md
+        - name: Как стать партнером в Сетке событий
+          href: partner-onboarding-overview.md
     - name: Домены событий
       href: event-domains.md
     - name: Форматы схемы событий
@@ -186,6 +194,8 @@
   items:
     - name: Публикация в пользовательском разделе
       href: post-to-custom-topic.md
+    - name: Подписка на события Auth0
+      href: auth0-how-to.md
     - name: Получение событий в конечной точке HTTP
       href: receive-events.md
     - name: Обработка недоставленных сообщений и повторные попытки
@@ -214,6 +224,8 @@
           href: configure-firewall.md
         - name: Защита веб-перехватчика с помощью AAD
           href: secure-webhook-delivery.md
+        - name: Доставка событий с использованием управляемого удостоверения
+          href: managed-service-identity.md
     - name: Диагностика
       items:
         - name: Включение журналов диагностики

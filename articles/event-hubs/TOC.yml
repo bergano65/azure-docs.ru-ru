@@ -133,6 +133,8 @@
   items:
     - name: Перемещение между регионами
       href: move-across-regions.md
+    - name: Динамическое добавление разделов
+      href: dynamically-add-partitions.md
     - name: Использование хранилища BLOB-объектов в качестве хранилища контрольных точек в Azure Stack Hub
       href: use-blob-storage-checkpoint-store-azure-stack-hub.md
     - name: Миграция из API Azure Service Manager (классическая модель) в API Resource Manager
@@ -205,7 +207,7 @@
           href: event-hubs-ip-filtering.md
         - name: Настройка конечных точек служб для виртуальной сети
           href: event-hubs-service-endpoints.md
-        - name: Настройка частных конечных точек (предварительная версия)
+        - name: Настройка частных конечных точек
           href: private-link-service.md
         - name: 'Настройка ключей, управляемых клиентом'
           href: configure-customer-managed-key.md

@@ -25,9 +25,13 @@
         - name: Создание записной книжки Apache Spark с помощью веб-средств
           href: quickstart-apache-spark-notebook.md
         - name: Создание пула Apache Spark с помощью портала Azure
-          href: quickstart-create-apache-spark-pool.md
-        - name: Создание пула SQL
-          href: quickstart-create-sql-pool.md
+          href: quickstart-create-apache-spark-pool-portal.md
+        - name: Создание пула Apache Spark с помощью Synapse Studio
+          href: quickstart-create-apache-spark-pool-studio.md
+        - name: Создание пула SQL с помощью портала Azure
+          href: quickstart-create-sql-pool-portal.md
+        - name: Создание пула SQL с помощью Synapse Studio
+          href: quickstart-create-sql-pool-studio.md
     - name: Загрузка данных с помощью пулов SQL
       items:
         - name: Инструкция COPY
@@ -308,7 +312,7 @@
                   href: sql/develop-storage-files-overview.md
                 - name: Управление доступом к хранилищу
                   href: sql/develop-storage-files-storage-access-control.md
-                - name: Таблицы Spark
+                - name: Внешних таблицы Apache Spark для Azure Synapse
                   href: sql/develop-storage-files-spark-tables.md
         - name: Управление рабочей нагрузкой
           items:
@@ -328,8 +332,16 @@
               href: ./sql-data-warehouse/resource-classes-for-workload-management.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
     - name: Synapse Link
       items:
+        - name: Synapse Link для Azure Cosmos DB
+          href: ../cosmos-db/synapse-link.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+        - name: Общие сведения об аналитическом хранилище
+          href: ../cosmos-db/analytical-store-introduction.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Поддерживаемые функции Synapse Link
           href: ./synapse-link/concept-synapse-link-cosmos-db-support.md
+        - name: Часто задаваемые вопросы о Synapse Link
+          href: ../cosmos-db/synapse-link-frequently-asked-questions.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+        - name: Варианты использования Synapse Link
+          href: ../cosmos-db/synapse-link-use-cases.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
     - name: 'Интеграция средств (искусственный интеллект; извлечение, преобразование и загрузка; бизнес-аналитика)'
       items:
         - name: Устранение неполадок с Synapse Analytics Studio
@@ -414,6 +426,8 @@
       items:
         - name: Synapse Link
           items:
+            - name: Настройка Synapse Link
+              href: ../cosmos-db/configure-synapse-link.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: "Подключение к Azure Synapse Link для Cosmos\_DB"
               href: ./synapse-link/how-to-connect-synapse-link-cosmos-db.md
             - name: Отправка запросов к аналитическому хранилищу Azure Cosmos DB с помощью Apache Spark для Azure Synapse Analytics
@@ -860,14 +874,16 @@
   items:
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=databases'
+    - name: Запросы функций
+      href: 'https://feedback.azure.com/forums/307516-sql-data-warehouse/'
     - name: Форум
       href: 'https://social.msdn.microsoft.com/Forums/home?forum=AzureSQLDataWarehouse'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/synapse-analytics/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Запросы функций
-      href: 'https://feedback.azure.com/forums/307516-sql-data-warehouse/'
+    - name: Вопросы и ответы
+      href: 'https://docs.microsoft.com/en-us/answers/questions/topics/single/25423.html'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=sql-data-warehouse'
     - name: Stack Overflow

@@ -25,8 +25,6 @@
       href: quickstart-create-data-factory-rest-api.md
     - name: Создание фабрики данных с помощью шаблона Resource Manager
       href: quickstart-create-data-factory-resource-manager-template.md
-    - name: Безопасность. Включение шифрования на базе управляемых клиентом ключей
-      href: quickstart-enable-customer-managed-key.md
     - name: Создание потока данных
       href: data-flow-create.md
 - name: Учебники
@@ -188,8 +186,6 @@
               href: wrangling-data-flow-functions.md
     - name: Роли и разрешения
       href: concepts-roles-permissions.md
-    - name: Основные сведения о ценах
-      href: pricing-concepts.md
     - name: Правила именования
       href: naming-rules.md
 - name: Практические руководства
@@ -370,6 +366,8 @@
           href: connector-servicenow.md
         - name: SFTP
           href: connector-sftp.md
+        - name: "Список SharePoint\_Online"
+          href: connector-sharepoint-online-list.md
         - name: Shopify
           href: connector-shopify.md
         - name: Spark
@@ -416,6 +414,8 @@
           href: copy-activity-schema-and-type-mapping.md
         - name: Отказоустойчивость
           href: copy-activity-fault-tolerance.md
+        - name: Проверка согласованности данных
+          href: copy-activity-data-consistency.md
         - name: Поддержка сжатия и форматирования (устаревшая функция)
           href: supported-file-formats-and-compression-codecs-legacy.md
     - name: Преобразование данных
@@ -553,8 +553,12 @@
           href: encrypt-credentials-self-hosted-integration-runtime.md
         - name: Управляемое удостоверение для Фабрики данных
           href: data-factory-service-identity.md
+        - name: Шифрование на базе управляемых клиентом ключей
+          href: quickstart-enable-customer-managed-key.md
     - name: Отслеживание и управление
       items:
+        - name: Визуальный мониторинг
+          href: monitor-visually.md
         - name: Мониторинг с помощью Azure Monitor
           href: monitor-using-azure-monitor.md
         - name: Мониторинг с помощью пакетов SDK
@@ -577,6 +581,8 @@
           href: create-azure-ssis-integration-runtime.md
         - name: Общая локальная среда выполнения интеграции
           href: create-shared-self-hosted-integration-runtime-powershell.md
+        - name: Скрипты автоматизации локальной среды выполнения интеграции
+          href: self-hosted-integration-runtime-automation-scripts.md
     - name: Запуск пакетов служб Integration Services в Azure
       items:
         - name: Запуск пакетов Integration Services в Azure из SSDT
@@ -597,12 +603,10 @@
           href: self-hosted-integration-runtime-proxy-ssis.md
         - name: Включение аутентификации Azure AD для Azure-SSIS IR
           href: enable-aad-authentication-azure-ssis-ir.md
-        - name: Подключение к данным с проверкой подлинности Windows
-          href: ssis-azure-connect-with-windows-auth.md
-        - name: Сохранение файлов и подключение к общим папкам
-          href: ssis-azure-files-file-shares.md
         - name: Настройка выпуска Enterprise Edition для Azure-SSIS IR
           href: how-to-configure-azure-ssis-ir-enterprise-edition.md
+        - name: Встроенные и предварительно установленные компоненты в Azure-SSIS IR
+          href: built-in-preinstalled-components-ssis-integration-runtime.md
         - name: Настройка Azure-SSIS IR
           href: how-to-configure-azure-ssis-ir-custom-setup.md
         - name: Установка лицензированных компонентов для Azure-SSIS IR
@@ -613,6 +617,8 @@
           href: configure-bcdr-azure-ssis-integration-runtime.md
         - name: Очистка журналов SSISDB с помощью заданий обработки эластичных баз данных
           href: how-to-clean-up-ssisdb-logs-with-elastic-jobs.md
+        - name: Использование Управляемого экземпляра SQL Azure с Azure-SSIS IR
+          href: how-to-use-sql-managed-instance-with-ir.md
         - name: Перенос заданий SSIS с использованием SSMS
           href: how-to-migrate-ssis-job-ssms.md
     - name: Создание триггеров
@@ -645,6 +651,12 @@
           href: solution-template-move-files.md
         - name: Преобразование с помощью Azure Databricks
           href: solution-template-databricks-notebook.md
+    - name: Основные сведения о ценах
+      items:
+        - name: Планирование затрат и управление ими
+          href: plan-manage-costs.md
+        - name: Примеры цен
+          href: pricing-concepts.md
     - name: Руководства по устранению неполадок
       items:
         - name: Действия

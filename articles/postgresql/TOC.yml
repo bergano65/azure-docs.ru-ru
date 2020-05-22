@@ -200,6 +200,8 @@
               href: howto-create-users.md
             - name: Настройка интеграции Azure AD
               href: howto-configure-sign-in-aad-authentication.md
+            - name: Подключение с использованием управляемого удостоверения
+              href: howto-connect-with-managed-identity.md
         - name: Оптимизация
           items:
             - name: Операции массовой вставки

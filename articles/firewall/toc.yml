@@ -17,13 +17,13 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Развертывание с помощью групп IP-адресов
+    - name: Развертывание с использованием групп IP-адресов. Шаблон ARM
       displayName: Resource Manager
       href: quick-create-ipgroup-template.md
-    - name: Развертывание с несколькими адресами
+    - name: Развертывание с использованием нескольких адресов. Шаблон ARM
       displayName: Resource Manager
       href: quick-create-multiple-ip-template.md
-    - name: Развертывание с использованием Зон доступности
+    - name: Развертывание с использованием Зон доступности. Шаблон ARM
       displayName: Resource Manager
       href: deploy-template.md
 - name: Примеры

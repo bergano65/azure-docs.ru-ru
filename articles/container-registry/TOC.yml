@@ -91,7 +91,7 @@
           items:
             - name: Ограничение доступа с помощью частной конечной точки
               href: container-registry-private-link.md
-            - name: Настройка правил брандмауэра службы
+            - name: Настройка общего доступа к реестру
               href: container-registry-access-selected-networks.md
             - name: Ограничение доступа с помощью конечных точек службы (предварительная версия)
               href: container-registry-vnet.md

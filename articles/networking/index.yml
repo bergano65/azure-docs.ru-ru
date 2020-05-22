@@ -12,12 +12,12 @@ metadata:
   ms.author: kumud
   manager: mtillman
   ms.date: 03/17/2020
-  ms.openlocfilehash: 5745c6c9a7f380d7e9b1d8d59d56a81581c66e14
-  ms.sourcegitcommit: fab450a18a600d72b583ecfbe6c5e53afd43408c
+  ms.openlocfilehash: 99b15e3b311a033e346cb8994bb9109401d90a20
+  ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/26/2020
-  ms.locfileid: "80294313"
+  ms.lasthandoff: 05/20/2020
+  ms.locfileid: "83715778"
 highlightedContent:
   items:
   - title: Что такое Сеть Azure?
@@ -32,9 +32,9 @@ highlightedContent:
   - title: Звездообразная топологии сети в Azure
     itemType: architecture
     url: https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke
-  - title: Частный доступ к серверу базы данных SQL
-    itemType: tutorial
-    url: ../private-link/create-private-endpoint-portal.md
+  - title: Что такое предпочтение маршрутизации?
+    itemType: concept
+    url: ../virtual-network/routing-preference-overview.md
   - title: Дистанционная работа с использованием служб Azure
     itemType: concept
     url: working-remotely-support.md
