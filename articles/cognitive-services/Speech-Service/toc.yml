@@ -32,8 +32,6 @@
           href: quickstarts/speech-to-text-from-file.md
         - name: 'Распознавание речи из файлов, находящихся в хранилище BLOB-объектов'
           href: quickstarts/from-blob.md
-        - name: Оценка произношения с использованием эталонных входных данных
-          href: 'rest-speech-to-text.md#pronunciation-assessment-parameters'
     - name: Практические руководства
       items:
         - name: Выбор режима распознавания речи
@@ -563,11 +561,14 @@
           href: devices-sdk-release-notes.md
 - name: Инструменты
   items:
-    - name: SPX
+    - name: Интерфейс командной строки службы "Речь"
+      displayName: SPX
       items:
-        - name: Что такое SPX?
+        - name: Об интерфейсе командной строки службы "Речь"
+          displayName: What is SPX?
           href: spx-overview.md
-        - name: Основные сведения об SPX
+        - name: Общие сведения об интерфейсе командной строки службы "Речь"
+          displayName: SPX basics
           href: spx-basics.md
     - name: Speech Studio
       items:
