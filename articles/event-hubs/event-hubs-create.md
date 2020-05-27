@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 05/04/2020
 ms.author: spelluru
-ms.openlocfilehash: c678965048a6437deb8cbf39f38f12dc116d39ab
-ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
+ms.openlocfilehash: 7562dc9a70fc462cb9d623a5184fb672a7f7ca39
+ms.sourcegitcommit: 95269d1eae0f95d42d9de410f86e8e7b4fbbb049
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82743996"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83860262"
 ---
 # <a name="quickstart-create-an-event-hub-using-azure-portal"></a>Краткое руководство. Создание концентратора событий с помощью портала Azure
 Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
@@ -102,7 +102,7 @@ ms.locfileid: "82743996"
 - [.NET Core](get-started-dotnet-standard-send-v2.md)
 - [Java](get-started-java-send-v2.md)
 - [Python](get-started-python-send-v2.md)
-- [JavaScript](get-started-java-send-v2.md)
+- [JavaScript](get-started-node-send-v2.md)
 - [GO](event-hubs-go-get-started-send.md)
 - [C (только отправка)](event-hubs-c-getstarted-send.md)
 - [Apache Storm (только получение)](event-hubs-storm-getstarted-receive.md)

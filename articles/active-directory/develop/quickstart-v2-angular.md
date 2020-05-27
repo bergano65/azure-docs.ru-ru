@@ -12,17 +12,14 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 03/18/2020
 ms.author: janutter
-ms.openlocfilehash: 4b6a2481c18314a44470a020033ffdc4ba1d7259
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: f457e876cb9484fce29cba35c7570572b2771aed
+ms.sourcegitcommit: 95269d1eae0f95d42d9de410f86e8e7b4fbbb049
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81380028"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83860058"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-an-angular-single-page-application"></a>Краткое руководство. Вход пользователей и получение маркера доступа в одностраничное приложение Angular
-
-> [!IMPORTANT]
-> Эта функция в настоящее время находится на стадии предварительной версии. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
 
 В этом кратком руководстве описано, как с помощью примера кода можно узнать, как одностраничное приложение (SPA) Angular может выполнять вход с помощью рабочих, учебных или личных учетных записей Майкрософт. Одностраничное приложение Angular также может получить маркер доступа для вызова API Microsoft Graph или любого веб-API.
 
