@@ -13,13 +13,13 @@ ms.custom:
 - seo-java-august2019
 - seo-java-september2019
 - mqtt
-ms.date: 06/21/2019
-ms.openlocfilehash: 954fe6f92b68d011aaff0fff7925b3409ee628cb
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.date: 05/26/2020
+ms.openlocfilehash: 225b9407bff4294288bb4834cbb0d919698b78c6
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81769115"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83873166"
 ---
 # <a name="quickstart-send-telemetry-to-an-azure-iot-hub-and-read-it-with-a-java-application"></a>Краткое руководство. Отправка данных телеметрии в Центр Интернета вещей и их чтение с помощью приложения Java
 
@@ -133,7 +133,7 @@ az extension add --name azure-iot
 
     На следующем снимке экрана показан пример выходных данных, когда приложение имитированного устройства отправляет данные телеметрии в Центр Интернета вещей:
 
-    ![Данные телеметрии, переданные устройством в центр Интернета вещей](media/quickstart-send-telemetry-java/iot-hub-simulated-device.png)
+    ![Данные телеметрии, переданные устройством в центр Интернета вещей](media/quickstart-send-telemetry-java/simulated-device.png)
 
 ## <a name="read-the-telemetry-from-your-hub"></a>Чтение данных телеметрии из концентратора
 
@@ -145,9 +145,9 @@ az extension add --name azure-iot
 
     | Переменная | Значение |
     | -------- | ----------- |
-    | `eventHubsCompatibleEndpoint` | Замените значение переменной записанной ранее конечной точкой, совместимой с Центрами событий. |
-    | `eventHubsCompatiblePath`     | Замените значение переменной записанным ранее путем, совместимым с Центрами событий. |
-    | `iotHubSasKey`                | Замените значение переменной записанным ранее первичным ключом службы. |
+    | `EVENT_HUBS_COMPATIBLE_ENDPOINT` | Замените значение переменной записанной ранее конечной точкой, совместимой с Центрами событий. |
+    | `EVENT_HUBS_COMPATIBLE_PATH`     | Замените значение переменной записанным ранее путем, совместимым с Центрами событий. |
+    | `IOT_HUB_SAS_KEY`                | Замените значение переменной записанным ранее первичным ключом службы. |
 
 3. Установите необходимые библиотеки и создайте внутреннее приложение, выполнив в окне терминала на локальном компьютере следующие команды:
 
@@ -163,7 +163,7 @@ az extension add --name azure-iot
 
     На следующем снимке экрана показан пример выходных данных, когда внутреннее приложение получает данные телеметрии, отправленные в концентратор имитированным устройством:
 
-    ![Выходные данные после получения серверным приложением данных телеметрии, отправляемых в центр Интернета вещей](media/quickstart-send-telemetry-java/iot-hub-read-device-to-cloud.png)
+    ![Выходные данные после получения серверным приложением данных телеметрии, отправляемых в центр Интернета вещей](media/quickstart-send-telemetry-java/read-device-to-cloud.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
