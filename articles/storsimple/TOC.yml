@@ -419,8 +419,8 @@
       href: 'https://azure.microsoft.com/services/storsimple/'
     - name: Варианты поддержки StorSimple
       href: storsimple-8000-support-options.md
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=StorSimple'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-storsimple.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/storsimple/'
     - name: Калькулятор цен

@@ -289,8 +289,8 @@
           href: ./hdinsight-hadoop-access-yarn-app-logs-linux.md
         - name: Включение дампов кучи для служб Apache Hadoop
           href: ./hdinsight-hadoop-collect-debug-heap-dump-linux.md
-        - name: Получение помощи на форуме
-          href: 'https://social.msdn.microsoft.com/forums/azure/home?forum=hdinsight'
+        - name: Получение справки на странице вопросов (раздел вопросов и ответов на сайте Майкрософт)
+          href: 'https://docs.microsoft.com/answers/topics/azure-hdinsight.html'
         - name: Калькулятор цен
           href: 'https://azure.microsoft.com/pricing/calculator/'
         - name: Средства Windows для HDInsight

@@ -33,7 +33,7 @@
       href: concepts-events-routing.md
     - name: Ограничения в общедоступной предварительной версии службы
       href: concepts-service-limits.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Лучшие методики обеспечения безопасности
           href: security-best-practices.md
@@ -98,14 +98,14 @@
           href: 'https://docs.microsoft.com/azure/iot-fundamentals/iot-support-help'
         - name: Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/azure-digital-twins'
-        - name: Форум MSDN
-          href: 'https://social.msdn.microsoft.com/Forums/home?category=&forum=&filter=&sort=relevancedesc&brandIgnore=true&searchTerm=Azure+Digital+Twins'
+        - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+          href: 'https://docs.microsoft.com/answers/topics/azure-digital-twins.html'
         - name: Примеры кода для Azure IoT
           href: 'https://docs.microsoft.com/samples/browse/?term=iot'
     - name: Обратная связь и форумы
       items:
-        - name: Форум MSDN
-          href: 'https://social.msdn.microsoft.com/Forums/home?category=&forum=&filter=&sort=relevancedesc&brandIgnore=true&searchTerm=Azure+Digital+Twins'
+        - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+          href: 'https://docs.microsoft.com/answers/topics/azure-digital-twins.html'
         - name: Запросы и рекомендации по улучшению продукта
           href: 'https://feedback.azure.com/forums/916621-azure-digital-twins'
     - name: Истории клиентов

@@ -101,7 +101,7 @@
               href: virtual-machines-windows-sql-workgroup-availability-group.md
             - name: Настройка вручную
               items:
-                - name: предварительные требования
+                - name: Предварительные требования
                   href: virtual-machines-windows-portal-sql-availability-group-prereq.md
                 - name: Учебник
                   href: virtual-machines-windows-portal-sql-availability-group-tutorial.md
@@ -141,7 +141,7 @@
       href: 'https://docs.microsoft.com/sql/tools/overview-sql-tools'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=compute'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=WAVirtualMachinesforWindows&filter=alltypes&brandIgnore=True&sort=relevancedesc&searchTerm=SQL+Server'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-virtual-machines.html'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/search?q=%5Bazure-virtual-machine%5D+sql+server'
