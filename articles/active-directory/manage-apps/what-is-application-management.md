@@ -12,12 +12,12 @@ ms.date: 06/05/2019
 ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ca73fac06649f801461e53130a67aa9ec0ad0d0
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: ee9a9d404e9a08d8b795a3d73907e84d25b73107
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77063328"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83739759"
 ---
 # <a name="application-management-with-azure-active-directory"></a>Управление приложениями с помощью Azure Active Directory
 
@@ -43,7 +43,7 @@ Azure Active Directory (Azure AD) упрощает процесс управле
 
 ## <a name="manage-risk-with-conditional-access-policies"></a>Управление рисками с помощью политик условного доступа
 
-Взаимозависимость единого входа Azure AD с [условным доступом](https://docs.microsoft.com/azure/active-directory/conditional-access/overview) обеспечивает высокий уровень безопасности при доступе к приложениям. Возможности безопасности предусматривают облачную защиту личных данных, управление доступом на основе рисков, собственную многофакторную проверку подлинности и политики условного доступа. Эти возможности позволяют использовать политики управления на основе приложений или групп, которым требуется более высокий уровень безопасности.
+Взаимозависимость единого входа Azure AD с [условным доступом](../conditional-access/concept-conditional-access-cloud-apps.md) обеспечивает высокий уровень безопасности при доступе к приложениям. Возможности безопасности предусматривают облачную защиту личных данных, управление доступом на основе рисков, собственную многофакторную проверку подлинности и политики условного доступа. Эти возможности позволяют использовать политики управления на основе приложений или групп, которым требуется более высокий уровень безопасности.
 
 ## <a name="improve-productivity-with-single-sign-on"></a>Повышайте производительность с помощью функции единого входа
 
