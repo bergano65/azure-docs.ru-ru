@@ -990,6 +990,8 @@
       href: /azure/templates/microsoft.compute/allversions
 - name: Ресурсы
   items:
+    - name: Вопросы и ответы
+      href: 'https://docs.microsoft.com/answers/topics/azure-virtual-machines.html'
     - name: Создание шаблонов ARM
       displayName: Azure Resource Manager
       href: ../../azure-resource-manager/templates/template-syntax.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
