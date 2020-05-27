@@ -9,12 +9,12 @@ metadata:
   author: florianborn71
   ms.author: flborn
   ms.date: 03/26/2020
-  ms.openlocfilehash: a257b294c105ca153a57afe90db95a1bd1b753e8
-  ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+  ms.openlocfilehash: e379515ea34206e21f80ceb23a465858d6d4da81
+  ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/06/2020
-  ms.locfileid: "80678320"
+  ms.lasthandoff: 05/21/2020
+  ms.locfileid: "83773225"
 landingContent:
 - title: Сведения об Удаленной отрисовке Azure
   linkLists:
@@ -58,9 +58,11 @@ landingContent:
   linkLists:
   - linkListType: tutorial
     links:
-    - text: Настройка проекта Unity с нуля
+    - text: Unity. Настройка проекта с нуля
       url: tutorials/unity/project-setup.md
-    - text: Работа с удаленными сущностями в Unity
+    - text: Unity. Работа с удаленными сущностями
       url: tutorials/unity/working-with-remote-entities.md
-    - text: Изменение среды и материалов
+    - text: Unity. Изменение среды и материалов
       url: tutorials/unity/changing-environment-and-materials.md
+    - text: Нативный C++. Интеграция Удаленной отрисовки в голографическом приложении HoloLens
+      url: tutorials/native-cpp/hololens/integrate-remote-rendering-into-holographic-app.md

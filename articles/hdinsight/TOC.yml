@@ -330,8 +330,18 @@
           href: ./spark/spark-best-practices.md
         - name: Настройка параметров Apache Spark
           href: ./spark/apache-spark-settings.md
-        - name: Оптимизация заданий Apache Spark
-          href: ./spark/apache-spark-perf.md
+        - name: Optimization
+          items:
+            - name: Оптимизация заданий Apache Spark
+              href: ./spark/apache-spark-perf.md
+            - name: Оптимизация обработки данных
+              href: ./spark/optimize-data-processing.md
+            - name: Оптимизация хранения данных
+              href: ./spark/optimize-data-storage.md
+            - name: Оптимизация использования памяти
+              href: ./spark/optimize-memory-usage.md
+            - name: Оптимизация конфигурации кластера
+              href: ./spark/optimize-cluster-configuration.md
         - name: Миграция на Spark 2.3 или 2.4
           href: ./spark/migrate-versions.md
     - name: Практическое руководство

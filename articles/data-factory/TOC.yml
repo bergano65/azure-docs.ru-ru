@@ -721,8 +721,8 @@
       href: 'https://azure.microsoft.com/updates/?product=data-factory'
     - name: Блог
       href: 'https://techcommunity.microsoft.com/t5/azure-data-factory/bg-p/AzureDataFactoryBlog#'
-    - name: "Задать вопрос\_— форум MSDN"
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDataFactory&filter=alltypes&sort=lastpostdesc'
+    - name: Задание вопроса. Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-data-factory.html'
     - name: "Задать вопрос\_— Stack Overflow"
       href: 'https://stackoverflow.com/questions/tagged/azure-data-factory'
     - name: Запрашивание функции

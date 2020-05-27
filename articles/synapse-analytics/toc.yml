@@ -44,6 +44,8 @@
       href: quickstart-connect-synapse-link-cosmos-db.md
 - name: Учебники
   items:
+    - name: Начало работы
+      href: get-started.md
     - name: Запуск приложений Apache Spark для пулов Spark
       href: ./spark/intellij-tool-synapse.md
     - name: Определения заданий Spark
@@ -874,10 +876,10 @@
   items:
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=databases'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html'
     - name: Запросы функций
       href: 'https://feedback.azure.com/forums/307516-sql-data-warehouse/'
-    - name: Форум
-      href: 'https://social.msdn.microsoft.com/Forums/home?forum=AzureSQLDataWarehouse'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/synapse-analytics/'
     - name: Калькулятор цен

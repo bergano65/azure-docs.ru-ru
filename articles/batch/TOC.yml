@@ -53,12 +53,26 @@
       items:
         - name: Базовые средства безопасности
           href: security-baseline.md
-    - name: Возможности разработчика
-      href: batch-api-basics.md
+    - name: Рабочий процесс и ресурсы пакетной службы
+      displayName: developer features
+      href: batch-service-workflow-features.md
+      items:
+        - name: Учетные записи пакетной службы
+          displayName: storage account
+          href: accounts.md
+        - name: Узлы и пулы
+          displayName: 'compute node, application package, scaling, schedule, os'
+          href: nodes-and-pools.md
+        - name: Задания и задачи
+          displayName: Batch job
+          href: jobs-and-tasks.md
+        - name: Файлы и каталоги
+          displayName: Batch file
+          href: files-and-directories.md
     - name: API-интерфейсы и средства
       href: batch-apis-tools.md
-    - name: Обнаружение и обработка ошибок пакетной службы
-      href: batch-retry-after-errors.md
+    - name: Обработка и обнаружение ошибок
+      href: error-handling.md
     - name: Рекомендации
       href: best-practices.md
     - name: Квоты и ограничения
@@ -91,6 +105,10 @@
           href: batch-aad-auth-management.md
         - name: Обеспечение безопасного доступа к Key Vault с помощью пакетной службы
           href: credential-access-key-vault.md
+        - name: Использование сертификатов с пакетной службой
+          href: batch-certificates.md
+    - name: Использование пакетов приложений
+      href: batch-application-packages.md
     - name: Копирование файлов и приложений на узлы пула
       items:
         - name: Копирование приложений и данных в узлы пула
