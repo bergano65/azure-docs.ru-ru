@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/05/2020
 ms.author: aahi
-ms.openlocfilehash: d1df46a5a8de4396011cc18ea062fe2d6b52ca8d
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.openlocfilehash: 1d4fde8dd21911b70d5a1c0f3b23304a3468a2a6
+ms.sourcegitcommit: fc0431755effdc4da9a716f908298e34530b1238
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83773973"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83816239"
 ---
 # <a name="install-and-run-speech-service-containers-preview"></a>Установка и запуск контейнеров речевых служб (Предварительная версия)
 
@@ -26,7 +26,7 @@ ms.locfileid: "83773973"
 > [!IMPORTANT]
 > Все контейнеры речи в настоящее время предоставляются как часть [общедоступного "условного" предварительного просмотра](../cognitive-services-container-support.md#public-gated-preview-container-registry-containerpreviewazurecrio). Объявление будет создано, когда речевые контейнеры переводятся в общедоступную версию.
 
-| Функция | Возможности | Последняя |
+| Компонент | Компоненты | Последняя |
 |--|--|--|
 | Преобразование речи в текст | Анализирует тональности и расшифровывает непрерывную голосовую или пакетную звукозапись в реальном времени с промежуточными результатами.  | 2.2.0 |
 | Пользовательское распознавание речи к тексту | Используя настраиваемую модель на [портале пользовательское распознавание речи](https://speech.microsoft.com/customspeech), расшифровывает непрерывную голосовую или пакетную звукозапись в режиме реального времени в текст с промежуточными результатами. | 2.2.0 |
@@ -39,7 +39,7 @@ ms.locfileid: "83773973"
 
 Перед использованием речевых контейнеров выполните следующие предварительные требования.
 
-| Обязательный | Назначение |
+| Обязательно | Назначение |
 |--|--|
 | Модуль Docker | На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br> |
 | Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`. |
@@ -47,7 +47,7 @@ ms.locfileid: "83773973"
 
 ## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
 
-Заполните [форму запроса](https://aka.ms/speechcontainerspreview/) и отправьте ее, чтобы запросить доступ к контейнеру. 
+Заполните [форму запроса](https://aka.ms/cognitivegate) и отправьте ее, чтобы запросить доступ к контейнеру. 
 
 
 [!INCLUDE [Request access to the container registry](../../../includes/cognitive-services-containers-request-access-only.md)]

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/05/2020
 ms.author: aahi
 ms.custom: seodec18
-ms.openlocfilehash: f1b6b9ffb53972aa81d6dd1150640b8db9dd7be9
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 75b71fe9a15b05679ab1b71b13bb0b1f51b7d1d1
+ms.sourcegitcommit: fc0431755effdc4da9a716f908298e34530b1238
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83698548"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83816154"
 ---
 # <a name="install-and-run-read-containers-preview"></a>Установка и запуск контейнеров чтения (Предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "83698548"
 
 Перед использованием контейнеров необходимо выполнить следующие предварительные требования:
 
-|Обязательный|Назначение|
+|Обязательно|Назначение|
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
@@ -38,7 +38,7 @@ ms.locfileid: "83698548"
 
 ## <a name="request-access-to-the-private-container-registry"></a>Запрос доступа к частному реестру контейнеров
 
-Заполните [форму запроса](https://aka.ms/VisionContainersPreview) и отправьте ее, чтобы запросить доступ к контейнеру. 
+Заполните [форму запроса](https://aka.ms/cognitivegate) и отправьте ее, чтобы запросить доступ к контейнеру. 
 
 [!INCLUDE [Request access to public preview](../../../includes/cognitive-services-containers-request-access.md)]
 
