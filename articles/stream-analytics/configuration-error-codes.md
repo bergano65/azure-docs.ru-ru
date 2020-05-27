@@ -6,28 +6,16 @@ author: mamccrea
 ms.topic: conceptual
 ms.date: 05/07/2020
 ms.service: stream-analytics
-ms.openlocfilehash: 9951a6ddfbd1c562184e2b7e02a9da98f7d94b12
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 5aa15ae4a234a56a172a0166070c32be4f822910
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/19/2020
-ms.locfileid: "83595593"
+ms.locfileid: "83650075"
 ---
 # <a name="azure-stream-analytics-configuration-error-codes"></a>Коды ошибок данных в Azure Stream Analytics
 
 Журналы действий и журналы ресурсов можно использовать для отладки и устранения ошибок при выполнении заданий в Azure Stream Analytics. В этой статье приводится описание всех кодов конфигурации. Ошибки конфигурации связаны с конфигурацией задания, а также с конфигурациями входных и выходных данных.
-
-## <a name="kafkainvalidpermission"></a>KafkaInvalidPermission
-
-* **Причина.** Задание Stream Analytics не имеет необходимых разрешений для выполнения определенных действий.
-
-## <a name="kafkainvalidconfiguration"></a>KafkaInvalidConfiguration
-
-* **Причина.** Некоторые конфигурации на адаптере Kafka недопустимы.
-
-## <a name="kafkainvalidtimestamptype"></a>KafkaInvalidTimestampType
-
-* **Причина.** Тип метки времени, используемый Kafka, недопустим.
 
 ## <a name="eventhubunauthorizedaccess"></a>EventHubUnauthorizedAccess
 

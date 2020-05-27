@@ -3,18 +3,18 @@ title: Настройка оповещений в Application Insights с пом
 description: Автоматизация настройки Application Insights для получения сообщений электронной почты об изменениях метрик.
 ms.topic: conceptual
 ms.date: 10/31/2016
-ms.openlocfilehash: c19cb43d08b44b55c786e750e64a83e6f0c67381
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: f35658b08eff7574448e3c72b103178b66acbbe0
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77669851"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83701830"
 ---
 # <a name="use-powershell-to-set-alerts-in-application-insights"></a>Настройка оповещений в Application Insights с помощью PowerShell
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Вы можете автоматизировать настройку [оповещений](../../azure-monitor/app/alerts.md) в [Application Insights](../../azure-monitor/app/app-insights-overview.md).
+Вы можете автоматизировать настройку [оповещений](../../azure-monitor/platform/alerts-log.md) в [Application Insights](../../azure-monitor/app/app-insights-overview.md).
 
 Кроме того, вы можете [установить объекты webhook, чтобы автоматизировать реагирование на оповещения](../../azure-monitor/platform/alerts-webhooks.md).
 
@@ -126,7 +126,7 @@ GUID — это идентификатор подписки (не ключ ин�
 ## <a name="webhooks"></a>Веб-перехватчики
 Вы можете [автоматизировать реагирование на оповещения](../../azure-monitor/platform/alerts-webhooks.md). При возникновении оповещения Azure будет вызывать выбранный вами веб-адрес.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 * [Сценарий настройки Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource#creating-a-resource-automatically)
 * [Создание ресурсов Application Insights и веб-тестов на основе шаблонов](powershell.md)
 * [Автоматизация связывания Диагностики Microsoft Azure с Application Insights](powershell-azure-diagnostics.md)

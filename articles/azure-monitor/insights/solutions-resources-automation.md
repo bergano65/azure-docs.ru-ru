@@ -7,12 +7,12 @@ author: bwren
 ms.author: bwren
 ms.date: 05/24/2017
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8ef9f27546e9db95d5a41769e1b5bc7bc0c2f851
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: a3b1b134afbc4a13d7888281a82609d444cee377
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77663068"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83682872"
 ---
 # <a name="adding-azure-automation-resources-to-a-management-solution-preview"></a>Добавление ресурсов службы автоматизации Azure в решение по управлению (предварительная версия)
 > [!NOTE]
@@ -25,7 +25,7 @@ ms.locfileid: "77663068"
 > В примерах этой статьи используются обязательные или общие параметры и переменные для решений по управлению, описанные в статье [Проектирование и сборка решения по управлению в Azure (предварительная версия)]( solutions-creating.md). 
 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 В этой статье предполагается, что вы уже знакомы со следующими сведениями.
 
 - Как [создать решение по управлению]( solutions-creating.md).
@@ -33,7 +33,7 @@ ms.locfileid: "77663068"
 - Как [создавать шаблоны Resource Manager](../../azure-resource-manager/templates/template-syntax.md).
 
 ## <a name="automation-account"></a>Учетная запись службы автоматизации
-Все ресурсы в службе автоматизации Azure содержатся в [учетной записи службы автоматизации](../../automation/automation-security-overview.md#automation-account-overview).  Как указано в разделе [Log Analytics workspace and Automation account]( solutions.md#log-analytics-workspace-and-automation-account) (Рабочая область Log Analytics и учетная запись службы автоматизации), учетная запись службы автоматизации не включена в решение для управления и должна быть создана до установки решения.  Если она недоступна, произойдет сбой установки решения.
+Все ресурсы в службе автоматизации Azure содержатся в [учетной записи службы автоматизации](../../automation/automation-security-overview.md).  Как указано в разделе [Log Analytics workspace and Automation account]( solutions.md#log-analytics-workspace-and-automation-account) (Рабочая область Log Analytics и учетная запись службы автоматизации), учетная запись службы автоматизации не включена в решение для управления и должна быть создана до установки решения.  Если она недоступна, произойдет сбой установки решения.
 
 Имя учетной записи службы автоматизации указывается в имени каждого ресурса службы автоматизации.  Оно указывается в решении с помощью параметра **accountName**, как в следующем примере ресурса модуля Runbook.
 
@@ -165,7 +165,7 @@ ms.locfileid: "77663068"
 | Свойство | Описание |
 |:--- |:--- |
 | userName |Имя пользователя для учетных данных. |
-| пароль |Пароль для учетных данных. |
+| password |Пароль для учетных данных. |
 
 
 ## <a name="schedules"></a>Расписания
@@ -265,7 +265,7 @@ ms.locfileid: "77663068"
 | description | Необязательное описание переменной. |
 | isEncrypted | Указывает, следует ли шифровать переменную. |
 | type | Сейчас это свойство ни на что не влияет.  Тип данных переменной определяется начальным значением. |
-| значение | Значение переменной. |
+| value | Значение переменной. |
 
 > [!NOTE]
 > Сейчас свойство **type** не влияет на создаваемую переменную.  Тип данных переменной определяется значением.  
@@ -315,7 +315,7 @@ ms.locfileid: "77663068"
 
 
 
-## <a name="sample"></a>Пример
+## <a name="sample"></a>Образец
 Ниже приведен пример решения со приведенными ниже ресурсами.
 
 - Модуль Runbook.  Это пример модуля Runbook, хранящийся в общедоступном репозитории GitHub.
@@ -642,5 +642,5 @@ ms.locfileid: "77663068"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Добавьте представление в решение]( solutions-resources-views.md) для визуализации собранных данных.

@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 07/13/2017
 ms.author: yegu
-ms.openlocfilehash: a385d3ed7ef46389f96de72c98ffc29cebf60ec4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 838835cf44b5ca5048ea6cb7bc1bba582b2a0926
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79278536"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83647983"
 ---
 # <a name="manage-azure-cache-for-redis-with-azure-powershell"></a>Управление кэшем Azure для Redis с использованием Azure PowerShell
 > [!div class="op_single_selector"]
@@ -26,9 +26,9 @@ ms.locfileid: "79278536"
 
 [!INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]
 
-Дополнительные сведения о классической модели развертывания см. в статье [Azure Resource Manager vs. classic deployment: Understand deployment models and the state of your resources](../azure-resource-manager/management/deployment-models.md) (Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов).
+Дополнительные сведения о классической модели развертывания см. в статье [Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов](../azure-resource-manager/management/deployment-models.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Если вы уже установили Azure PowerShell, необходимо использовать Azure PowerShell 1.0.0 или более поздней версии. Установленную версию Azure PowerShell можно узнать в командной строке Azure PowerShell с помощью такой команды:
 
     Get-Module Az | format-table version
@@ -122,16 +122,16 @@ ms.locfileid: "79278536"
 | Имя |Имя кэша | |
 | Расположение |Расположение кэша | |
 | ResourceGroupName |Имя группы ресурсов, в которой необходимо создать кэш | |
-| Size |Размер кэша. Допустимые значения: P1, P2, P3, P4, C0, C1, C2, C3, C4, C5, C6, 250 МБ, 1 ГБ, 2,5 ГБ, 6 ГБ, 13 ГБ, 26 ГБ, 53 ГБ |1 ГБ |
+| Размер |Размер кэша. Допустимые значения: P1, P2, P3, P4, C0, C1, C2, C3, C4, C5, C6, 250 МБ, 1 ГБ, 2,5 ГБ, 6 ГБ, 13 ГБ, 26 ГБ, 53 ГБ |1 ГБ |
 | ShardCount |Число сегментов, которые будут созданы при создании кэша уровня Premium с включенной кластеризацией. Допустимые значения: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 | |
-| номер SKU |Определяет SKU кэша. Допустимые значения: Basic, Standard, Premium |Standard |
+| номер SKU |Определяет SKU кэша. Допустимые значения: "Базовый", "Стандартный" и "Премиум" |Standard |
 | RedisConfiguration |Задает параметры конфигурации кластера Redis. Подробные сведения о каждом параметре представлены в таблице [Свойства RedisConfiguration](#redisconfiguration-properties) . | |
 | EnableNonSslPort |Определяет, включен ли порт без SSL. |False |
 | MaxMemoryPolicy |Этот параметр устарел, вместо него используется параметр RedisConfiguration. | |
 | StaticIP |При размещении кэша в виртуальной сети определяет уникальный IP-адрес подсети для кэша. Если IP-адрес не указан, он автоматически выбирается из подсети. | |
 | Подсеть |При размещении кэша в виртуальной сети определяет имя подсети, в которой будет развернут кэш. | |
 | Виртуальная сеть |При размещении кэша в виртуальной сети определяет идентификатор ресурса виртуальной сети, в которой будет развернут кэш. | |
-| KeyType |Определяет, какой ключ доступа будет создаваться повторно при обновлении ключей доступа. Допустимые значения: Primary, Secondary | |
+| KeyType |Определяет, какой ключ доступа будет создаваться повторно при обновлении ключей доступа. Допустимые значения: первичный или вторичный | |
 
 ### <a name="redisconfiguration-properties"></a>Свойства RedisConfiguration
 | Свойство | Описание | Ценовые категории |
@@ -771,13 +771,13 @@ ms.locfileid: "79278536"
         -Force
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об использовании Windows PowerShell с Azure см. в следующих ресурсах:
 
 * [Документация по командлету кэша Azure для Redis на MSDN](https://docs.microsoft.com/powershell/module/az.rediscache)
-* [Командлеты диспетчера ресурсов Azure](https://go.microsoft.com/fwlink/?LinkID=394765): узнайте, как использовать командлеты в модуле диспетчера ресурсов Azure.
-* [Развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure](../azure-resource-manager/templates/deploy-portal.md): узнайте, как создавать группы ресурсов и управлять ими на портале Azure.
-* [Блог Azure](https://azure.microsoft.com/blog/): узнайте о новых возможностях в Azure.
-* [Блог Windows PowerShell](https://blogs.msdn.com/powershell): узнайте о новых возможностях в Windows PowerShell.
-* [Блог "Hey, Scripting Блог](https://blogs.technet.com/b/heyscriptingguy/): реальные советы и рекомендации от сообщества Windows PowerShell.
+* [Overview of Azure PowerShell](https://go.microsoft.com/fwlink/?LinkID=394765) (Общие сведения об Azure PowerShell) — сведения об использовании командлетов в модуле Azure Resource Manager.
+* [Развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure](../azure-resource-manager/templates/deploy-portal.md) — сведения о создании групп ресурсов и управлении ими на портале Azure.
+* [Блог Azure](https://azure.microsoft.com/blog/) — сведения о новых возможностях в Azure.
+* [Блог Windows PowerShell](https://devblogs.microsoft.com/powershell/) — сведения о новых возможностях в Windows PowerShell.
+* [Блог "Hey, Scripting Guy!"](https://blogs.technet.com/b/heyscriptingguy/) — реальные советы и рекомендации от сообщества Windows PowerShell.
 
