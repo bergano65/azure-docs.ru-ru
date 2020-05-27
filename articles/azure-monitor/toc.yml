@@ -60,6 +60,32 @@
           href: learn/tutorial-app-dashboards.md
 - name: Примеры
   items:
+    - name: Шаблоны Resource Manager
+      items:
+        - name: Обзор
+          href: samples/resource-manager-samples.md
+        - name: Агенты
+          href: samples/resource-manager-agent.md
+        - name: видны узлы
+          items:
+            - name: Правила генерации оповещений журнала
+              href: samples/resource-manager-alerts-log.md
+            - name: Правила генерации оповещений метрик
+              href: samples/resource-manager-alerts-metric.md
+            - name: Группы действий
+              href: samples/resource-manager-action-groups.md
+        - name: Параметры диагностики
+          href: samples/resource-manager-diagnostic-settings.md
+        - name: Рабочие области Log Analytics
+          href: samples/resource-manager-workspace.md
+        - name: Запросы журнала
+          href: samples/resource-manager-log-queries.md
+        - name: Workbooks
+          href: samples/resource-manager-workbooks.md
+        - name: Azure Monitor для контейнеров
+          href: samples/resource-manager-container-insights.md
+        - name: Azure Monitor для виртуальных машин
+          href: samples/resource-manager-vminsights.md
     - name: Azure CLI
       href: samples/cli-samples.md
     - name: Azure PowerShell

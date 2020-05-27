@@ -182,8 +182,8 @@
       href: frequently-asked-questions.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/home?forum=WAVirtualMachinesVirtualNetwork'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-virtual-network.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/network-watcher/'
     - name: Обновления службы
