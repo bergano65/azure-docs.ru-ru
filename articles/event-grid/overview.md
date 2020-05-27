@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 02/20/2020
 ms.author: babanisa
 ms.custom: seodec18
-ms.openlocfilehash: b6f987eb283edea7f2d8e6b207b5b4e5b14f9120
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 7a323bd9b9c605363963d5a25d1746727e379553
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81393184"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83587601"
 ---
 # <a name="what-is-azure-event-grid"></a>Что такое служба "Сетка событий Azure"?
 
@@ -52,15 +52,15 @@ ms.locfileid: "81393184"
 
 Дополнительные сведения о возможностях каждого обработчика, а также статьи по этой теме см. в описании [обработчиков событий](event-handlers.md). В настоящее время обработку событий из службы "Сетка событий" поддерживают следующие службы Azure: 
 
-* [Служба автоматизации Azure](event-handlers.md#azure-automation)
-* [Функции Azure](event-handlers.md#azure-functions)
-* [Центры событий](event-handlers.md#event-hubs)
-* [Гибридные подключения](event-handlers.md#hybrid-connections)
-* [Logic Apps](event-handlers.md#logic-apps)
+* [Служба автоматизации Azure](handler-webhooks.md#azure-automation)
+* [Функции Azure](handler-functions.md)
+* [Центры событий](handler-event-hubs.md)
+* [Гибридные подключения Relay](handler-relay-hybrid-connections.md)
+* [Logic Apps](handler-webhooks.md#logic-apps)
 * [Power Automate (ранее — Microsoft Flow)](https://preview.flow.microsoft.com/connectors/shared_azureeventgrid/azure-event-grid/)
-* [Служебная шина](event-handlers.md#service-bus)
-* [Хранилище очередей](event-handlers.md#queue-storage)
-* [Веб-перехватчики](event-handlers.md#webhooks)
+* [Служебная шина](handler-service-bus.md)
+* [Хранилище очередей](handler-storage-queues.md)
+* [Веб-перехватчики](handler-webhooks.md)
 
 ## <a name="concepts"></a>Основные понятия
 

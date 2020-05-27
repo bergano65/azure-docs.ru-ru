@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: overview
-ms.date: 02/12/2020
+ms.date: 05/19/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 167c7f7aa3dbf967575c0ee8905821fb9d3f77ce
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 0effb6bb6e3d3f80775a3cee1ad8a63013a78805
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80050738"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83585842"
 ---
 # <a name="what-is-guest-user-access-in-azure-active-directory-b2b"></a>Что представляет собой гостевой доступ в службе совместной работы Azure Active Directory B2B?
 
@@ -88,6 +88,19 @@ ms.locfileid: "80050738"
 
 - Используйте функцию [управления правами Azure AD](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-overview), чтобы настроить политики для [управления доступом внешних пользователей](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-external-users#how-access-works-for-external-users).
 - Воспользуйтесь [интерфейсами API приглашения службы совместной работы B2B](https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation), чтобы настроить процесс подключения.
+
+## <a name="integrate-with-identity-providers"></a>Интеграция с поставщиками удостоверений
+
+Azure AD поддерживает внешние поставщики удостоверений, такие как Facebook, учетные записи Майкрософт, Google и корпоративные поставщики удостоверений. Вы можете настроить федерацию с поставщиками удостоверений, чтобы внешние пользователи могли выполнять вход с использованием существующих социальных или корпоративных учетных записей вместо создания новой учетной записи только для вашего приложения. См. сведения о поставщиках удостоверений для внешних удостоверений.
+
+![Снимок экрана: страница поставщиков удостоверений](media/what-is-b2b/identity-providers.png)
+
+
+## <a name="create-a-self-service-sign-up-user-flow-preview"></a>Создание потока пользователя для самостоятельной регистрации (предварительная версия)
+
+Используя самостоятельную регистрацию, вы можете определить процедуру регистрации для внешних пользователей, которым требуется доступ к вашим приложениям. В рамках процесса регистрации вы можете указывать параметры для разных поставщиков удостоверений социальных сетей или организаций и собирать сведения о пользователе. См. сведения о самостоятельной регистрации и способах ее настройки.
+
+![Снимок экрана: страница "Потоки пользователей"](media/what-is-b2b/self-service-sign-up-user-flow-overview.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

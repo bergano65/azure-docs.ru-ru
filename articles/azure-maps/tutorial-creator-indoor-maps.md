@@ -1,0 +1,427 @@
+---
+title: Использование Creator для создания схем помещений
+description: Использование Azure Maps Creator для создания схем помещений.
+author: anastasia-ms
+ms.author: v-stharr
+ms.date: 05/18/2020
+ms.topic: conceptual
+ms.service: azure-maps
+services: azure-maps
+manager: philmea
+ms.openlocfilehash: 5a7f64ead6d2e19242950002feed1cd1491dbacc
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83596593"
+---
+# <a name="use-creator-to-create-indoor-maps"></a>Использование Creator для создания схем помещений
+
+В этом учебнике показано, как создавать схемы помещений. Из этого учебника вы узнаете, как использовать API, чтобы выполнять следующие задачи:
+
+> [!div class="checklist"]
+> * Отправка пакета рисунков со схемой помещений
+> * Преобразование пакета рисунков в данные схемы
+> * Создание набора данных на основе данных схемы
+> * Создание набора плиток из данных в наборе данных
+> * Запрос API Azure Maps Web Feature Service (WFS), чтобы узнать о функциях схемы
+> * Создание набора состояний функции с помощью функций схемы и данных в наборе данных
+> * Обновление набора состояний вашей функции
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Создание схем помещений:
+
+1. [Создайте учетную запись службы Azure Maps](quick-demo-map-app.md#create-an-account-with-azure-maps)
+2. [Получите первичный ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account), который иногда называется первичным ключом или ключом подписки.
+3. [Создайте ресурс Creator](how-to-manage-creator.md).
+4. Скачайте [пример пакета рисунков](https://github.com/Azure-Samples/am-creator-indoor-data-examples).
+
+В этом руководстве используется приложение [Postman](https://www.postman.com/), но вы можете выбрать другую среду разработки API.
+
+## <a name="upload-a-drawing-package"></a>Отправка пакета рисунков
+
+Используйте [API отправки данных](https://docs.microsoft.com/rest/api/maps/data/uploadpreview), чтобы передать пакет рисунков в ресурсы Azure Maps.
+
+API отправки данных — это долго выполняющаяся транзакция, которая реализует шаблон, определенный здесь. После завершения операции мы будем использовать `udid` для доступа к переданному пакету для его преобразования. Чтобы получить `udid`, выполните следующие действия.
+
+1. Откройте приложение Postman. В верхней части приложения Postman выберите элемент **Создать**. В окне **Create New** (Создание) выберите **Collection** (Коллекция).  Присвойте имя коллекции и нажмите кнопку **Создать**.
+
+2. Чтобы создать запрос, нажмите кнопку **Создать** еще раз. В окне **Create New** (Создание) выберите **Request** (Запрос). Введите **Имя запроса** для запроса. Выберите коллекцию, созданную на предыдущем шаге, а затем нажмите кнопку **Сохранить**.
+
+3. Выберите HTTP-метод **POST** на вкладке "Построитель" и введите следующий URL-адрес, чтобы отправить пакет рисунков в службу Azure Maps. Для этого запроса и других запросов, упомянутых в этой статье, замените `<Azure-Maps-Primary-Subscription-key>` первичным ключом подписки.
+
+    ```http
+    https://atlas.microsoft.com/mapData/upload?api-version=1.0&dataFormat=zip&subscription-key={Azure-Maps-Primary-Subscription-key}
+    ```
+
+4. На вкладке **Заголовки** укажите значение для ключа `Content-Type`. Пакет рисунков — это папка в ZIP-архиве, поэтому используйте значение `application/octet-stream`. На вкладке **Текст** выберите **двоичный**. Щелкните элемент **Выбрать файл** и выберите пакет рисунков.
+
+     ![управление данными](./media/tutorial-creator-indoor-maps/enter-content-type.png)
+
+5. Нажмите синюю кнопку **Отправить** и дождитесь обработки запроса. После завершения запроса перейдите на вкладку **Заголовки** ответа. Скопируйте значение ключа **Расположение**, который является `status URL`.
+
+6. Чтобы проверить состояние вызова API, создайте HTTP-запрос GET на `status URL`. Вам потребуется добавить первичный ключ подписки к URL-адресу для проверки подлинности.
+
+    ```http
+    https://atlas.microsoft.com/mapData/operations/{operationsId}?api-version=1.0&subscription-key={Azure-Maps-Primary-Subscription-key}
+    ```
+
+7. После успешного завершения HTTP-запроса **GET** можно использовать URL-адрес `resourceLocation` для получения метаданных из этого ресурса на следующем шаге.
+
+    ```json
+    {
+        "operationId": "{operationId}",
+        "status": "Succeeded",
+        "resourceLocation": "https://atlas.microsoft.com/mapData/metadata/{upload-udid}?api-version=1.0"
+    }
+    ```
+
+8. Чтобы получить метаданные содержимого, создайте HTTP-запрос **GET** на URL-адресе `resourceLocation`, скопированном на шаге 7. Текст ответа содержит уникальный `udid` для отправленного содержимого, расположение для доступа или скачивания содержимого в будущем, а также другие метаданные содержимого, такие как дата создания или обновления, размер и т. д. Пример общего ответа:
+
+     ```json
+    {
+        "udid": "{udid}",
+        "location": "https://atlas.microsoft.com/mapData/{udid}?api-version=1.0",
+        "created": "2020-02-03T02:32:25.0509366+00:00",
+        "updated": "2020-02-11T06:12:13.0309351+00:00",
+        "sizeInBytes": 766,
+        "uploadStatus": "Completed"
+    }
+    ```
+
+## <a name="convert-a-drawing-package"></a>Преобразование пакета рисунков
+
+ После отправки пакета рисунков мы применим к нему `udid`, чтобы преобразовать этот пакет в данные схемы. API-интерфейс преобразования использует длительную транзакцию, которая реализует шаблон, определенный [здесь](creator-long-running-operation.md). После завершения операции мы будем использовать `conversionId` для доступа к преобразованным данным. Чтобы получить `conversionId`, выполните следующие действия.
+
+1. Нажмите кнопку **Создать**. В окне **Create New** (Создание) выберите **Request** (Запрос). Введите **имя запроса** и выберите коллекцию. Выберите команду **Сохранить**.
+
+2. Выберите HTTP-метод **POST** на вкладке "Построитель" и введите следующий URL-адрес для преобразования отправленного пакета рисунков в данные схемы. Используйте `udid` для отправленного пакета.
+
+    ```http
+    https://atlas.microsoft.com/conversion/convert?subscription-key={Azure-Maps-Primary-Subscription-key}&api-version=1.0&udid={upload-udid}&inputType=DWG
+    ```
+
+3. Нажмите кнопку **Отправить** и дождитесь обработки запроса. После завершения запроса перейдите на вкладку **Заголовки** ответа и найдите ключ **Расположение**. Скопируйте значение ключа **Расположение**, который является `status URL` для запроса на преобразование.
+
+4. Запустите новый HTTP-метод **GET** на вкладке "Построитель". Добавьте первичный ключ подписки Azure Maps в `status URL`. Выполните запрос **GET** на `status URL` из предыдущего шага. Если процесс преобразования еще не завершен, вы можете увидеть нечто вроде следующего ответа JSON:
+
+    ```json
+    {
+        "operationId": "77dc9262-d3b8-4e32-b65d-74d785b53504",
+        "created": "2020-04-22T19:39:54.9518496+00:00",
+        "status": "Running"
+    }
+    ```
+
+5. После успешного выполнения запроса в тексте ответа отобразится успешное сообщение о состоянии.  Скопируйте `conversionId` из URL-адреса `resourceLocation` преобразованного пакета. `conversionId` используется другим API для доступа к данным преобразованной схемы.
+
+    ```json
+   {
+        "operationId": "77dc9262-d3b8-4e32-b65d-74d785b53504",
+        "created": "2020-04-22T19:39:54.9518496+00:00",
+        "status": "Succeeded",
+        "resourceLocation": "https://atlas.microsoft.com/conversion/{conversionId}?api-version=1.0",
+        "properties": {}
+    }
+    ```
+
+>[!NOTE]
+>Приложение Postman изначально не поддерживает длительные запросы HTTP. В результате вы можете заметить долгую задержку при выполнении запроса **GET** по URL-адресу состояния.  Выждите примерно тридцать секунд и снова нажмите кнопку **Отправить**, пока не появится сообщение об успешном или неудачном выполнении.
+
+Образец пакета рисунков должен быть преобразован без ошибок или предупреждений. Однако если для собственного пакета рисунков вы получаете ошибки или предупреждения, ответ JSON вернет ссылку на [визуализатор ошибок рисунков](drawing-error-visualizer.md). Визуализатор ошибок рисунков позволяет просматривать сведения об ошибках и предупреждениях. Чтобы получить рекомендации по устранению ошибок и предупреждений при преобразовании, см. сведения в разделе [Ошибки и предупреждения, связанные с преобразованием рисунков](drawing-conversion-error-codes.md).
+
+```json
+{
+    "operationId": "77dc9262-d3b8-4e32-b65d-74d785b53504",
+    "created": "2020-04-22T19:39:54.9518496+00:00",
+    "status": "Failed",
+    "resourceLocation": "https://atlas.microsoft.com/conversion/{conversionId}?api-version=1.0",
+    "properties": {
+        "diagnosticPackageLocation": "https://atlas.microsoft.com/mapData/ce61c3c1-faa8-75b7-349f-d863f6523748?api-version=1.0"
+    }
+}
+```
+
+## <a name="create-a-dataset"></a>Создание набора данных
+
+Набор данных — это коллекция функций схем, таких как здания, этажи и помещения. Чтобы создать набор данных, используйте [API создания набора данных](https://docs.microsoft.com/rest/api/maps/dataset/createpreview). API создания набора данных принимает `conversionId` для преобразованного пакета рисунков и возвращает `datasetId` созданного набора данных. Ниже показано, как создать набор данных.
+
+1. В приложении Postman выберите **New** (Создать). В окне **Create New** (Создание) выберите **Request** (Запрос). Введите **имя запроса** и выберите коллекцию. Щелкните **Сохранить**.
+
+2. Выполните запрос **POST** к [API создания набора данных](https://docs.microsoft.com/rest/api/maps/dataset/createpreview), чтобы создать новый набор данных. Перед отправкой запроса добавьте ключ подписки и `conversionId` с `conversionId`, полученным в процессе преобразования на шаге 5.  Запрос должен выглядеть, как в этом URL-адресе:
+
+    ```http
+    https://atlas.microsoft.com/dataset/create?api-version=1.0&conversionID={conversionId}&type=facility&subscription-key={Azure-Maps-Primary-Subscription-key}
+    ```
+
+3. Получите `statusURL` из ключа **Расположение** ответа **Заголовки**.
+
+4. Чтобы получить `datasetId`, выполните запрос на **GET** к `statusURL`. Добавьте первичный ключ подписки Azure Maps для проверки подлинности. Запрос должен выглядеть, как в этом URL-адресе:
+
+    ```http
+    https://atlas.microsoft.com/dataset/operations/{operationsId}?api-version=1.0&subscription-key=<Azure-Maps-Primary-Subscription-key>
+    ```
+
+5. После успешного завершения HTTP-запроса **GET** заголовок ответа будет содержать `datasetId` для созданного набора данных. Скопируйте `datasetId`. Чтобы создать набор фрагментов, необходимо использовать `datasetId`.
+
+    ```json
+    {
+        "operationId": "a93570cb-3e4f-4e45-a2b1-360df174180a",
+        "created": "2020-04-22T19:52:38.9352189+00:00",
+        "status": "Succeeded",
+        "resourceLocation": "https://azure.microsoft.com/dataset/{datasetiId}?api-version=1.0"
+     }
+    ```
+
+## <a name="create-a-tileset"></a>Создание набора фрагментов
+
+Набор фрагментов — это ряд векторных плиток, которые отображаются на схеме. Наборы фрагментов создаются на основе существующих наборов данных. Однако набор фрагментов не зависит от набора данных, который послужил его источником. Если набор данных удален, набор фрагментов по-прежнему будет существовать. Чтобы создать набор фрагментов, выполните следующие действия:
+
+1. В приложении Postman выберите **New** (Создать). В окне **Create New** (Создание) выберите **Request** (Запрос). Введите **имя запроса** и выберите коллекцию. Щелкните **Сохранить**.
+
+2. Выполните запрос **POST** на вкладке "Построитель". URL-адрес запроса должен выглядеть как этот URL-адрес:
+
+    ```http
+    https://atlas.microsoft.com/tileset/create/vector?api-version=1.0&datasetID={datasetId}&subscription-key={Azure-Maps-Primary-Subscription-key}
+    ```
+
+3. Выполните запрос **GET** в `statusURL` для этого набора фрагментов. Добавьте первичный ключ подписки Azure Maps для проверки подлинности. Запрос должен выглядеть, как в этом URL-адресе:
+
+   ```http
+    https://atlas.microsoft.com/tileset/operations/{operationsId}?api-version=1.0&subscription-key=<Azure-Maps-Primary-Subscription-key>
+    ```
+
+4. После успешного завершения HTTP-запроса **GET** заголовок ответа будет содержать `tilesetId` для созданного набора фрагментов. Скопируйте `tilesetId`.
+
+    ```json
+    {
+        "operationId": "a93570cb-3e4f-4e45-a2b1-360df174180a",
+        "createdDateTime": "3/11/2020 8:45:13 PM +00:00",
+        "status": "Succeeded",
+        "resourceLocation": "https://atlas.microsoft.com/tileset/{tilesetId}?api-version=1.0"
+    }
+    ```
+
+## <a name="query-datasets-with-wfs-api"></a>Запросы к наборам данных с помощью API WFS
+
+ Наборы данных можно запрашивать с помощью [API WFS](https://docs.microsoft.com/rest/api/maps/wfs). С помощью API WFS можно запросить коллекции функций, определенную коллекцию или функцию с **идентификатором** функции. **Идентификатор** функции однозначно определяет функцию в наборе данных. Он используется, например, для указания, какое состояние функции следует обновить в заданном наборе состояний.
+
+1. В приложении Postman выберите **New** (Создать). В окне **Create New** (Создание) выберите **Request** (Запрос). Введите **имя запроса** и выберите коллекцию. Щелкните **Сохранить**.
+
+2. Выполните запрос **GET**, чтобы просмотреть список коллекций в наборе данных. Замените `<dataset-id>` на `datasetId`. Используйте первичный ключ Azure Maps вместо заполнителя. Запрос должен выглядеть, как в этом URL-адресе:
+
+    ```http
+    https://atlas.microsoft.com/wfs/datasets/{datasetId}/collections?subscription-key={Azure-Maps-Primary-Subscription-key}&api-version=1.0
+    ```
+
+3. Текст ответа будет доставляться в формате GeoJSON и будет содержать все коллекции в этом наборе данных. Для простоты в этом примере показана только коллекция `unit`. Пример, содержащий все коллекции, см. в разделе [API коллекций описания WFS](https://docs.microsoft.com/rest/api/maps/wfs/describecollectionspreview). Чтобы узнать больше о любой коллекции, можно щелкнуть любой URL-адрес в элементе `link`.
+
+    ```json
+    {
+    "collections": [
+        {
+            "name": "unit",
+            "description": "A physical and non-overlapping area which might be occupied and traversed by a navigating agent. Can be a hallway, a room, a courtyard, etc. It is surrounded by physical obstruction (wall), unless the is_open_area attribute is equal to true, and one must add openings where the obstruction shouldn't be there. If is_open_area attribute is equal to true, all the sides are assumed open to the surroundings and walls are to be added where needed. Walls for open areas are represented as a line_element or area_element with is_obstruction equal to true.",
+            "links": [
+                {
+                    "href": "https://atlas.microsoft.com/wfs/datasets/{datasetId}/collections/unit/definition?api-version=1.0",
+                    "rel": "describedBy",
+                    "title": "Metadata catalogue for unit"
+                },
+                {
+                    "href": "https://atlas.microsoft.com/wfs/datasets/{datasetId}/collections/unit/items?api-version=1.0",
+                    "rel": "data",
+                    "title": "unit"
+                }
+                {
+                    "href": "https://atlas.microsoft.com/wfs/datasets/{datasetId}/collections/unit?api-version=1.0",
+                    "rel": "self",
+                    "title": "Metadata catalogue for unit"
+                }
+            ]
+        },
+    ```
+
+4. Выполните запрос **GET** для коллекций функций `unit`.  Замените `{datasetId}` на `datasetId`. Используйте первичный ключ Azure Maps вместо заполнителя. Текст ответа будет содержать все функции коллекции `unit`. Запрос должен выглядеть, как в этом URL-адресе:
+
+    ```http
+    https://atlas.microsoft.com/wfs/datasets/{datasetId}/collections/unit/items?subscription-key={Azure-Maps-Primary-Subscription-key}&api-version=1.0
+    ```
+
+5. Скопируйте `id` функции для функции секции, имеющей свойства стиля, которые можно изменять динамически.  Так как состояние заполнения секции и температуру можно обновлять динамически, мы будем использовать `id` этой функции в следующем разделе. В следующем примере `id` функции — "UNIT26". Мы будем называть свойства стиля этой функции состояниями, и будем использовать эту функцию для создания набора состояний.
+
+     ```json
+    {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Polygon",
+                    "coordinates": ["..."]
+                },
+                "properties": {
+                    "original_id": "b7410920-8cb0-490b-ab23-b489fd35aed0",
+                    "category_id": "CTG8",
+                    "is_open_area": true,
+                    "navigable_by": [
+                        "pedestrian"
+                    ],
+                    "route_through_behavior": "allowed",
+                    "level_id": "LVL14",
+                    "occupants": [],
+                    "address_id": "DIR1",
+                    "name": "157"
+                },
+                "id": "UNIT26",
+                "featureType": ""
+            }, {"..."}
+        ]
+    }
+    ```
+
+## <a name="create-a-feature-stateset"></a>Создание набора состояний функции
+
+1. В приложении Postman выберите **New** (Создать). В окне **Create New** (Создание) выберите **Request** (Запрос). Введите **имя запроса** и выберите коллекцию. Щелкните **Сохранить**.
+
+2. Выполните запрос **POST** к [API создания набора состояний](https://docs.microsoft.com/rest/api/maps/featurestate/createstatepreview). Используйте `datasetId` набора данных, содержащего состояние, которое необходимо изменить. Запрос должен выглядеть, как в этом URL-адресе:
+
+    ```http
+    https://atlas.microsoft.com/featureState/stateset?api-version=1.0&datasetId={datasetId}&subscription-key={Azure-Maps-Primary-Subscription-key}
+    ```
+
+3. В **Заголовках** запроса **POST** установите для параметра `Content-Type` значение `application/json`. В поле **Текст** укажите следующие стили, чтобы отразить изменения в *состояниях* `occupied` и `temperature`. Закончив, нажмите кнопку **Отправить**.
+
+    ```json
+    {
+       "styles":[
+          {
+             "keyname":"occupied",
+             "type":"boolean",
+             "rules":[
+                {
+                   "true":"#FF0000",
+                   "false":"#00FF00"
+                }
+             ]
+          },
+          {
+             "keyname":"temperature",
+             "type":"number",
+             "rules":[
+                {
+                   "range":{
+                      "exclusiveMaximum":66
+                   },
+                   "color":"#00204e"
+                },
+                {
+                   "range":{
+                      "minimum":66,
+                      "exclusiveMaximum":70
+                   },
+                   "color":"#0278da"
+                },
+                {
+                   "range":{
+                      "minimum":70,
+                      "exclusiveMaximum":74
+                   },
+                   "color":"#187d1d"
+                },
+                {
+                   "range":{
+                      "minimum":74,
+                      "exclusiveMaximum":78
+                   },
+                   "color":"#fef200"
+                },
+                {
+                   "range":{
+                      "minimum":78,
+                      "exclusiveMaximum":82
+                   },
+                   "color":"#fe8c01"
+                },
+                {
+                   "range":{
+                      "minimum":82
+                   },
+                   "color":"#e71123"
+                }
+             ]
+          }
+       ]
+    }
+    ```
+
+4. Скопируйте `statesetId` из текста ответа.
+
+5. Создайте запрос **POST** для обновления состояния: Передайте идентификатор statesetId и `ID` функции с помощью ключа подписки Azure Maps. Запрос должен выглядеть, как в этом URL-адресе:
+
+    ```http
+    https://atlas.microsoft.com/featureState/state?api-version=1.0&statesetID={statesetId}&featureID={featureId}&subscription-key={Azure-Maps-Primary-Subscription-key}
+    ```
+
+6. В **Заголовках** запроса **POST** установите для параметра `Content-Type` значение `application/json`. В поле **Текст** запроса **POST**, скопируйте и вставьте JSON в примере ниже.
+
+    ```json
+    {
+        "states": [
+            {
+                "keyName": "occupied",
+                "value": true,
+                "eventTimestamp": "2019-11-14T17:10:20"
+            }
+        ]
+    }
+    ```
+
+    >[!NOTE]
+    > Обновление будет сохранено только в том случае, если отметка времени будет располагаться после метки времени предыдущего запроса. Мы можем передать любое имя ключа, настроенное ранее во время создания.
+
+7. После успешного обновления вы получите код состояния HTTP `200 OK`. При наличии [динамического стиля, реализованного](indoor-map-dynamic-styling.md) для схемы помещений, обновление будет отображаться на преобразованной для просмотра схеме в указанной отметке времени.
+
+[API состояний получения функций](https://docs.microsoft.com/rest/api/maps/featurestate/getstatespreview) позволяет извлекать состояние компонента с помощью функции `ID`. Кроме того, можно удалить набор состояний и его ресурсы, используя [API удаления состояния функции](https://docs.microsoft.com/rest/api/maps/featurestate/deletestatesetpreview).
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+В этом руководстве вы узнали, как выполнять следующие задачи:
+
+> [!div class="checklist"]
+> * Отправка пакета рисунков со схемой помещений
+> * Преобразование пакета рисунков в данные схемы
+> * Создание набора данных на основе данных схемы
+> * Создание набора плиток из данных в наборе данных
+> * Отправьте запрос в службу Azure Maps WFS, чтобы узнать о функциях этой схемы
+> * Создание набора состояний функции с помощью функций схемы и данных в наборе данных
+> * Обновление набора состояний вашей функции
+
+Теперь вы знаете все необходимое для знакомства со следующими руководствами:
+
+> [!div class="nextstepaction"]
+> [Использование модуля схем помещений](how-to-use-indoor-module.md)
+
+> [!div class="nextstepaction"]
+> [Реализация динамического стиля для схем помещений](indoor-map-dynamic-styling.md)
+
+Дополнительные сведения о различных службах Azure Maps, обсуждаемых в этой статье:
+
+> [!div class="nextstepaction"]
+> [Data — Upload Preview](creator-indoor-maps.md#upload-a-drawing-package) (Данные — предварительная версия отправки)
+
+> [!div class="nextstepaction"]
+> [Преобразование данных](creator-indoor-maps.md#convert-a-drawing-package)
+
+> [!div class="nextstepaction"]
+> [Набор данных](creator-indoor-maps.md#datasets)
+
+> [!div class="nextstepaction"]
+> [Набор фрагментов](creator-indoor-maps.md#tilesets)
+
+> [!div class="nextstepaction"]
+> [Набор состояний функции](creator-indoor-maps.md#feature-statesets)
+
+> [!div class="nextstepaction"]
+> [Служба WFS](creator-indoor-maps.md#web-feature-service-api)

@@ -6,23 +6,23 @@ ms.topic: how-to
 ms.date: 04/28/2020
 ms.custom: cc996988-fb4f-47
 ms.openlocfilehash: c16bd728fe81796d671762615ec8dc4ad6e1d87d
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 05/19/2020
 ms.locfileid: "83123779"
 ---
 # <a name="create-a-function-triggered-by-azure-cosmos-db"></a>Создание функции, активируемой с помощью Azure Cosmos DB
 
-Узнайте, как создать функцию, которая активируется при добавлении или изменении данных в Azure Cosmos DB. Дополнительные сведения об Azure Cosmos DB см. в статье [Azure Cosmos DB: обработка данных бессерверных баз данных с помощью службы "Функции Azure"](../cosmos-db/serverless-computing-database.md).
+Узнайте, как создать функцию, которая активируется при добавлении или изменении данных в Azure Cosmos DB. Дополнительные сведения о службе Azure Cosmos DB см. в статье [ Обработка данных бессерверных баз данных с помощью Azure Cosmos DB и Функций Azure](../cosmos-db/serverless-computing-database.md).
 
 :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/quickstart-completed.png" alt-text="Код Azure Cosmos DB":::
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством:
+Для работы с этим руководством сделайте следующее:
 
-+ Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
++ Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 > [!NOTE]
 > [!INCLUDE [SQL API support only](../../includes/functions-cosmosdb-sqlapi-note.md)]
@@ -46,31 +46,31 @@ ms.locfileid: "83123779"
 
 ## <a name="create-azure-cosmos-db-trigger"></a>Создание триггера Azure Cosmos DB
 
-1. В приложении функции в меню слева выберите **функции** , а затем в верхнем меню выберите **Добавить** . 
+1. В приложении-функции выберите **Функции** в меню слева, а затем в меню вверху выберите **Добавить**. 
 
-1. На странице **Новая функция** введите `cosmos` в поле поиска, а затем выберите шаблон **триггер Azure Cosmos DB** .
+1. На странице **Новая функция** введите `cosmos` в поле поиска, а затем выберите шаблон **Триггер Azure Cosmos DB**.
 
-   :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/function-choose-cosmos.png" alt-text="Страница "функции" в портал Azure":::
+   :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/function-choose-cosmos.png" alt-text="Страница "Функции" на портале Azure":::
 
 
-1. Настройте новый триггер с помощью параметров, как указано в следующей таблице.
+1. Настройте новый триггер с параметрами, как показано в следующей таблице.
 
     | Параметр      | Рекомендуемое значение  | Описание                                |
     | ------------ | ---------------- | ------------------------------------------ |
-    | **Новая функция** | Принять имя по умолчанию | Имя функции. |
-    | **Cosmos DB account connection (Подключение к учетной записи Cosmos DB)** | Принять новое имя по умолчанию | Выберите **создать**, созданную ранее **учетную запись базы данных** , а затем нажмите **кнопку ОК**. Это действие создает параметр приложения для подключения к учетной записи. Этот параметр используется в привязке для подключения к базе данных. |
-    | **Имя базы данных** | Задания | Имя базы данных, содержащей отслеживаемую коллекцию. |
+    | **Новая функция** | Примите значение по умолчанию. | Имя функции. |
+    | **Подключение к учетной записи Cosmos DB** | Примите новое имя по умолчанию. | Выберите **Создать** и **Учетная запись базы данных**, которую вы создали ранее, а затем щелкните **ОК**. Будет создан параметр приложения для подключения к учетной записи. Этот параметр используется в привязке для подключения к базе данных. |
+    | **Имя базы данных** | Задания | Имя базы данных, которая включает отслеживаемую коллекцию. |
     | **Имя коллекции** | Items | Имя отслеживаемой коллекции. |
-    | **Имя коллекции для аренд** | leases | Имя коллекции для хранения аренд. |
-    | **Создать сбор аренд, если он не существует** | Да | Проверяет наличие сбора аренд и автоматически создает ее. |
+    | **Имя коллекции для аренды** | Аренда | Имя коллекции, в которой хранятся сведения об аренде. |
+    | **Создать коллекцию аренды, если ее не существует** | Да | Проверяет существование коллекции аренды и автоматически создает ее при необходимости. |
 
-    :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/functions-cosmosdb-trigger-settings.png" alt-text="Создание функции, активируемой с помощью Azure Cosmos DB":::
+    :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/functions-cosmosdb-trigger-settings.png" alt-text="Создать функцию, активируемую с помощью Azure Cosmos DB":::
 
-1. Выберите **создать функцию**. 
+1. Выберите **Создать функцию**. 
 
-    Azure создает функцию триггера Cosmos DB.
+    Azure создает функцию для триггера Cosmos DB.
 
-1. Чтобы отобразить код функции на основе шаблона, выберите **код + тест**.
+1. Чтобы отобразить код функции на основе шаблона, выберите **Код + тестовый**.
 
     :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/function-cosmosdb-template.png" alt-text="Шаблон функции Cosmos DB на C#":::
 

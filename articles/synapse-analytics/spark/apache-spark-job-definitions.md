@@ -1,6 +1,6 @@
 ---
-title: 'Руководство. Azure Synapse Analytics: определение задания Spark для Synapse'
-description: Руководство. Использование Azure Synapse Analytics для создания определений заданий Spark и их отправки в пул Synapse Spark.
+title: 'Руководство. Apache Spark для Azure Synapse Analytics: определение задания Apache Spark для Synapse'
+description: Руководство. Использование Azure Synapse Analytics для создания определений заданий Spark и их отправки в пул Apache Spark для Azure Synapse Analytics.
 author: hrasheed-msft
 ms.author: jejiang
 ms.reviewer: jasonh
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 04/15/2020
-ms.openlocfilehash: d5443a2db6f4fecbd84ef51166f44c3a6e920aee
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 5fc9dffaa73d195c842381b6682a00e9834c0fe7
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81425913"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83587941"
 ---
 # <a name="tutorial-use-azure-synapse-analytics-to-create-apache-spark-job-definitions-for-synapse-spark-pools"></a>Руководство по Использование Azure Synapse Analytics для создания определений заданий Apache Spark для пулов Synapse Spark
 

@@ -9,37 +9,33 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 0d2683091898e9c84457b3b538776f0e6b0469d4
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 2d5d508afe81975cbeda448b497a098e8a3bbcf3
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81420058"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83589284"
 ---
-# <a name="control-storage-account-access-for-sql-on-demand-preview-in-azure-synapse-analytics"></a>Управление доступом к учетной записи хранения в SQL по запросу (предварительная версия) в Azure Synapse Analytics
+# <a name="control-storage-account-access-for-sql-on-demand-preview"></a>Управление доступом к учетной записи хранения в SQL по запросу (предварительная версия)
 
-SQL по запросу (предварительная версия) позволяет создавать запросы для чтения файлов непосредственно из службы хранилища Azure. Так как учетная запись хранения является внешним объектом по отношению к ресурсу SQL по запросу, нужно предоставить соответствующие учетные данные. Пользователь должен иметь разрешения на использование учетных данных для доступа. В этой статье описываются типы учетных данных, которые вы можете использовать, и способ поиска учетных данных для пользователей SQL и Azure AD.
+SQL по запросу позволяет создавать запросы для чтения файлов непосредственно из службы хранилища Azure. Разрешения на доступ к файлам в службе хранилища Azure контролируются на двух уровнях.
+- **Уровень хранилища** — пользователь должен иметь разрешение на доступ к базовым файлам хранилища. Администратор хранилища должен разрешить субъекту Azure AD чтение и запись файлов или создать ключ SAS, который будет использоваться для доступа к хранилищу.
+- **Уровень службы SQL** — пользователь должен иметь разрешение `SELECT` на чтение данных из [внешней таблицы](develop-tables-external-tables.md) или разрешение `ADMINISTER BULK ADMIN` на выполнение `OPENROWSET` и разрешение на использование учетных данных, которые предназначены для доступа к хранилищу.
+
+В этой статье описываются типы учетных данных, которые вы можете использовать, и способ поиска учетных данных для пользователей SQL и Azure AD.
 
 ## <a name="supported-storage-authorization-types"></a>Поддерживаемые типы авторизации в службе хранилища
 
-Пользователь, выполнивший вход в ресурс SQL по запросу, должен иметь права на доступ и запросы к файлам в службе хранилища Azure. Поддерживаются три типа авторизации.
+Пользователь, выполнивший вход в ресурс SQL по запросу, должен иметь права на доступ и отправку запросов к файлам в службе хранилища Azure, если эти файлы не являются общедоступными. Поддерживаются три типа авторизации.
 
-- [Подписанный URL-адрес](#shared-access-signature)
-- [Управляемое удостоверение](#managed-identity)
-- [Удостоверение пользователя](#user-identity)
+- [Подписанный URL-адрес](?tabs=shared-access-signature)
+- [Удостоверение пользователя](?tabs=user-identity)
+- [Управляемое удостоверение](?tabs=managed-identity)
 
 > [!NOTE]
-> По умолчанию при создании рабочей области действует [сквозная аутентификация Azure AD](#force-azure-ad-pass-through). Это избавляет от необходимости создавать учетные данные для каждой учетной записи хранения, к которой осуществляется доступ по имени входа AD. Это поведение [можно отключить](#disable-forcing-azure-ad-pass-through).
+> По умолчанию при создании рабочей области действует [сквозная аутентификация Azure AD](#force-azure-ad-pass-through). Это избавляет от необходимости создавать учетные данные для каждой учетной записи хранения, к которой осуществляется доступ по имени для входа Azure AD. Это поведение [можно отключить](#disable-forcing-azure-ad-pass-through).
 
-В таблице ниже перечислены различные типы авторизации, которые уже поддерживаются или будут поддерживаться в ближайшее время.
-
-| Тип авторизации                    | *Пользователь SQL*    | *Пользователь Azure AD*     |
-| ------------------------------------- | ------------- | -----------    |
-| [SAS](#shared-access-signature)       | Поддерживается     | Поддерживается      |
-| [Управляемое удостоверение](#managed-identity) | Не поддерживается | Не поддерживается  |
-| [Удостоверение пользователя](#user-identity)       | Не поддерживается | Поддерживается      |
-
-### <a name="shared-access-signature"></a>Подписанный URL-адрес
+### <a name="shared-access-signature"></a>[Подписанный URL-адрес](#tab/shared-access-signature)
 
 **Подписанный URL-адрес (SAS)** предоставляет делегированный доступ к ресурсам в учетной записи хранения. С помощью SAS можно предоставить клиентам доступ к ресурсам в учетной записи хранения, не передавая им ключи учетной записи. SAS обеспечивает детальный контроль над типом доступа, который вы предоставляете клиентам с конкретным SAS, включая период действия, предоставленные разрешения, допустимый диапазон IP-адресов и допустимый протокол (HTTPS или HTTP).
 
@@ -50,12 +46,11 @@ SQL по запросу (предварительная версия) позво
 >
 > Маркер SAS: ?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-04-18T20:42:12Z&st=2019-04-18T12:42:12Z&spr=https&sig=lQHczNvrk1KoYLCpFdSsMANd0ef9BrIPBNJ3VYEIq78%3D
 
-### <a name="user-identity"></a>Удостоверение пользователя
+Чтобы разрешить доступ с помощью маркера SAS, необходимо создать учетные данные уровня базы данных или уровня сервера.
+
+### <a name="user-identity"></a>[Удостоверение пользователя](#tab/user-identity)
 
 **Удостоверение пользователя** используется для типа авторизации "сквозная аутентификация", при которой удостоверение пользователя Azure AD, выполнившего вход в SQL по запросу, применяется для авторизации доступа к данным. Перед обращением к данным администратор службы хранилища Azure должен предоставить разрешения соответствующему пользователю Azure AD. Как указано в таблице выше, этот тип не поддерживается для типа пользователя SQL.
-
-> [!NOTE]
-> Использование [сквозной аутентификации Azure AD](#force-azure-ad-pass-through) избавляет от необходимости создавать учетные данные для каждой учетной записи хранения, к которой осуществляется доступ по именам входа AD.
 
 > [!IMPORTANT]
 > Чтобы использовать удостоверение для доступа к данным, необходимо иметь роль владельца, участника или читателя данных для BLOB-объекта в хранилище.
@@ -64,86 +59,9 @@ SQL по запросу (предварительная версия) позво
 > Дополнительные сведения см. в статье [Access control in Azure Data Lake Storage Gen2](../../storage/blobs/data-lake-storage-access-control.md) (Контроль доступа в Azure Data Lake Storage 2-го поколения).
 >
 
-### <a name="managed-identity"></a>Управляемое удостоверение
+Чтобы пользователи Azure AD могли получить доступ к хранилищу с собственными удостоверениями, необходимо явным образом включить сквозную проверку подлинности Azure AD.
 
-**Управляемое удостоверение** иногда обозначается как MSI. Это функция Azure Active Directory (Azure AD), которая предоставляет службы Azure для SQL по запросу. Также она развертывает автоматически управляемое удостоверение в Azure AD. Это удостоверение можно использовать для авторизации запроса на доступ к данным в службе хранилища Azure.
-
-Перед обращением к данным администратор службы хранилища Azure должен предоставить управляемому удостоверению разрешения на доступ к данным. Предоставление разрешений управляемому удостоверению выполняется точно так же, как любому другому пользователю Azure AD.
-
-## <a name="create-credentials"></a>Создание учетных данных
-
-Чтобы выполнить запрос к файлу, который размещен в службе хранилища Azure, конечная точка SQL по запросу должна иметь учетные данные (CREDENTIAL) уровня сервера с информацией об аутентификации. Для добавления учетных данных выполните инструкцию [CREATE CREDENTIAL](/sql/t-sql/statements/create-credential-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). Необходимо указать аргумент CREDENTIAL NAME. Он должен соответствовать пути к данным в хранилище или некоторой части этого пути (см. ниже).
-
-> [!NOTE]
-> Аргумент FOR CRYPTOGRAPHIC PROVIDER не поддерживается.
-
-Для всех поддерживаемых типов авторизации учетные данные могут указывать на учетную запись, контейнер, любой каталог (ниже корневого) или отдельный файл.
-
-Аргумент CREDENTIAL NAME должен содержать полный путь к контейнеру, папке или файлу в следующем формате: `<prefix>://<storage_account_path>/<storage_path>`
-
-| Внешний источник данных       | Prefix | Путь к учетной записи хранения                                |
-| -------------------------- | ------ | --------------------------------------------------- |
-| хранилище BLOB-объектов Azure         | HTTPS  | <учетная_запись_хранилища>.blob.core.windows.net             |
-| Хранилище Azure Data Lake Storage 1-го поколения | HTTPS  | <учетная_запись_хранилища>.azuredatalakestore.net/webhdfs/v1 |
-| Azure Data Lake Storage 2-го поколения | HTTPS  | <учетная_запись_хранилища>.dfs.core.windows.net              |
-
- Элемент <учетная_запись_хранилища> содержит путь в хранилище, указывающий на папку или файл, который нужно считать.
-
-> [!NOTE]
-> Существует специальное значение `UserIdentity` для CREDENTIAL NAME, которое [принудительно применяет сквозную аутентификацию Azure AD](#force-azure-ad-pass-through). Изучите, как оно влияет на [поиск учетных данных](#credential-lookup) при выполнении запросов.
-
-Кроме того, чтобы разрешить пользователю создавать или удалять учетные данные, администратор может предоставить пользователю разрешение GRANT/DENY ALTER ANY CREDENTIAL.
-
-```sql
-GRANT ALTER ANY CREDENTIAL TO [user_name];
-```
-
-### <a name="supported-storages-and-authorization-types"></a>Поддерживаемые типы авторизации и хранилища
-
-Вы можете использовать следующие сочетания типов авторизации и хранилища Azure.
-
-|                     | Хранилище BLOB-объектов   | ADLS 1-го поколения        | ADLS 2-го поколения     |
-| ------------------- | ------------   | --------------   | -----------   |
-| *SAS*               | Поддерживается      | Не поддерживается   | Поддерживается     |
-| *Управляемое удостоверение* | Не поддерживается  | Не поддерживается    | Не поддерживается |
-| *Удостоверение пользователя*    | Поддерживается      | Поддерживается        | Поддерживается     |
-
-### <a name="examples"></a>Примеры
-
-В зависимости от [типа авторизации](#supported-storage-authorization-types) вы можете создать учетные данные с помощью приведенного ниже синтаксиса T-SQL.
-
-**Подписанные URL-адреса и хранилище BLOB-объектов**
-
-Замените <*mystorageaccountname*> реальным именем учетной записи хранения, а <*mystorageaccountcontainername*> — именем контейнера:
-
-```sql
-CREATE CREDENTIAL [https://<mystorageaccountname>.blob.core.windows.net/<mystorageaccountcontainername>]
-WITH IDENTITY='SHARED ACCESS SIGNATURE'
-, SECRET = 'sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-04-18T20:42:12Z&st=2019-04-18T12:42:12Z&spr=https&sig=lQHczNvrk1KoYLCpFdSsMANd0ef9BrIPBNJ3VYEIq78%3D';
-GO
-```
-
-**Удостоверение пользователя и Azure Data Lake Storage 1-го поколения**
-
-Замените <*mystorageaccountname*> реальным именем учетной записи хранения, а <*mystorageaccountcontainername*> — именем контейнера:
-
-```sql
-CREATE CREDENTIAL [https://<mystorageaccountname>.azuredatalakestore.net/webhdfs/v1/<mystorageaccountcontainername>]
-WITH IDENTITY='User Identity';
-GO
-```
-
-**Удостоверение пользователя и Azure Data Lake Storage 2-го поколения**
-
-Замените <*mystorageaccountname*> реальным именем учетной записи хранения, а <*mystorageaccountcontainername*> — именем контейнера:
-
-```sql
-CREATE CREDENTIAL [https://<mystorageaccountname>.dfs.core.windows.net/<mystorageaccountcontainername>]
-WITH IDENTITY='User Identity';
-GO
-```
-
-## <a name="force-azure-ad-pass-through"></a>Принудительное применение сквозной аутентификации Azure AD
+#### <a name="force-azure-ad-pass-through"></a>Принудительное применение сквозной аутентификации Azure AD
 
 Сквозная аутентификация Azure AD применяется принудительно по умолчанию, если указано специальное значение `UserIdentity` для параметра CREDENTIAL NAME, которое создается автоматически во время подготовки рабочей области Azure Synapse. В этом режиме использование сквозной аутентификации Azure AD является обязательным для каждого запроса от любого имени входа Azure AD, независимо от наличия других учетных данных.
 
@@ -163,9 +81,7 @@ WITH IDENTITY = 'User Identity';
 GRANT REFERENCES ON CREDENTIAL::[UserIdentity] TO USER [user_name];
 ```
 
-Дополнительные сведения о поиске учетных данных для использования в SQL по запросу см. в [этой статье](#credential-lookup).
-
-## <a name="disable-forcing-azure-ad-pass-through"></a>Отключение принудительного применения сквозной аутентификации Azure AD
+#### <a name="disable-forcing-azure-ad-pass-through"></a>Отключение принудительного применения сквозной аутентификации Azure AD
 
 Вы можете отключить [принудительное применение сквозной аутентификации Azure AD для каждого запроса](#force-azure-ad-pass-through). Для этого удалите учетные данные `Userdentity` с помощью этой команды:
 
@@ -175,17 +91,55 @@ DROP CREDENTIAL [UserIdentity];
 
 Если вы решите снова включить этот режим, воспользуйтесь инструкцией [Принудительное применение сквозной аутентификации Azure AD](#force-azure-ad-pass-through).
 
-Чтобы отключить принудительное применение сквозной аутентификации Azure AD для конкретного пользователя, отмените для этого пользователя разрешение REFERENCE для учетных данных `UserIdentity`. Следующий пример отключает принудительное применение сквозной аутентификации Azure AD для пользователя user_name:
+### <a name="managed-identity"></a>[Управляемое удостоверение](#tab/managed-identity)
+
+**Управляемое удостоверение** иногда обозначается как MSI. Это функция Azure Active Directory (Azure AD), которая предоставляет службы Azure для SQL по запросу. Также она развертывает автоматически управляемое удостоверение в Azure AD. Это удостоверение можно использовать для авторизации запроса на доступ к данным в службе хранилища Azure.
+
+Перед обращением к данным администратор службы хранилища Azure должен предоставить управляемому удостоверению разрешения на доступ к данным. Предоставление разрешений управляемому удостоверению выполняется точно так же, как любому другому пользователю Azure AD.
+
+### <a name="anonymous-access"></a>[Анонимный доступ](#tab/public-access)
+
+Вы можете использовать файлы, размещенные в общедоступных расположениях в учетных записях хранения Azure, которые [допускают анонимный доступ](/azure/storage/blobs/storage-manage-access-to-resources.md).
+
+---
+
+### <a name="supported-authorization-types-for-databases-users"></a>Поддерживаемые типы авторизации для пользователей баз данных
+
+В таблице ниже перечислены доступные типы авторизации.
+
+| Тип авторизации                    | *Пользователь SQL*    | *Пользователь Azure AD*     |
+| ------------------------------------- | ------------- | -----------    |
+| [Удостоверение пользователя](?tabs=user-identity#supported-storage-authorization-types)       | Не поддерживается | Поддерживается      |
+| [SAS](?tabs=shared-access-signature#supported-storage-authorization-types)       | Поддерживается     | Поддерживается      |
+| [Управляемое удостоверение](?tabs=managed-identity#supported-storage-authorization-types) | Не поддерживается | Поддерживается      |
+
+### <a name="supported-storages-and-authorization-types"></a>Поддерживаемые типы авторизации и хранилища
+
+Вы можете использовать следующие сочетания типов авторизации и хранилища Azure.
+
+|                     | Хранилище BLOB-объектов   | ADLS 1-го поколения        | ADLS 2-го поколения     |
+| ------------------- | ------------   | --------------   | -----------   |
+| *SAS*               | Поддерживается      | Не поддерживается   | Поддерживается     |
+| *Управляемое удостоверение* | Поддерживается      | Поддерживается        | Поддерживается     |
+| *Удостоверение пользователя*    | Поддерживается      | Поддерживается        | Поддерживается     |
+
+## <a name="credentials"></a>Учетные данные
+
+Чтобы выполнить запрос по файлу, который размещен в службе хранилища Azure, конечная точка SQL по запросу должна иметь учетные данные с информацией об аутентификации. Используются два типа учетных данных.
+- Объект CREDENTIAL уровня сервера используется для нерегламентированных запросов, выполняемых с помощью функции `OPENROWSET`. Имя этого объекта должно соответствовать URL-адресу хранилища.
+- DATABASE SCOPED CREDENTIAL используется для внешних таблиц. Внешняя таблица ссылается на `DATA SOURCE` с учетными данными, которые должны использоваться для доступа к хранилищу.
+
+Чтобы разрешить пользователю создавать или удалять учетные данные, администратор может предоставить пользователю разрешение GRANT/DENY ALTER ANY CREDENTIAL.
 
 ```sql
-DENY REFERENCES ON CREDENTIAL::[UserIdentity] TO USER [user_name];
+GRANT ALTER ANY CREDENTIAL TO [user_name];
 ```
 
-Дополнительные сведения о поиске учетных данных для использования в SQL по запросу см. в [этой статье](#credential-lookup).
+Пользователи базы данных, которые обращаются к внешнему хранилищу, должны иметь разрешение на использование учетных данных.
 
-## <a name="grant-permissions-to-use-credential"></a>Предоставление разрешений на использование учетных данных
+### <a name="grant-permissions-to-use-credential"></a>Предоставление разрешений на использование учетных данных
 
-Чтобы использовать учетные данные, пользователь должен иметь разрешение REFERENCES для этих учетных данных. Чтобы предоставить разрешение REFERENCES для учетных данных хранилища storage_credential конкретному пользователю specific_user, выполните такую команду:
+Чтобы использовать учетные данные, пользователь должен иметь разрешение `REFERENCES` для этих учетных данных. Чтобы предоставить разрешение `REFERENCES` для учетных данных хранилища (storage_credential) конкретному пользователю (specific_user), выполните такую команду:
 
 ```sql
 GRANT REFERENCES ON CREDENTIAL::[storage_credential] TO [specific_user];
@@ -197,47 +151,193 @@ GRANT REFERENCES ON CREDENTIAL::[storage_credential] TO [specific_user];
 GRANT REFERENCES ON CREDENTIAL::[UserIdentity] TO [public];
 ```
 
-## <a name="credential-lookup"></a>Поиск учетных данных
+## <a name="server-scoped-credential"></a>Учетные данные уровня сервера
 
-При авторизации запросов применяется поиск учетных данных для доступа к учетной записи хранения и действуют следующие правила:
+Учетные данные уровня сервера используются при вызове функции `OPENROWSET` из процесса входа в SQL без `DATA_SOURCE` для чтения файлов в определенной учетной записи хранения. Имя учетных данных уровня сервера **должно** совпадать с URL-адресом службы хранилища Azure. Для добавления учетных данных выполните инструкцию [CREATE CREDENTIAL](/sql/t-sql/statements/create-credential-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). Необходимо указать аргумент CREDENTIAL NAME. Он должен соответствовать пути к данным в хранилище или некоторой части этого пути (см. ниже).
 
-- Пользователь вошел в систему с именем для входа Azure AD.
+> [!NOTE]
+> Аргумент FOR CRYPTOGRAPHIC PROVIDER не поддерживается.
 
-  - Если существуют учетные данные UserIdentity и у пользователя есть разрешения на доступ к ним, будет использоваться сквозная аутентификация Azure AD. В противном случае выполняется [поиск учетных данных по пути](#lookup-credential-by-path).
+Имя объекта CREDENTIAL уровня сервера должно содержать полный путь к учетной записи хранения и к контейнеру (необязательно) в следующем формате: `<prefix>://<storage_account_path>/<storage_path>` Описание путей к учетной записи хранения приведено в следующей таблице.
 
-- Пользователь вошел в систему с именем для входа SQL.
+| Внешний источник данных       | Prefix | Путь к учетной записи хранения                                |
+| -------------------------- | ------ | --------------------------------------------------- |
+| хранилище BLOB-объектов Azure         | HTTPS  | <учетная_запись_хранилища>.blob.core.windows.net             |
+| Хранилище Azure Data Lake Storage 1-го поколения | HTTPS  | <учетная_запись_хранилища>.azuredatalakestore.net/webhdfs/v1 |
+| Azure Data Lake Storage 2-го поколения | HTTPS  | <учетная_запись_хранения>.dfs.core.windows.net              |
 
-  - Используется [поиск учетных данных по пути](#lookup-credential-by-path).
+> [!NOTE]
+> Существует специальное значение `UserIdentity` для CREDENTIAL уровня сервера, которое [принудительно применяет сквозную аутентификацию Azure AD](?tabs=user-identity#force-azure-ad-pass-through).
 
-### <a name="lookup-credential-by-path"></a>Поиск учетных данных по пути
+Учетные данные уровня сервера позволяют получить доступ к службе хранилища Azure через следующие типы проверки подлинности:
 
-Если принудительное применение сквозной аутентификации Azure AD отключено, выполняется поиск учетных данных на основе пути к хранилищу (в глубину), а также проверяется наличие разрешения REFERENCES для этих учетных данных. Если для доступа к одному файлу можно использовать несколько учетных данных, SQL по запросу будет использовать наиболее конкретный вариант.  
+### <a name="shared-access-signature"></a>[Подписанный URL-адрес](#tab/shared-access-signature)
 
-Ниже приведен пример запроса по следующему пути к файлу: *account.dfs.core.windows.net/filesystem/folder1/.../folderN/fileX.ext*
+Следующий скрипт создает учетные данные уровня сервера, которые могут использоваться функцией `OPENROWSET` для доступа к любому файлу в службе хранилища Azure через токен SAS. Создайте такие учетные данные, чтобы разрешить субъекту SQL, который выполняет функцию `OPENROWSET`, считывать файлы, защищенные ключом SAS в службе хранилища Azure, которая соответствует URL-адресу в имени учетных данных.
 
-Поиск учетных данных в этом примере будет выполнен в следующем порядке:
+Замените <*mystorageaccountname*> реальным именем учетной записи хранения, а <*mystorageaccountcontainername*> — именем контейнера:
+
+```sql
+CREATE CREDENTIAL [https://<mystorageaccountname>.blob.core.windows.net/<mystorageaccountcontainername>]
+WITH IDENTITY='SHARED ACCESS SIGNATURE'
+, SECRET = 'sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-04-18T20:42:12Z&st=2019-04-18T12:42:12Z&spr=https&sig=lQHczNvrk1KoYLCpFdSsMANd0ef9BrIPBNJ3VYEIq78%3D';
+GO
+```
+
+### <a name="user-identity"></a>[Удостоверение пользователя](#tab/user-identity)
+
+Следующий скрипт создает учетные данные уровня сервера, которые позволяют олицетворять пользователя с помощью удостоверения Azure AD.
+
+```sql
+CREATE CREDENTIAL [UserIdentity]
+WITH IDENTITY = 'User Identity';
+```
+
+### <a name="managed-identity"></a>[Управляемое удостоверение](#tab/managed-identity)
+
+Следующий скрипт создает учетные данные уровня сервера, которые могут использоваться функцией `OPENROWSET` для доступа к любому файлу в службе хранилища Azure через управляемое удостоверение рабочей области.
+
+```sql
+CREATE CREDENTIAL [https://<mystorageaccountname>.blob.core.windows.net/<mystorageaccountcontainername>]
+WITH IDENTITY='Managed Identity'
+```
+
+### <a name="public-access"></a>[Открытый доступ](#tab/public-access)
+
+Следующий скрипт создает учетные данные уровня сервера, которые могут использоваться функцией `OPENROWSET` для доступа к любому файлу в общедоступном хранилище Azure. Создайте такие учетные данные, чтобы разрешить субъекту SQL, выполняющему функцию `OPENROWSET`, считывать общедоступные файлы в службе хранилища Azure, которая соответствует URL-адресу в имени учетных данных.
+
+Замените здесь заполнитель <*mystorageaccountname*> реальным именем учетной записи хранения, а <*mystorageaccountcontainername*> — именем контейнера:
+
+```sql
+CREATE CREDENTIAL [https://<mystorageaccountname>.blob.core.windows.net/<mystorageaccountcontainername>]
+WITH IDENTITY='SHARED ACCESS SIGNATURE'
+, SECRET = '';
+GO
+```
+---
+
+## <a name="database-scoped-credential"></a>Учетные данные уровня базы данных
+
+Учетные данные уровня базы данных используются, когда какой-либо субъект вызывает функцию `OPENROWSET` с `DATA_SOURCE` или выбирает данные из [внешней таблицы](develop-tables-external-tables.md) без использования общедоступных файлов. Учетные данные уровня базы данных не должны совпадать с именем учетной записи хранения, так как они будут явно указаны в объекте DATA SOURCE, который определяет расположение хранилища.
+
+Такие учетные данные позволяют получить доступ к службе хранилища Azure через следующие типы проверки подлинности:
+
+### <a name="shared-access-signature"></a>[Подписанный URL-адрес](#tab/shared-access-signature)
+
+Следующий скрипт создает учетные данные, которые используются для доступа к файлам в хранилище с помощью маркера SAS, указанного в этих учетных данных.
+
+```sql
+CREATE DATABASE SCOPED CREDENTIAL [SasToken]
+WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 'sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-04-18T20:42:12Z&st=2019-04-18T12:42:12Z&spr=https&sig=lQHczNvrk1KoYLCpFdSsMANd0ef9BrIPBNJ3VYEIq78%3D';
+GO
+```
+
+### <a name="azure-ad-identity"></a>[Удостоверение Azure AD](#tab/user-identity)
+
+Следующий скрипт создает учетные данные уровня базы данных, которые используются для [внешней таблицы](develop-tables-external-tables.md) и в функциях `OPENROWSET`, использующих источник данных с учетными данными для доступа к файлам хранилища с собственными удостоверениями Azure AD.
+
+```sql
+CREATE DATABASE SCOPED CREDENTIAL [AzureAD]
+WITH IDENTITY = 'User Identity';
+GO
+```
+
+### <a name="managed-identity"></a>[Управляемое удостоверение](#tab/managed-identity)
+
+Следующий скрипт создает учетные данные уровня базы данных, которые можно использовать для олицетворения текущего пользователя Azure AD в управляемом удостоверении службы. 
+
+```sql
+CREATE DATABASE SCOPED CREDENTIAL [SynapseIdentity]
+WITH IDENTITY = 'Managed Identity';
+GO
+```
+
+Учетные данные уровня базы данных не должны совпадать с именем учетной записи хранения, так как они будут явно указаны в объекте DATA SOURCE, который определяет расположение хранилища.
+
+### <a name="public-access"></a>[Открытый доступ](#tab/public-access)
+
+Учетные данные уровня базы данных не обязательны для обращения к общедоступным файлам. Создайте [источник данных без учетных данных уровня базы данных](develop-tables-external-tables.md?tabs=sql-ondemand#example-for-create-external-data-source), чтобы обращаться к общедоступным файлам в службе хранилища Azure.
+
+---
+
+Учетные данные уровня базы данных используются во внешних источниках данных для указания метода проверки подлинности, который будет использоваться для доступа к этому хранилищу.
+
+```sql
+CREATE EXTERNAL DATA SOURCE mysample
+WITH (    LOCATION   = 'https://*******.blob.core.windows.net/samples',
+          CREDENTIAL = <name of database scoped credential> 
+)
+```
+
+## <a name="examples"></a>Примеры
+
+**Обращение к общедоступному источнику данных**
+
+Используйте следующий скрипт, чтобы создать таблицу, которая обращается к общедоступному источнику данных.
+
+```sql
+CREATE EXTERNAL FILE FORMAT [SynapseParquetFormat] WITH ( FORMAT_TYPE = PARQUET)
+GO
+CREATE EXTERNAL DATA SOURCE publicData
+WITH (    LOCATION   = 'https://****.blob.core.windows.net/public-access' )
+GO
+
+CREATE EXTERNAL TABLE dbo.userPublicData ( [id] int, [first_name] varchar(8000), [last_name] varchar(8000) )
+WITH ( LOCATION = 'parquet/user-data/*.parquet', DATA_SOURCE = [publicData], FILE_FORMAT = [SynapseParquetFormat] )
+```
+
+Пользователь базы данных может считывать содержимое файлов из такого источника данных, используя внешнюю таблицу или функцию [OPENROWSET](develop-openrowset.md), которая ссылается на источник данных:
+
+```sql
+SELECT TOP 10 * FROM dbo.userPublicData;
+GO
+SELECT TOP 10 * FROM OPENROWSET(BULK 'parquet/user-data/*.parquet', DATA_SOURCE = [mysample], FORMAT=PARQUET) as rows;
+GO
+```
+
+**Доступ к источнику данных с учетными данными**
+
+Измените следующий скрипт, чтобы создать внешнюю таблицу, которая обращается к службе хранилища Azure с маркером SAS, удостоверением пользователя Azure AD или управляемым удостоверением рабочей области.
+
+```sql
+-- Create master key in databases with some password (one-off per database)
+CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'Y*********0'
+GO
+
+-- Create databases scoped credential that use User Identity, Managed Identity, or SAS. User needs to create only database-scoped credentials that should be used to access data source:
+
+CREATE DATABASE SCOPED CREDENTIAL MyIdentity WITH IDENTITY = 'User Identity'
+GO
+CREATE DATABASE SCOPED CREDENTIAL WorkspaceIdentity WITH IDENTITY = 'Managed Identity'
+GO
+CREATE DATABASE SCOPED CREDENTIAL SasCredential WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 'sv=2019-10-1********ZVsTOL0ltEGhf54N8KhDCRfLRI%3D'
+
+-- Create data source that one of the credentials above, external file format, and external tables that reference this data source and file format:
+
+CREATE EXTERNAL FILE FORMAT [SynapseParquetFormat] WITH ( FORMAT_TYPE = PARQUET)
+GO
+
+CREATE EXTERNAL DATA SOURCE mysample
+WITH (    LOCATION   = 'https://*******.blob.core.windows.net/samples'
+-- Uncomment one of these options depending on authentication method that you want to use to access data source:
+--,CREDENTIAL = MyIdentity 
+--,CREDENTIAL = WorkspaceIdentity 
+--,CREDENTIAL = SasCredential 
+)
+
+CREATE EXTERNAL TABLE dbo.userData ( [id] int, [first_name] varchar(8000), [last_name] varchar(8000) )
+WITH ( LOCATION = 'parquet/user-data/*.parquet', DATA_SOURCE = [mysample], FILE_FORMAT = [SynapseParquetFormat] )
 
 ```
-account.dfs.core.windows.net/filesystem/folder1/.../folderN/fileX
-account.dfs.core.windows.net/filesystem/folder1/.../folderN
-account.dfs.core.windows.net/filesystem/folder1
-account.dfs.core.windows.net/filesystem
-account.dfs.core.windows.net
+
+Пользователь базы данных может считывать содержимое файлов из такого источника данных, используя [внешнюю таблицу](develop-tables-external-tables.md) или функцию [OPENROWSET](develop-openrowset.md), которая ссылается на источник данных:
+
+```sql
+SELECT TOP 10 * FROM dbo.userdata;
+GO
+SELECT TOP 10 * FROM OPENROWSET(BULK 'parquet/user-data/*.parquet', DATA_SOURCE = [mysample], FORMAT=PARQUET) as rows;
+GO
 ```
-
-Если пользователь не имеет разрешения REFERENCES на учетные данные с номером 5, SQL по запросу проверит, имеет ли пользователь разрешение REFERENCES на учетные данные на один уровень выше, и так далее, пока не обнаружит учетные данные, на которые пользователь имеет такое разрешение. Если разрешение не найдено, возвращается сообщение об ошибке.
-
-### <a name="credential-and-path-level"></a>Учетные данные и уровень пути
-
-В зависимости от нужной формы пути к выполнению запросов предъявляются следующие требования.
-
-- Если запрос затрагивает несколько файлов или папок (независимо от наличия подстановочных знаков), пользователь должен иметь доступ к учетным данным по крайней мере на уровне корневого каталога (контейнера). Это связано с тем, что файлы перечисляются относительно корневого каталога (ограничения службы хранилища Azure).
-- Если запрос выполняется для одного файла, пользователь должен иметь доступ к учетным данным на любом уровне, так как SQL по запросу обращается к файлу напрямую, то есть без перечисления папок.
-
-|                  | *Учетная запись* | *Корневой каталог* | *Любой другой каталог* | *Файл*        |
-| ---------------- | --------- | ---------------- | --------------------- | ------------- |
-| *Один файл*    | Поддерживается | Поддерживается        | Поддерживается             | Поддерживается     |
-| *Несколько файлов* | Поддерживается | Поддерживается        | Не поддерживается         | Не поддерживается |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
