@@ -138,6 +138,8 @@
           href: howto-password-ban-bad-on-premises-agent-versions.md
     - name: Использование проверки подлинности с помощью SMS (предварительная версия)
       href: howto-authentication-sms-signin.md
+    - name: Вход с использованием адреса электронной почты (предварительная версия)
+      href: howto-authentication-use-email-signin.md
     - name: Смарт-блокировка Azure AD
       href: howto-password-smart-lockout.md
     - name: Аутентификация на основе сертификата
@@ -223,8 +225,8 @@
   items:
     - name: Форум отзывов и предложений по Azure
       href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-active-directory.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/active-directory/'
     - name: Обновления службы

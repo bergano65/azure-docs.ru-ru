@@ -8,12 +8,12 @@ ms.topic: overview
 author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
-ms.openlocfilehash: b8dbbb2810277bef20cb3b9b47a63deeea3e0ff9
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: b97bae252b25c9ae2891506f08fc4955f84c1eb6
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79290472"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83593024"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -23,7 +23,7 @@ ms.locfileid: "79290472"
 
 Начните обучение на локальном компьютере, а затем перенесите его в облако. 
 
-Служба также взаимодействует с популярными средствами с открытым кодом, такими как PyTorch, TensorFlow и scikit-learn.
+Служба также взаимодействует с популярными средствами для глубокого обучения с подкреплением с открытым кодом, такими как PyTorch, TensorFlow, scikit-learn и Ray RLlib. 
 
 > [!VIDEO https://channel9.msdn.com/Events/Connect/Microsoft-Connect--2018/D240/player]
 
@@ -51,6 +51,8 @@ ms.locfileid: "79290472"
 + [Интерфейс командной строки для машинного обучения](reference-azure-machine-learning-cli.md)
 
 + Платформы с открытым кодом, например Python, PyTorch, TensorFlow, scikit-learn и многие другие.
+
++ [Обучение с подкреплением](how-to-use-reinforcement-learning.md) с помощью Ray RLlib
 
 Вы можете даже использовать [MLflow для мониторинга метрик и развертывания моделей](how-to-use-mlflow.md) или Kubeflow для [создания конвейеров сквозных рабочих процессов](https://www.kubeflow.org/docs/azure/).
 

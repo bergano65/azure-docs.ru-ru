@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: diberry
-ms.openlocfilehash: 21669a214ff1646a8f331cbe2871b7d8c756f22f
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 0c52771573c1df6a7a0efefbf950e88e1f1728f7
+ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83591766"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83800631"
 ---
 # <a name="whats-new-in-personalizer"></a>Новые возможности в персонализации
 
@@ -31,7 +31,7 @@ ms.locfileid: "83591766"
 
 ### <a name="march-2020"></a>Март 2020 г.
 
-* TLS 1,2 теперь применяется для всех HTTP-запросов к этой службе. Дополнительные сведения см. в статье [Безопасность Azure Cognitive Services](../cognitive-services-security.md).
+* TLS 1.2 теперь применяется для всех HTTP-запросов к этой службе. Дополнительные сведения см. в статье [Безопасность в Azure Cognitive Services](../cognitive-services-security.md).
 
 ### <a name="november-2019---ignite-conference"></a>Ноябрь 2019-Ignite Конференция
 
@@ -44,11 +44,11 @@ ms.locfileid: "83591766"
 
 * [Цикл обучения по рангам и наградам](what-is-personalizer.md)
 
-## <a name="videos"></a>Видеоролики
+## <a name="videos"></a>Видео
 
-### <a name="2019-build-videos"></a>видео о сборке 2019
+### <a name="2019-build-videos"></a>Видео с Build 2019
 
-* [Предоставление правильных возможностей & содержимого, таких как Xbox, с помощью персонализации Cognitive Services](https://mybuild.techcommunity.microsoft.com/sessions/76970?source=sessions#top-anchor)
+* [Предоставление правильных возможностей & содержимого, таких как Xbox, с помощью персонализации Cognitive Services](https://azure.microsoft.com/resources/videos/build-2019-deliver-the-right-experiences-and-content-with-cognitive-services-personalizer/)
 
 ## <a name="service-updates"></a>Обновления службы
 

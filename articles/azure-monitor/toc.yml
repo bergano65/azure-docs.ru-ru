@@ -98,6 +98,10 @@
           href: platform/data-security.md
         - name: 'Ключи, управляемые клиентом'
           href: platform/customer-managed-keys.md
+        - name: Сетевое взаимодействие с Приватным каналом
+          href: platform/private-link-security.md
+        - name: Частное хранилище
+          href: platform/private-storage.md
         - name: Обработка персональных данных
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
@@ -238,7 +242,7 @@
               href: app/cloudservices.md
             - name: Функции Azure
               displayname: 'functions, monitor functions, automation'
-              href: ../azure-functions/functions-monitoring.md
+              href: app/monitor-functions.md
             - name: Служба Azure Kubernetes
               href: app/kubernetes-codeless.md
             - name: Автономные (любая среда)

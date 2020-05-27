@@ -159,6 +159,8 @@
               href: manage-self-service-access.md
             - name: Обнаружение домашней области
               href: configure-authentication-for-federated-users-portal.md
+        - name: Автоматизация единого входа на основе SAML с помощью API MS Graph
+          href: application-saml-sso-configure-api.md
         - name: "Перенос приложений в Azure\_AD"
           items:
             - name: Ресурсы по миграции

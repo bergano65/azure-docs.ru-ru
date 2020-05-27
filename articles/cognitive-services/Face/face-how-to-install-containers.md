@@ -11,12 +11,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: bd1449501cdc9483621a5408a3a4926afe90212f
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 611ab503dfea44e8287e95cf607ce6af3b447d1f
+ms.sourcegitcommit: fc0431755effdc4da9a716f908298e34530b1238
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702148"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83815797"
 ---
 # <a name="install-and-run-face-containers-preview"></a>Установка и запуск контейнеров лиц (Предварительная версия)
 
@@ -28,7 +28,7 @@ ms.locfileid: "83702148"
 
 Прежде чем использовать контейнеры службы лиц, необходимо выполнить следующие предварительные требования.
 
-|Обязательный|Назначение|
+|Обязательно|Назначение|
 |--|--|
 |Модуль Docker| Подсистема DOCKER должна быть установлена на [главном компьютере](#the-host-computer). Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> В Windows DOCKER также должен быть настроен для поддержки контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Вам потребуется базовое понимание концепций DOCKER, таких как реестры, репозитории, контейнеры и образы контейнеров. Также необходимо знание основных `docker` команд.| 
@@ -38,7 +38,7 @@ ms.locfileid: "83702148"
 
 ## <a name="request-access-to-the-private-container-registry"></a>Запрос доступа к частному реестру контейнеров
 
-Заполните [форму запроса](https://aka.ms/VisionContainersPreview) и отправьте ее, чтобы запросить доступ к контейнеру. 
+Заполните [форму запроса](https://aka.ms/cognitivegate) и отправьте ее, чтобы запросить доступ к контейнеру. 
 
 [!INCLUDE [Request access to private container registry](../../../includes/cognitive-services-containers-request-access.md)]
 

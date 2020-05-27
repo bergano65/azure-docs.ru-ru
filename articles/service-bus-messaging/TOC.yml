@@ -196,6 +196,8 @@
           href: service-bus-diagnostic-logs.md
         - name: Приостановка и повторная активация сущностей обмена сообщениями
           href: entity-suspend.md
+        - name: Использование Service Bus Explorer для выполнения операций с данными в Служебной шине
+          href: explorer.md
         - name: Использование шаблонов ARM
           href: service-bus-resource-manager-overview.md
           items:

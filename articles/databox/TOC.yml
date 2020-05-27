@@ -56,6 +56,8 @@
               href: data-box-portal-admin.md
             - name: Управление с помощью локального пользовательского веб-интерфейса
               href: data-box-local-web-ui-admin.md
+            - name: Использование самоуправляемой доставки
+              href: data-box-portal-customer-managed-shipping.md
             - name: Включение управляемого клиентом ключа
               href: data-box-customer-managed-encryption-key-portal.md
             - name: Перемещение данных на уровень больших двоичных объектов
@@ -117,6 +119,8 @@
           items:
             - name: Управление через портал Azure
               href: data-box-portal-ui-admin.md
+            - name: Использование самоуправляемой доставки
+              href: data-box-disk-portal-customer-managed-shipping.md
             - name: Диагностика
               items:
                 - name: Проблемы при разблокировке

@@ -13,12 +13,12 @@ metadata:
   ms.topic: hub-page
   ms.date: 03/24/2020
   ms.author: trbye
-  ms.openlocfilehash: 50252d0a308c4232b84bffddd905d8a84e1be0d8
-  ms.sourcegitcommit: a3c6efa4d4a48e9b07ecc3f52a552078d39e5732
+  ms.openlocfilehash: 87190c5cab772e4b8dc04672066e575b10c14533
+  ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/20/2020
-  ms.locfileid: "83707978"
+  ms.lasthandoff: 05/22/2020
+  ms.locfileid: "83800783"
 highlightedContent:
   items:
   - title: Что собой представляет служба "Речь"
@@ -130,13 +130,13 @@ conceptualContent:
   - title: Инструменты
     links:
     - itemType: overview
-      text: Сведения об SPX. Использование службы "Речь" без написания кода
+      text: Об интерфейсе командной строки службы "Речь" (командная строка без использования кода)
       url: spx-overview.md
     - itemType: how-to-guide
-      text: Основные сведения об SPX
+      text: Основные сведения об интерфейсе командной строки службы "Речь" (установка и примеры)
       url: spx-basics.md
     - itemType: overview
-      text: Сведения о Speech Studio. Настройка службы "Речь" без написания кода
+      text: О Студии службы "Речь" (настройки)
       url: https://speech.microsoft.com
   - title: Hosting
     links:

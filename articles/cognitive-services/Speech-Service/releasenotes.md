@@ -11,17 +11,17 @@ ms.topic: conceptual
 ms.date: 02/25/2020
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: c7caa6c2b329d7d24d6c9a3008d884b396fc99ce
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: ecd1c650456bf506f22366ca1d59a3634751b9e0
+ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83584915"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83800230"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 ## <a name="speech-sdk-1120-2020-may-release"></a>Пакет SDK для распознавания речи 1.12.0:2020 — выпуск может быть выпущен
 
-**Командная консоль службы распознавания речи Azure SPX**
+**Интерфейс командной строки Azure для распознавания речи**
 - **SPX** — это новое средство командной строки, которое позволяет выполнять распознавание, синтез, перевод, отправку пакетов и пользовательские средства управления распознаванием речи из командной строки. Используйте его для тестирования службы распознавания речи Azure или создания скрипта для задач службы распознавания речи, которые необходимо выполнить. Загрузите средство и прочитайте документацию [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/spx-overview).
 
 **Новые возможности**

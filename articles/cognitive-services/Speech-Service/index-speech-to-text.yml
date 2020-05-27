@@ -11,12 +11,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/19/2020
   ms.author: trbye
-  ms.openlocfilehash: be34def3c7aacc5419071028a3d3085fe69103fa
-  ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+  ms.openlocfilehash: c1f4b6b43f661251f764e65e5d5378952ab99d10
+  ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
   ms.translationtype: MT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/19/2020
-  ms.locfileid: "83653474"
+  ms.lasthandoff: 05/22/2020
+  ms.locfileid: "83800861"
 landingContent:
 - title: О распознавании речи в текст
   linkLists:
@@ -28,7 +28,7 @@ landingContent:
       url: batch-transcription.md
     - text: Основы распознавания речи
       url: speech-to-text-basics.md
-    - text: Использование SPX для преобразования речи в текст без кода
+    - text: Использование речевого интерфейса командной строки для преобразования речи в текст без кода
       url: spx-overview.md
   - linkListType: quickstart
     links:
@@ -38,7 +38,7 @@ landingContent:
       url: quickstarts/speech-to-text-from-file.md
     - text: Распознавание речи из файлов, находящихся в хранилище BLOB-объектов
       url: quickstarts/from-blob.md
-    - text: Оценка произношения с вводом ссылок
+    - text: Оценка произношения с использованием эталонных входных данных
       url: rest-speech-to-text.md#pronunciation-assessment-parameters
 - title: Разработка с помощью преобразования речи в текст
   linkLists:
@@ -68,7 +68,7 @@ landingContent:
   linkLists:
   - linkListType: reference
     links:
-    - text: Языковая поддержка
+    - text: Поддержка языков
       url: language-support.md#speech-to-text
     - text: Вопросы и ответы. Преобразование речи в текст
       url: faq-stt.md

@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: a3860b2cedbdf8154658449349439f918775cb25
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 761cf5831bb2332ae8c3f7a9a8edee707e6810ee
+ms.sourcegitcommit: fc0431755effdc4da9a716f908298e34530b1238
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83701863"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83816341"
 ---
 # <a name="install-and-run-form-recognizer-containers-preview"></a>Установка и запуск контейнеров распознавателей форм (Предварительная версия)
 
@@ -25,7 +25,7 @@ ms.locfileid: "83701863"
 > [!IMPORTANT]
 > Контейнеры распознавателя форм в настоящее время используют API распознавателя форм версии 1,0. Вы можете получить доступ к последней версии API, используя управляемую службу.
 
-| Функция | Компоненты |
+| Компонент | Компоненты |
 |----------|----------|
 | Распознаватель документов | <li>Обрабатывает файлы PDF, PNG и JPG<li>Обучение пользовательских моделей как минимум из пяти форм одинакового макета <li>Извлекает пары "ключ — значение" и сведения о таблице <li>Использует функцию "Распознавания текста" API Компьютерного зрения Cognitive Service для обнаружения и извлечения печатного текста из изображений в формах<li>Не требует добавления заметок или меток |
 
@@ -35,7 +35,7 @@ ms.locfileid: "83701863"
 
 Прежде чем использовать контейнеры Распознавателя документов, необходимо выполнить следующие условия:
 
-| Обязательный | Назначение |
+| Обязательно | Назначение |
 |----------|---------|
 | Модуль Docker | На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> В ОС Windows для Docker нужно также настроить поддержку контейнеров Linux.<br><br> |
 | Опыт работы с Docker | Требуется базовое представление о понятиях Docker, таких как реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`. |
@@ -67,7 +67,7 @@ ms.locfileid: "83701863"
 
 ## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
 
-Заполните [форму запроса](https://aka.ms/FormRecognizerContainerRequestAccess) и отправьте ее, чтобы запросить доступ к контейнеру.
+Заполните [форму запроса](https://aka.ms/cognitivegate) и отправьте ее, чтобы запросить доступ к контейнеру.
 
 [!INCLUDE [Request access to the container registry](../../../includes/cognitive-services-containers-request-access-only.md)]
 
