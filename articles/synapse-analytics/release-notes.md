@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: 059e77c063d00ef850a171507ca2e06422ade426
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 514694dc2e3f06db2fb80f6b3ba0106343be11d8
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82191776"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83658506"
 ---
 # <a name="azure-synapse-analytics-preview-release-notes"></a>Заметки о выпуске Azure Synapse Analytics (предварительная версия)
 
@@ -38,6 +38,6 @@ ms.locfileid: "82191776"
 
 * [Создание рабочей области](quickstart-create-workspace.md)
 * [Использование Synapse Studio](quickstart-synapse-studio.md)
-* [Создание пула SQL](quickstart-create-sql-pool.md)
+* [Создание пула SQL](quickstart-create-sql-pool-portal.md)
 * [Использование службы SQL по запросу](quickstart-sql-on-demand.md)
-* [Создание пула Apache Spark](quickstart-create-apache-spark-pool.md)
+* [Создание пула Apache Spark](quickstart-create-apache-spark-pool-portal.md)

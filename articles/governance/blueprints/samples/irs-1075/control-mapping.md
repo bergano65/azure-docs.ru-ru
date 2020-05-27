@@ -1,14 +1,14 @@
 ---
 title: Пример элементов управления для схемы IRS 1075
 description: Сопоставление элементов управления на примере схемы IRS 1075. Каждый элемент управления сопоставляется с одной или несколькими политиками Azure, которые помогают выполнять оценку.
-ms.date: 11/20/2019
+ms.date: 05/13/2020
 ms.topic: sample
-ms.openlocfilehash: 86570012000e660b53b2c3c7291b9ca98576a004
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 0cd69a35cb4ad30a565a2392f7109c74d75de4d7
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74546828"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83659813"
 ---
 # <a name="control-mapping-of-the-irs-1075-blueprint-sample"></a>Сопоставление элементов управления с помощью примера схемы IRS 1075
 

@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 02/10/2020
 ms.author: erhopf
-ms.openlocfilehash: 72e9334b4df58b1b90288cb7363a7d94bb531661
-ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
+ms.openlocfilehash: e3ee175e521fe37c99fcb3650ce7480f3f503a08
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80659186"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83673277"
 ---
 Чтобы создать проект Visual Studio для разработки рабочего стола C++ необходимо настроить параметры разработки Visual Studio, создать проект, выбрать целевую архитектуру и установить пакет SDK службы "Речь".
 
@@ -77,4 +77,4 @@ ms.locfileid: "80659186"
 
 1. В диалоговом окне **Просмотр изменений** нажмите **ОК**.
 
-1. В диалоговом окне **Принятие условий лицензионного соглашения** просмотрите лицензию, а затем выберите **Я принимаю**. Начнется установка пакета, и после завершения установки в области **Output** (вывод) отобразится сообщение следующего вида: `Successfully installed 'Microsoft.CognitiveServices.Speech 1.11.0' to helloworld`.
+1. В диалоговом окне **Принятие условий лицензионного соглашения** просмотрите лицензию, а затем выберите **Я принимаю**. Начнется установка пакета, и после завершения установки в области **Output** (вывод) отобразится сообщение следующего вида: `Successfully installed 'Microsoft.CognitiveServices.Speech 1.12.0' to helloworld`.
