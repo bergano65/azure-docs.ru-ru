@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 6bcdfc3eb09b6c5ed4f8dde4d48a34bee8746e1e
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 7971681c3f0c99a11567e6a30e61167c5d42348c
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83593448"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83680514"
 ---
 # <a name="tutorial-sync-data-from-sql-edge-to-azure-sql-database-by-using-sql-data-sync"></a>Руководство по синхронизации данных из SQL Azure для пограничных вычислений с Базой данных SQL Azure с помощью Синхронизации данных SQL
 
@@ -32,7 +32,7 @@ ms.locfileid: "83593448"
 
 * Создайте таблицы и другие необходимые объекты в экземпляре Базы данных SQL Azure.
 
-* Создайте необходимые таблицы и объекты в развертывании SQL Azure для пограничных вычислений. Дополнительные сведения см. в статье [Использование пакетов DAC Базы данных SQL с SQL Azure для пограничных вычислений](stream-analytics.md).
+* Создайте необходимые таблицы и объекты в развертывании SQL Azure для пограничных вычислений. Дополнительные сведения см. в статье [Использование пакетов DAC Базы данных SQL с SQL Azure для пограничных вычислений](deploy-dacpac.md).
 
 * Зарегистрируйте экземпляр SQL Azure для пограничных вычислений с помощью Data Sync Agent для Синхронизации данных SQL Azure. Дополнительные сведения см. в статье [Добавление локальной базы данных SQL Server](../sql-database/sql-database-get-started-sql-data-sync.md#add-on-prem).
 
