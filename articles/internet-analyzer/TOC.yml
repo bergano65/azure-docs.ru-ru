@@ -30,8 +30,8 @@
       href: 'https://azure.microsoft.com/roadmap/?category=networking'
     - name: Блог
       href: 'https://azure.microsoft.com/blog/topics/networking'
-    - name: Форум
-      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=WAVirtualMachinesVirtualNetwork'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-virtual-network.html'
     - name: Соглашение об уровне обслуживания для предварительной версии
       href: 'https://azure.microsoft.com/support/legal/preview-supplemental-terms'
     - name: Соглашение об уровне обслуживания

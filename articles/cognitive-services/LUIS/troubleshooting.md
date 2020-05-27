@@ -4,18 +4,18 @@ description: В этой статье приведены ответы на ча�
 ms.topic: conceptual
 ms.date: 05/06/2020
 ms.author: diberry
-ms.openlocfilehash: 3a30dd1c55d1ee4314e5a9a2f14ffe832994c467
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 79cee94a0f04cb89aa65f65cde63e48b6f078d2c
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83592854"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83835008"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
 В этой статье приведены ответы на часто задаваемые вопросы о службе "Распознавание речи" (LUIS).
 
-## <a name="whats-new"></a>Новое
+## <a name="whats-new"></a>Новые возможности
 
 [Узнайте больше](whats-new.md) о новых возможностях Language UNDERSTANDING (Luis).
 
@@ -317,9 +317,9 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 ## <a name="build-2019-conference-announcements"></a>Объявления о конференции для сборки 2019
 
-Следующие функции были выпущены на Конференции Build 2019:
+На конференции Build 2019 г были представлены следующие возможности:
 
-* [Предварительная версия инструкции по миграции API V3](luis-migration-api-v3.md)
+* [Предварительная версия инструкции по миграции API версии 3](luis-migration-api-v3.md)
 * [Улучшенная панель мониторинга аналитики](luis-how-to-use-dashboard.md)
 * [Улучшенные предварительно созданные домены](luis-reference-prebuilt-domains.md)
 * [Сущности динамического списка](schema-change-prediction-runtime.md#dynamic-lists-passed-in-at-prediction-time)
@@ -327,10 +327,10 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 Видеоролики:
 
-* [Как использовать службу искусственного интеллекта Azure для масштабирования вашего бизнеса для следующего поколения](https://www.youtube.com/watch?v=_k97jd-csuk&feature=youtu.be)
+* [Как использовать службу Azure Conversational AI для масштабирования вашего бизнеса для следующего поколения](https://www.youtube.com/watch?v=_k97jd-csuk&feature=youtu.be)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительную информацию о LUIS см. в следующих ресурсах:
 * [Вопросы Stack Overflow, помеченные LUIS](https://stackoverflow.com/questions/tagged/luis)
-* [Форум MSDN, посвященный Интеллектуальной службе распознавания речи (LUIS)](https://social.msdn.microsoft.com/forums/azure/home?forum=LUIS)
+* [Страница вопросов и ответов по Microsoft Q&для MSDN Language Understanding Intelligent Services (LUIS)](https://docs.microsoft.com/answers/topics/azure-language-understanding.html)

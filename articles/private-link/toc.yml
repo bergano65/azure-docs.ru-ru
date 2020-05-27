@@ -74,8 +74,8 @@
       href: 'https://azure.microsoft.com/roadmap/?category=networking'
     - name: Блог о сетях
       href: 'https://azure.microsoft.com/blog/topics/networking'
-    - name: Форум по сетям
-      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=WAVirtualMachinesVirtualNetwork'
+    - name: Страница с вопросами о службе "Сеть" (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-virtual-network.html'
     - name: Отзыв о работе сети
       href: 'https://feedback.azure.com/forums/217313-networking?category_id=77469'
     - name: Цены

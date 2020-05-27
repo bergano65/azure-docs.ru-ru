@@ -393,8 +393,8 @@
   items:
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=databases'
-    - name: Форум
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureSQLDataWarehouse'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/sql-data-warehouse/'
     - name: Калькулятор цен

@@ -121,8 +121,8 @@
       href: analysis-services-samples.md
     - name: Блог команды разработчиков Analysis Services
       href: 'https://blogs.msdn.microsoft.com/analysisservices/'
-    - name: Форум по Azure Analysis Services
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureAnalysisServices'
+    - name: Страница с вопросами об Azure Analysis Services (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-analysis-services.html'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=intelligence-analytics'
     - name: Состояние Azure

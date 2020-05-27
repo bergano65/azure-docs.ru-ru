@@ -201,8 +201,8 @@
       href: data-factory-customer-case-studies.md
     - name: Схема обучения
       href: 'https://azure.microsoft.com/documentation/learning-paths/data-factory'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/home?forum=AzureDataFactory'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-data-factory.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/data-factory/'
     - name: Калькулятор цен

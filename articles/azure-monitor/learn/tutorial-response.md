@@ -7,12 +7,12 @@ author: bwren
 ms.author: bwren
 ms.date: 10/05/2018
 ms.custom: mvc
-ms.openlocfilehash: 756ce6c8551d259fc27855489b4276d90c7aa771
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8af1acb67961de105e5bf5900d7b10c437cb30d8
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77670378"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83835875"
 ---
 # <a name="respond-to-events-with-azure-monitor-alerts"></a>Реагирование на события с помощью оповещений Azure Monitor
 Оповещения Azure Monitor позволяют обнаружить важную информацию о репозитории Log Analytics. Они создаются правилами генерации оповещений, которые автоматически через регулярные интервалы выполняют поиск по журналам и, если результаты поиска по журналу соответствуют конкретным условиям, создают запись оповещения (для которой можно настроить автоматическое ответное действие).  Эта статья является продолжением руководства по [созданию и совместному использованию панелей мониторинга данных Log Analytics](tutorial-logs-dashboards.md).   
@@ -23,7 +23,7 @@ ms.locfileid: "77670378"
 > * Создание правила оповещения
 > * Настройка группы действий для отправки уведомлений по электронной почте
 
-Для выполнения примера в этом руководстве требуется виртуальная машина [, подключенная к рабочей области Log Analytics](../../azure-monitor/learn/quick-collect-azurevm.md).  
+Для выполнения примера в этом руководстве требуется виртуальная машина [, подключенная к рабочей области Log Analytics](quick-collect-azurevm.md).  
 
 ## <a name="sign-in-to-azure-portal"></a>Вход на портал Azure
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com). 
@@ -69,4 +69,4 @@ ms.locfileid: "77670378"
 Чтобы увидеть готовые примеры сценариев Log Analytics, перейдите по ссылке ниже.  
 
 > [!div class="nextstepaction"]
-> [Примеры сценариев Log Analytics](../../azure-monitor/platform/powershell-samples.md)
+> [Примеры сценариев Log Analytics](../samples/powershell-samples.md)

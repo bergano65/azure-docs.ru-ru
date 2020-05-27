@@ -10,18 +10,18 @@ ms.subservice: language-understanding
 ms.date: 05/05/2020
 ms.topic: include
 ms.author: diberry
-ms.openlocfilehash: a09f995f4d022c47b573281183d07b7973215494
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: ef7208596ead8f7d3903bb614ccb980df782e581
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83778258"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83837901"
 ---
 ## <a name="sign-in-to-luis-portal"></a>Вход на портал LUIS
 
 Новому пользователю LUIS следует выполнить следующие действия:
 
-1. Войдите на [портал LUIS](https://www.luis.ai), выберите свою страну или регион и примите условия использования. Если же вы видите **Мои приложения**, это значит, что ресурс LUIS уже существует и вы можете сразу перейти к созданию приложения.
+1. Войдите на [портал LUIS](https://www.luis.ai), выберите свою страну или регион и примите условия использования. Если же вы видите **Мои приложения**, это значит, что ресурс LUIS уже существует и вы можете сразу перейти к созданию приложения. Сведения о поддерживаемых регионах см. в статье о [Регионы создания и публикации и связанные ключи](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions).
 
 1. Последовательно выберите **Create Azure resource** (Создать ресурс Azure) и **Create an authoring resource to migrate your apps to** (Создать ресурс для разработки, в который будут перенесены ваши приложения).
 

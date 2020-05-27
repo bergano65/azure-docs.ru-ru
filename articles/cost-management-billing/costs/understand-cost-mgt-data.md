@@ -7,12 +7,12 @@ ms.date: 03/02/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: micflan
-ms.openlocfilehash: 6e27f34572eef7d50c7b140c65cb78c6d0678fa8
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: 5fce5c8de3b2224ef471b0b3eec5ff29a869a9f6
+ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80477609"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83844528"
 ---
 # <a name="understand-cost-management-data"></a>Интерпретация данных службы "Управление затратами"
 
@@ -126,7 +126,6 @@ _<sup>**7**</sup> Сейчас покупки резервирований до�
     - Центры уведомлений
     - Служебная шина
     - Аналитика временных рядов
-    - VPN-шлюз
     
 Вот несколько советов по работе с тегами:
 

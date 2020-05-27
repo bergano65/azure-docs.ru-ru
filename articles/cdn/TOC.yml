@@ -67,8 +67,6 @@
           href: cdn-restrict-access-by-country.md
         - name: Увеличение производительность путем сжатия файлов
           href: cdn-improve-performance.md
-        - name: Несколько источников конечной точки
-          href: endpoint-multiorigin.md
         - name: Управление поведением кэширования
           items:
             - name: Управление поведением кэширования с помощью правил
@@ -185,8 +183,8 @@
       href: cdn-billing.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/home?forum=azurecdn'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-cdn.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cdn/'
     - name: Калькулятор цен

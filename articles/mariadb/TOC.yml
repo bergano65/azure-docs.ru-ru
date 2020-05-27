@@ -219,8 +219,8 @@
       href: 'https://azure.microsoft.com/roadmap/?category=databases'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/mariadb/'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/forums/en-US/home?forum=AzureDatabaseforMariaDB'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-database-mariadb.html'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-database-mariadb'
     - name: Запрашивание функции

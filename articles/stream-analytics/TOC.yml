@@ -617,8 +617,8 @@
       href: 'https://azure.microsoft.com/blog/tag/azure-stream-analytics/'
     - name: Форум отзывов и предложений
       href: 'https://feedback.azure.com/forums/270577-azure-stream-analytics'
-    - name: Форум
-      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-stream-analytics.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/stream-analytics/'
     - name: Калькулятор цен
