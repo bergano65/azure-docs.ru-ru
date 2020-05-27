@@ -2,14 +2,14 @@
 title: Краткое руководство. Клиентская библиотека для разработки Распознавания речи (LUIS)
 description: В этом кратком руководстве описано, как приступить к работе с клиентской библиотекой LUIS. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач.
 ms.topic: quickstart
-ms.date: 01/14/2020
+ms.date: 05/22/2020
 zone_pivot_groups: programming-languages-set-diberry-3core
-ms.openlocfilehash: 614d40bb3e5bc8b83a2307b89cd517fdf7913dbe
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: dab36a7688e510b4a23f285deedf7d670cd78d10
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77524450"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83871264"
 ---
 # <a name="quickstart-language-understanding-luis-authoring-client-library"></a>Краткое руководство. Клиентская библиотека для разработки Распознавания речи (LUIS)
 

@@ -2,13 +2,13 @@
 title: Краткое руководство. Создание, обучение и публикация базы знаний — QnA Maker
 description: Базу знаний QnA Maker можно создать из собственного содержимого, например часто задаваемых вопросов или руководств по продукции. В этой статье описано, как создать базу знаний QnA Maker на основе простой веб-страницы с часто задаваемыми вопросами, чтобы ответить на вопросы QnA Maker.
 ms.topic: conceptual
-ms.date: 02/08/2020
-ms.openlocfilehash: 5a3cd4a66ae3a7148b517050c3d1a8c6c8e7a712
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.date: 05/26/2020
+ms.openlocfilehash: a35cbdea2d40e4b0df0ce0f0b36f1b6bf60dd42e
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80756823"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83871464"
 ---
 # <a name="quickstart-create-train-and-publish-your-qna-maker-knowledge-base"></a>Краткое руководство. Создание, обучение и публикация базы знаний QnA Maker
 
@@ -34,8 +34,8 @@ ms.locfileid: "80756823"
 
 1. На **шаге 3** выберите Active Directory, подписку, службу (ресурс) и язык для всех баз знаний, созданных в службе.
 
-   ![Снимок экрана с выбранной базой данных и службой QnA Maker](../media/qnamaker-quickstart-kb/qnaservice-selection.png)
-
+    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/qnaservice-selection.png" alt-text="Снимок экрана с выбранной базой данных и службой QnA Maker":::
+    
 1. На **шаге 3** назовите свою базу знаний **Мой пример базы знаний QnA**.
 
 1. На **шаге 4** настройте параметры, используя значения из приведенной ниже таблицы.
@@ -64,7 +64,7 @@ ms.locfileid: "80756823"
 
     ` * Azure QnA Maker service\n* Azure Cognitive Search\n* Azure web app\n* Azure app plan`
 
-    ![ Добавьте вопрос в виде текста и ответа, отформатированного с помощью markdown.](../media/qnamaker-create-publish-knowledge-base/add-question-and-answer.png)
+    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/add-question-and-answer.png" alt-text="Добавьте вопрос в виде текста и ответа, отформатированного с помощью markdown.":::
 
     Символ markdown (`*`) используется для пунктов маркированного списка. Символ `\n` используется для новой строки.
 
@@ -81,7 +81,7 @@ ms.locfileid: "80756823"
 
     `How many Azure services are used by a knowledge base?`
 
-    ![ В текстовом поле введите пример пользовательского запроса. ](../media/qnamaker-create-publish-knowledge-base/test-panel-in-qna-maker.png)
+    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/test-panel-in-qna-maker.png" alt-text="В текстовом поле введите пример пользовательского запроса.":::
 
 1. Выберите **Inspect** (Проверить), чтобы более подробно изучить ответ. Окно тестирования используется для проверки изменений, внесенных в базу знаний, перед публикацией своей базы знаний.
 
@@ -131,7 +131,7 @@ ms.locfileid: "80756823"
 
     Чат-бот ответит, используя ответ из базы знаний.
 
-    ![Введите запрос пользователя в тестовый веб-чат.](../media/qnamaker-create-publish-knowledge-base/test-web-chat.png)
+    :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/test-web-chat.png" alt-text="Введите запрос пользователя в тестовый веб-чат.":::
 
 ## <a name="what-did-you-accomplish"></a>Что вы сделали
 
