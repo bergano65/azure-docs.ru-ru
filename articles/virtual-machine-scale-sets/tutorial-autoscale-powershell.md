@@ -9,12 +9,12 @@ ms.subservice: autoscale
 ms.date: 03/27/2018
 ms.reviewer: avverma
 ms.custom: avverma
-ms.openlocfilehash: 3c8488fa794e2bfa4de7833cb4cd4756b5394263
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: d2e10c2a02bf14f7a01ce03bc70f6e3f43b96385
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83201369"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83700829"
 ---
 # <a name="tutorial-automatically-scale-a-virtual-machine-scale-set-with-azure-powershell"></a>Руководство по Автоматическое масштабирование масштабируемых наборов виртуальных машин с помощью Azure PowerShell
 
@@ -255,8 +255,3 @@ Remove-AzureRmResourceGroup -Name "myResourceGroup" -Force -AsJob
 > * создание и использование правил автомасштабирования;
 > * нагрузочное тестирование экземпляров виртуальных машин и активация правил автомасштабирования;
 > * обратное автомасштабирование при уменьшении потребности в ресурсах.
-
-Дополнительные примеры использования масштабируемых наборов виртуальных машин см. в следующих примерах скриптов для Azure PowerShell.
-
-> [!div class="nextstepaction"]
-> [Scale set script samples for Azure PowerShell](powershell-samples.md) (Примеры Azure PowerShell для масштабируемых наборов виртуальных машин)

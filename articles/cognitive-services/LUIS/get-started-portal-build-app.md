@@ -2,13 +2,13 @@
 title: Краткое руководство. Создание приложения на портале LUIS
 description: В этом кратком руководстве описывается создание основных компонентов приложения, намерений и сущностей, а также тестирование с примером речевого фрагмента на портале LUIS.
 ms.topic: quickstart
-ms.date: 05/05/2020
-ms.openlocfilehash: b2ab2ec0fa5398ae8a69906aee25ef44ad5db3c9
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.date: 05/19/2020
+ms.openlocfilehash: 7cf55a7891b7e06c18c80d9d359b19e54f0413a9
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83585284"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83697281"
 ---
 # <a name="quickstart-create-a-new-app-in-the-luis-portal"></a>Краткое руководство. Создание приложения на портале LUIS
 
@@ -137,7 +137,7 @@ ms.locfileid: "83585284"
 
 1. Убедитесь, что сущность найдена в намерении **FindForm**, выбрав **Намерения** в меню слева. Затем выберите намерение **FindForm**.
 
-   Сущность помечается там, где она появляется в примерах речевых фрагментов. Если вы хотите просмотреть исходный текст, а не имя сущности, щелкните переключатель **Entities View** (Представление сущностей) на панели инструментов.
+   Сущность помечается там, где она появляется в примерах речевых фрагментов.
 
    > [!div class="mx-imgBorder"]
    > [![Снимок экрана, на котором показаны все примеры речевых фрагментов, отмеченные сущностями](./media/get-started-portal-build-app/all-example-utterances-marked-with-entities.png)](./media/get-started-portal-build-app/all-example-utterances-marked-with-entities.png#lightbox)

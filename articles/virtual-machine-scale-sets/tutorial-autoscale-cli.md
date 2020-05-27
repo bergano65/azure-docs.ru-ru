@@ -9,12 +9,12 @@ ms.subservice: autoscale
 ms.date: 05/18/2018
 ms.reviewer: avverma
 ms.custom: avverma
-ms.openlocfilehash: ba34976192d7e840f6077b13fd9aa165ed22b900
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 3f51c4e50c3c5499c73e18ce40e55de6aeb54472
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83195880"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83700889"
 ---
 # <a name="tutorial-automatically-scale-a-virtual-machine-scale-set-with-the-azure-cli"></a>Руководство. Автомасштабирование масштабируемого набора виртуальных машин с помощью Azure CLI
 
@@ -216,8 +216,3 @@ az group delete --name myResourceGroup --yes --no-wait
 > * создание и использование правил автомасштабирования;
 > * нагрузочное тестирование экземпляров виртуальных машин и активация правил автомасштабирования;
 > * обратное автомасштабирование при уменьшении потребности в ресурсах.
-
-Дополнительные примеры использования масштабируемых наборов виртуальных машин см. в следующих примерах сценариев для Azure CLI:
-
-> [!div class="nextstepaction"]
-> [Примеры сценариев Azure CLI для масштабируемых наборов](cli-samples.md)

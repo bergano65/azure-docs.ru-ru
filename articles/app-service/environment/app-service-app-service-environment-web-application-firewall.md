@@ -7,19 +7,19 @@ ms.topic: tutorial
 ms.date: 03/03/2018
 ms.author: stefsch
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 987228c5cf0f5231006726718684528a777e92fd
-ms.sourcegitcommit: 6397c1774a1358c79138976071989287f4a81a83
+ms.openlocfilehash: 33fd0b6a3a07fa4fbc5448a97ca93c75a3e239d5
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80804475"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83684218"
 ---
 # <a name="configuring-a-web-application-firewall-waf-for-app-service-environment"></a>Настройка брандмауэра веб-приложения (WAF) для среды службы приложений
 ## <a name="overview"></a>Обзор
 
 Брандмауэры веб-приложения (WAF) защищают веб-приложения, проверяя входящий трафик Интернета и блокируя атаки с использованием кода SQL и межсайтовых скриптов, передачи вредоносных программ, атаки DDoS на приложения и другие атаки. Они также проверяют ответы от внутренних веб-серверов, предотвращая потерю данных (DLP). В сочетании с изоляцией и дополнительным масштабированием, предоставляемым средами службы приложений, это обеспечивает идеальную среду для размещения важных коммерческих веб-приложений с большим трафиком, способных противостоять вредоносным запросам. Azure предоставляет возможности WAF со [шлюзом приложений](https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction).  См. документацию по [интеграции ILB ASE со шлюзом приложений](https://docs.microsoft.com/azure/app-service/environment/integrate-with-application-gateway).
 
-Помимо Шлюза приложений Azure, в [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/barracudanetworks/waf-byol/) доступны такие возможности, как [Barracuda WAF для Azure](https://www.barracuda.com/programs/azure). В остальной части этого документа описано, как интегрировать среду службы приложений с устройством Barracuda WAF.
+Помимо Шлюза приложений Azure, в [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/barracudanetworks.waf?tab=PlansAndPrice) доступны такие возможности, как [Barracuda WAF для Azure](https://www.barracuda.com/programs/azure). В остальной части этого документа описано, как интегрировать среду службы приложений с устройством Barracuda WAF.
 
 [!INCLUDE [app-service-web-to-api-and-mobile](../../../includes/app-service-web-to-api-and-mobile.md)] 
 

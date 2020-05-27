@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 03/20/2020
-ms.openlocfilehash: 6da2c324872a86c2c0ce6f55801bc7b0ee8d713e
-ms.sourcegitcommit: 515482c6348d5bef78bb5def9b71c01bb469ed80
+ms.openlocfilehash: 670cebe1c0f1c9002e33b729d0db9ee9f9a01283
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80611818"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83682533"
 ---
 # <a name="quickstart-deploy-cognitive-search-using-a-resource-manager-template"></a>Краткое руководство. Развертывание службы "Когнитивный поиск" с помощью шаблона Resource Manager
 
@@ -30,9 +30,9 @@ ms.locfileid: "80611818"
 
 ### <a name="review-the-template"></a>Изучение шаблона
 
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов Azure](https://docs.microsoft.com/azure/templates/Microsoft.Search/2015-08-19/searchservices).
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-azure-search-create/).
 
-:::code language="json"source="~/quickstart-templates/101-azure-search-create/azuredeploy.json" range="1-86" highlight="4-50":::
+:::code language="json"source="~/quickstart-templates/101-azure-search-create/azuredeploy.json" range="1-86" highlight="4-50,70-85":::
 
 Ресурс Azure, определенный в этом шаблоне:
 
@@ -42,7 +42,7 @@ ms.locfileid: "80611818"
 
 Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон создает ресурс службы "Когнитивный поиск Azure".
 
-[![Развертывание в Azure](./media/search-get-started-arm/arm-deploybuttona.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure%2Fazure-quickstart-templates%2Fmaster%2F101-azure-search-create%2Fazuredeploy.json)
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure%2Fazure-quickstart-templates%2Fmaster%2F101-azure-search-create%2Fazuredeploy.json)
 
 На портале отображается форма, позволяющая легко указывать значения параметров. Некоторые параметры предварительно заполняются стандартными значениями из шаблона. Вам потребуется указать подписку, группу ресурсов, расположение и имя службы. Если вы хотите использовать Cognitive Services в конвейере [обогащения с помощью ИИ](https://docs.microsoft.com/azure/search/cognitive-search-concept-intro), например для анализа двоичных файлов изображений для текста, выберите расположение, которое предлагает как Когнитивный поиск, так и Cognitive Services. Для рабочих нагрузок обогащения с помощью ИИ обе службы должны находиться в одном регионе. После заполнения формы необходимо принять условия, а затем нажать кнопку "Приобрести", чтобы завершить развертывание.
 

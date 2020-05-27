@@ -8,20 +8,20 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 05/08/2020
+ms.date: 05/19/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jesakowi
-ms.openlocfilehash: d050efe1224e2783cdad52a12c842f7abe44b7af
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 73a96f295d5dfa74130927e5096e9278a0e348e8
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83595073"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83682428"
 ---
 # <a name="publisher-verification-preview"></a>Проверка издателя (предварительная версия)
 
-Проверка издателя (предварительная версия) помогает администраторам и пользователям понять подлинность разработчиков приложений, интегрированных с платформой удостоверений Майкрософт. Другими словами, является ли издатель известным или злоумышленником, который выдает себя за известного издателя. Если приложение помечено как "проверенный издатель", это означает, что издатель подтвердил удостоверение с помощью учетной записи [Microsoft Partner Network](https://partner.microsoft.com/membership), для которой выполнен процесс [проверки](/partner-center/verification-responses) и привязка учетной записи MPN к регистрации приложения. 
+Проверка издателя (предварительная версия) помогает администраторам и пользователям понять подлинность разработчиков приложений, интегрированных с платформой удостоверений Майкрософт. Если приложение помечено как "проверенный издатель", это означает, что издатель подтвердил удостоверение с помощью учетной записи [Microsoft Partner Network](https://partner.microsoft.com/membership), для которой выполнен процесс [проверки](/partner-center/verification-responses) и привязка учетной записи MPN к регистрации приложения. 
 
 На запросе согласия Azure Active Directory и на других экранах появится синий значок "Проверено": ![Запрос согласия](./media/publisher-verification-overview/consent-prompt.png)
 

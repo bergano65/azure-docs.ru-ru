@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: e80194f53a406b8b378d0fb787df627937125a27
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 4f9b8f3edc475ec50eaf11080020aa9f62a0d2c1
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "75867487"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83700883"
 ---
 # <a name="quickstart-use-a-device-capability-model-to-create-an-iot-plug-and-play-preview-device-windows"></a>Краткое руководство. Создание устройства IoT Plug and Play (предварительная версия) в Windows с помощью модели возможностей устройства
 
@@ -87,7 +87,7 @@ az iot hub show-connection-string --hub-name <YourIoTHubName> --output table
 
 1. На локальном диске создайте папку `pnp_app`. Эта папка используется для файлов модели устройства и заглушки кода устройства.
 
-1. Скачайте [модель возможностей устройства, файлы примеров интерфейса](https://github.com/Azure/IoTPlugandPlay/blob/master/samples/SampleDevice.capabilitymodel.json) и [пример интерфейса](https://github.com/Azure/IoTPlugandPlay/blob/master/samples/EnvironmentalSensor.interface.json) в папку `pnp_app`.
+1. Скачайте [модель возможностей устройства, файлы примеров интерфейса](https://github.com/Azure/IoTPlugandPlay/blob/master/samples/SampleDevice.model.json) и [пример интерфейса](https://github.com/Azure/IoTPlugandPlay/blob/master/samples/EnvironmentalSensor.interface.json) в папку `pnp_app`.
 
     > [!TIP]
     > Чтобы скачать файл с сайта GitHub, перейдите к файлу, щелкните правой кнопкой мыши **Необработанный**, а затем выберите **Сохранить ссылку как**.
