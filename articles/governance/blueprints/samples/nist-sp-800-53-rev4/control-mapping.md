@@ -1,14 +1,14 @@
 ---
 title: Элементы управления примера схемы NIST SP 800-53 R4
 description: Сопоставление элементов управления на примере схемы NIST SP 800-53 R4. Каждый элемент управления сопоставляется с одной или несколькими политиками Azure, которые помогают выполнять оценку.
-ms.date: 11/18/2019
+ms.date: 05/14/2020
 ms.topic: sample
-ms.openlocfilehash: 104224ec96a5989a103f4d00310cf08b684b4d67
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: c1950feefae46643825cfe0af46fb7c3a2fe4b39
+ms.sourcegitcommit: fc0431755effdc4da9a716f908298e34530b1238
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74546623"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83815967"
 ---
 # <a name="control-mapping-of-the-nist-sp-800-53-r4-blueprint-sample"></a>Сопоставление элементов управления для образца схемы "NIST SP 800-53 R4"
 

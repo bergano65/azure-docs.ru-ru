@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 06/03/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge so I can use it to transfer data to Azure.
-ms.openlocfilehash: e453723692e0e6c08c1bd03301318688082201c2
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.openlocfilehash: e6b752eab3f6a8f40fad8b2f947a82f86a8ccfe5
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82564922"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83652060"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge"></a>Руководство по подготовке к развертыванию Azure Stack Edge  
 
@@ -25,12 +25,13 @@ ms.locfileid: "82564922"
 В этом руководстве описано следующее:
 
 > [!div class="checklist"]
+>
 > * Создать новый ресурс
 > * Получение ключа активации.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-### <a name="get-started"></a>Начало работы
+## <a name="get-started"></a>Начало работы
 
 Чтобы развернуть Azure Stack Edge, ознакомьтесь с руководствами, приведенными ниже, в заданной последовательности.
 
@@ -52,14 +53,15 @@ ms.locfileid: "82564922"
 
 Перед тем как начать, убедитесь в следующем.
 
-- Для ресурса Azure Stack Edge включена подписка Microsoft Azure. Подписки с оплатой по мере использования не поддерживаются.
-- У вас должен быть доступ с правами владельца или участника к Azure Stack Edge или Шлюзу Azure Data Box, Центру Интернета вещей и ресурсам службы хранилища Azure.
+* Подписка Microsoft Azure включена для ресурса Azure Stack Edge. Убедитесь, что используется поддерживаемая подписка, например, подписка с [Соглашением Microsoft Enterprise (EA)](https://azure.microsoft.com/overview/sales-number/), подписка в рамках программы [Поставщик облачных решений (CSP)](https://docs.microsoft.com/partner-center/azure-plan-lp) или подписка со [спонсорским предложением Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/). Подписки с оплатой по мере использования не поддерживаются.
 
-    - Для создания ресурсов Azure Stack Edge или Шлюза Azure Data Box необходимы разрешения с правами не ниже участника, действующие на уровне группы ресурсов. Необходимо также убедиться, что зарегистрирован поставщик `Microsoft.DataBoxEdge`. Сведения о том, как выполнить регистрацию, см. в разделе о [регистрации поставщика ресурсов](azure-stack-edge-manage-access-power-connectivity-mode.md#register-resource-providers).
-    - Для создания ресурсов Центра Интернета вещей нужно зарегистрировать поставщик Microsoft.Devices. Сведения о том, как выполнить регистрацию, см. в разделе о [регистрации поставщика ресурсов](azure-stack-edge-manage-access-power-connectivity-mode.md#register-resource-providers).
-    - Чтобы создать ресурс учетной записи хранения, также необходимы разрешения с правами, начиная с участника, действующие на уровне группы ресурсов. Хранилище Azure по умолчанию является зарегистрированным поставщиком ресурсов.
-- У вас есть доступ к API Graph Azure Active Directory в роли администратора или пользователя. Дополнительные сведения см. в статье [Области разрешений | Основные понятия API Graph](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
-- Имеется учетная запись хранения Microsoft Azure и данные для доступа к ней.
+* У вас должен быть доступ с правами владельца или участника к Azure Stack Edge или Шлюзу Azure Data Box, Центру Интернета вещей и ресурсам службы хранилища Azure.
+
+  * Для создания ресурсов Azure Stack Edge или Шлюза Azure Data Box необходимы разрешения с правами не ниже участника, действующие на уровне группы ресурсов. Необходимо также убедиться, что зарегистрирован поставщик `Microsoft.DataBoxEdge`. Сведения о том, как выполнить регистрацию, см. в разделе о [регистрации поставщика ресурсов](azure-stack-edge-manage-access-power-connectivity-mode.md#register-resource-providers).
+  * Для создания ресурсов Центра Интернета вещей нужно зарегистрировать поставщик Microsoft.Devices. Сведения о том, как выполнить регистрацию, см. в разделе о [регистрации поставщика ресурсов](azure-stack-edge-manage-access-power-connectivity-mode.md#register-resource-providers).
+  * Чтобы создать ресурс учетной записи хранения, также необходимы разрешения с правами, начиная с участника, действующие на уровне группы ресурсов. Хранилище Azure по умолчанию является зарегистрированным поставщиком ресурсов.
+* У вас есть доступ к API Graph Azure Active Directory в роли администратора или пользователя. Дополнительные сведения см. в статье [Области разрешений | Основные понятия API Graph](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
+* Имеется учетная запись хранения Microsoft Azure и данные для доступа к ней.
 
 ### <a name="for-the-azure-stack-edge-device"></a>Для устройства Azure Stack Edge
 
@@ -70,7 +72,6 @@ ms.locfileid: "82564922"
 - у вас есть доступ к плоской, стабильной и ровной рабочей поверхности, на которой можно безопасно разместить устройство;
 - место, где планируется установить устройство, имеет доступ к стандартному питанию переменного тока от независимого источника или к стоечному блоку распределения питания (БРП) с источником бесперебойного питания (ИБП);
 - у вас есть доступ к физическому устройству.
-
 
 ### <a name="for-the-datacenter-network"></a>Для сети центра обработки данных
 
@@ -90,7 +91,7 @@ ms.locfileid: "82564922"
 Чтобы создать ресурс Azure Stack Edge, выполните указанные ниже действия на портале Azure.
 
 1. Используйте учетные данные Microsoft Azure для входа: 
-    
+
     - на портал Azure по URL-адресу [https://portal.azure.com](https://portal.azure.com);
     - или на портал Azure для государственных организаций по URL-адресу [https://portal.azure.us](https://portal.azure.us). Дополнительные сведения см. в статье о [ подключении к Azure для государственных организаций с помощью портала](https://docs.microsoft.com/azure/azure-government/documentation-government-get-started-connect-with-portal).
 
@@ -155,14 +156,16 @@ ms.locfileid: "82564922"
     ![Получение ключа активации](media/azure-stack-edge-deploy-prep/get-activation-key.png)
 
 > [!IMPORTANT]
-> - Срок действия ключа активации истекает через три дня после создания.
-> - Если срок действия ключа истек, создайте другой ключ. Ключ с истекшим сроком действия является недействительным.
+>
+> * Срок действия ключа активации истекает через три дня после создания.
+> * Если срок действия ключа истек, создайте другой ключ. Ключ с истекшим сроком действия является недействительным.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве были освещены следующие темы относительно Azure Stack Edge.
 
 > [!div class="checklist"]
+>
 > * Создать новый ресурс
 > * Получение ключа активации.
 

@@ -12,12 +12,12 @@ ms.date: 05/08/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: aragra, lenalepa, sureshja
-ms.openlocfilehash: 94fed6f4aa62c7e649cf7d644e571b30561e0da4
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 2850ca3f23e61be54702878c0683af9fdb1fad91
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80050247"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83826865"
 ---
 # <a name="quickstart-modify-the-accounts-supported-by-an-application"></a>Краткое руководство. Изменение учетных записей, поддерживаемых приложением
 
@@ -69,6 +69,8 @@ ms.locfileid: "80050247"
 
 ### <a name="to-enable-oauth-20-implicit-grant"></a>Чтобы включить неявное предоставление авторизации OAuth 2.0, выполните следующие действия.
 
+1. В области навигации слева выберите службу **Azure Active Directory**, а затем выберите **Регистрация приложений**.
+1. Найдите и выберите приложение, которое нужно настроить. После выбора приложения появится страница **Обзор** приложения или главная страница регистрации.
 1. На странице **Обзор** выберите раздел **Проверка подлинности**.
 1. В разделе **Расширенные параметры** найдите раздел **Неявное разрешение**.
 1. Выберите **Токен идентификатора**, **Маркеры доступа** или и то, и другое.

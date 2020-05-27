@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 52258a8bc287df36158ec143e4aad74c34455ea4
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: e015999d8c1f60340fb30609c6563f770c5c824f
+ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80236074"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83726236"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-linux-device"></a>Краткое руководство. Развертывание модуля IoT Edge на виртуальном устройстве Linux
 
@@ -102,7 +102,7 @@ ms.locfileid: "80236074"
    az iot hub device-identity create --hub-name {hub_name} --device-id myEdgeDevice --edge-enabled
    ```
 
-   Если отобразится сообщение об ошибке при использовании ключей политики iothubowner, убедитесь, что в Cloud Shell установлена последняя версия расширения azure-cli-iot-ext.
+   Если отобразится сообщение об ошибке при использовании ключей политики iothubowner, убедитесь, что в Cloud Shell установлена последняя версия расширения azure-iot.
 
 2. Получите строку подключения для устройства, которая связывает физическое устройство с его идентификатором в Центре Интернета вещей.
 

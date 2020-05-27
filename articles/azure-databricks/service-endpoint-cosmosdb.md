@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: azure-databricks
 ms.topic: tutorial
 ms.date: 04/17/2019
-ms.openlocfilehash: 4ac8c01e986cf1f3158c615a0791ba476e5bf1bb
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: e18c2b0f03f9ac2155c441580d62d6085581de12
+ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74706164"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83779598"
 ---
 # <a name="tutorial-implement-azure-databricks-with-a-cosmos-db-endpoint"></a>Руководство по Внедрение Azure Databricks с помощью конечной точки Cosmos DB
 
@@ -107,8 +107,6 @@ ms.locfileid: "74706164"
 ## <a name="create-a-cluster-and-add-library"></a>Создание кластера и добавление библиотеки
 
 1. На [портале Azure](https://portal.azure.com) перейдите к службе Azure Databricks, а затем выберите **Launch Workspace** (Запустить рабочую область).
-
-   ![Запуск рабочей области Databricks](./media/service-endpoint-cosmosdb/launch-workspace.png)
 
 2. Создайте кластер. Выберите имя кластера и примите остальные значения по умолчанию.
 

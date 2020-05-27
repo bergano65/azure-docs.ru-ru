@@ -11,15 +11,15 @@
   items:
     - name: Просмотр разрешений на доступ пользователя
       href: check-access.md
+    - name: Шаблон ARM
+      displayName: Resource Manager
+      href: quickstart-role-assignments-template.md
 - name: Учебники
   items:
     - name: "Предоставление доступа пользователю\_— портал"
       href: quickstart-assign-role-user-portal.md
     - name: "Предоставление доступа пользователю\_— PowerShell"
       href: tutorial-role-assignments-user-powershell.md
-    - name: "Предоставление доступа пользователю \_— шаблон Resource Manager"
-      displayName: 'ARM, resource manager template'
-      href: tutorial-role-assignments-user-template.md
     - name: "Предоставление доступа группе\_— PowerShell"
       href: tutorial-role-assignments-group-powershell.md
     - name: "Создание настраиваемой роли\_— PowerShell"
@@ -67,7 +67,8 @@
           href: role-assignments-cli.md
         - name: REST API
           href: role-assignments-rest.md
-        - name: Шаблон
+        - name: Шаблон ARM
+          displayName: Resource Manager
           href: role-assignments-template.md
     - name: Отображение списка запрещенных назначений
       items:
@@ -113,8 +114,8 @@
       href: /cli/azure/role?view=azure-cli-latest
     - name: REST API
       href: /rest/api/authorization/
-    - name: Шаблоны Resource Manager
-      displayName: ARM
+    - name: Шаблоны ARM
+      displayName: Resource Manager
       items:
         - name: Назначения ролей
           href: /azure/templates/microsoft.authorization/roleassignments
