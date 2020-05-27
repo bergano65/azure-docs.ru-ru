@@ -9,12 +9,12 @@ ms.date: 03/28/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 96106882c1c43c322afbf6517209621557de9d25
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: c239c16103dc0c1f847c5d4354aed89a143a28c6
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83592072"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83745514"
 ---
 # <a name="tutorial-store-data-at-the-edge-with-sql-server-databases"></a>Руководство по Хранение данных в граничной системе с помощью баз данных SQL Server
 
@@ -41,7 +41,7 @@ ms.locfileid: "83592072"
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) ценовой категории "Бесплатный" или "Стандартный" в Azure.
 * Устройство AMD64 [с Linux, на котором выполняется Azure IoT Edge](quickstart-linux.md);
-  * Устройства ARM, такие как Raspberry Pis, не могут выполнять SQL Server. Если вы хотите использовать SQL на устройстве ARM, вы можете зарегистрироваться, чтобы использовать предварительную версию [SQL Azure для пограничных вычислений](https://azure.microsoft.com/services/azure-sql-edge/).
+  * Устройства ARM, такие как Raspberry Pis, не могут выполнять SQL Server. Если вы хотите использовать SQL на устройстве ARM, вы можете зарегистрироваться, чтобы использовать предварительную версию [SQL Azure для пограничных вычислений](https://azure.microsoft.com/services/sql-edge/).
 * реестр контейнеров, например [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/);
 * средство [Visual Studio Code](https://code.visualstudio.com/), настроенное с помощью [Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools);
 * выпуск [Docker CE](https://docs.docker.com/install/), настроенный для выполнения контейнеров Linux.
