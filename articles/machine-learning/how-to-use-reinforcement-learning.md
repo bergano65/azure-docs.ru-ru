@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: peterlu
 author: peterclu
 ms.date: 05/05/2020
-ms.openlocfilehash: b0a596ee4c576ff98be302b15a86a8758b11ce25
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 01e7e6c84be13db839338928f8086bcceb2ea169
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/19/2020
-ms.locfileid: "83596343"
+ms.locfileid: "83654421"
 ---
 # <a name="reinforcement-learning-preview-with-azure-machine-learning"></a>Обучение с подкреплением (предварительная версия) в Машинном обучении Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "83596343"
  - Собственный сервер Jupyter Notebook
 
     - Установите [пакет SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
-    - Установите [пакет SDK обучения с подкреплением для Машинного обучения Azure](https://review.docs.microsoft.com/python/api/azureml-contrib-reinforcementlearning/?view=azure-ml-py&branch=harnvirdebug): `pip install --upgrade azureml-contrib-reinforcementlearning`.
+    - Установите [пакет SDK обучения с подкреплением для Машинного обучения Azure](https://docs.microsoft.com/python/api/azureml-contrib-reinforcementlearning/?view=azure-ml-py): `pip install --upgrade azureml-contrib-reinforcementlearning`.
     - Создайте [файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
     - Запустите [записную книжку](https://aka.ms/azure-rl-env-setup) настройки виртуальной сети, чтобы открыть сетевые порты, используемые для распределенного обучения с подкреплением.
 
@@ -210,7 +210,7 @@ else:
 
 ## <a name="create-a-reinforcement-learning-estimator"></a>Создание оценщика обучения с подкреплением
 
-В этом разделе вы узнаете, как использовать [ReinforcementLearningEstimator](https://review.docs.microsoft.com/python/api/azureml-contrib-reinforcementlearning/azureml.contrib.train.rl.reinforcementlearningestimator?view=azure-ml-py&branch=harnvirdebug) для отправки задания обучения в Машинное обучение Azure.
+В этом разделе вы узнаете, как использовать [ReinforcementLearningEstimator](https://docs.microsoft.com/python/api/azureml-contrib-reinforcementlearning/azureml.contrib.train.rl.reinforcementlearningestimator?view=azure-ml-py) для отправки задания обучения в Машинное обучение Azure.
 
 Машинное обучение Azure использует классы оценщика для инкапсуляции сведений о конфигурации выполнения. Это позволяет легко указать, как настроить выполнение скрипта. Дополнительные сведения о шаблоне оценщика Машинного обучения Azure см. в статье [Обучение моделей с помощью оценщика](how-to-train-ml-models.md).
 

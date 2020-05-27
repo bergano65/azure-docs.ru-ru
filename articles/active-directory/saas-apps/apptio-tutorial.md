@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/29/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a421afc736399472a513dfc145321ba33ef6fdca
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d353aad9f0ecf871410dd94b0081381a0b1304c6
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "71129724"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83647326"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-apptio"></a>Руководство по интеграции единого входа Azure Active Directory с Apptio
 
@@ -129,11 +129,11 @@ ms.locfileid: "71129724"
 
 ## <a name="configure-apptio-sso"></a>Настройка единого входа Apptio
 
-Чтобы настроить единый вход на стороне **Apptio**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки Apptio](https://www.apptio.com/about/contact). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Apptio**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки Apptio](https://www.apptio.com/resources/customer-support/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-apptio-test-user"></a>Создание тестового пользователя Apptio
 
-В этом разделе вы узнаете, как создать пользователя B.Simon в приложении Apptio. Чтобы добавить пользователей на платформу Apptio, обратитесь к  [группе поддержки Apptio](https://www.apptio.com/about/contact). Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе вы узнаете, как создать пользователя B.Simon в приложении Apptio. Чтобы добавить пользователей на платформу Apptio, обратитесь к  [группе поддержки Apptio](https://www.apptio.com/resources/customer-support/). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 

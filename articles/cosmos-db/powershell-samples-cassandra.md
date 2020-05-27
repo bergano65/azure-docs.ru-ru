@@ -4,21 +4,21 @@ description: Получение примеров Azure PowerShell для вып�
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 12/02/2019
+ms.date: 05/13/2020
 ms.author: mjbrown
-ms.openlocfilehash: f09088fc001fd8c77a330938d261426528b214cd
-ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
+ms.openlocfilehash: 860d3c5e9fda8bc2a5eb5b07939875ed46b6e7e1
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80365746"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83649750"
 ---
 # <a name="azure-powershell-samples-for-azure-cosmos-db---cassandra-api"></a>Примеры Azure PowerShell для Azure Cosmos DB. API Cassandra
 
 В приведенной ниже таблице содержатся ссылки на примеры скриптов Azure PowerShell для Azure Cosmos DB для API Cassandra.
 
 > [!NOTE]
-> В примерах используются командлеты управления [Az.CosmosDB](https://docs.microsoft.com/powershell/module/az.cosmosdb). Обратите внимание, что командлеты `Az.CosmosDB` пока доступны в предварительной версии и могут быть изменены до выхода общедоступной версии. Регулярно проверяйте наличие обновлений для `Az.CosmosDB`.
+> В примерах используются командлеты управления [Az.CosmosDB](https://docs.microsoft.com/powershell/module/az.cosmosdb). Регулярно проверяйте наличие обновлений для `Az.CosmosDB`.
 
 | | |
 |---|---|

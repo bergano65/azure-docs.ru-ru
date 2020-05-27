@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: euang
 ms.reviewer: euang
-ms.openlocfilehash: b6af42f09351df60beb2aa449f8fcd2ff6a554e8
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 470cc8cc16c8bdb32bac32a7227690899abb9c51
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82116661"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83644675"
 ---
 # <a name="what-is-apache-spark-in-azure-synapse-analytics"></a>Что такое Apache Spark в Azure Synapse Analytics
 
@@ -35,7 +35,7 @@ Apache Spark предоставляет примитивы для кластер
 | Компонент | Описание |
 | --- | --- |
 | Скорость и эффективность |Запуск экземпляров Spark для менее чем 60 узлов занимает примерно две минуты, а для более 60 узлов — около пяти минут. По умолчанию экземпляр завершает работу через пять минут после последнего выполненного задания, если работа экземпляра не поддерживается через подключение к записной книжке. |
-| Простота создания |Создание пула Spark в Azure Synapse с помощью портала Azure, Azure PowerShell или пакета SDK для .NET в Synapse Analytics занимает всего несколько минут. См. статью [Краткое руководство. Создание пула Apache Spark (предварительной версии) в Synapse Analytics с помощью веб-средств](../quickstart-create-apache-spark-pool.md). |
+| Простота создания |Создание пула Spark в Azure Synapse с помощью портала Azure, Azure PowerShell или пакета SDK для .NET в Synapse Analytics занимает всего несколько минут. См. статью [Краткое руководство. Создание пула Apache Spark (предварительной версии) в Synapse Analytics с помощью веб-средств](../quickstart-create-apache-spark-pool-studio.md). |
 | Простота использования |Synapse Analytics включает в себя настраиваемую записную книжку, производную от [Nteract](https://nteract.io/). Их можно использовать для интерактивной обработки и визуализации данных.|
 | Интерфейсы REST API |Spark в Synapse Analytics включает в себя [Apache Livy](https://github.com/cloudera/hue/tree/master/apps/spark/java#welcome-to-livy-the-rest-spark-server), сервер заданий Spark на основе REST API, который позволяет удаленно отправлять и отслеживать задания. |
 | Поддержка Azure Data Lake Storage 2-го поколения| Пулы Spark в Azure Synapse могут использовать Azure Data Lake Storage 2-го поколения, а также хранилище BLOB-объектов. Дополнительные сведения о Data Lake Storage см. в [обзоре Azure Data Lake Storage](../../data-lake-store/data-lake-store-overview.md). |
@@ -78,7 +78,7 @@ Apache Spark предусматривает множество языковых 
 
 Дополнительные сведения об Apache Spark в Synapse Analytics см. в следующих документах:
 
-- [Краткое руководство. Создание пула Apache Spark (предварительной версии) в Synapse Analytics с помощью веб-средств](../quickstart-create-apache-spark-pool.md)
+- [Краткое руководство. Создание пула Apache Spark (предварительной версии) в Synapse Analytics с помощью веб-средств](../quickstart-create-apache-spark-pool-portal.md)
 - [Краткое руководство. Создание записной книжки Apache Spark](../quickstart-apache-spark-notebook.md)
 - [Руководство. Использование машинного обучения с Apache Spark](./apache-spark-machine-learning-mllib-notebook.md)
 - [Официальная документация по Apache Spark](https://spark.apache.org/docs/latest/)
@@ -90,4 +90,4 @@ Apache Spark предусматривает множество языковых 
 
 В этой обзорной статье вы получили основные сведения об Apache Spark в Azure Synapse Analytics. Перейдите к следующей статье, чтобы узнать, как создать пул Spark в Azure Synapse Analytics:
 
-- [Создание пула Apache Spark (предварительной версии) в Synapse Analytics с помощью веб-средств](../quickstart-create-apache-spark-pool.md)
+- [Создание пула Apache Spark (предварительной версии) в Synapse Analytics с помощью веб-средств](../quickstart-create-apache-spark-pool-portal.md)

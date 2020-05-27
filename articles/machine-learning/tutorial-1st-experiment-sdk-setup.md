@@ -10,12 +10,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 02/10/2020
-ms.openlocfilehash: 535cf95216cca210b5add5ca22cd6e5b1b997541
-ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
+ms.openlocfilehash: 3177de6816dd690514620098e79db844077fbaf6
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82779023"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83655447"
 ---
 # <a name="tutorial-get-started-creating-your-first-ml-experiment-with-the-python-sdk"></a>Руководство по Начало работы по созданию эксперимента Машинного обучения с помощью пакета SDK для Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -47,7 +47,9 @@ ms.locfileid: "82779023"
 
 В этом учебнике в качестве предварительно настроенного интерфейса, не требующего установки, используется облачный сервер записных книжек в рабочей области. Используйте [собственную среду](how-to-configure-environment.md#local), если вы предпочитаете контролировать среду, пакеты и зависимости.
 
- Выполните указанные ниже подробные инструкции, чтобы клонировать и запустить учебник из рабочей области. 
+ Просмотрите следующее видео или выполните указанные ниже подробные инструкции, чтобы клонировать и запустить пример записной книжки из рабочей области. 
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4mTUr]
 
 ### <a name="clone-a-notebook-folder"></a>Клонирование папки записной книжки
 

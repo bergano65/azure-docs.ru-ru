@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/20/2018
 ms.author: normesta
 ms.reviewer: fryu
-ms.openlocfilehash: 3a2381302a378e7b2635b84c32a87e844e4605a7
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8554a78112d197ef8174ac9d18147d301745165e
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68844878"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83652164"
 ---
 # <a name="monitor-and-troubleshoot-a-cloud-storage-application"></a>Мониторинг и устранение неполадок приложения облачного хранилища
 
@@ -87,7 +87,7 @@ curl https://<STORAGE_ACCOUNT_NAME>.blob.core.windows.net/<CONTAINER_NAME>/<INCO
 
 ### <a name="download-microsoft-message-analyzer"></a>Скачивание Microsoft Message Analyzer
 
-Скачайте [Microsoft Message Analyzer](https://www.microsoft.com/download/details.aspx?id=44226) и установите приложение.
+Скачайте [Microsoft Message Analyzer](https://docs.microsoft.com/message-analyzer/installing-and-upgrading-message-analyzer) и установите приложение.
 
 Запустите приложение и выберите **Файл** > **Открыть** > **From Other File Sources** (Из других источников файлов).
 

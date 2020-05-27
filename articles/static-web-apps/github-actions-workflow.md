@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: chnwamba
-ms.openlocfilehash: c7180be2afa541f743d7bd81627b93f34d9bb4eb
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 44472eb697a4d191d4ed99b7879654fcca61383b
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/19/2020
-ms.locfileid: "83595273"
+ms.locfileid: "83655208"
 ---
 # <a name="github-actions-workflows-for-azure-static-web-apps-preview"></a>Рабочие процессы GitHub Actions для предварительной версии Статических веб-приложений Azure
 
@@ -150,7 +150,7 @@ with:
 
 | Get-Help            | Описание |
 |---------------------|-------------|
-| `app_build_command` | Определяет пользовательскую команду, выполняемую во время развертывания приложения статического содержимого.<br><br>Например, чтобы настроить производственную сборку для приложения Angular, введите `ng build -prod`. Если оставить это поле пустым, рабочий процесс попытается выполнить команды `npm run build` или `npm run build:Azure`.  |
+| `app_build_command` | Определяет пользовательскую команду, выполняемую во время развертывания приложения статического содержимого.<br><br>Например, чтобы настроить производственную сборку для приложения Angular, введите `ng build --prod`. Если оставить это поле пустым, рабочий процесс попытается выполнить команды `npm run build` или `npm run build:Azure`.  |
 | `api_build_command` | Определяет пользовательскую команду, выполняемую во время развертывания приложения API Функций Azure. |
 
 ## <a name="route-file-location"></a>Расположение файла маршрута

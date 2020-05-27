@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: euang
 ms.reviewer: euang
-ms.openlocfilehash: b1db306ffdb1c05c880e5fc639de2cc1db130d8e
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 6276d198e547efec3d2e3cb88816da5e2b593aae
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82096288"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83644684"
 ---
 # <a name="apache-spark-in-azure-synapse-analytics-core-concepts"></a>Ключевые концепции Apache Spark в Azure Synapse Analytics
 
@@ -30,7 +30,7 @@ Azure Synapse упрощает создание и настройку компо
 
 Рекомендуется создавать пулы Spark малого размера для разработки и отладки, а более крупные пулы — для производственных рабочих нагрузок.
 
-Вы можете узнать, как создать пул Spark в Synapse Analytics и просмотреть все его свойства, [здесь](../quickstart-create-apache-spark-pool.md).
+Вы можете узнать, как создать пул Spark в Synapse Analytics и просмотреть все его свойства, [здесь](../quickstart-create-apache-spark-pool-portal.md).
 
 ## <a name="spark-instances"></a>Экземпляры Spark
 

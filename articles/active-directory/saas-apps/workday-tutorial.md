@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2f39b6f58b250d68a3b2ce962f158c7df36d812
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 83fd986e31410e34871d1b795db0c8c83ece688e
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77046599"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83648615"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workday"></a>Руководство по интеграции единого входа Azure Active Directory с Workday
 
@@ -247,7 +247,7 @@ ms.locfileid: "77046599"
 
 ### <a name="create-workday-test-user"></a>Создание тестового пользователя Workday
 
-В этом разделе вы создадите пользователя с именем B. Simon в приложении Workday. Обратитесь к [группе поддержки клиентов Workday](https://www.workday.com/partners-services/services/support.html), чтобы добавить пользователей на платформу Workday. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе вы создадите пользователя с именем B. Simon в приложении Workday. Обратитесь к [группе поддержки клиентов Workday](https://www.workday.com/en-us/partners-services/services/support.html), чтобы добавить пользователей на платформу Workday. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ## <a name="test-sso"></a>Проверка единого входа
 
