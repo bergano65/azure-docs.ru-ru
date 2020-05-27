@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 328f3d0dc648b3c5fa96c3aab02e80a37cf4218f
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 09ccb9f095e58d8fa22ec3d119853c729f0c7026
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83680752"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "67090575"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skillport"></a>Руководство по интеграции Azure Active Directory с Skillport
 
@@ -139,7 +139,7 @@ ms.locfileid: "83680752"
 
 ### <a name="configure-skillport-single-sign-on"></a>Настройка единого входа в Skillport
 
-Чтобы настроить единый вход со стороны **Skillport**, нужно отправить в **группу поддержки Skillport** скачанный [XML-файл метаданных федерации](https://www.skillsoft.com/about/contact-us) и соответствующие URL-адреса, скопированные на портале Azure. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход со стороны **Skillport**, нужно отправить в [группу поддержки Skillport](https://www.skillsoft.com/contact.asp) скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -194,7 +194,7 @@ ms.locfileid: "83680752"
 
 ### <a name="create-skillport-test-user"></a>Создание тестового пользователя Skillport
 
-Чтобы создать тестового пользователя Skillport, обратитесь в [службу поддержки Skillport](https://www.skillsoft.com/about/contact-us), так как они поддерживают различные бизнес-сценарии в соответствии с требованиями пользователей. Специалисты выполнят настройку после обсуждения с пользователями.
+Чтобы создать тестового пользователя Skillport, обратитесь в [службу поддержки Skillport](https://www.skillsoft.com/contact.asp), так как они поддерживают различные бизнес-сценарии в соответствии с требованиями пользователей. Специалисты выполнят настройку после обсуждения с пользователями.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
