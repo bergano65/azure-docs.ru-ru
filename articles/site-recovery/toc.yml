@@ -388,6 +388,8 @@
               href: service-updates-how-to.md
             - name: Удаление хранилища
               href: delete-vault.md
+    - name: Поддержка Site Recovery для групп размещения близкого взаимодействия
+      href: how-to-enable-replication-proximity-placement-groups.md
     - name: Аварийное восстановление для приложений
       items:
         - name: Сведения об аварийном восстановлении для локальных приложений
@@ -514,8 +516,8 @@
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Блог
       href: 'https://azure.microsoft.com/blog/tag/azure-site-recovery/'
-    - name: Форум
-      href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=hypervrecovmgr'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-site-recovery.html'
     - name: Схема обучения
       href: /learn/azure/
     - name: Цены

@@ -81,8 +81,8 @@
   items:
     - name: Форум отзывов и предложений по Azure
       href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-active-directory.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/active-directory/'
     - name: Обновления службы

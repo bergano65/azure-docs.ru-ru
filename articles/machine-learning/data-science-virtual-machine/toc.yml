@@ -55,8 +55,8 @@
       href: dsvm-secure-access-keys.md
 - name: Ресурсы
   items:
-    - name: Форум MSDN
-      href: 'https://social.microsoft.com/Forums/home?forum=dsvm'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-data-science-vm.html'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/search?q=dsvm'
     - name: "Руководство по разработке на\_R"

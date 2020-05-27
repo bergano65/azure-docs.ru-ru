@@ -266,7 +266,7 @@
     - name: Заметки о выпуске службы "Синхронизация файлов Azure"
       href: storage-files-release-notes.md
     - name: Форум службы хранилища Azure
-      href: 'https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazuredata'
+      href: 'https://docs.microsoft.com/answers/products/azure?product=storage'
     - name: Служба хранилища Azure на форуме Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/windows-azure-storage'
     - name: Цены на службу хранилища Azure

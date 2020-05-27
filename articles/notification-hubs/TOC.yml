@@ -170,8 +170,8 @@
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/notification-hubs/'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=notificationhubs'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-notification-hubs.html'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-notificationhub'
     - name: Запрашивание функции

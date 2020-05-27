@@ -57,6 +57,8 @@
           href: automation-create-account-template.md
         - name: Настройка аутентификации с помощью Amazon Web Services
           href: automation-config-aws-account.md
+        - name: "Настройка проверки подлинности с помощью Azure\_AD"
+          href: automation-use-azure-ad.md
         - name: Управление учетной записью запуска от имени в службе автоматизации
           href: manage-runas-account.md
         - name: Управление разрешениями ролей и безопасностью
@@ -297,8 +299,8 @@
       href: 'https://azure.microsoft.com/documentation/videos/azure-automation-101-with-powershell-and-eamon-o-reilly/'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=management-tools&query=automation'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=azureautomation'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/en-us/answers/topics/azure-automation.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/automation/'
     - name: Калькулятор цен
