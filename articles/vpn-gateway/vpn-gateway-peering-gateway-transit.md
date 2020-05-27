@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.date: 03/25/2018
 ms.author: yushwang
-ms.openlocfilehash: 3917101ee7ac151cf624e5be0f51ccf01c8cb1cc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: c243c6ded4057c9e4ac63345f300f3b3b690b363
+ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77161891"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83798945"
 ---
 # <a name="configure-vpn-gateway-transit-for-virtual-network-peering"></a>Настройка транзита VPN-шлюзов для пиринга между виртуальными сетями
 
@@ -30,6 +30,11 @@ ms.locfileid: "77161891"
 
 1. Обе виртуальные сети используют модель развертывания Resource Manager.
 2. Периферийная виртуальная сеть является классической, а виртуальная сеть концентратора с шлюзом находится в Resource Manager.
+
+
+>[!NOTE]
+> Если вы внесли изменения в топологию сети и используете VPN-клиенты Windows, необходимо повторно скачать и установить пакет VPN-клиента для клиентов Windows, чтобы изменения были применены к клиентам.
+>
 
 ## <a name="requirements"></a>Требования
 
@@ -48,7 +53,7 @@ ms.locfileid: "77161891"
 2. [Создание пиринга между виртуальными сетями с одинаковой моделью развертывания](../virtual-network/tutorial-connect-virtual-networks-portal.md)
 3. [Создание пиринга между виртуальными сетями с разными моделями развертывания](../virtual-network/create-peering-different-deployment-models.md)
 
-## <a name="permissions"></a><a name="permissions"></a>Разрешения
+## <a name="permissions"></a><a name="permissions"></a>Permissions
 
 У учетных записей, используемых для создания пиринга между виртуальными сетями, должны быть необходимые роли или разрешения. В приведенном ниже примере при создании пиринга между двумя виртуальными сетями Hub-RM и Spoke-Classic вашей учетной записи должны быть назначены следующие роли или разрешения для каждой виртуальной сети.
     

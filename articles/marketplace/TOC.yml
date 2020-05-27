@@ -324,9 +324,9 @@
               href: ./partner-center-portal/create-azure-container-technical-assets.md
             - name: Создание предложения по контейнерам Azure
               href: ./partner-center-portal/create-azure-container-offer.md
-        - name: Предложение по виртуальным машинам
+        - name: Предложение виртуальной машины
           items:
-            - name: Создание предложения по виртуальным машинам Azure
+            - name: Создание предложения виртуальной машины Azure
               href: ./partner-center-portal/azure-vm-create-offer.md
             - name: Создание технического ресурса виртуальной машины Azure
               items:

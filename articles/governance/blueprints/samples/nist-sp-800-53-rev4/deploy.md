@@ -1,14 +1,14 @@
 ---
 title: Развертывания примера схемы NIST SP 800-53 R4
 description: Процедура развертывания для примера схемы NIST SP 800-53 R4 и сведения о параметрах артефактов схемы.
-ms.date: 11/18/2019
+ms.date: 05/14/2020
 ms.topic: sample
-ms.openlocfilehash: db8c2302a6c2311e096be2cdc78935bdab2ef9c7
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 04412f8047d8ed5de8199f7fd8b1200afa9c5518
+ms.sourcegitcommit: fc0431755effdc4da9a716f908298e34530b1238
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74546608"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83816018"
 ---
 # <a name="deploy-the-nist-sp-800-53-r4-blueprint-sample"></a>Шаги развертывания образца схемы NIST SP 800-53 R4
 
