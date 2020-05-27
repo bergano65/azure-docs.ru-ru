@@ -7,12 +7,12 @@ ms.service: iot-hub
 ms.topic: tutorial
 ms.date: 11/21/2019
 ms.author: robinsh
-ms.openlocfilehash: 889c5e68759a94682150ac88970b7123ad0fc412
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 0b1870af6316713590eec59aee2af94ce34b7e1a
+ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82201743"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83722564"
 ---
 # <a name="tutorial-send-email-notifications-about-azure-iot-hub-events-using-event-grid-and-logic-apps"></a>Руководство по отправке уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Сетки событий и Logic Apps
 
@@ -240,7 +240,7 @@ ms.locfileid: "82201743"
 
 ## <a name="use-the-azure-cli"></a>Использование Azure CLI
 
-Вместо того чтобы использовать портал Azure, шаги для работы с Центром Интернета вещей можно выполнить с помощью Azure CLI. С дополнительными сведениями можно ознакомиться в статьях, посвященных созданию [подписки на события](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription) и [устройств Интернета вещей](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity) с использованием Azure CLI.
+Вместо того чтобы использовать портал Azure, шаги для работы с Центром Интернета вещей можно выполнить с помощью Azure CLI. С дополнительными сведениями можно ознакомиться в статьях, посвященных созданию [подписки на события](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription) и [устройств Интернета вещей](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/hub/device-identity) с использованием Azure CLI.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
