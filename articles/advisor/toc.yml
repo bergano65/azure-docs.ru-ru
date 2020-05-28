@@ -34,7 +34,7 @@
   items:
     - name: Центр безопасности
       href: 'https://azure.microsoft.com/services/security-center/'
-    - name: Помощник по базам данных SQL
+    - name: помощник по базам данных SQL
       href: 'https://azure.microsoft.com/documentation/articles/sql-database-advisor/'
     - name: Служба приложений
       href: 'https://docs.microsoft.com/azure/app-service/app-service-best-practices'
