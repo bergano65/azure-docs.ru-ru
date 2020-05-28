@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
-ms.date: 02/01/2019
+ms.date: 05/26/2020
 ms.author: swmachan
-ms.openlocfilehash: 47136ee9c2f0dee29571f310eb3b07d7c11888c0
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 8fae863c03ccbc17e9ec6621e73ddf475f759569
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83592718"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83996216"
 ---
 # <a name="translator-v2-to-v3-migration"></a>Миграция с версии 2 на v3
 
@@ -32,25 +32,25 @@ ms.locfileid: "83592718"
 
 * Отсутствие трассировки. В версии 3 функция "Без трассировки" применяется ко всем ценовым категориям на портале Azure. Это означает, что корпорация Майкрософт не будет сохранять текст, переданный в API версии 3.
 * JSON. ФорматXML заменили на JSON. Все данные, отправляемые службе и получаемые от нее, находятся в формате JSON.
-* Несколько целевых языков в одном запросе. Метод Translate работает с несколькими языками перевода в одном запросе. Например, один запрос может быть с английского на русский, а второй — с испанского на японский (или любая другая группа языков).
-* Двуязычный словарь. В этот API-интерфейс добавлен двуязычный метод Dictionary. Этот метод имеет два вида: Dictionary lookup и Dictionary examples.
+* Несколько целевых языков в одном запросе. метод Translation принимает несколько языков "to" для перевода в одном запросе. Например, одним запросом может быть "от" английского и "на немецкий, испанский, японский или любую другую группу языков.
+* Двуязычный словарь. В этот API-интерфейс добавлен двуязычный метод Dictionary. Этот метод включает в себя "Lookup" и "examples".
 * В этот API-интерфейс добавлен метод Transliterate. Этот метод преобразует слова и предложения в одном скрипте (например, арабском) в другой скрипт (например, латинский).
-* Языки. Новый метод Languages предоставляет сведения о языке в формате JSON. Его можно использовать с методами Translate, Dictionary и Transliterate.
-* Новые возможности метода Translate. В метод Translate добавлены новые возможности, которые обеспечивают поддержку некоторых функций, которые использовались в API версии 2 как отдельные методы. В качестве примера можно привести метод TranslateArray.
+* Языки. новый метод "Languages" предоставляет сведения о языке в формате JSON для использования с методами "транслируюте", "Dictionary" и "транслитерированный".
+* Новая возможность преобразования. в метод "перевести" добавлены новые возможности для поддержки некоторых функций, которые были в API v2 в качестве отдельных методов. В качестве примера можно привести метод TranslateArray.
 * Проговорите, что функция преобразования текста в речь больше не поддерживается в Microsoft Translator. Функция преобразования текста в речь доступна в [службе распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech).
 
 Ниже приведен список методов версий 2 и 3, в котором указаны методы версии 3 и API-интерфейсы, предоставляющие возможности версии 2.
 
 | Метод API версии 2   | Совместимость API версии 3 |
 |:----------- |:-------------|
-| `Translate`     | [Перевести](reference/v3-0-translate.md)          |
-| `TranslateArray`      | [Перевести](reference/v3-0-translate.md)        |
+| `Translate`     | [Translate](reference/v3-0-translate.md)          |
+| `TranslateArray`      | [Translate](reference/v3-0-translate.md)        |
 | `GetLanguageNames`      | [Языки](reference/v3-0-languages.md)         |
 | `GetLanguagesForTranslate`     | [Языки](reference/v3-0-languages.md)       |
 | `GetLanguagesForSpeak`      | [Служба распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech)         |
 | `Speak`     | [Служба распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech)          |
-| `Detect`     | [Определение](reference/v3-0-detect.md)         |
-| `DetectArray`     | [Определение](reference/v3-0-detect.md)         |
+| `Detect`     | [Detect](reference/v3-0-detect.md)         |
+| `DetectArray`     | [Detect](reference/v3-0-detect.md)         |
 | `AddTranslation`     | Компонент больше не поддерживается.       |
 | `AddTranslationArray`    | Компонент больше не поддерживается.          |
 | `BreakSentences`      | [BreakSentence](reference/v3-0-break-sentence.md)       |
@@ -86,7 +86,7 @@ Microsoft Translator V3 имеет такую же модель ценообра
 
 ## <a name="v3-end-points"></a>Конечные точки версии 3
 
-Глобальный
+Global
 
 * api.cognitive.microsofttranslator.com
 
@@ -116,10 +116,10 @@ Microsoft Translator V3 имеет такую же модель ценообра
 
 Нейронный перевод с помощью API перевода текста версии 3 не поддерживает стандартные категории (SMT, speech, tech, generalnn).
 
-| |Конечная точка|    Соответствие требованиям процессора GDPR|  Использование Translator Hub| Использование Пользовательского переводчика (предварительная версия)|
+| |Конечная точка|    Соответствие требованиям процессора GDPR|    Использование Translator Hub|    Использование Пользовательского переводчика (предварительная версия)|
 |:-----|:-----|:-----|:-----|:-----|
-|Переводчик версии 2|  api.microsofttranslator.com|    Нет  |Да    |Нет|
-|Translator версии 3|  api.cognitive.microsofttranslator.com|  Да|    Нет| Да|
+|Переводчик версии 2|    api.microsofttranslator.com|    Нет    |Да    |Нет|
+|Translator версии 3|    api.cognitive.microsofttranslator.com|    Да|    Нет|    Да|
 
 **Translator версии 3**
 * Является общедоступным и полностью поддерживается.

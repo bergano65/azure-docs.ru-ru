@@ -285,7 +285,7 @@
     - name: 'GitHub: примеры для Azure Blueprints'
       href: 'https://github.com/Azure/azure-blueprints'
     - name: Раздел вопросов и ответов об Azure Blueprints на сайте Майкрософт
-      href: /answers/topics/azure-blueprints.html
+      href: /answers/topics/azure-blueprints.html.html
     - name: 'Канал на YouTube, посвященный системе управления'
       href: 'https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ'
     - name: Пятница с Azure. Обзор Azure Blueprints

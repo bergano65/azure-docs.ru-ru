@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: conceptual
-ms.date: 04/14/2020
+ms.date: 05/19/2020
 ms.author: pafarley
-ms.openlocfilehash: c2b67989cbffb03eb182b4de2bf471a02ee33e7b
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.openlocfilehash: e3bf279142383ccdb3e82ffee49bd593640bb937
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82627999"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83996828"
 ---
 # <a name="whats-new-in-form-recognizer"></a>Новые возможности Распознавателя документов
 
@@ -27,11 +27,10 @@ ms.locfileid: "82627999"
 
 ### <a name="new-features"></a>Новые функции
 * **Поддержка пакета SDK для API распознавателя форм (общедоступная Предварительная версия 2.0** ) В этом месяце мы расширили поддержку службы, включив в нее предварительную версию пакета SDK для выпуска распознавателя версии 2.0 (Предварительная версия). Воспользуйтесь приведенными ниже ссылками, чтобы начать работу с выбранным языком: 
-   * [Пакет SDK для .NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer)
-   * [Пакет SDK для Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/formrecognizer/azure-ai-formrecognizer)
-   * [Пакет SDK для Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer)
-   * [Пакет SDK для JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer)
-
+   * [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/formrecognizer?view=azure-dotnet-preview)
+   * [Пакет SDK для Java](https://docs.microsoft.com/java/api/overview/azure/formrecognizer?view=azure-java-preview)
+   * [Пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/formrecognizer?view=azure-python-previewr)
+   * [Пакет SDK для JavaScript](https://docs.microsoft.com/javascript/api/overview/azure/formrecognizer?view=azure-node-preview)
 
   Новый пакет SDK поддерживает все функции REST API версии 2.0 для распознавателя форм. Например, можно обучить модель с метками или без них, а также извлечь текст, пары "ключ-значение" и таблицы из форм, извлечь данные из чеков с помощью предварительно построенной службы получения и извлечь текст и таблицы со службой макета из документов. Вы можете поделиться своими отзывами о [пакетах SDK в форме отзывов SDK](https://aka.ms/FR_SDK_v1_feedback).
  
@@ -39,6 +38,10 @@ ms.locfileid: "82627999"
    * [Создание авторизации копии](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/CopyCustomFormModelAuthorization) REST API
    * [Копирование настраиваемой модели](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/CopyCustomFormModel) REST API 
 
+### <a name="security-improvements"></a>Усовершенствования системы безопасности
+
+* Управляемые клиентом ключи теперь доступны для Формрекогнизер. Дополнительные сведения см. [в разделе Шифрование неактивных данных для распознавателя форм](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/form-recognizer-encryption-of-data-at-rest).
+* Используйте управляемые удостоверения для доступа к ресурсам Azure с помощью Azure Active Directory. Дополнительные сведения см. [в разделе Авторизация доступа к управляемым удостоверениям](https://docs.microsoft.com/azure/cognitive-services/authentication#authorize-access-to-managed-identities).
 
 ## <a name="march-2020"></a>Март 2020 г. 
 
@@ -64,7 +67,7 @@ ms.locfileid: "82627999"
   > [!div class="mx-imgBorder"]
   > ![Визуализация таблицы с помощью примера средства создания меток](./media/whats-new/formre-table-viz.png)
 
-    Извлеченные таблицы доступны в выходных данных JSON в разделе `"pageResults"`.
+    Извлеченные таблицы доступны в выходных данных JSON в разделе `"pageResults"` .
 
   > [!IMPORTANT]
   > Добавление меток к таблицам не поддерживается. Если таблицы не распознаются и екстратед автоматически, их можно пометить только как пары "ключ — значение". При пометке таблиц как пар "ключ-значение" каждая ячейка помечается как уникальное значение.
@@ -81,7 +84,7 @@ ms.locfileid: "82627999"
 
 ### <a name="tls-12-enforcement"></a>Обязательное использование TLS 1.2
 
-TLS 1,2 теперь применяется для всех HTTP-запросов к этой службе. Дополнительные сведения см. в статье [Безопасность Azure Cognitive Services](../cognitive-services-security.md).
+TLS 1.2 теперь применяется для всех HTTP-запросов к этой службе. Дополнительные сведения см. в статье [Безопасность в Azure Cognitive Services](../cognitive-services-security.md).
 
 ## <a name="january-2020"></a>Январь 2020 г.
 
