@@ -29,7 +29,7 @@
           href: tutorial-run-ml-model-on-sql-edge.md
 - name: Практическое руководство
   items:
-    - name: Пакеты приложения уровня данных и задания Stream Analytics
+    - name: Развертывание заданий Stream Analytics
       href: stream-analytics.md
     - name: Настройка репликации
       href: configure-replication.md
