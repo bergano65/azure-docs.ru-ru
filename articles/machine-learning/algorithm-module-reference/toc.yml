@@ -32,6 +32,8 @@
       href: clean-missing-data.md
     - name: Правка метаданных
       href: edit-metadata.md
+    - name: Группирование данных в ячейки
+      href: group-data-into-bins.md
     - name: Объединение данных
       href: join-data.md
     - name: Нормализация данных
@@ -130,6 +132,8 @@
       href: execute-r-script.md
 - name: Текстовая аналитика
   items:
+    - name: Преобразование слов в векторы
+      href: convert-word-to-vector.md
     - name: Извлечение N-грамм из текста
       href: extract-n-gram-features-from-text.md
     - name: Хэширование признаков

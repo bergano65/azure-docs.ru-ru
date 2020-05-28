@@ -10,12 +10,12 @@ metadata:
   author: DCtheGeek
   ms.author: dacoulte
   ms.date: 05/20/2020
-  ms.openlocfilehash: 347e60c8b0c50db1bdba7c8262701542448fe12a
-  ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+  ms.openlocfilehash: de9d2a95a19872e8f62a6ca412dabadadbfec3fb
+  ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/20/2020
-  ms.locfileid: "83682073"
+  ms.lasthandoff: 05/26/2020
+  ms.locfileid: "83849932"
 landingContent:
 - title: Сведения о службе "Политика Azure"
   linkLists:
@@ -91,10 +91,12 @@ landingContent:
   linkLists:
   - linkListType: get-started
     links:
+    - text: Раздел вопросов и ответов о Политике Azure на сайте Майкрософт
+      url: /answers/topics/azure-policy.html
     - text: Канал на YouTube, посвященный системе управления Azure
       url: https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ
     - text: Функция запроса продукта
-      url: https://feedback.azure.com/forums/915958-azure-governance
+      url: https://feedback.azure.com/forums/915958-azure-governance?category_id=345055
     - text: Техническое сообщество по системе управления Azure
       url: https://techcommunity.microsoft.com/t5/Azure-Governance/bd-p/AzureGovernance
 - title: Справочник

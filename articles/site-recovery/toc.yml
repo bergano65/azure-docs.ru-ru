@@ -388,7 +388,7 @@
               href: service-updates-how-to.md
             - name: Удаление хранилища
               href: delete-vault.md
-    - name: Поддержка Site Recovery для групп размещения близкого взаимодействия
+    - name: Использование Site Recovery для групп размещения близкого взаимодействия
       href: how-to-enable-replication-proximity-placement-groups.md
     - name: Аварийное восстановление для приложений
       items:

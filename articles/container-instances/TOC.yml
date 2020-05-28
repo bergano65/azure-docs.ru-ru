@@ -52,8 +52,12 @@
       href: container-instances-region-availability.md
     - name: Связь с оркестраторами
       href: container-instances-orchestrator-relationship.md
-    - name: Вопросы безопасности
-      href: container-instances-image-security.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
+        - name: Вопросы безопасности
+          href: container-instances-image-security.md
     - name: Виртуальная сеть
       href: container-instances-virtual-network-concepts.md
 - name: Практические руководства

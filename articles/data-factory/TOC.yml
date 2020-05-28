@@ -543,6 +543,8 @@
       items:
         - name: Вопросы безопасности при перемещении данных
           href: data-movement-security-considerations.md
+        - name: Стратегии получения доступа к данным
+          href: data-access-strategies.md
         - name: IP-адреса Azure Integration Runtime
           href: azure-integration-runtime-ip-addresses.md
         - name: Хранение учетных данных в Azure Key Vault

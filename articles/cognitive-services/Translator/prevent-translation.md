@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
-ms.date: 03/20/2020
+ms.date: 05/26/2020
 ms.author: swmachan
-ms.openlocfilehash: 33939976a0824ce8afeb2e6f6fb19e7033098683
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 37d2e4c0131569ab50ebf49ff73b6adf7a420713
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83592701"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83996182"
 ---
 # <a name="how-to-prevent-translation-of-content-with-the-translator"></a>Как предотвратить перевод содержимого с помощью транслятора
 
@@ -25,7 +25,7 @@ ms.locfileid: "83592701"
 
 1. Пометьте содержимое с помощью `notranslate`. Это можно сделать, только если входные Тексттипе заданы в формате HTML.
 
-   Пример.
+   Пример
 
    ```html
    <span class="notranslate">This will not be translated.</span>

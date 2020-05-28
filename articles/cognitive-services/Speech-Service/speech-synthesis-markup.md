@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
-ms.openlocfilehash: 8ec4c87dc4f19c140c5ac02779c5551016dfb0b3
-ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
+ms.openlocfilehash: 855feaf9b5b47b7b725ee7927418a2b3a9e25393
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83714327"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84017779"
 ---
 # <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>Улучшение синтеза с помощью языка разметки речи (SSML)
 
@@ -330,7 +330,7 @@ speechConfig!.setPropertyTo(
 
 | attribute | Описание | Обязательный или необязательный |
 |-----------|-------------|---------------------|
-| `alphabet` | Указывает фонетический алфавит, используемый при создании транскрипции строки в `ph` атрибуте. Строка, указывающая букву алфавита, должна быть указана в строчных буквах. Ниже приведены возможные алфавиты, которые можно указать.<ul><li>`ipa`&ndash; <a href="https://en.wikipedia.org/wiki/International_Phonetic_Alphabet" target="_blank">Международный фонетический <span class="docon docon-navigate-external x-hidden-focus"></span> алфавит</a></li><li>`sapi`&ndash; [Фонетический алфавит речевой службы](speech-ssml-phonetic-sets.md)</li><li>`ups`&ndash;Универсальный набор телефонов</li></ul><br>Алфавит применяется только к `phoneme` элементу в элементе.. | Необязательно |
+| `alphabet` | Указывает фонетический алфавит, используемый при создании транскрипции строки в `ph` атрибуте. Строка, указывающая букву алфавита, должна быть указана в строчных буквах. Ниже приведены возможные алфавиты, которые можно указать.<ul><li>`ipa`&ndash; <a href="https://en.wikipedia.org/wiki/International_Phonetic_Alphabet" target="_blank">Международный фонетический <span class="docon docon-navigate-external x-hidden-focus"></span> алфавит</a></li><li>`sapi`&ndash; [Фонетический алфавит речевой службы](speech-ssml-phonetic-sets.md)</li><li>`ups`&ndash; <a href="https://documentation.help/Microsoft-Speech-Platform-SDK-11/17509a49-cae7-41f5-b61d-07beaae872ea.htm" target="_blank">Универсальный набор телефонов</a></li></ul><br>Алфавит применяется только к `phoneme` элементу в элементе.. | Необязательно |
 | `ph` | Строка, содержащая телефоны, задающих произношение слова в `phoneme` элементе. Если указанная строка содержит нераспознаваемые телефоны, служба преобразования текста в речь (TTS) отклоняет весь документ SSML и не выдает ни одного из речевых выходных данных, указанных в документе. | Требуется при использовании фонемы. |
 
 **Примеры**

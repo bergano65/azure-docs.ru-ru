@@ -6,15 +6,15 @@ author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
-ms.date: 02/21/2019
+ms.date: 05/26/2020
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: cf0d96414c40784210723e315da5d885d61198c5
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 22c982babbed1322e97127379be75e7b070ed81f
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68595574"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83994248"
 ---
 # <a name="view-document-details"></a>Просмотр сведений о документе
 
@@ -22,7 +22,7 @@ ms.locfileid: "68595574"
 
 Щелкните отдельный документ, чтобы просмотреть страницу со сведениями о нем. На странице сведений о документе отображается список извлеченных из документа предложений.
 
-- По умолчанию в раскрывающемся списке выбран исходный язык, но вы можете переключаться для просмотра предложений на целевом языке.
+- По умолчанию в раскрывающемся поле выбран язык "исходный", но можно переключиться на просмотр предложений на целевом языке.
 - По умолчанию для каждой страницы отображаются 20 предложений. Вы можете использовать элемент разбиения на страницы для перехода между страницами.
 
 ![сведения о документе](media/how-to/how-to-view-document-details.png)
@@ -40,6 +40,6 @@ ms.locfileid: "68595574"
 
     ![Подтверждение удаления](media/how-to/how-to-delete-document-confirm.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об обучении модели см. в [этой статье](how-to-train-model.md).

@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
-ms.date: 02/21/2019
+ms.date: 05/26/2020
 ms.author: swmachan
-ms.openlocfilehash: 85c4ee27a828a05c64ca6cbf84bff438535328be
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: b35dce5a2b572e5a3f11601d5e67efb2da02cdec
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73647362"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83997066"
 ---
 # <a name="what-is-a-bleu-score"></a>Что такое оценка BLEU?
 
@@ -26,7 +26,7 @@ ms.locfileid: "73647362"
 
 ## <a name="how-bleu-works"></a>Как работает BLEU
 
-Преимущество алгоритма BLEU в том, что он хорошо коррелирует с оценками пользователей. Он усредняет число ошибок в отдельных предложениях для всего тестового набора, вместо того чтобы пытаться разработать точную оценку пользователя для каждого предложения.
+Сила БЛЕУ заключается в том, что она хорошо соотносится с человеком, что позволяет выусреднение отдельных предложений с ошибками в тестовой совокупности, вместо того чтобы пытаться обойти точный персонал каждого предложения.
 
 Более подробные сведения об оценках BLEU см. в [этой статье](https://youtu.be/-UqDljMymMg).
 
