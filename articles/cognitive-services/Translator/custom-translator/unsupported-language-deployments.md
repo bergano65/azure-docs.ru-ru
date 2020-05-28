@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
-ms.date: 04/24/2019
+ms.date: 05/26/2020
 ms.author: swmachan
-ms.openlocfilehash: 252759139de7f53cd7875efeb7f477219092aa0b
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: ea2761712e4bbb7a3abd1483766f4eae47b7c350
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83584707"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83996369"
 ---
 # <a name="unsupported-language-deployments"></a>Развертывания неподдерживаемых языков
 
@@ -45,7 +45,7 @@ ms.locfileid: "83584707"
 
 ![Перенос из центра](media/unsupported-language-deployments/request-unsupported-trainings.jpg) 
 
-## <a name="whats-next"></a>Что дальше?
+## <a name="whats-next"></a>Дальнейшие действия
 
 Модели, выбранные для развертывания, сохраняются после списания концентратора и развертывания всех моделей.  У вас есть до 24 мая для отправки запросов на развертывание неподдерживаемых моделей.  Мы будем развертывать эти модели 15 июня, после чего они будут доступны через API-интерфейс Translator v3.  Кроме того, они будут доступны через API v2 до 1 июля.  
 
