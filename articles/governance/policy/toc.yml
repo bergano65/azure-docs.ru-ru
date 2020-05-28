@@ -198,7 +198,7 @@
     - name: "GitHub\_— репозиторий политики сообщества"
       href: 'https://github.com/Azure/Community-Policy'
     - name: Раздел вопросов и ответов о Политике Azure на сайте Майкрософт
-      href: /answers/topics/azure-policy.html
+      href: /answers/topics/azure-policy.html.html
     - name: 'Канал на YouTube, посвященный системе управления'
       href: 'https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ'
     - name: Видео по гостевой конфигурации

@@ -3,12 +3,12 @@ title: Краткое описание примера схемы рабочей 
 description: Обзор и описание архитектуры примера схемы рабочей нагрузки Среды службы приложений или Базы данных SQL на основе ISO 27001.
 ms.date: 01/13/2020
 ms.topic: sample
-ms.openlocfilehash: 834096ec529673bae1728877310ba7153ae94cb3
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: ab6a1b7e5569be39cc3b2934ec9891d5aa5712ca
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81460585"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84012999"
 ---
 # <a name="overview-of-the-iso-27001-app-service-environmentsql-database-workload-blueprint-sample"></a>Обзор примера схемы рабочей нагрузки Среды службы приложений или Базы данных SQL на основе ISO 27001
 
@@ -33,7 +33,7 @@ ms.locfileid: "81460585"
 - Виртуальная сеть с одной подсетью и обратным пиринговым подключением к существующей среде [общих служб](../iso27001-shared/index.md) для принудительной передачи всего трафика через брандмауэр [общих служб](../iso27001-shared/index.md). В виртуальной сети размещаются следующие ресурсы:
   - Экземпляры [Среды службы приложений Azure](../../../../app-service/environment/intro.md), которые можно использовать для размещения веб-приложений, веб-интерфейсов API или функций.
   - Экземпляр [Azure Key Vault](../../../../key-vault/general/overview.md), использующий конечную точку службы виртуальной сети, для хранения секретов приложений, которые работают в среде рабочей нагрузки.
-  - Экземпляр [Базы данных SQL Azure](../../../../sql-database/sql-database-technical-overview.md), использующий конечную точку службы виртуальной сети, для размещения баз данных для приложений в среде рабочей нагрузки.
+  - Экземпляр [Базы данных SQL Azure](../../../../azure-sql/database/sql-database-paas-overview.md), использующий конечную точку службы виртуальной сети, для размещения баз данных для приложений в среде рабочей нагрузки.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
