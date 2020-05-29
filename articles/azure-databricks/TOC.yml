@@ -7,12 +7,15 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Создание рабочей области Databricks с помощью портала
-      href: quickstart-create-databricks-workspace-portal.md
-    - name: Создание рабочей области Databricks с помощью шаблона Resource Manager
-      href: quickstart-create-databricks-workspace-resource-manager-template.md
-    - name: Создание рабочей области Databricks с помощью виртуальной сети
-      href: quickstart-create-databricks-workspace-vnet-injection.md
+    - name: Создание рабочей области
+      items:
+        - name: Портал
+          href: quickstart-create-databricks-workspace-portal.md
+        - name: Шаблон ARM
+          displayName: Resource Manager
+          href: quickstart-create-databricks-workspace-resource-manager-template.md
+        - name: Виртуальная сеть
+          href: quickstart-create-databricks-workspace-vnet-injection.md
 - name: Учебники
   items:
     - name: 'Отправка запроса к платформе SQL Server, запущенной в контейнере Docker'

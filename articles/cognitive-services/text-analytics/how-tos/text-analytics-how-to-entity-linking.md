@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 02/10/2020
+ms.date: 05/13/2020
 ms.author: aahi
-ms.openlocfilehash: 243086ddaae47eba20eea6877fe6d7f8f9889290
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 457be5ac014fda6b4984ed7af3dcc89780b16379
+ms.sourcegitcommit: f0b206a6c6d51af096a4dc6887553d3de908abf3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79203497"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84141623"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованных сущностей в Анализ текста
 
@@ -23,97 +23,32 @@ API анализа текста позволяет получить нестру
 
 ### <a name="entity-linking"></a>Связывание сущностей
 
-Связывание сущностей — это возможность идентифицировать и устранить неоднозначность идентификации сущности, найденной в тексте (например, определить, относится ли `Mars` вхождение слова к планеты или Roman божественные War). Для этого процесса требуется наличие базы знаний на соответствующем языке, чтобы связать распознанные сущности в тексте. При связывании сущностей в качестве этой базы знаний используется [Википедии](https://www.wikipedia.org/) .
+Связывание сущностей — это возможность определить и устранить неоднозначность идентификации сущности, найденной в тексте (например, определить, относится ли вхождение слова «Mars» к планетам или Roman божественные War). Для этого процесса требуется наличие базы знаний на соответствующем языке, чтобы связать распознанные сущности в тексте. При связывании сущностей в качестве этой базы знаний используется [Википедии](https://www.wikipedia.org/) .
 
 
 ### <a name="named-entity-recognition-ner"></a>Распознавание именованных сущностей (NER)
 
 Распознавание имен сущностей (NER) — это возможность определения различных сущностей в тексте и категоризация их по заранее определенным классам или типам, таким как "пользователь", "расположение", "событие", "продукт" и "Организация".  
 
-Начиная с версии 3, эта функция API анализа текста может также обозначать персональные и конфиденциальные сведения о типах, например: номер телефона, номер социального страхования, адрес электронной почты и номер банковского счета.  Идентификация этих сущностей может помочь в классификации конфиденциальных документов и обезличивание персональных данных.
-
 ## <a name="named-entity-recognition-versions-and-features"></a>Версии и функции распознавания именованных сущностей
 
-API анализа текста предлагает две версии с именами "распознавание сущностей — v2" и "V3". Версия 3 (общедоступная Предварительная версия) предоставляет более подробные сведения в сущностях, которые могут быть обнаружены и отнесены к категории.
+[!INCLUDE [v3 region availability](../includes/v3-region-availability.md)]
 
-| Компонент                                                         | NER v2 | NER v3 |
-|-----------------------------------------------------------------|--------|--------|
-| Методы для одиночных и пакетных запросов                          | X      | X      |
-| Простое распознавание сущностей в нескольких категориях              | X      | X      |
-| Расширенная классификация для распознаваемых сущностей                 |        | X      |
-| Отдельные конечные точки для отправки запросов на связывание сущностей и NER. |        | X      |
-| управления версиями моделей;                                                |        | X      |
+| Компонент                                                         | NER версии 3.0 | NER версии 3.1 – Предварительная версия. 1 |
+|-----------------------------------------------------------------|--------|----------|
+| Методы для одиночных и пакетных запросов                          | X      | X        |
+| Расширенное распознавание сущностей в нескольких категориях           | X      | X        |
+| Отдельные конечные точки для отправки запросов на связывание сущностей и NER. | X      | X        |
+| Распознавание личных `PII` объектов () и сведений о работоспособности ( `PHI` )        |        | X        |
 
-Дополнительные сведения см. в разделе [Поддержка языков](../language-support.md#sentiment-analysis-key-phrase-extraction-and-named-entity-recognition) .
-
-
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+Дополнительные сведения см. в разделе [Поддержка языков](../language-support.md) .
 
 ### <a name="entity-types"></a>Типы сущностей
 
-Распознавание именованных сущностей v3 обеспечивает Расширенное обнаружение для нескольких типов. В настоящее время NER v3 может распознать следующие категории сущностей:
+Распознавание именованных сущностей v3 обеспечивает Расширенное обнаружение для нескольких типов. В настоящее время NER v 3.0 может распознавать сущности в [категории общих сущностей](../named-entity-types.md).
 
-* Общие
-* Личная информация 
+Распознавание имен сущностей версии 3.1 – Preview. 1 включает возможности обнаружения версий 3.0 и возможность обнаружения персональных данных ( `PII` ) с помощью `v3.1-preview.1/entities/recognition/pii` конечной точки. Необязательный параметр можно использовать `domain=phi` для обнаружения конфиденциальных сведений о работоспособности ( `PHI` ). Дополнительные сведения см. в разделе статьи о [категориях сущностей](../named-entity-types.md) и [запрос конечных точек](#request-endpoints) ниже.
 
-Подробный список поддерживаемых сущностей и языков см. в статье [NER v3 Supported Entity Types](../named-entity-types.md) .
-
-### <a name="request-endpoints"></a>Конечные точки запроса
-
-В примере распознавания сущностей v3 используются отдельные конечные точки для запросов NER и связывания сущностей. Используйте следующий формат URL-адреса в зависимости от вашего запроса:
-
-NER
-* Общие сущности —`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0-preview.1/entities/recognition/general`
-
-* Персональные данные —`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0-preview.1/entities/recognition/pii`
-
-Связывание сущностей
-* `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0-preview.1/entities/linking`
-
-### <a name="model-versioning"></a>управления версиями моделей;
-
-[!INCLUDE [v3-model-versioning](../includes/model-versioning.md)]
-
-#### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
-
-### <a name="entity-types"></a>Типы сущностей
-
-> [!NOTE]
-> Распознавание имен сущностей (NER) версии 2 поддерживает только следующие сущности. NER v3 находится в общедоступной предварительной версии и значительно расширяет количество и глубину сущностей, распознаваемых в тексте.   
-
-| Тип  | Подтип | Пример |
-|:-----------   |:------------- |:---------|
-| Модель Person        | Недоступно\*         | "Джеф", "Билл Гейтс"     |
-| Расположение      | Недоступно\*         | "Редмонд, штат Вашингтон", "Париж"  |
-| План  | Недоступно\*         | "Майкрософт"   |
-| Количество      | Номер        | "6", "шесть"     |
-| Количество      | Процент    | "50 %", "пятьдесят процентов"|
-| Количество      | Ordinal       | "2-й", "второй"     |
-| Количество      | Возраст           | "90 дней", "30 лет"    |
-| Количество      | Валюта      | "10,99 долл. США"     |
-| Количество      | Измерение     | "10 миль", "40 см"     |
-| Количество      | температура;   | "32 градуса"    |
-| Дата и время      | Недоступно\*         | "18:30 4 февраля 2012 г."      |
-| Дата и время      | Дата          | "2 мая 2017 г.", "02.05.2017"   |
-| Дата и время      | Время          | "8 утра", "8:00"  |
-| Дата и время      | Диапазон дат     | "с 2 по 5 мая"    |
-| Дата и время      | Диапазон времени     | "6:00–17:00"     |
-| Дата и время      | Duration      | "1 минута и 45 секунд"   |
-| Дата и время      | Присвойте параметру           | "каждый вторник"     |
-| URL-адрес           | Недоступно\*         | "https:\//www.Bing.com"    |
-| Электронная почта         | Недоступно\*         | "support@contoso.com" |
-| Номер телефона США  | Недоступно\*         | (Только номера телефонов США) "(312) 555-0176" |
-| IP-адрес    | Недоступно\*         | "10.0.0.100" |
-
-\* Некоторые сущности могут опускать `SubType` в зависимости от входных и извлеченных сущностей.  Все поддерживаемые типы сущностей доступны только для английского, упрощенного, французского, немецкого и испанского языков.
-
-### <a name="request-endpoints"></a>Конечные точки запроса
-
-При распознавании сущностей версии 2 для NER и запросов на связывание сущностей используется одна конечная точка.
-
-`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/entities`
-
----
 
 ## <a name="sending-a-rest-api-request"></a>Отправка запроса к REST API
 
@@ -130,27 +65,34 @@ NER
 > [!NOTE]
 > Ключ и конечную точку для ресурса Анализа текста можно найти на портале Azure. Они находятся на странице ресурса **Быстрый запуск** в разделе **Управление ресурсами**. 
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
 
-[Справочник по распознаванию именованных сущностей v3](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesRecognitionGeneral)
+### <a name="request-endpoints"></a>Конечные точки запроса
 
-В версии 3 используются отдельные конечные точки для запросов NER и связывания сущностей. Используйте следующий формат URL-адреса в зависимости от вашего запроса:
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
-NER
-* Общие сущности —`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0-preview.1/entities/recognition/general`
-
-* Сущности личных сведений —`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0-preview.1/entities/recognition/pii`
+В примере распознавания сущностей v3 используются отдельные конечные точки для запросов NER и связывания сущностей. Используйте следующий формат URL-адреса в зависимости от вашего запроса:
 
 Связывание сущностей
-* `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0-preview.1/entities/linking`
+* `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/entities/linking`
 
-#### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
+NER
+* `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/entities/recognition/general`
 
-[Справочник по распознаванию имен сущностей (NER) v2](https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)
+#### <a name="version-31-preview1"></a>[Версия 3,1-Preview. 1](#tab/version-3-preview)
 
-В версии 2 для связывания сущностей и запросов NER используется следующая конечная точка: 
+При распознавании именованных сущностей `v3.1-preview.1` используются отдельные конечные точки для запросов NER и связывания сущностей. Используйте следующий формат URL-адреса в зависимости от вашего запроса:
 
-`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/entities`
+Связывание сущностей
+* `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.1/entities/linking`
+
+NER
+* Общие сущности —`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.1/entities/recognition/general`
+
+* Личные `PII` сведения () —`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.1/entities/recognition/pii`
+
+Кроме того, можно использовать необязательный `domain=phi` параметр для обнаружения `PHI` сведений о работоспособности () в тексте. 
+
+`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.1/entities/recognition/pii?domain=phi`
 
 ---
 
@@ -164,12 +106,13 @@ NER
 {
   "documents": [
     {
-      "language": "en",
-      "id": "1",
-      "text": "I had a wonderful trip to Seattle last week."
+        "id": "1",
+        "language": "en",
+        "text": "Our tour guide took us up the Space Needle during our trip to Seattle last week."
     }
   ]
 }
+
 ```
 
 ## <a name="post-the-request"></a>Передача запроса
@@ -184,8 +127,6 @@ API Анализа текста не учитывает состояние. Ни
 
 Вывод возвращается немедленно. Можно выполнить потоковую передачу результатов в приложение, которое принимает JSON, или сохранить выходные данные в файле локальной системы, а затем импортировать их в приложение, которое дает возможность сортировки, поиска данных и управления ими. В связи с поддержкой многоязычности и эмодзи ответ может содержать смещения текста. Дополнительные сведения см. [в разделе Обработка смещения текста](../concepts/text-offsets.md) .
 
-#### <a name="version-30-preview"></a>[Версия 3,0-Preview)](#tab/version-3)
-
 ### <a name="example-v3-responses"></a>Примеры ответов v3
 
 Версия 3 предоставляет отдельные конечные точки для NER и связывания сущностей. Ниже приведены ответы для обеих операций. 
@@ -194,102 +135,114 @@ API Анализа текста не учитывает состояние. Ни
 
 ```json
 {
-    "documents": [{
-    "id": "1",
-    "entities": [{
-        "text": "Seattle",
-        "type": "Location",
-        "offset": 26,
-        "length": 7,
-        "score": 0.80624294281005859
-    }, {
-        "text": "last week",
-        "type": "DateTime",
-        "subtype": "DateRange",
-        "offset": 34,
-        "length": 9,
-        "score": 0.8
-    }]
-    }],
-    "errors": [],
-    "modelVersion": "2019-10-01"
+  "documents": [
+    {
+      "id": "1",
+      "entities": [
+        {
+          "text": "tour guide",
+          "category": "PersonType",
+          "offset": 4,
+          "length": 10,
+          "confidenceScore": 0.45
+        },
+        {
+          "text": "Space Needle",
+          "category": "Location",
+          "offset": 30,
+          "length": 12,
+          "confidenceScore": 0.38
+        },
+        {
+          "text": "trip",
+          "category": "Event",
+          "offset": 54,
+          "length": 4,
+          "confidenceScore": 0.78
+        },
+        {
+          "text": "Seattle",
+          "category": "Location",
+          "subcategory": "GPE",
+          "offset": 62,
+          "length": 7,
+          "confidenceScore": 0.78
+        },
+        {
+          "text": "last week",
+          "category": "DateTime",
+          "subcategory": "DateRange",
+          "offset": 70,
+          "length": 9,
+          "confidenceScore": 0.8
+        }
+      ],
+      "warnings": []
+    }
+  ],
+  "errors": [],
+  "modelVersion": "2020-04-01"
 }
 ```
+
 
 #### <a name="example-entity-linking-response"></a>Пример ответа на связывание сущности
 
 ```json
 {
-  "documents": [{
-    "id": "1",
-    "entities": [{
-      "name": "Seattle",
-      "matches": [{
-        "text": "Seattle",
-        "offset": 26,
-        "length": 7,
-        "score": 0.15046201222847677
-      }],
-      "language": "en",
-      "id": "Seattle",
-      "url": "https://en.wikipedia.org/wiki/Seattle",
-      "dataSource": "Wikipedia"
-    }]
-  }],
+  "documents": [
+    {
+      "id": "1",
+      "entities": [
+        {
+          "name": "Space Needle",
+          "matches": [
+            {
+              "text": "Space Needle",
+              "offset": 30,
+              "length": 12,
+              "confidenceScore": 0.4
+            }
+          ],
+          "language": "en",
+          "id": "Space Needle",
+          "url": "https://en.wikipedia.org/wiki/Space_Needle",
+          "dataSource": "Wikipedia"
+        },
+        {
+          "name": "Seattle",
+          "matches": [
+            {
+              "text": "Seattle",
+              "offset": 62,
+              "length": 7,
+              "confidenceScore": 0.25
+            }
+          ],
+          "language": "en",
+          "id": "Seattle",
+          "url": "https://en.wikipedia.org/wiki/Seattle",
+          "dataSource": "Wikipedia"
+        }
+      ],
+      "warnings": []
+    }
+  ],
   "errors": [],
-  "modelVersion": "2019-10-01"
+  "modelVersion": "2020-02-01"
 }
 ```
 
-#### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
-
-### <a name="example-ner-v2-response"></a>Пример ответа NER v2
-```json
-{
-  "documents": [{
-    "id": "1",
-    "entities": [{
-      "name": "Seattle",
-      "matches": [{
-        "wikipediaScore": 0.15046201222847677,
-        "entityTypeScore": 0.80624294281005859,
-        "text": "Seattle",
-        "offset": 26,
-        "length": 7
-      }],
-      "wikipediaLanguage": "en",
-      "wikipediaId": "Seattle",
-      "wikipediaUrl": "https://en.wikipedia.org/wiki/Seattle",
-      "bingId": "5fbba6b8-85e1-4d41-9444-d9055436e473",
-      "type": "Location"
-    }, {
-      "name": "last week",
-      "matches": [{
-        "entityTypeScore": 0.8,
-        "text": "last week",
-        "offset": 34,
-        "length": 9
-      }],
-      "type": "DateTime",
-      "subType": "DateRange"
-    }]
-  }],
-  "errors": []
-}
-```
-
----
 
 ## <a name="summary"></a>Сводка
 
 В этой статье рассматриваются основные понятия и рабочий процесс связывания сущностей в службе Текстовой аналитики Cognitive Services. В разделе "Сводка" сделайте следующее.
 
-* Распознавание именованных сущностей доступно для выбранных языков в двух версиях.
 * В тексте запроса передаются документы JSON, которые содержат идентификатор, текст и код языка.
 * Запросы POST отправляются на одну или несколько конечных точек, используя персонализированный [ключ доступа и конечную точку](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) , допустимую для вашей подписки.
 * Ответ будет содержать выходные данные, содержащие связанные сущности (включая оценки уверенности, смещения и веб-ссылки для каждого идентификатора документа), которые можно использовать в любом приложении
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)
 * [Использование клиентской библиотеки Анализа текста](../quickstarts/text-analytics-sdk.md)

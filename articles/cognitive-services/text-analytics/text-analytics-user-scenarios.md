@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 03/04/2020
+ms.date: 05/13/2020
 ms.author: aahi
-ms.openlocfilehash: 6847059de2a8685a56719f07a041a40456f2aa06
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: eb82422aa0e3d45743539da623fcb919e8e77bbc
+ms.sourcegitcommit: f0b206a6c6d51af096a4dc6887553d3de908abf3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79219250"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84141825"
 ---
 # <a name="example-user-scenarios-for-the-text-analytics-api"></a>Примеры пользовательских сценариев для API Анализа текста
 
@@ -39,9 +39,9 @@ API Преобразования текста в речь, Анализа тон
 
 ![Схема использования функций извлечения ключевых фраз и распознавания сущностей для классификации обращений в службу поддержки и выявления тенденций](media/use-cases/support-incidents.svg)
 
-## <a name="monitor-your-products-social-media-feeds"></a>Отслеживание посвященных продукту страниц в социальных сетях
+## <a name="monitor-your-products-social-media-feeds"></a>Отслеживайте каналы социальных сетей вашего продукта
 
-Можно отслеживать отзывы пользователей о продукте на странице этого продукта в Twitter или Facebook. Полученные данные можно использовать для анализа мнений потребителей об ожидаемых продуктах, извлечения ключевых фраз о существующих и запрашиваемых функциях или реагирования на жалобы потребителей. Ознакомьтесь с примером [шаблона Power Automate](https://flow.microsoft.com/galleries/public/templates/2680d2227d074c4d901e36c66e68f6f9/run-sentiment-analysis-on-tweets-and-push-results-to-a-power-bi-dataset/).
+Отслеживайте отзывы пользователей о продуктах на странице Twitter или Facebook. Полученные данные можно использовать для анализа мнений потребителей об ожидаемых продуктах, извлечения ключевых фраз о существующих и запрашиваемых функциях или реагирования на жалобы потребителей. Ознакомьтесь с примером [шаблона Power Automate](https://flow.microsoft.com/galleries/public/templates/2680d2227d074c4d901e36c66e68f6f9/run-sentiment-analysis-on-tweets-and-push-results-to-a-power-bi-dataset/).
 
 ![Схема отслеживания отзывов потребителей о продукте или компании в социальных сетях с использованием функции извлечения ключевых фраз](media/use-cases/social-feed.svg)
 
@@ -51,7 +51,14 @@ API Преобразования текста в речь, Анализа тон
 
 ![Изображение, описывающее использование NER для обнаружения персональных данных и классификации и исправления документов](media/use-cases/sensitive-docs.jpg)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="perform-opinion-mining"></a>Выполнение интеллектуального анализа данных с мнениями
+
+Группирование мнений, связанных с конкретными аспектами продукта или службы, в опросах, отзывах пользователей или в любом месте, где находится мнение о аспекте. Используйте его, чтобы помочь в запуске продуктов и улучшениях, маркетинговой деятельности или выделять, как работает продукт или служба. 
+
+> [!div class="mx-imgBorder"] 
+> :::image type="content" source="media/use-cases/aspect-based-sentiment.png" alt-text="Пример мнения о гостинице.":::
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Что такое API "Анализ текста"?](overview.md)
 * [Quickstart: Use the Text Analytics client library for detecting language](quickstarts/text-analytics-sdk.md) (Краткое руководство. Вызов клиентской библиотеки "Анализ текста" для определения языка)
