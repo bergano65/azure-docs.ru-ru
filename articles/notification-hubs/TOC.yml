@@ -14,6 +14,7 @@
     - name: "Создание центра уведомлений с помощью Azure\_CLI"
       href: create-notification-hub-azure-cli.md
     - name: "Создание центра уведомлений\_— шаблон Resource Manager"
+      displayName: Resource Manager
       href: create-notification-hub-template.md
     - name: Настройка центра уведомлений
       href: configure-notification-hub-portal-pns-settings.md
@@ -23,9 +24,11 @@
       items:
         - name: Firebase Cloud Messaging
           items:
-            - name: Отправка push-уведомлений во все регистрации
+            - name: Отправка push-уведомлений всем зарегистрированным пользователям (пакет SDK версии 1.0.0-preview1)
+              href: android-sdk.md
+            - name: Отправка push-уведомлений всем зарегистрированным пользователям (пакет SDK версии 0.6)
               href: notification-hubs-android-push-notification-google-fcm-get-started.md
-            - name: Отправка push-уведомлений на конкретные устройства
+            - name: Отправка push-уведомлений на определенные устройства
               href: push-notifications-android-specific-devices-firebase-cloud-messaging.md
             - name: Отправка push-уведомлений определенным пользователям
               href: push-notifications-android-specific-users-firebase-cloud-messaging.md
@@ -33,9 +36,9 @@
               href: xamarin-notification-hubs-push-notifications-android-gcm.md
         - name: Google Cloud Messaging (устаревшая служба)
           items:
-            - name: Отправка push-уведомлений во все регистрации
+            - name: Отправка push-уведомлений всем зарегистрированным пользователям
               href: notification-hubs-android-push-notification-google-gcm-get-started.md
-            - name: Отправка push-уведомлений на конкретные устройства
+            - name: Отправка push-уведомлений на определенные устройства
               href: notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md
             - name: Отправка push-уведомлений определенным пользователям
               href: notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md
@@ -139,7 +142,7 @@
     - name: Регистрация в серверной части приложения
       href: notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification.md
     - name: Использование аутентификации на основе маркеров с устройствами Apple
-      href: notification-hubs-push-notification-http2-token-authentification.md
+      href: notification-hubs-push-notification-http2-token-authentication.md
     - name: Устранение неполадок из-за пропуска уведомлений
       href: notification-hubs-push-notification-fixer.md
     - name: Отправка push-уведомлений с помощью службы push-уведомлений облака Baidu

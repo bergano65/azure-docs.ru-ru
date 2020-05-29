@@ -42,6 +42,8 @@
   items:
     - name: Использование Распознавателя документов с Logic Apps
       href: tutorial-form-recognizer-with-logic-apps.md
+    - name: Использование Распознавателя документов со службой "Когнитивный поиск"
+      href: 'https://docs.microsoft.com/azure/search/cognitive-search-custom-skill-form'
 - name: Практические руководства
   items:
     - name: Создание набора данных для обучения
