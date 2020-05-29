@@ -1,0 +1,123 @@
+### YamlMime:Landing
+title: Документация по управляемому экземпляру SQL Azure
+summary: Ознакомьтесь с документацией по Управляемому экземпляру SQL Azure. Это управляемый экземпляр в Azure на основе новейшей стабильной версии Microsoft SQL Server.
+metadata:
+  title: Документация по управляемому экземпляру SQL Azure
+  description: Ознакомьтесь с документацией по Управляемому экземпляру SQL Azure. Это управляемый экземпляр в Azure на основе новейшей стабильной версии Microsoft SQL Server.
+  services: sql-database
+  ms.service: sql-database
+  ms.subservice: single-database
+  ms.topic: landing-page
+  author: MashaMSFT
+  ms.author: mathoma
+  ms.reviewer: carlrab
+  ms.date: 05/27/2020
+  ms.openlocfilehash: 967bf5461a1f4e6cf8869bcea6a0e7c74204d1a1
+  ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 05/27/2020
+  ms.locfileid: "84023625"
+landingContent:
+- title: Управляемый экземпляр SQL Azure
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание Управляемого экземпляра
+      url: instance-create-quickstart.md
+  - linkListType: concept
+    links:
+    - text: Новые возможности
+      url: ../database/doc-changes-updates-release-notes.md?tabs=managed-instance
+    - text: Что такое Управляемый экземпляр SQL?
+      url: sql-managed-instance-paas-overview.md
+    - text: Варианты приобретения
+      url: ../database/purchasing-models.md
+    - text: Уровни службы
+      url: ../database/service-tiers-general-purpose-business-critical.md
+    - text: Репликация транзакций
+      url: replication-transactional-overview.md
+    - text: Миграция из SQL Server
+      url: migrate-to-instance-from-sql-server.md
+    - text: Отличия в T-SQL при миграции из SQL Server
+      url: transact-sql-tsql-differences-sql-server.md
+- title: Расширенные функции безопасности
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Возможности системы безопасности
+      url: ../database/security-overview.md
+    - text: Лучшие методики обеспечения безопасности
+      url: ../database/security-best-practice.md
+    - text: Имена для входа, учетные записи пользователей, роли и разрешения
+      url: ../database/logins-create-manage.md
+    - text: Azure Active Directory
+      url: ../database/authentication-aad-overview.md
+    - text: Аудит
+      url: auditing-configure.md
+    - text: Прозрачное шифрование данных (TDE)
+      url: ../database/transparent-data-encryption-tde-overview.md
+    - text: Динамическое маскирование данных
+      url: ../database/dynamic-data-masking-overview.md
+    - text: Общедоступные конечные точки
+      url: public-endpoint-overview.md
+- title: Справочник
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Обучающие ресурсы по SQL
+      url: /sql/sql-server/educational-sql-resources
+  - linkListType: deploy
+    links:
+    - text: Примеры для Azure CLI
+      url: /sql/ssms/download-sql-server-management-studio-ssms
+    - text: Примеры для PowerShell
+      url: /sql/ssms/download-sql-server-management-studio-ssms
+    - text: Примеры шаблонов Resource Manager
+      url: /sql/ssms/download-sql-server-management-studio-ssms
+  - linkListType: download
+    links:
+    - text: SQL Server Management Studio (SSMS)
+      url: /sql/ssms/download-sql-server-management-studio-ssms
+    - text: Azure Data Studio
+      url: /sql/azure-data-studio/download-azure-data-studio
+    - text: SQL Server Data Tools
+      url: /sql/ssdt/download-sql-server-data-tools-ssdt
+    - text: Visual Studio 2019
+      url: https://visualstudio.microsoft.com/downloads/
+  - linkListType: reference
+    links:
+    - text: Руководство по миграции
+      url: https://datamigration.microsoft.com/
+    - text: Transact-SQL (T-SQL)
+      url: /sql/t-sql/language-reference
+    - text: Azure CLI
+      url: https://docs.microsoft.com/cli/azure/sql
+    - text: PowerShell
+      url: https://docs.microsoft.com/powershell/module/az.sql
+    - text: REST API
+      url: https://docs.microsoft.com/rest/api/sql/
+- title: Непрерывность бизнес-процессов
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Непрерывность бизнес-процессов
+      url: ../database/business-continuity-high-availability-disaster-recover-hadr-overview.md
+    - text: Высокий уровень доступности
+      url: ../database/high-availability-sla.md
+    - text: Группы автоматической отработки отказа
+      url: ../database/auto-failover-group-overview.md
+    - text: Автоматическое резервное копирование
+      url: ../database/automated-backups-overview.md
+    - text: Восстановление с использованием резервной копии
+      url: ../database/recovery-using-backups.md
+    - text: Долгосрочное хранение резервных копий
+      url: ../database/long-term-retention-overview.md
+- title: Пулы экземпляров
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Что такое пул экземпляров?
+      url: instance-pools-overview.md
+    - text: Configure
+      url: instance-pools-configure.md

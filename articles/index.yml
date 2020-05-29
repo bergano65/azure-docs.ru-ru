@@ -13,12 +13,12 @@ metadata:
   ms.date: 02/27/2020
   featureFlags:
   - clicktale
-  ms.openlocfilehash: 9232082e845ef651d188adcc2ccd5cd3b96d90b4
-  ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+  ms.openlocfilehash: 8dd70bbe8b3e495473523a662e0501613703354f
+  ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/26/2020
-  ms.locfileid: "83849609"
+  ms.lasthandoff: 05/27/2020
+  ms.locfileid: "84021778"
 highlightedContent:
   items:
   - title: Руководство по началу работы для разработчиков Azure
@@ -597,14 +597,26 @@ productDirectory:
     - databases
     - migration
     url: dms/index.yml
+  - title: Azure SQL
+    summary: Современное семейство SQL для миграции и модернизации приложений
+    imageSrc: https://static.docs.com/ui/media/product/azure/sql-database.svg
+    azureCategories:
+    - featured
+    - hybrid
+    - databases
+    url: azure-sql/index.yml
   - title: База данных SQL Azure
     summary: Управляемый, интеллектуальный SQL в облаке
     imageSrc: https://static.docs.com/ui/media/product/azure/sql-database.svg
     azureCategories:
-    - featured
     - databases
-    - hybrid
-    url: sql-database/index.yml
+    url: azure-sql/database/index.yml
+  - title: Управляемый экземпляр SQL Azure
+    summary: Управляемый и всегда актуальный экземпляр SQL в облаке
+    imageSrc: https://static.docs.com/ui/media/product/azure/sql-managed-instance.svg
+    azureCategories:
+    - databases
+    url: azure-sql/managed-instance/index.yml
   - title: SQL Azure для пограничных вычислений (предварительная версия)
     summary: Компактный механизм обработки данных с поддержкой пограничных устройств со встроенными средствами ИИ
     imageSrc: https://static.docs.com/ui/media/product/azure/sql-database-edge.svg

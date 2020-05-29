@@ -54,6 +54,8 @@
       href: concepts/text-offsets.md
     - name: Ограничения данных
       href: concepts/data-limits.md
+    - name: управления версиями моделей;
+      href: concepts/model-versioning.md
 - name: Практические руководства
   items:
     - name: Вызов API "Анализ текста"
@@ -76,6 +78,8 @@
           href: how-tos/text-analytics-how-to-use-container-instances.md
         - name: Использование Службы Azure Kubernetes (AKS)
           href: how-tos/text-analytics-how-to-use-kubernetes-service.md
+    - name: Переход на версию 3 API
+      href: migration-guide.md
 - name: Справочник
   items:
     - name: Справочник по CLI

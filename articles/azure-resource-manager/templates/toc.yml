@@ -76,7 +76,7 @@
           href: ../../virtual-machine-scale-sets/quick-create-template-windows.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Брандмауэр веб-приложения
           href: ../../web-application-firewall/ag/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-- name: Руководства
+- name: Учебники
   items:
     - name: Шаблоны для начинающих
       items:
@@ -156,6 +156,8 @@
       href: templates-cloud-consistency.md
     - name: Режимы развертывания
       href: deployment-modes.md
+    - name: Удаление журнала развертывания
+      href: deployment-history-deletions.md
     - name: Удаление ресурсов в полном режиме
       href: complete-mode-deletion.md
     - name: Диспетчер развертывания

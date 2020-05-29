@@ -1,0 +1,183 @@
+### YamlMime:Landing
+title: Документация по SQL Azure
+summary: 'Ознакомьтесь с документацией по семейству продуктов SQL Azure ядра СУБД SQL Server в облаке: База данных SQL Azure, Управляемый экземпляр SQL Azure и SQL Server на виртуальной машине Azure. '
+metadata:
+  title: Документация по SQL Azure
+  description: SQL Azure — это семейство продуктов ядра СУБД SQL Server в облаке — от полностью управляемой базы данных в Базе данных SQL Azure до полностью управляемого экземпляра в Управляемом экземпляре SQL Azure или решения SQL Server, установленного на виртуальной машине в Azure.
+  services: sql-database
+  ms.service: sql-database
+  ms.subservice: service
+  ms.tgt_pltfrm: na
+  ms.devlang: 
+  ms.topic: landing-page
+  author: MashaMSFT
+  ms.author: mathoma
+  ms.reviewer: carlrab
+  ms.date: 10/30/2019
+  ms.openlocfilehash: 449fa109712c3a92a48cc1e1997da3d2703bb1b2
+  ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 05/27/2020
+  ms.locfileid: "84023693"
+landingContent:
+- title: База данных SQL Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Новые возможности
+      url: database/doc-changes-updates-release-notes.md?tabs=single-database
+    - text: Что такое база данных SQL?
+      url: database/sql-database-paas-overview.md
+    - text: Что такое эластичные пулы?
+      url: database/elastic-pool-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Создание Базы данных SQL
+      url: database/single-database-create-quickstart.md
+    - text: Настройка брандмауэра
+      url: database/firewall-create-server-level-portal-quickstart.md
+  - linkListType: concept
+    links:
+    - text: Миграция из SQL Server
+      url: database/migrate-to-database-from-sql-server.md
+    - text: Расширенные функции безопасности
+      url: database/security-overview.md
+    - text: Непрерывность бизнес-процессов
+      url: database/business-continuity-high-availability-disaster-recover-hadr-overview.md
+    - text: Мониторинг и настройка
+      url: database/monitor-tune-overview.md
+    - text: Отличия в T-SQL при миграции из SQL Server
+      url: database/transact-sql-tsql-differences-sql-server.md
+- title: Управляемый экземпляр SQL Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Новые возможности
+      url: database/doc-changes-updates-release-notes.md?tabs=managed-instance
+    - text: Что такое Управляемый экземпляр SQL?
+      url: managed-instance/sql-managed-instance-paas-overview.md
+    - text: Что такое пулы экземпляров?
+      url: managed-instance/instance-pools-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Создание Управляемого экземпляра
+      url: managed-instance/instance-create-quickstart.md
+    - text: Настройка виртуальной машины для подключения
+      url: managed-instance/connect-vm-instance-configure.md
+    - text: Восстановление примера базы данных
+      url: managed-instance/restore-sample-database-quickstart.md
+  - linkListType: concept
+    links:
+    - text: Миграция из SQL Server
+      url: managed-instance/migrate-to-instance-from-sql-server.md
+    - text: Расширенные функции безопасности
+      url: database/security-overview.md
+    - text: Непрерывность бизнес-процессов
+      url: database/business-continuity-high-availability-disaster-recover-hadr-overview.md
+    - text: Мониторинг и настройка
+      url: database/monitor-tune-overview.md
+    - text: Отличия в T-SQL при миграции из SQL Server
+      url: managed-instance/transact-sql-tsql-differences-sql-server.md
+- title: SQL Server на виртуальной машине Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Новые возможности
+      url: virtual-machines/windows/doc-changes-updates-release-notes.md
+    - text: Что собой представляет SQL Server на виртуальной машине Windows?
+      url: virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md
+    - text: Что собой представляет SQL Server на виртуальной машине Linux?
+      url: virtual-machines/linux/sql-server-on-linux-vm-what-is-iaas-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Создание виртуальной машины Azure с SQL (Windows)
+      url: virtual-machines/windows/sql-vm-create-portal-quickstart.md
+    - text: Создание виртуальной машины Azure с SQL (Linux)
+      url: virtual-machines/linux/sql-vm-create-portal-quickstart.md
+  - linkListType: concept
+    links:
+    - text: Миграция из SQL Server
+      url: virtual-machines/windows/migrate-to-vm-from-sql-server.md
+    - text: Вопросы безопасности
+      url: virtual-machines/windows/security-considerations-best-practices.md
+    - text: Высокий уровень доступности и аварийное восстановление
+      url: virtual-machines/windows/business-continuity-high-availability-disaster-recovery-hadr-overview.md
+    - text: Рекомендации по повышению производительности
+      url: virtual-machines/windows/performance-guidelines-best-practices.md
+- title: Подключение и выполнение запросов
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Обзор
+      url: database/connect-query-content-reference-guide.md
+    - text: SQL Server Management Studio (SSMS)
+      url: database/connect-query-ssms.md
+    - text: Azure Data Studio
+      url: /azure-data-studio/quickstart-sql-database?toc=%2Fazure%2Fsql-database%2Ftoc.json
+    - text: Портал Azure
+      url: database/connect-query-portal.md
+    - text: Visual Studio (.NET)
+      url: database/connect-query-dotnet-visual-studio.md
+    - text: Visual Studio Code
+      url: database/connect-query-vscode.md
+    - text: .NET Core
+      url: database/connect-query-dotnet-core.md
+    - text: Python
+      url: database/connect-query-python.md
+- title: Разработка
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Разработка приложений
+      url: database/develop-overview.md
+    - text: Проектирование приложений с учетом функций аварийного восстановления
+      url: database/designing-cloud-solutions-for-disaster-recovery.md
+    - text: Управление последовательными обновлениями (база данных SQL)
+      url: database/manage-application-rolling-upgrade.md
+    - text: Стратегии разработки (виртуальная машина SQL)
+      url: virtual-machines/windows/application-patterns-development-strategies.md
+    - text: Шаблоны клиента в базе данных SaaS
+      url: database/saas-tenancy-app-design-patterns.md
+  - linkListType: how-to-guide
+    links:
+    - text: Проектирование первой базы данных (SSMS)
+      url: database/design-first-database-tutorial.md
+    - text: Проектирование первой базы данных (C#)
+      url: database/design-first-database-csharp-tutorial.md
+- title: Справочник
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Обучающие ресурсы по SQL
+      url: /sql/sql-server/educational-sql-resources
+  - linkListType: deploy
+    links:
+    - text: Примеры для Azure CLI
+      url: /sql/ssms/download-sql-server-management-studio-ssms
+    - text: Примеры для PowerShell
+      url: /sql/ssms/download-sql-server-management-studio-ssms
+    - text: Примеры шаблонов Resource Manager
+      url: /sql/ssms/download-sql-server-management-studio-ssms
+  - linkListType: download
+    links:
+    - text: SQL Server Management Studio (SSMS)
+      url: /sql/ssms/download-sql-server-management-studio-ssms
+    - text: Azure Data Studio
+      url: /sql/azure-data-studio/download-azure-data-studio
+    - text: SQL Server Data Tools
+      url: /sql/ssdt/download-sql-server-data-tools-ssdt
+    - text: Visual Studio 2019
+      url: https://visualstudio.microsoft.com/downloads/
+  - linkListType: reference
+    links:
+    - text: Руководство по миграции
+      url: https://datamigration.microsoft.com/
+    - text: Transact-SQL (T-SQL)
+      url: /sql/t-sql/language-reference
+    - text: Azure CLI
+      url: https://docs.microsoft.com/cli/azure/sql
+    - text: PowerShell
+      url: https://docs.microsoft.com/powershell/module/az.sql
+    - text: REST API
+      url: https://docs.microsoft.com/rest/api/sql/

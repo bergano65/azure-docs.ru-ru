@@ -1,0 +1,145 @@
+### YamlMime:Landing
+title: Документация по Базе данных SQL Azure
+summary: Ознакомьтесь с основными понятиями, краткими руководствами, учебными материалами и примерами, касающимися отдельных баз данных и баз данных в пуле в Базе данных SQL Azure.
+metadata:
+  title: Документация по Базе данных SQL Azure
+  description: Ознакомьтесь с документацией по Базе данных SQL Azure — решению PaaS (платформа как услуга), на основе новейшей стабильной версии Microsoft SQL Server.
+  services: sql-database
+  ms.service: sql-database
+  ms.subservice: single-database
+  ms.topic: landing-page
+  author: MashaMSFT
+  ms.author: mathoma
+  ms.reviewer: carlrab
+  ms.date: 05/27/2020
+  ms.openlocfilehash: 0faf1311e3a570028884f826b7d8b4ff3cd5e9e2
+  ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 05/27/2020
+  ms.locfileid: "84023829"
+landingContent:
+- title: База данных SQL Azure
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание Базы данных SQL
+      url: single-database-create-quickstart.md
+    - text: Настройка брандмауэра
+      url: firewall-create-server-level-portal-quickstart.md
+  - linkListType: concept
+    links:
+    - text: Новые возможности
+      url: doc-changes-updates-release-notes.md?tabs=single-database
+    - text: Что такое база данных SQL?
+      url: sql-database-paas-overview.md
+    - text: Варианты приобретения
+      url: purchasing-models.md
+    - text: Уровни службы
+      url: service-tiers-general-purpose-business-critical.md
+    - text: Бессерверные вычисления
+      url: serverless-tier-overview.md
+    - text: Уровень служб "Гипермасштабирование"
+      url: service-tier-hyperscale.md
+    - text: Миграция из SQL Server
+      url: migrate-to-database-from-sql-server.md
+    - text: Отличия в T-SQL при миграции из SQL Server
+      url: transact-sql-tsql-differences-sql-server.md
+- title: Непрерывность бизнес-процессов
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Непрерывность бизнес-процессов
+      url: business-continuity-high-availability-disaster-recover-hadr-overview.md
+    - text: Высокий уровень доступности
+      url: high-availability-sla.md
+    - text: Активная георепликация
+      url: active-geo-replication-overview.md
+    - text: Группы автоматической отработки отказа
+      url: auto-failover-group-overview.md
+    - text: Автоматическое резервное копирование
+      url: automated-backups-overview.md
+    - text: Восстановление с использованием резервной копии
+      url: recovery-using-backups.md
+    - text: Долгосрочное хранение резервных копий
+      url: long-term-retention-overview.md
+- title: Расширенные функции безопасности
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Возможности системы безопасности
+      url: security-overview.md
+    - text: Лучшие методики обеспечения безопасности
+      url: security-best-practice.md
+    - text: Имена для входа, учетные записи пользователей, роли и разрешения
+      url: logins-create-manage.md
+    - text: Azure Active Directory
+      url: authentication-aad-overview.md
+    - text: Аудит
+      url: auditing-overview.md
+    - text: Прозрачное шифрование данных (TDE)
+      url: transparent-data-encryption-tde-overview.md
+    - text: Динамическое маскирование данных
+      url: dynamic-data-masking-overview.md
+- title: Эластичные пулы
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Что такое эластичный пул?
+      url: elastic-pool-overview.md
+    - text: Управление
+      url: elastic-pool-manage.md
+    - text: Масштабирование
+      url: elastic-pool-scale.md
+    - text: Управление ресурсами
+      url: elastic-pool-resource-management.md
+- title: Справочник
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Обучающие ресурсы по SQL
+      url: /sql/sql-server/educational-sql-resources
+  - linkListType: deploy
+    links:
+    - text: Примеры для Azure CLI
+      url: /sql/ssms/download-sql-server-management-studio-ssms
+    - text: Примеры для PowerShell
+      url: /sql/ssms/download-sql-server-management-studio-ssms
+    - text: Примеры шаблонов Resource Manager
+      url: /sql/ssms/download-sql-server-management-studio-ssms
+  - linkListType: download
+    links:
+    - text: SQL Server Management Studio (SSMS)
+      url: /sql/ssms/download-sql-server-management-studio-ssms
+    - text: Azure Data Studio
+      url: /sql/azure-data-studio/download-azure-data-studio
+    - text: SQL Server Data Tools
+      url: /sql/ssdt/download-sql-server-data-tools-ssdt
+    - text: Visual Studio 2019
+      url: https://visualstudio.microsoft.com/downloads/
+  - linkListType: reference
+    links:
+    - text: Руководство по миграции
+      url: https://datamigration.microsoft.com/
+    - text: Transact-SQL (T-SQL)
+      url: /sql/t-sql/language-reference
+    - text: Azure CLI
+      url: https://docs.microsoft.com/cli/azure/sql
+    - text: PowerShell
+      url: https://docs.microsoft.com/powershell/module/az.sql
+    - text: REST API
+      url: https://docs.microsoft.com/rest/api/sql/
+- title: Масштабируемость
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Динамическое увеличение и уменьшение масштаба
+      url: scale-resources.md
+    - text: Горизонтальное масштабирование для чтения
+      url: read-scale-out.md
+    - text: Перекрестные задания баз данных
+      url: elastic-jobs-overview.md
+    - text: Эластичное масштабирование
+      url: elastic-scale-introduction.md
+    - text: Запросы к эластичным БД
+      url: elastic-query-overview.md

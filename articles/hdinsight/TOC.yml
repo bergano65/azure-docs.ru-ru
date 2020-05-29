@@ -772,6 +772,8 @@
               href: ./hadoop/hdinsight-use-hive.md
             - name: Использование представления Apache Hive
               href: ./hadoop/apache-hadoop-use-hive-ambari-view.md
+            - name: Подключение к Apache Beeline
+              href: ./hadoop/connect-install-beeline.md
             - name: Использование Apache Hive Beeline
               href: ./hadoop/apache-hadoop-use-hive-beeline.md
             - name: Использование Grafana

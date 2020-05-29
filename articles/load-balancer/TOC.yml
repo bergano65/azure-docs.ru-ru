@@ -135,12 +135,14 @@
           href: move-across-regions-internal-load-balancer-portal.md
         - name: "Внутренний балансировщик нагрузки\_— PowerShell"
           href: move-across-regions-internal-load-balancer-powershell.md
-    - name: Диагностика
-      items:
-        - name: Устранение неполадок Azure Load Balancer
-          href: load-balancer-troubleshoot.md
-        - name: Устранение стандартных ошибок развертывания
-          href: load-balancer-common-deployment-errors.md
+- name: Диагностика
+  items:
+    - name: Устранение неполадок Azure Load Balancer
+      href: load-balancer-troubleshoot.md
+    - name: Устранение стандартных ошибок развертывания
+      href: load-balancer-common-deployment-errors.md
+    - name: Устранение распространенных проблем с исходящим подключением
+      href: troubleshoot-outbound-connection.md
 - name: Справочник
   items:
     - name: Примеры кода

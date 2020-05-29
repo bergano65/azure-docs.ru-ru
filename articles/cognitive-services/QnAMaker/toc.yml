@@ -44,7 +44,7 @@
           href: Concepts/knowledge-base.md
         - name: Импортированные типы содержимого
           href: Concepts/content-types.md
-        - name: Наборы вопросов и ответов
+        - name: Пары вопросов и ответов
           href: Concepts/question-answer-set.md
     - name: Жизненный цикл базы знаний
       items:
@@ -72,8 +72,6 @@
         - name: Управление ресурсами
           href: How-To/set-up-qnamaker-service-azure.md
           displayName: 'azure, resource, key, upgrade, pricing, tier,'
-        - name: Создание плана обеспечения непрерывности бизнес-процессов
-          href: How-To/business-continuity-plan.md
         - name: Совместная работа
           href: How-To/collaborate-knowledge-base.md
         - name: Включение активного обучения

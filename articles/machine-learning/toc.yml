@@ -311,11 +311,14 @@
           displayName: automl automated auto ml
           href: how-to-auto-train-remote.md
         - name: Определение задач машинного обучения
-          displayName: 'machine learning, task type'
+          displayName: 'machine learning, task type, automl'
           href: how-to-define-task-type.md
         - name: Автоматическое обучение прогнозной модели
           displayName: time series
           href: how-to-auto-train-forecast.md
+        - name: Конструирование признаков в автоматизированном ML (Python)
+          displayName: 'automl, feature engineering, feature importance'
+          href: how-to-configure-auto-features.md
         - name: Использование автоматизированного машинного обучения в конвейерах машинного обучения (Python)
           displayName: machine learning automl
           href: how-to-use-automlstep-in-pipelines.md
@@ -449,8 +452,6 @@
     - name: Справочник по модулям конструктора
       displayName: 'module, reference, algorithm, studio'
       href: algorithm-module-reference/module-reference.md
-    - name: Машинное обучение в масштабе
-      href: /azure/architecture/data-guide/big-data/machine-learning-at-scale
     - name: Справочник по мониторингу данных
       href: monitor-resource-reference.md
     - name: Справочник по конвейеру машинного обучения YAML
