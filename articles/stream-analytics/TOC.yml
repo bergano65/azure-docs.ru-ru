@@ -9,14 +9,18 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: "Создание задания\_— портал Azure"
-      href: stream-analytics-quick-create-portal.md
-    - name: "Создание задания\_— PowerShell"
-      href: stream-analytics-quick-create-powershell.md
-    - name: Создание задания — Visual Studio
-      href: stream-analytics-quick-create-vs.md
-    - name: "Создание задания\_— Visual Studio Code"
-      href: quick-create-vs-code.md
+    - name: Создание задания
+      items:
+        - name: Портал Azure
+          href: stream-analytics-quick-create-portal.md
+        - name: Шаблон ARM
+          href: quick-create-azure-resource-manager.md
+        - name: PowerShell
+          href: stream-analytics-quick-create-powershell.md
+        - name: Visual Studio
+          href: stream-analytics-quick-create-vs.md
+        - name: Visual Studio Code
+          href: quick-create-vs-code.md
 - name: Учебники
   items:
     - name: 1. Создание и администрирование задания

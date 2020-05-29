@@ -2,13 +2,13 @@
 title: Настройка службы QnA Maker QnA Maker
 description: Перед созданием базы знаний службы QnA Maker необходимо настроить эту службу в Azure. Настроить службу QnA Maker может любой пользователь с правами на создание ресурсов в подписке.
 ms.topic: conceptual
-ms.date: 03/19/2020
-ms.openlocfilehash: 563a56fdb288568e7fe667fa54658400064a560f
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.date: 05/28/2020
+ms.openlocfilehash: 521d0388e4ee739b1ac840e482174ac466781f5f
+ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81402989"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84171180"
 ---
 # <a name="manage-qna-maker-resources"></a>Управление ресурсами QnA Maker
 
@@ -58,6 +58,7 @@ ms.locfileid: "81402989"
    ![Ресурс, созданный в службе QnA Maker](../media/qnamaker-how-to-setup-service/resources-created.png)
 
     У ресурса с типом _Cognitive Services_ есть ключи _подписки_ .
+
 
 ## <a name="find-subscription-keys-in-the-azure-portal"></a>Поиск ключей подписки в портал Azure
 
@@ -145,7 +146,7 @@ ms.locfileid: "81402989"
 
 Среда выполнения QnAMaker является частью экземпляра службы приложений Azure, который разворачивается при [создании службы QnAMaker](./set-up-qnamaker-service-azure.md) в портал Azure. Периодически устанавливаются обновления для этой среды выполнения. QnA Maker экземпляр службы приложений находится в режиме автоматического обновления после выпуска расширения сайта от апреля 2019 (версия 5 +). Это обновление предназначено для того, чтобы принимать во внимание время простоя при обновлении.
 
-Текущую версию можно проверить по адресу https://www.qnamaker.ai/UserSettings. Если версия старше версии 5. x, необходимо перезапустить службу приложений, чтобы установить последние обновления:
+Текущую версию можно проверить по адресу https://www.qnamaker.ai/UserSettings . Если версия старше версии 5. x, необходимо перезапустить службу приложений, чтобы установить последние обновления:
 
 1. Перейдите к службе QnAMaker (Группа ресурсов) в [портал Azure](https://portal.azure.com).
 
@@ -210,13 +211,36 @@ ms.locfileid: "81402989"
 
 Дополнительные сведения о настройке [общих параметров](../../../app-service/configure-common.md#configure-general-settings)службы приложений.
 
+## <a name="business-continuity-with-traffic-manager"></a>Непрерывность бизнес-процессов с помощью диспетчера трафика
+
+Основная цель плана обеспечения непрерывности бизнес-процессов — создание отказоустойчивой конечной точки базы знаний, которая обеспечит отсутствие простоев бота или приложения, которые его используют.
+
+> [!div class="mx-imgBorder"]
+> ![План по обеспечению непрерывности бизнес-процессов для QnA Maker](../media/qnamaker-how-to-bcp-plan/qnamaker-bcp-plan.png)
+
+В общих чертах для воплощения представленной выше концепции нужно сделать следующее:
+
+1. Настройте две параллельные [службы QnA Maker](set-up-qnamaker-service-azure.md) в [сопряженных регионах Azure](https://docs.microsoft.com/azure/best-practices-availability-paired-regions).
+
+1. [Создайте резервную копию](../../../app-service/manage-backup.md) основной службы приложений QnA Maker и [восстановите](../../../app-service/web-sites-restore.md) ее во вторичной установке. Это обеспечит работу обеих настроек с одним и тем же именем узла и ключами.
+
+1. Обеспечьте синхронизацию основного и дополнительного индексов поиска Azure. Используйте образец GitHub [здесь](https://github.com/pchoudhari/QnAMakerBackupRestore) , чтобы узнать, как выполнить резервное копирование для восстановления индексов Azure.
+
+1. Создайте резервную копию Application Insights с помощью [непрерывного экспорта](../../../application-insights/app-insights-export-telemetry.md).
+
+1. После настройки первичного и вторичного стеков воспользуйтесь [диспетчером трафика](../../../traffic-manager/traffic-manager-overview.md) для настройки двух конечных точек и метода маршрутизации.
+
+1. Вам потребуется создать протокол TLS, ранее известный как SSL (SSL), сертификат для конечной точки диспетчера трафика. [Привяжите сертификат TLS/SSL](../../../app-service/configure-ssl-bindings.md) в службах приложений.
+
+1. Наконец, используйте конечную точку диспетчера трафика в боте или приложении.
+
 ## <a name="delete-azure-resources"></a>Удаление ресурсов Azure
 
 Если удалить любой из ресурсов Azure, используемых для ваших баз знаний QnA Maker, базы знаний перестанут работать. Перед удалением любых ресурсов на странице **Настройки** убедитесь, что вы экспортируете свои базы знаний.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о [службе приложений](../../../app-service/index.yml) и службе [поиска](../../../search/index.yml).
 
 > [!div class="nextstepaction"]
-> [Создание и публикация базы знаний](../Quickstarts/create-publish-knowledge-base.md)
+> [Узнайте, как создавать другие](../how-to/collaborate-knowledge-base.md)
