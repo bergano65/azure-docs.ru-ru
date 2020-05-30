@@ -87,8 +87,6 @@
           href: howto-manage-devices.md
         - name: Настройка правил
           href: howto-configure-rules.md
-        - name: Использование рабочих процессов для интеграции с другими службами
-          href: howto-configure-rules-advanced.md
         - name: Анализ данных устройства
           href: howto-create-analytics.md
         - name: Добавление плиток на панель мониторинга
@@ -103,6 +101,8 @@
           href: howto-export-data.md
         - name: Создание действий веб-перехватчиков на основе правил
           href: howto-create-webhooks.md
+        - name: Использование рабочих процессов для интеграции с другими службами
+          href: howto-configure-rules-advanced.md
         - name: Подключение групп действий Azure Monitor на основе правил
           href: howto-use-action-groups.md
         - name: Создание настраиваемых правил

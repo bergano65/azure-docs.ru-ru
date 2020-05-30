@@ -1,6 +1,7 @@
 - name: Общие сведения
   href: index.yml
 - name: Обзор
+  expanded: true
   items:
     - name: Об Azure Key Vault
       href: overview.md

@@ -422,6 +422,8 @@
                       href: ../image-version-another-gallery-cli.md
                 - name: Создание виртуальной машины
                   items:
+                    - name: Специализированный
+                      href: ../vm-specialized-image-version-cli.md
                     - name: Универсальный
                       href: ../vm-generalized-image-version-cli.md
                 - name: Обновление ресурсов образа
