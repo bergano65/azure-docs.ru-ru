@@ -58,7 +58,7 @@
       items:
         - name: Импорт данных
           href: import-data.md
-        - name: Использование данных с локального сервера SQL
+        - name: Использование данных из SQL Server
           displayName: on-premises
           href: use-data-from-an-on-premises-sql-server.md
     - name: Обучение моделей

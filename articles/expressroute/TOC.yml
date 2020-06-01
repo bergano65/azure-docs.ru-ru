@@ -24,28 +24,28 @@
           href: work-remotely-support.md
     - name: Модели подключения
       href: expressroute-connectivity-models.md
-    - name: Каналы и пиринг
-      href: expressroute-circuit-peerings.md
     - name: Расположения и партнеры
       items:
         - name: Поставщики по расположению
           href: expressroute-locations-providers.md
         - name: Расположения по поставщикам
           href: expressroute-locations.md
-    - name: О шлюзах виртуальных сетей
-      href: expressroute-about-virtual-network-gateways.md
     - name: Предварительные требования
       href: expressroute-prerequisites.md
     - name: Рабочие процессы
       href: expressroute-workflows.md
     - name: Требования к маршрутизации
       href: expressroute-routing.md
+    - name: Каналы и пиринг
+      items:
+        - name: Сведения о каналах и пиринге
+          href: expressroute-circuit-peerings.md
+        - name: Перенос каналов из классического развертывания в развертывание с помощью Resource Manager
+          href: expressroute-move.md
     - name: BFD через ExpressRoute
       href: expressroute-bfd.md
     - name: Требования к QoS
       href: expressroute-qos.md
-    - name: Перенос каналов из классической модели развертывания в модель развертывания Resource Manager
-      href: expressroute-move.md
     - name: Сведения об ExpressRoute FastPath
       href: about-fastpath.md
     - name: Сведения об ExpressRoute Direct
@@ -54,6 +54,10 @@
       href: expressroute-global-reach.md
     - name: Сведения о шифровании ExpressRoute
       href: expressroute-about-encryption.md
+    - name: Средства управления безопасностью
+      href: expressroute-security-controls.md
+    - name: О шлюзах виртуальных сетей
+      href: expressroute-about-virtual-network-gateways.md
     - name: Подключение Azure к общедоступному облаку
       href: expressroute-connect-azure-to-public-cloud.md
     - name: Взаимодействие компонентов при подключении к серверной части
@@ -68,11 +72,9 @@
           href: ../networking/connectivty-interoperability-data-plane.md?toc=%2fazure%2fexpressroute%2ftoc.json
     - name: Возможность подключения нескольких сетей
       href: cross-network-connectivity.md
-    - name: Встроенные средства управления безопасностью
-      href: expressroute-security-controls.md
-    - name: Проектирование для обеспечения высокого уровня доступности
+    - name: "Высокий уровень доступности\_— проектирование"
       href: designing-for-high-availability-with-expressroute.md
-    - name: Проектирование для включения аварийного восстановления
+    - name: "Аварийное восстановление\_— проектирование"
       items:
         - name: Частный пиринг
           href: designing-for-disaster-recovery-with-expressroute-privatepeering.md
@@ -165,6 +167,8 @@
           href: expressroute-monitoring-metrics-alerts.md
         - name: Настройка решения "Монитор производительности сети" для ExpressRoute
           href: how-to-npm.md
+        - name: Настройка пользовательских оповещений для отслеживания объявляемых маршрутов
+          href: how-to-custom-route-alert.md
     - name: Классические и устаревшие статьи
       items:
         - name: Изменение канала

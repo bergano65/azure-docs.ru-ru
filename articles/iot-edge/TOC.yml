@@ -177,6 +177,8 @@
       items:
         - name: Мониторинг развертываний IoT Edge
           href: how-to-monitor-iot-edge-deployments.md
+        - name: Мониторинг двойников модулей
+          href: how-to-monitor-module-twins.md
         - name: Прямые методы EdgeAgent
           href: how-to-edgeagent-direct-method.md
     - name: Использование устройств IoT Edge в качестве шлюзов

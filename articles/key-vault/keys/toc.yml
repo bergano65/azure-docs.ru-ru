@@ -17,12 +17,12 @@
       href: quick-create-python.md
 - name: Учебники
   items:
-    - name: 'Импорт ключей, защищенных модулем HSM'
+    - name: Импорт защищенных модулем HSM ключей (общие сведения)
       href: hsm-protected-keys.md
-    - name: Импорт защищенных модулем HSM ключей (предварительная версия)
-      href: hsm-protected-keys-vendor-agnostic-byok.md
-    - name: Импорт защищенных модулем HSM ключей (прежняя версия)
-      href: hsm-protected-keys-legacy.md
+    - name: Импорт защищенных модулем HSM ключей (BYOK)
+      href: hsm-protected-keys-byok.md
+    - name: Импорт защищенных модулем HSM ключей (nCipher)
+      href: hsm-protected-keys-ncipher.md
 - name: Примеры
   items:
     - name: Встроенные компоненты Политики Azure
@@ -47,6 +47,8 @@
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.keyvault/allversions
       displayName: ARM
+    - name: Спецификация BYOK
+      href: byok-specification.md
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn

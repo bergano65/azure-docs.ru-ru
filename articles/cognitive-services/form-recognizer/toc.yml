@@ -60,6 +60,8 @@
           displayName: 'docker, container, run, billing, apikey, logging'
         - name: Использование экземпляров контейнеров
           href: deploy-form-recognizer-on-container-instances.md
+    - name: Копирование моделей для аварийного восстановления
+      href: disaster-recovery.md
 - name: Справочник
   items:
     - name: API Распознавателя документов версии 2.0

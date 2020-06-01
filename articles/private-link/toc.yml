@@ -20,6 +20,8 @@
       href: create-private-link-service-powershell.md
     - name: Создание службы "Приватный канал" с помощью Azure CLI
       href: create-private-link-service-cli.md
+    - name: Создание экземпляра службы "Приватный канал" с помощью шаблона ARM
+      href: create-private-link-service-template.md
 - name: Основные понятия
   items:
     - name: Частная конечная точка

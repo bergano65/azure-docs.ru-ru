@@ -25,6 +25,8 @@
       href: quickstart-create-data-factory-rest-api.md
     - name: Создание фабрики данных с помощью шаблона Resource Manager
       href: quickstart-create-data-factory-resource-manager-template.md
+    - name: Безопасность. Включение шифрования на базе управляемых клиентом ключей
+      href: quickstart-enable-customer-managed-key.md
     - name: Создание потока данных
       href: data-flow-create.md
 - name: Учебники
@@ -39,7 +41,7 @@
               href: tutorial-copy-data-portal.md
             - name: .NET
               href: tutorial-copy-data-dot-net.md
-        - name: Из локальной базы данных SQL Server в хранилище BLOB-объектов Azure
+        - name: Из базы данных SQL Server в хранилище BLOB-объектов Azure
           items:
             - name: Средство копирования данных
               href: tutorial-hybrid-copy-data-tool.md
@@ -76,7 +78,7 @@
                   href: tutorial-incremental-copy-portal.md
                 - name: Azure PowerShell
                   href: tutorial-incremental-copy-powershell.md
-            - name: "Из нескольких локальных таблиц SQL\_Server"
+            - name: Из нескольких таблиц баз данных SQL Server
               items:
                 - name: Пользовательский интерфейс
                   href: tutorial-incremental-copy-multiple-tables-portal.md
@@ -605,6 +607,10 @@
           href: self-hosted-integration-runtime-proxy-ssis.md
         - name: Включение аутентификации Azure AD для Azure-SSIS IR
           href: enable-aad-authentication-azure-ssis-ir.md
+        - name: Подключение к данным с проверкой подлинности Windows
+          href: ssis-azure-connect-with-windows-auth.md
+        - name: Сохранение файлов и подключение к общим папкам
+          href: ssis-azure-files-file-shares.md
         - name: Настройка выпуска Enterprise Edition для Azure-SSIS IR
           href: how-to-configure-azure-ssis-ir-enterprise-edition.md
         - name: Встроенные и предварительно установленные компоненты в Azure-SSIS IR
@@ -623,6 +629,8 @@
           href: how-to-use-sql-managed-instance-with-ir.md
         - name: Перенос заданий SSIS с использованием SSMS
           href: how-to-migrate-ssis-job-ssms.md
+        - name: Управление пакетами с помощью хранилища пакетов Azure-SSIS IR
+          href: azure-ssis-integration-runtime-package-store.md
     - name: Создание триггеров
       items:
         - name: Создание триггера на основе событий

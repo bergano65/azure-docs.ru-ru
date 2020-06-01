@@ -60,20 +60,34 @@
           href: ./samples/pattern-group-with-initiative.md
         - name: Развертывание ресурсов
           href: ./samples/pattern-deploy-resources.md
+    - name: Встроенные средства для обеспечения соответствия нормативным требованиям
+      items:
+        - name: Тестирование безопасности Azure
+          href: ./samples/azure-security-benchmark.md
+        - name: Тесты для оценки безопасности CIS для платформ Microsoft Azure 1.1.0
+          href: ./samples/cis-azure-1-1-0.md
+        - name: NIST SP 800-53 R4
+          href: ./samples/nist-sp-800-53-r4.md
 - name: Основные понятия
   items:
-    - name: Структура определения службы "Политика Azure"
+    - name: Структура определения
       displayName: 'parameters, location, rule, alias, initiatives'
       href: ./concepts/definition-structure.md
-    - name: Сведения о действии Политики
+    - name: Общие сведения о действиях
       displayName: 'order, evaluation'
       href: ./concepts/effects.md
-    - name: Структура назначения в службе "Политика Azure"
+    - name: Структура инициативы
+      displayName: 'parameters, groups, domains, policies'
+      href: ./concepts/initiative-definition-structure.md
+    - name: Структура назначения
       displayName: 'parameters, enforcementmode, policyDefinitionId'
       href: ./concepts/assignment-structure.md
     - name: Оценка влияния новой политики
       displayName: 'audit, enforcementmode, compliance'
       href: ./concepts/evaluate-impact.md
+    - name: Соответствие нормативным требованиям
+      displayName: 'standards, domains, controls'
+      href: ./concepts/regulatory-compliance.md
     - name: Рабочие процессы политики разработки как кода
       displayName: 'devops, infrastructure as code, iac, release, continuous, delivery, deploy'
       href: ./concepts/policy-as-code.md
@@ -127,6 +141,8 @@
         - name: Включение Azure Monitor для виртуальных машин (предварительная версия)
           displayName: 'monitor, insights, log analytics, builtin'
           href: ../../azure-monitor/insights/vminsights-enable-at-scale-policy.md?toc=/azure/governance/policy/toc.json&bc=/azure/governance/policy/breadcrumb/toc.json
+- name: Диагностика
+  href: ./troubleshoot/general.md
 - name: Справочник
   items:
     - name: Azure CLI
@@ -198,7 +214,7 @@
     - name: "GitHub\_— репозиторий политики сообщества"
       href: 'https://github.com/Azure/Community-Policy'
     - name: Раздел вопросов и ответов о Политике Azure на сайте Майкрософт
-      href: /answers/topics/azure-policy.html.html
+      href: /answers/topics/azure-policy.html
     - name: 'Канал на YouTube, посвященный системе управления'
       href: 'https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ'
     - name: Видео по гостевой конфигурации

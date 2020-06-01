@@ -1,14 +1,14 @@
 ---
 title: Индекс примеров политик
 description: Индекс встроенных определений Политики Azure. Теги категорий, соответствие нормативным требованиям, Key Vault, Kubernetes, гостевая конфигурация и многое другое.
-ms.date: 03/25/2020
+ms.date: 05/29/2020
 ms.topic: sample
-ms.openlocfilehash: 41a08a70df24f80ea324860d6d1db16c9ed99760
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 6e9c3b92942f24ae0a9972fa61340775262af761
+ms.sourcegitcommit: 0fa52a34a6274dc872832560cd690be58ae3d0ca
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83697185"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84203908"
 ---
 # <a name="azure-policy-samples"></a>Примеры для Политики Azure
 
@@ -32,6 +32,14 @@ ms.locfileid: "83697185"
 - [Оператор count](./pattern-count-operator.md)
 - [Группирование определений политик в инициативу](./pattern-group-with-initiative.md)
 - [Развертывание ресурсов с использованием deployIfNotExists](./pattern-deploy-resources.md)
+
+## <a name="regulatory-compliance"></a>Соответствие нормативным требованиям
+
+Ниже приведены встроенные средства, обеспечивающие [соответствие нормативным требованиям](../concepts/regulatory-compliance.md).
+
+- [Решение для оценки безопасности Azure](./azure-security-benchmark.md)
+- [Тесты для оценки безопасности CIS для платформ Microsoft Azure версии 1.1.0](./cis-azure-1-1-0.md)
+- [NIST SP 800-53, ред. 4](./nist-sp-800-53-r4.md)
 
 ## <a name="other-samples"></a>Другие примеры
 
