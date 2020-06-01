@@ -24,6 +24,8 @@
       href: classroom-labs-concepts.md
     - name: Основные понятия об архитектурах при работе с лабораториями для аудитории
       href: classroom-labs-fundamentals.md
+    - name: Ограничения емкости
+      href: capacity-limits.md
     - name: Сценарии
       items:
         - name: Использование лабораторий для проведения учебных занятий

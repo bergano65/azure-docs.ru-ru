@@ -60,8 +60,6 @@
       href: load-balancer-multivip-overview.md
     - name: Исходящие подключения
       href: load-balancer-outbound-connections.md
-    - name: Правила для исходящего трафика
-      href: load-balancer-outbound-rules-overview.md
     - name: Сброс подключений TCP во время ожидания в режиме простоя
       href: load-balancer-tcp-reset.md
     - name: Azure Load Balancer ценовой категории "Стандартный" и зоны доступности

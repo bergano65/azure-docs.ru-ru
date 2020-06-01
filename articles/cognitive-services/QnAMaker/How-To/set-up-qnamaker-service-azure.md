@@ -3,12 +3,12 @@ title: Настройка службы QnA Maker QnA Maker
 description: Перед созданием базы знаний службы QnA Maker необходимо настроить эту службу в Azure. Настроить службу QnA Maker может любой пользователь с правами на создание ресурсов в подписке.
 ms.topic: conceptual
 ms.date: 05/28/2020
-ms.openlocfilehash: 521d0388e4ee739b1ac840e482174ac466781f5f
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
+ms.openlocfilehash: 106796533f42250a2656735d97878ea04d6fa57f
+ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84171180"
+ms.lasthandoff: 05/31/2020
+ms.locfileid: "84235522"
 ---
 # <a name="manage-qna-maker-resources"></a>Управление ресурсами QnA Maker
 
@@ -210,6 +210,11 @@ ms.locfileid: "84171180"
 1. Вам будет предложено перезапустить приложение, чтобы использовать новый параметр. Выберите **Continue** (Продолжить).
 
 Дополнительные сведения о настройке [общих параметров](../../../app-service/configure-common.md#configure-general-settings)службы приложений.
+## <a name="configure-app-service-environment-to-host-qna-maker-app-service"></a>Настройка Среда службы приложений для размещения службы приложений QnA Maker
+Среда службы приложений можно использовать для размещения службы приложений QnA Maker. Если Среда службы приложений является внутренним, необходимо выполнить следующие действия.
+1. Создайте службу приложений и службу поиска Azure.
+2. Предоставьте службе приложений общедоступный тег службы DNS и список разрешений QnA Maker: Когнитивесервицесманажемент или обеспечьте бесконечную работу в Интернете.
+3. Создайте QnA Makerный экземпляр службы (Microsoft. CognitiveServices/Accounts) с помощью Azure Resource Manager, где QnA Maker конечная точка должна иметь значение Среда службы приложений. 
 
 ## <a name="business-continuity-with-traffic-manager"></a>Непрерывность бизнес-процессов с помощью диспетчера трафика
 
@@ -238,7 +243,7 @@ ms.locfileid: "84171180"
 
 Если удалить любой из ресурсов Azure, используемых для ваших баз знаний QnA Maker, базы знаний перестанут работать. Перед удалением любых ресурсов на странице **Настройки** убедитесь, что вы экспортируете свои базы знаний.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [службе приложений](../../../app-service/index.yml) и службе [поиска](../../../search/index.yml).
 
