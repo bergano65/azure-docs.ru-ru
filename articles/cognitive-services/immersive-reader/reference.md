@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: reference
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: cb88fb24ceed943d4104da6914959e4b79c35571
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 879834567b6905a070aada3dae2a41a672635c6c
+ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82231923"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84267245"
 ---
 # <a name="immersive-reader-sdk-reference-guide"></a>Справочное руководство по пакету SDK для иммерсивного чтения
 
@@ -33,7 +33,7 @@ ms.locfileid: "82231923"
 
 ## <a name="launchasync"></a>лаунчасинк
 
-Запускает иммерсивное средство чтения `iframe` в веб-приложении.
+Запускает иммерсивное средство чтения в `iframe` веб-приложении.
 
 ```typescript
 launchAsync(token: string, subdomain: string, content: Content, options?: Options): Promise<LaunchResponse>;
@@ -41,26 +41,26 @@ launchAsync(token: string, subdomain: string, content: Content, options?: Option
 
 ### <a name="parameters"></a>Параметры
 
-| Имя | Type | Описание |
+| Имя | Тип | Описание |
 | ---- | ---- |------------ |
 | `token` | строка | Маркер проверки подлинности Azure AD. |
 | `subdomain` | строка | Пользовательский поддомен для иммерсивного ресурса чтения в Azure. |
 | `content` | [Содержимое](#content) | Объект, содержащий содержимое, которое должно отображаться в иммерсивное средство чтения. |
-| `options` | [Параметры](#options) | Параметры для настройки определенного поведения иммерсивное средство чтения. Необязательный параметр. |
+| `options` | [Параметры](#options) | Параметры для настройки определенного поведения иммерсивное средство чтения. Необязательный элемент. |
 
 ### <a name="returns"></a>Результаты
 
-Возвращает объект `Promise<LaunchResponse>`, который разрешается при загрузке иммерсивное средство чтения. `Promise` Разрешается в [`LaunchResponse`](#launchresponse) объект.
+Возвращает объект `Promise<LaunchResponse>` , который разрешается при загрузке иммерсивное средство чтения. `Promise`Разрешается в [`LaunchResponse`](#launchresponse) объект.
 
 ### <a name="exceptions"></a>Исключения
 
-Возвращенный `Promise` [`Error`](#error) объект будет отклонен с объектом, если не удается загрузить иммерсивное средство чтения. Дополнительные сведения см. в [кодах ошибок](#error-codes).
+Возвращенный `Promise` объект будет отклонен с [`Error`](#error) объектом, если не удается загрузить иммерсивное средство чтения. Дополнительные сведения см. в [кодах ошибок](#error-codes).
 
-## <a name="close"></a>закрыть
+## <a name="close"></a>close
 
 Закрывает иммерсивное средство чтения.
 
-Примером использования этой функции является случай, если кнопка выход скрыта с помощью параметра ```hideExitButton: true``` [в параметрах.](#options) Затем с помощью другой кнопки (например, стрелки обратного заголовка мобильного устройства) можно вызвать эту ```close``` функцию при ее нажатии.
+Примером использования этой функции является случай, если кнопка выход скрыта с помощью параметра ```hideExitButton: true``` в [параметрах](#options). Затем с помощью другой кнопки (например, стрелки обратного заголовка мобильного устройства) можно вызвать эту ```close``` функцию при ее нажатии.
 
 ```typescript
 close(): void;
@@ -68,7 +68,7 @@ close(): void;
 
 ## <a name="renderbuttons"></a>рендербуттонс
 
-Эта функция выменяет стили и обновляет элементы кнопки чтения в документе. Если ```options.elements``` указан, то эта функция будет отображать кнопки в ```options.elements```. В противном случае кнопки будут отображены в элементах документа, имеющих класс ```immersive-reader-button```.
+Эта функция выменяет стили и обновляет элементы кнопки чтения в документе. Если указан ```options.elements``` , то эта функция будет отображать кнопки в ```options.elements``` . В противном случае кнопки будут отображены в элементах документа, имеющих класс ```immersive-reader-button``` .
 
 Эта функция автоматически вызывается пакетом SDK при загрузке окна.
 
@@ -80,13 +80,13 @@ renderButtons(options?: RenderButtonsOptions): void;
 
 ### <a name="parameters"></a>Параметры
 
-| Имя | Type | Описание |
+| Имя | Тип | Описание |
 | ---- | ---- |------------ |
-| `options` | [рендербуттонсоптионс](#renderbuttonsoptions) | Параметры для настройки определенного поведения функции Рендербуттонс. Необязательный параметр. |
+| `options` | [рендербуттонсоптионс](#renderbuttonsoptions) | Параметры для настройки определенного поведения функции Рендербуттонс. Необязательный элемент. |
 
 ## <a name="types"></a>Типы
 
-### <a name="content"></a>Содержимое
+### <a name="content"></a>Content
 
 Содержит содержимое, отображаемое в иммерсивное средство чтения.
 
@@ -111,7 +111,7 @@ renderButtons(options?: RenderButtonsOptions): void;
 
 ### <a name="launchresponse"></a>лаунчреспонсе
 
-Содержит ответ от вызова `ImmersiveReader.launchAsync`.
+Содержит ответ от вызова `ImmersiveReader.launchAsync` .
 
 ```typescript
 {
@@ -134,7 +134,7 @@ enum CookiePolicy { Disable, Enable }
 | --------- | ----------- |
 | text/plain | Обычный текст. |
 | text/html | Содержимое в виде HTML. [Дополнительные сведения](#html-support)|
-| Application/масмл + XML | Язык математической разметки (Масмл). [Подробнее](./how-to/display-math.md).
+| Application/масмл + XML | Язык математической разметки (Масмл). [Дополнительные сведения](./how-to/display-math.md).
 | приложение/vnd. openxmlformats-officeDocument. WordprocessingML. Document | Документ в формате Microsoft Word. docx.
 
 ### <a name="html-support"></a>Поддержка HTML
@@ -147,7 +147,7 @@ enum CookiePolicy { Disable, Enable }
 
 Неподдерживаемые теги будут подготовлены к просмотру сравнимо. Изображения и таблицы в настоящее время не поддерживаются.
 
-### <a name="options"></a>Элемент Options
+### <a name="options"></a>Параметры
 
 Содержит свойства, которые настраивают определенное поведение иммерсивное средство чтения.
 
@@ -175,7 +175,7 @@ enum CookiePolicy { Disable, Enable }
 }
 ```
 
-### <a name="error"></a>Ошибка
+### <a name="error"></a>Error
 
 Содержит сведения об ошибке.
 
@@ -190,14 +190,14 @@ enum CookiePolicy { Disable, Enable }
 
 | Код | Описание |
 | ---- | ----------- |
-| BadArgument | Указан недопустимый аргумент, `message` см. Дополнительные сведения. |
+| BadArgument | Указан недопустимый аргумент, см `message` . Дополнительные сведения. |
 | Время ожидания | Не удалось загрузить иммерсивное средство чтения в течение указанного времени ожидания. |
 | TokenExpired | Срок действия заданного маркера истек. |
 | Ожидает повтора | Превышено ограничение скорости вызовов. |
 
 ## <a name="launching-the-immersive-reader"></a>Запуск иммерсивное средство чтения
 
-Пакет SDK предоставляет стиль по умолчанию для кнопки запуска иммерсивное средство чтения. Для включения `immersive-reader-button` этого стиля используйте атрибут класса. Дополнительные сведения см. в [этой статье](./how-to-customize-launch-button.md) .
+Пакет SDK предоставляет стиль по умолчанию для кнопки запуска иммерсивное средство чтения. `immersive-reader-button`Для включения этого стиля используйте атрибут класса. Дополнительные сведения см. в [этой статье](./how-to-customize-launch-button.md).
 
 ```html
 <div class='immersive-reader-button'></div>
@@ -210,7 +210,7 @@ enum CookiePolicy { Disable, Enable }
 | Атрибут | Описание |
 | --------- | ----------- |
 | `data-button-style` | Задает стиль кнопки. Возможные значения: `icon`, `text` или `iconAndText`. По умолчанию имеет значение `icon`. |
-| `data-locale` | Задает языковой стандарт. Например, `en-US` или `fr-FR`. По умолчанию используется `en`английский язык. |
+| `data-locale` | Задает языковой стандарт. Например, `en-US` или `fr-FR`. По умолчанию используется английский язык `en` . |
 | `data-icon-px-size` | Задает размер значка в пикселях. По умолчанию используется 20px. |
 
 ## <a name="browser-support"></a>Поддержка браузеров
@@ -223,7 +223,7 @@ enum CookiePolicy { Disable, Enable }
 * Mozilla Firefox
 * Apple Safari;
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Изучите [пакет SDK иммерсивного средства чтения на сайте GitHub](https://github.com/microsoft/immersive-reader-sdk).
-* [Краткое руководство. Создание веб-приложения, запускающего иммерсивное средство чтения (C#)](./quickstart.md)
+* [Краткое руководство. Создание веб-приложения, запускающего иммерсивное средство чтения (C#)](./quickstarts/client-libraries.md?pivots=programming-language-csharp)
