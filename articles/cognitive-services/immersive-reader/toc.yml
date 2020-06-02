@@ -7,12 +7,8 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: 'Использование C#'
-      href: Quickstart.md
-    - name: Использование Node.js
-      href: quickstart-nodejs.md
-    - name: Использование Swift (iOS)
-      href: ios-quickstart.md
+    - name: Использование клиентской библиотеки
+      href: ./quickstarts/client-libraries.md
 - name: Учебники
   items:
     - name: Запуск иммерсивного средства чтения (Python)

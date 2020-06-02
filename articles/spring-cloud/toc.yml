@@ -90,7 +90,7 @@
 - name: Справочник
   items:
     - name: "Подключаемый модуль Azure\_CLI"
-      href: spring-cloud-cli-reference.md
+      href: 'https://docs.microsoft.com/cli/azure/ext/spring-cloud/spring-cloud'
     - name: Ресурсы
       href: spring-cloud-resources.md
     - name: Часто задаваемые вопросы

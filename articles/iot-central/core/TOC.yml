@@ -123,6 +123,8 @@
               href: howto-customize-ui.md
             - name: Экспорт приложения
               href: howto-use-app-templates.md
+            - name: Мониторинг работоспособности приложений
+              href: howto-monitor-application-health.md
         - name: Управление с помощью других решений
           items:
             - name: Управление с помощью портала Azure

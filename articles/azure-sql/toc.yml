@@ -50,6 +50,8 @@
               href: database/advanced-data-security.md
             - name: Расширенная защита от угроз
               href: database/threat-detection-overview.md
+            - name: Обнаружение и классификация данных
+              href: database/data-discovery-and-classification-overview.md
             - name: Динамическое маскирование данных
               href: database/dynamic-data-masking-overview.md
             - name: Оценка уязвимостей SQL
@@ -73,8 +75,6 @@
                   href: database/transparent-data-encryption-tde-overview.md
                 - name: Создание собственных ключей (BYOK)
                   href: database/transparent-data-encryption-byok-overview.md
-                - name: Обнаружение и классификация данных
-                  href: database/data-discovery-and-classification-overview.md
         - name: Непрерывность бизнес-процессов
           displayName: 'Backup, back up, restore, recovery'
           items:

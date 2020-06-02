@@ -190,7 +190,7 @@
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=compute'
     - name: Схема обучения
-      href: 'https://azure.microsoft.com/documentation/learning-paths/cloud-services/'
+      href: /learn/paths/azure-fundamentals/
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
       href: 'https://docs.microsoft.com/answers/topics/azure-cloud-services.html'
     - name: Цены
