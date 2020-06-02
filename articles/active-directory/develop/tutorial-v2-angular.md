@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 03/05/2020
 ms.author: hahamil
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: c645ab45711698e4a6f582678e2a850e15dea62a
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 1ede6592b3da979136d70b873142af6d2bb8b593
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82181602"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83201327"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-an-angular-single-page-application"></a>Руководство по входу пользователей в систему и вызову API Microsoft Graph из одностраничного приложения Angular
 
@@ -343,7 +343,6 @@ logout() {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Далее в учебнике по Angular вы узнаете, как выполнить для пользователя вход в систему и получить маркеры:
+Если вы не работали с удостоверениями и управлением доступом, ознакомьтесь с нашими статьями, чтобы узнать о современных методах проверки подлинности, начиная с [аутентификации и авторизации](authentication-vs-authorization.md).
 
-> [!div class="nextstepaction"]
-> [Учебник по Angular](https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-angular)
+Если вы хотите узнать больше о разработке одностраничных приложений на платформе Microsoft Identity, см. серию статей [Сценарий: одностраничное приложение](scenario-spa-overview.md).

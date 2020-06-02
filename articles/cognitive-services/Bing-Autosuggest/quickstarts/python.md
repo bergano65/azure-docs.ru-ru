@@ -1,25 +1,25 @@
 ---
 title: Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Python
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как быстро начать предложение условий поиска в режиме реального времени с помощью API Автозаполнения Bing.
+description: Узнайте, как настроить заполнение условий поиска в реальном времени с помощью API Автозаполнения Bing.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-autosuggest
 ms.topic: quickstart
-ms.date: 03/24/2020
+ms.date: 05/06/2020
 ms.author: aahi
-ms.openlocfilehash: 582e298bb291a66a6ec6b7300dffaa0fc18af4e0
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 94ee870771cd0f0c372602648e5a81e99cbd5537
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80238922"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82929539"
 ---
 # <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-python"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Python
 
-В этом кратком руководстве описано, как настроить осуществление вызовов к API Автозаполнения Bing и получение ответа JSON. Это простое приложение Python отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/python/Search/BingAutosuggestv7.py).
+В этом кратком руководстве показано, как вызывать API Автозаполнения Bing и считывать ответ в формате JSON. Это простое приложение Python отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/python/Search/BingAutosuggestv7.py).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -35,7 +35,7 @@ ms.locfileid: "80238922"
     import http.client, urllib.parse, json
     ```
 
-2. Создайте переменные для хоста и пути API, [рыночного кода](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и частичного поискового запроса. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+2. Создайте переменные для узла API и пути, [кода рынка](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и частичного поискового запроса. Вы можете использовать глобальную конечную точку в следующем коде или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемую на портале Azure для вашего ресурса.
 
     ```python
     subscriptionKey = 'enter key here'
@@ -45,7 +45,7 @@ ms.locfileid: "80238922"
     query = 'sail'
     ```
 
-3. Создайте строку параметров, добавив рыночный код к параметру `?mkt=`, и запрос к параметру `&q=`.
+3. Создайте строку параметров, добавив рыночный код к параметру `mkt=`, и запрос к параметру `q=`.
 
     ```python
     params = '?mkt=' + mkt + '&q=' + query

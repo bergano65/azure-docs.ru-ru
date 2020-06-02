@@ -4,20 +4,20 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 01/12/2020
 ms.author: glenga
-ms.openlocfilehash: 2d95055e79356b9e0fe9c4c0e64f5935619204b3
-ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
+ms.openlocfilehash: 2eb8b988d7d65b444fe41ecb21dddfab4ff4cfa1
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81112884"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83125858"
 ---
 1. В Visual Studio Code нажмите клавишу F1, чтобы открыть палитру команд. В палитре команд найдите и щелкните `Azure Functions: Open in portal`.
 
 1. Выберите приложение-функцию и нажмите клавишу ВВОД. Страница приложения-функции откроется на портале Azure.
 
-1. На вкладке **Обзор** выберите именованную ссылку в разделе **Группа ресурсов**.
+1. На вкладке **Обзор** выберите именованную ссылку рядом с полем **Группа ресурсов**.
 
-    ![Выберите группу ресурсов, которую требуется удалить со страницы приложения-функции.](./media/functions-cleanup-resources-vs-code/functions-app-delete-resource-group.png)
+   :::image type="content" source="./media/functions-cleanup-resources-vs-code/functions-app-delete-resource-group.png" alt-text="Выберите группу ресурсов, которую требуется удалить со страницы приложения-функции.":::
 
 1. На странице **Resource group** (Группа ресурсов) просмотрите список включенных ресурсов и убедитесь, что именно их требуется удалить.
  

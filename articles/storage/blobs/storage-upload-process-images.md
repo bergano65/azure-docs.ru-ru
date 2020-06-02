@@ -8,21 +8,21 @@ ms.topic: tutorial
 ms.date: 03/06/2020
 ms.author: mhopkins
 ms.reviewer: dineshm
-ms.openlocfilehash: e2ee959fb6fc7e8454919c71cfa20e2bb9055dfb
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 3c475787eafde4ba847b292df57e4b0d18cfe5d0
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81393848"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83196053"
 ---
-# <a name="tutorial-upload-image-data-in-the-cloud-with-azure-storage"></a>Руководство. Передача данных изображений в облако с помощью службы хранилища Azure
+# <a name="tutorial-upload-image-data-in-the-cloud-with-azure-storage"></a>Руководство по Передача данных изображений в облако с помощью службы хранилища Azure
 
 Это руководство представляет первую часть цикла. Из этого руководства вы узнаете, как развернуть веб-приложение, использующее клиентскую библиотеку хранилища BLOB-объектов Azure, для отправки изображений в учетную запись хранения. По окончании у вас будет веб-приложение, которое хранит и показывает изображения из службы хранилища Azure.
 
-# <a name="net-v12-sdk"></a>[\.NET (пакет SDK версии 12)](#tab/dotnet)
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 ![Приложение для изменения размера изображений на платформе .NET](media/storage-upload-process-images/figure2.png)
 
-# <a name="nodejs-v10-sdk"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
+# <a name="nodejs-v10"></a>[Node.js (версия 10)](#tab/nodejsv10)
 ![Приложение для изменения размера изображений на платформе Node.js версии 10](media/storage-upload-process-images/upload-app-nodejs-thumb.png)
 
 ---
@@ -37,7 +37,7 @@ ms.locfileid: "81393848"
 > * Настройка параметров приложения
 > * Взаимодействие с веб-приложением.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется подписка Azure. Перед началом работы создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 
@@ -111,7 +111,7 @@ az appservice plan create --name myAppServicePlan --resource-group myResourceGro
 
 Веб-приложение предоставляет пространство для размещения примера кода приложения, развернутого из примера репозитория GitHub. Создайте [веб-приложение](../../app-service/overview.md) в рамках плана `myAppServicePlan` службы приложений с помощью команды [az webapp create](/cli/azure/webapp).  
 
-В следующей команде замените `<web_app>` уникальным именем. Допустимые символы: `a-z`, `0-9` и `-`. Если `<web_app>` не является уникальным, отобразится следующее сообщение об ошибке: *Веб-сайт с указанным именем `<web_app>` уже существует*. URL-адрес приложения по умолчанию: `https://<web_app>.azurewebsites.net`.  
+В следующей команде замените `<web_app>` уникальным именем. Допустимые символы: `a-z`, `0-9` и `-`. Если `<web_app>` не является уникальным, отобразится сообщение об ошибке: *Веб-сайт с именем `<web_app>` уже существует.* URL-адрес приложения по умолчанию: `https://<web_app>.azurewebsites.net`.  
 
 ```azurecli-interactive
 webapp="<web_app>"
@@ -121,7 +121,7 @@ az webapp create --name $webapp --resource-group myResourceGroup --plan myAppSer
 
 ## <a name="deploy-the-sample-app-from-the-github-repository"></a>Развертывание примера приложения из репозитория GitHub
 
-# <a name="net-v12-sdk"></a>[\.NET (пакет SDK версии 12)](#tab/dotnet)
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 
 Служба приложений поддерживает несколько способов развертывания содержимого для веб-приложения. В этом руководстве развертывается веб-приложение из [общедоступного репозитория примеров GitHub](https://github.com/Azure-Samples/storage-blob-upload-from-webapp). Настройте для веб-приложения развертывание GitHub с помощью команды [az webapp deployment source config](/cli/azure/webapp/deployment/source).
 
@@ -133,7 +133,7 @@ az webapp deployment source config --name $webapp --resource-group myResourceGro
   --repo-url https://github.com/Azure-Samples/storage-blob-upload-from-webapp
 ```
 
-# <a name="nodejs-v10-sdk"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
+# <a name="nodejs-v10"></a>[Node.js (версия 10)](#tab/nodejsv10)
 Служба приложений поддерживает несколько способов развертывания содержимого для веб-приложения. В этом руководстве развертывается веб-приложение из [общедоступного репозитория примеров GitHub](https://github.com/Azure-Samples/storage-blob-upload-from-webapp-node-v10). Настройте для веб-приложения развертывание GitHub с помощью команды [az webapp deployment source config](/cli/azure/webapp/deployment/source).
 
 ```azurecli-interactive
@@ -146,7 +146,7 @@ az webapp deployment source config --name $webapp --resource-group myResourceGro
 
 ## <a name="configure-web-app-settings"></a>Настройка параметров веб-приложения
 
-# <a name="net-v12-sdk"></a>[\.NET (пакет SDK версии 12)](#tab/dotnet)
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 
 В примере веб-приложения для отправки изображений используется [API службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage). Учетные данные записи хранения задаются в параметрах приложения для веб-приложения. Добавить параметры в развернутое приложение можно с помощью команды [az webapp config appsettings set](/cli/azure/webapp/config/appsettings).
 
@@ -158,7 +158,7 @@ az webapp config appsettings set --name $webapp --resource-group myResourceGroup
     AzureStorageConfig__AccountKey=$blobStorageAccountKey
 ```
 
-# <a name="nodejs-v10-sdk"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
+# <a name="nodejs-v10"></a>[Node.js (версия 10)](#tab/nodejsv10)
 
 В примере приложения [клиентская библиотека хранилища Azure](https://github.com/Azure/azure-storage-js) используется для запроса маркеров доступа, которые используются для отправки изображений. Учетные данные записи хранения, используемые пакетом SDK службы хранилища, задаются в параметрах приложения для веб-приложения. Добавить параметры в развернутое приложение можно с помощью команды [az webapp config appsettings set](/cli/azure/webapp/config/appsettings).
 
@@ -176,7 +176,7 @@ az webapp config appsettings set --name $webapp --resource-group myResourceGroup
 
 Чтобы проверить веб-приложение, перейдите по URL-адресу опубликованного приложения. URL-адрес приложения по умолчанию: `https://<web_app>.azurewebsites.net`.
 
-# <a name="net-v12-sdk"></a>[\.NET (пакет SDK версии 12)](#tab/dotnet)
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 
 Выберите область **Отправка фотографий**, чтобы указать и отправить файл, или перетащите файлы в нее. При успешной отправке изображение исчезнет. Раздел **Generated Thumbnails** (Созданные эскизы) будет оставаться пустым, пока мы не протестируем его позднее.
 
@@ -218,7 +218,7 @@ public static async Task<bool> UploadFileToStorage(Stream fileStream, string fil
 | [StorageSharedKeyCredential](/dotnet/api/azure.storage.storagesharedkeycredential) | [StorageSharedKeyCredential(String, String) constructor](/dotnet/api/azure.storage.storagesharedkeycredential.-ctor) |
 | [BlobClient](/dotnet/api/azure.storage.blobs.blobclient) | [UploadAsync](/dotnet/api/azure.storage.blobs.blobclient.uploadasync) |
 
-# <a name="nodejs-v10-sdk"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
+# <a name="nodejs-v10"></a>[Node.js (версия 10)](#tab/nodejsv10)
 
 Чтобы выбрать файл, нажмите кнопку **Выбрать файл**, а затем **Загрузить изображение**. Раздел **Generated Thumbnails** (Созданные эскизы) будет оставаться пустым, пока мы не протестируем его позднее. 
 
@@ -304,7 +304,7 @@ router.post('/', uploadStrategy, async (req, res) => {
 
 Убедитесь, что изображение отображается в контейнере.
 
-![Список контейнеров образов на портале Azure](media/storage-upload-process-images/figure13.png)
+![Список контейнеров изображений на портале Azure](media/storage-upload-process-images/figure13.png)
 
 ## <a name="test-thumbnail-viewing"></a>Тестирование просмотра эскизов
 
@@ -316,10 +316,10 @@ router.post('/', uploadStrategy, async (req, res) => {
 
 Вернитесь к своему приложению и убедитесь, что изображение, отправленное в контейнер **эскизов**, отображается.
 
-# <a name="net-v12-sdk"></a>[\.NET (пакет SDK версии 12)](#tab/dotnet)
+# <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 ![Приложение для изменения размера изображений .NET с новым изображением](media/storage-upload-process-images/figure2.png)
 
-# <a name="nodejs-v10-sdk"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
+# <a name="nodejs-v10"></a>[Node.js (версия 10)](#tab/nodejsv10)
 ![Приложение для изменения размера изображений Node.js версии 10 с новым изображением](media/storage-upload-process-images/upload-app-nodejs-thumb.png)
 
 ---

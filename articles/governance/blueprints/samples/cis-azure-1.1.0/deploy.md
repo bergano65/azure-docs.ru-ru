@@ -1,14 +1,14 @@
 ---
 title: Развертывание примера схемы теста производительности CIS Microsoft Azure Foundations
 description: Шаги развертывания для примера схемы CIS Microsoft Azure Foundations Benchmark, включая сведения о параметрах артефактов схемы.
-ms.date: 10/14/2019
+ms.date: 05/06/2020
 ms.topic: sample
-ms.openlocfilehash: 7476addee3d31ec355c793ab7fbe1fbb732b8013
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 9f132ee47784eedf8d1ced7e0b67f957877d12ef
+ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74544518"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82864476"
 ---
 # <a name="deploy-the-cis-microsoft-azure-foundations-benchmark-blueprint-sample"></a>Развертывание примера схемы CIS Microsoft Azure Foundations Benchmark
 
@@ -93,8 +93,8 @@ ms.locfileid: "74544518"
 
 |Имя артефакта|Тип артефакта|Имя параметра|Описание|
 |-|-|-|-|
-|\[Предварительная версия.\] Аудит рекомендаций CIS Microsoft Azure Foundations Benchmark 1.1.0 и развертывание определенных расширений виртуальных машин для их поддержки|Назначение политики|Список регионов, где должен быть включен Наблюдатель за сетями|Разделенный точками с запятой список регионов. Список всех регионов можно просмотреть с помощью Get-AzLocation. Пример: eastus; eastus2|
-|\[Предварительная версия.\] Аудит рекомендаций CIS Microsoft Azure Foundations Benchmark 1.1.0 и развертывание определенных расширений виртуальных машин для их поддержки|Назначение политики|Список утвержденных для использования расширений виртуальной машины|Разделенный точками с запятой список расширений. Чтобы просмотреть полный список расширений виртуальной машины, используйте Get-AzVMExtensionImage. Например, AzureDiskEncryption; IaaSAntimalware|
+|Аудит рекомендаций CIS Microsoft Azure Foundations Benchmark 1.1.0 и развертывание определенных расширений виртуальных машин для их поддержки|Назначение политики|Список регионов, где должен быть включен Наблюдатель за сетями|Разделенный точками с запятой список регионов. Список всех регионов можно просмотреть с помощью Get-AzLocation. Пример: eastus; eastus2|
+|Аудит рекомендаций CIS Microsoft Azure Foundations Benchmark 1.1.0 и развертывание определенных расширений виртуальных машин для их поддержки|Назначение политики|Список утвержденных для использования расширений виртуальной машины|Разделенный точками с запятой список расширений. Список всех расширений виртуальной машины можно просмотреть с помощью Get-AzVMExtensionImage. Например, AzureDiskEncryption; IaaSAntimalware|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

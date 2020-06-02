@@ -595,6 +595,9 @@
         - name: Проигрыватель мультимедиа Azure
           tocHref: /azure/media-services/azure-media-player/
           topicHref: /azure/media-services/azure-media-player/
+        - name: Аналитика видеотрансляции в IoT Edge
+          tocHref: /azure/media-services/live-video-analytics-edge/
+          topicHref: /azure/media-services/live-video-analytics-edge/
     - name: Службы обмена сообщениями
       tocHref: /azure/messaging-services/
       topicHref: /azure/messaging-services/

@@ -1,15 +1,15 @@
 ---
 title: Хранение неструктурированных данных с помощью Azure Cosmos DB и службы "Функции"
 description: Хранение неструктурированных данных с помощью служб Функции Azure и Cosmos DB
-ms.topic: how-to
-ms.date: 10/01/2018
+ms.topic: quickstart
+ms.date: 04/14/2020
 ms.custom: mvc
-ms.openlocfilehash: d11b7e7d55d0327bdec0a8bd6c73571cf846fd3c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 09d9bbca7119539f31a4cea056f338cf28dfcd23
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80756658"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83121957"
 ---
 # <a name="store-unstructured-data-using-azure-functions-and-azure-cosmos-db"></a>Хранение неструктурированных данных с помощью Azure Cosmos DB и службы "Функции Azure"
 
@@ -20,11 +20,9 @@ ms.locfileid: "80756658"
 
 В Функциях Azure входные и выходные привязки предоставляют декларативный способ подключения данных внешних служб к функции. В этой статье вы узнаете, как обновить имеющуюся функцию, чтобы добавить выходную привязку, которая сохраняет неструктурированные данные в документе Azure Cosmos DB.
 
-![Cosmos DB](./media/functions-integrate-store-unstructured-data-cosmosdb/functions-cosmosdb.png)
+## <a name="prerequisites"></a>Предварительные требования
 
-## <a name="prerequisites"></a>предварительные требования
-
-Для работы с этим руководством:
+Для работы с этим руководством сделайте следующее:
 
 [!INCLUDE [Previous quickstart note](../../includes/functions-quickstart-previous-topics.md)]
 
@@ -36,30 +34,30 @@ ms.locfileid: "80756658"
 
 ## <a name="add-an-output-binding"></a>Добавление выходной привязки
 
-1. На портале перейдите к созданному ранее приложению-функции, а затем разверните и его, и функцию.
+1. На портале Azure перейдите к ранее созданному приложению-функции и выберите его.
 
-1. Выберите элементы **Интегрировать** и **Новые выходные данные**, которые находятся в верхней правой части страницы. Выберите **Azure Cosmos DB** и щелкните **Выбрать**.
+1. Выберите **Функции**, а затем выберите функцию HttpTrigger.
 
-    ![Добавление выходной привязки Azure Cosmos DB](./media/functions-integrate-store-unstructured-data-cosmosdb/functions-integrate-tab-add-new-output-binding.png)
+    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-select-http-function.png" alt-text="Выберите нужную функцию на портале Azure." border="true":::
 
-1. Если вы получите сообщение **Расширения не установлены**, выберите **Установить**, чтобы установить расширение привязки Azure Cosmos DB в приложении-функции. Это может занять несколько минут.
+1. Последовательно выберите **Интеграция** и **Добавить вывод**.
 
-    ![Установка расширения привязки Azure Cosmos DB](./media/functions-integrate-store-unstructured-data-cosmosdb/functions-integrate-install-binding-extension.png)
+     :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-add-output-binding.png" alt-text="Добавление выходной привязки к Azure Cosmos DB." border="true":::
 
-1. Используйте параметры **Azure Cosmos DB output** (Выходные данные Azure Cosmos DB) как указано в таблице:
+1. Укажите приведенные в таблице значение в области **Добавить вывод**.
 
-    ![Настройка выходной привязки Cosmos DB](./media/functions-integrate-store-unstructured-data-cosmosdb/functions-integrate-tab-configure-cosmosdb-binding.png)
+     :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-configure-cosmosdb-binding.png" alt-text="Настройка выходной привязки к Azure Cosmos B." border="true":::
 
-    | Параметр      | Рекомендуемое значение  | Description                                |
+    | Параметр      | Рекомендуемое значение  | Описание                                |
     | ------------ | ---------------- | ------------------------------------------ |
+    | **Тип привязки** | Azure Cosmos DB | Имя типа привязки, которое нужно выбрать для создания выходной привязки к Azure Cosmos DB. |
     | **Имя параметра документа** | taskDocument | Имя, которое ссылается на объект Cosmos DB в коде. |
     | **Имя базы данных** | taskDatabase | Имя базы данных для сохранения документов. |
-    | **Имя коллекции** | TaskCollection | Имя коллекции базы данных. |
-    | **If true, creates the Cosmos DB database and collection** (Если значение равно true, создается база данных Cosmos DB и коллекция) | Флажок установлен | Коллекция не существует, создайте ее. |
-    | **Подключение учетной записи Azure Cosmos DB** | Новый параметр | Щелкните **Создать**, выберите **подписку** и созданную ранее **учетную запись базы данных**, а затем нажмите кнопку **Выбрать**. Создает параметр приложения для подключения к учетной записи. Этот параметр используется в привязке для подключения к базе данных. |
-    | **Collection throughput** (Пропускная способность коллекции) |400 ЕЗ| Чтобы сократить задержку, позже вы можете увеличить масштаб пропускной способности. |
+    | **Имя коллекции** | taskCollection | Имя коллекции базы данных. |
+    | **If true, creates the Cosmos DB database and collection** (Если значение равно true, создается база данных Cosmos DB и коллекция) | Да | Коллекция не существует, создайте ее. |
+    | **Подключение к учетной записи Cosmos DB** | Новый параметр | Щелкните **Создать**, выберите вариант **Учетная запись Azure Cosmos DB** и созданную ранее **учетную запись базы данных**, а затем щелкните **OK**. Создает параметр приложения для подключения к учетной записи. Этот параметр используется в привязке для подключения к базе данных. |
 
-1. Нажмите кнопку **Сохранить**, чтобы создать привязку.
+1. Нажмите **ОК**, чтобы создать привязку.
 
 ## <a name="update-the-function-code"></a>Обновление кода функции
 
@@ -134,25 +132,29 @@ module.exports = async function (context, req) {
 
 ## <a name="test-the-function-and-database"></a>Тестирование функции и базы данных
 
-1. Разверните окно справа и выберите **Тест**. В разделе **Запрос** щелкните **Добавить параметр**, чтобы добавить следующие параметры в строку запроса:
+1. Выберите **Тест**. В разделе **Запрос** щелкните **Добавить параметр** и добавьте в строку запроса следующие параметры.
 
     + `name`
     + `task`
     + `duedate`
 
-1. Щелкните **Выполнить**. Должно быть возвращено состояние 200.
+    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-test-function.png" alt-text="Тестирование функции." border="true":::
 
-    ![Настройка выходной привязки Cosmos DB](./media/functions-integrate-store-unstructured-data-cosmosdb/functions-test-function.png)
 
-1. В левой части портала Azure разверните панель значков, введите `cosmos` в поле поиска и выберите **Azure Cosmos DB**.
+1. Щелкните **Выполнить** и убедитесь, что возвращается состояние 200.
 
-    ![Поиск службы Cosmos DB](./media/functions-integrate-store-unstructured-data-cosmosdb/functions-search-cosmos-db.png)
+    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-test-function-output.png" alt-text="Тестирование функции." border="true":::
 
-1. Выберите учетную запись Azure Cosmos DB, а затем выберите **обозреватель данных**.
 
-1. Разверните узлы **Коллекции**, выберите новый документ и убедитесь, что документ содержит ваши значения строки запроса, а также некоторые дополнительные метаданные.
+1. На портале Azure найдите и выберите **Azure Cosmos DB**.
 
-    ![Проверка записи Cosmos DB](./media/functions-integrate-store-unstructured-data-cosmosdb/functions-verify-cosmosdb-output.png)
+    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-search-cosmos-db.png" alt-text="Поиск службы Cosmos DB." border="true":::
+
+1. Выберите нужную учетную запись Azure Cosmos DB, а затем щелкните **Обозреватель данных**.
+
+1. Разверните узлы **TaskCollection**, выберите новый документ и убедитесь, что этот документ содержит ваши значения для строки запроса, а также некоторые дополнительные метаданные.
+
+    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-data-explorer-check-document.png" alt-text="Проверка строковых значений в документе." border="true":::
 
 Вы успешно добавили привязку к триггеру HTTP, которая сохраняет неструктурированные данные в Azure Cosmos DB.
 

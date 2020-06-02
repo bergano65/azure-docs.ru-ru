@@ -46,6 +46,8 @@
           href: test-createuidefinition.md
         - name: Запрос JIT-доступа
           href: request-just-in-time-access.md
+        - name: Использование имеющейся виртуальной сети
+          href: existing-vnet-integration.md
         - name: Обновление управляемых ресурсов
           href: update-managed-resources.md
         - name: Публикация определения приложения с помощью портала

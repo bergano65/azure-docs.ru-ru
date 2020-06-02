@@ -6,12 +6,12 @@ ms.topic: quickstart
 description: В этом кратком руководстве показано, как использовать Azure Dev Spaces и командную строку для разработки приложения с использованием существующего чарта Helm в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: e767b1ade2a80882ee33ff1fdd718c691dcefcf3
-ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
+ms.openlocfilehash: c37ea0b04e99cf1bba555e098bdf33b8a8558cfa
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82025289"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996682"
 ---
 # <a name="quickstart-develop-an-application-with-an-existing-helm-chart-on-kubernetes---azure-dev-spaces"></a>Краткое руководство. Разработка приложения с использованием существующего чарта Helm на Kubernetes — Azure Dev Spaces
 Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -96,7 +96,7 @@ Press Ctrl+C to detach
 ...
 ```
 
-Вы можете увидеть выполнение службы, открыв общедоступный URL-адрес, который отображается в выходных данных команды `azds up`. В этом примере общедоступный URL-адрес — *http://dev.service.1234567890abcdef1234.eus.azds.io/* .
+Вы можете увидеть выполнение службы, открыв общедоступный URL-адрес, который отображается в выходных данных команды `azds up`. В этом примере используется такой общедоступный URL-адрес: `http://dev.service.1234567890abcdef1234.eus.azds.io/`.
 
 > [!NOTE]
 > При переходе к службе во время выполнения `azds up` сведения о трассировке HTTP-запросов также отображаются в выходных данных команды `azds up`. Такая трассировка поможет вам в устранении проблем и отладке службы. Ее можно отключить с помощью команды `--disable-http-traces` при запуске `azds up`.

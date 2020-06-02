@@ -1,25 +1,25 @@
 ---
 title: Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и C#
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как быстро начать предложение условий поиска в режиме реального времени с помощью API Автозаполнения Bing.
+description: Узнайте, как настроить заполнение условий поиска в реальном времени с помощью API Автозаполнения Bing.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-autosuggest
 ms.topic: quickstart
-ms.date: 03/24/2020
+ms.date: 05/06/2020
 ms.author: aahi
-ms.openlocfilehash: 6c60516a87dbdc51e19bac5ee9b30f2f1a8b0254
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: cf74d686a9156d6ccff1753a4f53abb5ecc6b7df
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80239017"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82929695"
 ---
 # <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-c"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и C#
 
-В этом кратком руководстве описано, как настроить осуществление вызовов к API Автозаполнения Bing и получение ответа JSON. Это простое приложение C# отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/Search/BingAutosuggestv7.cs).
+В этом кратком руководстве показано, как вызывать API Автозаполнения Bing и считывать ответ в формате JSON. Это простое приложение C# отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/Search/BingAutosuggestv7.cs).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -40,7 +40,7 @@ ms.locfileid: "80239017"
     using System.Text;
     ```
 
-2. В новом классе создайте переменные для хоста и пути API, [рыночного кода](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и частичного поискового запроса. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+2. В новом классе создайте переменные для хоста и пути API, [рыночного кода](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и частичного поискового запроса. Вы можете использовать глобальную конечную точку в следующем коде или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемую на портале Azure для вашего ресурса.
 
     ```csharp
     static string host = "https://api.cognitive.microsoft.com";
@@ -65,7 +65,7 @@ ms.locfileid: "80239017"
     }
     ```
 
-2. В той же функции, описанной выше, создайте URI запроса, комбинируя хост и путь API. Добавьте код рынка к параметру `?mkt=`, и запрос к параметру `&query=`. Не забудьте выполнить URL-кодирование запроса. 
+2. В той же функции, описанной выше, создайте URI запроса, комбинируя хост и путь API. Добавьте код рынка к параметру `mkt=`, и запрос к параметру `query=`. Не забудьте выполнить URL-кодирование запроса. 
 
     ```csharp
     string uri = host + path + "?mkt=" + market + "&query=" + System.Net.WebUtility.UrlEncode (query);

@@ -11,6 +11,8 @@
       href: virtual-machines-availability-set-supportability.md
 - name: Руководство по развертыванию виртуальных машин
   items:
+    - name: Обновление до SLES 15 с пакетом обновления 1 (SP1)
+      href: linux-upgrade-suse-15sp1.md
     - name: Новые развертывания виртуальных машин
       items:
         - name: Linux

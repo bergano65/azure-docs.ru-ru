@@ -1,5 +1,7 @@
 - name: Документация по Службам мультимедиа
   href: ./index.yml
+- name: Переход к документации по Аналитике видеотрансляции в IoT Edge
+  href: ../live-video-analytics-edge/overview.md
 - name: Обзор
   items:
     - name: Сведения о Службах мультимедиа
@@ -369,7 +371,7 @@
         - name: Python
           href: 'https://aka.ms/ams-v3-python-ref'
         - name: Node.js
-          href: 'https://aka.ms/ams-v3-nodejs-ref'
+          href: 'https://docs.microsoft.com/javascript/api/overview/azure/mediaservices/management'
         - name: Go
           href: 'https://aka.ms/ams-v3-go-ref'
     - name: Шаблон Resource Manager

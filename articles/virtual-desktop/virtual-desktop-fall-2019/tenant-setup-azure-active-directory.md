@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 94128c69f227ceff51968354048ec6610e3d7c4c
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: 8b08e8e4d6623277d1935fc85e302e8ce3c88eea
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82613930"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124403"
 ---
 # <a name="tutorial-create-a-tenant-in-windows-virtual-desktop"></a>Руководство по Создание клиента в Виртуальном рабочем столе Windows
 
@@ -152,6 +152,8 @@ New-RdsRoleAssignment -TenantName <TenantName> -SignInName <Upn> -RoleDefinition
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
+Более подробные инструкции см. в [нашей схеме обучения работе с Виртуальным рабочим столом Windows](https://docs.microsoft.com/learn/paths/m365-wvd/).
 
 После создания клиента, необходимо создать субъект-службу в Azure Active Directory и назначить ей роль в рамках виртуального рабочего стола Windows. Субъект-служба позволит вам успешное развертывания виртуального рабочего стола Windows Azure Marketplace с предложением создать пул узлов. Дополнительные сведения см. в руководстве по созданию пула узлов в Виртуальном рабочем столе Windows.
 

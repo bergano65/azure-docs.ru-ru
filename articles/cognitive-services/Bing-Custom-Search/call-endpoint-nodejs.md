@@ -1,39 +1,39 @@
 ---
 title: Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" с помощью Node.js | Документация Майкрософт
 titleSuffix: Azure Cognitive Services
-description: Сведения из этого краткого руководства помогут вам приступить к выполнению запросов к результатам поиска из экземпляра службы "Пользовательский поиск Bing" с помощью Node.js
+description: Узнайте, как запрашивать результаты поиска из экземпляра Пользовательского поиска Bing с помощью Node.js.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-custom-search
 ms.topic: quickstart
-ms.date: 03/24/2020
+ms.date: 05/08/2020
 ms.author: aahi
-ms.openlocfilehash: 1c7bd97de4e46e1c8da467840006fe2520851caf
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 34d64db9caefd26adc91471ed67e528a6e3196dc
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80238870"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83199845"
 ---
 # <a name="quickstart-call-your-bing-custom-search-endpoint-using-nodejs"></a>Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" с помощью Node.js
 
-Сведения из этого краткого руководства помогут вам приступить к созданию запросов результатов поиска из экземпляра "Пользовательский поиск Bing". Хотя это приложение создается на языке JavaScript, API пользовательского поиска Bing представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/nodejs/Search/BingCustomSearchv7.js).
+Узнайте, как запрашивать результаты поиска из экземпляра Пользовательского поиска Bing. Хотя это приложение написано на JavaScript, API Пользовательского поиска Bing представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/nodejs/Search/BingCustomSearchv7.js).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Экземпляр службы "Пользовательский поиск Bing". См. [Краткое руководство. Создание первого экземпляра службы "Пользовательский поиск Bing"](quick-start.md), чтобы получить дополнительные сведения.
+- Экземпляр службы "Пользовательский поиск Bing". Дополнительные сведения см. в [кратком руководстве Создание первого экземпляра Пользовательского поиска Bing](quick-start.md).
 
-- [Node.js](https://www.nodejs.org/)
+- [Среда выполнения JavaScript Node.js.](https://www.nodejs.org/)
 
-- [Библиотека запросов JavaScript](https://github.com/request/request)
+- [Библиотека запросов JavaScript.](https://github.com/request/request)
 
 [!INCLUDE [cognitive-services-bing-custom-search-prerequisites](../../../includes/cognitive-services-bing-custom-search-signup-requirements.md)]
 
 ## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
 
-1. Создайте файл JavaScript в избранной интегрированной среде разработки или редакторе и добавьте оператор `require()` для библиотеки запросов. Создайте переменные для ключа подписки, идентификатор пользовательской конфигурации и условие поиска. 
+- Создайте файл JavaScript в избранной интегрированной среде разработки или редакторе и добавьте оператор `require()` для библиотеки запросов. Создайте переменные для ключа подписки, идентификатора пользовательской конфигурации и условия поиска.
 
     ```javascript
     var request = require("request");
@@ -45,7 +45,7 @@ ms.locfileid: "80238870"
 
 ## <a name="send-and-receive-a-search-request"></a>Отправка и получение поискового запроса 
 
-1. Создайте переменную для хранения сведений, отправляемых в запросе. Создайте URL-адрес запроса, добавив условие поиска к параметру запроса `q=` и идентификатор пользовательской конфигурации экземпляра поиска к `customconfig=`. Разделяйте параметры символом `&`. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+1. Создайте переменную для хранения сведений, отправляемых в запросе. Создайте URL-адрес запроса, добавив условие поиска к параметру запроса `q=` и идентификатор пользовательской конфигурации экземпляра поиска к параметру `customconfig=`. Разделите параметры символом `&`. Вы можете использовать глобальную конечную точку в следующем коде или конечную точку [личного поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемую на портале Azure для вашего ресурса.
 
     ```javascript
     var info = {
@@ -58,7 +58,7 @@ ms.locfileid: "80238870"
     }
     ```
 
-1. Используйте библиотеку запросов JavaScript для отправки поискового запроса к экземпляру службы "Пользовательский поиск Bing" и выведите сведения о результатах, включая его имя, URL-адрес и дату последнего просмотра веб-страницы.
+1. Используйте библиотеку запросов JavaScript для отправки поискового запроса к экземпляру Пользовательского поиска Bing и вывода на экран сведений о результатах, включая его имя, URL-адрес и дату последнего просмотра веб-страницы.
 
     ```javascript
     request(info, function(error, response, body){

@@ -390,7 +390,7 @@
           href: voice-assistants.md
     - name: Пользовательские команды (предварительная версия)
       items:
-        - name: Что собой представляет приложение пользовательских команд?
+        - name: Что собой представляют пользовательские команды?
           href: custom-commands.md
         - name: Краткие руководства
           items:
@@ -454,6 +454,18 @@
           href: speech-devices-sdk-kws-guidelines.md
         - name: Настройка распознавания ключевых слов
           href: speech-devices-sdk-create-kws.md
+- name: API Распознавания говорящего
+  items:
+    - name: Обзор
+      items:
+        - name: Что такое распознавание говорящего?
+          href: speaker-recognition-overview.md
+    - name: Справочник
+      items:
+        - name: Интерфейсы REST API
+          items:
+            - name: REST API службы "Распознавание речи"
+              href: 'https://docs.microsoft.com/rest/api/speakerrecognition/'
 - name: Hosting
   items:
     - name: Документация по размещению

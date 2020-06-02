@@ -9,21 +9,24 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 9748b0354ce09752296fb7d736e09af716f19351
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: f09f9a503348efc51fb50c283e7fe856869e0dd5
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81420878"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83198518"
 ---
 # <a name="connect-to-synapse-sql"></a>Подключение к Synapse SQL
 Установите подключение к функции Synapse SQL в Azure Synapse Analytics.
 
 ## <a name="supported-tools-for-sql-on-demand-preview"></a>Поддерживаемые средства для использования SQL по запросу (предварительная версия)
 
-Полностью поддерживаемое средство — Azure Data Studio (предварительная версия).
+[Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) полностью поддерживается, начиная с версии 1.18.0. SSMS частично поддерживается, начиная с версии 18.5, и используется только для подключения и выполнения запросов.
 
-SQL Server Management Studio поддерживается частично, начиная с версии 18.4. Ограничены такие функции, как подключение и запросы.
+> [!NOTE]
+> Если для имени входа AAD открыто подключение в течение более 1 часа во время выполнения запроса, все запросы, зависящие от AAD, завершатся ошибкой. Сюда входят запросы к хранилищу с помощью сквозной аутентификации AAD и инструкций, которые взаимодействуют с AAD (например, CREATE EXTERNAL PROVIDER). Это влияет на все средства, которые поддерживают подключения открытыми, например редактор запросов в SSMS и ADS. Средства, которые открывают новые подключения для выполнения запроса, например Synapse Studio, не затрагиваются.
+
+> Чтобы устранить эту ошибку, можно перезапустить SSMS или выполнить подключение и отключение в ADS. 
 
 ## <a name="find-your-server-name"></a>Поиск имени сервера
 

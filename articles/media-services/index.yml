@@ -13,12 +13,12 @@ metadata:
   author: Juliako
   ms.author: juliako
   ms.date: 07//2020
-  ms.openlocfilehash: 2f2049f710dcdbb210594331fa69e6743f5e431e
-  ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
+  ms.openlocfilehash: 5d49173a9c06e35c5af3831e504fc6f55a8dfc50
+  ms.sourcegitcommit: 223cea58a527270fe60f5e2235f4146aea27af32
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/22/2020
-  ms.locfileid: "81869313"
+  ms.lasthandoff: 06/01/2020
+  ms.locfileid: "84259547"
 highlightedContent:
   items:
   - title: Сведения о Службах мультимедиа Azure версии 3
@@ -33,15 +33,18 @@ highlightedContent:
   - title: Сравнение предустановок Служб мультимедиа версии 3 и Индексатора видео
     itemType: concept
     url: ./video-indexer/compare-video-indexer-with-media-services-presets.md
+  - title: Аналитика видеотрансляции в IoT Edge (предварительная версия)
+    itemType: overview
+    url: ./live-video-analytics-edge/overview.md
+  - title: Проигрыватель мультимедиа Azure
+    itemType: overview
+    url: https://docs.microsoft.com/azure/media-services/azure-media-player/azure-media-player-overview
   - title: Сведения о Службах мультимедиа Azure версии 2 (устаревшая версия)
     itemType: overview
     url: ./previous/media-services-overview.md
   - title: Миграция из Служб мультимедиа версии 2 в версию 3
     itemType: concept
     url: ./latest/migrate-from-v2-to-v3.md
-  - title: Проигрыватель мультимедиа Azure
-    itemType: overview
-    url: azure-media-player/azure-media-player-overview.md
 conceptualContent:
   items:
   - title: Разработка с помощью API Служб мультимедиа версии 3
@@ -110,6 +113,14 @@ conceptualContent:
     - url: media-services-fmp4-live-ingest-overview.md
       itemType: concept
       text: Протокол Smooth Streaming для приема данных
+  - title: Аналитика видеотрансляции в IoT Edge (предварительная версия)
+    links:
+    - url: ./live-video-analytics-edge/overview.md
+      itemType: overview
+      text: Обзор
+    - url: ./live-video-analytics-edge/use-your-model-quickstart.md
+      itemType: quickstart
+      text: Запуск Аналитики видеотрансляции с помощью собственной модели
 additionalContent:
   sections:
   - items:

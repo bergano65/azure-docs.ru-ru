@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: quickstart
 ms.date: 02/26/2020
 ms.author: aahi
-ms.openlocfilehash: 0d4d32a413dd22c55f1b2f01dce3a3df81f5f729
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 039a52c9ab0bfc460116e48086c854f4d7e8efb4
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77919674"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996966"
 ---
 # <a name="quickstart-use-the-text-analytics-client-library-for-ruby"></a>Краткое руководство. Использование клиентской библиотеки API "Анализ текста" для Ruby
 
@@ -31,7 +31,7 @@ ms.locfileid: "77919674"
 > [!NOTE]
 > Это краткое руководство применимо только к API "Анализ текста" версии 2.1. Сейчас клиентская библиотека версии 3 для Ruby недоступна.
 
-[Справочная документация](https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/textanalytics?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-ruby/tree/master/data/azure_cognitiveservices_textanalytics) | [Пакет (RubyGems)](https://rubygems.org/gems/azure_cognitiveservices_textanalytics) | [Примеры](https://github.com/Azure-Samples/cognitive-services-quickstart-code)
+[Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-ruby/tree/master/data/azure_cognitiveservices_textanalytics) | [Пакет (RubyGems)](https://rubygems.org/gems/azure_cognitiveservices_textanalytics) | [Примеры](https://github.com/Azure-Samples/cognitive-services-quickstart-code)
 
 <a name="HOLTop"></a>
 
@@ -83,7 +83,7 @@ const endpoint = `<paste-your-text-analytics-endpoint-here>`
 
 ## <a name="code-examples"></a>Примеры кода
 
-Эти фрагменты кода показывают, как выполнить следующие действия с клиентской библиотекой Анализа текста для Python:
+В этих фрагментах кода показано, как выполнить следующие действия с клиентской библиотекой Анализа текста для Ruby:
 
 * [аутентификация клиента](#authenticate-the-client);
 * [Анализ тональности](#sentiment-analysis).

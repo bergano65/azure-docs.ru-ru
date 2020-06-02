@@ -9,30 +9,31 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-image-search
 ms.topic: quickstart
-ms.date: 12/06/2019
+ms.date: 05/08/2020
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 238f390ac998a05f0c726dd9ed024550b9a5ba3d
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 53572f4c5cce3ecd0c2e1dec90826e620841a852
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80478526"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83118709"
 ---
 # <a name="quickstart-search-for-images-using-the-bing-image-search-rest-api-and-ruby"></a>Краткое руководство. Поиск изображений с помощью REST API Bing для поиска изображений и Ruby
 
 Используйте это краткое руководство, чтобы вызвать API Bing для поиска изображений и получить ответ в формате JSON. Это простое приложение Ruby отправляет поисковой запрос к API и отображает необработанные результаты.
 
-Хотя это приложение создается на языке Ruby, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Хотя приложение написано на Ruby, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/ruby/Search/BingImageSearchv7.rb).
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Последняя версия [Ruby](https://www.ruby-lang.org/en/downloads/).
 
 [!INCLUDE [cognitive-services-bing-image-search-signup-requirements](../../../../includes/cognitive-services-bing-image-search-signup-requirements.md)]
 
-См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
+См. сведения о [ценах на Cognitive Services (API Поиска Bing)](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 
 ## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
 
@@ -44,7 +45,7 @@ ms.locfileid: "80478526"
     require 'json'
     ```
 
-2. Создайте переменные для конечной точки API, пути поиска изображения API, ключа подписки, а также условия поиска. В качестве `uri` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
+2. Создайте переменные для конечной точки API, пути поиска изображения API, ключа подписки, а также условия поиска. Для `uri` можно использовать глобальную конечную точку в следующем коде или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемую на портале Azure для вашего ресурса.
 
     ```ruby
     uri  = "https://api.cognitive.microsoft.com"
@@ -54,7 +55,7 @@ ms.locfileid: "80478526"
 
 ## <a name="format-and-make-an-api-request"></a>Форматирование и выполнение запроса API
 
-Используйте переменные из последнего шага для форматирования искомого URL-адреса для запроса API. Затем отправьте запрос.
+Используйте переменные из предыдущего шага для форматирования URL-адреса поиска для запроса API. Затем отправьте запрос.
 
 ```ruby
 uri = URI(uri + path + "?q=" + URI.escape(term))
@@ -144,8 +145,8 @@ puts "Url to the thumbnail of the first returned search result: #{first_result}"
 
 ## <a name="see-also"></a>См. также раздел
 
-* [Что такое API Bing для поиска изображений?](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/overview)  
-* [Попробуйте API Bing для поиска изображений](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/)  
-* [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=bing-image-search-api)  
-* [Документация по службам Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services)
-* [Справочник по API Bing для поиска изображений](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)
+* [Знакомство с API Bing для поиска изображений](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/overview)  
+* [Попробуйте интерактивную демонстрацию в подключенном режиме.](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/)  
+* [Получите бесплатный ключ доступа Cognitive Services.](https://azure.microsoft.com/try/cognitive-services/?api=bing-image-search-api)  
+* [Просмотрите документацию по Cognitive Services.](https://docs.microsoft.com/azure/cognitive-services)
+* [Просмотрите справочник по API Поиска изображений Bing.](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)

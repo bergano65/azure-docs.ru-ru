@@ -410,6 +410,8 @@
               href: id-tokens.md
             - name: Маркеры доступа
               href: access-tokens.md
+            - name: Конечная точка UserInfo
+              href: userinfo.md
             - name: Учетные данные сертификата
               href: active-directory-certificate-credentials.md
         - name: "Протокол SAML\_2.0"

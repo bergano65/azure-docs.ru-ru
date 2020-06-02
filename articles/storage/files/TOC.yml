@@ -124,6 +124,10 @@
           href: storage-files-enable-soft-delete.md
         - name: Управление хранилищем в независимых облаках Azure
           href: ../common/storage-powershell-independent-clouds.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+        - name: Изменение способа репликации данных
+          href: ../common/redundancy-migration.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+        - name: Инициирование отработки отказа учетной записи
+          href: ../common/storage-initiate-account-failover.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
         - name: Управление избыточностью данных
           items:
             - name: Изменение способа репликации данных
@@ -136,6 +140,24 @@
               href: ../common/last-sync-time-get.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
             - name: Инициирование отработки отказа учетной записи
               href: ../common/storage-initiate-account-failover.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+    - name: Authenticate
+      items:
+        - name: Включение проверки подлинности и авторизации в локальной среде
+          items:
+            - name: Обзор AD DS
+              href: storage-files-identity-auth-active-directory-enable.md
+            - name: Включение проверки подлинности AD DS
+              href: storage-files-identity-ad-ds-enable.md
+            - name: Назначение разрешений
+              href: storage-files-identity-ad-ds-assign-permissions.md
+            - name: Настройка разрешений
+              href: storage-files-identity-ad-ds-configure-permissions.md
+            - name: Подключение общих файловых ресурсов
+              href: storage-files-identity-ad-ds-mount-file-share.md
+            - name: Обновление пароля
+              href: storage-files-identity-ad-ds-update-password.md
+        - name: "Включение проверки подлинности и авторизации Azure\_AD\_DS"
+          href: storage-files-identity-auth-active-directory-domain-service-enable.md
     - name: Монитор
       items:
         - name: Мониторинг службы "Синхронизация файлов Azure"
@@ -188,10 +210,6 @@
           href: ../common/storage-network-security.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
         - name: Требование безопасной передачи
           href: ../common/storage-require-secure-transfer.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: "Включение проверки подлинности и авторизации Azure\_AD"
-          href: storage-files-identity-auth-active-directory-enable.md
-        - name: "Включение проверки подлинности и авторизации Azure\_AD\_DS"
-          href: storage-files-identity-auth-active-directory-domain-service-enable.md
         - name: Включение безопасного TLS для клиента службы хранилища Azure
           href: ../common/storage-security-tls.md
     - name: Перенос

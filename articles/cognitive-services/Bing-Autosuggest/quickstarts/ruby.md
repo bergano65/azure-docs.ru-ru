@@ -1,25 +1,25 @@
 ---
 title: Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Ruby
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как быстро начать предложение условий поиска в режиме реального времени с помощью API Автозаполнения Bing.
+description: Узнайте, как настроить заполнение условий поиска в реальном времени с помощью API Автозаполнения Bing.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-autosuggest
 ms.topic: quickstart
-ms.date: 03/24/2020
+ms.date: 05/06/2020
 ms.author: aahi
-ms.openlocfilehash: eac1f53d35f8175da814dba6172edc12f9e1a063
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: e9b990f7e79fe0d70a213db5739153fe1e558f3c
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80238945"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82930205"
 ---
 # <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-ruby"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Ruby
 
-В этом кратком руководстве описано, как настроить осуществление вызовов к API Автозаполнения Bing и получение ответа JSON. Это простое приложение Ruby отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке Ruby, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+В этом кратком руководстве показано, как вызывать API Автозаполнения Bing и считывать ответ в формате JSON. Это простое приложение Ruby отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке Ruby, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -38,7 +38,7 @@ ms.locfileid: "80238945"
     require 'json'
     ```
 
-2. Создайте переменные для хоста и пути API, [рыночного кода](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и частичного поискового запроса. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+2. Создайте переменные для узла API и пути, [кода рынка](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и частичного поискового запроса. Вы можете использовать глобальную конечную точку в следующем коде или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемую на портале Azure для вашего ресурса.
 
     ```ruby
     subscriptionKey = 'enter your key here'
@@ -48,7 +48,7 @@ ms.locfileid: "80238945"
     query = 'sail'
     ```
 
-3. Создайте строку параметров, добавив рыночный код к параметру `?mkt=`, и запрос к параметру `&q=`. Затем создайте URI запроса, объединив хост API, путь и строку параметров.
+3. Создайте строку параметров, добавив рыночный код к параметру `mkt=`, и запрос к параметру `q=`. Затем создайте URI запроса, объединив узел API, путь и строку параметров.
 
     ```ruby
     params = '?mkt=' + mkt + '&q=' + query

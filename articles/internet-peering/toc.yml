@@ -56,6 +56,10 @@
           href: howto-legacy-exchange-portal.md
         - name: Azure PowerShell
           href: howto-legacy-exchange-powershell.md
+    - name: Создание или изменение пиринга с сервером маршрутов через точку обмена
+      items:
+        - name: Портал
+          href: how-to-exchange-route-server-portal.md
 - name: Справочник
   items:
     - name: Azure CLI

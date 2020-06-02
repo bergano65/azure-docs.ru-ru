@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 02/27/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 3182b3f059bf586dce32d8a555ec0d15542c6afc
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 5765c2e7335183734c86f1ddd11e4fa61576740c
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81460364"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82977555"
 ---
 # <a name="create-a-highly-available-vm"></a>Создание высокодоступной виртуальной машины
 
@@ -53,7 +53,7 @@ az group delete --name myResourceGroup
 | [az network public-ip create](https://docs.microsoft.com/cli/azure/network/public-ip) | Создает общедоступный IP-адрес со статическим IP-адресом и связанным DNS-именем. |
 | [az network lb create](https://docs.microsoft.com/cli/azure/network/lb) | Создает балансировщик сетевой нагрузки Azure. |
 | [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe) | Создает пробу балансировщика сетевой нагрузки. Она используется для отслеживания каждой виртуальной машины в наборе балансировщика сетевой нагрузки. Если любая виртуальная машина становится недоступной, к ней не направляется трафик. |
-| [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule) | Создает правило балансировщика сетевой нагрузки. В этом примере создается правило для порта 80. Так как трафик HTTP поступает в балансировщик сетевой нагрузки, он перенаправляется на порт 80 одной из виртуальных машин в наборе балансировщика сетевой нагрузки. |
+| [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule) | Создает правило балансировщика сетевой нагрузки. В этом примере создается правило для порта 80. Так как трафик HTTP поступает в NLB, он перенаправляется на порт 80 одной из виртуальных машин в наборе NLB. |
 | [az network lb inbound-nat-rule create](https://docs.microsoft.com/cli/azure/network/lb/inbound-nat-rule) | Создает правило преобразования сетевых адресов (NAT) балансировщика сетевой нагрузки.  Правила NAT сопоставляют порт балансировщика сетевой нагрузки с портом виртуальной машины. В этом примере создается правило NAT для SSH-трафика на каждой виртуальной машине в наборе балансировщика сетевой нагрузки.  |
 | [az network nsg create](https://docs.microsoft.com/cli/azure/network/nsg) | Создает группу безопасности сети (NSG), которая выполняет роль периметра безопасности между Интернетом и виртуальной машиной. |
 | [az network nsg rule create](https://docs.microsoft.com/cli/azure/network/nsg/rule) | Создает правило NSG, разрешающее входящий трафик. В этом примере открывается порт 22 для трафика SSH. |

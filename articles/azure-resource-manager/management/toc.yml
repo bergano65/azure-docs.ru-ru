@@ -57,6 +57,20 @@
           href: region-move-support.md
         - name: Службы
           items:
+            - name: Cлужба управления Azure API
+              href: ../../api-management/api-management-howto-migrate.md?toc=/azure/azure-resource-manager/toc.json
+            - name: Служба приложений Azure
+              href: ../../app-service/manage-move-across-regions.md?toc=/azure/azure-resource-manager/toc.json
+            - name: Служба автоматизации Azure
+              href: 'https://docs.microsoft.com/azure/automation/automation-managing-data#geo-replication-in-azure-automation?toc=/azure/azure-resource-manager/toc.json'
+            - name: Пакетная служба Azure
+              href: 'https://docs.microsoft.com/azure/batch/best-practices#moving-batch-accounts-across-regions?toc=/azure/azure-resource-manager/toc.json'
+            - name: Когнитивный поиск Azure
+              href: ../../search/search-howto-move-across-regions.md?toc=/azure/azure-resource-manager/toc.json
+            - name: Azure Dev Spaces
+              href: 'https://docs.microsoft.com/azure/dev-spaces/faq#can-i-migrate-my-aks-cluster-with-azure-dev-spaces-to-another-region?toc=/azure/azure-resource-manager/toc.json'
+            - name: Центры событий Azure
+              href: ../../event-hubs/move-across-regions.md?toc=/azure/azure-resource-manager/toc.json
             - name: Центр Интернета вещей Azure
               href: ../../iot-hub/iot-hub-how-to-clone.md?toc=/azure/azure-resource-manager/toc.json
             - name: Виртуальные машины Azure
@@ -73,6 +87,8 @@
               href: ../../virtual-network/move-across-regions-nsg-portal.md?toc=/azure/azure-resource-manager/toc.json
             - name: Общедоступные IP-адреса
               href: ../../virtual-network/move-across-regions-publicip-portal.md?toc=/azure/azure-resource-manager/toc.json
+            - name: Site Recovery (хранилища Служб восстановления)
+              href: ../../site-recovery/move-vaults-across-regions.md?toc=/azure/azure-resource-manager/toc.json
             - name: Виртуальная сеть
               href: ../../virtual-network/move-across-regions-nsg-portal.md?toc=/azure/azure-resource-manager/toc.json
     - name: Теги

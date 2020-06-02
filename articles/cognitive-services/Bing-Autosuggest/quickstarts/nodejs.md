@@ -1,25 +1,25 @@
 ---
 title: Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Node.js
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как быстро начать предложение условий поиска в режиме реального времени с помощью API Автозаполнения Bing.
+description: Узнайте, как настроить заполнение условий поиска в реальном времени с помощью API Автозаполнения Bing.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-autosuggest
 ms.topic: quickstart
-ms.date: 03/24/2020
+ms.date: 05/06/2020
 ms.author: aahi
-ms.openlocfilehash: 11dc0d4f80e14c293fde4e84b5e97d39fe594629
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 0d63bd0fc745a3305b9d2f8906a09626668d091b
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80238956"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82930273"
 ---
 # <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-nodejs"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Node.js
 
-В этом кратком руководстве описано, как настроить осуществление вызовов к API Автозаполнения Bing и получение ответа JSON. Это простое приложение Node.js отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке JavaScript, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/nodejs/Search/BingAutosuggestv7.js).
+В этом кратком руководстве показано, как вызывать API Автозаполнения Bing и считывать ответ в формате JSON. Это простое приложение Node.js отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке JavaScript, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/nodejs/Search/BingAutosuggestv7.js).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -37,7 +37,7 @@ ms.locfileid: "80238956"
     let https = require ('https');
     ```
 
-2. Создайте переменные для хоста и пути конечной точки API, вашего ключа подписки, [рыночного кода](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и поискового запроса. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+2. Создайте переменные для хоста и пути конечной точки API, вашего ключа подписки, [рыночного кода](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и поискового запроса. Вы можете использовать глобальную конечную точку в следующем коде или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемую на портале Azure для вашего ресурса.
 
     ```javascript
     // Replace the subscriptionKey string value with your valid subscription key.
@@ -74,19 +74,20 @@ ms.locfileid: "80238956"
     }
     ```
 
-    1. В той же функции используйте библиотеку запросов для отправки своего запроса в API. `response_handler` определится в следующем разделе.
+ 1. В той же функции используйте библиотеку запросов для отправки своего запроса в API. Вы определите `response_handler` в следующем разделе.
     
-        ```javascript
+    ```javascript
         //...
         let req = https.request(request_params, response_handler);
         req.end();
         ```
 
-## <a name="create-a-search-handler"></a>Создание обработчика поиска
+## Create a search handler
 
-1. Определите функцию с именем `response_handler`, принимающую HTTP-вызов `response` как параметр. Выполните следующие действия в этой функции:
+1. Define a function named `response_handler` that takes an HTTP call, `response`, as a parameter. 
+Do the following steps within this function:
     
-    1. Определите переменную для хранения текста ответа JSON.  
+    1. Define a variable to contain the body of the JSON response.  
 
         ```javascript
         let response_handler = function (response) {
@@ -94,7 +95,7 @@ ms.locfileid: "80238956"
         };
         ```
 
-    2. Сохраните текст ответа при вызове флага **data**.
+    2. Store the body of the response when the `data` flag is called
         
         ```javascript
         response.on ('data', function (d) {
@@ -102,7 +103,7 @@ ms.locfileid: "80238956"
         });
         ```
 
-    3. Когда появляется **конечный** флаг, используйте `JSON.parse()` и `JSON.stringify()`, чтобы распечатать ответ.
+    3. When an `end` flag is signaled, use `JSON.parse()` and `JSON.stringify()` to print the response.
     
         ```javascript
         response.on ('end', function () {
@@ -115,11 +116,11 @@ ms.locfileid: "80238956"
         });
         ```
 
-2. Вызовите `get_suggestions()`, чтобы отправить запрос в API Автозаполнения Bing.
+2. Call `get_suggestions()` to send the request to the Bing Autosuggest API.
 
-## <a name="example-json-response"></a>Пример ответа в формате JSON
+## Example JSON response
 
-Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
+A successful response is returned in JSON, as shown in the following example: 
 
 ```json
 {
