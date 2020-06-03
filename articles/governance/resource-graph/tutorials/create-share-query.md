@@ -3,12 +3,12 @@ title: Руководство по управлению запросами на 
 description: Работая с этим учебником, вы создадите запрос Resource Graph и предоставите новый запрос в совместный доступ на портале Azure.
 ms.date: 05/20/2020
 ms.topic: tutorial
-ms.openlocfilehash: e63a92a4570a0713ed65e1090e4d77d25fb10f95
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 80725bd03d31a4985374005fe68a62e16aaef000
+ms.sourcegitcommit: 2721b8d1ffe203226829958bee5c52699e1d2116
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83637752"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84148027"
 ---
 # <a name="tutorial-create-and-share-an-azure-resource-graph-query-in-the-azure-portal"></a>Руководство по Создание запроса Azure Resource Graph и предоставление общего доступа к нему на портале Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "83637752"
 
    Щелкните **Выполнить запрос** и просмотрите результаты запроса на панели внизу.
 
-   Дополнительные сведения об этом запросе см. в статье [Tutorial: Create and share an Azure Resource Graph query in the Azure portal](../samples/starter.md#count-virtual-machines-by-os-type) (Примеры. Подсчет количества виртуальных машин по типу ОС).
+   Дополнительные сведения об этом запросе см. в статье [Tutorial: Create and share an Azure Resource Graph query in the Azure portal](../samples/starter.md#count-os) (Примеры. Подсчет количества виртуальных машин по типу ОС).
 
 
 1. Выберите **Сохранить** или **Сохранить как**, введите имя **Число виртуальных машин по ОС**, сохраните выбранный тип **Закрытый запрос** и щелкните **Сохранить** в нижней части панели **Сохранение запроса**. В заголовке вкладки вместо **Запрос 1** отобразится **Число виртуальных машин по ОС**.
@@ -76,7 +76,7 @@ ms.locfileid: "83637752"
     
    Щелкните **Выполнить запрос** и просмотрите результаты запроса на панели внизу.
 
-   Дополнительные сведения об этом запросе см. в статье [Tutorial: Create and share an Azure Resource Graph query in the Azure portal](../samples/starter.md#count-virtual-machines-by-os-type) (Примеры. Подсчет количества виртуальных машин по типу ОС).
+   Дополнительные сведения об этом запросе см. в статье [Tutorial: Create and share an Azure Resource Graph query in the Azure portal](../samples/starter.md#count-os) (Примеры. Подсчет количества виртуальных машин по типу ОС).
 
 1. Щелкните **Сохранить** или **Сохранить как**.
 
