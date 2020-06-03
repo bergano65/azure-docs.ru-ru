@@ -6,12 +6,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: ca54d5a0d196cbc39256668f21e19bdf9162dfbf
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: a9d9a5661e8a094b7d92a9dd83db3cdcd76b8b65
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79202796"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84018388"
 ---
 # <a name="how-the-azure-reservation-discount-is-applied-to-virtual-machines"></a>Применения скидки на резервирование Azure к виртуальным машинам
 
@@ -102,7 +102,7 @@ ms.locfileid: "79202796"
 
 - [Сведения о резервированиях для Azure](../reservations/save-compute-costs-reservations.md)
 - [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../../virtual-machines/windows/prepay-reserved-vm-instances.md)
-- [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../../sql-database/sql-database-reserved-capacity.md)
+- [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../../azure-sql/database/reserved-capacity-overview.md)
 - [Управление резервированиями для Azure](../reservations/manage-reserved-vm-instance.md)
 - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../reservations/understand-reserved-instance-usage.md)
 - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](../reservations/understand-reserved-instance-usage-ea.md)

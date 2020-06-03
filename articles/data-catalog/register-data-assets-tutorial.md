@@ -6,12 +6,12 @@ ms.author: jasonh
 ms.service: data-catalog
 ms.topic: tutorial
 ms.date: 08/01/2019
-ms.openlocfilehash: 4bd2b7093100ff24b21b67ea84613ac9b2ec8299
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 1c3987e4f2f31dd0c2395f9b40cc40780c40a518
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68950244"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84021608"
 ---
 # <a name="tutorial-register-data-assets-in-azure-data-catalog"></a>Руководство по Регистрация ресурсов данных в Каталоге данных Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "68950244"
 
 ### <a name="register-a-data-source"></a>Регистрация источника данных
 
-Мы предлагаем зарегистрировать ресурсы данных (таблицы) из [образца базы данных Azure SQL](../sql-database/sql-database-single-database-get-started.md), но вы можете использовать любой другой поддерживаемый источник, если предпочитаете работать со знакомыми и (или) соответствующими вашей роли данными. Список поддерживаемых источников данных см. в статье [Источники данных, поддерживаемые каталогом данных Azure](data-catalog-dsr.md).
+Мы предлагаем зарегистрировать ресурсы данных (таблицы) из [образца базы данных Azure SQL](../azure-sql/database/single-database-create-quickstart.md), но вы можете использовать любой другой поддерживаемый источник, если предпочитаете работать со знакомыми и (или) соответствующими вашей роли данными. Список поддерживаемых источников данных см. в статье [Источники данных, поддерживаемые каталогом данных Azure](data-catalog-dsr.md).
 
 В рамках этого руководства мы используем базу данных Azure SQL с именем *RLSTest*.
 

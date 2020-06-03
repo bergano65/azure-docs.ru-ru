@@ -1,112 +1,42 @@
 ---
-title: Настройка ключей, управляемых клиентом, с помощью портал Azure
+title: Ключи, управляемые клиентом, для Cognitive Services
 titleSuffix: Cognitive Services
-description: Узнайте, как использовать портал Azure для настройки ключей, управляемых клиентом, с помощью Azure Key Vault. Ключи, управляемые клиентом, позволяют создавать, поворачивать, отключать и отзывать элементы управления доступом.
+description: Узнайте, как использовать портал Azure для настройки ключей, управляемых клиентом, с помощью Azure Key Vault. Управляемые клиентом ключи позволяют создавать, менять, отключать и отзывать элементы управления доступом.
 services: cognitive-services
 author: erindormier
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 03/11/2020
+ms.date: 05/28/2020
 ms.author: egeaney
-ms.openlocfilehash: 04a8a8d2520376931f2bb7727c1e751b83f6315f
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 1369f30c4a3bcb0a391a5f2b2a63191590afd622
+ms.sourcegitcommit: 69156ae3c1e22cc570dda7f7234145c8226cc162
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81455263"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84310705"
 ---
-# <a name="configure-customer-managed-keys-with-azure-key-vault-by-using-the-azure-portal"></a>Настройка ключей, управляемых клиентом, с помощью Azure Key Vault портал Azure
+# <a name="configure-customer-managed-keys-with-azure-key-vault-for-cognitive-services"></a>Настройка ключей, управляемых клиентом, с помощью Azure Key Vault для Cognitive Services
 
-Для хранения ключей, управляемых клиентом, необходимо использовать Azure Key Vault. Можно либо создать собственные ключи и сохранить их в хранилище ключей, либо использовать Azure Key Vault API для создания ключей. Ресурс Cognitive Services и хранилище ключей должны находиться в одном и том же регионе и в одном клиенте Azure Active Directory (Azure AD), но могут находиться в разных подписках. Дополнительные сведения о Azure Key Vault см. в разделе [что такое Azure Key Vault?](https://docs.microsoft.com/azure/key-vault/key-vault-overview).
+Процесс включения управляемых клиентом ключей с Azure Key Vault для Cognitive Services зависит от продукта. Используйте эти ссылки для получения инструкций, относящихся к службам.
 
-В этой статье показано, как настроить Azure Key Vault с управляемыми клиентом ключами с помощью [портал Azure](https://portal.azure.com/). Сведения о создании хранилища ключей с помощью портал Azure см. в разделе [Краткое руководство. Установка и извлечение секрета из Azure Key Vault с помощью портал Azure](../../key-vault/secrets/quick-create-portal.md).
+## <a name="vision"></a>Зрение
 
-## <a name="configure-azure-key-vault"></a>Настройка Azure Key Vault
-
-Для использования ключей, управляемых клиентом, требуется, чтобы в хранилище ключей были установлены два свойства: **обратимое удаление** и **не очищать**. Эти свойства не включены по умолчанию, но их можно включить с помощью PowerShell или Azure CLI в новом или существующем хранилище ключей.
-
-> [!IMPORTANT]
-> Если вы не включили функции **обратимого удаления** **и не удаляют свойства,** а вы удалите ключ, вы не сможете восстановить данные в своем ресурсе службы.
-
-Сведения о том, как включить эти свойства в существующем хранилище ключей, см. в разделах с названием **Включение обратимого удаления** и **Включение защиты от очистки** в одной из следующих статей:
-
-- [Использование обратимого удаления с помощью PowerShell](https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-powershell).
-- [Использование обратимого удаления с помощью интерфейса командной строки](https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-cli).
-
-С шифрованием службы хранилища Azure поддерживаются только ключи RSA размером 2048. Дополнительные сведения о ключах см. в разделе **Key Vault Keys** раздела [о Azure Key Vault ключах, секретах и сертификатах](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates#key-vault-keys).
-
-## <a name="enable-customer-managed-keys"></a>Включить управляемые клиентом ключи
-
-Чтобы включить управляемые клиентом ключи в портал Azure, выполните следующие действия.
-
-1. Перейдите к ресурсу Cognitive Services.
-1. В колонке **Параметры** для Cognitive Services ресурса щелкните **Шифрование**. Выберите параметр **управляемые ключи клиента** , как показано на следующем рисунке.
-
-    ![Снимок экрана, показывающий, как выбрать управляемые пользователем ключи](../media/cognitive-services-encryption/selectcmk.png)
-
-## <a name="specify-a-key"></a>Укажите ключ
-
-После включения ключей, управляемых клиентом, можно указать ключ, связываемый с ресурсом Cognitive Services.
-
-### <a name="specify-a-key-as-a-uri"></a>Указание ключа в качестве URI
-
-Чтобы указать ключ в качестве универсального кода ресурса (URI), выполните следующие действия.
-
-1. Чтобы найти URI ключа в портал Azure, перейдите в хранилище ключей и выберите параметр **ключи** . Выберите нужный ключ, а затем щелкните ключ, чтобы просмотреть его версии. Выберите версию ключа, чтобы просмотреть параметры для этой версии.
-1. Скопируйте значение поля **идентификатор ключа** , которое предоставляет универсальный код ресурса (URI).
-
-    ![Снимок экрана, показывающий URI ключа хранилища ключей](../media/cognitive-services-encryption/key-uri-portal.png)
-
-1. В параметрах **шифрования** для учетной записи хранения выберите параметр **Введите URI ключа** .
-1. Вставьте URI, скопированный в поле **ключа URI** .
-
-   ![Снимок экрана, показывающий, как ввести URI ключа](../media/cognitive-services-encryption/ssecmk2.png)
-
-1. Укажите подписку, которая содержит хранилище ключей.
-1. Сохраните изменения.
-
-### <a name="specify-a-key-from-a-key-vault"></a>Указание ключа из хранилища ключей
-
-Чтобы указать ключ из хранилища ключей, сначала убедитесь, что у вас есть хранилище ключей, содержащее ключ. Чтобы указать ключ из хранилища ключей, выполните следующие действия.
-
-1. Выберите параметр **Выбрать в Key Vault**.
-1. Выберите хранилище ключей, содержащее ключ, который вы хотите использовать.
-1. Выберите ключ из хранилища ключей.
-
-   ![Снимок экрана с параметром ключа, управляемого клиентом](../media/cognitive-services-encryption/ssecmk3.png)
-
-1. Сохраните изменения.
-
-## <a name="update-the-key-version"></a>Обновление версии ключа
-
-При создании новой версии ключа обновите ресурс Cognitive Services для использования новой версии. Выполните следующие действия.
-
-1. Перейдите к ресурсу Cognitive Services и отобразите параметры **шифрования** .
-1. Введите универсальный код ресурса (URI) для новой версии ключа. Кроме того, можно выбрать хранилище ключей и ключ еще раз, чтобы обновить версию.
-1. Сохраните изменения.
-
-## <a name="use-a-different-key"></a>Использовать другой ключ
-
-Чтобы изменить ключ, используемый для шифрования, выполните следующие действия.
-
-1. Перейдите к ресурсу Cognitive Services и отобразите параметры **шифрования** .
-1. Введите универсальный код ресурса (URI) для нового ключа. Кроме того, можно выбрать хранилище ключей и выбрать новый ключ.
-1. Сохраните изменения.
-
-## <a name="disable-customer-managed-keys"></a>Отключение ключей, управляемых клиентом
-
-При отключении ключей, управляемых клиентом, Cognitive Services ресурс шифруется с помощью ключей, управляемых корпорацией Майкрософт. Чтобы отключить управляемые клиентом ключи, выполните следующие действия.
-
-1. Перейдите к ресурсу Cognitive Services и отобразите параметры **шифрования** .
-1. Снимите флажок рядом с параметром **использовать собственный ключ** .
-
-## <a name="next-steps"></a>Следующие шаги
-
-* [Что такое Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)?
-* [Cognitive Servicesная форма запроса ключа, управляемого клиентом](https://aka.ms/cogsvc-cmk)
+* [Пользовательское визуальное распознавание шифрование неактивных данных](../Custom-Vision-Service/custom-vision-encryption-of-data-at-rest.md)
 * [Шифрование неактивных данных в службах распознавания лиц](../Face/face-encryption-of-data-at-rest.md)
-* [QnA Maker шифрование неактивных данных](../QnAMaker/qna-maker-encryption-of-data-at-rest.md)
+* [Расшифровка неактивных данных распознавателем форм](../form-recognizer/form-recognizer-encryption-of-data-at-rest.md)
+
+## <a name="language"></a>Язык
+
 * [Language Understanding шифрование неактивных данных в службе](../LUIS/luis-encryption-of-data-at-rest.md)
-* [Content Moderator шифрование неактивных данных](../Content-Moderator/content-moderator-encryption-of-data-at-rest.md)
+* [QnA Maker шифрование неактивных данных](../QnAMaker/qna-maker-encryption-of-data-at-rest.md)
 * [Шифрование неактивных данных в преобразователе](../translator/translator-encryption-of-data-at-rest.md)
+
+## <a name="decision"></a>Решение
+
+* [Content Moderator шифрование неактивных данных](../Content-Moderator/content-moderator-encryption-of-data-at-rest.md)
 * [Шифрование неактивных данных персонализации](../personalizer/personalizer-encryption-of-data-at-rest.md)
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+* [Об Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)
+* [Cognitive Servicesная форма запроса ключа, управляемого клиентом](https://aka.ms/cogsvc-cmk)

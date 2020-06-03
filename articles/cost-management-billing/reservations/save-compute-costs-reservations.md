@@ -7,12 +7,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 04/30/2020
 ms.author: banders
-ms.openlocfilehash: ae94a5c8d7e9ff93098e85535aea3699206b9e03
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.openlocfilehash: b41435cb0b337edc2d73820c75da847913326315
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82626963"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84015987"
 ---
 # <a name="what-are-azure-reservations"></a>Общие сведения о резервированиях в Azure
 
@@ -127,6 +127,6 @@ Azure Reserved Virtual Machine Instances обеспечивают гибкост
 - Дополнительные сведения о резервировании для планов обслуживания:
     - [Виртуальные машины с Azure Reserved Virtual Machine Instances](../../virtual-machines/windows/prepay-reserved-vm-instances.md)
     - [Ресурсы Azure Cosmos DB с резервной мощностью Azure Cosmos DB](../../cosmos-db/cosmos-db-reserved-capacity.md)
-    - [Вычислительные ресурсы Базы данных SQL Azure с получением резервной мощности](../../sql-database/sql-database-reserved-capacity.md). Дополнительные сведения о резервировании для планов программного обеспечения:
+    - [Вычислительные ресурсы Базы данных SQL Azure с получением резервной мощности](../../azure-sql/database/reserved-capacity-overview.md). Дополнительные сведения о резервировании для планов программного обеспечения:
     - [Планы программного обеспечения Red Hat по резервированиям Azure](../../virtual-machines/linux/prepay-rhel-software-charges.md)
     - [Планы программного обеспечения SUSE по резервированиям Azure](../../virtual-machines/linux/prepay-suse-software-charges.md)

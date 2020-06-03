@@ -7,12 +7,12 @@ ms.reviewer: yashesvi
 ms.topic: conceptual
 ms.date: 02/18/2020
 ms.author: banders
-ms.openlocfilehash: 2dadcac3c776feed5ee521284f6b244a050e83e9
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 1084e8687cc709b5e31a9ef2c903638dd3d8f62c
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79237944"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84020002"
 ---
 # <a name="manage-reservations-for-azure-resources"></a>Управление резервированиями для ресурсов Azure
 
@@ -168,7 +168,7 @@ ms.locfileid: "79237944"
 
 Приобретение плана обслуживания:
 - [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../../virtual-machines/windows/prepay-reserved-vm-instances.md)
-- [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../../sql-database/sql-database-reserved-capacity.md)
+- [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../../azure-sql/database/reserved-capacity-overview.md)
 - [Предоплата ресурсов Azure Cosmos DB с зарезервированной емкостью Azure Cosmos DB](../../cosmos-db/cosmos-db-reserved-capacity.md)
 
 Приобретение плана программного обеспечения:
