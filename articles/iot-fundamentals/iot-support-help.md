@@ -7,12 +7,12 @@ ms.service: iot-fundamentals
 services: iot-fundamentals
 ms.topic: overview
 ms.date: 1/23/2020
-ms.openlocfilehash: c40aa9b0a94940f48a8edbd046a744678f02cbd2
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: e5dfdd41d3770cc49ed7a1e40ad6fbb12e5b10ea
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76775346"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83827241"
 ---
 # <a name="azure-iot-support-and-help-options"></a>Параметры справки и поддержки Azure IoT
 
@@ -53,11 +53,11 @@ ms.locfileid: "76775346"
 
 Если вы не нашли решение своей проблемы с помощью функции поиска, отправьте вопрос на интернет-форум MSDN, посвященный вопросам о службах.
 
-- [Azure Digital Twins](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azuredigitaltwins)
-- [Центр Интернета вещей Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azureiothub)
-- [Azure IoT Edge](https://social.msdn.microsoft.com/Forums/en-US/home?forum=iotedge)
-- [Azure Maps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelbs)
-- [Аналитика временных рядов Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureTimeSeriesInsights)
+- [Страница Майкрософт с вопросами и ответами об Azure Digital Twins](https://docs.microsoft.com/answers/topics/azure-digital-twins.html)
+- [Страница Майкрософт с вопросами и ответами о Центре Интернета вещей](https://docs.microsoft.com/answers/topics/azure-iot-hub.html)
+- [Страница Майкрософт с вопросами и ответами об Azure IoT Edge](https://docs.microsoft.com/answers/topics/azure-iot-edge.html)
+- [Страница Майкрософт с вопросами и ответами об Azure Maps](https://docs.microsoft.com/answers/topics/azure-maps.html)
+- [Страница Майкрософт с вопросами и ответами об Аналитике временных рядов Azure](https://docs.microsoft.com/answers/topics/azure-time-series-insights.html)
 
 ## <a name="submit-feedback-on-azure-feedback"></a>Отправка отзыва в "Отзыв по Azure"
 

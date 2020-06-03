@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 04/27/2020
 ms.author: aahi
 ms.reviewer: chtufts
-ms.openlocfilehash: 4af2d060c11b804c5fa09bfdabbcb9753f7d5885
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 79a12505ccc7cea709a88818513ba95710989954
+ms.sourcegitcommit: f0b206a6c6d51af096a4dc6887553d3de908abf3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82204682"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84142373"
 ---
 # <a name="data-and-rate-limits-for-the-text-analytics-api"></a>Ограничения данных и частоты для использования API "Анализ текста"
 <a name="data-limits"></a>
@@ -36,7 +36,7 @@ ms.locfileid: "82204682"
 
 Максимальное число документов, которые можно отправить в одном запросе, зависит от используемой версии и возможностей API.
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-3"></a>[Версия 3](#tab/version-3)
 
 > [!NOTE]
 > Если запрос API версии 3.0 превышает эти ограничения, но находится в пределах ограничений версии 2.0, ответ от API будет содержать предупреждение. Начиная с 15.07.2020 вместо предупреждения вы получите код ошибки — 400. 

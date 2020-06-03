@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 04/14/2020
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: d8002530120eee4a3613f2310c4a59cc18612cad
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: ed003e83d8343d2da0f1b11c6d82581b76d3168d
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81405160"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83679874"
 ---
 # <a name="quickstart-analyze-a-local-image-using-the-computer-vision-rest-api-and-c"></a>Краткое руководство. Анализ локального изображения с помощью REST API "Компьютерное зрение" и C#
 
@@ -33,13 +33,14 @@ ms.locfileid: "81405160"
 
 Чтобы создать пример в Visual Studio, сделайте следующее:
 
-1. Создайте решение Visual Studio в Visual Studio, используя шаблон консольного приложения Visual C# (.NET Framework).
+1. Создайте решение или проект Visual Studio в Visual Studio, используя шаблон консольного приложения Visual C# (.NET Core Framework).
 1. Установите пакет NuGet Newtonsoft.Json.
     1. В меню щелкните **Средства**, выберите **Диспетчер пакетов NuGet**, а затем **Управление пакетами NuGet для решения**.
-    1. Перейдите на вкладку **Обзор** и в поле **Поиск** введите Newtonsoft.Json.
+    1. Перейдите на вкладку **Обзор** и в поле **Поиск** введите "Newtonsoft.Jso"n (если еще не отображается).
     1. Выберите **Newtonsoft.Json**, затем установите флажок рядом с именем проекта и щелкните **Установить**.
+1. Скопируйте пример фрагмента кода ниже и вставьте его в файл Program.cs. Измените имя пространства имен, если оно отличается от созданного.
+1. Добавьте выбранный образ в папку bin/debug/netcoreappX.X, а затем — имя образа (с расширением) в переменную "imageFilePath".
 1. Запустите программу.
-1. Введите путь к локальному изображению в командной строке.
 
 ```csharp
 using Newtonsoft.Json.Linq;
@@ -59,26 +60,18 @@ namespace CSHttpClientSample
         static string endpoint = Environment.GetEnvironmentVariable("COMPUTER_VISION_ENDPOINT");
         
         // the Analyze method endpoint
-        static string uriBase = endpoint + "vision/v2.1/analyze";
+        static string uriBase = endpoint + "vision/v3.0/analyze";
 
-        static async Task Main()
+        // Image you want analyzed (add to your bin/debug/netcoreappX.X folder)
+        // For sample images, download one from here (png or jpg):
+        // https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/ComputerVision/Images
+        static string imageFilePath = @"my-sample-image";
+
+        public static void Main()
         {
-            // Get the path and filename to process from the user.
-            Console.WriteLine("Analyze an image:");
-            Console.Write(
-                "Enter the path to the image you wish to analyze: ");
-            string imageFilePath = Console.ReadLine();
+            // Call the API
+            MakeAnalysisRequest(imageFilePath).Wait();
 
-            if (File.Exists(imageFilePath))
-            {
-                // Call the REST API method.
-                Console.WriteLine("\nWait for the results to appear.\n");
-                await MakeAnalysisRequest(imageFilePath);
-            }
-            else
-            {
-                Console.WriteLine("\nInvalid file path");
-            }
             Console.WriteLine("\nPress Enter to exit...");
             Console.ReadLine();
         }
@@ -167,7 +160,7 @@ namespace CSHttpClientSample
 
 ## <a name="examine-the-response"></a>Изучите ответ.
 
-Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера приложения и в окне консоли отобразится успешный ответ, аналогичный следующему.
+Успешный ответ возвращается в окне консоли в формате JSON (в зависимости от используемого образа), как показано в следующем примере:
 
 ```json
 {

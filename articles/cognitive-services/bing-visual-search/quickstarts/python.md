@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-visual-search
 ms.topic: quickstart
-ms.date: 12/17/2019
+ms.date: 05/22/2020
 ms.author: scottwhi
-ms.openlocfilehash: b56f6743b642904349797ac5b6167194f7916b45
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 7b33a857953b7f96180e306195dd0e8b21450556
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75446593"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83874016"
 ---
 # <a name="quickstart-get-image-insights-using-the-bing-visual-search-rest-api-and-python"></a>Краткое руководство. Получение аналитических сведений об изображении с помощью REST API и Python Визуального поиска Bing
 
-Из этого краткого руководства вы узнаете, как сделать первый вызов API Визуального поиска Bing и просмотреть результаты. Это приложение Python отправляет изображение в API и отображает возвращенные данные о нем. Хотя это приложение создано на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Используйте это краткое руководство, чтобы выполнить вызов к API Визуального поиска Bing. Это приложение Python отправляет изображение в API и отображает возвращенные данные о нем. Это приложение создано на языке Python. Но API представляет собой веб-службу на основе REST, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -35,7 +35,7 @@ ms.locfileid: "75446593"
     import requests, json
     ```
 
-2. Создайте переменные для ключа подписки, конечной точки и путь к отправляемому изображению. В качестве `BASE_URI` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
+2. Создайте переменные для ключа подписки, конечной точки и путь к отправляемому изображению. Для значения `BASE_URI` можно использовать глобальную конечную точку в следующем коде или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемую на портале Azure для вашего ресурса.
 
     ```python
 
@@ -44,7 +44,7 @@ ms.locfileid: "75446593"
     imagePath = 'your-image-path'
     ```
     
-    При отправке локального изображения данные формы должны содержать заголовок `Content-Disposition`. Вам необходимо задать для его параметра `name` значение "image", а для параметра `filename` — любую строку. Форма содержит двоичные данные изображения. Максимально допустимый размер отправляемого изображения — 1 МБ.
+3. При отправке локального изображения данные формы должны содержать заголовок `Content-Disposition`. Задайте для его параметра `name` значение "image", а для параметра `filename` — имя файла с изображением. Форма содержит двоичные данные изображения. Максимально допустимый размер отправляемого изображения — 1 МБ.
     
     ```
     --boundary_1234-abcd
@@ -55,13 +55,13 @@ ms.locfileid: "75446593"
     --boundary_1234-abcd--
     ```
 
-3. Создайте объект словаря для хранения информации о заголовке запроса. Привяжите ключ подписки к строке `Ocp-Apim-Subscription-Key`, как показано ниже:
+4. Создайте объект словаря для хранения информации о заголовке запроса. Привяжите ключ подписки к строке `Ocp-Apim-Subscription-Key`.
 
     ```python
     HEADERS = {'Ocp-Apim-Subscription-Key': SUBSCRIPTION_KEY}
     ```
 
-4. Создайте еще один словарь, содержащий изображение, которое будет открываться и загружаться при отправке запроса:
+5. Создайте еще один словарь, содержащий изображение, которое будет открываться и загружаться при отправке запроса.
 
     ```python
     file = {'image' : ('myfile', open(imagePath, 'rb'))}
@@ -69,27 +69,27 @@ ms.locfileid: "75446593"
 
 ## <a name="parse-the-json-response"></a>Проанализируйте ответ JSON.
 
-1. Создайте метод с именем `print_json()` для получения ответа API и напечатайте JSON:
+Создайте метод `print_json()` для получения ответа API и выведите на экран код JSON.
 
-    ```python
-    def print_json(obj):
-        """Print the object as json"""
-        print(json.dumps(obj, sort_keys=True, indent=2, separators=(',', ': ')))
-    ```
+```python
+def print_json(obj):
+    """Print the object as json"""
+    print(json.dumps(obj, sort_keys=True, indent=2, separators=(',', ': ')))
+```
 
 ## <a name="send-the-request"></a>Отправка запроса
 
-1. Используйте `requests.post()` для отправки запроса в Визуальный поиск Bing. Включите строку для конечной точки, заголовка и сведений о файле. Напечатайте `response.json()` с помощью `print_json()`:
+Используйте `requests.post()` для отправки запроса в Визуальный поиск Bing. Включите строку для конечной точки, заголовка и сведений о файле. Выведите на экран `response.json()` с помощью `print_json()`.
 
-    ```python
-    try:
-        response = requests.post(BASE_URI, headers=HEADERS, files=file)
-        response.raise_for_status()
-        print_json(response.json())
+```python
+try:
+    response = requests.post(BASE_URI, headers=HEADERS, files=file)
+    response.raise_for_status()
+    print_json(response.json())
     
-    except Exception as ex:
-        raise ex
-    ```
+except Exception as ex:
+    raise ex
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

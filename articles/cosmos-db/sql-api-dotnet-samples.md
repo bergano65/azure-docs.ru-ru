@@ -7,18 +7,19 @@ ms.subservice: cosmosdb-sql
 ms.topic: sample
 ms.date: 07/23/2019
 ms.author: sngun
-ms.openlocfilehash: 9b6635a0dab20c8122ad4df4b7fbc5a0cb6f4c99
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6a9ab62d5ea408a5c7683d2f06e2cd52f52da1bb
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "71351122"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83683883"
 ---
 # <a name="azure-cosmos-db-net-examples-for-the-sql-api"></a>Azure Cosmos DB. Примеры .NET для API SQL
+
 > [!div class="op_single_selector"]
-> * [Примеры .NET](sql-api-dotnet-samples.md)
-> * [Примеры Java](sql-api-java-samples.md)
-> * [Примеры Async Java](sql-api-async-java-samples.md)
+> * [Примеры пакета SDK для .NET версии 2](sql-api-dotnet-samples.md)
+> * [Примеры пакета SDK для .NET версии 3](sql-api-dotnet-v3sdk-samples.md)
+> * [Примеры для пакета SDK Java версии 4](sql-api-java-sdk-samples.md)
 > * [Примеры Node.js](sql-api-nodejs-samples.md)
 > * [Примеры Python](sql-api-python-samples.md)
 > * [Коллекция примеров кода Azure](https://azure.microsoft.com/resources/samples/?sort=0&service=cosmos-db)

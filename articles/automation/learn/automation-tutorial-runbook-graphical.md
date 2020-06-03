@@ -1,17 +1,17 @@
 ---
 title: Создание графического модуля runbook в службе автоматизации Azure
-description: Руководство по созданию, тестированию и публикации простого графического модуля runbook в службе автоматизации Azure.
+description: В этой статье собраны инструкции по созданию, тестированию и публикации простого графического runbook в службе автоматизации Azure.
 keywords: Runbook, шаблон Runbook, служба автоматизации Runbook и Azure Runbook
 services: automation
 ms.subservice: process-automation
 ms.date: 04/19/2020
 ms.topic: tutorial
-ms.openlocfilehash: f87f389667043e26f066886eddcdb8061df0319f
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.openlocfilehash: 3cd5db3736d5eda88e7cad7bda1966efb2b00977
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81725128"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83744739"
 ---
 # <a name="tutorial-create-a-graphical-runbook"></a>Руководство по Создание графического модуля runbook
 
@@ -24,9 +24,6 @@ ms.locfileid: "81725128"
 > * тестирование и публикация runbook;
 > * выполнение задания модуля runbook и отслеживание его состояния;
 > * обновление параметров и условных ссылок в модуле runbook для запуска виртуальной машины Azure.
-
->[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Чтобы обновить модули в учетной записи службы автоматизации, см. руководство по [обновлению модулей Azure PowerShell в службе автоматизации Azure](../automation-update-azure-modules.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -354,7 +351,7 @@ ms.locfileid: "81725128"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о графической разработке см. [в этой статье](../automation-graphical-authoring-intro.md).
+* Дополнительные сведения о графической разработке см. в статье [о создании графического runbook в службе автоматизации Azure](../automation-graphical-authoring-intro.md).
 * Сведения о том, как начать работу с runbook, см. в статье о [создании runbook PowerShell](automation-tutorial-runbook-textual-powershell.md).
 * Чтобы приступить к работе с runbook рабочего процесса PowerShell, обратитесь к [этом руководству](automation-tutorial-runbook-textual.md).
 * Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation

@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 02/27/2020
 ms.author: allensu
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 48ce72ee501252e35388f958b5c2e166edc2678f
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 21289874792987e35fa1cc5731a63e3f55fedc35
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83196174"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83835773"
 ---
 # <a name="what-is-azure-private-link"></a>Что собой представляет Приватный канал Azure? 
 Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure и Базе данных SQL), а также размещенным в Azure службам, которые принадлежат клиенту или партнеру, через [частную конечную точку](private-endpoint-overview.md) виртуальной сети.
@@ -65,6 +65,8 @@ ms.locfileid: "83196174"
 |Машинное обучение Azure | Восточная часть США, западная часть США 2, центрально-южная часть США      |   Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/machine-learning/how-to-configure-private-link)   |
 | Центр Интернета вещей | Все общедоступные регионы    |   Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/iot-hub/virtual-network-support ) |
 | Azure SignalR | Восточная часть США, западная часть США 2, центрально-южная часть США      |   Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://aka.ms/asrs/privatelink)   |
+| Azure Monitor <br/>(Log Analytics и Application Insights) | Все общедоступные регионы      |   GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/azure-monitor/platform/private-link-security)   |
+
 
 Самые актуальные уведомления доступны на странице [обновлений виртуальной сети Azure](https://azure.microsoft.com/updates/?product=virtual-network).
 

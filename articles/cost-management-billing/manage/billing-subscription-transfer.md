@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 84b36c1357bedfc120cec72af84fdd79f52a2f57
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8f259ba9c7da3d7c37ed3eb63c63d17b74f7fbdd
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79238165"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83745849"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Передача прав владения на выставление счетов для подписки Azure другой учетной записи
 
@@ -109,7 +109,7 @@ ms.locfileid: "79238165"
 - [Оплата по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/)
 - [Разработка и тестирование с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0023p/)
 - [Visual Studio Enterprise](https://azure.microsoft.com/offers/ms-azr-0063p/)
-- [Visual Studio Enterprise: Bizspark](https://azure.microsoft.com/offers/ms-azr-0064p/)
+- [Visual Studio Enterprise: BizSpark](https://azure.microsoft.com/offers/ms-azr-0064p/)
 - [Visual Studio Professional](https://azure.microsoft.com/offers/ms-azr-0059p/)
 - [Visual Studio Test Professional](https://azure.microsoft.com/offers/ms-azr-0060p/)
 - [План Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0017g/)\*\*
@@ -144,8 +144,8 @@ ms.locfileid: "79238165"
 
 Все ресурсы, включая виртуальные машины, диски и веб-сайты, переносятся в новую учетную запись. Но если подписка передается в учетную запись пользователя в другом клиенте Azure AD, с ней [не передаются](#transfer-a-subscription-to-another-azure-ad-tenant-account) назначения [ролей администратора](add-change-subscription-administrator.md) и [RBAC](../../role-based-access-control/role-assignments-portal.md) для управления ресурсами в подписке. Кроме того, не передаются данные о [регистрации приложений](../../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md) и другие службы, привязанные к конкретному клиенту.
 
-### <a name="can-i-transfer-ownership-to-an-account-in-another-country"></a>Можно ли передать права владения подпиской учетной записи из другой страны?
-К сожалению, такую передачу прав невозможно выполнить на портале Azure. Чтобы перенести подписку в другую страну, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+### <a name="can-i-transfer-ownership-to-an-account-in-another-countryregion"></a>Можно ли передать права владения подпиской в учетную запись, размещенную в другой стране или регионе?
+К сожалению, передачу прав в другую страну или регион невозможно выполнить на портале Azure. Чтобы перенести подписку в другую страну или регион, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
 ### <a name="i-am-an-administrator-on-two-accounts-can-i-transfer-a-subscription-from-one-of-my-accounts-to-another"></a>Я являюсь администратором двух учетных записей. Могу ли я передать подписку из одной учетной записи в другую?
 Да, вы можете передавать подписку между своими учетными записями. Официально считается, что эти учетные записи принадлежат двум разным пользователям, и вы можете выполнить описанные выше действия для передачи подписок между своими учетными записями.
@@ -160,7 +160,7 @@ ms.locfileid: "79238165"
 
 ### <a name="how-do-i-migrate-data-and-services-for-my-azure-subscription-to-new-subscription"></a>Как перенести данные и службы из подписки Azure в новую подписку?
 
-Если не удается передать права владения подпиской, то можно перенести ресурсы вручную. Ознакомьтесь со статьей [Move resources to new resource group or subscription](../../azure-resource-manager/management/move-resource-group-and-subscription.md) (Перемещение ресурсов в новую группу ресурсов или подписку).
+Если не удается передать права владения подпиской, то можно перенести ресурсы вручную. Ознакомьтесь со статьей [Перемещение ресурсов в новую группу ресурсов или подписку](../../azure-resource-manager/management/move-resource-group-and-subscription.md).
 
 ### <a name="if-i-transfer-a-visual-studio-or-microsoft-partner-network-subscription-does-my-credit-carry-forward-with-the-subscription-in-the-new-account"></a>Если я передам подписку Visual Studio или Microsoft Partner Network, деньги на счете также перенесутся с ней в новую учетную запись?
 

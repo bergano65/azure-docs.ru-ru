@@ -7,12 +7,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: 0eeddc26ac1a1f286d8ed253f3fe097f0e7de91f
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.openlocfilehash: 7cf42950bc25ad501fd11b1b28c74b5f63066c32
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80409387"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83745524"
 ---
 # <a name="troubleshoot-a-declined-card-at-azure-sign-up"></a>Устранение проблем, связанных с отклонением карты при регистрации в Azure
 
@@ -20,9 +20,9 @@ ms.locfileid: "80409387"
 
 Чтобы устранить проблему, выберите раздел ниже, содержимое в котором сильнее всего похоже на вашу ошибку.
 
-## <a name="the-credit-card-provider-is-not-accepted-for-your-country"></a>Поставщик кредитной карты не принимается в вашей стране
+## <a name="the-credit-card-provider-is-not-accepted-for-your-countryregion"></a>Поставщик кредитной карты не принимается в вашей стране или регионе
 
-При выборе карты Azure отображает параметры карты, допустимые в выбранной стране. Свяжитесь со своим банком или организацией, выпустившей карту, чтобы убедиться, что по кредитной карте разрешены международные транзакции. Дополнительные сведения о поддерживаемых странах и валютах см. в статье [Вопросы и ответы о ценах на Azure](https://azure.microsoft.com/pricing/faq/).
+При выборе карты в Azure отображаются варианты карт, допустимых в выбранной стране или регионе. Свяжитесь со своим банком или организацией, выпустившей карту, чтобы убедиться, что по кредитной карте разрешены международные транзакции. Дополнительные сведения о поддерживаемых странах, регионах и валютах см. в статье [Вопросы и ответы о ценах на Azure](https://azure.microsoft.com/pricing/faq/).
 
 >[!Note]
 >В настоящее время кредитные карты American Express не поддерживаются в качестве платежного средства в Индии. Нам не известен интервал времени, после которого они могут стать допустимой формой оплаты.

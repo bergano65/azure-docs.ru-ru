@@ -9,12 +9,12 @@ ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
 ms.custom: has-adal-ref
-ms.openlocfilehash: 1da5bd7020304c67bd9f9058612f47d528611a9e
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 542b5168bb70d876d91f8a747a230f2b754568e9
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83195335"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83873106"
 ---
 # <a name="quickstart-create-an-ios-app-with-azure-spatial-anchors-in-either-swift-or-objective-c"></a>Краткое руководство. Создание приложения iOS на языке Swift или Objective-C с помощью службы "Пространственные привязки Azure"
 
@@ -101,6 +101,8 @@ open ./SampleObjC.xcworkspace
 
 Найдите поле `spatialAnchorsAccountId` и замените `Set me` идентификатором учетной записи.
 
+Найдите `startSession()` и добавьте следующую строку, подставив в нее полученный ранее домен учетной записи: `cloudSession!.configuration.accountDomain = "MyAccountDomain";`.
+
 # <a name="objective-c"></a>[Objective-C](#tab/openproject-objc)
 
 Откройте среду `iOS/Objective-C/SampleObjC/BaseViewController.m`.
@@ -108,6 +110,8 @@ open ./SampleObjC.xcworkspace
 Найдите поле `SpatialAnchorsAccountKey` и замените `Set me` ключом учетной записи.
 
 Найдите поле `SpatialAnchorsAccountId` и замените `Set me` идентификатором учетной записи.
+
+Найдите `startSession()` и добавьте следующую строку, подставив в нее полученный ранее домен учетной записи: `_cloudSession.configuration.accountDomain = @"MyAccountDomain";`.
 
 ---
 

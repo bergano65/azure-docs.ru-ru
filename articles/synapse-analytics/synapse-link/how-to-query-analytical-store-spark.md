@@ -1,5 +1,5 @@
 ---
-title: Отправка запросов в аналитическое хранилище Azure Cosmos DB с помощью Apache Spark для Azure Synapse Analytics
+title: Отправка запросов в аналитическое хранилище Azure Cosmos DB (предварительная версия) с помощью Apache Spark для Azure Synapse Analytics
 description: Практическое руководство по отправке запросов в аналитическое хранилище Azure Cosmos DB с помощью Apache Spark для Azure Synapse Analytics
 services: synapse-analytics
 author: ArnoMicrosoft
@@ -9,14 +9,14 @@ ms.subservice: ''
 ms.date: 05/06/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 02d4b6a636bff5ef11686abba6efb52f45f04779
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 5c19a3f808b85ba9e34d3304251fe8acb21204ce
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83599256"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83700201"
 ---
-# <a name="query-azure-cosmos-db-analytical-store-with-apache-spark-for-azure-synapse-analytics"></a>Отправка запросов в аналитическое хранилище Azure Cosmos DB с помощью Apache Spark для Azure Synapse Analytics
+# <a name="query-azure-cosmos-db-analytical-store-preview-with-apache-spark-for-azure-synapse-analytics"></a>Отправка запросов в аналитическое хранилище Azure Cosmos DB (предварительная версия) с помощью Apache Spark для Azure Synapse Analytics
 
 В этой статье приводится ряд примеров того, как можно взаимодействовать с аналитическим хранилищем с помощью жестов Synapse. Чтобы просмотреть жесты, щелкните правой кнопкой мыши контейнер. С помощью жестов можно быстро создать код и скорректировать его в соответствии с потребностями. Жесты также идеально подходят для обнаружения данных одним щелчком мыши.
 

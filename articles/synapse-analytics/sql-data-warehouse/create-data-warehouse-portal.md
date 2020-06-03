@@ -11,12 +11,12 @@ ms.date: 05/28/2019
 ms.author: Kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 9605d20fa6a1480b24d7b64963aa9579ed3b5a11
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: e393b653ecb9e9d7b8eff277b91215ccc5bf6342
+ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81115179"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83770828"
 ---
 # <a name="quickstart-create-and-query-a-synapse-sql-pool-using-the-azure-portal"></a>Краткое руководство. Создание пула SQL Synapse и отправка в него запросов, используя портал Azure
 
@@ -66,7 +66,11 @@ ms.locfileid: "81115179"
 
    Дополнительные сведения об уровне производительности см. в статье [Управление вычислительными ресурсами в хранилище данных Azure Synapse Analytics](sql-data-warehouse-manage-compute-overview.md).
 
-5. Заполнив форму Azure Synapse Analytics на вкладке "Основные сведения", выберите элемент **Просмотр и создание**, а затем нажмите кнопку **Создать**, чтобы создать пул SQL. Подготовка занимает несколько минут.
+5. В разделе **Использовать существующие данные** выберите **Дополнительные параметры** и щелкните **Пример**, чтобы создать пример базы данных AdventureWorksDW.
+
+    ![Выберите "Использовать существующие данные"](./media/create-data-warehouse-portal/create-sql-pool-additional-1.png) 
+
+6. Заполнив форму Azure Synapse Analytics на вкладке "Основные сведения", выберите элемент **Просмотр и создание**, а затем нажмите кнопку **Создать**, чтобы создать пул SQL. Подготовка занимает несколько минут.
 
    ![Нажатая кнопка "Просмотреть и создать"](./media/create-data-warehouse-portal/create-sql-pool-review-create.png)
 
@@ -148,6 +152,8 @@ ms.locfileid: "81115179"
    ![объекты базы данных](./media/create-data-warehouse-portal/connected-ssms.png)
 
 ## <a name="run-some-queries"></a>Выполнение запросов
+
+Не рекомендуем выполнять большие запросы при входе в систему в качестве администратора сервера, так как при этом используется [ограниченный класс ресурсов](resource-classes-for-workload-management.md). Вместо этого настройте [изоляцию рабочей нагрузки](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-configure-workload-isolation-tsql), как [показано в руководствах](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/load-data-wideworldimportersdw#create-a-user-for-loading-data).
 
 Хранилище данных SQL использует язык запросов T-SQL. Чтобы открыть окно запросов и выполнить несколько запросов T-SQL, выполните следующие действия.
 

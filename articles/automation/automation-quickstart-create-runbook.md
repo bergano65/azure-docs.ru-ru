@@ -1,17 +1,17 @@
 ---
 title: Краткое руководство по Azure. Создание runbook службы автоматизации Azure | Документация Майкрософт
-description: Узнайте, как создать runbook службы автоматизации Azure
+description: Эта статья поможет вам разобраться с созданием runbook службы автоматизации Azure.
 services: automation
 ms.date: 02/05/2019
 ms.topic: quickstart
 ms.subservice: process-automation
 ms.custom: mvc
-ms.openlocfilehash: 250f51c9f028dd55d8327259e35b82b0c392c1f6
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 0717a7ac3cc663ff68ba96864aa5d37732337ca5
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81537004"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83836742"
 ---
 # <a name="create-an-azure-automation-runbook"></a>Создание runbook службы автоматизации Azure
 
@@ -98,4 +98,4 @@ ms.locfileid: "81537004"
 В этом руководстве вы создали, изменили, протестировали и опубликовали runbook, а затем запустили задание runbook. Дополнительные сведения о runbook службы автоматизации см. в статьях о разных типах runbook, которые можно создавать и использовать в службе автоматизации.
 
 > [!div class="nextstepaction"]
-> [Automation How To - Runbook Types](./automation-runbook-types.md) (Типы модулей Runbook в службе автоматизации Azure)
+> [Типы последовательностей runbook в службе автоматизации Azure](./automation-runbook-types.md)

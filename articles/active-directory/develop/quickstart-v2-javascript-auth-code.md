@@ -1,5 +1,5 @@
 ---
-title: Вход пользователей в одностраничных приложениях JavaScript с помощью кода проверки подлинности | Azure
+title: Вход пользователей в одностраничных приложениях (SPA) JavaScript с помощью кода проверки подлинности | Azure
 titleSuffix: Microsoft identity platform
 description: Узнайте, как приложение JavaScript может вызывать API, которому необходимы маркеры доступа, используя платформу удостоверений Майкрософт.
 services: active-directory
@@ -9,33 +9,30 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
 ms.workload: identity
-ms.date: 04/22/2020
+ms.date: 05/19/2020
 ms.author: hahamil
-ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript
-ROBOTS: NOINDEX
-ms.openlocfilehash: 9663c11508b0478a67f528cb301d705a3125e4f6
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.custom: aaddev, scenarios:getting-started, languages:JavaScript
+ms.openlocfilehash: 0ba4531ed15630a8887cb7be843a00ba23a439cc
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82871522"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83682022"
 ---
-# <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa-using-the-auth-code-flow"></a>Краткое руководство. Вход пользователей и получение маркера доступа в SPA JavaScript с помощью потока кода авторизации 
+# <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa-using-the-auth-code-flow"></a>Краткое руководство. Вход пользователей и получение маркера доступа в SPA JavaScript с помощью потока кода авторизации
 
 > [!IMPORTANT]
 > Эта функция в настоящее время находится на стадии предварительной версии. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
 
+В этом кратком руководстве вы выполните пример кода, который демонстрирует, как одностраничное приложение (SPA) JavaScript может выполнять вход с помощью личных, рабочих и учебных учетных записей с помощью потока кода авторизации. Также в этом примере кода демонстрируется получение маркера доступа для вызова веб-API, в данном случае API Microsoft Graph. Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).
 
-В этом кратком руководстве используется MSAL.js версии 2.0 с потоком кода авторизации. Чтобы использовать MSAL.js версии 1.0 с неявным потоком, просмотрите [это краткое руководство](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v2-javascript).
-
-В этом кратком руководстве описано, как с помощью примера кода можно узнать, как одностраничное приложение (SPA) JavaScript может выполнять вход с помощью личных, рабочих и учебных учетных записей. Одностраничное приложение JavaScript также может получить маркер доступа для вызова API Microsoft Graph или любого веб-API. Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).
+В этом кратком руководстве используется MSAL.js версии 2.0 с потоком кода авторизации. Есть аналогичное руководство для MSAL.js версии 1.0 с неявным потоком: [Краткое руководство. Вход пользователей в одностраничных приложениях JavaScript](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v2-javascript).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. [Создать подписку Azure бесплатно](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 * [Node.js](https://nodejs.org/en/download/)
-* [Visual Studio Code](https://code.visualstudio.com/download) (для внесения правок в файлы проекта).
-
+* [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода.
 
 > [!div renderon="docs"]
 > ## <a name="register-and-download-your-quickstart-application"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
@@ -56,7 +53,6 @@ ms.locfileid: "82871522"
 > #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 >
 > 1. Войдите на [портал Azure](https://portal.azure.com).
->
 > 1. Если ваша учетная запись предоставляет доступ к нескольким клиентам, в правом верхнем углу щелкните свою учетную запись и выберите для текущего сеанса работы нужный клиент Azure AD.
 > 1. Щелкните [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908).
 > 1. Выберите **Новая регистрация**.
@@ -64,8 +60,8 @@ ms.locfileid: "82871522"
 > 1. В разделе **Поддерживаемые типы учетных записей** выберите **Accounts in any organizational directory and personal Microsoft accounts** (Учетные записи в любом каталоге организации и личные учетные записи Майкрософт).
 > 1. Выберите **Зарегистрировать**. На странице приложения **Обзор** запишите **идентификатор приложения (клиента)** для использования в будущем.
 > 1. В левой области зарегистрированного приложения выберите **Проверка подлинности**.
-> 1. В разделе **Конфигурации платформ** щелкните **Добавить платформу**. Откроется панель слева. Выберите область **Одностраничные приложения**.
-> 1. В этой же левой части задайте для **URI перенаправления** значение `http://localhost:3000/`. 
+> 1. В разделе **Конфигурации платформ** щелкните **Добавить платформу**. На открывшейся панели выберите **Одностраничное приложение**.
+> 1. В поле **URI перенаправления** укажите значение `http://localhost:3000/`.
 > 1. Нажмите кнопку **Настроить**.
 
 > [!div class="sxs-lookup" renderon="portal"]
@@ -80,50 +76,57 @@ ms.locfileid: "82871522"
 #### <a name="step-2-download-the-project"></a>Шаг 2. Скачивание проекта
 
 > [!div renderon="docs"]
-> [Скачайте основные файлы проекта](https://github.com/Azure-Samples/ms-identity-javascript-v2/archive/quickstart.zip), чтобы запустить проект с помощью веб-сервера, используя Node.js.
+> [Скачайте основные файлы проекта](https://github.com/Azure-Samples/ms-identity-javascript-v2/archive/master.zip), чтобы запустить проект с помощью веб-сервера, используя Node.js.
 
 > [!div renderon="portal" class="sxs-lookup"]
 > Запустите проект с помощью веб-сервера, используя Node.js.
 
-> [!div renderon="portal" id="autoupdate" class="nextstepaction" class="sxs-lookup"]
-> [Скачивание примера кода](https://github.com/Azure-Samples/ms-identity-javascript-v2/archive/quickstart.zip)
+> [!div renderon="portal" class="sxs-lookup" id="autoupdate" class="nextstepaction"]
+> [Скачивание примера кода](https://github.com/Azure-Samples/ms-identity-javascript-v2/archive/master.zip)
 
 > [!div renderon="docs"]
 > #### <a name="step-3-configure-your-javascript-app"></a>Шаг 3. Настройка приложения JavaScript
 >
-> В папке *приложения* измените файл *authConfig.js* и установите значения `clientID`, `authority` и `redirectUri` в разделе `msalConfig`.
+> В папке *app* откройте файл *authConfig.js* и измените в нем значения `clientID`, `authority` и `redirectUri` для объекта `msalConfig`.
 >
 > ```javascript
->
->  // Config object to be passed to Msal on creation
->  const msalConfig = {
->    auth: {
->      clientId: "Enter_the_Application_Id_Here",
->      authority: "Enter_the_Cloud_Instance_Id_HereEnter_the_Tenant_Info_Here",
->      redirectUri: "Enter_the_Redirect_Uri_Here",
->    },
->    cache: {
->      cacheLocation: "sessionStorage", // This configures where your cache will be stored
->      storeAuthStateInCookie: false, // Set this to "true" if you are having issues on IE11 or Edge
->    }
->  };
->
->```
+> // Config object to be passed to Msal on creation
+> const msalConfig = {
+>   auth: {
+>     clientId: "Enter_the_Application_Id_Here",
+>     authority: "Enter_the_Cloud_Instance_Id_HereEnter_the_Tenant_Info_Here",
+>     redirectUri: "Enter_the_Redirect_Uri_Here",
+>   },
+>   cache: {
+>     cacheLocation: "sessionStorage", // This configures where your cache will be stored
+>     storeAuthStateInCookie: false, // Set this to "true" if you are having issues on IE11 or Edge
+>   }
+> };
+> ```
 
 > [!div renderon="portal" class="sxs-lookup"]
 > > [!NOTE]
-> > :::no-loc text="Enter_the_Supported_Account_Info_Here":::
+> > `Enter_the_Supported_Account_Info_Here`
 
 > [!div renderon="docs"]
 >
-> Где:
-> - *\<Enter_the_Application_Id_Here>*  — **Идентификатор приложения (клиент)** для зарегистрированного приложения.
-> - *\<Enter_the_Cloud_Instance_Id_Here>*  — экземпляр облака Azure. Для основного или глобального облака Azure просто введите *https://login.microsoftonline.com/* . Сведения для **национальных** облаков (например, Китая) см. в [этой статье](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud).
-> - *\<Enter_the_Tenant_info_here>* присваивается одно из следующих значений:
->    - Если приложение поддерживает *учетные записи только в этом каталоге организации*, замените это значение **идентификатором клиента** или **именем клиента** (например, *contoso.microsoft.com*).
->    - Если ваше приложение поддерживает *учетные записи в любом каталоге организации*, замените это значение на **organizations**.
->    - Если приложение поддерживает *учетные записи в любом каталоге организации и личные учетные записи Майкрософт*, замените это значение на **common**. Чтобы ограничить поддержку только *личными учетными записями Майкрософт*, замените это значение на **consumers**.
-> - *\<Enter_the_Redirect_Uri_Here>* имеет значение `http://localhost:3000`
+> Измените значения в разделе `msalConfig`, как описано далее.
+>
+> - `Enter_the_Application_Id_Here` содержит **идентификатор приложения (клиента)** для зарегистрированного приложения.
+> - `Enter_the_Cloud_Instance_Id_Here` представляет экземпляр облака Azure. Для основного или глобального облака Azure введите `https://login.microsoftonline.com/`. Сведения для **национальных** облаков (например, Китая) см. в [этой статье](authentication-national-cloud.md).
+> - `Enter_the_Tenant_info_here` может иметь одно из следующих значений.
+>   - Если приложение поддерживает *учетные записи только в этом каталоге организации*, замените это значение **идентификатором клиента** или **именем клиента**. Например, `contoso.microsoft.com`.
+>   - Если приложение поддерживает *учетные записи в любом каталоге организации*, замените это значение на `organizations`.
+>   - Если приложение поддерживает *учетные записи в любом каталоге организации и личные учетные записи Майкрософт*, замените это значение на `common`. В примерах **этого краткого руководства** укажите `common`.
+>   - Чтобы ограничить поддержку только *личными учетными записями Microsoft*, замените это значение на `consumers`.
+> - Параметр `Enter_the_Redirect_Uri_Here` равен `http://localhost:3000/`.
+>
+> Если вы используете основное (глобальное) облако Azure, значение `authority` в файле *authConfig.js* должно выглядеть примерно так:
+>
+> ```javascript
+> authority: "https://login.microsoftonline.com/common",
+> ```
+>
 > > [!TIP]
 > > Чтобы найти значения параметров **Идентификатор приложения (клиента)** , **Идентификатор каталога (клиента)** и **Поддерживаемые типы учетных записей**, на портале Azure перейдите на страницу регистрации приложения **Обзор**.
 >
@@ -134,6 +137,7 @@ ms.locfileid: "82871522"
 > [!div renderon="docs"]
 >
 > Затем в той же папке измените файл *graphConfig.js*, задав значения `graphMeEndpoint` и `graphMailEndpoint` для объекта `apiConfig`.
+>
 > ```javascript
 >   // Add here the endpoints for MS Graph API services you would like to use.
 >   const graphConfig = {
@@ -147,17 +151,23 @@ ms.locfileid: "82871522"
 >   };
 > ```
 >
-
 > [!div renderon="docs"]
 >
-> *\<Enter_the_Graph_Endpoint_Here>*  — это конечная точка, для которой будут выполняться вызовы API. Для основной или глобальной службы API Microsoft Graph введите `https://graph.microsoft.com`. Дополнительные сведения см. в статье [Национальные облачные развертывания](https://docs.microsoft.com/graph/deployments).
+> `Enter_the_Graph_Endpoint_Here` обозначает конечную точку, к которой будут направляться вызовы API. Для основной (глобальной) службы API Microsoft Graph введите значение `https://graph.microsoft.com/` (включая замыкающую косую черту). Дополнительные сведения о службе Microsoft Graph в национальных облаках см. [здесь](https://docs.microsoft.com/graph/deployments).
+>
+> Если вы используете основное (глобальное) облако Azure, значения `graphMeEndpoint` и `graphMailEndpoint` в файле *graphConfig.js* должны выглядеть примерно так:
+>
+> ```javascript
+> graphMeEndpoint: "https://graph.microsoft.com/v1.0/me",
+> graphMailEndpoint: "https://graph.microsoft.com/v1.0/me/messages"
+> ```
 >
 > #### <a name="step-4-run-the-project"></a>Шаг 4. Запуск проекта
 
-Запустите проект с помощью веб-сервера, используя [Node.js](https://nodejs.org/en/download/):
+Запустите проект на веб-сервере с помощью Node.js:
 
 1. Чтобы запустить сервер, выполните в каталоге проекта следующую команду.
-    ```bash
+    ```console
     npm install
     npm start
     ```
@@ -171,7 +181,7 @@ ms.locfileid: "82871522"
 
 ### <a name="how-the-sample-works"></a>Как работает этот пример
 
-![Принцип работы примера JavaScript SPA: 1. SPA инициирует вход. 2. SPA получает токен идентификатора от платформы удостоверений Майкрософт. 3. SPA вызывает получение токена. 4. Платформа удостоверений Майкрософт возвращает токен доступа в SPA. 5. SPA выполняет HTTP-запрос GET с маркером доступа к Microsoft API Graph. 6. API Graph возвращает ответ HTTP в SPA.](media/quickstart-v2-javascript/javascriptspa-intro.svg)
+:::image type="content" source="media/quickstart-v2-javascript-auth-code/diagram-01-auth-code-flow.png" alt-text="Схема потока кода авторизации для одностраничного приложения":::
 
 ### <a name="msaljs"></a>msal.js
 
@@ -181,20 +191,16 @@ MSAL.js — это библиотека, используемая для вып
 <script type="text/javascript" src="https://alcdn.msauth.net/browser/2.0.0-beta.0/js/msal-browser.js" integrity=
 "sha384-r7Qxfs6PYHyfoBR6zG62DGzptfLBxnREThAlcJyEfzJ4dq5rqExc1Xj3TPFE/9TH" crossorigin="anonymous"></script>
 ```
-> [!TIP]
-> Приведенную выше версию можно заменить последней выпущенной версией в разделе с [выпусками MSAL.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/releases).
 
-Кроме того, если вы установили Node.js, последнюю версию можно скачать с помощью диспетчера пакетов Node.js (NPM):
+Если у вас установлен Node.js, последнюю версию можно скачать с помощью диспетчера пакетов npm из Node.js:
 
-```batch
+```console
 npm install @azure/msal-browser
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Репозиторий GitHub MSAL.js](https://github.com/AzureAD/microsoft-authentication-library-for-js) содержит дополнительную документацию по библиотеке, часто задаваемые вопросы и предоставляет поддержку по устранению неполадок.
-
-Более подробное пошаговое руководство по созданию приложения для этого краткого руководства см. в следующей статье:
+Более подробное пошаговое руководство по созданию приложения для этого краткого руководства см. в следующем учебнике:
 
 > [!div class="nextstepaction"]
-> [Tutorial to sign in and call MS Graph](https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-javascript-auth-code) (Руководство по вызову API Microsoft Graph)
+> [Руководство по входу и вызовам в Microsoft Graph >](https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-javascript-auth-code)

@@ -8,21 +8,23 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: quickstart
-ms.date: 12/12/2019
+ms.date: 05/22/2020
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: e6911c51ecfe1c8f6924bf403e9ad00e14558a09
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: a3f5e915aa68761ca9fbb99b7955adb32e4c99cf
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75448483"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83869965"
 ---
 # <a name="quickstart-search-for-news-using-c-and-the-bing-news-search-rest-api"></a>Краткое руководство. Поиск новостей с помощью C# и REST API Bing для поиска новостей
 
-Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска новостей и просмотреть ответ в формате JSON. Это простое приложение C# отправляет запрос на поиск новостей к API и отображает ответ. Полный пример кода можно найти на сайте [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/Search/BingNewsSearchv7.cs).
+Используйте это краткое руководство, чтобы выполнить вызов API Поиска новостей Bing. Это простое приложение C# отправляет запрос на поиск новостей к API и отображает ответ в формате JSON. 
 
-Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Хотя это приложение написано на C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+
+Полный пример кода можно найти на сайте [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/Search/BingNewsSearchv7.cs).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -34,7 +36,7 @@ ms.locfileid: "75448483"
 
 ## <a name="create-and-initialize-a-project"></a>Создание и инициализация проекта
 
-1. Создайте консольное приложение C# в Visual Studio. Затем добавьте следующие пространства имен в основной файл кода.
+1. Создайте консольное решение C# в Visual Studio. Затем добавьте следующие пространства имен в основной файл кода:
     
     ```csharp
     using System;
@@ -44,30 +46,33 @@ ms.locfileid: "75448483"
     using System.Collections.Generic;
     ```
 
-2. Создайте переменные для конечной точки API, ключ подписки и условие поиска. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+2. Создайте переменные для конечной точки API, ключ подписки и условие поиска. Вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
 
     ```csharp
     const string accessKey = "enter key here";
     const string uriBase = "https://api.cognitive.microsoft.com/bing/v7.0/news/search";
     const string searchTerm = "Microsoft";
     ```
-   ## <a name="create-a-struct-to-format-the-bing-news-search-response"></a>Создание структуры для форматирования ответа API Bing для поиска новостей
+   
+## <a name="create-a-struct-to-format-the-bing-news-search-response"></a>Создание структуры для форматирования ответа API Bing для поиска новостей
 
-1. Определите структуру `SearchResult`, которая будет содержать результаты поиска изображения и сведения о заголовке JSON.
+Определите структуру `SearchResult`, которая будет содержать результаты поиска новостей и сведения о заголовке JSON.
 
-    ```csharp
-    struct SearchResult
-    {
-        public String jsonResult;
-        public Dictionary<String, String> relevantHeaders;
-    }
-    ```
+```csharp
+struct SearchResult
+{
+    public String jsonResult;
+    public Dictionary<String, String> relevantHeaders;
+}
+```
 
 ## <a name="create-and-handle-a-news-search-request"></a>Создание и обработка запроса на поиск новостей
 
-Создайте метод `BingNewsSearch` для выполнения вызовов к API и установите структуру `SearchResult`, созданную ранее, в качестве возвращаемого типа. В методе выполните следующие действия.
+1. Создайте метод `BingNewsSearch()` для обращения к API и определите структуру `SearchResult`, созданную ранее, в качестве возвращаемого типа. 
 
-1. Создайте URI для поискового запроса. Обратите внимание, что условие поиска `toSearch` нужно отформатировать перед добавлением к строке.
+   Добавьте код в этот метод, выполнив следующие действия.
+
+1. Создайте URI для поискового запроса. Условие поиска `toSearch` нужно отформатировать перед добавлением к строке.
 
     ```csharp
     static SearchResult BingNewsSearch(string toSearch){
@@ -76,7 +81,7 @@ ms.locfileid: "75448483"
     //...
     ```
 
-2. Выполните веб-запрос и получите ответ в виде строки JSON.
+1. Выполните веб-запрос и получите ответ в виде строки JSON.
 
     ```csharp
     WebRequest request = WebRequest.Create(uriQuery);
@@ -85,7 +90,7 @@ ms.locfileid: "75448483"
     string json = new StreamReader(response.GetResponseStream()).ReadToEnd();
     ```
 
-3. Создайте объект результата поиска и извлеките заголовки HTTP Bing. Затем возвратите `searchResult`.
+1. Создайте объект результата поиска и извлеките заголовки HTTP Bing. Затем получите `searchResult`.
 
     ```csharp
     // Create the result object for return
@@ -106,16 +111,16 @@ ms.locfileid: "75448483"
 
 ## <a name="process-the-response"></a>Обработка ответа
 
-1. В методе main вызовите `BingNewsSearch()` и сохраните возвращенный ответ. Затем десериализируйте JSON в объект. Затем можно просмотреть значения ответа.
+В методе main вызовите `BingNewsSearch()` и сохраните возвращенный ответ. Затем десериализируйте JSON в объект, в котором можно просмотреть значения ответа.
 
-    ```csharp
-    SearchResult result = BingNewsSearch(searchTerm);
-    //deserialize the JSON response
-    dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(result.jsonResult);
-    Console.WriteLine(jsonObj["value"][0])
-    ```
+```csharp
+SearchResult result = BingNewsSearch(searchTerm);
+//deserialize the JSON response
+dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(result.jsonResult);
+Console.WriteLine(jsonObj["value"][0])
+```
 
-## <a name="json-response"></a>Ответ в формате JSON
+## <a name="example-json-response"></a>Пример ответа в формате JSON
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже.
 

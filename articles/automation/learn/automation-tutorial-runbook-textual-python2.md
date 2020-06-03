@@ -1,17 +1,17 @@
 ---
 title: Создание runbook Python в службе автоматизации Azure
-description: Руководство по созданию, тестированию и публикации простого модуля runbook Python.
+description: Эта статья содержит инструкции по созданию, тестированию и публикации простого runbook на Python.
 services: automation
 ms.subservice: process-automation
 ms.date: 04/19/2020
 ms.topic: tutorial
 ms.custom: has-adal-ref
-ms.openlocfilehash: 2b20796fdcf71ccfb60c519d081b42fba982f0b6
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: 4e3edc9819fc3a282cc707db636c8bb213b13776
+ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82608700"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83714480"
 ---
 # <a name="tutorial-create-a-python-runbook"></a>Руководство по Создание модуля runbook в Python
 
@@ -79,13 +79,11 @@ print("Hello World!")
 
 ## <a name="publish-and-start-the-runbook"></a>Публикация и запуск модуля Runbook
 
-Модуль runbook, который вы только что создали, все еще находится в режиме черновика. Прежде чем запустить модуль в рабочей среде, его нужно опубликовать.
-При публикации модуля Runbook существующая опубликованная версия перезаписывается черновой.
-В нашем случае опубликованной версии не существует, так как модуль runbook создан только что.
+Модуль runbook, который вы только что создали, все еще находится в режиме черновика. Прежде чем запустить модуль в рабочей среде, его нужно опубликовать. При публикации модуля Runbook существующая опубликованная версия перезаписывается черновой. В нашем случае опубликованной версии не существует, так как модуль runbook создан только что.
 
 1. Щелкните **Опубликовать**, чтобы опубликовать модуль Runbook, а затем нажмите кнопку **Да** в появившемся запросе.
 
-2. Если прокрутить экран влево, чтобы просмотреть runbook на странице **Модули Runbook**, для параметра **Состояние создания** отобразится значение **Опубликовано**.
+2. Если прокрутить экран влево до элемента runbook на странице "Модули Runbook", для параметра **Состояние создания** должно отображаться значение **Опубликовано**.
 
 3. Прокрутите экран вправо до области **MyFirstRunbook-Python**.
 
@@ -246,9 +244,9 @@ except Exception as detail:
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Сведения о том, как начать работу с runbook, см. в статье о [создании runbook PowerShell](automation-tutorial-runbook-textual-powershell.md).
-- Чтобы начать работу с графическими модулями runbook, см. инструкции в [этой статье](automation-tutorial-runbook-graphical.md).
-- Чтобы приступить к работе с runbook рабочего процесса PowerShell, обратитесь к [этом руководству](automation-tutorial-runbook-textual.md).
-- Дополнительные сведения о типах модулей runbook в службе автоматизации Azure, их преимуществах и ограничениях можно найти в [этой статье](../automation-runbook-types.md).
-- Дополнительные сведения о разработке для Azure с использованием Python см. в статье [Azure для разработчиков Python](/azure/python/).
-- Примеры модулей Runbook Python 2 см. на странице [Azure для разработчиков Python](https://github.com/azureautomation/runbooks/tree/master/Utility/Python).
+- [Создание модуля runbook в PowerShell](automation-tutorial-runbook-textual-powershell.md)
+- [Создание графического модуля runbook](automation-tutorial-runbook-graphical.md)
+- [Создание модуля runbook рабочего процесса в PowerShell](automation-tutorial-runbook-textual.md)
+- [Типы модулей Runbook в службе автоматизации Azure](../automation-runbook-types.md)
+- [Azure for Python developers](/azure/python/) (Azure для разработчиков Python).
+- [Автоматизация Azure на сайте GitHub](https://github.com/azureautomation/runbooks/tree/master/Utility/Python)

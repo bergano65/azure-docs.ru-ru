@@ -6,12 +6,12 @@ ms.custom: subject-armqs
 ms.date: 04/29/2020
 author: davidsmatlak
 ms.author: v-dasmat
-ms.openlocfilehash: 47c25ebd0fe18d470b04ccbcc85a8638c1ce0346
-ms.sourcegitcommit: acc558d79d665c8d6a5f9e1689211da623ded90a
+ms.openlocfilehash: cf85939a1dbaf8d3e8a90a3acf10bda9faac83bc
+ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82598404"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84217286"
 ---
 # <a name="quickstart-create-a-recovery-services-vault-using-a-resource-manager-template"></a>Краткое руководство. Создание хранилища Служб восстановления с помощью шаблона Resource Manager
 
@@ -35,7 +35,7 @@ ms.locfileid: "82598404"
 
 В шаблоне определено два ресурса Azure:
 
-- [Microsoft.RecoveryServices/vaults](/azure/templates/microsoft.recoveryservices/2016-06-01/vaults) — создание хранилища.
+- [Microsoft.RecoveryServices/vaults](/azure/templates/microsoft.recoveryservices/vaults) — создание хранилища.
 - [Microsoft.RecoveryServices/vaults/backupstorageconfig](/rest/api/backup/backupresourcestorageconfigs) — настройка параметров избыточности резервного копирования хранилища.
 
 Шаблон включает необязательные параметры для конфигурации резервного копирования хранилища. Хранилище может быть локально избыточным (LRS) или геоизбыточным (GRS). См. сведения о [настройке избыточности хранилища](../backup/backup-create-rs-vault.md#set-storage-redundancy).

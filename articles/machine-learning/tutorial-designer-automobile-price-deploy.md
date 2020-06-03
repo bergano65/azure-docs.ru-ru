@@ -1,5 +1,5 @@
 ---
-title: Руководство по развертыванию модели машинного обучения с помощью конструктора
+title: Руководство по развертыванию моделей машинного обучения с помощью конструктора
 titleSuffix: Azure Machine Learning
 description: Сведения о том, как создавать решения для прогнозной аналитики в конструкторе Машинного обучения Azure (предварительная версия). Обучение, оценка и развертывание модели машинного обучения с помощью модулей перетаскивания.
 author: peterclu
@@ -9,12 +9,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 11/04/2019
-ms.openlocfilehash: c3ca37fd47b6551a95f9a491053ec7863acd1eeb
-ms.sourcegitcommit: 0553a8b2f255184d544ab231b231f45caf7bbbb0
+ms.custom: designer
+ms.openlocfilehash: 41b6fb38798e9aa7264000676d81101db1c83236
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80389398"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83656535"
 ---
 # <a name="tutorial-deploy-a-machine-learning-model-with-the-designer-preview"></a>Руководство по развертыванию модели машинного обучения с помощью конструктора (предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]

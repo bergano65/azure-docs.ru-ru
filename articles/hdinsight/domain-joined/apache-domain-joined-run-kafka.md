@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
-ms.date: 09/04/2019
-ms.openlocfilehash: 58c5b3bdd6d50f2e512cccffe78bd4e70805d729
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.date: 05/19/2020
+ms.openlocfilehash: 6da2537464e39ecb2c613a97b19f2d8f316818af
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78204741"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83677550"
 ---
 # <a name="tutorial-configure-apache-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство по Настройка политик Apache Kafka в HDInsight с Корпоративным пакетом безопасности (предварительная версия)
 
@@ -147,7 +147,8 @@ ms.locfileid: "78204741"
 
 4. Выполните шаг 3 в разделе **Создание и развертывание примера** в статье [Руководство. Используйте API производителя и потребителя Apache Kafka](../kafka/apache-kafka-producer-consumer-api.md#build-and-deploy-the-example), чтобы убедиться, что `kafka-producer-consumer.jar` также доступно для **sales_user**.
 
-**Примечание.  Для работы с этим руководством используйте файл kafka-producer-consumer.jar в проекте DomainJoined-Producer-Consumer (не в проекте Producer-Consumer, который предназначен для сценариев без присоединения к домену).**
+> [!NOTE]  
+> Для работы с этим руководством используйте файл kafka-producer-consumer.jar в проекте DomainJoined-Producer-Consumer (не в проекте Producer-Consumer, который предназначен для сценариев без присоединения к домену).
 
 5. Убедитесь, что **sales_user1** может работать с разделом `salesevents`, выполнив следующую команду.
 

@@ -8,12 +8,12 @@ ms.reviewer: jrasnick, carlrab
 ms.service: synapse-analytics
 ms.topic: tutorial
 ms.date: 04/15/2020
-ms.openlocfilehash: fc7551c081d14a871c8ee96610ca7190f629901d
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: 4d1fafa131a39ab72f6fc09663c7eb5b06107539
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82790972"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83644854"
 ---
 # <a name="tutorial-use-azure-toolkit-for-intellij-to-create-apache-spark-applications-for-spark-pools-preview"></a>Руководство по использованию Azure Toolkit for IntelliJ для создания приложений Apache Spark для пулов Spark
 
@@ -62,6 +62,7 @@ ms.locfileid: "82790972"
     |Project&nbsp;location (Расположение проекта)| Введите необходимое расположение для сохранения проекта.|
     |Project SDK (Пакет SDK проекта)| Это поле может быть пустым при первом использовании IDEA. Выберите **New...** (Создать...) и перейдите к JDK.|
     |Версия Spark|Мастер создания интегрирует правильную версию пакетов SDK для Spark и Scala. Synapse поддерживает только **Spark 2.4.0**.|
+    |||
 
     ![Выбор пакета SDK для Apache Spark](./media/intellij-tool-synapse/create-synapse-application02.png)
 
@@ -96,11 +97,11 @@ ms.locfileid: "82790972"
 
 3. В диалоговом окне **Вход в Azure** выберите **Имя пользователя устройства**, а затем — **Войти**.
 
-    ![Вход IntelliJ IDEA в Azure](./media/intellij-tool-synapse/intellij-view-explorer2.png)
+    ![Вход в Azure для IntelliJ IDEA](./media/intellij-tool-synapse/intellij-view-explorer2.png)
 
 4. В диалоговом окне **Azure Device Login** (Вход в систему устройства Azure) щелкните **Copy&Open** (Копировать и открыть).
 
-   ![IntelliJ IDEA логин устройства Azure](./media/intellij-tool-synapse/intellij-view-explorer5.png)
+   ![Вход устройства Azure для IntelliJ IDEA](./media/intellij-tool-synapse/intellij-view-explorer5.png)
 
 5. В интерфейсе браузера вставьте код и нажмите кнопку **Далее**.
 
@@ -141,7 +142,7 @@ ms.locfileid: "82790972"
     |Пулы Spark|Выберите пулы Spark, в которых хотите запустить приложение.|
     |Select an Artifact to submit (Выбор артефакта для запуска)|Оставьте параметр по умолчанию.|
     |Имя главного класса|значение по умолчанию — имя главного класса из выбранного файла. Класс можно изменить, нажав значок-многоточие ( **...** ) и выбрав другой класс.|
-    |Job configurations (Конфигурация заданий)|Вы можете изменить ключи или значения по умолчанию. Дополнительные сведения см. в статье [Apache Livy REST API](https://livy.incubator.apache.org./docs/latest/rest-api.html).|
+    |Job configurations (Конфигурация заданий)|Вы можете изменить ключи или значения по умолчанию. Дополнительные сведения см. в статье [Apache Livy REST API](http://livy.incubator.apache.org./docs/latest/rest-api.html).|
     |Аргументы командной строки|При необходимости можно ввести аргументы для основного класса, разделив их пробелом.|
     |Referenced Jars (Ссылки на JAR-файлы) и Referenced Files (Ссылки на файлы)|можно ввести пути к используемым JAR и файлам, если они есть. Вы можете также просматривать файлы в виртуальной файловой системе Azure, которая сейчас поддерживает только кластер ADLS 2 поколения. Дополнительные сведения [Конфигурации Apache Spark](https://spark.apache.org/docs/latest/configuration.html#runtime-environment) и [Краткое руководство. Создание большого двоичного объекта с помощью Обозревателя службы хранилища Azure](../../storage/blobs/storage-quickstart-blobs-storage-explorer.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).|
     |Job Upload Storage (Хранилище обновлений заданий)|Разверните раздел, чтобы отобразить дополнительные параметры.|
@@ -176,7 +177,7 @@ ms.locfileid: "82790972"
 
     ![Локальное выполнение конфигураций запуска и отладки в Intellij](./media/intellij-tool-synapse/local-run-synapse01.png)
 
-3. После завершения локального выполнения, если скрипт содержит выходные данные, можно проверить выходной файл в папке **data** >  **__default__** .
+3. После завершения локального выполнения, если скрипт содержит выходные данные, можно проверить выходной файл в папке **data** > **__default__**.
 
     ![Результат локального запуска проекта IntelliJ](./media/intellij-tool-synapse/spark-local-run-result.png)
 
@@ -270,4 +271,4 @@ ms.locfileid: "82790972"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Azure Synapse Analytics](../overview-what-is.md)
-- [Создание пула Apache Spark для рабочей области Azure Synapse Analytics](../../synapse-analytics/quickstart-create-apache-spark-pool.md)
+- [Создание пула Apache Spark для рабочей области Azure Synapse Analytics](../../synapse-analytics/quickstart-create-apache-spark-pool-studio.md)

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d2b1d9748b243dcc2104ce7b8e0e8735a7b7276f
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 27adab85f684143db29e248739492b68af869404
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79497675"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83647356"
 ---
 # <a name="what-is-azure-active-directory-identity-protection"></a>Что такое защита идентификации Azure Active Directory?
 
@@ -85,6 +85,8 @@ ms.locfileid: "79497675"
 | администратор безопасности; | Полный доступ к защите идентификации | Сброс пароля для пользователя |
 | Оператор безопасности | Просмотр всех отчетов Защиты идентификации и колонки "Обзор" <br><br> Закрытие уведомления о риске для пользователя, подтверждение безопасного входа в систему, подтверждение компрометации. | Настройка или изменение политик <br><br> Сброс пароля для пользователя <br><br> Настройка оповещений |
 | Читатель сведений о безопасности | Просмотр всех отчетов Защиты идентификации и колонки "Обзор" | Настройка или изменение политик <br><br> Сброс пароля для пользователя <br><br> Настройка оповещений <br><br> Отправка отзывов о обнаружении |
+
+Сейчас роли "Оператор безопасности" не предоставляется доступ к отчету о входах, представляющих риск.
 
 Администраторы условного доступа также могут создавать политики, учитывающие риск входа в систему в качестве условия, дополнительные сведения см. в разделе [ Риск при входе](../conditional-access/concept-conditional-access-conditions.md#sign-in-risk)
 

@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/31/2020
+ms.date: 05/07/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d19a7cc8d81f9e6e913f147b24c5cce03ff82027
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 2325259cd5e613223ee77371d7e563e8ab1e94ca
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76986739"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83648456"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-tableau-server"></a>Руководство по интеграции единого входа Azure Active Directory с Tableau Server
 
@@ -158,7 +158,7 @@ ms.locfileid: "76986739"
     h. Щелкните **Сохранить**.
 
     > [!NOTE]
-    > Клиенту необходимо отправить любой сертификат во время настройки единого входа SAML Tableau Server, и этот сертификат будет проигнорирован в потоке единого входа. Более подробные сведения о настройке SAML в Tableau Server см. в статье о [настройке SAML](https://help.tableau.com/current/online/en-us/saml_config_azure_ad.htm).
+    > Клиенту следует передать файл сертификата x509 в кодировке PEM с расширением CRT и файл закрытого ключа RSA или DSA с расширением KEY в качестве файла ключа сертификата. Дополнительные сведения о файле сертификата и файле ключа сертификата см. в [этом](https://help.tableau.com/current/server/en-us/saml_requ.htm) документе. Более подробные сведения о настройке SAML в Tableau Server см. в статье о [настройке SAML на уровне всего сервера](https://help.tableau.com/current/server/en-us/config_saml.htm).
 
 ### <a name="create-tableau-server-test-user"></a>Создание тестового пользователя Tableau Server
 

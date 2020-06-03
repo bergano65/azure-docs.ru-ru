@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.date: 11/05/2019
 ms.author: dech
 ms.reviewer: sngun
-ms.openlocfilehash: 45dd4e8dcfd74cdb5d96b935e239b9f4b5094a7c
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 3de73156618b0f5234cc8049c4ea70385b790388
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73720926"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83743580"
 ---
 # <a name="tutorial-create-a-notebook-in-azure-cosmos-db-to-analyze-and-visualize-the-data"></a>Руководство по Создание записной книжки в Azure Cosmos DB для анализа и визуализации данных
 
@@ -34,7 +34,7 @@ ms.locfileid: "73720926"
 
 1. После создания записной книжки ее можно переименовать на нечто вроде **VisualizeRetailData.ipynb.**
 
-1. Далее необходимо создать базу данных с именем "RetailDemo" и контейнер с именем "WebsiteData" для хранения розничных данных. В качестве ключа секции можно использовать /CardID. Скопируйте и вставьте следующий код в новую ячейку записной книжки и запустите ее.
+1. Далее необходимо создать базу данных с именем "RetailDemo" и контейнер с именем "WebsiteData" для хранения розничных данных. В качестве ключа секции можно использовать /CartID. Скопируйте и вставьте следующий код в новую ячейку записной книжки и запустите ее.
 
    ```python
    import azure.cosmos
@@ -121,7 +121,7 @@ ms.locfileid: "73720926"
 {Query text}
 ```
 
-Дополнительные сведения см. в статье о [командах и компонентах записной книжки в Azure Cosmos DB](use-notebook-features-and-commands.md). Вы выполните запрос – `SELECT c.Action, c.Price as ItemRevenue, c.Country, c.Item FROM c`. Результаты будут сохранены в кадр данных Pandas с именем df_cosmos. Вставьте приведенную ниже команду в ячейку записной книжки и запустите ее.
+Дополнительные сведения см. в статье о [командах и компонентах записной книжки в Azure Cosmos DB](use-python-notebook-features-and-commands.md). Вы выполните запрос – `SELECT c.Action, c.Price as ItemRevenue, c.Country, c.Item FROM c`. Результаты будут сохранены в кадр данных Pandas с именем df_cosmos. Вставьте приведенную ниже команду в ячейку записной книжки и запустите ее.
 
 ```python
 %%sql --database RetailDemo --container WebsiteData --output df_cosmos
@@ -141,7 +141,7 @@ df_cosmos.head(10)
 
 В этом разделе вы запустите некоторые запросы к извлеченным данным.
 
-* **Запрос 1:** Выполните запрос "Группировать по" к кадру данных, чтобы получить сумму дохода от продаж по каждой стране и отобразить 5 элементов из результатов. Выполните приведенную ниже команду в ячейке записной книжки.
+* **Запрос 1:** Выполните запрос "Группировать по" к кадру данных, чтобы получить сумму дохода от продаж по каждой стране или каждому региону и отобразить 5 элементов из результатов. Выполните приведенную ниже команду в ячейке записной книжки.
 
    ```python
    df_revenue = df_cosmos.groupby("Country").sum().reset_index()
@@ -170,16 +170,16 @@ df_cosmos.head(10)
    !{sys.executable} -m pip install bokeh --user
    ```
 
-1. Далее выполните подготовку для графического представления данных на карте. Присоедините данные в Azure Cosmos DB с информацией о стране, расположенной в хранилище Azure Blob, и конвертируйте результат в формат GeoJSON. Скопируйте приведенный ниже код в ячейку записной книжки и выполните его.
+1. Далее выполните подготовку для графического представления данных на карте. Присоедините данные в Azure Cosmos DB с информацией о стране или регионе, расположенном в хранилище BLOB-объектов Azure, и конвертируйте результат в формат GeoJSON. Скопируйте приведенный ниже код в ячейку записной книжки и выполните его.
 
    ```python
    import urllib.request, json
    import geopandas as gpd
 
-   # Load country information for mapping
+   # Load country/region information for mapping
    countries = gpd.read_file("https://cosmosnotebooksdata.blob.core.windows.net/notebookdata/countries.json")
 
-   # Merge the countries dataframe with our data in Azure Cosmos DB, joining on country code
+   # Merge the countries/regions dataframe with our data in Azure Cosmos DB, joining on country/region code
    df_merged = countries.merge(df_revenue, left_on = 'admin', right_on = 'Country', how='left')
 
    # Convert to GeoJSON so bokeh can plot it
@@ -187,7 +187,7 @@ df_cosmos.head(10)
    json_data = json.dumps(merged_json)
    ```
 
-1. Визуализируйте доход от продаж различных стран на карте мира, выполнив следующий код в новой ячейке записной книжки:
+1. Визуализируйте доход от продаж различных стран или регионов на карте мира, выполнив следующий код в новой ячейке записной книжки:
 
    ```python
    from bokeh.io import output_notebook, show
@@ -233,9 +233,9 @@ df_cosmos.head(10)
    show(p)
    ```
 
-   В выходных данных отображается геосхема мира с различными цветами. Более светлое цветовое значение представляет страны от наибольшего до наименьшего дохода.
+   В выходных данных отображается геосхема мира с различными цветами. Более светлое цветовое значение представляет страны или регионы от наибольшего до наименьшего дохода.
 
-   ![Визуализация дохода для стран](./media/create-notebook-visualize-data/countries-revenue-map-visualization.png)
+   ![Визуализация дохода для стран или регионов](./media/create-notebook-visualize-data/countries-revenue-map-visualization.png)
 
 1. Рассмотрим еще один вариант визуализации данных. Контейнер WebsiteData содержит записи о пользователях, которые просмотрели товар, добавили его в корзину и приобрели элемент. Давайте построим график коэффициента конверсии приобретенных товаров. Выполните следующий код в новой ячейке, чтобы визуализировать коэффициент конверсии для каждого элемента:
 
@@ -290,4 +290,4 @@ df_cosmos.head(10)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о командах записной книжки см. в статье [Использование встроенных команд и компонентов записной книжки в Azure Cosmos DB](use-notebook-features-and-commands.md).
+* Дополнительные сведения о командах записной книжки Python см. в статье [Использование встроенных команд и компонентов записной книжки Python в Azure Cosmos DB](use-python-notebook-features-and-commands.md).

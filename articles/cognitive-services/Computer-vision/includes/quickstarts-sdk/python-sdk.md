@@ -9,12 +9,12 @@ ms.subservice: computer-vision
 ms.topic: include
 ms.date: 12/05/2019
 ms.author: pafarley
-ms.openlocfilehash: 5f552dfc320459d23e538e65e5f34c085f5b5ad9
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 909c787c8ddc9443dca46dd80c0757cf099449c0
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80133671"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83778154"
 ---
 <a name="HOLTop"></a>
 
@@ -162,13 +162,13 @@ pip install --upgrade azure-cognitiveservices-vision-computervision
 
 ### <a name="call-the-read-api"></a>Вызов API чтения
 
-Сначала используйте следующий код, чтобы вызвать метод**batch_read_file** для данного образа. Он возвращает идентификатор операции и запускает асинхронный процесс чтения содержимого образа.
+Сначала выполните следующий код, чтобы вызвать метод **read** для предоставленного изображения. Он возвращает идентификатор операции и запускает асинхронный процесс чтения содержимого образа.
 
 [!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_read_call)]
 
 ### <a name="get-read-results"></a>Получение результатов чтения
 
-Затем получите идентификатор операции, возвращенный из вызова **batch_read_file**, и используйте его для запроса в службу результатов операции. Следующий код проверяет операцию с интервалами в одну секунду, пока не будут возвращены результаты. После этого извлеченные текстовые данные выводятся на консоль.
+Затем получите идентификатор операции, возвращенный из вызова **read**, и получите от службы результаты операции по этому идентификатору. Следующий код проверяет операцию с интервалами в одну секунду, пока не будут возвращены результаты. После этого извлеченные текстовые данные выводятся на консоль.
 
 [!code-python[](~/cognitive-services-quickstart-code/python/ComputerVision/ComputerVisionQuickstart.py?name=snippet_read_response)]
 

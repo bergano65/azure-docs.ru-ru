@@ -5,13 +5,13 @@ author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
 ms.topic: quickstart
-ms.date: 08/01/2019
-ms.openlocfilehash: 854760ea0158d356cc5449c9f1fdab6161588640
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.date: 05/26/2020
+ms.openlocfilehash: e37bd22e0bd0f750ef7b4ae9cc8465ed5292883e
+ms.sourcegitcommit: 95269d1eae0f95d42d9de410f86e8e7b4fbbb049
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "68976861"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83860993"
 ---
 # <a name="quickstart-create-an-azure-data-catalog"></a>Краткое руководство. Создание Каталога данных Azure
 
@@ -22,6 +22,9 @@ ms.locfileid: "68976861"
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
+
+> [!Note]
+> Согласно требованиям безопасности в Каталоге данных Azure применяется протокол TLS 1.2. Протоколы TLS 1.0 и TLS 1.1 отключены. Если на компьютере не выполнено обновление до TLS 1.2, при запуске средства регистрации могут возникать ошибки. Сведения о том, как выполнить это обновление, см. в статье [Как включить TLS 1.2](https://docs.microsoft.com/mem/configmgr/core/plan-design/security/enable-tls-1-2).
 
 Для начала работы необходимы перечисленные ниже компоненты и данные.
 

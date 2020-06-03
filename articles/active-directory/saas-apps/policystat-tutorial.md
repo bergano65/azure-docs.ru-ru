@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с PolicyStat | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с PolicyStat | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении PolicyStat.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: 327e470d60235e6bf400293e80e3aec5f6144ff4
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4f467e061ad52fdcc6d1e8706bb902088b237c24
+ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68943443"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83848776"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-policystat"></a>Руководство по интеграции Azure Active Directory с PolicyStat
+# <a name="tutorial-azure-active-directory-integration-with-policystat"></a>Руководство по Интеграция Azure Active Directory с PolicyStat
 
 В этом руководстве описано, как интегрировать PolicyStat с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением PolicyStat обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "68943443"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с PolicyStat, вам потребуется:
 
-* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка PolicyStat с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -80,10 +80,9 @@ ms.locfileid: "68943443"
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Настройка единого входа в PolicyStat](#configure-policystat-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя PolicyStat](#create-policystat-test-user)** требуется для того, чтобы в PolicyStat существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
+3. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+4. **[Создание тестового пользователя PolicyStat](#create-policystat-test-user)** требуется для того, чтобы в PolicyStat существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -101,7 +100,7 @@ ms.locfileid: "68943443"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
@@ -120,7 +119,7 @@ ms.locfileid: "68943443"
 
 5. Приложение PolicyStat ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![image](common/edit-attribute.png)
+    ![Изображение](common/edit-attribute.png)
 
 6. В дополнение к описанному выше приложение PolicyStat ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
@@ -130,9 +129,9 @@ ms.locfileid: "68943443"
 
     а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
     
-    ![image](common/new-save-attribute.png)
+    ![Изображение](common/new-save-attribute.png)
 
-    ![image](./media/policystat-tutorial/attribute01.png)
+    ![Изображение](./media/policystat-tutorial/attribute01.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -164,25 +163,7 @@ ms.locfileid: "68943443"
    
     ![Меню "Администратор"](./media/policystat-tutorial/ic808633.png "Меню «Администратор»")
 
-3. В разделе **Setup** (Настройка) установите флажок **Enable Single Sign-on Integration** (Включить интеграцию единого входа).
-   
-    ![Конфигурация единого входа](./media/policystat-tutorial/ic808634.png "Конфигурация единого входа")
-
-4. Щелкните **Configure Attributes** (Настроить атрибуты), а затем в разделе **Configure Attributes** (Настройка атрибутов) сделайте следующее.
-   
-    ![Конфигурация единого входа](./media/policystat-tutorial/ic808635.png "Конфигурация единого входа")
-   
-    а. В текстовом поле **Username Attribute** (Атрибут имени пользователя) введите значение **uid**.
-
-    b. В текстовое поле **First Name Attribute** (Атрибут имени) введите **имя** пользователя, **Britta**.
-
-    c. В текстовое поле **Last Name Attribute** (Атрибут фамилии) введите **фамилию** пользователя, **Simon**.
-
-    d. В текстовое поле **Email Attribute** (Атрибут электронной почты) введите значение **электронной почты** пользователя `BrittaSimon@contoso.com`.
-
-    д) Щелкните **Сохранить изменения**.
-
-5. Щелкните **Your IDP Metadata** (Метаданные вашего поставщика удостоверений), а затем в разделе **Your IDP Metadata** (Метаданные вашего поставщика удостоверений) сделайте следующее.
+3. Щелкните **Your IDP Metadata** (Метаданные вашего поставщика удостоверений), а затем в разделе **Your IDP Metadata** (Метаданные вашего поставщика удостоверений) сделайте следующее.
    
     ![Конфигурация единого входа](./media/policystat-tutorial/ic808636.png "Конфигурация единого входа")
    
@@ -190,33 +171,26 @@ ms.locfileid: "68943443"
 
     b. Щелкните **Сохранить изменения**.
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
+4. Щелкните **Configure Attributes** (Настроить атрибуты), а затем в разделе **Configure Attributes** (Настройка атрибутов) сделайте следующее.
+   
+    а. В текстовом поле **Username Attribute** (Атрибут имени пользователя) введите значение **uid**.
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+    b. В текстовое поле **First Name Attribute** (Атрибут имени) введите имя утверждения атрибута имени из Azure **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname** .
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+    c. В текстовое поле **Last Name Attribute** (Атрибут фамилии) введите имя утверждения атрибута фамилии из Azure **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname** .
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
+    d. В текстовое поле **Email Attribute** (Атрибут адреса электронной почты) введите имя утверждения атрибута адреса электронной почты из Azure **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** .
 
-2. В верхней части экрана выберите **Новый пользователь**.
+    д) Щелкните **Сохранить изменения**.
 
-    ![Кнопка "Новый пользователь"](common/new-user.png)
+5. В разделе **Setup** (Настройка) установите флажок **Enable Single Sign-on Integration** (Включить интеграцию единого входа).
+   
+    ![Конфигурация единого входа](./media/policystat-tutorial/ic808634.png "Конфигурация единого входа")
 
-3. В разделе свойств пользователя сделайте следующее:
-
-    ![Диалоговое окно "Пользователь"](common/user-properties.png)
-
-    а. В поле **Имя** введите **BrittaSimon**.
-  
-    b. В поле **Имя пользователя** введите brittasimon@yourcompanydomain.extension. Например BrittaSimon@contoso.com.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
-
-    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к PolicyStat.
+В этом разделе описано, как разрешить своей учетной записи использовать единый вход Azure, предоставив доступ к PolicyStat.
 
 1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **PolicyStat**.
 
@@ -234,7 +208,7 @@ ms.locfileid: "68943443"
 
     ![Область "Добавление назначения"](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+5. В диалоговом окне **Пользователи и группы** выберите свою учетную запись в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
 
 6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
@@ -260,4 +234,3 @@ ms.locfileid: "68943443"
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-

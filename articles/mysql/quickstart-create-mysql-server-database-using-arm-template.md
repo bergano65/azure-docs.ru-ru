@@ -1,23 +1,22 @@
 ---
 title: Создание Базы данных Azure для MySQL с помощью шаблона ARM
 description: В этой статье описано, как создать сервер Базы данных Azure для MySQL, интегрированный с виртуальной сетью, с помощью шаблона Azure Resource Manager.
-services: azure-resource-manager
 author: mgblythe
 ms.service: mysql
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: mblythe
-ms.date: 04/27/2020
-ms.openlocfilehash: 7313d12509859514e41b30c4021f74f25a0e50b9
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.date: 05/19/2020
+ms.openlocfilehash: ef3813840b1ecb3ad091a5b420ff8cfff9f6059a
+ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82630370"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83800195"
 ---
-# <a name="quickstart-create-an-azure-database-for-mysql-server-by-using-the-arm-template"></a>Краткое руководство. Создание сервера Базы данных Azure для MySQL с помощью шаблона ARM
+# <a name="quickstart-use-a-resource-manager-template-to-create-an-azure-database-for-mysql-server"></a>Краткое руководство. Создание сервера Базы данных Azure для MySQL с помощью шаблона Azure Resource Manager
 
-База данных Azure для MySQL — это управляемая служба, которая позволяет запускать, администрировать и масштабировать в облаке базы данных MySQL с высоким уровнем доступности. В этом кратком руководстве показано, как применить заранее определенный шаблон Azure Resource Manager (ARM) для создания сервера Базы данных Azure для MySQL с интеграцией виртуальной сети. Этот сервер можно развернуть с помощью портала Azure, Azure CLI или Azure PowerShell.
+База данных Azure для MySQL — это управляемая служба, которая позволяет запускать, администрировать и масштабировать в облаке базы данных MySQL с высоким уровнем доступности. В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager (ARM) создать сервер Базы данных Azure для MySQL с интеграцией виртуальной сети. Этот сервер можно развернуть на портале Azure, в Azure CLI или Azure PowerShell.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 

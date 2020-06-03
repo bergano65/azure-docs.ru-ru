@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: bdbf2a975cbdc3d06745b9375c1e6f8e751ddfd6
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: df23226adfa8caa86b7ad91dd28a9352381f4170
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77914102"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83747563"
 ---
 # <a name="migrate-a-web-app-from-google-maps"></a>Перенос веб-приложения из Google Карт
 
@@ -194,7 +194,7 @@ ms.locfileid: "77914102"
 
 ### <a name="localizing-the-map"></a>Локализация карты
 
-Если ваша аудитория распределена по нескольким странам или говорит на разных языках, необходима локализация.
+Если ваша аудитория распределена по нескольким странам или регионам либо говорит на разных языках, необходима локализация.
 
 **До: Google Карты**
 

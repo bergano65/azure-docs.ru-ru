@@ -7,12 +7,12 @@ ms.date: 07/09/2018
 ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio для отладки и быстрого выполнения итерации приложения .NET Core в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: f3be10929a9a0df23529348f2c62e35f2ebaa850
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: a807af3ffe14da943786051a3ece03b777a0edf5
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75770719"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83873625"
 ---
 # <a name="create-a-kubernetes-dev-space-visual-studio-and-net-core-with-azure-dev-spaces"></a>Создание пространства разработки Kubernetes: Visual Studio и .NET Core в Azure Dev Spaces
 
@@ -50,7 +50,7 @@ ms.locfileid: "75770719"
 1. Выберите **Review + create** (Проверить и создать), а по завершении щелкните **Create** (Создать).
 
 ## <a name="get-the-visual-studio-tools"></a>Получение средств Visual Studio
-Установите последнюю версию [Visual Studio 2017](https://www.visualstudio.com/vs/). Для Visual Studio 2019 в Windows следует установить рабочую нагрузку для разработки в Azure. Для Visual Studio 2017 в Windows необходимо установить рабочую нагрузку для разработки приложений ASP.NET и веб-приложений, а также [Средства Visual Studio для Kubernetes](https://aka.ms/get-azds-visualstudio).
+Установите в Windows последнюю версию [Visual Studio 2019](https://www.visualstudio.com/vs/) с рабочей нагрузкой для разработки в Azure.
 
 ## <a name="create-a-web-app-running-in-a-container"></a>Создание веб-приложения для работы в контейнере
 

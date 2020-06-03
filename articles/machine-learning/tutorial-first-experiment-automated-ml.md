@@ -10,12 +10,12 @@ author: cartacioS
 ms.author: sacartac
 ms.reviewer: nibaccam
 ms.date: 03/04/2020
-ms.openlocfilehash: b5a335a3f215ad5883b1b223245ca9d3f9967c3b
-ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
+ms.openlocfilehash: 8af412fb2660625ffb413052b06d4429d7844e70
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80366530"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83656514"
 ---
 # <a name="tutorial-create-a-classification-model-with-automated-ml-in-azure-machine-learning"></a>Руководство по Создание модели классификации с использованием автоматизированного машинного обучения в службе "Машинное обучение Azure".
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
@@ -23,6 +23,8 @@ ms.locfileid: "80366530"
 В этом руководстве вы узнаете, как с помощью интерфейса автоматизированного машинного обучения в службе "Машинное обучение Azure" создать базовую модель классификации, не написав ни одной строки кода. Эта модель классификации прогнозирует согласие клиента на депозит с фиксированным сроком, предложенный финансовым учреждением.
 
 Автоматическое машинное обучение позволяет автоматизировать задачи, которые занимают много времени. Автоматическое машинное обучение позволяет быстро выполнить итерацию множества сочетаний алгоритмов и гиперпараметров, пока не будет найдена лучшая модель на основе выбранных удачных метрик.
+
+Пример прогнозирования временных рядов см. в статье [Руководство. Прогнозирование спроса на прокат велосипедов с помощью автоматизированного машинного обучения](tutorial-automated-ml-forecast.md).
 
 Из этого руководства вы узнаете, как выполнять такие задачи:
 
@@ -221,7 +223,8 @@ ms.locfileid: "80366530"
 > [Использование веб-службы](how-to-consume-web-service.md#consume-the-service-from-power-bi)
 
 + Дополнительные сведения [об автоматическом машинном обучении](concept-automated-ml.md).
-+ Дополнительные сведения о классификационных метриках и графиках см. в статье [Общие сведения об автоматических результатах машинного обучения](how-to-understand-automated-ml.md#classification). Ознакомьтесь также со сведениями о [добавлении признаков](how-to-use-automated-ml-for-ml-models.md#featurization).
++ Дополнительные сведения о классификационных метриках и графиках см. в статье [Общие сведения об автоматических результатах машинного обучения](how-to-understand-automated-ml.md#classification).
++ Подробная информация о [добавлении признаков](how-to-use-automated-ml-for-ml-models.md#featurization).
 + Подробная информация [о профилировании данных](how-to-use-automated-ml-for-ml-models.md#profile).
 
 

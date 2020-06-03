@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 704da86fd1d816dbf5d6cd9cf67dfee53fce2622
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 72006879c7181a8cefe56248215099eeb784d816
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81419638"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83658253"
 ---
 # <a name="connect-to-synapse-sql-with-sql-server-management-studio-ssms"></a>Подключение к Synapse SQL с помощью SQL Server Management Studio (SSMS).
 > [!div class="op_single_selector"]
@@ -30,14 +30,17 @@ ms.locfileid: "81419638"
 
 ### <a name="supported-tools-for-sql-on-demand-preview"></a>Поддерживаемые средства для использования SQL по запросу (предварительная версия)
 
-SSMS частично поддерживается начиная с версии 18.5 с ограниченными функциями, такими как подключение и создание запросов. [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) поддерживается полностью.
+[Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) полностью поддерживается, начиная с версии 1.18.0. SSMS частично поддерживается, начиная с версии 18.5, и используется только для подключения и выполнения запросов.
 
+> [!NOTE]
+> Если для имени входа AAD открыто подключение в течение более 1 часа во время выполнения запроса, все запросы, зависящие от AAD, завершатся ошибкой. Сюда входят запросы к хранилищу с помощью сквозной аутентификации AAD и инструкций, которые взаимодействуют с AAD (например, CREATE EXTERNAL PROVIDER). Это влияет на все средства, которые поддерживают подключение открытым, например редактор запросов в SSMS и ADS. Средства, которые открывают новое подключение для выполнения запроса, например Synapse Studio, не затрагиваются.
+> Чтобы устранить эту ошибку, можно перезапустить SSMS или выполнить подключение и отключение в ADS. .
 ## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к работе, убедитесь, что у вас есть следующие необходимые компоненты.  
 
 * [SQL Server Management Studio (SSMS).](/sql/ssms/download-sql-server-management-studio-ssms) 
-* Для пула SQL требуется существующее хранилище данных. Сведения о его создании см. в статье [Создание пула SQL Azure](../quickstart-create-sql-pool.md). Для использования SQL по запросу он уже предусмотрен в вашем рабочем пространстве во время создания. 
+* Для пула SQL требуется существующее хранилище данных. Сведения о его создании см. в статье [Создание пула SQL Azure](../quickstart-create-sql-pool-portal.md). Для использования SQL по запросу он уже предусмотрен в вашем рабочем пространстве во время создания. 
 * Полное имя сервера SQL Server. Эти сведения можно узнать в статье [Подключение к Synapse SQL](connect-overview.md).
 
 ## <a name="connect"></a>Подключение

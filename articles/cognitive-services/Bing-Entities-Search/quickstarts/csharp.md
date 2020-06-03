@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
-ms.date: 12/11/2019
+ms.date: 05/08/2020
 ms.author: aahi
-ms.openlocfilehash: c343c160f67eda2dd390ffc39f3b4f1ff49cacb6
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: cd89f2ae13b10c83c3fc22023fc2e3cae1770c98
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75448669"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83650274"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-c"></a>Краткое руководство. Отправка запросов для поиска в REST API Поиска сущностей Bing с помощью C#
 
 Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска сущностей и просмотреть ответ в формате JSON. Это простое приложение C# отправляет запрос на поиск новостей к API и отображает ответ. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/Search/BingEntitySearchv7.cs).
 
-Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Это приложение написано на C#. Но API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -30,9 +30,9 @@ ms.locfileid: "75448669"
 
 - Платформа [Json.NET](https://www.newtonsoft.com/json), доступная в виде пакета NuGet. Чтобы установить пакет NuGet в Visual Studio, сделайте следующее:
 
-   1. Щелкните правой кнопкой мыши имя проекта в **обозревателе решений**.
+   1. В **Обозревателе решений** щелкните проект правой кнопкой мыши.
    2. Выберите **Manage NuGet Packages...** (Управление пакетами NuGet...).
-   3. Найдите пакет *Newtonsoft.Json* и установите его.
+   3. Найдите и выберите пакет *Newtonsoft.Json*. Установите его.
 
 - Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
 
@@ -41,7 +41,7 @@ ms.locfileid: "75448669"
 
 ## <a name="create-and-initialize-a-project"></a>Создание и инициализация проекта
 
-1. Создайте консольное приложение C# в Visual Studio. Затем добавьте следующие пространства имен в основной файл кода.
+1. Создайте консольное решение C# в Visual Studio. Затем добавьте следующие пространства имен в основной файл кода:
     
     ```csharp
     using Newtonsoft.Json;
@@ -50,7 +50,7 @@ ms.locfileid: "75448669"
     using System.Text;
     ```
 
-2. Создайте класс и добавьте переменные для конечной точки API, ключ подписки и запрос для поиска. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+2. Создайте класс и добавьте переменные для конечной точки API, ключ подписки и запрос для поиска. Вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
 
     ```csharp
     namespace EntitySearchSample
@@ -73,11 +73,13 @@ ms.locfileid: "75448669"
 
 ## <a name="send-a-request-and-get-the-api-response"></a>Отправка запроса и получение ответа API
 
-1. В классе создайте функцию с именем `Search()`. Создайте объект `HttpClient` и добавьте к заголовку ключ подписки `Ocp-Apim-Subscription-Key`.
+1. В классе создайте функцию с именем `Search()`. В этой функции создайте объект `HttpClient` и добавьте к заголовку ключ подписки `Ocp-Apim-Subscription-Key`.
 
-   1. Создайте универсальный код ресурса (URI) для вашего запроса, объединив хост и путь и добавив market и URL-кодирование своего запроса.
-   2. Получите HTTP-ответ с помощью метода `client.GetAsync()`, а затем сохраните его в формате JSON с помощью метода `ReadAsStringAsync()`.
-   3. Отформатируйте строку JSON с помощью `JsonConvert.DeserializeObject()` и выведите ее в консоль.
+2. Создайте универсальный код ресурса (URI) для вашего запроса, объединив хост и путь и добавив market. Кроме того, выполните URL-кодирование своего запроса.
+
+3. Получите HTTP-ответ с помощью метода `client.GetAsync()`. Затем сохраните его в формате JSON с помощью метода `ReadAsStringAsync()`.
+
+4. Отформатируйте строку JSON с помощью `JsonConvert.DeserializeObject()` и выведите ее в консоль.
 
       ```csharp
       async static void Search()
@@ -96,7 +98,7 @@ ms.locfileid: "75448669"
       }
       ```
 
-2. В методе main приложения вызовите функцию `Search()`.
+5. В методе `Main()` приложения вызовите функцию `Search()`.
     
     ```csharp
     static void Main(string[] args)
@@ -178,4 +180,4 @@ ms.locfileid: "75448669"
 > [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-entities-search-single-page-app.md)
 
 * [Основные сведения об API Bing для поиска сущностей](../overview.md )
-* [Справочник по API Bing для поиска сущностей](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference)
+* [Справочник по API "Поиск сущностей Bing"](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference)

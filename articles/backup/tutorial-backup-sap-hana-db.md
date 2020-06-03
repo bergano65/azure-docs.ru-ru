@@ -3,12 +3,12 @@ title: Учебник по резервному копированию баз д
 description: Из этого учебника вы узнаете, как выполнять резервное копирование баз данных SAP HANA, запущенных на виртуальной машине Azure, в хранилище Служб восстановления для Azure Backup.
 ms.topic: tutorial
 ms.date: 02/24/2020
-ms.openlocfilehash: f64dd74ad0e038c5cad152e20ae2255de03114e3
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: cb1fc4c1b9bfa2025850f16d175ba83bd5ee1470
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79501449"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83747230"
 ---
 # <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm"></a>Руководство по резервному копированию баз данных SAP HANA на виртуальной машине Azure
 
@@ -32,6 +32,11 @@ ms.locfileid: "79501449"
   * Для MDC ключ должен указывать на порт SQL **NAMESERVER**. Для SDC он должен указывать на порт SQL **INDEXSERVER**.
   * Должны быть учетные данные для добавления и удаления пользователей.
 * С правами привилегированного пользователя запустите скрипт настройки резервного копирования SAP HANA (скрипт предварительной регистрации) на виртуальной машине, где установлена HANA. [Этот скрипт](https://aka.ms/scriptforpermsonhana) получает систему HANA, готовую для резервного копирования. Дополнительные сведения о скрипте предварительной регистрации см. в разделе [Функции скрипта предварительной регистрации](#what-the-pre-registration-script-does).
+
+>[!NOTE]
+>Azure Backup не учитывает переход на летнее время при создании резервных копий базы данных SAP HANA, работающей на виртуальной машине Azure.
+>
+>Измените политику вручную, если это необходимо.
 
 ## <a name="set-up-network-connectivity"></a>Настройка сетевого подключения
 

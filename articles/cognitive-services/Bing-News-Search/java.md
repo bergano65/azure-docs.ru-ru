@@ -8,36 +8,35 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: quickstart
-ms.date: 12/16/2019
+ms.date: 05/22/2020
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 1a3e98afacf85bde8180253078cb53eae9a03d2f
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: c3ce10b6d3acb947d3fde6e3c872a2c2a83ddb69
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75383618"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83871144"
 ---
 # <a name="quickstart-perform-a-news-search-using-java-and-the-bing-news-search-rest-api"></a>Краткое руководство. Поиск новостей с помощью Java и REST API Bing для поиска новостей
 
-Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска новостей и просмотреть ответ в формате JSON. Это простое приложение Java отправляет запрос на поиск новостей к API и отображает ответ.
+Используйте это краткое руководство, чтобы выполнить вызов к API Поиска новостей Bing. Это простое приложение Java отправляет поисковый запрос на получение новостей к API и отображает ответ в формате JSON.
 
-Хотя это приложение создается на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Хотя это приложение написано на Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/Search/BingNewsSearchv7.java). 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Комплект разработчика Java (JDK) 7 или 8](https://aka.ms/azure-jdks).
-
-* [Библиотека Gson](https://github.com/google/gson).
+* [Комплект SDK для Java (JDK) версии 7 или 8.](https://aka.ms/azure-jdks)
+* [Библиотека Gson.](https://github.com/google/gson)
 
 
 [!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../includes/cognitive-services-bing-news-search-signup-requirements.md)]
 
 ## <a name="create-and-initialize-a-project"></a>Создание и инициализация проекта
 
-1. Создайте проект Java в любой интегрированной среде разработки или редакторе, а затем импортируйте в него следующие библиотеки.
+1. Создайте проект Java в любой интегрированной среде разработки или редакторе, а затем импортируйте в него следующие библиотеки:
 
     ```java
     import java.net.*;
@@ -50,7 +49,7 @@ ms.locfileid: "75383618"
     import com.google.gson.JsonParser;
     ```
 
-2. Создайте класс с переменными для конечной точки API, ключа подписки и термина для поиска. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+2. Создайте новый класс. Добавьте переменные для конечной точки API, ключа подписки и условия поиска. Вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
 
     ```java
     public static SearchResults SearchNews (String searchQuery) throws Exception {
@@ -64,7 +63,7 @@ ms.locfileid: "75383618"
 
 ## <a name="construct-the-search-request-and-receive-a-json-response"></a>Создание поискового запроса и получение ответа в формате JSON
 
-1. Используйте переменные из последнего шага для форматирования искомого URL-адреса для запроса API. Обратите внимание, что условие поиска нужно зашифровать в URL-адресе, прежде чем добавить его в запрос.
+1. Используйте переменные из предыдущего шага для форматирования URL-адреса поиска для запроса API. Закодируйте поисковый запрос с использованием URL-адреса, прежде чем добавлять его к запросу.
 
     ```java
     public static SearchResults SearchNews (String searchQuery) throws Exception {
@@ -75,7 +74,7 @@ ms.locfileid: "75383618"
     }
     ```
 
-2. Получите ответ в формате JSON от API Bing для поиска новостей и создайте результирующий объект.
+2. Получите ответ в формате JSON от API Поиска новостей Bing и создайте результирующий объект.
 
     ```java
     // receive JSON body
@@ -88,6 +87,7 @@ ms.locfileid: "75383618"
 ## <a name="process-the-json-response"></a>Обработка ответа в формате JSON
 
 1. Разделите заголовки HTTP, связанные с Bing, и текст в формате JSON, а затем закройте поток и получите ответ API.
+
     ```java
     // extract Bing-related HTTP headers
     Map<String, List<String>> headers = connection.getHeaderFields();
@@ -101,7 +101,8 @@ ms.locfileid: "75383618"
     return results;
     ```
 
-2. Создание метода для анализа и повторной сериализации JSON
+2. Создайте метод для анализа и повторной сериализации результата в формате JSON.
+
     ```java
     // pretty-printer for JSON; uses GSON parser to parse and re-serialize
     public static String prettify(String json_text) {
@@ -113,7 +114,8 @@ ms.locfileid: "75383618"
     ```
 
 3. В методе main приложения вызовите метод поиска и отобразите результат.
-    ```csharp
+
+    ```java
    public static void main (String[] args) {
        System.out.println("Searching the Web for: " + searchTerm);
        SearchResults result = SearchNews(searchTerm);
@@ -126,7 +128,7 @@ ms.locfileid: "75383618"
     }
     ```
 
-## <a name="json-response"></a>Ответ в формате JSON
+## <a name="example-json-response"></a>Пример ответа в формате JSON
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже.
 

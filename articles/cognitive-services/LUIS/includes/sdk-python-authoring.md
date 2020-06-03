@@ -6,16 +6,16 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.date: 02/14/2020
+ms.date: 05/26/2020
 ms.topic: include
 ms.custom: include file
 ms.author: diberry
-ms.openlocfilehash: 631185c20b816191530158fab2b7cd1ed68c3092
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 1e51c4e9d0c3da8b6ad76b4b45869ea8b2394008
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77371716"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83871278"
 ---
 С помощью клиентской библиотеки для разработки Распознавания речи (LUIS) для Python можно выполнять следующие задачи.
 
@@ -28,53 +28,12 @@ ms.locfileid: "77371716"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Учетная запись портала Распознавания речи (LUIS): [Создайте бесплатно](https://www.luis.ai).
-* [Python 3.x](https://www.python.org/)
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Текущая версия [Python 3.x](https://www.python.org/).
+* Получив подписку Azure, [создайте ресурс LUIS](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne) на портале Azure, чтобы получить ключ и конечную точку. Дождитесь, пока закончится развертывание, и нажмите кнопку **Перейти к ресурсу**.
+    * Для подключения приложения к LUIS для разработки потребуется ключ и конечная точка для [созданного](../luis-how-to-azure-subscription.md#create-luis-resources-in-azure-portal) ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве. Вы можете использовать ценовую категорию "Бесплатный" (`F0`), чтобы поработать со службой.
 
 ## <a name="setting-up"></a>Настройка
-
-### <a name="get-your-language-understanding-luis-starter-key"></a>Получение начального ключа LUIS
-
-Получите [ключ для начала работы](../luis-how-to-azure-subscription.md#starter-key), создав ресурс разработки LUIS. Сохраните ключ и регион ключа для следующего шага.
-
-### <a name="create-an-environment-variable"></a>Создание переменной среды
-
-Используя ключ и регион для ключа, создайте две переменные среды для проверки подлинности:
-
-* `LUIS_AUTHORING_KEY` — ключ ресурса для проверки подлинности запросов.
-* `LUIS_REGION` — регион, связанный с ключом. Например, `westus`.
-
-Используйте инструкции для своей операционной системы.
-
-#### <a name="windows"></a>[Windows](#tab/windows)
-
-```console
-setx LUIS_AUTHORING_KEY <replace-with-your-luis-authoring-key
-setx LUIS_REGION <replace-with-your-luis-region>
-```
-
-Добавив переменную среды, перезапустите окно консоли.
-
-#### <a name="linux"></a>[Linux](#tab/linux)
-
-```bash
-export LUIS_AUTHORING_KEY=<replace-with-your-luis-authoring-key>
-export LUIS_REGION=<replace-with-your-luis-region>
-```
-
-После добавления переменной среды запустите `source ~/.bashrc` из окна консоли, чтобы применить изменения.
-
-#### <a name="macos"></a>[macOS](#tab/unix)
-
-Измените `.bash_profile` и добавьте переменную среды:
-
-```bash
-export LUIS_AUTHORING_KEY=<replace-with-your-luis-authoring-key>
-export LUIS_REGION=<replace-with-your-luis-region>
-```
-
-После добавления переменной среды запустите `source .bash_profile` из окна консоли, чтобы применить изменения.
-***
 
 ### <a name="install-the-python-library-for-luis"></a>Установка библиотеки Python для LUIS
 

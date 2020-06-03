@@ -7,15 +7,15 @@ manager: daveba
 ms.service: active-directory
 ms.subservice: user-help
 ms.workload: identity
-ms.topic: overview
+ms.topic: end-user-help
 ms.date: 08/12/2019
 ms.author: curtand
-ms.openlocfilehash: 6ab1f7c97173021cc112a5f117469abd74ac954d
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 953f74a18ae7874c8772cdc8179e5e5bdd1a86d2
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77062580"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83738648"
 ---
 # <a name="set-up-an-authenticator-app-as-your-two-factor-verification-method"></a>Настройка приложения Microsoft Authenticator в качестве метода двухфакторной проверки подлинности
 
@@ -29,7 +29,7 @@ ms.locfileid: "77062580"
 
 ## <a name="set-up-the-microsoft-authenticator-app-to-send-notifications"></a>Настройка приложения Microsoft Authenticator для отправки уведомлений
 
-1. На странице **Дополнительная проверка безопасности** выберите **Мобильное приложение** в области **Шаг 1. Как с вами связаться?** .
+1. На странице [Дополнительная проверка безопасности](https://account.activedirectory.windowsazure.com/proofup.aspx?proofup=1) выберите **Мобильное приложение** в области **Шаг 1. Как с вами связаться?** .
 
 2. Выберите **Получить уведомления для проверки** в области **Как вы хотите использовать мобильное приложение?** , а затем нажмите кнопку **Настроить**.
 

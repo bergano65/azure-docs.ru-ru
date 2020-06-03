@@ -1,14 +1,14 @@
 ---
 title: Шаблон. Параметры в определении политики
 description: Этот шаблон Политики Azure предоставляет пример использования параметров в определении политики.
-ms.date: 01/31/2020
+ms.date: 05/20/2020
 ms.topic: sample
-ms.openlocfilehash: 4921bb216ef67b561bc8986cf48239e6448beafc
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: e163a243a0dc23f04d564287b630634eb4662cda
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77170182"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83696726"
 ---
 # <a name="azure-policy-pattern-parameters"></a>Шаблон Политики Azure: параметры
 
@@ -16,7 +16,10 @@ ms.locfileid: "77170182"
 
 ## <a name="sample-1-string-parameters"></a>Пример 1 Параметры строки
 
-Это определение политики использует два параметра: **tagName** и **tagValue**, чтобы задать, что именно будет искать назначение политики на ресурсах. Этот формат позволяет использовать политику для любого количества сочетаний имен тегов и значений тегов, но поддерживает только одно определение политики.
+Это определение политики использует два параметра: **tagName** и **tagValue**, чтобы задать, что именно будет искать назначение политики на ресурсах. Этот формат позволяет использовать определение политики для любого количества сочетаний имен тегов и значений тегов, но поддерживает только одно определение политики.
+
+> [!NOTE]
+> Пример тега, в котором используется **режим** _Все_ и который работает с группой ресурсов, см. в разделе [Шаблон: Теги — пример 1](./pattern-tags.md#sample-1-parameterize-tags).
 
 :::code language="json" source="~/policy-templates/patterns/pattern-parameters-1.json":::
 
@@ -47,6 +50,22 @@ ms.locfileid: "77170182"
 Здесь он используется для псевдонима **serviceProvider.bandwidthInMbps** как одно из определенных значений.
 
 :::code language="json" source="~/policy-templates/patterns/pattern-parameters-2.json" range="21-24" highlight="3":::
+
+## <a name="sample-3-parameterized-effect"></a>Пример 3. Параметризованный effect
+
+Распространенным способом обеспечения многократного использования определений политики является параметризация самого effect. В этом примере используется один параметр, **effect**. Параметризация effect позволяет присвоить одно и то же определение разным областям с разными effect.
+
+:::code language="json" source="~/policy-templates/patterns/pattern-parameters-3.json":::
+
+### <a name="sample-3-explanation"></a>Пример 3. Объяснение
+
+:::code language="json" source="~/policy-templates/patterns/pattern-parameters-3.json" range="11-25":::
+
+В этой части определения политики параметр **effect** определяется как _строка_. Определение политики устанавливает для назначения значение по умолчанию _аудит_ и ограничивает остальные параметры значениями _отключено_ и _запретить_.
+
+Затем параметр используется в блоке **policyRule.if** для _effect_.
+
+:::code language="json" source="~/policy-templates/patterns/pattern-parameters-3.json" range="38-40" highlight="2":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

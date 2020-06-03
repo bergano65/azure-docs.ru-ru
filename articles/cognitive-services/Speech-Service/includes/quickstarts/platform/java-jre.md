@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 10/11/2019
 ms.author: erhopf
-ms.openlocfilehash: 7147f0d13c88c1d2e17e81a360a5aee55ee760ed
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 94946b4b6d0f0fc9c94cac7aca1e971b3f6262f9
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "78925573"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83673226"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для 64-разрядной версии среды JRE Java 8. Если вам нужно только имя пакета, чтобы приступить к работе самостоятельно, учитывайте, что пакет SDK для Java недоступен в центральном репозитории Maven. Независимо от того, что вы используете: Gradle или файл зависимостей `pom.xml`, нужно добавить пользовательский репозиторий с указанием на `https://csspeechstorage.blob.core.windows.net/maven/` (имя пакета см. ниже).
 
@@ -29,7 +29,7 @@ ms.locfileid: "78925573"
 - Пакет SDK службы "Речь" для Java доступен для таких операционных систем:
   - Windows: только 64-разрядная версия.
   - MAC: macOS X версии 10.13 или более поздней.
-  - Linux: только 64-разрядная версия (Ubuntu 16.04, Ubuntu 18.04, Debian 9, RHEL 8, CentOS 8).
+  - Linux: только 64-разрядная версия (Ubuntu 16.04, Ubuntu 18.04, Debian 9, RHEL 7 или 8, CentOS 7 или 8).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -52,7 +52,7 @@ ms.locfileid: "78925573"
         sudo apt-get install build-essential libssl1.0.2 libasound2
         ```
 
-  - Чтобы установить необходимые пакеты в RHEL/CentOS 8, выполните следующие команды:
+  - Чтобы установить необходимые пакеты в RHEL/CentOS, выполните следующие команды:
 
         ```sh
         sudo yum update
@@ -60,7 +60,8 @@ ms.locfileid: "78925573"
         ```
 
 > [!NOTE]
-> Если вы используете RHEL/CentOS 8, выполните инструкции по [настройке OpenSSL для Linux](~/articles/cognitive-services/speech-service/how-to-configure-openssl-linux.md).
+> - Если вы используете RHEL/CentOS 7, выполните инструкции по [настройке пакета SDK службы "Речь" в RHEL/CentOS 7](~/articles/cognitive-services/speech-service/how-to-configure-rhel-centos-7.md).
+> - Если вы используете RHEL/CentOS 8, выполните инструкции по [настройке OpenSSL для Linux](~/articles/cognitive-services/speech-service/how-to-configure-openssl-linux.md).
 
 - В Windows для вашей платформы необходим [распространяемый компонент Microsoft Visual C++ для Visual Studio 2019](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads). Обратите внимание, что при первой установке может потребоваться перезагрузить Windows, чтобы продолжить работу с данным руководством.
 

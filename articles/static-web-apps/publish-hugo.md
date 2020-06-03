@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: aapowell
-ms.openlocfilehash: a0d1ba696b39b9331c4a85c9cf37d13d545ffad5
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 6debf422d0c16a6a2bfe180e6febb4973846e0f0
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83593701"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83870700"
 ---
 # <a name="tutorial-publish-a-hugo-site-to-azure-static-web-apps-preview"></a>Руководство по Публикация сайта Hugo в предварительной версии службы "Статические веб-приложения Azure"
 
@@ -133,13 +133,11 @@ ms.locfileid: "83593701"
 
 1. Нажмите кнопку **Next: Build >** (Далее: сборка >) для изменения конфигурации сборки.
 
-1. В поле _App location_ (Расположение приложения) выберите значение **/** .
+1. В поле _App location_ (Расположение приложения) задайте значение **public** (общедоступное).
 
-1. В поле _App artifact location_ (Расположение артефакта приложения) задайте значение **общедоступное**.
+1. Оставьте поле _App artifact location_ (Расположения артефакта приложения) пустым.
 
    Поле _API location_ (Расположения API) заполнять не требуется, так как вы в данный момент не развертываете API.
-
-   :::image type="content" source="./media/publish-hugo/build-details.png" alt-text="Параметры сборки":::
 
 ### <a name="review-and-create"></a>Просмотр и создание
 
@@ -155,12 +153,12 @@ ms.locfileid: "83593701"
 
 1. Откройте приложение Hugo в текстовом редакторе и откройте файл _.github/workflows/azure-pages-<WORKFLOW_NAME>.yml_.
 
-1. чтобы создать приложение Hugo, замените строку `- uses: actions/checkout@v1` (строка 18) на указанную ниже.
+1. чтобы создать приложение Hugo, замените строку `- uses: actions/checkout@v2` (строка 18) на указанную ниже.
 
    ```yml
    - uses: actions/checkout@v2
-        with:
-          submodules: true
+     with:
+       submodules: true
 
    - name: Setup Hugo
      uses: peaceiris/actions-hugo@v2.4.8

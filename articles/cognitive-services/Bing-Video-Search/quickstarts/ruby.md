@@ -8,18 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: quickstart
-ms.date: 12/09/2019
+ms.date: 05/22/2020
 ms.author: aahi
-ms.openlocfilehash: 8f6022f03d28362e85fba3fd75e60c4d7032b41b
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: cd02a0ea51faa7dae14e0f9d61c446aae55dcbe1
+ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75448382"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83849575"
 ---
 # <a name="quickstart-search-for-videos-using-the-bing-video-search-rest-api-and-ruby"></a>Краткое руководство. Поиск видео с помощью REST API Поиска видео Bing и Ruby
 
-Из этого краткого руководства вы узнаете, как сделать первый вызов API Bing для поиска видео и просмотреть результаты поиска в ответе JSON. Это простое приложение Ruby отправляет запрос для поиска видео HTTP к API и выводит ответ. Хотя это приложение создается на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код, используемый в данном примере, вместе с дополнительной обработкой ошибок и аннотациями кода можно получить на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/ruby/Search/BingVideoSearchv7.rb).
+Используйте это краткое руководство, чтобы выполнить вызов API "Поиск видео Bing". Это простое приложение Ruby отправляет HTTP-запрос для поиска видео к API и выводит ответ в формате JSON. Это приложение создано на языке Python. Но API представляет собой веб-службу на основе REST, совместимую с большинством языков программирования. 
+
+Исходный код, используемый в данном примере, вместе с дополнительной обработкой ошибок и аннотациями кода можно получить на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/ruby/Search/BingVideoSearchv7.rb).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -29,7 +31,7 @@ ms.locfileid: "75448382"
 
 ## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
 
-1. Импортируйте следующие пакеты в файл кода.
+1. Импортируйте следующие пакеты в файл кода:
 
     ```ruby
     require 'net/https'
@@ -37,7 +39,7 @@ ms.locfileid: "75448382"
     require 'json'
     ```
 
-2. Создайте переменные для конечной точки API, пути поиска видео API, ключа подписки, а также условия поиска. В качестве `uri` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
+2. Создайте переменные для конечной точки API, пути поиска видео API, ключа подписки, а также условия поиска. Для значения `url` вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
 
     ```ruby
     uri  = "https://api.cognitive.microsoft.com"
@@ -48,7 +50,7 @@ ms.locfileid: "75448382"
 
 ## <a name="create-and-send-an-api-request"></a>Создание и отправка запроса API
 
-1. Используйте переменные из последнего шага для форматирования искомого URL-адреса для запроса. Объедините URI и путь, а затем закодируйте условие поиска с помощью URL-адреса, прежде чем добавлять его к параметру `?q=`.
+1. Используйте переменные из предыдущего шага для форматирования URL-адреса поиска для запроса. Объедините URI и путь, а затем закодируйте условие поиска в формате URL-адреса, прежде чем добавлять его к параметру `?q=`.
 
     ```ruby
     uri = URI(uri + path + "?q=" + URI.escape(term))
@@ -61,7 +63,7 @@ ms.locfileid: "75448382"
     request['Ocp-Apim-Subscription-Key'] = accessKey
     ```
 
-3. Выполните запрос и сохраните ответ.
+3. Выполните запрос. Затем сохраните ответ.
     
     ```ruby
     response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
@@ -71,11 +73,11 @@ ms.locfileid: "75448382"
 
 ## <a name="process-and-view-the-response"></a>Обработка и просмотр ответа
 
-1. После получения ответа вы можете вывести ответ в формате JSON.
+После получения ответа выведите его в формате JSON.
 
-    ```ruby
-    puts JSON::pretty_generate(JSON(response.body))
-    ```
+```ruby
+puts JSON::pretty_generate(JSON(response.body))
+```
 
 ## <a name="json-response"></a>Ответ JSON
 
@@ -191,7 +193,7 @@ ms.locfileid: "75448382"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство. Одностраничное приложение для поиска видео](../tutorial-bing-video-search-single-page-app.md)
+> [Создание одностраничного веб-приложения](../tutorial-bing-video-search-single-page-app.md)
 
 ## <a name="see-also"></a>См. также раздел 
 

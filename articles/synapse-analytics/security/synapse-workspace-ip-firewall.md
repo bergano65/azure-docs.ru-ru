@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: f36a76187538d93b57d2d3f5973408f141271f67
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 1dfac9a56e3bc299fbb0651ae1cd5644eba83267
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81420168"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83645814"
 ---
 # <a name="azure-synapse-analytics-ip-firewall-rules-preview"></a>Правила брандмауэра для IP-адресов Azure Synapse Analytics (предварительная версия)
 
@@ -42,7 +42,7 @@ ms.locfileid: "81420168"
 
 Кроме того, для Synapse Studio необходимо разрешить исходящий обмен данными через UDP-порт 53. Для подключения с помощью таких средств, как SSMS и Power BI, необходимо разрешить исходящие подключения через TCP-порт 1433.
 
-Если вы используете параметр политики подключения перенаправления по умолчанию, может потребоваться разрешить исходящие подключения на дополнительных портах. Дополнительные сведения о политиках подключения можно узнать здесь.
+Если вы используете параметр политики подключения перенаправления по умолчанию, может потребоваться разрешить исходящие подключения на дополнительных портах. Дополнительные сведения о политиках подключения см. [здесь](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-architecture#connection-policy).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

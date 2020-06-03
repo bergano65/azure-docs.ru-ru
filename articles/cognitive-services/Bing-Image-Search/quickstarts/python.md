@@ -8,21 +8,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-image-search
 ms.topic: quickstart
-ms.date: 03/31/2020
+ms.date: 05/08/2020
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 6287b9b8e6129fd62a896e5ac1fcca29febbf01a
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 6cdee6dd30c1af44b321b12c96f3e2ecdcd0d2b3
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80478542"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83871970"
 ---
 # <a name="quickstart-search-for-images-using-the-bing-image-search-rest-api-and-python"></a>Краткое руководство. Поиск изображений с помощью REST API Bing для поиска изображений и Python
 
-В этом кратком руководстве описано, как отправлять поисковые запросы к API Поиска изображений Bing. Это приложение на Python отправляет поисковый запрос к API и отображает URL-адрес первого возвращенного в результатах изображения. Хотя это приложение создается на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Узнайте, как отправлять поисковые запросы к API Поиска изображений Bing. Это приложение на Python отправляет поисковый запрос к API и отображает URL-адрес первого возвращенного в результатах изображения. Это приложение создано на языке Python. Но API представляет собой веб-службу на основе REST, совместимую с большинством языков программирования.
 
-Этот пример можно запустить как записную книжку Jupyter в [MyBinder](https://mybinder.org), щелкнув эмблему запуска Binder:
+Чтобы запустить этот пример как записную книжку Jupyter в [MyBinder](https://mybinder.org), выберите эмблему **запуска Binder**.
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/Microsoft/cognitive-services-notebooks/master?filepath=BingImageSearchAPI.ipynb)
 
@@ -40,7 +40,7 @@ ms.locfileid: "80478542"
 
 ## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
 
-1. Создайте новый файл Python в избранной интегрированной среде разработки или редакторе, а затем импортируйте в него следующие модули. Создайте переменные для вашего ключа подписки, конечной точки и условия поиска. В качестве `search_url` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
+1. Создайте новый файл Python в избранной интегрированной среде разработки или редакторе, а затем импортируйте в него следующие модули. Создайте переменные для вашего ключа подписки, конечной точки и условия поиска. Для `search_url` можно использовать глобальную конечную точку в следующем коде или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемую на портале Azure для вашего ресурса.
 
     ```python
     import requests
@@ -61,7 +61,7 @@ ms.locfileid: "80478542"
 
 ## <a name="create-and-send-a-search-request"></a>Создание и отправка поискового запроса
 
-1. Создайте словарь для параметров поисковых запросов. Добавьте условие поиска в параметр `q`. Чтобы искать изображения в общедоступном домене, укажите для параметра `license` значение public, а чтобы искать только фотографии, задайте для параметра `imageType` значение photo.
+1. Создайте словарь для параметров поисковых запросов. Добавьте условие поиска в параметр `q`. Задайте для параметра `license` значение `public`, чтобы искать изображения в общедоступном домене. Задайте для `imageType` значение `photo`, чтобы искать только фотографии.
 
     ```python
     params  = {"q": search_term, "license": "public", "imageType": "photo"}
@@ -151,7 +151,7 @@ ms.locfileid: "80478542"
 > [Руководство по одностраничным приложениям для API Bing для поиска изображений](../tutorial-bing-image-search-single-page-app.md)
 
 * [Знакомство с API Bing для поиска изображений](../overview.md)  
-* [Сведения о ценах](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/) на API-интерфейсы Поиска Bing. 
-* [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=bing-image-search-api)  
-* [Документация по службам Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services)
-* [Справочник по API Bing для поиска изображений](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)
+* [Узнайте о ценах на API Поиска Bing.](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/) 
+* [Получите бесплатный ключ доступа Cognitive Services.](https://azure.microsoft.com/try/cognitive-services/?api=bing-image-search-api) 
+* [Просмотрите документацию по Cognitive Services.](https://docs.microsoft.com/azure/cognitive-services)
+* [Просмотрите справочник по API Поиска изображений Bing.](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)

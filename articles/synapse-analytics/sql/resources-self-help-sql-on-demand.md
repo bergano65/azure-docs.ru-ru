@@ -2,19 +2,19 @@
 title: Самостоятельное устранение проблем с SQL по запросу (предварительная версия)
 description: В этой статье содержатся сведения, которые могут помочь в устранении проблем с SQL по запросу (предварительной версии).
 services: synapse analytics
-author: vvasic-msft
+author: azaricstefan
 ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: ''
-ms.date: 04/15/2020
-ms.author: vvasic
+ms.date: 05/15/2020
+ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: e2c262915c928cf487cb84aeb3423d67e7a96e97
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 8b2a9b6c5324240d71a80cde904057757d6ef421
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81421198"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83658880"
 ---
 # <a name="self-help-for-sql-on-demand-preview"></a>Самостоятельное устранение проблем с SQL по запросу (предварительная версия)
 
@@ -33,13 +33,43 @@ ms.locfileid: "81421198"
 
 ## <a name="query-fails-because-it-cannot-be-executed-due-to-current-resource-constraints"></a>Сбой выполнения запроса из-за текущих ограничений ресурсов 
 
-Если сбой запроса завершается с сообщением This query cannot be executed due to current resource constraints (Этот запрос нельзя выполнить из-за текущих ограничений ресурсов), это означает, что SQL по запросу не может выполнить его в этот момент из-за ограничений ресурсов: 
+Если сбой запроса завершается сообщением This query cannot be executed due to current resource constraints (Этот запрос нельзя выполнить из-за текущих ограничений ресурсов), это означает, что SQL по запросу не может выполнить его в этот момент из-за ограничений ресурсов: 
 
 - Убедитесь, что используются типы данных допустимого размера. Кроме того, укажите схему для файлов Parquet для столбцов строк, так как по умолчанию у них будет тип VARCHAR(8000). 
 
 - Если запрос предназначен для CSV-файлов, [создайте статистику](develop-tables-statistics.md#statistics-in-sql-on-demand-preview). 
 
 - Ознакомьтесь с [рекомендациями по повышению производительности для SQL по запросу](best-practices-sql-on-demand.md), чтобы оптимизировать создание запросов.  
+
+## <a name="create-statement-is-not-supported-in-master-database"></a>Инструкция CREATE STATEMENT не поддерживается в базе данных master
+
+Если запрос завершается сообщением об ошибке:
+
+> "Не удалось выполнить запрос. Ошибка: СОЗДАНИЕ ВНЕШЕНЕЙ ТАБЛИЦЫ/ИСТОЧНИКА ДАННЫХ/УЧЕТНЫХ ДАННЫХ ДЛЯ БАЗЫ ДАННЫХ/ФОРМАТА ФАЙЛА не поддерживается в базе данных master." 
+
+Это означает, что база данных master в SQL по запросу не поддерживает создание таких ресурсов:
+  - Внешние таблицы
+  - Внешние источники данных
+  - Учетные данные для базы данных
+  - Форматы внешних файлов
+
+Решение.
+
+  1. Создание пользовательской базы данных:
+
+```sql
+CREATE DATABASE <DATABASE_NAME>
+```
+
+  2. Выполните инструкцию CREATE в контексте <DATABASE_NAME> который ранее завершился сбоем для базы данных master. 
+  
+  Пример создания формата внешнего файла:
+    
+```sql
+USE <DATABASE_NAME>
+CREATE EXTERNAL FILE FORMAT [SynapseParquetFormat] 
+WITH ( FORMAT_TYPE = PARQUET)
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

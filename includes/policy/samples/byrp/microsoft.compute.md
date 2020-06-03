@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 05/05/2020
+ms.date: 05/13/2020
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 136701010fb1c2e1a7dcf525f3d1138caa06e4ec
-ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
+ms.openlocfilehash: a561aa3d7b64e3cd2d86e4ec3439c75c25e98cc4
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82842435"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83651256"
 ---
 |Имя |Описание |Действие |Версия |GitHub |
 |---|---|---|---|---|
@@ -20,7 +20,7 @@ ms.locfileid: "82842435"
 |[Доступ через конечную точку с выходом в Интернет должен быть ограничен](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F9daedab3-fb2d-461e-b861-71790eead4f6) |Центр безопасности Azure определил, что некоторые правила для входящих подключений в группах безопасности сети недостаточно строгие. Правила для входящих подключений не должны разрешать доступ из диапазонов "Любой" или "Интернет". В противном случае злоумышленники смогут легко атаковать ваши ресурсы. |AuditIfNotExists, Disabled |1.0.0 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_UnprotectedEndpoints_Audit.json) |
 |[На виртуальных машинах должны быть включены адаптивные элементы управления приложениями](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F47a6b606-51aa-4496-8bb7-64b11cf66adc) |Возможная настройка списков разрешенных приложений будет отслеживаться Центром безопасности Azure. |AuditIfNotExists, Disabled |1.0.0 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_AppWhitelistMonitoring_Audit.json) |
 |[На виртуальных машинах с выходом в Интернет должны применяться рекомендации Адаптивной защиты сети.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F08e6af2d-db70-460a-bfe9-d5bd474ba9d6) |Центр безопасности Azure анализирует шаблоны трафика виртуальных машин, доступных через Интернет, и предоставляет рекомендации по правилам группы безопасности сети, которые уменьшают потенциальную область атаки. |AuditIfNotExists, Disabled |1.0.0 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_AdaptiveNetworkHardenings_Audit.json) |
-|[Разрешенные номера SKU виртуальных машин](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fcccc23c7-8427-4f53-ad12-b6a63eb452b3) |Эта политика позволяет задать набор SKU виртуальных машин, которые может развертывать ваша организация. |Запрет |1.0.0 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Compute/VMSkusAllowed_Deny.json) |
+|[Разрешенные номера SKU размеров виртуальных машин](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fcccc23c7-8427-4f53-ad12-b6a63eb452b3) |Эта политика позволяет задать набор номеров SKU размеров виртуальных машин, которые может развертывать ваша организация. |Запрет |1.0.1 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Compute/VMSkusAllowed_Deny.json) |
 |[Проверка развертывания Dependency Agent — образ виртуальной машины (ОС) отсутствует в списке](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F11ac78e3-31bc-4f0c-8434-37ab963cea07) |Сообщает о несоответствии виртуальной машины, если образ виртуальной машины (ОС) отсутствует в заданном списке и агент не установлен. Список образов ОС будет обновляться по мере расширения поддержки. |auditIfNotExists |1.0.1 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/DependencyAgent_OSImage_Audit.json) |
 |[Проверка развертывания Dependency Agent в масштабируемых наборах виртуальных машин — образ виртуальной машины (ОС) отсутствует в списке](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe2dd799a-a932-4e9d-ac17-d473bc3c6c10) |Сообщает о несоответствии масштабируемых наборов виртуальных машин, если образ виртуальной машины (ОС) отсутствует в заданном списке и агент не установлен. Список образов ОС будет обновляться по мере расширения поддержки. |auditIfNotExists |1.0.1 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/DependencyAgent_OSImage_VMSS_Audit.json) |
 |[Проверка развертывания агента Log Analytics в масштабируемых наборах виртуальных машин — образ виртуальной машины (ОС) отсутствует в списке](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F5c3bc7b8-a64c-4e08-a9cd-7ff0f31e1138) |Сообщает о несоответствии масштабируемых наборов виртуальных машин, если образ виртуальной машины (ОС) отсутствует в заданном списке и агент не установлен. Список образов ОС будет обновляться по мере расширения поддержки. |auditIfNotExists |1.0.1 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/LogAnalytics_OSImage_VMSS_Audit.json) |

@@ -8,21 +8,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: quickstart
-ms.date: 12/12/2019
+ms.date: 05/22/2020
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 79f00e4138d0fecdc7320235dd9c496033693d2b
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: ecdcfc7d90f61443cc6947680df9bbf9d9b9514e
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75383101"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83873225"
 ---
 # <a name="quickstart-perform-a-news-search-using-php-and-the-bing-news-search-rest-api"></a>Краткое руководство. Поиск новостей с помощью PHP и REST API Bing для поиска новостей
 
-Используйте это краткое руководство, чтобы вызвать API Bing для поиска изображений и получить ответ в формате JSON. Это простое приложение JavaScript отправляет поисковый запрос к API и отображает необработанные результаты.
+Используйте это краткое руководство, чтобы выполнить вызов к API "Поиск новостей Bing". Это простое приложение PHP отправляет запрос на поиск к API и отображает ответ JSON.
 
-Хотя это приложение создается на языке PHP, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Это приложение написано на PHP. Но API представляет собой веб-службу на основе REST, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,18 +30,18 @@ ms.locfileid: "75383101"
 
 [!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../includes/cognitive-services-bing-news-search-signup-requirements.md)]
 
-См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
+См. сведения на странице [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
-[API Bing для поиска новостей](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference) возвращает результаты поиска новостей из поисковой системы Bing.
+Чтобы запустить это приложение, сделайте следующее:
 
-1. Убедитесь, что в `php.ini` включена поддержка безопасного HTTP-подключения, как описано в комментарии к коду.
+1. Включите поддержку безопасного HTTP-подключения в файле `php.ini`, раскомментировав строку `;extension=php_openssl.dll`, как описано в комментарии кода.
 2. Создайте проект PHP в используемой вами интегрированной среде разработки или редакторе.
 3. Добавьте указанный ниже код.
 4. Замените значение `accessKey` ключом доступа, допустимым для подписки.
-5. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
-5. Запустите программу.
+5. Вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
+6. Запустите программу.
 
 ```php
 <?php
@@ -103,7 +103,7 @@ echo json_encode(json_decode($json), JSON_PRETTY_PRINT);
 ?>
 ```
 
-**Ответ**
+## <a name="example-json-response"></a>Пример ответа в формате JSON
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 

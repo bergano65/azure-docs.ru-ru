@@ -8,32 +8,30 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-local-business
 ms.topic: quickstart
-ms.date: 11/29/2019
+ms.date: 05/12/2020
 ms.author: aahi
-ms.openlocfilehash: 8ff70bea8d0e4810b6d5a0d35853077ed0a630cd
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: c50222c645926a6e48995e6c66d7844adc02699f
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "74665191"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83873000"
 ---
-# <a name="quickstart-send-a-query-to-the-bing-local-business-search-api-using-java"></a>Краткое руководство. Отправка запроса в API Bing для поиска местных компаний с помощью Java
+# <a name="quickstart-send-a-query-to-the-bing-local-business-search-api-using-java"></a>Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью Java
 
-С помощью этого краткого руководства вы сможете начать отправку запросов в Bing Local Business Search API в Cognitive Services. Хотя это простое приложение написано на Java, API является веб-службой RESTful, совместимой с любым языком программирования, который может выполнять HTTP-запросы и анализировать JSON.
+Из этого краткого руководства вы узнаете, как отправлять запросы в API Поиска местных компаний Bing в Azure Cognitive Services. Хотя это простое приложение написано на Java, API является веб-службой RESTful, совместимой с любым языком, который может выполнять HTTP-запросы и анализировать данные JSON.
 
-В этом примере приложения из API извлекаются сведения о местных компаниях по поисковому запросу `hotel in Bellevue`.
+В этом примере приложения из API извлекаются сведения о местных компаниях по поисковому запросу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-* [Комплект разработчика Java (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
+* [Комплект SDK Java (JDK).](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* [Учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с API-интерфейсами Поиска Bing. Для работы с этим кратким руководством достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api). Сохраните ключ API, указанный при активации бесплатной пробной версии. См. сведения на странице [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 
-Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с API-интерфейсами поиска Bing. Для этого краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api). Вам потребуется ключ доступа, указанный при активации бесплатной пробной версии.  См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
-
-В этом примере приложения из API извлекаются сведения о местных компаниях по запросу *hotel in Bellevue* (отель в Бельвю).
 
 ## <a name="create-the-request"></a>Создание запроса 
 
-Приведенный ниже код позволяет создать `WebRequest`, задать заголовок ключа доступа и добавить строку запроса "hotel in Bellevue" (отель в Бельвю).  Затем код отправляет запрос и назначает ответ строке, содержащей текст JSON.
+Приведенный ниже код позволяет создать `WebRequest`, задать заголовок ключа доступа и добавить строку запроса *hotel in Bellevue* (отель в Бельвю).  Затем код отправляет запрос и назначает ответ строке, содержащей текст JSON.
 
 ```java
     // construct URL of search request (endpoint + query string)
@@ -51,11 +49,11 @@ ms.locfileid: "74665191"
 
 ## <a name="run-the-complete-application"></a>Запуск готового приложения
 
-API Bing для поиска местных компаний возвращает результаты из поисковой системы Bing.
+Следующий код возвращает результаты поиска из поисковой системы Bing с помощью API Поиска местных компаний Bing. Чтобы выполнить этот код, сделайте следующее.
 1. Скачайте или установите библиотеку gson.
 2. Создайте проект Java в используемой вами интегрированной среде разработки или редакторе.
 3. Добавьте указанный ниже код.
-4. Замените значение subscriptionKey ключом доступа, допустимым для вашей подписки.
+4. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
 5. Запустите программу.
 
 ```java
@@ -165,6 +163,6 @@ public class LocalSearchCls {
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Quickstart: Send a query to the Bing Local Business Search API in C#](local-quickstart.md) (Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью C#)
-- [Краткое руководство. Использование Local Business Search с помощью Node](local-search-node-quickstart.md)
+- [Краткое руководство по использованию Поиска местных компаний Bing с помощью C#](local-quickstart.md)
+- [Краткое руководство по использованию Поиска местных компаний Bing с помощью Node.js](local-search-node-quickstart.md)
 - [Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью Python](local-search-python-quickstart.md)

@@ -1,14 +1,14 @@
 ---
 title: Выполнение пакетной службой Azure больших параллельных заданий в облаке
 description: Узнайте об использовании пакетной службы Azure для крупномасштабных параллельных рабочих нагрузок и рабочих нагрузок HPC.
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 01/19/2018
-ms.openlocfilehash: f2bdaeec47b50b715920b27d6adf6e078a354964
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: c78aec238664520c8c8c02a793298cdc1d3ac7e1
+ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82116355"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83779568"
 ---
 # <a name="what-is-azure-batch"></a>Что такое пакетная служба Azure?
 
@@ -74,7 +74,7 @@ ms.locfileid: "82116355"
 
 Это всего лишь один из способов использования пакетной службы, и в этом сценарии описываются только некоторые доступные функции. Например, можно выполнить [несколько задач параллельно](batch-parallel-node-tasks.md) на каждом вычислительном узле. Для подготовки узлов для заданий и последующей очистки также [можно использовать подготовку заданий и выполнение задач](batch-job-prep-release.md). 
 
-Дополнительные сведения о пулах, узлах, заданиях, задачах и множестве функций API, которые можно использовать при создании приложения пакетной службы, см. в [этой статье](batch-api-basics.md). Также см. последние [обновления пакетной службы](https://azure.microsoft.com/updates/?product=batch).
+В статье [о рабочем процессе и основных ресурсах пакетной службы](batch-service-workflow-features.md) описаны такие концепции, как пулы, узлы, задания и задачи. Также см. последние [обновления пакетной службы](https://azure.microsoft.com/updates/?product=batch).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

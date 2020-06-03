@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 04/14/2020
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: d2226e161d96a52834dc3d0c16a1a053d39f02e5
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 5c3a6ba009771a879694fe869862f2c3e5836114
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81404476"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83685080"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-computer-vision-rest-api-and-nodejs"></a>Краткое руководство. Создание эскиза с помощью REST API "Компьютерное зрение" и Node.js
 
@@ -53,16 +53,15 @@ ms.locfileid: "81404476"
 ```javascript
 'use strict';
 
-const request = require('request');
+const fs = require('fs');
+const request = require('request').defaults({ encoding: null });
 
 let subscriptionKey = process.env['COMPUTER_VISION_SUBSCRIPTION_KEY'];
 let endpoint = process.env['COMPUTER_VISION_ENDPOINT']
-if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
 
-var uriBase = endpoint + 'vision/v2.1/generateThumbnail';
+var uriBase = endpoint + 'vision/v3.0/generateThumbnail';
 
-const imageUrl =
-    'https://upload.wikimedia.org/wikipedia/commons/9/94/Bloodhound_Puppy.jpg';
+const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/9/94/Bloodhound_Puppy.jpg';
 
 // Request parameters.
 const params = {
@@ -71,6 +70,7 @@ const params = {
     'smartCropping': 'true'
 };
 
+// Construct the request
 const options = {
     uri: uriBase,
     qs: params,
@@ -79,18 +79,23 @@ const options = {
         'Content-Type': 'application/json',
         'Ocp-Apim-Subscription-Key' : subscriptionKey
     }
-};
+}
 
+// Post the request and get the response (an image stream)
 request.post(options, (error, response, body) => {
-  if (error) {
-    console.log('Error: ', error);
-    return;
-  }
+    // Write the stream to file
+    var buf = Buffer.from(body, 'base64');
+    fs.writeFile('thumbnail.png', buf, function (err) {
+        if (err) throw err;
+    });
+
+    console.log('Image saved')
 });
 ```
 
 ## <a name="examine-the-response"></a>Изучите ответ.
 
+Отобразится всплывающее окно с эскизом.
 Успешный ответ возвращается в виде двоичных данных, которые представляют данные изображения для эскиза. Если запрос завершается сбоем, ответ отображается в окне консоли. Ответ на невыполненный запрос содержит код ошибки и сообщение с описанием проблемы.
 
 ## <a name="next-steps"></a>Дальнейшие действия

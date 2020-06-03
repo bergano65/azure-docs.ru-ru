@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 09/27/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 008058e42dfeb84cb2812ac4e8378cb5a8b5913a
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 0d2666e2b56e73b809a0480d45fa3a4a63f06490
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81425383"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83652219"
 ---
 # <a name="provide-key-vault-authentication-with-an-access-control-policy"></a>Обеспечение проверки подлинности Azure Key Vault с помощью политики управления доступом
 
@@ -60,10 +60,10 @@ ObjectId для приложений соответствует связанно
 
 Получить objectId для приложения можно двумя способами.  Первый — зарегистрировать приложение с помощью Azure Active Directory. Для этого выполните действия, описанные в кратком руководстве [Регистрация приложения с помощью платформы Microsoft Identity](../../active-directory/develop/quickstart-register-app.md). После завершения регистрации идентификатор objectID будет указан как "Application (Client) ID" (Идентификатор приложения (клиента)).
 
-Второй — создание субъекта-службы в окне терминала. В интерфейсе командной строки Azure введите команду [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac).
+Второй — создание субъекта-службы в окне терминала. В Azure CLI используйте команду [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) и укажите уникальное имя субъекта-службы для флага -n в формате http://&lt;my-unique-service-principle-name&gt;.
 
 ```azurecli-interactive
-az ad sp create-for-rbac -n "http://mySP"
+az ad sp create-for-rbac -n "http://<my-unique-service-principle-name"
 ```
 
 Идентификатор objectId будет указан в выходных данных как `clientID`.
@@ -72,7 +72,7 @@ az ad sp create-for-rbac -n "http://mySP"
 
 
 ```azurepowershell-interactive
-New-AzADServicePrincipal -DisplayName mySP
+New-AzADServicePrincipal -DisplayName <my-unique-service-principle-name>
 ```
 
 Идентификатор objectId будет указан в выходных данных как `Id` (а не `ApplicationId`).
@@ -222,6 +222,9 @@ Add-AzADGroupMember -TargetGroupObjectId <groupId> -MemberObjectId <objectId>
 Наконец, предоставьте разрешения группе AD для хранилища ключей с помощью команды Azure CLI [az keyvault set-policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy) или командлета Azure PowerShell [Set-AzKeyVaultAccessPolicy](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy?view=azps-2.7.0). Примеры см. в разделе [Предоставление приложению, группе Azure AD или пользователю доступа к хранилищу ключей](#give-the-principal-access-to-your-key-vault) выше.
 
 Приложению также требуется по крайней мере одна роль Системы управления идентификацией и доступом (IAM), назначенная хранилищу ключей. В противном случае оно не сможет войти в систему и завершится ошибкой о недостаточных правах доступа к подписке.
+
+> [!WARNING]
+> На обновление токена и активацию группам Azure AD с управляемыми удостоверениями может потребоваться до 8 часов.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

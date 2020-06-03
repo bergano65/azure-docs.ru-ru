@@ -5,12 +5,12 @@ author: christophermanthei
 ms.author: chmant
 ms.date: 03/20/2020
 ms.topic: quickstart
-ms.openlocfilehash: 95993a54d321c9581d35f12b56d60e4ea052e505
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 59b235a32ae9363cc5fc804385867e140be502e2
+ms.sourcegitcommit: 0690ef3bee0b97d4e2d6f237833e6373127707a7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81415724"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83759002"
 ---
 # <a name="quickstart-deploy-unity-sample-to-desktop"></a>Краткое руководство. Развертывание примера Unity на рабочем столе
 
@@ -46,7 +46,7 @@ ms.locfileid: "81415724"
 ## <a name="build-the-sample-project"></a>Сборка примера проекта
 
 1. Откройте *File > Build Settings* (Файл > Параметры сборки).
-1. Для параметра *Platform* (Платформа) выберите **Universal Windows Platform** (Универсальная платформа Windows).
+1. Для параметра *Платформа* укажите **Универсальная платформа Windows** (поддерживается также вариант **Автономный компьютер**, но здесь мы его не используем).
 1. Для параметра *Target Device* (Целевое устройство) выберите **PC** (ПК).
 1. Для параметра *Architecture* (Архитектура) выберите **x86**.
 1. Для параметра *Build Type* (Тип сборки) выберите **D3D Project** (Проект D3D).

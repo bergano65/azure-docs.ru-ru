@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-visual-search
 ms.topic: quickstart
-ms.date: 12/17/2019
+ms.date: 05/22/2020
 ms.author: scottwhi
-ms.openlocfilehash: fe323fc27062ad1bee9abdfaf3408430e28523a9
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 3d52a58e3e890ff3baff31322096038d06a1bee6
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75446630"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83872588"
 ---
 # <a name="quickstart-get-image-insights-using-the-bing-visual-search-rest-api-and-java"></a>Краткое руководство. Получение аналитических сведений об изображениях с помощью REST API визуального поиска Bing и Java
 
-Из этого краткого руководства вы узнаете, как сделать первый вызов API Визуального поиска Bing и просмотреть результаты. Это приложение Java отправляет изображение в API и отображает возвращенные данные о нем. Хотя это приложение создано на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Используйте это краткое руководство, чтобы выполнить вызов к API "Визуальный поиск Bing". Это приложение Java отправляет изображение в API и отображает возвращенные данные о нем. Это приложение создано на языке Java. Но API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -52,7 +52,7 @@ ms.locfileid: "75446630"
     import org.apache.http.impl.client.HttpClientBuilder;
     ```
 
-2. Создайте переменные для конечной точки API, ключ подписки и путь к изображению. В качестве `endpoint` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
+2. Создайте переменные для конечной точки API, ключ подписки и путь к изображению. Для значения `endpoint` вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
 
     ```java
     static String endpoint = "https://api.cognitive.microsoft.com/bing/v7.0/images/visualsearch";
@@ -61,7 +61,7 @@ ms.locfileid: "75446630"
     ```
 
     
-    При отправке локального изображения данные формы должны содержать заголовок `Content-Disposition`. Вам необходимо задать для его параметра `name` значение "image", а для параметра `filename` — любую строку. Форма содержит двоичные данные изображения. Максимально допустимый размер отправляемого изображения — 1 МБ.
+3. При отправке локального изображения данные формы должны содержать заголовок `Content-Disposition`. Задайте для его параметра `name` значение "image", а для параметра `filename` имя файла с изображением. Форма содержит двоичные данные изображения. Максимально допустимый размер отправляемого изображения — 1 МБ.
     
     ```
     --boundary_1234-abcd
@@ -74,7 +74,7 @@ ms.locfileid: "75446630"
 
 ## <a name="create-the-json-parser"></a>Создание средства синтаксического анализа JSON
 
-Создайте метод, чтобы сделать ответ JSON от API более удобным для чтения с помощью `JsonParser`:
+Создайте метод, чтобы сделать ответ JSON от API более удобным для чтения с помощью `JsonParser`.
 
 ```java
 public static String prettify(String json_text) {
@@ -87,13 +87,13 @@ public static String prettify(String json_text) {
 
 ## <a name="construct-the-search-request-and-query"></a>Создание поискового запроса и запроса
 
-1. В методе main приложения создайте клиент HTTP с помощью `HttpClientBuilder.create().build();`:
+1. В методе main приложения создайте клиент HTTP с помощью `HttpClientBuilder.create().build();`.
 
     ```java
     CloseableHttpClient httpClient = HttpClientBuilder.create().build();
     ```
 
-2. Создайте объект `HttpEntity` для отправки изображения в API:
+2. Создайте объект `HttpEntity` для отправки изображения в API.
 
     ```java
     HttpEntity entity = MultipartEntityBuilder
@@ -102,7 +102,7 @@ public static String prettify(String json_text) {
         .build();
     ```
 
-3. Создайте объект `httpPost` с конечной точкой и задайте заголовок, чтобы использовать ключ подписки:
+3. Создайте объект `httpPost` с конечной точкой и задайте заголовок, чтобы использовать ключ подписки.
 
     ```java
     HttpPost httpPost = new HttpPost(endpoint);

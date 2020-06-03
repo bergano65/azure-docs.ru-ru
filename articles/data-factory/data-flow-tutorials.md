@@ -5,13 +5,13 @@ author: djpmsft
 ms.author: daperlov
 ms.service: data-factory
 ms.topic: tutorial
-ms.date: 04/17/2020
-ms.openlocfilehash: 3abec9b0c37e0475e369ce3cd2f91e40a1040b75
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.date: 05/25/2020
+ms.openlocfilehash: 87bfd505edcb394bafd70a975b5b3d6bde341cb9
+ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82628969"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83848905"
 ---
 # <a name="mapping-data-flow-video-tutorials"></a>Видеоматериалы по потоку данных для сопоставления
 
@@ -51,6 +51,8 @@ ms.locfileid: "82628969"
 
 [Преобразование "Уточняющий запрос"](https://www.youtube.com/watch?v=9U-0VPU2ZPU)
 
+[Lookup Transformation Updates & Tips](https://youtu.be/MBskWoeuTLw) (Обновление и советы по использованию преобразования "Уточняющий запрос")
+
 [Pivot transformation](https://www.youtube.com/watch?v=Tua14ZQA3F8&t=34s) (Преобразование "Сведение")
 
 [Pivot transformation: mapping drifted columns](https://youtu.be/5MygzCX0wnM) (Преобразование "Сведение": сопоставление смещенных столбцов)
@@ -58,6 +60,8 @@ ms.locfileid: "82628969"
 [Select transformation](http://youtu.be/F9VjQ_YyRyU?hd=1) (Выбор преобразования)
 
 [Select transformation: Rule-based mapping](https://youtu.be/5lf1lh1qMwU) (Выбор преобразования: сопоставление на основе правил)
+
+[Select transformation: Large Datasets](https://www.youtube.com/watch?v=R5ea2_R0ouc) (Выбор преобразования: очень большие наборы данных)
 
 [Surrogate key transformation](https://www.youtube.com/watch?v=ISpegL9CbTM) (Преобразование суррогатного ключа)
 
@@ -148,6 +152,8 @@ ms.locfileid: "82628969"
 [Logical Models vs. Physical Models](http://youtu.be/K5tgzLjEE9Q) (Сравнение логических и физических моделей)
 
 [Detect source data changes](http://youtu.be/CaxIlI7oXfI?hd=1) (Обнаружение изменений исходных данных)
+
+[Медленно изменяющееся измерение универсального типа 2](http://youtu.be/tc283k8CWh8)
 
 ## <a name="data-flow-expressions"></a>Выражения для потока данных
 

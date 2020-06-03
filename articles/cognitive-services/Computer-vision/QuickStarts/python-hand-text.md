@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство.  Извлечение печатного и рукописного текста через REST, Python с помощью Компьютерного зрения версии 2.0 и 2.1
+title: Краткое руководство.  Извлечение печатного и рукописного текста через REST с помощью Компьютерного зрения версии 2.1 и 3.0 (Python)
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как использовать API Компьютерного зрения для извлечения печатного и рукописного текста из изображений с помощью Python.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 04/14/2020
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 29944311c2215ebcc46ff3752004092bdeb9a9c8
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: ae83978994eb421e21ed73514a5c8fa697875349
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81404393"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83684109"
 ---
 # <a name="quickstart-extract-printed-and-handwritten-text-using-the-computer-vision-rest-api-and-python"></a>Краткое руководство. Извлечение печатного и рукописного текста с помощью REST API Компьютерного зрения и Python
 

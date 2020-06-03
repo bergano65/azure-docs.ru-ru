@@ -8,21 +8,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 12/09/2019
+ms.date: 05/22/2020
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 58192845e0119ce96ea2577007d211f075d3e419
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: bbb6acd4e976d345daa99cde7635febc3755963f
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76169730"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83873827"
 ---
-# <a name="quickstart-use-php-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с использованием PHP  
+# <a name="quickstart-use-php-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с помощью PHP  
 
-Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON. Это приложение Node.js отправляет поисковый запрос к API и показывает ответ. Хотя это приложение создается на языке JavaScript, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Используйте это краткое руководство, чтобы вызвать API Поиска в Интернете Bing. Это приложение Node.js отправляет поисковый запрос к API и показывает ответ в формате JSON. Это приложение написано на JavaScript. Но API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством вам потребуется следующее:
 
@@ -33,7 +33,7 @@ ms.locfileid: "76169730"
 
 ## <a name="enable-secure-http-support"></a>Включение поддержки защищенного HTTP
 
-Прежде чем начать, выполните поиск по `php.ini` и раскомментируйте следующую строку:
+Прежде чем начать, выполните поиск по php.ini и раскомментируйте следующую строку:
 
 ```php
 ; extension=php_openssl.dll
@@ -41,9 +41,13 @@ ms.locfileid: "76169730"
 
 ## <a name="create-a-project-and-define-variables"></a>Создание проекта и определение переменных
 
-Создайте проект PHP в используемой вами интегрированной среде разработки или редакторе. Не забудьте добавить открывающие и закрывающие теги `<?php` и `?>`.
+1. Создайте проект PHP в используемой вами интегрированной среде разработки или редакторе. Добавьте открывающие и закрывающие теги `<?php` и `?>`.
 
-Прежде чем продолжить, необходимо задать несколько переменных. В качестве `$endpoint` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса. Убедитесь, что значение `$endpoint` указано верно, и замените `$accesskey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение параметра `$term`.
+2. Для значения `$endpoint` вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса. 
+
+3. Убедитесь, что значение `$endpoint` указано верно, и замените `$accesskey` действительным ключом подписки из своей учетной записи Azure. 
+
+4. Кроме того, вы можете настроить поисковый запрос, заменив значение параметра `$term`.
 
 ```php
 $accessKey = 'enter key here';
@@ -53,7 +57,7 @@ $term = 'Microsoft Cognitive Services';
 
 ## <a name="construct-a-request"></a>Создание запроса
 
-Этот код объявляет функцию с именем `BingWebSearch`, которая создает запросы к API поиска Bing в Интернете. Она принимает три аргумента: `$url`, `$key` и `$query`.
+Этот код объявляет функцию с именем `BingWebSearch`, которая создает запросы к API "Поиск в Интернете Bing". Она принимает три аргумента: `$url`, `$key` и `$query`.
 
 ```php
 function BingWebSearch ($url, $key, $query) {
@@ -155,7 +159,7 @@ if (strlen($accessKey) == 32) {
 ?>
 ```
 
-## <a name="sample-response"></a>Пример ответа
+## <a name="example-json-response"></a>Пример ответа в формате JSON
 
 Ответы из API Bing для поиска в Интернете возвращаются в формате JSON. Представленный пример сокращен для отображения только одного результата.  
 
@@ -284,6 +288,6 @@ if (strlen($accessKey) == 32) {
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство по одностраничным приложениям для API Bing для Поиска в Интернете](../tutorial-bing-web-search-single-page-app.md)
+> [Руководство по одностраничным приложениям для API "Поиск в Интернете Bing"](../tutorial-bing-web-search-single-page-app.md)
 
 [!INCLUDE [bing-web-search-quickstart-see-also](../../../../includes/bing-web-search-quickstart-see-also.md)]

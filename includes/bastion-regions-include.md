@@ -5,15 +5,15 @@ services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: include
-ms.date: 03/05/2020
+ms.date: 05/19/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 5190804180612e885b226f9b00d82b8d2f528a8a
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: b4cdb787fe65c52a77fa4761a65e9108e7927c40
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78668794"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83721067"
 ---
 >[!NOTE]
 >Мы работаем над поддержкой дополнительных регионов. При добавлении региона он заносится в этот список.
@@ -35,6 +35,8 @@ ms.locfileid: "78668794"
 * Центральная Франция
 * Северная Европа
 * Восточная Норвегия;
+* Западная Норвегия
+* Северная Швейцария
 * южная часть Соединенного Королевства
 * западная часть Соединенного Королевства
 * Западная Европа
@@ -49,6 +51,7 @@ ms.locfileid: "78668794"
 * Республика Корея, центральный регион
 * Республика Корея, южный регион
 * Юго-Восточная Азия
+* Центральная Индия
 * Западная Индия
 
 **Ближний Восток и Африка:**

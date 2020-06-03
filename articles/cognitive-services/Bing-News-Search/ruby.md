@@ -8,21 +8,23 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: quickstart
-ms.date: 12/12/2019
+ms.date: 05/22/2020
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: ce1ef2b6c586ddd688bacb755d7c6f2ffd16a0a5
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: ad52116e11f9d89bf55a23692ae4e27f53b51319
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75448553"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83873417"
 ---
 # <a name="quickstart-perform-a-news-search-using-ruby-and-the-bing-news-search-rest-api"></a>Краткое руководство. Поиск новостей с помощью REST API Bing для поиска новостей и Ruby
 
-Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска новостей и получить ответ в формате JSON. Это простое приложение JavaScript отправляет поисковый запрос к API и обрабатывает результаты.
+Используйте это краткое руководство, чтобы выполнить первый вызов API "Поиск новостей Bing". Это простое приложение Ruby отправляет поисковый запрос к API и обрабатывает ответ в формате JSON.
 
-Хотя это приложение создается на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/ruby/Search/BingNewsSearchv7.rb).
+Хотя приложение написано на Ruby, API представляет собой веб-службу на основе REST, совместимую с большинством языков программирования. 
+
+Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/ruby/Search/BingNewsSearchv7.rb).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -40,7 +42,7 @@ ms.locfileid: "75448553"
     require 'json'
     ```
 
-2. Создайте переменные для конечной точки API, URL-адрес для поиска новостей, ключ подписки и условие поиска. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+2. Создайте переменные для конечной точки API, URL-адрес для поиска новостей, ключ подписки и условие поиска. Вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
 
     ```ruby
     accessKey = "enter key here"
@@ -51,7 +53,7 @@ ms.locfileid: "75448553"
 
 ## <a name="format-and-make-an-api-request"></a>Форматирование и выполнение запроса API
 
-Используйте переменные из последнего шага для форматирования искомого URL-адреса для запроса API. Затем отправьте запрос.
+Используйте переменные из предыдущего шага для форматирования URL-адреса поиска для запроса API. Затем отправьте запрос.
 
 ```ruby
 uri = URI(uri + path + "?q=" + URI.escape(term))
@@ -64,7 +66,7 @@ end
 
 ## <a name="process-and-print-the-json-response"></a>Обработка и вывод ответа в формате JSON
 
-Получив ответ, можете проанализировать данные JSON и вывести текст ответа и заголовки.
+Получив ответ, проанализируйте данные JSON и выведите текст и заголовки ответа.
 
 ```ruby
 puts "\nRelevant Headers:\n\n"
@@ -78,7 +80,7 @@ puts "\nJSON Response:\n\n"
 puts JSON::pretty_generate(JSON(response.body))
 ```
 
-## <a name="json-response"></a>Ответ в формате JSON
+## <a name="example-json-response"></a>Пример ответа в формате JSON
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже.
 
@@ -177,4 +179,4 @@ puts JSON::pretty_generate(JSON(response.body))
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Создание одностраничного приложения](tutorial-bing-news-search-single-page-app.md)
+> [Создание одностраничного веб-приложения](tutorial-bing-news-search-single-page-app.md)

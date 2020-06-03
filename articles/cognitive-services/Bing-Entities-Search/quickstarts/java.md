@@ -8,32 +8,32 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
-ms.date: 12/11/2019
+ms.date: 05/08/2020
 ms.author: aahi
-ms.openlocfilehash: c4335e1ac0f0ffc7ee5570a8f0819827fc77dd18
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 6d4e7297ba0b325aa0045c16620d716ceb1418b4
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75384157"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83650260"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-java"></a>Краткое руководство. Отправка запросов для поиска в REST API Bing для поиска сущностей с помощью Java
 
 Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска сущностей и просмотреть ответ в формате JSON. Это простое приложение Java отправляет запрос на поиск новостей к API и отображает ответ.
 
-Хотя это приложение создается на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Это приложение создано на языке Java. Но API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Комплект разработчика Java (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/).
-* [Библиотека Gson](https://github.com/google/gson).
+* [комплект SDK Java (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/);
+* [библиотека Gson](https://github.com/google/gson).
 
 
 [!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../../includes/cognitive-services-bing-entity-search-signup-requirements.md)]
 
 ## <a name="create-and-initialize-a-project"></a>Создание и инициализация проекта
 
-1. Создайте проект Java в любой интегрированной среде разработки или редакторе, а затем импортируйте в него следующие библиотеки.
+1. Создайте проект Java в любой интегрированной среде разработки или редакторе, а затем импортируйте в него следующие библиотеки:
 
    ```java
    import java.io.*;
@@ -50,7 +50,7 @@ ms.locfileid: "75384157"
    import com.google.gson.JsonParser;
    ```
 
-2. Создайте переменные для конечной точки API, ключа подписки и поискового запроса в новом классе. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+2. Создайте переменные для конечной точки API, ключа подписки и поискового запроса в новом классе. Вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
 
    ```java
    public class EntitySearch {
@@ -68,7 +68,7 @@ ms.locfileid: "75384157"
 
 ## <a name="construct-a-search-request-string"></a>Создание строки поискового запроса
 
-1. Создайте функцию `search()`, которая будет возвращать `String` в формате JSON. Выполните кодирование в URL-адрес поискового запроса и добавьте его в параметры строки с помощью команды `&q=`. С помощью команды `?mkt=` добавьте свой рынок в строку.
+1. Создайте функцию `search()`, которая будет возвращать `String` в формате JSON. Выполните кодирование в URL-адрес поискового запроса и добавьте его в параметры строки с помощью команды `&q=`. С помощью команды `?mkt=` добавьте свой рынок в строку параметра.
  
 2. Создайте объект URL-адреса, в котором указан узел, путь и параметры строки.
     
@@ -119,9 +119,9 @@ ms.locfileid: "75384157"
 
 ## <a name="format-the-json-response"></a>Формат ответа JSON
 
-1. Создайте функцию `prettify`, которая будет форматировать ответ JSON. Создайте `JsonParser`, вызовите `parse()` для работы с текстом в формате JSON и сохраните его в качестве объекта JSON. 
+1. Создайте функцию `prettify`, которая будет форматировать ответ JSON. Создайте `JsonParser`, вызовите `parse()` для работы с текстом в формате JSON. Затем сохраните его в качестве объекта JSON. 
 
-2. Используйте библиотеку GSON для создания `GsonBuilder()`, а затем используйте `setPrettyPrinting().create()` для форматирования JSON. После этого возвратите ее.    
+2. Используйте библиотеку Gson для создания `GsonBuilder()`, используйте `setPrettyPrinting().create()` для форматирования JSON, а затем верните его.    
   
    ```java
    //...
@@ -136,7 +136,7 @@ ms.locfileid: "75384157"
 
 ## <a name="call-the-search-function"></a>Вызов функции поиска
 
-1. В главном методе проекта вызовите `search()`, а затем используйте `prettify()` для форматирования текста.
+- В главном методе проекта вызовите `search()`, а затем используйте `prettify()` для форматирования текста.
     
     ```java
         public static void main(String[] args) {
@@ -220,5 +220,5 @@ ms.locfileid: "75384157"
 > [!div class="nextstepaction"]
 > [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-entities-search-single-page-app.md)
 
-* [Основные сведения об API Bing для поиска сущностей](../overview.md )
-* [Справочник по API Bing для поиска сущностей](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference)
+* [Основные сведения об API Bing для поиска сущностей](../overview.md)
+* [Справочник по API "Поиск сущностей Bing"](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference)

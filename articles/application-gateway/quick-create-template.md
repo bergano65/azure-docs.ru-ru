@@ -6,15 +6,15 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: quickstart
-ms.date: 03/23/2020
+ms.date: 05/28/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: cce3ef20a93c6d7a24bfa312501d2f8cc8ed9273
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.openlocfilehash: 986e061c03634fe33af985c9d11569848500862c
+ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81604899"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84170500"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway---resource-manager-template"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure с использованием шаблона Resource Manager
 
@@ -60,7 +60,9 @@ ms.locfileid: "81604899"
    [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fag-docs-qs%2Fazuredeploy.json)
 
 2. Выберите или создайте группу ресурсов, затем введите имя пользователя и пароль администратора виртуальной машины.
-3. Установите флажок **Я принимаю указанные выше условия** и нажмите кнопку **Приобрести**. Для развертывания может потребоваться 20 минут или более.
+3. Выберите **Review + Create** (Просмотр и создание), а затем выберите **Создать**.
+
+   Для развертывания может потребоваться 20 минут или более.
 
 ## <a name="validate-the-deployment"></a>Проверка развертывания
 

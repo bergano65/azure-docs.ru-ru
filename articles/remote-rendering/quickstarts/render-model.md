@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 01/23/2020
 ms.topic: quickstart
-ms.openlocfilehash: b0af45ba4a6b1ca7f9e751af082ff0db80776ec0
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.openlocfilehash: be5bc8ec4e8f363d9b6079d22f3bba1af2d4d5fb
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80677689"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83682565"
 ---
 # <a name="quickstart-render-a-model-with-unity"></a>Краткое руководство. Отрисовка модели с помощью Unity
 
@@ -66,7 +66,7 @@ git clone https://github.com/Azure/azure-remote-rendering
 
 1. В обозревателе ресурсов Unity перейдите к папке *Scenes* (Сцены) и откройте сцену **Quickstart** (Быстрый запуск).
 1. В разделе *Hierarchy* (Иерархия) выберите игровой объект **RemoteRendering**.
-1. В разделе *Inspector* (Инспектор) введите [учетные данные учетной записи](../how-tos/create-an-account.md).
+1. В разделе *Inspector* (Инспектор) введите [учетные данные учетной записи](../how-tos/create-an-account.md). Если у вас нет учетной записи, [создайте ее](../how-tos/create-an-account.md).
 
 ![Сведения об учетной записи ARR](./media/arr-sample-account-info.png)
 

@@ -16,14 +16,14 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df45ab0a7b1729ae6c1602c9769cd5b6da26f6ac
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 897762e523a2d20445c3a25e612cf138e021f633
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "74014358"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83739725"
 ---
-# <a name="quickstart-configure-named-locations-in-azure-active-directory"></a>Быстрое начало. Настройка именованных расположений в Azure Active Directory
+# <a name="quickstart-configure-named-locations-in-azure-active-directory"></a>Краткое руководство. Настройка именованных расположений в Azure Active Directory
 
 С помощью именованных расположений можно пометить доверенные диапазоны IP-адресов в вашей организации. Именованные расположения в Azure AD используются для перечисленных ниже задач.
 - Определение ложноположительных событий при [обнаружении рисков](concept-risk-events.md). Вход из надежного расположения снижает риски входа пользователя.   
@@ -31,7 +31,7 @@ ms.locfileid: "74014358"
 
 Из этого краткого руководства вы узнаете, как настроить именованные расположения в своей среде.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
@@ -63,6 +63,5 @@ ms.locfileid: "74014358"
 
 Дополнительные сведения см. в разделе:
 
-- [Что представляет собой условный доступ в Azure Active Directory?](../active-directory-conditional-access-azure-portal.md)
-- [What is the location condition in Azure Active Directory Conditional Access?](../conditional-access/location-condition.md) (Что собой представляют условия расположения при условном доступе в Azure AD?)
+- [Расположение как условие в политике условного доступа](../conditional-access/concept-conditional-access-conditions.md#locations).
 - [Отчет о событиях входа, представляющих риск, на портале Azure Active Directory](concept-risky-sign-ins.md)  

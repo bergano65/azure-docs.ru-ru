@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-visual-search
 ms.topic: quickstart
-ms.date: 12/16/2019
+ms.date: 05/22/2020
 ms.author: aahi
-ms.openlocfilehash: aaeb905c9cdc1e7b74e21d3c191f6a24a94fcd7d
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: e18605b75e4fcfcd8f2793e06801c309f9f23965
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80053812"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83869288"
 ---
 # <a name="quickstart-get-news-results-using-the-bing-news-search-rest-api-and-go"></a>Краткое руководство. Получайте новости, используя REST API поиска новостей Bing и Go
 
@@ -23,14 +23,13 @@ ms.locfileid: "80053812"
 
 ## <a name="prerequisites"></a>Предварительные требования
 * Установите [двоичные файлы Go](https://golang.org/dl/).
-* Установите go-spew-библиотеку для программы красивой печати, чтобы отобразить результаты.
-    * Установить эту библиотеку: `$ go get -u https://github.com/davecgh/go-spew`
+* Установите библиотеку go-spew, чтобы использовать принтер глубокой печати для вывода результатов. Используйте следующую команду для установки библиотеки: `$ go get -u https://github.com/davecgh/go-spew`.
 
 [!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../includes/cognitive-services-bing-news-search-signup-requirements.md)]
 
 ## <a name="create-a-project-and-import-libraries"></a>Создание проекта и импорт библиотек
 
-Создайте проект Go в используемой интегрированной среде разработки или текстовом редакторе. Затем импортируйте `net/http` для запросов, `ioutil` для чтения ответа и `encoding/json` для обработки текста JSON-результатов. Go-spew-библиотека необходима для анализа JSON. 
+Создайте проект Go в используемой интегрированной среде разработки или текстовом редакторе. Затем импортируйте `net/http` для запросов, `ioutil` для чтения ответа и `encoding/json` для обработки текста JSON результатов, а также библиотеку `go-spew` для анализа результатов JSON. 
 
 ```go
 package main
@@ -47,7 +46,7 @@ import (
 
 ## <a name="create-a-struct-to-format-the-news-search-results"></a>Создание структуры для форматирования результатов поиска новостей
 
-Структура `NewsAnswer` форматирует данные в ответе. Ответ JSON — многоуровневый и довольно сложный.  В следующей реализации рассматриваются основные компоненты.
+Структура `NewsAnswer` форматирует данные, предоставленные в JSON-формате многоуровневого и сложного ответа. В следующей реализации рассматриваются основные компоненты.
 
 ```go
 // This struct formats the answer provided by the Bing News Search API.
@@ -87,7 +86,7 @@ type NewsAnswer struct {
 
 ## <a name="declare-the-main-function-and-define-variables"></a>Объявление функции main и определение переменных  
 
-Следующий код объявляет основную функцию и назначает необходимые переменные. Убедитесь, что конечная точка указана верно, и замените значение `token` действительным ключом подписки из своей учетной записи Azure. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+Следующий код объявляет основную функцию и назначает необходимые переменные. Убедитесь, что конечная точка указана верно, а затем замените значение `token` действительным ключом подписки из своей учетной записи Azure. Вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
 
 ```go
 func main() {
@@ -121,7 +120,7 @@ req.Header.Add("Ocp-Apim-Subscription-Key", token)
 
 ```
 
-## <a name="get-request"></a>Запрос Get
+## <a name="get-request"></a>Запрос GET
 
 Создайте клиента и отправьте запрос Get. 
 
@@ -139,7 +138,7 @@ if err != nil {
 
 ## <a name="send-the-request"></a>Отправка запроса
 
-Отправьте запрос и считайте ответы с помощью `ioutil`.
+Отправка запроса и считывание результатов с помощью `ioutil`.
 
 ```go
 resp, err := client.Do(req)
@@ -160,7 +159,7 @@ if err != nil {
 
 ## <a name="handle-the-response"></a>Обработка ответа
 
-Функция `Unmarshall` извлекает сведения из текста JSON, возвращаемого API поиска новостей.  Затем можно отобразить узлы из результатов с помощью программы красивой печати `go-spew`.
+Функция `Unmarshall` извлекает сведения из текста JSON, возвращаемого API Поиска новостей Bing. Затем можно отобразить узлы из результатов с помощью программы красивой печати `go-spew`.
 
 ```go
 // Create a new answer object 
@@ -181,7 +180,7 @@ spew.Dump(result.Name, result.URL)
 
 ## <a name="results"></a>Результаты
 
-Результаты содержат имя и URL-адрес каждого результата.
+Следующие выходные данные содержат имя и URL-адрес каждого результата:
 
 ```
 (string) (len=91) "Cognitive Services Market: Global Industry Analysis and Opportunity Assessment, 2019 - 2025"

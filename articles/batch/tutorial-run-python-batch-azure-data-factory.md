@@ -1,5 +1,5 @@
 ---
-title: Выполнение скриптов Python с помощью Фабрики данных (Python в пакетной службе Azure)
+title: Выполнение скриптов Python с помощью Фабрики данных
 description: Учебник по выполнению скриптов Python в составе конвейера с помощью Фабрики данных Azure в пакетной службе Azure.
 author: mammask
 ms.devlang: python
@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 12/11/2019
 ms.author: komammas
 ms.custom: mvc
-ms.openlocfilehash: 6761896a6555c11d7957f923a5951641c1541012
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 433a652ffa3fa3ae5a570fac6160ef8a04ee11c8
+ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82117069"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83773191"
 ---
 # <a name="tutorial-run-python-scripts-through-azure-data-factory-using-azure-batch"></a>Руководство по Выполнение скриптов Python с помощью Фабрики данных Azure в пакетной службе Azure
 
@@ -34,6 +34,7 @@ ms.locfileid: "82117069"
 
 * Установленный дистрибутив [Python](https://www.python.org/downloads/) для локального тестирования.
 * Пакет `pip` [Azure](https://pypi.org/project/azure/).
+* [Набор данных iris.csv](https://www.kaggle.com/uciml/iris/version/2#Iris.csv)
 * учетная запись пакетной службы Azure и связанная учетная запись службы хранилища Azure. Дополнительные сведения о том, как создать учетные записи пакетной службы и связать их с учетными записями хранения, см. в статье [Создание учетной записи Пакетной службы](quick-create-portal.md#create-a-batch-account).
 * Учетная запись Фабрики данных Azure. В статье [Создание фабрики данных](../data-factory/quickstart-create-data-factory-portal.md#create-a-data-factory) представлены дополнительные сведения о том, как создать фабрику данных на портале Azure.
 * [Batch Explorer](https://azure.github.io/BatchExplorer/).
@@ -66,7 +67,7 @@ ms.locfileid: "82117069"
 1. Войдите в Обозреватель службы хранилища с помощью своих учетных данных Azure.
 1. Используя учетную запись хранения, связанную с вашей учетной записью Пакетной службы, создайте два контейнера больших двоичных объектов (один для входных файлов, а другой для выходных), выполнив шаги, описанные в разделе о [создании контейнера больших двоичных объектов](../vs-azure-tools-storage-explorer-blobs.md#create-a-blob-container).
     * В этом примере мы будем вызывать наш входной (`input`) и выходной (`output`) контейнеры.
-1. Передайте `main.py` и `iris.csv` во входной контейнер `input` с помощью Обозревателя службы хранилища, выполнив действия из статьи [Управление большими двоичными объектами в контейнере](../vs-azure-tools-storage-explorer-blobs.md#managing-blobs-in-a-blob-container).
+1. Передайте `main.py` и [`iris.csv`](https://www.kaggle.com/uciml/iris/version/2#Iris.csv) во входной контейнер `input` с помощью Обозревателя службы хранилища, выполнив действия из статьи [Управление большими двоичными объектами в контейнере](../vs-azure-tools-storage-explorer-blobs.md#managing-blobs-in-a-blob-container).
 
 
 ## <a name="develop-a-script-in-python"></a>Разработка скрипта на языке Python

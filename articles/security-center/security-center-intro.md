@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/06/2019
 ms.author: memildin
-ms.openlocfilehash: a02abd931dddd410882dd67a73a5b5fab6dc8cf9
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: f437205ae76feb36596b05ee0e320aaed0a37184
+ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82194896"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83846671"
 ---
 # <a name="what-is-azure-security-center"></a>Что такое Центр безопасности Azure?
 
@@ -41,7 +41,7 @@ ms.locfileid: "82194896"
 
 -   **Защита от угроз**. Центр безопасности оценивает рабочие нагрузки и выдает рекомендации по предотвращению угроз и оповещения системы безопасности.
 
--   **Быстрое получение системы безопасности**. В Центре безопасности все выполняется с облачной скоростью. Так как он изначально интегрирован, развернуть Центр безопасности несложно, он предоставляет автоматическую подготовку и защиту с помощью служб Azure.
+-   **Быстрое получение системы безопасности**. В Центре безопасности все выполняется с облачной скоростью. Так как он изначально интегрирован, развернуть Центр безопасности несложно благодаря автоматической подготовке и защите с помощью служб Azure.
 
 [!INCLUDE [azure-lighthouse-supported-service](../../includes/azure-lighthouse-supported-service.md)]
 

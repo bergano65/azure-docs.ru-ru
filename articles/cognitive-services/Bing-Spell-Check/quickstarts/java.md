@@ -8,18 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-spell-check
 ms.topic: quickstart
-ms.date: 12/16/2019
+ms.date: 05/21/2020
 ms.author: aahi
-ms.openlocfilehash: 491481156f026e9887244064297d0790a965158e
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+ms.openlocfilehash: f318a500bd4ce256690ff59f68d99af5d7a25d9e
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82735119"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83869816"
 ---
 # <a name="quickstart-check-spelling-with-the-bing-spell-check-rest-api-and-java"></a>Краткое руководство. Проверка орфографии с помощью REST API проверки орфографии Bing и Java
 
-В этом кратком руководстве показано, как отправить первый вызов к REST API "Проверка орфографии Bing". Это простое приложение Java отправляет запрос к API и возвращает список предлагаемых исправлений. Хотя это приложение создано на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/Search/BingSpellCheck.java).
+В этом кратком руководстве показано, как отправить первый вызов к REST API "Проверка орфографии Bing". Это простое приложение Java отправляет запрос к API и возвращает список предлагаемых исправлений. 
+
+Хотя это приложение создано на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/Search/BingSpellCheck.java).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -40,7 +42,7 @@ ms.locfileid: "82735119"
     import javax.net.ssl.HttpsURLConnection;
     ```
 
-2. Создайте переменные для узла конечной точки API, пути и ключа подписки. Затем создайте переменные для вашей отрасли, режима проверки орфографии и текста, который требуется проверить. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+2. Создайте переменные для узла конечной точки API, пути и ключа подписки. Затем создайте переменные для вашей отрасли, режима проверки орфографии и текста, который требуется проверить. Вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
 
     ```java
     static String host = "https://api.cognitive.microsoft.com";
@@ -55,7 +57,11 @@ ms.locfileid: "82735119"
 
 ## <a name="create-and-send-an-api-request"></a>Создание и отправка запроса API
 
-1. Создайте функцию с именем `check()`, чтобы создать и отправить запрос API. В рамках этой функции выполните следующие действия. Создайте строку для параметров запроса. Добавьте строку, содержащую параметр `?mkt=` со значением вашей отрасли и параметр `&mode=` со значением режима проверки орфографии.  
+1. Создайте функцию с именем `check()`, чтобы создать и отправить запрос API. Добавьте в эту функцию указанный на следующих шагах код. Создайте строку для параметров запроса.
+
+   а. Назначьте код рынка для параметра `mkt` с помощью оператора `=`. 
+
+   b. Добавьте параметр `mode` с оператором `&` и назначьте режим проверки орфографии. 
 
    ```java
    public static void check () throws Exception {
@@ -71,7 +77,7 @@ ms.locfileid: "82735119"
     HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
     ```
 
-3. Установите подключение к URL-адресу. Установите метод запроса `POST`. Добавьте параметры запроса. Не забудьте добавить ключ подписки в заголовок `Ocp-Apim-Subscription-Key`.
+3. Установите подключение к URL-адресу. Задайте для метода запроса значение `POST` и добавьте параметры запроса. Не забудьте добавить ключ подписки в заголовок `Ocp-Apim-Subscription-Key`.
 
     ```java
     connection.setRequestMethod("POST");
@@ -80,7 +86,7 @@ ms.locfileid: "82735119"
     connection.setDoOutput(true);
     ```
 
-4. Создайте новый объект `DataOutputStream` и отправьте запрос к API.
+4. Создайте объект `DataOutputStream` и отправьте запрос к API.
 
     ```java
         DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
@@ -91,7 +97,7 @@ ms.locfileid: "82735119"
 
 ## <a name="format-and-read-the-api-response"></a>Форматирование и считывание ответа API
 
-1. Добавьте следующий метод в класс. Он преобразовывает JSON в более понятные выходные данные.
+1. Добавьте метод `prettify()` в класс, который преобразовывает JSON в более понятные выходные данные.
 
     ``` java
     // This function prettifies the json response.
@@ -117,7 +123,7 @@ ms.locfileid: "82735119"
 
 ## <a name="call-the-api"></a>Вызов API
 
-В функции main приложения вызовите метод check(), созданный ранее.
+В функции main приложения вызовите метод `check()`, созданный ранее.
 ```java
         public static void main(String[] args) {
             try {
@@ -131,19 +137,19 @@ ms.locfileid: "82735119"
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
-Выполните сборку проекта и запустите его.
+Выполните сборку проекта и запустите его. При использовании командной строки выполните приведенные ниже команды для сборки и запуска приложения.
 
-При использовании командной строки выполните приведенные ниже команды для сборки и запуска приложения.
+1. Создайте приложение:
 
-**Сборка**:
-```bash
-javac -classpath .;gson-2.2.2.jar\* <CLASS_NAME>.java
-```
+   ```bash
+   javac -classpath .;gson-2.2.2.jar\* <CLASS_NAME>.java
+   ```
 
-**Запуск:**
-```bash
-java -cp .;gson-2.2.2.jar\* <CLASS_NAME>
-```
+2. Запустите приложение:
+
+   ```bash
+   java -cp .;gson-2.2.2.jar\* <CLASS_NAME>
+   ```
 
 ## <a name="example-json-response"></a>Пример ответа в формате JSON
 
@@ -193,4 +199,4 @@ java -cp .;gson-2.2.2.jar\* <CLASS_NAME>
 > [Создание одностраничного веб-приложения](../tutorials/spellcheck.md)
 
 - [Что такое API проверки орфографии Bing?](../overview.md)
-- [Справочник по API Проверки орфографии Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)
+- [Справочник по API Проверки орфографии Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)

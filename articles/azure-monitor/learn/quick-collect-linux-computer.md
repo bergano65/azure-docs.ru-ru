@@ -13,12 +13,12 @@ ms.topic: quickstart
 ms.date: 12/24/2019
 ms.author: bwren
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: 1da862a7994d7db5ee8c9f090119e14f19c6b13a
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 05dd9f6c2f1f08ec0e420bd4257d2c26e1963e5b
+ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80637891"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83850068"
 ---
 # <a name="quickstart-collect-data-from-a-linux-computer-in-a-hybrid-environment-with-azure-monitor"></a>Краткое руководство. Сбор данных с компьютера Linux в гибридной среде с помощью Azure Monitor
 
@@ -115,7 +115,7 @@ ms.locfileid: "80637891"
 
 Azure Monitor может собирать события из системного журнала и счетчиков производительности Linux, указанных для долгосрочного анализа и формирования отчетов. Служба также может выполнять определенные действия при обнаружении указанного условия. Сначала выполните приведенные ниже действия для настройки сбора событий из системного журнала Linux, а также нескольких стандартных счетчиков производительности.  
 
-1. Щелкните **Другие службы** в левом нижнем углу на портале Azure. В поле поиска введите **Log Analytics**. По мере ввода символов список отфильтруется соответствующим образом. Выберите **Рабочие области Log Analytics**.
+1. На портале Azure щелкните **Все службы**. В списке ресурсов введите Log Analytics. По мере ввода символов список отфильтруется соответствующим образом. Выберите **Рабочие области Log Analytics** и выберите в списке рабочих областей Log Analytics нужную рабочую область, затем перейдите к разделу **Дополнительные параметры** для этой рабочей области **Log Analytics**.
 
 2. Выберите **Данные** и **Системный журнал**.  
 

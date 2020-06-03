@@ -8,33 +8,39 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-spell-check
 ms.topic: quickstart
-ms.date: 12/16/2019
+ms.date: 05/21/2020
 ms.author: aahi
-ms.openlocfilehash: 036ea00362b604957a1887127fca0b8d775d4e7b
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 3bb126dc31620515c54a653ef595bfc017aaac73
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75382971"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83869599"
 ---
 # <a name="quickstart-check-spelling-with-the-bing-spell-check-rest-api-and-c"></a>Краткое руководство. Проверка орфографии с помощью REST API проверки орфографии Bing и C#
 
-В этом кратком руководстве показано, как отправить первый вызов к REST API "Проверка орфографии Bing". Это простое приложение C# отправляет запрос к API и возвращает список предлагаемых исправлений. Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/Search/BingAutosuggestv7.cs).
+В этом кратком руководстве показано, как отправить первый вызов к REST API "Проверка орфографии Bing". Это простое приложение C# отправляет запрос к API и возвращает список предлагаемых исправлений. 
+
+Это приложение написано на C#. Но API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/Search/BingAutosuggestv7.cs).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Любой выпуск [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/downloads/).
-* Чтобы установить `Newtonsoft.Json` в качестве пакета NuGet в Visual Studio, сделайте следующее.
-    1. Щелкните правой кнопкой мыши файл решения в **обозревателе решений**.
-    1. Выберите **Управление пакетами NuGet для решения**.
-    1. Затем выполните поиск пакета `Newtonsoft.Json` и установите его.
+* Пакет NuGet Newtonsoft.Json. 
+     
+   Чтобы установить этот пакет в Visual Studio, сделайте следующее:
+
+     1. Щелкните правой кнопкой мыши файл решения в **обозревателе решений**.
+     1. Выберите **Управление пакетами NuGet для решения**.
+     1. Найдите пакет *Newtonsoft.Json* и установите его.
+
 * Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
 
 [!INCLUDE [cognitive-services-bing-spell-check-signup-requirements](../../../../includes/cognitive-services-bing-spell-check-signup-requirements.md)]
 
 ## <a name="create-and-initialize-a-project"></a>Создание и инициализация проекта
 
-1. Создайте консольное решение `SpellCheckSample` в Visual Studio. Затем добавьте следующие пространства имен в основной файл кода.
+1. Создайте консольное решение SpellCheckSample в Visual Studio. Затем добавьте следующие пространства имен в основной файл кода:
     
     ```csharp
     using System;
@@ -46,7 +52,7 @@ ms.locfileid: "75382971"
     using Newtonsoft.Json;
     ```
 
-2. Создайте переменные для конечной точки API, ключа подписки и текста, в котором нужно проверить орфографию. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+2. Создайте переменные для конечной точки API, ключа подписки и текста, в котором нужно проверить орфографию. Вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
 
     ```csharp
     namespace SpellCheckSample
@@ -62,7 +68,11 @@ ms.locfileid: "75382971"
     }
     ```
 
-3. Создайте переменную для параметров поиска. Добавьте код рынка после `mkt=`. Код рынка определяет страну, из которой выполняется запрос. Кроме того, добавьте режим проверки орфографии после `&mode=`. Можно указать режим `proof` (выявляет большинство орфографических и грамматических ошибок) или `spell` (выявляет большинство орфографических ошибок, но не так много грамматических ошибок).
+3. Создайте строку для параметров поиска: 
+
+   а. Назначьте код рынка для параметра `mkt` с помощью оператора `=`. Код рынка — это код страны или региона, из которого выполняется запрос. 
+
+   b. Добавьте параметр `mode` с оператором `&` и назначьте режим проверки орфографии. Можно указать режим `proof` (выявляет большинство орфографических и грамматических ошибок) или `spell` (выявляет большинство орфографических ошибок, но не так много грамматических ошибок).
     
     ```csharp
     static string params_ = "mkt=en-US&mode=proof";
@@ -70,7 +80,7 @@ ms.locfileid: "75382971"
 
 ## <a name="create-and-send-a-spell-check-request"></a>Создание и отправка запроса на проверку орфографии
 
-1. Создайте асинхронную функцию `SpellCheck()` для отправки запроса в API. Создайте `HttpClient` и добавьте ключ подписки в заголовок `Ocp-Apim-Subscription-Key`. Затем выполните следующие шаги в рамках функции.
+1. Создайте асинхронную функцию `SpellCheck()` для отправки запроса в API. Создайте `HttpClient` и добавьте ключ подписки в заголовок `Ocp-Apim-Subscription-Key`. В функции выполните описанные ниже действия.
 
     ```csharp
     async static void SpellCheck()
@@ -127,7 +137,7 @@ Console.WriteLine(jsonObj);
 
 ## <a name="call-the-spell-check-function"></a>Вызов функции проверки орфографии
 
-В функции Main проекта вызовите `SpellCheck()`.
+В функции `Main()` проекта вызовите `SpellCheck()`.
 
 ```csharp
 static void Main(string[] args)
@@ -189,4 +199,4 @@ static void Main(string[] args)
 > [Создание одностраничного веб-приложения](../tutorials/spellcheck.md)
 
 - [Что такое API проверки орфографии Bing?](../overview.md)
-- [Справочник по API Проверки орфографии Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)
+- [Справочник по API "Проверка орфографии Bing" версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)
