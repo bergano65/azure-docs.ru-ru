@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 04/15/2020
 ms.author: owend
 ms.reviewer: owend
-ms.openlocfilehash: 0bedc88b78f2ac758d3201965425b42b69580719
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: 6e757260c7cd8945ff75dd0e760f3afeffd992f9
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81454260"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84016395"
 ---
 # <a name="tutorial-configure-server-administrator-and-user-roles"></a>Руководство по Настройка ролей администратора и пользователя сервера
 
@@ -59,7 +59,7 @@ ms.locfileid: "81454260"
     ![Подключение в среде SSMS](./media/analysis-services-tutorial-roles/aas-connect-ssms-auth.png)
 
     > [!TIP]
-    > Мы рекомендуем выбрать универсальную аутентификацию Active Directory с поддержкой MFA. Такой тип позволяет применять [неинтерактивную и многофакторную проверку подлинности](../../sql-database/sql-database-ssms-mfa-authentication.md). 
+    > Мы рекомендуем выбрать универсальную аутентификацию Active Directory с поддержкой MFA. Такой тип позволяет применять [неинтерактивную и многофакторную проверку подлинности](../../azure-sql/database/authentication-mfa-ssms-overview.md). 
 
 3. В **обозревателе объектов** разверните узел объектов сервера. Щелкните имя сервера правой кнопкой мыши, чтобы открыть его свойства.
    
