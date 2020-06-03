@@ -7,16 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: overview
-ms.date: 03/04/2020
+ms.date: 05/19/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aba42e6bd9b11e47d793219c0ff06b9177d609f5
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: f149678bd65ff47b8582e56cf376d88284c8fa8b
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78298825"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83681328"
 ---
 # <a name="pilot-cloud-provisioning-for-an-existing-synced-ad-forest"></a>Пилотная подготовка облака для существующего синхронизированного леса AD 
 
@@ -199,7 +199,9 @@ ms.locfileid: "78298825"
 3.  Выполните `Start-ADSyncSyncCycle`.  Нажмите клавишу ВВОД.  
 
 >[!NOTE] 
->Если вы используете собственный настраиваемый планировщик для синхронизации AAD Connect, включите его. 
+>Если вы используете собственный настраиваемый планировщик для синхронизации Azure AD Connect, включите его. 
+
+После включения планировщика Azure AD Connect будет прерывать экспорт любых изменений в объектах с `cloudNoFlow=true` в метавселенной, если не будет обновлен какой-либо атрибут ссылки (например, manager). Если для объекта выполнено обновление ссылочного атрибута, Azure AD Connect будет игнорировать сигнал `cloudNoFlow` и экспортировать все обновления для объекта.
 
 ## <a name="something-went-wrong"></a>Если что-то пошло не так
 Если пилотный проект не работает должным образом, вы можете вернуться к настройке службы синхронизации Azure AD Connect, выполнив следующие шаги.
