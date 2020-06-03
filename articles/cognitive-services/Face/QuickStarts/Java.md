@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 59c121f09858114cecfaeb45e257315d1ab92935
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 241aad3e9bf78d587c7f31d8046de171bd2638b3
+ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81403424"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84263998"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-java"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Java
 
@@ -248,7 +248,7 @@ public class Main {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В рамках этого краткого руководства вы создали простое консольное приложение Java, которое использует вызовы REST с API Azure "Распознавание лиц" для обнаружения лиц на изображении и возврата их атрибутов. Узнайте, что еще можно делать с помощью этой функции в приложении Android.
+В рамках этого краткого руководства вы создали простое консольное приложение Java, которое использует вызовы REST с API Azure "Распознавание лиц" для обнаружения лиц на изображении и возврата их атрибутов. Затем ознакомьтесь со справочной документацией по API распознавания лиц, чтобы узнать больше о поддерживаемых сценариях.
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание приложения Android для обнаружения и выделения лиц на изображении](../Tutorials/FaceAPIinJavaForAndroidTutorial.md)
+> [API Распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
