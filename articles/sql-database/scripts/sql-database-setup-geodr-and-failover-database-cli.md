@@ -11,12 +11,12 @@ author: mashamsft
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: 3bc6cbe025854286b0a24a34240396eea16292b6
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 93afb5b52df7ac3ff638ff5fc180c3c4774880b8
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80067412"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84020393"
 ---
 # <a name="use-cli-to-configure-active-geo-replication-for-a-single-database-in-azure-sql-database"></a>Настройка активной георепликации для отдельной базы данных в Базе данных SQL Azure с помощью CLI
 
@@ -60,4 +60,4 @@ az group delete --name $resource
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
-Дополнительные примеры сценариев интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../sql-database-cli-samples.md).
+Дополнительные примеры сценариев интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../../azure-sql/database/az-cli-script-samples-content-guide.md).

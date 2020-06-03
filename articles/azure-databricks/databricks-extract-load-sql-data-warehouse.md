@@ -8,12 +8,12 @@ ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 01/29/2020
-ms.openlocfilehash: fa7750a6e7888b6ca13c1ec32cabee9bcf803e65
-ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
+ms.openlocfilehash: d97fae777b06625488234eb6d48a74a60a83f4d6
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81382735"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84018724"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство по Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
@@ -370,7 +370,7 @@ ms.locfileid: "81382735"
    > [!NOTE]
    > В этом примере используется флаг `forward_spark_azure_storage_credentials`, который вызывает Azure Synapse для доступа к данным из хранилища BLOB-объектов с помощью ключа доступа. Это единственный поддерживаемый способ проверки подлинности.
    >
-   > Если для хранилища BLOB-объектов Azure нельзя выбирать виртуальные сети, Azure Synapse запросит [Управляемое удостоверение службы, а не ключи доступа](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). В таком случае вы получите ошибку с сообщением о том, что у вызывающей стороны нет прав на выполнение этой операции.
+   > Если для хранилища BLOB-объектов Azure нельзя выбирать виртуальные сети, Azure Synapse запросит [Управляемое удостоверение службы, а не ключи доступа](../azure-sql/database/vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). В таком случае вы получите ошибку с сообщением о том, что у вызывающей стороны нет прав на выполнение этой операции.
 
 6. Подключитесь к базе данных SQL и убедитесь, что вы видите базу данных **SampleTable**.
 

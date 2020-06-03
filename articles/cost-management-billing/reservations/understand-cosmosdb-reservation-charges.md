@@ -7,12 +7,12 @@ ms.reviewer: sngun
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 02/12/2020
-ms.openlocfilehash: 81818cc5ba2af1f9f0f70f7aa27fe62ed2c90c77
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: bfa84a993fafe9240ba765de8d87ea4afb69cbd5
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80065684"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84015953"
 ---
 # <a name="understand-how-the-reservation-discount-is-applied-to-azure-cosmos-db"></a>Общие сведения о применении скидки на резервирование в Azure Cosmos DB
 
@@ -117,7 +117,7 @@ ms.locfileid: "80065684"
 
 * [Общие сведения об Azure Reserved VM Instances](save-compute-costs-reservations.md)  
 * [Предоплата ресурсов Azure Cosmos DB с зарезервированной емкостью Azure Cosmos DB](../../cosmos-db/cosmos-db-reserved-capacity.md)  
-* [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../../sql-database/sql-database-reserved-capacity.md)  
+* [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../../azure-sql/database/reserved-capacity-overview.md)  
 * [Управление резервированиями для Azure](manage-reserved-vm-instance.md)  
 * [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](understand-reserved-instance-usage.md)  
 * [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](understand-reserved-instance-usage-ea.md)
