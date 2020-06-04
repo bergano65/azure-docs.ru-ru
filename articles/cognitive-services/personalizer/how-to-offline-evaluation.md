@@ -7,15 +7,15 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/20/2020
 ms.author: diberry
-ms.openlocfilehash: ce85c2d264b2b4849a4a36ed757150292fdf39f0
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 2fa4e47f600737c9bff5dbff4dd743946b4e82aa
+ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77622778"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84342159"
 ---
 # <a name="analyze-your-learning-loop-with-an-offline-evaluation"></a>Анализ цикла обучения с помощью автономной оценки
 
@@ -59,6 +59,6 @@ ms.locfileid: "77622778"
 
 1. Нажмите кнопку **Применить** , чтобы применить политику, которая повышает эффективность модели для данных.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [работе ознакомительных версий в автономном режиме](concepts-offline-evaluation.md).

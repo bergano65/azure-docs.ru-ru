@@ -8,34 +8,34 @@ ms.custom: seodec18
 services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/20/2019
 ms.author: diberry
-ms.openlocfilehash: c4ea9c5663755a4feb1693dd925d99b10c466140
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 7726219076aee0c25c59f57003967cf2220d531f
+ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "70256608"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84344175"
 ---
 # <a name="use-microsoft-azure-traffic-manager-to-manage-endpoint-quota-across-keys"></a>Использование диспетчера трафика Microsoft Azure для распределения квоты конечной точки на несколько ключей
-Служба "Распознавание речи" (LUIS) позволяет увеличить квоту запросы конечной точки за пределы квоты для одного ключа. Для этого создайте дополнительные ключи для LUIS и добавьте их в приложение LUIS на странице **Публикация** в разделе **Ресурсы и ключи**. 
+Служба "Распознавание речи" (LUIS) позволяет увеличить квоту запросы конечной точки за пределы квоты для одного ключа. Для этого создайте дополнительные ключи для LUIS и добавьте их в приложение LUIS на странице **Публикация** в разделе **Ресурсы и ключи**.
 
-Клиентское приложение должно управлять трафиком между ключами. LUIS не делает этого. 
+Клиентское приложение должно управлять трафиком между ключами. LUIS не делает этого.
 
-В этой статье описано, как управлять трафиком между ключами с помощью [диспетчера трафика Azure][traffic-manager-marketing]. Вам потребуется обученное и опубликованное приложение LUIS. Если у вас его нет, воспользуйтесь [руководством по началу работы](luis-get-started-create-app.md) с предварительно созданными доменами. 
+В этой статье описано, как управлять трафиком между ключами с помощью [диспетчера трафика Azure][traffic-manager-marketing]. Вам потребуется обученное и опубликованное приложение LUIS. Если у вас его нет, воспользуйтесь [руководством по началу работы](luis-get-started-create-app.md) с предварительно созданными доменами.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="connect-to-powershell-in-the-azure-portal"></a>Подключение к PowerShell на портале Azure
-На портале [Azure][azure-portal] откройте окно PowerShell. Значок окна PowerShell — **>_** в верхней панели навигации. Используя PowerShell на портале, вы получаете последнюю версию PowerShell и автоматически проходите проверку подлинности. Для использования PowerShell на портале требуется [учетная запись хранения Azure](https://azure.microsoft.com/services/storage/). 
+На портале [Azure][azure-portal] откройте окно PowerShell. Значок окна PowerShell — **>_** в верхней панели навигации. Используя PowerShell на портале, вы получаете последнюю версию PowerShell и автоматически проходите проверку подлинности. Для использования PowerShell на портале требуется [учетная запись хранения Azure](https://azure.microsoft.com/services/storage/).
 
 ![Снимок экрана портала Azure с открытым окном PowerShell](./media/traffic-manager/azure-portal-powershell.png)
 
 В следующих разделах используйте [командлеты PowerShell диспетчера трафика](https://docs.microsoft.com/powershell/module/az.trafficmanager/#traffic_manager).
 
 ## <a name="create-azure-resource-group-with-powershell"></a>Создание группы ресурсов Azure с помощью PowerShell
-Прежде чем создавать ресурсы Azure, создайте группу ресурсов, в которую будут входить все ресурсы. Укажите имя группы ресурсов `luis-traffic-manager` и регион `West US`. В регионе группы ресурсов хранятся метаданные о группе. Если ваши ресурсы находятся в другом регионе, это не скажется на скорости их работы. 
+Прежде чем создавать ресурсы Azure, создайте группу ресурсов, в которую будут входить все ресурсы. Укажите имя группы ресурсов `luis-traffic-manager` и регион `West US`. В регионе группы ресурсов хранятся метаданные о группе. Если ваши ресурсы находятся в другом регионе, это не скажется на скорости их работы.
 
 Создайте группу ресурсов с помощью командлета **[New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup)** :
 
@@ -44,16 +44,16 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
 ```
 
 ## <a name="create-luis-keys-to-increase-total-endpoint-quota"></a>Создание ключей LUIS для увеличения общей квоты конечной точки
-1. На портале Azure создайте два ключа службы **Распознавание речи**: в `West US` и `East US`. Используйте существующую группу ресурсов `luis-traffic-manager`, созданную в предыдущем разделе. 
+1. На портале Azure создайте два ключа службы **Распознавание речи**: в `West US` и `East US`. Используйте существующую группу ресурсов `luis-traffic-manager`, созданную в предыдущем разделе.
 
     ![Снимок экрана портала Azure с двумя ключами LUIS в группе ресурсов luis-traffic-manager](./media/traffic-manager/luis-keys.png)
 
-2. На веб-сайте [Luis][LUIS] в разделе **Управление** на странице **ресурсы Azure** назначьте ключи приложению и повторно опубликуйте приложение, нажав кнопку **опубликовать** в правом верхнем меню. 
+2. На веб-сайте [Luis][LUIS] в разделе **Управление** на странице **ресурсы Azure** назначьте ключи приложению и повторно опубликуйте приложение, нажав кнопку **опубликовать** в правом верхнем меню.
 
     В примере URL-адреса в столбце **Конечная точка** используется запрос GET с ключом конечной точки в качестве параметра запроса. Скопируйте URL-адреса конечной точки для двух новых ключей. Они используются для настройки диспетчера трафика далее в этой статье.
 
 ## <a name="manage-luis-endpoint-requests-across-keys-with-traffic-manager"></a>Распределение запросов к конечным точкам LUIS между ключами с помощью диспетчера трафика
-Диспетчер трафика создает новую точку доступа DNS для ваших конечных точек. Она действует не на уровне шлюза или прокси, а исключительно на уровне DNS. В этом примере не изменяются записи DNS. Библиотека DNS используется для взаимодействия с диспетчером трафика, чтобы получить конечную точку для указанного запроса. Для выполнения _каждого_ запроса LUIS сначала необходимо отправить запрос к диспетчеру трафика, чтобы определить используемую конечную точку LUIS. 
+Диспетчер трафика создает новую точку доступа DNS для ваших конечных точек. Она действует не на уровне шлюза или прокси, а исключительно на уровне DNS. В этом примере не изменяются записи DNS. Библиотека DNS используется для взаимодействия с диспетчером трафика, чтобы получить конечную точку для указанного запроса. Для выполнения _каждого_ запроса LUIS сначала необходимо отправить запрос к диспетчеру трафика, чтобы определить используемую конечную точку LUIS.
 
 ### <a name="polling-uses-luis-endpoint"></a>Опрос с использованием конечной точки LUIS
 Диспетчер трафика периодически опрашивает конечные точки, чтобы проверить, что конечная точка по-прежнему доступна. URL-адрес, опрашиваемый диспетчером трафика, должен быть доступен с помощью запроса GET и должен возвращать ответ 200. Этим условиям отвечает URL-адрес конечной точки на странице **Публикация**. Поскольку у каждого ключа конечной точки есть свой маршрут и параметры строки запроса, для каждого ключа конечной точки требуется использовать собственный путь опроса. Каждый раз, когда диспетчер трафика выполняет опрос, он использует запрос стоимости квоты. Параметр строки запроса **q** конечной точки LUIS представляет собой высказывание, отправляемое в LUIS. Этот параметр используется не для отправки высказывания, а для добавления опроса диспетчера трафика в журнал конечной точки LUIS с целью отладки при настройке диспетчера трафика.
@@ -63,10 +63,10 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
 После настройки диспетчера трафика не забудьте изменить путь, указав параметр строки запроса logging=false, чтобы в журнал не записывались сведения об опросе.
 
 ## <a name="configure-traffic-manager-with-nested-profiles"></a>Настройка диспетчера трафика с использованием вложенных профилей
-В следующих разделах будут созданы два дочерних профиля: один для ключа LUIS в регионе "Восточная часть США" и другой для ключа LUIS в регионе "Западная часть США". Затем будет создан родительский профиль, и оба дочерних профиля будут добавлены в родительский. 
+В следующих разделах будут созданы два дочерних профиля: один для ключа LUIS в регионе "Восточная часть США" и другой для ключа LUIS в регионе "Западная часть США". Затем будет создан родительский профиль, и оба дочерних профиля будут добавлены в родительский.
 
 ### <a name="create-the-east-us-traffic-manager-profile-with-powershell"></a>Создание профиля диспетчера трафика для региона "Восточная часть США" с помощью PowerShell
-Чтобы создать профиль для региона "Восточная часть США", необходимо выполнить несколько действий: создать профиль, добавить конечную точку и настроить конечную точку. Профиль диспетчера трафика может включать несколько конечных точек, но у каждой конечной точки один и тот же путь проверки. Поскольку URL-адреса конечных точек LUIS подписок для регионов "Западная часть США" и "Восточная часть США" различаются по региону и ключу конечной точки, то каждая конечная точка LUIS должна быть единственной конечной точкой в профиле. 
+Чтобы создать профиль для региона "Восточная часть США", необходимо выполнить несколько действий: создать профиль, добавить конечную точку и настроить конечную точку. Профиль диспетчера трафика может включать несколько конечных точек, но у каждой конечной точки один и тот же путь проверки. Поскольку URL-адреса конечных точек LUIS подписок для регионов "Западная часть США" и "Восточная часть США" различаются по региону и ключу конечной точки, то каждая конечная точка LUIS должна быть единственной конечной точкой в профиле.
 
 1. Создание профиля с помощью командлета **[New-азтраффикманажерпрофиле](https://docs.microsoft.com/powershell/module/az.trafficmanager/new-aztrafficmanagerprofile)**
 
@@ -75,9 +75,9 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     ```powerShell
     $eastprofile = New-AzTrafficManagerProfile -Name luis-profile-eastus -ResourceGroupName luis-traffic-manager -TrafficRoutingMethod Performance -RelativeDnsName luis-dns-eastus -Ttl 30 -MonitorProtocol HTTPS -MonitorPort 443 -MonitorPath "/luis/v2.0/apps/<appID>?subscription-key=<subscriptionKey>&q=traffic-manager-east"
     ```
-    
+
     В таблице ниже показаны значения каждой переменной в командлете:
-    
+
     |Параметр конфигурации|Имя переменной или значение|Назначение|
     |--|--|--|
     |-Name|luis-profile-eastus|Имя диспетчера трафика на портале Azure|
@@ -87,7 +87,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     |-Ttl|30|Интервал опроса, 30 секунд|
     |-MonitorProtocol<BR>-MonitorPort|HTTPS<br>443|Порт и протокол для LUIS — HTTPS-порт 443|
     |-MonitorPath|`/luis/v2.0/apps/<appIdLuis>?subscription-key=<subscriptionKeyLuis>&q=traffic-manager-east`|Замените `<appIdLuis>` и `<subscriptionKeyLuis>` собственными значениями.|
-    
+
     Для успешного запроса ответ не возвращается.
 
 2. Добавление конечной точки восточной части США с помощью командлета **[Add-азтраффикманажерендпоинтконфиг](https://docs.microsoft.com/powershell/module/az.trafficmanager/add-aztrafficmanagerendpointconfig)**
@@ -143,9 +143,9 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     ```powerShell
     $westprofile = New-AzTrafficManagerProfile -Name luis-profile-westus -ResourceGroupName luis-traffic-manager -TrafficRoutingMethod Performance -RelativeDnsName luis-dns-westus -Ttl 30 -MonitorProtocol HTTPS -MonitorPort 443 -MonitorPath "/luis/v2.0/apps/<appIdLuis>?subscription-key=<subscriptionKeyLuis>&q=traffic-manager-west"
     ```
-    
+
     В таблице ниже показаны значения каждой переменной в командлете:
-    
+
     |Параметр конфигурации|Имя переменной или значение|Назначение|
     |--|--|--|
     |-Name|luis-profile-westus|Имя диспетчера трафика на портале Azure|
@@ -155,7 +155,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     |-Ttl|30|Интервал опроса, 30 секунд|
     |-MonitorProtocol<BR>-MonitorPort|HTTPS<br>443|Порт и протокол для LUIS — HTTPS-порт 443|
     |-MonitorPath|`/luis/v2.0/apps/<appIdLuis>?subscription-key=<subscriptionKeyLuis>&q=traffic-manager-west`|Замените `<appId>` и `<subscriptionKey>` собственными значениями. Помните, что этот ключ конечной точки отличается от ключа конечной точки в регионе "Восточная часть США"|
-    
+
     Для успешного запроса ответ не возвращается.
 
 2. Добавление конечной точки "Западная часть США" с помощью командлета **[Add-азтраффикманажерендпоинтконфиг](https://docs.microsoft.com/powershell/module/az.TrafficManager/Add-azTrafficManagerEndpointConfig)**
@@ -243,7 +243,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     |-EndpointLocation|"eastus"|[Имя региона Azure](https://azure.microsoft.com/global-infrastructure/regions/) ресурса.|
     |-MinChildEndpoints|1|Минимальное число дочерних конечных точек|
 
-    Успешный ответ будет похож на приведенный ниже и будет включать новую конечную точку `child-endpoint-useast`:    
+    Успешный ответ будет похож на приведенный ниже и будет включать новую конечную точку `child-endpoint-useast`:
 
     ```console
     Id                               : /subscriptions/<azure-subscription-id>/resourceGroups/luis-traffic-manager/providers/Microsoft.Network/trafficManagerProfiles/luis-profile-parent
@@ -299,7 +299,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     Endpoints                        : {child-endpoint-useast, child-endpoint-uswest}
     ```
 
-4. Установка конечных точек с помощью командлета **[Set-азтраффикманажерпрофиле](https://docs.microsoft.com/powershell/module/az.TrafficManager/Set-azTrafficManagerProfile)** 
+4. Установка конечных точек с помощью командлета **[Set-азтраффикманажерпрофиле](https://docs.microsoft.com/powershell/module/az.TrafficManager/Set-azTrafficManagerProfile)**
 
     ```powerShell
     Set-AzTrafficManagerProfile -TrafficManagerProfile $parentprofile
@@ -308,16 +308,16 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     Успешный ответ аналогичен успешному ответу на шаге 3.
 
 ### <a name="powershell-variables"></a>Переменные PowerShell
-В предыдущих разделах были созданы три переменные PowerShell: `$eastprofile`, `$westprofile`, `$parentprofile`. Эти переменные используются на конечном этапе настройки диспетчера трафика. Если вы решили не создавать переменные или забыли, или окно PowerShell истечет, можно использовать командлет PowerShell **[Get-азтраффикманажерпрофиле](https://docs.microsoft.com/powershell/module/az.TrafficManager/Get-azTrafficManagerProfile)**, чтобы снова получить профиль и назначить его переменной. 
+В предыдущих разделах были созданы три переменные PowerShell: `$eastprofile`, `$westprofile`, `$parentprofile`. Эти переменные используются на конечном этапе настройки диспетчера трафика. Если вы решили не создавать переменные или забыли, или окно PowerShell истечет, можно использовать командлет PowerShell **[Get-азтраффикманажерпрофиле](https://docs.microsoft.com/powershell/module/az.TrafficManager/Get-azTrafficManagerProfile)**, чтобы снова получить профиль и назначить его переменной.
 
-Замените элементы в угловых скобках (`<>`) на соответствующие значения для каждого из трех профилей. 
+Замените элементы в угловых скобках (`<>`) на соответствующие значения для каждого из трех профилей.
 
 ```powerShell
 $<variable-name> = Get-AzTrafficManagerProfile -Name <profile-name> -ResourceGroupName luis-traffic-manager
 ```
 
 ## <a name="verify-traffic-manager-works"></a>Проверка работы диспетчера трафика
-О работоспособности профилей диспетчера трафика свидетельствует состояние `Online`. Это состояние определяется на основе пути опроса конечной точки. 
+О работоспособности профилей диспетчера трафика свидетельствует состояние `Online`. Это состояние определяется на основе пути опроса конечной точки.
 
 ### <a name="view-new-profiles-in-the-azure-portal"></a>Просмотр новых профилей на портале Azure
 Чтобы убедиться, что все три профиля созданы, посмотрите на ресурсы в группе ресурсов `luis-traffic-manager`.
@@ -325,7 +325,7 @@ $<variable-name> = Get-AzTrafficManagerProfile -Name <profile-name> -ResourceGro
 ![Снимок экрана группы ресурсов Azure luis-traffic-manager](./media/traffic-manager/traffic-manager-profiles.png)
 
 ### <a name="verify-the-profile-status-is-online"></a>Проверка состояния профиля "В сети"
-Диспетчер трафика опрашивает путь к каждой из конечных точек, чтобы убедиться, что она находится в рабочем режиме. Если она находится в рабочем режиме, дочерние профили находятся в состоянии `Online`. Это состояние отображается на странице **Обзор** каждого профиля. 
+Диспетчер трафика опрашивает путь к каждой из конечных точек, чтобы убедиться, что она находится в рабочем режиме. Если она находится в рабочем режиме, дочерние профили находятся в состоянии `Online`. Это состояние отображается на странице **Обзор** каждого профиля.
 
 ![Снимок экрана страницы "Обзор" профиля диспетчера трафика с состоянием профиля "В сети"](./media/traffic-manager/profile-status-online.png)
 
@@ -355,25 +355,25 @@ dns.resolveAny('luis-dns-parent.trafficmanager.net', (err, ret) => {
 ```json
 [
     {
-        value: 'westus.api.cognitive.microsoft.com', 
+        value: 'westus.api.cognitive.microsoft.com',
         type: 'CNAME'
     }
 ]
 ```
 
 ## <a name="use-the-traffic-manager-parent-profile"></a>Использование родительского профиля диспетчера трафика
-Чтобы управлять трафиком между конечными точками, необходимо добавить вызов DNS диспетчера трафика для поиска конечной точки LUIS. Этот вызов выполняется для каждого запроса LUIS к конечной точке и должен имитировать географическое расположение пользователя клиентского приложения LUIS. Добавьте код ответа DNS между клиентским приложением LUIS и запросом к LUIS для определения конечной точки. 
+Чтобы управлять трафиком между конечными точками, необходимо добавить вызов DNS диспетчера трафика для поиска конечной точки LUIS. Этот вызов выполняется для каждого запроса LUIS к конечной точке и должен имитировать географическое расположение пользователя клиентского приложения LUIS. Добавьте код ответа DNS между клиентским приложением LUIS и запросом к LUIS для определения конечной точки.
 
 ## <a name="resolving-a-degraded-state"></a>Разрешение состояния пониженной функциональности
 
 Включите [журналы диагностики](../../traffic-manager/traffic-manager-diagnostic-logs.md) для диспетчера трафика, чтобы узнать, почему конечная точка находится в состоянии пониженной функциональности.
 
 ## <a name="clean-up"></a>Очистка
-Удалите два ключа конечной точки LUIS, три профиля диспетчера трафика и группу ресурсов, содержащую эти пять ресурсов. Это необходимо сделать на портале Azure. Удалите пять ресурсов из списка ресурсов. Затем удалите группу ресурсов. 
+Удалите два ключа конечной точки LUIS, три профиля диспетчера трафика и группу ресурсов, содержащую эти пять ресурсов. Это необходимо сделать на портале Azure. Удалите пять ресурсов из списка ресурсов. Затем удалите группу ресурсов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы узнать, как добавить код управления трафиком в бот BotFramework, ознакомьтесь с вариантами [ПО промежуточного слоя](https://docs.microsoft.com/azure/bot-service/bot-builder-create-middleware?view=azure-bot-service-4.0&tabs=csaddmiddleware%2Ccsetagoverwrite%2Ccsmiddlewareshortcircuit%2Ccsfallback%2Ccsactivityhandler) в BotFramework версии 4. 
+Чтобы узнать, как добавить код управления трафиком в бот BotFramework, ознакомьтесь с вариантами [ПО промежуточного слоя](https://docs.microsoft.com/azure/bot-service/bot-builder-create-middleware?view=azure-bot-service-4.0&tabs=csaddmiddleware%2Ccsetagoverwrite%2Ccsmiddlewareshortcircuit%2Ccsfallback%2Ccsactivityhandler) в BotFramework версии 4.
 
 [traffic-manager-marketing]: https://azure.microsoft.com/services/traffic-manager/
 [traffic-manager-docs]: https://docs.microsoft.com/azure/traffic-manager/

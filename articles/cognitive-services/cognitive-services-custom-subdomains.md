@@ -96,7 +96,7 @@ Cognitive Services ресурсов, созданных до 1 июля, 2019 б
 | Китай | Восточный Китай 2 | `https://chinaeast2.api.cognitive.azure.cn` |
 | | Северный Китай | `https://chinanorth.api.cognitive.azure.cn` |
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Что такое Cognitive Services?](Welcome.md)
 * [Аутентификация](authentication.md)

@@ -8,15 +8,15 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/17/2020
 ms.author: diberry
-ms.openlocfilehash: 2c28e6c1edf4188cf3ea80c14565785dcf1dcbba
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 62f049624f4ad7ff7ce6d685b08c54875aab86f0
+ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83653823"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84345229"
 ---
 # <a name="steps-to-migrate-to-the-azure-authoring-resource"></a>Шаги для перехода на ресурс разработки Azure
 
@@ -116,7 +116,7 @@ ms.locfileid: "83653823"
 
 Если на `MissingSubscriptionRegistration` портале Luis появляется сообщение об ошибке с красной панелью уведомлений во время процесса миграции, создайте ресурс «неработающая служба» в [портал Azure](luis-how-to-azure-subscription.md#create-resources-in-the-azure-portal) или [Azure CLI](luis-how-to-azure-subscription.md#create-resources-in-azure-cli). Узнайте больше о [причинах этой ошибки](../../azure-resource-manager/templates/error-register-resource-provider.md#cause).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 
 * Ознакомьтесь с [основными понятиями](luis-concept-keys.md) о создании ключей и ключах среды выполнения
