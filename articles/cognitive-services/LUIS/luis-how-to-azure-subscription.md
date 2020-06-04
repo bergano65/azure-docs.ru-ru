@@ -2,14 +2,14 @@
 title: Как использовать ключи разработки и среды выполнения — LUIS
 description: При первом использовании Language Understanding (LUIS) не нужно создавать ключ разработки. Если вы планируете опубликовать приложение, а затем используйте конечную точку среды выполнения, необходимо создать и назначить приложению ключ среды выполнения.
 services: cognitive-services
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/06/2020
-ms.openlocfilehash: d9235b6ef1c7cddbfbbd36f8382439d781af6d5f
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: c566e8fe56d19856f5a577e472929b7610497d7c
+ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82101031"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84344464"
 ---
 # <a name="create-luis-resources"></a>Создание ресурсов LUIS
 
@@ -51,7 +51,7 @@ ms.locfileid: "82101031"
 
 Используйте [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) , чтобы создать каждый ресурс по отдельности.
 
-Ресурс `kind`:
+Ресурс `kind` :
 
 * Работы`LUIS.Authoring`
 * Прогнозирующее`LUIS`
@@ -64,13 +64,13 @@ ms.locfileid: "82101031"
 
     Откроется браузер, позволяющий выбрать правильную учетную запись и обеспечить проверку подлинности.
 
-1. Создайте ресурс для создания **Luis**, тип `LUIS.Authoring`которого `my-luis-authoring-resource` в _существующей_ группе ресурсов с именем `my-resource-group` для `westus` региона.
+1. Создайте ресурс для создания **Luis**, тип которого `LUIS.Authoring` `my-luis-authoring-resource` в _существующей_ группе ресурсов с именем `my-resource-group` для `westus` региона.
 
     ```azurecli
     az cognitiveservices account create -n my-luis-authoring-resource -g my-resource-group --kind LUIS.Authoring --sku F0 -l westus --yes
     ```
 
-1. Создайте **ресурс Luis прогнозирующих точек**типа `LUIS` `my-luis-prediction-resource` с именем в _существующей_ группе ресурсов с именем `my-resource-group` для `westus` региона. Если требуется более высокая пропускная способность, чем уровень Free `F0` , `S0`измените на. Дополнительные сведения о [ценовых категориях и пропускной способности](luis-limits.md#key-limits).
+1. Создайте **ресурс Luis прогнозирующих точек**типа `LUIS` с именем `my-luis-prediction-resource` в _существующей_ группе ресурсов с именем `my-resource-group` для `westus` региона. Если требуется более высокая пропускная способность, чем уровень Free, измените `F0` на `S0` . Дополнительные сведения о [ценовых категориях и пропускной способности](luis-limits.md#key-limits).
 
     ```azurecli
     az cognitiveservices account create -n my-luis-prediction-resource -g my-resource-group --kind LUIS --sku F0 -l westus --yes
@@ -111,7 +111,7 @@ ms.locfileid: "82101031"
 
     Этот API POST принимает указанные ниже параметры.
 
-    |Заголовок|Применение|
+    |Заголовок|Значение|
     |--|--|
     |`Authorization`|Значение заголовка `Authorization` — `Bearer {token}`. Обратите внимание, что перед значением маркера должны находиться слово `Bearer` и пробел.|
     |`Ocp-Apim-Subscription-Key`|Ваш ключ разработки.|
@@ -124,9 +124,9 @@ ms.locfileid: "82101031"
 
     |Тип|Параметр|Применение|
     |--|--|--|
-    |Заголовок|`Authorization`|Значение заголовка `Authorization` — `Bearer {token}`. Обратите внимание, что перед значением маркера должны находиться слово `Bearer` и пробел.|
-    |Заголовок|`Ocp-Apim-Subscription-Key`|Ваш ключ разработки.|
-    |Заголовок|`Content-type`|`application/json`|
+    |Header|`Authorization`|Значение заголовка `Authorization` — `Bearer {token}`. Обратите внимание, что перед значением маркера должны находиться слово `Bearer` и пробел.|
+    |Header|`Ocp-Apim-Subscription-Key`|Ваш ключ разработки.|
+    |Header|`Content-type`|`application/json`|
     |Строка запроса|`appid`|Идентификатор приложения LUIS.
     |Текст||{"AzureSubscriptionId":"ddda2925-af7f-4b05-9ba1-2155c5fe8a8e",<br>"ResourceGroup": "resourcegroup-2",<br>"AccountName": "luis-uswest-S0-2"}|
 
@@ -150,7 +150,7 @@ ms.locfileid: "82101031"
 
 Повторно создайте ключи Azure из портал Azure на странице **ключи** .
 
-## <a name="delete-account"></a>Удаление учетной записи
+## <a name="delete-account"></a>Удалить учетную запись
 
 Дополнительные сведения о том, какие данные удаляются при удалении учетной записи см. статью [Data storage and removal](luis-concept-data-storage.md#accounts) (Хранение и удаление данных).
 
@@ -189,7 +189,7 @@ ms.locfileid: "82101031"
 
 Добавьте оповещение для метрики **общее число вызовов** за определенный период времени. Добавьте адреса электронной почты всех пользователей, которые должны получать оповещение. Добавьте веб-привязки для всех систем, которые должны получать оповещения. При запуске оповещения также может выполняться приложение логики.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте [, как использовать версии](luis-how-to-manage-versions.md) для управления жизненным циклом приложения.
 * Изучите основные понятия, в том числе [ресурсы для разработки](luis-concept-keys.md#authoring-key) и [участников](luis-concept-keys.md#contributions-from-other-authors) этого ресурса.

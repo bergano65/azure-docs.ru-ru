@@ -8,15 +8,15 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/07/2020
 ms.author: diberry
-ms.openlocfilehash: c976d3b74badc4eeb5978af352fe425089f2fbfb
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 687f2a80b362ca559d054b81d464daf2f6f85c09
+ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83584977"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84340612"
 ---
 # <a name="how-to-improve-the-luis-app-by-reviewing-endpoint-utterances"></a>Как улучшить приложение LUIS, просмотрев конечную точку фразы продолжительностью
 
@@ -28,7 +28,7 @@ ms.locfileid: "83584977"
 
 Используйте портал LUIS для создания правильного запроса конечной точки.
 
-1. Войдите на [портал Luis](https://www.luis.ai)и выберите свою **подписку** и ресурс для **разработки** , чтобы просмотреть приложения, назначенные этому ресурсу для разработки.
+1. Войдите на портал [LUIS](https://www.luis.ai) и выберите **Подписка** и **Ресурс для разработки**, чтобы просмотреть приложения, назначенные этому ресурсу для разработки.
 1. Откройте приложение, выбрав его имя на странице " **Мои приложения** ".
 1. Перейдите к разделу **Управление** и выберите **ресурсы Azure**.
 1. Для назначенного прогнозирующего ресурса выберите **изменить параметры запроса**.
