@@ -1,15 +1,15 @@
 ---
 title: Встроенные определения политик для Службы приложений Azure
 description: Здесь приведены встроенные определения политик в Политике Azure для Службы приложений Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 05/13/2020
+ms.date: 05/29/2020
 ms.topic: sample
 ms.custom: subject-policy-samples
-ms.openlocfilehash: 0ea6464f66a92872bfd1df08cde88f502b9c8556
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 3b17ddbc420692cd5a884be01ec2e27935a83322
+ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83648994"
+ms.lasthandoff: 05/31/2020
+ms.locfileid: "84235857"
 ---
 # <a name="azure-policy-built-in-policy-definitions-for-azure-app-service"></a>Встроенные определения политик в Политике Azure для Службы приложений Azure
 

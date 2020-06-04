@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: 4f467e061ad52fdcc6d1e8706bb902088b237c24
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.openlocfilehash: 3e0e220467c8c16deb413f6c70f236f6de67f980
+ms.sourcegitcommit: f0b206a6c6d51af096a4dc6887553d3de908abf3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83848776"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84142050"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-policystat"></a>Руководство по Интеграция Azure Active Directory с PolicyStat
 
@@ -175,11 +175,11 @@ ms.locfileid: "83848776"
    
     а. В текстовом поле **Username Attribute** (Атрибут имени пользователя) введите значение **uid**.
 
-    b. В текстовое поле **First Name Attribute** (Атрибут имени) введите имя утверждения атрибута имени из Azure **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname** .
+    b. В текстовое поле **First Name Attribute** (Атрибут имени) введите имя утверждения атрибута имени из Azure **`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`** .
 
-    c. В текстовое поле **Last Name Attribute** (Атрибут фамилии) введите имя утверждения атрибута фамилии из Azure **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname** .
+    c. В текстовое поле **Last Name Attribute** (Атрибут фамилии) введите имя утверждения атрибута фамилии из Azure **`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`** .
 
-    d. В текстовое поле **Email Attribute** (Атрибут адреса электронной почты) введите имя утверждения атрибута адреса электронной почты из Azure **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** .
+    d. В текстовое поле **Email Attribute** (Атрибут адреса электронной почты) введите имя утверждения атрибута адреса электронной почты из Azure **`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`** .
 
     д) Щелкните **Сохранить изменения**.
 

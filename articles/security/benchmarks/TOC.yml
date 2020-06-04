@@ -41,6 +41,8 @@
       href: ../../backup/security-baseline.md
     - name: Базовый уровень безопасности пакетной службы
       href: ../../batch/security-baseline.md
+    - name: Базовые показатели системы безопасности для Экземпляров контейнеров
+      href: ../../container-instances/security-baseline.md
     - name: Базовая конфигурация безопасности для Реестра контейнеров
       href: ../../container-registry/security-baseline.md
     - name: "Базовая конфигурация безопасности для Cosmos\_DB"

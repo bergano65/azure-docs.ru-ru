@@ -10,12 +10,12 @@ ms.subservice: bing-spell-check
 ms.topic: quickstart
 ms.date: 05/21/2020
 ms.author: aahi
-ms.openlocfilehash: f318a500bd4ce256690ff59f68d99af5d7a25d9e
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: 70ed795032c3d6d46aa57afaf5b5ece94bc74ea9
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/27/2020
-ms.locfileid: "83869816"
+ms.locfileid: "83995979"
 ---
 # <a name="quickstart-check-spelling-with-the-bing-spell-check-rest-api-and-java"></a>Краткое руководство. Проверка орфографии с помощью REST API проверки орфографии Bing и Java
 
@@ -59,9 +59,9 @@ ms.locfileid: "83869816"
 
 1. Создайте функцию с именем `check()`, чтобы создать и отправить запрос API. Добавьте в эту функцию указанный на следующих шагах код. Создайте строку для параметров запроса.
 
-   а. Назначьте код рынка для параметра `mkt` с помощью оператора `=`. 
+   1. Назначьте код рынка для параметра `mkt` с помощью оператора `=`. 
 
-   b. Добавьте параметр `mode` с оператором `&` и назначьте режим проверки орфографии. 
+   1. Добавьте параметр `mode` с оператором `&` и назначьте режим проверки орфографии. 
 
    ```java
    public static void check () throws Exception {
@@ -199,4 +199,4 @@ ms.locfileid: "83869816"
 > [Создание одностраничного веб-приложения](../tutorials/spellcheck.md)
 
 - [Что такое API проверки орфографии Bing?](../overview.md)
-- [Справочник по API Проверки орфографии Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)
+- [Справочник по API "Проверка орфографии Bing" версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)

@@ -73,6 +73,12 @@
       items:
         - name: Доступ к смене ключей
           href: signalr-howto-key-rotation.md
+        - name: Использование тегов службы Azure
+          href: howto-service-tags.md
+        - name: Использование частных конечных точек Azure
+          href: howto-private-endpoints.md
+        - name: Управление доступом к сети
+          href: howto-network-access-control.md
     - name: Интеграция
       items:
         - name: Привязки для Функций Azure

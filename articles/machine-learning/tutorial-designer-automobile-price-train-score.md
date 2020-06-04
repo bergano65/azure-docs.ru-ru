@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 05/12/2020
 ms.custom: designer
-ms.openlocfilehash: 16f281cce70fb8d2a943b62c796c3037649c3c72
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: f6d684829092d8be97785c46058186f3ca5542b2
+ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83656579"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84119034"
 ---
 # <a name="tutorial-predict-automobile-price-with-the-designer-preview"></a>Руководство по прогнозированию цен на автомобили с помощью конструктора (предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
@@ -220,11 +220,9 @@ ms.locfileid: "83656579"
 
 1. Выберите модуль **Регрессия** > **Линейная регрессия** и перетащите его на холст конвейера.
 
-1. Подключите выход модуля **Линейная регрессия** к левому входу модуля **Обучение модели**.
-
 1. В палитре модулей разверните раздел **Module training** (Модуль обучения) и перетащите модуль **Обучение модели** на холст.
 
-1. Выберите модуль **Обучение модели** и перетащите его на холст конвейера.
+1. Подключите выход модуля **Линейная регрессия** к левому входу модуля **Обучение модели**.
 
 1. Подключите выход данных для обучения (левый порт) модуля **разделения данных** к правому входу модуля **обучения модели**.
     

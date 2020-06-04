@@ -61,11 +61,13 @@
         - name: "HDInsight\_— службы ML"
           href: ../../hdinsight/r-server/quickstart-resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Key Vault
-          href: ../../key-vault/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+          href: ../../key-vault/secrets/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Load Balancer
           href: ../../load-balancer/quickstart-load-balancer-standard-public-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Управляемое приложение
           href: ../managed-applications/publish-service-catalog-app.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Машинное обучение
+          href: ../../machine-learning/tutorial-resource-manager-workspace.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Центры уведомлений
           href: ../../notification-hubs/create-notification-hub-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Политика
@@ -81,7 +83,7 @@
         - name: Site Recovery
           href: ../../site-recovery/quickstart-create-vault-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: База данных SQL
-          href: ../../sql-database/sql-database-single-database-get-started-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+          href: ../../azure-sql/database/single-database-create-arm-template-quickstart.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Масштабируемые наборы виртуальных машин — Linux
           href: ../../virtual-machine-scale-sets/quick-create-template-linux.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: "Масштабируемые наборы виртуальных машин\_— Windows"
@@ -164,6 +166,8 @@
   items:
     - name: Рекомендации по работе с шаблоном
       href: template-best-practices.md
+    - name: Часто задаваемые вопросы
+      href: frequently-asked-questions.md
     - name: Шаблоны для обеспечения согласованности данных в облаке
       href: templates-cloud-consistency.md
     - name: Режимы развертывания

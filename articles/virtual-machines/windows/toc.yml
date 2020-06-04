@@ -860,8 +860,10 @@
               href: disks-enable-ultra-ssd.md
             - name: Тест производительности диска
               href: disks-benchmarks.md
-        - name: Обнаружение неприсоединенных дисков
+        - name: "Обнаружение неприсоединенных дисков\_— PowerShell"
           href: find-unattached-disks.md
+        - name: "Обнаружение неприсоединенных дисков\_— портал"
+          href: ../disks-find-unattached-portal.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Часто задаваемые вопросы о дисках
           href: faq-for-disks.md
     - name: Управление сетями

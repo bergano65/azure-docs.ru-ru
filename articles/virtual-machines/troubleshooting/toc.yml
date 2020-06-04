@@ -69,6 +69,8 @@
       items:
         - name: Диагностика загрузки
           href: boot-diagnostics.md
+        - name: "Ошибка загрузки\_— произошла ошибка чтения с диска"
+          href: boot-error-disk-read-error-occurred.md
         - name: Ошибки BitLocker
           href: troubleshoot-bitlocker-boot-error.md
         - name: Ошибки "синий экран"

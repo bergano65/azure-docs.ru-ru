@@ -548,6 +548,9 @@
               href: msal-js-pass-custom-state-authentication-request.md
             - name: Поведения запроса
               href: msal-js-prompt-behavior.md
+            - name: Перенос SPA из неявного потока в поток с кодом авторизации
+              href: migrate-spa-implicit-to-auth-code.md
+              displayName: 'authorization, single-page app, 2.0'
         - name: MSAL для iOS и MacOS
           items:
             - name: Разница между MSAL для iOS и для macOS

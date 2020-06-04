@@ -4,18 +4,16 @@ description: Быстро научитесь выполнять пакетное
 ms.topic: quickstart
 ms.date: 05/19/2020
 ms.custom: subject-armqs
-ms.openlocfilehash: 535c8c34ea7af8e6bc56c3ecfe564de4c1b2bc54
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: a4d2e791d810a55b765669c8e909cf448a68fc99
+ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83694127"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84266905"
 ---
 # <a name="quickstart-create-a-batch-account-by-using-azure-resource-manager-template"></a>Краткое руководство. Создание учетной записи пакетной службы с помощью шаблона Azure Resource Manager
 
-Для создания вычислительных ресурсов (пулов вычислительных узлов) и заданий в пакетной службе потребуется учетная запись пакетной службы. Вы можете связать учетную запись хранения Azure с учетной записью пакетной службы, что будет удобно для развертывания приложений и хранения входных и выходных данных в большинстве реальных рабочих нагрузок.
-
-В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager создать учетную запись пакетной службы, включая хранилище. Выполняя действия из этого краткого руководства, вы изучите основные понятия пакетной службы и сможете использовать ее с более реалистичными рабочими нагрузками в большем масштабе.
+Для создания вычислительных ресурсов (пулов вычислительных узлов) и заданий в пакетной службе потребуется учетная запись пакетной службы. Вы можете связать учетную запись хранения Azure с учетной записью пакетной службы, что будет удобно для развертывания приложений и хранения входных и выходных данных в большинстве реальных рабочих нагрузок. В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager создать учетную запись пакетной службы, включая хранилище. Выполняя действия из этого краткого руководства, вы изучите основные понятия пакетной службы и сможете использовать ее с более реалистичными рабочими нагрузками в большем масштабе.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
@@ -29,9 +27,9 @@ ms.locfileid: "83694127"
 
 ### <a name="review-the-template"></a>Изучение шаблона
 
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-batchaccount-with-storage).
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-batchaccount-with-storage/).
 
-:::code language="json" source="~/quickstart-templates/101-batchaccount-with-storage/azuredeploy.json":::
+:::code language="json" source="~/quickstart-templates/101-batchaccount-with-storage/azuredeploy.json" range="1-80" highlight="36-69":::
 
 В шаблоне определено два ресурса Azure:
 

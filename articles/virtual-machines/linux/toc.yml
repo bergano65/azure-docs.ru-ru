@@ -952,8 +952,10 @@
               href: configure-raid.md
             - name: Настройка диспетчера логических томов
               href: configure-lvm.md
-        - name: Обнаружение неприсоединенных дисков
+        - name: "Обнаружение неприсоединенных дисков\_— CLI"
           href: find-unattached-disks.md
+        - name: "Обнаружение неприсоединенных дисков\_— портал"
+          href: ../disks-find-unattached-portal.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Использование хранилища файлов
           href: mount-azure-file-storage-on-linux-using-smb.md
         - name: Часто задаваемые вопросы о дисках

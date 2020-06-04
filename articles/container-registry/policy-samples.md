@@ -1,18 +1,18 @@
 ---
 title: Встроенные определения политик для Реестра контейнеров Azure
 description: Здесь приведены встроенные определения политик в Политике Azure для Реестра контейнеров Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 05/13/2020
+ms.date: 05/29/2020
 ms.topic: sample
 author: dlepow
 ms.author: danlep
 ms.service: container-registry
 ms.custom: subject-policy-samples
-ms.openlocfilehash: fe29916f0185dd9d044d20cf75619d94f8a3c7d8
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: fdc379c6ab7545e51ce4efbea0ecfd99cbb553bf
+ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83658269"
+ms.lasthandoff: 05/31/2020
+ms.locfileid: "84235661"
 ---
 # <a name="azure-policy-built-in-policy-definitions-for-azure-container-registry"></a>Встроенные определения политик в Политике Azure для Реестра контейнеров Azure
 

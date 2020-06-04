@@ -6,12 +6,12 @@ ms.author: brendm
 ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 04/06/2020
-ms.openlocfilehash: e5fbb14477275ca329243797b75550cfe92077b6
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: a92c5fde68227bf94342dd380250429675bd084d
+ms.sourcegitcommit: 8017209cc9d8a825cc404df852c8dc02f74d584b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83701560"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84248861"
 ---
 # <a name="use-circuit-breaker-dashboard-with-azure-spring-cloud"></a>использованию панели мониторинга размыкателя цепи в Azure Spring Cloud
 Spring [Cloud Netflix Turbine](https://github.com/Netflix/Turbine) часто используется для объединения нескольких потоков метрик [Hystrix](https://github.com/Netflix/Hystrix), чтобы потоки можно было отслеживать в одном представлении с помощью панели мониторинга Hystrix. В этом учебнике показано, как использовать их в Azure Spring Cloud.
@@ -59,7 +59,7 @@ az spring-cloud app deploy -n hystrix-turbine --jar-path hystrix-turbine/target/
 Выполните проверку, используя общедоступные конечные точки или частные конечные точки теста.
 
 ### <a name="using-public-endpoints"></a>Использование общедоступных конечных точек
-Получите доступ к приложению hystrix-turbine с помощью пути `https://<SERVICE-NAME>-hystrix-turbine azuremicroservices.io/hystrix` из браузера.  На следующем рисунке показана панель мониторинга Hystrix, работающая в этом приложении.
+Получите доступ к приложению hystrix-turbine с помощью пути `https://<SERVICE-NAME>-hystrix-turbine.azuremicroservices.io/hystrix` из браузера.  На следующем рисунке показана панель мониторинга Hystrix, работающая в этом приложении.
 
 ![Панель мониторинга Hystrix](media/spring-cloud-circuit-breaker/hystrix-dashboard.png)
 

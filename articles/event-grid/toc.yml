@@ -194,6 +194,8 @@
           href: metrics.md
 - name: Практические руководства
   items:
+    - name: 'Создание, просмотр и администрирование системных разделов'
+      href: create-view-manage-system-topics.md
     - name: Публикация в пользовательском разделе
       href: post-to-custom-topic.md
     - name: Подписка на события Auth0
