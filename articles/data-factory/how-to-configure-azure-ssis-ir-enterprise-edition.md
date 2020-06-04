@@ -12,7 +12,7 @@ ms.reviewer: douglasl
 manager: anandsub
 ms.openlocfilehash: a0e35a309fd30a36263b498b6a8e74a312004a99
 ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "81606160"
@@ -63,7 +63,7 @@ ms.locfileid: "81606160"
                                                  -ResourceGroupName $MyResourceGroupName
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 -   [Пользовательская установка для среды выполнения интеграции Azure SSIS](how-to-configure-azure-ssis-ir-custom-setup.md)
 

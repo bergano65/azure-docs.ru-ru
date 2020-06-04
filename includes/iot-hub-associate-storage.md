@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: iot-edge
 author: kgremban
@@ -10,7 +10,7 @@ ms.author: kgremban
 ms.custom: include file
 ms.openlocfilehash: ebc23ce4238c736442fbc4507e858876f9192fd9
 ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "76021151"

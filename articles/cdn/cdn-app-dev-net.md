@@ -17,7 +17,7 @@ ms.author: mazha
 ms.custom: has-adal-ref
 ms.openlocfilehash: e03616bf0d02f7ce063c027912cba4ab4e8f8d3f
 ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/30/2020
 ms.locfileid: "82611472"
@@ -52,7 +52,7 @@ ms.locfileid: "82611472"
 1. В меню **Сервис** выберите **Диспетчер пакетов NuGet**, а затем — **Консоль диспетчера пакетов**.
 
     ![Управление пакетами NuGet](./media/cdn-app-dev-net/cdn-manage-nuget.png)
-2. В консоли диспетчера пакетов выполните приведенную ниже команду, чтобы установить **библиотеку аутентификации Active Directory (ADAL)**.
+2. В консоли диспетчера пакетов выполните приведенную ниже команду, чтобы установить **библиотеку аутентификации Active Directory (ADAL)** .
 
     `Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory`
 3. Выполните следующую команду, чтобы установить **библиотеки управления Azure CDN**.
@@ -74,7 +74,7 @@ ms.locfileid: "82611472"
     using Microsoft.IdentityModel.Clients.ActiveDirectory;
     using Microsoft.Rest;
     ```
-2. Необходимо определить несколько констант, которые будут использоваться нашими методами.  В классе `Program` перед методом `Main` добавьте приведенный ниже код.  Обязательно замените заполнители, включая ** &lt;угловые скобки&gt;**, собственными значениями.
+2. Необходимо определить несколько констант, которые будут использоваться нашими методами.  В классе `Program` перед методом `Main` добавьте приведенный ниже код.  Обязательно замените заполнители, включая **&lt;угловые скобки&gt;** , собственными значениями.
 
     ```csharp
     //Tenant app constants

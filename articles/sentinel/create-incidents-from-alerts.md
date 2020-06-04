@@ -17,7 +17,7 @@ ms.date: 09/23/2019
 ms.author: yelevin
 ms.openlocfilehash: 1593b96ae8412632120e8977635a4193996ca88d
 ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "82025124"
@@ -28,7 +28,7 @@ ms.locfileid: "82025124"
 
 Вы можете легко настроить Azure Sentinel для автоматического создания инцидентов при каждом запуске оповещения в подключенном решении безопасности Майкрософт, следуя инструкциям в этой статье.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы включить создание инцидентов на основе оповещений службы безопасности, необходимо [подключить Решения безопасности Майкрософт](connect-data-sources.md#data-connection-methods).
 
 ## <a name="using-microsoft-security-incident-creation-analytic-rules"></a>Использование правил аналитики для создания инцидентов безопасности Майкрософт
