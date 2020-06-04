@@ -15,24 +15,24 @@ ms.workload: iaas-sql-server
 ms.date: 07/12/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: b76ade40db1e85abc0fb42af2e6f4ab88cb092c4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 384b66020b3d18064ea1cd9f162911878caa598d
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75982289"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84017550"
 ---
 # <a name="automate-management-tasks-on-azure-virtual-machines-with-the-sql-server-agent-extension-classic"></a>Автоматизация задач управления на виртуальных машинах Azure с помощью расширения агента SQL Server (классическая модель)
 > [!div class="op_single_selector"]
-> * [Resource Manager](../sql/virtual-machines-windows-sql-server-agent-extension.md)
-> * [Классические](../classic/sql-server-agent-extension.md)
+> * [Resource Manager](../../../azure-sql/virtual-machines/windows/sql-server-iaas-agent-extension-automate-management.md)
+> * [Классический](virtual-machines-windows-classic-sql-server-agent-extension.md)
 > 
 >
  
 Расширение агента IaaS для SQL Server (SQLIaaSAgent) запускается на виртуальных машинах Azure для автоматизации задач администрирования. В этом разделе представлен обзор служб, поддерживаемых расширением, а также указания по установке, проверке состояния и удалению расширения.
 
 > [!IMPORTANT] 
-> В Azure предусмотрены две различные модели развертывания для создания ресурсов и работы с ними: [Диспетчер ресурсов и Classic](../../../azure-resource-manager/management/deployment-models.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов.  Чтобы просмотреть версию этой статьи для модели Resource Manager, см. статью [Расширение агента IaaS для виртуальных машин SQL Server (Resource Manager)](../sql/virtual-machines-windows-sql-server-agent-extension.md).
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель развертывания с помощью Resource Manager и классическая модель](../../../azure-resource-manager/management/deployment-models.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов. Чтобы просмотреть версию этой статьи для модели Resource Manager, см. статью [Расширение агента IaaS для виртуальных машин SQL Server (Resource Manager)](../../../azure-sql/virtual-machines/windows/sql-server-iaas-agent-extension-automate-management.md).
 
 ## <a name="supported-services"></a>Поддерживаемые службы
 Расширение агента IaaS для SQL Server поддерживает следующие задачи администрирования:
@@ -41,13 +41,13 @@ ms.locfileid: "75982289"
 | --- | --- |
 | **Автоматическая архивация SQL** |Автоматизирует планирование архивации всех баз данных для установленного на виртуальной машине экземпляра SQL Server по умолчанию. Дополнительные сведения см. в статье [Автоматическая архивация SQL Server на виртуальных машинах Azure (классическая модель)](../classic/sql-automated-backup.md). |
 | **Автоматическая установка исправлений SQL** |Настраивает период обслуживания, во время которого можно установить на виртуальную машину важные обновления ОС Windows. Таким образом можно избежать установки обновлений в пиковые периоды рабочей нагрузки. Дополнительные сведения см. в статье [Автоматическая установка исправлений SQL Server на виртуальных машинах Azure (классическая модель)](../classic/sql-automated-patching.md). |
-| **Интеграция Azure Key Vault** |Автоматически устанавливает и настраивает хранилище ключей Azure на виртуальной машине SQL Server. Дополнительные сведения см. в статье [Настройка интеграции хранилища ключей Azure для SQL Server на виртуальных машинах Azure (классическая модель)](../classic/ps-sql-keyvault.md). |
+| **Интеграция с хранилищем ключей Azure** |Автоматически устанавливает и настраивает хранилище ключей Azure на виртуальной машине SQL Server. Дополнительные сведения см. в статье [Настройка интеграции хранилища ключей Azure для SQL Server на виртуальных машинах Azure (классическая модель)](../classic/ps-sql-keyvault.md). |
 
 ## <a name="prerequisites"></a>Предварительные требования
 Требования для использования расширения агента IaaS для SQL Server на виртуальной машине:
 
 ### <a name="operating-system"></a>Операционная система:
-* Windows Server 2012
+* Windows Server 2012
 * Windows Server 2012 R2
 * Windows Server 2016
 
@@ -82,14 +82,14 @@ ms.locfileid: "75982289"
 > В классических виртуальных машинах не предусмотрена функция установки и настройки расширения агента IaaS SQL через портал.
 
 > [!NOTE]
-> Расширение агента IaaS для SQL Server поддерживается только для [образов из коллекции виртуальных машин SQL Server](../sql/virtual-machines-windows-sql-server-iaas-overview.md#get-started-with-sql-vms) (с оплатой по мере использования или с использованием собственной лицензии). Расширение не поддерживается, если вы вручную установили SQL Server на виртуальной машине Windows Server только с ОС или развертываете настраиваемый VHD виртуальной машины SQL Server. В таких случаях можно установить расширение и вручную управлять им с помощью PowerShell. Но мы настоятельно рекомендуем вместо этого установить образ из коллекции виртуальных машин SQL Server, а затем настроить его.
+> Расширение агента IaaS для SQL Server поддерживается только для [образов из коллекции виртуальных машин SQL Server](../../../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md#get-started-with-sql-vms) (с оплатой по мере использования или с использованием собственной лицензии). Расширение не поддерживается, если вы вручную установили SQL Server на виртуальной машине Windows Server только с ОС или развертываете настраиваемый VHD виртуальной машины SQL Server. В таких случаях можно установить расширение и вручную управлять им с помощью PowerShell. Но мы настоятельно рекомендуем вместо этого установить образ из коллекции виртуальных машин SQL Server, а затем настроить его.
 
 ## <a name="status"></a>Состояние
 Одним из способов проверки того, что расширение установлено, является просмотр состояния агента на портале Azure. Выберите виртуальную машину в соответствующей колонке и щелкните **Расширения**. В списке будет указано расширение **SQLIaaSAgent** .
 
 ![Расширение агента IaaS для SQL Server на портале Azure](./media/virtual-machines-windows-classic-sql-server-agent-extension/azure-sql-server-iaas-agent-portal.png)
 
-Вы также можете использовать командлет Azure PowerShell **Get-AzureVMSqlServerExtension** .
+Можно также использовать командлет Azure PowerShell **Get-AzureVMSqlServerExtension** .
 
     Get-AzureVM –ServiceName "service" –Name "vmname" | Get-AzureVMSqlServerExtension
 
@@ -102,8 +102,8 @@ ms.locfileid: "75982289"
 
     Get-AzureVM –ServiceName "service" –Name "vmname" | Remove-AzureVMSqlServerExtension | Update-AzureVM
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 Начните работать с одной из служб, поддерживаемых расширением. Дополнительные сведения см. в разделе [Поддерживаемые службы](#supported-services) этой статьи.
 
-Подробные сведения о работе SQL Server на виртуальных машинах Azure см. в разделе [Общие сведения об SQL Server на виртуальных машинах Azure](../sql/virtual-machines-windows-sql-server-iaas-overview.md).
+Подробные сведения о работе SQL Server на виртуальных машинах Azure см. в разделе [Общие сведения об SQL Server на виртуальных машинах Azure](../../../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md).
 

@@ -8,19 +8,19 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/05/2019
 ms.author: diberry
-ms.openlocfilehash: ef5f6967b7ad9500672d00d93dd8acaca99e5948
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 7b9646f2bab4c17449c6683ae7924af87b184167
+ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73499464"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84340187"
 ---
 # <a name="build-a-luis-app-programmatically-using-nodejs"></a>Создание приложения LUIS программным способом с помощью Node.js
 
-Служба LUIS предоставляет программный API, выполняющий те же задачи, что и веб-сайт [LUIS](luis-reference-regions.md). Это позволит сэкономить время при уже имеющихся данных, поэтому создавать приложение LUIS программным способом можно быстрее, чем путем ввода информации вручную. 
+Служба LUIS предоставляет программный API, выполняющий те же задачи, что и веб-сайт [LUIS](luis-reference-regions.md). Это позволит сэкономить время при уже имеющихся данных, поэтому создавать приложение LUIS программным способом можно быстрее, чем путем ввода информации вручную.
 
 [!INCLUDE [Waiting for LUIS portal refresh](./includes/wait-v3-upgrade.md)]
 
@@ -32,14 +32,14 @@ ms.locfileid: "73499464"
 * Установите Node.js последней версии с NPM. Скачать эту версию можно [здесь](https://nodejs.org/en/download/).
 * **(Рекомендуется)** Visual Studio Code для применения функции IntelliSense и отладки. Скачать Visual Studio Code бесплатно можно [здесь](https://code.visualstudio.com/).
 
-Весь код в этой статье доступен в [репозитории Azure-samples Language Understanding GitHub](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/examples/build-app-programmatically-csv). 
+Весь код в этой статье доступен в [репозитории Azure-samples Language Understanding GitHub](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/examples/build-app-programmatically-csv).
 
 ## <a name="map-preexisting-data-to-intents-and-entities"></a>Сопоставление существующих данных с намерениями и сущностями
 Даже если у вас есть система, которая была создана без учета LUIS, и если она содержит текстовые данные, сопоставляемые с разными задачами, которые хотят выполнять пользователи, вы можете осуществлять сопоставления из существующих категорий пользовательского ввода с намерениями в LUIS. Если вы можете определить важные слова или фразы в речи пользователя, эти слова можно сопоставлять с сущностями.
 
-Откройте [`IoT.csv`](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/IoT.csv) файл. Он содержит журнал пользовательских запросов к вымышленной службе по домашней автоматике, в том числе способ их классификации, что именно сказал пользователь и некоторые столбцы с извлеченной из них полезной информацией. 
+Откройте [`IoT.csv`](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/IoT.csv) файл. Он содержит журнал пользовательских запросов к вымышленной службе по домашней автоматике, в том числе способ их классификации, что именно сказал пользователь и некоторые столбцы с извлеченной из них полезной информацией.
 
-![CSV-файл уже имеющихся данных](./media/luis-tutorial-node-import-utterances-csv/csv.png) 
+![CSV-файл уже имеющихся данных](./media/luis-tutorial-node-import-utterances-csv/csv.png)
 
 Вы видите, что столбец **RequestType** может быть намерениями, а в столбце **Request** показан пример высказывания. Другие поля могут быть сущностями, если они встречаются в высказывании. Поскольку здесь есть намерения, сущности и примеры высказываний, вы выполнили требования к примеру простого приложения.
 
@@ -47,12 +47,12 @@ ms.locfileid: "73499464"
 Чтобы создать приложение LUIS из CSV-файла, сделайте следующее.
 
 * Проанализируйте данные из CSV-файла:
-    * Выполните преобразование в формат, который можно передать в LUIS с помощью API разработки. 
-    * Из проанализированных данных соберите сведения о намерениях и сущностях. 
+    * Выполните преобразование в формат, который можно передать в LUIS с помощью API разработки.
+    * Из проанализированных данных соберите сведения о намерениях и сущностях.
 * Выполните вызовы API разработки:
     * Создайте приложение.
-    * Добавьте намерения и сущности, собранные из проанализированных данных. 
-    * После создания приложения LUIS можно добавить примеры высказываний из проанализированных данных. 
+    * Добавьте намерения и сущности, собранные из проанализированных данных.
+    * После создания приложения LUIS можно добавить примеры высказываний из проанализированных данных.
 
 Этот поток программы можно увидеть в последней части файла `index.js`. Скопируйте или [скачайте](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/index.js) этот код и сохраните его в `index.js`.
 
@@ -61,7 +61,7 @@ ms.locfileid: "73499464"
 
 ## <a name="parse-the-csv"></a>Анализ CSV-файла
 
-Записи столбцов, содержащие высказывания в CSV-файле, необходимо анализировать в формате JSON, понятном для LUIS. Этот формат JSON должен содержать поле `intentName`, которое определяет намерение высказывания. Он также должен содержать поле `entityLabels`, которое может быть пустым в случае отсутствия записей в высказывании. 
+Записи столбцов, содержащие высказывания в CSV-файле, необходимо анализировать в формате JSON, понятном для LUIS. Этот формат JSON должен содержать поле `intentName`, которое определяет намерение высказывания. Он также должен содержать поле `entityLabels`, которое может быть пустым в случае отсутствия записей в высказывании.
 
 Например, запись "Turn on the lights" соответствует этому JSON:
 
@@ -106,7 +106,7 @@ ms.locfileid: "73499464"
 Следующий код добавляет сущности в приложение LUIS. Скопируйте или [скачайте](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/_entities.js) его и сохраните в `_entities.js`.
 
    [!code-javascript[Node.js code for creating entities](~/samples-luis/examples/build-app-programmatically-csv/_entities.js)]
-   
+
 
 
 ## <a name="add-utterances"></a>Добавление высказываний
@@ -135,7 +135,7 @@ ms.locfileid: "73499464"
 // Change these values
 const LUIS_programmaticKey = "YOUR_AUTHORING_KEY";
 const LUIS_appName = "Sample App";
-const LUIS_appCulture = "en-us"; 
+const LUIS_appCulture = "en-us";
 const LUIS_versionId = "0.1";
 ```
 
@@ -146,7 +146,7 @@ const LUIS_versionId = "0.1";
 > node index.js
 ```
 
-или диспетчер конфигурации служб
+или
 
 ```console
 > npm start
@@ -186,7 +186,7 @@ upload done
 ![Намерение TurnOn](./media/luis-tutorial-node-import-utterances-csv/imported-utterances-661.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Проверьте и обучите свое приложение на веб-сайте LUIS](luis-interactive-test.md)
@@ -196,5 +196,5 @@ upload done
 В этом примере приложения используются следующие API LUIS:
 - [создать приложение](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36)
 - [Добавление целей](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0c)
-- [Добавление сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0e) 
+- [Добавление сущностей](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0e)
 - [Добавить фразы продолжительностью](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09)

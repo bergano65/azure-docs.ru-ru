@@ -8,15 +8,15 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/28/2020
 ms.author: diberry
-ms.openlocfilehash: 679073715588a4a81e69e3e7ba2d18341b1bab4b
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: b480dca46e544caabdf3be62b57b38652ee973ae
+ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82096628"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84337994"
 ---
 # <a name="migrate-to-an-azure-resource-authoring-key"></a>Миграция в ключ создания ресурсов Azure
 
@@ -61,7 +61,7 @@ Language Understanding (LUIS) создание аутентификации из
 
 ### <a name="before-you-migrate"></a>Перед миграцией
 
-* **Необходимо иметь** [подписку Azure](https://azure.microsoft.com/free/). В рамках процесса подписки требуются сведения о выставлении счетов. Однако вы можете использовать ценовую категорию Free (`F0`) при использовании Luis.
+* **Необходимо иметь** [подписку Azure](https://azure.microsoft.com/free/). В рамках процесса подписки требуются сведения о выставлении счетов. Однако вы можете использовать ценовую категорию Free ( `F0` ) при использовании Luis.
 * **При необходимости**создайте резервную копию приложений из списка приложений Luis Portal, экспортировав каждое приложение или используя [API](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c40)экспорта.
 * **При необходимости**сохраните список коллаборатор'с для каждого приложения. Этот список электронной почты предоставляется в рамках процесса миграции.
 
@@ -119,6 +119,6 @@ Language Understanding (LUIS) создание аутентификации из
 
 `https://www.luis.ai/applications/REPLACE-WITH-YOUR-APP-ID/versions/REPLACE-WITH-YOUR-VERSION-ID/manage/resources`
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Перенос приложения в ресурс разработки](luis-migration-authoring-steps.md)

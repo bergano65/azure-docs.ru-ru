@@ -10,12 +10,12 @@ author: swinarko
 ms.author: sawinark
 manager: mflasko
 ms.reviewer: douglasl
-ms.openlocfilehash: 02952c3baea5d9089061b10f2429be57a9322398
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 8d15ab5f08b7f9f5bc4824aec8980ed4b711ae1d
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81606179"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84020291"
 ---
 # <a name="clean-up-ssisdb-logs-with-azure-elastic-database-jobs"></a>Очистка журналов SSISDB с помощью заданий обработки эластичных баз данных Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "81606179"
 
 Задания обработки эластичных баз данных — это служба Azure, которая позволяет легко автоматизировать и выполнять задания по базе данных или группах баз данных. Вы можете планировать, запускать и отслеживать эти задания с помощью портала Azure, Transact-SQL, PowerShell или REST API. Используйте задания обработки эластичных баз данных для активации хранимой процедуры очистки журнала однократно или по расписанию. Можно выбрать интервал расписания в зависимости от использования ресурсов SSISDB, чтобы избежать большой нагрузки на базу данных.
 
-Дополнительные сведения см. в статье[Управление группами баз данных с помощью заданий эластичных баз данных](../sql-database/elastic-jobs-overview.md).
+Дополнительные сведения см. в статье[Управление группами баз данных с помощью заданий эластичных баз данных](../azure-sql/database/elastic-jobs-overview.md).
 
 В разделах ниже описано, как активировать хранимую процедуру `[internal].[cleanup_server_retention_window_exclusive]` для удаления журналов SSISDB, которые находятся за пределами окна периода удержания, настроенного администратором.
 
@@ -33,7 +33,7 @@ ms.locfileid: "81606179"
 
 [!INCLUDE [requires-azurerm](../../includes/requires-azurerm.md)]
 
-Следующие примеры сценариев PowerShell создают новые задания обработки эластичных баз данных для активации хранимой процедуры очистки журнала SSISDB. Дополнительные сведения см.в статье [Создание агента заданий обработки эластичных баз данных с помощью PowerShell](../sql-database/elastic-jobs-powershell.md).
+Следующие примеры сценариев PowerShell создают новые задания обработки эластичных баз данных для активации хранимой процедуры очистки журнала SSISDB. Дополнительные сведения см.в статье [Создание агента заданий обработки эластичных баз данных с помощью PowerShell](../azure-sql/database/elastic-jobs-powershell-create.md).
 
 ### <a name="create-parameters"></a>Создание параметров
 
@@ -41,7 +41,7 @@ ms.locfileid: "81606179"
 # Parameters needed to create the Job Database
 param(
 $ResourceGroupName = $(Read-Host "Please enter an existing resource group name"),
-$AgentServerName = $(Read-Host "Please enter the name of an existing Azure SQL server(for example, yhxserver) to hold the SSISDBLogCleanup job database"),
+$AgentServerName = $(Read-Host "Please enter the name of an existing logical SQL server(for example, yhxserver) to hold the SSISDBLogCleanup job database"),
 $SSISDBLogCleanupJobDB = $(Read-Host "Please enter a name for the Job Database to be created in the given SQL Server"),
 # The Job Database should be a clean,empty,S0 or higher service tier. We set S0 as default.
 $PricingTier = "S0",
@@ -52,7 +52,7 @@ $SSISDBLogCleanupAgentName = $(Read-Host "Please enter a name for your new Elast
 # Parameters needed to create the job credential in the Job Database to connect to SSISDB
 $PasswordForSSISDBCleanupUser = $(Read-Host "Please provide a new password for SSISDBLogCleanup job user to connect to SSISDB database for log cleanup"),
 # Parameters needed to create a login and a user in the SSISDB of the target server
-$SSISDBServerEndpoint = $(Read-Host "Please enter the name of the target Azure SQL server which contains SSISDB you need to cleanup, for example, myserver") + '.database.windows.net',
+$SSISDBServerEndpoint = $(Read-Host "Please enter the name of the target logical SQL server which contains SSISDB you need to cleanup, for example, myserver") + '.database.windows.net',
 $SSISDBServerAdminUserName = $(Read-Host "Please enter the target server admin username for SQL authentication"),
 $SSISDBServerAdminPassword = $(Read-Host "Please enter the target server admin password for SQL authentication"),
 $SSISDBName = "SSISDB",
@@ -191,7 +191,7 @@ $Job | Set-AzureRmSqlElasticJob -IntervalType $IntervalType -IntervalCount $Inte
     SELECT * FROM jobs.target_groups WHERE target_group_name = 'SSISDBTargetGroup';
     SELECT * FROM jobs.target_group_members WHERE target_group_name = 'SSISDBTargetGroup';
     ```
-4. Предоставьте соответствующие разрешения для базы данных SSISDB. Для успешного выполнения очистки журнала SSISDB каталог SSISDB должен иметь соответствующие разрешения для хранимой процедуры. Подробные инструкции см. в статье [Предоставление доступа к базе данных и управление им](../sql-database/sql-database-manage-logins.md).
+4. Предоставьте соответствующие разрешения для базы данных SSISDB. Для успешного выполнения очистки журнала SSISDB каталог SSISDB должен иметь соответствующие разрешения для хранимой процедуры. Подробные инструкции см. в статье [Предоставление доступа к базе данных и управление им](../azure-sql/database/logins-create-manage.md).
 
     ```sql
     -- Connect to the master database in the target server including SSISDB 
@@ -262,7 +262,7 @@ SELECT * FROM jobs.job_executions WHERE is_active = 1
 ORDER BY start_time DESC
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для управления и отслеживания задач, относящихся к Azure-SSIS Integration Runtime, ознакомьтесь со следующими статьями. Azure-SSIS IR — это механизм среды выполнения для пакетов служб SSIS, хранящихся в SSISDB в Базе данных SQL Azure.
 
