@@ -52,3 +52,5 @@
       href: customer-keys.md
     - name: Использование Azure NetApp Files с Azure HPC Cache
       href: hpc-cache-netapp.md
+    - name: Видео
+      href: 'https://azure.microsoft.com/resources/videos/index/?service=hpc-cache'
