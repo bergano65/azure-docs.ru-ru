@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 03/12/2018
 ms.author: guybo
-ms.openlocfilehash: 5bf26fa096058f5a73d5527c0c6adb1649c9884f
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
-ms.translationtype: MT
+ms.openlocfilehash: cf50ee847bd1542a3e024cb88cf7bbc8bc283f91
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82857323"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83643432"
 ---
 # <a name="prepare-a-sles-or-opensuse-virtual-machine-for-azure"></a>Подготовка виртуальной машины SLES или openSUSE для Azure
 
@@ -23,23 +23,23 @@ ms.locfileid: "82857323"
 ## <a name="sles--opensuse-installation-notes"></a>Замечания по установке SLES и openSUSE
 * Дополнительные сведения о подготовке Linux для Azure см. в разделе [Общие замечания по установке Linux](create-upload-generic.md#general-linux-installation-notes).
 * Формат VHDX не поддерживается в Azure, поддерживается только **фиксированный VHD**.  Можно преобразовать диск в формат VHD с помощью диспетчера Hyper-V или командлета convert-vhd.
-* При установке системы Linux рекомендуется использовать стандартные разделы, а не LVM (как правило, значение по умолчанию во многих дистрибутивах). Это позволит избежать конфликта имен LVM при клонировании виртуальных машин, особенно если диск с OC может быть подключен к другой ВМ в целях устранения неполадок. [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) могут использоваться на дисках данных, если они предпочтительны.
+* При установке системы Linux рекомендуется использовать стандартные разделы, а не LVM (как правило, значение по умолчанию во многих дистрибутивах). Это позволит избежать конфликта имен LVM при клонировании виртуальных машин, особенно если диск с OC может быть подключен к другой ВМ в целях устранения неполадок. Для дисков данных можно использовать [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 * Не настраивайте раздел подкачки на диске с ОС. Можно настроить агент Linux для создания файла подкачки на временном диске ресурсов.  Дополнительные сведения описаны далее.
 * Размер виртуальной памяти всех VHD в Azure должен быть округлен до 1 МБ. При конвертации диска в формате RAW в виртуальный жесткий диск убедитесь, что размер диска RAW в несколько раз превышает 1 МБ. См. дополнительные сведения в [примечаниях по установке Linux](create-upload-generic.md#general-linux-installation-notes).
 
 ## <a name="use-suse-studio"></a>Использование SUSE Studio
-[SUSE Studio](http://www.susestudio.com) можно с легкостью использовать для создания образов SLES и openSUSE для Azure и Hyper-V, а также для управления этими образами. Этот подход рекомендуется для настройки собственных образов SLES и openSUSE.
+[SUSE Studio](https://studioexpress.opensuse.org/) можно с легкостью использовать для создания образов SLES и openSUSE для Azure и Hyper-V, а также для управления этими образами. Этот подход рекомендуется для настройки собственных образов SLES и openSUSE.
 
 Вместо того чтобы создать собственный виртуальный жесткий диск, SUSE публикует образы BYOS (использование собственной подписки) для SLES в каталоге [VM Depot](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/04/using-and-contributing-vms-to-vm-depot.pdf).
 
 ## <a name="prepare-suse-linux-enterprise-server-11-sp4"></a>Подготовка SUSE Linux Enterprise Server 11 с пакетом обновления 4 (SP4)
 1. На центральной панели диспетчера Hyper-V выберите виртуальную машину.
-2. Щелкните **Подключиться**, чтобы открыть окно для виртуальной машины.
+2. Щелкните **Подключение** , чтобы открыть окно виртуальной машины.
 3. Зарегистрируйте систему SUSE Linux Enterprise, чтобы позволить ей скачивать обновления и устанавливать пакеты.
 4. Установите в системе последние исправления:
    
         # sudo zypper update
-5. Установите агент Linux для Azure из репозитория SLES (SLE11-Public-Cloud-Module):
+5. Установите агент Linux для Azure из репозитория SLES (SLE11-Public-Cloud-Module).
    
         # sudo zypper install python-azure-agent
 6. Убедитесь, что waagent в chkconfig имеет значение on. Если указано другое значение, включите для службы waagent автоматический запуск.
@@ -92,12 +92,12 @@ ms.locfileid: "82857323"
         # sudo waagent -force -deprovision
         # export HISTSIZE=0
         # logout
-16. В диспетчере Hyper-V щелкните **действие-> завершить работу** . Виртуальный жесткий диск Linux готов к передаче в Azure.
+16. В диспетчере Hyper-V выберите **Действие -> Завершение работы**. Виртуальный жесткий диск Linux готов к передаче в Azure.
 
 ---
 ## <a name="prepare-opensuse-131"></a>Подготовка openSUSE 13.1+
 1. На центральной панели диспетчера Hyper-V выберите виртуальную машину.
-2. Щелкните **Подключиться**, чтобы открыть окно для виртуальной машины.
+2. Щелкните **Подключение** , чтобы открыть окно виртуальной машины.
 3. В консоли оболочки выполните команду`zypper lr`. Если эта команда возвращает результат следующего вида, то репозитории настроены надлежащим образом, и никаких изменений не требуется (обратите внимание, что номера версий могут отличаться):
    
         # | Alias                 | Name                  | Enabled | Refresh
@@ -135,7 +135,7 @@ ms.locfileid: "82857323"
 7. Рекомендуется отредактировать файл /etc/sysconfig/network/dhcp и изменить параметр `DHCLIENT_SET_HOSTNAME` следующим образом:
    
      DHCLIENT_SET_HOSTNAME="no"
-8. **Внимание!** В файле /etc/sudoers закомментируйте или удалите следующие строки, если они существуют:
+8. **Внимание!** В "/etc/sudoers" закомментируйте или удалите следующие строки, если они существуют:
      
      ```
      Defaults targetpw   # ask for the password of the target user i.e. root
@@ -156,7 +156,7 @@ ms.locfileid: "82857323"
 12. Убедитесь, что агент Linux для Azure запускается при загрузке:
     
         # sudo systemctl enable waagent.service
-13. В диспетчере Hyper-V щелкните **действие-> завершить работу** . Виртуальный жесткий диск Linux готов к передаче в Azure.
+13. В диспетчере Hyper-V выберите **Действие -> Завершение работы**. Виртуальный жесткий диск Linux готов к передаче в Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь виртуальный жесткий диск SUSE Linux можно использовать для создания новых виртуальных машин Azure. Если вы отправляете VHD-файл в Azure впервые, см. раздел [Вариант 1. Передача VHD](upload-vhd.md#option-1-upload-a-vhd).

@@ -1081,20 +1081,6 @@
               href: platform/view-designer-parts.md
             - name: Фильтры
               href: platform/view-designer-filters.md
-        - name: Пользовательские решения
-          items:
-            - name: Проектирование и сборка
-              href: insights/solutions-creating.md
-            - name: Файл решения
-              href: insights/solutions-solution-file.md
-            - name: Ресурсы службы автоматизации
-              href: insights/solutions-resources-automation.md
-            - name: Поиск по журналам и оповещения
-              href: insights/solutions-resources-searches-alerts.md
-            - name: Представления
-              href: insights/solutions-resources-views.md
-            - name: Рекомендации
-              href: insights/solutions-best-practices.md
     - name: Workbooks
       items:
         - name: Обзор
