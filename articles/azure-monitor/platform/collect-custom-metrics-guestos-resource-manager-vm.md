@@ -1,34 +1,31 @@
 ---
-title: Получение метрик виртуальной машины Windows в Azure Monitor с помощью шаблона
-description: Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Resource Manager для виртуальной машины Windows
+title: Сбор метрик виртуальной машины Windows в Azure Monitor с помощью шаблона
+description: Отправка метрик гостевой ОС в хранилище базы метрик Azure Monitor с помощью шаблона Resource Manager для виртуальной машины Windows
 author: anirudhcavale
 services: azure-monitor
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.author: ancav
+ms.date: 05/04/2020
+ms.author: bwren
 ms.subservice: metrics
-ms.openlocfilehash: e747ca89912c36538bfb9d02986629fe57c5adcb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 14079f42fd857495396a0c44fd3bdeaf4371ea5f
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77657373"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83650544"
 ---
-# <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-using-a-resource-manager-template-for-a-windows-virtual-machine"></a>Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Resource Manager для виртуальной машины Windows
+# <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-by-using-an-azure-resource-manager-template-for-a-windows-virtual-machine"></a>Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Azure Resource Manager для виртуальной машины Windows
+Данные о производительности из гостевых ОС виртуальных машин Azure не собираются автоматически, как другие [метрики платформы](../insights/monitor-azure-resource.md#monitoring-data). Установите [расширение диагностики](diagnostics-extension-overview.md) Azure Monitor, чтобы собирать метрики гостевой ОС в базу данных метрик и использовать их со всеми возможностями метрик Azure Monitor, включая оповещения почти в режиме реального времени, диаграммы, маршрутизацию и доступ из REST API. В этой статье описывается процесс отправки метрик производительности гостевой ОС с виртуальной машины под управлением Windows в базу данных метрик с использованием шаблона Resource Manager. 
 
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+> [!NOTE]
+> Дополнительные сведения о настройке расширения диагностики для сбора метрик гостевой ОС с помощью портала Azure см. в разделе [Установка и настройка расширения системы диагностики Windows Azure (WAD)](diagnostics-extension-windows-install.md).
 
-[Расширение диагностики](diagnostics-extension-overview.md) для Azure Monitor позволяет собирать метрики и журналы из операционной системы на виртуальной машине (гостевой ОС), в облачной службе или кластере Service Fabric. Это расширение может отправлять данные телеметрии во [множество различных расположений](https://docs.microsoft.com/azure/monitoring/monitoring-data-collection?toc=/azure/azure-monitor/toc.json).
-
-В этой статье описывается процесс отправки метрик производительности гостевой ОС с виртуальной машины под управлением Windows в хранилище данных Azure Monitor. Начиная с версии 1.11 расширение диагностики позволяет записывать метрики напрямую в хранилище метрик Azure Monitor, где уже собраны стандартные метрики платформы.
-
-Хранение их в этом расположении позволяет получить доступ к тем же действиям, что и для метрик платформы. К этим действиям относятся оповещения практически в реальном времени, построение диаграмм, маршрутизация, доступ из REST API и многое другое. Ранее расширение диагностики записывало данные в службу хранилища Azure, а не в хранилище данных Azure Monitor.
 
 Если вы не знакомы с шаблонами Resource Manager, изучите сведения о [развертывании шаблонов](../../azure-resource-manager/management/overview.md), их структуре и синтаксисе.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- Ваша подписка должна быть зарегистрирована в [Microsoft. Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
+- Подписку необходимо зарегистрировать в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services).
 
 - Необходимо установить [Azure PowerShell](/powershell/azure) или [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
@@ -48,7 +45,7 @@ ms.locfileid: "77657373"
 Скачайте и сохраните оба файла в локальном расположении.
 
 ### <a name="modify-azuredeployparametersjson"></a>Изменение файла azuredeploy.parameters.json
-Откройте файл *azuredeploy. parameters. JSON.*
+Откройте файл *azuredeploy.parameters.json*.
 
 1. Введите значения **adminUsername** и **adminPassword** для виртуальной машины. Эти параметры используются для удаленного доступа к виртуальной машине. НЕ ИСПОЛЬЗУЙТЕ значения, указанные в этом шаблоне, во избежание перехвата виртуальной машины. Боты сканируют Интернет на наличие имен пользователей и паролей в общедоступных репозиториях GitHub. Вероятно, они будут тестировать виртуальные машины с этими значениями по умолчанию.
 
@@ -56,9 +53,9 @@ ms.locfileid: "77657373"
 
 ### <a name="modify-azuredeployjson"></a>Изменение файла azuredeploy.json
 
-Открытие файла *azuredeploy. JSON*
+Откройте файл *azuredeploy.json*.
 
-Добавьте идентификатор учетной записи хранения в раздел **Variables** шаблона после записи для **storageAccountName.**
+Добавьте идентификатор учетной записи хранения в раздел **variables** шаблона после записи для **storageAccountName**.
 
 ```json
 // Find these lines.
@@ -69,7 +66,7 @@ ms.locfileid: "77657373"
     "accountid": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]",
 ```
 
-Добавьте это расширение Управляемое удостоверение службы (MSI) в шаблон в верхней части раздела **ресурсов** . Это расширение гарантирует, что Azure Monitor принимает исходящие метрики.
+Добавьте расширение "Управляемое удостоверение службы" (MSI) в шаблон в верхней части раздела **resources**. Это расширение гарантирует, что Azure Monitor принимает исходящие метрики.
 
 ```json
 //Find this code.
@@ -234,7 +231,7 @@ ms.locfileid: "77657373"
 ## <a name="deploy-the-resource-manager-template"></a>Развертывание шаблона Resource Manager
 
 > [!NOTE]
-> Необходимо запустить расширение система диагностики Azure версии 1,5 или более поздней и задать для свойства **autoUpgradeMinorVersion**: "true" в шаблоне диспетчер ресурсов. Затем Azure загрузит нужное расширение при запуске виртуальной машины. Если этих параметров нет в шаблоне, внесите их и повторно разверните шаблон.
+> Необходимо использовать расширение системы диагностики Azure версии 1.5 или более поздней, А ТАКЖЕ задать для свойства **autoUpgradeMinorVersion** значение true в шаблоне Resource Manager. Затем Azure загрузит нужное расширение при запуске виртуальной машины. Если этих параметров нет в шаблоне, внесите их и повторно разверните шаблон.
 
 
 Для развертывания шаблона Resource Manager мы используем Azure PowerShell.
@@ -253,7 +250,7 @@ ms.locfileid: "77657373"
     New-AzResourceGroup -Name "<Name of Resource Group>" -Location "<Azure Region>"
    ```
    > [!NOTE]
-   > Не забудьте [использовать регион Azure, для которого разрешены пользовательские метрики](metrics-custom-overview.md).
+   > Не забывайте [использовать регион Azure, включенный для пользовательских метрик](metrics-custom-overview.md).
 
 1. Выполните следующие команды, чтобы развернуть виртуальную машину на основе шаблона Resource Manager.
    > [!NOTE]
@@ -274,7 +271,7 @@ ms.locfileid: "77657373"
 
 2. В меню слева выберите **Монитор**.
 
-3. На странице Монитор щелкните **Метрики**.
+3. На странице "Монитор" щелкните **Метрики**.
 
    ![Страница "Метрики"](media/collect-custom-metrics-guestos-resource-manager-vm/metrics.png)
 
@@ -287,6 +284,6 @@ ms.locfileid: "77657373"
 7. В раскрывающемся меню метрик выберите **Память > \%выделенных байт в использовании**.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
 

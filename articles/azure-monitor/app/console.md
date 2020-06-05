@@ -2,14 +2,14 @@
 title: Azure Application Insights для консольных приложений | Документация Майкрософт
 description: Отслеживайте доступность, производительность и использование веб-приложений.
 ms.topic: conceptual
-ms.date: 12/02/2019
+ms.date: 05/21/2020
 ms.reviewer: lmolkova
-ms.openlocfilehash: baaea0f8055eeff0314fcf5fde00729ea8091d12
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: fe34b2b48de8ef4f6c2cdd61623b885878bad2b4
+ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77655435"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83774040"
 ---
 # <a name="application-insights-for-net-console-applications"></a>Application Insights для консольных приложений .NET
 
@@ -18,12 +18,12 @@ ms.locfileid: "77655435"
 Вам потребуется подписка [Microsoft Azure](https://azure.com). Войдите с помощью учетной записи Майкрософт, которую вы, возможно, уже используете для Windows, XBox Live или других облачных служб Майкрософт. Возможно, у вашей группы есть подписка организации Azure: попросите ее владельца добавить вас к ней с помощью вашей учетной записи Майкрософт.
 
 > [!NOTE]
-> Существует новый пакет SDK Application Insights с именем [Microsoft. ApplicationInsights. воркерсервице](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) , который можно использовать для включения Application Insights для любых консольных приложений. Рекомендуется использовать этот пакет и соответствующие инструкции [отсюда.](../../azure-monitor/app/worker-service.md) Этот пакет предназначен [`NetStandard2.0`](https://docs.microsoft.com/dotnet/standard/net-standard)для использования и поэтому может использоваться в .net Core 2,0 или более поздней версии, а также .NET Framework 4.7.2 или более поздней версии.
+> Существует новый пакет SDK Application Insights под названием [Microsoft.ApplicationInsights.WorkerService](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService), который можно использовать, чтобы включать Application Insights для любых консольных приложений. Рекомендуется использовать этот пакет и связанные инструкции [отсюда](../../azure-monitor/app/worker-service.md). Этот пакет предназначен для [`NetStandard2.0`](https://docs.microsoft.com/dotnet/standard/net-standard), поэтому его можно использовать в .NET Core 2.0 или более поздней версии либо в .NET Framework 4.7.2 или более поздней версии.
 
 ## <a name="getting-started"></a>Начало работы
 
-* В [портал Azure](https://portal.azure.com) [Создайте ресурс Application Insights](../../azure-monitor/app/create-new-resource.md). Для параметра типа приложения выберите приложение **Общий**.
-* Сделайте копию ключа инструментирования. Найдите ключ в раскрывающемся списке **основных** компонентов нового созданного ресурса.
+* На [портале Azure](https://portal.azure.com)[создайте ресурс Application Insights](../../azure-monitor/app/create-new-resource.md). Для параметра типа приложения выберите приложение **Общий**.
+* Сделайте копию ключа инструментирования. Найдите ключ в раскрывающемся списке **Основные компоненты** нового ресурса, который вы создали.
 * Установите последнюю версию пакета [Microsoft.ApplicationInsights](https://www.nuget.org/packages/Microsoft.ApplicationInsights).
 * Прежде чем отслеживать телеметрию, задайте ключ инструментирования в коде или переменную среды APPINSIGHTS_INSTRUMENTATIONKEY. После этого вы сможете отслеживать телеметрию вручную и просматривать данные телеметрии на портале Azure.
 
@@ -36,7 +36,7 @@ telemetryClient.TrackTrace("Hello World!");
 ```
 
 > [!NOTE]
-> Данные телеметрии не отправляются мгновенно. Элементы телеметрии пакетированы и отправляются пакетом SDK для ApplicationInsights. В консольных приложениях, которые завершаются сразу после `Track()` вызова методов, данные телеметрии могут быть не `Flush()` отправлены, пока `Sleep` приложение не завершит работу, как показано в [полном примере](#full-example) далее в этой статье.
+> Данные телеметрии не отправляются мгновенно. Элементы телеметрии пакетируются и отправляются пакетом SDK для ApplicationInsights. В консольных приложениях, которые выполняются сразу после вызова методов `Track()`, данные телеметрии могут и не отправляться, если только `Flush()` и `Sleep`/`Delay` не будут выполнены до завершения работы приложения, как показано в [полном примере](#full-example) далее в этой статье. `Sleep` не обязателен, если используется `InMemoryChannel`. Существует нерешенная проблема, связанная с потребностью в `Sleep`, статус которой отслеживается здесь: [ApplicationInsights-dotnet/issues/407](https://github.com/microsoft/ApplicationInsights-dotnet/issues/407)
 
 
 * Установите последнюю версию пакета [Microsoft.ApplicationInsights.DependencyCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DependencyCollector), который позволяет автоматически отслеживать HTTP-вызовы, SQL-вызовы или другие внешние вызовы зависимостей.
@@ -96,7 +96,7 @@ var telemetryClient = new TelemetryClient(configuration);
 
 ### <a name="configuring-telemetry-collection-from-code"></a>Настройка сбора данных телеметрии с помощью кода
 > [!NOTE]
-> Чтение файла конфигурации не поддерживается в .NET Core. Вы можете использовать [Application Insights SDK для ASP.NET Core](../../azure-monitor/app/asp-net-core.md)
+> Чтение файла конфигурации не поддерживается в .NET Core. Рассмотрите использование [пакета SDK Application Insights для ASP.NET Core](../../azure-monitor/app/asp-net-core.md)
 
 * При запуске приложения создайте и настройте экземпляр `DependencyTrackingTelemetryModule`. Он должен быть одноэлементным и сохраняться в течение всего времени существования приложения.
 
@@ -125,13 +125,13 @@ module.Initialize(configuration);
 configuration.TelemetryInitializers.Add(new HttpDependenciesParsingTelemetryInitializer());
 ```
 
-Если вы создали конфигурацию с обычным `TelemetryConfiguration()` конструктором, необходимо включить поддержку корреляции дополнительно. **Он не требуется** при чтении конфигурации из файла, используется `TelemetryConfiguration.CreateDefault()` или. `TelemetryConfiguration.Active`
+Если вы создали конфигурацию с обычным конструктором `TelemetryConfiguration()`, необходимо включить поддержку корреляции дополнительно. **Это не требуется** в случае чтения конфигурации из файла, используемого `TelemetryConfiguration.CreateDefault()` или `TelemetryConfiguration.Active`.
 
 ```csharp
 configuration.TelemetryInitializers.Add(new OperationCorrelationTelemetryInitializer());
 ```
 
-* Также может потребоваться установить и инициализировать модуль сбора данных счетчиков производительности, как описано [здесь](https://apmtips.com/blog/2017/02/13/enable-application-insights-live-metrics-from-code/) .
+* Может также быть желательно установить и инициализировать модуль сборщика для счетчика производительности, как описано [здесь](https://apmtips.com/blog/2017/02/13/enable-application-insights-live-metrics-from-code/).
 
 
 #### <a name="full-example"></a>Полный пример
@@ -172,7 +172,8 @@ namespace ConsoleApp
             // before exit, flush the remaining data
             telemetryClient.Flush();
 
-            // flush is not blocking so wait a bit
+            // flush is not blocking when not using InMemoryChannel so wait a bit. There is an active issue regarding the need for `Sleep`/`Delay`
+            // which is tracked here: https://github.com/microsoft/ApplicationInsights-dotnet/issues/407
             Task.Delay(5000).Wait();
 
         }
@@ -205,6 +206,6 @@ namespace ConsoleApp
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Отслеживайте зависимости](../../azure-monitor/app/asp-net-dependencies.md), чтобы выяснить, что стало причиной медленной работы — REST, SQL или другие внешние ресурсы.
 * [Используйте API](../../azure-monitor/app/api-custom-events-metrics.md) для отправки собственных событий и метрик для более четкого представления о производительности и использовании приложения.

@@ -3,14 +3,14 @@ title: Начало работы с интерфейсом командной с
 description: Сведения об использовании интерфейса командной строки Azure Service Fabric. Узнайте, как подключиться к кластеру и как управлять приложениями.
 author: jeffj6123
 ms.topic: conceptual
-ms.date: 1/16/2020
+ms.date: 5/19/2020
 ms.author: jejarry
-ms.openlocfilehash: 46c5e1ed0a1d0db100c3415c40f59d46f62b21f9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: b3714f8401def9bed68e4b0845d025734a480cb3
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79258945"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83681801"
 ---
 # <a name="azure-service-fabric-cli"></a>Интерфейс командной строки Azure Service Fabric
 
@@ -18,7 +18,7 @@ ms.locfileid: "79258945"
 
 [!INCLUDE [links to azure cli and service fabric cli](../../includes/service-fabric-sfctl.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать установку, убедитесь, что в вашей среде установлены Python и pip. Дополнительные сведения см. в [кратком руководстве по началу работы с pip](https://pip.pypa.io/en/latest/quickstart/) и официальной [документации по установке Python](https://wiki.python.org/moin/BeginnersGuide/Download).
 
@@ -30,7 +30,8 @@ ms.locfileid: "79258945"
 
 | Версия интерфейса командной строки   | Поддерживаемая версия среды выполнения |
 |---------------|---------------------------|
-| Последняя (~ = 9)  | Последняя (~7)              |
+| Последняя (~ = 10) | Последняя (~ = 7,1)            |
+| 9.0.0         | 7.1                       |
 | 8.0.0         | 6,5                       |
 | 7.1.0         | 6.4                       |
 | 6.0.0         | 6.3                       |
@@ -265,7 +266,7 @@ pip uninstall sfctl
 pip install sfctl
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Manage an Azure Service Fabric application by using Azure Service Fabric CLI](service-fabric-application-lifecycle-sfctl.md) (Управление приложением Azure Service Fabric с помощью интерфейса командной строки Azure Service Fabric)
 * [Prepare your development environment on Linux](service-fabric-get-started-linux.md) (Подготовка среды разработки в Linux)
