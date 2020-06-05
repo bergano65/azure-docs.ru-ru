@@ -21,7 +21,7 @@ ms.locfileid: "77474214"
 
 ### <a name="billing-arguments"></a>Аргументы для выставления счетов
 
-<a href="https://docs.docker.com/engine/reference/commandline/run/" target="_blank"> `docker run` Команда запустит контейнер, если указаны следующие три параметра с допустимыми <span class="docon docon-navigate-external x-hidden-focus"></span> </a> значениями:
+Команда запустит контейнер, если указаны следующие три параметра с допустимыми значениями: <a href="https://docs.docker.com/engine/reference/commandline/run/" target="_blank"> `docker run` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>
 
 | Параметр | Описание |
 |--------|-------------|

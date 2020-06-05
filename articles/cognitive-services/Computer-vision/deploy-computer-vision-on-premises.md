@@ -25,7 +25,7 @@ ms.locfileid: "80877985"
 
 Перед использованием Компьютерное зрение контейнеров в локальной среде выполните следующие предварительные требования:
 
-| Обязательный | Назначение |
+| Обязательно | Цель |
 |----------|---------|
 | Учетная запись Azure | Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][free-azure-account], прежде чем начинать работу. |
 | Kubernetes CLI | Интерфейс [командной строки Kubernetes][kubernetes-cli] требуется для управления общими учетными данными из реестра контейнеров. Kubernetes также требуется перед Helm, который является диспетчером пакетов Kubernetes. |
@@ -48,9 +48,9 @@ ms.locfileid: "80877985"
 
 ### <a name="sharing-docker-credentials-with-the-kubernetes-cluster"></a>Предоставление учетных данных DOCKER в кластере Kubernetes
 
-Чтобы разрешить кластеру `docker pull` Kubernetes настроенные образы из реестра `containerpreview.azurecr.io` контейнеров, необходимо переместить учетные данные DOCKER в кластер. Выполните приведенную ниже [`kubectl create`][kubectl-create] команду, чтобы создать *секрет DOCKER-Registry* на основе учетных данных, предоставленных в предварительных требованиях для доступа к реестру контейнеров.
+Чтобы разрешить кластеру Kubernetes `docker pull` настроенные образы из `containerpreview.azurecr.io` реестра контейнеров, необходимо переместить учетные данные DOCKER в кластер. Выполните [`kubectl create`][kubectl-create] приведенную ниже команду, чтобы создать *секрет DOCKER-Registry* на основе учетных данных, предоставленных в предварительных требованиях для доступа к реестру контейнеров.
 
-В выбранном интерфейсе командной строки выполните следующую команду. Обязательно замените `<username>`, `<password>`и `<email-address>` на учетные данные реестра контейнеров.
+В выбранном интерфейсе командной строки выполните следующую команду. Обязательно замените `<username>` , `<password>` и на `<email-address>` учетные данные реестра контейнеров.
 
 ```console
 kubectl create secret docker-registry containerpreview \
@@ -98,7 +98,7 @@ version: 1.0.0
 description: A Helm chart to deploy the microsoft/cognitive-services-read to a Kubernetes cluster
 ```
 
-Чтобы настроить значения по умолчанию для диаграммы Helm, скопируйте и вставьте следующий YAML в файл с `values.yaml`именем. Замените комментарии `# {ENDPOINT_URI}` и `# {API_KEY}` собственными значениями.
+Чтобы настроить значения по умолчанию для диаграммы Helm, скопируйте и вставьте следующий YAML в файл с именем `values.yaml` . Замените `# {ENDPOINT_URI}` комментарии и `# {API_KEY}` собственными значениями.
 
 ```yaml
 # These settings are deployment specific and users can provide customizations
@@ -118,9 +118,9 @@ read:
 ```
 
 > [!IMPORTANT]
-> Если значения `billing` и `apikey` не указаны, срок действия служб истечет через 15 минут. Аналогичным образом проверка завершится ошибкой, так как службы будут недоступны.
+> Если `billing` значения и `apikey` не указаны, срок действия служб истечет через 15 минут. Аналогичным образом проверка завершится ошибкой, так как службы будут недоступны.
 
-Создайте папку *Templates* в каталоге *Read* . Скопируйте и вставьте следующий YAML в файл с именем `deployment.yaml`. `deployment.yaml` Файл будет служить шаблоном Helm.
+Создайте папку *Templates* в каталоге *Read* . Скопируйте и вставьте следующий YAML в файл с именем `deployment.yaml` . `deployment.yaml`Файл будет служить шаблоном Helm.
 
 > Шаблоны создают файлы манифеста, YAML описания ресурсов, которые Kubernetes могут понять. [-Helm шаблон диаграммы][chart-template-guide]
 
@@ -167,11 +167,11 @@ spec:
 
 ### <a name="the-kubernetes-package-helm-chart"></a>Пакет Kubernetes (диаграмма Helm)
 
-*Диаграмма Helm* содержит конфигурацию образов DOCKER, которые необходимо извлечь из реестра `containerpreview.azurecr.io` контейнеров.
+*Диаграмма Helm* содержит конфигурацию образов DOCKER, которые необходимо извлечь из `containerpreview.azurecr.io` реестра контейнеров.
 
 > [Helm диаграмма][helm-charts] — это коллекция файлов, описывающих связанный набор ресурсов Kubernetes. Отдельную диаграмму можно использовать для развертывания чего-либо простого, такого как memcached Pod или что-то сложного, подобно полному стеку веб-приложений с серверами HTTP, базами данных, кэшами и т. д.
 
-Предоставленные *диаграммы Helm* извлекают образы docker службы компьютерное зрение и соответствующую службу из реестра `containerpreview.azurecr.io` контейнеров.
+Предоставленные *диаграммы Helm* извлекают образы docker службы компьютерное зрение и соответствующую службу из `containerpreview.azurecr.io` реестра контейнеров.
 
 ## <a name="install-the-helm-chart-on-the-kubernetes-cluster"></a>Установка диаграммы Helm в кластере Kubernetes
 
@@ -230,7 +230,7 @@ replicaset.apps/read-57cb76bcf7   1         1         1       17s
 
 [!INCLUDE [Container's API documentation](../../../includes/cognitive-services-containers-api-documentation.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об установке приложений с помощью Helm в службе Kubernetes Azure (AKS) см. [здесь][installing-helm-apps-in-aks].
 
