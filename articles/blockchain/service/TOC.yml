@@ -4,6 +4,8 @@
   items:
     - name: Общие сведения о службе "Блокчейн Azure"
       href: overview.md
+    - name: Новые возможности
+      href: whats-new.md
 - name: Краткие руководства
   expanded: true
   items:
