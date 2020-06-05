@@ -34,7 +34,7 @@ ms.locfileid: "81409202"
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -93,7 +93,7 @@ ms.locfileid: "81409202"
     ```powershell
     $selfHostedIntegrationRuntimeName = "MySelfHostedIR09142017" 
     ```
-2. Запустите **PowerShell**. Не закрывайте Azure PowerShell, пока выполняются описанные в этом кратком руководстве инструкции. Если закрыть и снова открыть это окно, то придется вновь выполнять эти команды. Чтобы получить список регионов Azure, в которых в настоящее время доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
+2. Запустите **PowerShell**. Не закрывайте Azure PowerShell, пока выполняются описанные в этом кратком руководстве инструкции. Если закрыть и снова открыть это окно, то придется вновь выполнять эти команды. Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
 
     Выполните следующую команду и введите имя пользователя и пароль, которые используются для входа на портал Azure.
         
@@ -110,7 +110,7 @@ ms.locfileid: "81409202"
     ```powershell
     Select-AzSubscription -SubscriptionId "<SubscriptionId>"    
     ```  
-3. Создайте группу ресурсов ADFTutorialResourceGroup, если она не существует в вашей подписке. 
+3. Создайте группу ресурсов: Создайте группу ресурсов ADFTutorialResourceGroup, если она не существует в вашей подписке. 
 
     ```powershell
     New-AzResourceGroup -Name $resourceGroupName -Location "East Us" 
@@ -156,9 +156,9 @@ ms.locfileid: "81409202"
 
    ![Регистрация среды выполнения интеграции](media/tutorial-transform-data-using-hive-in-vnet/register-integration-runtime.png)
 
-   Когда локальная среда выполнения интеграции будет успешно зарегистрирована, вы увидите следующее сообщение: ![Зарегистрировано успешно](media/tutorial-transform-data-using-hive-in-vnet/registered-successfully.png).
+   Когда локальная среда выполнения интеграции будет успешно зарегистрирована, вы увидите следующее сообщение: Сообщение об ![успешной регистрации](media/tutorial-transform-data-using-hive-in-vnet/registered-successfully.png)
 
-   Когда узел будет подключен к облачной службе, появится следующая страница: ![Узел подключен](media/tutorial-transform-data-using-hive-in-vnet/node-is-connected.png).
+   Когда узел будет подключен к облачной службе, отобразится следующая страница: Страница ![Node is connected](media/tutorial-transform-data-using-hive-in-vnet/node-is-connected.png) (Узел подключен)
 
 ## <a name="author-linked-services"></a>Создание связанных служб
 

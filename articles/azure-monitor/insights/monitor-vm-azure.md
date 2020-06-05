@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/05/2020
-ms.openlocfilehash: 1121b5324368f8b8c6c062868f5072f4a0e7ac86
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: ebb25d49250b71ab8d948833ac982ef244225539
+ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83654378"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84216444"
 ---
 # <a name="monitoring-azure-virtual-machines-with-azure-monitor"></a>Мониторинг виртуальных машин Azure с помощью Azure Monitor
 В этой статье описывается, как использовать Azure Monitor для сбора и анализа данных мониторинга с виртуальных машин Azure для поддержания их работоспособности. С помощью Azure Monitor можно отслеживать доступность и производительность виртуальных машин так же, как аналогичные параметры любых [других ресурсов Azure](monitor-azure-resource.md). Однако они отличаются от других ресурсов тем, что, помимо прочего, необходимо отслеживать операционную систему на виртуальной машине и выполняющиеся на ней рабочие нагрузки. 
@@ -110,9 +110,7 @@ ms.locfileid: "83654378"
 Для сбора метрик платформы используется параметр диагностики для виртуальной машины. В отличие от других ресурсов Azure, вы не можете создать параметр диагностики для виртуальной машины на портале Azure. Для этого следует использовать [другой метод](../platform/diagnostic-settings.md#create-diagnostic-settings-using-powershell). Ниже приведены примеры сбора метрик для виртуальной машины с помощью PowerShell и CLI.
 
 ```powershell
-Set-AzDiagnosticSetting -Name vm-diagnostics -ResourceId "/subscriptions/monitor diagnostic-settings create \
-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/my-resource-group/providers/Microsoft.Compute/virtualMachines/my-vm" -Enabled $true -MetricCategory AllMetrics -workspaceId "/subscriptions/monitor diagnostic-settings create \
-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/my-resource-group/providers/microsoft.operationalinsights/workspaces/my-workspace"
+Set-AzDiagnosticSetting -Name vm-diagnostics -ResourceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/my-resource-group/providers/Microsoft.Compute/virtualMachines/my-vm" -Enabled $true -MetricCategory AllMetrics -workspaceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/my-resource-group/providers/microsoft.operationalinsights/workspaces/my-workspace"
 ```
 
 ```CLI

@@ -13,7 +13,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 04/30/2020
 ms.locfileid: "82594769"
 ---
-# <a name="tutorial-configure-a-jenkins-environment-to-enable-cicd-for-a-java-application-on-service-fabric"></a>Руководство. Настройка среды Jenkins для включения непрерывной интеграции и непрерывного развертывания для приложения Java в Service Fabric
+# <a name="tutorial-configure-a-jenkins-environment-to-enable-cicd-for-a-java-application-on-service-fabric"></a>Руководство по Настройка среды Jenkins для включения непрерывной интеграции и непрерывного развертывания для приложения Java в Service Fabric
 
 Это руководство представляет собой пятую часть цикла. В нем показано, как развернуть обновления в приложении с помощью Jenkins. В этом руководстве приложение Voting развертывается в кластере с помощью подключаемого модуля Jenkins для Service Fabric в сочетании с репозиторием GitHub, в котором размещено это приложение.
 
@@ -31,7 +31,7 @@ ms.locfileid: "82594769"
 > * [Настройка мониторинга и диагностики приложения](service-fabric-tutorial-java-elk.md)
 > * Настройка непрерывной интеграции и непрерывного развертывания.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Необходимо установить Git на локальный компьютер, используя [страницу загрузки Git](https://git-scm.com/downloads). Дополнительные сведения о Git см. в [документации по Git](https://git-scm.com/docs).
 * Необходимо иметь опыт работы с [Jenkins](https://jenkins.io/).

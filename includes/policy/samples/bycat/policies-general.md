@@ -12,7 +12,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 05/31/2020
 ms.locfileid: "84232509"
 ---
-|Имя |Description |Действие |Версия |GitHub |
+|Имя |Описание |Действие |Версия |GitHub |
 |---|---|---|---|---|
 |[Допустимые расположения](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe56962a6-4747-49cd-b67b-bf8b01975c4c) |Эта политика позволяет ограничить расположения, которые ваша организация может указать при развертывании ресурсов. Используется для соблюдения географических требований. Исключает группы ресурсов, каталоги Microsoft.AzureActiveDirectory/b2cDirectories и ресурсы, в которых используется "глобальный" регион. |deny |1.0.0 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/AllowedLocations_Deny.json) |
 |[Разрешенные расположения для групп ресурсов](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe765b5de-1225-4ba3-bd56-1ac6695af988) |Эта политика позволяет ограничить расположения, которые ваша организация может указать при создании групп ресурсов. Используется для соблюдения географических требований. |deny |1.0.0 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/ResourceGroupAllowedLocations_Deny.json) |

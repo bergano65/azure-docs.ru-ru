@@ -1188,6 +1188,8 @@
             - name: Параметры определяемого пользователем маршрута
               href: /azure/databricks/administration-guide/cloud-configurations/azure/udr
               maintainContext: true
+            - name: IP-адреса MySQL
+              href: mysql-ip-address.md
     - name: Устранение неполадок
       items:
         - name: Часто задаваемые вопросы
@@ -1872,7 +1874,7 @@
                 - name: Databricks Runtime 6.6 ML
                   href: /azure/databricks/release-notes/runtime/6.6ml
                   maintainContext: true
-                - name: "Databricks Runtime\_6.6 Genomics"
+                - name: Databricks Runtime 6.6 для Genomics
                   href: /azure/databricks/release-notes/runtime/6.6genomics
                   maintainContext: true
                 - name: Databricks Runtime 6.5

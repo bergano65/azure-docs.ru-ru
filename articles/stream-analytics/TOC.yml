@@ -114,6 +114,8 @@
   items:
     - name: Управление
       items:
+        - name: Задания автомасштабирования
+          href: stream-analytics-autoscale.md
         - name: Обновление учетных данных
           href: stream-analytics-login-credentials-inputs-outputs.md
         - name: Настройка политик упорядочения событий
@@ -611,6 +613,8 @@
       href: /rest/api/streamanalytics
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.streamanalytics/allversions
+    - name: Azure CLI
+      href: /cli/azure/ext/stream-analytics/stream-analytics
 - name: Ресурсы
   items:
     - name: Предварительные версии Stream Analytics

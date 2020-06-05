@@ -230,7 +230,7 @@
                     - name: Журнал версий
                       href: platform/diagnostics-extension-versions.md
                     - name: Формат JSON Lines для журналов ресурсов
-                      href: platform/diagnostic-logs-append-blobs.md
+                      href: platform/resource-logs-append-blobs.md
                     - name: Устранение неполадок
                       href: platform/diagnostics-extension-troubleshooting.md
                 - name: Linux
@@ -1173,8 +1173,10 @@
           href: platform/alerts-metric-near-real-time.md
     - name: Журналы платформы
       items:
+        - name: Поддерживаемые типы и категории журналов ресурсов
+          href: platform/resource-logs-categories.md
         - name: Схемы журналов ресурсов
-          href: platform/diagnostic-logs-schema.md
+          href: platform/resource-logs-schema.md
         - name: Схема журнала действий
           href: platform/activity-log-schema.md
     - name: Схемы расширений для диагностики

@@ -148,9 +148,9 @@
               href: storage-files-identity-auth-active-directory-enable.md
             - name: Включение проверки подлинности AD DS
               href: storage-files-identity-ad-ds-enable.md
-            - name: Назначение разрешений
+            - name: Назначение разрешений на уровне общего ресурса
               href: storage-files-identity-ad-ds-assign-permissions.md
-            - name: Настройка разрешений
+            - name: Назначение разрешений на уровне каталога или файлов
               href: storage-files-identity-ad-ds-configure-permissions.md
             - name: Подключение общих файловых ресурсов
               href: storage-files-identity-ad-ds-mount-file-share.md
@@ -234,48 +234,8 @@
           href: storage-troubleshoot-cannot-delete-files-azure-file-share.md
 - name: Справочник
   items:
-    - name: Azure PowerShell (Storage)
-      href: /powershell/module/az.storage
-    - name: Azure PowerShell (StorageSync)
-      href: /powershell/module/az.storagesync
-    - name: Azure CLI
-      href: /cli/azure/storage
-    - name: .NET
-      items:
-        - name: Файлы (версия 11.x)
-          href: /dotnet/api/microsoft.azure.storage.file
-        - name: Перемещение данных
-          href: /dotnet/api/microsoft.azure.storage.datamovement
-        - name: Поставщик ресурсов хранилища
-          href: /dotnet/api/overview/azure/storage/management
-    - name: Java
-      items:
-        - name: Файлы (версия 8.x)
-          href: /java/api/com.microsoft.azure.storage.file
-        - name: Поставщик ресурсов хранилища
-          href: /java/api/overview/azure/storage/management
-    - name: JavaScript (версия 10.x)
-      href: /javascript/api/@azure/storage-file
-    - name: Python (версия 2.x)
-      href: /python/api/azure-storage-file/?view=azure-python
-    - name: REST
-      items:
-        - name: 'Большие двоичные объекты, очереди, таблицы и файлы'
-          href: /rest/api/storageservices
-        - name: Поставщик ресурсов хранилища
-          href: /rest/api/storagerp
-        - name: Импорт и экспорт
-          href: /rest/api/storageimportexport
-    - name: C++
-      href: 'https://azure.github.io/azure-storage-cpp'
-    - name: Ruby
-      href: 'https://azure.github.io/azure-storage-ruby'
-    - name: PHP
-      href: 'https://azure.github.io/azure-storage-php/'
-    - name: iOS
-      href: 'https://azure.github.io/azure-storage-ios/'
-    - name: Android
-      href: 'https://azure.github.io/azure-storage-android'
+    - name: Справочная документация по общим папкам Azure
+      href: ../files/reference.md
     - name: Шаблон Resource Manager
       displayName: arm
       href: /azure/templates/microsoft.storage/allversions

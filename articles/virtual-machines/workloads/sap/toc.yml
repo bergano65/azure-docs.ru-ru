@@ -259,6 +259,10 @@
       href: 'https://docs.microsoft.com/power-bi/desktop-sap-bw-connector'
     - name: Возможность интеграции данных SAP HANA и Business Warehouse в Фабрике данных Azure
       href: 'https://azure.microsoft.com/blog/azure-data-factory-offer-sap-hana-and-business-warehouse-data-integration'
+- name: Справочник
+  items:
+    - name: Azure CLI
+      href: /cli/azure/ext/sap-hana/hanainstance
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

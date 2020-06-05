@@ -190,6 +190,18 @@
               href: storage-blob-reserved-capacity.md
             - name: Планирование затрат и управление ими
               href: ../common/storage-plan-manage-costs.md
+            - name: Целевые показатели масштабируемости и производительности хранилища
+              items:
+                - name: Хранилище BLOB-объектов
+                  href: scalability-targets.md
+                - name: Стандартные учетные записи хранения
+                  href: ../common/scalability-targets-standard-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: Учетные записи хранения блочных BLOB-объектов категории "Премиум"
+                  href: scalability-targets-premium-block-blobs.md
+                - name: Учетные записи хранения страничных BLOB-объектов категории "Премиум"
+                  href: scalability-targets-premium-page-blobs.md
+                - name: Поставщик ресурсов хранилища
+                  href: ../common/scalability-targets-resource-provider.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Параллелизм
           href: ../common/storage-concurrency.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Поиск и анализ данных BLOB-объектов
@@ -473,60 +485,8 @@
               href: ../common/troubleshoot-latency-storage-analytics-logs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
     - name: Справочник
       items:
-        - name: Целевые показатели масштабируемости и производительности хранилища
-          items:
-            - name: Хранилище BLOB-объектов
-              href: scalability-targets.md
-            - name: Стандартные учетные записи хранения
-              href: ../common/scalability-targets-standard-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Учетные записи хранения блочных BLOB-объектов категории "Премиум"
-              href: scalability-targets-premium-block-blobs.md
-            - name: Учетные записи хранения страничных BLOB-объектов категории "Премиум"
-              href: scalability-targets-premium-page-blobs.md
-            - name: Поставщик ресурсов хранилища
-              href: ../common/scalability-targets-resource-provider.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Azure PowerShell
-          href: /powershell/module/az.storage
-        - name: Azure CLI
-          href: /cli/azure/storage
-        - name: .NET
-          items:
-            - name: Большие двоичные объекты (версия 12.x)
-              href: /dotnet/api/azure.storage.blobs
-            - name: Перемещение данных
-              href: /dotnet/api/microsoft.azure.storage.datamovement
-            - name: Поставщик ресурсов хранилища
-              href: /dotnet/api/overview/azure/storage/management
-        - name: Java
-          items:
-            - name: Большие двоичные объекты (версия 12.x)
-              href: 'https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/index.html'
-            - name: Большие двоичные объекты (версия 8.x)
-              href: /java/api/com.microsoft.azure.storage.blob
-            - name: Поставщик ресурсов хранилища
-              href: /java/api/overview/azure/storage/management
-        - name: JavaScript (версия 12.x)
-          href: /javascript/api/@azure/storage-blob/
-        - name: Python (версия 12.x)
-          href: /python/api/azure-storage-blob/
-        - name: REST
-          items:
-            - name: 'Большие двоичные объекты, очереди, таблицы и файлы'
-              href: /rest/api/storageservices
-            - name: Поставщик ресурсов хранилища
-              href: /rest/api/storagerp
-            - name: Импорт и экспорт
-              href: /rest/api/storageimportexport
-        - name: C++
-          href: 'https://azure.github.io/azure-storage-cpp'
-        - name: Ruby
-          href: 'https://azure.github.io/azure-storage-ruby'
-        - name: PHP
-          href: 'https://azure.github.io/azure-storage-php/'
-        - name: iOS
-          href: 'https://azure.github.io/azure-storage-ios/'
-        - name: Android
-          href: 'https://azure.github.io/azure-storage-android'
+        - name: Справочная документация по хранилищу BLOB-объектов Azure
+          href: ../blobs/reference.md
         - name: "AzCopy версии\_10"
           items:
             - name: azcopy

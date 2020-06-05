@@ -12,6 +12,6 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 05/31/2020
 ms.locfileid: "84233670"
 ---
-|Имя |Description |Действие |Версия |GitHub |
+|Имя |Описание |Действие |Версия |GitHub |
 |---|---|---|---|---|
 |[Необходимо включить журналы диагностики в службах поиска](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb4330a05-a843-4bc8-bf9a-cacce50c67f4) |Аудит активации журналов диагностики. Это позволит воссоздать действия для расследования в случае инцидентов безопасности или компрометации сети. |AuditIfNotExists, Disabled |2.0.0 |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Search/Search_AuditDiagnosticLog_Audit.json) |

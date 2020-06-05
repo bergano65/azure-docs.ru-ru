@@ -90,6 +90,10 @@
                   href: tutorial-incremental-copy-change-tracking-feature-portal.md
                 - name: Azure PowerShell
                   href: tutorial-incremental-copy-change-tracking-feature-powershell.md
+            - name: Использование CDC в управляемом экземпляре SQL Azure
+              items:
+                - name: Пользовательский интерфейс
+                  href: tutorial-incremental-copy-change-data-capture-feature-portal.md
             - name: Новые файлы по дате последнего изменения
               href: tutorial-incremental-copy-lastmodified-copy-data-tool.md
             - name: 'Новые файлы на основе имен файлов, секционированных по времени'
@@ -196,6 +200,8 @@
       items:
         - name: Визуальная разработка фабрик данных
           href: author-visually.md
+        - name: Центр управления
+          href: author-management-hub.md
         - name: Система управления версиями
           href: source-control.md
         - name: Непрерывная интеграция и поставка

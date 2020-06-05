@@ -20,7 +20,7 @@ ms.locfileid: "83798494"
 > [!div class="op_single_selector"]
 > * [Примеры пакета SDK для .NET версии 2](sql-api-dotnet-samples.md)
 > * [Примеры пакета SDK для .NET версии 3](sql-api-dotnet-v3sdk-samples.md)
-> * [Примеры пакета SDK для Java версии 4](sql-api-java-sdk-samples.md)
+> * [Примеры для пакета SDK Java версии 4](sql-api-java-sdk-samples.md)
 > * [Примеры Node.js](sql-api-nodejs-samples.md)
 > * [Примеры Python](sql-api-python-samples.md)
 > * [Коллекция примеров кода Azure](https://azure.microsoft.com/resources/samples/?sort=0&service=cosmos-db)
