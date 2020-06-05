@@ -12,7 +12,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 05/31/2020
 ms.locfileid: "84233993"
 ---
-|Имя |Description |Политики |Версия |
+|Имя |Описание |Политики |Версия |
 |---|---|---|---|
 |[Проверка виртуальных машин Linux, на которых не установлены указанные приложения](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Guest%20Configuration/GuestConfiguration_InstalledApplicationLinux.json) |Эта инициатива развертывает требуемые компоненты политики и проверяет виртуальные машины Linux, на которых не установлены указанные приложения. Дополнительные сведения о политиках гостевой конфигурации: [https://aka.ms/gcpol](https://aka.ms/gcpol) |2 |1.1.0 |
 |[Проверка виртуальных машин Linux, на которых установлены указанные приложения](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Guest%20Configuration/GuestConfiguration_NotInstalledApplicationLinux.json) |Эта инициатива развертывает требуемые компоненты политики и проверяет виртуальные машины Linux, на которых установлены указанные приложения. Дополнительные сведения о политиках гостевой конфигурации: [https://aka.ms/gcpol](https://aka.ms/gcpol) |2 |1.1.0 |

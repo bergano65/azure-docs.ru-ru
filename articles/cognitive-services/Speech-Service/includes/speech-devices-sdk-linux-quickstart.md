@@ -49,7 +49,7 @@ ms.locfileid: "83673158"
   sudo apt-get install libssl1.0.2 libasound2
   ```
 
-* Для RHEL/CentOS 8:
+* Для RHEL/CentOS.
   
   ```sh
   sudo yum update
@@ -57,7 +57,7 @@ ms.locfileid: "83673158"
   ```
 
   > [!NOTE]
-  > - Если вы используете RHEL/CentOS 7, выполните инструкции по [настройке пакета SDK "Речь" в RHEL/CentOS 7](~/articles/cognitive-services/speech-service/how-to-configure-rhel-centos-7.md).
+  > - Если вы используете RHEL/CentOS 7, выполните инструкции по [настройке пакета SDK службы "Речь" в RHEL/CentOS 7](~/articles/cognitive-services/speech-service/how-to-configure-rhel-centos-7.md).
 > - Если вы используете RHEL/CentOS 8, выполните инструкции по [настройке OpenSSL для Linux](~/articles/cognitive-services/speech-service/how-to-configure-openssl-linux.md).
 
 Сейчас транскрибирование бесед доступно для американского английского и китайского языков в регионах "центральная часть США" и "Восточная Азия". Для использования транскрибирования бесед вам понадобится речевой ключ в одном из упомянутых регионов.

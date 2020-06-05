@@ -18,7 +18,7 @@ ms.locfileid: "83673141"
 
 Исходный код для примера приложения входит в состав пакета SDK для речевых устройств. Он также [доступен на веб-сайте GitHub](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы начать использовать пакет SDK для речевых устройств, необходимо:
 

@@ -82,6 +82,8 @@
           href: specify-marketplace-images.md
         - name: Указание сведений о поддержке (владелец учетной записи лаборатории)
           href: lab-account-owner-support-information.md
+        - name: Управление затратами на лаборатории
+          href: cost-management-guide.md
     - name: Создание и настройка лабораторий для аудитории (преподаватель)
       items:
         - name: Создание и администрирование лабораторий для аудитории

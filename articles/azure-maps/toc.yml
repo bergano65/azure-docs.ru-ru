@@ -177,6 +177,14 @@
               href: map-get-information-from-coordinate.md
             - name: Отображение направлений от точки А до точки Б
               href: map-route.md
+        - name: Модуль схем помещений
+          items:
+            - name: Модуль схем помещений
+              href: how-to-use-indoor-module.md
+            - name: Динамический стиль для схем помещений
+              href: indoor-map-dynamic-styling.md
+            - name: Визуализатор ошибок рисования
+              href: drawing-error-visualizer.md
         - name: Модуль пространственного ввода-вывода
           items:
             - name: Использование модуля пространственного ввода-вывода
@@ -211,14 +219,6 @@
           href: how-to-add-tile-layer-android-map.md
         - name: Отображение данных о трафике
           href: how-to-show-traffic-android.md
-    - name: Разработка схем помещений с помощью Creator
-      items:
-        - name: Модуль схем помещений
-          href: how-to-use-indoor-module.md
-        - name: Динамический стиль для схем помещений
-          href: indoor-map-dynamic-styling.md
-        - name: Визуализатор ошибок рисования
-          href: drawing-error-visualizer.md
     - name: Предоставление отзывов о данных
       href: how-to-use-feedback-tool.md
 - name: Справочник
