@@ -17,7 +17,7 @@ ms.locfileid: "81275003"
 ---
 Контейнер предоставляет [интерфейсы API конечной точки на основе интерфейса RESTful](../rest-text-to-speech.md). Существует множество [примеров проектов исходного кода](https://github.com/Azure-Samples/Cognitive-Speech-TTS) для платформ, платформ и языковых вариантов.
 
-Используя стандартный контейнер преобразования *текста в речь* , вы должны полагаться на языковой стандарт и голоса скачанного тега образа. Например, если вы загрузили `latest` тег, язык по умолчанию `en-US` — `JessaRUS` и Voice. Затем `{VOICE_NAME}` аргумент будет иметь [`en-US-JessaRUS`](../language-support.md#standard-voices)значение. См. пример SSML ниже:
+Используя стандартный контейнер преобразования *текста в речь* , вы должны полагаться на языковой стандарт и голоса скачанного тега образа. Например, если вы загрузили `latest` тег, язык по умолчанию — `en-US` и `JessaRUS` Voice. `{VOICE_NAME}`Затем аргумент будет иметь значение [`en-US-JessaRUS`](../language-support.md#standard-voices) . См. пример SSML ниже:
 
 ```xml
 <speak version="1.0" xml:lang="en-US">
@@ -55,6 +55,6 @@ curl -s -v -X POST http://localhost:5000/speech/synthesize/cognitiveservices/v1 
 
 * Конструирует запрос HTTP POST для `speech/synthesize/cognitiveservices/v1` конечной точки.
 * Задает `Accept` заголовок`audio/*`
-* Задает заголовок `Content-Type` `application/ssml+xml`для более подробной информации см. в разделе [текст запроса](../rest-text-to-speech.md#request-body).
-* Задает `X-Microsoft-OutputFormat` заголовок `riff-16khz-16bit-mono-pcm`для дополнительных параметров см. [звуковые выходные данные](../rest-text-to-speech.md#audio-outputs).
-* Отправляет запрос на [языке разметки речи (SSML)](../speech-synthesis-markup.md) , `{VOICE_NAME}` заданный в конечной точке.
+* Задает `Content-Type` заголовок `application/ssml+xml` для более подробной информации см. в разделе [текст запроса](../rest-text-to-speech.md#request-body).
+* Задает `X-Microsoft-OutputFormat` заголовок `riff-16khz-16bit-mono-pcm` для дополнительных параметров см. [звуковые выходные данные](../rest-text-to-speech.md#audio-outputs).
+* Отправляет запрос на [языке разметки речи (SSML)](../speech-synthesis-markup.md) , заданный в `{VOICE_NAME}` конечной точке.
