@@ -5,19 +5,19 @@ author: anfeldma-ms
 ms.author: anfeldma
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/08/2020
+ms.date: 05/26/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 929fa936cdb864fd9b84f8feba55ef01ae6fed9c
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: d7028018501c5e6580d7345938a739ccc983ff48
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82984711"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83873256"
 ---
 # <a name="migrate-your-application-to-use-the-azure-cosmos-db-java-sdk-v4"></a>Перевод приложения на использование пакета средств разработки Java для Azure Cosmos DB версии 4
 
 > [!IMPORTANT]  
-> Дополнительные сведения об этом пакете SDK см. в заметках о выпуске для пакета средств разработки Java для Azure Cosmos DB версии 4, [репозитории Maven](https://mvnrepository.com/artifact/com.azure/azure-cosmos), [рекомендациях по повышению производительности](performance-tips-java-sdk-v4-sql.md) для пакета средств разработки Java для Azure Cosmos DB версии 4, а также в [руководстве по устранению неполадок](troubleshoot-java-sdk-v4-sql.md) для пакета средств разработки Java для Azure Cosmos DB версии 4.
+> Дополнительные сведения об этом пакете SDK см. в [заметках о выпуске](sql-api-sdk-java-v4.md) пакета SDK Java Azure Cosmos DB версии 4, [репозитории Maven](https://mvnrepository.com/artifact/com.azure/azure-cosmos), [рекомендациях по повышению производительности](performance-tips-java-sdk-v4-sql.md) для пакета SDK Java Azure Cosmos DB версии 4, а также в [руководстве по устранению неполадок](troubleshoot-java-sdk-v4-sql.md) для пакета SDK Java Azure Cosmos DB версии 4.
 >
 
 В этой статье объясняется, как обновить существующее приложение Java, в котором используется старая версия пакета средств разработки Java для Azure Cosmos DB, до нового пакета средств разработки Java для Azure Cosmos DB версии 4.0, работающего с API Core (SQL). Пакет средств разработки Java для Azure Cosmos DB версии 4 соответствует пакету `com.azure.cosmos`. Инструкции из этого документа можно использовать при переводе приложения с любого из следующих пакетов средств разработки Java для Azure Cosmos DB: 

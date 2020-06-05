@@ -1,20 +1,20 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: batch
-author: laurenhughes
+author: JnHs
 ms.service: batch
 ms.topic: include
 ms.date: 04/06/2018
-ms.author: lahugh
+ms.author: jenhayes
 ms.custom: include file
-ms.openlocfilehash: 7ba4c90811bd8051ed9c307d9f9fa33e08e69dc7
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
-ms.translationtype: MT
+ms.openlocfilehash: eaa76153fe96b5fd41166b20770e0a969aa9260d
+ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
-ms.locfileid: "67185640"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83797172"
 ---
 Задача, выполняемая пакетной службой Azure, может генерировать выходные данные при запуске. Выходные данные задачи часто требуется хранить, чтобы их могли получать другие задачи в задании и (или) клиентское приложение, которое выполняет это задание. Задачи записывают выходные данные в файловую систему вычислительного узла пакетной службы. При этом все данные на узле удаляются при пересоздании образа или исключении узла из пула. Задачи могут также иметь срок хранения файла, по истечении которого созданные задачей файлы удаляются. Поэтому важно хранить выходные данные задачи, которые понадобятся вам позднее для использования с хранилищем данных, например [службой хранилища Azure](https://docs.microsoft.com/azure/storage/).
 
-Параметры учетной записи хранения в пакетной службе см. в [обзоре функций пакетной службы](../articles/batch/batch-api-basics.md#azure-storage-account).
+Параметры учетной записи хранения в пакетной службе см. в статье [Учетные записи пакетной службы и учетные записи хранения Azure](../articles/batch/accounts.md#azure-storage-accounts).

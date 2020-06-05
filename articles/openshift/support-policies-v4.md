@@ -1,44 +1,46 @@
 ---
-title: Политика поддержки кластера Azure Red Hat OpenShift 4
-description: Общие сведения о требованиях политики поддержки для Red Hat OpenShift 4.
+title: Политика поддержки кластеров Azure Red Hat OpenShift 4
+description: Общие сведения о требованиях политики поддержки для Red Hat OpenShift 4.
 author: sakthi-vetrivel
 ms.author: suvetriv
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 04/24/2020
-ms.openlocfilehash: 7bdcccee3270f9d2b611682a9a59505158a494d2
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
-ms.translationtype: MT
+ms.openlocfilehash: ec27d054055866c72148ad6eb024d4324f063ce8
+ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82205213"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83774394"
 ---
 # <a name="azure-red-hat-openshift-support-policy"></a>Политика поддержки Azure Red Hat OpenShift
 
-Некоторые конфигурации для кластеров Azure Red Hat OpenShift 4 могут влиять на поддержку кластера. Azure Red Hat OpenShift 4 позволяет администраторам кластера вносить изменения во внутренние компоненты кластера, но не все изменения поддерживаются. Политика поддержки, представленная ниже, предоставляет общие сведения о том, какие изменения нарушают политику и поддерживают аннулирование от корпорации Майкрософт и Red Hat.
+Некоторые конфигурации кластеров Azure Red Hat OpenShift 4 могут влиять на поддержку вашего кластера. Azure Red Hat OpenShift 4 позволяет администраторам кластеров вносить изменения во внутренние компоненты кластеров, однако поддерживаются не все изменения. Представленная ниже политика поддержки объясняет, какие изменения нарушают политику и ведут к прекращению поддержки от корпорации Майкрософт и Red Hat.
 
 > [!NOTE]
-> Функции, помеченные как предварительная версия технологии на платформе контейнера OpenShift, не поддерживаются в Azure Red Hat OpenShift.
+> Функции, представленные на платформе контейнеров OpenShift как предварительные версии технологий, в Azure Red Hat OpenShift не поддерживаются.
 
-## <a name="cluster-configuration-requirements"></a>Требования к конфигурации кластера
+## <a name="cluster-configuration-requirements"></a>Требования к настройке кластеров
 
-* Все операторы кластера OpenShift должны оставаться в управляемом состоянии. Список операторов кластера можно вернуть, выполнив `oc get clusteroperators`.
-* Не удаляйте и не изменяйте службы Prometheus и Алертманажер кластера.
-* Не удаляйте правила Алертманажер служб.
+* Все операторы кластеров OpenShift должны оставаться в управляемом состоянии. Список операторов кластеров можно получить, выполнив команду `oc get clusteroperators`.
+* Не удаляйте и не изменяйте службы кластеров Prometheus и Alertmanager.
+* Не удаляйте правила службы Alertmanager.
 * Не изменяйте версию кластера OpenShift.
-* Не удаляйте и не изменяйте ведение журнала службы OpenShift Azure Red Hat (мдсд Pod).
-* Не удаляйте или не изменяйте секретный код опрашивающего кластера "arosvc.azurecr.io".
-* Все виртуальные машины кластера должны иметь исходящий доступ к Интернету по крайней мере для конечных точек Azure Resource Manager (ARM) и Service Logging (Geneva).
-* Служба Azure Red Hat OpenShift обращается к кластеру через службу частной связи.  Не удаляйте и не изменяйте доступ к службам.
-* Нерхкосные расчетные узлы не поддерживаются. Например, нельзя использовать RHELный узел вычислений.
+* Не удаляйте и не изменяйте журналы службы OpenShift Azure Red Hat (pod-объекты mdsd).
+* Не удаляйте и не изменяйте секретный код для извлечения кластера arosvc.azurecr.io.
+* Все виртуальные машины кластера должны иметь прямой исходящий доступ к Интернету по крайней мере для конечных точек Azure Resource Manager (ARM) и Service Logging (Geneva).  Ни одна из форм прокси-сервера HTTPS не поддерживается.
+* Не изменяйте конфигурацию DNS виртуальной сети кластера. Необходимо использовать сопоставитель Azure DNS по умолчанию.
+* Не переопределяйте ни один из объектов MachineConfig кластера (например, конфигурацию kubelet) никаким образом.
+* Служба Azure Red Hat OpenShift обращается к кластеру через службу приватных каналов.  Не удаляйте и не изменяйте доступ к службам.
+* Вычислительные узлы, кроме RHCOS, не поддерживаются. Например, вычислительный узел RHEL использовать нельзя.
 
 ## <a name="supported-virtual-machine-sizes"></a>Поддерживаемые размеры виртуальных машин
 
-Azure Red Hat OpenShift 4 поддерживает экземпляры рабочих узлов на следующих размерах виртуальных машин:
+Azure Red Hat OpenShift 4 поддерживает экземпляры рабочих узлов на виртуальных машинах следующих размеров:
 
 ### <a name="general-purpose"></a>Общего назначения
 
-|Series|Size|vCPU|Память, ГиБ|
+|Series|Размер|vCPU|Память: ГиБ|
 |-|-|-|-|
 |Dasv4|Standard_D4as_v4|4|16|
 |Dasv4|Standard_D8as_v4|8|32|
@@ -51,7 +53,7 @@ Azure Red Hat OpenShift 4 поддерживает экземпляры рабо
 
 ### <a name="memory-optimized"></a>Оптимизированные для операций в памяти
 
-|Series|Size|vCPU|Память, ГиБ|
+|Series|Размер|vCPU|Память: ГиБ|
 |-|-|-|-|
 |Esv3|Standard_E4s_v3|4|32|
 |Esv3|Standard_E8s_v3|8|64|
@@ -60,9 +62,17 @@ Azure Red Hat OpenShift 4 поддерживает экземпляры рабо
 
 ### <a name="compute-optimized"></a>Оптимизированные для вычислений
 
-|Series|Size|vCPU|Память, ГиБ|
+|Series|Размер|vCPU|Память: ГиБ|
 |-|-|-|-|
 |Fsv2|Standard_F4s_v2|4|8|
 |Fsv2|Standard_F8s_v2|8|16|
 |Fsv2|Standard_F16s_v2|16|32|
 |Fsv2|Standard_F32s_v2|32|64|
+
+### <a name="master-nodes"></a>Главные узлы
+
+|Series|Размер|vCPU|Память: ГиБ|
+|-|-|-|-|
+|Dsv3|Standard_D8s_v3|8|32|
+|Dsv3|Standard_D16s_v3|16|64|
+|Dsv3|Standard_D32s_v3|32|128|

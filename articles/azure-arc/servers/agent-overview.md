@@ -1,0 +1,232 @@
+---
+title: Общие сведения об агенте Connected Machine для Windows
+description: В этой статье представлен подробный обзор доступного агента Azure Arc для серверов, который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
+services: azure-arc
+ms.service: azure-arc
+ms.subservice: azure-arc-servers
+author: mgoedtel
+ms.author: magoedte
+ms.date: 05/18/2020
+ms.topic: conceptual
+ms.openlocfilehash: 4dbc559e62523a1ea17236a9e8c9666ef48bba33
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83662532"
+---
+# <a name="overview-of-azure-arc-for-servers-agent"></a>Установка агента Azure Arc для серверов
+
+Агент Connected Machine службы "Azure Arc для серверов" позволяет управлять компьютерами Windows и Linux, размещенными за пределами Azure, в корпоративной сети или другом поставщике облачных служб. В этой статье предоставлен подробный обзор требований к агенту, системе и сети, а также различных методов развертывания.
+
+## <a name="download-agents"></a>Скачивание агентов
+
+Пакет агента Azure Connected Machine для Windows и Linux можно скачать из указанных ниже расположений.
+
+- [Пакет установщика Windows для агента Windows](https://aka.ms/AzureConnectedMachineAgent) из Центра загрузки Майкрософт.
+- Агент Linux распределяется через [репозиторий пакетов](https://packages.microsoft.com/) Microsoft в предпочтительном для распределения пакетном формате (RPM или DEB).
+
+>[!NOTE]
+>В предварительной версии выпущен только один пакет, который подходит для Ubuntu 16.04 или 18.04.
+
+Агент Azure Connected Machine для Windows и Linux можно обновить до последней версии вручную или автоматически в зависимости от требований. Дополнительные сведения см. [здесь](manage-agent.md).
+
+## <a name="windows-agent-installation-details"></a>Сведения об установке агента для Windows
+
+Агент Connected Machine для Windows можно установить одним из следующих трех способов:
+
+* Дважды щелкните файл `AzureConnectedMachineAgent.msi`.
+* Вручную, запустив пакет установщика Windows `AzureConnectedMachineAgent.msi` из командной оболочки.
+* Из сеанса PowerShell с помощью сценариев.
+
+После установки пакетов агента Connected Machine для Windows применяются указанные ниже изменения конфигурации системы.
+
+* Во время установки создаются указанные ниже папки установки.
+
+    |Папка |Описание |
+    |-------|------------|
+    |C:\Program Files\AzureConnectedMachineAgent |Путь установки по умолчанию, содержащий вспомогательные файлы агента.|
+    |%ProgramData%\AzureConnectedMachineAgent |Содержит файлы конфигурации агента.|
+    |%ProgramData%\AzureConnectedMachineAgent\Tokens |Содержит полученные маркеры.|
+    |%ProgramData%\AzureConnectedMachineAgent\Config |Содержит файл конфигурации агента `agentconfig.json` с записями сведений о регистрации в службе.|
+    |%ProgramData%\GuestConfig |Содержит файлы, относящиеся к (применяемым) политикам Azure.|
+
+* Во время установки агента на целевом компьютере создаются указанные ниже службы Windows.
+
+    |Имя службы |Отображаемое имя |Имя процесса |Описание |
+    |-------------|-------------|-------------|------------|
+    |himds |Гибридная служба метаданных экземпляров Azure |himds.exe |Эта служба реализует Службу метаданных экземпляров Azure (IMDS) для отслеживания компьютера.|
+    |DscService |Служба гостевой конфигурации |dsc_service.exe |Это база кода Desired State Configuration (DSC версии 2), используемая в Azure для реализации гостевой политики.|
+
+* Во время установки агента создаются указанные ниже переменные среды.
+
+    |Имя |Значение по умолчанию |Описание |
+    |-----|--------------|------------|
+    |IDENTITY_ENDPOINT |http://localhost:40342/metadata/identity/oauth2/token ||
+    |IMDS_ENDPOINT |http://localhost:40342 ||
+    
+* Существует четыре файла журнала, доступных для устранения неполадок. Они описаны в следующей таблице.
+
+    |Журнал |Описание |
+    |----|------------|
+    |%ProgramData%\AzureConnectedMachineAgent\Log\himds.log |Записывает сведения о службе агентов (himds) и взаимодействии с Azure.|
+    |%ProgramData%\AzureConnectedMachineAgent\Log\azcmagent.log |Содержит выходные данные команд инструмента azcmagent при использовании аргумента подробного протоколирования (-v).|
+    |%ProgramData%\GuestConfig\gc_agent_logs\gc_agent.log |Записывает сведения о действиях службы DSC,<br> в частности о взаимодействии между службой himds и Политикой Azure.|
+    |%ProgramData%\GuestConfig\gc_agent_logs\gc_agent_telemetry.txt |Записывает сведения о телеметрии службы DSC и подробном протоколировании.|
+
+* Создается локальная группа безопасности **приложений расширения гибридного агента**. 
+
+* Во время удаления агента указанные ниже артефакты не удаляются.
+
+    * C:\Program Files\AzureConnectedMachineAgent\Logs
+    * %ProgramData%\AzureConnectedMachineAgent и подкаталоги
+    * %ProgramData%\GuestConfig
+
+## <a name="linux-agent-installation-details"></a>Сведения об установке агента для Linux
+
+Агент подключенного компьютера для ОС Linux предоставляется в пакете в предпочтительном формате для распространения (RPM или DEB). Он размещен в [репозитории пакетов](https://packages.microsoft.com/) Microsoft. Агент устанавливается и настраивается с помощью пакета сценариев оболочки [Install_linux_azcmagent.sh](https://aka.ms/azcmagent). 
+
+После установки пакетов агента Connected Machine для Linux применяются указанные ниже изменения конфигурации системы.
+
+* Во время установки создаются указанные ниже папки установки.
+
+    |Папка |Описание |
+    |-------|------------|
+    |/var/opt/azcmagent/ |Путь установки по умолчанию, содержащий вспомогательные файлы агента.|
+    |/opt/azcmagent/ |
+    |/opt/DSC/ |
+    |/var/opt/azcmagent/tokens |Содержит полученные маркеры.|
+    |/var/lib/GuestConfig |Содержит файлы, относящиеся к (применяемым) политикам Azure.|
+
+* Во время установки агента на целевом компьютере создаются указанные ниже управляющие программы.
+
+    |Имя службы |Отображаемое имя |Имя процесса |Описание |
+    |-------------|-------------|-------------|------------|
+    |himdsd.service |Гибридная служба метаданных экземпляров Azure |/opt/azcmagent/bin/himds |Эта служба реализует Службу метаданных экземпляров Azure (IMDS) для отслеживания компьютера.|
+    |dscd.service |Служба гостевой конфигурации |/opt/DSC/dsc_linux_service |Это база кода Desired State Configuration (DSC версии 2), используемая в Azure для реализации гостевой политики.|
+
+* Существует четыре файла журнала, доступных для устранения неполадок. Они описаны в следующей таблице.
+
+    |Журнал |Описание |
+    |----|------------|
+    |/var/opt/azcmagent/log/himds.log |Записывает сведения о службе агентов (himds) и взаимодействии с Azure.|
+    |/var/opt/azcmagent/log/azcmagent.log |Содержит выходные данные команд инструмента azcmagent при использовании аргумента подробного протоколирования (-v).|
+    |/opt/logs/dsc.log |Записывает сведения о действиях службы DSC,<br> в частности о взаимодействии между службой himds и Политикой Azure.|
+    |/opt/logs/dsc.telemetry.txt |Записывает сведения о телеметрии службы DSC и подробном протоколировании.|
+
+* Во время установки агента создаются указанные ниже переменные среды. В `/lib/systemd/system.conf.d/azcmagent.conf` задаются указанные ниже переменные.
+
+    |Имя |Значение по умолчанию |Описание |
+    |-----|--------------|------------|
+    |IDENTITY_ENDPOINT |http://localhost:40342/metadata/identity/oauth2/token ||
+    |IMDS_ENDPOINT |http://localhost:40342 ||
+
+* Во время удаления агента указанные ниже артефакты не удаляются.
+
+    * /var/opt/azcmagent
+    * /opt/logs
+
+## <a name="prerequisites"></a>Предварительные требования
+
+### <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
+
+Агент Azure Connected Machine официально поддерживают следующие версии операционных систем Windows и Linux: 
+
+- Windows Server 2012 R2 или более поздние версии (в том числе Windows Server Core)
+- Ubuntu 16.04 и 18.04.
+- CentOS Linux 7
+- SUSE Linux Enterprise Server (SLES) 15
+- Red Hat Enterprise Linux (RHEL) 7
+- Amazon Linux 2
+
+>[!NOTE]
+>Этот предварительный выпуск агента подключенного компьютера для Windows поддерживает только англоязычную версию Windows Server.
+>
+
+### <a name="required-permissions"></a>Необходимые разрешения
+
+- Чтобы подключить компьютеры, необходимо быть членом роли **Подключение компьютеров, подключенных к Azure**.
+
+- Для чтения, изменения, повторного включения и удаления компьютера необходимо быть членом роли **Администратор ресурсов компьютеров, подключенных к Azure**. 
+
+### <a name="azure-subscription-and-service-limits"></a>Ограничения подписки и служб Azure
+
+Прежде чем настраивать компьютеры с поддержкой Azure Arc для серверов (предварительная версия), необходимо просмотреть [ограничения подписки](../../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits) Azure Resource Manager и [ограничения группы ресурсов](../../azure-resource-manager/management/azure-subscription-service-limits.md#resource-group-limits), чтобы спланировать число подключенных компьютеров.
+
+## <a name="tls-12-protocol"></a>Протокол TLS 1.2
+
+Чтобы обеспечить безопасность данных, передаваемых в Azure, настоятельно рекомендуем настроить для компьютера использование протокола TLS версии 1.2. Более старые версии протоколов TLS/SSL оказались уязвимы. Хотя они все еще используются для обеспечения обратной совместимости, применять их **не рекомендуется**. 
+
+|Платформа или язык | Поддержка | Дополнительные сведения |
+| --- | --- | --- |
+|Linux | Как правило, дистрибутивы Linux для поддержки протокола TLS 1.2 используют [OpenSSL](https://www.openssl.org). | Убедитесь, что ваша версия OpenSSL поддерживается, проверив [журнал изменений OpenSSL](https://www.openssl.org/news/changelog.html).|
+| Windows Server 2012 R2 и более поздних версий; | Поддерживается и включена по умолчанию. | Убедитесь, что вы все еще используете [параметры по умолчанию](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings).|
+
+### <a name="networking-configuration"></a>Конфигурация сети
+
+Агент Connected Machine для Linux и Windows обменивается исходящими данными со службой Azure Arc через TCP-порт 443. Если компьютер подключен к брандмауэру или прокси-серверу для обмена данными через Интернет, ознакомьтесь с предварительными требованиями ниже, чтобы должным образом настроить сеть.
+
+Если исходящее подключение ограничено брандмауэром или прокси-сервером, убедитесь, что указанные ниже URL-адреса не заблокированы. Если разрешены только диапазоны IP-адресов или доменные имена, необходимые агенту для связи со службой, необходимо также разрешить доступ к следующим тегам и URL-адресам службы.
+
+Теги служб:
+
+- AzureActiveDirectory
+- AzureTrafficManager.
+
+URL-адреса:
+
+| Ресурс агента | Описание |
+|---------|---------|
+|management.azure.com|Azure Resource Manager|
+|login.windows.net|Azure Active Directory|
+|dc.services.visualstudio.com|Application Insights|
+|agentserviceapi.azure-automation.net|Гостевая конфигурация|
+|*-agentservice-prod-1.azure-automation.net|Гостевая конфигурация|
+|*.his.arc.azure.com|Служба гибридной идентификации|
+
+Список IP-адресов для каждого тега или региона службы см. в файле JSON [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) (Диапазоны IP-адресов и теги служб Azure — общедоступное облако). Корпорация Майкрософт публикует еженедельные обновления, содержащие каждую службу Azure и диапазоны IP-адресов, которые она использует. Дополнительные сведения см. в разделе [Теги служб](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags).
+
+URL-адреса в предыдущей таблице необходимы в дополнение к сведениям о диапазоне IP-адресов для тега службы, так как в большинстве служб сейчас нет регистрации тега службы. В связи с этим IP-адреса могут изменяться. Если для настройки брандмауэра требуются диапазоны IP-адресов, то для предоставления доступа ко всем службам Azure следует использовать тег службы **AzureCloud**. Не отключайте мониторинг безопасности или проверку URL-адресов, но предоставьте такие же разрешения, как для интернет-трафика.
+
+### <a name="register-azure-resource-providers"></a>Регистрация поставщиков ресурсов Azure
+
+Использование службы Azure Arc для серверов (предварительная версия) зависит от следующих поставщиков ресурсов Azure в подписке:
+
+- **Microsoft.HybridCompute**
+- **Microsoft.GuestConfiguration**
+
+Если поставщики не зарегистрированы, их можно зарегистрировать с помощью таких команд:
+
+Azure PowerShell:
+
+```azurepowershell-interactive
+Login-AzAccount
+Set-AzContext -SubscriptionId [subscription you want to onboard]
+Register-AzResourceProvider -ProviderNamespace Microsoft.HybridCompute
+Register-AzResourceProvider -ProviderNamespace Microsoft.GuestConfiguration
+```
+
+Azure CLI:
+
+```azurecli-interactive
+az account set --subscription "{Your Subscription Name}"
+az provider register --namespace 'Microsoft.HybridCompute'
+az provider register --namespace 'Microsoft.GuestConfiguration'
+```
+
+Вы также можете зарегистрировать поставщики ресурсов с помощью портала Azure, выполнив действия, описанные в [этом разделе](../../azure-resource-manager/management/resource-providers-and-types.md#azure-portal).
+
+
+## <a name="installation-and-configuration"></a>Установка и настройка
+
+Подключение компьютеров в гибридной среде напрямую к Azure может осуществляться разными способами в зависимости от требований. В следующей таблице описан каждый метод. Эти данные помогут вам определить, какой из методов самый подходящий для вашей организации.
+
+| Метод | Описание |
+|--------|-------------|
+| Интерактивно | Вручную установите агент на одном или нескольких компьютерах, выполнив действия, описанные в статье [Краткое руководство. Подключение компьютеров к Azure с помощью Azure Arc для серверов на портале](onboard-portal.md).<br> На портале Azure можно создать сценарий и выполнить его на компьютере, чтобы автоматизировать шаги установки и настройки агента.|
+| В большом масштабе | Установите и настройте агент для нескольких машин, выполнив указания в статье [Краткое руководство. Подключение компьютеров к Azure с помощью Azure Arc для серверов в PowerShell](onboard-service-principal.md).<br> Этот метод создает субъект-службу для подключения компьютеров в неинтерактивном режиме.|
+| В большом масштабе | Установите и настройте агент для нескольких машин с помощью метода, описанного в [этой статье](onboard-dsc.md).<br> Этот метод предполагает использование субъект-службы для подключения компьютеров в неинтерактивном режиме с помощью службы настройки требуемого состояния (DSC) PowerShell. |
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Чтобы начать оценку Azure Arc для серверов (предварительная версия), следуйте инструкциям в статье [Краткое руководство. Подключение компьютеров к Azure с помощью Azure Arc для серверов на портале](onboard-portal.md).

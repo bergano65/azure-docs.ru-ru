@@ -1,22 +1,22 @@
 ---
-title: Получение маркера в приложении Android
+title: Получение токена в приложении Android
 titleSuffix: Azure AD B2C
-description: Как создать приложение Android, которое использует AppAuth с Azure Active Directory B2C для управления удостоверениями пользователей и проверки подлинности пользователей.
+description: Сведения о создании приложения Android, которое использует AppAuth с Azure Active Directory B2C для управления удостоверениями пользователей и проверки подлинности пользователей.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/30/2018
+ms.date: 05/12/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 31ad373b1544fc601a9c37e05e324a9c1dfb3f73
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: e3a38b9a02894eafd3ef6df657680d2e2a58a7e7
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78183791"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83638394"
 ---
 # <a name="sign-in-using-an-android-application-in-azure-active-directory-b2c"></a>Вход с помощью приложения Android в Azure Active Directory B2C
 
@@ -35,13 +35,13 @@ ms.locfileid: "78183791"
 
 ## <a name="create-an-application"></a>Создание приложения
 
-Затем зарегистрируйте приложение в клиенте Azure AD B2C. Это предоставляет Azure AD сведения, необходимые для безопасного обмена данными с приложением.
+Затем зарегистрируйте приложение в клиенте Azure AD B2C. Таким образом в Azure AD поступят сведения, необходимые для безопасного взаимодействия с вашим приложением.
 
 [!INCLUDE [active-directory-b2c-appreg-native](../../includes/active-directory-b2c-appreg-native.md)]
 
-Запишите значение параметра **Идентификатор приложения (клиент)**. Оно вам потребуется в дальнейшем.
+Запишите значение параметра **Идентификатор приложения (клиент)** . Оно вам потребуется в дальнейшем.
 
-Кроме того, запишите пользовательский URI перенаправления для использования на следующем шаге. Например, `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
+Кроме того, запишите пользовательский URI перенаправления, который будет использоваться позже. Например, `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
 
 ## <a name="create-your-user-flows"></a>Создание потоков пользователей
 
@@ -72,10 +72,10 @@ ms.locfileid: "78183791"
 * идентификатор клиента (например, contoso.onmicrosoft.com);
 * имя потока пользователя (например, B2C\_1\_SignUpIn).
 
-Если выбрано автоматическое обнаружение URI конечных точек авторизации и токенов, вам потребуется получить сведения из URI обнаружения. URI обнаружения можно создать, заменив идентификатор \_клиента и имя\_политики в следующем URL-адресе:
+Если выбрано автоматическое обнаружение URI конечных точек авторизации и токенов, вам потребуется получить сведения из URI обнаружения. URI обнаружения можно создать, заменив `<tenant-id>` и `<policy-name>` в следующем URL-адресе:
 
 ```java
-String mDiscoveryURI = "https://<Tenant_name>.b2clogin.com/<Tenant_ID>/v2.0/.well-known/openid-configuration?p=<Policy_Name>";
+String mDiscoveryURI = "https://<tenant-name>.b2clogin.com/<tenant-id>/<policy-name>/v2.0/.well-known/openid-configuration";
 ```
 
 Вы можете получить URI конечных точек авторизации и токенов, а также создать объект AuthorizationServiceConfiguration, выполнив следующую команду:
@@ -99,12 +99,12 @@ AuthorizationServiceConfiguration.fetchFromIssuer(
   });
 ```
 
-Вместо того, чтобы получать URI конечных точек авторизации и токенов путем обнаружения, их можно также явно определить, заменив идентификатор\_клиента и имя\_политики в приведенном ниже URL-адресе:
+Вместо того чтобы получать URI конечных точек авторизации и токенов путем обнаружения, их можно также явно определить, заменив `<tenant-id>` и `<policy-name>` в приведенных ниже URL-адресах:
 
 ```java
-String mAuthEndpoint = "https://<Tenant_name>.b2clogin.com/<Tenant_ID>/oauth2/v2.0/authorize?p=<Policy_Name>";
+String mAuthEndpoint = "https://<tenant-name>.b2clogin.com/<tenant-id>/<policy-name>/oauth2/v2.0/authorize";
 
-String mTokenEndpoint = "https://<Tenant_name>.b2clogin.com/<Tenant_ID>/oauth2/v2.0/token?p=<Policy_Name>";
+String mTokenEndpoint = "https://<tenant-name>.b2clogin.com/<tenant-id>/<policy-name>/oauth2/v2.0/token";
 ```
 
 Выполните следующий код для создания объекта AuthorizationServiceConfiguration:
