@@ -95,6 +95,8 @@
       href: concepts-device.md
     - name: Безопасность
       href: concepts-security.md
+    - name: Поддержка TLS
+      href: tls-support.md
     - name: Служба
       href: concepts-service.md
     - name: Основные сведения об IP-адресах DPS

@@ -59,8 +59,6 @@
           href: ./hdinsight-selecting-vm-size.md
         - name: Планирование ресурсов кластера
           href: ./hdinsight-capacity-planning.md
-        - name: Запрос на увеличение квоты ядра ЦП
-          href: ./quota-increase-request.md
         - name: Рекомендации по управлению кластерами
           href: ./cluster-management-best-practices.md
         - name: Доступность и надежность
@@ -239,6 +237,8 @@
               href: ./cluster-availability-monitor-logs.md
         - name: Диагностика
           items:
+            - name: Запрос на увеличение квоты ядра ЦП
+              href: ./quota-increase-request.md
             - name: 'Устранение неполадок, связанных с действиями скрипта'
               href: ./troubleshoot-script-action.md
             - name: Сбои при создании ресурсов

@@ -14,6 +14,7 @@
         - name: Портал Azure
           href: stream-analytics-quick-create-portal.md
         - name: Шаблон ARM
+          displayName: Resource Manager
           href: quick-create-azure-resource-manager.md
         - name: PowerShell
           href: stream-analytics-quick-create-powershell.md
@@ -48,6 +49,10 @@
       href: feature-comparison.md
     - name: Разработка в локальной среде
       href: develop-locally.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Типы входных данных для задания
       items:
         - name: Общие сведения о входных данных

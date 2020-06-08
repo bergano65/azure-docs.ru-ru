@@ -195,6 +195,19 @@
         - name: Потоковая передача
           displayName: 'failover, bcdr, HA, high availability'
           href: media-services-high-availability-streaming.md
+    - name: Устранение неполадок
+      items:
+        - name: Часто задаваемые вопросы
+          displayName: faqs
+          href: frequently-asked-questions.md
+        - name: Коды ошибок
+          items:
+            - name: Коды ошибок конечной точки потоковой передачи
+              href: streaming-endpoint-error-codes.md
+            - name: Коды ошибок трансляции
+              href: live-event-error-codes.md
+            - name: Коды ошибок задания
+              href: job-error-codes.md
     - name: Миграция из версии 2 в версию 3
       items:
         - name: Сравнение версий 2 и 3
@@ -340,19 +353,6 @@
           href: download-results-howto.md
         - name: Описательный звуковой сигнал
           href: signal-descriptive-audio-howto.md
-    - name: Диагностика
-      items:
-        - name: Часто задаваемые вопросы
-          displayName: faqs
-          href: frequently-asked-questions.md
-        - name: Коды ошибок
-          items:
-            - name: Коды ошибок конечной точки потоковой передачи
-              href: streaming-endpoint-error-codes.md
-            - name: Коды ошибок трансляции
-              href: live-event-error-codes.md
-            - name: Коды ошибок задания
-              href: job-error-codes.md
 - name: Справочник
   items:
     - name: Спецификация OpenAPI (Swagger)

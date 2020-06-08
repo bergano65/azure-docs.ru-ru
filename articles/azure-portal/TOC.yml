@@ -70,6 +70,8 @@
       href: azure-portal-safelist-urls.md
     - name: Структура панелей мониторинга Azure
       href: azure-portal-dashboards-structure.md
+    - name: Azure CLI
+      href: /cli/azure/ext/portal/portal
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

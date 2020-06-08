@@ -13,6 +13,9 @@
       href: quick-create-portal.md
     - name: Создание виртуальной машины с помощью Azure PowerShell
       href: quick-create-powershell.md
+    - name: Создание виртуальной машины с помощью шаблона ARM
+      displayName: 'Resource Manager, template, json'
+      href: quick-create-template.md
 - name: Учебники
   items:
     - name: "1.\_Создание виртуальных машин и управление ими"
