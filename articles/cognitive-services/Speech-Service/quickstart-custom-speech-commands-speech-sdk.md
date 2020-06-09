@@ -3,19 +3,19 @@ title: Краткое руководство. подключение к прил
 titleSuffix: Azure Cognitive Services
 description: В этой статье вы создадите клиентское приложение речевого SDK с пользовательскими командами.
 services: cognitive-services
-author: don-d-kim
+author: nitinme
 manager: yetian
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/09/2019
-ms.author: donkim
-ms.openlocfilehash: 186b684cc7e4442d1a8ce14f06e16c839e117a26
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.author: nitinme
+ms.openlocfilehash: f2e8292ccace38e1a167c3ecdfb924589e4ebf0e
+ms.sourcegitcommit: 5504d5a88896c692303b9c676a7d2860f36394c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82872480"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84508936"
 ---
 # <a name="quickstart-connect-to-a-custom-commands-application-with-the-speech-sdk-preview"></a>Краткое руководство. подключение к приложению настраиваемых команд с помощью речевого пакета SDK (Предварительная версия)
 
@@ -37,7 +37,7 @@ ms.locfileid: "82872480"
 > [!div class = "checklist"]
 > * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
 > * Ключ подписки Azure для служб "Речь". [Получите его бесплатно](get-started.md) или создайте его на [портал Azure](https://portal.azure.com)
-> * [Включение устройства для разработки](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
+> * [Подготовка устройства к разработке](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
 
 ## <a name="optional-get-started-fast"></a>Необязательно: быстрое начало работы
 
@@ -120,7 +120,7 @@ ms.locfileid: "82872480"
 
 Добавьте источник кода программной части, чтобы приложение правильно работала. Источник кода программной части включает в себя:
 
-- Обязательные `using` инструкции для `Speech` пространств `Speech.Dialog` имен и
+- Обязательные `using` инструкции для `Speech` `Speech.Dialog` пространств имен и
 - простая реализация доступа к микрофону с привязкой к обработчику кнопки;
 - базовые вспомогательные функции пользовательского интерфейса для представления сообщений и ошибок в приложении;
 - целевая точка для пути кода инициализации, который будет добавлен позже;
@@ -129,7 +129,7 @@ ms.locfileid: "82872480"
 
 Добавьте источник кода программной части следующим образом:
 
-1. В **Обозреватель решений**откройте исходный файл `MainPage.xaml.cs` кода программной части (сгруппированный в разделе `MainPage.xaml`).
+1. В **Обозреватель решений**откройте исходный файл кода программной части `MainPage.xaml.cs` (сгруппированный в разделе `MainPage.xaml` ).
 
 1. Замените содержимое файла следующим кодом: 
 
@@ -321,7 +321,7 @@ ms.locfileid: "82872480"
    connector = new DialogServiceConnector(speechCommandsConfig);
    ```
 
-1. Замените строки `YourApplicationId`, `YourSpeechSubscriptionKey`и `YourServiceRegion` собственными значениями для приложения, подписки на речь и [региона](regions.md) .
+1. Замените строки `YourApplicationId` , `YourSpeechSubscriptionKey` и `YourServiceRegion` собственными значениями для приложения, подписки на речь и [региона](regions.md) .
 
 1. Добавьте следующий фрагмент кода в конец тела метода`InitializeDialogServiceConnector`
 
@@ -405,7 +405,7 @@ ms.locfileid: "82872480"
    }
    ```
 
-1. В строке меню выберите **файл** > **сохранить все** , чтобы сохранить изменения.
+1. В строке меню выберите **файл**  >  **сохранить все** , чтобы сохранить изменения.
 
 ## <a name="build-and-run-the-application"></a>Создание и запуск приложения
 
@@ -424,8 +424,8 @@ ms.locfileid: "82872480"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Как выполнять команды на клиенте с помощью пакета SDK для распознавания речи (Предварительная версия)](./how-to-custom-speech-commands-fulfill-sdk.md)
-> [. Добавление проверок в параметры пользовательской команды (Предварительная версия)](./how-to-custom-speech-commands-validations.md)
+> [Как выполнять команды на клиенте с помощью пакета SDK для распознавания речи (Предварительная версия)](./how-to-custom-speech-commands-fulfill-sdk.md) 
+>  [Как добавить проверки в пользовательские параметры команды (Предварительная версия)](./how-to-custom-speech-commands-validations.md)
 
 ## <a name="sample-source-code"></a>Исходный код примера
 Ознакомьтесь с примерами кода клиента на сайте [GitHub-воицеассистант](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant)
