@@ -622,6 +622,10 @@
                   href: app/javascript.md
                 - name: Сопоставитель с исходным кодом для JavaScript
                   href: app/source-map-support.md
+                - name: Диагностика
+                  items:
+                    - name: Сбоев при загрузке пакетов SDK
+                      href: app/javascript-sdk-load-failure.md
             - name: Сводка по API Application Insights
               displayname: 'SDK, API, custom events, custom metrics, trackevent,trackmetric, getmetric, trackrequest, trackexception, tracktrace, trackdependency'
               href: app/api-custom-events-metrics.md
@@ -743,6 +747,8 @@
               href: app/profiler-settings.md
             - name: Отслеживание запросов для профилирования
               href: app/profiler-trackrequests.md
+            - name: Настройка поддержки BYOS (использование собственного хранилища)
+              href: app/profiler-bring-your-own-storage.md
             - name: Устранение неполадок с Profiler
               href: app/profiler-troubleshooting.md
         - name: Snapshot Debugger
@@ -756,6 +762,8 @@
               href: app/snapshot-debugger-vm.md
             - name: Обновление Snapshot Debugger
               href: app/snapshot-debugger-upgrade.md
+            - name: Настройка поддержки BYOS (использование собственного хранилища)
+              href: app/profiler-bring-your-own-storage.md
             - name: Устранение неполадок со Snapshot Debugger
               displayname: 'troubleshoot, troubleshooting'
               href: app/snapshot-debugger-troubleshoot.md

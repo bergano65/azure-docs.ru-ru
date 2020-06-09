@@ -80,6 +80,8 @@
           href: howto-mfa-userstates.md
         - name: Настройка поставщиков проверки подлинности
           href: concept-mfa-authprovider.md
+        - name: Использование паролей приложений
+          href: howto-mfa-app-passwords.md
         - name: Федерация Active Directory
           items:
             - name: Адаптер AD FS для Windows Server 2016
@@ -169,6 +171,8 @@
           href: howto-mfaserver-deploy-userportal.md
         - name: Веб-служба мобильного приложения
           href: howto-mfaserver-deploy-mobileapp.md
+        - name: Настройка параметров
+          href: howto-mfa-server-settings.md
         - name: Настройка высокой доступности
           href: howto-mfaserver-deploy-ha.md
         - name: Обновление сервера MFA

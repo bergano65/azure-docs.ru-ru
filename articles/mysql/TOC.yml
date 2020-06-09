@@ -132,6 +132,8 @@
           href: concepts-query-performance-insight.md
         - name: Рекомендации по производительности
           href: concepts-performance-recommendations.md
+        - name: Параметры сервера
+          href: concepts-server-parameters.md
     - name: Разработка
       items:
         - name: Совместимость драйверов и инструментов

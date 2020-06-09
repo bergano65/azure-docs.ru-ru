@@ -50,8 +50,8 @@
           href: create-fslogix-profile-container.md
         - name: "Использование служб \"Файлы Azure\" и Azure AD\_DS"
           href: create-profile-container-adds.md
-    - name: Создание общих папок для контейнеров профилей
-      href: create-file-share.md
+        - name: "Использование служб \"Файлы Azure\" и AD\_DS"
+          href: create-file-share.md
     - name: Настройка параметров пула узлов
       items:
         - name: Свойства RDP
@@ -110,7 +110,7 @@
       href: troubleshoot-set-up-overview.md
     - name: Выявление и диагностика неполадок
       href: diagnostics-role-service.md
-    - name: Создание пула узлов и клиента
+    - name: Создание пула узлов
       href: troubleshoot-set-up-issues.md
     - name: Конфигурация виртуальной машины узла сеанса
       href: troubleshoot-vm-configuration.md

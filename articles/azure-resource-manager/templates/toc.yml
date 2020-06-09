@@ -22,6 +22,8 @@
           href: ../../backup/quick-backup-vm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Пакетная служба Azure
           href: ../../batch/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Блокчейн
+          href: ../../blockchain/service/create-member-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Когнитивный поиск
           href: ../../search/search-get-started-arm.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Экземпляры контейнеров
@@ -36,6 +38,8 @@
           href: ../../mysql/quickstart-create-mysql-server-database-using-arm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: База данных Azure для PostgreSQL
           href: ../../postgresql/quickstart-create-postgresql-server-database-using-arm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Databricks
+          href: ../../azure-databricks/quickstart-create-databricks-workspace-resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Сетка событий Azure
           href: ../../event-grid/blob-event-quickstart-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Концентратор событий
@@ -84,6 +88,8 @@
           href: ../../site-recovery/quickstart-create-vault-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: База данных SQL
           href: ../../azure-sql/database/single-database-create-arm-template-quickstart.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Stream Analytics
+          href: ../../stream-analytics/quick-create-azure-resource-manager.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Масштабируемые наборы виртуальных машин — Linux
           href: ../../virtual-machine-scale-sets/quick-create-template-linux.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: "Масштабируемые наборы виртуальных машин\_— Windows"
@@ -243,6 +249,12 @@
           href: update-visual-studio-deployment-script.md
         - name: IntelliJ IDEA
           href: create-templates-use-intellij.md
+    - name: Просмотр свойств шаблона
+      items:
+        - name: Экспорт шаблона
+          href: export-template-portal.md
+        - name: Просмотр ресурсов
+          href: view-resources.md
     - name: Развертывание шаблонов
       items:
         - name: "Развертывание\_— портал"
@@ -289,8 +301,6 @@
           href: add-template-to-azure-pipelines.md
         - name: "Развертывание\_— GitHub Actions"
           href: deploy-github-actions.md
-    - name: Экспорт шаблона
-      href: export-template-portal.md
     - name: Просмотр журнала развертывания
       href: deployment-history.md
     - name: Устранение неполадок развертываний

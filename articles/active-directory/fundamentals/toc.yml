@@ -11,6 +11,8 @@
       href: whats-new.md
     - name: "Новые возможности Microsoft\_365 для государственных организаций"
       href: whats-new-microsoft-365-government.md
+    - name: Новые возможности в Azure AD (архив)
+      href: whats-new-archive.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -51,6 +53,8 @@
       items:
         - name: 'Развертывание 30, 90 и выше'
           href: active-directory-deployment-checklist-p2.md
+        - name: Планы развертывания Azure Active Directory
+          href: active-directory-deployment-plans.md
     - name: Хранилище данных
       items:
         - name: Хранилище данных удостоверений для Европы
@@ -100,6 +104,8 @@
           href: active-directory-groups-settings-azure-portal.md
         - name: Добавление и удаление владельцев группы
           href: active-directory-accessmanagement-managing-group-owners.md
+        - name: Управление доступом к ресурсам с помощью групп
+          href: active-directory-manage-groups.md
     - name: Пользователи
       items:
         - name: Добавление и удаление пользователя
@@ -114,14 +120,10 @@
           href: license-users-groups.md
         - name: Восстановление удаленного пользователя
           href: active-directory-users-restore.md
-- name: Ресурсы
+- name: Устранение неполадок
   expanded: true
   items:
     - name: Получение поддержки для Azure Active Directory
       href: active-directory-troubleshooting-support-howto.md
     - name: 'Azure Active Directory: вопросы и ответы'
       href: active-directory-faq.md
-    - name: Планы развертывания Azure Active Directory
-      href: active-directory-deployment-plans.md
-    - name: Новые возможности в Azure AD (архив)
-      href: whats-new-archive.md

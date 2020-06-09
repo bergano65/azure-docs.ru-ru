@@ -50,6 +50,8 @@
               href: class-type-big-data-analytics.md
             - name: MATLAB
               href: class-type-matlab.md
+            - name: Автоматизированное проектирование (САПР) с использованием SolidWorks
+              href: class-type-solidworks.md
 - name: Практические руководства
   items:
     - name: Руководство для администратора
@@ -112,6 +114,8 @@
               href: how-to-enable-nested-virtualization-template-vm-ui.md
             - name: Включение вложенной виртуализации в шаблоне виртуальной машины с помощью скрипта
               href: how-to-enable-nested-virtualization-template-vm-using-script.md
+        - name: Настройка лаборатории с использованием графических процессоров
+          href: how-to-setup-lab-gpu.md
         - name: Подготовка виртуальной машины Windows
           href: how-to-prepare-windows-template.md
         - name: Управление поведением завершения работы Windows

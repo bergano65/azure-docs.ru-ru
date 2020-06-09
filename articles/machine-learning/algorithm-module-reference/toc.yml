@@ -106,6 +106,8 @@
       href: train-clustering-model.md
     - name: Обучение модели
       href: train-model.md
+    - name: Обучение модели PyTorch
+      href: train-pytorch-model.md
     - name: Настройка гиперпараметров модели
       href: tune-model-hyperparameters.md
 - name: Оценка модели
@@ -118,6 +120,8 @@
       href: cross-validate-model.md
     - name: Анализ модели
       href: evaluate-model.md
+    - name: Оценка моделей изображений
+      href: score-image-model.md
     - name: Оценка модели
       href: score-model.md
 - name: Язык Python
@@ -142,6 +146,20 @@
       href: preprocess-text.md
     - name: Латентное распределение Дирихле (LDA)
       href: latent-dirichlet-allocation.md
+- name: компьютерное зрение;
+  items:
+    - name: Применение преобразования изображений
+      href: apply-image-transformation.md
+    - name: Преобразование в каталог изображений
+      href: convert-to-image-directory.md
+    - name: Инициализация преобразования изображений
+      href: init-image-transformation.md
+    - name: Разделение каталога изображений
+      href: split-to-image-directory.md
+    - name: DenseNet
+      href: densenet.md
+    - name: ResNet
+      href: resnet.md
 - name: Рекомендация
   items:
     - name: Оценка рекомендателя

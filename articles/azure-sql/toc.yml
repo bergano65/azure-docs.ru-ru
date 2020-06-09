@@ -447,7 +447,7 @@
             - name: Решение проблем с подключением с помощью службы "Работоспособность ресурсов"
               href: database/resource-health-to-troubleshoot-connectivity.md
             - name: Переход с DTU на виртуальное ядро
-              href: database/resource-health-to-troubleshoot-connectivity.md
+              href: database/migrate-dtu-to-vcore.md
             - name: Масштабирование ресурсов базы данных
               href: database/single-database-scale.md
             - name: Масштабирование ресурсов пула

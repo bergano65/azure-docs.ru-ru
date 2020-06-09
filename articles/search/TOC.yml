@@ -326,22 +326,26 @@
           href: search-api-migration.md
     - name: Безопасность
       items:
-        - name: Общие сведения о безопасности
+        - name: Обзор
           href: search-security-overview.md
-        - name: Создание частной конечной точки
-          href: service-create-private-endpoint.md
-        - name: Настройка брандмауэра IP-адресов
-          href: service-configure-firewall.md
-        - name: Управление ключами службы
-          href: search-security-api-keys.md
-        - name: Доступ администратора на основе ролей
-          href: search-security-rbac.md
-        - name: Фильтры системы безопасности
-          href: search-security-trimming-for-azure-search.md
-        - name: Фильтр по удостоверениям AAD
-          href: search-security-trimming-for-azure-search-with-aad.md
-        - name: Управление ключами шифрования
-          href: search-security-manage-encryption-keys.md
+        - name: Шифрование данных
+          items:
+            - name: 'Ключи, управляемые клиентом'
+              href: search-security-manage-encryption-keys.md
+        - name: Безопасность для входящего трафика
+          items:
+            - name: Ключи доступа к API
+              href: search-security-api-keys.md
+            - name: Настройка брандмауэра IP-адресов
+              href: service-configure-firewall.md
+            - name: Создание частной конечной точки
+              href: service-create-private-endpoint.md
+        - name: Доступ на основе удостоверений
+          items:
+            - name: Фильтры системы безопасности
+              href: search-security-trimming-for-azure-search.md
+            - name: Фильтр по удостоверениям AAD
+              href: search-security-trimming-for-azure-search-with-aad.md
     - name: Управление
       items:
         - name: Портал
@@ -350,6 +354,8 @@
           href: search-manage-powershell.md
         - name: Перемещение служб между регионами
           href: search-howto-move-across-regions.md
+        - name: Доступ администратора на основе ролей
+          href: search-security-rbac.md
     - name: Монитор
       items:
         - name: Основные сведения
@@ -473,6 +479,8 @@
       href: 'https://azure.microsoft.com/updates/?product=search'
     - name: Форум для обратной связи (UserVoice)
       href: 'https://feedback.azure.com/forums/263029-azure-search'
+    - name: Соответствие требованиям и сертификация
+      href: 'https://aka.ms/azurecompliance'
     - name: Сайты с демоверсиями
       items:
         - name: Демонстрация с финансовыми файлами
