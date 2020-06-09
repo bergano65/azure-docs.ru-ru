@@ -15,6 +15,11 @@
       href: provision-vm.md
     - name: Создание виртуальной машины для обработки и анализа данных на платформе Ubuntu
       href: dsvm-ubuntu-intro.md
+- name: Учебники
+  items:
+    - name: Создание DSVM с помощью шаблона Resource Manager
+      displayName: Resource Manager
+      href: dsvm-tutorial-resource-manager.md
 - name: Основные понятия
   items:
     - name: Платформы глубокого обучения и искусственного интеллекта

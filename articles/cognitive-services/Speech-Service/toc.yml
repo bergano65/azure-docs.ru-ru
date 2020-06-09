@@ -466,7 +466,7 @@
       items:
         - name: Интерфейсы REST API
           items:
-            - name: REST API службы "Распознавание речи"
+            - name: REST API службы "Распознавание говорящего"
               href: 'https://docs.microsoft.com/rest/api/speakerrecognition/'
 - name: Hosting
   items:
