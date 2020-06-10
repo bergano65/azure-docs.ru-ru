@@ -1,18 +1,18 @@
 ---
 title: Ограничения в отношении ресурсов и объектов в службах Azure Analysis Services | Документы Майкрософт
-description: В этой статье описываются ограничения ресурсов и объектов для сервера Azure Analysis Services.
+description: В этой статье описываются ограничения в отношении ресурсов и объектов для сервера Azure Analysis Services.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/30/2019
+ms.date: 05/19/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: f309c9863eb2f3065251537380a2977839f990d8
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
-ms.translationtype: MT
+ms.openlocfilehash: c2caab4e449f4299d00fff14b697887ec00f35e6
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "73573211"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83697491"
 ---
 # <a name="analysis-services-resource-and-object-limits"></a>Ограничения в отношении ресурсов и объектов в службах Analysis Services
 
@@ -20,7 +20,7 @@ ms.locfileid: "73573211"
 
 ## <a name="tier-limits"></a>Ограничения по уровням
 
-Сведения об ограничениях QPU и памяти для уровней Developer, Basic и Standard см. на [странице цен на Azure Analysis Services](https://azure.microsoft.com/pricing/details/analysis-services/).
+Сведения об ограничениях единиц обработки запросов и памяти для разработчиков, уровней "Базовый" и "Стандартный" см. на [странице с ценами Azure Analysis Services](https://azure.microsoft.com/pricing/details/analysis-services/).
 
 ## <a name="object-limits"></a>Ограничения на объекты
 
@@ -33,7 +33,7 @@ ms.locfileid: "73573211"
 |Строки в таблице|Неограниченно<br /><br /> **Предупреждение**. Ни один столбец в таблице не может содержать более 1 999 999 997 отдельных значений.|  
 |Иерархии в таблице|15 999|  
 |Уровни в иерархии|15 999|  
-|Отношения|8000|  
+|Связи|8000|  
 |Ключевые столбцы во всех таблицах|15 999|  
 |Меры в таблице|2^31–1 = 2 147 483 647|  
 |Ячеек, возвращаемых запросом|2^31–1 = 2 147 483 647|  

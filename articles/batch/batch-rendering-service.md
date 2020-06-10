@@ -1,16 +1,16 @@
 ---
-title: Общие сведения о рендеринге — пакетная служба Azure
+title: Общие сведения о рендеринге
 description: Общие сведения об использовании Azure для рендеринга и обзор возможностей рендеринга в пакетной службе Azure
 author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
-ms.topic: conceptual
-ms.openlocfilehash: 515fc92aa14c0a86746d0a97d2bc601fab553aa3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.topic: how-to
+ms.openlocfilehash: fc779d6caba2b896b869440ad523291bc3c9a9b2
+ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82115709"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83726440"
 ---
 # <a name="rendering-using-azure"></a>Рендеринг с помощью Azure
 
@@ -89,7 +89,7 @@ ms.locfileid: "82115709"
   * Ниже перечислены доступные подключаемые модули:
     * [пакетная служба Azure для Maya](https://github.com/Azure/azure-batch-maya);
     * [3ds Max](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/3ds-max);
-    * [Blender](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/blender)
+    * [Blender](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/blender).
 
 ## <a name="getting-started-with-azure-batch-rendering"></a>Начало работы с рендерингом в пакетной службе Azure
 
@@ -98,6 +98,6 @@ ms.locfileid: "82115709"
 * [Руководство. Преобразование для просмотра сцены Blender с помощью Batch Explorer](https://docs.microsoft.com/azure/batch/tutorial-rendering-batchexplorer-blender);
 * [Руководство по использованию CLI пакетной службы для рендеринга сцены, созданной в Autodesk 3ds Max](https://docs.microsoft.com/azure/batch/tutorial-rendering-cli).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Список приложений рендеринга и версий в образах виртуальных машин, включенных в Azure Marketplace, вы найдете в [этой статье](https://docs.microsoft.com/azure/batch/batch-rendering-applications).

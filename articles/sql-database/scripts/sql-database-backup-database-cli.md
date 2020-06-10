@@ -1,5 +1,5 @@
 ---
-title: Пример для CLI. Резервное копирование базы данных SQL Azure
+title: 'Azure CLI: создание резервной копии базы данных в службе "База данных SQL Azure"'
 description: Пример скрипта Azure CLI для резервного копирования отдельной базы данных SQL Azure в контейнер хранилища Azure
 services: sql-database
 ms.service: sql-database
@@ -10,16 +10,16 @@ author: mashamsft
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 03/27/2019
-ms.openlocfilehash: 68af42bd83565243dad5d48f227fa5cef3115cf6
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 605b2690f85ea8c800e6485b0eb998b795ea9d10
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80061864"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84022715"
 ---
 # <a name="use-cli-to-backup-an-azure-sql-single-database-to-an-azure-storage-container"></a>Резервное копирование отдельной базы данных SQL Azure в контейнер службы хранилища Azure с помощью CLI
 
-Этот пример скрипта Azure CLI выполняет резервное копирование отдельной базы данных SQL Azure в контейнер хранилища Azure  
+Этот пример скрипта Azure CLI выполняет резервное копирование отдельной базы данных SQL в контейнер хранилища Azure.  
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
 
@@ -60,4 +60,4 @@ az group delete --name $resource
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
-Дополнительные примеры сценариев интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../sql-database-cli-samples.md).
+Дополнительные примеры скриптов интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../../azure-sql/database/az-cli-script-samples-content-guide.md).

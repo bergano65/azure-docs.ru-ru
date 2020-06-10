@@ -1,5 +1,5 @@
 ---
-title: Пример для CLI. Создание управляемого экземпляра в Базе данных SQL Azure
+title: 'Azure CLI: Создание управляемого экземпляра'
 description: Пример скрипта Azure CLI для создания управляемого экземпляра в Базе данных SQL Azure
 services: sql-database
 ms.service: sql-database
@@ -11,19 +11,19 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 03/25/2019
-ms.openlocfilehash: f52a460be33b23da3da0cb32075ab5f75bb8d129
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.openlocfilehash: fd2c7a33c0747aa21a8bda53ad5437c9e79a6557
+ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83772630"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84115407"
 ---
-# <a name="use-cli-to-create-an-azure-sql-database-managed-instance"></a>Создание управляемого экземпляра Базы данных SQL Azure с помощью CLI
+# <a name="use-cli-to-create-an-azure-sql-managed-instance"></a>Создание управляемого экземпляра SQL Azure с помощью CLI
 
-Этот пример скрипта Azure CLI создает управляемый экземпляр Базы данных SQL Azure в выделенной подсети в новой виртуальной сети. Он также настраивает таблицу маршрутов и группу безопасности сети для виртуальной сети. После успешного выполнения сценария доступ к управляемому экземпляру можно получить из виртуальной сети или из локальной среды. См. стать. о [настройке виртуальной машины Azure для подключения к Управляемому экземпляру Базы данных SQL Azure](../sql-database-managed-instance-configure-vm.md), а также стать. о [настройке подключения "точка — сеть" к Управляемому экземпляру Базы данных SQL Azure из локальной среды](../sql-database-managed-instance-configure-p2s.md).
+Этот пример скрипта Azure CLI создает управляемый экземпляр Базы данных SQL Azure в выделенной подсети в новой виртуальной сети. Он также настраивает таблицу маршрутов и группу безопасности сети для виртуальной сети. После успешного выполнения скрипта доступ к управляемому экземпляру можно получить из виртуальной сети или из локальной среды. См. статью о [настройке виртуальной машины Azure для подключения к управляемому экземпляру Базы данных SQL Azure]../../azure-sql/managed-instance/connect-vm-instance-configure.md), а также статью о [настройке подключения "точка — сеть" к управляемому экземпляру Базы данных SQL Azure из локальной среды](../../azure-sql/managed-instance/point-to-site-p2s-configure.md).
 
 > [!IMPORTANT]
-> Сведения об ограничениях см. в разделах [Поддерживаемые регионы](../sql-database-managed-instance-resource-limits.md#supported-regions) и [Поддерживаемые типы подписок](../sql-database-managed-instance-resource-limits.md#supported-subscription-types).
+> Сведения об ограничениях см. в разделах [Поддерживаемые регионы](../../azure-sql/managed-instance/resource-limits.md#supported-regions) и [Поддерживаемые типы подписок](../../azure-sql/managed-instance/resource-limits.md#supported-subscription-types).
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
 
@@ -54,10 +54,10 @@ az group delete --name $resource
 | [az network vnet](/cli/azure/network/vnet) | Команды виртуальной сети. |
 | [az network vnet subnet](/cli/azure/network/vnet/subnet) | Команды подсети виртуальной сети. |
 | [az network route-table](/cli/azure/network/route-table) | Команды таблицы маршрутизации. |
-| [az sql mi](/cli/azure/sql/mi) | Команды управляемого экземпляра. |
+| [az sql mi](/cli/azure/sql/mi) | Команды управляемого экземпляра базы данных SQL. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
-Дополнительные примеры сценариев интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../sql-database-cli-samples.md).
+Дополнительные примеры скриптов интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../../azure-sql/database/az-cli-script-samples-content-guide.md).

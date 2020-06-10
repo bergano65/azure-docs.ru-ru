@@ -3,12 +3,12 @@ title: Учебник по резервному копированию баз д
 description: Из этого учебника вы узнаете, как выполнять резервное копирование баз данных SAP HANA, запущенных на виртуальной машине Azure, в хранилище Служб восстановления для Azure Backup.
 ms.topic: tutorial
 ms.date: 02/24/2020
-ms.openlocfilehash: cb1fc4c1b9bfa2025850f16d175ba83bd5ee1470
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 31958a4d4e3af4f747ab2f9de7b1bc67560e87d7
+ms.sourcegitcommit: 8017209cc9d8a825cc404df852c8dc02f74d584b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83747230"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84248249"
 ---
 # <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm"></a>Руководство по резервному копированию баз данных SAP HANA на виртуальной машине Azure
 
@@ -22,6 +22,9 @@ ms.locfileid: "83747230"
 
 [Здесь](sap-hana-backup-support-matrix.md#scenario-support) все поддерживаемые сейчас сценарии.
 
+>[!NOTE]
+>[Попробуйте](https://docs.microsoft.com/azure/backup/tutorial-backup-sap-hana-db) предварительную версию Azure Backup для SAP HANA в RHEL (7.4, 7.6, 7.7 и 8.1). С вопросами пишите на адрес [AskAzureBackupTeam@microsoft.com](mailto:AskAzureBackupTeam@microsoft.com).
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 Перед настройкой резервных копий убедитесь обязательно сделайте следующее:
@@ -34,9 +37,7 @@ ms.locfileid: "83747230"
 * С правами привилегированного пользователя запустите скрипт настройки резервного копирования SAP HANA (скрипт предварительной регистрации) на виртуальной машине, где установлена HANA. [Этот скрипт](https://aka.ms/scriptforpermsonhana) получает систему HANA, готовую для резервного копирования. Дополнительные сведения о скрипте предварительной регистрации см. в разделе [Функции скрипта предварительной регистрации](#what-the-pre-registration-script-does).
 
 >[!NOTE]
->Azure Backup не учитывает переход на летнее время при создании резервных копий базы данных SAP HANA, работающей на виртуальной машине Azure.
->
->Измените политику вручную, если это необходимо.
+>Скрипт предварительной регистрации устанавливает **compat-unixODBC234** для рабочих нагрузок SAP HANA, выполняемых в RHEL (7.4, 7.6 и 7.7) и **unixODBC** для RHEL 8.1. [Этот пакет находится в репозитории RHEL for SAP HANA (for RHEL 7 Server) Update Services for SAP Solutions (RPMs)](https://access.redhat.com/solutions/5094721).  Репозиторий для образа RHEL в Azure Marketplace: **rhui-rhel-sap-hana-for-rhel-7-server-rhui-e4s-rpms**.
 
 ## <a name="set-up-network-connectivity"></a>Настройка сетевого подключения
 

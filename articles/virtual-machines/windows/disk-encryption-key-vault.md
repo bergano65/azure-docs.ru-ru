@@ -1,6 +1,6 @@
 ---
-title: Создание и настройка хранилища ключей для шифрования дисков Azure
-description: В этой статье описаны действия по созданию и настройке хранилища ключей для использования с шифрованием дисков Azure.
+title: Создание и настройка хранилища ключей для службы "Шифрование дисков Azure"
+description: В этой статье описано, как создать и настроить хранилище ключей для использования со службой "Шифрование дисков Azure".
 ms.service: virtual-machines
 ms.subservice: security
 ms.topic: article
@@ -8,45 +8,45 @@ author: msmbaldwin
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: f1317989434cca9375c612c8af0525323c6dda3c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 0348461e2a58bd8e71b8dff10667c512125d7b03
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82081665"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83656703"
 ---
-# <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption"></a>Создание и настройка хранилища ключей для шифрования дисков Azure
+# <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption"></a>Создание и настройка хранилища ключей для службы "Шифрование дисков Azure"
 
-Шифрование дисков Azure использует Azure Key Vault для управления ключами и секретами шифрования дисков, а так и управления ими.  Дополнительные сведения о хранилищах ключей см. в статье [Приступая к работе с Azure Key Vault](../../key-vault/key-vault-get-started.md) и [Защита хранилища ключей](../../key-vault/general/secure-your-key-vault.md). 
+Служба "Шифрование дисков Azure" использует Azure Key Vault, чтобы управлять секретами и ключами шифрования дисков и контролировать их использование.  Дополнительные сведения о хранилищах ключей см. в статье [Приступая к работе с Azure Key Vault](../../key-vault/key-vault-get-started.md) и [Защита хранилища ключей](../../key-vault/general/secure-your-key-vault.md). 
 
 > [!WARNING]
-> - Если вы ранее использовали шифрование дисков Azure с Azure AD для шифрования виртуальной машины, необходимо продолжить использовать этот параметр для шифрования виртуальной машины. Дополнительные сведения см. [в статье Создание и Настройка хранилища ключей для шифрования дисков Azure с помощью Azure AD (предыдущий выпуск)](disk-encryption-key-vault-aad.md) .
+> - Если вы уже использовали службу "Шифрование дисков Azure" c Azure AD для шифрования виртуальной машины, применяйте этот способ шифрования виртуальной машины и далее. Дополнительные сведения см. в статье [Создание и настройка хранилища ключей для службы "Шифрование дисков Azure" c Azure AD (предыдущий выпуск)](disk-encryption-key-vault-aad.md).
 
-Создание и Настройка хранилища ключей для использования с шифрованием дисков Azure состоит из трех этапов:
+Создание и настройка хранилища ключей для использования со службой "Шифрование дисков Azure" состоит из трех этапов.
 
-1. При необходимости создайте группу ресурсов.
+1. Создание группы ресурсов при необходимости.
 2. Создание хранилища ключей. 
-3. Настройка политик расширенного доступа к хранилищу ключей.
+3. Установка политик расширенного доступа к хранилищу ключей.
 
-Эти шаги показаны в следующих кратких руководствах:
+Эти этапы продемонстрированы в следующих кратких руководствах.
 
 - [Создание и шифрование виртуальной машины Windows с помощью Azure CLI](disk-encryption-cli-quickstart.md)
-- [Создание и шифрование виртуальной машины Windows с помощью Azure PowerShell](disk-encryption-cli-quickstart.md)
+- [Создание и шифрование виртуальной машины Windows с помощью Azure PowerShell](disk-encryption-powershell-quickstart.md)
 
-Вы также можете создать или импортировать ключ шифрования ключа (KEK), если нужно.
+При необходимости можно создать или импортировать ключ шифрования ключа (KEK).
 
 > [!Note]
-> Действия, описанные в этой статье, автоматизированы в [сценарии CLI для предварительных требований к шифрованию дисков Azure](https://github.com/ejarvi/ade-cli-getting-started) и [сценарии PowerShell для компонента шифрования дисков Azure](https://github.com/Azure/azure-powershell/tree/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts).
+> Описанные в этой статье процессы автоматизируются с помощью скриптов подготовки необходимых компонентов для службы "Шифрование дисков Azure". Скрипты доступны для [интерфейса командной строки](https://github.com/ejarvi/ade-cli-getting-started) и [PowerShell](https://github.com/Azure/azure-powershell/tree/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts).
 
 ## <a name="install-tools-and-connect-to-azure"></a>Установка средств и подключение к Azure
 
-Действия, описанные в этой статье, можно выполнить с помощью [Azure CLI](/cli/azure/), [модуля Azure PowerShell AZ](/powershell/azure/overview)или [портал Azure](https://portal.azure.com).
+Действия, описанные в этой статье, можно выполнить с помощью [Azure CLI](/cli/azure/), [модуля Azure PowerShell Az](/powershell/azure/overview) или [портала Azure](https://portal.azure.com).
 
-Доступ к порталу возможен через браузер, Azure CLI и Azure PowerShell требуется локальная установка. Дополнительные сведения см. в [статье шифрование дисков Azure для Windows: Установка средств](disk-encryption-windows.md#install-tools-and-connect-to-azure) .
+Доступ к порталу возможен через браузер, тогда как Azure CLI и Azure PowerShell нужно установить локально, как описано в статье [об установке средств для службы "Шифрование дисков Azure" для Windows ](disk-encryption-windows.md#install-tools-and-connect-to-azure).
 
 ### <a name="connect-to-your-azure-account"></a>Подключение к учетной записи Azure
 
-Перед использованием Azure CLI или Azure PowerShell необходимо сначала подключиться к подписке Azure. Для этого выполните [Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest), [Войдите в систему с помощью Azure PowerShell](/powershell/azure/authenticate-azureps?view=azps-2.5.0)или укажите учетные данные для портал Azure при появлении соответствующего запроса.
+Перед использованием Azure CLI или Azure PowerShell нужно установить подключение к подписке Azure. Для этого войдите в систему [с помощью Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest), [Azure PowerShell](/powershell/azure/authenticate-azureps?view=azps-2.5.0) или укажите учетные данные на портале Azure при появлении соответствующего запроса.
 
 ```azurecli-interactive
 az login
@@ -58,10 +58,10 @@ Connect-AzAccount
 
 [!INCLUDE [disk-encryption-key-vault](../../../includes/disk-encryption-key-vault.md)]
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сценарий CLI для предварительных требований к шифрованию дисков Azure](https://github.com/ejarvi/ade-cli-getting-started)
-- [Сценарий PowerShell для предварительных требований к шифрованию дисков Azure](https://github.com/Azure/azure-powershell/tree/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts)
-- Сведения о [сценариях шифрования дисков Azure на виртуальных машинах Windows](disk-encryption-windows.md)
-- Сведения об [устранении неполадок шифрования дисков Azure](disk-encryption-troubleshooting.md)
-- Ознакомьтесь с [примерами сценариев шифрования дисков Azure](disk-encryption-sample-scripts.md) .
+- [Скрипт CLI для подготовки необходимых компонентов для службы "Шифрование дисков Azure"](https://github.com/ejarvi/ade-cli-getting-started)
+- [Скрипт PowerShell для подготовки необходимых компонентов для службы "Шифрование дисков Azure"](https://github.com/Azure/azure-powershell/tree/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts)
+- Изучите [сценарии использования службы "Шифрование дисков Azure" для виртуальных машин Windows](disk-encryption-windows.md)
+- См. сведения об [устранении неполадок со службой "Шифрование дисков Azure"](disk-encryption-troubleshooting.md).
+- Изучите [примеры скриптов для службы "Шифрование дисков Azure"](disk-encryption-sample-scripts.md)

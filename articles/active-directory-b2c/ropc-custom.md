@@ -1,28 +1,28 @@
 ---
-title: Настройка потока учетных данных для пароля владельца ресурса с помощью настраиваемых политик
+title: Настройка потока учетных данных пароля владельца ресурса с помощью настраиваемых политик
 titleSuffix: Azure AD B2C
-description: Узнайте, как настроить поток учетных данных для пароля владельца ресурса (РОПК) с помощью пользовательских политик в Azure Active Directory B2C.
+description: Узнайте, как настроить поток учетных данных пароля владельца ресурса с помощью настраиваемых политик в Azure Active Directory B2C.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 04/01/2020
+ms.date: 05/12/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 207f4aecfb57480293c138c95ed6e8f6562bbc7b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 5c6956c38d15213d84b43b24784d2bb2b3a1963f
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80529160"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83638577"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-active-directory-b2c-using-a-custom-policy"></a>Настройка потока учетных данных пароля владельца ресурса в Azure Active Directory B2C с помощью пользовательской политики
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-В Azure Active Directory B2C (Azure AD B2C) поток учетных данных для пароля владельца ресурса (РОПК) является стандартным потоком проверки подлинности OAuth. В этом потоке приложение, также известное как проверяющая сторона, обменивает действительные учетные данные на маркеры проверки подлинности. Учетные данные включают идентификатор пользователя и пароль. Возвращается маркер идентификации, маркер доступа и маркер обновления.
+В Azure Active Directory B2C (Azure AD B2C) поток учетных данных пароля владельца ресурса (ROPC) — это процесс стандартной аутентификации OAuth. В этом потоке приложение, также известное как проверяющая сторона, обменивает действительные учетные данные на маркеры проверки подлинности. Учетные данные включают идентификатор пользователя и пароль. Возвращается маркер идентификации, маркер доступа и маркер обновления.
 
 [!INCLUDE [active-directory-b2c-ropc-notes](../../includes/active-directory-b2c-ropc-notes.md)]
 
@@ -124,7 +124,7 @@ ms.locfileid: "80529160"
     </TechnicalProfile>
     ```
 
-    Замените **DefaultValue** **client_id** идентификатором приложения ProxyIdentityExperienceFramework, созданным в руководстве по предварительной установке. Затем замените **DefaultValue** **resource_id** идентификатором приложения приложения IdentityExperienceFramework, которое также было создано в учебнике по необходимым компонентам.
+    Замените параметр **DefaultValue** для **client_id** идентификатором приложения ProxyIdentityExperienceFramework, созданного в учебнике о предварительных требованиях. Затем замените параметр **DefaultValue** для **resource_id** идентификатором приложения IdentityExperienceFramework, созданного в учебнике о предварительных требованиях.
 
 5. Добавьте следующие элементы **ClaimsProvider** с техническими профилями в элемент **ClaimsProviders**.
 
@@ -239,24 +239,24 @@ ms.locfileid: "80529160"
     ```
 
 5. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
-6. Включите **Перезапись политики, если она существует**, а затем найдите и выберите файл *ROPC_Auth. XML* .
+6. Включите функцию **Перезаписать политику, если она уже существует**, а затем найдите и выберите файл *ROPC_Auth.xml*.
 7. Щелкните **Отправить**.
 
 ## <a name="test-the-policy"></a>Проверка политики
 
 С помощью предпочитаемого приложения по разработке API создайте вызов API и просмотрите ответ, чтобы отладить политику. Создайте вызов, как в этом примере, со следующими сведениями в качестве текста запроса POST.
 
-`https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/v2.0/token?p=B2C_1_ROPC_Auth`
+`https://<tenant-name>.b2clogin.com/<tenant-name>.onmicrosoft.com/B2C_1_ROPC_Auth/oauth2/v2.0/token`
 
-- Замените `your-tenant-name` именем вашего клиента Azure AD B2C.
+- Замените `<tenant-name>` именем вашего клиента Azure AD B2C.
 - Замените `B2C_1A_ROPC_Auth` полным именем политики учетных данных пароля владельца ресурса.
 
 | Клавиши | Значение |
 | --- | ----- |
 | username | `user-account` |
-| пароль | `password1` |
-| grant_type | пароль |
-| scope | openid `application-id` offline_access |
+| password | `password1` |
+| grant_type | password |
+| область | openid `application-id` offline_access |
 | client_id | `application-id` |
 | response_type | token id_token |
 
@@ -268,8 +268,8 @@ ms.locfileid: "80529160"
 Фактический запрос POST выглядит так.
 
 ```HTTPS
-POST /yourtenant.onmicrosoft.com/oauth2/v2.0/token?B2C_1_ROPC_Auth HTTP/1.1
-Host: yourtenant.b2clogin.com
+POST /<tenant-name>.onmicrosoft.com/oauth2/v2.0/token?B2C_1_ROPC_Auth HTTP/1.1
+Host: <tenant-name>.b2clogin.com
 Content-Type: application/x-www-form-urlencoded
 
 username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scope=openid+bef22d56-552f-4a5b-b90a-1988a7d634ce+offline_access&client_id=bef22d56-552f-4a5b-b90a-1988a7d634ce&response_type=token+id_token
@@ -291,9 +291,9 @@ username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scop
 
 Создайте вызов POST, аналогичный приведенному здесь. Используйте приведенные в таблице ниже сведения в качестве текста запроса.
 
-`https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/v2.0/token?p=B2C_1_ROPC_Auth`
+`https://<tenant-name>.b2clogin.com/<tenant-name>.onmicrosoft.com/B2C_1_ROPC_Auth/oauth2/v2.0/token`
 
-- Замените `your-tenant-name` именем вашего клиента Azure AD B2C.
+- Замените `<tenant-name>` именем вашего клиента Azure AD B2C.
 - Замените `B2C_1A_ROPC_Auth` полным именем политики учетных данных пароля владельца ресурса.
 
 | Клавиши | Значение |
@@ -301,7 +301,7 @@ username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scop
 | grant_type | refresh_token |
 | response_type | id_token |
 | client_id | `application-id` |
-| resource | `application-id` |
+| ресурс | `application-id` |
 | refresh_token | `refresh-token` |
 
 - Замените `application-id` на идентификатор приложения из регистрации *ROPC_Auth_app*.

@@ -7,15 +7,16 @@ ms.service: private-link
 ms.topic: quickstart
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: dbcb833e6f8b90cebd3d013e58168558bcd96827
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: df01108a1cb103fc7392b1a599961a99a453a160
+ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "75459977"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84265494"
 ---
 # <a name="quickstart-create-a-private-endpoint-using-azure-cli"></a>Краткое руководство. Создание частной конечной точки с помощью Azure CLI
-Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (ВМ), обмениваться данными с ресурсами частной ссылки в частном порядке. В этом кратком руководстве вы узнаете, как создать виртуальную машину в виртуальной сети и сервер базы данных SQL с частной конечной точкой, используя Azure CLI. После этого вы сможете получить доступ к виртуальной машине и получить безопасный доступ к ресурсу частной ссылки (в этом примере это частный сервер базы данных SQL Azure). 
+
+Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (ВМ), обмениваться данными с ресурсами частной ссылки в частном порядке. В этом кратком руководстве вы узнаете, как создать виртуальную машину в виртуальной сети и сервер базы данных SQL с частной конечной точкой, используя Azure CLI. После этого вы сможете получить доступ к виртуальной машине и получить безопасный доступ к ресурсу частной ссылки (в этом примере это частный сервер базы данных SQL).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -30,6 +31,7 @@ az group create --name myResourceGroup --location westcentralus
 ```
 
 ## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
+
 Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
 
 ```azurecli-interactive
@@ -38,7 +40,9 @@ az network vnet create \
  --resource-group myResourceGroup \
  --subnet-name mySubnet
 ```
-## <a name="disable-subnet-private-endpoint-policies"></a>Отключение политик подсети частной конечной точки 
+
+## <a name="disable-subnet-private-endpoint-policies"></a>Отключение политик подсети частной конечной точки
+
 Поскольку Azure развертывает ресурсы в подсеть виртуальной сети, чтобы отключить политики сети частной конечной точки, вам следует создать или обновить подсеть. Обновите конфигурацию подсети *mySubnet* с помощью команды [az network vnet subnet update](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update).
 
 ```azurecli-interactive
@@ -48,75 +52,79 @@ az network vnet subnet update \
  --vnet-name myVirtualNetwork \
  --disable-private-endpoint-network-policies true
 ```
-## <a name="create-the-vm"></a>Создание виртуальной машины 
-Создайте виртуальную машину с помощью команды az vm create. При появлении запроса укажите пароль в качестве учетных данных для входа на виртуальную машину. В этом примере создается виртуальная машина с именем *myVM*. 
+
+## <a name="create-the-vm"></a>Создание виртуальной машины
+
+Создайте виртуальную машину с помощью команды az vm create. При появлении запроса укажите пароль в качестве учетных данных для входа на виртуальную машину. В этом примере создается виртуальная машина с именем *myVM*.
+
 ```azurecli-interactive
 az vm create \
   --resource-group myResourceGroup \
   --name myVm \
   --image Win2019Datacenter
 ```
- Запишите общедоступный IP-адрес виртуальной машины. Этот адрес используется на следующем шаге, чтобы подключиться к виртуальной машине из Интернета.
 
-## <a name="create-a-sql-database-server"></a>Создание сервера базы данных SQL 
-Создайте сервер базы данных SQL с помощью команды az sql server create. Помните, что имя SQL Server должно быть уникальным в пределах Azure, поэтому замените значение заполнителя в квадратных скобках своим уникальным значением: 
+Запишите общедоступный IP-адрес виртуальной машины. Этот адрес используется на следующем шаге, чтобы подключиться к виртуальной машине из Интернета.
+
+## <a name="create-a-server-in-sql-database"></a>Создание сервера базы данных SQL
+
+Создайте сервер базы данных SQL с помощью команды az sql server create. Помните, что имя сервера должно быть уникальным в пределах Azure, поэтому замените значение заполнителя в квадратных скобках своим уникальным значением:
 
 ```azurecli-interactive
-# Create a logical server in the resource group 
-az sql server create \ 
-    --name "myserver"\ 
-    --resource-group myResourceGroup \ 
-    --location WestUS \ 
-    --admin-user "sqladmin" \ 
-    --admin-password "CHANGE_PASSWORD_1" 
- 
-# Create a database in the server with zone redundancy as false 
-az sql db create \ 
-    --resource-group myResourceGroup  \ 
-    --server myserver \ 
-    --name mySampleDatabase \ 
-    --sample-name AdventureWorksLT \ 
-    --edition GeneralPurpose \ 
-    --family Gen4 \ 
-    --capacity 1 
+# Create a server in the resource group
+az sql server create \
+    --name "myserver"\
+    --resource-group myResourceGroup \
+    --location WestUS \
+    --admin-user "sqladmin" \
+    --admin-password "CHANGE_PASSWORD_1"
+
+# Create a database in the server with zone redundancy as false
+az sql db create \
+    --resource-group myResourceGroup  \
+    --server myserver \
+    --name mySampleDatabase \
+    --sample-name AdventureWorksLT \
+    --edition GeneralPurpose \
+    --family Gen4 \
+    --capacity 1
 ```
 
-Обратите внимание, что идентификатор SQL Server аналогичный  ```/subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.Sql/servers/myserver.```. Вы будете использовать идентификатор SQL Server в следующем шаге. 
+Идентификатор сервера аналогичный  ```/subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.Sql/servers/myserver.```. Вы будете использовать идентификатор сервера в следующем шаге.
 
-## <a name="create-the-private-endpoint"></a>Создание частной конечной точки 
-Создайте частную конечную точку для сервера базы данных SQL в виртуальной сети. 
+## <a name="create-the-private-endpoint"></a>Создание частной конечной точки
+
+Создайте частную конечную точку для логического сервера SQL в виртуальной сети:
+
 ```azurecli-interactive
 az network private-endpoint create \  
     --name myPrivateEndpoint \  
     --resource-group myResourceGroup \  
     --vnet-name myVirtualNetwork  \  
     --subnet mySubnet \  
-    --private-connection-resource-id "<SQL Server ID>" \  
+    --private-connection-resource-id "<server ID>" \  
     --group-ids sqlServer \  
     --connection-name myConnection  
  ```
-## <a name="configure-the-private-dns-zone"></a>Настройка частной зоны DNS 
-Создайте частную зону DNS для домена сервера базы данных SQL, а затем ссылку на ассоциацию с виртуальной сетью. 
-```azurecli-interactive
-az network private-dns zone create --resource-group myResourceGroup \ 
-   --name  "privatelink.database.windows.net" 
-az network private-dns link vnet create --resource-group myResourceGroup \ 
-   --zone-name  "privatelink.database.windows.net"\ 
-   --name MyDNSLink \ 
-   --virtual-network myVirtualNetwork \ 
-   --registration-enabled false 
 
-#Query for the network interface ID  
-networkInterfaceId=$(az network private-endpoint show --name myPrivateEndpoint --resource-group myResourceGroup --query 'networkInterfaces[0].id' -o tsv)
- 
- 
-az resource show --ids $networkInterfaceId --api-version 2019-04-01 -o json 
-# Copy the content for privateIPAddress and FQDN matching the SQL server name 
- 
- 
-#Create DNS records 
-az network private-dns record-set a create --name myserver --zone-name privatelink.database.windows.net --resource-group myResourceGroup  
-az network private-dns record-set a add-record --record-set-name myserver --zone-name privatelink.database.windows.net --resource-group myResourceGroup -a <Private IP Address>
+## <a name="configure-the-private-dns-zone"></a>Настройка частной зоны DNS
+
+Создайте частную зону DNS для домена базы данных SQL, создайте ассоциированную связь с виртуальной сетью и создайте группу зоны DNS, чтобы связать частную конечную точку с частной зоной DNS. 
+
+```azurecli-interactive
+az network private-dns zone create --resource-group myResourceGroup \
+   --name  "privatelink.database.windows.net"
+az network private-dns link vnet create --resource-group myResourceGroup \
+   --zone-name  "privatelink.database.windows.net"\
+   --name MyDNSLink \
+   --virtual-network myVirtualNetwork \
+   --registration-enabled false
+az network private-endpoint dns-zone-group create \
+   --resource-group myResourceGroup \
+   --endpoint-name myPrivateEndpoint \
+   --name MyZoneGroup \
+   --private-dns-zone "privatelink.database.windows.net" \
+   --zone-name sql
 ```
 
 ## <a name="connect-to-a-vm-from-the-internet"></a>Подключение к виртуальной машине из Интернета
@@ -144,38 +152,46 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 
 1. Когда появится рабочий стол виртуальной машины, сверните его, чтобы вернуться на локальный рабочий стол.  
 
-## <a name="access-sql-database-server-privately-from-the-vm"></a>Доступ с виртуальной машины к серверу базы данных SQL в частном порядке
+## <a name="access-sql-database-privately-from-the-vm"></a>Доступ с виртуальной машины к базе данных SQL в частном порядке
 
-В этом разделе вы будете подключаться к серверу базы данных SQL из виртуальной машины с помощью частной конечной точки.
+В этом разделе вы будете подключаться к базе данных SQL из виртуальной машины с помощью частной конечной точки.
 
- 1. Откройте PowerShell на удаленном рабочем столе *myVm*.
- 2. Введите nslookup myserver.database.windows.net  .Вы получите примерно следующее сообщение: 
+1. Откройте PowerShell на удаленном рабочем столе *myVm*.
+2. Введите myserver.database.windows.net
 
-```
-      Server:  UnKnown 
-      Address:  168.63.129.16 
-      Non-authoritative answer: 
-      Name:    myserver.privatelink.database.windows.net 
-      Address:  10.0.0.5 
-      Aliases:  myserver.database.windows.net 
-```
- 3. Установите SQL Server Management Studio 
- 4. В окне "Подключение к серверу" введите или выберите приведенные ниже сведения. Тип сервера: Выберите "Ядро СУБД".
- Имя сервера: Выберите имя пользователя "myserver.database.windows.net": Введите имя пользователя, указанное во время создания.
- Пароль: Введите пароль, указанный во время создания.
- Запомнить пароль: Выберите "Да".
- 
- 5. Выберите **Подключиться**.
- 6. В меню слева выберите **Базы данных**.
- 7. (Дополнительно) Создание или запрос информации из базы данных *mydatabase*
- 8. Закройте подключение к удаленному рабочему столу *myVm*.
+   Должно появиться сообщение следующего вида:
 
-## <a name="clean-up-resources"></a>Очистка ресурсов 
-Чтобы удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы, выполните команду "az group delete". 
+    ```
+    Server:  UnKnown
+    Address:  168.63.129.16
+    Non-authoritative answer:
+    Name:    myserver.privatelink.database.windows.net
+    Address:  10.0.0.5
+    Aliases:  myserver.database.windows.net
+    ```
+
+3. Установите SQL Server Management Studio
+4. В окне "Подключение к серверу" введите или выберите приведенные ниже сведения.
+
+   - Тип сервера: Выберите "Ядро СУБД".
+   - Имя сервера: Выберите myserver.database.windows.net
+   - Имя пользователя: Введите имя пользователя, указанное во время создания.
+   - Пароль: Введите пароль, указанный во время создания.
+   - Запомнить пароль: Выберите "Да".
+
+5. Выберите **Подключиться**.
+6. В меню слева выберите **Базы данных**.
+7. (Дополнительно) Создание или запрос информации из базы данных *mydatabase*
+8. Закройте подключение к удаленному рабочему столу *myVm*.
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Чтобы удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы, выполните команду "az group delete".
 
 ```azurecli-interactive
-az group delete --name myResourceGroup --yes 
+az group delete --name myResourceGroup --yes
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Дополнительные сведения о службе [Приватный канал Azure](private-link-overview.md)
+
+Дополнительные сведения о службе [Приватный канал Azure](private-link-overview.md)
