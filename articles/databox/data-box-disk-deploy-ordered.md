@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: e7ab15749ccd4ef2808e9cbb362196e38e3d7f4b
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: de481abd82b4fc7dd2eae3763f82b8dd96cc14a9
+ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83746080"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84266531"
 ---
 # <a name="tutorial-order-an-azure-data-box-disk"></a>Руководство по Заказ Диска Azure Data Box
 
@@ -105,7 +105,7 @@ ms.locfileid: "83746080"
 
 7. Во вкладке **Адрес доставки** укажите свое имя и фамилию, имя и почтовый адрес компании и действительный номер телефона. Щелкните **Проверить адрес**. Данная служба проверяет адрес доставки на доступность услуг. Если служба доступна для указанного адреса доставки, вы получите соответствующее уведомление.
 
-   После обработки заказа вы получите уведомление по электронной почте. Дополнительные сведения см. в статье [об использовании самостоятельной доставки](data-box-disk-portal-customer-managed-shipping.md).
+   После обработки заказа вы получите уведомление по электронной почте. Если вы выбрали самоуправляемую доставку, узнайте, [как ею пользоваться](data-box-disk-portal-customer-managed-shipping.md).
 
     ![Укажите адрес доставки](media/data-box-disk-deploy-ordered/data-box-shipping-address.png)
 8. В разделе **Сведения в уведомлении** укажите адрес электронной почты. Служба отправляет уведомления по электронной почте об обновлениях состояния заказа на указанные адреса электронной почты.

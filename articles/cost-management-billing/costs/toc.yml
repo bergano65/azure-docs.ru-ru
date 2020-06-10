@@ -35,6 +35,8 @@
           href: manage-automation.md
         - name: Миграция из EA в API MCA
           href: migrate-cost-management-api.md
+        - name: Параметры группирования и фильтрации
+          href: group-filter.md
     - name: Практические руководства
       items:
         - name: Предотвращение и анализ непредвиденных расходов

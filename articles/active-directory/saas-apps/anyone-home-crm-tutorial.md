@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 05/22/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f2320f8a005531039a386af9192157c3091f3ac
-ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
+ms.openlocfilehash: 4146e6de2ef23f7e12ee6b59c40045f8a678dc13
+ms.sourcegitcommit: 5504d5a88896c692303b9c676a7d2860f36394c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84221261"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84509191"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-anyone-home-crm"></a>Руководство по интеграции единого входа Azure Active Directory с Anyone Home CRM
 
@@ -88,7 +88,7 @@ ms.locfileid: "84221261"
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://app.anyonehome.com/webroot/files/simplesamlphp/www/module.php/saml/sp/saml2-acs.php/<Anyone_Home_Provided_Unique_Value>`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Anyone Home CRM](mailto:lightson@anyonehome.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Anyone Home CRM](mailto:support@anyonehome.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 
@@ -98,7 +98,7 @@ ms.locfileid: "84221261"
 
 В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 1. В верхней части экрана выберите **Новый пользователь**.
 1. В разделе **Свойства пользователя** выполните следующие действия.
    1. В поле **Имя** введите `B.Simon`.  
@@ -126,11 +126,11 @@ ms.locfileid: "84221261"
 
 ## <a name="configure-anyone-home-crm-sso"></a>Настройка единого входа в Anyone Home CRM
 
-Чтобы настроить единый вход на стороне **Anyone Home CRM**, необходимо отправить **URL-адрес метаданных федерации приложения** в [группу поддержки Anyone Home CRM](mailto:lightson@anyonehome.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Anyone Home CRM**, необходимо отправить **URL-адрес метаданных федерации приложения** в [группу поддержки Anyone Home CRM](mailto:support@anyonehome.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-anyone-home-crm-test-user"></a>Создание тестового пользователя Anyone Home CRM
 
-В этом разделе описано, как создать пользователя Britta Simon в Anyone Home CRM. Чтобы добавить пользователей на платформу Anyone Home CRM, обратитесь в  [группу поддержки Anyone Home CRM](mailto:lightson@anyonehome.com). Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в Anyone Home CRM. Чтобы добавить пользователей на платформу Anyone Home CRM, обратитесь в  [группу поддержки Anyone Home CRM](mailto:support@anyonehome.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 

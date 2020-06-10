@@ -11,12 +11,12 @@ ms.date: 05/28/2019
 ms.author: Kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: e393b653ecb9e9d7b8eff277b91215ccc5bf6342
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.openlocfilehash: 282222aad68df94ea9eff4151d31eb5e488bca81
+ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83770828"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84116981"
 ---
 # <a name="quickstart-create-and-query-a-synapse-sql-pool-using-the-azure-portal"></a>Краткое руководство. Создание пула SQL Synapse и отправка в него запросов, используя портал Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "83770828"
 
 ## <a name="create-a-sql-pool"></a>Создание пула SQL
 
-Хранилища данных создаются с использованием пула SQL в Azure Synapse Analytics. Пул SQL создается с определенным набором [вычислительных ресурсов](memory-concurrency-limits.md). База данных создается в пределах [группы ресурсов Azure](../../azure-resource-manager/management/overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) и [логического сервера SQL Azure](../../sql-database/sql-database-servers.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+Хранилища данных создаются с использованием пула SQL в Azure Synapse Analytics. Пул SQL создается с определенным набором [вычислительных ресурсов](memory-concurrency-limits.md). База данных создается в пределах [группы ресурсов Azure](../../azure-resource-manager/management/overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) и [логического сервера SQL](../../azure-sql/database/logical-servers.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 
 Следуйте приведенным инструкциям по созданию пула SQL, содержащего пример данных **AdventureWorksDW**.
 
@@ -64,7 +64,7 @@ ms.locfileid: "83770828"
 
    ![Изменение уровня производительности хранилища данных](./media/create-data-warehouse-portal/create-sql-pool-performance-level.png)  
 
-   Дополнительные сведения об уровне производительности см. в статье [Управление вычислительными ресурсами в хранилище данных Azure Synapse Analytics](sql-data-warehouse-manage-compute-overview.md).
+   Дополнительные сведения об уровне производительности см. в статье [Управление вычислительными ресурсами в Azure Synapse Analytics](sql-data-warehouse-manage-compute-overview.md).
 
 5. В разделе **Использовать существующие данные** выберите **Дополнительные параметры** и щелкните **Пример**, чтобы создать пример базы данных AdventureWorksDW.
 
@@ -76,16 +76,16 @@ ms.locfileid: "83770828"
 
    ![Выбор создания](./media/create-data-warehouse-portal/create-sql-pool-create.png)
 
-6. На панели инструментов щелкните значок **Уведомления**, чтобы отслеживать процесс развертывания.
+7. На панели инструментов щелкните значок **Уведомления**, чтобы отслеживать процесс развертывания.
 
    ![уведомление](./media/create-data-warehouse-portal/notification.png)
 
 ## <a name="create-a-server-level-firewall-rule"></a>создадим правило брандмауэра на уровне сервера;
 
-Служба Azure Synapse создает брандмауэр на уровне сервера. Этот брандмауэр предотвращает подключение внешних приложений и инструментов к серверу или базам данных на сервере. Чтобы разрешить это подключение, можно добавить правила брандмауэра, открывающие подключение для определенных IP-адресов. Выполните приведенные ниже действия, чтобы создать [правило брандмауэра уровня сервера](../../sql-database/sql-database-firewall-configure.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) для IP-адреса клиента.
+Служба Azure Synapse создает брандмауэр на уровне сервера. Этот брандмауэр предотвращает подключение внешних приложений и инструментов к серверу или базам данных на сервере. Чтобы разрешить это подключение, можно добавить правила брандмауэра, открывающие подключение для определенных IP-адресов. Выполните приведенные ниже действия, чтобы создать [правило брандмауэра уровня сервера](../../azure-sql/database/firewall-configure.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) для IP-адреса клиента.
 
 > [!NOTE]
-> Azure Synapse обменивается данными через порт 1433. Если вы пытаетесь подключиться из корпоративной сети, то исходящий трафик через порт 1433 может быть запрещен сетевым брандмауэром. В таком случае вы не сможете подключиться к серверу Базы данных SQL Azure, пока ваш ИТ-отдел не откроет порт 1433.
+> Azure Synapse обменивается данными через порт 1433. Если вы пытаетесь подключиться из корпоративной сети, то исходящий трафик через порт 1433 может быть запрещен сетевым брандмауэром. В таком случае вы не сможете подключиться к серверу, пока ваш ИТ-отдел не откроет порт 1433.
 
 1. После завершения развертывания в меню слева выберите **Все службы**. Щелкните значок **Базы данных**, затем выберите значок звездочки рядом с полем **Azure Synapse Analytics**, чтобы добавить Azure Synapse Analytics в избранное.
 
@@ -99,24 +99,24 @@ ms.locfileid: "83770828"
 
    ![параметры сервера](./media/create-data-warehouse-portal/server-settings.png)
 
-5. Откроется страница **параметров брандмауэра** для сервера Базы данных SQL.
+5. Откроется страница **Параметры брандмауэра** сервера.
 
    ![правило брандмауэра для сервера](./media/create-data-warehouse-portal/server-firewall-rule.png)
 
 6. На панели инструментов нажмите кнопку **Добавить IP-адрес клиента**, чтобы добавить текущий IP-адрес в новое правило брандмауэра. С использованием правила брандмауэра можно открыть порт 1433 для одного IP-адреса или диапазона IP-адресов.
 
-7. Щелкните **Save** (Сохранить). Для текущего IP-адреса будет создано правило брандмауэра уровня сервера, с помощью которого можно открыть порт 1433 логического сервера.
+7. Щелкните **Save** (Сохранить). Для текущего IP-адреса будет создано правило брандмауэра на уровне сервера, с помощью которого можно открыть порт 1433 на сервере.
 
 8. Нажмите кнопку **ОК**, а затем закройте страницу **Параметры брандмауэра**.
 
-Теперь с помощью этого IP-адреса можно подключиться к серверу SQL и его пулам SQL. Подключение выполняется из SQL Server Management Studio или другого инструмента на ваше усмотрение. При подключении используйте созданную ранее учетную запись ServerAdmin.
+Теперь с помощью этого IP-адреса можно подключиться к серверу и его пулам SQL. Подключение выполняется из SQL Server Management Studio или другого инструмента на ваше усмотрение. При подключении используйте созданную ранее учетную запись ServerAdmin.
 
 > [!IMPORTANT]
 > По умолчанию доступ через брандмауэр базы данных SQL включен для всех служб Azure. На этой странице щелкните положение **Выкл.** переключателя, а затем нажмите кнопку **Сохранить**, чтобы отключить брандмауэр для всех служб Azure.
 
 ## <a name="get-the-fully-qualified-server-name"></a>Получение полного имени сервера
 
-Получите полное имя сервера SQL на портале Azure. Позже это полное имя понадобится при подключении к серверу.
+Получите полное имя сервера на портале Azure. Позже это полное имя понадобится при подключении к серверу.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
@@ -128,7 +128,7 @@ ms.locfileid: "83770828"
 
 ## <a name="connect-to-the-server-as-server-admin"></a>Подключение к серверу от имени администратора сервера
 
-В этом разделе для подключения к серверу SQL Azure используется [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS).
+В этом разделе для подключения к серверу используется [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS).
 
 1. Откройте среду SQL Server Management Studio.
 
@@ -196,7 +196,7 @@ ms.locfileid: "83770828"
 
 3. Чтобы удалить пул SQL во избежание дальнейших платежей за вычисления или хранение, нажмите кнопку **Удалить**.
 
-4. Чтобы удалить созданный вами сервер SQL, выберите сервер **sqlpoolservername.database.windows.net**, выделенный на предыдущем изображении, а затем нажмите кнопку **Удалить**. Будьте внимательны, так как удаление сервера приведет к удалению всех баз данных, назначенных этому серверу.
+4. Чтобы удалить созданный вами сервер, выберите сервер **sqlpoolservername.database.windows.net**, выделенный на предыдущем изображении, и нажмите кнопку **Удалить**. Будьте внимательны, так как удаление сервера приведет к удалению всех баз данных, назначенных этому серверу.
 
 5. Чтобы удалить группу ресурсов, выберите **myResourceGroup**, а затем **Удалить группу ресурсов**.
 

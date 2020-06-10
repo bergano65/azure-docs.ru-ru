@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.openlocfilehash: 9f780ad3d2c95f9d23ea9a0b675b59ba22e25016
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: b9a855a89a37cde0be3c30b2428c32db361aa2e8
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83651937"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84021693"
 ---
 # <a name="use-reference-data-from-a-sql-database-for-an-azure-stream-analytics-job"></a>Использование эталонных данных из Базы данных SQL для задания Azure Stream Analytics
 
@@ -40,7 +40,7 @@ Azure Stream Analytics поддерживает базу данных SQL Azure 
 
    ![Настройка эталонной конфигурации Базы данных SQL](./media/sql-reference-data/sql-input-config.png)
 
-3. Проверьте запрос моментального снимка в редакторе SQL-запросов. Дополнительные сведения см. в статье [Краткое руководство. Использование редактора SQL-запросов на портале Azure для подключения к данным и их запроса](../sql-database/sql-database-connect-query-portal.md).
+3. Проверьте запрос моментального снимка в редакторе SQL-запросов. Дополнительные сведения см. в статье [Краткое руководство. Использование редактора SQL-запросов на портале Azure для подключения к данным и их запроса](../azure-sql/database/connect-query-portal.md).
 
 ### <a name="specify-storage-account-in-job-config"></a>Выбор учетной записи хранения в конфигурации задания
 
@@ -69,7 +69,7 @@ Azure Stream Analytics поддерживает базу данных SQL Azure 
 
 ### <a name="create-a-sql-database-table"></a>Создание таблицы базы данных SQL
 
-Создайте таблицу для хранения эталонных данных, используя SQL Server Management Studio. Дополнительные сведения см. в статье [Руководство. Разработка первой базы данных SQL Azure с использованием SSMS](../sql-database/sql-database-design-first-database.md).
+Создайте таблицу для хранения эталонных данных, используя SQL Server Management Studio. Дополнительные сведения см. в статье [Руководство. Разработка первой базы данных SQL Azure с использованием SSMS](../azure-sql/database/design-first-database-tutorial.md).
 
 Пример таблицы, используемый в следующем примере, был создан с помощью следующей инструкции:
 
@@ -129,7 +129,7 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
 
 ## <a name="delta-query"></a>Разностный запрос
 
-Вместе с разностным запросом рекомендуется использовать [темпоральные таблицы в базе данных SQL Azure](../sql-database/sql-database-temporal-tables.md).
+Вместе с разностным запросом рекомендуется использовать [темпоральные таблицы в базе данных SQL Azure](../azure-sql/temporal-tables.md).
 
 1. Создайте временную таблицу в Базе данных SQL Azure.
    

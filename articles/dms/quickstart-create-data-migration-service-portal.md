@@ -12,16 +12,16 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: quickstart
 ms.date: 01/08/2020
-ms.openlocfilehash: 3b2a6566322f29870d2376007060acedac62692a
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: 7d27d67cfa46eb4554f6ca3d66df76e393b18da0
+ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83873539"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84187545"
 ---
 # <a name="quickstart-create-an-instance-of-the-azure-database-migration-service-by-using-the-azure-portal"></a>Краткое руководство. Создание экземпляра службы Azure Database Migration Service с помощью портала Azure
 
-В этом кратком руководстве вы создадите экземпляр Azure Database Migration Service с помощью портала Azure.  После создания экземпляра вы сможете использовать его для переноса данных с локального сервера SQL Server в Базу данных SQL Azure.
+В этом кратком руководстве вы создадите экземпляр Azure Database Migration Service с помощью портала Azure.  Созданный экземпляр можно будет использовать для переноса данных с платформы SQL Server в Базу данных SQL Azure.
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
@@ -78,4 +78,4 @@ ms.locfileid: "83873539"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Миграция с SQL Server в Базу данных SQL Azure](tutorial-sql-server-to-azure-sql.md)
+> [Перенос SQL Server в Базу данных Azure SQL](tutorial-sql-server-to-azure-sql.md)

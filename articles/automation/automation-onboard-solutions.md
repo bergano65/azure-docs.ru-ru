@@ -5,12 +5,12 @@ services: automation
 ms.topic: conceptual
 ms.date: 05/10/2018
 ms.custom: mvc
-ms.openlocfilehash: 39ebdb6937b03d72365e9d3785af9571ebb66186
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 95370a45b9fce69e5c1d06ac9bb987e1bfcfba4f
+ms.sourcegitcommit: 0fa52a34a6274dc872832560cd690be58ae3d0ca
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836062"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84204078"
 ---
 # <a name="enable-update-management-from-a-runbook"></a>Включение Управления обновлениями в последовательности runbook
 
@@ -103,9 +103,6 @@ ms.locfileid: "83836062"
 
 * Сведения о планировании модуля runbook см. в статье [Управление расписаниями в службе автоматизации Azure](shared-resources/schedules.md).
 * Сведения об использовании Управления обновлениями для виртуальных машин см.статье [Управление обновлениями и исправлениями для виртуальных машин Azure](automation-tutorial-update-management.md).
-* Сведения о конфигурациях областей см. в статье [Устранение неполадок с Управлением обновлениями](automation-scope-configurations-update-management.md).
-* Если рабочая область Log Analytics больше не нужна, просмотрите инструкции в статье [Отмена связи рабочей области с учетной записью службы автоматизации для Управления обновлениями](automation-unlink-workspace-update-management.md).
-* Сведения об удалении виртуальных машин из Управления обновлениями см. в [этой статье](automation-remove-vms-from-update-management.md).
 * Сведения об устранении общих ошибок Управления обновлениями см. в [этой статье](troubleshoot/update-management.md).
 * Сведения об устранении неполадок, связанных с агентом обновления Windows, см. в [этой статье](troubleshoot/update-agent-issues.md).
-* Сведения об устранении неполадок с агентом обновления Linux см. в [этой статье](troubleshoot/update-agent-issues-linux.md).
+* Прочитайте, [как устранять неполадки, связанные с агентом обновления Linux](troubleshoot/update-agent-issues-linux.md).

@@ -7,19 +7,28 @@ ms.topic: include
 ms.date: 03/04/2019
 ms.author: antchu
 ms.custom: include file
-ms.openlocfilehash: 73d4d4e1a5f148dce6099b2d747ee1c290bcf7c1
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 2af9c1dfd13d3aeafa7cf1ac76537117ecc15aff
+ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "67185658"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84317672"
 ---
 ## <a name="run-the-web-application"></a>Запуск веб-приложения
 
-1. На платформе GitHub размещен пример одностраничного веб-приложения. Откройте в браузере [https://azure-samples.github.io/signalr-service-quickstart-serverless-chat/demo/chat-v2/](https://azure-samples.github.io/signalr-service-quickstart-serverless-chat/demo/chat-v2/).
+1. Чтобы упростить тестирование клиента, откройте в браузере страницу с примером нашего одностраничного веб-приложения: [https://azure-samples.github.io/signalr-service-quickstart-serverless-chat/demo/chat-v2/](https://azure-samples.github.io/signalr-service-quickstart-serverless-chat/demo/chat-v2/). 
 
     > [!NOTE]
-    > Путь к исходному HTML-файлу: [/docs/demo/chat-v2/index.html](https://github.com/Azure-Samples/signalr-service-quickstart-serverless-chat/blob/master/docs/demo/chat-v2/index.html).
+    > Путь к исходному HTML-файлу: [/docs/demo/chat-v2/index.html](https://github.com/Azure-Samples/signalr-service-quickstart-serverless-chat/blob/master/docs/demo/chat-v2/index.html). Если вы хотите разместить HTML-файл у себя, запустите локальный HTTP-сервер (например, [http-server](https://www.npmjs.com/package/http-server)) в каталоге */docs/demo/chat-v2*. Обязательно добавьте источник в параметр `CORS` в файле *local.settings.json*, как в примере.
+    > 
+    > ```javascript
+    > "Host": {
+    >  "LocalHttpPort": 7071,
+    >  "CORS": "http://localhost:8080,https://azure-samples.github.io",
+    >  "CORSCredentials": true
+    > }
+    >
+    > ```
 
 1. Когда появится запрос на ввод базового URL-адреса приложения-функции, введите `http://localhost:7071`.
 
@@ -32,6 +41,3 @@ ms.locfileid: "67185658"
     ![Выполнение приложения](../media/signalr-quickstart-azure-functions-csharp/signalr-quickstart-run-application.png)
 
 1. Откройте другой экземпляр веб-приложения в новом окне браузера. Вы увидите, что все отправляемые сообщения отображаются во всех экземплярах приложения.
-
-> [!IMPORTANT]
-> Так как HTML-страница обслуживается по протоколу HTTPS, но в локальной среде выполнения Функций Azure по умолчанию используется протокол HTTP, браузер (например, Firefox) может принудительно применить политику смешанного содержимого, блокирующую запросы от веб-страницы к функциям. Чтобы решить эту проблему, используйте браузер без таких ограничений или запустите локальный сервер HTTP, например [http-server](https://www.npmjs.com/package/http-server) в каталоге */docs/demo/chat-v2*. Обязательно добавьте источник в параметр `CORS` в файле *local.settings.json*.

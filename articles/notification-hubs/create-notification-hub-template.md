@@ -10,20 +10,20 @@ ms.author: sethm
 ms.date: 05/15/2020
 ms.reviewer: thsomasu
 ms.lastreviewed: 05/15/2020
-ms.openlocfilehash: aefccb831fe35898962893a173c5bd1125877def
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: ede6b8ae22fb51a9586c6c4465d2cf9ac79f88df
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83743533"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83996675"
 ---
 # <a name="quickstart-create-a-notification-hub-using-an-azure-resource-manager-template"></a>Краткое руководство по созданию Центра уведомлений с помощью шаблона Azure Resource Manager
 
 Центры уведомлений Azure обеспечивают простой в использовании и масштабируемый механизм отправки push-уведомлений, который позволяет отправлять уведомления на любую платформу (iOS, Android, Windows, Kindle и т. д.) c любой серверной части (облачной или локальной). Дополнительные сведения о службе см. в статье [Что такое Центры уведомлений Azure?](notification-hubs-push-notification-overview.md).
 
-В этом кратком руководстве используется шаблон Azure Resource Manager для создания пространства имен Центров уведомлений Azure и центра уведомлений MyHub в этом пространстве имен.
-
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
+
+В этом кратком руководстве используется шаблон Azure Resource Manager для создания пространства имен Центров уведомлений Azure и центра уведомлений **MyHub** в этом пространстве имен.
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
@@ -32,8 +32,6 @@ ms.locfileid: "83743533"
 Нет.
 
 ## <a name="create-a-notification-hubs-namespace-and-hub"></a>Создание пространства имен Центров уведомлений и концентраторов
-
-<!-- The second H2 must start with "Create a". For example,  'Create a Key Vault', 'Create a virtual machine', etc. -->
 
 ### <a name="review-the-template"></a>Изучение шаблона
 
@@ -48,7 +46,7 @@ ms.locfileid: "83743533"
 
 Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон принимает имя пространства имен Центров уведомлений в качестве параметра. Затем он создает пространство имен с этим именем и Центр уведомлений **MyHub** в этом пространстве имен.
 
-[![Развертывание в Azure](./media/create-notification-hub-template/deploy-to-azure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-notification-hub%2Fazuredeploy.json)
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-notification-hub%2Fazuredeploy.json)
 
 ## <a name="review-deployed-resources"></a>Просмотр развернутых ресурсов
 

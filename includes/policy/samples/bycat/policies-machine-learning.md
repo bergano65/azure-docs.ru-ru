@@ -1,0 +1,21 @@
+---
+author: DCtheGeek
+ms.service: azure-policy
+ms.topic: include
+ms.date: 05/29/2020
+ms.author: dacoulte
+ms.custom: generated
+ms.openlocfilehash: 807dde49c352c3a4fc64fd540a0387e4cf77ae86
+ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/31/2020
+ms.locfileid: "84233890"
+---
+|Имя |Описание |Действие |Версия |GitHub |
+|---|---|---|---|---|
+|[Настройка разрешенных авторов модуля для указанных вычислений Машинного обучения Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F53c70b02-63dd-11ea-bc55-0242ac130003) |Эта политика позволяет задать разрешенных авторов модуля для указанных вычислений Машинного обучения Azure, и ее можно назначить в рабочей области. Дополнительные сведения см. по адресу [https://aka.ms/amlpolicydoc](https://aka.ms/amlpolicydoc). |enforceSetting, disabled |1.0.0 (предварительная версия) |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Machine%20Learning/AllowedModuleAuthors_EnforceSetting.json) |
+|[Настройка разрешенных пакетов Python для указанных вычислений Машинного обучения Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F77eeea86-7e81-4a7d-9067-de844d096752) | Эта политика позволяет задать разрешенные пакеты Python для указанных вычислений Машинного обучения Azure, и ее можно назначить в рабочей области. Дополнительные сведения см. по адресу [https://aka.ms/amlpolicydoc](https://aka.ms/amlpolicydoc). |enforceSetting, disabled |1.0.0 (предварительная версия) |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Machine%20Learning/AllowedPythonPackageChannels_EnforceSetting.json) |
+|[Настройка разрешенных реестров для указанных вычислений Машинного обучения Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F5853517a-63de-11ea-bc55-0242ac130003) |Эта политика позволяет задать разрешенные реестры для указанных вычислений Машинного обучения Azure, и ее можно назначить в рабочей области. Дополнительные сведения см. по адресу [https://aka.ms/amlpolicydoc](https://aka.ms/amlpolicydoc). |enforceSetting, disabled |1.0.0 (предварительная версия) |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Machine%20Learning/AllowedACRs_EnforceSetting.json) |
+|[Настройка конечной точки утверждения, которая вызывается перед заданиями, выполняемыми для указанных вычислений Машинного обучения Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3948394e-63de-11ea-bc55-0242ac130003) |Эта политика позволяет настроить конечную точку утверждения, которая вызывается перед заданиями, выполняемыми для указанных вычислений Машинного обучения Azure, и ее можно назначить в рабочей области. Дополнительные сведения см. в записи блога Дополнительные сведения см. по адресу [https://aka.ms/amlpolicydoc](https://aka.ms/amlpolicydoc). |enforceSetting, disabled |1.0.0 (предварительная версия) |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Machine%20Learning/ApprovalEndpoint_EnforceSetting.json) |
+|[Настройка выражения фильтра журнала и хранилища данных, используемых для полных журналов в указанных вычислениях Машинного обучения Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1d413020-63de-11ea-bc55-0242ac130003) |Эта политика позволяет задать выражение фильтра журнала и хранилище данных, которые будут использоваться для полных журналов в указанных вычислениях Машинного обучения Azure, и ее можно назначить в рабочей области. Дополнительные сведения см. по адресу [https://aka.ms/amlpolicydoc](https://aka.ms/amlpolicydoc). |enforceSetting, disabled |1.0.0 (предварительная версия) |[Ссылка](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Machine%20Learning/AllowedLogFilter_EnforceSetting.json) |

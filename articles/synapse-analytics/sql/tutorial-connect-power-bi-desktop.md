@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 649c9a2e0dd9df21a9a59140d9f2999768aab555
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 1b71e8108ecab0f6d420e404bd602a900ebfcfb2
+ms.sourcegitcommit: 223cea58a527270fe60f5e2235f4146aea27af32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83745404"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84258289"
 ---
 # <a name="tutorial-use-sql-on-demand-preview-with-power-bi-desktop--create-a-report"></a>Руководство по Использование SQL по запросу (предварительная версия) с Power BI Desktop и создание отчета
 
@@ -29,10 +29,14 @@ ms.locfileid: "83745404"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим учебником вам потребуется следующее программное обеспечение:
+Для работы с данным руководством вам потребуется:
+
+- [Power BI Desktop](https://powerbi.microsoft.com/downloads/) — требуется для визуализации данных и создания отчета.
+- [Рабочая область Azure Synapse](https://docs.microsoft.com/azure/synapse-analytics/quickstart-synapse-studio) — требуется для создания базы данных, внешнего источника данных и представления.
+
+Необязательное действие:
 
 - инструмент SQL-запросов, например [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) или [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
-- [Power BI Desktop](https://powerbi.microsoft.com/downloads/).
 
 Значения для следующих параметров:
 

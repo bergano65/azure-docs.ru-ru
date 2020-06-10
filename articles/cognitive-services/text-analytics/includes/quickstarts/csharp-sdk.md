@@ -9,16 +9,16 @@ ms.topic: include
 ms.date: 03/17/2020
 ms.author: aahi
 ms.reviewer: assafi
-ms.openlocfilehash: 0e98a10573a2e3abda255c325845190ed5067bb3
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 979c714ca5446d3f1eabb76e97535ee5ffa2e359
+ms.sourcegitcommit: f0b206a6c6d51af096a4dc6887553d3de908abf3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83778270"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84140760"
 ---
 <a name="HOLTop"></a>
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 [Справочная документация версии 3](https://aka.ms/azsdk-net-textanalytics-ref-docs) | [Исходный код библиотеки версии 3](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics) | [Пакет для разработки (NuGet) версии 3](https://www.nuget.org/packages/Azure.AI.TextAnalytics) | [Образцы кода версии 3](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics/samples)
 
@@ -42,9 +42,9 @@ ms.locfileid: "83778270"
 
 С помощью интегрированной среды разработки Visual Studio создайте консольное приложение .NET Core. Будет создан проект Hello World на языке C# с одним файлом исходного кода: *program.cs*.
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
-Установите клиентскую библиотеку, щелкнув правой кнопкой мыши решение в **обозревателе решений** и выбрав **Управление пакетами NuGet**. В открывшемся диспетчере пакетов выберите **Просмотр**, установите флажок **Включить предварительные версии** и выполните поиск по запросу `Azure.AI.TextAnalytics`. Выберите версию `1.0.0-preview.4`, а затем **Установить**. Вы также можете использовать [консоль диспетчера пакетов](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-powershell#find-and-install-a-package).
+Установите клиентскую библиотеку, щелкнув правой кнопкой мыши решение в **обозревателе решений** и выбрав **Управление пакетами NuGet**. В открывшемся диспетчере пакетов выберите **Просмотр**, установите флажок **Включить предварительные версии** и выполните поиск по запросу `Azure.AI.TextAnalytics`. Выберите версию `1.0.0-preview.5`, а затем **Установить**. Вы также можете использовать [консоль диспетчера пакетов](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-powershell#find-and-install-a-package).
 
 > [!TIP]
 > Хотите просмотреть готовый файл с кодом для этого краткого руководства? Его можно найти [на сайте GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/TextAnalytics/program.cs), где размещены примеры кода для этого краткого руководства. 
@@ -58,7 +58,7 @@ ms.locfileid: "83778270"
 
 ---
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 Откройте файл *program.cs* и добавьте следующие директивы `using`:
 
@@ -121,7 +121,7 @@ private static readonly string endpoint = "<replace-with-your-text-analytics-end
 
 Клиент Анализа текста является объектом `TextAnalyticsClient`, который выполняет проверку подлинности в Azure с помощью вашего ключа и предоставляет функции для приема текста в виде отдельных строк или пакета. Текст в API можно отправлять как синхронно, так и асинхронно. Объект в ответе будет содержать аналитическую информацию по каждому отправленному вами документу. 
 
-Если вы используете версию `3.0-preview` этой службы, можно использовать необязательный экземпляр `TextAnalyticsClientOptions` для инициализации клиента с разными параметрами по умолчанию (например, языком по умолчанию или подсказкой для страны или региона). Проверку подлинности можно также выполнить с помощью токена Azure Active Directory. 
+Если вы используете версию `3.0` этой службы, можно использовать необязательный экземпляр `TextAnalyticsClientOptions` для инициализации клиента с разными параметрами по умолчанию (например, языком по умолчанию или подсказкой для страны или региона). Проверку подлинности можно также выполнить с помощью токена Azure Active Directory. 
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -133,7 +133,7 @@ private static readonly string endpoint = "<replace-with-your-text-analytics-end
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 Убедитесь, что основной метод из более ранней версии создает новый объект клиента с конечной точкой и учетными данными.
 
@@ -155,7 +155,7 @@ var client = new TextAnalyticsClient(endpoint, credentials);
 
 ## <a name="sentiment-analysis"></a>Анализ мнений
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 Создайте функцию с именем `SentimentAnalysisExample()`, которая принимает созданный ранее клиент, и вызовите вложенную в нее функцию `AnalyzeSentiment()`. Возвращаемый объект `Response<DocumentSentiment>` будет содержать метку тональности и оценку всего входного документа, а также анализ тональности для каждого предложения, если выполнение успешное. При появлении ошибки возникает исключение `RequestFailedException`.
 
@@ -169,8 +169,7 @@ static void SentimentAnalysisExample(TextAnalyticsClient client)
     var si = new StringInfo(inputText);
     foreach (var sentence in documentSentiment.Sentences)
     {
-        Console.WriteLine($"\tSentence [length {sentence.GraphemeLength}]");
-        Console.WriteLine($"\tText: \"{si.SubstringByTextElements(sentence.GraphemeOffset, sentence.GraphemeLength)}\"");
+        Console.WriteLine($"\tText: \"{sentence.Text}\"");
         Console.WriteLine($"\tSentence sentiment: {sentence.Sentiment}");
         Console.WriteLine($"\tPositive score: {sentence.ConfidenceScores.Positive:0.00}");
         Console.WriteLine($"\tNegative score: {sentence.ConfidenceScores.Negative:0.00}");
@@ -184,14 +183,12 @@ static void SentimentAnalysisExample(TextAnalyticsClient client)
 ```console
 Document sentiment: Positive
 
-        Sentence [length 30]
         Text: "I had the best day of my life."
         Sentence sentiment: Positive
         Positive score: 1.00
         Negative score: 0.00
         Neutral score: 0.00
 
-        Sentence [length 30]
         Text: "I wish you were there with me."
         Sentence sentiment: Neutral
         Positive score: 0.21
@@ -215,7 +212,7 @@ Sentiment Score: 0.87
 
 ## <a name="language-detection"></a>Определение языка
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 
 Создайте функцию с именем `LanguageDetectionExample()`, которая принимает созданный ранее клиент, и вызовите вложенную в нее функцию `DetectLanguage()`. Возвращенный объект `Response<DetectedLanguage>` будет содержать обнаруженный язык вместе с его именем и кодом ISO-6391. При появлении ошибки возникает исключение `RequestFailedException`.
@@ -258,11 +255,11 @@ Language: English
 
 ## <a name="named-entity-recognition-ner"></a>Распознавание именованных сущностей (NER)
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 
 > [!NOTE]
-> Новое в версии `3.0-preview`.
+> Новое в версии `3.0`.
 > * Связывание сущностей теперь отделено от их распознавания.
 
 
@@ -276,7 +273,7 @@ static void EntityRecognitionExample(TextAnalyticsClient client)
     foreach (var entity in response.Value)
     {
         Console.WriteLine($"\tText: {entity.Text},\tCategory: {entity.Category},\tSub-Category: {entity.SubCategory}");
-        Console.WriteLine($"\t\tLength: {entity.GraphemeLength},\tScore: {entity.ConfidenceScore:F2}\n");
+        Console.WriteLine($"\t\tScore: {entity.ConfidenceScore:F2}\n");
     }
 }
 ```
@@ -285,11 +282,14 @@ static void EntityRecognitionExample(TextAnalyticsClient client)
 
 ```console
 Named Entities:
+        Text: trip,     Category: Event,        Sub-Category:
+                Score: 0.61
+
         Text: Seattle,  Category: Location,     Sub-Category: GPE
-                Length: 7,      Score: 0.92
+                Score: 0.82
 
         Text: last week,        Category: DateTime,     Sub-Category: DateRange
-                Length: 9,      Score: 0.80
+                Score: 0.80
 ```
 
 ## <a name="entity-linking"></a>Связывание сущностей
@@ -313,7 +313,7 @@ static void EntityLinkingExample(TextAnalyticsClient client)
         foreach (var match in entity.Matches)
         {
             Console.WriteLine($"\t\tText: {match.Text}");
-            Console.WriteLine($"\t\tLength: {match.GraphemeLength},\tScore: {match.ConfidenceScore:F2}\n");
+            Console.WriteLine($"\t\tScore: {match.ConfidenceScore:F2}\n");
         }
     }
 }
@@ -326,38 +326,38 @@ Linked Entities:
         Name: Altair 8800,      ID: Altair 8800,        URL: https://en.wikipedia.org/wiki/Altair_8800  Data Source: Wikipedia
         Matches:
                 Text: Altair 8800
-                Length: 11,     Score: 0.78
+                Score: 0.88
 
         Name: Bill Gates,       ID: Bill Gates, URL: https://en.wikipedia.org/wiki/Bill_Gates   Data Source: Wikipedia
         Matches:
                 Text: Bill Gates
-                Length: 10,     Score: 0.55
+                Score: 0.63
 
                 Text: Gates
-                Length: 5,      Score: 0.55
+                Score: 0.63
 
         Name: Paul Allen,       ID: Paul Allen, URL: https://en.wikipedia.org/wiki/Paul_Allen   Data Source: Wikipedia
         Matches:
                 Text: Paul Allen
-                Length: 10,     Score: 0.53
+                Score: 0.60
 
         Name: Microsoft,        ID: Microsoft,  URL: https://en.wikipedia.org/wiki/Microsoft    Data Source: Wikipedia
         Matches:
                 Text: Microsoft
-                Length: 9,      Score: 0.47
+                Score: 0.55
 
                 Text: Microsoft
-                Length: 9,      Score: 0.47
+                Score: 0.55
 
         Name: April 4,  ID: April 4,    URL: https://en.wikipedia.org/wiki/April_4      Data Source: Wikipedia
         Matches:
                 Text: April 4
-                Length: 7,      Score: 0.25
+                Score: 0.32
 
         Name: BASIC,    ID: BASIC,      URL: https://en.wikipedia.org/wiki/BASIC        Data Source: Wikipedia
         Matches:
                 Text: BASIC
-                Length: 5,      Score: 0.28
+                Score: 0.33
 ```
 
 #### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
@@ -374,7 +374,7 @@ Linked Entities:
 
 ## <a name="key-phrase-extraction"></a>Извлечение ключевой фразы
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 Создайте функцию с именем `KeyPhraseExtractionExample()`, которая принимает созданный ранее клиент, и вызовите вложенную в нее функцию `ExtractKeyPhrases()`. Возвращенный объект `<Response<IReadOnlyCollection<string>>` будет содержать список обнаруженных ключевых фраз. При появлении ошибки возникает исключение `RequestFailedException`.
 

@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: quickstart
-ms.date: 02/25/2020
+ms.date: 05/28/2020
 ms.author: jingwang
-ms.openlocfilehash: c54d3187af1faee3a47a794dcf5b9b91733e5592
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: d6191a5f4dcfc3d25072e0cfa00418fb64311773
+ms.sourcegitcommit: 8017209cc9d8a825cc404df852c8dc02f74d584b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83683357"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84248538"
 ---
 # <a name="quickstart-create-a-data-factory-by-using-the-azure-data-factory-ui"></a>Краткое руководство. Создание фабрики данных с помощью пользовательского интерфейса службы "Фабрика данных Azure"
 
@@ -143,12 +143,13 @@ ms.locfileid: "83683357"
     е) Щелкните **ОК**.   
 
     ![Установка свойств для OutputDataset](./media/quickstart-create-data-factory-portal/set-properties-for-outputdataset.png)
+
 ## <a name="create-a-pipeline"></a>Создание конвейера 
 На этом этапе вы создадите и проверите конвейер с действием копирования, которое использует входной и выходной наборы данных. При помощи действия копирования данные копируются из файла, указанного в параметрах входного набора данных, в файл, указанный в параметрах выходного набора данных. Если входной набор данных определяет только папку (но не имя файла), при помощи действия копирования в место назначения копируются все файлы из исходной папки. 
 
 1. Нажмите кнопку **+** (плюс) и выберите **Pipeline** (Конвейер). 
 
-1. На вкладке **Общие** укажите значение **CopyPipeline** в поле **Имя**. 
+1. В разделе **Свойства** на панели "Общие сведения" укажите для параметра **Имя** значение **CopyPipeline**. Затем сверните панель, щелкнув значок "Свойства" в правом верхнем углу.
 
 1. На панели элементов **Действия** разверните **Переместить и преобразовать**. Перетащите действие **Копирование данных** из панели инструментов **Действия** в область конструктора конвейера. Также на панели элементов **Действия** можно применить поиск. Введите **CopyFromBlobToBlob** в поле **имя**.
    ![Создание действия копирования данных](./media/quickstart-create-data-factory-portal/copy-activity.png)

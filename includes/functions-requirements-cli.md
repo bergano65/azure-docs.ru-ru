@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 03/25/2020
 ms.author: glenga
-ms.openlocfilehash: 3929ffa81a8b558d8cb0dbd74135acc9cf1ea47b
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.openlocfilehash: 49610c178b577c4d81376a535355d140e8a144cb
+ms.sourcegitcommit: f0b206a6c6d51af096a4dc6887553d3de908abf3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82876003"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144956"
 ---
 ## <a name="configure-your-local-environment"></a>Настройка локальной среды
 
@@ -21,7 +21,13 @@ ms.locfileid: "82876003"
 + [Azure Functions Core Tools](../articles/azure-functions/functions-run-local.md#v2) 2.7.1846 или версии, более поздней, чем 2.
 ::: zone-end  
 ::: zone pivot="programming-language-python"
-+ Для Python 3.6 и 3.7 требуется [Azure Functions Core Tools](../articles/azure-functions/functions-run-local.md#v2) 2.7.1846 или версии, более поздней, чем 2.x. Для Python 3.8 требуется Core Tools [версии 3.x](../articles/azure-functions/functions-run-local.md#v2).
++ Версия Azure Functions Core Tools, соответствующая установленной версии Python:
+
+   | Версия Python | Версия Core Tools |
+   | -------------- | ------------------ |
+   | Python 3.8     | [Версия 3.x](../articles/azure-functions/functions-run-local.md#v2) |
+   | Python 3.6<br/>Python 3.7 | [Версия 2.7.1846 или более поздняя](../articles/azure-functions/functions-run-local.md#v2) |
+  
 ::: zone-end
 
 + [Azure CLI](/cli/azure/install-azure-cli) 2.4 или более поздней версии. 

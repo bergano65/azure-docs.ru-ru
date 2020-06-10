@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/21/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 6bdc2eca3bdf02814ee851ff266e04bb57f7978c
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 32087b1b2340508f7f868455e2db476046eaa4b5
+ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83658826"
+ms.lasthandoff: 05/31/2020
+ms.locfileid: "84235273"
 ---
 # <a name="connect-to-azure-synapse-link-preview-for-azure-cosmos-db"></a>Подключение к Azure Synapse Link (предварительная версия) для Azure Cosmos DB
 
@@ -23,6 +23,9 @@ ms.locfileid: "83658826"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Перед подключением базы данных Azure Cosmos DB к рабочей области вам потребуется следующее:
+
+> [!IMPORTANT]
+> Сейчас Azure Synapse Link для Azure Cosmos DB поддерживается для рабочих областей, в которых не включена управляемая виртуальная сеть. 
 
 * имеющаяся база данных Azure Cosmos DB (можно также создать новую учетную запись, следуя инструкциям в этом [кратком руководстве](https://docs.microsoft.com/azure/cosmos-db/how-to-manage-database-account));
 * имеющаяся рабочая область Synapse (можно также создать новую рабочую область, следуя инструкциям в этом [кратком руководстве](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-workspace)). 

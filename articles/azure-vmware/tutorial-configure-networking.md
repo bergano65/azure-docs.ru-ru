@@ -3,14 +3,14 @@ title: Руководство. Настройка сети для частног
 description: Сведения о том, как создать и настроить сеть для развертывания частного облака в Azure.
 ms.topic: tutorial
 ms.date: 05/04/2020
-ms.openlocfilehash: 5a8086f78f465f52d0f9107932c09c4690f505e8
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: 6cac420fb77526746dbdbfef5a88b071c007d555
+ms.sourcegitcommit: 2721b8d1ffe203226829958bee5c52699e1d2116
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83873849"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84148112"
 ---
-# <a name="tutorial-configure-networking-for-your-vmware-private-cloud-in-azure"></a>Руководство по настройке сети для частного облака VMWare в Azure
+# <a name="tutorial-configure-networking-for-your-vmware-private-cloud-in-azure"></a>Руководство по настройке сети для частного облака VMware в Azure
 
 Для частного облака решения Azure VMware (AVS) требуется наличие виртуальной сети. Так как AVS в предварительной версии не поддерживает локальный экземпляр vCenter, вам придется выполнить дополнительные шаги по интеграции с локальной средой. Также вам нужно настроить канал ExpressRoute и шлюз виртуальной сети, как описано далее в этом руководстве.
 

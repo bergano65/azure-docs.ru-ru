@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 12/05/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 80c961c1aa4da199fa87b97bc8e0a37e60c2235f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: e17eee8de789b813e5aab726207233e8607ec97f
+ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74903110"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84200417"
 ---
 ### <a name="is-custom-ipsecike-policy-supported-on-all-azure-vpn-gateway-skus"></a>Поддерживается ли политика IPsec/IKE во всех номерах SKU VPN-шлюзов Azure?
-Пользовательская политика IPsec/IKE поддерживается во всех SKU Azure, за исключением номера SKU "базовый".
+Пользовательская политика IPsec/IKE поддерживается во всех SKU Azure, за исключением SKU "Базовый".
 
 ### <a name="how-many-policies-can-i-specify-on-a-connection"></a>Сколько политик можно указать для подключения?
-Для данного соединения можно указать только ***одну*** комбинацию политики.
+Можно указать только ***одну*** комбинацию политик для каждого подключения.
 
 ### <a name="can-i-specify-a-partial-policy-on-a-connection-for-example-only-ike-algorithms-but-not-ipsec"></a>Можно ли указать частичную политику для подключения (например, только алгоритмы IKE без IPsec)?
 Нет, следует указать все алгоритмы и параметры для IKE (основной режим) и IPsec (быстрый режим). Указать частичную политику нельзя.
@@ -35,14 +35,14 @@ ms.locfileid: "74903110"
 | Шифрование IPsec | GCMAES256, GCMAES192, GCMAES128, AES256, AES192, AES128, DES3, DES, нет      |
 | Целостность IPsec  | GCMAES256, GCMAES192, GCMAES128, SHA256, SHA1, MD5                            |
 | Группа PFS        | PFS24, ECP384, ECP256, PFS2048, PFS2, PFS1, нет                              |
-| Время существования QM SA   | Секунды (целое число; **min. 300**/Default 27000 секунд)<br>КБ (целое число; **min. 1024,/Default.** 102400000 КБ)           |
+| Время существования QM SA   | Секунды (целое число, **минимум 300**, по умолчанию — 27 000 с)<br>Килобайты (целое число, **минимум 1024**, по умолчанию — 102 400 000 КБ)           |
 | Селектор трафика | UsePolicyBasedTrafficSelectors ($True/$False; по умолчанию — $False)                 |
 |                  |                                                                               |
 
 > [!IMPORTANT]
 > 1. DHGroup2048 и PFS2048 — это такие же группы, как и группа Диффи-Хелмана **14** в протоколе IKE и IPsec PFS. Полное сопоставление см. в разделе о [группах Диффи — Хелмана](#DH).
 > 2. В алгоритмах GCMAES необходимо указать одинаковую длину ключа и алгоритма для шифрования и целостности данных IPsec.
-> 3. Время жизни SA в основном режиме зафиксировано в 28 800 секунд на VPN-шлюзах Azure.
+> 3. Время существования SA основного режима IKEv2 составляет 28 800 секунд на VPN-шлюзах Azure.
 > 4. Время существования QM SA указывать необязательно. Если эти значения не указаны, по умолчанию используются значения 27 000 с (7,5 ч) и 102 400 000 КБ (102 ГБ).
 > 5. UsePolicyBasedTrafficSelector — это необязательный параметр при подключении. Чтобы получить информацию о параметре UsePolicyBasedTrafficSelectors, см. следующий вопрос и ответ.
 
@@ -103,17 +103,17 @@ ms.locfileid: "74903110"
 ### <a name="does-custom-ipsecike-policy-work-on-expressroute-connection"></a>Работает ли настраиваемая политика IPsec/IKE для подключения ExpressRoute?
 Нет. Политика IPsec/IKE работает только для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть" через VPN-шлюзы Azure.
 
-### <a name="how-do-i-create-connections-with-ikev1-or-ikev2-protocol-type"></a>Разделы справки создать подключения с использованием типа протокола IKEv1 или IKEv2?
-Подключения IKEv1 могут создаваться для всех номеров SKU типа RouteBased VPN, за исключением номера SKU "базовый". При создании подключений можно указать тип протокола соединения IKEv1 или IKEv2. Если тип протокола соединения не указан, по умолчанию используется протокол IKEv2. Дополнительные сведения см. в документации по [командлетам PowerShell](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworkgatewayconnection?) . Сведения о типах SKU и поддержке IKEv1/IKEv2 см. [в статье Подключение шлюзов к VPN-устройствам на основе политик](../articles/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps.md).
+### <a name="how-do-i-create-connections-with-ikev1-or-ikev2-protocol-type"></a>Как создавать подключения с типом протокола IKEv1 или IKEv2?
+Подключения IKEv1 можно создавать во всех SKU с VPN типа RouteBased, кроме SKU прежних версий. При создании подключения можно указать тип протокола IKEv1 или IKEv2. Если тип протокола не указан, по умолчанию используется тип IKEv2 (там, где это применимо). Дополнительные сведения см. в документации по [командлетам PowerShell](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworkgatewayconnection?). Сведения о типах SKU и поддержке протоколов IKEv1 и IKEv2 см. в статье о [подключении шлюзов к VPN-устройствам на базе политик](../articles/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps.md).
 
-### <a name="is-transit-between-between-ikev1-and-ikev2-connections-allowed"></a>Разрешено ли пересылки между подключениями IKEv1 и IKEv2?
-Да. Поддерживается транзитное соединение между IKEv1 и IKEv2.
+### <a name="is-transit-between-between-ikev1-and-ikev2-connections-allowed"></a>Можно ли перейти с подключения типа IKEv1 на IKEv2 и обратно?
+Да. Переход между типами подключений IKEv1 и IKEv2 поддерживается.
 
-### <a name="can-i-have-ikev1-site-to-site-connections-on-basic-skus-of-routebased-vpn-type"></a>Могу ли я использовать для подключения типа "сеть — сеть" на уровне "базовый" RouteBased VPN?
-Нет. Базовый SKU не поддерживает эту возможность.
+### <a name="can-i-have-ikev1-site-to-site-connections-on-basic-skus-of-routebased-vpn-type"></a>Можно ли использовать межсайтовые подключения IKEv1 на SKU категории "Базовый" с VPN типа RouteBased?
+Нет. SKU категории "Базовый" не поддерживает такой возможности.
 
-### <a name="can-i-change-the-connection-protocol-type-after-the-connection-is-created-ikev1-to-ikev2-and-vice-versa"></a>Можно ли изменить тип протокола подключения после создания подключения (IKEv1 в IKEv2 и наоборот)?
-Нет. После создания соединения невозможно изменить протоколы IKEv1/IKEv2. Необходимо удалить и повторно создать новое соединение с требуемым типом протокола.
+### <a name="can-i-change-the-connection-protocol-type-after-the-connection-is-created-ikev1-to-ikev2-and-vice-versa"></a>Можно ли сменить тип протокола после создания подключения (с IKEv1 на IKEv2 или обратно)?
+Нет. Изменить тип протокола IKEv1 или IKEv2 после создания подключения невозможно. Вам потребуется удалить и снова создать подключение с протоколом нужного типа.
 
 ### <a name="where-can-i-find-more-configuration-information-for-ipsec"></a>Где можно найти дополнительные сведения о конфигурации для IPsec?
 См. раздел [Настройка политики IPsec/IKE для подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"](../articles/vpn-gateway/vpn-gateway-ipsecikepolicy-rm-powershell.md).

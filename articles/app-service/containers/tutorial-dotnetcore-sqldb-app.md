@@ -1,23 +1,22 @@
 ---
-title: Руководство по использованию ASP.NET Core в Linux с базой данных SQL
-description: Узнайте, как создать управляемое данными приложение ASP.NET Core в Linux, работающее в Службе приложений Azure, с подключением к Базе данных SQL.
+title: Руководство по использованию Linux ASP.NET Core с Базой данных SQL
+description: Узнайте, как создать приложение Linux ASP.NET Core, управляемое данными и работающее в Службе приложений Azure с подключением к Базе данных SQL.
 ms.assetid: 0b4d7d0e-e984-49a1-a57a-3c0caa955f0e
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 04/23/2020
 ms.custom: mvc, cli-validate, seodec18
-ms.openlocfilehash: 6c2ed68c18cc7845d45bebffc31842879353f2c2
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.openlocfilehash: 303177f1ee7a076a5c1756bfbb13a4364f43aca0
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83846942"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84020240"
 ---
 # <a name="tutorial-build-an-aspnet-core-and-sql-database-app-in-azure-app-service-on-linux"></a>Руководство по Создание веб-приложения ASP.NET Core с Базой данных SQL в Службе приложений Azure в Linux
 
 > [!NOTE]
 > В этой статье мы развернем приложение в службе приложений на платформе Linux. Дополнительные сведения о развертывании в Службе приложений в _Windows_ см. в руководстве по [созданию приложения .NET Core с Базой данных SQL в Службе приложений Azure](../app-service-web-tutorial-dotnetcore-sqldb.md).
->
 
 [Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом руководстве показано, как создать приложение .NET Core и подключить его к Базе данных SQL. После выполнения всех действий у вас будет приложение .NET Core MVC, работающее в службе приложений в Linux.
 
@@ -26,7 +25,8 @@ ms.locfileid: "83846942"
 В этом руководстве описано следующее:
 
 > [!div class="checklist"]
-> * Создание базы данных SQL в Azure.
+>
+> * Создание базы данных в службе "База данных SQL Azure"
 > * Подключение приложения .NET Core к базе данных SQL.
 > * Развертывание приложения в Azure
 > * Обновление модели данных и повторное развертывание приложения.
@@ -77,28 +77,25 @@ dotnet run
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-## <a name="create-production-sql-database"></a>Создание рабочей базы данных SQL
+## <a name="create-a-database-in-azure-sql-database"></a>Создание базы данных в службе "База данных SQL Azure"
 
-На этом шаге вы создадите базу данных SQL в Azure. При развертывании приложения в Azure используется эта облачная база данных.
-
-В этом руководстве для создания базы данных SQL используется [База данных SQL Azure](/azure/sql-database/).
+На данном этапе нужно создать базу данных в службе [База данных SQL Azure](/azure/sql-database/). Эта база данных используется при развертывании приложения в Azure.
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 [!INCLUDE [Create resource group](../../../includes/app-service-web-create-resource-group-linux-no-h.md)]
 
-### <a name="create-a-sql-database-logical-server"></a>Создание логического сервера базы данных SQL
+### <a name="create-a-server-in-azure-sql-database"></a>Создание сервера в службе "База данных SQL Azure"
 
-В Cloud Shell создайте логический сервер базы данных SQL с помощью команды [`az sql server create`](/cli/azure/sql/server?view=azure-cli-latest#az-sql-server-create).
+Запустите Cloud Shell и создайте [сервер](../../azure-sql/database/logical-servers.md) в Базе данных SQL Azure, выполнив команду [`az sql server create`](/cli/azure/sql/server?view=azure-cli-latest#az-sql-server-create). Сервер — это логическая конструкция, содержащая несколько баз данных, которыми можно управлять как единой группой.
 
-Замените заполнитель *\<server-name>* *уникальным* именем Базы данных SQL. Это имя используется как часть глобально уникальной конечной точки Базы данных SQL: `<server-name>.database.windows.net`. Допустимые символы: `a`-`z`, `0`-`9`, `-`. Кроме того, замените *\<db-username>* и *\<db-password>* именем пользователя и паролем по своему усмотрению. 
-
+Замените заполнитель *\<server-name>* *уникальным* именем в Базе данных SQL. Это имя используется как часть глобально уникальной конечной точки Базы данных SQL: `<server-name>.database.windows.net`. Допустимые символы: `a`-`z`, `0`-`9`, `-`. Также введите вместо *\<db-username>* и *\<db-password>* имя пользователя и пароль по своему усмотрению.
 
 ```azurecli-interactive
 az sql server create --name <server-name> --resource-group myResourceGroup --location "West Europe" --admin-user <db-username> --admin-password <db-password>
 ```
 
-После создания логического сервера базы данных SQL в Azure CLI отображаются примерно такие сведения:
+После создания сервера в Azure CLI появится приблизительно такая информация:
 
 <pre>
 {
@@ -120,25 +117,24 @@ az sql server create --name <server-name> --resource-group myResourceGroup --loc
 
 ### <a name="configure-a-server-firewall-rule"></a>Настройка правил брандмауэра сервера
 
-Создайте [правило брандмауэра уровня сервера Базы данных SQL Azure](../../sql-database/sql-database-firewall-configure.md) с помощью команды [`az sql server firewall create`](/cli/azure/sql/server/firewall-rule?view=azure-cli-latest#az-sql-server-firewall-rule-create). Если для начального и конечного IP-адресов задано значение 0.0.0.0, брандмауэр открыт только для других ресурсов Azure. 
+Создайте [правило брандмауэра на уровне сервера](../../azure-sql/database/firewall-configure.md) с помощью команды [`az sql server firewall create`](/cli/azure/sql/server/firewall-rule?view=azure-cli-latest#az-sql-server-firewall-rule-create). Если для начального и конечного IP-адресов задано значение 0.0.0.0, брандмауэр открыт только для других ресурсов Azure.
 
 ```azurecli-interactive
 az sql server firewall-rule create --resource-group myResourceGroup --server <server-name> --name AllowAzureIps --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0
 ```
 
-> [!TIP] 
+> [!TIP]
 > Вы можете применить еще более строгие ограничения в правиле брандмауэра, [разрешив только исходящие IP-адреса, используемые приложением](../overview-inbound-outbound-ips.md#find-outbound-ips).
->
 
-В Cloud Shell повторно выполните соответствующую команду, чтобы разрешить доступ с локального компьютера, заменив *\<your-ip-address >* [локальным IPv4-адресом](https://www.whatsmyip.org/).
+Чтобы разрешить доступ с локального компьютера, повторно выполните команду в Cloud Shell, заменив *\<your-ip-address>* [соответствующим локальным IPv4-адресом](https://www.whatsmyip.org/).
 
 ```azurecli-interactive
 az sql server firewall-rule create --name AllowLocalClient --server <mysql_server_name> --resource-group myResourceGroup --start-ip-address=<your-ip-address> --end-ip-address=<your-ip-address>
 ```
 
-### <a name="create-a-database"></a>Создание базы данных
+### <a name="create-a-database-in-azure-sql-database"></a>Создание базы данных в службе "База данных SQL Azure"
 
-Создайте на сервере базу данных с [уровнем производительности S0](../../sql-database/sql-database-service-tiers-dtu.md) с помощью команды [`az sql db create`](/cli/azure/sql/db?view=azure-cli-latest#az-sql-db-create).
+Создайте на сервере базу данных с [уровнем производительности S0](../../azure-sql/database/service-tiers-dtu.md) с помощью команды [`az sql db create`](/cli/azure/sql/db?view=azure-cli-latest#az-sql-db-create).
 
 ```azurecli-interactive
 az sql db create --resource-group myResourceGroup --server <server-name> --name coreDB --service-objective S0
@@ -174,11 +170,10 @@ services.AddDbContext<MyDatabaseContext>(options =>
 
 > [!IMPORTANT]
 > Для рабочих приложений, масштаб которых нужно увеличить горизонтально, следуйте рекомендациям из раздела [Применение миграций в рабочей среде](/aspnet/core/data/ef-rp/migrations#applying-migrations-in-production).
-> 
 
 ### <a name="run-database-migrations-to-the-production-database"></a>Выполнение миграций баз данных в рабочую базу данных
 
-В настоящее время приложение подключается к локальной базе данных Sqlite. Теперь, когда вы настроили Базу данных SQL Azure, повторно создайте первоначальную миграцию для нее. 
+В настоящее время приложение подключается к локальной базе данных Sqlite. Теперь, когда вы настроили в Azure базу данных, повторно создайте для нее первоначальную миграцию.
 
 В корне репозитория выполните следующие команды. Замените *\<connection-string>* строкой подключения, скопированной ранее.
 
@@ -210,7 +205,7 @@ dotnet run
 
 Откройте браузер и перейдите по адресу `http://localhost:5000`. Щелкните ссылку **Создать**, чтобы создать несколько элементов _списка дел_. Теперь приложение считывает данные из рабочей базы данных и записывает их в нее.
 
-Зафиксируйте локальные изменения, а затем зафиксируйте их в репозитории Git. 
+Зафиксируйте локальные изменения, а затем зафиксируйте их в репозитории Git.
 
 ```bash
 git add .
@@ -233,11 +228,11 @@ git commit -m "connect to SQLDB in Azure"
 
 ### <a name="create-a-web-app"></a>Создание веб-приложения
 
-[!INCLUDE [Create web app](../../../includes/app-service-web-create-web-app-dotnetcore-linux-no-h.md)] 
+[!INCLUDE [Create web app](../../../includes/app-service-web-create-web-app-dotnetcore-linux-no-h.md)]
 
 ### <a name="configure-connection-string"></a>Настройка строки подключения
 
-Чтобы задать строки подключения для приложения Azure, используйте команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. В следующей команде замените *\<app-name>* . Также замените *\<connection-string>* строкой подключения, созданной ранее.
+Чтобы задать строки подключения для приложения Azure, используйте команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. Замените *\<app-name>* в этой команде соответствующим значением, а параметр *\<connection-string>*  — строкой подключения, созданной ранее.
 
 ```azurecli-interactive
 az webapp config connection-string set --resource-group myResourceGroup --name <app-name> --settings MyDbConnection="<connection-string>" --connection-string-type SQLAzure
@@ -398,8 +393,8 @@ git push azure master
 
 В примере проекта уже выполнены инструкции из руководства [Ведение журналов в ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging#azure-app-service-provider) и внесены два изменения в настройки:
 
-- в файле *DotNetCoreSqlDb.csproj* содержится ссылка на `Microsoft.Extensions.Logging.AzureAppServices`.
-- Вызовы `loggerFactory.AddAzureWebAppDiagnostics()` в *Program.cs*.
+* в файле *DotNetCoreSqlDb.csproj* содержится ссылка на `Microsoft.Extensions.Logging.AzureAppServices`.
+* Вызовы `loggerFactory.AddAzureWebAppDiagnostics()` в *Program.cs*.
 
 Чтобы в Службе приложений для [уровня ведения журнала](https://docs.microsoft.com/aspnet/core/fundamentals/logging#log-level) ASP.NET Core задать значение `Information` вместо значения по умолчанию `Error`, используйте команду [`az webapp log config`](/cli/azure/webapp/log?view=azure-cli-latest#az-webapp-log-config) в Cloud Shell.
 
@@ -409,7 +404,6 @@ az webapp log config --name <app-name> --resource-group myResourceGroup --applic
 
 > [!NOTE]
 > Для уровня ведения журнала проекта уже задано значение `Information` в файле *appsettings.json*.
-> 
 
 Чтобы настроить потоки для журналов, выполните команду [`az webapp log tail`](/cli/azure/webapp/log?view=azure-cli-latest#az-webapp-log-tail) в Cloud Shell.
 
@@ -438,12 +432,14 @@ az webapp log tail --name <app-name> --resource-group myResourceGroup
 [!INCLUDE [cli-samples-clean-up](../../../includes/cli-samples-clean-up.md)]
 
 <a name="next"></a>
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Вы научились выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Создание базы данных SQL в Azure.
+>
+> * Создание базы данных в службе "База данных SQL Azure"
 > * Подключение приложения .NET Core к базе данных SQL.
 > * Развертывание приложения в Azure
 > * Обновление модели данных и повторное развертывание приложения.

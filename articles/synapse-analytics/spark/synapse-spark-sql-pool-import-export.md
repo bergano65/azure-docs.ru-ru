@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: prgomata
 ms.reviewer: euang
-ms.openlocfilehash: 1a2b9c739f3583fb5d842bd9d3834252d542cb7d
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 20b030079121104fe7bd75924a63ab0e12be9b19
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83739283"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84020869"
 ---
 # <a name="introduction"></a>Введение
 
@@ -59,7 +59,7 @@ EXEC sp_addrolemember 'db_exporter', 'Mary';
 
 Инструкции импорта необязательны, так как они уже импортированы для интерфейса записной книжки.
 
-### <a name="transferring-data-to-or-from-a-sql-pool-in-the-logical-server-dw-instance-attached-with-the-workspace"></a>Передача данных в пул SQL или из него на логическом сервере (экземпляре хранилища данных), подключенном к рабочей области
+### <a name="transferring-data-to-or-from-a-sql-pool-attached-with-the-workspace"></a>Передача данных в пул SQL, подключенный к рабочей области, и из него
 
 > [!NOTE]
 > **Импорт в интерфейсе записной книжки не требуется.**
@@ -92,7 +92,7 @@ df.write.sqlanalytics("[DBName].[Schema].[TableName]", Constants.EXTERNAL)
 
 Проверка подлинности для хранилища и SQL Server установлена.
 
-### <a name="if-you-are-transferring-data-to-or-from-a-sql-pool-or-database-in-a-logical-server-outside-the-workspace"></a>Передача данных в пул SQL или базу данных или из них на логическом сервере вне рабочей области
+### <a name="if-you-are-transferring-data-to-or-from-a-sql-pool-or-database-outside-the-workspace"></a>Передача данных в пул SQL или базу данных вне рабочей области и из них
 
 > [!NOTE]
 > Импорт в интерфейсе записной книжки не требуется.
