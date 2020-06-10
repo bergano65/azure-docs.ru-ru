@@ -9,12 +9,13 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.author: dapine
-ms.openlocfilehash: fa0ad8c7f75a977e1a39ff6ffd6fee08d977f57a
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.custom: tracking-python
+ms.openlocfilehash: be1f6bd05069024194cb9312b17941c609d544dd
+ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83202010"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84608457"
 ---
 # <a name="azure-cognitive-services-security"></a>Безопасность Cognitive Services Azure
 
@@ -200,7 +201,7 @@ NSString* value =
 
 Защищенное хранилище доступна для этой службы:
 
-* API перевода
+* Переводчик
 
 Для Language Understanding инженеры Майкрософт не будут получать доступ к данным клиентов в номере SKU E0. Чтобы запросить возможность использования номера SKU E0, заполните и отправьте [форму запроса на обслуживание Luis](https://aka.ms/cogsvc-cmk). Для получения сведений о состоянии вашего запроса потребуется около 3-5 рабочих дней. В зависимости от спроса вы можете поместить в очередь и утвердить, как только пространство станет доступным. После утверждения для использования SKU E0 с LUIS необходимо создать новый ресурс Language Understanding из портал Azure и выбрать параметр E0 в качестве ценовой категории. Пользователи не смогут выполнить обновление с F0 на новый SKU E0.
 

@@ -7,12 +7,12 @@ ms.service: cache
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 03/30/2018
-ms.openlocfilehash: e8b8feff0b66aa0b48c88b43049594003b20e5c0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: ca70262a7980df9d427fbd7e58e08b41c37d7133
+ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75411943"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84195579"
 ---
 # <a name="tutorial-create-a-cache-aside-leaderboard-on-aspnet"></a>Руководство по Создание списка лидеров с применением шаблона "Кэш на стороне" в ASP.NET
 
@@ -642,9 +642,9 @@ ms.locfileid: "75411943"
 
 ## <a name="publish-and-run-in-azure"></a>Публикация и выполнение в Azure
 
-### <a name="provision-a-sql-azure-database-for-the-app"></a>Подготовка базы данных SQL Azure для приложения
+### <a name="provision-a-database-for-the-app"></a>Подготовка базы данных для приложения
 
-В этом разделе выполняется подготовка новой базы данных SQL Azure для приложения, которая будет использоваться во время размещения в Azure.
+В этом разделе выполняется подготовка новой базы данных SQL, которую приложение будет использовать при размещении в Azure.
 
 1. На [портале Azure](https://portal.azure.com/) в верхнем левом углу щелкните **Создать ресурс**.
 

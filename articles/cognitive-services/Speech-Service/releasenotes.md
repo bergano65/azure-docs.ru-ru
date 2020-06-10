@@ -8,31 +8,55 @@ manager: jhakulin
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 02/25/2020
+ms.date: 06/08/2020
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: ecd1c650456bf506f22366ca1d59a3634751b9e0
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.openlocfilehash: 13a7250bc89b1c9f81996dfa4e15d7d4469779ab
+ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83800230"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84607879"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
-## <a name="speech-sdk-1120-2020-may-release"></a>Пакет SDK для распознавания речи 1.12.0:2020 — выпуск может быть выпущен
-
-**Интерфейс командной строки Azure для распознавания речи**
-- **SPX** — это новое средство командной строки, которое позволяет выполнять распознавание, синтез, перевод, отправку пакетов и пользовательские средства управления распознаванием речи из командной строки. Используйте его для тестирования службы распознавания речи Azure или создания скрипта для задач службы распознавания речи, которые необходимо выполнить. Загрузите средство и прочитайте документацию [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/spx-overview).
+## <a name="speech-sdk-1121-2020-june-release"></a>Пакет SDK для распознавания речи 1.12.1:2020 — выпуск от июня
+**Речевой интерфейс командной строки (или SPX)**
+-   Добавлены функции поиска справки в CLI:
+    -   `spx help find --text TEXT`
+    -   `spx help find --topic NAME`
+-   Обновлены для работы с новыми развернутыми пакетными API версии 3.0 и Пользовательское распознавание речи.
+    -   `spx help batch examples`
+    -   `spx help csr examples`
 
 **Новые возможности**
+-   **C \# , C++**: распознавание говорящего Preview: Эта функция включает идентификацию докладчика (кто говорит?) и верификацию докладчика (это именно то, что они заявляют?). Начните с [обзора](https://docs.microsoft.com/azure/cognitive-services/Speech-Service/speaker-recognition-overview), ознакомьтесь со [статьей распознавание говорящего основы](https://docs.microsoft.com/azure/cognitive-services/speech-service/speaker-recognition-basics)или [справочной документацией по API](https://docs.microsoft.com/rest/api/speakerrecognition/).
 
+**Исправления ошибок**
+-   **C \# , C++**: фиксированная запись с микрофона не работала в 1,12 при распознавании речи.
+-   **JavaScript**: исправления для преобразования текста в речь в Firefox и Safari в MacOS и iOS.
+-   Устранение ошибки нарушения прав доступа для средства проверки приложений Windows при записи разговора при использовании потока с 8 каналами.
+-   Устранение ошибки нарушения прав доступа для средства проверки приложений Windows при преобразовании бесед на нескольких устройствах.
+
+**Примеры**
+-   **C#**: [пример кода](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/csharp/dotnet/speaker-recognition) для распознавания докладчика.
+-   **C++**: [пример кода](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/cpp/windows/speaker-recognition) для распознавания докладчика.
+-   **Java**: [пример кода](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/java/android/intent-recognition) для распознавания намерения в Android. 
+
+**Ковид-19 краткие тестирование:** Благодаря удаленной работе за последние несколько недель мы не смогли выполнить проверку вручную, как и обычно. Мы не внесли изменения, которые могли бы привести к нарушению, и наши автоматические тесты прошли успешно. В маловероятном случае, если мы пропустили что-нибудь, сообщите нам об этом на [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?q=is%3Aissue+is%3Aopen).<br>
+Оставайтесь в курсе событий!
+
+
+## <a name="speech-sdk-1120-2020-may-release"></a>Пакет SDK для распознавания речи 1.12.0:2020 — выпуск может быть выпущен
+**Речевой интерфейс командной строки (или SPX)**
+- **SPX** — это новое средство командной строки, которое позволяет выполнять распознавание, синтез, перевод, отправку пакетов и пользовательские средства управления распознаванием речи из командной строки. Используйте его для тестирования службы распознавания речи или написания сценариев для задач службы распознавания речи, которые необходимо выполнить. Загрузите средство и прочитайте документацию [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/spx-overview).
+
+**Новые возможности**
 - **Go**: Новая поддержка языка Go для [распознавания речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-microphone?pivots=programming-language-go) и [пользовательского голосового помощника](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/voice-assistants?pivots=programming-language-go). Настройте среду разработки [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/setup-platform?pivots=programming-language-go). Пример кода см. в разделе примеры ниже. 
 - **JavaScript**: добавлена поддержка браузера для преобразования текста в речь. См. документацию [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/text-to-speech-audio-file?pivots=programming-language-JavaScript).
-- **C++, C#, Java**: новый объект Кэйвордрекогнизер и API-интерфейсы, поддерживаемые на платформах Windows, Android, Linux & iOS. Ознакомьтесь с документацией [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/custom-keyword-overview). Пример кода см. в разделе примеры ниже. 
+- **C++, C#, Java**: новые `KeywordRecognizer` объекты и API, поддерживаемые на платформах Windows, Android, Linux & iOS. Ознакомьтесь с документацией [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/custom-keyword-overview). Пример кода см. в разделе примеры ниже. 
 - **Java**: Добавлено обсуждение с несколькими устройствами с поддержкой перевода. См. справочный документ [здесь](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.transcription).
 
 **Улучшения & оптимизации**
-
 - **JavaScript**. Оптимизированная реализация микрофона браузера улучшает точность распознавания речи.
 - **Java**: рефакторингы привязок с использованием прямой реализации JNI без Свиг. Это сокращается путем 10 раз размер привязок для всех пакетов Java, используемых для Windows, Android, Linux и Mac, и упрощает разработку реализации Java в речевом пакете SDK.
 - **Linux**: обновленная [Документация](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk?tabs=linux) по технической поддержке с последними заметками RHEL 7.
@@ -40,30 +64,24 @@ ms.locfileid: "83800230"
 - Обновлена страница "Быстрый запуск [Portal.Azure.com](https://portal.azure.com) Speech", которая поможет разработчикам перейти к следующему этапу в пути распознавания речи Azure.
 
 **Исправления ошибок**
-
 - **C#, Java**: Исправлена [проблема](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/587) с загрузкой библиотек SDK на ARM Linux (как 32, так и 64 бит).
 - **C#**: Исправлена явная реализация собственных дескрипторов для Транслатионрекогнизер, интентрекогнизер и объектов соединения.
 - **C#**: фиксированное управление временем жизни звукового ввода для объекта конверсатионтранскрибер.
-- Исправлена проблема, при которой при распознавании целей из простых фраз Интентрекогнизер причина не была правильно задана.
-- Исправлена проблема, при которой смещение результата Спичрекогнитионевентаргс неправильно задано.
-- Исправлено состояние гонки, когда пакет SDK пытался отправить сетевое сообщение перед открытием подключения WebSocket. Было воспроизводимо для Транслатионрекогнизер при добавлении участников.
+- Исправлена проблема, `IntentRecognizer` при которой причина результата не была правильно задана при распознавании целей из простых фраз.
+- Исправлена проблема, при которой `SpeechRecognitionEventArgs` не было задано правильное смещение результата.
+- Исправлено состояние гонки, когда пакет SDK пытался отправить сетевое сообщение перед открытием подключения WebSocket. Было воспроизводимо за `TranslationRecognizer` время добавления участников.
 - Фиксированные утечки памяти в подсистеме распознавателя ключевых слов.
 
 **Примеры**
-
 - **Go**: добавлены краткие руководства для [распознавания речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-microphone?pivots=programming-language-go) и [пользовательского голосового помощника](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/voice-assistants?pivots=programming-language-go). Найдите пример кода [здесь](https://github.com/microsoft/cognitive-services-speech-sdk-go/tree/master/samples). 
 - **JavaScript**: добавлены краткие руководства для преобразования [текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/text-to-speech?pivots=programming-language-javascript), [перевода](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/translate-speech-to-text?pivots=programming-language-javascript)и [Распознавание намерений](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/intent-recognition?pivots=programming-language-javascript).
 - Примеры распознавания ключевых слов [для \# C](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/csharp/uwp/keyword-recognizer) и [Java](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/java/android/keyword-recognizer) (Android).  
 
-**КОВИД-19 краткие тестирование:**
-
-Благодаря удаленной работе за последние несколько недель мы не смогли выполнить проверку вручную, как и обычно. Примером этого является тестирование входных данных с микрофона и динамика в Linux, iOS и macOS. Мы не внесли изменения, которые могли бы привести к нарушению данных на этих платформах, а также выполнению всех автоматических тестов. В маловероятном случае, если мы пропустили что-нибудь, сообщите нам об этом на [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?page=2&q=is%3Aissue+is%3Aopen).<br>
+**Ковид-19 краткие тестирование:** Благодаря удаленной работе за последние несколько недель мы не смогли выполнить проверку вручную, как и обычно. Мы не внесли изменения, которые могли бы привести к нарушению, и наши автоматические тесты прошли успешно. В маловероятном случае, если мы пропустили что-нибудь, сообщите нам об этом на [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?q=is%3Aissue+is%3Aopen).<br>
 Оставайтесь в курсе событий!
 
 ## <a name="speech-sdk-1110-2020-march-release"></a>Пакет SDK для распознавания речи 1.11.0:2020 — выпуск, Март
-
 **Новые возможности**
-
 - Linux: добавлена поддержка Red Hat Enterprise Linux (RHEL)/Центос 7 x64 с [инструкциями](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-configure-rhel-centos-7) по настройке системы для работы с ГОЛОСОВыми пакетами SDK.
 - Linux: добавлена поддержка .NET Core C# в Linux ARM32 и ARM64. Дополнительные сведения см. [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk?tabs=linux). 
 - C#, C++: добавлен `UtteranceId` в `ConversationTranscriptionResult` , согласованный идентификатор для всех промежуточных и конечных результатов распознавания речи. Сведения для [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.transcription.conversationtranscriptionresult?view=azure-dotnet), [C++](https://docs.microsoft.com/cpp/cognitive-services/speech/transcription-conversationtranscriptionresult).
@@ -73,7 +91,6 @@ ms.locfileid: "83800230"
 - JavaScript. Добавьте новый API, чтобы включить проверку всех сообщений об отправке и полученных сообщениях. Дополнительные сведения см. [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript). 
         
 **Исправления ошибок**
-
 - C#, C++: Исправлена проблема, поэтому `SendMessageAsync` теперь отправляет двоичное сообщение как двоичный тип. Сведения для [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.connection.sendmessageasync?view=azure-dotnet#Microsoft_CognitiveServices_Speech_Connection_SendMessageAsync_System_String_System_Byte___System_UInt32_), [C++](https://docs.microsoft.com/cpp/cognitive-services/speech/connection).
 - C#, C++: Исправлена проблема, из-за которой использование `Connection MessageReceived` события может вызвать сбой `Recognizer` , если удаляется перед `Connection` объектом. Сведения для [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.connection.messagereceived?view=azure-dotnet), [C++](https://docs.microsoft.com/cpp/cognitive-services/speech/connection#messagereceived).
 - Android: размер звукового буфера с микрофона уменьшился с 800ms до 100 мс для улучшения задержки.
@@ -82,13 +99,10 @@ ms.locfileid: "83800230"
 - JavaScript: Добавление дополнительных сведений об ошибках для ошибок подключения из NodeJS.
         
 **Примеры**
-
 - Unity: Открытый пример распознавания намерения является фиксированным, где не удалось импортировать LUIS JSON. Подробные сведения см. [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/369).
 - Python: Добавлен пример для `Language ID` . Подробные сведения см. [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/python/console/speech_sample.py).
     
-**Тестирование Covid19 краткие**
-
-Из-за последних нескольких недель мы не смогли выполнить тестирование проверки устройств вручную, как обычно. Примером этого является тестирование входных данных с микрофона и динамика в Linux, iOS и macOS. Мы не внесли изменения, которые могли бы привести к нарушению данных на этих платформах, а также выполнению всех автоматических тестов. В маловероятном случае, если мы пропустили что-нибудь, сообщите нам об этом на [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?page=2&q=is%3Aissue+is%3Aopen).<br> Благодарим вас за продолжающуюся поддержку. Вы всегда можете отправить вопросы или отзывы на [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?page=2&q=is%3Aissue+is%3Aopen) или [Stack overflow](https://stackoverflow.microsoft.com/questions/tagged/731).<br>
+**Тестирование Covid19 краткие:** Из-за последних нескольких недель мы не смогли выполнить тестирование проверки устройств вручную, как обычно. Примером этого является тестирование входных данных с микрофона и динамика в Linux, iOS и macOS. Мы не внесли изменения, которые могли бы привести к нарушению данных на этих платформах, а также выполнению всех автоматических тестов. В маловероятном случае, если мы пропустили что-нибудь, сообщите нам об этом на [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?q=is%3Aissue+is%3Aopen).<br> Благодарим вас за продолжающуюся поддержку. Вы всегда можете отправить вопросы или отзывы на [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?q=is%3Aissue+is%3Aopen) или [Stack overflow](https://stackoverflow.microsoft.com/questions/tagged/731).<br>
 Оставайтесь в курсе событий!
 
 ## <a name="speech-sdk-1100-2020-february-release"></a>Пакет SDK для распознавания речи 1.10.0:2020 — выпуск, Февраль
@@ -124,7 +138,7 @@ ms.locfileid: "83800230"
 
 ## <a name="speech-sdk-190-2020-january-release"></a>Пакет SDK для распознавания речи 1.9.0:2020-выпуск за Январь
 
-**Новые возможности**
+**Новые функции**
 
 - Беседа с несколькими устройствами. Подключение нескольких устройств к одному речевому или текстовому диалогу и при необходимости преобразование передаваемых сообщений. Дополнительные сведения см. в [этой статье](multi-device-conversation.md). 
 - Добавлена поддержка распознавания ключевых слов для пакета Android. AAR и добавлена поддержка для версий x86 и x64. 
@@ -168,7 +182,7 @@ ms.locfileid: "83800230"
 
 ## <a name="speech-sdk-180-2019-november-release"></a>Пакет SDK для распознавания речи 1.8.0:2019 – Ноябрьский выпуск
 
-**Новые возможности**
+**Новые функции**
 
 - Добавлен `FromHost()` API для упрощения использования с локальными контейнерами и облаками независимых.
 - Добавлены автоматические распознавание языка источника для распознавания речи (в Java и C++)
@@ -194,7 +208,7 @@ ms.locfileid: "83800230"
 
 ## <a name="speech-sdk-170-2019-september-release"></a>Пакет SDK для распознавания речи 1.7.0:2019 – сентябрь выпуска
 
-**Новые возможности**
+**Новые функции**
 
 - Добавлена поддержка бета-версии для Xamarin на универсальная платформа Windows (UWP), Android и iOS.
 - Добавлена поддержка iOS для Unity.
@@ -337,7 +351,7 @@ ms.locfileid: "83800230"
 
 ## <a name="speech-sdk-130-2019-february-release"></a>Пакет SDK для распознавания речи 1.3.0:2019 — выпуск, Февраль
 
-**Новые возможности**
+**Новые функции**
 
 - Пакет SDK для распознавания речи поддерживает выбор входного микрофона через `AudioConfig` класс. Это позволяет передавать звуковые данные в службу распознавания речи с микрофона, не используемого по умолчанию. Дополнительные сведения см. в документации, описывающей [Выбор устройства ввода звука](how-to-select-audio-input-devices.md). Эта функция пока недоступна в JavaScript.
 - Пакет SDK для службы "Речь" теперь поддерживает Unity в бета-версии. Оставьте отзыв в разделе "проблемы" в [репозитории примера GitHub](https://aka.ms/csspeech/samples). Текущий выпуск поддерживает Unity на 32- или 64-разрядной ОС Windows (классическое приложение или приложение универсальной платформы Windows) и Android (32- или 64-разрядная архитектура ARM). Дополнительные сведения можно найти в [кратком руководстве по Unity](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=unity).
@@ -392,7 +406,7 @@ ms.locfileid: "83800230"
 
 ## <a name="speech-sdk-120-2018-december-release"></a>Пакет SDK для распознавания речи 1.2.0:2018 — Декабрь
 
-**Новые возможности**
+**Новые функции**
 
 - Python
   - В этом выпуске доступна бета-версия поддержки Python (3.5 и более поздних версий). Дополнительные сведения см. здесь] (краткое руководство — python.md).
@@ -407,7 +421,7 @@ ms.locfileid: "83800230"
 - Android
   - Включена поддержка ProGuard во время создания пакета APK.
 
-**Улучшения**
+**Продукта**
 
 - Улучшения в использовании внутреннего потока, сокращение числа потоков, блокировок, взаимных исключений.
 - Улучшены сведения и сообщения об ошибках. В некоторых случаях сообщения об ошибках не были распространены полностью.
@@ -433,13 +447,13 @@ ms.locfileid: "83800230"
 
 ## <a name="speech-sdk-110"></a>Пакет SDK для службы "Речь" 1.1.0
 
-**Новые возможности**
+**Новые функции**
 
 - Поддержка Android x86/x64.
 - Поддержка прокси: в `SpeechConfig` объекте теперь можно вызвать функцию, чтобы задать сведения о прокси-сервере (имя узла, порт, имя пользователя и пароль). Эта функция недоступна в iOS.
 - Улучшенный код ошибки и сообщения. Если распознавание возвращает ошибку, это означает, что для `Error` уже установлен набор `Reason` (в отмененное событие) или `CancellationDetails` (в результат распознавания). Отмененное событие теперь содержит два дополнительных элемента: `ErrorCode` и `ErrorDetails`. Если сервер вернул дополнительные сведения об ошибке вместе с сообщаемой ошибкой, то она будет доступна в новых элементах.
 
-**Улучшения**
+**Продукта**
 
 - В конфигурацию распознавателя добавлена дополнительная проверка и сообщение об ошибке.
 - Улучшена обработка долгого периода тишины в середине звукового файла.

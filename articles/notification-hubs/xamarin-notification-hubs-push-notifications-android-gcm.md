@@ -17,12 +17,12 @@ ms.date: 08/01/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 08/01/2019
-ms.openlocfilehash: 0e4354fa7466efcf27f430bbce7edb30bb9a304c
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 06be9e7c4ce41ff01494ecef84a800b52db6b82e
+ms.sourcegitcommit: 69156ae3c1e22cc570dda7f7234145c8226cc162
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "72387655"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84308138"
 ---
 # <a name="tutorial-send-push-notifications-to-xamarinandroid-apps-using-notification-hubs"></a>Руководство по Отправка push-уведомлений в приложения Xamarin.Android с помощью Центров уведомлений
 
@@ -248,7 +248,7 @@ ms.locfileid: "72387655"
     public class MyFirebaseMessagingService : FirebaseMessagingService
     ```
 
-18. Добавьте в файл `MyFirebaseMessagingService.cs` следующий код для обработки полученных сообщений. 
+18. Добавьте в класс `MyFirebaseMessagingService` следующий код для обработки полученных сообщений. 
 
     ```csharp
         const string TAG = "MyFirebaseMsgService";
@@ -292,7 +292,7 @@ ms.locfileid: "72387655"
         }
     ```
 
-19. Добавьте в класс MyFirebaseMessagingService следующие методы, чтобы получить маркер регистрации FCM и отправить его в экземпляр Центров уведомлений (концентратор). 
+19. Добавьте в класс MyFirebaseMessagingService следующие методы (прямо под кодом, добавленным в предыдущем шаге), чтобы получить маркер регистрации FCM и отправить его в экземпляр Центров уведомлений (концентратор). 
 
     ```csharp
         public override void OnNewToken(string token)
