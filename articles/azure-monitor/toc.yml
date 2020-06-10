@@ -155,6 +155,8 @@
           displayname: VM
     - name: Администрирование и настройка
       items:
+        - name: Развертывание в масштабе
+          href: platform/deploy-scale.md
         - name: 'Роли, разрешения и безопасность'
           href: platform/roles-permissions-security.md
         - name: IP-адреса

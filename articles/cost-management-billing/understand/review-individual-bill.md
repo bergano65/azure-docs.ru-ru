@@ -6,14 +6,14 @@ ms.reviewer: judupont
 tags: billing
 ms.service: cost-management-billing
 ms.topic: tutorial
-ms.date: 02/13/2020
+ms.date: 05/28/2020
 ms.author: banders
-ms.openlocfilehash: 8ebda9716df2e9e45050760ee8d0434c12838370
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5a9e21cacb17743cbb8324a06c083c52aa261eb9
+ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77199132"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84194136"
 ---
 # <a name="tutorial-review-your-individual-azure-bill"></a>Учебник. Просмотр отдельного счета Azure
 
@@ -21,7 +21,9 @@ ms.locfileid: "77199132"
 
 Этот учебник относится только к клиентам Azure с отдельной подпиской. Самый распространенный пример — это подписки с оплатой по мере использования, приобретенные непосредственно на веб-сайте Azure.
 
-В этом учебнике описаны следующие действия.
+Если вам необходима помощь в том, чтобы разобраться с непредвиденными расходами, см. раздел [Анализ непредвиденных расходов](https://docs.microsoft.com/azure/cost-management-billing/manage/getting-started#analyze-unexpected-charges). Или если вам нужно отменить подписку Azure, см. статью [Отмена подписки Azure](../manage/cancel-azure-subscription.md).
+
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Сравнение сумм в счете с файлом потребления
@@ -47,7 +49,7 @@ ms.locfileid: "77199132"
 
 На портале Azure введите *подписки* в поле поиска и щелкните элемент [Подписки](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade).
 
-![Переход к подпискам](./media/review-individual-bill/navigate-subscriptions.png)
+[![Переход к подпискам](./media/review-individual-bill/navigate-subscriptions.png)](./media/review-individual-bill/navigate-subscriptions.png#lightbox)
 
 В колонке подписок щелкните нужную подписку.
 
@@ -147,7 +149,7 @@ Azure не включает стоимость ресурсов в счета н
 
 После создания виртуальной машины каждый счетчик начинает передавать данные об использовании. Эти данные и соответствующая стоимость отслеживаются в системе учета затрат Azure.
 
-В CSV-файле с данными об использовании вы видите те счетчики, которые использовались для составления счета.
+В CSV-файле с данными об использовании, как и в примере выше, вы видите те счетчики, которые использовались для составления счета.
 
 ## <a name="pay-your-bill"></a><a name="payment"></a>Оплата счетов
 

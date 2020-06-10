@@ -6,15 +6,17 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 05/18/2020
+ms.date: 06/03/2020
 ms.author: diberry
-ms.openlocfilehash: f60b4391f5b68f163eb2e97153667d82454639d5
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 05142c1d98906a591fae41658c5c7b9d36cdb8c4
+ms.sourcegitcommit: 8e5b4e2207daee21a60e6581528401a96bfd3184
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83654311"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84418080"
 ---
+[Справочная документация](https://westeurope.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview/operations/5890b47c39e2bb052c5b9c08) | [Пример](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/LUIS/node-predict-with-rest/predict.js)
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Язык программирования [Node.js](https://nodejs.org/).
@@ -26,9 +28,9 @@ ms.locfileid: "83654311"
 
 ## <a name="create-the-nodejs-project"></a>Создание проекта Node.js
 
-1. Создайте новую папку для размещения проекта Node.js, например `node-predict-with-rest`.
+1. Создайте папку для размещения проекта Node.js, например `node-predict-with-rest`.
 
-1. Откройте новое окно командной строку, перейдите в только что созданный каталог и введите следующую команду:
+1. Откройте новое окно командной строки, перейдите в только что созданный каталог и введите следующую команду:
 
     ```console
     npm init
@@ -50,58 +52,15 @@ ms.locfileid: "83654311"
 
 1. Скопируйте следующий фрагмент кода в файл с именем `predict.js`:
 
-    ```javascript
-    var requestPromise = require('request-promise');
-    var queryString = require('querystring');
+    [!code-javascript[Code snippet](~/cognitive-services-quickstart-code/javascript/LUIS/node-predict-with-rest/predict.js)]
 
-    // Analyze a string utterance.
-    getPrediction = async () => {
-
-        //////////
-        // Values to modify.
-
-        // YOUR-APP-ID: The App ID GUID found on the www.luis.ai Application Settings page.
-        const LUIS_appId = "YOUR-APP-ID";
-
-        // YOUR-PREDICTION-KEY: Your LUIS authoring key, 32 character value.
-        const LUIS_predictionKey = "YOUR-PREDICTION-KEY";
-
-        // YOUR-PREDICTION-ENDPOINT: Replace this with your authoring key endpoint.
-        // For example, "https://westus.api.cognitive.microsoft.com/"
-        const LUIS_endpoint = "YOUR-PREDICTION-ENDPOINT";
-
-        // The utterance you want to use.
-        const utterance = "I want a deep dish supreme pizza with extra cheese, hold the onions.";
-        //////////
-
-        // Create query string
-        const queryParams = {
-            "show-all-intents": true,
-            "verbose":  true,
-            "query": utterance,
-            "subscription-key": LUIS_predictionKey
-        }
-
-        // Create the URI for the REST call.
-        const URI = `${LUIS_endpoint}luis/prediction/v3.0/apps/${LUIS_appId}/slots/production/predict?${queryString.stringify(queryParams)}`
-
-        // Send the REST call.
-        const response = await requestPromise(URI);
-
-        // Display the response from the REST call.
-        console.log(response);
-    }
-
-    // Pass an utterance to the sample LUIS app
-    getPrediction().then(()=>console.log("done")).catch((err)=>console.log(err));
-    ```
-
-1. Замените значения `YOUR-KEY` и `YOUR-ENDPOINT` собственным ключом и конечной точкой **среды выполнения** прогнозирования.
+1. Замените значения, начинающиеся с `YOUR-`, собственными значениями.
 
     |Сведения|Назначение|
     |--|--|
-    |`YOUR-KEY`|Ваш ключ (32 символа) **среды выполнения** прогнозирования.|
-    |`YOUR-ENDPOINT`| Конечная точка URL-адреса прогнозирования. Например, `replace-with-your-resource-name.api.cognitive.microsoft.com`.|
+    |`YOUR-APP-ID`|Идентификатор приложения. Находится на портале LUIS на странице "Application Settings" (Параметры приложения) для приложения.
+    |`YOUR-PREDICTION-KEY`|Ваш ключ прогнозирования длиной в 32 символа. Находится на портале LUIS на странице "Azure Resources" (Ресурсы Azure) для приложения.
+    |`YOUR-PREDICTION-ENDPOINT`| Конечная точка URL-адреса прогнозирования. Находится на портале LUIS на странице "Azure Resources" (Ресурсы Azure) для приложения.<br>Например, `https://westus.api.cognitive.microsoft.com/`.|
 
  1. Проверьте ответ прогноза, который возвращается в формате JSON:
 
@@ -273,7 +232,7 @@ ms.locfileid: "83654311"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-По завершении работы с этим кратким руководством удалите папку проекта из файловой системы.
+Завершив работу с этим кратким руководством, удалите папку проекта из файловой системы.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

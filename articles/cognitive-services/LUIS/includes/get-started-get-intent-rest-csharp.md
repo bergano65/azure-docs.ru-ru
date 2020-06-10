@@ -6,15 +6,17 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 05/18/2020
+ms.date: 06/03/2020
 ms.author: diberry
-ms.openlocfilehash: 8ae5bf3790db82d8d96f872d6375e9d3b167bf6d
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 2b092d0e2c932e3d0c4b2d7880b1243513e45980
+ms.sourcegitcommit: 8e5b4e2207daee21a60e6581528401a96bfd3184
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83654307"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84418089"
 ---
+[Справочная документация](https://westeurope.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview/operations/5890b47c39e2bb052c5b9c08) | [Пример](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/LanguageUnderstanding/csharp-predict-with-rest/Program.cs)
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [.NET Core версий 2.2+](https://dotnet.microsoft.com/download)
@@ -43,78 +45,15 @@ ms.locfileid: "83654307"
 
 1. Откройте `Program.cs` в любой интегрированной среде разработки или редакторе. Затем замените `Program.cs` следующим кодом:
 
-    ```csharp
-    using System;
-    using System.Net.Http;
-    using System.Web;
+    [!code-csharp[Code snippet](~/cognitive-services-quickstart-code/dotnet/LanguageUnderstanding/csharp-predict-with-rest/Program.cs)]
 
-    namespace predict_with_rest
-    {
-        class Program
-        {
-            static void Main(string[] args)
-            {
-                // YOUR-APP-ID: The App ID GUID found on the www.luis.ai Application Settings page.
-                var appId = "YOUR-APP-ID";
-
-                // YOUR-PREDICTION-KEY: 32 character key.
-                var key = "YOUR-PREDICTION-KEY";
-
-                // YOUR-PREDICTION-ENDPOINT: Example is "https://westus.api.cognitive.microsoft.com/"
-                var endpoint = "YOUR-PREDICTION-ENDPOINT";
-
-                // An utterance to test the pizza app.
-                var utterance = "I want two large pepperoni pizzas on thin crust please";
-
-                MakeRequest(key, endpoint, appId, utterance);
-
-                Console.WriteLine("Press ENTER to exit...");
-                Console.ReadLine();
-            }
-
-            static async void MakeRequest(string key, string endpoint, string appId, string utterance)
-            {
-                var client = new HttpClient();
-                var queryString = HttpUtility.ParseQueryString(string.Empty);
-
-                // The request header contains your subscription key
-                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", key);
-
-                // The "q" parameter contains the utterance to send to LUIS
-                queryString["query"] = utterance;
-
-                // These optional request parameters are set to their default values
-                queryString["verbose"] = "true";
-                queryString["show-all-intents"] = "true";
-                queryString["staging"] = "false";
-                queryString["timezoneOffset"] = "0";
-
-                var endpointUri = String.Format("{0}luis/prediction/v3.0/apps/{1}/slots/production/predict?{2}", endpoint, appId, queryString);
-
-                // Remove these before updating the article.
-                Console.WriteLine("endpoint: " + endpoint);
-                Console.WriteLine("appId: " + appId);
-                Console.WriteLine("queryString: " + queryString);
-                Console.WriteLine("endpointUri: " + endpointUri);
-
-                var response = await client.GetAsync(endpointUri);
-
-                var strResponseContent = await response.Content.ReadAsStringAsync();
-
-                // Display the JSON result from LUIS.
-                Console.WriteLine(strResponseContent.ToString());
-            }
-        }
-    }
-    ```
-
-1. Замените значения `YOUR-APP-ID`, `YOUR-KEY` и `YOUR-ENDPOINT` собственным ключом и конечной точкой прогнозирования.
+1. Замените значения, начинающиеся с `YOUR-`, собственными значениями.
 
     |Сведения|Назначение|
     |--|--|
-    |`YOUR-APP-ID`|Идентификатор приложения. На портале LUIS, страница "Параметры приложения" для приложения.
-    |`YOUR-PREDICTION-KEY`|Ваш ключ прогнозирования длиной в 32 символа. На портале LUIS, страница "Ресурсы Azure" для приложения.
-    |`YOUR-PREDICTION-ENDPOINT`| Конечная точка URL-адреса прогнозирования. На портале LUIS, страница "Ресурсы Azure" для приложения.<br>Например, `https://westus.api.cognitive.microsoft.com/`.|
+    |`YOUR-APP-ID`|Идентификатор приложения. Находится на портале LUIS на странице "Application Settings" (Параметры приложения) для приложения.
+    |`YOUR-PREDICTION-KEY`|Ваш ключ прогнозирования длиной в 32 символа. Находится на портале LUIS на странице "Azure Resources" (Ресурсы Azure) для приложения.
+    |`YOUR-PREDICTION-ENDPOINT`| Конечная точка URL-адреса прогнозирования. Находится на портале LUIS на странице "Azure Resources" (Ресурсы Azure) для приложения.<br>Например, `https://westus.api.cognitive.microsoft.com/`.|
 
 1. Создайте консольное приложение с помощью этой команды:
 
@@ -298,7 +237,7 @@ ms.locfileid: "83654307"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-По завершении работы с этим кратким руководством удалите папку проекта из файловой системы.
+Завершив работу с этим кратким руководством, удалите папку проекта из файловой системы.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

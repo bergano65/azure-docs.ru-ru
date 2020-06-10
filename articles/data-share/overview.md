@@ -6,12 +6,12 @@ ms.author: joanpo
 ms.service: data-share
 ms.topic: overview
 ms.date: 07/10/2019
-ms.openlocfilehash: 363feda1409d2bb54e60d1b2168cba38f2a8a41c
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: fa90f272a05b7449981ca5d4ccab161fb1e39e9e
+ms.sourcegitcommit: ce44069e729fce0cf67c8f3c0c932342c350d890
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77621853"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84636786"
 ---
 # <a name="what-is-azure-data-share"></a>Что такое Azure Data Share?
 
@@ -78,15 +78,6 @@ Azure Data Share позволяет потребителям данных сле
 * Подписаться на общий ресурс данных, чтобы получать последние копии данных с помощью добавочных моментальных снимков.
 
 Все перечисленные выше ключевые функции поддерживаются на портале Azure и в REST API. Дополнительные сведения об использовании данных Azure Data Share в REST API см. в нашей справочной документации. 
-
-## <a name="security"></a>безопасность
-
-Служба Azure Data Share использует предоставляемую Azure систему безопасности для защиты неактивных и передаваемых данных. Неактивные данные шифруются, если это поддерживается хранилищем данных. Данные также шифруются при передаче. Метаданные об общем ресурсе также шифруются при передаче и в неактивном состоянии. 
-
-Элементы управления доступом можно настроить на уровне Azure Data Share, чтобы обеспечить доступ к службе для авторизованных пользователей. 
-
-Azure Data Share использует управляемые удостоверения для ресурсов Azure (ранее известные как управляемые удостоверения службы), автоматически управляемые в Azure Active Directory. Управляемые удостоверения для ресурсов Azure используются для доступа к хранилищам данных, через которые осуществляется обмен данными. Поставщики и потребители данных не обмениваются учетными данными. Дополнительные сведения см. в статье [Службы с поддержкой управляемых удостоверений для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities). 
-
 
 ## <a name="supported-regions"></a>Поддерживаемые регионы
 

@@ -5,14 +5,14 @@ author: amberbhargava
 tags: billing
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 05/01/2020
+ms.date: 06/01/2020
 ms.author: banders
-ms.openlocfilehash: b8f588df89429bd08b1c74fbc528801fb45377ed
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
+ms.openlocfilehash: ea6dc2a35d4b55c2164e7586684cdaf019e5277d
+ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82692308"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84299933"
 ---
 # <a name="complete-enterprise-agreement-tasks-in-your-billing-account-for-a-microsoft-customer-agreement"></a>Выполнение задач для Соглашения Enterprise в учетной записи выставления счетов для Клиентского соглашения Майкрософт
 
@@ -125,7 +125,7 @@ ms.locfileid: "82692308"
 
 Вам предоставляются следующие роли для новой учетной записи выставления счетов, которые позволяют создавать дополнительные подписки Azure:
 
-**Владелец подписки Azure** — вам назначается роль владельца подписки Azure для раздела счетов, который создан для вашего отдела из Соглашения Enterprise. Если ваша учетная запись не принадлежит конкретному отделу, вы получаете роль создателя подписок Azure в разделе счетов с названием Default invoice section (Раздел счетов по умолчанию). Эта роль позволяет создавать подписки Azure для раздела счетов.
+**Создатель подписки Azure** — вам назначается роль создателя подписки Azure для раздела счетов, который создан для вашего отдела из Соглашения Enterprise. Если ваша учетная запись не принадлежит конкретному отделу, вы получаете роль создателя подписок Azure в разделе счетов с названием Default invoice section (Раздел счетов по умолчанию). Эта роль позволяет создавать подписки Azure для раздела счетов.
 
 ### <a name="create-an-azure-subscription"></a>Создание подписки Azure.
 

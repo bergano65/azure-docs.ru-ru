@@ -19,8 +19,6 @@
       href: terminology.md
     - name: Роли и требования
       href: concepts-roles-permissions.md
-    - name: Аварийное восстановление
-      href: disaster-recovery.md
 - name: Примеры
   items:
     - name: Примеры кода
@@ -43,6 +41,10 @@
       href: how-to-delete-invitation.md
     - name: Отмена подписки на общую папку
       href: how-to-revoke-share-subscription.md
+    - name: Безопасность
+      href: security.md
+    - name: Аварийное восстановление
+      href: disaster-recovery.md
 - name: Справочник
   items:
     - name: .NET

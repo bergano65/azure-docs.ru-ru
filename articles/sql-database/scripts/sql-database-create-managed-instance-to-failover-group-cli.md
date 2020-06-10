@@ -1,6 +1,6 @@
 ---
-title: Пример для CLI. Группа отработки отказа управляемого экземпляра Базы данных SQL Azure
-description: Пример скрипта Azure CLI для создания управляемого экземпляра в службе "База данных SQL Azure", добавления его в группу отработки отказа и выполнение тестовой отработки отказа.
+title: 'Azure CLI: добавление управляемого экземпляра в группу отработки отказа'
+description: Пример скрипта Azure CLI для создания Управляемого экземпляра SQL Azure, добавления его в группу отработки отказа и выполнение тестовой отработки отказа.
 services: sql-database
 ms.service: sql-database
 ms.subservice: high-availability
@@ -11,14 +11,14 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 07/16/2019
-ms.openlocfilehash: 792746ec3bfcf429afb7919458b9ac7ec8446b60
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 1f6c178c1f8813300d3473ad3b788ecd7e7b573e
+ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80061848"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84115399"
 ---
-# <a name="use-cli-to-add-an-azure-sql-database-managed-instance-to-a-failover-group"></a>Добавление управляемого экземпляра службы "База данных SQL Azure" в группу отработки отказа с помощью CLI
+# <a name="use-cli-to-add-an-azure-sql-managed-instance-to-a-failover-group"></a>Добавление Управляемого экземпляра SQL Azure в группу отработки отказа с помощью CLI
 
 Этот пример скрипта для Azure CLI создает два управляемых экземпляра, добавляет их в группу отработки отказа, а затем проверяет отработку отказа с основного на дополнительный управляемый экземпляр.
 
@@ -53,13 +53,13 @@ az group delete --name $resource
 | [az network nsg](/cli/azure/network/nsg) | Команды группы безопасности сети. |
 | [az network nsg rule](/cli/azure/network/nsg/rule)| Команды правила сетевой безопасности. |
 | [az network route-table](/cli/azure/network/route-table) | Команды таблицы маршрутизации. |
-| [az sql mi](/cli/azure/sql/mi) | Команды управляемого экземпляра. |
+| [az sql mi](/cli/azure/sql/mi) | Команды управляемого экземпляра базы данных SQL. |
 | [az network public-ip](/cli/azure/network/public-ip) | Команды сетевого общедоступного IP-адреса. |
 | [az network vnet-gateway](/cli/azure/network/vnet-gateway) | Команды шлюза виртуальной сети. |
-| [az sql instance-failover-group](/cli/azure/sql/instance-failover-group) | Команды группы отработки отказа управляемого экземпляра. |
+| [az sql instance-failover-group](/cli/azure/sql/instance-failover-group) | Команды группы отработки отказа Управляемого экземпляра SQL. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
-Дополнительные примеры сценариев интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../sql-database-cli-samples.md).
+Дополнительные примеры сценариев интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../../azure-sql/database/az-cli-script-samples-content-guide.md).

@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: euang
 ms.reviewer: euang
-ms.openlocfilehash: 470cc8cc16c8bdb32bac32a7227690899abb9c51
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 8ca2a3d55a98f96f704999d888761ea40fc4665f
+ms.sourcegitcommit: f0b206a6c6d51af096a4dc6887553d3de908abf3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83644675"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84140979"
 ---
 # <a name="what-is-apache-spark-in-azure-synapse-analytics"></a>Что такое Apache Spark в Azure Synapse Analytics
 
@@ -39,9 +39,9 @@ Apache Spark предоставляет примитивы для кластер
 | Простота использования |Synapse Analytics включает в себя настраиваемую записную книжку, производную от [Nteract](https://nteract.io/). Их можно использовать для интерактивной обработки и визуализации данных.|
 | Интерфейсы REST API |Spark в Synapse Analytics включает в себя [Apache Livy](https://github.com/cloudera/hue/tree/master/apps/spark/java#welcome-to-livy-the-rest-spark-server), сервер заданий Spark на основе REST API, который позволяет удаленно отправлять и отслеживать задания. |
 | Поддержка Azure Data Lake Storage 2-го поколения| Пулы Spark в Azure Synapse могут использовать Azure Data Lake Storage 2-го поколения, а также хранилище BLOB-объектов. Дополнительные сведения о Data Lake Storage см. в [обзоре Azure Data Lake Storage](../../data-lake-store/data-lake-store-overview.md). |
-| Интеграция со сторонними IDE | Azure Synapse предоставляет подключаемый модуль интегрированной среды разработки для [IntelliJ IDEA Jetbrains](https://www.jetbrains.com/idea/), который можно использовать для создания и отправки приложений в пул Spark. |
+| Интеграция со сторонними IDE | Azure Synapse предоставляет подключаемый модуль интегрированной среды разработки для [IntelliJ IDEA JetBrains](https://www.jetbrains.com/idea/), который можно использовать для создания и отправки приложений в пул Spark. |
 | Предварительно загруженные библиотеки Anaconda |Пулы Spark в Azure Synapse поставляются с предустановленными библиотеками Anaconda. [Anaconda](https://docs.continuum.io/anaconda/) содержит порядка 200 библиотек для машинного обучения, анализа данных, визуализации и т. д. |
-| Масштабируемость | В Apache Spark в пулах Azure Synapse может быть включено автомасштабирование, чтобы при необходимости масштаб пулов можно было вертикально увеличивать и уменьшать. Кроме того, завершить работу пулов Spark можно без потери данных, так как все данные хранятся в службе хранилища Azure или Data Lake Storage. |
+| Масштабируемость | В Apache Spark в пулах Azure Synapse может быть включено автомасштабирование, чтобы при необходимости масштаб пулов можно было изменить путем добавления или удаления кластера. Кроме того, завершить работу пулов Spark можно без потери данных, так как все данные хранятся в службе хранилища Azure или Data Lake Storage. |
 
 Пулы Spark в Azure Synapse включают в себя указанные ниже компоненты, доступные в пулах по умолчанию.
 

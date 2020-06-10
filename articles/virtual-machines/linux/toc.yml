@@ -657,7 +657,7 @@
               href: update-agent.md
         - name: 'Устранение уязвимостей, связанных со спекулятивным выполнением команд'
           href: mitigate-se.md
-        - name: Монитор метаданных
+        - name: Служба метаданных экземпляров Azure
           href: instance-metadata-service.md
         - name: Получение метрик потребления с помощью REST
           href: metrics-vm-usage-rest.md

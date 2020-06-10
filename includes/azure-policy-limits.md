@@ -6,12 +6,12 @@ ms.service: azure-policy
 ms.topic: include
 ms.date: 04/23/2020
 ms.author: dacoulte
-ms.openlocfilehash: 04e607296478520298a2febab61a7edac911a59c
-ms.sourcegitcommit: f7d057377d2b1b8ee698579af151bcc0884b32b4
+ms.openlocfilehash: e9faea1d5913a19dfdeff662e26992529dc1b22d
+ms.sourcegitcommit: ba8df8424d73c8c4ac43602678dae4273af8b336
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82131457"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84466912"
 ---
 Ниже приведено максимальное количество для каждого типа объекта для службы "Политика Azure". Запись _Область_ означает либо подписку, либо [группу управления](../articles/governance/management-groups/overview.md).
 
@@ -19,7 +19,7 @@ ms.locfileid: "82131457"
 |---|---|---|
 | Область | Определения политик | 500 |
 | Область | Определения инициативы | 100 |
-| Клиент | Определения инициативы | 1000 |
+| Клиент | Определения инициативы | 2500 |
 | Область | Назначение политик или инициатив | 100 |
 | Определение политики | Параметры | 20 |
 | Определение инициативы | Политики | 100 |

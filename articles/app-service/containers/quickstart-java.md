@@ -8,12 +8,12 @@ ms.devlang: Java
 ms.topic: quickstart
 ms.date: 03/27/2019
 ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 8f2e99ffc9f9ee5c5553e8d933d82f83999c8ab2
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 1ed7126f2698294ac6706aafcb85e3229a7491bb
+ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81732902"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84300101"
 ---
 # <a name="quickstart-create-a-java-app-on-azure-app-service-on-linux"></a>Краткое руководство. Создание приложения Java в Службе приложений Azure в Linux
 
@@ -34,7 +34,7 @@ ms.locfileid: "81732902"
 В приглашении Cloud Shell выполните следующую команду Maven, чтобы создать новое веб-приложение с именем `helloworld`.
 
 ```bash
-mvn archetype:generate "-DgroupId=example.demo" "-DartifactId=helloworld" "-DarchetypeArtifactId=maven-archetype-webapp"
+mvn archetype:generate "-DgroupId=example.demo" "-DartifactId=helloworld" "-DarchetypeArtifactId=maven-archetype-webapp" -Dversion=1.0-SNAPSHOT
 ```
 Затем измените рабочую папку на папку проекта:
 
@@ -44,13 +44,9 @@ cd helloworld
 
 ## <a name="configure-the-maven-plugin"></a>Настройка подключаемого модуля Maven
 
-В процессе развертывания для Службы приложений Azure используются данные учетной записи из Azure CLI. Прежде чем продолжить, [войдите с помощью Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
+В процессе развертывания для Службы приложений Azure автоматически используются учетные данные Azure из Azure CLI. Если Azure CLI не установлен, подключаемый модуль Maven будет выполнять вход с помощью имени для входа OAuth или имени пользователя устройства. При необходимости ознакомьтесь со сведениями о [выполнении проверки подлинности с помощью подключаемых модулей Maven](https://github.com/microsoft/azure-maven-plugins/wiki/Authenticatio).
 
-```azurecli
-az login
-```
-
-Затем можно настроить развертывание, выполнить в командной строке команду Maven и использовать конфигурации по умолчанию, нажимая клавишу **ВВОД**, пока не появится строка **Confirm (Y/N)** (Подтверждение (Д/Н)), затем нажмите клавишу **Y** и завершите настройку. 
+Чтобы настроить развертывание, выполните в командной строке команду Maven и используйте конфигурации по умолчанию, нажимая клавишу **ВВОД**, пока не появится строка **Confirm (Y/N)** (Подтверждение (Д/Н)), затем нажмите клавишу **Y** и завершите настройку. 
 ```cmd
 mvn com.microsoft.azure:azure-webapp-maven-plugin:1.9.1:config
 ```
@@ -93,7 +89,13 @@ Confirm (Y/N)? : Y
 > [!NOTE]
 > В этой статье мы работаем только с приложениями Java, которые упакованы в WAR-файлы. Подключаемый модуль также поддерживает веб-приложения JAR. См. руководство по [развертыванию файла JAR Java SE в Службе приложений в Linux](https://docs.microsoft.com/java/azure/spring-framework/deploy-spring-boot-java-app-with-maven-plugin?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
 
-Снова перейдите к `pom.xml`, чтобы убедиться, что конфигурация подключаемого модуля обновлена. При необходимости вы можете изменить другие параметры Службы приложений непосредственно в POM-файле. Некоторые из них перечислены ниже:
+Откройте файл `pom.xml`, чтобы посмотреть обновленную конфигурацию.
+
+```bash
+code pom.xml
+```
+
+При необходимости вы можете изменить другие параметры Службы приложений непосредственно в POM-файле. Некоторые из них перечислены ниже.
 
  Свойство | Обязательно | Описание | Версия
 ---|---|---|---
@@ -147,7 +149,7 @@ az group delete --name <your resource group name; for example: helloworld-155840
 > [Подключение к Базе данных Azure для PostgreSQL на Java](/azure/postgresql/connect-java)
 
 > [!div class="nextstepaction"]
-> [Настройка приложения Java](configure-custom-container.md)
+> [Настройка приложения Java](configure-language-java.md)
 
 > [!div class="nextstepaction"]
 > [CI/CD с использованием Jenkins](/azure/jenkins/deploy-jenkins-app-service-plugin)

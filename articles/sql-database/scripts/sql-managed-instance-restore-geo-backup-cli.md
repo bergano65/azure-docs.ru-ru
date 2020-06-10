@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 07/03/2019
-ms.openlocfilehash: 1a46cb537892d4255fd274b5754ab8e8c0278308
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.openlocfilehash: c6ae8d79ee40729f47a906561d6c8ae586765f5d
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83774461"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84019849"
 ---
 # <a name="use-cli-to-restore-a-managed-instance-database-to-another-geo-region"></a>Восстановление Управляемого экземпляра базы данных в другом географическом регионе с помощью CLI
 
@@ -28,7 +28,7 @@ ms.locfileid: "83774461"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-Наличие пары управляемых экземпляров. См. сведения о [создании управляемого экземпляра Базы данных SQL Azure с помощью Azure CLI](sql-database-create-configure-managed-instance-cli.md).
+Наличие пары управляемых экземпляров. Ознакомьтесь со сведениями о [создании Управляемого экземпляра SQL Azure с помощью Azure CLI](sql-database-create-configure-managed-instance-cli.md).
 
 ### <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -64,4 +64,4 @@ az sql midb restore -g $resource --mi $instance -n $managedDatabase --dest-name 
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
-Дополнительные примеры сценариев интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../sql-database-cli-samples.md).
+Дополнительные примеры сценариев интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../../azure-sql/database/az-cli-script-samples-content-guide.md).

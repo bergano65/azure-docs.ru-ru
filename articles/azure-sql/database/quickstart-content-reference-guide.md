@@ -1,0 +1,61 @@
+---
+title: Ссылки на содержимое краткого руководства по работе с отдельной базой данных
+description: Ознакомьтесь со справочной информацией всех кратких руководств, которые помогут вам быстро приступить к работе с отдельными базами данных в службе "База данных SQL Azure"
+services: sql-database
+ms.service: sql-database
+ms.subservice: single-database
+ms.custom: sqldbrb=1
+ms.devlang: ''
+ms.topic: quickstart
+author: jovanpop-msft
+ms.author: jovanpop
+ms.reviewer: carlr
+ms.date: 07/29/2019
+ms.openlocfilehash: c4a699a6b531feee98f9c6f83ba19cfef9d27620
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84052907"
+---
+# <a name="getting-started-with-single-databases-in-azure-sql-database"></a>Начало работы с отдельной базой данных в Базе данных SQL Azure
+[!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
+
+[Отдельная база данных](../index.yml) — это полностью управляемая база данных как услуга (DbaaS) на основе модели PaaS. Это идеальная подсистема хранилища для современных облачных приложений. В этом разделе вы узнаете, как быстро создать и настроить отдельную базу данных в службе "База данных SQL Azure".
+
+## <a name="quickstart-overview"></a>Общие сведения о кратком руководстве
+
+В этом разделе представлен обзор доступных статей, которые помогут вам быстро начать работу с отдельными базами данных. В приведенных ниже кратких руководствах показано, как быстро создать отдельную базу данных, настроить правило брандмауэра на уровне сервера, а затем импортировать базу данных в новую отдельную базу данных с использованием файла `.bacpac`:
+
+- [Создайте отдельную базу данных с помощью портала Azure](single-database-create-quickstart.md).
+- После создания базы данных [ее необходимо защитить, настроив правила брандмауэра](firewall-create-server-level-portal-quickstart.md).
+- Если на сервере SQL Server есть база данных, которую вы хотите перенести в Базу данных Azure, необходимо установить [Помощник по миграции данных (DMA)](https://www.microsoft.com/download/details.aspx?id=53595). Он проанализирует ваши базы данных на SQL Server и обнаружит любые проблемы, которые могут заблокировать перенос. Если вы не обнаружите никаких проблем, вы можете экспортировать базу данных в виде файла `.bacpac` и [импортировать его с помощью портала Azure или SqlPackage](database-import.md).
+
+
+## <a name="automating-management-operations"></a>Автоматизация операций управления
+
+Для создания, настройки и масштабирования базы данных можно использовать PowerShell или Azure CLI.
+
+- Создание и настройка отдельной базы данных с помощью [PowerShell](scripts/create-and-configure-database-powershell.md) или [Azure CLI](scripts/create-and-configure-database-cli.md)
+- Обновление отдельной базы данных и масштабирование ресурсов с помощью [PowerShell](scripts/monitor-and-scale-database-powershell.md) или [Azure CLI](scripts/monitor-and-scale-database-cli.md).
+
+## <a name="migrating-to-a-single-database-with-minimal-downtime"></a>Перенос в отдельную базу данных с минимальным временем простоя
+
+Эти краткие руководства позволяют быстро создать или импортировать базу данных в Azure с использованием файла `.bacpac`. Однако файлы `.bacpac` и `.dacpac` предназначены для быстрого перемещения баз данных между различными версиями SQL Server и SQL Azure или для осуществления непрерывной интеграции в конвейер DevOps. Этот метод не обеспечивает перенос рабочих баз данных с минимальным временем простоя, так как вам потребуется остановить добавление новых данных, дождаться завершения экспортирования базы данных-источника в файл `.bacpac`, а затем — завершения его импорта в базу данных SQL Azure. Все это ожидание приведет к простою приложения, особенно для больших баз данных. Чтобы переместить свою рабочую базу данных, вам понадобится лучший способ переноса, который обеспечивает минимальный простой. Для переноса базы данных с минимальными простоями используйте [службу миграции данных (DMS)](https://docs.microsoft.com/azure/dms/tutorial-sql-server-to-azure-sql?toc=/azure/sql-database/toc.json), которая выполняет постепенную принудительную отправку изменений, внесенных в базу данных-источник, в отдельную восстанавливаемую базу данных. С ее помощью вы можете быстро перевести приложение с исходной базы данных на целевую с минимальным временем простоя.
+
+## <a name="hands-on-learning-modules"></a>Практические учебные модули
+
+С помощью приведенных ниже бесплатных модулей Microsoft Learn вы сможете получить сведения о службе "База данных SQL Azure".
+
+- [Подготовка базы данных SQL Azure для хранения данных приложения](https://docs.microsoft.com/learn/modules/provision-azure-sql-db/)
+- [Разработка и настройка приложения ASP.NET, обращающегося к Базе данных SQL Azure](https://docs.microsoft.com/learn/modules/develop-app-that-queries-azure-sql/)
+- [Защита базы данных SQL Azure](https://docs.microsoft.com/learn/modules/secure-your-azure-sql-database/)
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Ознакомьтесь с [кратким списком поддерживаемых возможностей в Базе данных SQL Azure](features-comparison.md).
+- Узнайте, как [повысить безопасность базы данных](secure-database-tutorial.md).
+- Дополнительные руководства см. в статье [Использование отдельной базы данных в Базе данных SQL Azure](how-to-content-reference-guide.md).
+- Ознакомьтесь с примерами скриптов, написанными в [PowerShell](powershell-script-content-guide.md) и [Azure CLI](az-cli-script-samples-content-guide.md).
+- Узнайте больше об [API управления](single-database-manage.md), который можно использовать для настройки баз данных.
+- [Определение нужного SKU Базы данных SQL Azure или Управляемого экземпляра для локальной базы данных](/sql/dma/dma-sku-recommend-sql-db/).

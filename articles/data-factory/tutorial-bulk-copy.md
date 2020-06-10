@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019
 ms.date: 01/22/2018
-ms.openlocfilehash: 0f73095f72d07989cdfa309454a2b54efa8e5f95
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: a6a6aaedc1bb4abc5cf02ea1cd081ad48ec78d19
+ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81418768"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84118204"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "81418768"
 
 **Подготовка исходной базы данных SQL Azure:**
 
-Создайте базу данных SQL Azure, используя пример данных Adventure Works LT, представленный в статье [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md). В этом руководстве копируются все таблицы из этого примера базы данных в хранилище данных SQL.
+Создайте базу данных SQL Azure, используя пример данных Adventure Works LT, представленный в статье [Создание базы данных SQL Azure на портале Azure](../azure-sql/database/single-database-create-quickstart.md). В этом руководстве копируются все таблицы из этого примера базы данных в хранилище данных SQL.
 
 **Подготовка хранилища данных-приемника SQL Azure:**
 
@@ -69,7 +69,7 @@ ms.locfileid: "81418768"
 
 ## <a name="azure-services-to-access-sql-server"></a>Доступ служб Azure к серверу SQL Server
 
-В базе данных SQL и хранилище данных SQL Azure предоставьте службам Azure доступ к серверу SQL Server. Убедитесь, что параметр **Разрешить доступ к службам Azure** имеет значение **ВКЛ** для вашего сервера Azure SQL. Этот параметр позволяет службе фабрики данных читать данные из базы данных SQL Azure и записывать данные в хранилище данных SQL Azure. Чтобы проверить и при необходимости включить этот параметр, сделайте следующее.
+В базе данных SQL и хранилище данных SQL Azure предоставьте службам Azure доступ к серверу SQL Server. Убедитесь, что параметр **Разрешить доступ к службам Azure** **включен** для вашего сервера. Этот параметр позволяет службе фабрики данных читать данные из базы данных SQL Azure и записывать данные в хранилище данных SQL Azure. Чтобы проверить и при необходимости включить этот параметр, сделайте следующее.
 
 1. Щелкните **Все службы** слева и выберите **Серверы SQL**.
 2. Выберите сервер и щелкните **Брандмауэр** в разделе **Параметры**.

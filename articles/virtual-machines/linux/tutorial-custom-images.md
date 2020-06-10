@@ -10,12 +10,12 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.custom: mvc
 ms.reviewer: akjosh
-ms.openlocfilehash: bed65754dd872d51d4cbd1bccc673373e8e96846
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 0ea5c11254d8dba050fe63a4cd915240c8270dd1
+ms.sourcegitcommit: 58ff2addf1ffa32d529ee9661bbef8fbae3cddec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83652999"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84324578"
 ---
 # <a name="tutorial-create-a-custom-image-of-an-azure-vm-with-the-azure-cli"></a>Руководство по Создание пользовательского образа виртуальной машины Azure с помощью Azure CLI
 
@@ -68,7 +68,7 @@ az group create --name myGalleryRG --location eastus
 az sig create --resource-group myGalleryRG --gallery-name myGallery
 ```
 
-## <a name="get-infornation-about-the-vm"></a>Получение информации о виртуальной машине
+## <a name="get-information-about-the-vm"></a>Получение информации о виртуальной машине
 
 Список доступных виртуальных машин можно просмотреть с помощью команды [az vm list](/cli/azure/vm#az-vm-list). 
 

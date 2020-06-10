@@ -8,15 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 03/24/2020
+ms.date: 05/25/2020
 ms.author: aahi
+ms.custom: tracking-python
 zone_pivot_groups: programming-languages-text-analytics
-ms.openlocfilehash: cc3f48ec1113f954336cfae0bda2cba2499d9a1d
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: be9b82b411d8ba76f0b592cb25e7ff70917b934f
+ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80240133"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84605482"
 ---
 # <a name="quickstart-use-the-text-analytics-client-library"></a>Краткое руководство. Использование клиентской библиотеки Анализа текста
 
@@ -32,7 +33,7 @@ ms.locfileid: "80240133"
 ::: zone pivot="programming-language-csharp"
 
 > [!IMPORTANT]
-> * Последняя предварительная версия API Анализа текста — `3.0-preview`, которая включает в себя общедоступную предварительную версию улучшенных функций [анализа тональности](../how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features) и [распознавания именованных сущностей (NER)](../how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-versions-and-features). Последняя стабильная версия — `2.1`.
+> * `3.0` — это последняя стабильная версия клиентской библиотеки Анализа текста.
 >    * Обязательно следуйте указаниям по используемой версии.
 > * В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных. Для рабочих сценариев рекомендуется использовать пакетные асинхронные методы для повышения производительности и масштабируемости. См. справочную документацию ниже.
 
@@ -43,7 +44,7 @@ ms.locfileid: "80240133"
 ::: zone pivot="programming-language-java"
 
 > [!IMPORTANT]
-> * В этом кратком руководстве используется только версия `3.0-preview` клиентской библиотеки Анализа текста, которая включает в себя общедоступную предварительную версию улучшенных функций [анализа тональности](../how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features) и [распознавания именованных сущностей (NER)](../how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-versions-and-features).
+> * `3.0` — это последняя стабильная версия клиентской библиотеки Анализа текста.
 > * В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных. Для рабочих сценариев рекомендуется использовать пакетные асинхронные методы для повышения производительности и масштабируемости. См. справочную документацию ниже.
 
 [!INCLUDE [Java quickstart](../includes/quickstarts/java-sdk.md)]
@@ -53,7 +54,7 @@ ms.locfileid: "80240133"
 ::: zone pivot="programming-language-javascript"
 
 > [!IMPORTANT]
-> * Последняя предварительная версия API Анализа текста — `3.0-preview`, которая включает в себя общедоступную предварительную версию улучшенных функций [анализа тональности](../how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features) и [распознавания именованных сущностей (NER)](../how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-versions-and-features). Последняя стабильная версия — `2.1`.
+> * `3.0` — это последняя стабильная версия клиентской библиотеки Анализа текста.
 >    * Обязательно следуйте указаниям по используемой версии.
 > * В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных. Для рабочих сценариев рекомендуется использовать пакетные асинхронные методы для повышения производительности и масштабируемости. См. справочную документацию ниже.
 > * Вы также можете запустить эту версию клиентской библиотеки службы "Анализ текста" [в браузере](https://github.com/Azure/azure-sdk-for-js/blob/master/documentation/Bundling.md).
@@ -65,7 +66,7 @@ ms.locfileid: "80240133"
 ::: zone pivot="programming-language-python"
 
 > [!IMPORTANT]
-> * Последняя предварительная версия API Анализа текста — `3.0-preview`, которая включает в себя общедоступную предварительную версию улучшенных функций [анализа тональности](../how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features) и [распознавания именованных сущностей (NER)](../how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-versions-and-features). Последняя стабильная версия — `2.1`.
+> * `3.0` — это последняя стабильная версия клиентской библиотеки Анализа текста.
 >    * Обязательно следуйте указаниям по используемой версии.
 > * В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных. Для рабочих сценариев рекомендуется использовать пакетные асинхронные методы для повышения производительности и масштабируемости. См. справочную документацию ниже. 
 

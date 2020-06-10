@@ -967,8 +967,6 @@
                   items:
                     - name: Использование CLI виртуальной машины SQL в Azure
                       href: virtual-machines/windows/availability-group-az-cli-configure.md
-                    - name: Шаблон на портале Azure
-                      href: virtual-machines/windows/availability-group-azure-marketplace-template-configure.md
                     - name: Шаблоны быстрого запуска Azure
                       href: virtual-machines/windows/availability-group-quickstart-template-configure.md
                     - name: Различные регионы

@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
-ms.openlocfilehash: db80c11c3b6eab3b7e682878e479729f4787a40b
-ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.openlocfilehash: 894eecc7746ddb1352708f2dfe5d6d2d53cdd8c9
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82086102"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84021659"
 ---
 # <a name="use-azure-active-directory-authentication-for-authentication-with-synapse-sql"></a>Использование Azure Active Directory для проверки подлинности в SQL Synapse
 
@@ -22,7 +22,7 @@ ms.locfileid: "82086102"
 С помощью аутентификации Azure AD вы можете централизованно управлять идентификаторами пользователей, которые имеют доступ к Azure Synapse, что упрощает управление разрешениями. Это дает такие преимущества:
 
 - альтернатива обычной проверке подлинности по имени пользователя и паролю;
-- возможность остановить увеличение количества пользователей на серверах баз данных;
+- возможность остановить увеличение количества пользователей на серверах;
 - возможность чередования паролей в одном расположении;
 - клиенты могут управлять разрешениями базы данных, используя внешние группы (Azure AD);
 - возможность исключить хранение паролей с помощью встроенной проверки подлинности Windows и других видов проверки подлинности, поддерживаемых Azure Active Directory;

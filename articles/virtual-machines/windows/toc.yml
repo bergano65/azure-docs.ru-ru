@@ -624,7 +624,7 @@
           href: ../extensions/agent-windows.md
         - name: 'Устранение уязвимостей, связанных со спекулятивным выполнением команд'
           href: mitigate-se.md
-        - name: Монитор метаданных
+        - name: Служба метаданных экземпляров Azure
           href: instance-metadata-service.md
         - name: Включение вложенной виртуализации
           href: nested-virtualization.md

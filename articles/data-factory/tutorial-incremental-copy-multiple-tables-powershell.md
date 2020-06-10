@@ -1,6 +1,6 @@
 ---
 title: Добавочное копирование нескольких таблиц с помощью PowerShell
-description: В этом руководстве вы создадите конвейер Фабрики данных Azure, который пошагово копирует разностные данные из нескольких таблиц в локальной базе данных SQL Server в Базу данных SQL Azure.
+description: В этом руководстве вы создадите конвейер Фабрики данных Azure, который пошагово копирует разностные данные из нескольких таблиц в базе данных SQL Server в Базу данных SQL Azure.
 services: data-factory
 ms.author: yexu
 author: dearandyxu
@@ -11,18 +11,18 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 01/30/2020
-ms.openlocfilehash: aa4dbfbaff620c25042d2603dab543661ec2cd14
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: a3fc4a7fa905e7538199d3b26a0cd8b9791aaac4
+ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81410008"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84194529"
 ---
 # <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-an-azure-sql-database"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в Базу данных SQL Azure
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-В этом руководстве вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц локальной базы данных SQL Server в Базу данных SQL Azure.    
+В этом учебнике вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц базы данных SQL Server в Базу данных SQL Azure.    
 
 В этом руководстве вы выполните следующие шаги:
 
@@ -69,12 +69,12 @@ ms.locfileid: "81410008"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **SQL Server.** В этом руководстве используйте локальную базу данных SQL Server в качестве исходного хранилища данных. 
-* **База данных SQL Azure**. Базу данных SQL используйте в качестве принимающего хранилища данных. Если у вас нет базы данных SQL, создайте ее, следуя указаниям в статье [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md). 
+* **SQL Server.** В этом учебнике используйте базу данных SQL Server в качестве исходного хранилища данных. 
+* **База данных SQL Azure**. Базу данных SQL используйте в качестве принимающего хранилища данных. Если у вас нет базы данных SQL, создайте ее, следуя указаниям в статье [Создание базы данных SQL Azure на портале Azure](../azure-sql/database/single-database-create-quickstart.md). 
 
 ### <a name="create-source-tables-in-your-sql-server-database"></a>Создание исходных таблиц в базе данных SQL Server
 
-1. Откройте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) или [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download-azure-data-studio) и подключитесь к локальной базе данных SQL Server.
+1. Откройте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) или [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download-azure-data-studio) и подключитесь к базе данных SQL Server.
 
 2. В **Обозревателе сервера (SSMS)** или в **Области подключения (Azure Data Studio)** , щелкните правой кнопкой мыши на базу данных и выберите **Новый запрос**.
 
@@ -113,7 +113,7 @@ ms.locfileid: "81410008"
 
 ### <a name="create-destination-tables-in-your-azure-sql-database"></a>Создание целевых таблиц в базе данных SQL Azure
 
-1. Откройте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) или [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download-azure-data-studio) и подключитесь к локальной базе данных SQL Server.
+1. Откройте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) или [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download-azure-data-studio) и подключитесь к базе данных SQL Server.
 
 2. В **Обозревателе сервера (SSMS)** или в **Области подключения (Azure Data Studio)** , щелкните правой кнопкой мыши на базу данных и выберите **Новый запрос**.
 
@@ -289,11 +289,11 @@ END
 
 ## <a name="create-linked-services"></a>Создание связанных служб
 
-Связанная служба в фабрике данных связывает хранилища данных и службы вычислений с фабрикой данных. В этом разделе вы создадите связанные службы локальной базы данных SQL Server и Базы данных SQL Azure. 
+Связанная служба в фабрике данных связывает хранилища данных и службы вычислений с фабрикой данных. В этом разделе вы создадите связанные службы базы данных SQL Server и Базы данных SQL Azure. 
 
 ### <a name="create-the-sql-server-linked-service"></a>Создание связанной службы SQL Server
 
-На этом шаге вы свяжете локальную базу данных SQL Server с фабрикой данных.
+На этом шаге вы свяжете базу данных SQL Server с фабрикой данных.
 
 1. Создайте JSON-файл с именем**SqlServerLinkedService.json** в папке C:\ADFTutorials\IncCopyMultiTableTutorial (создайте локальные папки, если они не существуют) со следующим содержимым. Выберите правильный раздел в зависимости от типа проверки подлинности, используемого для подключения к SQL Server.  
 

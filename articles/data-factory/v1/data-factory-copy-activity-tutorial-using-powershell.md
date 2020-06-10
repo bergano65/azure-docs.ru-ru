@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 215ed088b17125e7e41877e3c188a6bf3d77e8bb
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: f34103bb42999f6d2e9bfe35dbc257db7cecd909
+ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73682855"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84119268"
 ---
 # <a name="tutorial-create-a-data-factory-pipeline-that-moves-data-by-using-azure-powershell"></a>Руководство по Создание конвейера фабрики данных для переноса данных с помощью Azure PowerShell
 > [!div class="op_single_selector"]
@@ -189,7 +189,7 @@ ms.locfileid: "73682855"
 1. Создайте в папке C:\ADFGetStartedPSH файл JSON с именем AzureSqlLinkedService.json и добавьте в него приведенное ниже содержимое.
 
     > [!IMPORTANT]
-    > Вместо &lt;servername&gt;, &lt;databasename&gt;, &lt;username@servername&gt; и &lt;password&gt; укажите имя своего сервера Azure SQL Server, имя базы данных, имя учетной записи пользователя и пароль.
+    > Вместо &lt;servername&gt;, &lt;databasename&gt;, &lt;username@servername&gt; и &lt;password&gt; укажите имя своего сервера, имя базы данных, имя учетной записи пользователя и пароль.
     
     ```json
     {
@@ -218,7 +218,7 @@ ms.locfileid: "73682855"
     ProvisioningState : Succeeded
     ```
 
-   Убедитесь, что для сервера Базы данных SQL включен параметр **Разрешить доступ к службам Azure**. Чтобы проверить и при необходимости включить этот параметр, выполните следующие действия.
+   Убедитесь, что параметр **Разрешить доступ к службам Azure** включен для вашего сервера. Чтобы проверить и при необходимости включить этот параметр, выполните следующие действия.
 
     1. Войдите на [портал Azure](https://portal.azure.com)
     1. Щелкните **Больше служб** слева и выберите **Серверы SQL** в категории **Базы данных**.

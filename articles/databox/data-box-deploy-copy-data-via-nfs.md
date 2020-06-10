@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 06/25/2019
 ms.author: alkohli
-ms.openlocfilehash: f0a4bb23d8a868e7c11153748259eba23a0cca38
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 81732f13b85a7c0b514aad61c40802f4547957c2
+ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79501823"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84219131"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-via-nfs"></a>Руководство по Копирование данных в Azure Data Box через NFS
 
@@ -94,7 +94,9 @@ ms.locfileid: "79501823"
   * регистр в файлах не учитывается.
 
     Например, при копировании `SampleFile.txt` и `Samplefile.Txt` в Data Box регистр в имени сохранится, но второй файл перезапишет первый, так как они считаются одним и тем же файлом.
-* Обязательно сохраняйте копию исходных данных, пока не убедитесь, что служба Data Box перенесла ваши данные в службу хранилища Azure
+
+> [!IMPORTANT]
+> Обязательно сохраняйте копию исходных данных, пока не убедитесь, что служба Data Box перенесла ваши данные в службу хранилища Azure
 
 Если у вас главный компьютер с ОС Linux, используйте программу копирования, аналогичную Robocopy. Вот некоторые программы, доступные в ОС Linux: [rsync](https://rsync.samba.org/), [FreeFileSync](https://www.freefilesync.org/), [Unison](https://www.cis.upenn.edu/~bcpierce/unison/), [Ultracopier](https://ultracopier.first-world.info/).  
 
@@ -102,31 +104,31 @@ ms.locfileid: "79501823"
 
 При копировании при помощи rsync с использованием нескольких потоков следуйте указанным ниже рекомендациям.
 
- - Установите пакет **CIFS Utils** или **NFS Utils** (в зависимости от того, какая файловая система используется в клиенте с ОС Linux).
+* Установите пакет **CIFS Utils** или **NFS Utils** (в зависимости от того, какая файловая система используется в клиенте с ОС Linux).
 
     `sudo apt-get install cifs-utils`
 
     `sudo apt-get install nfs-utils`
 
- -  Установите программу **Rsync** и **Parallel** (в зависимости от версии используемого дистрибутива ОС Linux).
+* Установите программу **Rsync** и **Parallel** (в зависимости от версии используемого дистрибутива ОС Linux).
 
     `sudo apt-get install rsync`
    
     `sudo apt-get install parallel` 
 
- - Создайте точку подключения.
+* Создайте точку подключения.
 
     `sudo mkdir /mnt/databox`
 
- - Подключите том.
+* Подключите том.
 
     `sudo mount -t NFS4  //Databox IP Address/share_name /mnt/databox` 
 
- - Сделайте зеркальное отражение структуры каталогов.  
+* Сделайте зеркальное отражение структуры каталогов.  
 
     `rsync -za --include='*/' --exclude='*' /local_path/ /mnt/databox`
 
- - Скопируйте файлы. 
+* Скопируйте файлы.
 
     `cd /local_path/; find -L . -type f | parallel -j X rsync -za {} /mnt/databox/{}`
 
@@ -140,22 +142,20 @@ ms.locfileid: "79501823"
 Откройте папку назначения для просмотра и проверки скопированных файлов. Если в процессе копирования возникли ошибки, скачайте файл с ошибками для устранения неполадок. Дополнительные сведения см. в разделе [Просмотр журналов ошибок во время копирования данных в Data Box](data-box-logs.md#view-error-log-during-data-copy). Подробный список ошибок во время копирования данных см. в статье об [устранении неполадок, связанных с Azure Data Box](data-box-troubleshoot.md).
 
 Чтобы обеспечить целостность данных, при копировании данных система вычисляет их контрольные суммы. По завершении копирования проверьте использованное и свободное место на устройстве.
-    
-   ![Проверка свободного и использованного места на панели мониторинга](media/data-box-deploy-copy-data/verify-used-space-dashboard.png)
 
+   ![Проверка свободного и использованного места на панели мониторинга](media/data-box-deploy-copy-data/verify-used-space-dashboard.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве были освещены следующие темы относительно Azure Data Box.
 
 > [!div class="checklist"]
+>
 > * Предварительные требования
 > * подключение к Data Box;
 > * копирование данных в Data Box;
-
 
 Перейдите к следующему руководству, чтобы узнать, как отправить свой Data Box обратно в корпорацию Майкрософт.
 
 > [!div class="nextstepaction"]
 > [Отправка Azure Data Box в корпорацию Майкрософт](./data-box-deploy-picked-up.md)
-

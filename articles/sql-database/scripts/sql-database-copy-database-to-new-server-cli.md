@@ -1,6 +1,6 @@
 ---
-title: Пример для CLI. Копирование базы данных SQL Azure на новый сервер
-description: Пример скрипта Azure CLI для копирования базы данных SQL на новый сервер
+title: 'Azure CLI: Копирование базы данных в Базе данных SQL Azure на новый сервер'
+description: Пример сценария Azure CLI для копирования базы данных в Базе данных SQL Azure на новый сервер
 services: sql-database
 ms.service: sql-database
 ms.subservice: data-movement
@@ -11,14 +11,14 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: b7e04d7b1ed51a45e132d088b0dd29377312027c
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: e7a83478654b848b8e001dd3fea276c5cc9e125a
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80067473"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84022698"
 ---
-# <a name="use-cli-to-copy-a-sql-database-to-a-new-server"></a>Копирование базы данных SQL на новый сервер с помощью CLI
+# <a name="use-cli-to-copy-a-database-in-azure-sql-database-to-a-new-server"></a>Использование сценария CLI для копирования базы данных в Базе данных SQL Azure на новый сервер
 
 Этот пример скрипта Azure CLI создает копию существующей базы данных на новом сервере.
 
@@ -61,4 +61,4 @@ az group delete --name $targetResource
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
-Дополнительные примеры сценариев интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../sql-database-cli-samples.md).
+Дополнительные примеры сценариев интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../../azure-sql/database/az-cli-script-samples-content-guide.md).

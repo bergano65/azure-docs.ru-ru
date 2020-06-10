@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: d5ea3d3420cb598693ccaede7ee10d2f8c4fd839
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5a48ea0747a110720a29a9c34fa2dca0f5a74f16
+ms.sourcegitcommit: 69156ae3c1e22cc570dda7f7234145c8226cc162
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77025781"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84310008"
 ---
 # <a name="tutorial-create-and-walk-through-the-solar-panel-monitoring-app-template"></a>Руководство по Создание и пошаговое руководство по шаблону приложения мониторинга солнечных панелей 
 
@@ -110,4 +110,3 @@ Adatum — это вымышленная компания, которая от�
 * Дополнительные сведения об архитектуре приложений солнечной панели см. в статье [концепции](https://docs.microsoft.com/azure/iot-central/energy/concept-iot-central-solar-panel-app)
 * Бесплатное создание шаблонов приложение солнечной панели, см. в разделе [Приложения солнечной панели](https://apps.azureiotcentral.com/build/new/solar-panel-monitoring)
 * Дополнительные сведения об IoT Central, см. в разделе [Общие сведения об IoT Central](https://docs.microsoft.com/azure/iot-central/).
-

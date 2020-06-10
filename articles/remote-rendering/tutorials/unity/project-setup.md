@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 01/30/2020
 ms.topic: tutorial
-ms.openlocfilehash: 33801316e4c0446865169560bb42f98052acba70
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.openlocfilehash: 7901f12763cb97fa76c0908e76755247ae934a20
+ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80678655"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84300595"
 ---
 # <a name="tutorial-setting-up-a-unity-project-from-scratch"></a>Руководство по Настройка проекта Unity с нуля
 
@@ -31,10 +31,13 @@ ms.locfileid: "80678655"
 
 * Данные учетной записи (идентификатор и ключ учетной записи, идентификатор подписки). Если у вас нет учетной записи, [создайте ее](../../how-tos/create-an-account.md).
 * Windows SDK 10.0.18362.0 [(скачать)](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
-* Последняя версия Visual Studio 2019 [(скачать)](https://visualstudio.microsoft.com/vs/older-downloads/).
+* Последняя версия Visual Studio 2019 [(скачать)](https://visualstudio.microsoft.com/vs/older-downloads/). 
+* [Средства Visual Studio для службы "Смешанная реальность"](https://docs.microsoft.com/windows/mixed-reality/install-the-tools). В частности, следующие установки для *рабочей нагрузки* являются обязательными:
+  * **Разработка классических приложений на C++** .
+  * **Разработка приложений для универсальной платформы Windows (UWP)** .
 * GIT [(скачать)](https://git-scm.com/downloads).
 * Unity 2019.3.1 [(скачать)](https://unity3d.com/get-unity/download).
-  * Установите такие модули в Unity:
+  * Установите следующие модули в Unity:
     * **UWP** — обеспечивает поддержку для создания приложений универсальной платформы Windows;
     * **IL2CPP** — обеспечивает поддержку сборки для Windows (IL2CPP).
 
@@ -77,7 +80,7 @@ ms.locfileid: "80678655"
 ## <a name="ensure-you-have-the-latest-version-of-the-package"></a>Убедитесь, что у вас установлена последняя версия пакета.
 
 Выполните следующие шаги, чтобы обеспечить использование последней версии пакета удаленной отрисовки для проекта.
-1. Выберите пакет в окне проекта и щелкните значок пакета: ![Нажатие значка пакета](media/package-icons.png)
+1. Выберите пакет в окне проекта и щелкните значок :::no-loc text="package":::: ![Нажатие значка пакета](media/package-icons.png)
 1. В окне Inspector щелкните View in Package Manager (Просмотр в диспетчере пакетов): ![Инспектор пакетов](media/package-properties.png)
 1. На странице диспетчера пакетов выберите пакет удаленной отрисовки и проверьте, доступна ли кнопка обновления. Если это так, то при ее нажатии версия пакета будет обновлена до последней: ![Пакет Удаленной отрисовки Azure в диспетчере пакетов](media/package-manager.png)
 1. Иногда обновление пакета может приводить к ошибкам в консоли. Если это происходит, попробуйте закрыть и снова открыть проект.
@@ -90,11 +93,11 @@ ms.locfileid: "80678655"
 
     ![Сброс преобразования камеры](media/camera-reset-transform.png)
 
-1. Задайте свойству **Clear flags** (Очистить флаги) значение *Solid Color* (Сплошной цвет).
+1. Задайте свойству **:::no-loc text="Clear flags":::** значение *:::no-loc text="Solid Color":::* .
 
-1. Задайте свойству **Background** (Фон) значение *Black* (Черный).
+1. Задайте свойству **:::no-loc text="Background":::** значение *:::no-loc text="Black":::* .
 
-1. Задайте свойству **Clipping Planes** (Плоскости отсечения) такие значения: *Near (Ближний)=0,3* и *Far (Дальний)=20*. Это означает, что при отрисовке будет обрезаться геометрический объект, расположенный ближе чем 30 см или дальше 20 м.
+1. Задайте свойству **:::no-loc text="Clipping Planes":::** значение *NEAR (Ближний) = 0.3* и *FAR (Дальний) = 20*. Это означает, что при отрисовке будет обрезаться геометрический объект, расположенный ближе чем 30 см или дальше 20 м.
 
     ![Свойства камеры Unity](media/camera-properties.png)
 

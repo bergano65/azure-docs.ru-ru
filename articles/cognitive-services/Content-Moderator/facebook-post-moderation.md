@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: tutorial
-ms.date: 01/27/2020
+ms.date: 05/27/2020
 ms.author: pafarley
-ms.openlocfilehash: 9f25c845302d62e3bc9e230b4a6f8f2669f4ac35
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: a9a5fe2eed0c0e6cf990183d321a71a7fabfbbee
+ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76774269"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84118640"
 ---
 # <a name="tutorial-moderate-facebook-posts-and-commands-with-azure-content-moderator"></a>Руководство по Модерация записей и команд Facebook с помощью Azure Content Moderator
 
@@ -70,14 +70,14 @@ ms.locfileid: "76774269"
     
     | Имя параметра приложения | value   | 
     | -------------------- |-------------|
-    | cm:TeamId   | Идентификатор команды Content Moderator.  | 
-    | cm:SubscriptionKey | Ключ подписки Content Moderator (см. раздел [Учетные данные](review-tool-user-guide/credentials.md)). |
-    | cm:Region | Имя региона Content Moderator без пробелов. Его можно найти в поле **Расположение** на вкладке **Обзор** для ресурса Azure.|
-    | cm:ImageWorkflow | Имя рабочего процесса для изображений. |
-    | cm:TextWorkflow | Имя рабочего процесса для текста. |
-    | cm:CallbackEndpoint | URL-адрес приложения-функции CMListener, которое будет создано позже в этом руководстве. |
-    | fb:VerificationToken | Маркер создаваемого вами секрета, который используется для подписки на события веб-канала Facebook. |
-    | fb:PageAccessToken | Срок действия маркера доступа API Graph Facebook не истекает, что позволяет функции скрывать или удалять записи от вашего имени. Вы получите его позже. |
+    | `cm:TeamId`   | Идентификатор команды Content Moderator.  | 
+    | `cm:SubscriptionKey` | Ключ подписки Content Moderator (см. раздел [Учетные данные](review-tool-user-guide/credentials.md)). |
+    | `cm:Region` | Имя региона Content Moderator без пробелов. Его можно найти в поле **Местоположение** на вкладке **Обзор** для ресурса Azure.|
+    | `cm:ImageWorkflow` | Имя рабочего процесса для изображений. |
+    | `cm:TextWorkflow` | Имя рабочего процесса для текста. |
+    | `cm:CallbackEndpoint` | URL-адрес приложения-функции CMListener, которое будет создано позже в этом руководстве. |
+    | `fb:VerificationToken` | Маркер создаваемого вами секрета, который используется для подписки на события веб-канала Facebook. |
+    | `fb:PageAccessToken` | Срок действия маркера доступа API Graph Facebook не истекает, что позволяет функции скрывать или удалять записи от вашего имени. Вы получите его позже. |
 
     Нажмите кнопку **Сохранить** в верхней части страницы.
 

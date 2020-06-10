@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: c9ed675dc970b093f6407d15b3db2ac2668c626b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 1e408f27d4c9b2686bd9f56ca754f5553a446440
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74327559"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84014916"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-azure-hdinsight"></a>Руководство по Извлечение, преобразование и загрузка данных с помощью Azure HDInsight
 
@@ -244,12 +244,12 @@ ms.locfileid: "74327559"
    sudo apt-get --assume-yes install freetds-dev freetds-bin
    ```
 
-6. После завершения установки используйте следующую команду для подключения к серверу Базы данных SQL.
+6. После завершения установки используйте следующую команду для подключения к Базе данных SQL.
 
    ```bash
    TDSVER=8.0 tsql -H '<server-name>.database.windows.net' -U '<admin-login>' -p 1433 -D '<database-name>'
     ```
-   * Замените заполнитель `<server-name>` именем сервера Базы данных SQL.
+   * Замените заполнитель `<server-name>` именем логического сервера SQL Server.
 
    * Замените заполнитель `<admin-login>` именем для входа администратора для Базы данных SQL.
 

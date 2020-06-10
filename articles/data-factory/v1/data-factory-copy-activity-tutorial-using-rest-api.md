@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: c6e6d4a38c5ed2afc118b267f253ffc7533f9d82
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6344f2c69e7b6407152e752c61c1928ab651a88c
+ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75438875"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84119228"
 ---
 # <a name="tutorial-use-rest-api-to-create-an-azure-data-factory-pipeline-to-copy-data"></a>Руководство по Создание конвейера Фабрики данных Azure для копирования данных с помощью REST API 
 > [!div class="op_single_selector"]
@@ -121,7 +121,7 @@ ms.locfileid: "75438875"
 
 ### <a name="azuresqllinkedservicejson"></a>azuresqllinkedservice.json
 > [!IMPORTANT]
-> Замените **servername**, **databasename**, **username** и **password** на имя сервера SQL Azure, имя базы данных SQL, имя учетной записи пользователя и ее пароль.  
+> Замените **servername**, **databasename**, **username** и **password** на имя сервера, имя базы данных SQL, имя учетной записи пользователя и ее пароль.  
 > 
 >
 
@@ -403,7 +403,7 @@ $accessToken = (ConvertFrom-Json $responseToken).access_token;
     ```
 
 ### <a name="create-azure-sql-linked-service"></a>Создание связанной службы SQL Azure
-На этом шаге вы свяжете базу данных SQL Azure с фабрикой данных. В этом разделе вы укажете имя сервера SQL Azure, имя базы данных, имя пользователя и пароль. Дополнительные сведения о свойствах JSON для определения связанной службы SQL Azure см. в разделе [Связанная служба SQL Azure](data-factory-azure-sql-connector.md#linked-service-properties).
+На этом шаге вы свяжете базу данных SQL Azure с фабрикой данных. В этом разделе вы укажете имя логического сервера SQL Server, имя базы данных, имя пользователя и пароль. Дополнительные сведения о свойствах JSON для определения связанной службы SQL Azure см. в разделе [Связанная служба SQL Azure](data-factory-azure-sql-connector.md#linked-service-properties).
 
 1. Назначьте команду переменной с именем **cmd**. 
    

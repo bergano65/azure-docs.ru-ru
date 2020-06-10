@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 04/06/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 55305fff95e9707b35ea265915e2893a736ab97d
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 1a8dc8bec5d5e81a8e1e23e7697e6e630b307670
+ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81264879"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84219746"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-fortes-change-cloud"></a>Руководство по интеграции единого входа Azure Active Directory с Fortes Change Cloud
 
@@ -83,7 +83,7 @@ ms.locfileid: "81264879"
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<identifier>.fortes-online.com`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<identifier>.fortes-online.com/saml/metadata`.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<identifier>.fortes-online.com/saml/SSO`.
 
@@ -94,7 +94,7 @@ ms.locfileid: "81264879"
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Fortes Change Cloud](mailto:support@fortes.nl). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. Приложение Fortes Change Cloud ожидает проверочные утверждения SAML в определенном формате, который требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, в котором **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение Fortes Change Cloud ожидает сопоставления **nameidentifier** с **user.samaccountname**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
+1. Приложение Fortes Change Cloud ожидает проверочные утверждения SAML в определенном формате, который требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, в котором **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение Fortes Change Cloud ожидает сопоставления **уникального идентификатора пользователя** с **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
 
     ![Изображение](common/edit-attribute.png)
 

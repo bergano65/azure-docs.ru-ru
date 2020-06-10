@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 02/27/2019
 ms.author: allensu
 ms.custom: seodec18
-ms.openlocfilehash: f521cc68476e2f9df1cc8288cf41156da3851cd0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 9a490550bf6652186c80268d4a99bff931897fcd
+ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78251876"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84344192"
 ---
 # <a name="tutorial-load-balance-vms-across-availability-zones-with-a-standard-load-balancer-using-the-azure-portal"></a>Руководство по Распределение нагрузки виртуальных машин в пределах зон доступности с помощью Load Balancer уровня "Стандартный" и портала Azure
 
@@ -140,9 +140,6 @@ ms.locfileid: "78251876"
     - *myNetworkSecurityGroup* — для имени группы безопасности сети (брандмауэра).
 5. Щелкните **Отключено**, чтобы отключить диагностику загрузки.
 6. Нажмите кнопку **ОК**, просмотрите параметры на странице сводки и нажмите кнопку **Создать**.
-  
-   ![Создание виртуальной машины](./media/load-balancer-standard-public-availability-zones-portal/create-vm-standard-ip.png)
-
 7. Создайте вторую виртуальную машину с именем *VM2* в зоне 2 и третью виртуальную машину в зоне 3, настроив *myVnet* в качестве виртуальной сети, *myBackendSubnet* как подсеть и \**myNetworkSecurityGroup* как группу безопасности сети и выполнив шаги 1–6.
 
 ### <a name="install-iis-on-vms"></a>Установка служб IIS на виртуальные машины

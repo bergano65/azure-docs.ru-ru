@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Создание рабочей области Azure Databricks с помощью Azure Resource Manager
-description: В этом кратком руководстве объясняется, как с помощью шаблона Azure Resource Manager создать рабочую область Azure Databricks и кластер Apache Spark, а затем запустить задание Spark.
+title: Краткое руководство. Создание рабочей области Azure Databricks с помощью шаблона Azure Resource Manager
+description: В этом кратком руководстве объясняется, как создать рабочую область Azure Databricks с помощью шаблона Azure Resource Manager.
 services: azure-databricks
 ms.service: azure-databricks
 author: mamccrea
@@ -8,36 +8,42 @@ ms.author: mamccrea
 ms.reviewer: jasonh
 ms.workload: big-data
 ms.topic: quickstart
-ms.custom: mvc
-ms.date: 03/23/2020
-ms.openlocfilehash: d3c3c55a4ce3ee25db01128dcf50bb8763c5829b
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.custom: mvc, subject-armqs
+ms.date: 05/27/2020
+ms.openlocfilehash: 8435704963e832020ecff27a11d00793ad28890c
+ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81604650"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84171044"
 ---
-# <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-resource-manager-template"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью шаблона Azure Resource Manager
+# <a name="quickstart-create-an-azure-databricks-workspace-by-using-the-azure-resource-manager-template"></a>Краткое руководство. Создание рабочей области Azure Databricks с помощью шаблона Azure Resource Manager
 
-Из этого краткого руководства вы узнаете, как с помощью шаблона Azure Resource Manager создать рабочую область Azure Databricks с кластером Apache Spark. Вы запустите задание в кластере и воспользуетесь пользовательскими диаграммами для получения отчетов в режиме реального времени на основе демографических данных по бесплатному и платному использованию.
+В этом кратком руководстве для создания рабочей области Azure Databricks используется шаблон Azure Resource Manager. После создания рабочей области необходимо проверить развертывание.
+
+[!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+Для работы с этой статьей необходимо иметь:
 
-## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
-
-Войдите на [портал Azure](https://portal.azure.com).
-
-> [!Note]
-> Инструкции из этого руководство нельзя выполнять с **бесплатной пробной версией подписки**.
-> Если у вас есть бесплатная учетная запись, перейдите к профилю и измените подписку на подписку с **оплатой по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/). Затем [удалите предельную сумму расходов](https://docs.microsoft.com/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit) и [запросите увеличение квоты](https://docs.microsoft.com/azure/azure-portal/supportability/resource-manager-core-quotas-request) на ЦП в своем регионе. При создании рабочей области Azure Databricks можно выбрать ценовую категорию **Пробная версия ("Премиум" — 14 дней бесплатно (DBU))** для предоставления рабочей области доступа к бесплатным DBU Azure Databricks уровня "Премиум" на 14 дней.
+* подписку Azure ([создайте бесплатную учетную запись](https://azure.microsoft.com/free/)).
 
 ## <a name="create-an-azure-databricks-workspace"></a>Создание рабочей области Azure Databricks
 
+### <a name="review-the-template"></a>Изучение шаблона
+
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-databricks-workspace).
+
+:::code language="json" source="~/quickstart-templates/101-databricks-workspace/azuredeploy.json" range="1-53":::
+
+Ресурс Azure, определенный в шаблоне, — Microsoft.Databricks/workspaces. Создайте рабочую область Azure Databricks. 
+
+## <a name="deploy-the-template"></a>Развертывание шаблона
+
 В этом разделе вы создадите рабочую область Azure Databricks с помощью шаблона Azure Resource Manager.
 
-1. Щелкните следующее изображение, чтобы открыть шаблон на портале Azure.
+1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон создает рабочую область Azure Databricks.
 
    [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-databricks-workspace%2Fazuredeploy.json)
 
@@ -55,142 +61,56 @@ ms.locfileid: "81604650"
    |**Имя рабочей области**     | Укажите имя рабочей области Databricks.        |
    |**Ценовая категория**     |  Вы можете выбрать уровень **Стандартный** или **Премиум**. Дополнительные сведения об этих ценовых категориях см. на [странице цен на Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
 
-3. Установите флажок **Я принимаю указанные выше условия** и **Закрепить на панели мониторинга**, а затем нажмите кнопку **Приобрести**.
+3. Выберите **Проверить и создать**, а затем — **Создать**.
 
-4. Создание рабочей области займет несколько минут. Во время создания рабочей области на портале с правой стороны отображается плитка **Идет отправка развертывания для Azure Databricks**. Возможно, вам потребуется прокрутить панель мониторинга, чтобы увидеть эту плитку. В верхней части экрана также будет отображаться индикатор хода выполнения. Следить за выполнением можно с помощью любого из этих элементов.
+4. Создание рабочей области займет несколько минут. Если при развертывании рабочей области произойдет сбой, она все равно будет создана, но в состоянии сбоя. Удалите такую рабочую область и создайте новую, чтобы устранить ошибки с развертыванием. При удалении рабочей области, для которой произошел сбой, также удаляются ее управляемую группу ресурсов и все успешно развернутые ресурсы.
 
-   ![Плитка развертывания Databricks](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-deployment-tile.png "Плитка развертывания Databricks")
+## <a name="review-deployed-resources"></a>Просмотр развернутых ресурсов
 
-   Если при развертывании рабочей области произойдет сбой, она все равно будет создана, но в состоянии сбоя. Удалите такую рабочую область и создайте новую, чтобы устранить ошибки с развертыванием. При удалении рабочей области, для которой произошел сбой, также удаляются ее управляемую группу ресурсов и все успешно развернутые ресурсы.
+Вы можете использовать портал Azure, чтобы проверить рабочую область Azure Databricks, а также следующие скрипты Azure CLI или Azure PowerShell, чтобы просмотреть ресурс:
 
-## <a name="create-a-spark-cluster-in-databricks"></a>Создание кластера Spark в Databricks
+### <a name="azure-cli"></a>Azure CLI
 
-1. На портале Azure перейдите к созданной рабочей области Databricks, а затем выберите **Launch Workspace** (Запуск рабочей области).
+```azurecli-interactive
+echo "Enter your Azure Databricks workspace name:" &&
+read databricksWorkspaceName &&
+echo "Enter the resource group where the Azure Databricks workspace exists:" &&
+read resourcegroupName &&
+az databricks workspace show -g $resourcegroupName -n $databricksWorkspaceName
+```
 
-2. Вы будете перенаправлены на портал Azure Databricks. На портале выберите **Кластер**.
+### <a name="azure-powershell"></a>Azure PowerShell
 
-   ![Databricks в Azure](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-on-azure.png "Databricks в Azure")
-
-3. На странице **создания кластера** укажите значения для создания кластера.
-
-   ![Создание кластера Databricks Spark в Azure](./media/quickstart-create-databricks-workspace-resource-manager-template/create-databricks-spark-cluster.png "Создание кластера Databricks Spark в Azure")
-
-   Для всех остальных параметров, кроме следующих, примите значения по умолчанию:
-
-   * Введите имя кластера.
-   * В рамках этой статьи создайте кластер со средой выполнения **4.0**.
-   * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of activity** (Завершить через \_\_ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
-
-   Выберите **Create cluster** (Создать кластер). После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
-
-Дополнительные сведения о создании кластеров см. в статье [о создании кластера Spark в Azure Databricks](/azure/databricks/clusters/create).
-
-## <a name="run-a-spark-sql-job"></a>Выполнение задания Spark SQL
-
-Прежде чем приступить к работе с этим разделом, выполните следующие предварительные требования.
-
-* [Создайте учетную запись хранения BLOB-объектов Azure](../storage/common/storage-account-create.md).
-* Скачайте образец файла JSON на [веб-сайте GitHub](https://github.com/Azure/usql/blob/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json).
-* Отправьте пример JSON-файла в созданную учетную запись хранения BLOB-объектов Azure. Для передачи файлов можно использовать [обозреватель службы хранилища Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md).
-
-Выполните указанные ниже задачи, чтобы создать записную книжку в Databricks, настроить ее для считывания данных из учетной записи хранения больших двоичных объектов Azure, а затем запустить задание Spark SQL в данных.
-
-1. В левой области щелкните **рабочую область**. В раскрывающемся списке **рабочей области** выберите **Создать**, а затем выберите **записную книжку**.
-
-   ![Создание записной книжки в Databricks](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-create-notebook.png "Создание записной книжки в Databricks")
-
-2. В диалоговом окне **создания записной книжки** введите имя, выберите **Scala** в качестве языка, а затем выберите созданный ранее кластер Spark.
-
-   ![Создание записной книжки в Databricks](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-notebook-details.png "Создание записной книжки в Databricks")
-
-   Нажмите кнопку **Создать**.
-
-3. На этом шаге свяжите учетную запись службы хранения Azure с кластером Spark Databricks. Есть два способа выполнения этой ассоциации. Вы можете подключить учетную запись хранения Azure к файловой системе Databricks (DBFS) или получить прямой доступ к учетной записи хранения Azure из создаваемого приложения.
-
-   > [!IMPORTANT]
-   >В этой статье используется **подход с подключением хранилища к DBFS**. Он гарантирует, что подключенное хранилище самостоятельно связывается с файловой системой кластера. Таким образом, любое приложение, обращающееся к кластеру, может также использовать связанное хранилище. Подход с получением прямого доступа ограничен использованием приложения, с помощью которого настраивается доступ.
-   >
-   > Для применения подхода с подключением необходимо создать кластер Spark с версией среды выполнения Databricks **4.0**, выбранной в этой статье.
-
-   В следующем фрагменте кода замените `{YOUR CONTAINER NAME}`, `{YOUR STORAGE ACCOUNT NAME}` и `{YOUR STORAGE ACCOUNT ACCESS KEY}` соответствующими значениями для вашей учетной записи хранения Azure. Вставьте фрагмент кода в пустую ячейку в записной книжке и нажмите сочетание клавиш SHIFT + ВВОД, чтобы запустить ячейку кода.
-
-   * **Подключите учетную запись хранения к DBFS (рекомендуется)** . В этом фрагменте кода путь к учетной записи хранения Azure подключается к `/mnt/mypath`. Таким образом, при следующих попытках получить доступ к учетной записи хранения Azure вам не нужно будет предоставлять полный путь. Вы можете просто указать `/mnt/mypath`.
-
-          dbutils.fs.mount(
-            source = "wasbs://{YOUR CONTAINER NAME}@{YOUR STORAGE ACCOUNT NAME}.blob.core.windows.net/",
-            mountPoint = "/mnt/mypath",
-            extraConfigs = Map("fs.azure.account.key.{YOUR STORAGE ACCOUNT NAME}.blob.core.windows.net" -> "{YOUR STORAGE ACCOUNT ACCESS KEY}"))
-
-   * **Получите прямой доступ к учетной записи хранения.**
-
-          spark.conf.set("fs.azure.account.key.{YOUR STORAGE ACCOUNT NAME}.blob.core.windows.net", "{YOUR STORAGE ACCOUNT ACCESS KEY}")
-
-     Сведения о том, как получить ключи доступа к учетной записи хранения, см. в разделе [Управление ключами доступа к учетной записи хранения](../storage/common/storage-account-keys-manage.md).
-
-   > [!NOTE]
-   > Вы также можете воспользоваться Azure Data Lake Store с кластером Spark в Azure Databricks. Дополнительные сведения см. в разделе [Azure Data Lake Store](/azure/databricks/data/data-sources/azure/azure-datalake-gen2).
-
-4. Выполните инструкцию SQL для создания временной таблицы, используя данные образца файла данных JSON, **small_radio_json.json**. В указанном ниже фрагменте кода замените значения заполнителя именем контейнера и учетной записи хранения. Вставьте фрагмент кода в ячейку кода в записной книжке, а затем нажмите сочетание клавиш SHIFT + ВВОД. Во фрагменте кода `path` обозначает расположение примера файла JSON, который вы передали в учетную запись хранения Azure.
-
-   ```sql
-   %sql
-   DROP TABLE IF EXISTS radio_sample_data;
-   CREATE TABLE radio_sample_data
-   USING json
-   OPTIONS (
-    path "/mnt/mypath/small_radio_json.json"
-   )
-   ```
-
-   После успешного выполнения команды все данные из файла JSON будут отображаться в виде таблицы в кластере Databricks.
-
-   Волшебная команда языка `%sql` позволяет выполнить код SQL из записной книжки, даже если записная книжка другого типа. Дополнительные сведения см. в статье об [объединении языков программирования в записной книжке](/azure/databricks/notebooks/index).
-
-5. Рассмотрим моментальный снимок примера данных JSON, чтобы лучше ознакомиться с запросом, который вы выполняете. Вставьте следующий фрагмент кода в ячейку кода и нажмите клавиши **SHIFT + ВВОД**.
-
-   ```sql
-   %sql
-   SELECT * from radio_sample_data
-   ```
-
-6. Отобразятся табличные данные, как показано на следующем снимке экрана (показаны только некоторые столбцы).
-
-   ![Пример данных JSON](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-sample-csv-data.png "Пример данных JSON")
-
-   Среди прочего пример данных демонстрирует пол аудитории радиоканала (имя столбца **gender**), а также категорию подписки (бесплатная или платная) (имя столбца **level**).
-
-7. Теперь можно создать визуальное представление данных по каждому полу, а также по числу пользователей с бесплатными и платными учетными записями. В нижней части выходных табличных данных щелкните значок **линейчатой диаграммы**, а затем — **параметры построения**.
-
-   ![Создание линейчатой диаграммы](./media/quickstart-create-databricks-workspace-resource-manager-template/create-plots-databricks-notebook.png "Создание линейчатой диаграммы")
-
-8. В разделе **настроек построения** перетащите значения, как показано на снимке экрана.
-
-   ![Настройка линейчатой диаграммы](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-notebook-customize-plot.png "Настройка линейчатой диаграммы")
-
-   * Для параметра **Ключи** задайте значение **gender**.
-   * Для параметра **Series groupings** (Группирование ряда) задайте значение **level**.
-   * Для параметра **Значения** задайте значение **level**.
-   * Для параметра **Агрегирование** задайте значение **COUNT**.
-
-   Нажмите кнопку **Применить**.
-
-9. Выходные данные отображают визуальное представление, как показано на следующем снимке экрана:
-
-   ![Настройка линейчатой диаграммы](./media/quickstart-create-databricks-workspace-resource-manager-template/databricks-sql-query-output-bar-chart.png "Настройка линейчатой диаграммы")
+```azurepowershell-interactive
+$resourceGroupName = Read-Host -Prompt "Enter the resource group name where your Azure Databricks workspace exists"
+(Get-AzResource -ResourceType "Microsoft.Databricks/workspaces" -ResourceGroupName $resourceGroupName).Name
+ Write-Host "Press [ENTER] to continue..."
+```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Когда вы выполните задачи в статье, можно будет завершить работу кластера. Для этого в рабочей области Azure Databricks на левой панели выберите **Кластеры**. Для кластера, работу которого необходимо завершить, переместите указатель мыши на многоточие в столбце **Actions** (Действия) и выберите значок **Завершить**.
+Если вы планируете продолжить работу с последующими учебниками, эти ресурсы можно пока сохранить. Удалите группу ресурсов, если она больше не нужна. Рабочая область Azure Databricks и связанные управляемые ресурсы будут также удалены. Чтобы удалить группу ресурсов с помощью Azure CLI или Azure PowerShell, выполните следующие действия.
 
-![Остановка кластера Databricks](./media/quickstart-create-databricks-workspace-resource-manager-template/terminate-databricks-cluster.png "Остановка кластера Databricks")
+### <a name="azure-cli"></a>Azure CLI
 
-Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после \_\_ мин бездействия). В этом случае работа кластера автоматически завершается, если он был неактивным в течение определенного времени.
+```azurecli-interactive
+echo "Enter the Resource Group name:" &&
+read resourceGroupName &&
+az group delete --name $resourceGroupName &&
+echo "Press [ENTER] to continue ..."
+```
+
+### <a name="azure-powershell"></a>Azure PowerShell
+
+```azurepowershell-interactive
+$resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
+Remove-AzResourceGroup -Name $resourceGroupName
+Write-Host "Press [ENTER] to continue..."
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье вы создали кластер Spark в Azure Databricks и запустили задание Spark, используя данные в хранилище Azure. Вы также можете просмотреть [источники данных Spark](/azure/databricks/data/data-sources/index), чтобы узнать, как импортировать данные из источников данных в Azure Databricks. Можно также ознакомиться с шаблоном Resource Manager для [создания рабочей области Azure Databricks с настраиваемым адресом виртуальной сети](https://github.com/Azure/azure-quickstart-templates/tree/master/101-databricks-workspace-with-custom-vnet-address). Синтаксис и свойства JSON, используемые в шаблоне, см. в справочнике по шаблону [Microsoft.Databricks/workspaces](/azure/templates/microsoft.databricks/workspaces).
-
-Перейдите к следующей статье, чтобы узнать, как выполнять операции ETL (извлечения, преобразование и загрузка данных) с помощью Azure Databricks.
+В этом кратком руководстве вы создали рабочую область Azure Databricks с помощью шаблона Azure Resource Manager и проверили развертывание. Перейдите к следующей статье, чтобы узнать, как выполнять операции ETL (извлечения, преобразование и загрузка данных) с помощью Azure Databricks.
 
 > [!div class="nextstepaction"]
 > [Извлечение, преобразование и загрузка данных с помощью Azure Databricks](databricks-extract-load-sql-data-warehouse.md)
