@@ -5,13 +5,13 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/19/2020
 ms.topic: tutorial
-ms.custom: has-adal-ref
-ms.openlocfilehash: 4e3edc9819fc3a282cc707db636c8bb213b13776
-ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
+ms.custom: has-adal-ref, tracking-python
+ms.openlocfilehash: 1203feaf6b400e91e6ab5381df0af245db0a2973
+ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83714480"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84559563"
 ---
 # <a name="tutorial-create-a-python-runbook"></a>Руководство по Создание модуля runbook в Python
 
@@ -244,9 +244,9 @@ except Exception as detail:
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Создание модуля runbook в PowerShell](automation-tutorial-runbook-textual-powershell.md)
-- [Создание графического модуля runbook](automation-tutorial-runbook-graphical.md)
-- [Создание модуля runbook рабочего процесса в PowerShell](automation-tutorial-runbook-textual.md)
-- [Типы модулей Runbook в службе автоматизации Azure](../automation-runbook-types.md)
-- [Azure for Python developers](/azure/python/) (Azure для разработчиков Python).
-- [Автоматизация Azure на сайте GitHub](https://github.com/azureautomation/runbooks/tree/master/Utility/Python)
+- Сведения о том, как начать работу с runbook, см. в статье о [создании runbook PowerShell](automation-tutorial-runbook-textual-powershell.md).
+- Чтобы начать работу с графическими модулями runbook, см. инструкции в [этой статье](automation-tutorial-runbook-graphical.md).
+- Чтобы приступить к работе с runbook рабочего процесса PowerShell, обратитесь к [этом руководству](automation-tutorial-runbook-textual.md).
+- Дополнительные сведения о типах модулей runbook в службе автоматизации Azure, их преимуществах и ограничениях можно найти в [этой статье](../automation-runbook-types.md).
+- Дополнительные сведения о разработке для Azure с использованием Python см. в статье [Azure для разработчиков Python](/azure/python/).
+- Примеры модулей Runbook Python 2 см. на странице [Azure для разработчиков Python](https://github.com/azureautomation/runbooks/tree/master/Utility/Python).

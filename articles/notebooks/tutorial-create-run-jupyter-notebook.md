@@ -3,12 +3,13 @@ title: Учебник по созданию и запуску Jupyter Notebook �
 description: Узнайте, как создать и запустить записную книжку Jupyter в предварительной версии службы "Записные книжки Azure" для демонстрации процесса линейной регрессии при обработке и анализе данных.
 ms.topic: tutorial
 ms.date: 01/11/2019
-ms.openlocfilehash: 8a1c13f41ef1588b040b3540b852d83764c6ce79
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.custom: tracking-python
+ms.openlocfilehash: e677fca9291bb5247071c3970b7db3f36a6bdceb
+ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75660823"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84561750"
 ---
 # <a name="tutorial-create-and-run-a-jupyter-notebook-with-python"></a>Руководство. Создание и запуск записной книжки Jupyter с помощью Python
 

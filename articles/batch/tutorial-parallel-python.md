@@ -4,13 +4,13 @@ description: Руководство. Обработка медиафайлов �
 ms.devlang: python
 ms.topic: tutorial
 ms.date: 11/29/2018
-ms.custom: mvc
-ms.openlocfilehash: 32e42fe04ad8ce55bbbbb90e5aca6356fd1c6f22
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: mvc, tracking-python
+ms.openlocfilehash: 63515012d10739bb018de34e040465fbe337aa02
+ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82117121"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84561279"
 ---
 # <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-python-api"></a>Руководство по Запуск параллельной рабочей нагрузки с помощью пакета Azure с использованием Python API
 
