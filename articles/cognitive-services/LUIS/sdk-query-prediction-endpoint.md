@@ -3,13 +3,14 @@ title: Краткое руководство. Запрос конечной то
 description: В этом кратком руководстве показано, как с помощью пакета средств разработки отправить речевой фрагмент пользователя в приложение "Распознавание речи" Azure Cognitive Services и получить прогноз.
 ms.topic: quickstart
 ms.date: 05/28/2020
+ms.custom: tracking-python
 zone_pivot_groups: programming-languages-set-diberry-3core
-ms.openlocfilehash: 2275b50086eaf070d0748e3bb9b8de90ea9ee78e
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
+ms.openlocfilehash: 27bf958e32402549e148e4b5d71391e8867bd4e4
+ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84171291"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84605582"
 ---
 # <a name="quickstart-query-v3-prediction-endpoint-with-sdk"></a>Краткое руководство. Запрос конечной точки прогнозирования версии 3 с помощью пакета SDK
 

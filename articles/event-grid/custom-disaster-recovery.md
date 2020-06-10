@@ -2,17 +2,17 @@
 title: Аварийное восстановление пользовательских разделов в Сетке событий Azure
 description: Из этого руководства вы узнаете, как настроить архитектуру обработки событий для восстановления, если служба "Сетка событий" станет неработоспособной в регионе.
 services: event-grid
-author: banisadr
+author: femila
 ms.service: event-grid
 ms.topic: tutorial
 ms.date: 01/21/2020
-ms.author: babanisa
-ms.openlocfilehash: 87f8f79e2cf125fa5735653153d8fcaa781f5200
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.author: femila
+ms.openlocfilehash: d2b6d8f8433d1eef34e554b0e0fccbf8b2cbab94
+ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76511524"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84557797"
 ---
 # <a name="build-your-own-disaster-recovery-for-custom-topics-in-event-grid"></a>Самостоятельное выполнение аварийного восстановления пользовательских разделов в Сетке событий
 При аварийном восстановлении основное внимание уделяется восстановлению после серьезной потери функциональности приложения. Из этого руководства вы узнаете, как настроить архитектуру обработки событий для восстановления, если служба Сетки событий станет неработоспособной в конкретном регионе.

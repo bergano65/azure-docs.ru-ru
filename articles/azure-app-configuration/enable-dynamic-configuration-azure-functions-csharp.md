@@ -15,12 +15,12 @@ ms.date: 11/17/2019
 ms.author: zhenlwa
 ms.custom: azure-functions
 ms.tgt_pltfrm: Azure Functions
-ms.openlocfilehash: ba70d5f186c1424b2019716ab7a87aeae85f8913
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 0cd86aa647655f92f4ae1b5de50f506e9aad0f4e
+ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74187298"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84558143"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-an-azure-functions-app"></a>Руководство по использованию динамической конфигурации в приложении Функций Azure
 
@@ -67,7 +67,7 @@ ms.locfileid: "74187298"
     }
     ```
 
-3. Обновите метод `Run` и оповещение об обновлениях конфигурации, используя метод `Refresh` в начале вызова функций. Это не будет работать, если время истечения срока действия кэша не достигнуто. Удалите оператор `await`, если вы предпочитаете, чтобы конфигурация обновлялась без блокировки.
+3. Обновите метод `Run` и оповещение об обновлениях конфигурации, используя метод `TryRefreshAsync` в начале вызова функций. Это не будет работать, если время истечения срока действия кэша не достигнуто. Удалите оператор `await`, если вы предпочитаете, чтобы конфигурация обновлялась без блокировки.
 
     ```csharp
     public static async Task<IActionResult> Run(
@@ -75,7 +75,7 @@ ms.locfileid: "74187298"
     {
         log.LogInformation("C# HTTP trigger function processed a request.");
 
-        await ConfigurationRefresher.Refresh();
+        await ConfigurationRefresher.TryRefreshAsync(); 
 
         string keyName = "TestApp:Settings:Message";
         string message = Configuration[keyName];
