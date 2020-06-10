@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: aapowell
-ms.openlocfilehash: bd9eaad0c141eda815da159e3c13d6c51f5e6200
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: cc1bf52190cb47bc4ffd6efe159ed88cac560e02
+ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83593602"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84298008"
 ---
 # <a name="tutorial-publish-a-vuepress-site-to-azure-static-web-apps-preview"></a>Руководство по Публикация сайта VuePress в предварительной версии службы "Статические веб-приложения Azure"
 
@@ -120,7 +120,7 @@ ms.locfileid: "83593602"
 
 1. Для параметра _Группа ресурсов_ выберите **Создать**. В разделе _Новое имя группы ресурсов_ введите **vuepress-static-app** и нажмите кнопку **ОК**.
 
-1. Затем в поле **Имя** укажите глобально уникальное имя для приложения. Допустимые символы: `a-z`, `A-Z`, `0-9` и `-`. Это значение используется в качестве префикса URL-адреса для статического приложения в формате `https://<APP_NAME>.azurestaticapps.net`.
+1. В поле **Имя** введите имя приложения. Допустимые символы: `a-z`, `A-Z`, `0-9` и `-`.
 
 1. В поле _Регион_выберите ближайший доступный регион.
 

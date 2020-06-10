@@ -10,18 +10,19 @@ ms.subservice: bing-visual-search
 ms.topic: conceptual
 ms.date: 4/26/2019
 ms.author: scottwhi
-ms.openlocfilehash: 251197c456ece4fe2dbbe264219d52f3502b7492
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: tracking-python
+ms.openlocfilehash: ac704ff7213b08072debf9d56da10a74e8315c68
+ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67341724"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84607042"
 ---
 # <a name="use-an-insights-token-to-get-insights-for-an-image"></a>Использование токена Insights для получения ценной информации об изображении
 
-API Bing для наглядного поиска возвращает сведения об изображении, которое вы предоставляете. Изображение можно предоставить с помощью URL-адреса изображения, токена аналитики или через отправку изображения. Сведения об этих параметрах см. в разделе [что такое API визуального поиска Bing?](overview.md). В этой статье демонстрируется использование токена аналитики. Примеры, демонстрирующие, как отправить изображение для получения аналитических сведений, см. в кратком руководстве ([C#](quickstarts/csharp.md) | [Java](quickstarts/java.md) | [node. js](quickstarts/nodejs.md) | [Python](quickstarts/python.md)).
+API Bing для наглядного поиска возвращает сведения об изображении, которое вы предоставляете. Изображение можно предоставить с помощью URL-адреса изображения, токена аналитики или через отправку изображения. Сведения об этих параметрах см. в разделе [что такое API визуального поиска Bing?](overview.md). В этой статье демонстрируется использование токена аналитики. Примеры, демонстрирующие, как отправить изображение для получения аналитических сведений, см. в кратком руководстве ([C#](quickstarts/csharp.md)  |  [Java](quickstarts/java.md)  |  [node. js](quickstarts/nodejs.md)  |  [Python](quickstarts/python.md)).
 
-Если вы отправляете Визуальный поиск Bing маркер изображения или URL-адрес, в следующем примере отображаются данные формы, которые необходимо включить в текст записи. Данные формы должны включать `Content-Disposition` заголовок, и его `name` параметр должен иметь значение "кновледжерекуест". Дополнительные сведения об `imageInfo` объекте см. в запросе:
+Если вы отправляете Визуальный поиск Bing маркер изображения или URL-адрес, в следующем примере отображаются данные формы, которые необходимо включить в текст записи. Данные формы должны включать `Content-Disposition` заголовок, и его параметр должен иметь значение `name` "кновледжерекуест". Дополнительные сведения об `imageInfo` объекте см. в запросе:
 
 ```json
 {
@@ -58,7 +59,7 @@ Content-Disposition: form-data; name="knowledgeRequest"
 --boundary_1234-abcd--
 ```
 
-Примеры использования токена Insights см. в разделе [C#](#use-with-c) | [Java](#use-with-java) | [node. js](#use-with-nodejs) | [Python](#use-with-python).
+Примеры использования токена Insights см. в разделе [C#](#use-with-c)  |  [Java](#use-with-java)  |  [node. js](#use-with-nodejs)  |  [Python](#use-with-python).
 
 ## <a name="use-with-c"></a>Использование с C #
 

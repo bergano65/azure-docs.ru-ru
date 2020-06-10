@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/27/2020
 ms.author: trbye
-ms.openlocfilehash: 2d4ce6f274efbd4d8afe2ac48856b0fc312f0a09
-ms.sourcegitcommit: 223cea58a527270fe60f5e2235f4146aea27af32
+ms.openlocfilehash: cc19844c6407a83233c70048e9eb258a742036fb
+ms.sourcegitcommit: ce44069e729fce0cf67c8f3c0c932342c350d890
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84261789"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84635175"
 ---
 # <a name="what-is-the-azure-speaker-recognition-service"></a>Что такое служба Распознавание говорящего Azure?
 
@@ -27,7 +27,7 @@ ms.locfileid: "84261789"
 
 ### <a name="how-does-speaker-verification-work"></a>Как работает Проверка говорящего?
 
-![Как работает проверка динамика](media/speaker-recognition/speaker-rec.png)
+:::image type="content" source="media/speaker-recognition/speaker-rec.png" alt-text="Блок-схема Проверка говорящего.":::
 
 Проверка докладчика может быть как зависимой от текста, так и независимой от текста. Проверка, **зависимая от текста** , означает, что докладчики должны выбрать ту же парольную фразу, которая будет использоваться на этапах регистрации и проверки. **Независимая от текста** проверка означает, что динамики могут говорить на повседневном языке в фразах регистрации и проверки.
 
@@ -59,4 +59,5 @@ ms.locfileid: "84261789"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
+> * Выполните инструкции из [статьи основы](speaker-recognition-basics.md) распознавание говорящего для выполнения стандартных шаблонов проектирования, которые можно использовать в приложениях.
 > * См. [видеоруководство](https://azure.microsoft.com/resources/videos/speaker-recognition-text-independent-verification-developer-tutorial/) по проверке независимого от текста динамика.

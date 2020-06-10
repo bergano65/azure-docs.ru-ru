@@ -14,22 +14,25 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
-ms.openlocfilehash: ada3762b6daae86033903f72ad9865ca66904ead
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 6ffc1aa6e28bf17d0de3783e5e03b6a2df541e4a
+ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81418649"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84194645"
 ---
 # <a name="set-up-an-azure-ssis-ir-in-azure-data-factory-by-using-powershell"></a>Настройка Azure-SSIS IR в Фабрике данных Azure с помощью PowerShell
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-В этом руководстве показано, как настроить среду выполнения интеграции Integration Services (Azure-SSIS IR) в Фабрике данных Azure. Azure-SSIS IR поддерживает выполнение пакетов, развернутых в следующих расположениях:
-* каталог SSIS (база данных SSISDB), размещенный в экземпляре или управляемом экземпляре сервера Базы данных SQL Azure (модель развертывания проекта);
+В этом руководстве описано, как с помощью PowerShell подготовить среду выполнения интеграции Azure SQL Server Integration Services (Azure-SSIS IR) в Фабрике данных Azure. Azure-SSIS IR поддерживает выполнение пакетов, развернутых в следующих расположениях:
+
+* каталог SSIS (база данных SSISDB), размещенный в Базе данных SQL или Управляемом экземпляре SQL (модель развертывания проекта);
 * файловые системы, общие папки или общий ресурс службы "Файлы Azure" (модель развертывания пакета). 
 
-Настроив Azure-SSIS IR, можно использовать знакомые средства, такие как SQL Server Data Tools (SSDT) и SQL Server Management Studio (SSMS), для развертывания и запуска пакетов в Azure. Также можно использовать служебные программы командной строки, например `dtinstall`, `dtutil` и `dtexec`.  
+После подготовки Azure-SSIS IR вы можете использовать для развертывания и запуска пакетов в Azure любые привычные средства, например SQL Server Data Tools (SSDT), SQL Server Management Studio (SSMS) или средства командной строки `dtinstall`, `dtutil` и `dtexec`.
+
+См. дополнительные сведения о [среде выполнения интеграции Azure SSIS](concepts-integration-runtime.md#azure-ssis-integration-runtime).
 
 > [!NOTE]
 > В этой статье объясняется, как настроить Azure-SSIS IR с помощью Azure PowerShell. Инструкции по настройке Azure-SSIS IR с помощью портала Azure или Фабрики данных Azure см. в [этом руководстве](tutorial-create-azure-ssis-runtime-portal.md). 
@@ -46,16 +49,16 @@ ms.locfileid: "81418649"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. Основные сведения об Azure-SSIS IR см. в [этом разделе](concepts-integration-runtime.md#azure-ssis-integration-runtime).
+- **Подписка Azure**. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу. Основные сведения об Azure-SSIS IR см. в [этом разделе](concepts-integration-runtime.md#azure-ssis-integration-runtime).
 
-- Сервер Базы данных SQL Azure (необязательно). Если у вас еще нет сервера базы данных, создайте его на портале Azure перед началом работы. Фабрика данных Azure, в свою очередь, создаст SSISDB на этом сервере базы данных. Мы рекомендуем создать сервер базы данных в одном регионе Azure со средой интеграции. Эта конфигурация позволяет среде выполнения интеграции записывать журналы выполнения в SSISDB, не пересекая регионы Azure. 
-    - В зависимости от выбранного сервера базы данных SSISDB можно создать от вашего имени как отдельную базу данных, а также как часть эластичного пула или Управляемого экземпляра. Доступ к этой базе данных можно получить через общедоступную сеть или после присоединения к виртуальной сети. Инструкции по выбору типа сервера базы данных для размещения SSISDB см. в [сравнении отдельной Базы данных SQL, эластичного пула и управляемого экземпляра](../data-factory/create-azure-ssis-integration-runtime.md#comparison-of-a-sql-database-single-database-elastic-pool-and-managed-instance). 
+- **База данных SQL или Управляемый экземпляр SQL**. Если у вас их нет, создайте Базу данных SQL или Управляемый экземпляр SQL на портале Azure перед началом работы, а Фабрика данных Azure, в свою очередь, создаст в них SSISDB. Мы рекомендуем создавать Базу данных SQL или Управляемый экземпляр SQL в одном регионе Azure со средой выполнения интеграции. Эта конфигурация позволяет среде выполнения интеграции записывать журналы выполнения в SSISDB, не пересекая регионы Azure. 
+    - В зависимости от выбранного сервера базы данных SSISDB можно создать от вашего имени как отдельную базу данных, а также как часть эластичного пула в Базе данных SQL или Управляемом экземпляре SQL. Доступ к этой базе данных можно получить через общедоступную сеть или после присоединения к виртуальной сети. Инструкции по выбору типа сервера базы данных для размещения SSISDB см. в разделе [Сравнение Базы данных SQL и Управляемого экземпляра SQL](create-azure-ssis-integration-runtime.md#comparison-of-sql-database-and-sql-managed-instance).
     
-      Если сервер Базы данных SQL Azure используется с брандмауэром IP-адресов, с конечными точками служб для виртуальной сети или с управляемым экземпляром и частной конечной точкой для размещения SSISDB, или вам нужен доступ к локальным данным без настройки локальной среды выполнения интеграции, необходимо присоединить Azure-SSIS IR к виртуальной сети. См. сведения о [создании среды выполнения интеграции Azure SSIS в виртуальной сети](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime).
-    - Убедитесь, что для сервера базы данных включен параметр **Разрешить доступ к службам Azure**. Этот параметр не применяется, если сервер Базы данных SQL Azure используется с правилами брандмауэра для IP-адресов, с конечными точками служб для виртуальной сети или с управляемым экземпляром и частной конечной точкой для размещения базы данных SSISDB. Дополнительные сведения см. в разделе [Создание правила брандмауэра на уровне сервера с помощью портала Azure](../sql-database/sql-database-security-tutorial.md#create-firewall-rules). Сведения о включении этого параметра с помощью PowerShell см. в статье [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule).
-    - Добавьте IP-адрес клиентского компьютера или диапазон IP-адресов, который включает IP-адрес клиентского компьютера, в список IP-адресов клиента в параметрах брандмауэра для сервера базы данных. Дополнительные сведения см. в разделе [Правила брандмауэра уровня сервера Базы данных SQL Azure и уровня базы данных SQL Azure](../sql-database/sql-database-firewall-configure.md).
-    - К серверу базы данных можно подключиться с использованием проверки подлинности SQL и учетных данных администратора сервера или проверки подлинности Azure Active Directory (Azure AD) и управляемого удостоверения вашей фабрики данных. Для проверки подлинности Azure AD управляемое удостоверение фабрики данных нужно добавить в группу Azure AD, которая обладает разрешениями на доступ к серверу базы данных. См.статью о [создании Azure-SSIS IR с проверкой подлинности Azure AD](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime).
-    - Убедитесь, что на сервере базы данных еще нет SSISDB. При настройке Azure-SSIS IR использование существующей базы данных SSISDB не поддерживается.
+      Если наряду с сервером Базы данных SQL используется брандмауэр IP-адресов, конечные точки служб для виртуальной сети или Управляемый экземпляр SQL с частной конечной точкой для размещения SSISDB или если вам нужен доступ к локальным данным без настройки локальной среды выполнения интеграции, присоедините Azure-SSIS IR к виртуальной сети. См. сведения о [создании среды выполнения интеграции Azure SSIS в виртуальной сети](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime).
+    - Убедитесь, что для Базы данных SQL включен параметр **Разрешить доступ к службам Azure**. Этот параметр не применяется, если наряду с Базой данных SQL используются правила брандмауэра для IP-адресов, конечные точки служб для виртуальной сети или Управляемый экземпляр SQL с частной конечной точкой для размещения базы данных SSISDB. Дополнительные сведения см. в разделе [Создание правила брандмауэра на уровне сервера с помощью портала Azure](../azure-sql/database/secure-database-tutorial.md#create-firewall-rules). Сведения о включении этого параметра с помощью PowerShell см. в статье [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule).
+    - Добавьте IP-адрес клиентского компьютера или содержащий его диапазон IP-адресов в список IP-адресов клиента в параметрах брандмауэра для Базы данных SQL. Дополнительные сведения см. в статье [Правила брандмауэра на уровнях сервера и базы данных](../azure-sql/database/firewall-configure.md).
+    - Для подключения к Базе данных SQL или Управляемому экземпляру SQL можно пройти аутентификацию SQL, указав учетные данные администратора сервера, либо использовать систему проверки подлинности Azure Active Directory (Azure AD) и управляемое удостоверение вашей фабрики данных. Для проверки подлинности Azure AD управляемое удостоверение фабрики данных нужно добавить в группу Azure AD, которая обладает разрешениями на доступ к серверу базы данных. См.статью о [создании Azure-SSIS IR с проверкой подлинности Azure AD](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime).
+    - Подтвердите, что База данных SQL или Управляемый экземпляр SQL еще не имеют SSISDB. При настройке Azure-SSIS IR использование существующей базы данных SSISDB не поддерживается.
 
 - Установите Azure PowerShell. Если вы хотите настроить Azure-SSIS IR с помощью скрипта PowerShell, следуйте инструкциям из статьи [Установка модуля Azure PowerShell](/powershell/azure/install-Az-ps).
 
@@ -92,7 +95,7 @@ $AzureSSISNodeNumber = 2
 # Azure-SSIS IR edition/license info: Standard or Enterprise 
 $AzureSSISEdition = "Standard" # Standard by default, although Enterprise lets you use advanced/premium features on your Azure-SSIS IR
 # Azure-SSIS IR hybrid usage info: LicenseIncluded or BasePrice
-$AzureSSISLicenseType = "LicenseIncluded" # LicenseIncluded by default, while BasePrice lets you bring your own on-premises SQL Server license with Software Assurance to earn cost savings from Azure Hybrid Benefit (AHB) option
+$AzureSSISLicenseType = "LicenseIncluded" # LicenseIncluded by default, while BasePrice lets you bring your existing SQL Server license with Software Assurance to earn cost savings from Azure Hybrid Benefit (AHB) option
 # For a Standard_D1_v2 node, up to 4 parallel executions per node are supported, but for other nodes, up to (2 x number of cores) are currently supported
 $AzureSSISMaxParallelExecutionsPerNode = 8
 # Custom setup info: Standard/express custom setups
@@ -100,11 +103,11 @@ $SetupScriptContainerSasUri = "" # OPTIONAL to provide a SAS URI of blob contain
 $ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO|KingswaySoft.IntegrationToolkit|KingswaySoft.ProductivityPack|Theobald.XtractIS or leave it empty]" # OPTIONAL to configure an express custom setup without script
 
 ### SSISDB info
-$SSISDBServerEndpoint = "[your Azure SQL Database server name.database.windows.net or managed instance name.public.DNS prefix.database.windows.net,3342 or leave it empty if you're not using SSISDB]" # WARNING: If you use SSISDB, please ensure that there is no existing SSISDB on your database server, so we can prepare and manage one on your behalf    
+$SSISDBServerEndpoint = "[your server name.database.windows.net or managed instance name.public.DNS prefix.database.windows.net,3342 or leave it empty if you're not using SSISDB]" # WARNING: If you use SSISDB, please ensure that there is no existing SSISDB on your database server, so we can prepare and manage one on your behalf    
 $SSISDBServerAdminUserName = "[your server admin username for SQL authentication]"
 $SSISDBServerAdminPassword = "[your server admin password for SQL authentication]"
 # For the basic pricing tier, specify "Basic", not "B" - For standard/premium/elastic pool tiers, specify "S0", "S1", "S2", "S3", etc., see https://docs.microsoft.com/azure/sql-database/sql-database-resource-limits-database-server
-$SSISDBPricingTier = "[Basic|S0|S1|S2|S3|S4|S6|S7|S9|S12|P1|P2|P4|P6|P11|P15|…|ELASTIC_POOL(name = <elastic_pool_name>) for Azure SQL Database server or leave it empty for managed instance]"
+$SSISDBPricingTier = "[Basic|S0|S1|S2|S3|S4|S6|S7|S9|S12|P1|P2|P4|P6|P11|P15|…|ELASTIC_POOL(name = <elastic_pool_name>) for SQL Database or leave it empty for SQL Managed Instance]"
 
 ### Self-hosted integration runtime info - This can be configured as a proxy for on-premises data access 
 $DataProxyIntegrationRuntimeName = "" # OPTIONAL to configure a proxy for on-premises data access 
@@ -123,7 +126,7 @@ Select-AzSubscription -SubscriptionName $SubscriptionName
 
 ## <a name="validate-the-connection-to-your-database-server"></a>Проверка подключения к серверу базы данных
 
-Для проверки сервера Базы данных SQL Azure добавьте следующий скрипт: 
+Чтобы проверить подключение, добавьте следующий скрипт. 
 
 ```powershell
 # Validate only if you're using SSISDB
@@ -137,7 +140,7 @@ if(![string]::IsNullOrEmpty($SSISDBServerEndpoint))
     }
     Catch [System.Data.SqlClient.SqlException]
     {
-        Write-Warning "Cannot connect to your Azure SQL Database server, exception: $_";
+        Write-Warning "Cannot connect, exception: $_";
         Write-Warning "Please make sure the server you specified has already been created. Do you want to proceed? [Y/N]"
         $yn = Read-Host
         if(!($yn -ieq "Y"))
@@ -357,7 +360,7 @@ $AzureSSISNodeNumber = 2
 # Azure-SSIS IR edition/license info: Standard or Enterprise 
 $AzureSSISEdition = "Standard" # Standard by default, while Enterprise lets you use advanced/premium features on your Azure-SSIS IR
 # Azure-SSIS IR hybrid usage info: LicenseIncluded or BasePrice
-$AzureSSISLicenseType = "LicenseIncluded" # LicenseIncluded by default, while BasePrice lets you bring your own on-premises SQL Server license with Software Assurance to earn cost savings from Azure Hybrid Benefit (AHB) option
+$AzureSSISLicenseType = "LicenseIncluded" # LicenseIncluded by default, while BasePrice lets you bring your existing SQL Server license with Software Assurance to earn cost savings from Azure Hybrid Benefit (AHB) option
 # For a Standard_D1_v2 node, up to 4 parallel executions per node are supported, but for other nodes, up to (2 x the number of cores) are currently supported
 $AzureSSISMaxParallelExecutionsPerNode = 8
 # Custom setup info: Standard/express custom setups
@@ -365,11 +368,11 @@ $SetupScriptContainerSasUri = "" # OPTIONAL to provide a SAS URI of blob contain
 $ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO|KingswaySoft.IntegrationToolkit|KingswaySoft.ProductivityPack|Theobald.XtractIS or leave it empty]" # OPTIONAL to configure an express custom setup without script
 
 ### SSISDB info
-$SSISDBServerEndpoint = "[your Azure SQL Database server name.database.windows.net or managed instance name.public.DNS prefix.database.windows.net,3342 or leave it empty if you're not using SSISDB]" # WARNING: If you want to use SSISDB, ensure that there is no existing SSISDB on your database server, so we can prepare and manage one on your behalf    
+$SSISDBServerEndpoint = "[your server name.database.windows.net or managed instance name.public.DNS prefix.database.windows.net,3342 or leave it empty if you're not using SSISDB]" # WARNING: If you want to use SSISDB, ensure that there is no existing SSISDB on your database server, so we can prepare and manage one on your behalf    
 $SSISDBServerAdminUserName = "[your server admin username for SQL authentication]"
 $SSISDBServerAdminPassword = "[your server admin password for SQL authentication]"
 # For the basic pricing tier, specify "Basic", not "B" - For standard/premium/elastic pool tiers, specify "S0", "S1", "S2", "S3", etc., see https://docs.microsoft.com/azure/sql-database/sql-database-resource-limits-database-server
-$SSISDBPricingTier = "[Basic|S0|S1|S2|S3|S4|S6|S7|S9|S12|P1|P2|P4|P6|P11|P15|…|ELASTIC_POOL(name = <elastic_pool_name>) for Azure SQL Database server or leave it empty for managed instance]"
+$SSISDBPricingTier = "[Basic|S0|S1|S2|S3|S4|S6|S7|S9|S12|P1|P2|P4|P6|P11|P15|…|ELASTIC_POOL(name = <elastic_pool_name>) for SQL Database or leave it empty for SQL Managed Instance]"
 
 ### Self-hosted integration runtime info - This can be configured as a proxy for on-premises data access 
 $DataProxyIntegrationRuntimeName = "" # OPTIONAL to configure a proxy for on-premises data access 
@@ -392,7 +395,7 @@ if(![string]::IsNullOrEmpty($SSISDBServerEndpoint))
     }
     Catch [System.Data.SqlClient.SqlException]
     {
-        Write-Warning "Cannot connect to your Azure SQL Database server, exception: $_";
+        Write-Warning "Cannot connect, exception: $_";
         Write-Warning "Please make sure the server you specified has already been created. Do you want to proceed? [Y/N]"
         $yn = Read-Host
         if(!($yn -ieq "Y"))
@@ -537,7 +540,7 @@ write-host("If any cmdlet is unsuccessful, please consider using -Debug option f
 
 ## <a name="deploy-ssis-packages"></a>Развертывание пакетов служб SSIS.
 
-Если вы используете SSISDB, вы можете развернуть пакеты и запустить их в Azure-SSIS IR с помощью средств SQL Server Data Tools (SSDT) или SQL Server Management Studio (SSMS), которые подключаются к серверу базы данных через конечную точку этого сервера. Форматы конечной точки сервера для экземпляра сервера Базы данных SQL Azure или управляемого экземпляра с общедоступной конечной точкой: *<server name>.database.windows.net* и *<server name>.public.<dns prefix>.database.windows.net,3342* соответственно. 
+Если вы используете SSISDB, вы можете развернуть пакеты и запустить их в Azure-SSIS IR с помощью средств SQL Server Data Tools (SSDT) или SQL Server Management Studio (SSMS), которые подключаются к серверу базы данных через конечную точку этого сервера. Форматы конечной точки для Базы данных SQL или Управляемого экземпляра SQL с общедоступной конечной точкой: *<server name>.database.windows.net* и *<server name>.public.<dns prefix>.database.windows.net,3342*, соответственно. 
 
 Если вы не используете SSISDB, вы можете развернуть пакеты в файловых системах, общих папках или в общем ресурсе службы "Файлы Azure" и запускать их из Azure-SSIS IR с помощью программ командной строки `dtinstall`/`dtutil`/`dtexec`. Дополнительные сведения см. в разделе [Развертывание пакетов на сервере служб Integration Services](/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages#deploy-packages-to-integration-services-server). 
 
