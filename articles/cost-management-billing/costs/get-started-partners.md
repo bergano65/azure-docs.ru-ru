@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: aparnag
 ms.custom: secdec18
-ms.openlocfilehash: d1425407b9d451a8c35e736c38b8fac059a7c9d8
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8dea0da44ebfb35165daa7096296dada55e78e99
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79204891"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83997134"
 ---
 # <a name="get-started-with-azure-cost-management-for-partners"></a>Начало работы со службой "Управление затратами Azure" для партнеров
 
@@ -246,7 +246,7 @@ ms.locfileid: "79204891"
 
 Если для свойства **PartnerEarnedCreditApplied** установлено значение _False_, то связанная стоимость не соответствует необходимым требованиям для получения кредита. Или купленная служба не имеет прав на партнерские баллы.
 
-Данные об использовании службы, как правило, отображаются в службе "Управление затратами" в течение 8–24 часов. Дополнительные сведения см. [Usage data update frequency varies](understand-cost-mgt-data.md#usage-data-update-frequency-varies) (Частота обновления данных об использовании варьируется). Кредиты PEC появляются в течение 48 часов с момента доступа в Управление затратами Azure.
+Данные об использовании службы, как правило, отображаются в службе "Управление затратами" в течение 8–24 часов. Дополнительные сведения см. в статье [Обновление и сохранение данных о затратах и потреблении](understand-cost-mgt-data.md#cost-and-usage-data-updates-and-retention). Кредиты PEC появляются в течение 48 часов с момента доступа в Управление затратами Azure.
 
 
 Группировать и фильтровать можно также используя свойство **PartnerEarnedCreditApplied** с параметрами **Группировать по**. Используйте параметры для изучения затрат, которые имеют и не имеют PEC.

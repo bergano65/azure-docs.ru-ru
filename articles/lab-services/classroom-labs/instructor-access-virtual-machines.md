@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/15/2020
 ms.author: spelluru
-ms.openlocfilehash: 449ff8aafd6dec1e9c0ff16dc407155949fd1313
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 4b4e6bf7b69f1b4c7664a104a0af70d9e486f08a
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83586173"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83699963"
 ---
 # <a name="access-virtual-machines-as-a-student-from-the-educator-view"></a>Доступ к виртуальным машинам в качестве учащегося из представления преподавателя
 В этой статье показано, как преподаватели могут получить доступ к своим виртуальным машинам для классов, которые они посещают в качестве учащихся. 
@@ -36,5 +36,6 @@ ms.locfileid: "83586173"
 См. следующие статьи:
 
 - [Подключение к виртуальной машине](how-to-use-classroom-lab.md#connect-to-the-vm)
-- [Подключение к виртуальной машине с помощью RDP на компьютере Mac](connect-virtual-machine-mac-rdp.md)
+- [Подключение к виртуальной машине с помощью RDP на компьютере Mac](connect-virtual-machine-mac-remote-desktop.md)
+- [Подключение к виртуальной машине с помощью RDP на Chromebook](connect-virtual-machine-chromebook-remote-desktop.md)
 - [Использование удаленного рабочего стола для виртуальных машин Linux](how-to-use-remote-desktop-linux-student.md)

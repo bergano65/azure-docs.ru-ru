@@ -12,21 +12,21 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: quickstart
 ms.date: 03/13/2020
-ms.openlocfilehash: dd3e77610749eb5d146b0c0b7cf9d307fba0dd83
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: e63f073c4f7166cd205b85ef06589f6056b2a70f
+ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79370242"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84195690"
 ---
 # <a name="quickstart-create-a-hybrid-mode-instance-with-azure-portal--azure-database-migration-service"></a>Краткое руководство. Создание экземпляра в гибридном режиме с помощью портала Azure и Azure Database Migration Service
 
-Гибридный режим Azure Database Migration Service позволяет управлять миграцией баз данных с помощью рабочей роли миграции, размещенной локально, и экземпляра Azure Database Migration Service, работающего в облаке. Гибридный режим особенно удобен для сценариев, в которых подключение типа "сеть — сеть" между локальной сетью и Azure отсутствует или его пропускная способность ограничена.
+Гибридный режим Azure Database Migration Service позволяет управлять миграцией баз данных с помощью рабочей роли миграции, размещенной локально, и экземпляра Azure Database Migration Service, работающего в облаке. Гибридный режим особенно удобен для сценариев, в которых подключение типа "сеть — сеть" между локальной сетью и Azure отсутствует или его пропускная способность ограничена.
 
 >[!NOTE]
 >В настоящее время Azure Database Migration Service, выполняемый в гибридном режиме, поддерживает миграцию SQL Server в:
 >
->- Управляемый экземпляр базы данных SQL Azure с почти нулевым временем простоя (в сети).
+>- Управляемый экземпляр SQL Azure с почти нулевым временем простоя (в сети).
 >- Единую базу данных SQL Azure с некоторым временем простоя (вне сети).
 >- MongoDb в Azure CosmosDB с почти нулевым временем простоя (в сети).
 >- MongoDb в Azure CosmosDB с некоторым временем простоя (вне сети).
@@ -39,7 +39,7 @@ ms.locfileid: "79370242"
 > [!IMPORTANT]
 > Для гибридного установщика Azure Database Migration Service требуется .NET 4.7.2 или более поздней версии. Чтобы найти последние версии .NET, перейдите на страницу скачивания [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework).
 
-Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись, прежде чем начинать работу.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
@@ -75,7 +75,7 @@ ms.locfileid: "79370242"
 
          ![Создание службы миграции: основы](media/quickstart-create-data-migration-service-hybrid-portal/dms-create-service-basics.png)
 
-4. Выберите **Review + create** (Просмотреть и создать).
+4. Выберите **Просмотреть и создать**.
 
 5. На вкладке **Просмотр и создание** просмотрите условия, проверьте другие предоставленные сведения, а затем выберите **Создать**.
 
@@ -191,5 +191,5 @@ ms.locfileid: "79370242"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Перенос SQL Server в управляемый экземпляр Базы данных SQL Azure по сети](tutorial-sql-server-managed-instance-online.md)
-> [Перенос SQL Server в отдельную базу данных или базу данных в пуле в Базе данных SQL Azure в автономном режиме](tutorial-sql-server-to-azure-sql.md)
+> [Перенос SQL Server в Управляемый экземпляр SQL Azure по сети](tutorial-sql-server-managed-instance-online.md)
+> [Перенос SQL Server в Базу данных SQL Azure в автономном режиме](tutorial-sql-server-to-azure-sql.md)

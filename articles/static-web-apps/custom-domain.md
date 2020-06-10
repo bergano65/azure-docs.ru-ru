@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: buhollan
-ms.openlocfilehash: 10d3e3674aef901ad35dfb6d0b9fd13715aace55
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 8425c2c1f653d874d24053a12d511c64a3b9ee9d
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/19/2020
-ms.locfileid: "83594943"
+ms.locfileid: "83655238"
 ---
 # <a name="setup-a-custom-domain-in-azure-static-web-apps-preview"></a>Настройка личного домена в предварительной версии Статических веб-приложений Azure
 
@@ -92,7 +92,7 @@ ms.locfileid: "83594943"
 
 ## <a name="map-a-wildcard-domain"></a>Сопоставление домена с подстановочными знаками
 
-Иногда требуется, чтобы весь трафик, отправляемый в поддомен, направлялся в другой домен. Распространенным примером является сопоставление всего трафика поддомена с `www.example.com`. Таким образом, даже если кто-то вводит `ww.example.com` вместо `www.example.com`, запрос отправляется в `www.example.com`.
+Иногда требуется, чтобы весь трафик, отправляемый в поддомен, направлялся в другой домен. Распространенным примером является сопоставление всего трафика поддомена с `www.example.com`. Таким образом, даже если кто-то вводит `w.example.com` вместо `www.example.com`, запрос отправляется в `www.example.com`.
 
 ### <a name="configure-dns-provider"></a>Настройка поставщика DNS
 

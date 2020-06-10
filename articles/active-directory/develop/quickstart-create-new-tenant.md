@@ -12,12 +12,12 @@ ms.date: 03/12/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: 0e2247e94b20846f19c2ed26c96a5dc53972e770
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: a45160db09b3f6bf68bda3f25e40a29a1154099d
+ms.sourcegitcommit: 69156ae3c1e22cc570dda7f7234145c8226cc162
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80883819"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84308495"
 ---
 # <a name="quickstart-set-up-a-tenant"></a>Краткое руководство. Настройка клиента
 
@@ -59,7 +59,7 @@ ms.locfileid: "80883819"
 Если у вас нет клиента Azure AD или вы хотите создать клиент для разработки, см. [это краткое руководство](https://portal.azure.com/#create/Microsoft.AzureActiveDirectory) или используйте [процедуру создания каталога](../fundamentals/active-directory-access-create-new-tenant.md). Вы должны будете предоставить следующие сведения, чтобы создать клиент:
 
 - **Название организации**
-- **Исходный домен** — он будет частью *.onmicrosoft.com. Вы сможете настроить домен позже.
+- **Исходный домен** — он будет частью *.onmicrosoft.com. Вы сможете настроить домен позже.
 - **Страна или регион**
 
 > [!NOTE]
@@ -73,4 +73,4 @@ ms.locfileid: "80883819"
 
 * [Зарегистрируйте приложение](quickstart-register-app.md) и выполните интеграцию с платформой идентификации Майкрософт. 
 * Ознакомьтесь с [основами аутентификации](authentication-scenarios.md).
-* См. сведения о том, как [подписки Azure связаны с арендатором Azure AD](../fundamentals/active-directory-how-subscriptions-associated-directory.md).
+* Для получения сведений о том, как подписки Azure связаны с клиентом Azure AD см. статью [Привязка или добавление подписки Azure к клиенту Azure Active Directory](../fundamentals/active-directory-how-subscriptions-associated-directory.md).

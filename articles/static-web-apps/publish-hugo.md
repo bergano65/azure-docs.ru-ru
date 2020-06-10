@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: aapowell
-ms.openlocfilehash: 6debf422d0c16a6a2bfe180e6febb4973846e0f0
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: 85376e1861108089cd7918b3b261f05433b59217
+ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83870700"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84298042"
 ---
 # <a name="tutorial-publish-a-hugo-site-to-azure-static-web-apps-preview"></a>Руководство по Публикация сайта Hugo в предварительной версии службы "Статические веб-приложения Azure"
 
@@ -109,7 +109,7 @@ ms.locfileid: "83870700"
 
 1. Для параметра _Группа ресурсов_ выберите **Создать**. В разделе _Новое имя группы ресурсов_ введите **hugo-static-app** и нажмите кнопку **ОК**.
 
-1. Затем в поле **Имя** укажите глобально уникальное имя для приложения. Допустимые символы: `a-z`, `A-Z`, `0-9` и `-`. Это значение используется в качестве префикса URL-адреса для статического приложения в формате `https://<APP_NAME>....`.
+1. В поле **Имя** введите имя приложения. Допустимые символы: `a-z`, `A-Z`, `0-9` и `-`.
 
 1. В поле _Регион_выберите ближайший доступный регион.
 
@@ -153,7 +153,7 @@ ms.locfileid: "83870700"
 
 1. Откройте приложение Hugo в текстовом редакторе и откройте файл _.github/workflows/azure-pages-<WORKFLOW_NAME>.yml_.
 
-1. чтобы создать приложение Hugo, замените строку `- uses: actions/checkout@v2` (строка 18) на указанную ниже.
+1. чтобы создать приложение Hugo, замените строку `- uses: actions/checkout@v2` (строка 18) на указанную ниже. Если требуется Hugo Extended, раскомментируйте `extended: true`.
 
    ```yml
    - uses: actions/checkout@v2
@@ -164,6 +164,7 @@ ms.locfileid: "83870700"
      uses: peaceiris/actions-hugo@v2.4.8
      with:
        hugo-version: "latest"
+       # extended: true
 
    - name: Build
      run: hugo
