@@ -11,12 +11,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 9334cd0fa54212eac937742215f9c2e704a8bd9c
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.openlocfilehash: 7ef31a11414fad1b9a3d06d00055c36c995adcce
+ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81688024"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84216318"
 ---
 # <a name="about-azure-key-vault"></a>Об Azure Key Vault
 
@@ -73,7 +73,7 @@ Azure Key Vault может быть защищено либо с помощью 
 
 Являясь защищенным хранилищем в Azure, Key Vault используется для упрощения таких сценариев:
 -  [Дисковое шифрование Azure](../../security/fundamentals/encryption-overview.md)
--  Функция [Always Encrypted]( https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine) в SQL Server и Базе данных SQL Azure.
+-  Функции [Always Encrypted]( https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine) и [прозрачное шифрование данных]( https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption?view=sql-server-ver15) в SQL Server и базе данных SQL Azure
 - [Служба приложений Azure]( https://docs.microsoft.com/azure/app-service/configure-ssl-certificate). 
 
 Key Vault можно интегрировать с учетными записями хранения, концентраторами событий и Log Analytics.

@@ -9,17 +9,17 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: e18fc765385e6d703e735a1ca15c539c32f36e93
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 8501f9d07ffa2d04915d4d1a351317cc145f9844
+ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82116253"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84118268"
 ---
 # <a name="overview-query-data-in-storage"></a>Общие сведения. Запрашивание данных в хранилище
 
 В этом разделе содержатся примеры запросов, которые можно использовать для работы с ресурсом SQL по запросу (предварительной версии) в Azure Synapse Analytics.
-В настоящее время поддерживаются следующие файлы: 
+Сейчас поддерживаются эти форматы файлов:  
 - CSV
 - Parquet
 - JSON
@@ -44,67 +44,13 @@ ms.locfileid: "82116253"
 
 ## <a name="first-time-setup"></a>Изначальная настройка
 
-При использовании приведенных далее примеров необходимо выполнить два действия:
-
-- создайте базу данных для представлений (если необходимо использовать представления);
-- создайте учетные данные, которые будут использоваться SQL по запросу для доступа к файлам в хранилище.
-
-### <a name="create-database"></a>Создание базы данных
-
-Для создания представлений понадобится база данных. Используйте эту базу данных в примерах запросов в этой документации.
+Для начала **создайте базу данных**, в которой будут выполняться запросы. Затем инициализируйте объекты, выполнив [скрипт настройки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. Этот сценарий установки создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются для считывания данных в этих примерах.
 
 > [!NOTE]
 > Базы данных используются только для просмотра метаданных, а не для реальных данных.  Запишите имя используемой базы данных, ведь оно потребуется позже.
 
 ```sql
 CREATE DATABASE mydbname;
-```
-
-### <a name="create-credentials"></a>Создание учетных данных
-
-Перед выполнением запросов следует создать учетные данные. Эти учетные данные будут использоваться службой SQL по запросу для доступа к файлам в хранилище.
-
-> [!NOTE]
-> Для успешного выполнения указаний в этом разделе необходимо использовать маркер SAS.
->
-> Чтобы приступить к использованию маркеров SAS, необходимо удалить UserIdentity, который описан в этой [статье](develop-storage-files-storage-access-control.md#disable-forcing-azure-ad-pass-through).
->
-> По умолчанию для SQL по запросу всегда используется сквозной доступ через Azure Active Directory.
-
-Дополнительные сведения об управлении доступом к хранилищу см. по этой [ссылке](develop-storage-files-storage-access-control.md).
-
-Чтобы создать учетные данные для контейнеров CSV, JSON и Parquet, выполните следующий код:
-
-```sql
--- create credentials for CSV container in our demo storage account
-IF EXISTS (SELECT * FROM sys.credentials WHERE name = 'https://sqlondemandstorage.blob.core.windows.net/csv')
-DROP CREDENTIAL [https://sqlondemandstorage.blob.core.windows.net/csv];
-GO
-
-CREATE CREDENTIAL [https://sqlondemandstorage.blob.core.windows.net/csv]
-WITH IDENTITY='SHARED ACCESS SIGNATURE',  
-SECRET = 'sv=2018-03-28&ss=bf&srt=sco&sp=rl&st=2019-10-14T12%3A10%3A25Z&se=2061-12-31T12%3A10%3A00Z&sig=KlSU2ullCscyTS0An0nozEpo4tO5JAgGBvw%2FJX2lguw%3D';
-GO
-
--- create credentials for JSON container in our demo storage account
-IF EXISTS (SELECT * FROM sys.credentials WHERE name = 'https://sqlondemandstorage.blob.core.windows.net/json')
-DROP CREDENTIAL [https://sqlondemandstorage.blob.core.windows.net/json];
-GO
-
-CREATE CREDENTIAL [https://sqlondemandstorage.blob.core.windows.net/json]
-WITH IDENTITY='SHARED ACCESS SIGNATURE',  
-SECRET = 'sv=2018-03-28&ss=bf&srt=sco&sp=rl&st=2019-10-14T12%3A10%3A25Z&se=2061-12-31T12%3A10%3A00Z&sig=KlSU2ullCscyTS0An0nozEpo4tO5JAgGBvw%2FJX2lguw%3D';
-GO
-
--- create credentials for PARQUET container in our demo storage account
-IF EXISTS (SELECT * FROM sys.credentials WHERE name = 'https://sqlondemandstorage.blob.core.windows.net/parquet')
-DROP CREDENTIAL [https://sqlondemandstorage.blob.core.windows.net/parquet];
-GO
-
-CREATE CREDENTIAL [https://sqlondemandstorage.blob.core.windows.net/parquet]
-WITH IDENTITY='SHARED ACCESS SIGNATURE',  
-SECRET = 'sv=2018-03-28&ss=bf&srt=sco&sp=rl&st=2019-10-14T12%3A10%3A25Z&se=2061-12-31T12%3A10%3A00Z&sig=KlSU2ullCscyTS0An0nozEpo4tO5JAgGBvw%2FJX2lguw%3D';
-GO
 ```
 
 ## <a name="provided-demo-data"></a>Предоставление демонстрационных данных
@@ -132,24 +78,6 @@ GO
 | /json/                                                       | Родительская папка для данных в формате JSON.                        |
 | /json/books/                                                 | Файлы JSON с данными книг.                                   |
 
-## <a name="validation"></a>Проверка
-
-Выполните следующие три запроса и проверьте, правильно ли созданы учетные данные.
-
-> [!NOTE]
-> Все универсальные коды ресурсов (URI) в примерах запросов используют учетную запись хранения, расположенную в регионе Azure "Северная Европа". Убедитесь, что вы создали соответствующие учетные данные. Выполните приведенный ниже запрос и убедитесь, что в списке указана учетная запись хранения.
-
-```sql
-SELECT name
-FROM sys.credentials
-WHERE
-     name IN ( 'https://sqlondemandstorage.blob.core.windows.net/csv',
-     'https://sqlondemandstorage.blob.core.windows.net/parquet',
-     'https://sqlondemandstorage.blob.core.windows.net/json');
-```
-
-Если вы не можете найти соответствующие учетные данные, см. раздел [Изначальная установка](#first-time-setup).
-
 ### <a name="sample-query"></a>Пример запроса
 
 Последний шаг проверки — выполнение следующего запроса:
@@ -159,7 +87,8 @@ SELECT
     COUNT_BIG(*)
 FROM  
     OPENROWSET(
-        BULK 'https://sqlondemandstorage.blob.core.windows.net/parquet/taxi/year=2017/month=9/*.parquet',
+        BULK 'parquet/taxi/year=2017/month=9/*.parquet',
+        DATA_SOURCE = 'sqlondemanddemo',
         FORMAT='PARQUET'
     ) AS nyc;
 ```

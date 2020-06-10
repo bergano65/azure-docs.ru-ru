@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-dt-2019
 ms.date: 01/22/2018
-ms.openlocfilehash: f4de4c25cea251ea0db72bcb435ceb63eb308ff0
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: bb2679d0f681ae82bbe1a50671bd2ff70a239dfb
+ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81409230"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84194507"
 ---
 # <a name="incrementally-load-data-from-an-azure-sql-database-to-azure-blob-storage-using-powershell"></a>Пошаговая загрузка данных из Базы данных SQL Azure в хранилище BLOB-объектов Azure с помощью PowerShell
 
@@ -63,7 +63,7 @@ ms.locfileid: "81409230"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-* **База данных SQL Azure**. Используйте базу данных как исходное хранилище данных. Если у вас нет базы данных SQL, создайте ее, следуя указаниям в статье [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md).
+* **База данных SQL Azure**. Используйте базу данных как исходное хранилище данных. Если у вас нет базы данных SQL, создайте ее, следуя указаниям в статье [Создание базы данных SQL Azure на портале Azure](../azure-sql/database/single-database-create-quickstart.md).
 * **Хранилище Azure.** В этом руководстве в качестве приемника будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения, создайте ее, следуя действиям в разделе [Создание учетной записи хранения](../storage/common/storage-account-create.md). Создайте контейнер с именем adftutorial. 
 * **Azure PowerShell**. Следуйте инструкциям в статье [Установка и настройка Azure PowerShell](/powershell/azure/install-Az-ps).
 
@@ -732,7 +732,7 @@ END
 > * Запустили конвейер.
 > * Осуществили мониторинг выполнения конвейера.
 
-В этом руководстве с помощью конвейера мы скопировали данные из одной таблицы в базе данных SQL в хранилище BLOB-объектов. Перейдите к следующему руководству, чтобы узнать о копировании данных из нескольких таблиц в локальной базе данных SQL Server в базу данных SQL.
+В этом руководстве с помощью конвейера мы скопировали данные из одной таблицы в базе данных SQL в хранилище BLOB-объектов. Перейдите к следующему учебнику, чтобы узнать о копировании данных из нескольких таблиц в базе данных SQL Server в базу данных SQL.
 
 > [!div class="nextstepaction"]
 >[Добавочная загрузка данных из нескольких таблиц в SQL Server в базу данных SQL Azure](tutorial-incremental-copy-multiple-tables-powershell.md)
