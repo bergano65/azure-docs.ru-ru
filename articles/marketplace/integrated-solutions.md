@@ -1,52 +1,51 @@
 ---
-title: Интегрированные решения в Azure Marketplace
-description: Интегрированные решения в Azure Marketplace и AppSource
+title: Интегрированные решения — коммерческая платформа Майкрософт
+description: Узнайте о преимуществах, ресурсах и дальнейших действиях, с помощью которых вы можете предложить пользователям интегрированное решение на коммерческой платформе.
 author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: dsindona
-ms.openlocfilehash: 4c32fe80b681e6d82d40b0f5c94d5e9288f72cd6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: bf20473b407db1804a4275fdc6dd3d528de1f189
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81684399"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83657993"
 ---
-# <a name="integrated-solutions-in-microsoft-appsource-and-azure-marketplace"></a>Интегрированные решения в Microsoft AppSource и Azure Marketplace
+# <a name="integrated-solutions-in-the-commercial-marketplace"></a>Интегрированные решения на коммерческой платформе
+В интегрированном решении объединены лучшие технологии от партнеров Майкрософт, а также услуги консультирования, развертывания и поддержки от партнеров-экспертов.
 
-Интегрированное решение объединяет лучшие в себе технологии от партнеров Майкрософт, а также консультации, развертывание и поддержку, предоставляемые экспертами служб.
+Два или больше партнеров Майкрософт интегрируют свои технологии и службы, создавая на их основе комплексное, целостное и воспроизводимое решение, которое клиенты могут легко развернуть и использовать.  Ведущий партнер решения (как правило, это партнер по оказанию услуг) предлагает клиенту единый контакт для связи — контактное лицо, которое помогает в адаптации, консультирует и предоставляет поддержку в связи с данным решением.
 
-Два или несколько партнеров Майкрософт интегрируют свои технологии и службы для создания унифицированных, удобных и повторяемых возможностей развертывания, чтобы клиенты быстро могли работать.  Ведущий партнер в решении (обычно это партнер по службам) предоставляет единую точку контакта для клиента, обеспечивая соответствующие настройки, консультации и поддержку решения.
-
-В других сценариях партнеры совместно продают или объединяют свое решение совместно, в то время как интегрированное решение — это совместно созданное новое решение, объединяющее технологию и службы для всех партнеров.
+В рамках других сценариев партнеры вместе продают общий продукт, который представляет собой созданное совместными усилиями решение, интегрирующее в себе технологии и услуги этих партнеров.
 
 ## <a name="advantages"></a>Преимущества
 
-Преимущества интегрированного подхода:
+Преимущества интегрированного подхода
 
-* *Отраслевый опыт*: партнеры по обслуживанию предоставляют отраслевые решения и знания
-* *Время до значения*: интегрированный подход к развертыванию, позволяющий реализовать немедленные преимущества
-* *Лучшие решения*: Узнайте о простоте интегрированной функции приобретения и реализации
+* *Опыт отраслевых экспертов.* Партнеры по оказанию услуг предлагают решения и полезные знания с учетом потребностей своей отрасли.
+* *Сроки окупаемости.* Интегрированный подход к развертыванию позволяет сразу же получить ощутимые выгоды.
+* *Решения высшего класса.* Интегрированный подход к покупке и реализации в целом проще и удобнее.
 
-Дополнительные сведения см. в статье [Публикация интегрированного решения](https://docs.microsoft.com/azure/marketplace/integrated-solutions-for-publishers).
+Дополнительные сведения см. в статье [Публикация интегрированного решения](./integrated-solutions-for-publishers.md).
 
-## <a name="submit-a-nomination"></a>Подайте заявку.
+## <a name="submit-a-nomination"></a>Отправка заявки на утверждение
 
-Партнеры, желающие участвовать в программе, должны распознать других партнеров, с которыми они хотят работать. Они должны заполнить [форму встроенных решений предварительного утверждения](https://assetsprod.microsoft.com/mpn/integrated-solutions-partner-nomination.docx). Группа разработчиков интегрированных решений просматривает предварительного утверждения и выполняет следующие действия в течение 10 рабочих дней. Команда предоставляет утверждение и дальнейшие действия.
+Партнеры, желающие участвовать в этой программе, должны указать, с какими партнерами они желают сотрудничать. Для этого нужно заполнить [форму утверждения интегрированных решений](https://assetsprod.microsoft.com/mpn/integrated-solutions-partner-nomination.docx). Группа поддержки программы интегрированных решений в течение 10 рабочих дней изучает заявку на утверждение и информирует о принятом решении. Вы получите информацию о статусе утверждения и рекомендации по дальнейшим действиям.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы найти интегрированные решения и подключиться к этим партнерам, посетите их следующие списки:
+Чтобы ознакомиться с интегрированными решениями и связаться с партнерами, изучите перечисленные ниже категории.
 
-* [Клиент 360 на платформе Zero2Hero](https://azuremarketplace.microsoft.com/marketplace/consulting-services/bardess.customer-360-powered-by-zero2hero)
-* [Быстрая коммерция](https://azuremarketplace.microsoft.com/marketplace/consulting-services/publicis-sapient.rapid_commerce)
-* [Аналитика портфеля ссуд](https://azuremarketplace.microsoft.com/marketplace/consulting-services/rcg-us.rcg-enable-credit-analytics)
-* [Контрольный стек Cloud здравоохранения](https://azuremarketplace.microsoft.com/marketplace/consulting-services/xentit.azure-xentit-trendmicro-qualys-hcss-12months)
-* [Подсистема ускорения DevOps](https://azuremarketplace.microsoft.com/marketplace/consulting-services/sirrus7.sirrus7-devops-acceleration-engine?search=devops%20acceleration%20engine&page=1)
+* [Всесторонний подход к работе с клиентами от Zero2Hero](https://azuremarketplace.microsoft.com/marketplace/consulting-services/bardess.customer-360-powered-by-zero2hero)
+* [Быстрое развертывание коммерческих решений](https://azuremarketplace.microsoft.com/marketplace/consulting-services/publicis-sapient.rapid_commerce)
+* [Аналитика кредитных портфелей](https://azuremarketplace.microsoft.com/marketplace/consulting-services/rcg-us.rcg-enable-credit-analytics)
+* [Стек облачных технологий безопасности для здравоохранения](https://azuremarketplace.microsoft.com/marketplace/consulting-services/xentit.azure-xentit-trendmicro-qualys-hcss-12months)
+* [Механизм интенсификации процессов DevOps](https://azuremarketplace.microsoft.com/marketplace/consulting-services/sirrus7.sirrus7-devops-acceleration-engine?search=devops%20acceleration%20engine&page=1)
 * [Окончание поддержки Windows Server](https://azuremarketplace.microsoft.com/marketplace/consulting-services/new-signature.eos_appfactory)
-* [Быстрый запуск консолидации центра обработки данных](https://azuremarketplace.microsoft.com/marketplace/consulting-services/rivermeadowsoftwareinc.rapid-datacenter-consolidation-jumpstart?flightCodes=100discovermigrate)
-* [Девицетоне IoT для службы связанных полей](https://azuremarketplace.microsoft.com/marketplace/apps/marketplaceprodware.devicetone_iot_for_connected_field_service?tab=Overview)
-* [Одновременном: единое решение для управления маркетингом](https://appsource.microsoft.com/marketplace/consulting-services/barhead_solutions.unison_p2p?pub_source=email&pub_status=success)
-* [Интеллектуальные M&комплексная экспертиза](https://azuremarketplace.microsoft.com/marketplace/consulting-services/avanadeinc.intelligent_ma_due_diligence)
+* [Консолидация центров обработки данных: быстрый старт](https://azuremarketplace.microsoft.com/marketplace/consulting-services/rivermeadowsoftwareinc.rapid-datacenter-consolidation-jumpstart?flightCodes=100discovermigrate)
+* [DeviceTone: Интернета вещей в интегрированном выездном обслуживании](https://azuremarketplace.microsoft.com/marketplace/apps/marketplaceprodware.devicetone_iot_for_connected_field_service?tab=Overview)
+* [Unison: единое решение для управления маркетингом](https://appsource.microsoft.com/marketplace/consulting-services/barhead_solutions.unison_p2p?pub_source=email&pub_status=success)
+* [Интеллектуальная комплексная экспертиза для слияний и поглощений](https://azuremarketplace.microsoft.com/marketplace/consulting-services/avanadeinc.intelligent_ma_due_diligence)
