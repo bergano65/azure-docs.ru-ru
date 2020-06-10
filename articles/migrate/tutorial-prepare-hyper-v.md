@@ -4,12 +4,12 @@ description: Узнайте, как подготовить виртуальны�
 ms.topic: tutorial
 ms.date: 04/15/2020
 ms.custom: mvc
-ms.openlocfilehash: ea6290eae187ed4ead39f7307a84a54a23c19c29
-ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
+ms.openlocfilehash: 22fd5bc87494eb2fc162828363e7ca70afe1bbf0
+ms.sourcegitcommit: 58ff2addf1ffa32d529ee9661bbef8fbae3cddec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2020
-ms.locfileid: "81641636"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84322171"
 ---
 # <a name="prepare-for-assessment-and-migration-of-hyper-v-vms-to-azure"></a>Подготовка виртуальных машин Hyper-V к оценке и переносу в Azure
 
@@ -126,11 +126,10 @@ ms.locfileid: "81641636"
     ```
     Пример использования:
     ```
-    C:\>CertUtil -HashFile C:\Users\Administrators\Desktop\ MicrosoftAzureMigrate-Hyper-V.ps1
-    SHA256
+    C:\>CertUtil -HashFile C:\Users\Administrators\Desktop\ MicrosoftAzureMigrate-Hyper-V.ps1 SHA256
     ```
 
-4.    После проверки целостности скрипта запустите его на каждом узле Hyper-V с помощью следующей команды PowerShell:
+4. После проверки целостности скрипта запустите его на каждом узле Hyper-V с помощью следующей команды PowerShell:
     ```
     PS C:\Users\Administrators\Desktop> MicrosoftAzureMigrate-Hyper-V.ps1
     ```
