@@ -13,6 +13,7 @@
     - name: Создание частной конечной точки с помощью Azure CLI
       href: create-private-endpoint-cli.md
     - name: "Создание частной конечной точки\_— шаблон ARM"
+      displayName: Resource Manager
       href: create-private-endpoint-template.md
     - name: Создание службы "Приватный канал" с помощью портала
       href: create-private-link-service-portal.md
@@ -21,6 +22,7 @@
     - name: Создание службы "Приватный канал" с помощью Azure CLI
       href: create-private-link-service-cli.md
     - name: Создание экземпляра службы "Приватный канал" с помощью шаблона ARM
+      displayName: Resource Manager
       href: create-private-link-service-template.md
 - name: Основные понятия
   items:

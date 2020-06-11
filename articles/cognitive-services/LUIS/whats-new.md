@@ -3,18 +3,24 @@ title: Новые возможности службы "Распознавани�
 description: Эта статья регулярно обновляется последними сведениями об API Распознавания речи в Azure Cognitive Services.
 ms.topic: overview
 ms.date: 05/19/2020
-ms.openlocfilehash: b4d287c8d1ddbeeee63390fb397718de1234c93e
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
-ms.translationtype: HT
+ms.openlocfilehash: 45bfe4e703942a7fa38329bd0905833e904e0ab1
+ms.sourcegitcommit: f01c2142af7e90679f4c6b60d03ea16b4abf1b97
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83675956"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84678755"
 ---
 # <a name="whats-new-in-language-understanding"></a>Новые возможности службы "Распознавание речи"
 
 Узнайте о новых возможностях службы. Это могут быть заметки о выпуске, видео, записи блогов и другие типы информации. Создайте закладку для этой страницы, чтобы получать последние сведения об обновлениях службы.
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="june-2020"></a>июнь 2020 г.
+
+* [Предварительная версия 3,0. Разработка](luis-migration-authoring-entities.md) Tool
+    * Версия 3.2.0-Preview. 3 — [.NET — NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)
+    * Версия 4.0.0-Preview. 3- [JS-NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring)
 
 ### <a name="may-2020---build"></a>Май 2020 года — //Build
 

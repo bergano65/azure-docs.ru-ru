@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 09/24/2019
 ms.author: diberry
-ms.openlocfilehash: 96440bf0e9c26e6f222f3bc94c8fabb0bc8f488d
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 2c1b98a72af3442b596a9fdde66d254e3e5c2c19
+ms.sourcegitcommit: f01c2142af7e90679f4c6b60d03ea16b4abf1b97
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79220559"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84678619"
 ---
 # <a name="language-support-for-a-qna-maker-resource-and-knowledge-bases"></a>Поддержка языков для QnA Maker ресурсов и баз знаний
 
@@ -70,7 +70,7 @@ ms.locfileid: "79220559"
 |Португальский|
 |Панджаби|
 |Румынский|
-|Русский|
+|русском языке|
 |Сербский (кириллица)|
 |Сербский (латиница)|
 |Словацкий|
@@ -85,7 +85,7 @@ ms.locfileid: "79220559"
 |Урду|
 |Вьетнамский|
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Выбор языка](../how-to/language-knowledge-base.md)

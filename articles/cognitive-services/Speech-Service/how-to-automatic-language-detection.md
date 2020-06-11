@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: trbye
 zone_pivot_groups: programming-languages-set-nineteen
-ms.openlocfilehash: 311c85e254711a219ac93424b77f35c2662008b7
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: a9fac89f529cfefbb8a8d82135838bb96e2689db
+ms.sourcegitcommit: eeba08c8eaa1d724635dcf3a5e931993c848c633
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83658451"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84669823"
 ---
 # <a name="automatic-language-detection-for-speech-to-text"></a>Автоматическое определение языка для речи в текст
 
@@ -29,7 +29,7 @@ ms.locfileid: "83658451"
 
 ## <a name="automatic-language-detection-with-the-speech-sdk"></a>Автоматическое определение языка с помощью пакета SDK для распознавания речи
 
-Автоматическое определение языка в настоящее время имеет ограничение на два языка на стороне служб для каждого обнаружения. При создании объекта учитывайте это ограничение `AudoDetectSourceLanguageConfig` . В примерах ниже мы создадим `AutoDetectSourceLanguageConfig` , а затем используем его для создания `SpeechRecognizer` .
+Автоматическое определение языка в настоящее время имеет ограничение на четыре языка на стороне служб для каждого обнаружения. При создании объекта учитывайте это ограничение `AudoDetectSourceLanguageConfig` . В примерах ниже мы создадим `AutoDetectSourceLanguageConfig` , а затем используем его для создания `SpeechRecognizer` .
 
 > [!TIP]
 > Можно также указать пользовательскую модель, которая будет использоваться при выполнении преобразования речи в текст. Дополнительные сведения см. [в разделе Использование настраиваемой модели для автоматического определения языка](#use-a-custom-model-for-automatic-language-detection).
@@ -213,6 +213,6 @@ SPXAutoDetectSourceLanguageConfiguration* autoDetectSourceLanguageConfig = \
 
 ::: zone-end
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Справочная документация по пакету SDK для распознавания речи](speech-sdk.md)
