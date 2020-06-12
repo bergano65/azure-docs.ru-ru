@@ -54,6 +54,9 @@
         - name: Identity Governance
           tocHref: /azure/active-directory/governance/
           topicHref: /azure/active-directory/governance/
+        - name: Подготовка приложений
+          tocHref: /azure/active-directory/app-provisioning/
+          topicHref: /azure/active-directory/app-provisioning/
         - name: Управление приложениями
           tocHref: /azure/active-directory/manage-apps/
           topicHref: /azure/active-directory/manage-apps/
