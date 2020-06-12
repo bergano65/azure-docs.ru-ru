@@ -2,19 +2,19 @@
 title: Создание задания потоковой передачи T-SQL в SQL Azure для пограничных вычислений (предварительная версия)
 description: Сведения о создании заданий Stream Analytics в SQL Azure для пограничных вычислений (предварительная версия)
 keywords: ''
-services: sql-database-edge
-ms.service: sql-database-edge
+services: sql-edge
+ms.service: sql-edge
 ms.topic: conceptual
 author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 7db7f9548a3daa86a53dd37fbe088661e8b7b17e
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 323ec00667350917e6b16827f908ac1abeee77d6
+ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83685178"
+ms.lasthandoff: 05/31/2020
+ms.locfileid: "84233306"
 ---
 # <a name="create-stream-analytics-job-in-azure-sql-edge-preview"></a>Создание задания Stream Analytics в SQL Azure для пограничных вычислений (предварительная версия) 
 

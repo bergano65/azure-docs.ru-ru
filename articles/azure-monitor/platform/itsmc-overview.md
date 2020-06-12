@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
-ms.openlocfilehash: 50bab4c26046059b993c19a030a8f840ae336ef2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: b0ae621791fb989fbb1fdab6a045bc8e9707bc74
+ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79274545"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83846534"
 ---
 # <a name="connect-azure-to-itsm-tools-using-it-service-management-connector"></a>Подключение Azure к инструментам ITSM с помощью соединителя управления ИТ-услугами
 
@@ -33,7 +33,7 @@ ms.locfileid: "79274545"
 -  Создавать рабочие элементы в инструменте ITSM на основе оповещений Azure (например, оповещений о метриках, оповещений журнала действий и Log Analytics).
 -  При необходимости синхронизировать данные инцидентов и запросов на изменение из инструмента ITSM с рабочей областью Azure Log Analytics.
 
-Узнайте больше о [юридических условиях и политике конфиденциальности](https://go.microsoft.com/fwLink/?LinkID=522330&clcid=0x9).
+Дополнительные сведения о [юридических условиях и политике конфиденциальности](https://go.microsoft.com/fwLink/?LinkID=522330&clcid=0x9).
 
 Вы можете начать использование соединителя ITSM, выполнив следующие шаги:
 
@@ -57,7 +57,7 @@ ms.locfileid: "79274545"
 3. В разделе **Рабочая область OMS** выберите рабочую область Azure Log Analytics, где нужно установить решение.
    >[!NOTE]
    > * В рамках текущего перехода от Microsoft Operations Management Suite (OMS) к Azure Monitor рабочие области OMS теперь называются рабочими областями Log Analytics.
-   > * Соединитель ITSM можно установить только в Log Analytics рабочих областях в следующих регионах: Восточная часть США, Западная США 2, Юго-Центральный регион США, Западная Центральная часть США, Центральная Канада, Западная Европа, Южная Великобритания, Юго-Восточная Азия, Япония, Юго-Восточная, Центральная Индия, Юго-Восточная Австралия.
+   > * Соединитель ITSM можно устанавливать в рабочих областях Log Analytics только в следующих регионах: восточная часть США, западная часть США 2, центрально-южная часть США, центрально-западная часть США, Фэрфакс, Центральная Канада, Западная Европа, южная часть Соединенного Королевства, Юго-Восточная Азия, Восточная Япония, Центральная Индия, Юго-Восточная Австралия.
 
 4. В разделе **Параметры рабочей области OMS** выберите группу ресурсов, в которой вы хотите создать решение.
 
@@ -67,7 +67,7 @@ ms.locfileid: "79274545"
 
 5. Нажмите кнопку **Создать**.
 
-При развертывании ресурса решения в правом верхнем углу окна появляется уведомление.
+Когда ресурс решения будет развернут, вверху окна справа появится уведомление.
 
 
 ## <a name="creating-an-itsm--connection"></a>Создание подключения ITSM
@@ -76,21 +76,21 @@ ms.locfileid: "79274545"
 
 Для этого вам необходимо подготовить инструмент ITSM, чтобы разрешить подключение от решения "Соединитель управления ИТ-услугами".  
 
-В зависимости от продукта ITSM, к которому вы подключаетесь, выполните следующие действия.
+Выберите продукт ITSM, к которому вы подключаетесь, чтобы выполнить соответствующие шаги:
 
 - [System Center Service Manager](../../azure-monitor/platform/itsmc-connections.md#connect-system-center-service-manager-to-it-service-management-connector-in-azure);
 - [ServiceNow](../../azure-monitor/platform/itsmc-connections.md#connect-servicenow-to-it-service-management-connector-in-azure)
-- [Provance;](../../azure-monitor/platform/itsmc-connections.md#connect-provance-to-it-service-management-connector-in-azure)  
+- [Provance](../../azure-monitor/platform/itsmc-connections.md#connect-provance-to-it-service-management-connector-in-azure);  
 - [Cherwell](../../azure-monitor/platform/itsmc-connections.md#connect-cherwell-to-it-service-management-connector-in-azure)
 
 Подготовив инструмент ITSM, выполните приведенные ниже шаги, чтобы создать подключение.
 
-1. Перейдите к разделу **Все ресурсы** и найдите элемент **ServiceDesk(имя_вашей_рабочей_области)**.
+1. Перейдите к разделу **Все ресурсы** и найдите элемент **ServiceDesk(имя_вашей_рабочей_области)** .
 2. В области слева в разделе **Источники данных рабочей области** щелкните **Подключения ITSM**.
    ![Подключения ITSM](media/itsmc-overview/itsm-connections.png)
 
    На этой странице отобразится список подключений.
-3. Нажмите кнопку **Добавить подключение**.
+3. Щелкните **Добавить подключение**.
 
    ![Добавление подключения ITSM](media/itsmc-overview/add-new-itsm-connection.png)
 
@@ -157,7 +157,7 @@ ms.locfileid: "79274545"
 
 ![Снимок экрана с Log Analytics](media/itsmc-overview/itsmc-overview-integrated-solutions.png)
 
-Дополнительные сведения см. в статье [Использование решения схемы услуги в Operations Management Suite](../../azure-monitor/insights/service-map.md).
+Дополнительные сведения: [Схема услуги](../../azure-monitor/insights/service-map.md)
 
 
 ## <a name="additional-information"></a>Дополнительные сведения
@@ -171,17 +171,17 @@ ms.locfileid: "79274545"
 >
 > В зависимости от типа рабочего элемента, импортированного в Log Analytics, **ServiceDesk_CL** содержит указанные ниже поля.
 
-**Рабочий элемент:** **инциденты**  
+**Рабочий элемент:** **Инциденты**  
 ServiceDeskWorkItemType_s="Incident"
 
-**Поля**
+**Fields**
 
 - ServiceDeskConnectionName;
 - "Идентификатор службы поддержки";
 - Состояние
 - "Срочность";
 - Влияние
-- Priority
+- Приоритет
 - Escalation (Эскалация);
 - Автор
 - "Кем разрешено";
@@ -189,7 +189,7 @@ ServiceDeskWorkItemType_s="Incident"
 - Источник
 - Кому назначено
 - Категория
-- Заголовок
+- Title
 - Описание
 - "Дата создания";
 - Closed Date (Дата закрытия);
@@ -198,25 +198,25 @@ ServiceDeskWorkItemType_s="Incident"
 - Компьютер
 
 
-**Рабочий элемент:** **запросы на изменение**
+**Рабочий элемент:** **Запросы на изменение**
 
 ServiceDeskWorkItemType_s="ChangeRequest"
 
-**Поля**
+**Fields**
 - ServiceDeskConnectionName;
 - "Идентификатор службы поддержки";
 - Автор
 - Closed By (Кем закрыто);
 - Источник
 - Кому назначено
-- Название
+- Title
 - Тип
 - Категория
 - Состояние
 - Escalation (Эскалация);
 - Conflict Status (Состояние конфликта);
 - "Срочность";
-- Priority
+- Приоритет
 - Риск
 - Влияние
 - Кому назначено
@@ -235,11 +235,11 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 
 | Поле Log Analytics | Поле ServiceNow |
 |:--- |:--- |
-| ServiceDeskId_s| Число |
+| ServiceDeskId_s| Number |
 | IncidentState_s | Состояние |
 | Urgency_s |"Срочность"; |
 | Impact_s |Влияние|
-| Priority_s | Priority |
+| Priority_s | Приоритет |
 | CreatedBy_s | Opened by (Кем открыто) |
 | ResolvedBy_s | "Кем разрешено"|
 | ClosedBy_s  | Closed By (Кем закрыто) |
@@ -257,16 +257,16 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 
 | Log Analytics | Поле ServiceNow |
 |:--- |:--- |
-| ServiceDeskId_s| Число |
+| ServiceDeskId_s| Number |
 | CreatedBy_s | "Кем запрошено" |
 | ClosedBy_s | Closed By (Кем закрыто) |
 | AssignedTo_s | Кому назначено  |
 | Title_s|  Краткое описание |
-| Type_s|  Type |
+| Type_s|  Тип |
 | Category_s|  Категория |
 | CRState_s|  Состояние|
 | Urgency_s|  "Срочность"; |
-| Priority_s| Priority|
+| Priority_s| Приоритет|
 | Risk_s| Риск|
 | Impact_s| Влияние|
 | RequestedDate_t  | Requested by date |
@@ -281,15 +281,15 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 
 ## <a name="troubleshoot-itsm-connections"></a>Устранение неполадок с подключениями ITSM
 1. Если сбой подключения происходит из пользовательского интерфейса подключенного источника с сообщением **Ошибка при сохранении подключения**, сделайте следующее:
-   - При использовании подключений ServiceNow, Cherwell и Provance   
+   - При использовании подключений ServiceNow, Cherwell и Provance  
    - проверьте правильность ввода ими пользователя и пароля, а также идентификатора и секрета клиента каждого подключения.  
    - Проверьте наличие необходимых прав в соответствующем продукте ITSM, чтобы установить подключение.  
    - При использовании Service Manager  
-   - убедитесь, что веб-приложение успешно развернуто и создано гибридное подключение. Чтобы убедиться, что подключение установлено на локальном Service Manager компьютере, обратитесь к URL-адресу Web App, как описано в документации по выполнению [гибридного подключения](../../azure-monitor/platform/itsmc-connections.md#configure-the-hybrid-connection).  
+   - убедитесь, что веб-приложение успешно развернуто и создано гибридное подключение. Чтобы проверить подключение к локальному компьютеру Service Manager, перейдите по URL-адресу веб-приложения, как описано в документации по установке [гибридного подключения](../../azure-monitor/platform/itsmc-connections.md#configure-the-hybrid-connection).  
 
 2. Если данные из ServiceNow не синхронизируются с Log Analytics, убедитесь, что экземпляр ServiceNow не находится в спящем режиме. Иногда экземпляры разработки ServiceNow переходят в спящий режим при длительном периоде простоя. В противном случае сообщите о проблеме.
 3. Если поступают оповещения Log Analytics, но рабочие элементы не создаются в продукте ITSM либо элементы конфигурации не создаются или не связываются с рабочими элементами или же вам нужны другие сведения общего характера, просмотрите следующие компоненты:
-   -  ITSMC. в решении отображается сводка по подключениям, рабочим элементам, компьютерам и т. д. Щелкните плитку **состояние соединителя**, чтобы перейти к **поиску по журналам** в соответствующем запросе. Чтобы получить дополнительные сведения, просмотрите записи журнала, где для параметра ERROR задано значение LogType_S.
+   -  ITSMC: решение показывает сводные данные о подключениях, рабочих элементах, компьютерах и т. д. Щелкните плитку **Состояние соединителя**, чтобы с помощью соответствующего запроса перейти на страницу **Поиск по журналу**. Чтобы получить дополнительные сведения, просмотрите записи журнала, где для параметра ERROR задано значение LogType_S.
    - Страница **Поиск по журналу**: просмотрите сведения об ошибках и другие соответствующие сведения непосредственно с помощью запроса `*`ServiceDeskLog_CL`*`.
 
 ## <a name="troubleshoot-service-manager-web-app-deployment"></a>Устранение неполадок развертывания веб-приложения Service Manager
@@ -300,7 +300,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 
 ## <a name="contact-us"></a>Свяжитесь с нами
 
-Для получения любых запросов или отзывов о Соединитель управления ИТ-услугами свяжитесь с нами по [omsitsmfeedback@microsoft.com](mailto:omsitsmfeedback@microsoft.com)адресу.
+Свяжитесь с нами по адресу [omsitsmfeedback@microsoft.com](mailto:omsitsmfeedback@microsoft.com), чтобы оставить отзывы или запросы касательно соединителя управления ИТ-службами.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами (предварительная версия)](../../azure-monitor/platform/itsmc-connections.md)

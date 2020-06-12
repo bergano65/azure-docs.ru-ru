@@ -2,19 +2,19 @@
 title: Что такое SQL Azure для пограничных вычислений (предварительная версия)?
 description: Сведения о SQL Azure для пограничных вычислений (предварительная версия)
 keywords: Введение в SQL Azure для пограничных вычислений; что такое SQL для пограничных вычислений; обзор SQL для пограничных вычислений
-services: sql-database-edge
-ms.service: sql-database-edge
+services: sql-edge
+ms.service: sql-edge
 ms.topic: conceptual
 author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 40128c68caeba793919a680ba2beeb35eb3aa3be
-ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
+ms.openlocfilehash: 1c70950426b2f34d94bd66d2287550e19253874c
+ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83712814"
+ms.lasthandoff: 05/31/2020
+ms.locfileid: "84233162"
 ---
 # <a name="what-is-azure-sql-edge-preview"></a>Что такое SQL Azure для пограничных вычислений (предварительная версия)?
 
