@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: overview
 ms.date: 05/19/2020
-ms.openlocfilehash: 6597a8d5f1f8f4aa34ba9f59d4e08b5dc6d66728
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: f8ddc3ef56aefc6ea613af19d91cd0122435efd7
+ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83682464"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84344209"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Новые возможности в Когнитивном поиске Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "83682464"
 
 + Используйте [управляемую системой идентификацию (предварительная версия)](search-howto-managed-identities-data-sources.md), чтобы настроить подключение к источнику данных Azure для индексирования. Применяется к [индексаторам](search-indexer-overview.md), принимающим содержимое из источников данных Azure, таких как База данных SQL Azure, Azure Cosmos DB и служба хранилища Azure.
 
-+ Измените базу для вычисления оценок поиска, от каждого сегмента до всех сегментов, используя параметр запроса [scoringStatistics=global](index-similarity-and-scoring.md#scoring-statistics).
++ Измените базу для вычисления оценок поиска, от каждого сегмента до всех сегментов, используя параметры запроса [scoringStatistics=global](index-similarity-and-scoring.md#scoring-statistics) и sessionId.
 
 ### <a name="march-2020"></a>Март 2020 г.
 

@@ -2,19 +2,19 @@
 title: Date_Bucket (Transact-SQL). База данных SQL Azure для пограничных вычислений (предварительная версия)
 description: Сведения об использовании Date_Bucket в SQL Azure для пограничных вычислений (предварительная версия)
 keywords: Date_Bucket, SQL Azure для пограничных вычислений
-services: sql-database-edge
-ms.service: sql-database-edge
+services: sql-edge
+ms.service: sql-edge
 ms.topic: reference
 author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2019
-ms.openlocfilehash: dda292909b7b90579666cd83d460fc4051c9456c
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: c2f63abeb9f935236b4c35decb278eb86e0e2a82
+ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83595683"
+ms.lasthandoff: 05/31/2020
+ms.locfileid: "84233294"
 ---
 # <a name="date_bucket-transact-sql"></a>Date_Bucket (Transact-SQL)
 
@@ -248,10 +248,10 @@ SELECT DATE_BUCKET(week,(SELECT top 1 CustomerKey FROM dbo.DimCustomer where Geo
   
 #### <a name="specifying-numeric-expressions-and-scalar-system-functions-as-number-and-date"></a>Указание в качестве аргументов number и date числовых выражений и скалярных системных функций
 
-В этом примере в качестве аргументов для *number* и *date* используется числовое выражение (-`(10/2))` и скалярные системные функции (`SYSDATETIME`).
+В этом примере в качестве аргументов для number и date используется числовое выражение ((10/2)) и скалярные системные функции (SYSDATETIME).
   
 ```sql
-SELECT Date_Bucket(week,-(10/2), SYSDATETIME());
+SELECT Date_Bucket(week,(10/2), SYSDATETIME());
 ```
 
 #### <a name="specifying-an-aggregate-window-function-as-number"></a>Указание в качестве аргумента number статистической оконной функции
