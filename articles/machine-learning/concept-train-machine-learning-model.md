@@ -8,13 +8,13 @@ author: Blackmist
 ms.author: larryfr
 ms.subservice: core
 ms.topic: conceptual
-ms.date: 03/05/2020
-ms.openlocfilehash: 593ca5d63245ed664b5f63373d1d651129055544
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.date: 05/13/2020
+ms.openlocfilehash: 99e2c878443b9a4256eec495429dbe57a88557d0
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83592395"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83683008"
 ---
 # <a name="train-models-with-azure-machine-learning"></a>Обучение моделей с помощью Машинного обучения Azure
 
@@ -111,6 +111,18 @@ ms.locfileid: "83592395"
 + [Классификация. Прогнозирование сопутствующих продаж, стремления и оттока клиентов](how-to-designer-sample-classification-churn.md)
 + [Классификация с помощью пользовательского скрипта R: прогнозирование задержки рейсов](how-to-designer-sample-classification-flight-delay.md)
 + [Классификация текстов: набор данных Wikipedia SP 500](how-to-designer-sample-text-classification.md)
+
+## <a name="many-models-solution-accelerator"></a>Акселератор решений многих моделей
+
+[Акселератор решений для многих моделей](https://aka.ms/many-models) (предварительная версия) основан на службе Машинного обучения Azure и позволяет обучать, использовать и обслуживать сотни и даже тысячи моделей машинного обучения.
+
+Например, создание модели __для каждого экземпляра или человека__ в следующих сценариях может привести к повышению результатов:
+
+* Прогнозирование продаж для каждого отдельного магазина
+* Прогнозное обслуживание для сотен нефтяных скважин
+* Адаптация возможностей для отдельных пользователей
+
+Дополнительные сведения см. в разделе [Акселератор решений для многих моделей](https://aka.ms/many-models) на сайте GitHub.
 
 ## <a name="cli"></a>CLI
 

@@ -12,12 +12,12 @@ ms.date: 04/22/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, keyam
 ms.custom: aaddev
-ms.openlocfilehash: 59f42f7c1fcdfef29becfb4a046753650ae9d14f
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 92b3e12cc078326e98df5f42e36fcaddd56bf0c6
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83737560"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83993701"
 ---
 # <a name="how-to-provide-optional-claims-to-your-azure-ad-app"></a>Руководство. Предоставление дополнительных утверждений для приложения Azure AD
 
@@ -85,7 +85,6 @@ ms.locfileid: "83737560"
 | `pwd_exp`     | Срок действия пароля        | Дата и время истечения срока действия пароля. |       |
 | `pwd_url`     | Изменить URL-адрес пароля             | URL-адрес, перейдя по которому пользователь может изменить свой пароль.   |   |
 | `in_corp`     | В корпоративной сети        | Посылает сигнал, если клиент входит в корпоративную сеть. В противном случае это утверждение не добавляется.   |  На основе параметров [надежных IP-адресов](../authentication/howto-mfa-mfasettings.md#trusted-ips) в MFA.    |
-| `nickname`    | Псевдоним                        | Дополнительное имя для пользователя. Псевдоним отделен от имени или фамилии. Требуется область `profile`.|
 | `family_name` | Фамилия                       | Предоставляет фамилию пользователя, как определено в объекте пользователя. <br>"family_name":"Miller" | Поддерживается в MSA и Azure AD. Требуется область `profile`.   |
 | `given_name`  | Имя                      | Указывает личное имя пользователя, которое задано в объекте пользователя.<br>"given_name": "Frank"                   | Поддерживается в MSA и Azure AD.  Требуется область `profile`. |
 | `upn`         | Имя участника-пользователя | Идентификатор пользователя, который можно использовать с параметром username_hint.  Не является долговременным идентификатором для пользователя и не должен использоваться для ключевых данных. | См. в разделе [Дополнительные свойства необязательных утверждений](#additional-properties-of-optional-claims) указанном ниже для конфигурации утверждения. Требуется область `profile`.|

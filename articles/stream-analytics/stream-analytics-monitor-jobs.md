@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 04/20/2017
-ms.openlocfilehash: 23c0cc0d0e4a007fdf46021f857b559266f6a193
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 465ca1d012c6d2057e33fe1460e794e4d5966be6
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75431671"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83831217"
 ---
 # <a name="programmatically-create-a-stream-analytics-job-monitor"></a>Создание монитора заданий Stream Analytics программным способом
 
@@ -20,9 +20,9 @@ ms.locfileid: "75431671"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем начать этот процесс, необходимо выполнить следующие предварительные требования.
+Прежде чем начать этот процесс, необходимо следующее:
 
-* Visual Studio 2019 или 2015
+* Visual Studio 2019 или 2015
 * Скачанный и установленный [пакет SDK Azure для .NET](https://azure.microsoft.com/downloads/).
 * Существующее задание Stream Analytics, отслеживание которого нужно включить.
 
@@ -135,7 +135,7 @@ ms.locfileid: "75431671"
 
 ## <a name="enable-monitoring-for-an-existing-stream-analytics-job"></a>Включение отслеживания существующего задания Stream Analytics
 
-С помощью следующего кода можно включить отслеживание **имеющегося** задания Stream Analytics. В первой части кода в службу Stream Analytics отправляется запрос GET, что позволяет получить сведения о конкретном задании Stream Analytics. В нем используется свойство *ID* (полученное из запроса GET) в качестве параметра для метода размещения во второй половине кода, который отправляет запрос на размещение в службу Insights, чтобы включить мониторинг для задания Stream Analytics.
+С помощью следующего кода можно включить отслеживание **имеющегося** задания Stream Analytics. В первой части кода в службу Stream Analytics отправляется запрос GET, что позволяет получить сведения о конкретном задании Stream Analytics. Во второй части кода, где запрос PUT отправляется в службу Insights для включения отслеживания задания Stream Analytics, свойство *ID* (полученное в результате выполнения запроса GET) используется в качестве параметра метода Put.
 
 > [!WARNING]
 > Если ранее вы включили функцию отслеживания для другого задания Stream Analytics либо на портале Azure, либо программным способом с помощью указанного ниже кода, **мы рекомендуем использовать ту же учетную запись хранения, которую вы использовали для включения функции отслеживания.**
@@ -169,7 +169,7 @@ ms.locfileid: "75431671"
 
 ## <a name="get-support"></a>Получение поддержки
 
-Для получения дополнительной помощи посетите наш [Azure Stream Analytics Форум](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
+Для получения дополнительной помощи воспользуйтесь [страницей вопросов и ответов о Microsoft Azure Stream Analytics](https://docs.microsoft.com/answers/topics/azure-stream-analytics.html).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

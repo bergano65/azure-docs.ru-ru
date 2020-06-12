@@ -325,10 +325,6 @@
       href: 'https://azure.microsoft.com/pricing/details/azure-maps'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Stack Overflow
-      href: 'https://stackoverflow.com/questions/tagged/azure-maps'
-    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-maps.html'
     - name: Видео об Azure Maps
       href: 'https://aka.ms/AzureMapsVideos'
     - name: Проекты с открытым исходным кодом

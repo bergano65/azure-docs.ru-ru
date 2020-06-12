@@ -2,40 +2,43 @@
 title: Развертывание ресурсов в подписке
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 ms.topic: conceptual
-ms.date: 05/07/2020
-ms.openlocfilehash: a48bc2fd4efb383b42fd0889df079c9a6f700dda
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
-ms.translationtype: MT
+ms.date: 05/18/2020
+ms.openlocfilehash: 4f8bcbfc6467969c9d8ca8b1511e6e8ffff94b14
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82929066"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83653358"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
 
-Чтобы упростить управление ресурсами в подписке Azure, можно определить и назначить [политики](../../governance/policy/overview.md) или [элементы управления доступом на основе ролей](../../role-based-access-control/overview.md) в рамках подписки. С помощью шаблонов уровня подписки декларативно применяются политики и назначаются роли в подписке. Вы также можете создавать группы ресурсов и развертывать ресурсы.
+Чтобы упростить управление ресурсами, можно развернуть ресурсы на уровне подписки Azure. Например, можно развернуть в подписке [политики](../../governance/policy/overview.md) и [управления доступом на основе ролей](../../role-based-access-control/overview.md), и эти ресурсы будут применяться в рамках всей подписки. Вы также можете создавать группы ресурсов и развертывать в них ресурсы.
 
-Чтобы развернуть шаблоны на уровне подписки, используйте Azure CLI, PowerShell или REST API. Портал Azure не поддерживает развертывания на уровне подписки.
+> [!NOTE]
+> На уровне подписки можно развернуть до 800 различных групп ресурсов.
+
+Чтобы развернуть шаблоны на уровне подписки, используйте Azure CLI, PowerShell или REST API. Портал Azure не поддерживает развертывания на уровне подписки.
 
 ## <a name="supported-resources"></a>Поддерживаемые ресурсы
 
-На уровне подписки можно развернуть следующие типы ресурсов:
+На уровне подписки можно развернуть ресурсы следующих типов:
 
-* [проекты](/azure/templates/microsoft.blueprint/blueprints)
-* [увеличен](/azure/templates/microsoft.consumption/budgets)
-* [развертывания](/azure/templates/microsoft.resources/deployments) — для вложенных шаблонов, которые развертываются в группах ресурсов.
-* [eventSubscriptions](/azure/templates/microsoft.eventgrid/eventsubscriptions)
-* [пираснс](/azure/templates/microsoft.peering/2019-09-01-preview/peerasns)
-* [полициассигнментс](/azure/templates/microsoft.authorization/policyassignments)
-* [policyDefinitions](/azure/templates/microsoft.authorization/policydefinitions)
-* [policySetDefinitions](/azure/templates/microsoft.authorization/policysetdefinitions)
-* [исправления](/azure/templates/microsoft.policyinsights/2019-07-01/remediations)
-* [resourceGroups](/azure/templates/microsoft.resources/resourcegroups)
-* [roleAssignments](/azure/templates/microsoft.authorization/roleassignments)
-* [roleDefinitions](/azure/templates/microsoft.authorization/roledefinitions)
-* [скопеассигнментс](/azure/templates/microsoft.managednetwork/scopeassignments)
-* [суппортплантипес](/azure/templates/microsoft.addons/supportproviders/supportplantypes)
-* [Тэги](/azure/templates/microsoft.resources/tags)
-* [воркспацесеттингс](/azure/templates/microsoft.security/workspacesettings)
+* [blueprints](/azure/templates/microsoft.blueprint/blueprints);
+* [budgets](/azure/templates/microsoft.consumption/budgets);
+* [deployments](/azure/templates/microsoft.resources/deployments) — для вложенных шаблонов, которые развертываются в группах ресурсов;
+* [eventSubscriptions](/azure/templates/microsoft.eventgrid/eventsubscriptions);
+* [peerAsns](/azure/templates/microsoft.peering/2019-09-01-preview/peerasns);
+* [policyAssignments](/azure/templates/microsoft.authorization/policyassignments);
+* [policyDefinitions](/azure/templates/microsoft.authorization/policydefinitions);
+* [policySetDefinitions](/azure/templates/microsoft.authorization/policysetdefinitions);
+* [remediations](/azure/templates/microsoft.policyinsights/2019-07-01/remediations);
+* [resourceGroups](/azure/templates/microsoft.resources/resourcegroups);
+* [roleAssignments](/azure/templates/microsoft.authorization/roleassignments);
+* [roleDefinitions](/azure/templates/microsoft.authorization/roledefinitions).
+* [scopeAssignments](/azure/templates/microsoft.managednetwork/scopeassignments);
+* [supportPlanTypes](/azure/templates/microsoft.addons/supportproviders/supportplantypes);
+* [теги](/azure/templates/microsoft.resources/tags)
+* [workspacesettings](/azure/templates/microsoft.security/workspacesettings).
 
 ### <a name="schema"></a>схема
 
@@ -55,9 +58,9 @@ https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json
 
 ## <a name="deployment-commands"></a>Команды развертывания
 
-Команды для развертываний на уровне подписки отличаются от команд для развертываний групп ресурсов.
+Команды, используемые для развертываний на уровне подписки, отличаются от команд для развертываний группы ресурсов.
 
-Для Azure CLI используйте команду [AZ Deployment подсоздание](/cli/azure/deployment/sub?view=azure-cli-latest#az-deployment-sub-create). В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
+Для Azure CLI используйте [az deployment sub create](/cli/azure/deployment/sub?view=azure-cli-latest#az-deployment-sub-create). В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
 
 ```azurecli-interactive
 az deployment sub create \
@@ -67,7 +70,7 @@ az deployment sub create \
   --parameters rgName=demoResourceGroup rgLocation=centralus
 ```
 
-Для команды развертывания PowerShell используйте [New-аздеплоймент](/powershell/module/az.resources/new-azdeployment) или **New-азсубскриптиондеплоймент**. В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
+В качестве команды развертывания в PowerShell используйте [New-AzDeployment](/powershell/module/az.resources/new-azdeployment) или **New-AzSubscriptionDeployment**. В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
 
 ```azurepowershell-interactive
 New-AzSubscriptionDeployment `
@@ -78,15 +81,15 @@ New-AzSubscriptionDeployment `
   -rgLocation centralus
 ```
 
-Для REST API используйте [развертывания — создание в области подписки](/rest/api/resources/deployments/createorupdateatsubscriptionscope).
+Для REST API используйте инструкции в статье [Развертывания — создание в области подписки](/rest/api/resources/deployments/createorupdateatsubscriptionscope).
 
 ## <a name="deployment-location-and-name"></a>Расположение и имя развертывания
 
 Для развертываний на уровне подписки необходимо указать расположение для развертывания. Расположение развертывания отделено от расположения развертываемых ресурсов. В расположении развертывания указывается место хранения данных развертывания.
 
-Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
+Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
 
-Для каждого имени развертывания расположение является неизменяемым. Нельзя создать развертывание в одном месте, если существует развертывание с тем же именем в другом расположении. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
+Для каждого имени развертывания расположение остается неизменным. Нельзя создать развертывание в одном расположении, если в другом уже есть развертывание с таким же именем. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
 
 ## <a name="use-template-functions"></a>Использование функций шаблонов
 
@@ -94,7 +97,7 @@ New-AzSubscriptionDeployment `
 
 * Функция [resourceGroup()](template-functions-resource.md#resourcegroup)**не** поддерживается.
 * Функции [reference()](template-functions-resource.md#reference) и [list()](template-functions-resource.md#list) поддерживаются.
-* Используйте функцию [субскриптионресаурцеид ()](template-functions-resource.md#subscriptionresourceid) , чтобы получить идентификатор ресурса для ресурсов, развернутых на уровне подписки.
+* Используйте функцию [subscriptionResourceId()](template-functions-resource.md#subscriptionresourceid), чтобы получить идентификатор ресурса для ресурсов, развернутых на уровне подписки.
 
   Например, чтобы получить идентификатор ресурса для определения политики, используйте:
 
@@ -110,7 +113,7 @@ New-AzSubscriptionDeployment `
 
 ## <a name="create-resource-groups"></a>Создание группы ресурсов
 
-Чтобы создать группу ресурсов в шаблоне Azure Resource Manager, определите имя и расположение ресурса [Microsoft.Resources/resourceGroups](/azure/templates/microsoft.resources/allversions) для группы ресурсов. Вы можете создать группу ресурсов и развернуть ресурсы в нее в одном шаблоне.
+Чтобы создать группу ресурсов в шаблоне Azure Resource Manager, определите для ресурса [Microsoft.Resources/resourceGroups](/azure/templates/microsoft.resources/allversions) имя и расположение. Вы можете создать группу ресурсов и развернуть ресурсы в нее в одном шаблоне.
 
 В следующем примере создается пустая группа ресурсов.
 
@@ -130,7 +133,7 @@ New-AzSubscriptionDeployment `
   "resources": [
     {
       "type": "Microsoft.Resources/resourceGroups",
-      "apiVersion": "2018-05-01",
+      "apiVersion": "2019-10-01",
       "name": "[parameters('rgName')]",
       "location": "[parameters('rgLocation')]",
       "properties": {}
@@ -161,7 +164,7 @@ New-AzSubscriptionDeployment `
   "resources": [
     {
       "type": "Microsoft.Resources/resourceGroups",
-      "apiVersion": "2018-05-01",
+      "apiVersion": "2019-10-01",
       "location": "[parameters('rgLocation')]",
       "name": "[concat(parameters('rgNamePrefix'), copyIndex())]",
       "copy": {
@@ -175,11 +178,11 @@ New-AzSubscriptionDeployment `
 }
 ```
 
-Дополнительные сведения о итерации ресурсов см. [в разделе Развертывание нескольких экземпляров ресурса в Azure Resource Manager шаблонах](./copy-resources.md)и [учебник. Создание нескольких экземпляров ресурсов с помощью шаблонов диспетчер ресурсов](./template-tutorial-create-multiple-instances.md).
+Дополнительные сведения см. в статьях [Развертывание нескольких экземпляров ресурса в шаблонах Azure Resource Manager](./copy-resources.md) и [Руководство. Создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager](./template-tutorial-create-multiple-instances.md).
 
 ## <a name="resource-group-and-resources"></a>Группа ресурсов и ресурсы
 
-Чтобы создать группу ресурсов и развернуть в нее ресурсы, используйте вложенный шаблон. Вложенный шаблон определяет ресурсы для развертывания в группе ресурсов. Установите вложенный шаблон как зависимый от группы ресурсов, чтобы группа существовала до развертывания ресурсов.
+Чтобы создать группу ресурсов и развернуть в нее ресурсы, используйте вложенный шаблон. Вложенный шаблон определяет ресурсы для развертывания в группе ресурсов. Установите вложенный шаблон как зависимый от группы ресурсов, чтобы группа существовала до развертывания ресурсов. Можно выполнить развертывание до 800 групп ресурсов.
 
 В следующем примере создается группа ресурсов и в нее развертывается учетная запись хранения.
 
@@ -205,14 +208,14 @@ New-AzSubscriptionDeployment `
   "resources": [
     {
       "type": "Microsoft.Resources/resourceGroups",
-      "apiVersion": "2018-05-01",
+      "apiVersion": "2019-10-01",
       "location": "[parameters('rgLocation')]",
       "name": "[parameters('rgName')]",
       "properties": {}
     },
     {
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2018-05-01",
+      "apiVersion": "2019-10-01",
       "name": "storageDeployment",
       "resourceGroup": "[parameters('rgName')]",
       "dependsOn": [
@@ -228,7 +231,7 @@ New-AzSubscriptionDeployment `
           "resources": [
             {
               "type": "Microsoft.Storage/storageAccounts",
-              "apiVersion": "2017-10-01",
+              "apiVersion": "2019-06-01",
               "name": "[variables('storageName')]",
               "location": "[parameters('rgLocation')]",
               "sku": {
@@ -250,7 +253,7 @@ New-AzSubscriptionDeployment `
 
 ### <a name="assign-policy-definition"></a>Назначение определения политики
 
-В следующем примере подписке присваивается имеющееся определение политики. Если определение политики принимает параметры, укажите их в качестве объекта. Если определение политики не принимает параметры, используйте пустой объект по умолчанию.
+В следующем примере подписке присваивается имеющееся определение политики. Предоставьте параметры в качестве объекта, если определение политики принимает их. Используйте пустой объект по умолчанию, если определение политики не принимает параметры.
 
 ```json
 {
@@ -314,9 +317,9 @@ New-AzSubscriptionDeployment `
   -policyParameters $policyParams
 ```
 
-### <a name="create-and-assign-policy-definitions"></a>Создание и назначение определений политик
+### <a name="create-and-assign-policy-definitions"></a>Создание и назначение определения политики
 
-Определение политики можно [определить](../../governance/policy/concepts/definition-structure.md) и назначить в том же шаблоне.
+Вы можете [определить](../../governance/policy/concepts/definition-structure.md) и назначить определение политики в том же шаблоне.
 
 ```json
 {
@@ -359,7 +362,7 @@ New-AzSubscriptionDeployment `
 }
 ```
 
-Чтобы создать определение политики в подписке и назначить его подписке, используйте следующую команду интерфейса командной строки:
+Чтобы создать определение политики и назначить ее в подписке, используйте следующую команду CLI.
 
 ```azurecli
 az deployment sub create \
@@ -379,13 +382,13 @@ New-AzSubscriptionDeployment `
 
 ## <a name="azure-blueprints"></a>Azure Blueprints
 
-### <a name="create-blueprint-definition"></a>Создать определение схемы
+### <a name="create-blueprint-definition"></a>Создание определения схемы
 
-Определение схемы можно [создать](../../governance/blueprints/tutorials/create-from-sample.md) на основе шаблона.
+Можно [создать](../../governance/blueprints/tutorials/create-from-sample.md) определение схемы из шаблона.
 
 :::code language="json" source="~/quickstart-templates/subscription-level-deployments/blueprints-new-blueprint/azuredeploy.json":::
 
-Чтобы создать определение схемы в подписке, используйте следующую команду интерфейса командной строки:
+Чтобы создать определение схемы в подписке, используйте следующую команду CLI.
 
 ```azurecli
 az deployment sub create \
@@ -405,12 +408,12 @@ New-AzSubscriptionDeployment `
 
 ## <a name="template-samples"></a>Примеры шаблона
 
-* [Создайте группу ресурсов, заблокируйте ее и предоставьте ей разрешения](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-level-deployments/create-rg-lock-role-assignment).
-* [Создайте группу ресурсов, политику и назначение политики](https://github.com/Azure/azure-docs-json-samples/blob/master/subscription-level-deployment/azuredeploy.json).
+* [Создание группы ресурсов, ее блокировка и предоставление ей разрешений](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-level-deployments/create-rg-lock-role-assignment).
+* [Создание группы ресурсов, политики и назначения политики](https://github.com/Azure/azure-docs-json-samples/blob/master/subscription-level-deployment/azuredeploy.json).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о назначении ролей см. в статье [Управление доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager](../../role-based-access-control/role-assignments-template.md).
+* Сведения о назначении ролей см. в статье об [управлении доступом к ресурсам Azure с помощью RBAC и шаблонов Azure Resource Manager](../../role-based-access-control/role-assignments-template.md).
 * Пример развертывания параметров рабочей области для центра безопасности Azure см. в разделе о [deployASCwithWorkspaceSettings.json](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/deployASCwithWorkspaceSettings.json).
-* Примеры шаблонов можно найти на сайте [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-level-deployments).
-* Вы также можете развернуть шаблоны на уровне [группы управления](deploy-to-management-group.md) и на [уровне клиента](deploy-to-tenant.md).
+* Примеры шаблонов можно найти на [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/subscription-level-deployments).
+* Кроме того, можно развернуть шаблоны на [уровне группы управления](deploy-to-management-group.md) и на [уровне клиента](deploy-to-tenant.md).

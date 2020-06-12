@@ -42,6 +42,8 @@
           href: ../../postgresql/quickstart-create-postgresql-server-database-using-arm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Databricks
           href: ../../azure-databricks/quickstart-create-databricks-workspace-resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Виртуальная машина для обработки и анализа данных
+          href: ../../machine-learning/data-science-virtual-machine/dsvm-tutorial-resource-manager.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Сетка событий Azure
           href: ../../event-grid/blob-event-quickstart-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Концентратор событий
@@ -68,6 +70,8 @@
           href: ../../hdinsight/r-server/quickstart-resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Key Vault
           href: ../../key-vault/secrets/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Виртуальная машина Linux
+          href: ../../virtual-machines/linux/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Load Balancer
           href: ../../load-balancer/quickstart-load-balancer-standard-public-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Управляемое приложение
@@ -80,6 +84,10 @@
           href: 'https://docs.microsoft.com/azure/devops/pipelines/apps/cd/azure/deploy-arm-template?toc=/azure/azure-resource-manager/templates/toc.json'
         - name: Политика
           href: ../../governance/policy/assign-policy-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Конечная точка службы "Приватный канал"
+          href: ../../private-link/create-private-endpoint-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Служба "Приватный канал"
+          href: ../../private-link/create-private-link-service-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Resource Graph
           href: ../../governance/resource-graph/shared-query-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Управление доступом на основе ролей (RBAC)
@@ -255,11 +263,11 @@
           href: update-visual-studio-deployment-script.md
         - name: IntelliJ IDEA
           href: create-templates-use-intellij.md
-    - name: Просмотр свойств шаблона
+    - name: Обнаружение свойств шаблона
       items:
         - name: Экспорт шаблона
           href: export-template-portal.md
-        - name: Просмотр ресурсов
+        - name: Обнаружение ресурсов
           href: view-resources.md
     - name: Развертывание шаблонов
       items:

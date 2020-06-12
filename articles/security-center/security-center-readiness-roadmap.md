@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/03/2018
 ms.author: yurid
-ms.openlocfilehash: 9d74ea2b967112a794cda204cbbfcac707e1d7c4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: de14f334b2a68d820dbf80f194ac93430c452038
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80879468"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83833376"
 ---
 # <a name="azure-security-center-readiness-roadmap"></a>План подготовки к работе с центром безопасности Azure
 Этот документ содержит план подготовки, который поможет вам приступить к работе с центром безопасности Azure.
@@ -43,7 +43,7 @@ ms.locfileid: "80879468"
 Следующие ресурсы пригодятся вам в процессе планирования и эксплуатации.
 
 Статья
-* [Руководство по планированию и эксплуатации центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide)
+* [Руководство по планированию использования центра безопасности Azure и работе в нем](https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide)
 
 
 ### <a name="onboarding-computers-to-security-center"></a>Подключение компьютеров к центру безопасности
@@ -63,8 +63,8 @@ ms.locfileid: "80879468"
 Следующие ресурсы помогут вам управлять предупреждениями безопасности и защищать ресурсы.
 
 Статьи    
-* [Мониторинг работоспособности системы безопасности в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-monitoring)
-* [Защита приложений и виртуальных машин в центре безопасности Azure](security-center-virtual-machine-protection.md)
+* [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-monitoring)
+* [Защита виртуальных машин в центре безопасности Azure](security-center-virtual-machine-protection.md)
 * [Защита сети в центре безопасности Azure.](https://docs.microsoft.com/azure/security-center/security-center-network-recommendations)
 * [Защита службы SQL Azure и данных в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-sql-service-recommendations)
 
@@ -73,7 +73,7 @@ ms.locfileid: "80879468"
 * [Устранение проблем безопасности с помощью центра безопасности Azure](https://channel9.msdn.com/Blogs/Azure-Security-Videos/Mitigating-Security-Issues-using-Azure-Security-Center)
 
 ### <a name="security-center-for-incident-response"></a>Реагирование на инциденты с помощью центра безопасности
-Чтобы снизить затраты и ущерб, важно иметь план реагирования на инциденты, прежде чем атака будет происходить. Центр безопасности Azure можно использовать на разных этапах реагирования на инциденты.
+Чтобы минимизировать затраты и риски, важно составить план реагирования до обнаружения атаки. Центр безопасности Azure можно использовать на разных этапах реагирования на инциденты.
 
 Ознакомьтесь со следующими ресурсами, что узнать, как центр безопасности можно интегрировать в процесс реагирования на инциденты.
 
@@ -87,16 +87,16 @@ ms.locfileid: "80879468"
 
 ## <a name="advanced-cloud-defense"></a>Расширенная защита облака
 
-Для виртуальных машин Azure можно использовать дополнительные возможности защиты облака в центре безопасности. Эти возможности включают JIT-доступ к виртуальной машине и адаптивные элементы управления приложениями.
+Для виртуальных машин Azure можно использовать дополнительные возможности защиты облака в центре безопасности. Эти возможности включают только JIT-доступ к виртуальной машине и адаптивные элементы управления приложением.
 
 В следующих ресурсах объясняется, как использовать эти возможности в центре безопасности.
 
 Видео    
-* [Центр безопасности Azure — JIT-доступ к виртуальной машине](https://youtu.be/UOQb2FcdQnU)
+* [Azure Security Center — Just-in-Time VM Access](https://youtu.be/UOQb2FcdQnU) (Центр безопасности Azure — JIT-доступ к виртуальной машине)
 * [Центр безопасности Azure — адаптивные элементы управления приложениями](https://youtu.be/wWWekI1Y9ck)
 
 Статьи    
-* [Управление доступом к виртуальным машинам с помощью JIT](https://docs.microsoft.com/azure/security-center/security-center-just-in-time)
+* [Manage virtual machine access using Just-in-time](https://docs.microsoft.com/azure/security-center/security-center-just-in-time) (Управление доступом к виртуальным машинам с помощью JIT)
 * [Адаптивные элементы управления приложениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application)
 
 ## <a name="hands-on-activities"></a>Практические упражнения
@@ -108,18 +108,17 @@ ms.locfileid: "80879468"
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 * [Документация по центру безопасности](https://docs.microsoft.com/azure/security-center/)
 * [Security Center REST API Documentation Page](https://msdn.microsoft.com/library/mt704034.aspx) (Документация по REST API центра безопасности)
-* [Центр безопасности Azure: часто задаваемые вопросы](https://docs.microsoft.com/azure/security-center/security-center-faq)
+* [Azure Security Center frequently asked questions (FAQ)](https://docs.microsoft.com/azure/security-center/security-center-faq) (Центр безопасности Azure: часто задаваемые вопросы)
 * [Цены на центр безопасности](https://azure.microsoft.com/pricing/details/security-center/)
 * [Рекомендации по обеспечению безопасности удостоверений](https://docs.microsoft.com/azure/security/fundamentals/identity-management-best-practices)
 * [Рекомендации по обеспечению сетевой безопасности](https://docs.microsoft.com/azure/security/fundamentals/network-best-practices)
 * [Рекомендации для PaaS](https://docs.microsoft.com/azure/security/security-paas-deployments)
 * [Соответствие](https://www.microsoft.com/trustcenter/compliance/due-diligence-checklist)
-* [Клиенты log Analytics теперь могут использовать центр безопасности Azure для защиты своих гибридных облачных рабочих нагрузок.](https://blogs.technet.microsoft.com/msoms/2017/09/25/oms-customers-can-now-use-azure-security-center-to-protect-their-hybrid-cloud-workloads/)
+* [Клиенты службы анализа журналов теперь могут использовать центр безопасности Azure для защиты своих рабочих нагрузок в гибридном облаке](https://blogs.technet.microsoft.com/msoms/2017/09/25/oms-customers-can-now-use-azure-security-center-to-protect-their-hybrid-cloud-workloads/)
 
 ## <a name="community-resources"></a>Ресурсы сообщества
 
 * [UserVoice центра безопасности](https://feedback.azure.com/forums/347535-azure-security-center)
-* [Форум сообщества центра безопасности](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=AzureSecurityCenter)
-
+* [Страница вопросов и ответов Майкрософт для центра безопасности](https://docs.microsoft.com/answers/topics/azure-security-center.html)
 
 

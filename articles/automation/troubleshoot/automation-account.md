@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок учетной записи службы автоматизации Azure
-description: Узнайте, как устранять неполадки и устранять проблемы с учетной записью Azure.
+title: Устранение неполадок с учетной записью службы автоматизации Azure
+description: В этой статье рассказывается, как устранять неполадки с учетной записью Azure.
 services: automation
 author: mgoedtel
 ms.author: magoedte
@@ -8,22 +8,22 @@ ms.date: 03/24/2020
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 6a7defdaa9b4b0f0b3580a3ac6b1a0487434a97c
-ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
-ms.translationtype: MT
+ms.openlocfilehash: bebc89514da7f28015da5cb145ae50bf3fccdb6a
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82864136"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83680084"
 ---
-# <a name="troubleshoot-an-azure-automation-account"></a>Устранение неполадок учетной записи службы автоматизации Azure
+# <a name="troubleshoot-azure-automation-account-issues"></a>Устранение неполадок с учетной записью службы автоматизации Azure
 
-В этой статье рассматриваются решения проблем, которые могут возникнуть при использовании учетной записи службы автоматизации Azure. Общие сведения об учетных записях службы автоматизации см. [в статье Создание учетной записи Azure](../automation-quickstart-create-account.md).
+В этой статье рассматриваются решения проблем, которые могут возникнуть при использовании учетной записи службы автоматизации Azure. Общие сведения об учетных записях службы автоматизации см. в статье [Общие сведения о проверке подлинности учетной записи службы автоматизации Azure](../automation-security-overview.md).
 
-## <a name="scenario-unable-to-register-automation-resource-provider-for-subscriptions"></a><a name="rp-register"></a>Сценарий: не удалось зарегистрировать поставщик ресурсов службы автоматизации для подписок
+## <a name="scenario-unable-to-register-automation-resource-provider-for-subscriptions"></a><a name="rp-register"></a>Сценарий. Не удается оформить подписки для поставщика ресурсов службы автоматизации
 
 ### <a name="issue"></a>Проблема
 
-При работе с решениями для управления в учетной записи службы автоматизации возникает следующая ошибка:
+При работе с функциями управления, например Управлением обновлениями, в учетной записи службы автоматизации возникает следующая ошибка:
 
 ```error
 Error details: Unable to register Automation Resource Provider for subscriptions:
@@ -35,22 +35,22 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 
 ### <a name="resolution"></a>Решение
 
-Чтобы зарегистрировать поставщик ресурсов службы автоматизации, выполните следующие действия в портал Azure.
+Чтобы зарегистрировать поставщик ресурсов службы автоматизации, выполните указанные ниже действия на портале Azure.
 
 1. В браузере перейдите на [портал Azure](https://portal.azure.com).
 
-2. Перейдите к разделу **подписки**и выберите свою подписку.   
+2. Перейдите на страницу **Подписки** и выберите подписку.   
 
-3. В разделе **Параметры**выберите **поставщики ресурсов**.
+3. В разделе **Параметры** выберите **Поставщики ресурсов**.
 
-4. Убедитесь, что в списке поставщиков ресурсов зарегистрирован поставщик ресурсов **Microsoft. Automation** .
+4. В списке поставщиков ресурсов убедитесь в том, что поставщик ресурсов **Microsoft.Automation** зарегистрирован.
 
-5. Если поставщик отсутствует в списке, зарегистрируйте его, как описано в разделе [Устранение ошибок при регистрации поставщика ресурсов](/azure/azure-resource-manager/resource-manager-register-provider-errors).
+5. Если поставщика нет в списке, зарегистрируйте его, как описано в разделе [Устранение ошибок регистрации поставщика ресурсов](/azure/azure-resource-manager/resource-manager-register-provider-errors).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если эта статья не решает проблему, попробуйте использовать один из следующих каналов для получения дополнительной поддержки:
+Если эта статья не помогла вам решить проблему, попробуйте использовать один из следующих каналов для получения дополнительной поддержки:
 
-* Получите ответы от экспертов Azure на [форумах Azure](https://azure.microsoft.com/support/forums/).
-* Подключитесь [@AzureSupport](https://twitter.com/azuresupport)к. Это официальная учетная запись Microsoft Azure для подключения сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
-* Отправьте запрос в службу поддержки Azure Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/)и выберите **получить поддержку**.
+* Получите ответы специалистов Azure на [форумах Azure](https://azure.microsoft.com/support/forums/).
+* Подключитесь к [@AzureSupport](https://twitter.com/azuresupport). Это официальная учетная запись Microsoft Azure для доступа к ресурсам сообщества Azure (ответы на вопросы, поддержка и консультации специалистов).
+* Отправьте запрос в службу поддержки Azure Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **Получить поддержку**.

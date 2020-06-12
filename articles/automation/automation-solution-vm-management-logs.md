@@ -1,24 +1,24 @@
 ---
-title: Как запрашивать журналы из Запуск и остановка виртуальных машин в нерабочее время
-description: В этой статье описывается, как запрашивать данные журнала, созданные Запуск и остановка виртуальных машин в нерабочее время решением из Azure Monitor.
+title: Запрос журналов Запуска и остановки виртуальных машин в нерабочее время в службе автоматизации Azure
+description: В этой статье объясняется, как использовать Azure Monitor для запроса данных журналов, создаваемых решением "Запуск и остановка виртуальных машин в нерабочее время".
 services: automation
 ms.subservice: process-automation
 ms.date: 04/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: 472baa3f4b3cbb970a8f365ccc94929ad565c421
-ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
-ms.translationtype: MT
+ms.openlocfilehash: de013b6ccd924f50ffe12fcba1285b121eece5f7
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82864238"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83827562"
 ---
-# <a name="how-to-query-logs-from-startstop-vms-during-off-hours"></a>Как запрашивать журналы из Запуск и остановка виртуальных машин в нерабочее время
+# <a name="query-logs-from-startstop-vms-during-off-hours"></a>Журналы запросов Запуска и остановки виртуальных машин в нерабочее время
 
-Служба автоматизации Azure перенаправляет два типа записей в связанную рабочую область Log Analytics: журналы заданий и потоки заданий. В этой статье рассматриваются данные, доступные для [запроса](../azure-monitor/log-query/log-query-overview.md) в Azure Monitor.
+Служба автоматизации направляет в связанную рабочую область Log Analytics записи двух типов: журналы заданий и потоки заданий. В этой статье рассматриваются данные, доступные для [запроса](../azure-monitor/log-query/log-query-overview.md) в Azure Monitor.
 
 ## <a name="job-logs"></a>Журналы заданий
 
-|Свойство. | Описание|
+|Свойство | Описание|
 |----------|----------|
 |Caller |  Сторона, инициировавшая операцию. Допустимые значения: электронный адрес или system для запланированных заданий.|
 |Категория | Классификация типа данных. Для службы автоматизации значением является JobLogs.|
@@ -35,11 +35,11 @@ ms.locfileid: "82864238"
 |SourceSystem | Указывает исходную систему для отправленных данных. Для службы автоматизации значением является OpsManager.|
 |StreamType | Задает тип события. Возможны следующие значения:<br>- Verbose.<br>Выходные данные<br>error<br>Предупреждение|
 |SubscriptionId | Указывает идентификатор подписки задания.
-|Время | Дата и время выполнения задания Runbook.|
+|Time | Дата и время выполнения задания Runbook.|
 
 ## <a name="job-streams"></a>Потоки заданий
 
-|Свойство. | Описание|
+|Свойство | Описание|
 |----------|----------|
 |Caller |  Сторона, инициировавшая операцию. Допустимые значения: электронный адрес или system для запланированных заданий.|
 |Категория | Классификация типа данных. Для службы автоматизации значением является JobStreams.|
@@ -54,21 +54,23 @@ ms.locfileid: "82864238"
 |RunbookName | Имя Runbook.|
 |SourceSystem | Указывает исходную систему для отправленных данных. Для службы автоматизации значением является OpsManager.|
 |StreamType | Тип потока задания. Возможны следующие значения:<br>- Progress<br>Выходные данные<br>Предупреждение<br>error<br>debug<br>- Verbose.|
-|Время | Дата и время выполнения задания Runbook.|
+|Time | Дата и время выполнения задания Runbook.|
 
 При выполнении поиска по журналам, в результате которого возвращаются записи категории **JobLogs** или **JobStreams**, можно выбрать представление **JobLogs** или **JobStreams**. Эти представления отображают набор элементов с перечнем обновлений, возвращенных в результатах поиска.
 
 ## <a name="sample-log-searches"></a>Пример поисков журналов
 
-Следующая таблица содержит примеры поисков по журналу для получения записей заданий, собранных этим решением.
+Приведенная ниже таблица содержит примеры поиска по журналам для получения записей заданий, собранных решением "Запуск и остановка виртуальных машин в нерабочее время".
 
 |Запрос | Описание|
 |----------|----------|
 |Поиск успешно выполненных заданий runbook ScheduledStartStop_Parent. | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "ScheduledStartStop_Parent" ) <br>&#124;  where ( ResultType == "Completed" )  <br>&#124;  summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc</code>|
-|Поиск заданий для ScheduledStartStop_Parent Runbook, которые не были успешно выполнены | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "ScheduledStartStop_Parent" ) <br>&#124;  where ( ResultType == "Failed" )  <br>&#124;  summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc</code>|
+|Поиск заданий runbook ScheduledStartStop_Parent, которые не были выполнены успешно. | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "ScheduledStartStop_Parent" ) <br>&#124;  where ( ResultType == "Failed" )  <br>&#124;  summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc</code>|
 |Поиск успешно выполненных заданий runbook SequencedStartStop_Parent. | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "SequencedStartStop_Parent" ) <br>&#124;  where ( ResultType == "Completed" ) <br>&#124;  summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc</code>|
-|Поиск заданий для SequencedStartStop_Parent Runbook, которые не были успешно выполнены | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "SequencedStartStop_Parent" ) <br>&#124;  where ( ResultType == "Failed" ) <br>&#124;  summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc</code>|
+|Поиск заданий runbook SequencedStartStop_Parent, которые не были выполнены успешно. | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "SequencedStartStop_Parent" ) <br>&#124;  where ( ResultType == "Failed" ) <br>&#124;  summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc</code>|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-**Запуск и остановка виртуальных машин в нерабочее время** решение не включает предопределенный набор предупреждений. Дополнительные сведения о создании оповещений о сбое задания для поддержки DevOps или рабочих процессов и процедур см. в статье [Создание оповещений журнала](../azure-monitor/platform/alerts-log.md) с помощью Azure Monitor.
+* Чтобы настроить возможность Запуска и остановки виртуальных машин в нерабочее время, см. [эту статью](automation-solution-vm-management-config.md).
+* Сведения о предупреждениях журнала во время развертывания компонентов см. в статье [Создание оповещений журнала с помощью Azure Monitor](../azure-monitor/platform/alerts-log.md).
+* Сведения об устранении ошибок с этой возможностью см. в [этой статье](troubleshoot/start-stop-vm.md).

@@ -111,6 +111,8 @@
           href: howto-create-custom-rules.md
         - name: Создание пользовательских решений аналитики с помощью Databricks
           href: howto-create-custom-analytics.md
+        - name: Визуализация данных в Power BI
+          href: howto-connect-powerbi.md
     - name: Администрирование
       items:
         - name: Управление приложением

@@ -462,6 +462,8 @@
       items:
         - name: Что такое распознавание говорящего?
           href: speaker-recognition-overview.md
+        - name: Основные сведения об API "Распознавание говорящего"
+          href: speaker-recognition-basics.md
     - name: Справочник
       items:
         - name: Интерфейсы REST API

@@ -12,12 +12,13 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 05/21/2020
 ms.author: apimpm
-ms.openlocfilehash: 92473dc7553286867a33100d7328dd0320d55823
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.custom: references_regions
+ms.openlocfilehash: f7a036a382ac3b16093529a67abe9ef78b897274
+ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83799932"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84300099"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure позволяют размещать любые ресурсы Azure в сети, недоступной из Интернета, доступом к которой управляете вы сами. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md).
@@ -265,7 +266,7 @@ IP-адреса разделены **средой Azure**. При разреше
 | Azure для государственных организаций| Восточная часть США (DoD)| 52.181.32.192|
 
 ## <a name="related-content"></a><a name="related-content"> </a>См. также
-* [Подключение типа "сеть — сеть" и многосайтовое подключение (через VPN-туннель IPsec/IKE)](../vpn-gateway/vpn-gateway-about-vpngateways.md#s2smulti)
+* [Подключение типа "сеть — сеть" и многосайтовое подключение (через VPN-туннель IPsec/IKE)](../vpn-gateway/design.md#s2smulti)
 * [Подключение виртуальных сетей из различных моделей развертывания с использованием PowerShell](../vpn-gateway/vpn-gateway-connect-different-deployment-models-powershell.md)
 * [Как использовать инспектор API для трассировки вызовов в службе управления API Azure](api-management-howto-api-inspector.md)
 * [Виртуальная сеть: часто задаваемые вопросы](../virtual-network/virtual-networks-faq.md)

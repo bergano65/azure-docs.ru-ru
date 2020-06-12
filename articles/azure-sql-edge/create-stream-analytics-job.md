@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 5e0043ebba1a317dcc6798d6be74aac051d97012
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 7db7f9548a3daa86a53dd37fbe088661e8b7b17e
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83595393"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83685178"
 ---
 # <a name="create-stream-analytics-job-in-azure-sql-edge-preview"></a>Создание задания Stream Analytics в SQL Azure для пограничных вычислений (предварительная версия) 
 
@@ -22,6 +22,9 @@ ms.locfileid: "83595393"
 
 1. Создайте входные и выходные объекты внешнего потока.
 2. Определите запрос задания потоковой передачи в ходе создания задания потоковой передачи.
+
+> [!NOTE]
+> Чтобы включить функцию потоковой передачи T-SQL в SQL Azure для пограничных вычислений, включите TF 11515 в качестве параметра запуска или используйте команду [DBCC TRACEON]( https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-transact-sql). Дополнительные сведения о том, как включить флаги трассировки с помощью файла mssql.conf, см. в разделе [Настройка с помощью файла mssql.conf](configure.md#configure-using-mssqlconf-file). Это требование будет удалено в будущих обновлениях SQL Azure для пограничных вычислений (предварительная версия).
 
 ## <a name="configure-an-external-stream-input-and-output-object"></a>Настройка входного и выходного объекта внешнего потока
 

@@ -17,12 +17,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 56f240a5191dd483f89889f3ffe13b1819ca1e53
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 5dbfca54227895de53b984dcf5c7a1f8c5fbf51d
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78399321"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83647395"
 ---
 # <a name="get-started-with-the-azure-active-directory-reporting-api"></a>Начало работы с API отчетов Azure Active Directory
 
@@ -34,7 +34,7 @@ API Microsoft Graph для отчетов Azure AD обеспечивает пр
 
 При возникновении проблем ознакомьтесь со статьей [Как получить поддержку для Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-troubleshooting-support-howto).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы получить доступ к API отчетов с вмешательством пользователя или без него, потребуется:
 
@@ -47,13 +47,13 @@ API Microsoft Graph для отчетов Azure AD обеспечивает пр
 
 ## <a name="api-endpoints"></a>Конечные точки API 
 
-`https://graph.microsoft.com/beta/auditLogs/directoryAudits` — это конечная точка API Microsoft Graph для журналов аудита, а `https://graph.microsoft.com/beta/auditLogs/signIns` — конечная точка API Microsoft Graph для входа в систему. Дополнительные сведения см. в справке по [API аудита](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) и [API входа](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signIn).
+`https://graph.microsoft.com/v1.0/auditLogs/directoryAudits` — это конечная точка API Microsoft Graph для журналов аудита, а `https://graph.microsoft.com/v1.0/auditLogs/signIns` — конечная точка API Microsoft Graph для входа в систему. Дополнительные сведения см. в справке по [API аудита](https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/directoryaudit) и [API входа](https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/signIn).
 
-Кроме того, вы можете использовать [API обнаружения угроз для защиты идентификации](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/identityriskevent) , чтобы получить программный доступ к средствам обнаружения безопасности с помощью Microsoft Graph. Дополнительные сведения см. в статье [Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph](../identity-protection/graph-get-started.md). 
+Кроме того, вы можете использовать [API-интерфейс обнаружения риска защиты идентификации](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/identityriskevent), чтобы получить программный доступ к сведениям об обнаружениях с помощью Microsoft Graph. Дополнительные сведения см. в статье [Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph](../identity-protection/graph-get-started.md). 
   
-## <a name="apis-with-microsoft-graph-explorer"></a>API с помощью проводника Microsoft Graph
+## <a name="apis-with-microsoft-graph-explorer"></a>API с песочницей Microsoft Graph
 
-С помощью [обозревателя Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer) можно проверить данные API входа и аудита. Войдите в учетную запись, используя одну из кнопок входа в пользовательском интерфейсе песочницы Graph и задав для клиента разрешения **AuditLog.Read.All** и **Directory.ReadAll**, как показано ниже.   
+Вы можете использовать [песочницу Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer) для проверки входа и аудита данных API. Войдите в учетную запись, используя одну из кнопок входа в пользовательском интерфейсе песочницы Graph и задав для клиента разрешения **AuditLog.Read.All** и **Directory.ReadAll**, как показано ниже.   
 
 ![Песочница Graph](./media/concept-reporting-api/graph-explorer.png)
 
@@ -63,9 +63,9 @@ API Microsoft Graph для отчетов Azure AD обеспечивает пр
 
 Если вы планируете получать данные отчетов без вмешательства пользователя, используйте API отчетов Azure AD с сертификатами.
 
-Подробные инструкции см. [в статье получение данных с помощью API отчетов Azure AD с сертификатами](tutorial-access-api-with-certificates.md).
+Подробные инструкции см. в статье о [получении данных с помощью API отчетов Azure AD с сертификатами](tutorial-access-api-with-certificates.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
  * [Предварительные требования для доступа к API отчетов](howto-configure-prerequisites-for-reporting-api.md) 
  * [Получение данных, используя API отчетов Azure AD с сертификатами](tutorial-access-api-with-certificates.md)

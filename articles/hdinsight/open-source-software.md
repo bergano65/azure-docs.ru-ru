@@ -1,5 +1,5 @@
 ---
-title: Поддержка по с открытым кодом в Azure HDInsight
+title: Поддержка программного обеспечения с открытым кодом в Azure HDInsight
 description: Microsoft Azure предоставляет общий уровень поддержки для технологий с открытым исходным кодом.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,18 +8,18 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: 65f21450f194175af37c6c198468978392cee462
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: dd32d176b3e8821236f39dd1677d6dbe78b40adb
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82195168"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83836079"
 ---
-# <a name="open-source-software-support-in-azure-hdinsight"></a>Поддержка по с открытым кодом в Azure HDInsight
+# <a name="open-source-software-support-in-azure-hdinsight"></a>Поддержка программного обеспечения с открытым кодом в Azure HDInsight
 
-Служба Microsoft Azure HDInsight использует среду с открытым исходным кодом, созданную на основе Apache Hadoop. Microsoft Azure предоставляет общий уровень поддержки для технологий с открытым исходным кодом. Дополнительные сведения см. в разделе, посвященном **области действия поддержки**, на [веб-сайте с часто задаваемыми вопросами о поддержке Azure](https://azure.microsoft.com/support/faq/). Служба HDInsight предоставляет дополнительный уровень поддержки для встроенных компонентов.
+Служба Microsoft Azure HDInsight использует сформированную вокруг Apache Hadoop среду технологий с открытым кодом. Microsoft Azure предоставляет общий уровень поддержки для технологий с открытым исходным кодом. Дополнительные сведения см. в разделе, посвященном **области действия поддержки**, на [веб-сайте с часто задаваемыми вопросами о поддержке Azure](https://azure.microsoft.com/support/faq/). Служба HDInsight предоставляет дополнительный уровень поддержки для встроенных компонентов.
 
-## <a name="components"></a>Компоненты
+## <a name="components"></a>Components
 
 В службе HDInsight доступно два типа компонентов с открытым кодом.
 
@@ -27,7 +27,7 @@ ms.locfileid: "82195168"
 
 Эти компоненты предварительно установлены в кластерах HDInsight и предоставляют его базовые функциональные возможности. К этой категории относятся следующие компоненты:
 
-* [Apache Hadoop YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) диспетчер ресурсов.
+* Диспетчер ресурсов [Apache Hadoop YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html).
 * Язык запросов Hive [HiveQL](https://cwiki.apache.org/confluence/display/Hive/LanguageManual).
 * [Apache Mahout](https://mahout.apache.org/).
 
@@ -40,13 +40,13 @@ ms.locfileid: "82195168"
 > [!WARNING]  
 > Компоненты, поставляемые с кластером HDInsight, полностью поддерживаются. Служба поддержки Майкрософт помогает выявлять и устранять проблемы, связанные с этими компонентами.
 >
-> Настраиваемые компоненты получают ограниченную, коммерчески оправданную поддержку, способствующую дальнейшему устранению неполадок. Эту проблему может решить служба поддержки Майкрософт. Вас могут попросить воспользоваться доступными каналами по технологиям с открытым кодом, чтобы связаться с экспертами в данной области. Вы можете использовать ряд сайтов сообществ, Например, [форум MSDN по HDInsight](https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight) и [Stack Overflow](https://stackoverflow.com).
+> Настраиваемые компоненты получают ограниченную, коммерчески оправданную поддержку, способствующую дальнейшему устранению неполадок. Эту проблему может решить служба поддержки Майкрософт. Вас могут попросить воспользоваться доступными каналами по технологиям с открытым кодом, чтобы связаться с экспертами в данной области. Вы можете использовать ряд сайтов сообществ, Примерами могут служить [страница с вопросами и ответами по HDInsight](https://docs.microsoft.com/answers/topics/azure-hdinsight.html) и [Stack Overflow](https://stackoverflow.com).
 >
 > Для проектов Apache также имеются соответствующие сайты, указанные на [веб-сайте Apache](https://apache.org). Например, [Hadoop](https://hadoop.apache.org/).
 
 ## <a name="component-usage"></a>Использование компонентов
 
-Служба HDInsight позволяет использовать настраиваемые компоненты несколькими разными способами. Уровень поддержки не зависит от того, как компонент используется или устанавливается в кластере. В следующей таблице описаны наиболее распространенные способы использования настраиваемых компонентов в кластерах HDInsight.
+Служба HDInsight позволяет использовать настраиваемые компоненты несколькими разными способами. Уровень поддержки не зависит от того, как компонент используется или устанавливается в кластере. В таблице ниже приведен список самых распространенных способов использования настраиваемых компонентов в кластерах HDInsight.
 
 |Использование |Описание |
 |---|---|
@@ -56,6 +56,6 @@ ms.locfileid: "82195168"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Настройка кластеров Azure HDInsight с помощью действий сценария](./hdinsight-hadoop-customize-cluster-linux.md)
-* [Разработка скриптов действия скрипта для HDInsight](hdinsight-hadoop-script-actions-linux.md)
-* [Безопасное управление средой Python в Azure HDInsight с помощью действия скрипта](./spark/apache-spark-python-package-installation.md)
+* [Настройка кластеров Azure HDInsight с помощью действий сценариев](./hdinsight-hadoop-customize-cluster-linux.md)
+* [Разработка действий сценариев с помощью HDInsight](hdinsight-hadoop-script-actions-linux.md)
+* [Безопасное управление средой Python в Azure HDInsight с помощью действия сценария](./spark/apache-spark-python-package-installation.md)
