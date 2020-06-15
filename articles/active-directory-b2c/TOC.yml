@@ -36,6 +36,9 @@
           href: tutorial-desktop-app.md
         - name: Одностраничное приложение
           href: tutorial-single-page-app.md
+        - name: Python
+          href: tutorial-web-app-python.md
+          displayName: flask
     - name: Предоставление доступа через API
       items:
         - name: ASP.NET

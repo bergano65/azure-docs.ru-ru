@@ -256,12 +256,10 @@
           href: limit-egress-traffic.md
         - name: Включение интеграции с Azure Active Directory
           items:
-            - name: "Интеграция Azure\_AD (предварительная версия)"
+            - name: AAD с управлением AKS (предварительная версия)
               href: managed-aad.md
             - name: Использование Azure CLI
               href: azure-ad-integration-cli.md
-            - name: Использование портала Azure
-              href: azure-ad-integration.md
         - name: "Использование RBAC Kubernetes при интеграции с Azure\_AD"
           href: azure-ad-rbac.md
           maintainContext: true

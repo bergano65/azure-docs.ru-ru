@@ -37,16 +37,8 @@
       displayName: 'list, examples'
       href: ./samples/index.md
     - name: Тестирование безопасности Azure
-      items:
-        - name: Обзор
-          displayName: 'standards, azure, benchmark'
-          href: ./samples/azure-security-benchmark/index.md
-        - name: Сопоставление элементов управления
-          displayName: 'standards, azure, benchmark'
-          href: ./samples/azure-security-benchmark/control-mapping.md
-        - name: Инструкции по развертыванию
-          displayName: 'standards, azure, benchmark'
-          href: ./samples/azure-security-benchmark/deploy.md
+      displayName: 'standards, azure, benchmark'
+      href: ./samples/azure-security-benchmark.md
     - name: Australian Government ISM PROTECTED
       items:
         - name: Сопоставление элементов управления
@@ -64,16 +56,8 @@
           displayName: 'standards, canada, federal, pbmm'
           href: ./samples/canada-federal-pbmm/deploy.md
     - name: Тест производительности CIS для платформ Microsoft Azure
-      items:
-        - name: Обзор
-          displayName: 'standards, cis'
-          href: ./samples/cis-azure-1.1.0/index.md
-        - name: Сопоставление рекомендаций
-          displayName: 'standards, cis'
-          href: ./samples/cis-azure-1.1.0/control-mapping.md
-        - name: Инструкции по развертыванию
-          displayName: 'standards, cis'
-          href: ./samples/cis-azure-1.1.0/deploy.md
+      displayName: 'standards, cis'
+      href: ./samples/cis-azure-1-1-0.md
     - name: "Уровень влияния DoD\_4"
       items:
         - name: Обзор
@@ -173,17 +157,9 @@
         - name: Инструкции по развертыванию
           displayName: 'standards, Media'
           href: ./samples/media/deploy.md
-    - name: "NIST SP 800-53, ред.\_4"
-      items:
-        - name: Обзор
-          displayName: 'standards, nist, 800-53, rev 4'
-          href: ./samples/nist-sp-800-53-rev4/index.md
-        - name: Сопоставление элементов управления
-          displayName: 'standards, nist, 800-53, rev 4'
-          href: ./samples/nist-sp-800-53-rev4/control-mapping.md
-        - name: Инструкции по развертыванию
-          displayName: 'standards, nist, 800-53, rev 4'
-          href: ./samples/nist-sp-800-53-rev4/deploy.md
+    - name: NIST SP 800-53 R4
+      displayName: 'standards, nist, 800-53, rev 4'
+      href: ./samples/nist-sp-800-53-r4.md
     - name: "PCI-DSS версии\_3.2.1"
       items:
         - name: Обзор

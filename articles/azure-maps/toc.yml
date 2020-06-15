@@ -59,6 +59,8 @@
           href: drawing-conversion-error-codes.md
     - name: Покрытие
       items:
+        - name: Покрытие
+          href: geographic-coverage.md
         - name: Наличие информации о геокодировании
           href: geocoding-coverage.md
         - name: Наличие информации о дорожном движении

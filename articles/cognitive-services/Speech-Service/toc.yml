@@ -12,6 +12,8 @@
       href: language-support.md
     - name: Поддержка регионов
       href: regions.md
+    - name: Новые возможности в Документации Майкрософт
+      href: whats-new.md
 - name: Преобразование речи в текст
   items:
     - name: Документация по преобразованию речи в текст

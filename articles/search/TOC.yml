@@ -222,12 +222,12 @@
               href: cognitive-search-create-custom-skill-example.md
             - name: "Пример\_— Распознаватель документов Azure"
               href: cognitive-search-custom-skill-form.md
+            - name: Пример. Машинное обучение Azure
+              href: cognitive-search-tutorial-aml-custom-skill.md
             - name: "Пример\_— контейнеры"
               href: 'https://go.microsoft.com/fwlink/?linkid=2089500'
         - name: Советы по проектированию
           href: cognitive-search-concept-troubleshooting.md
-        - name: Ссылки на документацию
-          href: cognitive-search-resources-documentation.md
         - name: Хранилище знаний
           items:
             - name: Создание с помощью REST и Postman
@@ -464,6 +464,8 @@
               href: cognitive-search-skill-text-translation.md
         - name: Пользовательские навыки
           items:
+            - name: Машинное обучение Azure (AML)
+              href: cognitive-search-aml-skill.md
             - name: Пользовательские веб-API
               href: cognitive-search-custom-skill-web-api.md
         - name: Устаревшие навыки
@@ -481,6 +483,8 @@
       href: 'https://feedback.azure.com/forums/263029-azure-search'
     - name: Соответствие требованиям и сертификация
       href: 'https://aka.ms/azurecompliance'
+    - name: Ссылки на документацию (интеллектуальный анализ знаний)
+      href: cognitive-search-resources-documentation.md
     - name: Сайты с демоверсиями
       items:
         - name: Демонстрация с финансовыми файлами

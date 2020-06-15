@@ -35,6 +35,8 @@
           href: temporal-tables.md
         - name: Увеличение и уменьшение масштаба
           href: database/scale-resources.md
+        - name: Горизонтальное масштабирование для чтения
+          href: database/read-scale-out.md
         - name: Безопасность
           items:
             - name: Обзор
@@ -282,8 +284,6 @@
           href: database/connectivity-architecture.md
         - name: Параметры подключения
           href: database/connectivity-settings.md
-        - name: Горизонтальное масштабирование для чтения
-          href: database/read-scale-out.md
         - name: Отличия T-SQL
           href: database/transact-sql-tsql-differences-sql-server.md
         - name: Служба автоматизации Azure

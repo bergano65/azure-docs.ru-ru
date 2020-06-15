@@ -54,6 +54,10 @@
       href: /azure/event-hubs/authenticate-managed-identity?context=azure/active-directory/managed-identities-azure-resources/context/msi-context
     - name: Экземпляры контейнеров Azure
       href: /azure/container-instances/container-instances-managed-identity?context=azure/active-directory/managed-identities-azure-resources/context/msi-context
+- name: Основные понятия
+  items:
+    - name: Управляемые удостоверения и виртуальные машины Azure
+      href: how-managed-identities-work-vm.md
 - name: Практические руководства
   items:
     - name: Настройка управляемых удостоверений на виртуальных машинах

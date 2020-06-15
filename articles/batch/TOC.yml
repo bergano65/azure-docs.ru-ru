@@ -95,6 +95,8 @@
           href: batch-management-dotnet.md
         - name: Анализ затрат и бюджеты
           href: budget.md
+        - name: Использование частных конечных точек с учетными записями пакетной службы
+          href: private-connectivity.md
     - name: "Аутентификация с помощью Azure\_AD"
       items:
         - name: Azure AD и пакетная служба

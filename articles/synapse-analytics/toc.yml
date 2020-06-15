@@ -235,7 +235,7 @@
         - name: Загрузка данных
           items:
             - name: Обзор
-              href: sql/data-loading-overview.md
+              href: ./sql-data-warehouse/design-elt-data-loading.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Рекомендации
               href: sql/data-loading-best-practices.md
             - name: Сжатие columnstore

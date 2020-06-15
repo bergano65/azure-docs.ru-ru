@@ -4,6 +4,8 @@
   items:
     - name: Что такое Виртуальный рабочий стол Windows
       href: overview.md
+    - name: Новые возможности
+      href: whats-new.md
     - name: "Документация по выпуску за осень 2019\_года"
       href: ./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md
 - name: Учебники
@@ -82,6 +84,8 @@
       href: teams-on-wvd.md
     - name: Настройка Многофакторной идентификации Azure
       href: set-up-mfa.md
+    - name: Настройка автоматических обновлений
+      href: configure-automatic-updates.md
     - name: Установка языковых пакетов
       href: language-packs.md
 - name: Основные понятия
