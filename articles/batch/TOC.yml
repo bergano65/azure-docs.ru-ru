@@ -97,6 +97,8 @@
           href: budget.md
         - name: Использование частных конечных точек с учетными записями пакетной службы
           href: private-connectivity.md
+        - name: 'Настройка ключей, управляемых клиентом'
+          href: batch-customer-managed-key.md
     - name: "Аутентификация с помощью Azure\_AD"
       items:
         - name: Azure AD и пакетная служба
