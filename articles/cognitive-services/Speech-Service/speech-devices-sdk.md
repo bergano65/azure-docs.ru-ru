@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: erhopf
-ms.openlocfilehash: 3fb5f1df0eb4473483c9298cdbf36909b75065e7
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.openlocfilehash: 4ec153a9c770b0001888c972dc44414470e3ddbf
+ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82927213"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84730311"
 ---
 # <a name="what-is-the-speech-devices-sdk"></a>Что такое пакет SDK для речевых устройств?
 
@@ -37,7 +37,11 @@ ms.locfileid: "82927213"
 
 ### <a name="android"></a>Android
 
-Для Android устройства загружают последнюю версию [пакета SDK для речевых устройств Android](https://aka.ms/sdsdk-download-android).
+Пакет SDK для речевых устройств для Android поддерживает [Рубо v1](speech-devices-sdk-roobo-v1.md) и аналогичные устройства. для этого скачайте последнюю версию [пакета SDK для речевых устройств Android](https://aka.ms/sdsdk-download-android).
+
+
+Если у вас другое устройство Android, например телефон или Mobile, начните с [пакета Android Speech SDK](speech-sdk.md)
+
 
 ### <a name="windows"></a>Windows
 
@@ -51,7 +55,7 @@ ms.locfileid: "82927213"
 
 Предоставляются дополнительные двоичные файлы для поддержки предстоящих устройств, [Рубо v2 DDK](https://aka.ms/sdsdk-download-roobov2), [урбеттер DDK](https://aka.ms/sdsdk-download-urbetter), [ГЖЕК докладчика](https://aka.ms/sdsdk-download-speaker), [Linux ARM32](https://aka.ms/sdsdk-download-linux-arm32)и [Linux ARM64](https://aka.ms/sdsdk-download-linux-arm64).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Выберите свое речевое устройство](get-speech-devices-sdk.md)

@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 07/08/2019
 ms.author: scottwhi
 ms.openlocfilehash: 6fa022f181e2061c6a7f3e08d1f2f501ddd9cac3
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79220273"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84696717"
 ---
 # <a name="filtering-the-answers-that-the-search-response-includes"></a>Фильтрация результатов, возвращаемых в ответе на запрос поиска  
 
@@ -102,7 +102,7 @@ Host: api.cognitive.microsoft.com
 
 ### <a name="site"></a>Сайт
 
-Чтобы получить результаты поиска из определенного домена, включите параметр `site:` запроса в строку запроса.  
+Чтобы получить результаты поиска из определенного домена, включите `site:` параметр запроса в строку запроса.  
 
 ```
 https://api.cognitive.microsoft.com/bing/v7.0/search?q=sailing+dinghies+site:contososailing.com&mkt=en-us
@@ -119,7 +119,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/search?q=sailing+dinghies+site:con
 * `Week`— Возврат веб-страниц, обнаруженных Bing за последние семь дней
 * `Month`— Возврат веб-страниц, обнаруженных в течение последних 30 дней
 
-Можно также задать для этого параметра настраиваемый диапазон дат в форме `YYYY-MM-DD..YYYY-MM-DD`. 
+Можно также задать для этого параметра настраиваемый диапазон дат в форме `YYYY-MM-DD..YYYY-MM-DD` . 
 
 `https://<host>/bing/v7.0/search?q=ipad+updates&freshness=2019-02-01..2019-05-30`
 
@@ -131,7 +131,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/search?q=sailing+dinghies+site:con
 
 ## <a name="limiting-the-number-of-answers-in-the-response"></a>Ограничение числа результатов в ответе
 
-Bing может возвращать несколько типов ответов в ответе JSON. Например, при запросе *гоночные + дингхиес* `webpages`Bing может возвращать `images`,, `videos`и. `relatedSearches`
+Bing может возвращать несколько типов ответов в ответе JSON. Например, при запросе *гоночные + дингхиес*Bing может возвращать `webpages` , `images` , `videos` и `relatedSearches` .
 
 ```json
 {

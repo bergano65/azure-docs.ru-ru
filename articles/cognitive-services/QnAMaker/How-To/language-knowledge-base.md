@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: diberry
 ms.openlocfilehash: 38701e8bbef1c5d78eca2242105e81fe7261c0f6
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79220636"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84693096"
 ---
 # <a name="language-support-of-knowledge-base-content-for-qna-maker"></a>Языковая поддержка содержимого базы знаний для QnA Maker
 
@@ -25,7 +25,7 @@ ms.locfileid: "79220636"
 
 ## <a name="one-language-for-all-knowledge-bases-in-resource"></a>Один язык для всех баз знаний в ресурсе
 
-QnA Maker позволяет выбрать язык для службы QnA при создании первой базы знаний. Для всех баз знаний в ресурсе QnA Maker все они должны быть на одном языке. Этот язык нельзя изменить.
+QnA Maker позволяет выбрать язык для службы QnA при создании первой базы знаний. Все базы знаний в ресурсе QnA Maker должны быть на одном языке. Этот язык нельзя изменить.
 
 Создание баз знаний на разных языках в одном ресурсе отрицательно влияет на релевантность результатов QnA Maker предоставляемых в ответ на запросы пользователя.
 

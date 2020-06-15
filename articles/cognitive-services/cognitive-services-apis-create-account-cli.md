@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 10/04/2019
 ms.author: aahi
 ms.openlocfilehash: 72b00d78d19ed0e963b4dad01b82033c659e1efd
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79219613"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84704715"
 ---
 # <a name="create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Создание Cognitive Services ресурса с помощью интерфейс командной строки Azure (CLI)
 
@@ -60,7 +60,7 @@ az account list-locations \
 
 Создав расположение Azure, создайте новую группу ресурсов в Azure CLI с помощью команды [AZ Group Create](/cli/azure/group#az-group-create) .
 
-В приведенном ниже примере замените расположение `westus2` Azure на одно из расположений Azure, доступных для вашей подписки.
+В приведенном ниже примере замените расположение Azure на `westus2` одно из расположений Azure, доступных для вашей подписки.
 
 ```azurecli-interactive
 az group create \
@@ -82,13 +82,13 @@ az group create \
 
 
 > [!NOTE]
-> Многие из Cognitive Services ниже имеют бесплатный уровень, который можно использовать для пробного использования службы. Чтобы использовать уровень "бесплатный", `F0` используйте в качестве номера SKU для ресурса.
+> Многие из Cognitive Services ниже имеют бесплатный уровень, который можно использовать для пробного использования службы. Чтобы использовать уровень "бесплатный", используйте в `F0` качестве номера SKU для ресурса.
 
-### <a name="vision"></a>Концепция
+### <a name="vision"></a>Зрение
 
 | Служба                    | Вид                      |
 |----------------------------|---------------------------|
-| API Компьютерного зрения            | `ComputerVision`          |
+| Компьютерное зрение            | `ComputerVision`          |
 | Прогнозирование Пользовательское визуальное распознавание | `CustomVision.Prediction` |
 | Пользовательское визуальное распознавание обучение   | `CustomVision.Training`   |
 | Распознавание лиц                       | `Face`                    |
@@ -99,11 +99,11 @@ az group create \
 
 | Служба            | Вид                  |
 |--------------------|-----------------------|
-| API Автозаполнения Bing   | `Bing.Autosuggest.v7` |
+| Автозаполнение Bing   | `Bing.Autosuggest.v7` |
 | Пользовательский поиск Bing | `Bing.CustomSearch`   |
-| API Поиска сущностей Bing | `Bing.EntitySearch`   |
+| Поиск сущностей Bing | `Bing.EntitySearch`   |
 | Поиск Bing        | `Bing.Search.v7`      |
-| API Проверки орфографии Bing   | `Bing.SpellCheck.v7`  |
+| Проверка орфографии Bing   | `Bing.SpellCheck.v7`  |
 
 ### <a name="speech"></a>Речь
 
@@ -140,7 +140,7 @@ az cognitiveservices account list-kinds
 
 Чтобы создать новый ресурс Cognitive Services и подписываться на него, используйте команду [AZ cognitiveservices Account Create](https://docs.microsoft.com/cli/azure/cognitiveservices/account?view=azure-cli-latest#az-cognitiveservices-account-create) . Эта команда добавляет новый оплачиваемый ресурс в группу ресурсов, созданную ранее. При создании нового ресурса необходимо знать тип службы, которую вы хотите использовать, а также ценовую категорию (или SKU) и расположение Azure:
 
-Вы можете создать ресурс F0 (Free) для детектора аномалий с именем `anomaly-detector-resource` , используя приведенную ниже команду.
+Вы можете создать ресурс F0 (Free) для детектора аномалий с именем, `anomaly-detector-resource` используя приведенную ниже команду.
 
 ```azurecli-interactive
 az cognitiveservices account create \
@@ -198,7 +198,7 @@ az cognitiveservices account list-usage \
 az group delete --name cognitive-services-resource-group
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительно
 
 * [Проверка подлинности запросов к Azure Cognitive Services](authentication.md)
 * [Что такое Azure Cognitive Services?](Welcome.md)
