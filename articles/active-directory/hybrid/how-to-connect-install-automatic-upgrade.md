@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect: автоматическое обновление | Документация Майкрософт'
+title: 'Azure AD Connect выполняет следующие функции: автоматическое обновление | Документация Майкрософт'
 description: В этом разделе описывается встроенная функция автоматического обновления в Azure AD Connect.
 services: active-directory
 documentationcenter: ''
@@ -12,18 +12,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/07/2020
+ms.date: 05/18/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae0632fbc3208befe197c15ffdbf2d9a4e7b2d7a
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
-ms.translationtype: MT
+ms.openlocfilehash: a05de8bf6a6e4ab79e63d6634ddb1b79fae6045f
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82926482"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83680216"
 ---
-# <a name="azure-ad-connect-automatic-upgrade"></a>Azure AD Connect: автоматическое обновление
+# <a name="azure-ad-connect-automatic-upgrade"></a>Azure AD Connect выполняет следующие функции: Автоматическое обновление
 Эта функция появилась в сборке [1.1.105.0 (выпущенной в феврале 2016 года)](reference-connect-version-history.md#111050).  Эта функция была обновлена в [сборке 1.1.561](reference-connect-version-history.md#115610) и теперь поддерживает дополнительные, ранее не поддерживаемые, сценарии.
 
 ## <a name="overview"></a>Обзор
@@ -43,7 +43,7 @@ ms.locfileid: "82926482"
 | Приостановлена |Устанавливается только системой. Сейчас система **не имеет возможности** получать автоматические обновления. |
 | Выключено |Автоматическое обновление отключено. |
 
-Переключаться между состояниями **Включено** и **Отключено** позволяет командлет `Set-ADSyncAutoUpgrade`. Состояние **Приостановлено**может устанавливаться только системой.  До 1.1.750.0 командлет Set-ADSyncAutoUpgrade заблокировал автоматическое обновление, если состояние автоматического обновления было установлено в suspended. Теперь эта функция изменена, поэтому она не блокирует автообновление.
+Переключаться между состояниями **Включено** и **Отключено** позволяет командлет `Set-ADSyncAutoUpgrade`. Состояние **Приостановлено**может устанавливаться только системой.  До версии 1.1.750.0 командлет Set-ADSyncAutoUpgrade блокировал автоматическое обновление, если для этой функции было установлено состояние "Приостановлено". После внесения изменений этот командлет не будет блокировать автоматическое обновление.
 
 В качестве инфраструктуры обновлений при автоматическом обновлении используется Azure AD Connect Health. Чтобы работало автоматическое обновление, откройте в прокси-сервере URL-адреса для **Azure AD Connect Health** , указанные в статье [URL-адреса и диапазоны IP-адресов Office 365](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2).
 
@@ -67,9 +67,9 @@ ms.locfileid: "82926482"
 
 Итоговый код содержит префикс и общие сведения о состоянии.
 
-| Префикс итогового кода | Описание: |
+| Префикс итогового кода | Описание |
 | --- | --- |
-| Успех |Установка успешно обновлена. |
+| Успешно |Установка успешно обновлена. |
 | UpgradeAborted |Временное состояние привело к остановке обновления. Будет выполнена повторная попытка установки, и ожидается, что она будет успешной. |
 | UpgradeNotSupported |Конфигурация системы блокирует автоматическое обновление. Будет выполнена повторная попытка для проверки изменения состояния, однако ожидается, что систему потребуется обновить вручную. |
 
@@ -92,7 +92,7 @@ ms.locfileid: "82926482"
 | UpgradeNotSupportedAdfsSignInMethod | Вы выбрали вход с помощью AD FS. |
 | UpgradeNotSupportedCustomizedSyncRules |Пользователь добавил собственные правила в конфигурацию. |
 | UpgradeNotSupportedDeviceWritebackEnabled |Включена функция [обратной записи устройства](how-to-connect-device-writeback.md) . |
-| UpgradeNotSupportedGroupWritebackEnabled |Включена функция [обратной записи групп](how-to-connect-preview.md#group-writeback) . |
+| UpgradeNotSupportedGroupWritebackEnabled |Включена функция обратной записи групп. |
 | UpgradeNotSupportedInvalidPersistedState |Установка не является экспресс-установкой параметров или обновлением DirSync. |
 | UpgradeNotSupportedMetaverseSizeExceeeded |В метавселенной больше 100 000 объектов. |
 | UpgradeNotSupportedMultiForestSetup |Выполняется подключение к нескольким лесам. Экспресс-установка подключается только к одному лесу. |
@@ -103,4 +103,4 @@ ms.locfileid: "82926482"
 | UpgradeNotSupportedUserWritebackEnabled |Включена функция [обратной записи пользователей](how-to-connect-preview.md#user-writeback) . |
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

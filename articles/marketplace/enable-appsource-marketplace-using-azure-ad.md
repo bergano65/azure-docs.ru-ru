@@ -1,26 +1,26 @@
 ---
-title: Включение описания в Microsoft AppSource и Azure Marketplace с помощью Azure Active Directory | Azure
-description: Включение типа описания с помощью Azure Active Directory в Azure Marketplace и AppSource для издателей приложений и служб.
+title: Интеграция предложения marketplace коммерческой платформы Майкрософт с Azure Active Directory
+description: Использование Azure Active Directory для аутентификации предложений Microsoft AppSource и Azure Marketplace.
 author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: dsindona
-ms.openlocfilehash: 324f8def5ddafb15156a31fe5addabadcee6f115
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
-ms.translationtype: MT
+ms.openlocfilehash: 17cbfe92744ad96f2b5651b7e2f47a6443337068
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
-ms.locfileid: "82160619"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83658044"
 ---
-# <a name="enable-an-appsource-and-marketplace-listing-by-using-azure-active-directory"></a>Включение описания в AppSource и Marketplace с помощью Azure Active Directory
+# <a name="integrate-your-commercial-marketplace-listing-with-azure-active-directory"></a>Интеграция коммерческого профиля marketplace с Azure Active Directory
 
- Azure Active Directory (Azure AD) — это облачная служба идентификации, которая позволяет выполнять проверку подлинности с помощью учетной записи Майкрософт. В Azure AD используются стандартные отраслевые платформы. Дополнительные [сведения о Azure Active Directory](https://azure.microsoft.com/services/active-directory).
+ В этой статье описаны требования для интеграции коммерческого профиля или предложения marketplace с Azure Active Directory (Azure AD). Azure AD — это облачная служба идентификации, которая использует стандартные отраслевые платформы для аутентификации с помощью учетной записи Майкрософт. [Подробнее об Azure Active Directory](https://azure.microsoft.com/services/active-directory).
 
 ## <a name="azure-ad-benefits"></a>Преимущества Azure AD
 
-Клиенты Microsoft AppSource и Azure Marketplace используют имеющиеся в продуктах возможности для поиска по каталогам описаний. Для этого им требуется выполнить вход в продукт. Интеграция с Azure AD обеспечивает следующие преимущества:
+Клиенты Microsoft AppSource и Azure Marketplace используют имеющиеся в продуктах возможности для поиска по каталогам профилей Storefront. Для этого им требуется выполнить вход в продукт. Интеграция с Azure AD обеспечивает следующие преимущества:
 
 - Более быстрое взаимодействие и улучшение качества.
 - Единый вход для миллионов корпоративных пользователей.
@@ -29,17 +29,17 @@ ms.locfileid: "82160619"
 
 ## <a name="offers-that-require-azure-ad"></a>Предложения, для которых может понадобиться Azure AD
 
-При внедрении службы Azure AD требования для AppSource и Azure Marketplace отличаются. Это происходит из-за того, что существую различные [варианты описаний и типы предложений](https://docs.microsoft.com/azure/marketplace/determine-your-listing-type). Дополнительные сведения см. в таблице, приведенной ниже.
+При внедрении службы Azure AD требования для различных [вариантов профилей и типов предложений](https://docs.microsoft.com/azure/marketplace/determine-your-listing-type) отличаются. Дополнительные сведения см. в таблице, приведенной ниже.
 
 | **Тип предложения**    | **Требования к единому входу в Azure AD**  |  |   |  |
 | :------------------- | :-------------------|:-------------------|:-------------------|:-------------------|
 |  | Связь со мной | Пробная версия | Тестовый выпуск | "Транзакция" |
-| Виртуальная машина | Н/Д | Нет | Нет | Нет |
-| Приложения Azure (шаблон решения)  | Н/Д | Н/Д | Н/Д | Н/Д |
-| Управляемые приложения  | Н/Д | Н/Д | Н/Д | Нет |
+| Виртуальная машина | Недоступно | Нет | Нет | Нет |
+| Приложения Azure (шаблон решения)  | Недоступно | Недоступно | Недоступно | Недоступно |
+| Управляемые приложения  | Недоступно | Недоступно | Недоступно | Нет |
 | SaaS  | Нет | Да | Да | Да |
-| Контейнеры  | Н/Д | Н/Д | Н/Д | Нет |
-| Консультационные услуги  | Нет | Н/Д | Н/Д | Н/Д |
+| Контейнеры  | Недоступно | Недоступно | Недоступно | Нет |
+| Консультационные услуги  | Нет | Недоступно | Недоступно | Недоступно |
 
 Дополнительные сведения о технических требованиях к SaaS см. в статье [Руководство по публикации SaaS-приложений](https://docs.microsoft.com/azure/marketplace/marketplace-saas-applications-technical-publishing-guide).
 
@@ -73,7 +73,7 @@ ms.locfileid: "82160619"
 Если вы не использовали федеративный единый вход в Azure AD, выполните следующие действия:
 
 1. Зарегистрируйте свое приложение в Marketplace.
-1. Разрабатывайте единый вход с помощью Azure AD, используя [OAuth 2,0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-oauth-code) или [OpenID Connect Connect](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-openid-connect-code).
+1. Настройте единый вход в Azure AD с помощью [OAuth 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-oauth-code) или [OpenID Connect](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-openid-connect-code).
 1. Включите функцию поддержки мультитенантности в Azure AD, чтобы предоставить пробную версию одним щелчком.
 
 ### <a name="single-tenant-solutions"></a>Решения для приложений с одним клиентом
@@ -81,16 +81,16 @@ ms.locfileid: "82160619"
 Используйте Azure AD для поддержки одного из следующих действий.
 
 - Добавление гостевых пользователей с помощью [Azure AD B2B](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b).
-- Вручную настройте пробные версии для клиентов, используя вариант публикации " **свяжитесь со мной** ".
+- Ручная настройка бесплатной пробной версии для клиентов с помощью параметра публикации **Свяжитесь со мной**.
 - Разработайте тестовый выпуск для одного клиента.
 - Создайте демонстрационное мультитенантное приложение, использующее единый вход.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если это еще не сделано, 
 
-- [Сведения](https://azuremarketplace.microsoft.com/sell) о Marketplace.
+- [Узнайте больше](https://azuremarketplace.microsoft.com/sell) о marketplace
 
-Чтобы зарегистрироваться в центре партнеров, начните создавать новое предложение или работать над существующим:
+Чтобы зарегистрироваться в Центре партнеров, начните создавать новое предложение или продолжите работу над существующим:
 
-- [Войдите в центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) , чтобы создать или завершить свое предложение.
+- [Войдите в Центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership), чтобы создать или завершить свое предложение.

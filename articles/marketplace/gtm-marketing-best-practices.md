@@ -1,27 +1,21 @@
 ---
-title: Услуги для перехода на рынке — рекомендации по маркетингу | Azure Marketplace
-description: 'Службы выхода на рынок: в этом разделе описываются лучшие методики по маркетингу для издателей Microsoft Azure Marketplace'
+title: Рекомендации по маркетингу — коммерческая платформа Microsoft Marketplace
+description: Материалы с рекомендациями по маркетингу для партнеров, публикующих предложения в Microsoft AppSource и Azure Marketplace.
 author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/16/2020
 ms.author: dsindona
-ms.openlocfilehash: e874343b5bb38928ae2fc429d901d8f7ec163580
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 1955dd9dda75906e52007958fe7b4385e657444c
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81684597"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83658023"
 ---
 # <a name="marketing-best-practices"></a>Рекомендации по маркетингу
 
-Оптимизированный список Marketplace и маркетинговые кампании могут помочь вам ускорить рост приобретений клиентов и, таким же, играть важную роль в облачной стратегии и механизме. Подготовьтесь к составлению списка предложений, предоставьте клиентам пробные испытания и свяжитесь с клиентами Майкрософт и сообществом партнеров. Скачайте [руководство по AppSource & Azure Marketplace для маркетинга](https://aka.ms/marketplacebestpractices) , чтобы узнать, как максимально эффективно использовать маркетинговые кампании.
+При создании и составлении списка предложений для коммерческого рынка во время предоставления клиентам пробных версий и при работе с клиентами Майкрософт и сообществом партнеров следует учитывать рекомендации по маркетингу. Если вы оптимизируете списки предложений и маркетинговые кампании, можно ускорить привлечение клиентов. Загрузите [рекомендации для Azure Marketplace и AppSource](https://aka.ms/marketplacebestpractices), чтобы узнать, как максимально эффективно использовать маркетинговую деятельность в Интернете.
 
-**Дальнейшие действия**
-
-Чтобы узнать больше о службах выхода на рынок в marketplace, посетите [эту страницу](https://partner.microsoft.com/reach-customers/gtm).
-
-Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) , чтобы создать и настроить предложение.
-
----
+Дополнительные сведения о том, как Microsoft Partner Network может помочь в развитии бизнеса, см. в статье [Выход на рынок с помощью Microsoft](https://partner.microsoft.com/reach-customers/gtm). Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard/commercial-marketplace/), чтобы создать и настроить предложение.

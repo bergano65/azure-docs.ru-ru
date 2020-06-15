@@ -16,12 +16,12 @@ ms.date: 07/18/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 378aa35ff4b43f5a268ac3dcd9530783ada6921e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 9f834924a564f92fe7050a1236701701af7f5229
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76512969"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83647269"
 ---
 # <a name="azure-active-directory-hybrid-identity-design-considerations--next-steps"></a>Рекомендации по проектированию решений для гибридной идентификации Azure Active Directory — следующие шаги
 После завершения определения требований и проверки всех вариантов решения управления мобильными устройствами вы готовы к дальнейшим действиям по развертыванию инфраструктуры поддержки, которая идеально подходит вам и вашей организации.
@@ -37,10 +37,10 @@ ms.locfileid: "76512969"
 Мониторинг следующих ресурсов часто помогает получить последние новости и обновления, связанные с решением для управления мобильными устройствами:
 
 * [Блог Microsoft Enterprise Mobility](https://cloudblogs.microsoft.com/ENTERPRISEMOBILITY/)
-* [Блог "Майкрософт в облаке"](https://blogs.technet.com/b/in_the_cloud/)
-* [Блог Microsoft Intune](https://blogs.technet.com/b/microsoftintune/)
-* [Блог Microsoft Endpoint Configuration Manager](https://techcommunity.microsoft.com/t5/Configuration-Manager-Blog/bg-p/ConfigurationManagerBlog)
+* [Блог "Майкрософт в облаке"](https://cloudblogs.microsoft.com/)
+* [Блог Microsoft Intune](https://techcommunity.microsoft.com/t5/intune-customer-success/welcome-to-the-new-intune-customer-success-blog/ba-p/281367)
+* [Блог о Microsoft Endpoint Configuration Manager](https://techcommunity.microsoft.com/t5/Configuration-Manager-Blog/bg-p/ConfigurationManagerBlog)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 [Обзор рекомендаций по проектированию](plan-hybrid-identity-design-considerations-overview.md)
 

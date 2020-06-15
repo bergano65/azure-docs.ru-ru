@@ -213,8 +213,12 @@
           href: configure-customer-managed-key.md
     - name: Диагностика
       items:
-        - name: Руководство по устранению неполадок
+        - name: Устранение проблем подключения
           href: troubleshooting-guide.md
+        - name: Устранение проблем с проверкой подлинности и авторизацией
+          href: troubleshoot-authentication-authorization.md
+        - name: Руководство по устранению неполадок с Kafka для Центров событий
+          href: apache-kafka-troubleshooting-guide.md
         - name: Исключения .NET
           href: event-hubs-messaging-exceptions.md
         - name: Исключения Resource Manager

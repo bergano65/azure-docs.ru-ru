@@ -1,70 +1,70 @@
 ---
-title: Служба приложений Azure в качестве источника службы "Сетка событий"
-description: В этой статье описывается, как использовать службу приложений Azure в качестве источника событий службы "Сетка событий". Он содержит схему и ссылки на руководства и практические руководства.
+title: Служба приложений Azure в качестве источника Сетки событий
+description: В этой статье описывается, как использовать Службу приложений Azure в качестве источника событий Сетки событий. Она содержит схему и ссылки на учебники и практические руководства.
 services: event-grid
 author: jasonfreeberg
 ms.service: event-grid
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.author: jafreebe
-ms.openlocfilehash: 19cb7d7cfdb5c5ae61aba0f75d06476b40bdd6d7
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.openlocfilehash: 0a24e8ba84739dbc1b5de5e0546a8fe0d2e826f1
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83116940"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83650697"
 ---
-# <a name="azure-app-service-as-an-event-grid-source"></a>Служба приложений Azure в качестве источника службы "Сетка событий"
+# <a name="azure-app-service-as-an-event-grid-source"></a>Служба приложений Azure в качестве источника Сетки событий
 
-В этой статье приводятся свойства и схема для событий службы приложений Azure. Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md). Здесь также приводится список быстрых запусков и учебников по использованию службы приложений Azure в качестве источника событий.
+В этой статье описаны свойства и схема для событий Службы приложений Azure. Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md). Здесь также приводится список кратких руководств и учебников по использованию Службы приложений Azure в качестве источника событий.
 
 ## <a name="event-grid-event-schema"></a>Схема событий службы "Сетка событий Azure"
 
 ### <a name="available-event-types"></a>Доступные типы событий
 
-Служба приложений Azure выдает следующие типы событий
+Служба приложений Azure выдает приведенные ниже типы событий.
 
 |    Тип события                                             |    Описание                                                     |
 |-----------------------------------------------------------|--------------------------------------------------------------------|
-|    Microsoft. Web/Sites. баккупоператионстартед             |    Активируется при запуске резервного копирования                             |
-|    Microsoft. Web/Sites. баккупоператионкомплетед           |    Активируется после завершения резервного копирования                           |
-|    Microsoft. Web/Sites. баккупоператионфаилед              |    Активируется при сбое резервного копирования                              |
-|    Microsoft. Web/Sites. рестореоператионстартед            |    Активируется при запуске восстановления из резервной копии        |
-|    Microsoft. Web/Sites. рестореоператионкомплетед          |    Активируется при завершении восстановления из резервной копии      |
-|    Microsoft. Web/Sites. рестореоператионфаилед             |    Активируется при сбое восстановления из резервной копии         |
-|    Microsoft. Web/Sites. слотсвапстартед                    |    Активируется при запуске переключения слотов                          |
-|    Microsoft. Web/Sites. слотсвапкомплетед                  |    Активируется при завершении переключения слотов                      |
-|    Microsoft. Web/Sites. слотсвапфаилед                     |    Активируется при сбое переключения слотов                           |
-|    Microsoft. Web/Sites. слотсвапвиспревиевстартед         |    Активируется при запуске переключения слотов с предварительным просмотром           |
-|    Microsoft. Web/Sites. слотсвапвиспревиевканцеллед       |    Активируется при отмене переключения слотов с предварительным просмотром    |
-|    Microsoft. Web/Sites. Аппупдатед. перезапущено               |    Активируется при перезапуске сайта                      |
-|    Microsoft. Web/Sites. Аппупдатед. Stopped                 |    Активируется при остановке сайта                          |
-|    Microsoft. Web/Sites. Аппупдатед. Чанжедаппсеттингс      |    Активируется при изменении параметров приложения сайта             |
-|    Microsoft. Web/serverfarms. аппсервицепланупдатед        |    Активируется при обновлении плана службы приложений                 |
+|    Microsoft.Web/sites.BackupOperationStarted             |    Активируется при запуске резервного копирования.                             |
+|    Microsoft.Web/sites.BackupOperationCompleted           |    Активируется при завершении резервного копирования.                           |
+|    Microsoft.Web/sites.BackupOperationFailed              |    Активируется при сбое резервного копирования.                              |
+|    Microsoft.Web/sites.RestoreOperationStarted            |    Активируется при запуске восстановления из резервной копии.        |
+|    Microsoft.Web/sites.RestoreOperationCompleted          |    Активируется при завершении восстановления из резервной копии.      |
+|    Microsoft.Web/sites.RestoreOperationFailed             |    Активируется при сбое восстановления из резервной копии.         |
+|    Microsoft.Web/sites.SlotSwapStarted                    |    Активируется при запуске переключения слотов.                          |
+|    Microsoft.Web/sites.SlotSwapCompleted                  |    Активируется при завершении переключения слотов.                      |
+|    Microsoft.Web/sites.SlotSwapFailed                     |    Активируется при сбое переключения слотов.                           |
+|    Microsoft.Web/sites.SlotSwapWithPreviewStarted         |    Активируется при запуске переключения слотов с предварительным просмотром.           |
+|    Microsoft.Web/sites.SlotSwapWithPreviewCancelled       |    Активируется при отмене переключения слотов с предварительным просмотром.    |
+|    Microsoft.Web/sites.AppUpdated.Restarted               |    Активируется при перезапуске сайта.                      |
+|    Microsoft.Web/sites.AppUpdated.Stopped                 |    Активируется при остановке сайта.                          |
+|    Microsoft.Web/sites.AppUpdated.ChangedAppSettings      |    Активируется при изменении параметров приложения сайта.             |
+|    Microsoft.Web/serverfarms.AppServicePlanUpdated        |    Активируется при обновлении плана службы приложений.                 |
 
 ### <a name="the-contents-of-an-event-response"></a>Содержимое ответа на событие
 
-При активации события служба службы "Сетка событий" отправляет данные об этом событии в подписку на конечную точку.
-В этом разделе содержится пример того, как будут выглядеть данные для каждого события. Каждое событие имеет следующие данные верхнего уровня:
+При активации события служба Сетки событий отправляет данные о нем на подписанную конечную точку.
+В этом разделе приведен пример того, как будут выглядеть данные для каждого события. Каждое событие содержит приведенные ниже данные верхнего уровня.
 
-|     Свойство          |     Type     |     Описание                                                                                                                                |
+|     Свойство          |     Тип     |     Описание                                                                                                                                |
 |-----------------------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-|    Раздел              |    строка    |    Полный путь к ресурсу для источника события. Это поле защищено от записи. Это значение предоставляет служба "Сетка событий".                                      |
-|    subject            |    строка    |    Определенный издателем путь к теме события.                                                                                              |
+|    Раздел              |    строка    |    Полный путь к ресурсу источника событий. Это поле защищено от записи. Это значение предоставляет служба "Сетка событий".                                      |
+|    subject            |    строка    |    Определенный издателем путь к субъекту события.                                                                                              |
 |    eventType          |    строка    |    Один из зарегистрированных типов событий для этого источника событий.                                                                                  |
-|    eventTime          |    строка    |    Время создания события на основе времени UTC поставщика.                                                                         |
-|    id                 |    строка    |    Уникальный идентификатор события.                                                                                                            |
-|    .               |    object    |    Данные события хранилища BLOB-объектов.                                                                                                                    |
-|    dataVersion        |    строка    |    Версия схемы объекта данных. Версию схемы определяет издатель.                                                          |
-|    metadataVersion    |    строка    |    Версия схемы метаданных события. Служба "Сетка событий" определяет схему свойств верхнего уровня. Это значение предоставляется в сетке событий.    |
+|    eventTime          |    строка    |    Время создания события с учетом времени поставщика в формате UTC.                                                                         |
+|    идентификатор                 |    строка    |    Уникальный идентификатор события.                                                                                                            |
+|    .               |    объект    |    Данные события хранилища BLOB-объектов.                                                                                                                    |
+|    dataVersion        |    строка    |    Версия схемы для объекта данных. Версию схемы определяет издатель.                                                          |
+|    metadataVersion    |    строка    |    Версия схемы для метаданных события. Служба "Сетка событий" определяет схему свойств верхнего уровня. Это значение предоставляет Сетка событий.    |
 
-#### <a name="backupoperationstarted-backupoperationcompleted-backupoperationfailed"></a>Баккупоператионстартед, Баккупоператионкомплетед, Баккупоператионфаилед
+#### <a name="backupoperationstarted-backupoperationcompleted-backupoperationfailed"></a>BackupOperationStarted, BackupOperationCompleted, BackupOperationFailed
 
 ```js
 {
     id:'7c5d6de5-eb70-4de2-b788-c52a544e68b8',
     subject:'/Microsoft.Web/sites/<site-name>',
-    eventType:'Microsoft.Web.SlotSwapStarted',
+    eventType:'Microsoft.Web.BackupOperationStarted',
     eventTime:'2020-01-28T18:26:51.7194887Z',
     data: {
         "appEventTypeDetail": { "action": "Started" },
@@ -81,135 +81,135 @@ ms.locfileid: "83116940"
 }
 ```
 
-Объект данных содержит следующие свойства:
+Объект данных содержит следующие свойства.
 
-|    Свойство                |    Type      |    Описание                                                                                                       |
+|    Свойство                |    Тип      |    Описание                                                                                                       |
 |----------------------------|--------------|----------------------------------------------------------------------------------------------------------------------|
-|    аппевенттипедетаил      |    object    |    Сведения о действии в приложении                                                                                       |
-|    action                  |    строка    |    Тип действия операции                                                                                   |
-|    name                    |    строка    |    имя веб-сайта с этим событием                                                                          |
-|    clientRequestId         |    строка    |    Идентификатор запроса клиента, созданный службой приложений для операции API сайта, вызвавшей это событие         |
-|    коррелатионрекуестид    |    строка    |    Идентификатор запроса корреляции, созданный службой приложений для операции API сайта, вызвавшей это событие    |
-|    requestId               |    строка    |    Идентификатор запроса, сформированный службой приложений для операции API сайта, вызвавшей это событие                |
-|    address                 |    строка    |    URL-адрес запроса HTTP для этой операции                                                                                |
-|    Команда                    |    строка    |    HTTP-команда для этой операции                                                                                       |
+|    appEventTypeDetail      |    объект    |    Сведения о действии в приложении.                                                                                       |
+|    action                  |    строка    |    Тип действия операции.                                                                                   |
+|    name                    |    строка    |    Имя веб-сайта с этим событием.                                                                          |
+|    clientRequestId         |    строка    |    Идентификатор запроса клиента, созданный службой приложений для операции API сайта, активировавшей это событие.         |
+|    correlationRequestId    |    строка    |    Идентификатор запроса корреляции, созданный службой приложений для операции API сайта, активировавшей это событие.    |
+|    requestId               |    строка    |    Идентификатор запроса, созданный службой приложений для операции API сайта, активировавшей это событие.                |
+|    address                 |    строка    |    URL-адрес HTTP-запроса для этой операции.                                                                                |
+|    Команда                    |    строка    |    HTTP-команда для этой операции.                                                                                       |
 
-#### <a name="restoreoperationstarted-restoreoperationcompleted-restoreoperationfailed"></a>Рестореоператионстартед, Рестореоператионкомплетед, Рестореоператионфаилед
+#### <a name="restoreoperationstarted-restoreoperationcompleted-restoreoperationfailed"></a>RestoreOperationStarted, RestoreOperationCompleted, RestoreOperationFailed
 
 ```js
 {
-    id:'7c5d6de5-eb70-4de2-b788-c52a544e68b8',
-    subject:'/Microsoft.Web/sites/<site-name>',
-    eventType:'Microsoft.Web.RestoreOperationStarted,
-    eventTime:'2020-01-28T18:26:51.7194887Z',
+    id: '7c5d6de5-eb70-4de2-b788-c52a544e68b8',
+    subject: '/Microsoft.Web/sites/<site-name>',
+    eventType: 'Microsoft.Web.RestoreOperationStarted',
+    eventTime: '2020-01-28T18:26:51.7194887Z',
     data: {
-        "appEventTypeDetail": { 
-            "action": "Started" 
+        appEventTypeDetail: { 
+            action: "Started" 
         },
-        "siteName": "<site-name>",
-        "clientRequestId": "None",
-        "correlationRequestId": "None",
-        "requestId": "292f499d-04ee-4066-994d-c2df57b99198",
-        "address": "None",
-        "verb": "POST"
+        siteName: "<site-name>",
+        clientRequestId: "None",
+        correlationRequestId: "None",
+        requestId: "292f499d-04ee-4066-994d-c2df57b99198",
+        address: "None",
+        verb: "POST"
     }
-    topic:'/subscriptions/<id>/resourceGroups/<rg>/providers/Microsoft.Web/sites/<site-name>',
-    dataVersion:'1',
-    metaDataVersion:'1'
+    topic: '/subscriptions/<id>/resourceGroups/<rg>/providers/Microsoft.Web/sites/<site-name>',
+    dataVersion: '1',
+    metaDataVersion: '1'
 }
 ```
 
-Объект данных содержит следующие свойства:
+Объект данных содержит следующие свойства.
 
-|    Свойство                |    Type      |    Описание                                                                                                       |
+|    Свойство                |    Тип      |    Описание                                                                                                       |
 |----------------------------|--------------|----------------------------------------------------------------------------------------------------------------------|
-|    аппевенттипедетаил      |    object    |    Сведения о действии в приложении                                                                                       |
-|    action                  |    строка    |    Тип действия операции                                                                                   |
-|    name                    |    строка    |    имя веб-сайта с этим событием                                                                          |
-|    clientRequestId         |    строка    |    Идентификатор запроса клиента, созданный службой приложений для операции API сайта, вызвавшей это событие         |
-|    коррелатионрекуестид    |    строка    |    Идентификатор запроса корреляции, созданный службой приложений для операции API сайта, вызвавшей это событие    |
-|    requestId               |    строка    |    Идентификатор запроса, сформированный службой приложений для операции API сайта, вызвавшей это событие                |
-|    address                 |    строка    |    URL-адрес запроса HTTP для этой операции                                                                                |
-|    Команда                    |    строка    |    HTTP-команда для этой операции                                                                                       |
+|    appEventTypeDetail      |    объект    |    Сведения о действии в приложении.                                                                                       |
+|    action                  |    строка    |    Тип действия операции.                                                                                   |
+|    name                    |    строка    |    Имя веб-сайта с этим событием.                                                                          |
+|    clientRequestId         |    строка    |    Идентификатор запроса клиента, созданный службой приложений для операции API сайта, активировавшей это событие.         |
+|    correlationRequestId    |    строка    |    Идентификатор запроса корреляции, созданный службой приложений для операции API сайта, активировавшей это событие.    |
+|    requestId               |    строка    |    Идентификатор запроса, созданный службой приложений для операции API сайта, активировавшей это событие.                |
+|    address                 |    строка    |    URL-адрес HTTP-запроса для этой операции.                                                                                |
+|    Команда                    |    строка    |    HTTP-команда для этой операции.                                                                                       |
 
-#### <a name="slotswapstarted-slotswapcompleted-slotswapfailed"></a>Слотсвапстартед, Слотсвапкомплетед, Слотсвапфаилед
+#### <a name="slotswapstarted-slotswapcompleted-slotswapfailed"></a>SlotSwapStarted, SlotSwapCompleted, SlotSwapFailed
 
 ```js
 {
-    id:'7c5d6de5-eb70-4de2-b788-c52a544e68b8',
-    subject:'/Microsoft.Web/sites/<site-name>',
-    eventType:'Microsoft.Web.SlotSwapStarted',
-    eventTime:'2020-01-28T18:26:51.7194887Z',
-    data:{
-        appEventTypeDetail:null,
-        siteName:'<site-name>',
-        clientRequestId:'922f4841-20d9-4dd6-8c5b-23f0d85e5592',
-        correlationRequestId:'9ac46505-2b8a-4e06-834c-05ffbe2e8c3a',
-        requestId:'765117aa-eaf8-4bd2-a644-1dbf69c7b0fd',
+    id: '7c5d6de5-eb70-4de2-b788-c52a544e68b8',
+    subject: '/Microsoft.Web/sites/<site-name>',
+    eventType: 'Microsoft.Web.SlotSwapStarted',
+    eventTime: '2020-01-28T18:26:51.7194887Z',
+    data: {
+        appEventTypeDetail: null,
+        siteName: '<site-name>',
+        clientRequestId: '922f4841-20d9-4dd6-8c5b-23f0d85e5592',
+        correlationRequestId: '9ac46505-2b8a-4e06-834c-05ffbe2e8c3a',
+        requestId: '765117aa-eaf8-4bd2-a644-1dbf69c7b0fd',
         address: '/websystems/WebSites/web/subscriptions/<id>/webspaces/<webspace>/sites/<site-name>/slots?Command=SWAP&targetSlot=production',
-        verb:'POST'
+        verb: 'POST'
         sourceSlot: "staging",
         targetSlot: "production"
     },
-    topic:'/subscriptions/<id>/resourceGroups/<rg>/providers/Microsoft.Web/sites/<site-name>',
-    dataVersion:'1',
-    metaDataVersion:'1'
+    topic: '/subscriptions/<id>/resourceGroups/<rg>/providers/Microsoft.Web/sites/<site-name>',
+    dataVersion: '1',
+    metaDataVersion: '1'
 }
 ```
 
-Объект данных содержит следующие свойства:
+Объект данных содержит следующие свойства.
 
-|    Свойство                |    Type      |    Описание                                                                                                       |
+|    Свойство                |    Тип      |    Описание                                                                                                       |
 |----------------------------|--------------|----------------------------------------------------------------------------------------------------------------------|
-|    аппевенттипедетаил      |    object    |    Сведения о действии в приложении                                                                                       |
-|    action                  |    строка    |    Тип действия операции                                                                                   |
-|    name                    |    строка    |    имя веб-сайта с этим событием                                                                          |
-|    clientRequestId         |    строка    |    Идентификатор запроса клиента, созданный службой приложений для операции API сайта, вызвавшей это событие         |
-|    коррелатионрекуестид    |    строка    |    Идентификатор запроса корреляции, созданный службой приложений для операции API сайта, вызвавшей это событие    |
-|    requestId               |    строка    |    Идентификатор запроса, сформированный службой приложений для операции API сайта, вызвавшей это событие                |
-|    address                 |    строка    |    URL-адрес запроса HTTP для этой операции                                                                                |
-|    Команда                    |    строка    |    HTTP-команда для этой операции                                                                                       |
-|    саурцеслот              |    строка    |    Исходный слот подкачки                                                                                       |
+|    appEventTypeDetail      |    объект    |    Сведения о действии в приложении.                                                                                       |
+|    action                  |    строка    |    Тип действия операции.                                                                                   |
+|    name                    |    строка    |    Имя веб-сайта с этим событием.                                                                          |
+|    clientRequestId         |    строка    |    Идентификатор запроса клиента, созданный службой приложений для операции API сайта, активировавшей это событие.         |
+|    correlationRequestId    |    строка    |    Идентификатор запроса корреляции, созданный службой приложений для операции API сайта, активировавшей это событие.    |
+|    requestId               |    строка    |    Идентификатор запроса, созданный службой приложений для операции API сайта, активировавшей это событие.                |
+|    address                 |    строка    |    URL-адрес HTTP-запроса для этой операции.                                                                                |
+|    Команда                    |    строка    |    HTTP-команда для этой операции.                                                                                       |
+|    sourceSlot              |    строка    |    Исходный слот для переключения.                                                                                       |
 
-#### <a name="slotswapwithpreviewstarted-slotswapwithpreviewcancelled"></a>Слотсвапвиспревиевстартед, Слотсвапвиспревиевканцеллед
+#### <a name="slotswapwithpreviewstarted-slotswapwithpreviewcancelled"></a>SlotSwapWithPreviewStarted, SlotSwapWithPreviewCancelled
 
 ```js
 {
-    id:'7c5d6de5-eb70-4de2-b788-c52a544e68b8',
-    subject:'/Microsoft.Web/sites/<site-name>',
-    eventType:'Microsoft.Web.SlotSwapWithPreviewStarted',
-    eventTime:'2020-01-28T18:26:51.7194887Z',
-    data:{
-        appEventTypeDetail:null,
-        siteName:'<site-name >',
-        clientRequestId:'922f4841-20d9-4dd6-8c5b-23f0d85e5592',
-        correlationRequestId:'9ac46505-2b8a-4e06-834c-05ffbe2e8c3a',
-        requestId:'765117aa-eaf8-4bd2-a644-1dbf69c7b0fd',
+    id: '7c5d6de5-eb70-4de2-b788-c52a544e68b8',
+    subject: '/Microsoft.Web/sites/<site-name>',
+    eventType: 'Microsoft.Web.SlotSwapWithPreviewStarted',
+    eventTime: '2020-01-28T18:26:51.7194887Z',
+    data: {
+        appEventTypeDetail: null,
+        siteName: '<site-name>',
+        clientRequestId: '922f4841-20d9-4dd6-8c5b-23f0d85e5592',
+        correlationRequestId: '9ac46505-2b8a-4e06-834c-05ffbe2e8c3a',
+        requestId: '765117aa-eaf8-4bd2-a644-1dbf69c7b0fd',
         address: '/websystems/WebSites/web/subscriptions/<id>/webspaces/<webspace>/sites/<site-name>/slots?Command=SWAP&targetSlot=production',
-        verb:'POST'
+        verb: 'POST'
         sourceSlot: "staging",
         targetSlot: "production"
     },
-    topic:'/subscriptions/<id>/resourceGroups/<rg>/providers/Microsoft.Web/sites/<site-name>',
-    dataVersion:'1',
-    metaDataVersion:'1'
+    topic: '/subscriptions/<id>/resourceGroups/<rg>/providers/Microsoft.Web/sites/<site-name>',
+    dataVersion: '1',
+    metaDataVersion: '1'
 }
 ```
 
-Объект данных содержит следующие свойства:
+Объект данных содержит следующие свойства.
 
-|    Свойство                |    Type      |    Описание                                                                                                       |
+|    Свойство                |    Тип      |    Описание                                                                                                       |
 |----------------------------|--------------|----------------------------------------------------------------------------------------------------------------------|
-|    аппевенттипедетаил      |    object    |    Сведения о действии в приложении                                                                                       |
-|    action                  |    строка    |    Тип действия операции                                                                                   |
-|    name                    |    строка    |    имя веб-сайта с этим событием                                                                          |
-|    clientRequestId         |    строка    |    Идентификатор запроса клиента, созданный службой приложений для операции API сайта, вызвавшей это событие         |
-|    коррелатионрекуестид    |    строка    |    Идентификатор запроса корреляции, созданный службой приложений для операции API сайта, вызвавшей это событие    |
-|    requestId               |    строка    |    Идентификатор запроса, сформированный службой приложений для операции API сайта, вызвавшей это событие                |
-|    address                 |    строка    |    URL-адрес запроса HTTP для этой операции                                                                                |
-|    Команда                    |    строка    |    HTTP-команда для этой операции                                                                                       |
+|    appEventTypeDetail      |    объект    |    Сведения о действии в приложении.                                                                                       |
+|    action                  |    строка    |    Тип действия операции.                                                                                   |
+|    name                    |    строка    |    Имя веб-сайта с этим событием.                                                                          |
+|    clientRequestId         |    строка    |    Идентификатор запроса клиента, созданный службой приложений для операции API сайта, активировавшей это событие.         |
+|    correlationRequestId    |    строка    |    Идентификатор запроса корреляции, созданный службой приложений для операции API сайта, активировавшей это событие.    |
+|    requestId               |    строка    |    Идентификатор запроса, созданный службой приложений для операции API сайта, активировавшей это событие.                |
+|    address                 |    строка    |    URL-адрес HTTP-запроса для этой операции.                                                                                |
+|    Команда                    |    строка    |    HTTP-команда для этой операции.                                                                                       |
 
-#### <a name="appupdatedrestarted-appupdatedstopped-appupdatedchangedappsettings"></a>Аппупдатед. перезапущено, Аппупдатед. Stopped, Аппупдатед. Чанжедаппсеттингс
+#### <a name="appupdatedrestarted-appupdatedstopped-appupdatedchangedappsettings"></a>AppUpdated.Restarted, AppUpdated.Stopped, AppUpdated.ChangedAppSettings
 
 ```js
 {
@@ -225,10 +225,10 @@ ms.locfileid: "83116940"
         clientRequestId: '64a5e0aa-7cee-4ff1-9093-b9197b820014',
         correlationRequestId: '25bb36a5-8f6c-4f04-b615-e9a0ee045756',
         requestId: 'f2e8eb3f-b190-42de-b99e-6acefe587374',
-        address: '/websystems/WebSites/web/subscriptions/<id>/webspaces/ <webspace>/sites/<site-name>/stop',
+        address: '/websystems/WebSites/web/subscriptions/<id>/webspaces/<webspace>/sites/<site-name>/stop',
         verb: 'POST'
     },
-    topic: '/subscriptions/<id>/resourceGroups/<group>/providers/ Microsoft.Web/sites/<site-name>',
+    topic: '/subscriptions/<id>/resourceGroups/<group>/providers/Microsoft.Web/sites/<site-name>',
     dataVersion: '1',
     metaDataVersion: '1'
 }
@@ -236,69 +236,69 @@ ms.locfileid: "83116940"
 
 Объект данных имеет следующие свойства:
 
-|    Свойство                |    Type      |    Описание                                                                                                       |
+|    Свойство                |    Тип      |    Описание                                                                                                       |
 |----------------------------|--------------|----------------------------------------------------------------------------------------------------------------------|
-|    аппевенттипедетаил      |    object    |    Сведения о действии в приложении                                                                                       |
-|    action                  |    строка    |    Тип действия операции                                                                                   |
-|    name                    |    строка    |    имя веб-сайта с этим событием                                                                          |
-|    clientRequestId         |    строка    |    Идентификатор запроса клиента, созданный службой приложений для операции API сайта, вызвавшей это событие         |
-|    коррелатионрекуестид    |    строка    |    Идентификатор запроса корреляции, созданный службой приложений для операции API сайта, вызвавшей это событие    |
-|    requestId               |    строка    |    Идентификатор запроса, сформированный службой приложений для операции API сайта, вызвавшей это событие                |
-|    address                 |    строка    |    URL-адрес запроса HTTP для этой операции                                                                                |
-|    Команда                    |    строка    |    HTTP-команда для этой операции                                                                                       |
+|    appEventTypeDetail      |    объект    |    Сведения о действии в приложении.                                                                                       |
+|    action                  |    строка    |    Тип действия операции.                                                                                   |
+|    name                    |    строка    |    Имя веб-сайта с этим событием.                                                                          |
+|    clientRequestId         |    строка    |    Идентификатор запроса клиента, созданный службой приложений для операции API сайта, активировавшей это событие.         |
+|    correlationRequestId    |    строка    |    Идентификатор запроса корреляции, созданный службой приложений для операции API сайта, активировавшей это событие.    |
+|    requestId               |    строка    |    Идентификатор запроса, созданный службой приложений для операции API сайта, активировавшей это событие.                |
+|    address                 |    строка    |    URL-адрес HTTP-запроса для этой операции.                                                                                |
+|    Команда                    |    строка    |    HTTP-команда для этой операции.                                                                                       |
 
-#### <a name="serverfarmsappserviceplanupdated"></a>Serverfarms. Аппсервицепланупдатед
+#### <a name="serverfarmsappserviceplanupdated"></a>Serverfarms.AppServicePlanUpdated
 
 ```js
 {
-   "id":"56501672-9150-40e1-893a-18420c7fdbf7",
-   "subject":"/Microsoft.Web/serverfarms/<plan-name>",
-   "eventType":"Microsoft.Web.AppServicePlanUpdated",
-   "eventTime":"2020-01-28T18:22:23.5516004Z",
-   "data":{
-        "serverFarmEventTypeDetail":{
-            "stampKind":"Public",
-            "action":"Updated",
-            "status":"Started"
+   id: "56501672-9150-40e1-893a-18420c7fdbf7",
+   subject: "/Microsoft.Web/serverfarms/<plan-name>",
+   eventType: "Microsoft.Web.AppServicePlanUpdated",
+   eventTime: "2020-01-28T18:22:23.5516004Z",
+   data: {
+        serverFarmEventTypeDetail: {
+            stampKind: "Public",
+            action: "Updated",
+            status: "Started"
         },
-        "serverFarmId":"0",
-        "sku":{
-            "name":"P1v2",
-            "tier":"PremiumV2",
-            "size":"P1v2",
-            "family":"Pv2",
-            "capacity":1
+        serverFarmId: "0",
+        sku: {
+            name: "P1v2",
+            tier: "PremiumV2",
+            size: "P1v2",
+            family: "Pv2",
+            capacity: 1
         },
-        "clientRequestId":"8f880321-a991-45c7-b743-6ff63fe4c004",
-        "correlationRequestId":"1995c3be-ba7f-4ccf-94af-516df637ec8a",
-        "requestId":"b973a8e6-6949-4783-b44c-ac778be831bb",
-        "address":"/websystems/WebSites/serverfarms/subscriptions/<id>/webspaces/<webspace-id>/serverfarms/<plan-name>/async",
-        "verb":"PUT"
+        clientRequestId: "8f880321-a991-45c7-b743-6ff63fe4c004",
+        correlationRequestId: "1995c3be-ba7f-4ccf-94af-516df637ec8a",
+        requestId: "b973a8e6-6949-4783-b44c-ac778be831bb",
+        address: "/websystems/WebSites/serverfarms/subscriptions/<id>/webspaces/<webspace-id>/serverfarms/<plan-name>/async",
+        verb: "PUT"
    },
-   "topic":"/subscriptions/<id>/resourceGroups/<rg>/providers/Microsoft.Web/ serverfarms/<serverfarm-name>",
-   "dataVersion":"1",
-   "metaDataVersion":"1"
+   topic: "/subscriptions/<id>/resourceGroups/<rg>/providers/Microsoft.Web/serverfarms/<serverfarm-name>",
+   dataVersion: "1",
+   metaDataVersion: "1"
 }
 ```
 
 Объект данных имеет следующие свойства:
 
-|    Свойство                         |    Type      |    Описание                                                                                                       |
+|    Свойство                         |    Тип      |    Описание                                                                                                       |
 |-------------------------------------|--------------|----------------------------------------------------------------------------------------------------------------------|
-|    аппсервицепланевенттипедетаил    |    object    |    Сведения о действии в плане службы приложений                                                                          |
-|    стампкинд                        |    строка    |    Тип среды, в которой находится план службы приложений                                                                     |
-|    action                           |    строка    |    Тип действия в плане службы приложений                                                                            |
-|    status                           |    строка    |    Состояние операции в плане службы приложений                                                                   |
-|    sku                              |    object    |    номер SKU плана службы приложений                                                                                       |
-|    name                             |    строка    |    имя плана службы приложений                                                                                      |
-|    Уровень                             |    строка    |    уровень плана службы приложений                                                                                      |
-|    Размер                             |    строка    |    Размер плана службы приложений                                                                                      |
-|    Семейство                           |    строка    |    Семейство плана службы приложений                                                                                        |
-|    Capacity                         |    строка    |    Емкость плана службы приложений                                                                                      |
-|    action                           |    строка    |    Тип действия операции                                                                                   |
-|    name                             |    строка    |    имя веб-сайта с этим событием                                                                          |
-|    clientRequestId                  |    строка    |    Идентификатор запроса клиента, созданный службой приложений для операции API сайта, вызвавшей это событие         |
-|    коррелатионрекуестид             |    строка    |    Идентификатор запроса корреляции, созданный службой приложений для операции API сайта, вызвавшей это событие    |
-|    requestId                        |    строка    |    Идентификатор запроса, сформированный службой приложений для операции API сайта, вызвавшей это событие                |
-|    address                          |    строка    |    URL-адрес запроса HTTP для этой операции                                                                                |
-|    Команда                             |    строка    |    HTTP-команда для этой операции                                                                                       |
+|    appServicePlanEventTypeDetail    |    объект    |    Сведения о действии для плана службы приложений.                                                                          |
+|    stampKind                        |    строка    |    Тип среды, в которой находится план службы приложений.                                                                     |
+|    action                           |    строка    |    Тип действия для плана службы приложений.                                                                            |
+|    status                           |    строка    |    Состояние операции для плана службы приложений.                                                                   |
+|    sku                              |    объект    |    Номер SKU плана службы приложений.                                                                                       |
+|    name                             |    строка    |    Имя плана службы приложений.                                                                                      |
+|    Уровень                             |    строка    |    Уровень плана службы приложений.                                                                                      |
+|    Размер                             |    строка    |    Размер плана службы приложений.                                                                                      |
+|    Семейство                           |    строка    |    Семейство плана службы приложений.                                                                                        |
+|    Capacity                         |    строка    |    Емкость плана службы приложений.                                                                                      |
+|    action                           |    строка    |    Тип действия операции.                                                                                   |
+|    name                             |    строка    |    Имя веб-сайта с этим событием.                                                                          |
+|    clientRequestId                  |    строка    |    Идентификатор запроса клиента, созданный службой приложений для операции API сайта, активировавшей это событие.         |
+|    correlationRequestId             |    строка    |    Идентификатор запроса корреляции, созданный службой приложений для операции API сайта, активировавшей это событие.    |
+|    requestId                        |    строка    |    Идентификатор запроса, созданный службой приложений для операции API сайта, активировавшей это событие.                |
+|    address                          |    строка    |    URL-адрес HTTP-запроса для этой операции.                                                                                |
+|    Команда                             |    строка    |    HTTP-команда для этой операции.                                                                                       |

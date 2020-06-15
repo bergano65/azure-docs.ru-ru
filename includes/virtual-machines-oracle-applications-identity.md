@@ -4,19 +4,19 @@ ms.service: virtual-machines-linux
 ms.topic: include
 ms.date: 07/10/2019
 ms.author: danlep
-ms.openlocfilehash: c1cca99a04e78c40cdd1061e52e49f45a73c73eb
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
-ms.translationtype: MT
+ms.openlocfilehash: 2b28cc742bb981e0db535d39cb0c7fbf027470ea
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "68361561"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83673770"
 ---
-### <a name="identity-tier"></a>Уровень удостоверений 
+### <a name="identity-tier"></a>Уровень идентификации 
 
-Партнерство Microsoft-Oracle позволяет настроить единую идентификацию в Azure, OCI и приложении Oracle. Для настройки единого входа между Azure AD и Oracle OHS для JD Edwards EnterpriseOne или PeopleSoft Application Suite необходим экземпляр сервера Oracle HTTP (ИДКС).
+Партнерство корпорации Майкрософт и Oracle позволяет настроить единую идентификацию в Azure, OCI и приложении Oracle. Для настройки единого входа между Azure AD и Oracle набору приложений JD Edwards EnterpriseOne или PeopleSoft необходим экземпляр сервера Oracle HTTP Server (OHS).
 
-OHS действует как обратный прокси-сервер уровня приложения, что означает, что все запросы к конечным приложениям проходят через него. Веб-шлюз Oracle Access Manager — это подключаемый модуль OHS Web Server, который перехватывает все запросы к конечному приложению. Если доступ к ресурсу защищен (требуется сеанс с проверкой подлинности), веб-шлюз инициирует поток проверки подлинности OIDC с помощью облачной службы Identity через браузер пользователя. Дополнительные сведения о потоках, поддерживаемых OpenID Connect Connects, см. в документации по [диспетчеру доступа Oracle](https://docs.oracle.com/en/middleware/idm/access-manager/12.2.1.3/aiaag/integrating-webgate-oidc-server.html).
+OHS действует как обратный прокси-сервер для уровня приложения. Это означает, что все запросы к конечным приложениям проходят через него. Oracle Access Manager WebGate — это подключаемый модуль веб-сервера OHS, который перехватывает все запросы к конечному приложению. Если доступ к ресурсу защищен (требуется сеанс с аутентификацией), то WebGate инициирует поток аутентификации OIDC с помощью службы Identity Cloud Service через браузер пользователя. Дополнительные сведения о потоках, поддерживаемых OpenID Connect WebGate, см. в [документации по Oracle Access Manager](https://docs.oracle.com/cd/E52734_01/oam/AIAAG/GUID-1E927D1B-FB83-425B-8768-85DB441821A4.htm#AIAAG7327).
 
-При такой настройке пользователь, уже вошедший в Azure AD, может переходить к приложению JD Edwards EnterpriseOne или PeopleSoft без повторного входа с помощью облачной службы Identity Oracle. Клиенты, которые развертывают это решение, получают преимущества единого входа, в том числе единый набор учетных данных, Улучшенный интерфейс входа в систему, Улучшенный уровень безопасности и сокращенные затраты на службу технической поддержки.
+При такой конфигурации пользователь, уже вошедший в Azure AD, может перейти к приложению JD Edwards EnterpriseOne или PeopleSoft без повторного входа благодаря службе Oracle Identity Cloud Service. Клиенты, которые развертывают это решение, получают преимущества единого входа, в том числе единый набор учетных данных, улучшенный интерфейс входа в систему, повышенный уровень безопасности и сокращение затрат на службу технической поддержки.
 
-Дополнительные сведения о настройке единого входа для JD Edwards EnterpriseOne или PeopleSoft с помощью Azure AD см. в соответствующем [техническом документе Oracle](https://cloud.oracle.com/iaas/whitepapers/deploy_peoplesoft_jdedwards_across_oci_azure.pdf).
+Чтобы узнать больше о настройке единого входа для JD Edwards EnterpriseOne или PeopleSoft с помощью Azure AD, ознакомьтесь с соответствующим [техническим документом Oracle](https://cloud.oracle.com/iaas/whitepapers/deploy_peoplesoft_jdedwards_across_oci_azure.pdf).

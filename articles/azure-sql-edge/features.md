@@ -2,19 +2,19 @@
 title: Поддерживаемые функции SQL Azure для пограничных вычислений (предварительная версия)
 description: Дополнительные сведения о функциях, поддерживаемых SQL Azure для пограничных вычислений (предварительная версия)
 keywords: Введение в Базу данных SQL Azure для пограничных вычислений; что такое База данных SQL для пограничных вычислений; обзор Базы данных SQL для пограничных вычислений
-services: sql-database-edge
-ms.service: sql-database-edge
+services: sql-edge
+ms.service: sql-edge
 ms.topic: conceptual
 author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 7d33c2bef1cd0f7bfab4ec3c09f16c049881d1cd
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: e3bac1cbb0e57f9be4a489207f2fe8b30b5d457e
+ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83594623"
+ms.lasthandoff: 05/31/2020
+ms.locfileid: "84233208"
 ---
 # <a name="supported-features-of-azure-sql-edge-preview"></a>Поддерживаемые функции SQL Azure для пограничных вычислений (предварительная версия) 
 
@@ -34,7 +34,7 @@ ms.locfileid: "83594623"
 
 ## <a name="operating-system"></a>Операционная система
 
-Контейнеры SQL Azure для пограничных вычислений в настоящее время основаны на Ubuntu (16.04 и 18.04) и поэтому поддерживаются только на узлах Docker под управлением Ubuntu 16.04 и 18.04. База данных SQL Azure для пограничных вычислений может также выполняться на других узлах операционной системы, например в других дистрибутивах Linux или Windows (с помощью Docker CE или Docker EE), однако эти конфигурации масштабно не тестировались корпорацией Майкрософт.
+Контейнеры SQL Azure для пограничных вычислений в настоящее время основаны на Ubuntu 16.04 и поэтому поддерживаются только на узлах Docker под управлением Ubuntu 16.04 (рекомендуется) или Ubuntu 18.04. База данных SQL Azure для пограничных вычислений может также выполняться на других узлах операционной системы, например в других дистрибутивах Linux или Windows (с помощью Docker CE или Docker EE), однако эти конфигурации масштабно не тестировались корпорацией Майкрософт.
 
 SQL Azure для пограничных вычислений в настоящее время поддерживается только для развертывания с помощью Azure IoT Edge. Дополнительные сведения о поддерживаемых системах для Azure IoT Edge см. [здесь](https://docs.microsoft.com/azure/iot-edge/support).
 
