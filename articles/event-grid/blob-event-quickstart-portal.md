@@ -9,12 +9,12 @@ ms.date: 06/02/2020
 ms.topic: quickstart
 ms.service: event-grid
 ms.custom: seodec18
-ms.openlocfilehash: 3c84bf32f0d7b8b8381747e995f060d7e2dc1c9b
-ms.sourcegitcommit: 69156ae3c1e22cc570dda7f7234145c8226cc162
+ms.openlocfilehash: 8c1627b0a9ae37f7d784c49613eb14b0c851b9b1
+ms.sourcegitcommit: ba8df8424d73c8c4ac43602678dae4273af8b336
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84310519"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84457054"
 ---
 # <a name="quickstart-route-blob-storage-events-to-web-endpoint-with-the-azure-portal"></a>Краткое руководство. Отправка событий хранилища BLOB-объектов в конечную веб-точку с помощью портала Azure
 
@@ -92,12 +92,9 @@ ms.locfileid: "84310519"
    ![Выбор веб-перехватчика](./media/blob-event-quickstart-portal/select-web-hook.png)
 3. На странице **Создание подписки на события** сделайте следующее: 
     1. Укажите **имя** подписки на события.
-    2. Введите **имя** **системного раздела**. 
+    2. Введите **имя** **системного раздела**. См. [общие сведения о системных разделах](system-topics.md).
 
        ![Ввод имен для подписки на событие и системного раздела](./media/blob-event-quickstart-portal/event-subscription-name-system-topic.png)
-
-       > [!NOTE]
-       > Ранее, когда вы создали подписку для события, вызываемого источниками Azure, служба "Сетка событий" автоматически создала системный раздел со случайным именем. Теперь вы можете указать имя системного раздела с помощью этого текстового поля. Вы можете использовать этот ресурс системного раздела для обнаружения метрик и журналов диагностики.
     2. Выберите значение **Веб-перехватчик** для параметра **Тип конечной точки**. 
 
        ![Выбор типа конечной точки для веб-перехватчика](./media/blob-event-quickstart-portal/select-web-hook-end-point-type.png)

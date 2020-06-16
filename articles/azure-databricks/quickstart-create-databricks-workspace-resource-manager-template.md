@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.custom: mvc, subject-armqs
 ms.date: 05/27/2020
-ms.openlocfilehash: 8435704963e832020ecff27a11d00793ad28890c
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
+ms.openlocfilehash: c8503aee5cefbe197fd63cd6406006a1cdf8afa9
+ms.sourcegitcommit: 813f7126ed140a0dff7658553a80b266249d302f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84171044"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84463156"
 ---
 # <a name="quickstart-create-an-azure-databricks-workspace-by-using-the-azure-resource-manager-template"></a>Краткое руководство. Создание рабочей области Azure Databricks с помощью шаблона Azure Resource Manager
 
@@ -33,13 +33,13 @@ ms.locfileid: "84171044"
 
 ### <a name="review-the-template"></a>Изучение шаблона
 
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-databricks-workspace).
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-databricks-workspace/).
 
-:::code language="json" source="~/quickstart-templates/101-databricks-workspace/azuredeploy.json" range="1-53":::
+:::code language="json" source="~/quickstart-templates/101-databricks-workspace/azuredeploy.json" range="1-53" highlight="33-46":::
 
-Ресурс Azure, определенный в шаблоне, — Microsoft.Databricks/workspaces. Создайте рабочую область Azure Databricks. 
+Ресурс Azure, определенный в шаблоне, — [Microsoft.Databricks/workspaces](/azure/templates/microsoft.databricks/workspaces). Создайте рабочую область Azure Databricks.
 
-## <a name="deploy-the-template"></a>Развертывание шаблона
+### <a name="deploy-the-template"></a>Развертывание шаблона
 
 В этом разделе вы создадите рабочую область Azure Databricks с помощью шаблона Azure Resource Manager.
 

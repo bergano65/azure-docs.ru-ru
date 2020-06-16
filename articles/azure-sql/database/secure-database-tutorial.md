@@ -10,14 +10,14 @@ ms.author: vanto
 ms.reviewer: carlrab
 ms.date: 09/03/2019
 ms.custom: seoapril2019 sqldbrb=1
-ms.openlocfilehash: 7181dd74963a1af05438b16e00e2442478daac03
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
+ms.openlocfilehash: a709d0d4aa9b7c4e3ab06e6d34bbb199cb1b5917
+ms.sourcegitcommit: 58ff2addf1ffa32d529ee9661bbef8fbae3cddec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84267904"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84323932"
 ---
-# <a name="tutorial-secure-an-azure-sql-database"></a>Руководство по защите Базы данных SQL Azure
+# <a name="tutorial-secure-a-database-in-azure-sql-database"></a>Руководство по Защита базы данных в службе "База данных SQL Azure"
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -25,7 +25,7 @@ ms.locfileid: "84267904"
 > [!div class="checklist"]
 >
 > - Создавать правила брандмауэра уровня сервера и уровня базы данных.
-> - Назначать администратора Azure Active Directory (AD).
+> - Назначение администратора Azure Active Directory (Azure AD)
 > - Управлять пользовательским доступом с помощью аутентификации SQL, аутентификации Azure AD и безопасных строк подключения.
 > - Включать функции безопасности, такие как расширенная защита данных, аудит, маскирование данных и шифрование.
 
@@ -42,7 +42,7 @@ ms.locfileid: "84267904"
 Дополнительные сведения см. в статьях [Расширенные функции безопасности Базы данных SQL Azure](/azure/sql-database/sql-database-security-index) и [Обзор возможностей безопасности Базы данных SQL Azure](security-overview.md).
 
 > [!TIP]
-> Следующий модуль Microsoft Learn поможет вам получить бесплатные сведения о [защите Базы данных SQL Azure](https://docs.microsoft.com/learn/modules/secure-your-azure-sql-database/).
+> Следующий модуль Microsoft Learn поможет вам получить бесплатные сведения о [защите базы данных в службе "База данных SQL Azure"](https://docs.microsoft.com/learn/modules/secure-your-azure-sql-database/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -94,7 +94,7 @@ ms.locfileid: "84267904"
 
 Правила брандмауэра на уровне базы данных применяются только к отдельным базам данных. Базы данных сохранит эти правила при отработке отказа сервера. Правила брандмауэра уровня базы данных можно настроить только с помощью инструкций Transact-SQL (T-SQL) и только после настройки правила брандмауэра уровня сервера.
 
-Чтобы настроить правила брандмауэра уровня базы данных:
+Чтобы настроить правило брандмауэра на уровне базы данных, сделайте следующее:
 
 1. Подключитесь к базе данных, например с помощью [SQL Server Management Studio](connect-query-ssms.md).
 
@@ -119,7 +119,7 @@ ms.locfileid: "84267904"
 
 Чтобы настроить администратора Azure AD:
 
-1. На портале Azure на странице **SQL Server** выберите **Администратор Active Directory**. Затем щелкните **Задать администратора**.
+1. На портале Azure на странице **SQL Server** выберите элемент **Администратор Active Directory**. Затем щелкните **Задать администратора**.
 
     ![выбор Active Directory](./media/secure-database-tutorial/admin-settings.png)  
 

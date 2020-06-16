@@ -7,13 +7,13 @@ ms.service: azure-resource-manager
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: patricka
-ms.date: 04/22/2020
-ms.openlocfilehash: 1e0e4018c79c231c69f29b2272420344198af413
-ms.sourcegitcommit: 69156ae3c1e22cc570dda7f7234145c8226cc162
+ms.date: 06/04/2020
+ms.openlocfilehash: 5524a8920ef49603ab9aa143ae4094cdaad9d340
+ms.sourcegitcommit: ba8df8424d73c8c4ac43602678dae4273af8b336
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84310365"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84456540"
 ---
 # <a name="quickstart-create-an-azure-blockchain-service-member-using-an-azure-resource-manager-template"></a>Краткое руководство. Создание участника Блокчейна Azure с помощью шаблона Resource Manager
 
@@ -61,6 +61,12 @@ ms.locfileid: "84310365"
 1. Щелкните **Приобрести**, чтобы развернуть шаблон.
 
   Для развертывания шаблона здесь используется портал Azure. Вы можете также использовать Azure PowerShell, Azure CLI и REST API. Дополнительные сведения о других методах развертывания см. в статье о [развертывании с использованием шаблонов](../../azure-resource-manager/templates/deploy-powershell.md).
+
+## <a name="review-deployed-resources"></a>Просмотр развернутых ресурсов
+
+Вы можете просматривать сведения о развернутом элементе службы "Блокчейн Azure" на портале Azure. На портале перейдите к группе ресурсов, содержащей элемент службы "Блокчейн Azure". Выберите созданный элемент блокчейна.
+
+![Общие сведения о развернутом элементе службы "Блокчейн Azure" на портале Azure](./media/create-member-template/deployed-member.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

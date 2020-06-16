@@ -14,12 +14,12 @@ ms.reviewer: davidph
 manager: cgronlun
 ms.date: 04/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 6dee5d6e1bb2802114d7bba14a57b91dbab09e19
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: 37cc50a31f2f31c0cb7fc49102328f2072c6570a
+ms.sourcegitcommit: 58ff2addf1ffa32d529ee9661bbef8fbae3cddec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84053248"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84324595"
 ---
 # <a name="quickstart-create-and-train-a-predictive-model-in-r-with-azure-sql-database-machine-learning-services-preview"></a>Краткое руководство. Создание и обучение прогнозной модели на языке R с помощью Служб машинного обучения Azure в Базе данных SQL (предварительная версия)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -53,9 +53,9 @@ ms.locfileid: "84053248"
 
 Далее вы настроите данные для обучения, создадите регрессионную модель, обучите ее с помощью настроенных данных, а затем сохраните эту модель в таблице SQL.
 
-1. Откройте **SQL Server Management Studio** и подключитесь к базе данных SQL.
+1. Откройте **SQL Server Management Studio** и подключитесь к базе данных.
 
-   Если вам нужна помощь с подключением, ознакомьтесь с разделом [Краткое руководство. Подключение к базе данных SQL Azure и создание запросов к ней с помощью SQL Server Management Studio](connect-query-ssms.md).
+   Если вам нужна помощь с подключением, ознакомьтесь с разделом [Краткое руководство. Подключение к базе данных в службе "База данных SQL Azure" и создание запросов к ней с помощью SQL Server Management Studio](connect-query-ssms.md).
 
 1. Создайте таблицу **CarSpeed** для сохранения данных для обучения.
 
@@ -127,7 +127,7 @@ ms.locfileid: "84053248"
    Violation of PRIMARY KEY constraint...Cannot insert duplicate key in object bo.stopping_distance_models
    ```
 
-   Один из вариантов, который поможет избежать этой ошибки, — изменять имя для каждой новой модели. Например, можно изменить имя на нечто более описательное и включить тип модели, день создания и т. д.
+   Один из вариантов, который поможет избежать этой ошибки, — изменять имя для каждой новой модели. Например, можно изменить имя на нечто более описательное и включить тип модели, день создания и т. д.
 
    ```sql
    UPDATE dbo.stopping_distance_models

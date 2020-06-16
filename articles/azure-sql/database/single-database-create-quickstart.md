@@ -1,6 +1,6 @@
 ---
 title: Создание отдельной базы данных
-description: Создание отдельной базы данных в службе "База данных SQL Azure" с помощью портала Azure, PowerShell и Azure CLI. Сведения о запросах к базе данных, отправляемых через редактор запросов на портале Azure.
+description: Создание отдельной базы данных в службе "База данных SQL Azure" с помощью портала Azure, PowerShell или Azure CLI. Сведения о запросах к базе данных, отправляемых через редактор запросов на портале Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: single-database
@@ -11,23 +11,22 @@ author: sachinpMSFT
 ms.author: ninarn
 ms.reviewer: carlrab, sstein, vanto
 ms.date: 04/19/2020
-ms.openlocfilehash: 8b4e057fe41bdf76612888e9d4715d7cdee0ce29
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: 1ae3159365e63159b8ed62c09bc20441ba65d8aa
+ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84053215"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84343852"
 ---
 # <a name="quickstart-create-an-azure-sql-database-single-database"></a>Краткое руководство. Создание отдельной базы данных в Базе данных SQL Azure
-[!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
-В этом кратком руководстве вы примените портал Azure, скрипт PowerShell или скрипт Azure CLI для создания отдельной базы данных SQL Azure. Затем вы отправите запросы к этой базе данных через **редактор запросов** на портале Azure.
+В рамках этого краткого руководства вы создадите отдельную базу данных в службе "База данных SQL Azure" с помощью портала Azure, скрипта PowerShell или скрипта Azure CLI. Затем вы отправите запросы к этой базе данных через **редактор запросов** на портале Azure.
 
 [Отдельная база данных](single-database-overview.md) — это самый быстрый и простой вариант развертывания в Базе данных SQL Azure. Управление отдельной базой данных выполняется на [сервере](logical-servers.md), который существует в [группе ресурсов Azure](../../active-directory-b2c/overview.md) в определенном регионе Azure. В этом кратком руководстве объясняется, как создать группу ресурсов и сервер для новой базы данных.
 
 Отдельную базу данных можно создать на уровне *подготовленных* или *бессерверных* вычислительных ресурсов. Подготовленная база данных имеет определенное количество предварительно выделенных вычислительных ресурсов, таких как объем памяти и ЦП, и использует одну из двух [моделей приобретения](purchasing-models.md). В этом кратком руководстве объясняется, как создать подготовленную базу данных с моделью покупки [на основе виртуальных ядер](service-tiers-vcore.md). Но вы можете выбрать модель [на основе DTU](service-tiers-dtu.md).
 
-Уровень бессерверных вычислений доступен только для модели покупки на основе виртуальных ядер. На этом уровне предоставляется автомасштабируемый набор вычислительных ресурсов, таких как объем памяти и ЦП. Чтобы создать отдельную базу данных на уровне бессерверных вычислений, воспользуйтесь статьей [о создании бессерверной базы данных](serverless-tier-overview.md#create-new-database-in-serverless-compute-tier).
+Уровень бессерверных вычислений доступен только для модели покупки на основе виртуальных ядер. На этом уровне предоставляется автомасштабируемый набор вычислительных ресурсов, таких как объем памяти и ЦП. Чтобы создать отдельную базу данных на уровне бессерверных вычислений, воспользуйтесь статьей [о создании бессерверной базы данных](serverless-tier-overview.md#create-a-new-database-in-the-serverless-compute-tier).
 
 ## <a name="prerequisite"></a>Предварительные требования
 
@@ -68,7 +67,7 @@ ms.locfileid: "84053215"
 
 Когда вы закончите работу с этими ресурсами, созданную группу ресурсов можно удалить вместе с размещенными в ней сервером и отдельной базой данных.
 
-### <a name="portal"></a>[Портал](#tab/azure-portal)
+### <a name="the-azure-portal"></a>[Портал Azure](#tab/azure-portal)
 
 Чтобы удалить **myResourceGroup** и все ее ресурсы с помощью портала Azure, сделайте следующее:
 
@@ -76,7 +75,7 @@ ms.locfileid: "84053215"
 1. На странице группы ресурсов выберите **Удалить группу ресурсов**.
 1. В поле **Введите имя группы ресурсов** введите *myResourceGroup*, а затем щелкните **Удалить**.
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="the-azure-cli"></a>[CLI Azure.](#tab/azure-cli)
 
 Чтобы удалить группу ресурсов и все ресурсы в ней, выполните следующую команду Azure CLI с именем удаляемой группы ресурсов.
 
@@ -98,5 +97,7 @@ Remove-AzResourceGroup -Name <your resource group>
 
 [Создайте подключение и выполните запрос](connect-query-content-reference-guide.md) к базе данных с помощью разных средств и языков.
 > [!div class="nextstepaction"]
-> [Краткое руководство. Подключение и выполнение запросов к Базе данных SQL Azure или Управляемому экземпляру SQL Azure с помощью SSMS ](connect-query-ssms.md)
-> [Краткое руководство. Подключение и выполнение запросов к Базе данных SQL Azure с помощью Azure Data Studio](/sql/azure-data-studio/quickstart-sql-database?toc=/azure/sql-database/toc.json)
+> [подключиться и создать запрос с помощью SQL Server Management Studio](connect-query-ssms.md);
+>
+> [подключиться и создать запрос с помощью Azure Data Studio](/sql/azure-data-studio/quickstart-sql-database?toc=/azure/sql-database/toc.json).
+ 

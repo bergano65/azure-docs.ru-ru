@@ -107,3 +107,13 @@
               href: pim-resource-roles-perform-access-review.md
             - name: Выполнение проверки доступа
               href: pim-resource-roles-complete-access-review.md
+- name: Справочник
+  items:
+    - name: API Graph
+      href: 'https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/azure_ad_overview'
+    - name: "Интерфейс командной строки Azure\_AD"
+      href: 'https://docs.microsoft.com/cli/azure/ad'
+    - name: "Azure\_AD PowerShell для Graph"
+      href: 'https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0'
+    - name: "Ограничения службы Azure\_AD"
+      href: ../users-groups-roles/directory-service-limits-restrictions.md

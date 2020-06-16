@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 05/29/2020
-ms.openlocfilehash: ba934d8eeadcd3d3e89d5d9f6115c258206c2d13
-ms.sourcegitcommit: 8017209cc9d8a825cc404df852c8dc02f74d584b
+ms.openlocfilehash: 680f8518e5d005aebeffd54fe6d05ae1124c595a
+ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84247263"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84559719"
 ---
-# <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-an-azure-sql-database"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в базу данных SQL Azure
+# <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-an-azure-sql-database-using-the-azure-portal"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в Базу данных SQL Azure с использованием портала Azure
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
@@ -65,7 +65,7 @@ ms.locfileid: "84247263"
     ![Пошаговая загрузка данных](media/tutorial-incremental-copy-multiple-tables-portal/high-level-solution-diagram.png)
 
 
-Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись, прежде чем начинать работу.
+Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 * **SQL Server.** В этом учебнике используйте базу данных SQL Server в качестве исходного хранилища данных. 
@@ -239,7 +239,7 @@ END
 
 3. На странице **Новая фабрика данных** введите **ADFMultiIncCopyTutorialDF** в поле **Имя**. 
  
-   Имя фабрики данных Azure должно быть **глобально уникальным**. Если вы увидите красный восклицательный знак с указанным ниже текстом ошибки, введите другое имя фабрики данных (например, ваше_имя_ADFIncCopyTutorialDF) и попробуйте создать фабрику данных снова. Ознакомьтесь со статьей [Фабрика данных Azure — правила именования](naming-rules.md), чтобы узнать правила именования для артефактов службы "Фабрика данных".
+   Имя фабрики данных Azure должно быть **глобально уникальным**. Если вы увидите красный восклицательный знак с указанным ниже текстом ошибки, введите другое имя фабрики данных (например, ваше_имя_ADFIncCopyTutorialDF) и попробуйте создать фабрику данных снова. Ознакомьтесь со статьей [Фабрика данных Azure — правила именования](naming-rules.md), чтобы узнать правила именования для артефактов службы "Фабрика данных".
   
    `Data factory name "ADFIncCopyTutorialDF" is not available`
 
@@ -264,18 +264,18 @@ END
 
 1. На вкладке **Integration Runtimes** (Среды выполнения интеграции) щелкните **+ Создать**. 
 
-1. В окне **Настройка среды выполнения интеграции** выберите вариант **Выполнить перемещение данных и передать действия на внешние вычислительные ресурсы**, затем нажмите кнопку **Продолжить**. 
+1. В окне **Integration Runtime Setup** (Настройка среды выполнения интеграции) выберите вариант **Perform data movement and dispatch activities to external computes** (Выполнить перемещение данных и передать действия на внешние вычислительные ресурсы), затем нажмите кнопку **Продолжить**. 
 
 1. Выберите параметр **Независимый** и щелкните **Продолжить**. 
 1. Введите **MySelfHostedIR** для параметра **Имя** и щелкните **Создать**. 
 
-1. Нажмите **Щелкните здесь, чтобы запустить экспресс-установку для этого компьютера** в разделе **Вариант 1. Экспресс-установка**. 
+1. Щелкните элемент **Click here to launch the express setup for this computer** (Щелкните здесь, чтобы запустить экспресс-установку для этого компьютера) в разделе **Option 1: Express setup** (Вариант 1. Экспресс-установка). 
 
    ![Ссылка экспресс-установки](./media/tutorial-incremental-copy-multiple-tables-portal/click-express-setup.png)
 1. В окне **Экспресс-установка Integration Runtime (Self-hosted)** щелкните **Закрыть**. 
 
-   ![Настройка среды выполнения интеграции — успешное завершение](./media/tutorial-incremental-copy-multiple-tables-portal/integration-runtime-setup-successful.png)
-1. В окне веб-браузера **Настройка среды выполнения интеграции** нажмите кнопку **Готово**. 
+   ![Настройка среды выполнения интеграции — успешное завершение](./media/tutorial-incremental-copy-multiple-tables-portal/integration-runtime-setup-successful.png)
+1. В окне веб-браузера **Integration Runtime Setup** (Настройка среды выполнения интеграции) нажмите кнопку **Готово**. 
 
  
 1. Проверьте, чтобы в списке сред выполнения интеграции использовалась среда **MySelfHostedIR**.
@@ -288,12 +288,12 @@ END
 
 1. В окне **подключений** перейдите из вкладки **сред выполнения интеграции** на вкладку **Связанные службы**, а затем щелкните **+ Создать**.
 
-1. В окне **Новая связанная служба** выберите **SQL Server**, а затем нажмите кнопку **Продолжить**. 
+1. В окне **New Linked Service** (Новая связанная служба) выберите **SQL Server**, а затем нажмите кнопку **Продолжить**. 
 
-1. В окне **Новая связанная служба** выполните следующие действия:
+1. В окне **New Linked Service** (Новая связанная служба) выполните следующие действия:
 
     1. Введите **SqlServerLinkedService** в поле **Имя**. 
-    1. Выберите **MySelfHostedIR** для параметра **Подключиться через среду выполнения интеграции**. Это **важный** шаг. Среда выполнения интеграции по умолчанию не может подключиться к локальному хранилищу данных. Используйте ранее созданную локальную среду выполнения интеграции. 
+    1. Выберите **MySelfHostedIR** для параметра **Connect via integration runtime** (Подключиться через среду выполнения интеграции). Это **важный** шаг. Среда выполнения интеграции по умолчанию не может подключиться к локальному хранилищу данных. Используйте ранее созданную локальную среду выполнения интеграции. 
     1. В поле **Имя сервера** введите имя компьютера, на котором размещена база данных SQL Server.
     1. В поле **Имя базы данных** введите имя базы данных на сервере SQL Server, где содержатся исходные данные. Для работы с этим руководством вы ранее создали таблицу и вставили данные в эту базу данных. 
     1. В поле **Тип проверки подлинности** выберите **соответствующий тип**, который будет использоваться для подключения к базе данных. 
@@ -306,8 +306,8 @@ END
 На последнем шаге вы создадите связанную службу, которая свяжет исходную базу данных SQL Server с фабрикой данных. На этом шаге вы свяжете базу данных-приемник или целевую базу данных SQL Azure с фабрикой данных. 
 
 1. В окне **подключений** перейдите из вкладки **сред выполнения интеграции** на вкладку **Связанные службы**, а затем щелкните **+ Создать**.
-1. В окне **Новая связанная служба** выберите **База данных SQL Microsoft Azure** и щелкните **Продолжить**. 
-1. В окне **Новая связанная служба** выполните следующие действия:
+1. В окне **New Linked Service** (Новая связанная служба) выберите **Azure SQL Database** (База данных SQL Microsoft Azure) и щелкните **Continue** (Продолжить). 
+1. В окне **New Linked Service** (Новая связанная служба) выполните следующие действия:
 
     1. Введите **AzureSqlDatabaseLinkedService** в поле **Имя**. 
     1. Для поля **Имя сервера** выберите в раскрывающемся списке имя сервера. 
@@ -445,7 +445,7 @@ END
         select * from @{item().TABLE_NAME} where @{item().WaterMark_Column} > '@{activity('LookupOldWaterMarkActivity').output.firstRow.WatermarkValue}' and @{item().WaterMark_Column} <= '@{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue}'        
         ```
 
-        ![Действие копирования — настройки источника](./media/tutorial-incremental-copy-multiple-tables-portal/copy-source-settings.png)
+        ![Действие копирования — настройки источника](./media/tutorial-incremental-copy-multiple-tables-portal/copy-source-settings.png)
 1. Перейдите на вкладку **Приемник** и выберите **SinkDataset** в поле **Sink Dataset** (Целевой набор данных). 
         
 1. Выполните следующие шаги:
@@ -462,7 +462,7 @@ END
 
 1. Перейдите на вкладку **Учетная запись SQL** и выберите **AzureSqlDatabaseLinkedService** в списке **Связанная служба**.
 
-    ![Действие хранимой процедуры — учетная запись SQL](./media/tutorial-incremental-copy-multiple-tables-portal/sproc-activity-sql-account.png)
+    ![Действие хранимой процедуры — учетная запись SQL](./media/tutorial-incremental-copy-multiple-tables-portal/sproc-activity-sql-account.png)
 1. Перейдите на вкладку **Хранимая процедура** и выполните здесь следующие действия:
 
     1. В качестве **имени хранимой процедуры** укажите `[dbo].[usp_write_watermark]`. 
@@ -474,7 +474,7 @@ END
         | LastModifiedtime | Дата и время | `@{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue}` |
         | TableName | Строка | `@{activity('LookupOldWaterMarkActivity').output.firstRow.TableName}` |
     
-        ![Действие хранимой процедуры — параметры хранимой процедуры](./media/tutorial-incremental-copy-multiple-tables-portal/sproc-activity-sproc-settings.png)
+        ![Действие хранимой процедуры — параметры хранимой процедуры](./media/tutorial-incremental-copy-multiple-tables-portal/sproc-activity-sproc-settings.png)
 1. Чтобы опубликовать сущности, созданные в службе "Фабрика данных", выберите **Опубликовать все**. 
 
 1. Дождитесь сообщения **Successfully published** (Публикация выполнена). Чтобы просмотреть уведомления, щелкните ссылку **Показать уведомления**. Чтобы закрыть окно уведомлений, щелкните значок **X**.

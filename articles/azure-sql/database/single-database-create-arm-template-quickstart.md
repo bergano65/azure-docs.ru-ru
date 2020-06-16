@@ -11,15 +11,14 @@ author: mumian
 ms.author: jgao
 ms.reviewer: carlrab
 ms.date: 06/28/2019
-ms.openlocfilehash: 03d598e0c0756cd304248ab19ab28a25836c57ab
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: 02e0947de3e7e5c6ce5110740127571ea393b168
+ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84052412"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84343869"
 ---
 # <a name="quickstart-create-a-single-database-in-azure-sql-database-using-the-azure-resource-manager-template"></a>Краткое руководство. Создание отдельной базы данных в Базе данных SQL с помощью шаблона Azure Resource Manager
-[!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 Создание [отдельной базы данных](single-database-overview.md) — это самый быстрый и простой вариант для создания базы данных в Базе данных SQL Azure. В этом кратком руководстве описано, как создать отдельную базу данных с помощью шаблона Azure Resource Manager.
 
@@ -29,7 +28,7 @@ ms.locfileid: "84052412"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-None
+Нет.
 
 ## <a name="create-a-single-database"></a>Создание отдельной базы данных
 
@@ -73,7 +72,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri
 Read-Host -Prompt "Press [ENTER] to continue ..."
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="the-azure-cli"></a>[CLI Azure.](#tab/azure-cli)
 
 ```azurecli-interactive
 $projectName = Read-Host -Prompt "Enter a project name that is used for generating resource names"
@@ -112,7 +111,7 @@ $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
 Remove-AzResourceGroup -Name $resourceGroupName
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="the-azure-cli"></a>[CLI Azure.](#tab/azure-cli)
 
 ```azurecli-interactive
 echo "Enter the Resource Group name:" &&
@@ -128,6 +127,7 @@ az group delete --name $resourceGroupName
 - Создав правило брандмауэра на уровне сервера, вы сможете [устанавливать подключение и выполнять запросы к базе данных](connect-query-content-reference-guide.md) с помощью разных средств и языков.
   - [подключиться и создать запрос с помощью SQL Server Management Studio](connect-query-ssms.md);
   - [подключиться и создать запрос с помощью Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/quickstart-sql-database?toc=/azure/sql-database/toc.json).
-- Чтобы создать отдельную базу данных с помощью Azure CLI, ознакомьтесь со статьей [Примеры Azure CLI для базы данных SQL](az-cli-script-samples-content-guide.md).
+- Чтобы создать отдельную базу данных с помощью Azure CLI, ознакомьтесь с [этими примерами Azure CLI](az-cli-script-samples-content-guide.md).
 - Чтобы создать отдельную базу данных с помощью Azure PowerShell, ознакомьтесь со статьей [Примеры Azure PowerShell для базы данных SQL Azure](powershell-script-content-guide.md).
 - Сведения о [создании шаблонов Resource Manager](../../azure-resource-manager/templates/template-tutorial-create-first-template.md).
+ 

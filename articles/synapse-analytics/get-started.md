@@ -9,12 +9,12 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.topic: quickstart
 ms.date: 05/19/2020
-ms.openlocfilehash: 24a34ae6f00eca7154021162184f5e71503da06b
-ms.sourcegitcommit: 8017209cc9d8a825cc404df852c8dc02f74d584b
+ms.openlocfilehash: 00f93086fec62c08c5241d868fc5104a1197cff3
+ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84248334"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84605414"
 ---
 # <a name="getting-started-with-azure-synapse-analytics"></a>Начало работы с Azure Synapse Analytics
 
@@ -164,7 +164,7 @@ ms.locfileid: "84248334"
 
 1. Перейдите в центр **Данные**, щелкните правой кнопкой мыши **Базы данных** и выберите **Обновить**.
 1. Должны отображаться такие базы данных:
-    - SQLDB (пул SQL)
+    - SQLDB1 (пул SQL);
     - nyctaxi (Spark)
       
 ## <a name="analyze-the-nyc-taxi-data-using-spark-and-notebooks"></a>Анализ данных нью-йоркского такси с помощью Spark и записных книжек
@@ -190,10 +190,10 @@ ms.locfileid: "84248334"
       WHERE TripDistanceMiles > 0 AND PassengerCount > 0
       GROUP BY PassengerCount
       ORDER BY PassengerCount
-    """) 
-    display(df)
-    df.write.saveAsTable("nyctaxi.passengercountstats")
-    ```
+   """) 
+   display(df)
+   df.write.saveAsTable("nyctaxi.passengercountstats")
+   ```
 
 1. В результатах ячейки выберите пункт **График**, чтобы просмотреть отображаемые данные
  
@@ -282,7 +282,7 @@ df.write.mode("overwrite").parquet("/NYCTaxi/PassengerCountStats.parquet")
 1. Выберите **пользователи (Основной)"**
 1. Появится папка `NYCTaxi`. В ней будут еще две папки: `PassengerCountStats.csv` и `PassengerCountStats.parquet`.
 1. Откройте папку `PassengerCountStats.parquet`.
-1. Щелкните правой кнопкой мыши файл Parquet внутри нее и выберите **Создать записную книжку**, после чего будет создана записная книжка с ячейкой следующего вида:
+1. Щелкните правой кнопкой мыши файл `.parquet` в папке и выберите команду **Создать записную книжку**. Будет создана записная книжка с ячейкой следующего вида:
 
     ```py
     %%pyspark

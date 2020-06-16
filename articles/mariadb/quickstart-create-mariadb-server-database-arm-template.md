@@ -7,14 +7,14 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: mblythe
 ms.date: 05/14/2020
-ms.openlocfilehash: 547b268a43cdd4b362d56b34cf9129a8b5efe16e
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
+ms.openlocfilehash: 78b38f5059d50d56158e31c65299e5f747c8c073
+ms.sourcegitcommit: 58ff2addf1ffa32d529ee9661bbef8fbae3cddec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84266429"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84323609"
 ---
-# <a name="quickstart-use-a-resource-manager-template-to-create-an-azure-database-for-mariadb-server"></a>Краткое руководство. Создание сервера Базы данных Azure для MariaDB с помощью шаблона Azure Resource Manager
+# <a name="quickstart-use-an-arm-template-to-create-an-azure-database-for-mariadb-server"></a>Краткое руководство. Создание сервера Базы данных Azure для MariaDB с помощью шаблона Resource Manager
 
 База данных Azure для MariaDB — это управляемая служба, которая позволяет запускать, администрировать и масштабировать высокодоступные Базы данных MariaDB в облаке. В этом кратком руководстве показано, как с помощью шаблона ARM создать Базу данных Azure для MariaDB, используя портал Azure, PowerShell или Azure CLI.
 

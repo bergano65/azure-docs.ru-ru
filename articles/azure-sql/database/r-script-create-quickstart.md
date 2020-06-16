@@ -14,12 +14,12 @@ ms.reviewer: davidph
 manager: cgronlun
 ms.date: 04/11/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 6645b50a6cd2d2145f9510ca2e2de0ee702fc3ad
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: 9b78b696b42431c744c30c91a730fdc7ec8c1032
+ms.sourcegitcommit: 58ff2addf1ffa32d529ee9661bbef8fbae3cddec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84053072"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84324612"
 ---
 # <a name="quickstart-create-and-run-simple-r-scripts-in-azure-sql-database-machine-learning-services-preview"></a>Краткое руководство. Создание и выполнение простых сценариев R в Службах машинного обучения в Базе данных SQL Azure (предварительная версия)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "84053072"
 
 Чтобы выполнить сценарий R, необходимо передать его в качестве аргумента в системную хранимую процедуру [sp_execute_external_script](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql).
 
-В следующих шагах вы запустите этот сценарий R в Базе данных SQL.
+На следующих этапах вы запустите этот сценарий R в базе данных:
 
 ```r
 a <- 1
@@ -51,9 +51,9 @@ d <- a*b
 print(c(c, d))
 ```
 
-1. Откройте **SQL Server Management Studio** и подключитесь к базе данных SQL.
+1. Откройте **SQL Server Management Studio** и подключитесь к базе данных.
 
-   Если вам нужна помощь с подключением, ознакомьтесь с разделом [Краткое руководство. Подключение к базе данных SQL Azure и создание запросов к ней с помощью SQL Server Management Studio](connect-query-ssms.md).
+   Если вам нужна помощь с подключением, ознакомьтесь с разделом [Краткое руководство. Подключение к базе данных в службе "База данных SQL Azure" и создание запросов к ней с помощью SQL Server Management Studio](connect-query-ssms.md).
 
 1. Передайте полный сценарий R в хранимую процедуру [sp_execute_external_script](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql).
 
@@ -70,7 +70,7 @@ print(c(c, d))
     '
     ```
 
-   Если вы получаете какие-либо ошибки, это может быть связано с тем, что общедоступная предварительная версия Служб машинного обучения (с использованием R) не включена для базы данных SQL. См. [предварительные требования](#prerequisites) выше.
+   Если вы получаете сообщения о каких-либо ошибках, это может быть связано с тем, что общедоступная предварительная версия Служб машинного обучения (с использованием R) не включена для базы данных. См. [предварительные требования](#prerequisites) выше.
 
    > [!NOTE]
    > Если вы являетесь администратором, можете настроить автоматическое выполнение внешнего кода. Разрешение можно предоставить другим пользователям с помощью команды:
@@ -196,7 +196,7 @@ GO
 
 ## <a name="check-r-version"></a>Проверка версии R
 
-Если вы хотите узнать, какая версия R установлена в Базе данных SQL, выполните следующий сценарий.
+Если вы хотите узнать, какая версия R установлена в базе данных, выполните приведенный ниже скрипт.
 
 ```sql
 EXECUTE sp_execute_external_script @language = N'R'
@@ -229,7 +229,7 @@ nickname       Someone to Lean On
 
 ## <a name="list-r-packages"></a>Получение списка пакетов R
 
-Корпорация Майкрософт предоставляет ряд пакетов R, предварительно установленных с помощью Служб машинного обучения в базе данных SQL.
+Корпорация Майкрософт предоставляет ряд пакетов R, предварительно установленных с помощью Служб машинного обучения в базе данных.
 
 Чтобы просмотреть список установленных пакетов R, включая сведения о версии, зависимостях, лицензии и пути к библиотеке, выполните следующий сценарий.
 

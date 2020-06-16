@@ -1,5 +1,5 @@
 ---
-title: Добавочное копирование данных с помощью решения "Отслеживание изменений"
+title: Добавочное копирование данных с помощью решения "Отслеживание изменений" и PowerShell
 description: В этом руководстве вы создадите конвейер Фабрики данных Azure, который пошагово копирует разностные данные из нескольких таблиц в базе данных SQL Server в Базу данных SQL Azure.
 services: data-factory
 ms.author: yexu
@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 01/22/2018
-ms.openlocfilehash: b83b10c15bcc5d1a8ea9fc094e1d709d57221902
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
+ms.openlocfilehash: 2eb52ae24fe17a3e1a161ab132eee862efae9af1
+ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84196162"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84559663"
 ---
-# <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information"></a>Добавочная загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживания изменений
+# <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information-using-powershell"></a>Добавочная загрузка данных из Базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживания изменений и PowerShell
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
@@ -58,10 +58,10 @@ ms.locfileid: "84196162"
 ## <a name="high-level-solution"></a>Общее решение
 В этом руководстве описано, как создать два конвейера, которые выполняют следующие две операции:  
 
-1. **Начальная загрузка** — вы создадите конвейер с действием копирования, которое копирует все данные из исходного хранилища данных (База данных Azure SQL) в целевое хранилище данных (хранилище BLOB-объектов Azure).
+1. **Начальная загрузка** — вы создадите конвейер с действием копирования, которое копирует все данные из исходного хранилища данных (База данных Azure SQL) в целевое хранилище данных (хранилище BLOB-объектов Azure).
 
     ![Полная загрузка данных](media/tutorial-incremental-copy-change-tracking-feature-powershell/full-load-flow-diagram.png)
-1.  **Добавочная загрузка** — вы создадите конвейер со следующими действиями для периодического выполнения:
+1.  **Добавочная загрузка** — вы создадите конвейер со следующими действиями для периодического выполнения:
     1. Создайте **два действия поиска**, чтобы получить старое и новое значения SYS_CHANGE_VERSION из базы данных SQL Azure и передать их в действие копирования.
     2. Создайте **одно действие копирования**, чтобы скопировать вставленные, обновленные или удаленные данные, связанные с двумя значениями SYS_CHANGE_VERSION, из Базы данных SQL Azure в хранилище BLOB-объектов.
     3. Создайте **одно действие хранимой процедуры**, чтобы обновить значение SYS_CHANGE_VERSION для запуска следующего конвейера.
@@ -69,7 +69,7 @@ ms.locfileid: "84196162"
     ![Схема процесса добавочной загрузки](media/tutorial-incremental-copy-change-tracking-feature-powershell/incremental-load-flow-diagram.png)
 
 
-Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись, прежде чем начинать работу.
+Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -642,13 +642,13 @@ Invoke-AzDataFactoryV2Pipeline -PipelineName "IncrementalCopyPipeline" -Resource
 
 ![Выходной файл, полученный в результате добавочного копирования](media/tutorial-incremental-copy-change-tracking-feature-powershell/incremental-copy-output-file.png)
 
-Файл должен включать только разностные данные из базы данных Azure SQL. Запись с `U` — это обновленная строка в базе данных, а `I` — добавленная строка.
+Файл должен включать только разностные данные из базы данных Azure SQL. Запись с `U` — это обновленная строка в базе данных, а `I` — добавленная строка.
 
 ```
 1,update,10,2,U
 6,new,50,1,I
 ```
-Первые три столбца — это измененные данные из таблицы data_source_table. Последние два столбцы — это метаданные из таблицы sys.change_tracking_tables. Четвертый столбец — это версия SYS_CHANGE_VERSION для каждой изменившейся строки. Пятый столбец — это операция  U = update, I = insert.  Дополнительные сведения об отслеживании изменений см. в описании функции [CHANGETABLE](/sql/relational-databases/system-functions/changetable-transact-sql).
+Первые три столбца — это измененные данные из таблицы data_source_table. Последние два столбцы — это метаданные из таблицы sys.change_tracking_tables. Четвертый столбец — это версия SYS_CHANGE_VERSION для каждой изменившейся строки. Пятый столбец — это операция  U = update, I = insert.  Дополнительные сведения об отслеживании изменений см. в описании функции [CHANGETABLE](/sql/relational-databases/system-functions/changetable-transact-sql).
 
 ```
 ==================================================================
@@ -663,4 +663,4 @@ PersonID Name    Age    SYS_CHANGE_VERSION    SYS_CHANGE_OPERATION
 В этом руководстве рассказывается о копировании новых и измененных файлов на основе параметра LastModifiedDate:
 
 > [!div class="nextstepaction"]
->[Копирование новых файлов с использованием параметра LastModifiedDate](tutorial-incremental-copy-lastmodified-copy-data-tool.md)
+>[Copy new files by lastmodifieddate](tutorial-incremental-copy-lastmodified-copy-data-tool.md) (Копирование новых файлов с использованием параметра LastModifiedDate)
