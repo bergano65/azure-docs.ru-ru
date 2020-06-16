@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/26/2020
 ms.author: trbye
 ms.custom: seodec18
-ms.openlocfilehash: 43476f3e3f125bc338ba25e8cce0e96baa76262b
-ms.sourcegitcommit: ce44069e729fce0cf67c8f3c0c932342c350d890
+ms.openlocfilehash: 36b653fb3c3a24f3d19408aa2c87b3b764d04ec1
+ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84636110"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84730328"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Поддержка языков и голосов в службе "Речь"
 
@@ -27,8 +27,6 @@ ms.locfileid: "84636110"
 REST API и пакет SDK службы "Речь" (Майкрософт) поддерживают следующие языки (языковые стандарты). 
 
 Чтобы повысить точность, можно выполнить настройку набора языков, отправив **аудиозаписи и расшифровки с метками, сделанными человеком** или **связанный текст с предложениями**. См. сведения о настройке в статье [Что такое Пользовательское распознавание речи?](how-to-custom-speech.md)
-
-См. сведения о том, как улучшить произношение, в разделе [Добавление новых слов с произношением](how-to-custom-speech-improve-accuracy.md#add-new-words-with-pronunciation).
 
 <!--
 To get the AM and ML bits:
