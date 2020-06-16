@@ -2,13 +2,13 @@
 title: Новые возможности службы "Распознавание речи" (LUIS)
 description: Эта статья регулярно обновляется последними сведениями об API Распознавания речи в Azure Cognitive Services.
 ms.topic: overview
-ms.date: 05/19/2020
-ms.openlocfilehash: 45bfe4e703942a7fa38329bd0905833e904e0ab1
-ms.sourcegitcommit: f01c2142af7e90679f4c6b60d03ea16b4abf1b97
+ms.date: 06/15/2020
+ms.openlocfilehash: d178ee2f5db74949f4a8ad68df93bf3c4407c58a
+ms.sourcegitcommit: 6571e34e609785e82751f0b34f6237686470c1f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84678755"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84789214"
 ---
 # <a name="whats-new-in-language-understanding"></a>Новые возможности службы "Распознавание речи"
 
@@ -16,11 +16,19 @@ ms.locfileid: "84678755"
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
-### <a name="june-2020"></a>июнь 2020 г.
+### <a name="june-2020"></a>Июнь 2020 г.
 
 * [Предварительная версия 3,0. Разработка](luis-migration-authoring-entities.md) Tool
     * Версия 3.2.0-Preview. 3 — [.NET — NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)
     * Версия 4.0.0-Preview. 3- [JS-NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring)
+* Применение методик DevOps с помощью LUIS
+    * Основные понятия
+        * [Рекомендации по DevOps для LUIS](luis-concept-devops-sourcecontrol.md)
+        * [Рабочие процессы непрерывной интеграции и непрерывной поставки для LUIS DevOps](luis-concept-devops-automation.md)
+        * [Тестирование для LUIS DevOps](luis-concept-devops-testing.md)
+    * Практическое руководство
+        * [Применение DevOps к разработке приложений LUIS с помощью действий GitHub](luis-how-to-devops-with-github.md)
+    * [Полный репозиторий кода GitHub](https://github.com/Azure-Samples/LUIS-DevOps-Template)
 
 ### <a name="may-2020---build"></a>Май 2020 года — //Build
 
