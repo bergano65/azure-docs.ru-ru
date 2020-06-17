@@ -5,14 +5,14 @@ author: amberbhargava
 tags: billing
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 02/20/2020
+ms.date: 05/29/2020
 ms.author: banders
-ms.openlocfilehash: 4dab11afb2ddd910a4d6619d088031279ebf3172
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6f571d323a06b64f79c3f97ae8717be7eb8968d3
+ms.sourcegitcommit: b55d1d1e336c1bcd1c1a71695b2fd0ca62f9d625
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79238012"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84434497"
 ---
 # <a name="billing-accounts-and-scopes-in-the-azure-portal"></a>Учетные записи и области выставления счетов на портале Azure
 
@@ -22,9 +22,9 @@ ms.locfileid: "79238012"
 
 - **Программа Microsoft Online Services**: Учетная запись выставления счетов для программы Microsoft Online Services создается при регистрации в Azure с помощью веб-сайта Azure. Например, при регистрации с [бесплатной учетной записи Azure](https://azure.microsoft.com/offers/ms-azr-0044p/), [учетной записью с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/) или как [подписчик Visual Studio](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/).
 
-- **Соглашение Enterprise**. Учетная запись выставления счетов для Соглашения Enterprise создается когда ваша организация подписывает [Соглашение Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/) для использования Azure.
+- **Соглашение Enterprise**. Учетная запись выставления счетов для Соглашения Enterprise создается когда ваша организация подписывает [Соглашение Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/) для использования Azure. В Соглашении Enterprise может быть не более 500 подписок.
 
-- **Клиентское соглашение Майкрософт**: Учетная запись выставления счетов для Клиентского соглашения Майкрософт создается, когда ваша организация работает с представителем корпорации Майкрософт для подписания Клиентского соглашения Майкрософт. В некоторых регионах клиенты, которые зарегистрировались на веб-сайте Azure для получения [учетной записи с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/) или [бесплатной учетной записи Azure](https://azure.microsoft.com/offers/ms-azr-0044p/), могут также использовать учетную запись выставления счетов для Клиентского соглашения Майкрософт. Дополнительные сведения см. в статье [Get started with your billing account for Microsoft Customer Agreement](../understand/mca-overview.md) (Учетные записи выставления счетов для клиентского соглашения Майкрософт).
+- **Клиентское соглашение Майкрософт**: Учетная запись выставления счетов для Клиентского соглашения Майкрософт создается, когда ваша организация работает с представителем корпорации Майкрософт для подписания Клиентского соглашения Майкрософт. В некоторых регионах клиенты, которые зарегистрировались на веб-сайте Azure для получения [учетной записи с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/) или [бесплатной учетной записи Azure](https://azure.microsoft.com/offers/ms-azr-0044p/), могут также использовать учетную запись выставления счетов для Клиентского соглашения Майкрософт. В Клиентском соглашении Майкрософт может быть не более 20 подписок. Дополнительные сведения см. в статье [Get started with your billing account for Microsoft Customer Agreement](../understand/mca-overview.md) (Учетные записи выставления счетов для клиентского соглашения Майкрософт).
 
 - **Соглашение с партнером Майкрософт**. Учетная запись выставления счетов для Соглашения с партнером Майкрософт создается для того, чтобы поставщики облачных решений могли управлять выставлением счетов для своих клиентов по новой коммерческой программе. Чтобы управлять учетной записью выставления счетов на портале Azure, у партнера должен быть хотя бы один клиент, использующий [план Azure](https://docs.microsoft.com/partner-center/purchase-azure-plan). Дополнительные сведения см. в статье [Начало работы с учетной записью выставления счетов клиентского соглашения Майкрософт](../understand/mpa-overview.md).
 
@@ -35,7 +35,7 @@ ms.locfileid: "79238012"
 
 ### <a name="microsoft-online-services-program"></a>Программа Microsoft Online Services
 
- ![Снимок экрана с иерархией в рамках программы Microsoft Online Services](./media/view-all-accounts/mosp-hierarchy.png)
+![Снимок экрана с иерархией в рамках программы Microsoft Online Services](./media/view-all-accounts/mosp-hierarchy.png)
 
 |Область  |Определение  |
 |---------|---------|

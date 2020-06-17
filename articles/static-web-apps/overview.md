@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: overview
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: d416044599535e8acd363d09099e8667bba59a0a
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 476b81fc9aceae3f05ed54e7b2b11be381121bd8
+ms.sourcegitcommit: 20e246e86e25d63bcd521a4b4d5864fbc7bad1b0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83599069"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84488925"
 ---
 # <a name="what-is-azure-static-web-apps-preview"></a>Что такое Статические веб-приложения Azure (предварительная версия)?
 
@@ -30,7 +30,7 @@ ms.locfileid: "83599069"
 
 ## <a name="key-features"></a>Основные возможности
 
-- **Бесплатный** веб-хостинг для статического содержимого, например HTML, CSS, JavaScript и изображений.
+- **Веб-хостинг** для статического содержимого, например HTML, CSS, JavaScript и изображений.
 - **Интегрированная поддержка API**, предоставляемая Функциями Azure.
 - **Прямая интеграция с GitHub**, при которой изменения в репозитории активируют операции сборки и развертывания.
 - **Глобальное распределение** статического содержимого, благодаря которому содержимое находится ближе к пользователям.

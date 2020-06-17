@@ -2,14 +2,14 @@
 title: Оценка виртуальных машин VMware с помощью средства оценки серверов Миграции Azure
 description: В этой статье описывается, как оценить готовность локальных виртуальных машин VMware к миграции в Azure с помощью средства оценки серверов в службе "Миграция Azure".
 ms.topic: tutorial
-ms.date: 04/15/2020
+ms.date: 06/03/2020
 ms.custom: mvc
-ms.openlocfilehash: bd9e6b5923207297b1aa70a67052a7796b901781
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 87eac5979176fe9a71db15961e4c5f822b56568e
+ms.sourcegitcommit: 79508e58c1f5c58554378497150ffd757d183f30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81535372"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84331888"
 ---
 # <a name="assess-vmware-vms-with-server-assessment"></a>Оценка виртуальных машин VMware с помощью решения оценки серверов
 
@@ -85,18 +85,26 @@ ms.locfileid: "81535372"
 Прежде чем развертывать OVA-файл, убедитесь, что он не поврежден.
 
 1. На компьютере, на который был скачан файл, откройте командное окно с правами администратора.
-1. Выполните следующую команду, чтобы создать хэш OVA-файла.
+2. Выполните следующую команду, чтобы создать хэш OVA-файла.
   
    ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
    
    Пример использования: ```C:\>CertUtil -HashFile C:\AzureMigrate\AzureMigrate.ova SHA256```
 
-Для версии 2.19.07.30 созданный хэш должен соответствовать следующим значениям:
+3. Проверьте последние версии и хэш-значения устройств:
 
-**Алгоритм** | **Значение хэша**
---- | ---
-MD5 | c06ac2a2c0f870d3b274a0b7a73b78b1
-SHA256 | 4ce4faa3a78189a09a26bfa5b817c7afcf5b555eb46999c2fad9d2ebc808540c
+    - Для общедоступного облака Azure:
+    
+        **Алгоритм** | **Загрузить** | **SHA256**
+        --- | --- | ---
+        VMware (10,9 ГБ) | [Последняя версия](https://aka.ms/migrate/appliance/vmware) | cacbdaef927fe5477fa4e1f494fcb7203cbd6b6ce7402b79f234bc0fe69663dd
+
+    - Для Azure для государственных организаций:
+    
+        **Алгоритм** | **Загрузить** | **SHA256**
+        --- | --- | ---
+        VMware (63,1 ГБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2120300&clcid=0x409 ) | 3d5822038646b81f458d89d706832c0a2c0e827bfa9b0a55cc478eaf2757a4de
+
 
 ### <a name="create-the-appliance-vm"></a>Создание виртуальной машины устройства
 

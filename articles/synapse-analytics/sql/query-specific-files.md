@@ -1,58 +1,55 @@
 ---
 title: Использование метаданных файлов в запросах
-description: Функция OPENROWSET предоставляет сведения о файле и пути о каждом файле, используемом в запросе, для фильтрации или анализа данных по имени файла и (или) пути к папке.
+description: Функция OPENROWSET предоставляет сведения о файле и пути для каждого используемого в запросе файла, что позволяет фильтровать или анализировать данные по именам файлов и (или) путям к папкам.
 services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
 ms.topic: how-to
 ms.subservice: ''
-ms.date: 04/15/2020
+ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 40a8e2c153ec3d8e7b4007340b9433a38f9ccc89
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: e8d7301799bfb4af9a0f5a6f242be929e8253d7c
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81431557"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83744221"
 ---
 # <a name="using-file-metadata-in-queries"></a>Использование метаданных файлов в запросах
 
-Служба запросов по запросу SQL может обращаться к нескольким файлам и папкам, как описано в статье о [папках запросов и нескольких файлах](query-folders-multiple-csv-files.md) . В этой статье вы узнаете, как использовать метаданные о именах файлов и папок в запросах.
+Служба запросов SQL по запросу умеет работать с несколькими файлами и папками, как описано в [этой статье](query-folders-multiple-csv-files.md). Здесь вы узнаете, как использовать в запросах метаданные с именами файлов и папок.
 
-Иногда может потребоваться знать, какой источник файла или папки соотносится с определенной строкой результирующего набора.
+Иногда бывает нужно узнать, какой исходный файл или папка соотносятся с определенной строкой результирующего набора.
 
-Можно использовать функцию `filepath` и `filename` для возврата имен файлов и (или) пути в результирующий набор. Их также можно использовать для фильтрации данных на основе имени файла и (или) пути к папке. Эти функции описаны в разделе синтаксис [имени файла](develop-storage-files-overview.md#filename-function) и [функция FilePath](develop-storage-files-overview.md#filepath-function). Ниже приведены краткие описания и примеры.
+Функции `filepath` и `filename` можно применить для получения имен файлов и (или) путей в результирующем наборе. Также вы можете применить их для фильтрации данных по именам файлов и (или) путям к папкам. Эти функции описаны в разделах, посвященных [функции filename](develop-storage-files-overview.md#filename-function) и [функции filepath](develop-storage-files-overview.md#filepath-function). Ниже вы найдете краткие описания и примеры по ним.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем читать оставшуюся часть этой статьи, ознакомьтесь со следующими предварительными требованиями.
-
-- [Изначальная настройка](query-data-storage.md#first-time-setup)
-- [Предварительные требования](query-data-storage.md#prerequisites)
+Первым делом вам нужно **создать базу данных**, у которой источник данных ссылается на учетную запись хранения. Затем инициализируйте объекты, выполнив [скрипт настройки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. Этот скрипт настройки создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются в этих примерах.
 
 ## <a name="functions"></a>Функции
 
-### <a name="filename"></a>имя_файла
+### <a name="filename"></a>Имя файла
 
-Эта функция возвращает имя файла, являющегося источником строки.
+Эта функция возвращает имя файла, из которого получена строка.
 
-Следующий пример считывает файлы данных Нью желтого такси за последние три месяца 2017 и возвращает число переданных на файл. Часть инструкции OPENROWSET в запросе указывает, какие файлы будут считаны.
+Следующий пример считывает файлы данных из набора NYC Yellow Taxi (данные о поездках в такси за три последних месяца 2017 года) и возвращает число поездок, внесенных в каждый файл. Сегмент OPENROWSET в запросе указывает, какие файлы будут считаны.
 
 ```sql
 SELECT
-    r.filename() AS [filename]
+    nyc.filename() AS [filename]
     ,COUNT_BIG(*) AS [rows]
-FROM OPENROWSET(
-        BULK 'https://sqlondemandstorage.blob.core.windows.net/parquet/taxi/year=2017/month=9/*.parquet',
-        FORMAT='PARQUET') AS [r]
-GROUP BY
-    r.filename()
-ORDER BY
-    [filename];
+FROM  
+    OPENROWSET(
+        BULK 'parquet/taxi/year=2017/month=9/*.parquet',
+        DATA_SOURCE = 'SqlOnDemandDemo',
+        FORMAT='PARQUET'
+    ) nyc
+GROUP BY nyc.filename();
 ```
 
-В следующем примере показано, как можно использовать *filename ()* в предложении WHERE для фильтрации считываемых файлов. Он обращается ко всей папке в части OPENROWSET файлов запроса и фильтрует в предложении WHERE.
+Следующий пример демонстрирует применение функции *filename()* в предложении WHERE для фильтрации считываемых файлов. Он обращается ко всей папке в сегменте запроса OPENROWSET и фильтрует файлы в предложении WHERE.
 
 Результаты будут такими же, как в предыдущем примере.
 
@@ -61,52 +58,42 @@ SELECT
     r.filename() AS [filename]
     ,COUNT_BIG(*) AS [rows]
 FROM OPENROWSET(
-    BULK 'https://sqlondemandstorage.blob.core.windows.net/parquet/taxi/year=2017/month=9/*.parquet',
-    FORMAT='PARQUET') AS [r]
+    BULK 'csv/taxi/yellow_tripdata_2017-*.csv',
+        DATA_SOURCE = 'SqlOnDemandDemo',
+        FORMAT = 'CSV',
+        PARSER_VERSION = '2.0',
+        FIRSTROW = 2) 
+        WITH (C1 varchar(200) ) AS [r]
 WHERE
-    r.filename() IN ('yellow_tripdata_2017-10.parquet', 'yellow_tripdata_2017-11.parquet', 'yellow_tripdata_2017-12.parquet')
+    r.filename() IN ('yellow_tripdata_2017-10.csv', 'yellow_tripdata_2017-11.csv', 'yellow_tripdata_2017-12.csv')
 GROUP BY
     r.filename()
 ORDER BY
     [filename];
 ```
 
-### <a name="filepath"></a>Равно
+### <a name="filepath"></a>Filepath
 
-Функция FilePath возвращает полный или частичный путь:
+Функция filepath возвращает полный или частичный путь:
 
-- При вызове без параметра возвращается полный путь к файлу, из которого получена строка.
-- При вызове с параметром он возвращает часть пути, соответствующую подстановочному знаку в положении, указанном в параметре. Например, значение параметра 1 вернет часть пути, совпадающую с первым подстановочным знаком.
+- При вызове без параметров она возвращает полный путь к файлу, из которого была получена строка.
+- При вызове с параметром она возвращает ту часть пути, которая соответствует подстановочному знаку в той позиции, которую определяет этот параметр. Например, при значении параметра 1 возвращается часть пути, соответствующая первому подстановочному знаку.
 
-В следующем примере считываются файлы данных Нью желтого такси за последние три месяца 2017. Он возвращает число переданных на путь к файлу. Часть инструкции OPENROWSET в запросе указывает, какие файлы будут считаны.
+Следующий пример считывает файлы данных из набора NYC Yellow Taxi (данные о поездках в такси за три последних месяца 2017 года). Он возвращает число поездок, сохраненных в каждом пути. Сегмент OPENROWSET в запросе указывает, какие файлы будут считаны.
 
 ```sql
 SELECT
     r.filepath() AS filepath
     ,COUNT_BIG(*) AS [rows]
 FROM OPENROWSET(
-        BULK 'https://sqlondemandstorage.blob.core.windows.net/csv/taxi/yellow_tripdata_2017-1*.csv',
+        BULK 'csv/taxi/yellow_tripdata_2017-1*.csv',
+        DATA_SOURCE = 'SqlOnDemandDemo',
         FORMAT = 'CSV',
+        PARSER_VERSION = '2.0',
         FIRSTROW = 2
     )
     WITH (
-        vendor_id INT,
-        pickup_datetime DATETIME2,
-        dropoff_datetime DATETIME2,
-        passenger_count SMALLINT,
-        trip_distance FLOAT,
-        rate_code SMALLINT,
-        store_and_fwd_flag SMALLINT,
-        pickup_location_id INT,
-        dropoff_location_id INT,
-        payment_type SMALLINT,
-        fare_amount FLOAT,
-        extra FLOAT,
-        mta_tax FLOAT,
-        tip_amount FLOAT,
-        tolls_amount FLOAT,
-        improvement_surcharge FLOAT,
-        total_amount FLOAT
+        vendor_id INT
     ) AS [r]
 GROUP BY
     r.filepath()
@@ -114,9 +101,9 @@ ORDER BY
     filepath;
 ```
 
-В следующем примере показано, как можно использовать *FilePath ()* в предложении WHERE для фильтрации считываемых файлов.
+Следующий пример демонстрирует применение функции *filepath()* в предложении WHERE для фильтрации считываемых файлов.
 
-Можно использовать подстановочные знаки в части OPENROWSET запроса и фильтровать файлы в предложении WHERE. Результаты будут такими же, как в предыдущем примере.
+Вы можете указать подстановочные знаки в сегменте запроса OPENROWSET и отфильтровать файлы в предложении WHERE. Результаты будут такими же, как в предыдущем примере.
 
 ```sql
 SELECT
@@ -125,28 +112,14 @@ SELECT
     ,r.filepath(2) AS [month]
     ,COUNT_BIG(*) AS [rows]
 FROM OPENROWSET(
-        BULK 'https://sqlondemandstorage.blob.core.windows.net/csv/taxi/yellow_tripdata_*-*.csv',
+        BULK 'csv/taxi/yellow_tripdata_*-*.csv',
+        DATA_SOURCE = 'SqlOnDemandDemo',
         FORMAT = 'CSV',
+        PARSER_VERSION = '2.0',        
         FIRSTROW = 2
     )
 WITH (
-    vendor_id INT,
-    pickup_datetime DATETIME2,
-    dropoff_datetime DATETIME2,
-    passenger_count SMALLINT,
-    trip_distance FLOAT,
-    rate_code SMALLINT,
-    store_and_fwd_flag SMALLINT,
-    pickup_location_id INT,
-    dropoff_location_id INT,
-    payment_type SMALLINT,
-    fare_amount FLOAT,
-    extra FLOAT,
-    mta_tax FLOAT,
-    tip_amount FLOAT,
-    tolls_amount FLOAT,
-    improvement_surcharge FLOAT,
-    total_amount FLOAT
+    vendor_id INT
 ) AS [r]
 WHERE
     r.filepath(1) IN ('2017')
@@ -159,6 +132,6 @@ ORDER BY
     filepath;
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-В следующей статье вы узнаете, как [запрашивать файлы Parquet](query-parquet-files.md).
+В следующей статье вы узнаете, как [выполнять запросы по файлам Parquet](query-parquet-files.md).

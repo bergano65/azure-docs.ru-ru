@@ -1,21 +1,14 @@
 ---
 title: Руководство по интеграции с Power Virtual Agents (QnA Maker)
-titleSuffix: Azure Cognitive Services
 description: В этом руководстве рассматривается улучшение качества базы знаний с помощью активного обучения. Просматривайте, подтверждайте, отклоняйте и добавляйте вопросы без удаления или изменения существующих.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.service: cognitive-services
-ms.subservice: qna-maker
 ms.topic: tutorial
-ms.date: 03/11/2020
-ms.author: diberry
-ms.openlocfilehash: 4557dee995c8a01067f7e6ad0e79bb7115b6ecdb
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.date: 06/08/2020
+ms.openlocfilehash: f1d51f6ad8892252161238eb71fbb02f463463fd
+ms.sourcegitcommit: ce44069e729fce0cf67c8f3c0c932342c350d890
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81402818"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84635393"
 ---
 # <a name="tutorial-add-your-knowledge-base-to-power-virtual-agents"></a>Руководство по добавлению базы знаний в Power Virtual Agents
 Создайте бот [Power Virtual Agents](https://powervirtualagents.microsoft.com/) и дополните его для предоставления ответов из базы знаний.
@@ -57,14 +50,15 @@ ms.locfileid: "81402818"
     * Создайте раздел агента.
     * Вызовите действие (для потока Power Automate).
 * На портале [Power Automate](https://us.flow.microsoft.com/) сделайте следующее:
-    * Создайте поток с соединителем к API [GenerateAnswer в QnA Maker](https://docs.microsoft.com/connectors/cognitiveservicesqnamaker/).
+    * Найдите шаблон _Создание ответа с помощью QnA Maker_
+    * Используйте шаблон, чтобы настроить поток для использования [GenerateAnswer в QnA Maker](https://docs.microsoft.com/connectors/cognitiveservicesqnamaker/).
         * Информация о базе знаний, опубликованной в QnA Maker:
             * Идентификатор базы знаний
             * Узел конечной точки ресурса QnA Maker
             * Ключ конечной точки ресурса QnA Maker
         * Входные данные — пользовательский запрос
         * Выходные данные — ответ базы знаний
-    * Создайте решение и добавьте поток.
+    * Создайте решение и добавьте поток или добавьте поток в существующее решение.
 * Вернитесь к Power Virtual Agents и сделайте следующее:
     * Выберите выходные данные решения в качестве сообщения для раздела.
 
@@ -82,16 +76,17 @@ ms.locfileid: "81402818"
 ## <a name="create-an-agent-in-power-virtual-agents"></a>Создание агента в Power Virtual Agents
 
 1. [Выполните вход в Power Virtual Agents](https://go.microsoft.com/fwlink/?LinkId=2108000&clcid=0x409). Укажите рабочий или учебный адрес электронной почты.
+
 1. Если это ваш первый бот, откроется **домашняя страница** агента. Если у вас уже есть боты, выберите нужный в правой части страницы и щелкните **+ New Bot** (+ Создать бота).
 
     > [!div class="mx-imgBorder"]
     > ![Снимок экрана с домашней страницей Power Virtual Agents](../media/how-to-integrate-power-virtual-agent/power-virtual-agent-home.png)
 
-1. Введите параметры опубликованной базы знаний, которые указаны на странице **Параметры** на портале [QnA Maker](https://www.qnamaker.ai/).
-
 ## <a name="topics-provided-in-the-bot"></a>Предоставленные в боте разделы
 
 Агент использует коллекцию разделов для ответа на вопросы в нужной предметной области. В этом примере агент содержит вам много разделов, которые делятся на пользовательские и системные.
+
+Выберите **Разделы** в левой области навигации, чтобы просмотреть разделы, предоставленные ботом.
 
 > [!div class="mx-imgBorder"]
 > ![Снимок экрана со списком предоставленных в агенте разделов](../media/how-to-integrate-power-virtual-agent/power-virtual-agent-topics-provided.png)
@@ -124,80 +119,40 @@ ms.locfileid: "81402818"
 
 1. В новом действии возврата могут уже присутствовать элементы потока беседы. Удалите элемент **Escalate** (Передать), выбрав меню **Параметры**.
 
-    > [!div class="mx-imgBorder"]
-    > ![Снимок экрана с разделом возврата в Power Virtual Agents](../media/how-to-integrate-power-virtual-agent/power-virtual-agent-fallback-topic-delete-escalate.png)
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/delete-escalate-action-using-option-menu.png" alt-text="Частичный снимок экрана потока диалога с выделенным параметром "Удалить".":::
 
-1. Выберите соединитель **+** , который идет от блока **Message** (Сообщение), а затем выберите команду **Call an action** (Вызов действия).
+1. Выберите соединитель **+** , который идет к блоку **Сообщение**, а затем выберите команду **Вызов действия**.
 
-    > [!div class="mx-imgBorder"]
-    > ![Снимок экрана с командой вызова действия](../media/how-to-integrate-power-virtual-agent/create-new-item-call-an-action.png)
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/create-new-item-call-an-action.png" alt-text="Частичный снимок экрана с командой вызова действия.":::
 
 1. Выберите элемент **Создать поток**. После этого откроется портал Power Automate.
 
     > [!div class="mx-imgBorder"]
     > ![Снимок экрана с командой создания потока](../media/how-to-integrate-power-virtual-agent/create-a-flow.png)
 
+
+    Power Automate открывается в новом шаблоне. Вы не будете использовать этот новый шаблон.
+
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-automate-flow-initial-template.png" alt-text="Частичный снимок экрана: Power Automate с новым шаблоном потока.":::
+
 ## <a name="create-a-power-automate-flow-to-connect-to-your-knowledge-base"></a>Создание потока Power Automate для подключения к базе знаний
 
 Следующая процедура позволяет создать поток Power Automate, который:
 * принимает входящий пользовательский текст и отправляет его в QnA Maker;
-* сохраняет лучший ответ QnA Maker в переменную и отправляет эту переменную с лучшим ответом в агент.
+* Возвращает верхний ответ к агенту.
 
-1. В **Power Automate** запускается **Шаблон потока**. В элементе потока **Power Virtual Agents** выберите пункт **Изменить**, чтобы настроить входную переменную, поступающую от агента в базу знаний. Входная текстовая переменная — это отправленный пользователем текстовый вопрос от агента.
+1. В **Power Automate** выберите **Шаблоны** в левой области навигации. Если вам будет предложено покинуть страницу браузера, нажмите "Покинуть".
 
-    > [!div class="mx-imgBorder"]
-    > ![Снимок экрана с действием Power Automate для настройки входной переменной в виде текстовой строки](../media/how-to-integrate-power-virtual-agent/power-automate-configure-input-variable.png)
+1. На странице шаблонов найдите шаблон **Создать ответ с помощью QnA Maker** и выберите его. Этот шаблон содержит все шаги для вызова QnA Maker с параметрами базы знаний и возврата верхнего ответа.
 
-1. Добавьте входной текст и присвойте переменной имя `InputText` и описание `IncomingUserQuestion`. Такое именование помогает отличать входной текст от выходного текста, который вы создадите позже.
+1. На новом экране для потока QnA Maker выберите **Продолжить**.
 
-    > [!div class="mx-imgBorder"]
-    > ![Снимок экрана с действием Power Automate для настройки имени и описания входной переменной](../media/how-to-integrate-power-virtual-agent/power-automate-configure-input-variable-name-and-description.png)
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-automate-qna-flow-template-continue.png" alt-text="Частичный снимок экрана: поток шаблона QnA Maker с выделенной кнопкой "Продолжить".":::
 
-1. Выберите соединитель **+** , который идет от блока **Power Virtual Agents**, чтобы вставить новый шаг в поток перед группой **Возвратить значения в Power Virtual Agents**. Затем выберите команду **Добавить действие**.
+1. Выберите поле действия **Создать ответ** и заполните параметры QnA Maker из предыдущего раздела, озаглавленного [Создание и публикация базы знаний](#create-and-publish-a-knowledge-base). **Узел службы** на следующем рисунке ссылается на узел базы знаний **Узел** и имеет формат `https://YOUR-RESOURCE-NAME.azurewebsites.net/qnamaker`.
 
-1. Выполните поиск по `Qna`, чтобы найти действия **QnA Maker**, а затем выберите **Generate answer** (Создать ответ).
 
-    > [!div class="mx-imgBorder"]
-    > ![Снимок экрана с командой создания ответа](../media/how-to-integrate-power-virtual-agent/generate-answer-action-selected.png)
-
-    Обязательные параметры подключения к QnA Maker отображаются в параметрах действия и параметрах вопроса, полученных от агента.
-
-    > [!div class="mx-imgBorder"]
-    > ![Снимок экрана с обязательными параметрами подключения](../media/how-to-integrate-power-virtual-agent/generate-answer-knowledge-base-settings.png)
-
-1. Настройте для этого действия идентификатор базы знаний, узел и ключ конечной точки. Они находятся на странице **Параметры** базы знаний на портале QnA Maker.
-
-    > [!div class="mx-imgBorder"]
-    > ![Снимок экрана с параметрами опубликованной базы знаний](../media/how-to-integrate-power-virtual-agent/published-knowledge-base-settings.png)
-
-1. Чтобы настроить **Вопрос**, щелкните текстовое поле и выберите `InputText` в списке.
-
-1. Чтобы вставить новый шаг в поток, выберите соединитель **+** в поле действия **Generate answer** (Создать ответ). Затем выберите команду **Добавить действие**.
-
-1. Чтобы добавить переменную для записи текста ответа, возвращаемого из интерфейса `GenerateAnswer`, найдите и выберите действие `Initialize variable`.
-
-    Присвойте переменной имя `OutgoingQnAAnswer` и выберите тип **String**. Не задавайте **Значение**.
-
-    > [!div class="mx-imgBorder"]
-    > ![Снимок экрана с инициализацией выходной переменной](../media/how-to-integrate-power-virtual-agent/initialize-output-variable-for-qna-answer.png)
-
-1. Чтобы вставить новый шаг в поток, выберите соединитель **+** в поле действия **Инициализировать переменную**. Затем выберите команду **Добавить действие**.
-
-1. Чтобы назначить в переменную весь ответ JSON из базы знаний, найдите и выберите действие `Apply to each`. Выберите `GenerateAnswer` `answers`.
-
-1. Чтобы вернуть только лучший ответ, в том же поле **Применить к каждому**, выберите команду **Добавить действие**. Найдите и выберите элемент **Задание переменной**.
-
-    В поле **Set variable** (Задание переменной) выберите текстовое поле **Имя**, а затем выберите **OutgoingQnAAnswer** в списке.
-
-    Выберите текстовое поле **Value** (Значение), а затем в списке выберите значение **Answers Answer**.
-
-    > [!div class="mx-imgBorder"]
-    > ![Снимок экрана для процесса настройки имени и значения переменной ](../media/how-to-integrate-power-virtual-agent/power-automate-flow-apply-to-each-set-variable.png)
-
-1. Чтобы вернуть переменную (и ее значение), выберите элемент потока **Возвратить значения в Power Virtual Agents**. Затем выберите **Edit** > **Add an output** (Изменить > Добавить выходные данные). Выберите тип выходных данных **Text** (Текст), а затем в поле **Title** (Заголовок) введите значение `FinalAnswer`. Выберите текстовое поле **Значение**, а затем выберите переменную `OutgoingQnAAnswer`.
-
-    > [!div class="mx-imgBorder"]
-    > ![Снимок экрана для настройки возвращаемого значения](../media/how-to-integrate-power-virtual-agent/power-automate-flow-return-value.png)
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-virtual-agent-fill-in-generate-answer-settings.png" alt-text="Частичный снимок экрана: поток шаблона QnA Maker с выделенной кнопкой "Продолжить".":::
 
 1. Выберите **Сохранить**, чтобы сохранить поток.
 
@@ -223,29 +178,28 @@ ms.locfileid: "81402818"
 
 1. В решении выберите команду **+ Добавить существующий**, а затем в списке выберите **Поток**.
 
-1. Найдите нужный поток и нажмите кнопку **Добавить**, чтобы завершить процесс. Если потоков много, просмотрите столбец **Изменен**, чтобы найти самый последний поток.
+1. Найдите поток в списке **Внешние решения** и нажмите **Добавить**, чтобы завершить процесс. Если потоков много, просмотрите столбец **Изменен**, чтобы найти самый последний поток.
 
 ## <a name="add-your-solutions-flow-to-power-virtual-agents"></a>Добавление потока решения в Power Virtual Agents
 
 1. Вернитесь на вкладку браузера, где открыта странице агента в Power Virtual Agents. Созданный холст по-прежнему должен быть открыт.
 
-1. Чтобы вставить новый шаг в поток, в поле действия **Message** (Сообщение) выберите соединитель **+** . Затем выберите команду **Call an action** (Вызов действия).
+1. Чтобы вставить новый шаг в поток, над полем действия **Сообщение** выберите соединитель **+** . Затем выберите команду **Call an action** (Вызов действия).
 
-1. В новом действии выберите входное значение **UnrecognizedTriggerPhrase**. При этом текст будет передан из агента в поток.
+1. Во всплывающем окне **Поток** выберите новый поток с именем **Создать ответы с помощью базы знаний QnA Maker...** . В потоке появится новое действие.
 
-    > [!div class="mx-imgBorder"]
-    > ![Снимок экрана с параметром Power Virtual Agents для выбора нераспознанной фразы активации](../media/how-to-integrate-power-virtual-agent/power-virtual-agent-select-unrecognized-trigger-phrase.png)
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-virtual-agent-flow-after-adding-action.png" alt-text="Частичный снимок экрана: холст беседы Power Virtual Agent после добавления потока QnA Maker.":::
 
-1. Чтобы вставить новый шаг в поток, в поле **Action** (Действие) выберите соединитель **+** . Затем щелкните **Show a message** (Показать сообщение).
+1. Чтобы правильно задать входную переменную для действия QnA Maker, выберите **Выбрать переменную** и нажмите **bot.UnrecognizedTriggerPhrase**.
 
-1. Введите текст сообщения: `Your answer is:`. Выберите `FinalAnswer` в качестве переменной контекста, используя функцию на панели инструментов.
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-virtual-agent-selection-action-input.png" alt-text="Частичный снимок экрана: холст беседы Power Virtual Agent с выбором входной переменной.":::
 
-    > [!div class="mx-imgBorder"]
-    > ![Снимок экрана для операции ввода текста сообщения в Power Virtual Agents](../media/how-to-integrate-power-virtual-agent/power-virtual-agent-topic-authoring-canvas-show-message-final-answer.png)
+
+1. Чтобы правильно задать выходную переменную для действия QnA Maker, в действии **Сообщение** выберите **UnrecognizedTriggerPhrase**, затем щелкните значок, чтобы вставить переменную, `{x}`, и выберите **FinalAnswer**.
 
 1. На контекстной панели инструментов нажмите кнопку **Сохранить**, чтобы сохранить сведения с холста разработки для раздела.
 
-Так выглядит окончательное состояние агента на холсте.
+Так выглядит окончательный холст агента.
 
 > [!div class="mx-imgBorder"]
 > ![Снимок экрана с окончательной версией агента на холсте](../media/how-to-integrate-power-virtual-agent/power-virtual-agent-topic-authoring-canvas-full-flow.png)
@@ -263,10 +217,9 @@ ms.locfileid: "81402818"
     |3|Да|Ответ на `Did that answer your question?`|
     |4|Высокая|Ответ на `Please rate your experience.`|
     |5|Да|Ответ на `Can I help with anything else?`|
-    |6|Что представляет собой база знаний|Этот вопрос активирует действие возврата, которое отправляет текст в базу знаний для ответа. После этого отображается ответ. |
+    |6|Как повысить пропускную способность для прогнозов запросов?|Этот вопрос активирует действие возврата, которое отправляет текст в базу знаний для ответа. После этого отображается ответ. Зеленые флажки для отдельных действий указывают на успешное выполнение каждого действия.|
 
-> [!div class="mx-imgBorder"]
-> ![Снимок экрана с окончательной версией агента на холсте](../media/how-to-integrate-power-virtual-agent/power-virtual-agent-test-tracked.png)
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-virtual-agent-test-tracked.png" alt-text="Снимок экрана: чат-бот с холстом с зелеными флажками, обозначающими успешные действия.":::
 
 ## <a name="publish-your-bot"></a>Публикация бота
 
@@ -276,7 +229,7 @@ ms.locfileid: "81402818"
 
 1. Проверьте работу бота на демонстрационном веб-сайте (ссылку можно найти в разделе **Publish** (Публикация)).
 
-    Откроется новая веб-страница с ботом. Задайте боту тот же тестовый вопрос: `What is a knowledge base?`
+    Откроется новая веб-страница с ботом. Задайте боту тот же тестовый вопрос: `How can I improve the throughput performance for query predictions?`
 
     > [!div class="mx-imgBorder"]
     > ![Снимок экрана с окончательной версией агента на холсте](../media/how-to-integrate-power-virtual-agent/demo-chat-bot.png)

@@ -8,13 +8,13 @@ ms.author: xshi
 ms.date: 01/04/2019
 ms.topic: tutorial
 ms.service: iot-edge
-ms.custom: mvc
-ms.openlocfilehash: 71b22bf9bf040abcdf513a4f8baa916930c8972e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.custom: mvc, tracking-python
+ms.openlocfilehash: 7e17da94ba124c3b20fdede93ad6b4716247c6ba
+ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76772220"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84610123"
 ---
 # <a name="tutorial-develop-and-deploy-a-nodejs-iot-edge-module-for-linux-devices"></a>Руководство по разработке модуля IoT Edge на языке Node.js и его развертыванию на устройствах Linux
 
@@ -86,7 +86,7 @@ ms.locfileid: "76772220"
    | Введите название решения. | Введите описательное имя решения или примите имя по умолчанию **EdgeSolution**. |
    | Выбор шаблона модуля | Выберите **модуль Node.js**. |
    | Указание имени модуля | Присвойте модулю имя **NodeModule**. |
-   | Указание репозитория изображений Docker для модуля | Репозиторий изображений включает в себя имя реестра контейнеров и имя образа контейнера. Образ контейнера предварительно заполняется именем, которое вы указали на последнем шаге. Замените **localhost:5000** на значение сервера входа из реестра контейнеров Azure. Вы можете извлечь сервер входа на странице "Обзор" реестра контейнеров на портале Azure. <br><br>Окончательный вариант репозитория образов выглядит так: \<имя_реестра\>.azurecr.io/nodemodule. |
+   | Указание репозитория изображений Docker для модуля | Репозиторий изображений включает в себя имя реестра контейнеров и имя образа контейнера. Образ контейнера предварительно заполняется именем, которое вы указали на последнем шаге. Замените **localhost:5000** на значение сервера входа из реестра контейнеров Azure. Вы можете извлечь сервер входа на странице "Обзор" реестра контейнеров на портале Azure. <br><br>Окончательный вариант репозитория образов выглядит так: \<registry name\>.azurecr.io/nodemodule. |
 
    ![Выбор репозитория образа Docker](./media/tutorial-node-module/repository.png)
 

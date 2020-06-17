@@ -7,12 +7,12 @@ ms.date: 06/01/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: boalcsva
-ms.openlocfilehash: a2430e29acb83945e9893ca4c6e2e0110ef6e007
-ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
+ms.openlocfilehash: eefd4a9ddf2150728578a4e058686a3204e34930
+ms.sourcegitcommit: ba8df8424d73c8c4ac43602678dae4273af8b336
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84298165"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84456561"
 ---
 # <a name="azure-ea-portal-administration"></a>Администрирование на портале Azure EA
 
@@ -76,7 +76,7 @@ ms.locfileid: "84298165"
 
 Учетная запись Azure EA считается организационной единицей подразделения на Azure EA Portal. Она используется для администрирования подписок и для отчетов. Чтобы получить доступ к службам Azure и использовать их, вам нужно создать учетную запись самостоятельно или попросить создать ее для вас.
 
-Дополнительные сведения см. в статье о добавлении учетных записей.
+Дополнительные сведения см. в статье о [добавлении учетных записей](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-get-started#add-an-account).
 
 ## <a name="enterprise-devtest-offer"></a>Предложение "Enterprise — разработка и тестирование"
 

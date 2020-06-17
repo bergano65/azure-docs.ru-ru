@@ -12,12 +12,12 @@ ms.date: 09/24/2019
 ms.author: marsma
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:iOS
-ms.openlocfilehash: 5ade4701c53287de5d5815531f12850b3dc839de
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
+ms.openlocfilehash: 840c0157713e9758092ca5cc51ee2745428ae568
+ms.sourcegitcommit: f57fa5f3ce40647eda93f8be4b0ab0726d479bca
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84169854"
+ms.lasthandoff: 06/07/2020
+ms.locfileid: "84483529"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>Краткое руководство. Вход пользователей и вызов Microsoft API Graph из приложения iOS или macOS
 
@@ -70,56 +70,32 @@ ms.locfileid: "84169854"
 >
 > > [!div id="appconfigured" class="alert alert-info"]
 > > ![Уже настроено](media/quickstart-v2-ios/green-check.png). Ваше приложение настроено с помощью этих атрибутов
-
-#### <a name="step-2-download-the-sample-project"></a>Шаг 2. Загрузка примера проекта
-
-- [Скачивание примера кода для iOS](https://github.com/Azure-Samples/active-directory-ios-swift-native-v2/archive/master.zip)
-- [Скачивание примера кода для macOS](https://github.com/Azure-Samples/active-directory-macOS-swift-native-v2/archive/master.zip)
+> 
+> #### <a name="step-2-download-the-sample-project"></a>Шаг 2. Загрузка примера проекта
+> > [!div id="autoupdate_ios" class="nextstepaction"]
+> > [Загрузка примера кода для iOS]()
+> 
+> > [!div id="autoupdate_macos" class="nextstepaction"]
+> > [Загрузка примера кода для macOS]()
+> [!div renderon="docs"]
+> #### <a name="step-2-download-the-sample-project"></a>Шаг 2. Загрузка примера проекта
+> 
+> - [Загрузка примера кода для iOS](https://github.com/Azure-Samples/active-directory-ios-swift-native-v2/archive/master.zip)
+> - [Загрузка примера кода для macOS](https://github.com/Azure-Samples/active-directory-macOS-swift-native-v2/archive/master.zip)
 
 #### <a name="step-3-install-dependencies"></a>Шаг 3. Установка зависимостей
 
 В окне терминала перейдите к папке со скачанным примером кода и выполните `pod install`, чтобы установить последнюю библиотеку MSAL.
 
-#### <a name="step-4-configure-your-project"></a>Шаг 4. Настройка проекта
-
-> [!div renderon="docs"]
-> Если вы выбрали вариант 1 выше, можно пропустить эти шаги.
-
 > [!div renderon="portal" class="sxs-lookup"]
-> 1. Извлеките ZIP-файл и откройте проект в XCode.
-> 1. Измените **ViewController.swift** и замените строку, начинающуюся с "let kClientID", следующим фрагментом кода. Не забудьте обновить значение `kClientID`, указав идентификатор клиента, который вы ранее сохранили при регистрации приложения на портале в этом кратком руководстве.
->    ```swift
->    let kClientID = "Enter_the_Application_Id_Here"
->    ```
-> 1. Измените **ViewController.swift** и замените строку, начинающуюся с let kAuthority, следующим фрагментом кода.
->    ```swift
->    let kAuthority = "Enter_the_Authority_Endpoint_Host_HereEnter_the_Tenant_Info_Here"
->    ```
-> 1. Измените **ViewController.swift** и замените строку, начинающуюся с let kGraphEndpoint, следующим фрагментом кода.
->    ```swift
->    let kGraphEndpoint = "Enter_the_MS_Graph_Endpoint_Host_Here"
->    ```
-> 1. Откройте параметры проекта. В разделе **Идентификатор** введите **идентификатор пакета**, введенный на портале.
-> 1. (Только для iOS) Щелкните **Info.plist**, а затем выберите **Открыть как** > **Исходный код**.
-> 1. (Только для iOS) В корневом узле словаря замените `CFBundleURLSchemes` на ***идентификатор пакета***, введенный на портале.
->
->    ```xml
->    <key>CFBundleURLTypes</key>
->    <array>
->       <dict>
->          <key>CFBundleURLSchemes</key>
->          <array>
->             <string>msauth.Enter_the_Bundle_Id_Here</string>
->          </array>
->       </dict>
->    </array>
->    ```
-> 1. Создайте и запустите приложение.
-> [!div class="sxs-lookup" renderon="portal"]
-> > [!NOTE]
+> #### <a name="step-4-your-app-is-configured-and-ready-to-run"></a>Шаг 4. Приложение настроено и готово к запуску
+> Мы уже настроили для проекта нужные значения свойств приложения, и его можно запускать.
+> >  [!NOTE]
 > > `Enter_the_Supported_Account_Info_Here`
+
 > [!div renderon="docs"]
->
+>#### <a name="step-4-configure-your-project"></a>Шаг 4. Настройка проекта
+> Если вы выбрали вариант 1 выше, можно пропустить эти шаги.
 > 1. Извлеките ZIP-файл и откройте проект в XCode.
 > 1. Измените **ViewController.swift** и замените строку, начинающуюся с "let kClientID", следующим фрагментом кода. Не забудьте обновить значение `kClientID`, указав идентификатор клиента, который вы ранее сохранили при регистрации приложения на портале в этом кратком руководстве:
 >    ```swift
@@ -136,8 +112,8 @@ ms.locfileid: "84169854"
 >     let kAuthority = "https://login.microsoftonline.de/common"
 >     ```
 > 1. Откройте параметры проекта. В разделе **Идентификатор** введите **идентификатор пакета**, введенный на портале.
-> 1. (Только для iOS) Щелкните **Info.plist**, а затем выберите **Открыть как** > **Исходный код**.
-> 1. (Только для iOS) В корневом узле словаря замените `Enter_the_bundle_Id_Here` на ***идентификатор пакета***, использованный на портале.
+> 1. Щелкните **Info.plist**, а затем выберите **Открыть как** > **Исходный код**.
+> 1. В корневом узле словаря замените `Enter_the_bundle_Id_Here` на ***идентификатор пакета***, использованный на портале.
 >
 >    ```xml
 >    <key>CFBundleURLTypes</key>

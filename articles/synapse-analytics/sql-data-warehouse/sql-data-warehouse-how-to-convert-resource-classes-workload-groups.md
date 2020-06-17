@@ -7,27 +7,27 @@ manager: craigg
 ms.service: synapse-analytics
 ms.subservice: ''
 ms.topic: conceptual
-ms.date: 04/14/2020
+ms.date: 05/19/2020
 ms.author: rortloff
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 5d73ba8f21fe7731fb751d42a8497ff8e1ebba7d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: f0cc0cd7233d0c16cae8389fcddd50a16cf96bd2
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81383626"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83683644"
 ---
 # <a name="convert-resource-classes-to-workload-groups"></a>Преобразование классов ресурсов в группы рабочей нагрузки
 
-Группы рабочей нагрузки предоставляют механизм для изоляции и хранения системных ресурсов.  Кроме того, группы рабочей нагрузки позволяют задавать правила выполнения для запросов, выполняемых в них.  Правило выполнения запроса с превышением времени ожидания позволяет отменить невыполненные запросы без вмешательства пользователя.  В этой статье объясняется, как взять существующий класс ресурсов и создать группу рабочей нагрузки с аналогичной конфигурацией.  Кроме того, добавляется Необязательное правило времени ожидания запроса.
+Группы рабочей нагрузки предоставляют механизм изоляции и хранения системных ресурсов.  Кроме того, группы рабочей нагрузки позволяют задавать правила выполнения для выполняемых в них запросов.  Правило выполнения запроса с превышением времени ожидания позволяет отменять неконтролируемые запросы без вмешательства пользователя.  В этой статье объясняется, как на основе существующего класса ресурсов создать группу рабочей нагрузки с аналогичной конфигурацией.  Кроме того, мы добавим необязательное правило времени ожидания запроса.
 
 > [!NOTE]
-> Рекомендации по использованию групп рабочей нагрузки и классов ресурсов см. в разделе [назначение классов ресурсов с помощью классификаторов](sql-data-warehouse-workload-classification.md#mixing-resource-class-assignments-with-classifiers) в документе концепции [классификации рабочей нагрузки](sql-data-warehouse-workload-classification.md) .
+> Рекомендации по параллельному использованию групп рабочей нагрузки и классов ресурсов см. в разделе [Смешивание назначений классов ресурсов с помощью классификаторов](sql-data-warehouse-workload-classification.md#mixing-resource-class-assignments-with-classifiers) в статье [Классификация рабочих нагрузок Azure Synapse Analytics](sql-data-warehouse-workload-classification.md).
 
-## <a name="understanding-the-existing-resource-class-configuration"></a>Основные сведения о существующей конфигурации класса ресурсов
+## <a name="understanding-the-existing-resource-class-configuration"></a>Сведения о существующей конфигурации класса ресурсов
 
-Для групп рабочей нагрузки требуется параметр `REQUEST_MIN_RESOURCE_GRANT_PERCENT` с именем, указывающий процент общих системных ресурсов, выделенных для каждого запроса.  Выделение ресурсов выполняется для [классов ресурсов](resource-classes-for-workload-management.md#what-are-resource-classes) путем выделения слотов выдачи.  Чтобы определить значение, которое необходимо указать `REQUEST_MIN_RESOURCE_GRANT_PERCENT`для, используйте динамическое административное представление sys. dm_workload_management_workload_groups_stats <link tbd> .  Например, приведенный ниже запрос запроса возвращает значение, которое можно использовать для `REQUEST_MIN_RESOURCE_GRANT_PERCENT` параметра, чтобы создать группу рабочей нагрузки, подобную staticrc40.
+Группам рабочей нагрузки требуется параметр `REQUEST_MIN_RESOURCE_GRANT_PERCENT`, который определяет долю общих системных ресурсов, выделяемых для каждого запроса.  Выделение ресурсов для [классов ресурсов](resource-classes-for-workload-management.md#what-are-resource-classes) выполняется путем выделения слотов параллелизма.  Чтобы определить значение для параметра `REQUEST_MIN_RESOURCE_GRANT_PERCENT`, используйте динамическое административное представление sys.dm_workload_management_workload_groups_stats <link tbd>.  Например, приведенный ниже запрос возвращает значение, которое можно использовать для параметра `REQUEST_MIN_RESOURCE_GRANT_PERCENT`, чтобы создать группу рабочей нагрузки, аналогичную staticrc40.
 
 ```sql
 SELECT Request_min_resource_grant_percent = Effective_request_min_resource_grant_percent
@@ -36,15 +36,15 @@ SELECT Request_min_resource_grant_percent = Effective_request_min_resource_grant
 ```
 
 > [!NOTE]
-> Группы рабочей нагрузки работают в процентах от общего количества системных ресурсов.  
+> Группы рабочей нагрузки распределяют системные ресурсы с учетом их общей доли.  
 
-Поскольку группы рабочей нагрузки работают на основе процента общих системных ресурсов по мере увеличения и уменьшения масштаба, процент ресурсов, выделенных для статических классов ресурсов относительно общих изменений системных ресурсов.  Например, staticrc40 в DW1000c выделяет 9,6% общих системных ресурсов.  В DW2000c выделяются 19,2%.  Эта модель аналогична, если вы хотите увеличить параллелизм и выделить больше ресурсов на запрос.
+При этом при увеличении или уменьшении масштаба изменяется доля выделяемых ресурсов для статических классов ресурсов относительно общего доступного объема.  Например, класс staticrc40 на оборудовании DW1000c выделяет 19,2 % от общего объема системных ресурсов.  На оборудовании DW2000c он же выделяет 9,6 %.  Эта ситуация аналогично сценарию, когда вы хотите выполнить вертикальное масштабирование для обеспечения параллелизма в сравнении с выделением большего объема ресурсов на каждый запрос.
 
 ## <a name="create-workload-group"></a>Создание группы рабочей нагрузки
 
-Используя известный `REQUEST_MIN_RESOURCE_GRANT_PERCENT`, можно создать группу рабочей нагрузки с помощью СИНТАКСИСА Create Рабочей группы <link> .  При необходимости можно указать значение `MIN_PERCENTAGE_RESOURCE` , большее нуля, чтобы изолировать ресурсы для группы рабочей нагрузки.  Кроме того, при необходимости можно указать `CAP_PERCENTAGE_RESOURCE` менее 100, чтобы ограничить объем ресурсов, которые может использовать группа рабочей нагрузки.  
+Зная `REQUEST_MIN_RESOURCE_GRANT_PERCENT`, вы можете создать группу рабочей нагрузки с помощью синтаксиса CREATE WORKLOAD GROUP <link>.  При желании можно указать для `MIN_PERCENTAGE_RESOURCE` значение больше нуля, чтобы изолировать ресурсы для группы рабочей нагрузки.  Также можно указать для `CAP_PERCENTAGE_RESOURCE` значение меньше 100, чтобы ограничить объем ресурсов, потребляемый группой рабочей нагрузки.  
 
-В приведенном ниже примере `MIN_PERCENTAGE_RESOURCE` задается, чтобы выделить 9,6% системных ресурсов `wgDataLoads` и гарантировать, что один запрос сможет выполняться все время.  Кроме того `CAP_PERCENTAGE_RESOURCE` , имеет значение 38,4% и ограничивает эту группу рабочей нагрузки четырьмя одновременными запросами.  Если задать для `QUERY_EXECUTION_TIMEOUT_SEC` параметра значение 3600, любой запрос, выполняемый более 1 часа, будет автоматически отменен.
+В приведенном ниже примере для `MIN_PERCENTAGE_RESOURCE` задается значение, выделяющее для `wgDataLoads` 9,6 % системных ресурсов и гарантирующее, что в любой момент будет возможность выполнить один запрос.  Кроме того, для `CAP_PERCENTAGE_RESOURCE` задается значение 38,4 %, что устанавливает для этой группы рабочей нагрузки ограничение в четыре параллельных запроса.  Если задать для параметра `QUERY_EXECUTION_TIMEOUT_SEC` значение 3600, все выполняемые более одного часа запросы будут автоматически отменяться.
 
 ```sql
 CREATE WORKLOAD GROUP wgDataLoads WITH  
@@ -56,10 +56,10 @@ CREATE WORKLOAD GROUP wgDataLoads WITH
 
 ## <a name="create-the-classifier"></a>Создание классификатора
 
-Ранее сопоставление запросов с классами ресурсов выполнялось [sp_addrolemember](resource-classes-for-workload-management.md#change-a-users-resource-class).  Чтобы обеспечить ту же функциональность и сопоставлять запросы с группами рабочей нагрузки, используйте синтаксис [классификатора рабочей нагрузки](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) .  С помощью sp_addrolemember вы можете сопоставлять ресурсы с запросом на основе имени входа.  Классификатор предоставляет дополнительные параметры помимо имени входа, например:
+Ранее сопоставление запросов с классами ресурсов выполнялось с помощью [sp_addrolemember](resource-classes-for-workload-management.md#change-a-users-resource-class).  Чтобы обеспечить те же функциональные возможности и сопоставить запросы с группами рабочей нагрузки, используйте синтаксис [CREATE WORKLOAD CLASSIFIER](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  Использование sp_addrolemember позволяло сопоставлять ресурсы с запросами только на основе имени входа.  Классификатор предоставляет помимо имени входа дополнительные параметры, например:
     - label
     - сеанс
-    - во время, приведенном ниже примере, к `AdfLogin` имени входа назначаются запросы, для которых в `factloads` качестве [метки параметра](sql-data-warehouse-develop-label.md) задана группа `wgDataLoads` рабочей нагрузки, созданная ранее.
+    - время. Следующий пример направляет запросы от имени входа `AdfLogin` с меткой [OPTION LABEL](sql-data-warehouse-develop-label.md) и значением `factloads`, в ранее созданную группу рабочей нагрузки `wgDataLoads`.
 
 ```sql
 CREATE WORKLOAD CLASSIFIER wcDataLoads WITH  
@@ -68,9 +68,9 @@ CREATE WORKLOAD CLASSIFIER wcDataLoads WITH
  ,WLM_LABEL = 'factloads')
 ```
 
-## <a name="test-with-a-sample-query"></a>Тестирование с помощью примера запроса
+## <a name="test-with-a-sample-query"></a>Тестирование с использованием примера запроса
 
-Ниже приведен пример запроса и запрос динамического административного представления, чтобы убедиться, что группа рабочей нагрузки и классификатор настроены правильно.
+Ниже приведены примеры обычного запроса и запроса динамического административного представления, которые позволяют проверить правильность настройки группы рабочей нагрузки и классификатора.
 
 ```sql
 SELECT SUSER_SNAME() --should be 'AdfLogin'
@@ -86,7 +86,7 @@ SELECT request_id, [label], classifier_name, group_name, command
   ORDER BY submit_time DESC
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Изоляция рабочей нагрузки](sql-data-warehouse-workload-isolation.md)
 - [Создание группы рабочей нагрузки](quickstart-configure-workload-isolation-tsql.md)

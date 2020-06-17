@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
-ms.openlocfilehash: d29420d14a716e5a45e42dd681faa01f518f713a
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: aa442e15dbc95709ecf3c818f69301d2f02e9b5b
+ms.sourcegitcommit: 8e5b4e2207daee21a60e6581528401a96bfd3184
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83665796"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84417027"
 ---
 # <a name="iot-central-device-development-overview"></a>Общие сведения о разработке для устройств для IoT Central
 
@@ -85,7 +85,9 @@ DPS позволяет следующее:
 - Синхронизировать значения свойств на устройстве и в IoT Central. В шаблоне устройства указываются имена и типы данных свойств, чтобы решение IoT Central могло отображать сведения.
 - Реализовывать обработчики для команд, которые указываются в шаблоне устройства. В шаблоне устройства указываются имена и параметры команд, которые должно использовать устройство.
 
-Дополнительные сведения см. в руководстве по созданию клиентского приложения [Node. js](./tutorial-connect-device-nodejs.md) или [Python](./tutorial-connect-device-python.md) и его подключению.
+Дополнительные сведения о роли шаблонов устройств см. в разделе [Что такое шаблоны устройств?](./concepts-device-templates.md).
+
+Примеры кода см. в руководстве по созданию клиентского приложения [Node.js](./tutorial-connect-device-nodejs.md) или [Python](./tutorial-connect-device-python.md) и его подключению.
 
 ### <a name="languages-and-sdks"></a>Языки и пакеты SDK
 

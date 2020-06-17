@@ -4,12 +4,12 @@ description: Общие сведения о службе "Блокчейн Azure
 ms.date: 05/22/2020
 ms.topic: overview
 ms.reviewer: ravastra
-ms.openlocfilehash: 38d0a5564e1e7a28168ac95826cc527d47ef093b
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.openlocfilehash: 8a73ed45279ce224441ea9c021b565e63bc4fc63
+ms.sourcegitcommit: b55d1d1e336c1bcd1c1a71695b2fd0ca62f9d625
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83844596"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84432223"
 ---
 # <a name="what-is-azure-blockchain-service"></a>Что собой представляет служба "Блокчейн Azure"?
 
@@ -69,7 +69,7 @@ ms.locfileid: "83844596"
 
 Посещайте [блог, посвященный Блокчейну Azure](https://azure.microsoft.com/blog/topics/blockchain/), чтобы оставаться в курсе предложений услуг для блокчейна и просматривать информацию, предоставляемую группой разработчиков Блокчейна Azure.
 
-Чтобы отправить отзыв о продукте или запросить новые функции, опубликуйте обращение на [форуме обратной связи по Блокчейну Azure](https://aka.ms/blockchainuservoice).
+Чтобы отправить отзыв о продукте или запросить новые функции, опубликуйте обращение на [форуме обратной связи по блокчейну Azure](https://aka.ms/blockchainuservoice).
 
 ### <a name="community-support"></a>Поддержка сообщества
 

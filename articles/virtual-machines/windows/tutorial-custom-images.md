@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 05/01/2020
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 9061cbbae0b30881fffe1762208216cb8009594a
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: 1ded745b5a734fd92a8ace851e3ecfc4a7a487d5
+ms.sourcegitcommit: ce44069e729fce0cf67c8f3c0c932342c350d890
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82791584"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84636399"
 ---
 # <a name="tutorial-create-windows-vm-images-with-azure-powershell"></a>Руководство по Создание образов виртуальных машин Windows с помощью Azure PowerShell
 
@@ -140,7 +140,7 @@ New-AzGalleryImageVersion `
 
 ## <a name="create-a-vm"></a>Создание виртуальной машины 
 
-Получив специализированный образ, вы можете создать одну или несколько виртуальных машин. Используйте командлет [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm). Чтобы использовать образ, используйте командлет Set-AzVMSourceImage, указав -Id в качестве идентификатора определения образа (в нашем примере — $galleryImage.Id). Тогда будет использоваться самая новая версия образа. 
+Получив специализированный образ, вы можете создать одну или несколько виртуальных машин. Используйте командлет [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm). Чтобы использовать образ, используйте `Set-AzVMSourceImage`, указав `-Id` в качестве идентификатора определения образа (в нашем примере — $galleryImage.Id). Тогда будет использоваться самая новая версия образа. 
 
 При необходимости замените имена ресурсов в этом примере. 
 

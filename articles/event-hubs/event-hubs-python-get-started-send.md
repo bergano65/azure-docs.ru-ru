@@ -9,12 +9,13 @@ ms.workload: core
 ms.topic: quickstart
 ms.date: 01/15/2020
 ms.author: spelluru
-ms.openlocfilehash: 22f6b2aba36e560e9bd335baa92925fe9846c670
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.custom: tracking-python
+ms.openlocfilehash: 96c95efdc8f2154e0586fec59d1af66496acb101
+ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77162605"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84558970"
 ---
 # <a name="quickstart-send-and-receive-events-with-event-hubs-using-python-azure-eventhub-version-1"></a>Краткое руководство. Отправка и получение событий через Центры событий с использованием Python (azure-eventhub, версия 1)
 В этом кратком руководстве показано, как отправлять события в концентратор событий и получать события из него с помощью пакета Python **azure-eventhub версии 1**. 
@@ -47,7 +48,7 @@ ms.locfileid: "77162605"
 
 1. Откройте редактор Python, например [Visual Studio Code](https://code.visualstudio.com/).
 2. Создайте новый файл с именем *send.py*. Этот сценарий отправляет 100 событий в ваш концентратор событий.
-3. Вставьте следующий код в файл *send.py*, заменив актуальными значениями следующие параметры Центров событий: \<namespace> (пространство имен), \<eventhub> (концентратор событий), \<AccessKeyName> (имя ключа доступа) и \<primary key value> (значение первичного ключа). 
+3. Вставьте следующий код в *send.py*, заменив концентраторы событий \<namespace>, \<eventhub>, \<AccessKeyName> и \<primary key value> своими значениями: 
    
    ```python
    import sys
@@ -110,7 +111,7 @@ start python send.py
 Чтобы создать приложение Python, которое получает события из концентратора событий, выполните следующее.
 
 1. В редакторе Python создайте файл с именем *recv.py*.
-2. Вставьте следующий код в *recv.py*, заменив актуальными значениями следующие параметры Центров событий: \<namespace> (пространство имен), \<eventhub> (концентратор событий), \<AccessKeyName> (имя ключа доступа) и \<primary key value> (значение первичного ключа). 
+2. Вставьте следующий код в *recv.py*, заменив концентраторы событий \<namespace>, \<eventhub>, \<AccessKeyName> и \<primary key value> своими значениями: 
    
    ```python
    import os

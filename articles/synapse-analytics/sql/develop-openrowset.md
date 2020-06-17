@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 05/07/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3861b981a1083b44e9cc522a01c50cf24f281e91
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 9c2a2d7059e24b37b0f47d0b568a3929f296d8c6
+ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702034"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84560873"
 ---
 # <a name="how-to-use-openrowset-with-sql-on-demand-preview"></a>Как использовать OPENROWSET в службе SQL по запросу (предварительная версия)
 
@@ -107,19 +107,19 @@ WITH ( {'column_name' 'column_type' [ 'column_ordinal'] })
 **unstructured_data_path**
 
 Аргумент unstructured_data_path, который определяет путь к данным, может содержать абсолютный или относительный путь:
-- Абсолютный путь в формате "\<префикс>://\<путь_к_учетной_записи_хранения>/\<путь_к_хранилищу>" позволяет напрямую считывать файлы.
+- Абсолютный путь в формате "\<prefix>://\<storage_account_path>/\<storage_path>" позволяет пользователю напрямую читать файлы.
 - Относительный путь в формате "<путь_к_хранилищу>", который нужно использовать только с параметром `DATA_SOURCE`, описывает шаблон имени файла в расположении <путь_к_учетной_записи_хранения>, которое определено в `EXTERNAL DATA SOURCE`. 
 
  Ниже приведены соответствующие значения <storage account path>, которые будут связаны с конкретным внешним источником данных. 
 
 | Внешний источник данных       | Prefix | Путь к учетной записи хранения                                 |
 | -------------------------- | ------ | ---------------------------------------------------- |
-| хранилище BLOB-объектов Azure         | HTTPS  | \<учетная_запись_хранения>.blob.core.windows.net             |
-| Azure Data Lake Store 1-го поколения | HTTPS  | \<учетная_запись_хранения>.azuredatalakestore.net/webhdfs/v1 |
-| Azure Data Lake Store 2-го поколения | HTTPS  | \<учетная_запись_хранения>.dfs.core.windows.net              |
+| хранилище BLOB-объектов Azure         | HTTPS  | \<storage_account>.blob.core.windows.net             |
+| Azure Data Lake Store 1-го поколения | HTTPS  | \<storage_account>.azuredatalakestore.net/webhdfs/v1 |
+| Azure Data Lake Store 2-го поколения | HTTPS  | \<storage_account>.dfs.core.windows.net              |
 ||||
 
-\<путь_к_хранилищу>
+'\<storage_path>'
 
  Позволяет задать путь в хранилище, указывающий на папку или файл, который нужно считать. Если путь указывает на контейнер или папку, все файлы будут считываться только из этого контейнера или папки. Файлы во вложенных папках не включаются. 
 
@@ -130,7 +130,7 @@ WITH ( {'column_name' 'column_type' [ 'column_ordinal'] })
 Если указать в аргументе unstructured_data_path папку, после обращения к службе SQL по запросу будут получены файлы из этой папки. 
 
 > [!NOTE]
-> В отличие от Hadoop и Polybase, SQL по запросу не возвращает вложенные папки. Еще одно отличие от Hadoop и Polybase заключается в том, что служба SQL по запросу не возвращает файлы, имя которых начинается с подчеркивания (_) или точки (.).
+> В отличие от Hadoop и Polybase, SQL по запросу не возвращает вложенные папки. Еще одно отличие от Hadoop и PolyBase заключается в том, что служба SQL по запросу не возвращает файлы, имя которых начинается с подчеркивания (_) или точки (.).
 
 Если в приведенном ниже примере unstructured_data_path=`https://mystorageaccount.dfs.core.windows.net/webdata/`, после обращения в SQL по запросу будут возвращены строки из mydata.txt и _hidden.txt. Служба не будет возвращать mydata2.txt и mydata3.txt, так как они находятся во вложенной папке.
 

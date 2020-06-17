@@ -4,20 +4,26 @@ description: Сведения об Azure HPC Cache, решения для быс
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: overview
-ms.date: 04/15/2020
+ms.date: 05/29/2020
 ms.author: v-erkel
-ms.openlocfilehash: 02013abe7050f7f193b6aeb1a441e70f46a5df48
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: c0d32beeedba61bc2ecdc444685f7e81073459be
+ms.sourcegitcommit: b55d1d1e336c1bcd1c1a71695b2fd0ca62f9d625
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82106463"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84433698"
 ---
 # <a name="what-is-azure-hpc-cache"></a>Что такое Azure HPC Cache?
 
 Azure HPC Cache ускоряет доступ к данным для задач высокопроизводительных вычислений (HPC). Azure HPC Cache обеспечивает масштабируемость облачных вычислений для имеющегося рабочего процесса благодаря кэшированию файлов в Azure. Эту службу можно использовать даже для рабочих процессов, в которых данные хранятся в каналах глобальной сети, например в локальной среде запоминающих устройств, подключаемых к сети, центра обработки данных.
 
 Azure HPC Cache легко запускается и его легко отслеживать на портале Azure. Существующее хранилище NFS или новые контейнеры BLOB-объектов могут входить в состав агрегированного пространства имен, что делает клиентский доступ простым, даже если вы изменяете целевой объект внутреннего хранилища.
+
+## <a name="overview-video"></a>Обзорное видео
+
+[![Эскиз видеоролика. Обзор Azure HPC Cache — щелкните, чтобы посетить страницу видео](media/video-1-overview.png)](https://azure.microsoft.com/resources/videos/hpc-cache-overview/)
+
+Щелкните изображение выше, чтобы просмотреть [краткий обзор Azure HPC Cache](https://azure.microsoft.com/resources/videos/hpc-cache-overview/).
 
 ## <a name="use-cases"></a>Варианты использования
 

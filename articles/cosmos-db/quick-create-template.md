@@ -6,14 +6,14 @@ ms.author: sngun
 tags: azure-resource-manager
 ms.service: cosmos-db
 ms.topic: quickstart
-ms.date: 02/27/2020
+ms.date: 06/01/2020
 ms.custom: subject-armqs
-ms.openlocfilehash: f524a1e1db426b9b9dafb2fb95d77538a34b04ec
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.openlocfilehash: 273305894e05b397d0f48acd7a483a9fdfc247ef
+ms.sourcegitcommit: 58ff2addf1ffa32d529ee9661bbef8fbae3cddec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81605464"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84324048"
 ---
 # <a name="quickstart-create-an-azure-cosmos-db-and-a-container-by-using-azure-resource-manager-template"></a>Краткое руководство. Создание Azure Cosmos DB и контейнера с помощью шаблона Azure Resource Manager
 
@@ -35,9 +35,9 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ### <a name="review-the-template"></a>Изучение шаблона
 
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-cosmosdb-create/).
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-cosmosdb-sql/).
 
-:::code language="json" source="~/quickstart-templates/101-cosmosdb-create/azuredeploy.json":::
+:::code language="json" source="~/quickstart-templates/101-cosmosdb-sql/azuredeploy.json":::
 
 В шаблоне определены три ресурса Azure:
 
@@ -53,7 +53,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон создаст учетную запись, базу данных и контейнер Azure Cosmos DB.
 
-   [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-cosmosdb-create%2Fazuredeploy.json)
+   [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-cosmosdb-sql%2Fazuredeploy.json)
 
 2. Введите или выберите следующие значения.
 
@@ -68,6 +68,9 @@ Azure Cosmos DB — это глобально распределенная мн
     * **Расположение**. Введите расположение, в котором вы хотите создать учетную запись Azure Cosmos DB. Это может быть то же расположение, в котором размещена группа ресурсов.
     * **Основной регион**. Регион первичной реплики для учетной записи Azure Cosmos DB.
     * **Дополнительный регион**. Регион вторичной реплики для учетной записи Azure Cosmos DB.
+    * **Уровень согласованности по умолчанию**: уровень согласованности по умолчанию в учетной записи Azure Cosmos.
+    * **Префикс максимального числа устаревших запросов**: максимальное число устаревших запросов. Требуется для BoundedStaleness.
+    * **Максимальный интервал в секундах**: максимальное время запаздывания. Требуется для BoundedStaleness.
     * **Имя базы данных**: имя базы данных Azure Cosmos DB.
     * **Имя контейнера**: имя контейнера Azure Cosmos DB.
     * **Пропускная способность**.  Пропускная способность контейнера, минимальное значение — 400 единиц запросов в секунду.

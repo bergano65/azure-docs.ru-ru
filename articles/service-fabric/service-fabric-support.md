@@ -1,16 +1,16 @@
 ---
-title: Дополнительные сведения о вариантах поддержки Service Fabric Azure
+title: Сведения о вариантах поддержки Azure Service Fabric
 description: Поддерживаемые версии кластера Service Fabric и ссылки для отправки запросов в службу поддержки.
 author: pkcsf
 ms.topic: troubleshooting
 ms.date: 8/24/2018
 ms.author: pkc
-ms.openlocfilehash: 7494f0072f27f2c9b00db7070f19dfc05627eacf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: ee602b3aa6c701eb10730f4c5c387175bb070ef3
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79282098"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83834600"
 ---
 # <a name="azure-service-fabric-support-options"></a>Варианты поддержки Azure Service Fabric
 
@@ -20,15 +20,15 @@ ms.locfileid: "79282098"
 
 Чтобы сообщить о проблемах в кластере Service Fabric, развернутом в Azure, откройте запрос в службу поддержки [на портале Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) или [портале службы поддержки Майкрософт](https://support.microsoft.com/oas/default.aspx?prid=16146).
 
-Дополнительные сведения
+См. также:
  
 - [Поддержка корпорации Майкрософт для клиентов Azure](https://azure.microsoft.com/support/plans/?b=16.44).
 - [Поддержка Premier](https://support.microsoft.com/en-us/premier).
 
 > [!Note]
-> Кластеры, работающие на уровне бронзовой надежности или кластере с одним узлом, позволяют выполнять только тестовые рабочие нагрузки. При возникновении проблем с кластером, работающим на основе бронзовой надежности или кластера с одним узлом, Группа поддержки Майкрософт поможет вам устранить эту неполадку, но не выполнит анализ основных причин. Дополнительные сведения см. в разделе [характеристики надежности кластера](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#the-reliability-characteristics-of-the-cluster) .
+> Кластеры с бронзовым уровнем надежности или кластер с одним узлом позволяют выполнять только тестовые рабочие нагрузки. При возникновении проблем с кластером с бронзовым уровнем надежности или кластером с одним узлом техническая поддержка Майкрософт поможет устранить неполадку, но анализ первопричин проводить не будет. Дополнительные сведения см. в разделе [Характеристики надежности кластера](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#the-reliability-characteristics-of-the-cluster).
 >
-> Дополнительные сведения о том, что требуется для готового к работе кластера, см. в [контрольном списке готовности к рабочей среде](https://docs.microsoft.com/azure/service-fabric/service-fabric-production-readiness-checklist).
+> Дополнительные сведения о том, что требуется для пригодного для промышленной эксплуатации кластера, см. в статье [Контрольный список готовности рабочей среды](https://docs.microsoft.com/azure/service-fabric/service-fabric-production-readiness-checklist).
 
 <a id="getlivesitesupportonprem"></a>
 
@@ -36,7 +36,7 @@ ms.locfileid: "79282098"
 
 Чтобы сообщить о проблемах в кластере Service Fabric, развернутом в локальной среде или облаке стороннего производителя, откройте запрос в профессиональную службу поддержки на [портале службы поддержки Майкрософт](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview).
 
-Дополнительные сведения
+См. также:
 
 - [Professional Support Options](https://support.microsoft.com/en-us/gp/offerprophone?wa=wsignin1.0) (Варианты профессиональной поддержки).
 - [Поддержка Premier](https://support.microsoft.com/en-us/premier).
@@ -51,23 +51,23 @@ ms.locfileid: "79282098"
 
 ### <a name="stackoverflow-and-msdn-forums"></a>Сайт StackOverflow и форум MSDN
 
-[Тег Service Fabric на сайте StackOverflow][stackoverflow] и [форум MSDN по Service Fabric][msdn-forum] очень удобно использовать, чтобы задавать вопросы о принципах работы платформы и о том, как выполнять различные задачи с ее помощью.
+[Тег Service Fabric на сайте StackOverflow][stackoverflow] и [форум MSDN по Service Fabric][msdn-forum] лучше всего использовать для вопросов о принципах работы платформы и о том, как с ее помощью выполнять различные задачи.
 
 ### <a name="azure-feedback-forum"></a>Форум отзывов и предложений по Azure
 
-[Форум отзывов и предложений по Azure по Service Fabric][uservoice-forum] — лучший форум, на котором можно поделиться идеями о важных функциях для продукта, так как мы рассматриваем наиболее популярные запросы в процессе среднесрочного и долгосрочного планирования. Мы рекомендуем вам обращаться с предложениями в службу поддержки в этом сообществе.
+[Форум отзывов и предложений по Azure Service Fabric][uservoice-forum] — это лучшее место, где можно поделиться идеями о важных функциях для продукта. В процессе среднесрочного и долгосрочного планирования мы изучаем наиболее популярные запросы. Мы рекомендуем вам обращаться с предложениями в службу поддержки в этом сообществе.
 
 ## <a name="service-fabric-preview-versions---unsupported-for-production-use"></a>Предварительные версии Service Fabric не поддерживают работу в рабочей среде.
 
 Время от времени мы выпускаем версии с важными функциями, доступными в виде предварительных версий, отзывы по которым мы хотим получить. Эти предварительные версии следует использовать только для целей тестирования. На производственном кластере всегда должна быть запущена поддерживаемая стабильная версия Service Fabric. Предварительная версия всегда начинается с номера основной и вспомогательной версии, равного 255. Например, если отображается версия Service Fabric 255.255.5703.949, она является предварительной и ее следует использовать в тестовых кластерах. О выходе этих предварительных выпусков также объявляется в [блоге группы Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric) и приводятся сведения о функциях, включенных в их состав.
 Возможность платной технической поддержки для этих предварительных выпусков отсутствует. Чтобы задать вопросы или отправить отзыв, воспользуйтесь одной из возможностей в разделе [Сообщение о проблемах Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-support#report-azure-service-fabric-issues).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Поддерживаемые версии Service Fabric](service-fabric-versions.md)
 
 <!--references-->
-[msdn-forum]: https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureServiceFabric
+[Microsoft Q&A question page]: https://docs.microsoft.com/answers/topics/azure-service-fabric.html
 [stackoverflow]: https://stackoverflow.com/questions/tagged/azure-service-fabric
 [uservoice-forum]: https://feedback.azure.com/forums/293901-service-fabric
 [acom-docs]: https://aka.ms/servicefabricdocs

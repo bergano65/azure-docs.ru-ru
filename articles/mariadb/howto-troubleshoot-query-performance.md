@@ -1,17 +1,17 @@
 ---
-title: Устранение неполадок с производительностью запросов — База данных Azure для MariaDB
-description: Узнайте, как использовать объяснение для устранения неполадок с производительностью запросов в базе данных Azure для MariaDB.
+title: Устранение неполадок с производительностью запросов в службе "База данных Azure для MariaDB"
+description: Узнайте, как использовать инструкцию EXPLAIN для устранения неполадок с производительностью запросов в Базе данных Azure для MariaDB.
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: troubleshooting
 ms.date: 3/18/2020
-ms.openlocfilehash: b06fe37b63494eb4ee0ca680733a801c26415d67
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: ca9a74763715c5c68526ff3213a14d2148f5ad30
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79530059"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83834311"
 ---
 # <a name="how-to-use-explain-to-profile-query-performance-in-azure-database-for-mariadb"></a>Использование инструкции EXPLAIN для профилирования производительности запросов в Базе данных Azure для MariaDB
 Инструкция **EXPLAIN** представляет собой удобное средство для оптимизации запросов. С помощью инструкций EXPLAIN можно получать информацию о том, как выполняются инструкции SQL. Ниже показан пример выполнения инструкции EXPLAIN.
@@ -120,7 +120,7 @@ possible_keys: covered
 Как показано в инструкции EXPLAIN выше, теперь MariaDB использует охватываемый индекс и не создает временную таблицу. 
 
 ## <a name="combined-index"></a>Составной индекс
-Составной индекс состоит из значений нескольких столбцов и может считаться массивом строк, отсортированных путем объединения значений индексированных столбцов.Этот метод может быть полезен в инструкции **GROUP BY**.
+Составной индекс состоит из значений нескольких столбцов и может считаться массивом строк, отсортированных путем объединения значений индексированных столбцов. Этот метод может быть полезен в инструкции **GROUP BY**.
 
 ```sql
 mysql> EXPLAIN SELECT c1, c2 from tb1 WHERE c2 LIKE '%100' ORDER BY c1 DESC LIMIT 10\G
@@ -163,7 +163,7 @@ possible_keys: NULL
  
 ## <a name="conclusion"></a>Заключение
  
-Использование инструкции EXPLAIN и разных типов индексов позволяет существенно повысить производительность. Наличие индекса в таблице не обязательно означает, что MariaDB сможет использовать ее для ваших запросов. Следует всегда проверять свои предположения с помощью инструкции EXPLAIN и оптимизировать запросы с помощью индексов.
+Использование инструкции EXPLAIN и разных типов индексов позволяет существенно повысить производительность. Наличие индекса для таблицы не обязательно означает, что MariaDB сможет использовать его в запросах. Следует всегда проверять свои предположения с помощью инструкции EXPLAIN и оптимизировать запросы с помощью индексов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
-- Чтобы найти ответы на наиболее важные вопросы либо опубликовать новый вопрос или ответ, посетите [Форум MSDN](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDatabaseforMariadb) или [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-database-mariadb).
+## <a name="next-steps"></a>Дальнейшие действия
+- Найти ответы на важные для вас вопросы, а также задать вопрос или ответить на него можно на [странице вопросов и ответов на сайте Microsoft ](https://docs.microsoft.com/answers/topics/azure-database-mariadb.html) или на [сайте Stack Overflow](https://stackoverflow.com/questions/tagged/azure-database-mariadb).

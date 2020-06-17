@@ -1,22 +1,22 @@
 ---
 title: Программное создание политик
-description: В этой статье описывается программное создание политик и управление ими для политики Azure с помощью Azure CLI, Azure PowerShell и REST API.
-ms.date: 01/31/2019
+description: В статье описано, как программно создавать политики для службы "Политика Azure" и управлять ими с помощью Azure CLI, Azure PowerShell и REST API.
+ms.date: 05/20/2020
 ms.topic: how-to
-ms.openlocfilehash: 08ed43a464d1dd7de8220428dbc1c61ce9fc3ad6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 8ee87ecd9e7c636b5bb63c8e94be0e353acc3e13
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79264548"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83682118"
 ---
 # <a name="programmatically-create-policies"></a>Программное создание политик
 
-В этой статье описано программное создание и управление политиками. Определения политик Azure применяют различные правила и эффекты к ресурсам. Принудительное применение обеспечивает соответствие ресурсов корпоративным стандартам и соглашениям об уровне обслуживания.
+В этой статье описано программное создание и управление политиками. Определения Политики Azure обеспечивают соблюдение различных правил и выполнение действий в ваших ресурсах. Принудительное применение обеспечивает соответствие ресурсов корпоративным стандартам и соглашениям об уровне обслуживания.
 
 Сведения о соответствии см. в статье [Получение данных о соответствии](get-compliance-data.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к работе, убедитесь, что у вас есть следующие необходимые компоненты.
 
@@ -24,13 +24,13 @@ ms.locfileid: "79264548"
 
 1. Обновите свой модуль Azure PowerShell до последней версии. Дополнительные сведения см. в статье [Install the Azure PowerShell module](/powershell/azure/install-az-ps) (Установка модуля Azure PowerShell). Дополнительные сведения о последней версии см. по ссылке [для Azure PowerShell](https://github.com/Azure/azure-powershell/releases).
 
-1. Зарегистрируйте поставщик ресурсов Azure Policy Insights с помощью Azure PowerShell, чтобы проверить, работает подписка с поставщиком ресурсов. Чтобы сделать это, необходимо иметь разрешение на регистрацию поставщика ресурсов. Эта операция включается в роли участника и владельца. Выполните указанную ниже команду для регистрации поставщика ресурсов.
+1. Зарегистрируйте поставщик ресурсов Azure Policy Insights с помощью Azure PowerShell, чтобы связать подписку с поставщиком ресурсов. Чтобы сделать это, необходимо иметь разрешение на регистрацию поставщика ресурсов. Эта операция включается в роли участника и владельца. Выполните указанную ниже команду для регистрации поставщика ресурсов.
 
    ```azurepowershell-interactive
    Register-AzResourceProvider -ProviderNamespace 'Microsoft.PolicyInsights'
    ```
 
-   Дополнительные сведения о регистрации и просмотре поставщиков ресурсов см. в разделе [поставщики и типы ресурсов](../../../azure-resource-manager/management/resource-providers-and-types.md).
+   Дополнительные сведения о регистрации и просмотре поставщиков ресурсов см. в статье [Поставщики и типы ресурсов](../../../azure-resource-manager/management/resource-providers-and-types.md).
 
 1. Установите интерфейс командной строки Azure CLI, если это еще не сделано. Последнюю версию CLI см. в статье [Установка Azure CLI в Windows](/cli/azure/install-azure-cli-windows).
 
@@ -87,7 +87,7 @@ ms.locfileid: "79264548"
 
    Замените _ContosoRG_ именем вашей целевой группы ресурсов.
 
-   Параметр **области** в `New-AzPolicyAssignment` работает с группой управления, подпиской, группой ресурсов или одним ресурсом. Параметр использует полный путь к ресурсу, возвращаемый свойством **ResourceId** в `Get-AzResourceGroup`. Формат параметра **Scope** для каждого контейнера приведен ниже. Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно.
+   Параметр **Scope** в `New-AzPolicyAssignment` работает с группой управления, подпиской, группой ресурсов или отдельным ресурсом. Параметр использует полный путь к ресурсу, возвращаемый свойством **ResourceId** в `Get-AzResourceGroup`. Формат параметра **Scope** для каждого контейнера приведен ниже. Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно.
    Замените `{rType}`**типом ресурса**, таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
 
    - Ресурс: `/subscriptions/{subID}/resourceGroups/{rgName}/providers/{rType}/{rName}`.
@@ -133,15 +133,15 @@ ms.locfileid: "79264548"
 
    ```console
    # For defining a policy in a subscription
-   armclient PUT "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyDefinitions/AuditStorageAccounts?api-version=2016-12-01" @<path to policy definition JSON file>
+   armclient PUT "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyDefinitions/AuditStorageAccounts?api-version=2019-09-01" @<path to policy definition JSON file>
 
    # For defining a policy in a management group
-   armclient PUT "/providers/Microsoft.Management/managementgroups/{managementGroupId}/providers/Microsoft.Authorization/policyDefinitions/AuditStorageAccounts?api-version=2016-12-01" @<path to policy definition JSON file>
+   armclient PUT "/providers/Microsoft.Management/managementgroups/{managementGroupId}/providers/Microsoft.Authorization/policyDefinitions/AuditStorageAccounts?api-version=2019-09-01" @<path to policy definition JSON file>
    ```
 
    Замените {subscriptionId} идентификатором своей подписки или {managementGroupId} идентификатором своей [группы управления](../../management-groups/overview.md).
 
-   Дополнительные сведения о структуре запроса см. в разделе [определения политик Azure — создание или обновление](/rest/api/resources/policydefinitions/createorupdate) и [определения политик — создание или обновление в группе управления](/rest/api/resources/policydefinitions/createorupdateatmanagementgroup) .
+   Дополнительные сведения о структуре запроса см. в статье [Создание и обновление определений Политики Azure](/rest/api/resources/policydefinitions/createorupdate) и [Создание и обновление определений политик в группе управления](/rest/api/resources/policydefinitions/createorupdateatmanagementgroup).
 
 Используйте следующую процедуру для создания назначения политики и назначьте определение политики на уровне группы ресурсов.
 
@@ -162,7 +162,7 @@ ms.locfileid: "79264548"
 1. Создайте назначение политики с использованием следующего вызова:
 
    ```console
-   armclient PUT "/subscriptions/<subscriptionID>/resourceGroups/<resourceGroupName>/providers/Microsoft.Authorization/policyAssignments/Audit Storage Accounts Open to Public Networks?api-version=2017-06-01-preview" @<path to Assignment JSON file>
+   armclient PUT "/subscriptions/<subscriptionID>/resourceGroups/<resourceGroupName>/providers/Microsoft.Authorization/policyAssignments/Audit Storage Accounts Open to Public Networks?api-version=2019-09-01" @<path to Assignment JSON file>
    ```
 
    Замените данные в символах &lt;&gt; на собственные значения.
@@ -207,8 +207,8 @@ ms.locfileid: "79264548"
 
    При вызове без параметров расположения `az policy definition creation` по умолчанию сохраняет определение политики в выбранной подписке контекста сеансов. Чтобы сохранить определение в другом месте, используйте следующие параметры:
 
-   - **--subscription** — сохранение в другой подписке. Требуется значение _GUID_ для идентификатора подписки или значение _строки_ для имени подписки.
-   - **--management-group** — сохранение в группе управления. Требуется значение _строки_.
+   - **subscription** — сохранение в другой подписке. Требуется значение _GUID_ для идентификатора подписки или значение _строки_ для имени подписки.
+   - **management-group** — сохранение в группе управления. Требуется значение _строки_.
 
 1. Чтобы создать назначение политики, выполните следующую команду: Замените данные в символах &lt;&gt; на собственные значения.
 
@@ -216,14 +216,14 @@ ms.locfileid: "79264548"
    az policy assignment create --name '<name>' --scope '<scope>' --policy '<policy definition ID>'
    ```
 
-   Параметр **--scope** в `az policy assignment create` работает с группой управления, подпиской, группой ресурсов или отдельным ресурсом. Параметр использует полный путь к ресурсу. Шаблон для **--области** для каждого контейнера выглядит следующим образом. Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно. Замените `{rType}`**типом ресурса**, таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
+   Параметр **scope** в `az policy assignment create` работает с группой управления, подпиской, группой ресурсов или отдельным ресурсом. Параметр использует полный путь к ресурсу. Формат параметра **scope** для каждого контейнера приведен ниже. Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно. Замените `{rType}`**типом ресурса**, таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
 
    - Ресурс: `/subscriptions/{subID}/resourceGroups/{rgName}/providers/{rType}/{rName}`.
    - Группа ресурсов — `/subscriptions/{subID}/resourceGroups/{rgName}`
    - Подписка — `/subscriptions/{subID}`
    - Группа управления — `/providers/Microsoft.Management/managementGroups/{mgName}`
 
-Идентификатор определения политики Azure можно получить с помощью PowerShell, выполнив следующую команду:
+Вы можете получить идентификатор определения Политики Azure с помощью следующей команды в PowerShell.
 
 ```azurecli-interactive
 az policy definition show --name 'Audit Storage Accounts with Open Public Networks'
@@ -237,12 +237,12 @@ az policy definition show --name 'Audit Storage Accounts with Open Public Networ
 
 Дополнительные сведения об управлении политиками ресурсов с помощью Azure CLI см. в [этой статье](/cli/azure/policy?view=azure-cli-latest).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о командах и запросах, используемых в этой статье, см. в следующих ресурсах.
 
 - [Ресурсы REST API Azure](/rest/api/resources/)
-- [Модули Azure PowerShell](/powershell/module/az.resources/#policies)
+- [Модули Azure PowerShell](/powershell/module/az.resources/#policies).
 - [Команды Azure CLI для роботы с политикой](/cli/azure/policy?view=azure-cli-latest)
-- [Справочник по поставщику ресурсов Azure Policy Insights REST API](/rest/api/policy-insights)
-- [Упорядочите ресурсы с помощью групп управления Azure](../../management-groups/overview.md).
+- [Справочник по REST API для поставщика ресурсов Azure Policy Insights](/rest/api/policy-insights)
+- [Организация ресурсов с помощью групп управления Azure.](../../management-groups/overview.md)

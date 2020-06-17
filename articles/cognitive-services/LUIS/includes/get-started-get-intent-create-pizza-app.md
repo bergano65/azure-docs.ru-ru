@@ -5,17 +5,17 @@ services: cognitive-services
 author: roy-har
 manager: diberry
 ms.service: cognitive-services
-ms.date: 05/18/2020
+ms.date: 06/03/2020
 ms.subservice: language-understanding
 ms.topic: include
 ms.custom: include file
 ms.author: roy-har
-ms.openlocfilehash: 7ab6aa5f830e335a30502207d3a49a528d03f7fd
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 8e67a6d0c98a3839922a79e9b452465087da1b69
+ms.sourcegitcommit: 8e5b4e2207daee21a60e6581528401a96bfd3184
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83654279"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84418073"
 ---
 1. Щелкните [pizza-app-for-luis-v6.json](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/luis/apps/pizza-app-for-luis-v6.json), чтобы открыть на сайте GitHub страницу с файлом `pizza-app-for-luis.json`.
 1. Щелкните правой кнопкой мыши кнопку **Raw** (Необработанный) или коснитесь ее с задержкой и выберите **Save link as** (Сохранить ссылку как), чтобы сохранить `pizza-app-for-luis.json` на компьютере.
@@ -29,7 +29,7 @@ ms.locfileid: "83654279"
 
 Приложение будет импортировано.
 
-Если отобразится диалоговое окно **How to create an effective LUIS app** (Как создать эффективное приложение LUIS), закройте его.
+Если отобразится диалоговое окно **Как создать эффективное приложение LUIS**, закройте его.
 
 ## <a name="train-and-publish-the-pizza-app"></a>Обучение и публикация приложения для заказа пиццы
 
@@ -43,7 +43,7 @@ ms.locfileid: "83654279"
 
 ## <a name="record-the-app-id-prediction-key-and-prediction-endpoint-of-your-pizza-app"></a>Запись идентификатора приложения для заказа пиццы, а также ключа прогнозирования и конечной точки прогнозирования
 
-Чтобы использовать новое приложение для заказа пиццы, вам потребуются его идентификатор, ключ прогнозирования и конечная точка.
+Чтобы использовать новое приложение для заказа пиццы, вам потребуются его идентификатор, ключ прогнозирования и конечная точка прогнозирования.
 
 Вот как найти эти значения:
 

@@ -1,6 +1,6 @@
 ---
-title: Настройка групп доступности для SQL Server на виртуальных машинах RHEL в Azure — Виртуальные машины Linux | Документация Майкрософт
-description: Сведения о настройке высокой доступности в среде кластера RHEL и настройке STONITH
+title: Настройка групп доступности для SQL Server на виртуальных машинах RHEL в Azure — виртуальные машины Linux | Документация Майкрософт
+description: Сведения о настройке высокого уровня доступности в среде кластера RHEL и настройке STONITH
 ms.service: virtual-machines-linux
 ms.subservice: ''
 ms.topic: tutorial
@@ -8,12 +8,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: jroth
 ms.date: 02/27/2020
-ms.openlocfilehash: 445ab97e2e980cdcafe333fa05a340c0e5fef24b
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: d323d89b13a89a8dd9f2dac6292a01215bf6068a
+ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84024640"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84343801"
 ---
 # <a name="tutorial-configure-availability-groups-for-sql-server-on-rhel-virtual-machines-in-azure"></a>Руководство по Настройка групп доступности для SQL Server на виртуальных машинах RHEL в Azure 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -21,21 +21,21 @@ ms.locfileid: "84024640"
 > [!NOTE]
 > Представленное руководство находится в **общедоступной предварительной версии**. 
 >
-> В этом руководстве мы используем SQL Server 2017 с RHEL 7.6, но для настройки высокого уровня доступности можно использовать SQL Server 2019 в RHEL 7 или RHEL 8. Команды для настройки ресурсов группы доступности в RHEL 8 изменились, и, чтобы получить дополнительные сведения о правильных командах, вам нужно будет ознакомиться с разделом [Создание ресурса группы доступности](/sql/linux/sql-server-linux-availability-group-cluster-rhel#create-availability-group-resource) и ресурсами RHEL 8.
+> В этом учебнике мы используем SQL Server 2017 с RHEL 7.6, но для настройки высокого уровня доступности можно использовать SQL Server 2019 в RHEL 7 или RHEL 8. Команды для настройки ресурсов группы доступности в RHEL 8 изменились, и, чтобы получить дополнительные сведения о правильных командах, вам нужно будет ознакомиться с разделом [Создание ресурса группы доступности](/sql/linux/sql-server-linux-availability-group-cluster-rhel#create-availability-group-resource) и ресурсами RHEL 8.
 
 В этом руководстве описано следующее:
 
 > [!div class="checklist"]
-> - Создание новой группы ресурсов, Группы доступности и Виртуальных машин Linux в Azure (VM)
+> - Создание новой группы ресурсов, группы доступности и виртуальных машин Linux
 > - Включение высокого уровня доступности
 > - Создание кластера Pacemaker
 > - Настройка агента ограждения путем создания устройства STONITH
 > - Установка SQL Server и средств mssql на RHEL
-> - Настройка группы доступности Always On SQL Server
+> - Настройка группы доступности Always On SQL Server
 > - Настройка ресурсов группы доступности в кластере Pacemaker
 > - Проверка отработки отказа и агента ограждения
 
-В этом руководстве для развертывания ресурсов Azure используется интерфейс командной строки Azure (CLI).
+В этом учебнике для развертывания ресурсов в Azure используется Azure CLI.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -53,7 +53,7 @@ ms.locfileid: "84024640"
 az group create --name <resourceGroupName> --location eastus2
 ```
 
-## <a name="create-an-availability-set"></a>Создание группы доступности.
+## <a name="create-an-availability-set"></a>"Создать группу доступности"
 
 Следующим шагом является создание группы доступности. Выполните следующую команду в Azure Cloud Shell и замените `<resourceGroupName>` именем группы ресурсов. Выберите имя для `<availabilitySetName>`.
 
@@ -95,7 +95,7 @@ az vm availability-set create \
 >
 > Используйте образ RHEL с высоким уровнем доступности при создании виртуальной машины Azure, чтобы избежать "двойной оплаты". Образы, предлагаемые как образы RHEL с высоким уровнем доступности, являются также образами PAYG с предварительно включенным репозиторием с высоким уровнем доступности.
 
-1. Получите список образов виртуальных машин (VM), которые предлагают RHEL с высоким уровнем доступности:
+1. Получите список образов виртуальных машин, которые предлагают RHEL с высоким уровнем доступности:
 
     ```azurecli-interactive
     az vm image list --all --offer "RHEL-HA"
@@ -134,7 +134,7 @@ az vm availability-set create \
     > [!IMPORTANT]
     > Для настройки группы доступности имена компьютеров должны содержать менее 15 символов. Имя пользователя не может содержать прописных букв, а длина пароля должна составлять более 12 символов.
 
-1. Нам нужно создать 3 виртуальные машины в Группе доступности. Замените следующее в приведенной ниже команде:
+1. Нам нужно создать 3 виртуальные машины в группе доступности. Замените следующее в приведенной ниже команде:
 
     - `<resourceGroupName>`
     - `<VM-basename>`
@@ -197,7 +197,7 @@ ssh <username>@publicipaddress
 
 Введите `exit` чтобы выйти из сеанса SSH.
 
-## <a name="enable-high-availability"></a>Включение высокого уровня доступности
+## <a name="enable-high-availability"></a>Включение высокой доступности
 
 > [!IMPORTANT]
 > Для выполнения этой части руководства необходимо иметь подписку на RHEL и дополнительный компонент для высокого уровня доступности. Если вы используете образ, рекомендованный в предыдущем разделе, вам не нужно регистрировать другую подписку.
@@ -452,7 +452,7 @@ az role definition create --role-definition "<filename>.json"
 
 - Замените `<ApplicationID>` значением идентификатора из регистрации приложения.
 - Замените `<servicePrincipalPassword>` значением из секрета клиента.
-- Замените `<resourceGroupName>` Группой ресурсов из подписки, используемой в этом руководстве.
+- Замените `<resourceGroupName>` группой ресурсов из подписки, используемой в этом учебнике.
 - Замените `<tenantID>` и `<subscriptionId>` из подписки Azure.
 
 ```bash
@@ -472,7 +472,7 @@ sudo firewall-cmd --reload
 
 ## <a name="install-sql-server-and-mssql-tools"></a>Установка SQL Server и средств mssql
  
-Используйте раздел ниже, чтобы установить на виртуальных машинах SQL Server и средства mssql. Выполните каждое из описанных действий на всех узлах. Дополнительные сведения см. [Краткое руководство. Установка SQL Server и создание базы данных в Red Hat](/sql/linux/quickstart-install-connect-red-hat).
+Используйте раздел ниже, чтобы установить на виртуальных машинах SQL Server и средства mssql. Выполните каждое из описанных действий на всех узлах. Дополнительные сведения см. в разделе [Установка SQL Server на виртуальной машине Red Hat](/sql/linux/quickstart-install-connect-red-hat).
 
 ### <a name="installing-sql-server-on-the-vms"></a>Установка SQL Server на виртуальных машинах
 
@@ -531,11 +531,11 @@ systemctl status mssql-server --no-pager
            └─11640 /opt/mssql/bin/sqlservr
 ```
 
-## <a name="configure-sql-server-always-on-availability-group"></a>Настройка группы доступности Always On SQL Server
+## <a name="configure-an-availability-group"></a>Настройка группы доступности
 
-Используйте следующие шаги для настройки группы доступности Always On SQL Server для виртуальных машин. Дополнительные сведения см. [Настройка группы доступности Always On SQL Server для обеспечения высокой доступности в Linux](/sql/linux/sql-server-linux-availability-group-configure-ha)
+Используйте следующие шаги для настройки группы доступности Always On SQL Server для виртуальных машин. Дополнительные сведения см. в разделе [Настройка группы доступности Always On SQL Server для обеспечения высокого уровня доступности в Linux](/sql/linux/sql-server-linux-availability-group-configure-ha)
 
-### <a name="enable-alwayson-availability-groups-and-restart-mssql-server"></a>Включение групп доступности AlwaysOn и перезапуск mssql-server
+### <a name="enable-always-on-availability-groups-and-restart-mssql-server"></a>Включение групп доступности AlwaysOn и перезапуск mssql-server
 
 Включите группы доступности Always On на каждом узле с экземпляром SQL Server. Затем перезапустите mssql-server. Выполните следующий скрипт:
 
@@ -566,19 +566,19 @@ sudo systemctl restart mssql-server
 1. Подключитесь к первичной реплике с помощью SSMS или SQL CMD. Приведенные ниже команды создадут сертификат в `/var/opt/mssql/data/dbm_certificate.cer` и закрытый ключ в `var/opt/mssql/data/dbm_certificate.pvk` на первичной реплике SQL Server:
 
     - Замените `<Private_Key_Password>` собственным паролем.
-
-```sql
-CREATE CERTIFICATE dbm_certificate WITH SUBJECT = 'dbm';
-GO
-
-BACKUP CERTIFICATE dbm_certificate
-   TO FILE = '/var/opt/mssql/data/dbm_certificate.cer'
-   WITH PRIVATE KEY (
-           FILE = '/var/opt/mssql/data/dbm_certificate.pvk',
-           ENCRYPTION BY PASSWORD = '<Private_Key_Password>'
-       );
-GO
-```
+    
+    ```sql
+    CREATE CERTIFICATE dbm_certificate WITH SUBJECT = 'dbm';
+    GO
+    
+    BACKUP CERTIFICATE dbm_certificate
+       TO FILE = '/var/opt/mssql/data/dbm_certificate.cer'
+       WITH PRIVATE KEY (
+               FILE = '/var/opt/mssql/data/dbm_certificate.pvk',
+               ENCRYPTION BY PASSWORD = '<Private_Key_Password>'
+           );
+    GO
+    ```
 
 Выйдите из сеанса SQL CMD, выполнив команду `exit` и вернитесь в сеанс SSH.
  
@@ -631,7 +631,7 @@ GO
 
 ### <a name="create-the-database-mirroring-endpoints-on-all-replicas"></a>Создайте конечные точки на всех репликах зеркального отображения базы данных
 
-Выполните следующий скрипт для всех экземпляров SQL с помощью SQL CMD или SSMS:
+Выполните следующий скрипт для всех экземпляров SQL Server с помощью SQL CMD или SSMS:
 
 ```sql
 CREATE ENDPOINT [Hadr_endpoint]
@@ -649,7 +649,7 @@ GO
 
 ### <a name="create-the-availability-group"></a>Создание группы доступности
 
-Подключитесь к экземпляру SQL Server, на котором находится первичная реплика, используя SQL CMD или SSMS. Выполните следующую команду, чтобы создать Группу доступности:
+Подключитесь к экземпляру SQL Server, на котором находится первичная реплика, используя SQL CMD или SSMS. Выполните следующую команду, чтобы создать группу доступности:
 
 - Замените `ag1` на желаемое имя Группы доступности.
 - Замените значения `<VM1>`, `<VM2>`, и `<VM3>` на имена экземпляров SQL Server, где размещаются реплики.
@@ -687,7 +687,7 @@ GO
 
 ### <a name="create-a-sql-server-login-for-pacemaker"></a>Создание учетных данных SQL Server для Pacemaker
 
-На всех серверах SQL Server создайте имя для входа на SQL с помощью Pacemaker. Следующий Transact-SQL создает имя для входа.
+На всех экземплярах SQL Server создайте учетные данные SQL Server для Pacemaker. Следующий Transact-SQL создает имя для входа.
 
 - Замените `<password>` собственным надежным паролем.
 
@@ -702,7 +702,7 @@ ALTER SERVER ROLE [sysadmin] ADD MEMBER [pacemakerLogin];
 GO
 ```
 
-Сохраните учетные данные, используемые для входа SQL Server на всех серверах SQL Server. 
+Сохраните учетные данные, используемые для учетных данных SQL Server, на всех экземплярах SQL Server. 
 
 1. Создание файла:
 
@@ -790,7 +790,7 @@ GO
 SELECT DB_NAME(database_id) AS 'database', synchronization_state_desc FROM sys.dm_hadr_database_replica_states;
 ```
 
-Если в `synchronization_state_desc` перечислено "СИНХРОНИЗИРОВАНО" для `db1`, это означает, что реплики синхронизированы. Получатели показывают `db1` в первичной реплике.
+Если в `synchronization_state_desc` указано "СИНХРОНИЗИРОВАНО" для `db1`, это означает, что реплики синхронизированы. Получатели показывают `db1` в первичной реплике.
 
 ## <a name="create-availability-group-resources-in-the-pacemaker-cluster"></a>Создание ресурсов группы доступности в кластере Pacemaker
 
@@ -915,7 +915,7 @@ Daemon Status:
 
 ## <a name="test-failover"></a>Тестовая отработка отказа
 
-Чтобы убедиться, что настройка прошла успешно, мы протестируем отработку отказа. Дополнительные сведения см. в разделе [Отработка отказа для группы доступности Always On на Linux](/sql/linux/sql-server-linux-availability-group-failover-ha).
+Чтобы убедиться, что настройка прошла успешно, мы протестируем отработку отказа. Дополнительные сведения см. в разделе [Отработка отказа для группы доступности Always On на Linux](/sql/linux/sql-server-linux-availability-group-failover-ha).
 
 1. Выполните следующую команду, чтобы вручную выполнить отработку отказа первичной реплики в `<VM2>`. Замените `<VM2>` значением имени вашего сервера.
 
@@ -985,7 +985,7 @@ Node: <VM3> fenced
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы использовать прослушиватель группы доступности для серверов SQL, нужно создать и настроить подсистему балансировки нагрузки.
+Чтобы использовать прослушиватель группы доступности для экземпляров SQL Server, нужно создать и настроить подсистему балансировки нагрузки.
 
 > [!div class="nextstepaction"]
-> [Руководство. Настройка прослушивателя группы доступности для SQL Server на виртуальных машинах RHEL в Azure](rhel-high-availability-listener-tutorial.md)
+> [Руководство. Настройка прослушивателя группы доступности для SQL Server на виртуальных машинах RHEL в Azure](rhel-high-availability-listener-tutorial.md)

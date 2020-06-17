@@ -10,12 +10,12 @@ ms.workload: data-services
 author: djpmsft
 ms.author: daperlov
 manager: anandsub
-ms.openlocfilehash: 8b7791c5c04e986b30959d2fcae17142fdd8b7ec
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 3955d3b9370a1cd2ee88c27e42b107f5ae0f87c2
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81418326"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83833563"
 ---
 # <a name="roles-and-permissions-for-azure-data-factory"></a>Роли и разрешения для службы "Фабрика данных Azure"
 
@@ -80,11 +80,11 @@ ms.locfileid: "81418326"
   В этом сценарии требуется два назначения ролей.
 
   1. Назначьте встроенную роль **Участник** на уровне фабрики данных.
-  2. Создайте пользовательскую роль с разрешением **Microsoft.Resources/deployments/**. Назначьте ее для пользователя на уровне группы ресурсов.
+  2. Создайте пользовательскую роль с разрешением **Microsoft.Resources/deployments/** . Назначьте ее для пользователя на уровне группы ресурсов.
 
-- Разрешить пользователю только проверять соединение в связанной службе
+- Предоставление пользователю разрешения только на проверку соединения в связанной службе
 
-    Создайте настраиваемую роль роли с разрешениями для следующих действий: **Microsoft. жетфеатуревалуе. жетдатапланеакцесс/фабрики//Read** и **Microsoft../Read**. Назначьте эту пользовательскую роль для ресурса фабрики данных для пользователя.
+    Создайте настраиваемую роль с разрешениями на выполнение следующих действий: **Microsoft.DataFactory/factories/getFeatureValue/read** и **Microsoft.DataFactory/factories/getDataPlaneAccess/read**. Назначьте пользователю эту роль для выполнения действий с ресурсом фабрики данных.
 
 - Дайте пользователю возможность обновлять фабрику данных с помощью PowerShell или пакета SDK, но не портала Azure.
 

@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: tutorial
-ms.date: 11/05/2019
+ms.date: 06/08/2020
 ms.author: spelluru
-ms.openlocfilehash: fef325b67c38eda09a05dac9d74bd5b97df164cc
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 548a51fef693aae6e9b9068f9731b82aaa85dfe3
+ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80067764"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84610499"
 ---
 # <a name="tutorial-respond-to-azure-service-bus-events-received-via-azure-event-grid-by-using-azure-functions-and-azure-logic-apps"></a>Руководство по Реагирование на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps
 Узнайте, как отвечать на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps. 
@@ -122,19 +122,25 @@ ms.locfileid: "80067764"
     }
     
     ```
-2. Выберите **Сохранить и запустить**.
+2. На панели инструментов нажмите **Сохранить**, чтобы сохранить код для функции.
 
-    ![Выходные данные приложения-функции](./media/service-bus-to-event-grid-integration-example/function-run-output.png)
+    ![Сохранение кода функции](./media/service-bus-to-event-grid-integration-example/save-function-code.png)
+3. Выберите **Тест/запуск** на панели инструментов, введите имя в тексте и выберите **Запустить**. 
+
+    ![Тестовый запуск](./media/service-bus-to-event-grid-integration-example/test-run-function.png)
+4. Убедитесь, что видите выходные данные и журналы, как показано на следующем рисунке. 
+
+    ![Выходные данные тестового запуска](./media/service-bus-to-event-grid-integration-example/test-run-output.png)
 3. Щелкните **Получить URL-адрес функции** и скопируйте URL-адрес. 
 
     ![Получение URL-адреса функции](./media/service-bus-to-event-grid-integration-example/get-function-url.png)
+5. Нажмите кнопку **Копировать** рядом с URL-адресом.    
+    ![Копирование URL-адреса функции](./media/service-bus-to-event-grid-integration-example/get-function-url-copy.png)
 
 # <a name="azure-functions-v1"></a>[Функции Azure версии 1](#tab/v1)
 
 1. Настройте функцию для использования **версии 1**: 
     1. Разверните приложение-функцию в представлении в виде дерева и выберите **Параметры приложения-функции**. 
-
-        ![Параметры приложения-функции]()./media/service-bus-to-event-grid-integration-example/function-app-settings.png)
     2. Выберите значение **~1** для параметра **Версия среды выполнения**. 
 2. Разверните **Функции** в представлении в виде дерева и выберите нужную функцию. Замените код в функции следующим кодом: 
 
@@ -184,9 +190,11 @@ ms.locfileid: "80067764"
 4. Выберите **Сохранить и запустить**.
 
     ![Выходные данные приложения-функции](./media/service-bus-to-event-grid-integration-example/function-run-output.png)
-4. Щелкните **Получить URL-адрес функции** и скопируйте URL-адрес. 
+4. Щелкните **Получить URL-адрес функции** на панели инструментов. 
 
     ![Получение URL-адреса функции](./media/service-bus-to-event-grid-integration-example/get-function-url.png)
+5. Нажмите кнопку **Копировать** рядом с URL-адресом.    
+    ![Копирование URL-адреса функции](./media/service-bus-to-event-grid-integration-example/get-function-url-copy.png)
 
 ---
 
@@ -201,16 +209,20 @@ ms.locfileid: "80067764"
 2. Выберите **+ Подписка на события** на панели инструментов. 
 3. На странице **Создание подписки на события** сделайте следующее:
     1. Укажите **имя** подписки. 
+    2. Введите **имя** **системного раздела**. Системные разделы — это разделы, созданные для ресурсов Azure, таких как учетная запись хранения Azure и служебная шина Azure. См. [общие сведения о системных разделах](../event-grid/system-topics.md).
     2. Выберите значение **Веб-перехватчик** для параметра **Тип конечной точки**. 
 
         ![Служебная шина — подписка на Сетку событий](./media/service-bus-to-event-grid-integration-example/event-grid-subscription-page.png)
     3. Щелкните **Выбрать конечную точку**, вставьте URL-адрес функции, а затем щелкните **Подтвердить выбор**. 
 
         ![Функция — выбор конечной точки](./media/service-bus-to-event-grid-integration-example/function-select-endpoint.png)
-    4. Откройте вкладку **Фильтры**, укажите имя **первой подписки** раздела служебной шины, созданной ранее, а затем щелкните **Создать**. 
+    4. Перейдите на вкладку **Фильтры** и выполните следующие действия.
+        1. Выберите **Включить фильтрацию тем**
+        2. Введите имя **первой подписки** в раздел служебной шины, созданный ранее.
+        3. Нажмите кнопку **Создать**. 
 
-        ![Фильтр событий подписки](./media/service-bus-to-event-grid-integration-example/event-subscription-filter.png)
-4. Убедитесь, что подписка на события отображается в списке.
+            ![Фильтр событий подписки](./media/service-bus-to-event-grid-integration-example/event-subscription-filter.png)
+4. Перейдите на вкладку **Подписки на события** на странице **События** и убедитесь, что в списке отображается подписка на события.
 
     ![Подписка на события в списке](./media/service-bus-to-event-grid-integration-example/event-subscription-in-list.png)
 
@@ -242,11 +254,15 @@ ms.locfileid: "80067764"
         ![Получение профиля публикации для функции](./media/service-bus-to-event-grid-integration-example/function-download-publish-profile.png)
     4. Сохраните файл в папку проекта. 
 4. Затем в Visual Studio щелкните правой кнопкой мыши **SBEventGridIntegration** и выберите **Опубликовать**. 
-5. Щелкните **Запустить** на странице **Публикация**. 
-6. На странице **Выбор целевого объекта публикации** щелкните **Импорт профиля**. 
+5. В диалоговом окне **Публикация** выполните следующие действия. 
+    1. Щелкните **Запустить** на странице **Публикация**. 
+    2. В поле **Целевой объект** выберите **Импорт профиля**. 
+    3. Выберите **Далее**. 
 
-    ![Visual Studio — кнопка импорта профиля](./media/service-bus-to-event-grid-integration-example/visual-studio-import-profile-button.png)
-7. Выберите **файл профиля публикации**, который вы скачали ранее. 
+        ![Visual Studio — кнопка импорта профиля](./media/service-bus-to-event-grid-integration-example/visual-studio-import-profile-button.png)
+7. Выберите **файл профиля публикации**, который вы скачали ранее, и нажмите **Готово**.
+
+    ![Выбор профиля публикации](./media/service-bus-to-event-grid-integration-example/select-publish-profile.png)
 8. На странице **Публикация** щелкните **Опубликовать**. 
 
     ![Visual Studio — публикация](./media/service-bus-to-event-grid-integration-example/select-publish.png)

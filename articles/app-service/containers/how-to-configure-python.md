@@ -4,13 +4,13 @@ description: Узнайте, как настроить готовый конте
 ms.topic: quickstart
 ms.date: 03/28/2019
 ms.reviewer: astay; kraigb
-ms.custom: mvc, seodec18
-ms.openlocfilehash: 8a9276f73c1d9bdf0289f41bb59340b29f5a2575
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.custom: mvc, seodec18, tracking-python
+ms.openlocfilehash: 96f7684176df35e9ac085dd2d7a0c576b7266883
+ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80046023"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84553255"
 ---
 # <a name="configure-a-linux-python-app-for-azure-app-service"></a>Настройка приложения Python в Linux для Службы приложений Azure
 
@@ -131,7 +131,7 @@ gunicorn --bind=0.0.0.0 --timeout 600 app:app
 az webapp config set --resource-group <resource-group-name> --name <app-name> --startup-file "<custom-command>"
 ```
 
-Например, если вы используете приложение Flask, главным модулем которого является *hello.py*, а объект приложения Flask в этом файле называется `myapp`, тогда команда *\<custom-command>* будет выглядеть следующим образом:
+Например, если вы используете приложение Flask, главным модулем которого является *hello.py*, и объект приложения Flask в этом файле имеет имя `myapp`, тогда *\<custom-command>* будет выглядеть следующим образом:
 
 ```bash
 gunicorn --bind=0.0.0.0 --timeout 600 hello:myapp
@@ -143,7 +143,7 @@ gunicorn --bind=0.0.0.0 --timeout 600 hello:myapp
 gunicorn --bind=0.0.0.0 --timeout 600 --chdir website hello:myapp
 ```
 
-Кроме того, вы можете добавить любые дополнительные аргументы для Gunicorn в команду *\<custom-command>* , например `--workers=4`. Дополнительные сведения см. в статье [Running Gunicorn](https://docs.gunicorn.org/en/stable/run.html) (Запуск Gunicorn) (docs.gunicorn.org).
+Кроме того, вы можете добавить любые дополнительные аргументы в *\<custom-command>* для Gunicorn, например `--workers=4`. Дополнительные сведения см. в статье [Running Gunicorn](https://docs.gunicorn.org/en/stable/run.html) (Запуск Gunicorn) (docs.gunicorn.org).
 
 Для использования сервера, отличного от Gunicorn, например [aiohttp](https://aiohttp.readthedocs.io/en/stable/web_quickstart.html), *\<custom-command>* можно заменить следующим образом:
 

@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 05/12/2020
+ms.date: 06/04/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9013fe7b05467400afc300bd08c92eedc95ed0e
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: d7b8fc62744b8e0f4f088522bdef5fb484aa7a8d
+ms.sourcegitcommit: 813f7126ed140a0dff7658553a80b266249d302f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83662193"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84465462"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sharevault"></a>Руководство по интеграции единого входа Azure Active Directory с ShareVault
 
@@ -64,12 +64,12 @@ ms.locfileid: "83662193"
 
 Чтобы настроить и проверить единый вход Azure AD в ShareVault, выполните следующие действия:
 
-1. **[Настройка единого входа Azure AD.](#configure-azure-ad-sso)** Требуется, чтобы пользователи могли использовать эту функцию.
-    1. **[Создание тестового пользователя Azure AD.](#create-an-azure-ad-test-user)** Требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
-    1. **[Назначение тестового пользователя Azure AD.](#assign-the-azure-ad-test-user)** Требуется, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
+    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в ShareVault.](#configure-sharevault-sso)** Требуется, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя ShareVault.](#create-sharevault-test-user)** Требуется для того, чтобы в ShareVault существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа.](#test-sso)** Позволяет убедиться в правильности конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -102,7 +102,7 @@ ms.locfileid: "83662193"
     | ------------- | --------- |
     | sv.svid |  < `svid number` > |
     | sv.firstname | user.givenname |
-    | user.lastname | user.surname |
+    | sv.lastname | user.surname |
     | sv.email | user.userprincipalname |
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.

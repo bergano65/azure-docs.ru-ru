@@ -7,16 +7,16 @@ ms.date: 11/20/2018
 ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
-ms.openlocfilehash: 54085d602246d38adb970ed02f451241ca7ba19d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 2e168abaf522fa1126e3cb4618941952b562df31
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "68726405"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83831880"
 ---
 # <a name="how-to-use-blob-storage-from-ios"></a>Использование хранилища BLOB-объектов из iOS
 
-В этой статье показано, как реализовать распространенные сценарии с использованием хранилища BLOB-объектов Microsoft Azure. Примеры написаны на Objective-C и используют [клиентскую библиотеку службы хранилища Azure для iOS](https://github.com/Azure/azure-storage-ios). Здесь описаны такие сценарии, как отправка, перечисление, скачивание и удаление больших двоичных объектов. Дополнительные сведения о больших двоичных объектах см. в разделе [дальнейшие действия](#next-steps) . Кроме того, можно загрузить [пример приложения](https://github.com/Azure/azure-storage-ios/tree/master/BlobSample), чтобы просмотреть варианты использования службы хранилища Azure в приложении iOS.
+В этой статье показано, как реализовать распространенные сценарии с использованием хранилища BLOB-объектов Microsoft Azure. Примеры написаны на Objective-C и используют [клиентскую библиотеку службы хранилища Azure для iOS](https://github.com/Azure/azure-storage-ios). Здесь описаны такие сценарии, как отправка, перечисление, скачивание и удаление больших двоичных объектов. Дополнительные сведения о больших двоичных объектах см. в разделе [Дальнейшие действия](#next-steps). Кроме того, можно загрузить [пример приложения](https://github.com/Azure/azure-storage-ios/tree/master/BlobSample), чтобы просмотреть варианты использования службы хранилища Azure в приложении iOS.
 
 Дополнительные сведения см. в статье [Общие сведения о хранилище BLOB-объектов Azure](storage-blobs-introduction.md).
 
@@ -62,7 +62,7 @@ ms.locfileid: "68726405"
 Другой способ использования библиотеки заключается в создании файла framework вручную.
 
 1. Прежде всего загрузите или клонируйте [репозиторий azure-storage-ios](https://github.com/azure/azure-storage-ios).
-2. Перейдите в раздел *Azure-Storage-iOS* -> *lib* -> и*Клиентская библиотека хранилища Azure*, а затем откройте `AZSClient.xcodeproj` в Xcode.
+2. Перейдите в *azure-storage-ios* -> *Lib*(Библиотеки) -> *Azure Storage Client Library* (Клиентская библиотека службы хранилища Azure) и откройте файл `AZSClient.xcodeproj` в программе Xcode.
 3. В левой верхней части окна Xcode измените активную схему с Azure Storage Client Library (Клиентская библиотека хранилища Azure) на Framework (Платформа).
 4. Выполните сборку проекта (⌘ + B). На рабочем столе будет создан файл `AZSClient.framework`.
 
@@ -82,7 +82,7 @@ ms.locfileid: "68726405"
 #import <AZSClient/AZSClient.h>
 ```
 
-Если вы используете SWIFT, необходимо создать заголовок моста и импортировать \<AZSClient/AZSClient. h> там:
+Если вы используете Swift, потребуется создать промежуточный заголовок и импортировать \<AZSClient/AZSClient.h>:
 
 1. Создайте файл заголовка `Bridging-Header.h` и добавьте приведенный выше оператор импорта.
 2. Откройте вкладку *Параметры сборки* и найдите *Заголовок Objective-C*.
@@ -133,9 +133,9 @@ ms.locfileid: "68726405"
 
 Разрешения контейнера, настраиваемые по умолчанию, — это разрешения на **закрытый** доступ. При этом контейнеры предоставляют и другие возможности доступа.
 
-- **Закрытый**: данные контейнера и BLOB-объекта могут быть прочитаны только владельцем учетной записи.
-- **BLOB-объект**: хотя данные BLOB-объекта, содержащиеся в контейнере, могут быть прочитаны через анонимный запрос, данные самого контейнера недоступны. Клиенты не могут перечислять BLOB-объекты внутри с помощью анонимного запроса.
-- **Контейнер**: данные контейнера и BLOB-объекта могут быть прочитаны через анонимный запрос. Клиенты могут перечислять BLOB-объекты внутри контейнера с помощью анонимного запроса, но не могут перечислять контейнеры в учетной записи хранения.
+- **Частные**. Данные контейнера и большого двоичного объекта могут быть прочитаны только владельцем учетной записи.
+- **Большой двоичный объект.** Данные BLOB-объектов в этом контейнере можно считать с помощью анонимного запроса, но данные контейнера недоступны. Клиенты не могут перечислять BLOB-объекты внутри с помощью анонимного запроса.
+- **Контейнер.** Данные контейнера и большого двоичного объекта могут быть прочитаны через анонимный запрос. Клиенты могут перечислять BLOB-объекты внутри контейнера с помощью анонимного запроса, но не могут перечислять контейнеры в учетной записи хранения.
 
 В следующем примере показано, как создать контейнер с разрешениями на доступ к **контейнеру**, предоставляющими открытый доступ только на чтение всем пользователям Интернета:
 
@@ -224,12 +224,12 @@ https://nameofyourstorageaccount.blob.core.windows.net/containerpublic/sampleblo
 - **prefix** — можно указать префикс, который будет использоваться при перечислении BLOB-объектов. Перечислены будут только BLOB-объекты, начинающиеся с этого префикса.
 - **useFlatBlobListing** — как упоминалось в разделе [Присвоение имен контейнерам и BLOB-объектам, а также создание ссылок на них](/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata) , хотя служба BLOB-объектов представляет собой плоскую схему хранилища, вы можете создать виртуальную иерархию, присваивая BLOB-объектам имена с информацией о пути. Однако неплоское перечисление в настоящее время не поддерживается. Эта функция станет доступной в ближайшее время. Сейчас же это значение должно быть **YES** (Да).
 - **blobListingDetails** — вы можете указать, какие элементы будут включены при перечислении BLOB-объектов.
-  - _AZSBlobListingDetailsNone_: вывод списка только зафиксированных больших двоичных объектов без возвращения их метаданных.
-  - _AZSBlobListingDetailsSnapshots_: вывод списка зафиксированных больших двоичных объектов и их моментальных снимков.
+  - _AZSBlobListingDetailsNone_: перечисление только зафиксированных больших двоичных объектов без возвращения их метаданных.
+  - _AZSBlobListingDetailsSnapshots_: перечисление зафиксированных больших двоичных объектов и их моментальных снимков.
   - _AZSBlobListingDetailsMetadata_: извлечение метаданных каждого большого двоичного объекта, возвращаемого при перечислении.
-  - _AZSBlobListingDetailsUncommittedBlobs_: вывод списка зафиксированных и незафиксированных больших двоичных объектов.
-  - _AZSBlobListingDetailsCopy_: добавление в список свойств копий.
-  - _AZSBlobListingDetailsAll_: вывод списка всех доступных зафиксированных больших двоичных объектов, незафиксированных больших двоичных объектов и моментальных снимков, а также возвращение всех метаданных и состояния копий этих объектов.
+  - _AZSBlobListingDetailsUncommittedBlobs_: перечисление зафиксированных и незафиксированных больших двоичных объектов.
+  - _AZSBlobListingDetailsCopy_: включение свойств копий при перечислении.
+  - _AZSBlobListingDetailsAll_: перечисление всех доступных зафиксированных BLOB-объектов, незафиксированных BLOB-объектов и моментальных снимков, а также возврат всех метаданных и статуса копий этих объектов.
 - **maxResults** — максимальное количество результатов, возвращаемых этой операцией. Значение -1 используется для снятия ограничения.
 - **completionHandler** — блок кода, выполняемого с использованием результатов операции перечисления.
 
@@ -391,8 +391,8 @@ https://nameofyourstorageaccount.blob.core.windows.net/containerpublic/sampleblo
 
 - [Клиентская библиотека хранилища Azure для iOS](https://github.com/azure/azure-storage-ios)
 - [Справочная документация по использованию службы хранилища Azure в iOS](https://azure.github.io/azure-storage-ios/)
-- [REST API служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355.aspx)
-- [Блог рабочей группы службы хранилища Azure](https://blogs.msdn.com/b/windowsazurestorage)
+- [API-интерфейс REST служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355.aspx)
+- [Блог рабочей группы службы хранилища Azure](https://docs.microsoft.com/archive/blogs/windowsazurestorage/)
 
-Если у вас возникли вопросы, касающиеся этой библиотеки, вы можете отправить на наш [форум MSDN Azure](https://social.msdn.microsoft.com/Forums/windowsazure/home?forum=windowsazuredata) или [Stack overflow](https://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files).
+Если у вас есть вопросы по данной библиотеке, вы можете задать их на [странице вопросов и ответов на сайте Microsoft](https://docs.microsoft.com/answers/topics/azure-blob-storage.html) или на [сайте Stack Overflow](https://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files).
 Если у вас есть предложения по функциям службы хранилища Azure, вы можете опубликовать их на сайте [отзывов о службе хранилища Azure](https://feedback.azure.com/forums/217298-storage/).

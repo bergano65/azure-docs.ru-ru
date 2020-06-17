@@ -10,12 +10,12 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: ranku
 ms.date: 04/09/2020
-ms.openlocfilehash: 54f09c4b35f31619c3dcaa027c70444595c4352e
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
+ms.openlocfilehash: 5f3a73ed6c7843c13d35a91a75189fe9dd8d4dbd
+ms.sourcegitcommit: d7fba095266e2fb5ad8776bffe97921a57832e23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84196510"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84628391"
 ---
 # <a name="tutorial-create-a-labeling-project-preview-for-multi-class-image-classification"></a>Руководство по Создание проекта маркировки (предварительная версия) для многоклассовой классификации изображений 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -109,6 +109,12 @@ ms.locfileid: "84196510"
     1. Выберите окружность рядом с именем набора данных в списке, например **images-for-tutorial**.
 
 1. Чтобы продолжить создание проекта, щелкните **Далее**.
+
+### <a name="incremental-refresh"></a>Добавочное обновление
+
+Если вам нужно добавить новые изображения в набор данных проекта, используйте добавочное обновление, чтобы найти и добавить их.  При включении этой функции проект будет периодически проверять наличие новых изображений.  Вы не будете добавлять новые изображения в хранилище данных в этом учебнике, поэтому не отмечайте этот параметр.
+
+Нажмите кнопку **Далее**, чтобы продолжить.
 
 ### <a name="label-classes"></a>Классы меток
 

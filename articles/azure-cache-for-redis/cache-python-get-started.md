@@ -9,13 +9,14 @@ ms.topic: quickstart
 ms.custom:
 - mvc
 - seo-python-october2019
+- tracking-python
 ms.date: 11/05/2019
-ms.openlocfilehash: 6ce3dd1cbb694988af3555765342a1c4ca3850b5
-ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
+ms.openlocfilehash: 120708cc72117495e6200f41f13422e94a58c265
+ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81010857"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84556483"
 ---
 # <a name="quickstart-create-a-python-app-that-uses-azure-cache-for-redis"></a>Краткое руководство. Создание приложения Python, в котором используется кэш Azure для Redis
 
@@ -41,7 +42,7 @@ ms.locfileid: "81010857"
 
 ## <a name="read-and-write-to-the-cache"></a>Операции чтения и записи в кэше
 
-Запустите Python из командной строки и проверьте кэш, используя следующий код. Замените `<Your Host Name>` и `<Your Access Key>` значениями для своего экземпляра Кэша Azure для Redis. Имя узла имеет вид *\<DNS-имя>.redis.cache.windows.net*.
+Запустите Python из командной строки и проверьте кэш, используя следующий код. Замените `<Your Host Name>` и `<Your Access Key>` значениями для своего экземпляра Кэша Azure для Redis. Имя узла имеет вид *\<DNS name>.redis.cache.windows.net*.
 
 ```python
 >>> import redis
@@ -58,7 +59,7 @@ b'bar'
 
 ## <a name="create-a-python-sample-app"></a>Создание примера приложения Python
 
-Создайте текстовый файл, добавьте в него приведенный ниже сценарий и сохраните этот файл как *PythonApplication1.py*. Замените `<Your Host Name>` и `<Your Access Key>` значениями для своего экземпляра Кэша Azure для Redis. Имя узла имеет вид *\<DNS-имя>.redis.cache.windows.net*.
+Создайте текстовый файл, добавьте в него приведенный ниже сценарий и сохраните этот файл как *PythonApplication1.py*. Замените `<Your Host Name>` и `<Your Access Key>` значениями для своего экземпляра Кэша Azure для Redis. Имя узла имеет вид *\<DNS name>.redis.cache.windows.net*.
 
 ```python
 import redis

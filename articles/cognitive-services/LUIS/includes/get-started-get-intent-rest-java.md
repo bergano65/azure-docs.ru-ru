@@ -6,15 +6,17 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 05/18/2020
+ms.date: 06/03/2020
 ms.author: diberry
-ms.openlocfilehash: 5b3cf31fd5388c1d558726ab7c01b9946e826c23
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: de3c7b46c048ff5575f3e9890b3c736ed7c71a61
+ms.sourcegitcommit: 8e5b4e2207daee21a60e6581528401a96bfd3184
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83654332"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84418096"
 ---
+[Справочная документация](https://westeurope.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview/operations/5890b47c39e2bb052c5b9c08) | [Пример](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/LUIS/java-predict-with-rest/Predict.java)
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [JDK SE](https://aka.ms/azure-jdks) (комплект разработчика Java, выпуск "Стандартный");
@@ -30,7 +32,7 @@ ms.locfileid: "83654332"
 
 1. Создайте новую папку для размещения проекта Java, например `java-predict-with-rest`.
 
-1. Создайте подкаталог `lib` и скопируйте в подкаталог `lib` следующие библиотеки Java:
+1. Создайте подкаталог с именем `lib` и скопируйте в его подкаталог `lib` следующие библиотеки Java.
 
     * [commons-logging-1.2.jar](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-language-understanding/master/documentation-samples/quickstarts/analyze-text/java/lib/commons-logging-1.2.jar);
     * [httpclient-4.5.3.jar](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-language-understanding/master/documentation-samples/quickstarts/analyze-text/java/lib/httpclient-4.5.3.jar);
@@ -38,90 +40,9 @@ ms.locfileid: "83654332"
 
 1. Скопируйте следующий код для создания класса в файл с именем `Predict.java`:
 
-    ```java
-    import java.io.*;
-    import java.net.URI;
-    import org.apache.http.HttpEntity;
-    import org.apache.http.HttpResponse;
-    import org.apache.http.client.HttpClient;
-    import org.apache.http.client.methods.HttpGet;
-    import org.apache.http.client.utils.URIBuilder;
-    import org.apache.http.impl.client.HttpClients;
-    import org.apache.http.util.EntityUtils;
+    [!code-java[Code snippet](~/cognitive-services-quickstart-code/java/LUIS/java-predict-with-rest/Predict.java)]
 
-    // To compile, execute this command at the console:
-    //      Windows: javac -cp ";lib/*" Predict.java
-    //      macOs: javac -cp ":lib/*" Predict.java
-    //      Linux: javac -cp ":lib/*" Predict.java
-
-    // To run, execute this command at the console:
-    //      Windows: java -cp ";lib/*" Predict
-    //      macOs: java -cp ":lib/*" Predict
-    //      Linux: java -cp ":lib/*" Predict
-
-    public class Predict {
-
-        public static void main(String[] args)
-        {
-            HttpClient httpclient = HttpClients.createDefault();
-
-            try
-            {
-                //////////
-                // Values to modify.
-
-                // YOUR-APP-ID: The App ID GUID found on the www.luis.ai Application Settings page.
-                String AppId = "93066630-3523-4df6-b05f-2b6cd9d46ea1";
-
-                // YOUR-PREDICTION-KEY: Your LUIS authoring key, 32 character value.
-                String Key = "9c0c8b2196ae4f95818b006b4de05cc7";
-
-                // YOUR-PREDICTION-ENDPOINT: Replace this with your authoring key endpoint.
-                // For example, "https://westus.api.cognitive.microsoft.com/"
-                String Endpoint = "https://westus.api.cognitive.microsoft.com/";
-
-                // The utterance you want to use.
-                String Utterance = "I want two large pepperoni pizzas on thin crust please";
-                //////////
-
-                // Begin building the endpoint URL.
-                URIBuilder endpointURLbuilder = new URIBuilder(Endpoint + "luis/prediction/v3.0/apps/" + AppId + "/slots/production/predict?");
-
-                // Create the query string params.
-                endpointURLbuilder.setParameter("query", Utterance);
-                endpointURLbuilder.setParameter("subscription-key", Key);
-                endpointURLbuilder.setParameter("show-all-intents", "true");
-                endpointURLbuilder.setParameter("verbose", "true");
-
-                // Create the prediction endpoint URL.
-                URI endpointURL = endpointURLbuilder.build();
-
-                // Create the HTTP object from the URL.
-                HttpGet request = new HttpGet(endpointURL);
-
-                // Access the LUIS endpoint to analyze the text utterance.
-                HttpResponse response = httpclient.execute(request);
-
-                // Get the response.
-                HttpEntity entity = response.getEntity();
-
-                // Print the response on the console.
-                if (entity != null)
-                {
-                    System.out.println(EntityUtils.toString(entity));
-                }
-            }
-
-            // Display errors if they occur.
-            catch (Exception e)
-            {
-                System.out.println(e.getMessage());
-            }
-        }
-    }
-    ```
-
-1. Замените значения `YOUR-KEY` и `YOUR-ENDPOINT` собственным ключом и конечной точкой **среды выполнения** прогнозирования.
+1. Замените значения, начинающиеся с `YOUR-`, собственными значениями.
 
     |Сведения|Назначение|
     |--|--|
@@ -129,57 +50,15 @@ ms.locfileid: "83654332"
     |`YOUR-PREDICTION-KEY`|Ваш ключ прогнозирования длиной в 32 символа. Находится на портале LUIS на странице "Azure Resources" (Ресурсы Azure) для приложения.
     |`YOUR-PREDICTION-ENDPOINT`| Конечная точка URL-адреса прогнозирования. Находится на портале LUIS на странице "Azure Resources" (Ресурсы Azure) для приложения.<br>Например, `https://westus.api.cognitive.microsoft.com/`.|
 
-1. Скомпилируйте программу Java из командной строки:
+1. Скомпилируйте программу Java из командной строки.
 
-    ::: zone pivot="client-operating-system-linux"
-
-    ```console
-    javac -cp ":lib/*" Predict.java
-    ```
-
-    ::: zone-end
-
-    ::: zone pivot="client-operating-system-macos"
-
-    ```console
-    javac -cp ":lib/*" Predict.java
-    ```
-
-    ::: zone-end
-
-    ::: zone pivot="client-operating-system-windows"
-
-    ```console
-    javac -cp ";lib/*" Predict.java
-    ```
-
-    ::: zone-end
+    * В Windows выполните следующую команду: `javac -cp ";lib/*" Predict.java`.
+    * В macOS и Linux выполните следующую команду: `javac -cp ":lib/*" Predict.java`.
 
 1. Запустите программу Java из командной строки:
 
-    ::: zone pivot="client-operating-system-linux"
-
-    ```console
-    java -cp ":lib/*" Predict
-    ```
-
-    ::: zone-end
-
-    ::: zone pivot="client-operating-system-macos"
-
-    ```console
-    java -cp ":lib/*" Predict
-    ```
-
-    ::: zone-end
-
-    ::: zone pivot="client-operating-system-windows"
-
-    ```console
-    java -cp ";lib/*" Predict
-    ```
-
-    ::: zone-end
+    * В Windows выполните следующую команду: `java -cp ";lib/*" Predict`.
+    * В macOS и Linux выполните следующую команду: `java -cp ":lib/*" Predict`.
 
 1. Проверьте ответ прогноза, который возвращается в формате JSON:
 

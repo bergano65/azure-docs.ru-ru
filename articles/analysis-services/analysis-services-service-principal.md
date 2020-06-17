@@ -1,18 +1,18 @@
 ---
-title: Автоматизация Azure Analysis Services задач с помощью субъектов-служб | Документация Майкрософт
-description: Узнайте, как создать субъект-службу для автоматизации задач администрирования Azure Analysis Services.
+title: Автоматизация задач Azure Analysis Services с помощью субъектов-служб | Документация Майкрософт
+description: Сведения о создании субъекта-службы для автоматизации административных задач Azure Analysis Services.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 02/18/2020
+ms.date: 05/26/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: dc163de9a7fb46d62f4bc2983e040e68bbf9231c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 638ba26c8c8aed9385e10242b86a7587c1d9a7c5
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79266147"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83871170"
 ---
 # <a name="automation-with-service-principals"></a>Автоматизация с помощью субъектов-служб
 
@@ -20,14 +20,14 @@ ms.locfileid: "79266147"
 
 В Analysis Services субъекты-службы применяются для автоматизации типичных задач с использованием службы автоматизации Azure, автоматического режима PowerShell, настраиваемых клиентских приложений и веб-приложений. Например, подготовка серверов, развертывание моделей, обновление данных, увеличение и уменьшение масштаба, остановка и возобновление могут быть автоматизированы с помощью субъектов-служб. Разрешения присваиваются субъектам-службам через членство в ролях, так же как и в обычных учетных записях Azure AD UPN.
 
-Analysis Services также поддерживает операции, выполняемые управляемыми удостоверениями с помощью субъектов-служб. Дополнительные сведения см. в статье [управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md) и [служб Azure, поддерживающих аутентификацию Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-analysis-services).  
+Analysis Services также поддерживает операции, выполняемые управляемыми удостоверениями с помощью субъектов-служб. Дополнительные сведения см. в статьях [Что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md) и [Службы с поддержкой управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-analysis-services).  
 
 ## <a name="create-service-principals"></a>Создание субъектов-служб
  
 Субъекты-службы можно создать на портале Azure или с помощью PowerShell. Дополнительные сведения см. на следующих ресурсах:
 
-[Создание субъекта-службы — портал Azure](../active-directory/develop/howto-create-service-principal-portal.md)   
-[Создание субъекта-службы — PowerShell](../active-directory/develop/howto-authenticate-service-principal-powershell.md)
+[Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md)   
+[Создание субъекта-службы с помощью PowerShell](../active-directory/develop/howto-authenticate-service-principal-powershell.md)
 
 ## <a name="store-credential-and-certificate-assets-in-azure-automation"></a>Хранение учетных данных и сертификатов в службе автоматизации Azure
 
@@ -48,11 +48,11 @@ Analysis Services также поддерживает операции, выпо
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-#### <a name="using-azanalysisservices-module"></a><a name="azmodule" />Использование модуля AZ. AnalysisServices
+#### <a name="using-azanalysisservices-module"></a><a name="azmodule" />Использование модуля Az.AnalysisServices
 
-При использовании субъекта-службы для операций управления ресурсами с помощью модуля [AZ. AnalysisServices](/powershell/module/az.analysisservices) используйте `Connect-AzAccount` командлет. 
+При выполнении операций управления ресурсами с модулем [Az.AnalysisServices](/powershell/module/az.analysisservices) с помощью субъекта-службы используйте командлет `Connect-AzAccount`. 
 
-В следующем примере appID и пароль используются для выполнения операций плоскости управления для синхронизации с репликами только для чтения и увеличения/уменьшения.
+В следующем примере идентификатор приложения и пароль используются для выполнения таких операций уровня управления, как синхронизация с доступными только для чтения репликами, а также вертикальное и горизонтальное масштабирование.
 
 ```powershell
 Param (
@@ -108,6 +108,9 @@ tbl.RequestRefresh(RefreshType.Full);
 db.Model.SaveChanges();
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
-[Вход с помощью Azure PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps)   
-[Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md)   
+## <a name="next-steps"></a>Дальнейшие действия
+[Sign in with Azure PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps)  (Вход в Azure PowerShell)  
+[Обновление с помощью Logic Apps](analysis-services-refresh-logic-app.md)  
+[Refresh with Azure Automation](analysis-services-refresh-azure-automation.md) (Обновление с помощью службы автоматизации Azure)  
+[Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md)  
+[Автоматизация задач по управлению рабочими областями Premium и наборами данных с помощью субъектов-служб](https://docs.microsoft.com/power-bi/admin/service-premium-service-principal) 

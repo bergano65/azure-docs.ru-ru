@@ -2,14 +2,14 @@
 title: Оценка виртуальных машин Hyper-V для миграции в Azure с помощью службы "Миграция Azure" | Документация Майкрософт
 description: В этой статье показано, как оценить готовность локальных виртуальных машин Hyper-V к миграции в Azure с помощью средства оценки серверов Миграции Azure.
 ms.topic: tutorial
-ms.date: 04/15/2020
+ms.date: 06/03/2020
 ms.custom: mvc
-ms.openlocfilehash: c627902268af3a91e172223c1741dd24ea21fa92
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 2c4233df6566f3187c8366188b0eb960189b43c5
+ms.sourcegitcommit: 79508e58c1f5c58554378497150ffd757d183f30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81535457"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84331769"
 ---
 # <a name="assess-hyper-v-vms-with-azure-migrate-server-assessment"></a>Оценка виртуальных машин Hyper-V с помощью средства "Оценка сервера" службы "Миграция Azure"
 
@@ -96,12 +96,20 @@ ms.locfileid: "81535457"
     - ```C:\>Get-FileHash -Path <file_location> -Algorithm [Hashing Algorithm]```
     - Пример использования: ```C:\>Get-FileHash -Path ./AzureMigrateAppliance_v1.19.06.27.zip -Algorithm SHA256```
 
-3.  Для версии устройства 2.19.07.30 созданный хэш должен соответствовать этим параметрам.
+3.  Проверьте последние версии и хэш-значения устройств:
 
-  **Алгоритм** | **Значение хэша**
-  --- | ---
-  MD5 | 29a7531f32bcf69f32d964fa5ae950bc
-  SHA256 | 37b3f27bc44f475872e355f04fcb8f38606c84534c117d1609f2d12444569b31
+    - Для общедоступного облака Azure:
+
+        **Сценарий** | **Загрузить** | **SHA256**
+        --- | --- | ---
+        Hyper-V (8,93 МБ) | [Последняя версия](https://aka.ms/migrate/appliance/hyperv) |  572be425ea0aca69a9aa8658c950bc319b2bdbeb93b440577264500091c846a1
+
+    - Для Azure для государственных организаций:
+
+        **Сценарий*** | **Загрузить** | **SHA256**
+        --- | --- | ---
+        Hyper-V (63,1 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2120200&clcid=0x409) |  2c5e73a1e5525d4fae468934408e43ab55ff397b7da200b92121972e683f9aa3
+
 
 ### <a name="create-the-appliance-vm"></a>Создание виртуальной машины устройства
 

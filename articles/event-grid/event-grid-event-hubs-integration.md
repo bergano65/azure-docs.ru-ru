@@ -6,14 +6,14 @@ author: spelluru
 manager: timlt
 ms.service: event-grid
 ms.topic: tutorial
-ms.date: 11/05/2019
+ms.date: 06/08/2020
 ms.author: spelluru
-ms.openlocfilehash: 6f5bd129b175210cd5b9415a65b8db06d904e24d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: e6733bdc91ba26d52366de09ed6bc255dcd4ff98
+ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73718180"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84610823"
 ---
 # <a name="tutorial-stream-big-data-into-a-data-warehouse"></a>Руководство по Потоковая передача больших данных в хранилище данных
 [Сетка событий](overview.md) Azure — интеллектуальная служба маршрутизации событий, позволяющая реагировать на уведомления (события) приложений и служб. Например, она может активировать функции Azure для обработки данных Центров событий, собранных в хранилище BLOB-объектов Azure или Data Lake Storage, и переноса данных в другие репозитории данных. В этом [примере интеграции Центров событий Azure и службы "Сетка событий"](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo) показано, как с помощью Центров событий Azure и службы "Сетка событий Azure" легко перенести данные Центров событий из хранилища BLOB-объектов в Хранилище данных SQL.
@@ -79,12 +79,11 @@ ms.locfileid: "73718180"
 ### <a name="use-azure-cli"></a>Использование Azure CLI
 
 1. Создайте группу ресурсов Azure, выполнив следующую команду в окне CLI: 
-    1. Скопируйте следующую команду и вставьте ее в окно Cloud Shell.
+    1. Скопируйте следующую команду и вставьте ее в окно Cloud Shell. При желании измените имя группы ресурсов и расположение.
 
         ```azurecli
-        az group create -l eastus -n <Name for the resource group>
+        az group create -l eastus -n rgDataMigration
         ```
-    1. Укажите имя для **группы ресурсов**
     2. Нажмите клавишу **ВВОД**. 
 
         Например:
@@ -107,7 +106,7 @@ ms.locfileid: "73718180"
 
         ```azurecli
         az group deployment create \
-            --resource-group rgDataMigrationSample \
+            --resource-group rgDataMigration \
             --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/event-grid/EventHubsDataMigration.json \
             --parameters eventHubNamespaceName=<event-hub-namespace> eventHubName=hubdatamigration sqlServerName=<sql-server-name> sqlServerUserName=<user-name> sqlServerPassword=<password> sqlServerDatabaseName=<database-name> storageName=<unique-storage-name> functionAppName=<app-name>
         ```
@@ -132,7 +131,7 @@ ms.locfileid: "73718180"
     1. Скопируйте следующую команду и вставьте ее в окно Cloud Shell.
 
         ```powershell
-        New-AzResourceGroup -Name rgDataMigration -Location westcentralus
+        New-AzResourceGroup -Name rgDataMigration -Location eastus
         ```
     2. Укажите имя для **группы ресурсов**.
     3. Нажмите клавишу ВВОД. 
@@ -170,11 +169,11 @@ ms.locfileid: "73718180"
 ### <a name="create-a-table-in-sql-data-warehouse"></a>Создание таблицы в хранилище данных SQL
 Создайте таблицу в хранилище данных, выполнив сценарий [CreateDataWarehouseTable.sql](https://github.com/Azure/azure-event-hubs/blob/master/samples/e2e/EventHubsCaptureEventGridDemo/scripts/CreateDataWarehouseTable.sql). Чтобы запустить скрипт, воспользуйтесь Visual Studio или редактором запросов на портале. В следующих шагах продемонстрировано, как использовать редактор запросов. 
 
-1. В списке ресурсов группы ресурсов выберите свое хранилище данных SQL. 
+1. В списке ресурсов группы ресурсов выберите свой **пул Synapse SQL (хранилище данных)** . 
 2. На странице хранилища данных SQL в левом меню выберите **Редактор запросов (предварительная версия)** . 
 
     ![Страница хранилища данных SQL](media/event-grid-event-hubs-integration/sql-data-warehouse-page.png)
-2. Введите имя **пользователя** и **пароль** для SQL Server и щелкните **ОК**. 
+2. Введите имя **пользователя** и **пароль** для SQL Server и щелкните **ОК**. Для успешного входа в SQL Server необходимо иметь IP-адрес клиента в брандмауэре. 
 
     ![Проверка подлинности SQL Server](media/event-grid-event-hubs-integration/sql-server-authentication.png)
 4. Скопируйте и вставьте следующий код в окно запроса: 
@@ -193,6 +192,17 @@ ms.locfileid: "73718180"
     ![Выполнение SQL-запроса](media/event-grid-event-hubs-integration/run-sql-query.png)
 5. Не закрывайте эту вкладку или окно, так как в конце руководства это поможет вам проверить успешность создания данных. 
 
+### <a name="update-the-function-runtime-version"></a>Обновление версии среды выполнения функции
+
+1. На портале Azure в меню слева выберите **Группы ресурсов**.
+2. Выберите группу ресурсов, в которой существует приложение-функция. 
+3. Выберите приложение-функцию типа **Служба приложений** в списке ресурсов в группе ресурсов.
+4. Выберите **Конфигурация** в меню **Параметры** слева. 
+5. Перейдите на вкладку **Параметры среды выполнения функций** в правой области. 
+5. Обновите **версию среды выполнения** до **~3**. 
+
+    ![Обновление версии среды выполнения функции](media/event-grid-event-hubs-integration/function-runtime-version.png)
+    
 
 ## <a name="publish-the-azure-functions-app"></a>Публикация приложения службы "Функции Azure"
 
@@ -204,13 +214,20 @@ ms.locfileid: "73718180"
 4. Если вы видите такой экран, щелкните **Начало**. 
 
    ![Кнопка начала публикации](media/event-grid-event-hubs-integration/start-publish-button.png) 
-5. На странице **Выберите целевой объект публикации** нажмите **Выбрать существующий**, а потом щелкните **Создать профиль**. 
+5. В диалоговом окне **Публикация** выберите **Azure** в качестве параметра **Целевой объект** и нажмите **Далее**. 
 
-   ![Выбор целевого объекта публикации](media/event-grid-event-hubs-integration/publish-select-existing.png)
-6. На странице службы приложений, выберите свою **подписку Azure**, затем **приложение-функцию** в группе ресурсов и нажмите кнопку **ОК**. 
+   ![Кнопка начала публикации](media/event-grid-event-hubs-integration/publish-select-azure.png)
+6. Выберите **Приложение-функция Azure (Windows)** и нажмите **Далее**. 
 
-   ![Страница службы приложений](media/event-grid-event-hubs-integration/publish-app-service.png) 
-1. После настройки профиля в Visual Studio выберите **Публиковать**.
+   ![Выбор приложения-функции Azure — Windows](media/event-grid-event-hubs-integration/select-azure-function-windows.png)
+7. На вкладке **Экземпляр функций** выберите свою подписку Azure, разверните группу ресурсов и выберите приложение-функцию, а затем нажмите **Готово**. Войдите в свою учетную запись Azure, если вы еще этого не сделали. 
+
+   ![Выбор приложения-функции](media/event-grid-event-hubs-integration/publish-select-function-app.png)
+8. В разделе **Зависимости службы** выберите **Настроить**.
+9. На странице **Настройка зависимостей** выберите созданную ранее учетную запись хранения и нажмите **Далее**. 
+10. Сохраните настройки для имени и значения строки подключения и нажмите **Далее**.
+11. Снимите флажок **Хранилище секретов** и нажмите **Готово**.  
+8. После настройки профиля в Visual Studio выберите **Публиковать**.
 
    ![Выбор публикации](media/event-grid-event-hubs-integration/select-publish.png)
 
@@ -224,21 +241,24 @@ ms.locfileid: "73718180"
 4. Выберите в списке свою группу ресурсов.
 
     ![Выберите группу ресурсов](media/event-grid-event-hubs-integration/select-resource-group.png)
-4. Выберите в списке план службы приложений. 
+4. Выберите "План службы приложений" (не "Служба приложений") в списке ресурсов в группе ресурсов. 
 5. На странице плана службы приложений в меню слева выберите **Приложения**, а затем приложение-функцию. 
 
     ![Выбор приложения-функции](media/event-grid-event-hubs-integration/select-function-app-app-service-plan.png)
 6. Разверните приложение-функцию, функции, а затем выберите свою функцию. 
+7. Выберите **Добавить подписку сетки событий** на панели инструментов. 
 
     ![Выбор функции Azure](media/event-grid-event-hubs-integration/select-function-add-button.png)
-7. Выберите **Добавить подписку сетки событий** на панели инструментов. 
 8. На странице **Create Event Grid Subscription** (Создание подписки на Сетку событий) сделайте следующее. 
-    1. В разделе **Сведения о разделе** выполните следующие действия:
-        1. Выберите подписку Azure.
+    1. На странице **сведений о подписке на события** введите имя для подписки (например, captureEventSub) и щелкните **Создать**. 
+    2. В разделе **Сведения о разделе** выполните следующие действия:
+        1. Выберите **Пространства имен Центров событий** для параметра **Типы разделов**. 
+        2. Выберите подписку Azure.
         2. Выберите группу ресурсов Azure.
         3. Выберите пространство имен Центров событий.
-    2. На странице **сведений о подписке на события** введите имя для подписки (например, captureEventSub) и щелкните **Создать**. 
-
+    3. Убедитесь в том, что в разделе **ТИПЫ СОБЫТИЙ** выбран **Созданный файл записи** для параметра **Фильтр по типам событий**. 
+    4. В разделе **СВЕДЕНИЯ О КОНЕЧНОЙ ТОЧКЕ** убедитесь, что для параметра **Тип конечной точки** задано значение **Функция Azure**, а для параметра **Конечная точка** установлена функция Azure. 
+    
         ![Создание подписки для службы "Сетка событий"](media/event-grid-event-hubs-integration/create-event-subscription.png)
 
 ## <a name="run-the-app-to-generate-data"></a>Запуск приложения для создания данных
