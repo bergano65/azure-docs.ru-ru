@@ -1,3 +1,5 @@
+- name: Размеры виртуальной машины
+  href: vm-sizes.md
 - name: Сопоставление материалов для форматов модели
   href: material-mapping.md
 - name: Регионы

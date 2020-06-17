@@ -207,6 +207,8 @@
               href: ../dav4-dasv4-series.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: Серии Ddv4 и Ddsv4
               href: ../ddv4-ddsv4-series.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
+            - name: Серии Dv4 и Dsv4
+              href: ../dv4-dsv4-series.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Оптимизированные для вычислений
           items:
             - name: Обзор
@@ -226,6 +228,8 @@
               href: ../eav4-easv4-series.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: Серии Edv4 и Edsv4
               href: ../edv4-edsv4-series.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
+            - name: Серии Ev4 и Esv4
+              href: ../ev4-esv4-series.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: Серия M
               href: ../m-series.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: Серия Mv2
@@ -288,6 +292,8 @@
         - name: Точечные виртуальные машины
           href: spot-vms.md
           displayName: 'pre-empt, preempt'
+        - name: Виртуальные машины Azure без временных дисков
+          href: ../azure-vms-no-temp-disk.md
         - name: Предыдущие поколения
           href: ../sizes-previous-gen.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Размеры изолированных виртуальных машин
@@ -657,7 +663,7 @@
               href: update-agent.md
         - name: 'Устранение уязвимостей, связанных со спекулятивным выполнением команд'
           href: mitigate-se.md
-        - name: Служба метаданных экземпляров Azure
+        - name: Монитор метаданных
           href: instance-metadata-service.md
         - name: Получение метрик потребления с помощью REST
           href: metrics-vm-usage-rest.md
@@ -693,7 +699,7 @@
             - name: Общие сведения об агентах
               href: ../../azure-monitor/platform/agents-overview.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: ВОПРОСЫ И ОТВЕТЫ
-              href: '../../azure-monitor/faq.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json#agents'
+              href: ../../azure-monitor/faq.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json#agents
             - name: Расширение службы "Диагностика Azure"
               items:
                 - name: Обзор
@@ -750,7 +756,7 @@
             - name: Часто задаваемые вопросы об общедоступной версии
               href: ../../azure-monitor/insights/vminsights-ga-release-faq.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: ВОПРОСЫ И ОТВЕТЫ
-              href: '../../azure-monitor/faq.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json#azure-monitor-for-vms'
+              href: ../../azure-monitor/faq.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json#azure-monitor-for-vms
             - name: Включение мониторинга
               items:
                 - name: Общие сведения о включении мониторинга

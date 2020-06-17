@@ -946,14 +946,14 @@
               href: insights/container-insights-enable-new-cluster.md
             - name: Включение для существующего кластера AKS
               href: insights/container-insights-enable-existing-clusters.md
+            - name: Включение для кластера с поддержкой Arc
+              href: insights/container-insights-enable-arc-enabled-clusters.md
             - name: Включение для гибридного кластера
               href: insights/container-insights-hybrid-setup.md
             - name: "Включение для Azure Red Hat OpenShift версии\_3"
               href: insights/container-insights-azure-redhat-setup.md
             - name: "Включение для Azure Red Hat OpenShift версии\_4"
               href: insights/container-insights-azure-redhat4-setup.md
-            - name: Включение для кластера с поддержкой Arc
-              href: insights/container-insights-enable-arc-enabled-clusters.md
             - name: Сопоставления регионов
               href: insights/container-insights-region-mapping.md
         - name: Мониторинг производительности

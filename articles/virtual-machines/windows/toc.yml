@@ -493,6 +493,8 @@
               href: ../linux/image-builder-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Использование Azure CLI
               href: image-builder.md
+            - name: Использование Azure PowerShell
+              href: image-builder-powershell.md
             - name: Сборка для коллекций образов
               href: image-builder-gallery.md
             - name: Обновление существующего образа
