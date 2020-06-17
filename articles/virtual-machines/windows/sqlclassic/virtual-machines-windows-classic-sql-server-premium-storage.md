@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 06/01/2017
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 07e8d2b6bd22029a4b6556ada62985167807eb77
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: ca11fce252192cbf8e5f0bc2cfb5fcd38f5d4443
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83833937"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84020886"
 ---
 # <a name="use-azure-premium-storage-with-sql-server-on-virtual-machines"></a>Использование хранилища Azure Premium Storage с SQL Server на виртуальных машинах
 
@@ -41,7 +41,7 @@ ms.locfileid: "83833937"
 * Возможные подходы при миграции.
 * Комплексный пример, иллюстрирующий действия в Azure, Windows и SQL Server для миграции существующей реализации AlwaysOn.
 
-Более детальные дополнительные сведения о сервере SQL Server в виртуальных машинах Azure содержатся в статье [SQL Server в виртуальных машинах Azure](../sql/virtual-machines-windows-sql-server-iaas-overview.md).
+Более детальные дополнительные сведения о сервере SQL Server в виртуальных машинах Azure содержатся в статье [SQL Server в виртуальных машинах Azure](../../../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md).
 
 **Автор:** Дэниэл Сол (Daniel Sol) **Технические рецензенты:** Луис Карлос Варгас Херринг (Luis Carlos Vargas Herring), Санджай Мишра (Sanjay Mishra), Правин Митал (Pravin Mital), Юрген Томас (Juergen Thomas), Гонсало Руис (Gonzalo Ruiz).
 
@@ -681,7 +681,7 @@ $destcloudsvc = "danNewSvcAms"
 New-AzureService $destcloudsvc -Location $location
 ```
 
-#### <a name="step-2-increase-the-permitted-failures-on-resources-optional"></a>Шаг 2. Увеличение значения разрешенных ошибок на ресурсах \<Необязательно>
+#### <a name="step-2-increase-the-permitted-failures-on-resources-optional"></a>Шаг 2. Увеличение значения разрешенных ошибок на ресурсах \<Optional>
 
 На некоторых ресурсах, принадлежащих группе доступности Always On, существуют ограничения на количество сбоев, которые могут возникнуть в течение определенного периода, когда служба кластеров пытается перезапустить группу ресурсов. Рекомендуется увеличить это значение на время выполнения процедуры, потому что вы можете приблизиться к заданному ограничению, если не будете выполнять или вызывать переход на другой ресурс вручную посредством завершения работы виртуальных машин.
 
@@ -691,7 +691,7 @@ New-AzureService $destcloudsvc -Location $location
 
 Установите значение максимальных отказов на 6.
 
-#### <a name="step-3-addition-ip-address-resource-for-cluster-group-optional"></a>Шаг 3. Добавление ресурса IP-адреса для группы кластера \<Необязательно>
+#### <a name="step-3-addition-ip-address-resource-for-cluster-group-optional"></a>Шаг 3. Добавление ресурса IP-адреса для группы кластера \<Optional>
 
 Если у вас есть только один IP-адрес для группы кластера и он настраивается на подсеть облака, следите за тем, чтобы случайно не перевести в автономный режим все узлы кластера в облаке в данной сети — в таком случае ресурс IP-адреса кластера и сетевое имя кластера не могут перейти в оперативный режим. В этом случае данное действие предотвращает обновления для других ресурсов кластера.
 
@@ -1250,7 +1250,7 @@ Get-AzureVM –ServiceName $destcloudsvc –Name $vmNameToMigrate  | Add-AzureEn
 
 * [Хранилище Azure Premium](../disks-types.md)
 * [Виртуальные машины](https://azure.microsoft.com/services/virtual-machines/)
-* [SQL Server в виртуальных машинах Azure](../sql/virtual-machines-windows-sql-server-iaas-overview.md)
+* [SQL Server в виртуальных машинах Azure](../../../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md)
 
 <!-- IMAGES -->
 [1]: ./media/virtual-machines-windows-classic-sql-server-premium-storage/1_VNET_Portal.png

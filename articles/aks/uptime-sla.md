@@ -4,12 +4,13 @@ description: Сведения о варианте Соглашения об ур
 services: container-service
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.openlocfilehash: e0e1399f69640dddfd618ac99637023390f28a92
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.custom: references_regions
+ms.openlocfilehash: 2df0ad675f03b25363ab0f5b13dceb762a657ed7
+ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83683219"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84299559"
 ---
 # <a name="azure-kubernetes-service-aks-uptime-sla"></a>Соглашение об уровне обслуживания с гарантией времени доступности для Службы Azure Kubernetes (AKS)
 
@@ -25,18 +26,6 @@ ms.locfileid: "83683219"
 ## <a name="sla-terms-and-conditions"></a>Условия Соглашения об уровне обслуживания
 
 Соглашение об уровне обслуживания с гарантией времени доступности является платной возможностью и включается отдельно для каждого кластера. Цены на Соглашение об уровне обслуживания с гарантией времени доступности зависят от количества отдельных кластеров, но не от их размеров. Дополнительные сведения см. на странице [Цены на службу Azure Kubernetes (AKS)](https://azure.microsoft.com/pricing/details/kubernetes-service/).
-
-## <a name="region-availability"></a>Доступность по регионам
-
-Соглашение об уровне обслуживания с гарантией времени доступности предоставляется в следующих регионах:
-
-* Восточная Австралия
-* Центральная Канада
-* Восточная часть США
-* восточная часть США 2
-* Центрально-южная часть США
-* Юго-Восточная Азия
-* западная часть США 2
 
 ## <a name="before-you-begin"></a>Перед началом
 

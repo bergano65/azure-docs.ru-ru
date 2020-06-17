@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6cf00fab14f91b151327b435068d689edab32b2
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: dfdfcda0ce466299d57f79ba1e60a96309078587
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83737730"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84014355"
 ---
 # <a name="conditional-access-cloud-apps-or-actions"></a>Условный доступ. Облачные приложения или действия
 
@@ -36,7 +36,7 @@ ms.locfileid: "83737730"
 - [Office 365 (предварительная версия)](#office-365-preview)
 - Службы Azure Analysis Services
 - Azure DevOps
-- [База данных SQL Azure и хранилище данных](../../sql-database/sql-database-conditional-access.md)
+- [База данных SQL Azure и хранилище данных](../../azure-sql/database/conditional-access-configure.md)
 - Dynamics CRM Online
 - Аналитика Microsoft Application Insights
 - [Microsoft Azure Information Protection](/azure/information-protection/faqs#i-see-azure-information-protection-is-listed-as-an-available-cloud-app-for-conditional-accesshow-does-this-work)
