@@ -194,6 +194,8 @@
               href: ../dav4-dasv4-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Серии Ddv4 и Ddsv4
               href: ../ddv4-ddsv4-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серии Dv4 и Dsv4
+              href: ../dv4-dsv4-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Оптимизированные для вычислений
           items:
             - name: Обзор
@@ -213,6 +215,8 @@
               href: ../eav4-easv4-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Серии Edv4 и Edsv4
               href: ../edv4-edsv4-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серии Ev4 и Esv4
+              href: ../ev4-esv4-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Серия M
               href: ../m-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Серия Mv2
@@ -277,6 +281,8 @@
         - name: Точечные виртуальные машины
           href: spot-vms.md
           displayName: 'pre-empt, preempt'
+        - name: Виртуальные машины Azure без временных дисков
+          href: ../azure-vms-no-temp-disk.md
         - name: Предыдущие поколения
           href: ../sizes-previous-gen.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
           displayName: D-series Ds-series A-series Basic
@@ -371,7 +377,7 @@
               href: ../linux/spot-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
             - name: Коды ошибок
               href: ../error-codes-spot.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
-        - name: 'Использование C#'
+        - name: Использование C#
           href: csharp.md
         - name: Использование специализированного диска
           items:
@@ -379,7 +385,7 @@
               href: create-vm-specialized-portal.md
             - name: PowerShell
               href: create-vm-specialized.md
-        - name: 'Использование шаблона ARM с C#'
+        - name: Использование шаблона ARM с C#
           href: csharp-template.md
           displayName: Azure Resource Manager
         - name: Создание виртуальной машины с помощью Chef
@@ -624,7 +630,7 @@
           href: ../extensions/agent-windows.md
         - name: 'Устранение уязвимостей, связанных со спекулятивным выполнением команд'
           href: mitigate-se.md
-        - name: Служба метаданных экземпляров Azure
+        - name: Монитор метаданных
           href: instance-metadata-service.md
         - name: Включение вложенной виртуализации
           href: nested-virtualization.md
@@ -663,7 +669,7 @@
             - name: Общие сведения об агентах
               href: ../../azure-monitor/platform/agents-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: ВОПРОСЫ И ОТВЕТЫ
-              href: '../../azure-monitor/faq.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json#agents'
+              href: ../../azure-monitor/faq.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json#agents
             - name: Расширение службы "Диагностика Azure"
               items:
                 - name: Обзор
@@ -736,7 +742,7 @@
             - name: Часто задаваемые вопросы об общедоступной версии
               href: ../../azure-monitor/insights/vminsights-ga-release-faq.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: ВОПРОСЫ И ОТВЕТЫ
-              href: '../../azure-monitor/faq.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json#azure-monitor-for-vms'
+              href: ../../azure-monitor/faq.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json#azure-monitor-for-vms
             - name: Включение мониторинга
               items:
                 - name: Общие сведения о включении мониторинга

@@ -10,6 +10,10 @@
       href: overview-iot-central-developer.md
     - name: Последние обновления
       items:
+        - name: "Обновления за май 2020\_г."
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-may-2020-updates/'
+        - name: "Обновления для панели мониторинга за май 2020\_г."
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-may-2020-dashboard-updates/'
         - name: "Новые функции в версии за апрель 2020\_г."
           href: 'https://azure.microsoft.com/updates/azure-iot-central-april-2020-new-features/'
         - name: "Обновления за апрель 2020\_г."
@@ -182,9 +186,9 @@
     - name: Пакеты SDK для Центра Интернета вещей Azure
       items:
         - name: Пакеты SDK для служб IoT
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
         - name: Пакеты SDK для устройств Интернета вещей
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
     - name: Справочник по API для IoT Central
       href: 'https://docs.microsoft.com/rest/api/iotcentral/'
     - name: Запросы данных клиентов

@@ -52,7 +52,7 @@
           href: luis-tutorial-pattern.md
     - name: Использование с ботом
       items:
-        - name: 'Использование C#'
+        - name: Использование C#
           href: luis-csharp-tutorial-bf-v4.md
           displayName: 'bot framework, framework, sdk, abs'
         - name: Использование Node.js
@@ -125,6 +125,14 @@
         - name: Стратегии разработки
           href: luis-concept-enterprise.md
           displayName: import
+    - name: Применение методик DevOps в LUIS
+      items:
+        - name: Управление исходным кодом и стратегии создания ветвей для LUIS
+          href: luis-concept-devops-sourcecontrol.md
+        - name: Тестирование для DevOps
+          href: luis-concept-devops-testing.md
+        - name: Рабочие процессы CI/CD
+          href: luis-concept-devops-automation.md
 - name: Практические руководства
   items:
     - name: Запуск нового приложения
@@ -238,11 +246,13 @@
         - name: Ограничения контейнеров
           href: luis-container-limitations.md
           displayName: 'phrase list recommendations, multi-language, translator, locale, language, English, Chinese, French, German, Italian, Korean, Portuguese, Spanish, Turkish, Keigo, subculture, dictation, speech, Bing Spell Check, foreign words, Hybrid languages, Tokenization, space, special character, compound words, tokens'
+    - name: Использование DevOps
+      href: luis-how-to-devops-with-github.md
     - name: Связанные службы
       items:
         - name: Служба Azure Bot
           href: 'https://dev.botframework.com/'
-        - name: 'Пакет SDK для Bot Builder 4.x для C#'
+        - name: Пакет SDK для Bot Builder 4.x для C#
           href: 'https://github.com/Microsoft/botbuilder-dotnet'
         - name: QnA Maker
           href: 'https://qnamaker.ai/'
@@ -284,7 +294,7 @@
               href: luis-reference-response-codes.md
         - name: Пакеты SDK
           items:
-            - name: 'C#'
+            - name: C#
               items:
                 - name: "NuGet\_— разработка"
                   href: 'https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/'

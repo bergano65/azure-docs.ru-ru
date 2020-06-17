@@ -197,7 +197,7 @@
             - name: Обзор
               href: platform/agents-overview.md
             - name: ВОПРОСЫ И ОТВЕТЫ
-              href: 'faq.md#agents'
+              href: faq.md#agents
             - name: Расширение службы "Диагностика Azure"
               items:
                 - name: Обзор
@@ -905,7 +905,7 @@
         - name: Часто задаваемые вопросы об общедоступной версии
           href: insights/vminsights-ga-release-faq.md
         - name: ВОПРОСЫ И ОТВЕТЫ
-          href: 'faq.md#azure-monitor-for-vms'
+          href: faq.md#azure-monitor-for-vms
         - name: Включение мониторинга
           items:
             - name: Общие сведения о включении мониторинга
@@ -937,7 +937,7 @@
         - name: Обзор
           href: insights/container-insights-overview.md
         - name: ВОПРОСЫ И ОТВЕТЫ
-          href: 'faq.md#azure-monitor-for-containers'
+          href: faq.md#azure-monitor-for-containers
         - name: Включение мониторинга
           items:
             - name: Общие сведения о включении мониторинга
@@ -952,6 +952,8 @@
               href: insights/container-insights-azure-redhat-setup.md
             - name: "Включение для Azure Red Hat OpenShift версии\_4"
               href: insights/container-insights-azure-redhat4-setup.md
+            - name: Включение для кластера с поддержкой Arc
+              href: insights/container-insights-enable-arc-enabled-clusters.md
             - name: Сопоставления регионов
               href: insights/container-insights-region-mapping.md
         - name: Мониторинг производительности

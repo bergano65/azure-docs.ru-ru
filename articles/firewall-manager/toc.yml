@@ -24,7 +24,7 @@
       href: secured-virtual-hub.md
     - name: Общий процесс развертывания
       href: deployment-overview.md
-    - name: Доверенные партнеры по безопасности
+    - name: Поставщики партнера по безопасности
       href: trusted-security-partners.md
     - name: Логика обработки правил
       href: rule-processing.md
@@ -32,7 +32,7 @@
       href: vhubs-and-vnets.md
 - name: Практические руководства
   items:
-    - name: Развертывание для доверенных партнеров по безопасности
+    - name: Развертывание поставщиков партнера по безопасности
       href: deploy-trusted-security-partner.md
     - name: Переход на политику брандмауэра (PowerShell)
       href: migrate-to-policy.md
