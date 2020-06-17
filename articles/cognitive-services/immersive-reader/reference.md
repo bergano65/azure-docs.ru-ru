@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: reference
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: 879834567b6905a070aada3dae2a41a672635c6c
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
+ms.openlocfilehash: 5b1471cc43fc506ca798e81ac8e35a5051278ee0
+ms.sourcegitcommit: 34eb5e4d303800d3b31b00b361523ccd9eeff0ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84267245"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84907386"
 ---
 # <a name="immersive-reader-sdk-reference-guide"></a>Справочное руководство по пакету SDK для иммерсивного чтения
 
@@ -41,14 +41,14 @@ launchAsync(token: string, subdomain: string, content: Content, options?: Option
 
 ### <a name="parameters"></a>Параметры
 
-| Имя | Тип | Описание |
+| Имя | Тип | Описание: |
 | ---- | ---- |------------ |
 | `token` | строка | Маркер проверки подлинности Azure AD. |
 | `subdomain` | строка | Пользовательский поддомен для иммерсивного ресурса чтения в Azure. |
 | `content` | [Содержимое](#content) | Объект, содержащий содержимое, которое должно отображаться в иммерсивное средство чтения. |
-| `options` | [Параметры](#options) | Параметры для настройки определенного поведения иммерсивное средство чтения. Необязательный элемент. |
+| `options` | [Параметры](#options) | Параметры для настройки определенного поведения иммерсивное средство чтения. Необязательный параметр. |
 
-### <a name="returns"></a>Результаты
+### <a name="returns"></a>Возвращает
 
 Возвращает объект `Promise<LaunchResponse>` , который разрешается при загрузке иммерсивное средство чтения. `Promise`Разрешается в [`LaunchResponse`](#launchresponse) объект.
 
@@ -80,13 +80,13 @@ renderButtons(options?: RenderButtonsOptions): void;
 
 ### <a name="parameters"></a>Параметры
 
-| Имя | Тип | Описание |
+| Имя | Тип | Описание: |
 | ---- | ---- |------------ |
-| `options` | [рендербуттонсоптионс](#renderbuttonsoptions) | Параметры для настройки определенного поведения функции Рендербуттонс. Необязательный элемент. |
+| `options` | [рендербуттонсоптионс](#renderbuttonsoptions) | Параметры для настройки определенного поведения функции Рендербуттонс. Необязательный параметр. |
 
 ## <a name="types"></a>Типы
 
-### <a name="content"></a>Content
+### <a name="content"></a>Содержимое
 
 Содержит содержимое, отображаемое в иммерсивное средство чтения.
 
@@ -111,7 +111,7 @@ renderButtons(options?: RenderButtonsOptions): void;
 
 ### <a name="launchresponse"></a>лаунчреспонсе
 
-Содержит ответ от вызова `ImmersiveReader.launchAsync` .
+Содержит ответ от вызова `ImmersiveReader.launchAsync` . Обратите внимание, что доступ к ссылке `iframe` , содержащей иммерсивное средство чтения, можно получить с помощью `container.firstChild` .
 
 ```typescript
 {
@@ -134,8 +134,8 @@ enum CookiePolicy { Disable, Enable }
 | --------- | ----------- |
 | text/plain | Обычный текст. |
 | text/html | Содержимое в виде HTML. [Дополнительные сведения](#html-support)|
-| Application/масмл + XML | Язык математической разметки (Масмл). [Дополнительные сведения](./how-to/display-math.md).
-| приложение/vnd. openxmlformats-officeDocument. WordprocessingML. Document | Документ в формате Microsoft Word. docx.
+| Application/масмл + XML | Язык математической разметки (Масмл). [Подробнее](./how-to/display-math.md).
+| приложение/vnd.openxmlformats-officedocument.wordprocessingml.docумент | Документ в формате Microsoft Word. docx.
 
 ### <a name="html-support"></a>Поддержка HTML
 
@@ -147,7 +147,7 @@ enum CookiePolicy { Disable, Enable }
 
 Неподдерживаемые теги будут подготовлены к просмотру сравнимо. Изображения и таблицы в настоящее время не поддерживаются.
 
-### <a name="options"></a>Параметры
+### <a name="options"></a>Варианты
 
 Содержит свойства, которые настраивают определенное поведение иммерсивное средство чтения.
 
@@ -207,9 +207,9 @@ enum CookiePolicy { Disable, Enable }
 
 Используйте следующие атрибуты, чтобы настроить внешний вид и поведение кнопки.
 
-| Атрибут | Описание |
+| attribute | Описание |
 | --------- | ----------- |
-| `data-button-style` | Задает стиль кнопки. Возможные значения: `icon`, `text` или `iconAndText`. По умолчанию имеет значение `icon`. |
+| `data-button-style` | Задает стиль кнопки. Возможные значения: `icon`, `text` или `iconAndText`. По умолчанию — `icon`. |
 | `data-locale` | Задает языковой стандарт. Например, `en-US` или `fr-FR`. По умолчанию используется английский язык `en` . |
 | `data-icon-px-size` | Задает размер значка в пикселях. По умолчанию используется 20px. |
 
