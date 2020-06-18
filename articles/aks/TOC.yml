@@ -24,27 +24,6 @@
       items:
         - name: Разработка с использованием Helm
           href: quickstart-helm.md
-        - name: Azure Dev Spaces
-          expanded: true
-          items:
-            - name: Использование Azure Dev Spaces для групп разработчиков
-              href: ../dev-spaces/quickstart-team-development.md
-              maintainContext: true
-            - name: "Использование Visual Studio\_Code"
-              href: ../dev-spaces/quickstart-netcore.md
-              maintainContext: true
-            - name: Использование Visual Studio
-              href: ../dev-spaces/quickstart-netcore-visualstudio.md
-              maintainContext: true
-            - name: Использование CLI
-              href: ../dev-spaces/quickstart-cli.md
-              maintainContext: true
-            - name: Использование Azure Dev Spaces с Java
-              href: ../dev-spaces/quickstart-java.md
-              maintainContext: true
-            - name: Использование Azure Dev Spaces с Node.js
-              href: ../dev-spaces/quickstart-nodejs.md
-              maintainContext: true
 - name: Учебники
   items:
     - name: 1. Подготовка приложения для AKS
@@ -302,54 +281,10 @@
           href: 'https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/optimize-windows-dockerfile?context=/azure/aks/context/aks-context'
     - name: Разработка и запуск приложений
       items:
-        - name: Разработка с помощью Dev Spaces
-          href: ../dev-spaces/azure-dev-spaces.md
-          maintainContext: true
-          items:
-            - name: Java (VS Code и CLI)
-              items:
-                - name: "1.\_Начало работы"
-                  href: ../dev-spaces/get-started-java.md
-                  maintainContext: true
-                - name: "2.\_Разработка с использованием нескольких служб"
-                  href: ../dev-spaces/multi-service-java.md
-                  maintainContext: true
-                - name: "3.\_Командная разработка"
-                  href: ../dev-spaces/team-development-java.md
-                  maintainContext: true
-            - name: .NET Core (VS Code и CLI)
-              items:
-                - name: "1.\_Начало работы"
-                  href: ../dev-spaces/get-started-netcore.md
-                  maintainContext: true
-                - name: "2.\_Разработка с использованием нескольких служб"
-                  href: ../dev-spaces/multi-service-netcore.md
-                  maintainContext: true
-                - name: "3.\_Командная разработка"
-                  href: ../dev-spaces/team-development-netcore.md
-                  maintainContext: true
-            - name: ".NET Core (Visual Studio\_2017)"
-              items:
-                - name: "1.\_Начало работы"
-                  href: ../dev-spaces/get-started-netcore-visualstudio.md
-                  maintainContext: true
-                - name: "2.\_Разработка с использованием нескольких служб"
-                  href: ../dev-spaces/multi-service-netcore-visualstudio.md
-                  maintainContext: true
-                - name: "3.\_Командная разработка"
-                  href: ../dev-spaces/team-development-netcore-visualstudio.md
-                  maintainContext: true
-            - name: Node.js (VS Code и CLI)
-              items:
-                - name: "1.\_Начало работы"
-                  href: ../dev-spaces/get-started-nodejs.md
-                  maintainContext: true
-                - name: "2.\_Разработка с использованием нескольких служб"
-                  href: ../dev-spaces/multi-service-nodejs.md
-                  maintainContext: true
-                - name: "3.\_Командная разработка"
-                  href: ../dev-spaces/team-development-nodejs.md
-                  maintainContext: true
+        - name: Использование Локального процесса с Kubernetes в Visual Studio Code (предварительная версия)
+          href: ../dev-spaces/how-to/local-process-kubernetes-vs-code.md
+        - name: Использование Локального процесса с Kubernetes в Visual Studio (предварительная версия)
+          href: ../dev-spaces/how-to/local-process-kubernetes-visual-studio.md
         - name: Установка существующих приложений с помощью Helm
           href: kubernetes-helm.md
         - name: С помощью OpenFaaS

@@ -4,6 +4,10 @@
   items:
     - name: Сведения об Azure Arc с поддержкой Kubernetes
       href: overview.md
+- name: Примеры
+  items:
+    - name: Встроенные политики службы "Политика Azure"
+      href: ./policy-samples.md
 - name: Практические руководства
   items:
     - name: Операции с кластером

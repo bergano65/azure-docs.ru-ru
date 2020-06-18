@@ -1,2 +1,4 @@
 - name: Средство проверки ArrInspector
   href: arr-inspector.md
+- name: Средство для работы с объектами службы "Удаленная отрисовка Azure"
+  href: ../../samples/azure-remote-rendering-asset-tool.md
