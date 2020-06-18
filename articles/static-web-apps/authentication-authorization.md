@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: cb6b99351a5cb995d87b482b7e707a3913fd86f2
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 1ac1df402c25c0f6e5f07ce8d9631c01c0fa504c
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/19/2020
-ms.locfileid: "83594963"
+ms.locfileid: "83655254"
 ---
 # <a name="authentication-and-authorization-for-azure-static-web-apps-preview"></a>Проверка подлинности и авторизация Статических веб-приложений Azure (предварительная версия)
 
@@ -118,7 +118,7 @@ https://identity.azurestaticapps.net/.auth/purge/<AUTHENTICATION_PROVIDER_NAME>
 Чтобы платформа не предоставляла эти сведения при последующих запросах к отдельным приложениям, отправьте запрос по следующему URL-адресу:
 
 ```url
-https://<WEB_APP_DOMAIN_NAME>/identity/.auth/purge/<AUTHENTICATION_PROVIDER_NAME>
+https://<WEB_APP_DOMAIN_NAME>/.auth/purge/<AUTHENTICATION_PROVIDER_NAME>
 ```
 
 ## <a name="system-folder"></a>Системная папка
@@ -154,6 +154,11 @@ https://<WEB_APP_DOMAIN_NAME>/identity/.auth/purge/<AUTHENTICATION_PROVIDER_NAME
 }
 ```
 
+### <a name="post-login-redirect"></a>Перенаправление после входа
+
+Если вы хотите, чтобы после входа пользователь возвращался на определенную страницу, укажите URL-адрес в параметре строки запроса `post_login_redirect_uri`.
+
+
 ## <a name="logout"></a>Logout
 
 Маршрут `/.auth/logout` выполняет выход пользователя с веб-сайта. Вы можете добавить ссылку для навигации по сайту, чтобы разрешить пользователю выполнить выход, как показано в следующем примере.
@@ -170,6 +175,10 @@ https://<WEB_APP_DOMAIN_NAME>/identity/.auth/purge/<AUTHENTICATION_PROVIDER_NAME
   "serve": "/.auth/logout"
 }
 ```
+
+### <a name="post-logout-redirect"></a>Перенаправление после выхода
+
+Если вы хотите, чтобы после выхода пользователь возвращался на определенную страницу, укажите URL-адрес в параметре строки запроса `post_logout_redirect_uri`.
 
 ## <a name="block-an-authorization-provider"></a>Блокировка поставщика авторизации
 

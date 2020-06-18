@@ -5,45 +5,45 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 09fa22d33377dfcbafd84f0caeb5f33a575b1bce
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: de3f127d97803ea920d61d748a1af0c80a1a1afc
+ms.sourcegitcommit: 0690ef3bee0b97d4e2d6f237833e6373127707a7
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80681666"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83759138"
 ---
 # <a name="textures"></a>Текстуры
 
-Текстуры — это неизменяемый [общий ресурс](../concepts/lifetime.md). Текстуры могут быть загружены из [хранилища BLOB-объектов](../how-tos/conversion/blob-storage.md) и применены непосредственно к моделям, как показано в [руководстве. изменение среды и материалов](../tutorials/unity/changing-environment-and-materials.md). Однако чаще всего текстуры будут частью [преобразованной модели](../how-tos/conversion/model-conversion.md), на которую ссылаются [материалы](materials.md).
+Текстуры являются неизменяемым [общим ресурсом](../concepts/lifetime.md). Текстуры можно загружать из [хранилища BLOB-объектов](../how-tos/conversion/blob-storage.md) и применять непосредственно к моделям, как показано в [Учебник. Изменение среды и материалов](../tutorials/unity/changing-environment-and-materials.md). Однако наиболее часто текстуры будут частью [преобразованной модели](../how-tos/conversion/model-conversion.md), где на них ссылаются ее [материалы](materials.md).
 
 ## <a name="texture-types"></a>Типы текстур
 
-Различные типы текстур имеют разные варианты использования.
+Различные типы текстур используются в разных случаях.
 
-* **2D-текстуры** в основном используются в [материалах](materials.md).
-* **Кубемапс** можно использовать для [перевозки](../overview/features/sky.md).
+* **2D-текстуры** в основном используются в [ материалах](materials.md).
+* **Кубические карты** обычно используются для [неба](../overview/features/sky.md).
 
 ## <a name="supported-texture-formats"></a>Поддерживаемые форматы текстур
 
-Все текстуры, переданные в ARR, должны быть в [формате DDS](https://en.wikipedia.org/wiki/DirectDraw_Surface). Желательно с MIP-карты и сжатием текстур. Если вы хотите автоматизировать процесс преобразования, ознакомьтесь [с программой командной строки тексконв](../resources/tools/tex-conv.md) .
+Все текстуры, переданные в ARR, должны быть в [формате DDS](https://en.wikipedia.org/wiki/DirectDraw_Surface). Желательно с MIP-картами и сжатием текстур. Чтобы автоматизировать процесс преобразования, см. [средство командной строки TexConv](../resources/tools/tex-conv.md).
 
 ## <a name="loading-textures"></a>Загрузка текстур
 
 При загрузке текстуры необходимо указать ожидаемый тип. Если тип не соответствует, происходит сбой загрузки текстуры.
-При загрузке текстуры с таким же URI дважды возвращается тот же объект текстуры, что и [общий ресурс](../concepts/lifetime.md).
+При загрузке текстуры с одним и тем же URI дважды, возвращается один и тот же объект текстуры, так как это [общий ресурс](../concepts/lifetime.md).
 
-Аналогично загрузке моделей существует два варианта адресации ресурса текстуры в исходном хранилище BLOB-объектов:
+Аналогично загрузке моделей, существует два варианта обращения к ресурсу текстуры в исходном хранилище BLOB-объектов.
 
-* URI SAS может обращаться к ресурсу текстуры. Соответствующая функция загрузки `LoadTextureFromSASAsync` связана с `LoadTextureFromSASParams`параметром. Используйте этот вариант также при загрузке [встроенных текстур](../overview/features/sky.md#built-in-environment-maps).
-* Вы можете напрямую обращаться к текстуре с помощью параметров хранилища больших двоичных объектов, если [хранилище BLOB-объектов связано с учетной записью](../how-tos/create-an-account.md#link-storage-accounts). Соответствующая функция загрузки в этом случае `LoadTextureAsync` — с `LoadTextureParams`параметром.
+* К ресурсу текстуры можно обращаться по подписанному URL-адресу. Для этого используется функция `LoadTextureFromSASAsync` с параметром `LoadTextureFromSASParams`. Также используйте этот вариант для загрузки [встроенных текстур](../overview/features/sky.md#built-in-environment-maps).
+* К текстуре также можно обращаться напрямую по параметрам хранилища BLOB-объектов, если [хранилище BLOB-объектов связано с учетной записью](../how-tos/create-an-account.md#link-storage-accounts). В этом случае используется функция загрузки `LoadTextureAsync` с параметром `LoadTextureParams`.
 
-В следующем примере кода показано, как загрузить текстуру через URI SAS (или встроенную текстуру). Обратите внимание, что в другом случае для другого варианта различаются только функции или параметры загрузки.
+В следующем примере кода показано, как загрузить текстуру через URI SAS (или встроенную текстуру). Обратите внимание, что во втором случае отличается только функция/параметр загрузки.
 
-``` cs
+```cs
 LoadTextureAsync _textureLoad = null;
 void LoadMyTexture(AzureSession session, string textureUri)
 {
-    _textureLoad = session.Actions.LoadTextureAsync(new LoadTextureParams(textureUri, TextureType.Texture2D));
+    _textureLoad = session.Actions.LoadTextureFromSASAsync(new LoadTextureFromSASParams(textureUri, TextureType.Texture2D));
     _textureLoad.Completed +=
         (LoadTextureAsync res) =>
         {
@@ -60,12 +60,34 @@ void LoadMyTexture(AzureSession session, string textureUri)
 }
 ```
 
-В зависимости от того, для чего предполагается использовать текстуру, могут существовать ограничения для типа и содержимого текстуры. Например, таблица с приблизительным соответствием для объекта [PBR](../overview/features/pbr-materials.md) должна иметь градации серого.
+```cpp
+void LoadMyTexture(ApiHandle<AzureSession> session, std::string textureUri)
+{
+    LoadTextureFromSASParams params;
+    params.TextureType = TextureType::Texture2D;
+    params.TextureUrl = std::move(textureUri);
+    ApiHandle<LoadTextureAsync> textureLoad = *session->Actions()->LoadTextureFromSASAsync(params);
+    textureLoad->Completed([](ApiHandle<LoadTextureAsync> res)
+    {
+        if (res->IsRanToCompletion())
+        {
+            //use res->Result()
+        }
+        else
+        {
+            printf("Texture loading failed!");
+        }
+    });
+}
+```
+
+
+В зависимости от того, для чего предполагается использовать текстуру, могут существовать ограничения по типу и содержимому текстуры. Например, карты неровностей [материала PBR](../overview/features/pbr-materials.md) должны быть в оттенках серого.
 
 > [!CAUTION]
-> Все *асинхронные* функции в arr возвращают объекты асинхронной операции. Необходимо сохранить ссылку на эти объекты до завершения операции. В противном случае сборщик мусора на C# может удалить операцию на раннем этапе и не сможет завершиться. В примере кода выше переменная-член "_textureLoad" используется для хранения ссылки, пока не поступит *завершенное* событие.
+> Все *асинхронные функции* в ARR возвращают объекты асинхронной операции. Ссылку на эти объекты необходимо хранить до завершения операции. В противном случае сборщик мусора C# может удалить операцию раньше, чем она завершится. В примере кода выше переменная-член «_textureLoad» используется, чтобы хранить ссылку до наступления события *Completed*.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Материалы](materials.md)
-* [Небес](../overview/features/sky.md)
+* [Небо](../overview/features/sky.md)

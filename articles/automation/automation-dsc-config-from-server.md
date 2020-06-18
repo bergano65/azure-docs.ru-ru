@@ -1,6 +1,6 @@
 ---
-title: Создание конфигураций из существующих серверов — служба автоматизации Azure
-description: Узнайте, как создавать конфигурации из существующих серверов для службы автоматизации Azure.
+title: Создание конфигураций на основе существующих серверов для конфигурации состояния службы автоматизации Azure
+description: В этой статье рассказывается, как создать конфигурации на основе существующих серверов для конфигурации состояния службы автоматизации Azure.
 keywords: dsc,powershell,конфигурация,установка
 services: automation
 ms.service: automation
@@ -10,41 +10,41 @@ ms.author: migreene
 ms.date: 08/08/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: dff9b8f52207a38cf7eaddefa178aff262ddc546
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 775fae09c4d618551327669362cd28a0ae2cc801
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80585545"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83837014"
 ---
 # <a name="create-configurations-from-existing-servers"></a>Создание конфигураций на основе существующих серверов
 
-> Область применения: Windows PowerShell 5,1
+> Область применения: Windows PowerShell 5.1
 
-Создание конфигураций из существующих серверов может оказаться сложной задачей.
-Может потребоваться не *все* параметры, а только те, которые вас интересуют.
-Даже затем необходимо знать, в каком порядке должны быть применены параметры, чтобы конфигурация была успешно применена.
+Создание конфигураций на основе существующих серверов может оказаться сложной задачей.
+Возможно, потребуются не *все параметры*, а только те, которые вас интересуют.
+Даже в этом случае необходимо знать, в каком порядке должны быть применены параметры, чтобы конфигурация была успешно применена.
 
 > [!NOTE]
-> В этой статье рассматривается решение, поддерживаемое сообществом с открытым исходным кодом.
-> Поддержка доступна только в форме службы совместной работы GitHub, а не корпорацией Майкрософт.
+> В этой статье используется решение, которое поддерживается сообществом ПО с открытым исходным кодом.
+> Поддержка этого решения предоставляется только на форуме GitHub и не имеет отношения к корпорации Майкрософт.
 
-## <a name="community-project-reversedsc"></a>Проект сообщества: Реверседск
+## <a name="community-project-reversedsc"></a>Проект сообщества: ReverseDSC
 
-Для работы в этой области, запускающей SharePoint, было создано решение для сообщества с именем [реверседск](https://github.com/microsoft/reversedsc) .
+Для работы с этой областью, запускающей SharePoint, было создано решение, поддерживаемое сообществом, с именем [ReverseDSC](https://github.com/microsoft/reversedsc).
 
-Решение строится на [ресурсе шарепоинтдск](https://github.com/powershell/sharepointdsc) и расширяет его для координации [сбора информации](https://github.com/Microsoft/sharepointDSC.reverse#how-to-use) с существующих серверов SharePoint.
-Последняя версия имеет несколько [режимов извлечения](https://github.com/Microsoft/SharePointDSC.Reverse/wiki/Extraction-Modes) для определения того, какой уровень информации следует включить.
+В основе решения лежит [ресурс SharePointDSC](https://github.com/powershell/sharepointdsc). Решение расширяет его возможности для оркестрации [сбора информации](https://github.com/Microsoft/sharepointDSC.reverse#how-to-use) от существующих серверов SharePoint.
+В последней версии имеется несколько [режимов извлечения](https://github.com/Microsoft/SharePointDSC.Reverse/wiki/Extraction-Modes), которые позволяют определить, какой уровень информации следует включить.
 
-Результатом использования решения является создание [данных конфигурации](https://github.com/Microsoft/sharepointDSC.reverse#configuration-data) для использования с сценариями конфигурации шарепоинтдск.
+Результатом использования решения является создание [данных конфигурации](https://github.com/Microsoft/sharepointDSC.reverse#configuration-data) для использования с сценариями конфигурации SharePointDSC.
 
-После создания файлов данных их можно использовать с [сценариями конфигурации DSC](/powershell/scripting/dsc/overview/overview) для создания MOF-файлов и [передачи MOF-файлов в службу автоматизации Azure](/azure/automation/tutorial-configure-servers-desired-state#create-and-upload-a-configuration-to-azure-automation).
-Затем зарегистрируйте серверы из [локальной](/azure/automation/automation-dsc-onboarding#onboarding-physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azure-including-aws-ec2-instances) среды или [в Azure](/azure/automation/automation-dsc-onboarding#onboarding-azure-vms) для извлечения конфигураций.
+После создания файлов данных их можно применить в [сценариях конфигурации DSC](/powershell/scripting/dsc/overview/overview) для создания MOF-файлов и [передачи MOF-файлов в службу автоматизации Azure](/azure/automation/tutorial-configure-servers-desired-state#create-and-upload-a-configuration-to-azure-automation).
+Затем зарегистрируйте серверы [локально](/azure/automation/automation-dsc-onboarding#onboarding-physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azure-including-aws-ec2-instances) или [в Azure](/azure/automation/automation-dsc-onboarding#onboarding-azure-vms) для получения конфигураций.
 
-Чтобы испытать Реверседск, перейдите на [коллекция PowerShell](https://www.powershellgallery.com/packages/ReverseDSC/) и скачайте решение или щелкните "сайт проекта", чтобы просмотреть [документацию](https://github.com/Microsoft/sharepointDSC.reverse).
+Чтобы испытать ReverseDSC в работе, откройте [коллекцию PowerShell](https://www.powershellgallery.com/packages/ReverseDSC/) и скачайте решение или щелкните ссылку "Сайт проекта" для перехода к [документации](https://github.com/Microsoft/sharepointDSC.reverse).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Общие сведения о службе настройки требуемого состояния Windows PowerShell](/powershell/scripting/dsc/overview/overview)
-- [Ресурсы DSC](/powershell/scripting/dsc/resources/resources)
-- [Настройка локального Configuration Manager](/powershell/scripting/dsc/managing-nodes/metaconfig)
+- Дополнительные сведения о DSC для PowerShell см. в статье [Общие сведения о службе настройки требуемого состояния Windows PowerShell](/powershell/scripting/dsc/overview/overview).
+- Изучите [ресурсы](/powershell/scripting/dsc/resources/resources), предоставляемые для PowerShell DSC.
+- Дополнительные сведения о настройках Local Configuration Manager см. в статье [Настройка локального диспетчера конфигураций](/powershell/scripting/dsc/managing-nodes/metaconfig).

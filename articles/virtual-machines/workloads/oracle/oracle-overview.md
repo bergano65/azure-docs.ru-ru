@@ -1,6 +1,6 @@
 ---
 title: Решения Oracle в Microsoft Azure | Документация Майкрософт
-description: Узнайте о вариантах развертывания приложений и решений Oracle на Microsoft Azure, включая работу полностью в инфраструктуре Azure или использование межоблачного подключения к облачной инфраструктуре Oracle (OCI).
+description: Узнайте о вариантах развертывания приложений и решений Oracle на Microsoft Azure, включая работу полностью в инфраструктуре Azure или использование межоблачного соединения с облачной инфраструктурой Oracle (Oracle Cloud Infrastructure, OCI).
 services: virtual-machines-linux
 documentationcenter: ''
 author: BorisB2015
@@ -10,88 +10,94 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 03/16/2020
+ms.date: 05/12/2020
 ms.author: borisb
-ms.openlocfilehash: c737189650d571fb62a770707e84ed15c5a37a57
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 649d96a158682752e0d4a31bf7ec73eb7c442f0f
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81870497"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83660547"
 ---
-# <a name="overview-of-oracle-applications-and-solutions-on-azure"></a>Общие сведения о приложениях и решениях Oracle в Azure
+# <a name="overview-of-oracle-applications-and-solutions-on-azure"></a>Обзор приложений и решений Oracle в Azure
 
-В этой статье представлены возможности для запуска решений Oracle с помощью инфраструктуры Azure. См. также подробные сведения о доступных [образах виртуальных машин Oracle](oracle-vm-solutions.md) в Azure Marketplace и возможности для объединения [Azure с облачной инфраструктурой Oracle (OCI)](oracle-oci-overview.md).
+В этой статье описаны возможности для запуска решений Oracle с помощью инфраструктуры Azure. См. также подробные сведения о [приложениях Azure для WebLogic Server](oracle-weblogic.md), [образах виртуальных машин Oracle](oracle-vm-solutions.md), доступных в Azure Marketplace, а также о возможности [взаимодействия между Azure и облачной инфраструктурой Oracle (Oracle Cloud Infrastructure, OCI)](oracle-oci-overview.md).
 
 ## <a name="oracle-databases-on-azure-infrastructure"></a>Базы данных Oracle в инфраструктуре Azure
 
-Запуск баз данных Oracle в инфраструктуре Azure с помощью Oracle Database для образов Oracle Linux, доступных в Azure Marketplace:
+Следующие базы данных Oracle могут быть запущены в инфраструктуре Azure с помощью Oracle Database и образов Oracle Linux, доступных в Azure Marketplace:
 
-* Oracle Database 12,1, 12,2 и 18,3 Enterprise Edition 
+* Oracle Database 12.1, 12.2 и 18.3 Enterprise Edition 
 
-* Oracle Database 12,1, 12,2 и 18,3 Standard Edition 
+* Oracle Database 12.1, 12.2 и 18.3 Standard Edition 
 
-Вы также можете настроить Oracle Database на неOracle Linuxном образе, доступном в Azure, создать решение на основе пользовательского образа, созданного с нуля в Azure, или отправить пользовательский образ из локальной среды.
+Вы можете установить Oracle Database на образе, отличном от Oracle Linux, доступном в Azure, а также создать решение на основе пользовательского образа, созданного вами с нуля в Azure или загруженного из вашей локальной среды.
 
-При необходимости настройте с несколькими подключенными дисками и увеличьте производительность базы данных, установив автоматическое управление хранилищем (ASM) Oracle.
+При необходимости можно подключить несколько дисков и увеличить производительность базы данных, установив систему автоматического управления хранением Oracle (Oracle Automatic Storage Management, ASM).
 
-## <a name="applications-on-oracle-linux-and-weblogic-server"></a>Приложения на Oracle Linux и сервере серверной логической логики
+## <a name="weblogic-server-with-azure-service-integrations"></a>Интеграция WebLogic Server со службами Azure
 
-Запускайте корпоративные приложения в Azure в поддерживаемых операционных системах Oracle. В Azure Marketplace доступны следующие образы:
+Выбирайте из множества приложений Azure для WebLogic Server, чтобы быстрее пройти свою дорогу в облака.  Доступны несколько предварительно настроенных интеграций со службами Azure, включая базу данных, Шлюз приложений Azure и Azure Active Directory.
 
-* Сервер 12.1.2 для Oracle.
+## <a name="applications-on-oracle-linux-and-weblogic-server"></a>Приложения на Oracle Linux и WebLogic Server
 
-* Oracle Linux с неповрежденным ядром Enterprise (UEK) 6,8, 6,9, 6,10, 7,3, 7,4, 7,5 и 7,6 
+Запускайте корпоративные приложения в Azure на поддерживаемых операционных системах Oracle. Следующие образы виртуальных машин доступны в Azure Marketplace:
 
-## <a name="high-availability-and-disaster-recovery-options"></a>Параметры высокого уровня доступности и аварийного восстановления
+* Oracle WebLogic Server 12.1.2
 
-* Настройте [Oracle Data Guard](https://docs.oracle.com/cd/B19306_01/server.102/b14239/concepts.htm#g1049956), [Active Data Guard с фсфо](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/dgbkr/index.html), [сегментированием](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/admin/sharding-overview.html) или [золотым шлюзом](https://www.oracle.com/middleware/technologies/goldengate.html) в инфраструктуре Azure в сочетании с [зоны доступности](../../../availability-zones/az-overview.md) для обеспечения высокой доступности в регионе. Вы также можете настроить эти конфигурации в нескольких регионах Azure для повышения доступности и аварийного восстановления.
+* Oracle Linux с ядром Unbreakable Enterprise Kernel (UEK) 6.8, 6.9, 6.10, 7.3, 7.4, 7.5 и 7.6 
 
-* Используйте [Azure Site Recovery](../../../site-recovery/site-recovery-overview.md) , чтобы управлять аварийным восстановлением для виртуальных машин Oracle Linux и локальных или физических серверов, а также осуществлять управление ими. 
+## <a name="high-availability-and-disaster-recovery-options"></a>Высокая доступность и аварийное восстановление
 
-* Включите кластеры реальных приложений (RAC) Oracle в Azure с помощью [решения VMware для Azure](https://docs.microsoft.com/azure/vmware-cloudsimple/oracle-real-application-clusters/) или [FlashGrid скиклустер](https://www.flashgrid.io/oracle-rac-in-azure/).
+* Настройте [Oracle Data Guard](https://docs.oracle.com/cd/B19306_01/server.102/b14239/concepts.htm#g1049956), [Active Data Guard с FSFO](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/dgbkr/index.html), [Sharding](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/admin/sharding-overview.html) или [Golden Gate](https://www.oracle.com/middleware/technologies/goldengate.html) в инфраструктуре Azure в сочетании с [Зонами доступности](../../../availability-zones/az-overview.md) для обеспечения высокой доступности внутри региона. Вы также можете включить в эти конфигурации несколько регионов Azure для повышения доступности и расширения возможностей аварийного восстановления.
 
-## <a name="backup-oracle-workloads"></a>Резервные рабочие нагрузки Oracle
+* Используйте [Azure Site Recovery](../../../site-recovery/site-recovery-overview.md) для оркестрации и управления аварийным восстановлением виртуальных машин Oracle Linux в Azure и своих локальных или физических серверов. 
 
-* Резервное копирование виртуальных машин Oracle с помощью [Azure Backup](https://docs.microsoft.com/azure/backup/backup-overview)
+* Включите Oracle Real Application Clusters (RAC) в Azure, используя [решение Azure VMware](https://docs.microsoft.com/azure/vmware-cloudsimple/oracle-real-application-clusters/) или [FlashGrid SkyCluster](https://www.flashgrid.io/oracle-rac-in-azure/).
 
-* Создайте резервную копию Oracle Database с помощью Oracle RMAN и, при необходимости, используйте [предохранитель BLOB-объекта Azure](https://docs.microsoft.com/azure/storage/blobs/storage-how-to-mount-container-linux) , чтобы подключить [высокоредудантную учетную запись хранилища больших двоичных объектов Azure](https://docs.microsoft.com/azure/storage/common/storage-redundancy) и записать в нее резервные копии RMAN для повышения устойчивости.
+## <a name="backup-oracle-workloads"></a>Резервное копирование рабочих нагрузок Oracle
+
+* Выполняйте резервное копирование виртуальных машин Oracle с помощью [Azure Backup](https://docs.microsoft.com/azure/backup/backup-overview)
+
+* Выполняйте резервное копирование Oracle Database при помощи Oracle RMAN. Для повышенной надежности подключите [высокоизбыточное хранилище BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/common/storage-redundancy), используя [Azure Blob Fuse](https://docs.microsoft.com/azure/storage/blobs/storage-how-to-mount-container-linux), и запишите туда резервные копии, созданные RMAN.
 
 ## <a name="integration-of-azure-with-oci"></a>Интеграция Azure с OCI
 
-Запускайте приложения Oracle в инфраструктуре Azure, подключенные к серверным базам данных в облачной инфраструктуре Oracle (OCI). Это решение использует следующие возможности: 
+Запускайте приложения Oracle в инфраструктуре Azure, подключенной к серверным базам данных в облачной инфраструктуре Oracle (Oracle Cloud Infrastructure, OCI). Это решение предоставляет следующие возможности. 
 
-* **Сети между облаками** . Используйте прямое соединение между Azure ExpressRoute и Oracle фастконнект для установки соединений с высокой пропускной способностью, частными и низкой задержкой между приложением и уровнем базы данных.
-* **Интегрированная идентификация** . Настройте федеративные удостоверения между Azure AD и Oracle идкс, чтобы создать единый источник удостоверений для решений. Включите единый вход для управления ресурсами в OCI и Azure.
+* **Сетевые соединения между облаками** — используйте прямое взаимодействие между Azure ExpressRoute и Oracle FastConnect, чтобы установить конфиденциальное соединение с высокой пропускной способностью и низкой задержкой между приложением и уровнем базы данных.
+* **Интегрированная идентификация** — настройте федеративные удостоверения между Azure AD и Oracle IDCS, чтобы создать единый источник удостоверений для обоих решений. Включите единый вход для управления ресурсами в OCI и Azure.
 
 ### <a name="deploy-oracle-applications-on-azure"></a>Развертывание приложений Oracle в Azure
 
-Используйте шаблоны terraform для настройки инфраструктуры Azure и установки приложений Oracle. 
+Используйте шаблоны Terraform для настройки инфраструктуры Azure и установки приложений Oracle. 
 
 > [!IMPORTANT]
-> Oracle будет сертифицировать эти приложения для запуска в Azure при использовании решения Azure/Oracle Cloud Interconnect с 2020 мая.
+> К маю 2020 г. следующие приложения будут сертифицированы Oracle для запуска в Azure при использовании соединения между облаками Azure и Oracle Cloud:
 
-* Набор E-Business
+* E-Business Suite
 * JD Edwards EnterpriseOne
 * PeopleSoft
-* Розничные приложения Oracle
+* Приложения Oracle Retail
 * Oracle Hyperion Financial Management
 
-Также развертывайте пользовательские приложения в Azure, которые подключаются к OCI и другим службам Azure.
+Развертывайте в Azure также пользовательские приложения, которые подключаются к OCI и службам Azure.
 
-### <a name="set-up-oracle-databases-in-oci"></a>Настройка баз данных Oracle в OCI
+### <a name="set-up-oracle-databases-in-oci"></a>Размещение баз данных Oracle в OCI
 
-Используйте Oracle Database облачные службы (автономная база данных, RAC, Ексадата, DBaaS, один узел) в сочетании с приложениями Oracle, работающими в Azure. Дополнительные сведения о [параметрах базы данных OCI](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm). 
+Используйте облачные службы баз данных Oracle Database Cloud Services (Autonomous Database, RAC, Exadata, DBaaS, Single Node) в сочетании с приложениями Oracle, работающими в Azure. Дополнительные сведения о [вариантах размещения баз данных в OCI](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm). 
  
 
 ## <a name="licensing"></a>Лицензирование
 
-Развертывание приложений Oracle в Azure основано на модели "использование собственной лицензии". Предполагается, что вы правильно лицензированы для использования программного обеспечения Oracle и у вас есть действующее соглашение о поддержке для Oracle. Oracle гарантирует перемещение лицензий из локальной среды в Azure. См. раздел [часто задаваемые вопросы об](https://www.oracle.com/cloud/technologies/oracle-azure-faq.html)Oracle и Azure.
+Развертывание приложений Oracle в Azure основано на модели "с использованием собственной лицензии". Вы должны иметь соответствующую лицензию на использование программного обеспечения Oracle, а также соглашение о текущей поддержке. Oracle гарантирует перемещение лицензий из локальной среды в Azure. См. раздел [вопросы и ответы](https://www.oracle.com/cloud/technologies/oracle-azure-faq.html) по сотрудничеству Oracle и Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о развертывании [образов виртуальных машин Oracle](oracle-vm-solutions.md) в инфраструктуре Azure.
+* Узнайте больше о [приложениях Azure для WebLogic Server](oracle-weblogic.md) и поддерживаемых ими интеграциях со службами Azure.
 
-* Узнайте больше о том, как [присоединиться к Azure с помощью OCI](oracle-oci-overview.md).
+* Узнайте больше о развертывании [образов виртуальных машин Oracle](oracle-vm-solutions.md) в инфраструктуре Azure.
 
-* Ознакомьтесь с [обзорным сеансом Oracle в Azure](https://myignite.techcommunity.microsoft.com/sessions/82915) от Ignite 2019. 
+* Узнайте больше о том, как [подключить Azure к OCI](oracle-oci-overview.md).
+
+* Ознакомьтесь с [обзорной сессией об Oracle в Azure](https://myignite.techcommunity.microsoft.com/sessions/82915), записанной на Ignite 2019. 

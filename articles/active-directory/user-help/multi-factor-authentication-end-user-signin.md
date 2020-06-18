@@ -1,6 +1,6 @@
 ---
-title: Вход с использованием рабочей или учебной учетной записи Azure AD с помощью проверки подлинности
-description: Узнайте, как войти в рабочую или учебную учетную запись с помощью различных методов двухфакторной проверки подлинности.
+title: Вход в систему с проверкой подлинности по рабочей или учебной учетной записи — Azure AD
+description: Узнайте, как войти в рабочую или учебную учетную запись с использованием различных методов двухфакторной проверки.
 services: active-directory
 author: curtand
 manager: daveba
@@ -8,19 +8,19 @@ ms.assetid: b310b762-471b-4b26-887a-a321c9e81d46
 ms.workload: identity
 ms.service: active-directory
 ms.subservice: user-help
-ms.topic: conceptual
+ms.topic: end-user-help
 ms.date: 04/02/2017
 ms.author: curtand
 ms.reviewer: librown
 ms.custom: end-user, seo-update-azuread-jan
-ms.openlocfilehash: 33cf9e284d2206ea497af7a5da7c3cf4a890cc87
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: daa2cfae4ed8371e245d12a9f805fe07f31a6d76
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77064093"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83742957"
 ---
-# <a name="sign-in-to-your-work-or-school-account-using-your-two-factor-verification-method"></a>Вход в рабочую или учебную учетную запись с помощью метода двухфакторной проверки подлинности
+# <a name="sign-in-to-your-work-or-school-account-using-your-two-factor-verification-method"></a>Вход в рабочую или учебную учетную запись с использованием вашего метода двухфакторной проверки
 
 > [!NOTE]
 > В этой статье рассматривается стандартная процедура входа. Если у вас возникают проблемы со входом в систему см. статью [об устранении неполадок при двухфакторной проверке подлинности](multi-factor-authentication-end-user-troubleshoot.md).
@@ -32,7 +32,7 @@ ms.locfileid: "77064093"
 | --- |
 | [С помощью звонка на мобильный или рабочий телефон](#signing-in-with-a-phone-call) |
 | [С помощью текстового сообщения на мобильный телефон](#signing-in-with-a-text-message)
-| [С помощью уведомлений из приложения Microsoft Authenticator](#to-sign-in-with-a-notification-from-the-microsoft-authenticator-app) |
+| [Вход с помощью уведомлений Microsoft Authenticator](#to-sign-in-with-a-notification-from-the-microsoft-authenticator-app) |
 | С помощью кодов проверки приложения Microsoft Authenticator |
 | [С помощью другого метода, так как я не могу использовать прямо сейчас основной вариант](#signing-in-with-an-alternate-method) |
 
@@ -82,7 +82,7 @@ ms.locfileid: "77064093"
 
    ![Использовать другой метод](./media/multi-factor-authentication-end-user-signin/alt.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Если у вас возникли проблемы при входе в систему с помощью двухфакторной проверки подлинности, см. статью [Проблемы с использованием Многофакторной идентификации Azure](multi-factor-authentication-end-user-troubleshoot.md).
 
 - Узнайте, как [управлять параметрами двухфакторной проверки подлинности](multi-factor-authentication-end-user-manage-settings.md).

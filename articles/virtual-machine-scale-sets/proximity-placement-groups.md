@@ -1,36 +1,36 @@
 ---
-title: Предварительная версия групп размещения с учетом расположения для масштабируемых наборов виртуальных машин
-description: Сведения о создании и использовании групп размещения с учетом расположения для масштабируемых наборов виртуальных машин Windows в Azure.
-author: ju-shim
-ms.author: jushiman
+title: Предварительная версия групп размещения близкого взаимодействия для масштабируемых наборов виртуальных машин
+description: Сведения о создании и использовании групп размещения близкого взаимодействия для масштабируемых наборов виртуальных машин Windows в Azure.
+author: cynthn
+ms.author: cynthn
 ms.topic: how-to
 ms.service: virtual-machine-scale-sets
 ms.subservice: availability
 ms.date: 07/01/2019
-ms.reviewer: mimckitt
+ms.reviewer: zivr
 ms.custom: mimckitt
-ms.openlocfilehash: 18cb1ae3e549995d7b4732025906329bc609f360
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.openlocfilehash: 8e455d4d016f97a466838c07fc7af2422f72cc00
+ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83124352"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83727103"
 ---
-# <a name="preview-creating-and-using-proximity-placement-groups-using-powershell"></a>Предварительная версия: создание и использование групп размещения с помощью PowerShell
+# <a name="preview-creating-and-using-proximity-placement-groups-using-powershell"></a>Предварительный просмотр: Создание и использование групп размещения близкого взаимодействия с помощью PowerShell
 
-Чтобы виртуальные машины максимально близки к максимально возможной задержке, необходимо развернуть масштабируемый набор в [группе размещения](co-location.md#preview-proximity-placement-groups)с учетом расположения.
+Чтобы виртуальные машины были максимально близки для обеспечения наименьшей задержки, необходимо развернуть масштабируемый набор в [группе размещения близкого взаимодействия](co-location.md#preview-proximity-placement-groups).
 
-Группа размещения с учетом расположения — это логическая группировка, используемая для того, чтобы ресурсы вычислений Azure физически размещались близко друг к другу. Группы размещения с учетом расположения удобны для рабочих нагрузок, где требуется низкая задержка.
+Группа размещения близкого взаимодействия — это логическая группировка, используемая для того, чтобы ресурсы вычислений Azure физически размещались близко друг к другу. Группа размещения близкого взаимодействия удобны для рабочих нагрузок, где требуется низкая задержка.
 
 > [!IMPORTANT]
-> Группы размещения близкого взаимодействия в настоящее время находятся в общедоступной предварительной версии.
+> В настоящее время доступна общедоступная предварительная версия группы размещения близкого взаимодействия.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 >
-> Группы размещения с учетом расположения недоступны в этих регионах во время предварительной версии: **Восточная Япония**, **Восточная Австралия** и **Индии Central**.
+> Предварительная версия групп размещения близкого взаимодействия недоступна в следующих регионах: **Восточная Япония**, **Восточная Австралия** и **Центральная Индия**.
 
 
 ## <a name="create-a-proximity-placement-group"></a>Создание группы размещения близкого взаимодействия
-Создайте группу размещения с учетом расположения с помощью командлета [New-азпроксимитиплацементграуп](https://docs.microsoft.com/powershell/module/az.compute/new-azproximityplacementgroup) . 
+Создайте группу размещения близкого взаимодействия с помощью командлета [New-AzProximityPlacementGroup](https://docs.microsoft.com/powershell/module/az.compute/new-azproximityplacementgroup). 
 
 ```azurepowershell-interactive
 $resourceGroup = "myPPGResourceGroup"
@@ -44,9 +44,9 @@ $ppg = New-AzProximityPlacementGroup `
    -ProximityPlacementGroupType Standard
 ```
 
-## <a name="list-proximity-placement-groups"></a>Список групп размещения с учетом расположения
+## <a name="list-proximity-placement-groups"></a>Перечисление групп размещения близкого взаимодействия
 
-Список всех групп размещения с учетом расположения можно получить с помощью командлета [Get-азпроксимитиплацементграуп](/powershell/module/az.compute/get-azproximityplacementgroup) .
+Список всех групп размещения с учетом расположения можно получить с помощью командлета [Get-AzProximityPlacementGroup](/powershell/module/az.compute/get-azproximityplacementgroup).
 
 ```azurepowershell-interactive
 Get-AzProximityPlacementGroup
@@ -55,7 +55,7 @@ Get-AzProximityPlacementGroup
 
 ## <a name="create-a-scale-set"></a>Создание масштабируемого набора
 
-Создайте шкалу в группе размещения с использованием `-ProximityPlacementGroup $ppg.Id` для ссылки на идентификатор группы размещения с учетом расположения при использовании командлета [New-азвмсс](https://docs.microsoft.com/powershell/module/az.compute/new-azvmss) для создания масштабируемого набора.
+Создайте масштаб в группе размещения близкого взаимодействия с помощью `-ProximityPlacementGroup $ppg.Id` для ссылки на идентификатор группы размещения близкого взаимодействия при использовании [New-AzVMSS](https://docs.microsoft.com/powershell/module/az.compute/new-azvmss) для создания масштабируемого набора.
 
 ```azurepowershell-interactive
 $scalesetName = "myVM"
@@ -72,7 +72,7 @@ New-AzVmss `
   -ProximityPlacementGroup $ppg.Id
 ```
 
-Экземпляр можно просмотреть в группе размещения с помощью команды [Get-азпроксимитиплацементграуп](/powershell/module/az.compute/get-azproximityplacementgroup).
+Экземпляр можно просмотреть в группе размещения с помощью [Get-AzProximityPlacementGroup](/powershell/module/az.compute/get-azproximityplacementgroup).
 
 ```azurepowershell-interactive
   Get-AzProximityPlacementGroup `
@@ -83,4 +83,4 @@ New-AzVmss `
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Можно также использовать [Azure CLI](../virtual-machines/linux/proximity-placement-groups.md) для создания групп размещения с учетом расположения.
+Можно также использовать [Azure CLI](../virtual-machines/linux/proximity-placement-groups.md) для создания групп размещения близкого взаимодействия.

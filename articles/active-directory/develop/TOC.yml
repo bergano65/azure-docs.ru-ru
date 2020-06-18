@@ -305,7 +305,7 @@
         - name: iOS и macOS
           items:
             - name: "Интеграция с Azure\_AD\_B2C"
-              href: 'config-authority.md#b2c'
+              href: config-authority.md#b2c
             - name: Миграция в MSAL.iOS или MSAL.macOS
               href: migrate-objc-adal-msal.md
             - name: Режим совместной работы с устройством iOS
@@ -376,6 +376,11 @@
               displayName: 'shared device mode, firstline worker, frontline worker, flw'
             - name: Обработка изменений свойства SameSite в файлах cookie в браузере Chrome
               href: howto-handle-samesite-cookie-changes-chrome-browser.md
+            - name: "Области для веб-API, которые принимают маркеры версии\_1.0"
+              href: msal-v1-app-scopes.md
+            - name: Перенос приложений из ADAL в MSAL
+              href: msal-migration.md
+              displayName: migration
     - name: Протоколы проверки подлинности
       displayName: Auth protocol
       items:

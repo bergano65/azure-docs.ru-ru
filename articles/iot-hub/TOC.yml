@@ -379,6 +379,8 @@
       items:
         - name: Отключение устройств
           href: iot-hub-troubleshoot-connectivity.md
+        - name: Устранение неполадок маршрутизации сообщений
+          href: troubleshoot-message-routing.md
         - name: Решение проблем
           items:
             - name: 400027 ConnectionForcefullyClosedOnNewConnection
@@ -416,7 +418,7 @@
     - name: Azure CLI
       href: /cli/azure/iot
     - name: Azure PowerShell
-      href: '/powershell/module/az.iothub#iot'
+      href: /powershell/module/az.iothub#iot
     - name: .NET (устройство)
       href: /dotnet/api/microsoft.azure.devices.client
     - name: .NET (служба)
@@ -474,12 +476,12 @@
     - name: Пакеты SDK для Центра Интернета вещей Azure
       items:
         - name: Пакеты SDK для служб IoT
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
         - name: Пакеты SDK для устройств Интернета вещей
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
     - name: Примеры для Интернета вещей Azure
       items:
-        - name: 'C# (.NET)'
+        - name: C# (.NET)
           href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-csharp/'
         - name: Node.js
           href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-node/'

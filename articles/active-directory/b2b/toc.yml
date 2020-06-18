@@ -23,6 +23,8 @@
           href: b2b-tutorial-require-mfa.md
     - name: Примеры
       items:
+        - name: Примеры для самостоятельной регистрации
+          href: code-samples-self-service-sign-up.md
         - name: Примеры кода и сценариев Azure PowerShell
           href: code-samples.md
     - name: Основные понятия

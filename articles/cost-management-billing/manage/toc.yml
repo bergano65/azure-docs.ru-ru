@@ -41,10 +41,10 @@
           href: mca-section-invoice.md
         - name: Настройка учетной записи выставления счетов для Клиентского соглашения Майкрософт
           href: mca-setup-account.md
-        - name: "Регистрация с помощью учетной записи Office\_365"
-          href: office-365-account-for-azure-subscription.md
-        - name: Оформление подписки на Office 365 с помощью учетной записи Azure
-          href: azure-account-for-office-365-subscription.md
+        - name: "Регистрация с помощью учетной записи Microsoft\_365"
+          href: microsoft-365-account-for-azure-subscription.md
+        - name: "Регистрация подписки Microsoft\_365 с помощью учетной записи Azure"
+          href: azure-account-for-microsoft-365-subscription.md
         - name: Оплата с проведением строгой проверки подлинности клиентов
           href: open-banking-strong-customer-authentication.md
     - name: Администрирование подписок

@@ -99,6 +99,8 @@
           href: unresponsive-vm-apply-windows-update.md
         - name: При применении групповой политики виртуальная машина не отвечает
           href: unresponsive-vm-apply-group-policy.md
+        - name: При применении политики безопасности виртуальная машина не отвечает
+          href: unresponsive-vm-apply-security-policy.md
 - name: Не удается подключиться к виртуальной машине
   items:
     - name: RDP

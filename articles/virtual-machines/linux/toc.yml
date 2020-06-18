@@ -56,12 +56,8 @@
       href: tutorial-azure-devops-blue-green-strategy.md
     - name: 15d. Использование CI/CD с Azure Pipelines (YAML)
       href: tutorial-build-deploy-azure-pipelines.md
-    - name: "16а.\_Создание стека LAMP"
+    - name: "16.\_Создание стека LAMP"
       href: tutorial-lamp-stack.md
-    - name: "16b.\_Создание стека LEMP"
-      href: tutorial-lemp-stack.md
-    - name: "16c.\_Создание стека MEAN"
-      href: tutorial-mean-stack.md
     - name: "17.\_Защита веб-сервера с помощью SSL"
       href: tutorial-secure-web-server.md
 - name: Примеры

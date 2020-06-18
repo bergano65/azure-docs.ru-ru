@@ -1,5 +1,5 @@
 ---
-title: Преобразование данных с помощью действия Hadoop MapReduce
+title: Преобразование данных с помощью действия MapReduce для Hadoop
 description: Узнайте, как обрабатывать данные путем выполнения программ Hadoop MapReduce в кластере Azure HDInsight из фабрики данных Azure.
 services: data-factory
 ms.service: data-factory
@@ -9,13 +9,13 @@ author: nabhishek
 ms.author: abnarain
 manager: shwang
 ms.custom: seo-lt-2019
-ms.date: 01/16/2018
-ms.openlocfilehash: e3060f7e36f9e2696194da12c3c800555103d271
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 05/08/2020
+ms.openlocfilehash: 48afff71d4b5241ede1783a270658e56e4b8c242
+ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81418921"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83849252"
 ---
 # <a name="transform-data-using-hadoop-mapreduce-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hadoop MapReduce в фабрике данных Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "81418921"
 
 Действие MapReduce HDInsight в [конвейере](concepts-pipelines-activities.md) Фабрики данных вызывает программу MapReduce для [вашего](compute-linked-services.md#azure-hdinsight-linked-service) кластера HDInsight или кластера HDInsight [по запросу](compute-linked-services.md#azure-hdinsight-on-demand-linked-service). Данная статья основана на материалах статьи о [действиях преобразования данных](transform-data.md) , в которой приведен общий обзор преобразования данных и список поддерживаемых действий преобразования.
 
-Если вы не знакомы с фабрикой данных Azure, сначала ознакомьтесь со статьей [Введение в фабрику данных Azure](introduction.md) и руководством [Преобразование данных в облаке с помощью действия Spark в фабрике данных Azure](tutorial-transform-data-spark-powershell.md).
+Если вы не знакомы с Фабрикой данных Azure, сначала ознакомьтесь со статьей [Введение в фабрику данных Azure](introduction.md) и руководством [Преобразование данных в облаке с помощью действия Spark в фабрике данных Azure](tutorial-transform-data-spark-powershell.md) перед чтением этой статьи.
 
 Дополнительные сведения о выполнении скриптов Pig и Hive в кластере HDInsight из конвейера с помощью действий Pig и Hive в HDInsight см. в статьях о действии [Pig](transform-data-using-hadoop-pig.md) и [Hive](transform-data-using-hadoop-hive.md).
 
@@ -62,17 +62,17 @@ ms.locfileid: "81418921"
 
 ## <a name="syntax-details"></a>Сведения о синтаксисе
 
-| Свойство          | Описание                              | Обязательный |
+| Свойство          | Описание                              | Обязательно |
 | ----------------- | ---------------------------------------- | -------- |
 | name              | Имя действия.                     | Да      |
 | description       | Текст, описывающий, для чего используется действие | Нет       |
 | type              | Для действия MapReduce Activity используется тип действия HDinsightMapReduce. | Да      |
 | linkedServiceName | Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md). | Да      |
 | className         | Имя класса для выполнения.         | Да      |
-| jarLinkedService  | Ссылки на связанные службы хранилища Azure, используемые для хранения файлов Jar. Если не указать эту связанную службу, будет использоваться связанная служба хранилища Azure, определенная в связанной службе HDInsight. | Нет       |
+| jarLinkedService  | Ссылки на связанные службы хранилища Azure, используемые для хранения файлов Jar. Здесь поддерживаются только связанные службы **[Хранилище BLOB-объектов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage)** и **[ADLS 2-го поколения](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage)** . Если не указать эту связанную службу, будет использоваться связанная служба хранилища Azure, определенная в связанной службе HDInsight. | Нет       |
 | jarFilePath       | Укажите путь к файлам Jar, которые хранятся в службе хранилища Azure, на который ссылается jarLinkedService. В имени файла учитывается регистр знаков. | Да      |
 | jarlibs           | Массив строк пути к файлам библиотеки Jar, на которые ссылается задание, хранящееся в службе хранилища Azure, которая, в свою очередь, определена в свойстве jarLinkedService. В имени файла учитывается регистр знаков. | Нет       |
-| getDebugInfo      | Указывает, когда файлы журнала копируются в службу хранилища Azure, используемую кластером HDInsight или определенную jarLinkedService. Допустимые значения: None, Always или Failure. Значение по умолчанию: None. | Нет       |
+| getDebugInfo      | Указывает, когда файлы журнала копируются в службу хранилища Azure, используемую кластером HDInsight или определенную jarLinkedService. Допустимые значения: None (никогда), Always (всегда) или Failure (в случае сбоя). Значение по умолчанию: Нет. | Нет       |
 | аргументы         | Указывает массив аргументов для задания Hadoop. Аргументы передаются в качестве аргументов командной строки в каждую задачу. | Нет       |
 | defines           | Параметры в виде пары "ключ — значение", ссылки на которые указываются в скрипте Hive. | Нет       |
 
@@ -112,9 +112,9 @@ ms.locfileid: "81418921"
     }
 }
 ```
-Вы можете указать необходимые аргументы для программы MapReduce в разделе **arguments**. Во время выполнения вы увидите несколько дополнительных аргументов (например, mapreduce.job.tags) платформы MapReduce. Чтобы отличать свои аргументы от аргументов MapReduce, вы можете использовать параметр и значение в качестве аргументов, как показано в следующем примере (-s, --input, --output и т. д — параметры, за которыми сразу следуют их значения).
+Вы можете указать необходимые аргументы для программы MapReduce в разделе **arguments**. Во время выполнения вы увидите несколько дополнительных аргументов (например, mapreduce.job.tags) платформы MapReduce. Чтобы отличать свои аргументы от аргументов MapReduce, вы можете использовать параметр и значение в качестве аргументов, как показано в следующем примере (-s, --input, --output и т. д. — параметры, за которыми сразу следуют их значения).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими ссылками, в которых описаны способы преобразования данных другими способами:
 
 * [Действие U-SQL](transform-data-using-data-lake-analytics.md)
@@ -123,5 +123,5 @@ ms.locfileid: "81418921"
 * [Действие потоковой передачи Hadoop](transform-data-using-hadoop-streaming.md)
 * [Действие Spark](transform-data-using-spark.md)
 * [Настраиваемое действие .NET](transform-data-using-dotnet-custom-activity.md)
-* [Действие выполнения пакета Машинное обучение](transform-data-using-machine-learning.md)
+* [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](transform-data-using-machine-learning.md)
 * [Действие хранимой процедуры](transform-data-using-stored-procedure.md)

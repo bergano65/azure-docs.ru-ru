@@ -8,16 +8,16 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 03/03/2020
 ms.author: victorh
-ms.openlocfilehash: 92fed35c828398c048d704e1ec9b537904939967
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 56c7ddd6eda021c802eb256c62fcae680d573b69
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78272939"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83681363"
 ---
 # <a name="create-an-application-gateway-with-internal-redirection-using-azure-powershell"></a>Создание шлюза приложений с перенаправлением внутреннего трафика с помощью Azure PowerShell
 
-С помощью Azure PowerShell можно настроить [перенаправление веб-трафика](multiple-site-overview.md) при создании [шлюза приложений](overview.md). В этом руководстве вы определите внутренний пул с использованием масштабируемого набора виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика в соответствующий пул. В этом учебнике предполагается, что вы владеете несколькими доменами и в них используются примеры *www\.contoso.com* и *www\.contoso.org*.
+С помощью Azure PowerShell можно настроить [перенаправление веб-трафика](multiple-site-overview.md) при создании [шлюза приложений](overview.md). В этом руководстве вы определите внутренний пул с использованием масштабируемого набора виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика в соответствующий пул. В этом руководстве предполагается, что вам принадлежат несколько доменов. Для примера здесь используются домены *www\.contoso.com* и *www\.contoso.org*.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -92,7 +92,7 @@ $frontendPort = New-AzApplicationGatewayFrontendPort `
 
 ### <a name="create-the-backend-pool-and-settings"></a>Создание серверного пула и настройка параметров
 
-Создайте внутренний пул с именем *contosoPool* для шлюза приложений с помощью [New-азаппликатионгатевайбаккендаддресспул](/powershell/module/az.network/new-azapplicationgatewaybackendaddresspool). Настройте параметры для серверного пула, используя командлет [New-AzApplicationGatewayBackendHttpSettings](/powershell/module/az.network/new-azapplicationgatewaybackendhttpsetting).
+Создайте внутренний пул *contosoPool* для шлюза приложений с помощью командлета [New-AzApplicationGatewayBackendAddressPool](/powershell/module/az.network/new-azapplicationgatewaybackendaddresspool). Настройте параметры для серверного пула, используя командлет [New-AzApplicationGatewayBackendHttpSettings](/powershell/module/az.network/new-azapplicationgatewaybackendhttpsetting).
 
 ```azurepowershell-interactive
 $contosoPool = New-AzApplicationGatewayBackendAddressPool `
@@ -107,9 +107,9 @@ $poolSettings = New-AzApplicationGatewayBackendHttpSettings `
 
 ### <a name="create-the-first-listener-and-rule"></a>Создание первого прослушивателя и правила
 
-Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этом руководстве создаются два прослушивателя для двух ваших доменов. В этом примере прослушиватели создаются для доменов *www\.contoso.com* и *www\.contoso.org*.
+Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этом руководстве создаются два прослушивателя для двух ваших доменов. В этом примере создаются прослушиватели для доменов *www\.contoso.com* и *www\.contoso.org*.
 
-Создайте первый прослушиватель с именем *контосокомлистенер* , используя [New-азаппликатионгатевайхттплистенер](/powershell/module/az.network/new-azapplicationgatewayhttplistener) с внешней конфигурацией и интерфейсным портом, созданными ранее. Правило требуется для того, чтобы указать прослушивателю, какой внутренний пул использовать для входящего трафика. Создайте базовое правило с именем *contosoComRule* , используя [New-азаппликатионгатевайрекуестраутингруле](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule).
+Создайте первый прослушиватель *contosoComListener*, используя командлет [New-AzApplicationGatewayHttpListener](/powershell/module/az.network/new-azapplicationgatewayhttplistener), с конфигурацией внешнего интерфейса и интерфейсным портом, созданными ранее. Правило требуется для того, чтобы указать прослушивателю, какой внутренний пул использовать для входящего трафика. Создайте базовое правило *contosoComRule* с помощью командлета [New-AzApplicationGatewayRequestRoutingRule](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule).
 
 ```azurepowershell-interactive
 $contosoComlistener = New-AzApplicationGatewayHttpListener `
@@ -151,7 +151,7 @@ $appgw = New-AzApplicationGateway `
 
 ### <a name="add-the-second-listener"></a>Добавление второго прослушивателя
 
-Добавьте прослушиватель с именем *контосурглистенер* , необходимый для перенаправления трафика с помощью [Add-азаппликатионгатевайхттплистенер](/powershell/module/az.network/add-azapplicationgatewayhttplistener).
+Добавьте прослушиватель *contosoOrgListener*, необходимый для перенаправления трафика, при помощи командлета [Add-AzApplicationGatewayHttpListener](/powershell/module/az.network/add-azapplicationgatewayhttplistener).
 
 ```azurepowershell-interactive
 $appgw = Get-AzApplicationGateway `
@@ -199,7 +199,7 @@ Set-AzApplicationGateway -ApplicationGateway $appgw
 
 ### <a name="add-the-second-routing-rule"></a>Добавление второго правила маршрутизации
 
-Затем можно связать конфигурацию перенаправления с новым правилом с именем *контосургруле* , используя [Add-азаппликатионгатевайрекуестраутингруле](/powershell/module/az.network/add-azapplicationgatewayrequestroutingrule).
+Вы можете привязать конфигурацию перенаправления к созданному правилу *contosoOrgRule*, выполнив командлет [Add-AzApplicationGatewayRequestRoutingRule](/powershell/module/az.network/add-azapplicationgatewayrequestroutingrule).
 
 ```azurepowershell-interactive
 $appgw = Get-AzApplicationGateway `
@@ -292,13 +292,13 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-В адресной строке браузера введите имя домена. Например, [https://www.contoso.com](https://www.contoso.com).
+В адресной строке браузера введите имя домена. Например, `https://www.contoso.com`.
 
 ![Проверка сайта contoso в шлюзе приложений](./media/redirect-internal-site-powershell/application-gateway-iistest.png)
 
-Измените адрес на другой домен. например https://www.contoso.org , вы должны увидеть, что трафик был перенаправлен обратно в прослушиватель для www\.contoso.com.
+Измените адрес на другой домен, например `https://www.contoso.org`. Вы должны увидеть, что трафик перенаправляется в прослушиватель для www\.contoso.com.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как выполнять следующие задачи:
 

@@ -1,6 +1,6 @@
 ---
-title: Настройка и управление политиками неизменности для хранилища BLOB-объектов в службе хранилища Azure
-description: Узнайте, как использовать ЧЕРВи (однократная запись, чтение и поддержка) для хранения больших двоичных объектов (объектов) для хранения данных в неизменяемом состоянии, не допускающем изменения, в течение указанного интервала.
+title: Настройка и администрирование политик неизменяемости для хранилища BLOB-объектов — служба хранилища Azure
+description: Узнайте, как использовать поддержку WORM для хранения больших двоичных объектов, что позволяет хранить данные в нестираемом и неизменяемом состоянии на протяжении определенного интервала времени.
 services: storage
 author: tamram
 ms.service: storage
@@ -8,26 +8,26 @@ ms.topic: conceptual
 ms.date: 11/26/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 05a155584f0cb69191883cb82b3db0af435ccc12
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 539154135c35e034c889294d911fb53b3d45daa4
+ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78970104"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83771015"
 ---
-# <a name="set-and-manage-immutability-policies-for-blob-storage"></a>Настройка политик неизменности для хранилища BLOB-объектов и управление ими
+# <a name="set-and-manage-immutability-policies-for-blob-storage"></a>Настройка и администрирование политик неизменяемости для хранилища BLOB-объектов
 
-Неизменяемое хранилище для хранилища BLOB-объектов Azure позволяет пользователям хранить критически важные для бизнеса объекты данных в ЧЕРВе (однократная запись, считывание из множества). Это состояние делает их нестираемыми и неизменяемыми в течение определенного пользователем интервала времени. В течение интервала хранения большие двоичные объекты можно создавать и читать, но нельзя изменять или удалять. Неизменяемое хранилище доступно для учетных записей общего назначения версии 2 и хранилища BLOB-объектов во всех регионах Azure.
+Функция хранения данных в неизменяемом виде хранилища BLOB-объектов Azure дает пользователям возможность хранить критически важные для бизнеса объекты данных в состоянии WORM. Это состояние делает их нестираемыми и неизменяемыми в течение определенного пользователем интервала времени. В течение периода удержания большие двоичные объекты можно создать и прочитать, но не изменять или удалять. Хранение данных в неизменяемом виде доступно только в учетных записях хранилища BLOB-объектов и общего назначения версии 2 во всех регионах.
 
-В этой статье показано, как задать и управлять политиками неизменности и юридическими удержаниями для данных в хранилище BLOB-объектов с помощью портал Azure, PowerShell или Azure CLI. Дополнительные сведения о неизменяемом хранилище см. [в статье хранение критически важных бизнес-данных с помощью неизменяемого хранилища](storage-blob-immutable-storage.md).
+В этой статье показано, как настроить политики неизменяемости и удержания по юридическим причинам для данных в хранилище BLOB-объектов и администрировать их с помощью портала Azure, PowerShell или Azure CLI. Дополнительные сведения о неизменяемом хранилище см. в статье [Хранение критически важных для бизнеса данных большого двоичного объекта с помощью неизменяемого хранилища](storage-blob-immutable-storage.md).
 
-## <a name="set-retention-policies-and-legal-holds"></a>Настройка политик хранения и юридических удержаний
+## <a name="set-retention-policies-and-legal-holds"></a>Настройка политик хранения и удержаний по юридическим причинам
 
 ### <a name="portal"></a>[Портал](#tab/azure-portal)
 
-1. Создайте новый контейнер или выберите существующий контейнер для хранения BLOB-объектов, которые должны храниться в неизменяемом состоянии. Контейнер должен быть в учетной записи общего назначения версии 2 или хранилища BLOB-объектов.
+1. Создайте новый контейнер или выберите существующий контейнер для хранения BLOB-объектов, которые должны храниться в неизменяемом состоянии. Контейнер должен находиться в учетной записи хранения общего назначения версии 2 или учетной записи хранилища BLOB-объектов.
 
-2. В параметрах контейнера выберите **Политика доступа**. Затем выберите **Добавить политику** в **неизменяемом хранилище BLOB-объектов**.
+2. В параметрах контейнера выберите **Политика доступа**. Затем в разделе **Хранилище неизменяемых BLOB-объектов** нажмите **Добавить политику**.
 
     ![Параметры контейнера на портале](media/storage-blob-immutability-policies-manage/portal-image-1.png)
 
@@ -35,21 +35,21 @@ ms.locfileid: "78970104"
 
     ![Параметр "Хранение с учетом времени", выбранный в разделе типа политики](media/storage-blob-immutability-policies-manage/portal-image-2.png)
 
-4. Введите интервал хранения в днях (допустимые значения: от 1 до 146000 дней).
+4. Введите период удержания в днях (допустимые значения: от 1 до 146 000 дней).
 
     ![Поле "Изменить срок хранения на"](media/storage-blob-immutability-policies-manage/portal-image-5-retention-interval.png)
 
-    Начальное состояние политики разблокируется, что позволяет протестировать функцию и внести изменения в политику перед ее блокировкой. Блокировка политики необходима для обеспечения соответствия нормативным требованиям, таким как SEC 17A-4.
+    Начальное состояние политики разблокировано, что позволяет протестировать функцию и внести изменения в политику перед ее блокировкой. Блокировка политики необходима для обеспечения соответствия требованиям, например SEC 17a-4.
 
-5. Заблокируйте политику. Щелкните правой кнопкой мыши кнопку с многоточием (**...**) и в открывшемся меню появятся дополнительные действия.
+5. Заблокируйте политику. Щелкните правой кнопкой мыши кнопку с многоточием ( **...** ), и появится следующее меню с дополнительными действиями.
 
     ![Параметр "Политика блокировки" в меню](media/storage-blob-immutability-policies-manage/portal-image-4-lock-policy.png)
 
-6. Выберите **блокировать политику** и подтвердите блокировку. Политика заблокирована и не может быть удалена, только расширения для интервала хранения будут разрешены. Удаление и переопределение BLOB-объектов не разрешено. 
+6. Выберите **Блокировать политику** и подтвердите блокировку. После блокировки политику невозможно будет удалить и разрешено будет только продлевать период удержания. Удаление и переопределение BLOB-объектов запрещено. 
 
-    ![Подтвердите "заблокировать политику" в меню.](media/storage-blob-immutability-policies-manage/portal-image-5-lock-policy.png)
+    ![Параметр "Блокировать политику" в меню](media/storage-blob-immutability-policies-manage/portal-image-5-lock-policy.png)
 
-7. Чтобы включить юридические удержания, выберите **Добавить политику**. В раскрывающемся меню выберите **Удержание по юридическим причинам**.
+7. Чтобы включить удержания по юридическим причинам, нажмите кнопку **Добавить политику**. В раскрывающемся меню выберите **Удержание по юридическим причинам**.
 
     ![Параметр в меню "Удержание по юридическим причинам" под полем "Тип политики"](media/storage-blob-immutability-policies-manage/portal-image-legal-hold-selection-7.png)
 
@@ -57,7 +57,7 @@ ms.locfileid: "78970104"
 
     ![Поле "Имя тега" под полем "Тип политики"](media/storage-blob-immutability-policies-manage/portal-image-set-legal-hold-tags.png)
 
-9. Чтобы очистить юридическое удержание, удалите примененный тег "идентификатор юридического удержания".
+9. Чтобы очистить удержание по юридическим причинам, удалите примененный тег идентификатора удержания по юридическим причинам.
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -67,15 +67,15 @@ ms.locfileid: "78970104"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Модуль AZ. Storage поддерживает неизменяемое хранилище.  Чтобы включить эту функцию, сделайте следующее:
+Модуль Az.Storage поддерживает неизменяемое хранилище.  Чтобы включить эту функцию, сделайте следующее:
 
 1. Установите последнюю версию PowerShellGet: `Install-Module PowerShellGet –Repository PSGallery –Force`.
 2. Удалите все предыдущие версии Azure PowerShell.
 3. Установка Azure PowerShell: `Install-Module Az –Repository PSGallery –AllowClobber`.
 
-Пример сценария PowerShell ниже приводится для справки. Он создает учетную запись хранения и контейнер. Затем вы узнаете, как задать и очистить юридические удержания, создать и заблокировать политику хранения на основе времени (также известную как политика неизменности) и продлить интервал хранения.
+Пример сценария PowerShell ниже приводится для справки. Он создает учетную запись хранения и контейнер. Далее в нем показано, как задавать и снимать удержания по юридическим причинам, создавать и блокировать политику хранения на основе времени (известную как неизменяемая политика), а также продлевать период удержания.
 
-Сначала создайте учетную запись хранения Azure:
+Прежде всего создайте учетную запись хранения Azure.
 
 ```powershell
 $resourceGroup = "<Enter your resource group>"
@@ -91,7 +91,7 @@ Register-AzResourceProvider -ProviderNamespace "Microsoft.Storage"
 New-AzResourceGroup -Name $resourceGroup -Location $location
 
 # Create your Azure storage account
-$storageAccount = New-AzStorageAccount -ResourceGroupName $resourceGroup -StorageAccountName `
+$account = New-AzStorageAccount -ResourceGroupName $resourceGroup -StorageAccountName `
     $storageAccount -SkuName Standard_ZRS -Location $location -Kind StorageV2
 
 # Create a new container using the context
@@ -116,10 +116,10 @@ Remove-AzRmStorageContainerLegalHold -ResourceGroupName $resourceGroup `
     -StorageAccountName $storageAccount -Name $container -Tag <tag3>
 ```
 
-Создание или обновление политик неизменности на основе времени:
+Создание или обновление политик неизменяемости на основе времени:
 
 ```powershell
-# Create a time-based immutablity policy
+# Create a time-based immutability policy
 Set-AzRmStorageContainerImmutabilityPolicy -ResourceGroupName $resourceGroup `
     -StorageAccountName $storageAccount -ContainerName $container -ImmutabilityPeriod 10
 ```
@@ -132,7 +132,7 @@ Get-AzRmStorageContainerImmutabilityPolicy -ResourceGroupName $resourceGroup `
     -StorageAccountName $storageAccount -ContainerName $container
 ```
 
-Политики блокировки блокировок (добавить `-Force` , чтобы закрыть запрос):
+Блокировка политик неизменяемости (добавление `-Force` для отклонения запроса):
 
 ```powershell
 # Lock immutability policies
@@ -154,7 +154,7 @@ Set-AzRmStorageContainerImmutabilityPolicy -ImmutabilityPolicy `
     $policy -ImmutabilityPeriod 11 -ExtendPolicy
 ```
 
-Удалите незаблокированную политику неизменности (добавить `-Force` , чтобы закрыть запрос):
+Удаление политики неизменяемости (добавление `-Force` для отклонения запроса):
 
 ```powershell
 # Remove an unlocked immutability policy
@@ -166,11 +166,11 @@ Remove-AzRmStorageContainerImmutabilityPolicy -ImmutabilityPolicy $policy
 
 ---
 
-## <a name="enabling-allow-protected-append-blobs-writes"></a>Включение разрешения "разрешить защищенные добавочные большие двоичные объекты"
+## <a name="enabling-allow-protected-append-blobs-writes"></a>Включение разрешения на запись добавочных больших двоичных объектов
 
 ### <a name="portal"></a>[Портал](#tab/azure-portal)
 
-![Разрешить дополнительные операции записи после добавления](media/storage-blob-immutability-policies-manage/immutable-allow-additional-append-writes.png)
+![Параметр "Разрешить дополнительные добавления"](media/storage-blob-immutability-policies-manage/immutable-allow-additional-append-writes.png)
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -179,7 +179,7 @@ Remove-AzRmStorageContainerImmutabilityPolicy -ImmutabilityPolicy $policy
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```powershell
-# Create an immutablity policy with appends allowed
+# Create an immutability policy with appends allowed
 Set-AzRmStorageContainerImmutabilityPolicy -ResourceGroupName $resourceGroup `
     -StorageAccountName $storageAccount -ContainerName $container -ImmutabilityPeriod 10 -AllowProtectedAppendWrite $true
 ```
@@ -188,4 +188,4 @@ Set-AzRmStorageContainerImmutabilityPolicy -ResourceGroupName $resourceGroup `
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Хранение критически важных для бизнеса данных большого двоичного объекта с неизменяемым хранилищем](storage-blob-immutable-storage.md)
+[Хранение критически важных для бизнеса данных большого двоичного объекта с помощью неизменяемого хранилища](storage-blob-immutable-storage.md)

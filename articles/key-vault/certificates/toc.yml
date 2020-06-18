@@ -34,10 +34,14 @@
       href: create-certificate-scenarios.md
     - name: Способы создания сертификатов
       href: create-certificate.md
+- name: Практические руководства
+  items:
+    - name: Интеграция Key Vault с центром сертификации DigiCert
+      href: how-to-integrate-certificate-authority.md
 - name: Справочник
   items:
     - name: Azure PowerShell
-      href: '/powershell/module/az.keyvault/?view=azps-1.2.0#key_vault'
+      href: /powershell/module/az.keyvault/?view=azps-1.2.0#key_vault
     - name: Azure CLI
       href: /cli/azure/keyvault
     - name: .NET

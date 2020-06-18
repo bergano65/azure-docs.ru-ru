@@ -7,12 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 08/24/2018
 tags: connectors
-ms.openlocfilehash: 3f1e092c2ff325cdcbc32c617af316d6fbe6dd74
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 1e95b7bfce3d57dfe579a5622c3c13fac2b6af68
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74789347"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83834821"
 ---
 # <a name="manage-rss-feeds-by-using-azure-logic-apps"></a>Управление RSS-каналами с помощью Azure Logic Apps
 
@@ -23,7 +23,7 @@ ms.locfileid: "74789347"
 
 RSS (RDF-сводка сайта), также называемая Really Simple Syndication, — это популярный формат веб-синдикации, используемый для публикации часто обновляемого содержимого, такого как записи блога и заголовки новостей. Многие издатели содержимого предоставляют RSS-канал, чтобы пользователи могли подписаться на его содержимое. 
 
-Вы можете использовать триггер RSS, который получает ответы из RSS-канала и делает выходные данные доступными для других действий. Действие RSS можно использовать в приложениях логики для выполнения задачи с RSS-каналом. Если вы не знакомы с приложениями логики, ознакомьтесь с [Azure Logic Apps?](../logic-apps/logic-apps-overview.md)
+Вы можете использовать триггер RSS, который получает ответы из RSS-канала и делает выходные данные доступными для других действий. Действие RSS можно использовать в приложениях логики для выполнения задачи с RSS-каналом. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -31,7 +31,7 @@ RSS (RDF-сводка сайта), также называемая Really Simple
 
 * URL-адрес RSS-канала
 
-* Основные сведения о [создании приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md)
+* Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
 * Приложение логики, из которого необходимо получить доступ к RSS-каналу. Чтобы начать работу с триггером RSS, [создайте пустое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md). Чтобы использовать действие RSS, запустите приложение логики с другим триггером, например триггером **Периодичность**.
 
@@ -55,7 +55,7 @@ RSS (RDF-сводка сайта), также называемая Really Simple
 
 ## <a name="get-support"></a>Получение поддержки
 
-* Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
+* В случае наличия вопросов посетите страницу [Вопросы и ответы Майкрософт по Azure Logic Apps](https://docs.microsoft.com/answers/topics/azure-logic-apps.html).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Дальнейшие действия

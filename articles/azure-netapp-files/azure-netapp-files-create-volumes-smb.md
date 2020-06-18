@@ -1,6 +1,6 @@
 ---
-title: Создание тома SMB для Azure NetApp Files | Документация Майкрософт
-description: Описание создания тома SMB для Azure NetApp Files.
+title: Создание тома SMB для Azure NetApp Files | Документация Майкрософт
+description: Описание процесса создания тома SMB для Azure NetApp Files.
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -12,214 +12,223 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/30/2020
+ms.date: 05/19/2020
 ms.author: b-juche
-ms.openlocfilehash: 7dfc17825fab6c9a5f0d832318cb1d57271c56da
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
-ms.translationtype: MT
+ms.openlocfilehash: 6cb3fa56e679bc911f12e99379152fc8e1fb7526
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82625557"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83832841"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Создание тома SMB для Azure NetApp Files
 
-Azure NetApp Files поддерживает тома NFS и SMBv3. Потребление емкости тома зависит от подготовленной емкости пула. В этой статье показано, как создать том SMBv3. Если вы хотите создать том NFS, см. раздел [Создание тома NFS для Azure NetApp Files](azure-netapp-files-create-volumes.md). 
+Azure NetApp Files поддерживает тома NFS и SMBv3. Потребление емкости тома зависит от подготовленной емкости пула. В этой статье показано, как создать том SMBv3. Если вы хотите создать том NFS, обратитесь к разделу [Создание тома NFS для Azure NetApp Files](azure-netapp-files-create-volumes.md). 
 
 ## <a name="before-you-begin"></a>Перед началом 
 Перед началом необходимо настроить пул емкости.   
 [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)   
 Подсеть должна быть делегирована службе Azure NetApp Files.  
-[Делегирование подсети в Azure NetApp Files](azure-netapp-files-delegate-subnet.md)
+[Делегирование подсети службе Azure NetApp Files](azure-netapp-files-delegate-subnet.md)
 
-## <a name="requirements-for-active-directory-connections"></a>Требования к Active Directoryным подключениям
+## <a name="requirements-for-active-directory-connections"></a>Требования к подключениям Active Directory
 
- Перед созданием тома SMB необходимо создать Active Directory подключения. Ниже приведены требования к Active Directoryным подключениям. 
+ Перед созданием тома SMB необходимо создать подключения Active Directory. Ниже перечислены требования к подключениям Active Directory. 
 
-* Используемая учетная запись администратора должна иметь возможность создавать учетные записи компьютеров в указанном пути подразделений (OU).  
+* Используемая учетная запись администратора должна иметь возможность создавать учетные записи компьютеров в указанном пути подразделения (OU).  
 
 * На соответствующем сервере Windows Active Directory (AD) должны быть открыты правильные порты.  
-    Ниже приведены необходимые порты. 
+    Ниже перечислены необходимые порты. 
 
     |     Служба           |     Порт     |     Протокол     |
     |-----------------------|--------------|------------------|
-    |    Веб-службы Active Directory    |    9389      |    TCP           |
+    |    Веб-службы AD    |    9389      |    TCP           |
     |    DNS                |    53        |    TCP           |
-    |    DNS                |    53        |    Протокол UDP           |
-    |    ICMPv4             |    Н/Д       |    Эхо-ответ    |
+    |    DNS                |    53        |    UDP           |
+    |    ICMPv4             |    Недоступно       |    Ответ на запрос проверки связи    |
     |    Kerberos           |    464       |    TCP           |
-    |    Kerberos           |    464       |    Протокол UDP           |
+    |    Kerberos           |    464       |    UDP           |
     |    Kerberos           |    88        |    TCP           |
-    |    Kerberos           |    88        |    Протокол UDP           |
+    |    Kerberos           |    88        |    UDP           |
     |    LDAP               |    389       |    TCP           |
-    |    LDAP               |    389       |    Протокол UDP           |
+    |    LDAP               |    389       |    UDP           |
     |    LDAP               |    3268      |    TCP           |
-    |    имя NetBIOS;       |    138       |    Протокол UDP           |
+    |    NetBIOS-имя       |    138       |    UDP           |
     |    SAM/LSA            |    445       |    TCP           |
-    |    SAM/LSA            |    445       |    Протокол UDP           |
-    |    w32time            |    123       |    Протокол UDP           |
+    |    SAM/LSA            |    445       |    UDP           |
+    |    w32time            |    123       |    UDP           |
 
-* Топология сайта для целевых служб домен Active Directory должна соответствовать рекомендациям, в частности в виртуальной сети Azure, в которой развернута Azure NetApp Files.  
+* Топология сайта для целевых доменных служб Active Directory должна соответствовать рекомендациям, в частности в виртуальной сети Azure, в которой развернута Azure NetApp Files.  
 
-    Адресное пространство виртуальной сети, в которой развертывается Azure NetApp Files, должно быть Добавлено на новый или существующий сайт Active Directory (где доступен контроллер домена, доступный по Azure NetApp Files). 
+    Адресное пространство виртуальной сети, в которой развертывается Azure NetApp Files, должно быть добавлено на новый или существующий сайт Active Directory (где размещен контроллер домена, доступный Azure NetApp Files). 
 
 * Указанные DNS-серверы должны быть доступны из [делегированной подсети](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-delegate-subnet) Azure NetApp Files.  
 
-    См. [рекомендации по Azure NetApp Files планировании сети](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-network-topologies) для поддерживаемых сетевых топологий.
+    См. [Рекомендации по планированию сети Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-network-topologies), чтобы ознакомиться с поддерживаемыми сетевыми топологиями.
 
-    Группы безопасности сети (группы безопасности сети) и брандмауэры должны иметь соответствующим образом настроенные правила, чтобы разрешить Active Directory и запросы на трафик DNS. 
+    Группы безопасности сети (NSG) и брандмауэры должны иметь соответствующим образом настроенные правила, чтобы разрешить запросы к Active Directory и запросы трафика DNS. 
 
-* Azure NetApp Filesая Делегированная подсеть должна иметь доступ ко всем контроллерам домена домен Active Directory служб (ADDS) в домене, включая все локальные и удаленные контроллеры домена. В противном случае может произойти прерывание работы службы.  
+* Делегированная подсеть Azure NetApp Files должна иметь доступ ко всем контроллерам домена доменных служб Active Directory служб (ADDS) в домене, включая все локальные и удаленные контроллеры домена. В противном случае работа службы может быть прервана.  
 
-    Если у вас есть контроллеры домена, недоступные Azure NetApp Files делегированной подсети, можно указать Active Directoryный сайт во время создания подключения Active Directory.  Azure NetApp Files должны взаимодействовать только с контроллерами домена, на которых Azure NetApp Files адресное пространство делегированной подсети.
+    Если у вас есть контроллеры домена, недоступные делегированной подсети Azure NetApp Files, можно указать сайт Active Directory во время создания подключения Active Directory.  Служба Azure NetApp Files должна взаимодействовать только с контроллерами домена на сайте, на которых находится адресное пространство делегированной подсети Azure NetApp Files.
 
-    См. раздел [проектирование топологии сайтов](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/designing-the-site-topology) о сайтах и СЛУЖБАХ Active Directory. 
+    Сведения сайтах и службах Active Directory см. в разделе [Проектирование топологии сайта](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/designing-the-site-topology). 
     
 <!--
 * Azure NetApp Files supports DES, Kerberos AES 128, and Kerberos AES 256 encryption types (from the least secure to the most secure). The user credentials used to join Active Directory must have the highest corresponding account option enabled that matches the capabilities enabled for your Active Directory.   
 
     For example, if your Active Directory has only the AES-128 capability, you must enable the AES-128 account option for the user credentials. If your Active Directory has the AES-256 capability, you must enable the AES-256 account option (which also supports AES-128). If your Active Directory does not have any Kerberos encryption capability, Azure NetApp Files uses DES by default.  
 
-    You can enable the account options in the properties of the Active Directory Users and Computers MMC console:   
+    You can enable the account options in the properties of the Active Directory Users and Computers Microsoft Management Console (MMC):   
 
     ![Active Directory Users and Computers MMC](../media/azure-netapp-files/ad-users-computers-mmc.png)
 -->
 
-Дополнительные сведения об Active Directory см. в разделе [вопросы и ответы по SMB](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-faqs#smb-faqs) Azure NetApp Files. 
+Дополнительные сведения об Active Directory см. в [часто задаваемых вопросах об SMB](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-faqs#smb-faqs) Azure NetApp Files. 
 
-## <a name="decide-which-domain-services-to-use"></a>Выбор служб домена для использования 
+## <a name="decide-which-domain-services-to-use"></a>Выбор доменных служб для использования 
 
-Azure NetApp Files поддерживает [службы домен Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/understanding-active-directory-site-topology) (ADDS) и Azure Active Directory доменные службы (AADDS) для подключений AD.  Перед созданием подключения к Active Directory необходимо решить, следует ли использовать ADDS или AADDS.  
+Для подключений AD Azure NetApp Files поддерживает и [доменные службы Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/understanding-active-directory-site-topology) (ADDS), и доменные службы Azure Active Directory (AADDS).  Перед созданием подключения к Active Directory необходимо решить, следует ли использовать ADDS или AADDS.  
 
-Дополнительные сведения см. в разделе [Сравнение самостоятельно управляемых служб домен Active Directory, Azure Active Directory и управляемых Azure Active Directory доменных служб](https://docs.microsoft.com/azure/active-directory-domain-services/compare-identity-solutions). 
+Дополнительные сведения см. в статье [Сравнение самостоятельно управляемых доменных служб Active Directory, Azure Active Directory и управляемых доменных служб Azure Active Directory](https://docs.microsoft.com/azure/active-directory-domain-services/compare-identity-solutions). 
 
 ### <a name="active-directory-domain-services"></a>Доменные службы Active Directory
 
-Для Azure NetApp Files можно использовать предпочитаемые [сайты Active Directory и области служб](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/understanding-active-directory-site-topology) . Этот параметр позволяет выполнять операции чтения и записи в контроллеры домена домен Active Directory Services (ADDS), [Доступные для Azure NetApp Files](azure-netapp-files-network-topologies.md). Это также предотвращает взаимодействие службы с контроллерами домена, которые не находятся на указанном Active Directory сайтах и службах. 
+Для Azure NetApp Files можно использовать предпочтительную область [сайтов и служб Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/understanding-active-directory-site-topology). Этот параметр позволяет выполнять операции чтения и записи в контроллеры домена доменных служб Active Directory Services (ADDS), которые [доступны службе Azure NetApp Files](azure-netapp-files-network-topologies.md). Это также предотвращает взаимодействие службы с контроллерами домена, которые не находятся на указанном сайте модуля "Active Directory — сайты и службы". 
 
-Чтобы найти имя сайта при использовании добавления, можно связаться с административной группой в Организации, которая отвечает за домен Active Directory Services. В приведенном ниже примере показан подключаемый модуль сайтов и служб Active Directory, в котором отображается имя сайта. 
+Чтобы найти имя сайта при использовании ADDS, можно обратиться к администраторам организации, которые отвечают за работу доменных служб Active Directory. В приведенном ниже примере показан подключаемый модуль "Active Directory — сайты и службы", в котором отображается имя сайта. 
 
-![Active Directory — сайты и службы.](../media/azure-netapp-files/azure-netapp-files-active-directory-sites-and-services.png)
+![Active Directory — сайты и службы](../media/azure-netapp-files/azure-netapp-files-active-directory-sites-services.png)
 
-При настройке подключения AD для Azure NetApp Files необходимо указать имя сайта в поле область для **имени сайта Active Directory** .
+При настройке подключения AD для Azure NetApp Files необходимо указать имя сайта в области в поле **Имя сайта AD**.
 
 ### <a name="azure-active-directory-domain-services"></a>Доменные службы Azure Active Directory 
 
-Сведения о конфигурации доменных служб Azure Active Directory (AADDS) и инструкции см. в [документации по доменным службам Azure AD](https://docs.microsoft.com/azure/active-directory-domain-services/).
+Сведения о конфигурации доменных служб Azure Active Directory (AADDS) и соответствующие инструкции см. в статье [Документация по доменным службам Azure AD](https://docs.microsoft.com/azure/active-directory-domain-services/).
 
-Дополнительные соображения AADDS относятся к Azure NetApp Files: 
+Дополнительные моменты относительно AADDS, которые следует учитывать при использовании Azure NetApp Files: 
 
-* Убедитесь, что VNet или подсеть, в которой развернут AADDS, находится в том же регионе Azure, что и развертывание Azure NetApp Files.
-* Если вы используете другую виртуальную сеть в регионе, где развернут Azure NetApp Files, следует создать пиринг между двумя виртуальных сетей.
-* Azure NetApp Files поддерживает `user` типы `resource forest` и.
-* Для типа синхронизации можно выбрать `All` или. `Scoped`   
-    Если выбрано `Scoped`, убедитесь, что выбрана правильная группа Azure AD для доступа к общим папкам SMB.  Если вы не уверены, можно использовать тип `All` синхронизации.
-* Необходимо использовать SKU Enterprise или Premium. Номер SKU "Стандартный" не поддерживается.
+* Убедитесь, что виртуальная сеть или подсеть, в которой развернуты AADDS, находится в том же регионе Azure, что и развертывание Azure NetApp Files.
+* Если вы используете другую виртуальную сеть в регионе, где развернуты Azure NetApp Files, следует создать пиринг между двумя виртуальными сетями.
+* Azure NetApp Files поддерживает типы `user` и `resource forest`.
+* Для типа синхронизации можно выбрать `All` или `Scoped`.   
+    При выборе `Scoped` убедитесь, что выбрана правильная группа Azure AD для доступа к общим папкам SMB.  Если вы не уверены, можно использовать тип синхронизации `All`.
+* Необходимо использовать номер SKU "Корпоративный" или "Премиум". Номер SKU "Стандартный" не поддерживается.
 
-При создании подключения Active Directory обратите внимание на следующие особенности для AADDS:
+При создании подключения Active Directory обратите внимание на следующие особенности для AADDS.
 
-* Сведения о **первичном DNS**, **дополнительном DNS-** домене и **доменном имени AD** DNS можно найти в меню AADDS.  
+* В меню AADDS представлены сведения об **основном DNS**, **дополнительном DNS** и **имени DNS-домена AD**.  
 Для DNS-серверов будут использоваться два IP-адреса для настройки подключения Active Directory. 
-* **Путь к подразделению** — `OU=AADDC Computers`.  
-Этот параметр настраивается в **Active Directory подключениях** в разделе **учетная запись NetApp**:
+* **Путь подразделения** — `OU=AADDC Computers`.  
+Этот параметр настраивается в подразделе **Подключения Active Directory** раздела **Учетная запись NetApp**.
 
-  ![Путь к подразделению](../media/azure-netapp-files/azure-netapp-files-org-unit-path.png)
+  ![Путь подразделения](../media/azure-netapp-files/azure-netapp-files-org-unit-path.png)
 
-* Учетные данные **пользователя** могут быть любым пользователем, который является членом группы Azure AD **DC Administrators**.
+* В поле **Имя пользователя** можно указать любого пользователя, который является членом группы Azure AD **Администраторы Azure AD DC**.
 
 
 ## <a name="create-an-active-directory-connection"></a>Создание подключения Active Directory
 
-1. В учетной записи NetApp щелкните **Active Directory подключения**, а затем нажмите кнопку **присоединиться**.  
+1. В учетной записи NetApp нажмите **Присоединение каталога Active Directory**, а затем нажмите **Присоединиться**.  
 
-    ![Подключения Active Directory](../media/azure-netapp-files/azure-netapp-files-active-directory-connections.png)
+    ![Подключения Active Directory](../media/azure-netapp-files/azure-netapp-files-active-directory-connections.png)
 
-2. В окне Присоединение Active Directory укажите следующие сведения в зависимости от служб домена, которые вы хотите использовать.  
+2. В окне "Присоединение каталога Active Directory" укажите следующие сведения в зависимости от доменных служб, которые вы хотите использовать.  
 
-    Сведения, относящиеся к используемым службам домена, см. в разделе [Выбор служб домена для использования](#decide-which-domain-services-to-use). 
+    Сведения, относящиеся к используемым доменным службам, см. в разделе [Выбор доменных служб для использования](#decide-which-domain-services-to-use). 
 
-    * **Основной DNS-сервер**  
-        Это DNS-служба, необходимая для Active Directory присоединение к домену и операции проверки подлинности SMB. 
-    * **Вторичный DNS-сервер**   
+    * **Основной DNS**  
+        Требуется для присоединения к домену Active Directory и прохождения проверки подлинности SMB. 
+    * **Дополнительный DNS**   
         Это дополнительный DNS-сервер для обеспечения избыточности служб имен. 
-    * **Доменное имя DNS AD**  
-        Это доменное имя служб домен Active Directory, которые необходимо присоединить.
-    * **Имя сайта Active Directory**  
-        Это имя сайта, которое будет ограничено для обнаружения контроллера домена.
-    * **Префикс сервера SMB (учетная запись компьютера)**  
+    * **Имя DNS-домена AD**  
+        Это доменное имя доменных служб Active Directory, которые необходимо присоединить.
+    * **Имя сайта AD**  
+        Это имя сайта, которым будет ограничено обнаружение контроллера домена.
+    * **Префикс SMB-сервера (учетная запись компьютера)**  
         Это префикс именования для учетной записи компьютера в Active Directory, который Azure NetApp Files будет использовать для создания новых учетных записей.
 
-        Например, если стандарт именования, используемый Организацией для файловых серверов, — NAS-01, NAS-02..., NAS-045, то для префикса нужно ввести "NAS". 
+        Например, если стандарт именования, используемый организацией для файловых серверов, — NAS-01, NAS-02..., NAS-045, то для префикса нужно ввести "NAS". 
 
         Служба будет создавать дополнительные учетные записи компьютеров в Active Directory по мере необходимости.
 
-    * **Путь к подразделению**  
-        Это путь LDAP для подразделения, в котором будут созданы учетные записи компьютера сервера SMB. То есть OU = второго уровня, OU = First. 
+        > [!IMPORTANT] 
+        > Переименование префикса сервера SMB после создания подключения Active Directory нарушается. После переименования префикса сервера SMB потребуется повторно подключить существующие общие ресурсы SMB.
 
-        Если вы используете Azure NetApp Files с доменными службами Azure Active Directory, путь подразделения задается `OU=AADDC Computers` при настройке Active Directory для учетной записи NetApp.
-        
-    * Учетные данные, включая **имя пользователя** и **пароль**
+    * **Путь подразделения**  
+        Это путь LDAP к подразделению, в котором будут созданы учетные записи компьютера SMB-сервера (OU = SecondLevel, OU = FirstLevel). 
 
-    ![Присоединение Active Directory](../media/azure-netapp-files/azure-netapp-files-join-active-directory.png)
+        При использовании Azure NetApp Files с доменными службами Azure Active Directory путь подразделения при настройке Active Directory для учетной записи NetApp будет `OU=AADDC Computers`.
+
+     * **Пользователи политики резервного копирования**  
+        Можно включить дополнительные учетные записи, требующие повышенных прав доступа к учетной записи компьютера, созданной для использования с Azure NetApp Files. Указанным учетным записям можно будет изменять разрешения NTFS на уровне файлов и папок. Например, можно указать непривилегированную учетную запись службы, используемую для переноса данных в общую папку SMB в Azure NetApp Files.  
+
+        > [!IMPORTANT] 
+        > Для использования функции пользователя политики резервного копирования требуется список разрешений. Для запроса этой функции отправьте ИД своей подписки на адрес anffeedback@microsoft.com. 
+
+    * Учетные данные, включая **имя пользователя** и **пароль**.
+
+    ![Присоединение каталога Active Directory](../media/azure-netapp-files/azure-netapp-files-join-active-directory.png)
 
 3. Щелкните **Соединить**.  
 
-    Откроется созданное Active Directory подключение.
+    Откроется созданное подключение Active Directory.
 
-    ![Подключения Active Directory](../media/azure-netapp-files/azure-netapp-files-active-directory-connections-created.png)
+    ![Подключения Active Directory](../media/azure-netapp-files/azure-netapp-files-active-directory-connections-created.png)
 
 > [!NOTE] 
-> После сохранения подключения Active Directory можно изменить поля имя пользователя и пароль. После сохранения соединения другие значения не могут быть изменены. Если необходимо изменить любые другие значения, необходимо сначала удалить все развернутые тома SMB, а затем удалить и повторно создать подключение Active Directory.
+> После сохранения подключения Active Directory можно изменить имя пользователя и пароль в соответствующих полях. После сохранения подключения сохранить другие значения не удастся. Если необходимо изменить любые другие значения, сначала удалите все развернутые тома SMB, а затем удалите и повторно создайте подключение Active Directory.
 
 ## <a name="add-an-smb-volume"></a>Добавление тома SMB
 
-1. Щелкните колонку **тома** в колонке пулы ресурсов. 
+1. В колонке управления пулами емкости щелкните колонку **Тома**. 
 
     ![Переход к томам](../media/azure-netapp-files/azure-netapp-files-navigate-to-volumes.png)
 
 2. Чтобы создать том щелкните **+ Добавить том**.  
-    Откроется окно Создание тома.
+    Откроется окно создания тома.
 
-3. В окне Создание тома щелкните **создать** и укажите сведения для следующих полей:   
+3. В окне создания тома нажмите **Создать**, а затем заполните следующие поля.   
     * **Имя тома**      
         Укажите имя создаваемого тома.   
 
-        Имя тома должно быть уникальным в пределах каждого пула емкости. Длина имени должна быть не менее трех знаков. Можно использовать любой алфавитно-цифровой символ.   
+        Имя тома должно быть уникальным в пределах каждого пула емкости. Длина имени должна быть не менее трех знаков. Имя может состоять из любых буквенно-цифровых символов.   
 
-        Нельзя использовать `default` в качестве имени тома.
+        В качестве имени тома нельзя использовать `default`.
 
-    * **Пул ресурсов**  
-        Укажите пул ресурсов, в котором нужно создать том.
+    * **Пул емкости**  
+        Укажите пул емкости, в котором нужно создать том.
 
-    * **Предел**  
+    * **Квота**  
         Укажите объем логического хранилища, выделенный для тома.  
 
         В поле **Доступная квота** отображается объем неиспользуемого пространства выбранного пула емкости, которое можно использовать для создания нового тома. Размер нового тома не должен превышать доступную квоту.  
 
     * **Виртуальная сеть**  
-        Укажите виртуальную сеть Azure, из которой вы хотите получить доступ к тому.  
+        Укажите виртуальную сеть Azure, из которой будет осуществляться доступ к тому.  
 
-        У указанной виртуальной сети должна быть Делегированная подсеть для Azure NetApp Files. Доступ к Azure NetApp Filesной службе можно получить только из той же виртуальной сети или из виртуальной сети, расположенной в том же регионе, что и том, с помощью пиринга виртуальных сетей. Вы также можете получить доступ к тому из локальной сети через Express Route.   
+        В указанной виртуальной сети должна быть подсеть, делегированная службе Azure NetApp Files. Доступ к службе Azure NetApp Files можно получить только из той же виртуальной сети либо из виртуальной сети, которая находится в том же расположении, что и том, через пиринговую связь. Доступ к тому также можно получить из локальной сети через Express Route.   
 
     * **Подсеть**  
         Укажите подсеть, которую нужно использовать для тома.  
         Указанная подсеть должна быть делегирована службе Azure NetApp Files. 
         
-        Если вы еще не делегированы подсеть, на странице Создание тома можно нажать кнопку **создать** . Затем на странице "Создание подсети" укажите сведения о подсети и выберите **Microsoft.NetApp/volumes**, чтобы делегировать подсеть службе Azure NetApp Files. В каждой виртуальной сети можно делегировать только одну подсеть в Azure NetApp Files.   
+        Если вы не делегировали подсеть, можно нажать **Создать** на странице "Создать том". Затем на странице "Создание подсети" укажите сведения о подсети и выберите **Microsoft.NetApp/volumes**, чтобы делегировать подсеть службе Azure NetApp Files. В каждой виртуальной сети можно делегировать только одну подсеть для Azure NetApp Files.   
  
         ![Создание тома](../media/azure-netapp-files/azure-netapp-files-new-volume.png)
     
         ![Создание подсети](../media/azure-netapp-files/azure-netapp-files-create-subnet.png)
 
-4. Щелкните **протокол** и укажите следующие сведения:  
-    * Выберите **SMB** в качестве типа протокола для тома. 
-    * Выберите подключение **Active Directory** из раскрывающегося списка.
-    * Укажите имя общего тома в поле **имя общего ресурса**.
+4. Нажмите **Протокол** и введите следующие сведения.  
+    * Выберите **SMB** в качестве типа протокола тома. 
+    * В раскрывающемся списке выберите подключение **Active Directory**.
+    * Укажите имя общего тома в поле **Имя общего ресурса**.
 
-    ![Укажите протокол SMB](../media/azure-netapp-files/azure-netapp-files-protocol-smb.png)
+    ![Выбор протокола SMB](../media/azure-netapp-files/azure-netapp-files-protocol-smb.png)
 
-5. Щелкните **проверить и создать** , чтобы проверить сведения о томе.  Затем щелкните **создать** , чтобы создать том SMB.
+5. Нажмите **Проверка и создание**, чтобы ознакомиться с сведениями о томе.  Затем нажмите кнопку **Создать**, чтобы создать том SMB.
 
-    Созданный том появится на странице тома. 
+    Созданный том появится на странице "Тома". 
  
     От пула емкости том наследует атрибуты подписки, группы ресурсов и расположения. Состояние развертывания можно отслеживать на вкладке уведомлений.
 
@@ -229,21 +238,21 @@ Azure NetApp Files поддерживает [службы домен Active Dire
 
 ### <a name="share-permissions"></a>Разрешения для общего ресурса  
 
-По умолчанию новый том имеет разрешения « **все» и «полный** доступ». Члены группы "Администраторы домена" могут изменять разрешения на общий доступ, используя "Управление компьютером" для учетной записи компьютера, используемой для тома Azure NetApp Files.
+По умолчанию новый том имеет разрешения **"Все" и "Полный доступ"** для общего доступа. Члены группы "Администраторы домена" могут изменять разрешения на общий доступ, используя компонент "Управление компьютером" в учетной записи компьютера, используемой для тома Azure NetApp Files.
 
-![Путь](../media/azure-netapp-files/smb-mount-path.png) 
-![подключения SMB. Задание разрешений для общего ресурса](../media/azure-netapp-files/set-share-permissions.png) 
+![Путь подключения SMB](../media/azure-netapp-files/smb-mount-path.png) 
+![Задание разрешений для общего ресурса](../media/azure-netapp-files/set-share-permissions.png) 
 
 ### <a name="ntfs-file-and-folder-permissions"></a>Разрешения для файлов и папок NTFS  
 
-Разрешения для файла или папки можно задать с помощью вкладки **Безопасность** свойств объекта в клиенте SMB Windows.
+Разрешения для файла или папки можно задать на вкладке **Безопасность** свойств объекта в клиенте SMB Windows.
  
-![Установка разрешений для файлов и папок](../media/azure-netapp-files/set-file-folder-permissions.png) 
+![Задание разрешений для файлов и папок](../media/azure-netapp-files/set-file-folder-permissions.png) 
 
 ## <a name="next-steps"></a>Дальнейшие действия  
 
 * [Подключение или отключение тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
 * [Ограничения ресурсов для службы Azure NetApp Files](azure-netapp-files-resource-limits.md)
-* [Часто задаваемые вопросы по SMB](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-faqs#smb-faqs)
-* [Сведения об интеграции виртуальной сети для служб Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)
-* [Установка нового Active Directory леса с помощью Azure CLI](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/virtual-dc/adds-on-azure-vm)
+* [Часто задаваемые вопросы о SMB](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-faqs#smb-faqs)
+* [Узнайте об интеграции виртуальной сети для служб Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)
+* [Установка нового леса Active Directory с помощью Azure CLI](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/virtual-dc/adds-on-azure-vm)

@@ -188,6 +188,8 @@
       items:
         - name: Включение обратной записи устройства
           href: how-to-connect-device-writeback.md
+        - name: Включение обратной записи групп
+          href: how-to-connect-group-writeback.md
         - name: Параметры устройств
           href: how-to-connect-device-options.md
         - name: "Дополнительные функции в Azure\_AD Connect"

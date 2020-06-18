@@ -9,13 +9,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 01/16/2018
-ms.openlocfilehash: c1bba6903fe1cb8cc5bae9a12153553594180b43
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 05/08/2020
+ms.openlocfilehash: 5acfef94a98f105a7cc09c5b72b65e8c228ed87d
+ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81418887"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83844633"
 ---
 # <a name="transform-data-using-hadoop-streaming-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия потоковой передачи Hadoop в фабрике данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -69,7 +69,7 @@ ms.locfileid: "81418887"
 
 ## <a name="syntax-details"></a>Сведения о синтаксисе
 
-| Свойство          | Описание                              | Обязательный |
+| Свойство          | Описание                              | Обязательно |
 | ----------------- | ---------------------------------------- | -------- |
 | name              | Имя действия.                     | Да      |
 | description       | Текст, описывающий, для чего используется действие | Нет       |
@@ -78,11 +78,11 @@ ms.locfileid: "81418887"
 | mapper            | Указывает имя исполняемого файла средства сопоставления. | Да      |
 | reducer           | Указывает имя исполняемого файла средства приведения. | Да      |
 | combiner          | Указывает имя исполняемого файла средства объединения. | Нет       |
-| fileLinkedService | Ссылки на связанные службы хранилища Azure, используемые для хранения программ средств сопоставления, объединения и приведения, которые следует выполнить. Если не указать эту связанную службу, будет использоваться связанная служба хранилища Azure, определенная в связанной службе HDInsight. | Нет       |
+| fileLinkedService | Ссылки на связанные службы хранилища Azure, используемые для хранения программ средств сопоставления, объединения и приведения, которые следует выполнить. Здесь поддерживаются только связанные службы **[Хранилище BLOB-объектов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage)** и **[ADLS 2-го поколения](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage)** . Если не указать эту связанную службу, будет использоваться связанная служба хранилища Azure, определенная в связанной службе HDInsight. | Нет       |
 | filePath          | Предоставляет массив путей к программам средств сопоставления, объединения и приведения, хранящийся в службе хранилища Azure, на которую ссылается свойство fileLinkedService. Путь учитывает регистр. | Да      |
 | input             | Указывает путь WASB к входному файлу для средства сопоставления. | Да      |
 | output            | Указывает путь WASB к выходному файлу для средства приведения. | Да      |
-| getDebugInfo      | Указывает, когда файлы журнала копируются в службу хранилища Azure, используемую кластером HDInsight или определенную scriptLinkedService. Допустимые значения: None, Always или Failure. Значение по умолчанию: None. | Нет       |
+| getDebugInfo      | Указывает, когда файлы журнала копируются в службу хранилища Azure, используемую кластером HDInsight или определенную scriptLinkedService. Допустимые значения: None (никогда), Always (всегда) или Failure (в случае сбоя). Значение по умолчанию: Нет. | Нет       |
 | аргументы         | Указывает массив аргументов для задания Hadoop. Аргументы передаются в качестве аргументов командной строки в каждую задачу. | Нет       |
 | defines           | Параметры в виде пары "ключ — значение", ссылки на которые указываются в скрипте Hive. | Нет       | 
 
@@ -95,5 +95,5 @@ ms.locfileid: "81418887"
 * [Действие MapReduce](transform-data-using-hadoop-map-reduce.md)
 * [Действие Spark](transform-data-using-spark.md)
 * [Настраиваемое действие .NET](transform-data-using-dotnet-custom-activity.md)
-* [Действие выполнения пакета Машинное обучение](transform-data-using-machine-learning.md)
+* [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](transform-data-using-machine-learning.md)
 * [Действие хранимой процедуры](transform-data-using-stored-procedure.md)

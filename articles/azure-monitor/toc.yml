@@ -114,6 +114,8 @@
         - name: Время приема данных журналов
           displayname: latency
           href: platform/data-ingestion-time.md
+        - name: Потоковая передача данных в Центры событий
+          href: platform/stream-monitoring-data-event-hubs.md
     - name: Аналитика
       href: insights/insights-overview.md
     - name: Безопасность данных
@@ -299,36 +301,12 @@
           displayName: 'Platform logs, Resource logs, Activity log'
           href: platform/platform-logs-overview.md
         - name: Журнал действий
-          items:
-            - name: Просмотр на портале Azure
-              displayName: 'Platform logs, Activity log'
-              href: platform/activity-log-view.md
-            - name: Сбор и анализ
-              displayName: 'Platform logs, Activity log'
-              href: platform/activity-log-collect.md
-            - name: Экспорт (прежние версии)
-              displayname: Activity log
-              href: platform/activity-log-export.md
-        - name: Отправка в рабочую область Log Analytics
-          displayname: 'Resource logs, Activity log, Platform logs'
-          href: platform/resource-logs-collect-workspace.md
-        - name: Отправка в службу хранилища Azure
-          displayname: 'Resource logs, Activity log, Platform logs'
-          href: platform/resource-logs-collect-storage.md
-        - name: Отправка в Центры событий
-          displayname: 'Resource logs, Activity log, Platform logs'
-          href: platform/resource-logs-stream-event-hubs.md
-        - name: Создание параметра диагностики
+          href: platform/activity-log.md
+        - name: Журналы ресурсов
+          href: platform/resource-logs.md
+        - name: Параметры диагностики
           displayName: 'Platform logs, Resource logs, Activity log'
           href: platform/diagnostic-settings.md
-        - name: Создание параметра диагностики с помощью Resource Manager
-          displayName: 'diagnostic setting, Platform logs, Resource logs, Activity log'
-          href: platform/diagnostic-settings-template.md
-        - name: Изменение формата хранилища BLOB-объектов
-          displayname: Diagnostic settings
-          href: platform/resource-logs-blob-format.md
-        - name: Потоковая передача данных в Центры событий
-          href: platform/stream-monitoring-data-event-hubs.md
     - name: Log Analytics
       items:
         - name: Обзор запросов к журналу
@@ -1015,6 +993,8 @@
           href: insights/storage-insights-overview.md
         - name: Группы ресурсов
           href: insights/resource-group-insights.md
+        - name: Устранение неполадок при использовании аналитических сведений
+          href: insights/troubleshoot-workbooks.md
     - name: Решения
       items:
         - name: Обзор
@@ -1185,12 +1165,12 @@
           href: platform/alerts-metric-near-real-time.md
     - name: Журналы платформы
       items:
-        - name: Поддерживаемые типы и категории журналов ресурсов
-          href: platform/resource-logs-categories.md
-        - name: Схемы журналов ресурсов
-          href: platform/resource-logs-schema.md
         - name: Схема журнала действий
           href: platform/activity-log-schema.md
+        - name: Схемы журналов ресурсов
+          href: platform/resource-logs-schema.md
+        - name: Поддерживаемые категории журналов ресурсов
+          href: platform/resource-logs-categories.md
     - name: Схемы расширений для диагностики
       items:
         - name: Расширение для диагностики Windows
@@ -1277,6 +1257,9 @@
           href: platform/oms-portal-transition.md
         - name: Устаревшие метрики диска
           href: platform/portal-disk-metrics-deprecation.md
+        - name: Изменение формата хранилища BLOB-объектов
+          displayname: Diagnostic settings
+          href: platform/resource-logs-blob-format.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

@@ -1,5 +1,5 @@
 ---
-title: Мониторинг Azure Stream Analytics и управление ими с помощью Visual Studio
+title: Мониторинг и управление Azure Stream Analytics с помощью Visual Studio
 description: В этой статье объясняется, как с помощью Visual Studio отслеживать задания Azure Stream Analytics и управлять ими.
 author: su-jie
 ms.author: sujie
@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: e43a8d157baaf7e02ab7f8db4c777009d2a0abe9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 521e5365816a25cf2ac90504f536f4374ce023a9
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75431690"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83831251"
 ---
 # <a name="monitor-and-manage-stream-analytics-jobs-with-visual-studio"></a>Мониторинг заданий Stream Analytics и управление ими с помощью Visual Studio
 
@@ -41,7 +41,7 @@ ms.locfileid: "75431690"
 
 
 ## <a name="get-support"></a>Получение поддержки
-Для получения дополнительной помощи посетите наш [Azure Stream Analytics Форум](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics). 
+Для получения дополнительной помощи воспользуйтесь [страницей вопросов и ответов о Microsoft Azure Stream Analytics](https://docs.microsoft.com/answers/topics/azure-stream-analytics.html). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)

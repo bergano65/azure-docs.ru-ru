@@ -7,12 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 08/24/2018
 tags: connectors
-ms.openlocfilehash: 998020c5e39c8d50e8a14c74c43b7b435752f43d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: b86a38278ae345fac376958d18912a878a53872b
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74789313"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83834804"
 ---
 # <a name="send-emails-and-manage-mailing-lists-in-sendgrid-by-using-azure-logic-apps"></a>Отправка сообщений электронной почты и управление списками рассылки в SendGrid с помощью Azure Logic Apps
 
@@ -25,7 +25,7 @@ ms.locfileid: "74789313"
 Вы можете использовать действия SendGrid в своих приложениях логики для выполнения этих задач. Кроме того, выходные данные действий SendGrid могут использоваться другими действиями. 
 
 Этот соединитель предоставляет только действия, поэтому для запуска приложения логики используйте отдельный триггер, такой как **Периодичность**. Например, если вы регулярно добавляете получателей в списки, вы можете отправить сообщение электронной почты о получателях и списках с помощью соединителя Office 365 Outlook или соединителя Outlook.com.
-Если вы не знакомы с приложениями логики, ознакомьтесь с [Azure Logic Apps?](../logic-apps/logic-apps-overview.md)
+Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -35,7 +35,7 @@ ms.locfileid: "74789313"
 
    Ваш ключ API авторизует приложение логики, чтобы оно могло создать подключение и получить доступ к вашей учетной записи SendGrid.
 
-* Основные сведения о [создании приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md)
+* Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
 * Приложение логики, из которого необходимо получить доступ к учетной записи SendGrid. Чтобы использовать действие SendGrid, запустите приложение логики с другим триггером, например триггером **Периодичность**.
 
@@ -52,7 +52,7 @@ ms.locfileid: "74789313"
      -или-
 
    * Между шагами, в которых вы хотите добавить действие, переместите указатель на стрелку между шагами. 
-   Выберите отображаемый знак плюса (**+**), а затем щелкните **Добавить действие**.
+   Выберите появившийся знак "плюс" ( **+** ), а затем щелкните **Добавить действие**.
 
 1. В поле поиска введите sendgrid в качестве условия фильтра. В списке действий выберите любое необходимое действие.
 
@@ -68,7 +68,7 @@ ms.locfileid: "74789313"
 
 ## <a name="get-support"></a>Получение поддержки
 
-* Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
+* В случае наличия вопросов посетите страницу [Вопросы и ответы Майкрософт по Azure Logic Apps](https://docs.microsoft.com/answers/topics/azure-logic-apps.html).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Дальнейшие действия

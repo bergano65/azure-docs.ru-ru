@@ -1,14 +1,14 @@
 ---
-title: Использование PowerShell для резервного копирования рабочих нагрузок DPM
+title: Использование PowerShell для архивации рабочих нагрузок DPM
 description: Узнайте о том, как развернуть службу архивации Azure для Data Protection Manager (DPM) и управлять ей с помощью PowerShell
 ms.topic: conceptual
 ms.date: 01/23/2017
-ms.openlocfilehash: ea1de4a328721deafc8a4706ad4597cec3c3defe
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 73b6d07c9d74ab7f8af5d91e992bb1ae457f964c
+ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82194590"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83848183"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-data-protection-manager-dpm-servers-using-powershell"></a>Развертывание резервного копирования в Azure для серверов Data Protection Manager (DPM) и управление им с помощью PowerShell
 
@@ -37,7 +37,7 @@ Sample DPM scripts: Get-DPMSampleScript
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Чтобы начать, [скачайте последнюю Azure PowerShell](/powershell/azure/install-az-ps).
+Чтобы начать, [загрузите последнюю версию Azure PowerShell](/powershell/azure/install-az-ps).
 
 С помощью PowerShell можно автоматизировать указанные ниже задачи по настройке и регистрации.
 
@@ -63,7 +63,7 @@ Sample DPM scripts: Get-DPMSampleScript
     New-AzResourceGroup –Name "test-rg" –Location "West US"
     ```
 
-3. Используйте командлет **New-азрековерисервицесваулт** , чтобы создать новое хранилище. Разместите хранилище там же, где находится группа ресурсов.
+3. Выполните командлет **New-AzRecoveryServicesVault**, чтобы создать хранилище. Разместите хранилище там же, где находится группа ресурсов.
 
     ```powershell
     New-AzRecoveryServicesVault -Name "testvault" -ResourceGroupName " test-rg" -Location "West US"
@@ -83,9 +83,9 @@ Sample DPM scripts: Get-DPMSampleScript
 
 ## <a name="view-the-vaults-in-a-subscription"></a>Просмотр хранилищ в подписке
 
-Используйте **Get-азрековерисервицесваулт** для просмотра списка всех хранилищ в текущей подписке. Он позволяет убедиться в том, что хранилище создано, и увидеть, какие хранилища доступны в подписке.
+Чтобы получить список всех хранилищ в текущей подписке, используйте командлет **Get- AzRecoveryServicesVault**. Он позволяет убедиться в том, что хранилище создано, и увидеть, какие хранилища доступны в подписке.
 
-Выполните команду Get-Азрековерисервицесваулт и в списке всех хранилищ в подписке отобразится список.
+Выполнив команду Get-AzRecoveryServicesVault, вы получите список всех хранилищ в подписке.
 
 ```powershell
 Get-AzRecoveryServicesVault
@@ -103,7 +103,7 @@ Properties        : Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties
 
 ## <a name="installing-the-azure-backup-agent-on-a-dpm-server"></a>Установка агента службы архивации Azure на сервер DPM
 
-Прежде чем устанавливать агент службы архивации Azure, необходимо загрузить установщик и разместить его в системе Windows Server. Последнюю версию установщика можно загрузить в [центре загрузки Майкрософт](https://aka.ms/azurebackup_agent) или на странице панели мониторинга для хранилища служб восстановления. Сохраните установщик в легко доступное расположение, например `C:\Downloads\*`.
+Прежде чем устанавливать агент службы архивации Azure, необходимо загрузить установщик и разместить его в системе Windows Server. Последнюю версию установщика можно загрузить в [центре загрузки Майкрософт](https://aka.ms/azurebackup_agent) или на странице панели мониторинга для хранилища служб восстановления. Сохраните установщик в удобном для вас месте, например в папке `C:\Downloads\*`.
 
 Чтобы установить агент, в консоли PowerShell с повышенными привилегиями **на сервере DPM**выполните следующую команду:
 
@@ -113,13 +113,13 @@ MARSAgentInstaller.exe /q
 
 Агент будет установлен с параметрами по умолчанию. Установка займет всего несколько минут и пройдет в фоновом режиме. Если параметр */nu* не будет указан, в конце установки откроется окно **Обновления Windows** для проверки наличия обновлений.
 
-Агент появится в списке установленных программ. Чтобы просмотреть список установленных программ, выберите **панель** > управления**программы** > **программы и компоненты**.
+Агент появится в списке установленных программ. Чтобы просмотреть список установленных программ, выберите **Панель управления** > **Программы** > **Программы и компоненты**.
 
 ![Агент установлен](./media/backup-dpm-automation/installed-agent-listing.png)
 
 ### <a name="installation-options"></a>Варианты установки
 
-Чтобы просмотреть все параметры, доступные через командную строку, используйте следующую команду:
+Чтобы просмотреть все доступные в командной строке параметры, используйте следующую команду:
 
 ```powershell
 MARSAgentInstaller.exe /?
@@ -127,7 +127,7 @@ MARSAgentInstaller.exe /?
 
 Доступны следующие параметры.
 
-| Параметр | Сведения | Значение по умолчанию |
+| Параметр | Сведения | По умолчанию |
 | --- | --- | --- |
 | /q |Позволяет выполнить тихую установку. |- |
 | /p:"расположение" |Путь к папке установки для агента архивации Azure. |C:\Program Files\Microsoft Azure Recovery Services Agent |
@@ -154,7 +154,7 @@ $credsfilename
 C:\downloads\testvault\_Sun Apr 10 2016.VaultCredentials
 ```
 
-На сервере DPM запустите командлет [Start-OBRegistration](https://docs.microsoft.com/powershell/module/msonlinebackup/start-obregistration?view=winserver2012-ps) , чтобы зарегистрировать компьютер в хранилище.
+На сервере DPM запустите командлет [Start-OBRegistration](https://docs.microsoft.com/powershell/module/msonlinebackup/start-obregistration) , чтобы зарегистрировать компьютер в хранилище.
 
 ```powershell
 $cred = $credspath + $credsfilename
@@ -268,7 +268,7 @@ $MPG = Get-ModifiableProtectionGroup $PG
 $server = Get-ProductionServer -DPMServerName "TestingServer" | Where-Object {($_.servername) –contains "productionserver01"}
 ```
 
-Теперь получим список источников данных на ```$server``` с помощью командлета [Get-DPMDatasource](https://docs.microsoft.com/powershell/module/dataprotectionmanager/get-dpmdatasource?view=systemcenter-ps-2019). В этом примере мы используем фильтрацию для тома `D:\` , который нужно настроить для резервного копирования. Затем этот источник данных добавляется в группу защиты с помощью командлета [Add-DPMChildDatasource](https://docs.microsoft.com/powershell/module/dataprotectionmanager/add-dpmchilddatasource?view=systemcenter-ps-2019). Не забывайте использовать *изменяемый* объект группы защиты ```$MPG```, чтобы вносить дополнения.
+Теперь получим список источников данных на ```$server``` с помощью командлета [Get-DPMDatasource](https://docs.microsoft.com/powershell/module/dataprotectionmanager/get-dpmdatasource?view=systemcenter-ps-2019). В этом примере мы применяем фильтрацию для тома `D:\`, который нужно настроить для резервного копирования. Затем этот источник данных добавляется в группу защиты с помощью командлета [Add-DPMChildDatasource](https://docs.microsoft.com/powershell/module/dataprotectionmanager/add-dpmchilddatasource?view=systemcenter-ps-2019). Не забывайте использовать *изменяемый* объект группы защиты ```$MPG```, чтобы вносить дополнения.
 
 ```powershell
 $DS = Get-Datasource -ProductionServer $server -Inquire | Where-Object { $_.Name -contains "D:\" }
@@ -340,7 +340,7 @@ Set-DPMReplicaCreationMethod -ProtectionGroup $MPG -NOW
 
 ### <a name="changing-the-size-of-dpm-replica--recovery-point-volume"></a>Изменение размера реплики DPM и тома точек восстановления
 
-Кроме того, можно изменить размер тома реплики DPM и тома теневых копий с помощью командлета [Set-DPMDatasourceDiskAllocation](https://docs.microsoft.com/powershell/module/dataprotectionmanager/set-dpmdatasourcediskallocation?view=systemcenter-ps-2019) , как показано в следующем примере: Get-DatasourceDiskAllocation -Datasource $DS Set-DatasourceDiskAllocation -Datasource $DS -ProtectionGroup $MPG -manual -ReplicaArea (2gb) -ShadowCopyArea (2gb).
+Вы можете также изменить размер тома реплики DPM и тома теневых копий с помощью командлета [Set-DPMDatasourceDiskAllocation](https://docs.microsoft.com/powershell/module/dataprotectionmanager/set-dpmdatasourcediskallocation?view=systemcenter-ps-2019), как показано в следующем примере: Get-DatasourceDiskAllocation -Datasource $DS Set-DatasourceDiskAllocation -Datasource $DS -ProtectionGroup $MPG -manual -ReplicaArea (2gb) -ShadowCopyArea (2gb)
 
 ### <a name="committing-the-changes-to-the-protection-group"></a>Фиксация изменений в группу защиты
 

@@ -330,6 +330,8 @@
               href: ./partner-center-portal/azure-vm-create-offer.md
             - name: Создание технического ресурса виртуальной машины Azure
               items:
+                - name: "Сертификация виртуальных машин\_— проблемы и решения"
+                  href: ./partner-center-portal/vm-certification-issues-solutions.md
                 - name: Создание технического ресурса виртуальной машины Azure
                   href: ./partner-center-portal/create-azure-vm-technical-asset.md
                 - name: 'Технические ресурсы виртуальных машин Azure: вопросы и ответы'

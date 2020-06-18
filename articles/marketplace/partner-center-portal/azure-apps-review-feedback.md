@@ -1,69 +1,52 @@
 ---
-title: Обработка отзывов о предложениях по проверке приложений Azure в коммерческом магазине Майкрософт
-description: Сведения о том, как с помощью портала коммерческого рынка в центре партнеров Майкрософт работать с отзывами по проверке для приложений Azure, можно получить список или продать в Azure Marketplace, AppSource или с помощью программы поставщика облачных решений (CSP).
+title: Проверка отзывов о предложениях для приложений Azure — коммерческая платформа Майкрософт
+description: Сведения о работе с отзывами о предложении для приложения Azure от команды проверки Microsoft Azure Marketplace. Вы можете получить доступ к отзывам в Azure DevOps, используя свои учетные данные Центра партнеров.
 author: dsindona
 ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/11/2019
-ms.openlocfilehash: 464f4d5434c8c0b8615e24eb1a323ae66a52273c
-ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
-ms.translationtype: MT
+ms.openlocfilehash: c9e441512177d731c5ad47b66b454e5722483507
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82744867"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83659844"
 ---
-# <a name="handling-review-feedback-for-azure-apps-offer-before-publishing-in-the-azure-marketplace"></a>Обработка отзыва проверки для приложений Azure перед публикацией в Azure Marketplace
+# <a name="handling-review-feedback-for-azure-application-offers"></a>Работа с отзывами о предложениях для приложений Azure после проверки
 
-В этой статье объясняется, как получить доступ к среде Azure DevOps, которая используется командой проверки Microsoft Azure Marketplace. Если в вашем предложении приложения Azure во время **проверки корпорацией Майкрософт** будут обнаружены критические ошибки, вы можете войти в эту систему и просмотреть подробные сведения об обнаруженных проблемах (отзывы по результатам проверки). Устранив все эти проблемы, повторно отправьте предложение, чтобы продолжить процесс публикации в Azure Marketplace. На следующей схеме показано, как процесс получения обратной связи связан с процессом публикации.
+В этой статье объясняется, как получить доступ к отзывам команды проверки Microsoft Azure Marketplace в среде [Azure DevOps](https://azure.microsoft.com/services/devops/). Если в вашем предложении приложения Azure во время **проверки корпорацией Майкрософт** будут обнаружены критические ошибки, вы можете войти в эту систему и просмотреть подробные сведения об обнаруженных проблемах (отзывы по результатам проверки). Устранив все проблемы, повторно отправьте предложение, чтобы продолжить процесс публикации в Azure Marketplace. На следующей схеме показано, как процесс получения обратной связи связан с процессом публикации.
 
-![Отзыв о процессе](./media/review-feedback-process.png)
+![Процесс проверки отзывов](./media/review-feedback-process.png)
 
-Как правило, проблемы проверки называются запросами на вытягивание. Каждый запрос на вытягивание связывается с элементом [Azure DevOps](https://azure.microsoft.com/services/devops/) (ранее эта служба называлась Visual Studio Team Services или VSTS), который содержит подробные сведения о проблеме. На следующем рисунке показан пример интерфейса центра партнеров, если проблемы обнаружены во время проверок. 
+Как правило, проблемы проверки называются запросами на включение внесенных изменений (PR). Каждый такой запрос связан с подключенным элементом Azure DevOps, который содержит подробные сведения о проблеме. На следующем изображении показан пример интерфейса Центра партнеров, если в процессе проверки обнаружены проблемы. 
 
 ![Состояние публикации](./media/publishing-status.png)
 
-Запрос на вытягивание, содержащий конкретные сведения об отправке, будет упомянут в ссылке "Просмотр отчета о сертификации". В сложных ситуациях команда проверки и группа поддержки может дополнительно отправить вам письмо.
+Запрос на включение внесенных изменений, содержащий конкретные сведения об отправке, будет упомянут в ссылке просмотра отчета о сертификации. В сложных ситуациях команда проверки и группа поддержки может дополнительно отправить вам письмо.
 
-## <a name="azure-devops-access"></a>Доступ к DevOps Azure
+## <a name="azure-devops-access"></a>Доступ к Azure DevOps
 
-Все пользователи с доступом к роли "Разработчик" в центре партнеров получат доступ для просмотра элементов запроса на вытягивание, на которые ссылается отзыв о проверке.
-
-<!---
-To view the PR items referenced in review feedback, publishers must first be granted proper authorization. Otherwise, new publishers receive a 401 - Not Authorized response page when trying to view PRs. To request access to this Azure DevOps repository, perform the following steps:
-
-1. Collect the following information:
-    * Your publisher name and ID
-    * Offer type (Azure app), offer name, and SKU ID
-    * The pull request link, for example: `https://solutiontemplates.visualstudio.com/marketplacesolutions/_git/contoso/pullrequest/<number>`. This URL can be retrieved from the notification message or the address of the 401 response page.
-    * The email address(es) of the individuals from your publishing organization that you want access granted to. This list should include the owner address(es) you provided when registering as a publisher on the Cloud Partner Portal (or Partner Center??).
-1. Create a support incident. In the title bar of the Cloud Partner Portal (??), select the **Help** button, then choose **Support** from the menu. Your default web browser should launch and navigate to the Microsoft new support incident page. (You may have to sign in first.)
-1. Specify the **Problem type** as **marketplace onboarding** and **Category** as **Access problem**, then select **Start request**.
-
-    ![Create an incident](./media/create-an-incident.png)
-
-1. In **Step 1 of 2** page, supply your contact information and select **Continue**.
-1. In **Step 2 of 2** page, specify an incident title (for example Request Azure DevOps access) and supply the information you collected in the first step (above). Read and accept the agreement, then select **Submit**.
-
-If the incident creation was successful, a confirmation page is displayed. Save the confirmation information on this page for your reference. The Microsoft Support Team should reply to your access request within a few business days. --->
+Все пользователи с доступом к роли "разработчик" в Центре партнеров смогут просматривать элементы запроса на включение внесенных изменений, на которые есть ссылка в отзыве по результатам проверки.
 
 ## <a name="reviewing-the-pull-request"></a>Просмотр запроса на вытягивание
 
 Используйте следующую процедуру, чтобы изучить проблемы, описанные в запросе на вытягивание.
 
-1. В разделе **Microsoft Review** в форме шагов публикации щелкните ссылку PR, чтобы открыть браузер и перейти на страницу **Обзор** (Главная) для этого запроса на вытягивание. На следующем рисунке показан пример домашней страницы критической проблемы для предложения примера приложения Contoso. Эта страница содержит полезные сведения о проблемах, обнаруженных в приложении Azure при проверке.
+1. В разделах **Проверка Microsoft** формы шагов публикации выберите ссылку на запрос на включение внесенных изменений, чтобы открыть в браузере страницу **Обзор** (главную страницу) для этого запроса. На следующем изображении представлен пример домашней страницы для критической ошибки в предложении приложения Contoso. Эта страница содержит полезные сведения о проблемах, обнаруженных в приложении Azure при проверке.
 
-    [![Домашняя страница запроса на вытягивание](./media/pr-home-page-thumb.png)](./media/pr-home-page.png)
-    <br/> *Щелкните изображение, чтобы развернуть сведения.*
+    [![Домашняя страница запроса на включение внесенных изменений](./media/pr-home-page-thumb.png)](./media/pr-home-page.png)
+    <br/> *Щелкните это изображение, чтобы развернуть сведения.*
 
-1. Используемых В правой части окна в разделе **политики**щелкните сообщение о выпуске (в этом примере — **Проверка политики не удалось**), чтобы исследовать сведения о низком уровне проблемы, включая связанные файлы журналов. Ошибки обычно отображаются в нижней части файлов журналов.
+1. (Необязательно.) В правой части окна в разделе **Policies** (Политики) выберите сообщение о проблеме (в этом примере указано: **Policy Validation failed** (Сбой проверки политики)), чтобы просмотреть подробные сведения об обнаруженной проблеме, в том числе связанные с ней файлы журнала. Ошибки обычно отображаются в нижней части файлов журналов.
+
 1. В левой части домашней страницы выберите в меню элемент **Files** (Файлы), чтобы получить список файлов с техническими ресурсами для этого предложения. Рецензенты Майкрософт обычно добавляют комментарии с описанием обнаруженных критических проблем. В следующем примере обнаружены две проблемы.
 
-    [![Домашняя страница запроса на вытягивание](./media/pr-files-page-thumb.png)](./media/pr-files-page.png)
-    <br/> *Щелкните изображение, чтобы развернуть сведения.*
+    [![Домашняя страница запроса на включение внесенных изменений](./media/pr-files-page-thumb.png)](./media/pr-files-page.png)
+    <br/> *Щелкните это изображение, чтобы развернуть сведения.*
 
-1. Щелкните каждый узел комментария в дереве слева, чтобы перейти к соответствующему комментарию в контексте фрагмента кода. Исправьте исходный код приложения в командном проекте, чтобы устранить описанную проблему.
+1. Выберите каждый узел комментария в дереве слева, чтобы перейти к соответствующему комментарию в контексте фрагмента кода. Исправьте исходный код приложения в командном проекте, чтобы устранить описанную проблему.
 
 >[!Note]
 >Вы не можете напрямую изменять технические ресурсы предложения в среде Azure DevOps команды проверки. Эта среда предоставляется издателям только для чтения исходного кода. Но вы можете оставить здесь ответ на комментарии для команды проверки Майкрософт.

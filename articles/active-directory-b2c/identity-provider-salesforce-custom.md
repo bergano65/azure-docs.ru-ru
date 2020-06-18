@@ -1,5 +1,5 @@
 ---
-title: Настройка входа с помощью поставщика SAML SalesForce с использованием настраиваемых политик
+title: Настройка входа с помощью поставщика SAML Salesforce и применения пользовательских политик
 titleSuffix: Azure AD B2C
 description: Настройте вход с помощью поставщика SAML Salesforce, используя пользовательские политики Azure в Active Directory B2C.
 services: active-directory-b2c
@@ -11,24 +11,24 @@ ms.topic: conceptual
 ms.date: 02/27/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 183fe1604cc363a9121d5eef3737751c54e9bdf1
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
-ms.translationtype: MT
+ms.openlocfilehash: 45878ea947803b04cd5cd6e471f701c21f2c26fa
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82229722"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83826355"
 ---
 # <a name="set-up-sign-in-with-a-salesforce-saml-provider-by-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа с помощью поставщика SAML Salesforce, используя пользовательские политики Azure в Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В этой статье показано, как включить вход для пользователей из Организации SalesForce с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C). Чтобы включить вход, добавьте [технический профиль поставщика удостоверений SAML](saml-identity-provider-technical-profile.md) в настраиваемую политику.
+В этой статье описывается включение входа пользователей из организации Salesforce с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C). Вход в систему включается путем добавления [технического профиля поставщика удостоверений SAML](saml-identity-provider-technical-profile.md) в пользовательскую политику.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 - Если это еще не сделано, зарегистрируйтесь для получения [бесплатной учетной записи Developer Edition](https://developer.salesforce.com/signup). В этой статье предполагается использование [Salesforce Lightning Experience](https://developer.salesforce.com/page/Lightning_Experience_FAQ).
-- [Настройте мой домен](https://help.salesforce.com/articleView?id=domain_name_setup.htm&language=en_US&type=0) для своей организации Salesforce.
+- [Настройка собственного домена](https://help.salesforce.com/articleView?id=domain_name_setup.htm&language=en_US&type=0) для организации Salesforce.
 
 ### <a name="set-up-salesforce-as-an-identity-provider"></a>Настройка Salesforce в качестве поставщика удостоверений
 
@@ -36,11 +36,11 @@ ms.locfileid: "82229722"
 2. В меню слева в разделе **Параметры** разверните узел **Удостоверение** и выберите **Поставщик удостоверений**.
 3. Выберите **Enable Identity Provider** (Включить поставщик удостоверений).
 4. В разделе **Select the certificate** (Выберите сертификат) выберите сертификат, который необходимо использовать в Salesforce при взаимодействии с Azure AD B2C. Вы можете использовать сертификат по умолчанию.
-5. Нажмите кнопку **Сохранить**.
+5. Выберите команду **Сохранить**.
 
 ### <a name="create-a-connected-app-in-salesforce"></a>Создание подключенного приложения в Salesforce
 
-1. На странице **поставщик удостоверений** выберите **поставщики услуг, которые теперь созданы с помощью подключенных приложений. Щелкните здесь.**
+1. На странице **Поставщик удостоверений** выберите **Service Providers are now created via Connected Apps. Click here** (Поставщики услуг теперь создаются с помощью подключенных приложений. Щелкните здесь).
 2. В разделе **Основные сведения** введите нужные значения для подключенного приложения.
 3. В разделе **Параметры веб-приложения** установите флажок **Включить SAML**.
 4. В поле **Идентификатор сущности** введите следующий URL-адрес. Замените значение `your-tenant` на имя клиента Azure AD B2C.
@@ -103,7 +103,7 @@ Export-PfxCertificate -Cert $Cert -FilePath .\B2CSigningCert.pfx -Password $pwd
 
 Если необходимо разрешить пользователям входить в систему с помощью учетной записи Salesforce, нужно определить учетную запись в качестве поставщика утверждений, с которым Azure AD B2C может взаимодействовать через конечную точку. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
 
-Чтобы определить учетную запись Salesforce в качестве поставщика утверждений, добавьте ее в элемент **ClaimsProviders** в файле расширения политики. Дополнительные сведения см. [в разделе Определение технического профиля поставщика удостоверений SAML](saml-identity-provider-technical-profile.md).
+Чтобы определить учетную запись Salesforce в качестве поставщика утверждений, добавьте ее в элемент **ClaimsProviders** в файле расширения политики. Дополнительные сведения см. в разделе об [определении технического профиля поставщика удостоверений SAML](saml-identity-provider-technical-profile.md).
 
 1. Откройте файл *TrustFrameworkExtensions.xml*.
 1. Найдите элемент **ClaimsProviders**. Если он не существует, добавьте его в корневой элемент.
@@ -150,7 +150,7 @@ Export-PfxCertificate -Cert $Cert -FilePath .\B2CSigningCert.pfx -Password $pwd
 
 1. Измените значение **PartnerEntity** на скопированный ранее URL-адрес метаданных Salesforce.
 1. Измените значение обоих экземпляров **StorageReferenceId** на имя ключа сертификата для подписи. Например, B2C_1A_SAMLSigningCert.
-1. Откройте `<ClaimsProviders>` раздел и добавьте следующий фрагмент XML-кода. Если ваша политика уже содержит `SM-Saml-idp` технический профиль, перейдите к следующему шагу. Дополнительные сведения см. [в разделе Управление сеансами единого входа](custom-policy-reference-sso.md).
+1. Откройте раздел `<ClaimsProviders>` и добавьте следующий фрагмент кода XML. Если политика уже содержит технический профиль `SM-Saml-idp`, перейдите к следующему шагу. Дополнительные сведения см. в разделе об [управлении сеансом единого входа](custom-policy-reference-sso.md).
 
     ```XML
     <ClaimsProvider>
@@ -203,19 +203,19 @@ Export-PfxCertificate -Cert $Cert -FilePath .\B2CSigningCert.pfx -Password $pwd
 Теперь, когда у вас есть кнопка, вам необходимо связать ее с действием. В этом случае действие — это возможность взаимодействия Azure AD B2C с учетной записью Salesforce для получения токена.
 
 1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
-2. Добавьте следующий элемент **ClaimsExchange** , убедившись, что используется то же значение **идентификатора** , которое использовалось для **таржетклаимсексчанжеид**:
+2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для **идентификатора** можно использовать то же значение, которое было использовано для **TargetClaimsExchangeId**:
 
     ```XML
     <ClaimsExchange Id="SalesforceExchange" TechnicalProfileReferenceId="salesforce" />
     ```
 
-    Измените значение **течникалпрофилереференцеид** на идентификатор созданного ранее **идентификатора** технического профиля. Например, `LinkedIn-OAUTH`.
+    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение **идентификатора** ранее созданного технического профиля. Например, `salesforce` или `LinkedIn-OAUTH`.
 
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
 
 ## <a name="create-an-azure-ad-b2c-application"></a>Создание приложения Azure AD B2C
 
-Связь с Azure AD B2C происходит через приложение, регистрируемое в клиенте B2C. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
+Взаимодействие с Azure AD B2C осуществляется с помощью приложения, зарегистрированного в клиенте B2C. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
 
 [!INCLUDE [active-directory-b2c-appreg-idp](../../includes/active-directory-b2c-appreg-idp.md)]
 

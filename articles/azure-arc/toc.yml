@@ -18,6 +18,8 @@
           href: ./servers/onboard-dsc.md
     - name: Управление
       items:
+        - name: Использование расширений виртуальной машины Azure и управление ими
+          href: ./servers/manage-vm-extensions.md
         - name: Управление агентом
           href: ./servers/manage-agent.md
 - name: Примеры
