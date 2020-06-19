@@ -219,10 +219,6 @@
               href: ./hadoop/apache-hadoop-visual-studio-tools-get-started.md
             - name: "Использование средств Spark и Hive для VS\_Code"
               href: ./hdinsight-for-vscode.md
-            - name: Использование средств HDInsight для IntelliJ с песочницей Hortonworks
-              href: ./hadoop/hdinsight-tools-for-intellij-with-hortonworks-sandbox.md
-            - name: Использование инструментов Data Lake с песочницей Hortonworks
-              href: ./hdinsight-hadoop-emulator-visual-studio.md
         - name: Наблюдение
           items:
             - name: Использование журналов Azure Monitor
@@ -501,7 +497,7 @@
                   href: ./hadoop/apache-hadoop-run-samples-linux.md
                 - name: Запуск пользовательских программ Apache Hadoop MapReduce
                   href: ./hadoop/apache-hadoop-run-custom-programs.md
-                - name: 'Разработка программ MapReduce для потоковой передачи на C#'
+                - name: Разработка программ MapReduce для потоковой передачи на C#
                   href: ./hadoop/apache-hadoop-dotnet-csharp-mapreduce-streaming.md
                 - name: Разработка программ Java MapReduce
                   href: ./hadoop/apache-hadoop-develop-deploy-java-mapreduce-linux.md
@@ -758,7 +754,7 @@
           items:
             - name: Обработка и анализ документов JSON
               href: ./hadoop/using-json-in-hive.md
-            - name: 'Использование определяемых пользователем функций C#'
+            - name: Использование определяемых пользователем функций C#
               href: ./hadoop/apache-hadoop-hive-pig-udf-dotnet-csharp.md
             - name: Использование Python с Apache Hive и Apache Pig
               href: ./hadoop/python-udf-hdinsight.md
@@ -893,7 +889,7 @@
                   href: ./storm/apache-storm-develop-java-topology.md
                 - name: Разработка топологий с помощью Python
                   href: ./storm/apache-storm-develop-python-topology.md
-                - name: 'Разработка топологий с помощью C#'
+                - name: Разработка топологий с помощью C#
                   href: ./storm/apache-storm-develop-csharp-visual-studio-topology.md
                 - name: Руководство по программированию для SCP.NET
                   href: ./storm/apache-storm-scp-programming-guide.md
@@ -901,7 +897,7 @@
                   href: ./storm/apache-storm-example-topology.md
             - name: Конвейеры потоковой передачи
               items:
-                - name: 'Концентратор событий и Apache Storm (C# и Java)'
+                - name: Концентратор событий и Apache Storm (C# и Java)
                   href: ./storm/apache-storm-develop-csharp-event-hub-topology.md
         - name: Управление
           items:

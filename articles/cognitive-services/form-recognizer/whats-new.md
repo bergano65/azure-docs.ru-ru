@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: pafarley
-ms.openlocfilehash: e3bf279142383ccdb3e82ffee49bd593640bb937
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.openlocfilehash: 8b6cad548c9fdc5b5157c842d6302c8635e21a15
+ms.sourcegitcommit: 51718f41d36192b9722e278237617f01da1b9b4e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83996828"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85099331"
 ---
 # <a name="whats-new-in-form-recognizer"></a>Новые возможности Распознавателя документов
 
@@ -23,12 +23,23 @@ ms.locfileid: "83996828"
 > [!NOTE]
 > В кратком руководстве и руководствах для распознавателя форм всегда используется последняя версия API, если не указано иное.
 
+## <a name="june-2020"></a>Июнь 2020 г.
+
+### <a name="new-features"></a>новые функции;
+* **API копимодел добавлен в пакеты SDK клиента** Теперь клиентские пакеты SDK можно использовать для копирования моделей из одной подписки в другую. Общие сведения об этой функции см. в разделе [резервное копирование и восстановление моделей](./disaster-recovery.md) .
+* **Интеграция Azure Active Directory** Теперь вы можете использовать учетные данные AAD для проверки подлинности объектов клиента распознавателя форм в пакетах SDK.
+* **Изменения, относящиеся к пакету SDK** Сюда входят как небольшие дополнения к компонентам, так и критические изменения. Дополнительные сведения см. в журналах изменений пакета SDK.
+  * [Журнал изменений C# SDK Preview 3](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/formrecognizer/Azure.AI.FormRecognizer/CHANGELOG.md)
+  * [Журнал изменений пакета SDK для Python Preview 3](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/CHANGELOG.md)
+  * [Журнал изменений пакета SDK для Java Preview 3](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/CHANGELOG.md)
+  * [Журнал изменений предварительной версии 3 пакета SDK для JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/%40azure/ai-form-recognizer_1.0.0-preview.3/sdk/formrecognizer/ai-form-recognizer/CHANGELOG.md)
+
 ## <a name="april-2020"></a>Апрель 2020 г.
 
-### <a name="new-features"></a>Новые функции
+### <a name="new-features"></a>новые функции;
 * **Поддержка пакета SDK для API распознавателя форм (общедоступная Предварительная версия 2.0** ) В этом месяце мы расширили поддержку службы, включив в нее предварительную версию пакета SDK для выпуска распознавателя версии 2.0 (Предварительная версия). Воспользуйтесь приведенными ниже ссылками, чтобы начать работу с выбранным языком: 
    * [Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/formrecognizer?view=azure-dotnet-preview)
-   * [Пакет SDK для Java](https://docs.microsoft.com/java/api/overview/azure/formrecognizer?view=azure-java-preview)
+   * [пакет SDK для Java](https://docs.microsoft.com/java/api/overview/azure/formrecognizer?view=azure-java-preview)
    * [Пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/formrecognizer?view=azure-python-previewr)
    * [Пакет SDK для JavaScript](https://docs.microsoft.com/javascript/api/overview/azure/formrecognizer?view=azure-node-preview)
 
@@ -45,7 +56,7 @@ ms.locfileid: "83996828"
 
 ## <a name="march-2020"></a>Март 2020 г. 
 
-### <a name="new-features"></a>Новые функции
+### <a name="new-features"></a>новые функции;
 
 * **Типы значений для меток** Теперь можно указать типы значений, с которыми вы подписаны, с помощью образца средства распознавания форм. Сейчас поддерживаются следующие типы и разновидности значений:
   * `string`
@@ -90,7 +101,7 @@ TLS 1.2 теперь применяется для всех HTTP-запросо
 
 В этом выпуске появился распознаватель форм 2,0 (Предварительная версия). В следующих разделах вы найдете дополнительные сведения о новых возможностях, улучшениях и изменениях. 
 
-### <a name="new-features"></a>Новые функции
+### <a name="new-features"></a>новые функции;
 
 * **Настраиваемая модель**
   * **Обучение с метками** Теперь можно обучить пользовательскую модель с помеченными вручную данными. Этот процесс повышает эффективность моделей и позволяет получить модели для достаточно сложных форм и (или) форм со значениями без ключей.

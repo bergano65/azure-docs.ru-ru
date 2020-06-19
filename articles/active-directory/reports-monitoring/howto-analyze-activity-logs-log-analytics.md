@@ -1,5 +1,5 @@
 ---
-title: Анализ журналов действий с помощью Azure Monitor журналов | Документация Майкрософт
+title: Анализ журналов действий с помощью журналов Azure Monitor | Документация Майкрософт
 description: Узнайте, как анализировать журналы действий Azure Active Directory с помощью журналов Azure Monitor
 services: active-directory
 documentationcenter: ''
@@ -17,16 +17,16 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d6212692465270182db541889bed5f03a08a345
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: fa952e0a237ca30a3bd109f51ee45c2f4dafa533
+ms.sourcegitcommit: 0690ef3bee0b97d4e2d6f237833e6373127707a7
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74008288"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83758271"
 ---
-# <a name="analyze-azure-ad-activity-logs-with-azure-monitor-logs"></a>Анализ журналов действий Azure AD с помощью журналов Azure Monitor (предварительная версия)
+# <a name="analyze-azure-ad-activity-logs-with-azure-monitor-logs"></a>Анализ журналов действий Azure AD с помощью журналов Azure Monitor
 
-После [интеграции журналов действий Azure AD с журналами Azure Monitor](howto-integrate-activity-logs-with-log-analytics.md) вы можете использовать возможности журналов Azure Monitor, чтобы получить полезные сведения о своей среде. Вы также можете установить [представления log Analytics для журналов действий Azure AD](howto-install-use-log-analytics-views.md) , чтобы получить доступ к предварительно созданным отчетам о событиях аудита и входа в вашей среде.
+После [интеграции журналов действий Azure AD с журналами Azure Monitor](howto-integrate-activity-logs-with-log-analytics.md) вы можете использовать возможности журналов Azure Monitor, чтобы получить полезные сведения о своей среде. Вы также можете установить [представления анализа журналов для журналов действий Azure AD ](howto-install-use-log-analytics-views.md), чтобы получить доступ к предварительно созданным отчетам о событиях аудита и входа в вашу среду.
 
 В этой статье вы узнаете, как анализировать журналы действий Azure AD в рабочей области Log Analytics. 
 
@@ -38,11 +38,11 @@ ms.locfileid: "74008288"
 
 * Рабочая область Log Analytics в подписке Azure. Узнайте, как [создать рабочую область Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace).
 * Сначала настройте передачу [журналов действий Azure AD в рабочую область Log Analytics](howto-integrate-activity-logs-with-log-analytics.md).
-*  [Доступ](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-workspace-permissions) к рабочей области log Analytics
-* Следующие роли в Azure Active Directory (при обращении к Log Analytics через портал Azure Active Directory)
+*  [Доступ](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-workspace-permissions) к рабочей области Log Analytics.
+* Следующие роли в Azure Active Directory (при доступе к Log Analytics через портал Azure Active Directory)
     - администратор безопасности;
     - Читатель сведений о безопасности
-    - Средство просмотра отчетов
+    - Читатель отчетов
     - глобальный администратор.
     
 ## <a name="navigate-to-the-log-analytics-workspace"></a>Переход к рабочей области Log Analytics
@@ -60,8 +60,8 @@ ms.locfileid: "74008288"
 
 1. В представлении запроса по умолчанию в предыдущем разделе выберите **Схему** и разверните рабочую область. 
 
-2. Разверните раздел **Управление журналами**, а затем разверните **AuditLogs** или **SignInLogs**, чтобы просмотреть схему журнала.
-    ![Журналы аудита](./media/howto-analyze-activity-logs-log-analytics/auditlogschema.png) ![журналы входа](./media/howto-analyze-activity-logs-log-analytics/signinlogschema.png)
+2. Разверните раздел **Управление журналами**, а затем разверните **AuditLogs** или **SigninLogs**, чтобы просмотреть схему журнала.
+    ![Журналы аудита](./media/howto-analyze-activity-logs-log-analytics/auditlogschema.png) ![Журналы входа](./media/howto-analyze-activity-logs-log-analytics/signinlogschema.png)
 
 ## <a name="query-the-azure-ad-activity-logs"></a>Запрос журналов действий Azure AD
 
@@ -105,7 +105,7 @@ AuditLogs
 Вы также можете загрузить готовые представления анализа журналов для журналов действий Azure AD. Представления содержат несколько отчетов, касающихся общих сценариев, связанных с событиями аудита и регистрации. Вы также можете создать оповещение о любых данных, представленных в отчетах, выполнив действия, описанные в предыдущем разделе.
 
 * **Azure AD Account Provisioning Events** (События подготовки учетных записей Azure AD). В этом представлении отображаются отчеты, связанные с аудитом действий подготовки, в том числе количество новых подготовленных пользователей и сбоев при подготовке, число обновленных пользователей и сбоев обновления, а также число отозванных пользователей и соответствующих сбоев.    
-* **Sign-ins Events** (События входа в систему). В этом представлении отображаются наиболее важные отчеты, связанные с мониторингом действий входа в систему, например число входов по приложениям, пользователям, устройствам, а также сводное представление для отслеживания числа входов со временем.
+* **Sign-ins Events** (События входа в систему). В этом представлении отображаются наиболее важные отчеты, связанные с мониторингом действий входа в систему, например, число входов по приложениям, пользователям, устройствам, а также сводное представление для отслеживания числа входов со временем.
 * **Users Performing Consent** (Пользователи, дающие согласие). В этом представлении отображаются отчеты, связанные с согласием пользователя, в том числе число согласий, предоставленных пользователем, число входов в систему пользователей, предоставивших согласие, а также число входов в систему всех приложений с доступом по согласию. 
 
 См. сведения об [установке и использовании предоставлений анализа журналов для журналов действий Azure AD](howto-install-use-log-analytics-views.md). 
@@ -115,4 +115,4 @@ AuditLogs
 
 * [Начало работы с запросами журналов Azure Monitor](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries)
 * [Создание групп действий и управление ими на портале Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups)
-* [Установка и использование представлений log Analytics для Azure Active Directory](howto-install-use-log-analytics-views.md)
+* [Установка и использование представлений Log Analytics для Azure Active Directory](howto-install-use-log-analytics-views.md)

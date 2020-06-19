@@ -44,14 +44,10 @@
           href: path-selection-multiple-links.md
 - name: Практические руководства
   items:
-    - name: Подключение шлюза виртуальной сети к Виртуальной глобальной сети
-      href: connect-virtual-network-gateway-vwan.md
     - name: Настройка глобального пиринга виртуальных сетей
       href: global-peering-vnet.md
     - name: Обновление номера SKU Виртуальной глобальной сети
       href: upgrade-virtual-wan.md
-    - name: Настройка пользовательской политики IPsec
-      href: virtual-wan-custom-ipsec-portal.md
     - name: ExpressRoute
       items:
         - name: Создание подключения ExpressRoute
@@ -62,6 +58,10 @@
       items:
         - name: Создание подключения "сеть — сеть"
           href: virtual-wan-site-to-site-portal.md
+        - name: Подключение шлюза виртуальной сети к Виртуальной глобальной сети
+          href: connect-virtual-network-gateway-vwan.md
+        - name: Настройка пользовательской политики IPsec
+          href: virtual-wan-custom-ipsec-portal.md
     - name: "Пользовательские VPN-подключения (точка\_— сеть)"
       items:
         - name: Создание пользовательского VPN-подключения
@@ -109,7 +109,7 @@
 - name: Справочник
   items:
     - name: Azure PowerShell
-      href: '/powershell/module/az.network#networking'
+      href: /powershell/module/az.network#networking
     - name: REST
       href: /rest/api/azure
     - name: Azure CLI

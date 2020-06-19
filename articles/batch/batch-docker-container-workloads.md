@@ -1,15 +1,15 @@
 ---
 title: Контейнерные рабочие нагрузки
-description: Узнайте, как запускать и масштабировать приложения из образов контейнеров в пакетной службе Azure. Создайте пул кластерных узлов, поддерживающих выполнение задач контейнера.
-ms.topic: article
-ms.date: 03/02/2020
+description: Сведения о выполнении и масштабировании приложений из образов контейнера в пакетной службе Azure. Вы можете создать пул вычислительных узлов, которые поддерживают выполнение задач контейнера.
+ms.topic: how-to
+ms.date: 05/20/2020
 ms.custom: seodec18
-ms.openlocfilehash: 27edfe67152857a89840f5cd24b06d66ae8d94c1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: b1310af2797e43659ac8859e74d1be8bdbab3c98
+ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82116134"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83726729"
 ---
 # <a name="run-container-applications-on-azure-batch"></a>Выполнение контейнерных приложений в пакетной службе Azure
 
@@ -21,9 +21,9 @@ ms.locfileid: "82116134"
 
 Использование контейнеров предоставляет простой способ запуска задач пакетной службы без необходимости управлять средой и зависимостями. В контейнерах приложения развертываются в качестве упрощенных переносимых самодостаточных единиц, которые могут выполняться в нескольких разных средах. Например, создайте и протестируйте контейнер локально, а затем отправьте образ контейнера в реестр в Azure или другое расположение. Модель развертывания контейнера гарантирует, что среда выполнения приложения всегда правильно установлена и настроена, независимо от того, где размещено приложение. Для решения контейнерных задач в пакетной службе также можно воспользоваться преимуществами функций неконтейнерных задач, включая пакеты приложений и управление файлами ресурсов и выходными файлами.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* **Версии пакета SDK**. пакеты SDK для пакетной службы поддерживают образы контейнеров в следующих версиях:
+* **Версии SDK**. Пакеты SDK для пакетной службы поддерживают образы контейнеров в таких версиях:
     * REST API пакетной службы версии 2017-09-01.6.0;
     * пакет SDK для .NET пакетной службы версии 8.0.0;
     * пакет SDK для Python пакетной службы версии 4.0;
@@ -46,33 +46,33 @@ ms.locfileid: "82116134"
 
 ### <a name="windows-support"></a>Поддержка Windows
 
-Пакетная поддержка содержит образы Windows Server с поддержкой контейнеров. Обычно имена SKU образа имеют суффикс `-with-containers` или. `-with-containers-smalldisk` Кроме того, API- `DockerCompatible` [интерфейс для перечисления всех поддерживаемых образов в пакетной](batch-linux-nodes.md#list-of-virtual-machine-images) службе будет заметку о возможности, если образ поддерживает контейнеры DOCKER.
+Пакетная служба поддерживает образы Windows Server, назначения которых поддерживают контейнеры. Обычно такие имена SKU образа имеют суффикс `-with-containers` или `-with-containers-smalldisk`. Кроме того, [API для перечисления всех поддерживаемых образов в пакетной службе](batch-linux-nodes.md#list-of-virtual-machine-images) будет указывать возможность `DockerCompatible`, если образ поддерживает контейнеры Docker.
 
 Можно также создавать пользовательские образы на основе виртуальных машин, на которых запущено средство Docker в Windows.
 
 ### <a name="linux-support"></a>Поддержка Linux
 
-Для рабочих нагрузок контейнеров Linux Пакетная служба в настоящее время поддерживает следующие образы Linux, опубликованные пакетная служба Microsoft Azure в Azure Marketplace без необходимости использовать пользовательский образ.
+Для рабочих нагрузок контейнера Linux пакетная служба сейчас поддерживает указанные ниже образы Linux, опубликованные разработчиками пакетной службы Microsoft Azure на платформе Azure Marketplace, без необходимости в пользовательском образе.
 
 #### <a name="vm-sizes-without-rdma"></a>Размеры виртуальных машин без RDMA
 
-- Издателя`microsoft-azure-batch`
-  - Дают`centos-container`
-  - Дают`ubuntu-server-container`
+- Издатель: `microsoft-azure-batch`
+  - Предложение: `centos-container`
+  - Предложение: `ubuntu-server-container`
 
 #### <a name="vm-sizes-with-rdma"></a>Размеры виртуальных машин с RDMA
 
-- Издателя`microsoft-azure-batch`
-  - Дают`centos-container-rdma`
-  - Дают`ubuntu-server-container-rdma`
+- Издатель: `microsoft-azure-batch`
+  - Предложение: `centos-container-rdma`
+  - Предложение: `ubuntu-server-container-rdma`
 
-Эти образы поддерживаются только для использования в пулах пакетной службы Azure и предназначены для выполнения контейнеров DOCKER. Они содержат следующее:
+Эти образы поддерживаются только в пулах пакетной службы Azure и предназначены для выполнения контейнеров Docker. Они содержат следующее:
 
-* Предварительно установленная среда выполнения контейнеров [значок Кита](https://github.com/moby/moby) , совместимая с DOCKER
+* Предустановленная среда выполнения контейнера [Moby](https://github.com/moby/moby), поддерживающая Docker.
 
-* Предварительно установленные драйверы NVIDIA GPU и среда выполнения контейнера NVIDIA для упрощения развертывания на виртуальных машинах Azure серии N
+* Предустановленные драйверы GPU NVIDIA и среда выполнения контейнера NVIDIA для упрощения развертывания на виртуальных машинах Azure серии N.
 
-* Предварительно установленный или предварительно настроенный образ с поддержкой размера виртуальных машин RDMA InfiniBand для образов с суффиксом `-rdma`. В настоящее время эти образы не поддерживают размеры виртуальных машин с преобразкой и RDMA SR-IOV.
+* Предварительно установленный или настроенный образ с поддержкой размеров виртуальных машин RDMA InfiniBand для образов с суффиксом `-rdma`. Сейчас эти образы не поддерживают размеры виртуальных машин RDMA/IB SR-IOV.
 
 Вы также можете создавать пользовательские образы на основе виртуальных машин, на которых работает Docker, используя один из дистрибутивов Linux, совместимый с пакетной службой. Если вы решите предоставить собственный пользовательский образ Linux, ознакомьтесь с инструкциями в статье [Использование управляемого пользовательского образа для создания пула виртуальных машин](batch-custom-images.md).
 
@@ -159,32 +159,40 @@ new_pool = batch.models.PoolAddParameter(
 В следующем примере на C# предполагается, что вы намерены предварительно загрузить образ TensorFlow из [центра Docker](https://hub.docker.com). Данный пример включает задачу запуска, выполняемую на узле виртуальной машины на узлах пула. Можно запустить стартовую задачу в узле, например, для вставки файлового сервера, доступ к которому можно получить из контейнеров.
 
 ```csharp
-
 ImageReference imageReference = new ImageReference(
     publisher: "microsoft-azure-batch",
     offer: "ubuntu-server-container",
     sku: "16-04-lts",
     version: "latest");
 
+ContainerRegistry containerRegistry = new ContainerRegistry(
+    registryServer: "https://hub.docker.com",
+    userName: "UserName",
+    password: "YourPassword"                
+);
+
 // Specify container configuration, prefetching Docker images
-ContainerConfiguration containerConfig = new ContainerConfiguration(
-    containerImageNames: new List<string> { "tensorflow/tensorflow:latest-gpu" } );
+ContainerConfiguration containerConfig = new ContainerConfiguration();
+containerConfig.ContainerImageNames = new List<string> { "tensorflow/tensorflow:latest-gpu" };
+containerConfig.ContainerRegistries = new List<ContainerRegistry> { containerRegistry };
 
 // VM configuration
 VirtualMachineConfiguration virtualMachineConfiguration = new VirtualMachineConfiguration(
     imageReference: imageReference,
-    containerConfiguration: containerConfig,
     nodeAgentSkuId: "batch.node.ubuntu 16.04");
+virtualMachineConfiguration.ContainerConfiguration = containerConfig;
 
 // Set a native host command line start task
-StartTask startTaskNative = new StartTask( CommandLine: "<native-host-command-line>" );
+StartTask startTaskContainer = new StartTask( commandLine: "<native-host-command-line>" );
 
 // Create pool
 CloudPool pool = batchClient.PoolOperations.CreatePool(
     poolId: poolId,
-    targetDedicatedComputeNodes: 4,
     virtualMachineSize: "Standard_NC6",
-    virtualMachineConfiguration: virtualMachineConfiguration, startTaskContainer);
+    virtualMachineConfiguration: virtualMachineConfiguration);
+
+// Start the task in the pool
+pool.StartTask = startTaskContainer;
 ...
 ```
 
@@ -195,22 +203,22 @@ CloudPool pool = batchClient.PoolOperations.CreatePool(
 
 ```csharp
 // Specify a container registry
-ContainerRegistry containerRegistry = new ContainerRegistry (
+ContainerRegistry containerRegistry = new ContainerRegistry(
     registryServer: "myContainerRegistry.azurecr.io",
-    username: "myUserName",
+    userName: "myUserName",
     password: "myPassword");
 
 // Create container configuration, prefetching Docker images from the container registry
-ContainerConfiguration containerConfig = new ContainerConfiguration(
-    containerImageNames: new List<string> {
-        "myContainerRegistry.azurecr.io/tensorflow/tensorflow:latest-gpu" },
-    containerRegistries: new List<ContainerRegistry> { containerRegistry } );
+ContainerConfiguration containerConfig = new ContainerConfiguration();
+containerConfig.ContainerImageNames = new List<string> {
+        "myContainerRegistry.azurecr.io/tensorflow/tensorflow:latest-gpu" };
+containerConfig.ContainerRegistries = new List<ContainerRegistry> { containerRegistry } );
 
 // VM configuration
 VirtualMachineConfiguration virtualMachineConfiguration = new VirtualMachineConfiguration(
     imageReference: imageReference,
-    containerConfiguration: containerConfig,
     nodeAgentSkuId: "batch.node.ubuntu 16.04");
+virtualMachineConfiguration.ContainerConfiguration = containerConfig;
 
 // Create pool
 CloudPool pool = batchClient.PoolOperations.CreatePool(
@@ -225,7 +233,7 @@ CloudPool pool = batchClient.PoolOperations.CreatePool(
 
 Чтобы выполнить контейнерную задачу в пуле с поддержкой контейнеров, укажите параметры нужного контейнера. Эти параметры включают используемый образ, реестр и параметры выполнения контейнера.
 
-* Используйте свойство `ContainerSettings` в классах задач для настройки параметров конкретного контейнера. Эти параметры определяются классом [TaskContainerSettings](/dotnet/api/microsoft.azure.batch.taskcontainersettings). Обратите внимание `--rm` , что параметр Container не требует `--runtime` дополнительного параметра, так как он позаботится пакетной службой.
+* Используйте свойство `ContainerSettings` в классах задач для настройки параметров конкретного контейнера. Эти параметры определяются классом [TaskContainerSettings](/dotnet/api/microsoft.azure.batch.taskcontainersettings). Обратите внимание, что параметр контейнера `--rm` не требует дополнительный параметр `--runtime`, так как он обрабатывается пакетной службой.
 
 * При запуске задач на образах контейнеров для [задач облака](/dotnet/api/microsoft.azure.batch.cloudtask) и [диспетчера заданий](/dotnet/api/microsoft.azure.batch.cloudjob.jobmanagertask) требуются параметры контейнера. Тем не менее [задача запуска](/dotnet/api/microsoft.azure.batch.starttask), [задача подготовки задания](/dotnet/api/microsoft.azure.batch.cloudjob.jobpreparationtask) и [задача снятия задания](/dotnet/api/microsoft.azure.batch.cloudjob.jobreleasetask) не требуют параметров контейнера (то есть их можно выполнить в контексте контейнера или напрямую на узле).
 
@@ -285,7 +293,6 @@ task = batch.models.TaskAddParameter(
 
 ```csharp
 // Simple container task command
-
 string cmdLine = "c:\\app\\myApp.exe";
 
 TaskContainerSettings cmdContainerSettings = new TaskContainerSettings (
@@ -295,12 +302,11 @@ TaskContainerSettings cmdContainerSettings = new TaskContainerSettings (
 
 CloudTask containerTask = new CloudTask (
     id: "Task1",
-    containerSettings: cmdContainerSettings,
-    commandLine: cmdLine);
+    commandline: cmdLine);
+containerTask.ContainerSettings = cmdContainerSettings;
 ```
 
-
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь также с документацией по набору средств [Batch Shipyard](https://github.com/Azure/batch-shipyard), чтобы легко развертывать рабочие нагрузки контейнера в пакетной службе Azure, следуя инструкциям [Shipyard](https://github.com/Azure/batch-shipyard/tree/master/recipes).
 

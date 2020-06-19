@@ -11,7 +11,7 @@
       items:
         - name: Портал
           href: quickstart-create-databricks-workspace-portal.md
-        - name: PowerShell
+        - name: Azure PowerShell
           href: quickstart-create-databricks-workspace-powershell.md
         - name: Шаблон ARM
           displayName: Resource Manager
@@ -1348,7 +1348,7 @@
             - name: Оптимизация производительности операций чтения из источников данных JDBC
               href: /azure/databricks/kb/data-sources/jdbc-optimize-read
               maintainContext: true
-            - name: Регулирование операций записи ADLS и WASB
+            - name: Операции записи ADLS и WASB подвергнуты регулированию
               href: /azure/databricks/kb/data-sources/azure-storage-throttling
               maintainContext: true
         - name: Файловая система Databricks

@@ -9,14 +9,14 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: pimorano
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 6f72e2ee3b83b693d889e9c43fe42a4677f1666d
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ms.openlocfilehash: e5896d1eabaf43afcbab7513d7abb0b1de4efe51
+ms.sourcegitcommit: 5a8c8ac84c36859611158892422fc66395f808dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84609477"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84656688"
 ---
-# <a name="quickstart-create-an-azure-synapse-analytics-workspace-preview"></a>Краткое руководство. Создание рабочей области Azure Synapse Analytics (предварительная версия)
+# <a name="quickstart-create-a-synapse-workspace"></a>Краткое руководство. Создание рабочей области Synapse
 
 В этом кратком руководстве описаны действия по созданию рабочей области Azure Synapse с помощью портала Azure.
 

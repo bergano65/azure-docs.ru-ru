@@ -3,7 +3,7 @@ title: PowerShell. Добавление управляемого экземпл�
 titleSuffix: Azure SQL Managed Instance
 description: Пример сценария Azure PowerShell для создания управляемого экземпляра, добавления его в группу автоматической отработки отказа и проверки отработки отказа.
 services: sql-database
-ms.service: sql-database
+ms.service: sql-managed-instance
 ms.subservice: high-availability
 ms.custom: sqldbrb=1
 ms.devlang: PowerShell
@@ -12,12 +12,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 07/16/2019
-ms.openlocfilehash: 27179f217d370a5ae4b9a4e87eaebc7659b66930
-ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
+ms.openlocfilehash: b6ad060939af0d79f93e15672af45e0224c1ca5c
+ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84220937"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84708558"
 ---
 # <a name="use-powershell-to-add-a-managed-instance-to-a-failover-group"></a>Добавление управляемого экземпляра в группу отработки отказа с помощью PowerShell 
 
