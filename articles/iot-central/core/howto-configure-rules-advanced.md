@@ -44,7 +44,7 @@ ms.locfileid: "83663752"
 1. В списке триггеров выберите **При активации правила (предварительная версия)** .
 1. Для шага **При активации правила** выберите приложение IoT Central и правило, которое вы используете.
 
-:::image type="content" source="./media/howto-configure-rules-advanced/triggers.png" alt-text="Найдите соединитель "Azure IoT Central (предварительная версия)" и выберите триггер":::
+:::image type="content" source="./media/howto-configure-rules-advanced/triggers.png" alt-text="Найдите соединитель Azure IoT Central (предварительная версия) и выберите триггер":::
 
 Теперь можно добавить дополнительные шаги в рабочий процесс, чтобы реализовать сценарий интеграции.
 
@@ -66,7 +66,7 @@ ms.locfileid: "83663752"
 1. В списке действий выберите нужное действие IoT Central.
 1. На этом шаге настройте параметры для выбранного действия. Затем нажмите кнопку **Save** (Сохранить).
 
-:::image type="content" source="./media/howto-configure-rules-advanced/actions.png" alt-text="Найдите соединитель "Azure IoT Central (предварительная версия)" и выберите действие":::
+:::image type="content" source="./media/howto-configure-rules-advanced/actions.png" alt-text="Найдите соединитель Azure IoT Central (предварительная версия) и выберите действие":::
 
 ## <a name="list-of-actions"></a>Список действий
 

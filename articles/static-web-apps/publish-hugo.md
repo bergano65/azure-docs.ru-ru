@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: aapowell
-ms.openlocfilehash: b65213bd87f6b82391733a135e096077127765d7
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.openlocfilehash: 44472981e48a7018fcdf55f28d33d0dda9479d44
+ms.sourcegitcommit: eeba08c8eaa1d724635dcf3a5e931993c848c633
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84344022"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84669908"
 ---
 # <a name="tutorial-publish-a-hugo-site-to-azure-static-web-apps-preview"></a>Руководство по Публикация сайта Hugo в предварительной версии службы "Статические веб-приложения Azure"
 
@@ -133,9 +133,9 @@ ms.locfileid: "84344022"
 
 1. Нажмите кнопку **Next: Build >** (Далее: сборка >) для изменения конфигурации сборки.
 
-1. В поле _App location_ (Расположение приложения) задайте значение **public** (общедоступное).
+1. В поле _App location_ (Расположение приложения) выберите значение **/** .
 
-1. Оставьте поле _App artifact location_ (Расположения артефакта приложения) пустым.
+1. В поле _App artifact location_ (Расположение артефакта приложения) задайте значение **общедоступное**.
 
    Поле _API location_ (Расположения API) заполнять не требуется, так как вы в данный момент не развертываете API.
 

@@ -7,14 +7,17 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: e824641f261fc920dd234ba8d4787fbd8ddffe48
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ROBOTS: NOINDEX, NOFOLLOW
+ms.openlocfilehash: 0f9ddf2f4fba9e216ef0b5a5747fc32f4288cf67
+ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84611521"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84737280"
 ---
 # <a name="build-out-an-end-to-end-solution"></a>Создание комплексного решения
+
+[!INCLUDE [Azure Digital Twins current preview status](../../includes/digital-twins-preview-status.md)]
 
 Чтобы настроить полное готовое решение, управляемое динамическими данными из вашей среды, вы можете подключить свой экземпляр Azure Digital Twins к другим службам Azure, предназначенным для управления устройствами и данными.
 

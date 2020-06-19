@@ -7,14 +7,17 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: overview
 ms.service: digital-twins
-ms.openlocfilehash: 11ec9a4294cb1d5895d1bbc4e75c6b1a9b071f65
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ROBOTS: NOINDEX, NOFOLLOW
+ms.openlocfilehash: 1d86749a4e6071213ba5e229765bb6391affb199
+ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84613320"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84737127"
 ---
 # <a name="what-is-azure-digital-twins"></a>Что такое Azure Digital Twins?
+
+[!INCLUDE [Azure Digital Twins current preview status](../../includes/digital-twins-preview-status.md)]
 
 **Azure Digital Twins** — это платформа Интернета вещей, которая позволяет создавать комплексные цифровые модели сред. Такими средами могут быть здания, фабрики, фермы, энергосистемы, железные дороги, стадионы и многое другое — даже целые города. Эти цифровые модели можно использовать для получения аналитических сведений, позволяющих улучшать продукты, оптимизировать операции, сокращать расходы и повышать эффективность работы с клиентами.
 

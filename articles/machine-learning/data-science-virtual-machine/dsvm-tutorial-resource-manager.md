@@ -10,14 +10,14 @@ ms.date: 06/10/2020
 ms.service: machine-learning
 ms.subservice: data-science-vm
 ms.topic: quickstart
-ms.openlocfilehash: e89f3d85156081106f4e1dbb55ee6c895e7e7a2d
-ms.sourcegitcommit: ce44069e729fce0cf67c8f3c0c932342c350d890
+ms.openlocfilehash: 7e3e45d96839be06deec238deccdc9873492d68f
+ms.sourcegitcommit: 5a8c8ac84c36859611158892422fc66395f808dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84636756"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84660252"
 ---
-# <a name="tutorial-create-an-ubuntu-data-science-virtual-machine-using-a-resource-manager-template"></a>Руководство по Создание виртуальной машины для анализа данных на платформе Ubuntu с помощью шаблона Resource Manager
+# <a name="quickstart-create-an-ubuntu-data-science-virtual-machine-using-a-resource-manager-template"></a>Краткое руководство. Создание виртуальной машины для анализа данных на платформе Ubuntu с помощью шаблона Resource Manager
 [!INCLUDE [applies-to-skus](../../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этом кратком руководстве показано, как создать виртуальную машину Ubuntu 18.04 для обработки и анализа данных с помощью шаблона Azure Resource Manager. Виртуальные машины для обработки и анализа данных — это облачные виртуальные машины, предварительно загруженные с помощью набора платформ и средств для обработки и анализа данных и машинного обучения. При развертывании на основе ресурсов вычислений на платформе GPU все средства и библиотеки настраиваются на использование GPU. 

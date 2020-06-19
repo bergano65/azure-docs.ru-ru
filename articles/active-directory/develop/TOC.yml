@@ -476,6 +476,34 @@
           href: /azure/active-directory/app-provisioning/scim-graph-scenarios
         - name: Автоматизация настройки с помощью MS Graph
           href: /azure/active-directory/app-provisioning/application-provisioning-configure-api
+    - name: Статьи справки на портале Azure
+      items:
+        - name: Время существования токена по умолчанию для специально разработанного приложения
+          href: registration-config-change-token-lifetime-how-to.md
+        - name: Обнаружение конечных точек
+          href: registration-config-how-to.md
+        - name: Выбор разрешений для заданного API
+          href: perms-for-given-api.md
+        - name: Протоколы проверки подлинности
+          href: active-directory-authentication-protocols.md
+        - name: Различия между делегируемыми разрешениями и разрешениями приложения
+          href: delegated-and-app-perms.md
+        - name: Как действует согласие для приложения
+          href: consent-framework-links.md
+        - name: 'Поиск конкретного API, необходимого для специально разработанного приложения'
+          href: api-find-an-api-how-to.md
+        - name: Справка по регистрации приложений
+          href: active-directory-v2-registration-portal.md
+        - name: Поля регистрации на портале Azure для специально разработанных приложений
+          href: registration-config-specific-application-property-how-to.md
+        - name: Настройка нового мультитенантного приложения
+          href: setup-multi-tenant-app.md
+        - name: Добавление мультитенантного приложения в коллекцию приложений Azure Active Directory
+          href: registration-config-multi-tenant-application-add-to-gallery-how-to.md
+        - name: Интеграция с Azure Active Directory
+          href: active-directory-how-to-integrate.md
+        - name: Настройка единого входа для приложения
+          href: registration-config-sso-how-to.md
 - name: Практические руководства
   items:
     - name: Аутентификация

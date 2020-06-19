@@ -1,5 +1,5 @@
 ---
-title: Создание виртуальной машины Windows в Azure и управление ею с помощью Python
+title: Создание виртуальной машины и управление ею в Azure с помощью Python
 description: Сведения об использовании Python для создания виртуальных машин Windows в Azure с помощью Python и управления ими.
 author: cynthn
 ms.service: virtual-machines-windows
@@ -7,16 +7,16 @@ ms.workload: infrastructure
 ms.topic: article
 ms.date: 06/22/2017
 ms.author: cynthn
-ms.openlocfilehash: b2172d44b4136b51c0ea459868ebd5b0572bb004
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 81b8f83115a8bcb953fc4445899f7ea9afc1007c
+ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82098074"
+ms.lasthandoff: 05/31/2020
+ms.locfileid: "84233351"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-python"></a>Развертывание виртуальной машины Azure с помощью Python
 
-[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины с помощью Python. Вы научитесь:
+[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины с помощью Python. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание проекта Visual Studio
@@ -32,8 +32,8 @@ ms.locfileid: "82098074"
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
 
 1. Если вы этого еще не сделали, установите [Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio). На странице рабочих нагрузок выберите **Разработка на Python** и нажмите кнопку **Установить**. В сводке вы увидите, что вариант **64-разрядная версия Python 3 (3.6.0)** выберется автоматически. Если вы уже установили Visual Studio, можно добавить рабочую нагрузку Python с помощью средства запуска Visual Studio.
-2. После установки и запуска Visual Studio щелкните **файл** > **создать** > **проект**.
-3. Щелкните **шаблоны** > **Python** > Python**Application**, введите *миписонпрожект* в поле имя проекта, выберите расположение проекта и нажмите кнопку **ОК**.
+2. После установки и запуска Visual Studio щелкните **Файл** > **Создать** > **Проект**.
+3. В разделе **Шаблоны** > **Python** > **Приложение Python** укажите имя *myPythonProject* и расположение проекта, а затем нажмите кнопку **ОК**.
 
 ## <a name="install-packages"></a>Установка пакетов
 
@@ -164,7 +164,7 @@ compute_client = ComputeManagementClient(
     input('Availability set created. Press enter to continue...')
     ```
 
-[Общедоступный IP-адрес](../../virtual-network/virtual-network-ip-addresses-overview-arm.md) необходим для взаимодействия с виртуальной машиной.
+[Общедоступный IP-адрес](../../virtual-network/public-ip-addresses.md) необходим для взаимодействия с виртуальной машиной.
 
 1. Чтобы создать общедоступный IP-адрес для виртуальной машины, добавьте эту функцию после переменных в PY-файле:
 
@@ -563,8 +563,8 @@ compute_client = ComputeManagementClient(
     На полное выполнение этого консольного приложения потребуется примерно 5 минут. После закрытия приложения на удаление ресурсов и групп ресурсов может потребоваться несколько минут.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Если возникли проблемы с развертыванием, на следующем шаге будет рассмотрено [Устранение неполадок развертывания группы ресурсов с портал Azure](../../resource-manager-troubleshoot-deployments-portal.md)
+- При наличии проблем с развертыванием ознакомьтесь с информацией об [устранении неполадок развертываний групп ресурсов с помощью портала Azure](../../resource-manager-troubleshoot-deployments-portal.md).
 - Узнайте больше о [библиотеке Azure для Python](https://docs.microsoft.com/python/api/overview/azure/?view=azure-python).
 

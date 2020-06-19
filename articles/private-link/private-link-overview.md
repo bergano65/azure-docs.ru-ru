@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 06/02/2020
 ms.author: allensu
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 4752fe65cf06b894413df2fda0decdfbb427afd5
-ms.sourcegitcommit: 0a5bb9622ee6a20d96db07cc6dd45d8e23d5554a
+ms.openlocfilehash: ec64facd554ca32ddc1357d9b92b08f1d844e377
+ms.sourcegitcommit: f01c2142af7e90679f4c6b60d03ea16b4abf1b97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84449385"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84673417"
 ---
 # <a name="what-is-azure-private-link"></a>Что собой представляет Приватный канал Azure? 
 Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure и Базе данных SQL), а также размещенным в Azure службам, которые принадлежат клиенту или партнеру, через [частную конечную точку](private-endpoint-overview.md) виртуальной сети.
@@ -63,7 +63,7 @@ ms.locfileid: "84449385"
 |Сетка событий Azure| Все общедоступные регионы       |   GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/event-grid/network-security) |
 |Веб-приложения Azure | Все общедоступные регионы      |   Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/app-service/networking/private-endpoint)   |
 |Машинное обучение Azure | Восточная часть США, западная часть США 2, центрально-южная часть США      |   Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/machine-learning/how-to-configure-private-link)   |
-| Центр Интернета вещей | Все общедоступные регионы    |   Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/iot-hub/virtual-network-support ) |
+| Центр Интернета вещей Azure | Все общедоступные регионы    |   GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/iot-hub/virtual-network-support ) |
 | Azure SignalR | Восточная часть США, западная часть США 2, центрально-южная часть США      |   Preview (Предварительный просмотр)   <br/> [Дополнительные сведения](https://aka.ms/asrs/privatelink)   |
 | Azure Monitor <br/>(Log Analytics и Application Insights) | Все общедоступные регионы      |   GA   <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/azure-monitor/platform/private-link-security)   |
 

@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 05/29/2020
 ms.author: b-juche
-ms.openlocfilehash: 6cb3fa56e679bc911f12e99379152fc8e1fb7526
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: ef54eddd52d67f595fe78cd8bba9f308a4f19a94
+ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83832841"
+ms.lasthandoff: 05/31/2020
+ms.locfileid: "84235241"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Создание тома SMB для Azure NetApp Files
 
@@ -175,9 +175,6 @@ Azure NetApp Files поддерживает тома NFS и SMBv3. Потреб�
     Откроется созданное подключение Active Directory.
 
     ![Подключения Active Directory](../media/azure-netapp-files/azure-netapp-files-active-directory-connections-created.png)
-
-> [!NOTE] 
-> После сохранения подключения Active Directory можно изменить имя пользователя и пароль в соответствующих полях. После сохранения подключения сохранить другие значения не удастся. Если необходимо изменить любые другие значения, сначала удалите все развернутые тома SMB, а затем удалите и повторно создайте подключение Active Directory.
 
 ## <a name="add-an-smb-volume"></a>Добавление тома SMB
 
