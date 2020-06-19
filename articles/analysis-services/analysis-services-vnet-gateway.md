@@ -1,41 +1,41 @@
 ---
-title: Настройка Azure Analysis Services для источников данных виртуальной сети | Документация Майкрософт
-description: Узнайте, как настроить сервер Azure Analysis Services для использования шлюза для источников данных в виртуальной сети Azure (VNet).
+title: Настройка Azure Analysis Services для источников данных виртуальной сети | Документация Майкрософт
+description: Узнайте, как настроить сервер Azure Analysis Services для подключения к источникам данным через шлюз в виртуальной сети Azure.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/30/2019
+ms.date: 05/19/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 384f4c2ee3021678c530aa5c98eaf4dbfd661e95
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
-ms.translationtype: MT
+ms.openlocfilehash: 7622b6b5855850a0150f43863fa117828e23d4bd
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "73572276"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83698868"
 ---
 # <a name="use-gateway-for-data-sources-on-an-azure-virtual-network-vnet"></a>Использование шлюза для источников данных в виртуальной сети Azure
 
-В этой статье описывается свойство сервера Azure Analysis Services **AlwaysUseGateway** для использования при работе с источниками данных в [виртуальной сети Azure (VNet)](../virtual-network/virtual-networks-overview.md).
+В этой статье описывается свойство сервера Azure Analysis Services **AlwaysUseGateway**, которое следует использовать при размещении источников данных в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md).
 
 ## <a name="server-access-to-vnet-data-sources"></a>Доступ сервера к источникам данных виртуальной сети
 
-Если доступ к источникам данных осуществляется через виртуальную сеть, сервер служб Azure Analysis Services должен подключаться к этим источникам данных так, как если бы они размещались в вашей локальной среде. Можно настроить свойство сервера **AlwaysUseGateway** , чтобы указать сервер для доступа ко всем источникам данных через [локальный шлюз](analysis-services-gateway.md). 
+Если доступ к источникам данных осуществляется через виртуальную сеть, сервер служб Azure Analysis Services должен подключаться к этим источникам данных так, как если бы они размещались в вашей локальной среде. Свойство сервера **AlwaysUseGateway** позволяет указать сервер для доступа ко всем источникам данных через [локальный шлюз](analysis-services-gateway.md). 
 
-Управляемый экземпляр Базы данных SQL Azure источники данных выполняются в виртуальной сети Azure с частным IP-адресом. Если на экземпляре включена общедоступная конечная точка, шлюз не требуется. Если общедоступная конечная точка не включена, требуется локальный шлюз данных, а свойство AlwaysUseGateway должно иметь значение true.
+Управляемые экземпляры Базы данных SQL Azure, которые являются источниками, работают в виртуальной сети Azure с частным IP-адресом. Если на экземпляре включена общедоступная конечная точка, дополнительный шлюз не требуется. Если общедоступная конечная точка не используется, нужен локальный шлюз данных, а свойство AlwaysUseGateway должно иметь значение true.
 
 > [!NOTE]
-> Это свойство действует, только если установлен и настроен [локальный шлюз данных](analysis-services-gateway.md) . Шлюз может находиться в виртуальной сети.
+> Это свойство действует только в тех случаях, если установлен и настроен [локальный шлюз данных](analysis-services-gateway.md). Шлюз может находиться в виртуальной сети.
 
 ## <a name="configure-alwaysusegateway-property"></a>Настройка свойства AlwaysUseGateway
 
-1. В среде SSMS > Server > **Свойства** > **Общие**выберите параметр **Показывать дополнительные (все) свойства**.
+1. Последовательно выберите SSMS > сервер > **Свойства** > **Общие** > **Показать дополнительные (все) свойства**.
 2. Для параметра **ASPaaS\AlwaysUseGateway** выберите **true**.
 
     ![Свойство AlwaysUseGateway](media/analysis-services-vnet-gateway/aas-ssms-always-property.png)
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 [Подключение к локальным источникам данных](analysis-services-gateway.md)   
 [Установка и настройка локального шлюза данных](analysis-services-gateway-install.md)   
 [Виртуальная сеть Azure](../virtual-network/virtual-networks-overview.md)   

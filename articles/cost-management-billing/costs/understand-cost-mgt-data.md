@@ -7,12 +7,12 @@ ms.date: 03/02/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: micflan
-ms.openlocfilehash: 10bd2e4722751b290263fc0599890ca92cd743c9
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.openlocfilehash: a25a34db99a4c1550ed78b5f084501fb8badfacf
+ms.sourcegitcommit: 6571e34e609785e82751f0b34f6237686470c1f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83995655"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84791288"
 ---
 # <a name="understand-cost-management-data"></a>Интерпретация данных службы "Управление затратами"
 
@@ -122,6 +122,7 @@ _<sup>**7**</sup> Сейчас покупки резервирований до�
 - Был ли тег применен более 24 часов назад? См. статью [Обновление и сохранение данных о затратах и потреблении](#cost-and-usage-data-updates-and-retention)
 - Поддерживает ли тип ресурса теги? Следующие типы ресурсов не поддерживают теги в данных об использовании с 1 декабря 2019 г. Полный список поддерживаемых возможностей см. в разделе [Tag support for Azure resources](../../azure-resource-manager/tag-support.md) (Поддержка тегов для ресурсов Azure).
     - Каталоги Azure Active Directory B2C
+    - Бастион Azure
     - Брандмауэры Azure
     - Azure NetApp Files
     - Фабрика данных
