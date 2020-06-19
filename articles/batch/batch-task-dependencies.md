@@ -1,15 +1,15 @@
 ---
-title: Создание зависимостей задач для выполнения задач в пакетной службе Azure
+title: Создание зависимостей задач для выполнения задач
 description: Создание задач, которые зависят от выполнения других задач, для обработки по модели MapReduce и аналогичных рабочих нагрузок больших данных в пакетной службе Azure.
-ms.topic: article
+ms.topic: how-to
 ms.date: 05/22/2017
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9b3bc37a3d004f077e2e780d096b7bb2a8e5f773
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 42cf24758c64f107723ae0907db08bd4b757a15a
+ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82116491"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83726389"
 ---
 # <a name="create-task-dependencies-to-run-tasks-that-depend-on-other-tasks"></a>Создание зависимостей для выполнения задач, которые зависят от других задач
 
@@ -30,7 +30,7 @@ ms.locfileid: "82116491"
 В этой статье рассматривается настройка зависимостей задач с помощью библиотеки [.NET пакетной службы][net_msdn]. Сначала в этой статье описывается, как [включить зависимость задачи](#enable-task-dependencies) в заданиях, а потом рассматривается, как [настроить задачу с зависимостями](#create-dependent-tasks). Мы также опишем, как указать действие зависимости, запускающее зависимые задачи при сбое родительской задачи. Напоследок рассматриваются поддерживаемые пакетной службой [сценарии использования зависимостей](#dependency-scenarios) .
 
 ## <a name="enable-task-dependencies"></a>Включение зависимостей задач
-Чтобы использовать зависимости задач в приложении пакетной службы, сначала необходимо настроить задание для использования зависимостей задач. В .NET пакетной службы включите зависимости задач в классе [CloudJob][net_cloudjob], задав для свойства [UsesTaskDependencies][net_usestaskdependencies] значение `true`.
+Чтобы использовать зависимости задач в приложении пакетной службы, сначала необходимо настроить задание для использования зависимостей задач. В .NET пакетной службы включите зависимости задач в классе [CloudJob][net_cloudjob], задав для свойства [UserTaskDependencies][net_usestaskdependencies] значение `true`.
 
 ```csharp
 CloudJob unboundJob = batchClient.JobOperations.CreateJob( "job001",
@@ -43,7 +43,7 @@ unboundJob.UsesTaskDependencies = true;
 Приведенный выше фрагмент кода batchClient представляет собой экземпляр класса [BatchClient][net_batchclient].
 
 ## <a name="create-dependent-tasks"></a>Создание зависимости задач
-Чтобы создать задачу, зависящую от выполнения одной или нескольких родительских задач, можно указать, что эта задача "зависит" от других задач. В .NET пакетной службы укажите свойство [CloudTask][net_cloudtask].[DependsOn][net_dependson] с помощью экземпляра класса [TaskDependencies][net_taskdependencies].
+Чтобы создать задачу, зависящую от выполнения одной или нескольких родительских задач, можно указать, что эта задача "зависит" от других задач. В .NET пакетной службы укажите свойство [CloudTask][net_cloudtask].[DepensOn.][net_dependson] с помощью экземпляра класса [TaskDependencies][net_taskdependencies].
 
 ```csharp
 // Task 'Flowers' depends on completion of both 'Rain' and 'Sun'
@@ -57,7 +57,7 @@ new CloudTask("Flowers", "cmd.exe /c echo Flowers")
 Этот фрагмент кода создает зависимую задачу с идентификатором задачи Flowers. Задача Flowers зависит от задач Rain и Sun. Выполнение задачи Flowers будет запланировано на вычислительном узле только после успешного завершения задач Rain и Sun.
 
 > [!NOTE]
-> По умолчанию задача считается успешно выполненной, когда она находится в состоянии **Выполнено** и ее **код выхода** равен `0`. В .NET пакетной службы это означает, что значение свойства [CloudTask][net_cloudtask].[State][net_taskstate] — `Completed`, а значение свойства [TaskExecutionInformation][net_taskexecutioninformation].[ExitCode][net_exitcode] класса CloudTask — `0`. Чтобы изменить эти значения, см. раздел [Действия зависимостей](#dependency-actions).
+> По умолчанию задача считается успешно выполненной, когда она находится в состоянии **Выполнено** и ее **код выхода** равен `0`. В .NET пакетной службы это означает, что значение свойства [CloudTask][net_cloudtask].[State][net_taskstate]равно `Completed`, а значение свойства СloudTask [TaskExecutionInformation][net_taskexecutioninformation].[ExitCode][net_exitcode] равно `0`. Чтобы изменить эти значения, см. раздел [Действия зависимостей](#dependency-actions).
 > 
 > 
 
@@ -76,7 +76,7 @@ new CloudTask("Flowers", "cmd.exe /c echo Flowers")
 > В примерах в этом разделе зависимая задача выполняется только после успешного завершения родительской задачи. Это поведение по умолчанию для зависимой задачи. Можно запустить зависимую задачу после сбоя родительской задачи, указав действие зависимости, чтобы переопределить поведение по умолчанию. Дополнительные сведения см. в разделе [Действия зависимостей](#dependency-actions).
 
 ### <a name="one-to-one"></a>Один к одному
-При взаимосвязи "один к одному" задача зависит от успешного выполнения одной родительской задачи. Чтобы создать зависимость, укажите один идентификатор задачи в статическом методе [TaskDependencies][net_taskdependencies].[OnId][net_onid] при заполнении свойства [DependsOn][net_dependson] элемента [CloudTask][net_cloudtask].
+При взаимосвязи "один к одному" задача зависит от успешного выполнения одной родительской задачи. Чтобы создать зависимость, укажите один идентификатор задачи в статическом методе [TaskDependencies][net_taskdependencies].[OnId][net_onid] при заполнении свойств [DependsOn][net_dependson] элемента [CloudTask][net_cloudtask].
 
 ```csharp
 // Task 'taskA' doesn't depend on any other tasks
@@ -193,14 +193,14 @@ new CloudTask("B", "cmd.exe /c echo B")
 ```
 
 ## <a name="code-sample"></a>Пример кода
-[TaskDependencies][github_taskdependencies] — это один из [примеров кода пакетной службы Azure][github_samples] на портале GitHub. Это решение Visual Studio демонстрирует следующее:
+[TaskDependencies][github_taskdependencies] — это один из примеров кода пакетной службы [Azure][github_samples] на портале GitHub. Это решение Visual Studio демонстрирует следующее:
 
 - как включить зависимость задачи для задания;
 - как создать задачи, которые зависят от других задач;
 - как выполнить эти задачи в пуле вычислительных узлов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
-### <a name="application-deployment"></a>Развертывание приложений
+## <a name="next-steps"></a>Дальнейшие действия
+### <a name="application-deployment"></a>Развертывание приложения
 Функция [пакетов приложения](batch-application-packages.md) в пакетной службе дает возможность очень легко развернуть приложения, которые задачи выполняют на вычислительных узлах, и управлять их версиями.
 
 ### <a name="installing-applications-and-staging-data"></a>Установка приложений и промежуточных данных

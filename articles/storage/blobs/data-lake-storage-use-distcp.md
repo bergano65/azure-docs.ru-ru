@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 3c09a95309e001def306698bbba4f6d0a1a2804d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 2ea7fb97b6c97a797ce99878762333833965549d
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79255539"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83698646"
 ---
 # <a name="use-distcp-to-copy-data-between-azure-storage-blobs-and-azure-data-lake-storage-gen2"></a>Использование средства DistCp для копирования данных между Azure Storage Blob и Azure Data Lake Storage 2-го поколения
 
@@ -21,13 +21,13 @@ ms.locfileid: "79255539"
 
 DistCp предоставляет различные параметры командной строки, поэтому мы настоятельно рекомендуем вам прочитать эту статью для того, чтобы использовать их оптимально. В этой статье описаны основные функциональные возможности этого средства и использование его для копирования данных в учетную запись с включенным иерархическим пространством имен.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Существующая учетная запись хранения Azure без включенных возможностей Data Lake Storage 2-го поколения (иерархическое пространство имен)**.
-* **Учетная запись службы хранилища Azure с включенной функцией хранилища Data Lake Storage 2-го поколения**. Сведения по созданию учетной записи см. в статье [Краткое руководство. Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
-* **Файловая система**, созданная в учетной записи хранения с включенным иерархическим пространством имен.
-* **Кластер Azure HDInsight** с доступом к учетной записи хранения с поддержкой Data Lake Storage 2-го поколения. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight). Убедитесь, что вы включили удаленный рабочий стол для кластера.
+* Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
+* Существующая учетная запись хранения Azure без включенных возможностей Data Lake Storage 2-го поколения (иерархическое пространство имен).
+* Учетная запись хранения Azure с включенными возможностями Data Lake Storage 2-го поколения (иерархическое пространство имен). Инструкции по созданию базы данных см. в статье [Создание учетной записи хранения Azure](../common/storage-account-create.md).
+* Контейнер, созданный в учетной записи хранения с включенным иерархическим пространством имен.
+* Кластер Azure HDInsight с доступом к учетной записи хранения с включенной функцией иерархического пространства имен. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight). Убедитесь, что вы включили удаленный рабочий стол для кластера.
 
 ## <a name="use-distcp-from-an-hdinsight-linux-cluster"></a>Использование Distcp из кластера HDInsight на платформе Linux
 
@@ -37,25 +37,25 @@ DistCp предоставляет различные параметры кома
 
 2. Проверьте, можно ли получить доступ к существующей учетной записи общего назначения версии 2 (без включенного иерархического пространства имен).
 
-        hdfs dfs –ls wasbs://<CONTAINER_NAME>@<STORAGE_ACCOUNT_NAME>.blob.core.windows.net/
+        hdfs dfs –ls wasbs://<container-name>@<storage-account-name>.blob.core.windows.net/
 
-    Эта команда должна вывести список содержимого в контейнере.
+   Эта команда должна вывести список содержимого в контейнере.
 
 3. Аналогичным образом проверьте, доступна ли учетная запись хранения с включенным иерархическим пространством имен из кластера. Выполните следующую команду:
 
-        hdfs dfs -ls abfss://<FILE_SYSTEM_NAME>@<STORAGE_ACCOUNT_NAME>.dfs.core.windows.net/
+        hdfs dfs -ls abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/
 
     Она должна вывести список файлов и папок в учетной записи хранилища Azure Data Lake.
 
 4. Используйте DistCp для копирования данных из WASB в учетную запись хранилища Azure Data Lake.
 
-        hadoop distcp wasbs://<CONTAINER_NAME>@<STORAGE_ACCOUNT_NAME>.blob.core.windows.net/example/data/gutenberg abfss://<FILE_SYSTEM_NAME>@<STORAGE_ACCOUNT_NAME>.dfs.core.windows.net/myfolder
+        hadoop distcp wasbs://<container-name>@<storage-account-name>.blob.core.windows.net/example/data/gutenberg abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/myfolder
 
-    Эта команда копирует содержимое папки **/example/data/gutenberg/**, расположенной в хранилище BLOB-объектов, в папку **/myfolder**, расположенную в учетной записи хранилища Azure Data Lake.
+    Эта команда копирует содержимое папки **/example/data/gutenberg/** , расположенной в хранилище BLOB-объектов, в папку **/myfolder**, расположенную в учетной записи хранилища Azure Data Lake.
 
 5. Аналогичным образом используйте DistCp для копирования данных из учетной записи хранилища Azure Data Lake в хранилище BLOB-объектов (WASB).
 
-        hadoop distcp abfss://<FILE_SYSTEM_NAME>@<STORAGE_ACCOUNT_NAME>.dfs.core.windows.net/myfolder wasbs://<CONTAINER_NAME>@<STORAGE_ACCOUNT_NAME>.blob.core.windows.net/example/data/gutenberg
+        hadoop distcp abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/myfolder wasbs://<container-name>@<storage-account-name>.blob.core.windows.net/example/data/gutenberg
 
     Эта команда копирует содержимое папки **/myfolder** в учетной записи Data Lake Store в папку **/example/data/gutenberg/** в WASB.
 
@@ -65,27 +65,27 @@ DistCp предоставляет различные параметры кома
 
 **Пример**
 
-    hadoop distcp -m 100 wasbs://<CONTAINER_NAME>@<STORAGE_ACCOUNT_NAME>.blob.core.windows.net/example/data/gutenberg abfss://<FILE_SYSTEM_NAME>@<STORAGE_ACCOUNT_NAME>.dfs.core.windows.net/myfolder
+    hadoop distcp -m 100 wasbs://<container-name>@<storage-account-name>.blob.core.windows.net/example/data/gutenberg abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/myfolder
 
 ### <a name="how-do-i-determine-the-number-of-mappers-to-use"></a>Как определить количество модулей сопоставления, которые следует использовать?
 
 Ниже представлены некоторые полезные рекомендации.
 
-* **Шаг 1. Определение общего объема памяти, доступного для очереди приложений YARN по умолчанию** . первый шаг заключается в определении памяти, доступной для очереди приложений YARN по умолчанию. Эта информация доступна на портале Ambari, связанном с кластером. Перейдите к YARN и откройте вкладку конфигураций, чтобы определить объем памяти YARN, доступный для очереди приложения по умолчанию. Это общая доступная память для задания DistCp (которое фактически является заданием MapReduce).
+* **Шаг 1. Определение общего объема памяти, доступного для очереди приложения YARN по умолчанию**. Сначала определите объем памяти, доступный для очереди приложения YARN по умолчанию. Эта информация доступна на портале Ambari, связанном с кластером. Перейдите к YARN и откройте вкладку конфигураций, чтобы определить объем памяти YARN, доступный для очереди приложения по умолчанию. Это общая доступная память для задания DistCp (которое фактически является заданием MapReduce).
 
-* **Шаг 2. Расчет количества модулей сопоставления.** Чтобы узнать значение **m**, разделите целую часть общего объема памяти YARN на размер контейнера YARN. Сведения о размере контейнера YARN также доступны на портале Ambari. Перейдите по адресу YARN и просмотрите вкладку configs (конфигурации). В этом окне отображается размер контейнера YARN. Уравнение для получения количества модулей сопоставления (**m**):
+* **Шаг 2. Расчет количества модулей сопоставления.** Чтобы узнать значение **m**, разделите целую часть общего объема памяти YARN на размер контейнера YARN. Сведения о размере контейнера YARN также доступны на портале Ambari. Перейдите к YARN и откройте вкладку конфигураций. Размер контейнера YARN отобразится в этом окне. Уравнение для получения количества модулей сопоставления (**m**):
 
         m = (number of nodes * YARN memory for each node) / YARN container size
 
 **Пример**
 
-Предположим, что в кластере есть 4 узла D14v2s, и вы пытаетесь передать 10 ТБ данных из 10 разных папок. Эти папки содержат различные объемы данных, и размеры файлов в каждой папке отличаются.
+Предположим, что в кластере есть 4 узла D14v2s и вы пытаетесь передать 10 ТБ данных из 10 разных папок. Эти папки содержат различные объемы данных, и размеры файлов в каждой папке отличаются.
 
-* **Общий объем памяти YARN**. На портале Ambari вы узнали, что объем памяти YARN составляет 96 ГБ для узла D14. Таким образом, общий объем памяти YARN для кластера из четырех узлов равен: 
+* **Общий объем памяти YARN**. На портале Ambari вы узнали, что объем памяти YARN составляет 96 ГБ для узла D14. Таким образом, общий объем памяти YARN для кластера из четырех узлов равен: 
 
         YARN memory = 4 * 96GB = 384GB
 
-* **Число модулей сопоставления**: на портале Ambari вы определили, что размер контейнера YARN составляет 3 072 МБ для узла кластера D14. Таким образом, число модулей сопоставления равно:
+* **Число модулей сопоставления**. На портале Ambari вы узнали, что размер контейнера YARN равен 3072 МБ для узла кластера D14. Таким образом, число модулей сопоставления равно:
 
         m = (4 nodes * 96GB) / 3072MB = 128 mappers
 

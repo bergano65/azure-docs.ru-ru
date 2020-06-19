@@ -8,12 +8,12 @@ manager: nitinme
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 05/19/2020
-ms.openlocfilehash: b84f98bd383c2b90c3291527b336d798e9b9cae9
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 14760eaef309ec5695b423b98e59a8ae1ab5cacb
+ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83662237"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84886756"
 ---
 # <a name="tutorial-diagnose-repair-and-commit-changes-to-your-skillset"></a>Руководство по диагностике, исправлению ошибок и фиксации изменений в наборе навыков
 
@@ -173,12 +173,12 @@ ms.locfileid: "83662237"
 ## <a name="fix-missing-skill-output-values"></a>Исправление ошибок из-за отсутствия выходного значения навыка
 
 > [!div class="mx-imgBorder"]
-> ![Ошибки и предупреждения](media/cognitive-search-debug/warnings-missing-value-locs-orgs.png)
+> ![Ошибки и предупреждения](media/cognitive-search-debug/warnings-missing-value-locations-organizations.png)
 
 Для навыка отсутствуют выходные значения. Чтобы определить навык с ошибкой, перейдите на вкладку "Обогащенная структура данных", найдите имя значения и посмотрите на источник его происхождения. При отсутствии значений organizations и locations, данные об организациях и расположениях выводятся из навыка № 1. При открытии вычислителя выражений </> для каждого пути будут, соответственно, отображены выражения указанные в виде "/document/content/organizations" и "/document/content/locations".
 
 > [!div class="mx-imgBorder"]
-> ![Сущность organizations в вычислителе выражений](media/cognitive-search-debug/expression-eval-missing-value-locs-orgs.png)
+> ![Сущность organizations в вычислителе выражений](media/cognitive-search-debug/expression-eval-missing-value-locations-organizations.png)
 
 Выходные данные для этих сущностей пусты, а так быть не должно. Какие входные данные приводят к такому результату?
 
@@ -187,7 +187,7 @@ ms.locfileid: "83662237"
 1. Откройте вычислитель выражений **</>** для входного значения "text".
 
 > [!div class="mx-imgBorder"]
-> ![Входные данные для навыка "текст"](media/cognitive-search-debug/input-skill-missing-value-locs-orgs.png)
+> ![Входные данные для навыка "текст"](media/cognitive-search-debug/input-skill-missing-value-locations-organizations.png)
 
 Отображаемый результат для этих входных данных не похож на текстовое входное значение. Похоже, что это изображение, окруженное новыми строками. Из-за отсутствия текста сущность идентифицировать невозможно. Если посмотреть на иерархию набора навыков, можно заметить, что содержимое сначала обрабатывается навыком № 6 (OCR), а затем передается в навык № 5 (слияние). 
 
@@ -195,7 +195,7 @@ ms.locfileid: "83662237"
 1. Перейдите на вкладку **Число выполнений** в области сведений о навыках справа и откройте вычислитель выражений **</>** для свойства "ВЫХОДНЫЕ ДАННЫЕ" mergedText.
 
 > [!div class="mx-imgBorder"]
-> ![Выходные данные для навыка слияния](media/cognitive-search-debug/merge-output-detail-missing-value-locs-orgs.png)
+> ![Выходные данные для навыка слияния](media/cognitive-search-debug/merge-output-detail-missing-value-locations-organizations.png)
 
 Здесь текст связан с изображением. Если взглянуть на выражение "/document/merged_content", можно заметить ошибку в путях "organizations" и "locations" для навыка № 1. Вместо выражения "/document/content" для входных данных "text" следует использовать "/document/merged_content".
 
@@ -216,7 +216,7 @@ ms.locfileid: "83662237"
 1. Откройте вычислитель выражений **</>** для сущности "organizations".
 
 > [!div class="mx-imgBorder"]
-> ![Выходные данные для сущности "organizations"](media/cognitive-search-debug/skill-output-detail-missing-value-locs-orgs.png)
+> ![Выходные данные для сущности "organizations"](media/cognitive-search-debug/skill-output-detail-missing-value-locations-organizations.png)
 
 Вычисление результата выражения даст правильный результат. Навык работает, определяя правильное значение для сущности "organizations". Однако сопоставление выходных данных в пути сущности по-прежнему приводит к ошибке. При сравнении пути к выходным данным в навыке с путем к выходным данным в сообщении об ошибке можно увидеть, что навык устанавливает родительские связи с выходными данными (organizations и locations) в узле /document/content. Однако сопоставление выходных полей предполагает, что результаты должны быть связаны родительской связью в узле /document/merged_content. На предыдущем шаге входные данные изменились с "/document/content" на "/document/merged_content". Чтобы обеспечить создание выходных данных с правильным контекстом, необходимо изменить контекст в параметрах навыка.
 
@@ -228,7 +228,7 @@ ms.locfileid: "83662237"
 1. Щелкните **Выполнить** в меню окна сеанса. Это приведет к другому запуску набора навыков с использованием документа.
 
 > [!div class="mx-imgBorder"]
-> ![Исправление контекста в параметрах навыка](media/cognitive-search-debug/skill-setting-context-correction-missing-value-locs-orgs.png)
+> ![Исправление контекста в параметрах навыка](media/cognitive-search-debug/skill-setting-context-correction-missing-value-locations-organizations.png)
 
 Все ошибки устранены.
 

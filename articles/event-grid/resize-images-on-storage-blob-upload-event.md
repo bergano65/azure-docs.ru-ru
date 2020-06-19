@@ -196,7 +196,7 @@ az functionapp deployment source config --name $functionapp \
 
 1. На [портале Azure](https://portal.azure.com)в верхней части страницы выполните поиск `Function App` и щелкните требуемый результат. Затем выберите только что созданное приложение-функцию. Щелкните элемент **Функции** и выберите функцию **Эскиз**.
 
-    :::image type="content" source="media/resize-images-on-storage-blob-upload-event/choose-thumbnail-function.png" alt-text="Выбор функции "Эскиз" на портале":::
+    :::image type="content" source="media/resize-images-on-storage-blob-upload-event/choose-thumbnail-function.png" alt-text="Выбор функции Эскиз на портале":::
 
 1.  Щелкните элемент **Интеграция**. Затем последовательно выберите элементы **Триггер сетки событий** и **Создание подписки для Сетки событий**.
 

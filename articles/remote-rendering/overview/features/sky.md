@@ -1,45 +1,45 @@
 ---
 title: Отражения неба
-description: Описывает, как настроить карты среды для переотражений.
+description: Узнайте, как настроить карту среды для отражения неба
 author: florianborn71
 ms.author: flborn
 ms.date: 02/07/2020
 ms.topic: article
-ms.openlocfilehash: 7316df7bcf78e3a154510e69116c288b2b293d4c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: be3dc2b113cb21c2dfb54a29e7f426e0d925c6d9
+ms.sourcegitcommit: 0690ef3bee0b97d4e2d6f237833e6373127707a7
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80680613"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83759121"
 ---
 # <a name="sky-reflections"></a>Отражения неба
 
-В удаленной отрисовке Azure для реалистичного освещения объектов используется высокоплотная текстура. Для приложений с расширенной реальности эта текстура должна напоминать реальную окружающую функцию, чтобы объекты были убедительными. В этой статье описывается, как изменить геотекстуру.
+В Удаленной отрисовке Azure для реалистичного освещения объектов применяется текстура неба. Для приложений дополненной реальности эта текстура должна убедительно имитировать обстановку реального мира. В этой статье описано, как изменить текстуру неба.
 
 > [!NOTE]
-> Текстура небесной заливки также называется *картой среды*. Эти термины взаимозаменяемы.
+> Текстура неба также называется *картой среды*. Эти термины являются взаимозаменяемыми.
 
-## <a name="object-lighting"></a>Освещение объектов
+## <a name="object-lighting"></a>Освещение объекта
 
-Удаленная визуализация Azure использует *физическую отрисовку* (PBR) для реалистичных вычислений освещения. Несмотря на то, что вы можете добавить источники освещения в сцену, использование хорошей текстуры с высокой [интенсивностью](lights.md) оказывает наибольшее влияние.
+Удаленная отрисовка Azure использует *физически корректную отрисовку* для вычисления реалистичного освещения. Вы можете добавлять в сцену разные [источники света](lights.md), но хорошая текстура неба дает самый лучший результат.
 
-На рисунках ниже показаны результаты освещения разных поверхностей только с помощью высокотекстурной текстуры:
+На рисунках ниже показаны результаты освещения разных поверхностей только текстурой неба:
 
-| Неровность  | 0                                        | 0,25                                          | 0,5                                          | 0.75                                          | 1                                          |
+| Неровность  | 0                                        | 0,25                                          | 0,5                                          | 0,75                                          | 1                                          |
 |:----------:|:----------------------------------------:|:---------------------------------------------:|:--------------------------------------------:|:---------------------------------------------:|:------------------------------------------:|
-| Без металла  | ![Dielectric0](media/dielectric-0.png)   | ![гринпоинтпарк](media/dielectric-0.25.png)  | ![гринпоинтпарк](media/dielectric-0.5.png)  | ![гринпоинтпарк](media/dielectric-0.75.png)  | ![гринпоинтпарк](media/dielectric-1.png)  |
-| Metal      | ![гринпоинтпарк](media/metallic-0.png)  | ![гринпоинтпарк](media/metallic-0.25.png)    | ![гринпоинтпарк](media/metallic-0.5.png)    | ![гринпоинтпарк](media/metallic-0.75.png)    | ![гринпоинтпарк](media/metallic-1.png)    |
+| Неметаллические  | ![Dielectric0](media/dielectric-0.png)   | ![GreenPointPark](media/dielectric-0.25.png)  | ![GreenPointPark](media/dielectric-0.5.png)  | ![GreenPointPark](media/dielectric-0.75.png)  | ![GreenPointPark](media/dielectric-1.png)  |
+| Металлические      | ![GreenPointPark](media/metallic-0.png)  | ![GreenPointPark](media/metallic-0.25.png)    | ![GreenPointPark](media/metallic-0.5.png)    | ![GreenPointPark](media/metallic-0.75.png)    | ![GreenPointPark](media/metallic-1.png)    |
 
-Дополнительные сведения о модели освещения см. в главе [материалы](../../concepts/materials.md) .
+Дополнительные сведения о модели освещения см. в главе о [материалах](../../concepts/materials.md).
 
 > [!IMPORTANT]
-> Удаленная визуализация Azure использует текстуру небесно только для моделей освещения. Он не отображает перевозки в качестве фона, так как расширенные приложения реально уже имеют правильный фон — реальный мир.
+> Удаленная отрисовка Azure использует текстуру неба для моделей освещения. Она не отрисовывает цвет неба в качестве фона, так как приложения дополненной реальности уже имеют надлежащий фон, то есть реальный мир.
 
-## <a name="changing-the-sky-texture"></a>Изменение текстуры перевозки
+## <a name="changing-the-sky-texture"></a>Изменение текстуры неба
 
-Чтобы изменить карту среды, достаточно [Загрузить текстуру](../../concepts/textures.md) и изменить значение сеанса `SkyReflectionSettings`:
+Чтобы изменить карту среды, достаточно [загрузить текстуру](../../concepts/textures.md) и изменить значение `SkyReflectionSettings` для сеанса.
 
-``` cs
+```cs
 LoadTextureAsync _skyTextureLoad = null;
 void ChangeEnvironmentMap(AzureSession session)
 {
@@ -66,54 +66,78 @@ void ChangeEnvironmentMap(AzureSession session)
 }
 ```
 
-Обратите внимание `LoadTextureFromSASAsync` , что этот вариант используется выше, так как загружается встроенная текстура. Если загрузка производится из [связанных хранилищ BLOB-объектов](../../how-tos/create-an-account.md#link-storage-accounts), используйте вариант `LoadTextureAsync`.
+```cpp
+void ChangeEnvironmentMap(ApiHandle<AzureSession> session)
+{
+    LoadTextureFromSASParams params;
+    params.TextureType = TextureType::CubeMap;
+    params.TextureUrl = "builtin://VeniceSunset";
+    ApiHandle<LoadTextureAsync> skyTextureLoad = *session->Actions()->LoadTextureFromSASAsync(params);
 
-## <a name="sky-texture-types"></a>Типы небесных текстур
+    skyTextureLoad->Completed([&](ApiHandle<LoadTextureAsync> res)
+    {
+        if (res->IsRanToCompletion())
+        {
+            ApiHandle<SkyReflectionSettings> settings = *session->Actions()->SkyReflectionSettings();
+            settings->SkyReflectionTexture(*res->Result());
+        }
+        else
+        {
+            printf("Texture loading failed!");
+        }
+    });
+}
 
-В качестве карт среды можно использовать как *[кубемапс](https://en.wikipedia.org/wiki/Cube_mapping)* , так и *2D-текстуры* .
+```
 
-Все текстуры должны быть в [поддерживаемом формате текстуры](../../concepts/textures.md#supported-texture-formats). Вам не нужно предоставлять MIP-карты для небесных текстур.
+Обратите внимание, что выше используется вариант `LoadTextureFromSASAsync`, так как загружаются встроенные текстуры. Если загрузка производится из [связанных хранилищ BLOB-объектов](../../how-tos/create-an-account.md#link-storage-accounts), используйте вариант `LoadTextureAsync`.
 
-### <a name="cube-environment-maps"></a>Карты среды Куба
+## <a name="sky-texture-types"></a>Типы текстур неба
 
-Для справки ниже приведен неупакованный кубической карты:
+Вы можете использовать в качестве карты среды *[cubemap](https://en.wikipedia.org/wiki/Cube_mapping)* или *двухмерную текстуру*.
 
-![Развернутый кубической карты](media/Cubemap-example.png)
+Все текстуры должны иметь [поддерживаемый формат текстуры](../../concepts/textures.md#supported-texture-formats). Для текстур неба не нужно предоставлять MIP-карты.
 
-`AzureSession.Actions.LoadTextureAsync` /  Используйте `LoadTextureFromSASAsync` с `TextureType.CubeMap` для загрузки текстур кубической карты.
+### <a name="cube-environment-maps"></a>Кубические карты среды
 
-### <a name="sphere-environment-maps"></a>Карты среды Sphere
+Для информации ниже приведен пример развернутого объекта cubemap.
 
-При использовании двухмерной текстуры в качестве схемы среды изображение должно находиться в [сферической области координат](https://en.wikipedia.org/wiki/Spherical_coordinate_system).
+![Развернутый объект cubemap](media/Cubemap-example.png)
 
-![Перенебесное изображение в сферных координатах](media/spheremap-example.png)
+Используйте `AzureSession.Actions.LoadTextureAsync`/ `LoadTextureFromSASAsync` с `TextureType.CubeMap` для загрузки текстур кубической карты (cubemap).
 
-Используйте `AzureSession.Actions.LoadTextureAsync` с `TextureType.Texture2D` для загрузки карт сферического окружения.
+### <a name="sphere-environment-maps"></a>Сферические карты среды
+
+При использовании двухмерной текстуры в качестве карты среды изображение должно находиться в [ пространстве сферических координат](https://en.wikipedia.org/wiki/Spherical_coordinate_system).
+
+![Изображение неба вычисляется в сферических координатах](media/spheremap-example.png)
+
+Используйте `AzureSession.Actions.LoadTextureAsync` с `TextureType.Texture2D` для загрузки сферических карт среды.
 
 ## <a name="built-in-environment-maps"></a>Встроенные карты среды
 
-Удаленная визуализация Azure предоставляет несколько встроенных схем среды, которые всегда доступны. Все встроенные карты среды являются кубемапс.
+Удаленная отрисовка Azure предоставляет несколько встроенных карт среды, которые всегда доступны. Все встроенные карты среды являются кубическими (cubemap).
 
-|Идентификатор                         | Описание                                              | Рисунки                                                      |
+|Идентификатор                         | Описание                                              | Иллюстрация                                                      |
 |-----------------------------------|:---------------------------------------------------------|:-----------------------------------------------------------------:|
-|builtin://Autoshop                 | Разнообразные индикаторы с чередованием, яркий базовый свет освещения    | ![Автомагазин](media/autoshop.png)
-|builtin://BoilerRoom               | Яркий параметр освещения, несколько световых окон      | ![боилеррум](media/boiler-room.png)
-|builtin://ColorfulStudio           | Разноцветные световые индикаторы в средней освещенности  | ![колорфулстудио](media/colorful-studio.png)
-|builtin://Hangar                   | Умеренный яркий световой зал                     | ![смаллхангар](media/hangar.png)
-|builtin://IndustrialPipeAndValve   | Настройка «затемнение» с светло-темным контрастом              | ![индустриалпипеандвалве](media/industrial-pipe-and-valve.png)
-|builtin://Lebombo                  | Постоянную наружное окружение, ярко-светлая область окна     | ![лебомбо](media/lebombo.png)
-|builtin://SataraNight              | Темно-ночный небесно-голубой и земля со многими окружающими индикаторами   | ![сатаранигхт](media/satara-night.png)
-|builtin://SunnyVondelpark          | Яркий солнечный свет и контрастность тени                      | ![суннивонделпарк](media/sunny-vondelpark.png)
-|builtin://Syferfontein             | Снятие небесного света с умеренным освещением от заземления            | ![сиферфонтеин](media/syferfontein.png)
-|builtin://TearsOfSteelBridge       | Умеренное изменение Sun и затенения                         | ![теарсофстилбридже](media/tears-of-steel-bridge.png)
-|builtin://VeniceSunset             | Вечером-светло-Закатный подход к Сумерки                    | ![веницесунсет](media/venice-sunset.png)
-|builtin://WhippleCreekRegionalPark | Яркие, Луш-зеленый и белый световые тона, затемненное заземление | ![вхипплекрикрегионалпарк](media/whipple-creek-regional-park.png)
-|builtin://WinterRiver              | Постоянную с ярко-светлым заземлением                 | ![винтерривер](media/winter-river.png)
-|builtin://DefaultSky               | То же, что и Теарсофстилбридже                               | ![дефаултски](media/tears-of-steel-bridge.png)
+|builtin://Autoshop                 | Разнообразные полосы света, яркое базовое освещение для закрытых помещений    | ![Autoshop](media/autoshop.png)
+|builtin://BoilerRoom               | Яркое освещение для сцен в закрытых помещениях, свет от нескольких окон      | ![BoilerRoom](media/boiler-room.png)
+|builtin://ColorfulStudio           | Окрашенный свет в закрытом помещении средней освещенности  | ![ColorfulStudio](media/colorful-studio.png)
+|builtin://Hangar                   | Равномерное неинтенсивное освещение в помещении большого размера                     | ![SmallHangar](media/hangar.png)
+|builtin://IndustrialPipeAndValve   | Тускло освещенное закрытое помещение с контрастными участками              | ![IndustrialPipeAndValve](media/industrial-pipe-and-valve.png)
+|builtin://Lebombo                  | Равномерное дневное освещение в комнате, ярко освещенная область окна     | ![Lebombo](media/lebombo.png)
+|builtin://SataraNight              | Темное ночное небо и земля со множеством источников света   | ![SataraNight](media/satara-night.png)
+|builtin://SunnyVondelpark          | Яркий солнечный свет и контрастные тени                      | ![SunnyVondelpark](media/sunny-vondelpark.png)
+|builtin://Syferfontein             | Чистое небо, умеренное освещение от земли            | ![Syferfontein](media/syferfontein.png)
+|builtin://TearsOfSteelBridge       | Умеренное освещение с неравномерными светлыми и затененными участками                         | ![TearsOfSteelBridge](media/tears-of-steel-bridge.png)
+|builtin://VeniceSunset             | Вечернее закатное освещение перед сумерками                    | ![VeniceSunset](media/venice-sunset.png)
+|builtin://WhippleCreekRegionalPark | Освещение ярких тонов зеленого и белого цвета, затененная земля | ![WhippleCreekRegionalPark](media/whipple-creek-regional-park.png)
+|builtin://WinterRiver              | Дневное освещение с ярко и равномерно освещенной землей                 | ![WinterRiver](media/winter-river.png)
+|builtin://DefaultSky               | То же, что и TearsOfSteelBridge                               | ![DefaultSky](media/tears-of-steel-bridge.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Освещение](../../overview/features/lights.md)
 * [Материалы](../../concepts/materials.md)
 * [Текстуры](../../concepts/textures.md)
-* [Программа командной строки Тексконв](../../resources/tools/tex-conv.md)
+* [Инструмент командной строки TexConv](../../resources/tools/tex-conv.md)
