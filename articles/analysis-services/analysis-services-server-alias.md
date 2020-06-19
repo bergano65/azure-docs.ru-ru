@@ -1,22 +1,22 @@
 ---
 title: Псевдонимы сервера Azure Analysis Services | Документация Майкрософт
-description: Узнайте, как создавать псевдонимы имен серверов Azure Analysis Services. После этого пользователи смогут подключаться к серверу с более коротким именем псевдонима вместо имени сервера.
+description: Узнайте, как создавать псевдонимы имен серверов служб Azure Analysis Services. С их помощью пользователи смогут подключаться к серверу, используя более короткий псевдоним вместо имени сервера.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/29/2019
+ms.date: 05/19/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 5e7017fad90e32cb8c4b952987fe248e463e4d03
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
-ms.translationtype: MT
+ms.openlocfilehash: 4b416a25fd0befa91076fed5f9bf5df23ea30844
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "73572295"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83698988"
 ---
 # <a name="alias-server-names"></a>Псевдонимы сервера
 
-С помощью псевдонима сервера пользователи могут подключаться к серверу Analysis Services Azure, используя более короткий *псевдоним* вместо имени сервера. При подключении из клиентского приложения псевдоним указывается как конечная точка в формате протокола **ссылка://**. Затем конечная точка возвращает настоящее имя сервера для подключения.
+С помощью псевдонима сервера пользователи могут подключаться к серверу Analysis Services Azure, используя более короткий *псевдоним* вместо имени сервера. При подключении из клиентского приложения псевдоним указывается как конечная точка в формате протокола **ссылка://** . Затем конечная точка возвращает настоящее имя сервера для подключения.
 
 Псевдонимы сервера удобно использовать в следующих сценариях:
 
@@ -29,7 +29,7 @@ ms.locfileid: "73572295"
 
 ![Псевдоним в формате ссылки](media/analysis-services-alias/aas-alias-browser.png)
 
-При подключении из клиента псевдоним сервера вводится в формате протокола **ссылка://**. Например, в Power BI Desktop это выглядит следующим образом.
+При подключении из клиента псевдоним сервера вводится в формате протокола **ссылка://** . Например, в Power BI Desktop это выглядит следующим образом.
 
 ![Подключение Power BI Desktop](media/analysis-services-alias/aas-alias-connect-pbid.png)
 
@@ -52,7 +52,7 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 [Клиентские библиотеки](analysis-services-data-providers.md)   
 [Подключение из Power BI Desktop](analysis-services-connect-pbi.md)

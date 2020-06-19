@@ -9,8 +9,6 @@
       href: cognitive-services-and-machine-learning.md
     - name: Пользовательские поддомены для Cognitive Services
       href: cognitive-services-custom-subdomains.md
-    - name: Процесс проверки для доступа к Cognitive Services
-      href: cognitive-services-gating-process.md
     - name: Поддержка языков
       href: language-support.md
 - name: Краткие руководства
@@ -21,6 +19,13 @@
       href: cognitive-services-apis-create-account-cli.md
     - name: Ведение журнала диагностики
       href: diagnostic-logging.md
+    - name: Шаблон ARM
+      displayName: Resource Manager
+      href: resource-manager-template.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      href: ./policy-samples.md
 - name: Безопасность
   items:
     - name: Безопасность Cognitive Services
