@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок общих ресурсов в службе автоматизации Azure
-description: Узнайте, как устранять неполадки и устранять проблемы с общими ресурсами службы автоматизации Azure.
+title: Устранение проблем c общими ресурсами службы автоматизации Azure
+description: В этой статье рассказывается, как устранять проблемы с общими ресурсами службы автоматизации Azure.
 services: automation
 author: mgoedtel
 ms.author: magoedte
@@ -8,45 +8,42 @@ ms.date: 03/12/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: c59e8ec67777a9cfebc12508b197e1237a61df4a
-ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
-ms.translationtype: MT
+ms.openlocfilehash: 5b87a98ed38e3af315789adffc11824f2522b802
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82864204"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83680886"
 ---
-# <a name="troubleshoot-shared-resources-in-azure-automation"></a>Устранение неполадок общих ресурсов в службе автоматизации Azure
+# <a name="troubleshoot-shared-resource-issues"></a>Устранение проблем с общими ресурсами
 
-В этой статье обсуждаются решения проблем, которые могут возникнуть при использовании [общих ресурсов](../automation-intro.md#shared-resources) в службе автоматизации Azure.
-
->[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM в настоящее время. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Для учетной записи службы автоматизации модули можно обновить до последней версии, используя [обновление модулей Azure PowerShell в службе автоматизации Azure](../automation-update-azure-modules.md).
+В этой статье обсуждаются проблемы, которые могут возникать при использовании [общих ресурсов](../automation-intro.md#shared-resources) в службе автоматизации Azure.
 
 ## <a name="modules"></a>Модули
 
-### <a name="scenario-a-module-is-stuck-during-import"></a><a name="module-stuck-importing"></a>Сценарий: во время импорта модуль зависает
+### <a name="scenario-a-module-is-stuck-during-import"></a><a name="module-stuck-importing"></a>Сценарий. Модуль завис во время импорта
 
 #### <a name="issue"></a>Проблема
 
-Модуль зависает в состоянии *импорта* при импорте или обновлении модулей службы автоматизации Azure.
+При импорте или обновлении модуля в службе автоматизации Azure обнаружилось, что модуль завис в состоянии *Импорт*.
 
 #### <a name="cause"></a>Причина
 
-Поскольку импорт модулей PowerShell является сложным, многошаговым процессом, модуль может быть неправильно импортирован и может зависнуть в переходном состоянии. Дополнительные сведения о процессе импорта см. в разделе [Импорт модуля PowerShell](/powershell/scripting/developer/module/importing-a-powershell-module#the-importing-process).
+Так как импорт модулей PowerShell — это сложный многоэтапный процесс, модуль может быть неправильно импортирован и может зависнуть в переходном состоянии. Подробнее о процессе импорта см. в статье [Импорт модуля PowerShell](/powershell/scripting/developer/module/importing-a-powershell-module#the-importing-process).
 
 #### <a name="resolution"></a>Решение
 
-Чтобы устранить эту проблему, необходимо удалить модуль, который зависает с помощью командлета [Remove-азаутоматионмодуле](https://docs.microsoft.com/powershell/module/Az.Automation/Remove-AzAutomationModule?view=azps-3.7.0) . Затем можно повторить импорт модуля.
+Чтобы устранить эту проблему, необходимо удалить зависший модуль с помощью командлета [Remove-AzAutomationModule](https://docs.microsoft.com/powershell/module/Az.Automation/Remove-AzAutomationModule?view=azps-3.7.0). Затем можно повторить импорт модуля.
 
 ```azurepowershell-interactive
 Remove-AzAutomationModule -Name ModuleName -ResourceGroupName ExampleResourceGroup -AutomationAccountName ExampleAutomationAccount -Force
 ```
 
-### <a name="scenario-azurerm-modules-are-stuck-during-import-after-an-update-attempt"></a><a name="update-azure-modules-importing"></a>Сценарий: модули AzureRM задерживаются во время импорта после попытки обновления
+### <a name="scenario-azurerm-modules-are-stuck-during-import-after-an-update-attempt"></a><a name="update-azure-modules-importing"></a>Сценарий. Модули AzureRM зависают во время импорта после попытки обновления
 
 #### <a name="issue"></a>Проблема
 
-После попытки обновления модулей AzureRM в вашей учетной записи остается баннер со следующим сообщением:
+После попытки обновления модулей AzureRM в вашей учетной записи остается баннер со следующим сообщением.
 
 ```error
 Azure modules are being updated
@@ -54,53 +51,53 @@ Azure modules are being updated
 
 #### <a name="cause"></a>Причина
 
-Существует известная ошибка при обновлении модулей AzureRM в учетной записи службы автоматизации. В частности, проблема возникает, если модули находятся в группе ресурсов с числовым именем, начинающимся с 0.
+Это известная проблема, которая может возникать при обновлении модулей AzureRM в учетной записи службы автоматизации. Эта проблема, в частности, возникает, если модули находятся в группе ресурсов, имя которой представляет собой число и начинается с 0.
 
 #### <a name="resolution"></a>Решение
 
-Чтобы обновить модули AzureRM в учетной записи службы автоматизации, учетная запись должна находиться в группе ресурсов с буквенно-цифровым именем. Группы ресурсов с числовыми именами, начинающимися с 0, не могут обновить модули AzureRM в данный момент.
+Чтобы была возможность обновить модули AzureRM в учетной записи службы автоматизации, учетная запись должна находиться в группе ресурсов с буквенно-цифровым именем. В настоящее время в группах ресурсов с цифровыми именами, начинающимися с 0, модули AzureRM обновить невозможно.
 
-### <a name="scenario-module-fails-to-import-or-cmdlets-cant-be-executed-after-importing"></a><a name="module-fails-to-import"></a>Сценарий: не удается импортировать модуль или после импорта не выполняются командлеты
+### <a name="scenario-module-fails-to-import-or-cmdlets-cant-be-executed-after-importing"></a><a name="module-fails-to-import"></a>Сценарий. Не удается импортировать модуль, или после импорта не выполняются командлеты
 
 #### <a name="issue"></a>Проблема
 
-Модуль не удается импортировать, или он успешно импортирован, но командлеты не извлекаются.
+Модулю не удается осуществить импорт, либо импорт выполнен успешно, но командлеты не извлекаются.
 
 #### <a name="cause"></a>Причина
 
 Ниже приведены наиболее распространенные причины, из-за которых модуль не может успешно завершить импорт в службу автоматизации Azure.
 
-* Структура не соответствует структуре, которая необходима для автоматизации.
+* Структура не соответствует той, которая требуется для службы автоматизации.
 * Модуль зависит от другого модуля, который не был развернут в учетной записи службы автоматизации.
 * В папке отсутствуют зависимости модуля.
-* Командлет [New-азаутоматионмодуле](https://docs.microsoft.com/powershell/module/Az.Automation/New-AzAutomationModule?view=azps-3.7.0) используется для отправки модуля, и вы не указали полный путь к хранилищу или не загрузили модуль с помощью общедоступного URL-адреса.
+* Командлет [New-AzAutomationModule](https://docs.microsoft.com/powershell/module/Az.Automation/New-AzAutomationModule?view=azps-3.7.0) используется для передачи модуля, при этом полный путь для хранения не указан или модуль не загружен с помощью общедоступного URL-адреса.
 
 #### <a name="resolution"></a>Решение
 
-Используйте любое из этих решений для решения проблемы.
+Для решения проблемы используйте одно из следующих решений.
 
-* Убедитесь, что модуль соответствует формату: ModuleName. zip-> ModuleName или номер версии-> (ModuleName. psm1, ModuleName. PSD1).
+* Убедитесь, что модуль имеет следующий формат: имя_модуля.zip -> имя_модуля или номер_версии -> (имя_модуля.psm1, имя_модуля.psd1).
 * Откройте файл **PSD1** и проверьте, есть ли у модуля зависимости. Если зависимости есть, отправьте эти модули в учетную запись службы автоматизации.
-* Убедитесь, что все **DLL** -файлы, на которые имеются ссылки, находятся в папке Module.
+* Убедитесь, что все указанные **DLL**-файлы находятся в папке модуля.
 
-### <a name="scenario-update-azuremoduleps1-suspends-when-updating-modules"></a><a name="all-modules-suspended"></a>Сценарий: Приостановка Упдате-азуремодуле. ps1 при обновлении модулей
+### <a name="scenario-update-azuremoduleps1-suspends-when-updating-modules"></a><a name="all-modules-suspended"></a>Сценарий. Update-AzureModule.ps1 приостанавливается при обновлении модулей
 
 #### <a name="issue"></a>Проблема
 
-Если вы используете модуль Runbook [упдате-азуремодуле. ps1](https://github.com/azureautomation/runbooks/blob/master/Utility/ARM/Update-AzureModule.ps1) для обновления модулей Azure, процесс обновления модуля приостанавливается.
+Если для обновления модулей Azure используется модуль runbook [Update-AzureModule.ps1](https://github.com/azureautomation/runbooks/blob/master/Utility/ARM/Update-AzureModule.ps1), процесс обновления приостанавливается.
 
 #### <a name="cause"></a>Причина
 
-Для этого модуля Runbook значение по умолчанию, определяющее, сколько модулей обновляется одновременно, равно 10. Процесс обновления подвержен ошибкам, если одновременно обновляются слишком много модулей.
+Для данного модуля runbook значение, определяющее количество одновременно обновляемых модулей, по умолчанию равно 10. Процесс обновления подвержен ошибкам, если одновременно обновляются слишком много модулей.
 
 #### <a name="resolution"></a>Решение
 
-Обычно в одной учетной записи службы автоматизации требуются все модули AzureRM и AZ. Необходимо импортировать только необходимые модули.
+Очень редко все модули AzureRM или Az требуются в одной учетной записи службы автоматизации. Следует импортировать только необходимые модули.
 
 > [!NOTE]
-> Избегайте импорта всего `Az.Automation` модуля или `AzureRM.Automation` , который импортирует все автономные модули.
+> Не импортируйте весь модуль `Az.Automation` или `AzureRM.Automation`, который импортирует все автономные модули.
 
-Если процесс обновления приостанавливается, добавьте `SimultaneousModuleImportJobCount` параметр в скрипт **упдате-азуремодулес. ps1** и укажите меньшее значение по умолчанию, равное 10. При реализации этой логики попробуйте начать со значения 3 или 5. `SimultaneousModuleImportJobCount`— Это параметр системного модуля Runbook **Update-аутоматионазуремодулесфораккаунт** , который используется для обновления модулей Azure. При внесении этой корректировки процесс обновления выполняется дольше, но более высока вероятность его завершения. В следующем примере показан параметр и его место в runbook:
+Если процесс обновления приостанавливается, добавьте параметр `SimultaneousModuleImportJobCount` в сценарий **Update-AzureModules.ps1** и укажите более низкое значение, чем значение по умолчанию, равное 10. Если вы реализуете эту логику, попробуйте начать со значения 3 или 5. `SimultaneousModuleImportJobCount` — параметр системного модуля runbook **Update-AutomationAzureModulesForAccount**, который используется для обновления модулей Azure. Если вы внесете указанное изменение, процесс обновления будет выполняться дольше, но вероятность его завершения будет более высокой. В следующем примере показан параметр и его место в runbook:
 
  ```powershell
          $Body = @"
@@ -121,11 +118,11 @@ Azure modules are being updated
 
 ## <a name="run-as-accounts"></a>Учетная запись запуска от имени
 
-### <a name="scenario-youre-unable-to-create-or-update-a-run-as-account"></a><a name="unable-create-update"></a>Сценарий: не удается создать или обновить учетную запись запуска от имени
+### <a name="scenario-youre-unable-to-create-or-update-a-run-as-account"></a><a name="unable-create-update"></a>Сценарий. Не удается создать или обновить учетную запись запуска от имени
 
 #### <a name="issue"></a>Проблема
 
-При попытке создать или обновить учетную запись запуска от имени появляется сообщение об ошибке следующего вида:
+При попытке создать или обновить учетную запись запуска от имени появляется сообщение об ошибке примерно следующего содержания.
 
 ```error
 You do not have permissions to create…
@@ -137,15 +134,15 @@ You do not have permissions to create…
 
 #### <a name="resolution"></a>Решение
 
-Чтобы создать или обновить учетную запись запуска от имени, необходимо иметь соответствующие [разрешения](../manage-runas-account.md#permissions) для различных ресурсов, используемых учетной записью запуска от имени. 
+Чтобы создать или обновить учетную запись запуска от имени, необходимо иметь соответствующие [разрешения](../manage-runas-account.md#permissions) на различные ресурсы, используемые этой учетной записью. 
 
-Если проблема связана с блокировкой, убедитесь, что блокировка может быть удалена. Затем перейдите к ресурсу, который заблокирован в портал Azure, щелкните блокировку правой кнопкой мыши и выберите **Удалить**.
+Если проблема связана с блокировкой, убедитесь, что эту блокировку можно снять. Затем на портале Azure перейдите к ресурсу, который заблокирован, щелкните блокировку правой кнопкой мыши и выберите **Удалить**.
 
-### <a name="scenario-you-receive-the-error-unable-to-find-an-entry-point-named-getperadapterinfo-in-dll-iplpapidll-when-executing-a-runbook"></a><a name="iphelper"></a>Сценарий. при выполнении Runbook появляется сообщение об ошибке "не удается найти точку входа с именем" Жетперадаптеринфо "в библиотеке DLL" иплпапи. dll ""
+### <a name="scenario-you-receive-the-error-unable-to-find-an-entry-point-named-getperadapterinfo-in-dll-iplpapidll-when-executing-a-runbook"></a><a name="iphelper"></a>Сценарий. При выполнении runbook появляется сообщение об ошибке "Не удается найти точку входа GetPerAdapterInfo в библиотеке DLL iplpapi.dll"
 
 #### <a name="issue"></a>Проблема
 
-При выполнении модуля Runbook появляется следующее исключение:
+При выполнении модуля runbook возникает следующее исключение.
 
 ```error
 Unable to find an entry point named 'GetPerAdapterInfo' in DLL 'iplpapi.dll'
@@ -153,11 +150,11 @@ Unable to find an entry point named 'GetPerAdapterInfo' in DLL 'iplpapi.dll'
 
 #### <a name="cause"></a>Причина
 
-Скорее всего, эта ошибка вызвана неправильно настроенной [учетной записью запуска от имени](../manage-runas-account.md).
+Скорее всего, эта ошибка возникает из-за неправильной настройки [учетной записи запуска от имени](../manage-runas-account.md).
 
 #### <a name="resolution"></a>Решение
 
-Убедитесь, что учетная запись запуска от имени настроена правильно. Затем убедитесь, что у вас есть правильный код в модуле Runbook для проверки подлинности в Azure. В следующем примере показан фрагмент кода для проверки подлинности в Azure в модуле Runbook с помощью учетной записи запуска от имени.
+Убедитесь, что учетная запись запуска от имени настроена правильно. Затем убедитесь, что в модуле runbook у вас правильный код проверки подлинности в Azure. В следующем примере показан фрагмент кода модуля runbook для проверки подлинности в Azure с использованием учетной записи запуска от имени.
 
 ```powershell
 $connection = Get-AutomationConnection -Name AzureRunAsConnection
@@ -167,9 +164,9 @@ Connect-AzAccount -ServicePrincipal -Tenant $connection.TenantID `
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если эта статья не решает проблему, попробуйте использовать один из следующих каналов для получения дополнительной поддержки:
+Если эта статья не помогла вам решить проблему, попробуйте использовать один из следующих каналов для получения дополнительной поддержки.
 
-* Получите ответы от экспертов Azure на [форумах Azure](https://azure.microsoft.com/support/forums/).
-* Подключитесь [@AzureSupport](https://twitter.com/azuresupport)к. Это официальная учетная запись Microsoft Azure для подключения сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
-* Отправьте запрос в службу поддержки Azure Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/)и выберите **получить поддержку**.
+* Получите ответы специалистов по Azure на [форумах Azure](https://azure.microsoft.com/support/forums/).
+* Обратитесь за помощью в Твиттер — [@AzureSupport](https://twitter.com/azuresupport). Это официальная учетная запись Microsoft Azure для доступа к ресурсам сообщества Azure (ответы на вопросы, поддержка и консультации специалистов).
+* Отправьте запрос в службу поддержки Azure Зайдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **Получить поддержку**.
 

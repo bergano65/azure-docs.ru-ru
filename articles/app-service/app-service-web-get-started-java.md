@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 05/29/2019
 ms.author: jafreebe
 ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: b07ffe92a5dd0c105188fab55bc679c04f660ed2
-ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
+ms.openlocfilehash: ed46859184dd17141892373943ac43e407b21eb6
+ms.sourcegitcommit: 1383842d1ea4044e1e90bd3ca8a7dc9f1b439a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84300966"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84817665"
 ---
 # <a name="quickstart-create-a-java-app-on-azure-app-service-on-windows"></a>Краткое руководство. Создание приложения Java в Службе приложений Azure на платформе Windows
 
@@ -48,6 +48,8 @@ cd helloworld
 ```
 
 ## <a name="configure-the-maven-plugin"></a>Настройка подключаемого модуля Maven
+
+В процессе развертывания для Службы приложений Azure автоматически используются учетные данные Azure из Azure CLI. Если Azure CLI не установлен, подключаемый модуль Maven будет выполнять вход с помощью имени для входа OAuth или имени пользователя устройства. При необходимости ознакомьтесь со сведениями о [выполнении проверки подлинности с помощью подключаемых модулей Maven](https://github.com/microsoft/azure-maven-plugins/wiki/Authentication).
 
 Вы можете выполнить в командной строке следующую команду maven, чтобы настроить развертывание, выбрать вариант **2** для операционной системы **windows** на первом шаге, затем принять конфигурации по умолчанию, нажимая клавишу **ВВОД**, пока не появится строка **Confirm (Y/N)** ("Подтверждение (Д/Н)"), а затем нажать клавишу **Y**, чтобы завершить настройку. 
 

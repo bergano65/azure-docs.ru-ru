@@ -7,14 +7,17 @@ ms.author: baanders
 ms.date: 5/8/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 070a65207bc1aa2cf754f3a0dca59f1a2950a339
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ROBOTS: NOINDEX, NOFOLLOW
+ms.openlocfilehash: 2534b2ef2eec0ca993ee2506dcc285d750ba38ce
+ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84611818"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84737209"
 ---
 # <a name="explore-azure-digital-twins-with-a-sample-client-app"></a>Изучение Azure Digital Twins с помощью примера клиентского приложения
+
+[!INCLUDE [Azure Digital Twins current preview status](../../includes/digital-twins-preview-status.md)]
 
 В этом учебнике представлен пример приложения, которое реализует клиентское приложение командной строки для взаимодействия с экземпляром Azure Digital Twins. Это клиентское приложение аналогично тому, которое создается в [учебнике по написанию кода для клиентского приложения](tutorial-code.md).
 

@@ -2,21 +2,21 @@
 title: Наблюдение и контроль за работой приложений с помощью Microsoft Cloud App Security
 description: Узнайте, как определять уровни рисков приложений, предотвращать бреши и утечки в реальном времени, а также как с помощью соединителей для приложений воспользоваться такими преимуществами API-интерфейсов от поставщиков, как наблюдение и управление.
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.topic: overview
+ms.topic: conceptual
 ms.workload: identity
 ms.date: 02/03/2020
-ms.author: mimart
+ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 206e1a06acddae0973d5dbc7e64212026149f217
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 62a77c1b21a6d602a2d54f56a2ed294fe800ac38
+ms.sourcegitcommit: bc943dc048d9ab98caf4706b022eb5c6421ec459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77069710"
+ms.lasthandoff: 06/14/2020
+ms.locfileid: "84763658"
 ---
 # <a name="cloud-app-visibility-and-control"></a>Видимость облачных приложений и управление ими
 

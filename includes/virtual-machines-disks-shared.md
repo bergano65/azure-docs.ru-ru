@@ -119,16 +119,16 @@ ms.locfileid: "83868046"
 
 Ниже приведен пример кластера WSFC с двумя узлами, использующего кластеризованные общие тома. В такой конфигурации обе виртуальные машины имеют одновременный доступ на запись к диску, что приводит к разбиению регулятора ReadWrite (чтение и запись) между двумя виртуальные машинами, и неиспользованию регулятора ReadOnly (только для чтения).
 
-:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-two-node-example.png" alt-text="Пример CSV с двумя узлами (цен. категория "Ультра")":::
+:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-two-node-example.png" alt-text="Пример CSV с двумя узлами (цен. категория Ультра)":::
 
 #### <a name="two-node-cluster-without-cluster-share-volumes"></a>Кластер с двумя узлами без общих томов кластера
 
 Ниже приведен пример кластера WSFC с двумя узлами, не использующего кластеризованные общие тома. В такой конфигурации только одна виртуальная машина имеет доступ на запись к диску. В результате регулятор ReadWrite будет использоваться исключительно для основной виртуальной машины, а регулятор ReadOnly — исключительно для вторичной.
 
-:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-two-node-no-csv.png" alt-text="Пример CSV с двумя узлами без диска CSV в цен. категории "Ультра"":::
+:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-two-node-no-csv.png" alt-text="Пример CSV с двумя узлами без диска CSV в цен. категории Ультра":::
 
 #### <a name="four-node-linux-cluster"></a>Кластер с четырьмя узлами Linux
 
 Ниже приведен пример кластера Linux с 4 узлами с одним модулем записи и тремя модулями чтения с горизонтальным масштабированием. В такой конфигурации только одна виртуальная машина имеет доступ на запись к диску. В результате регулятор ReadWrite будет использоваться исключительно для основной виртуальной машины, а регулятор ReadOnly — вторичными виртуальными машинами совместно.
 
-:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-four-node-example.png" alt-text="Пример регулирования "Ультра" на четырех узлах":::
+:::image type="content" source="media/virtual-machines-disks-shared-disks/ultra-four-node-example.png" alt-text="Пример регулирования Ультра на четырех узлах":::

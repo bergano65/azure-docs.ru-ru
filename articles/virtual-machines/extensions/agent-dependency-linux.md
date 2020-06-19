@@ -1,6 +1,6 @@
 ---
-title: Расширение виртуальной машины зависимостей Azure Monitor для Linux
-description: Развертывание агента зависимостей Azure Monitor на виртуальной машине Linux с помощью расширения виртуальной машины.
+title: Расширение виртуальной машины Azure Monitor Dependency для Linux
+description: Разверните агент Azure Monitor Dependency Agent на виртуальной машине Linux с помощью расширения виртуальной машины.
 services: virtual-machines-linux
 documentationcenter: ''
 author: mgoedtel
@@ -14,26 +14,26 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/29/2019
 ms.author: magoedte
-ms.openlocfilehash: 82f9c5a67cb056752cf8310be3b7c9f0bd2501e9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: cf4653ea7e49404af9e6d46796a7b00d9373c6da
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79254044"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83996556"
 ---
-# <a name="azure-monitor-dependency-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины зависимостей Azure Monitor для Linux
+# <a name="azure-monitor-dependency-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Azure Monitor Dependency для Linux
 
-Функция схемы в Azure Monitor для виртуальных машин получает данные от Microsoft Dependency Agent. Расширение виртуальной машины агента зависимостей Azure для Linux Опубликовано и поддерживается корпорацией Майкрософт. Расширение устанавливает агент зависимостей на виртуальных машинах Azure. В этом документе подробно описаны поддерживаемые платформы, конфигурации и варианты развертывания для расширения виртуальной машины агента зависимостей виртуальных машин Azure для Linux.
+Функция схемы в Azure Monitor для виртуальных машин получает данные от Microsoft Dependency Agent. Расширение виртуальной машины Azure VM Dependency Agent для Linux предоставляет и поддерживает корпорация Майкрософт. Это расширение устанавливает Dependency Agent на виртуальных машинах Azure. В этом документе подробно описаны поддерживаемые платформы, конфигурации и параметры развертывания для расширения виртуальной машины Azure VM Dependency Agent для Linux.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система
 
-Расширение агента зависимостей виртуальной машины Azure для Linux можно выполнить для поддерживаемых операционных систем, перечисленных в разделе " [Поддерживаемые операционные системы](../../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems) " статьи о развертывании Azure Monitor для виртуальных машин.
+Расширение Azure VM Dependency Agent для Linux можно запускать для поддерживаемых операционных систем, перечисленных в разделе [Поддерживаемые операционные системы](../../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems) статьи о развертывании Azure Monitor для виртуальных машин.
 
 ## <a name="extension-schema"></a>Схема расширения
 
-В следующем JSON показана схема для расширения агента зависимостей виртуальной машины Azure на виртуальной машине Linux в Azure. 
+В приведенном ниже коде в формате JSON показана схема для расширения Azure VM Dependency Agent на виртуальной машине Linux в Azure. 
 
 ```json
 {
@@ -73,20 +73,20 @@ ms.locfileid: "79254044"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Имя | Значение/пример |
+| Имя | Значение или пример |
 | ---- | ---- |
 | версия_API | 2015-01-01 |
-| publisher | Microsoft. Azure. Monitoring. Депенденциажент |
-| type | депенденциажентлинукс |
+| publisher | Microsoft.Azure.Monitoring.DependencyAgent |
+| type | DependencyAgentLinux |
 | typeHandlerVersion | 9,5 |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 
-Вы можете развернуть расширения виртуальной машины Azure с помощью шаблонов Azure Resource Manager. Вы можете использовать схему JSON, описанную в предыдущем разделе в шаблоне Azure Resource Manager, чтобы запустить расширение агента зависимостей виртуальной машины Azure во время развертывания шаблона Azure Resource Manager.
+Вы можете развернуть расширения виртуальной машины Azure с помощью шаблонов Azure Resource Manager. Чтобы запустить расширение Azure VM Dependency Agent во время развертывания шаблона Azure Resource Manager, в нем можно использовать схему JSON, описанную в предыдущем разделе.
 
-JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины. Вы также можете поместить его на корневом или верхнем уровне шаблона диспетчер ресурсов JSON. Размещение JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Задание имени и типа для дочерних ресурсов](../../azure-resource-manager/templates/child-resource-name-type.md).
+Код в формате JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины. Вы также можете поместить его на корневом или верхнем уровне шаблона JSON Resource Manager. Размещение JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/templates/child-resource-name-type.md).
 
-В следующем примере предполагается, что расширение агента зависимостей вложено в ресурс виртуальной машины. При вложении ресурса расширения JSON помещается в `"resources": []` объект виртуальной машины.
+В примере ниже предполагается, что расширение Dependency Agent вложено в ресурс виртуальной машины. При вложении ресурса расширения JSON помещается в объект `"resources": []` виртуальной машины.
 
 
 ```json
@@ -107,7 +107,7 @@ JSON для расширения виртуальной машины можно 
 }
 ```
 
-При помещении JSON расширения в корень шаблона имя ресурса включает ссылку на родительскую виртуальную машину. Тип отражает вложенную конфигурацию. 
+При размещении JSON расширения в корне шаблона имя ресурса содержит ссылку на родительскую виртуальную машину. Тип отражает вложенную конфигурацию. 
 
 ```json
 {
@@ -129,7 +129,7 @@ JSON для расширения виртуальной машины можно 
 
 ## <a name="azure-cli-deployment"></a>Развертывание с помощью Azure CLI
 
-Вы можете использовать Azure CLI для развертывания расширения виртуальной машины агента зависимостей на существующей виртуальной машине.  
+Развернуть расширение виртуальной машины Dependency Agent на существующей виртуальной машине можно с помощью Azure CLI.  
 
 ```azurecli
 
@@ -143,9 +143,9 @@ az vm extension set \
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
-### <a name="troubleshoot"></a>Устранение неполадок
+### <a name="troubleshoot"></a>Диагностика
 
-Данные о состоянии развертываний расширений можно получить из портал Azure и с помощью Azure CLI. Чтобы просмотреть состояние развертывания расширений для данной виртуальной машины, выполните следующую команду с помощью Azure CLI:
+Данные о состоянии развертывания расширения можно получить на портале Azure, а также с помощью Azure CLI. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните в Azure CLI следующую команду:
 
 ```azurecli
 az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
@@ -154,9 +154,9 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 Выходные данные выполнения расширения регистрируются в следующем файле:
 
 ```
-/opt/microsoft/dependcency-agent/log/install.log 
+/opt/microsoft/dependency-agent/log/install.log 
 ```
 
 ### <a name="support"></a>Поддержка
 
-Если вам нужна дополнительная помощь в любой момент в этой статье, обратитесь к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/). Вы также можете зафайлировать инцидент службы поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**. Сведения об использовании поддержки Azure см. в статье [часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, обратитесь к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Также можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq/).

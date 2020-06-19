@@ -99,7 +99,7 @@ ms.locfileid: "84635393"
 1. На портале [Power Virtual Agents](https://powerva.microsoft.com/#/) в правом верхнем углу выберите **Параметры** (значок шестеренки). Теперь выберите **System Fallback** (Системный возврат).
 
     > [!div class="mx-imgBorder"]
-    > ![Снимок экрана с элементом меню "System Fallback" (Системный возврат) в Power Virtual Agents](../media/how-to-integrate-power-virtual-agent/power-virtual-agent-settings-system-fallback.png)
+    > ![Снимок экрана с элементом меню System Fallback (Системный возврат) в Power Virtual Agents](../media/how-to-integrate-power-virtual-agent/power-virtual-agent-settings-system-fallback.png)
 
 1. Щелкните **+ Add** (+ Добавить), чтобы добавить раздел системного возврата.
 
@@ -119,7 +119,7 @@ ms.locfileid: "84635393"
 
 1. В новом действии возврата могут уже присутствовать элементы потока беседы. Удалите элемент **Escalate** (Передать), выбрав меню **Параметры**.
 
-    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/delete-escalate-action-using-option-menu.png" alt-text="Частичный снимок экрана потока диалога с выделенным параметром "Удалить".":::
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/delete-escalate-action-using-option-menu.png" alt-text="Частичный снимок экрана потока диалога с выделенным параметром Удалить.":::
 
 1. Выберите соединитель **+** , который идет к блоку **Сообщение**, а затем выберите команду **Вызов действия**.
 
@@ -147,12 +147,12 @@ ms.locfileid: "84635393"
 
 1. На новом экране для потока QnA Maker выберите **Продолжить**.
 
-    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-automate-qna-flow-template-continue.png" alt-text="Частичный снимок экрана: поток шаблона QnA Maker с выделенной кнопкой "Продолжить".":::
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-automate-qna-flow-template-continue.png" alt-text="Частичный снимок экрана: поток шаблона QnA Maker с выделенной кнопкой Продолжить.":::
 
 1. Выберите поле действия **Создать ответ** и заполните параметры QnA Maker из предыдущего раздела, озаглавленного [Создание и публикация базы знаний](#create-and-publish-a-knowledge-base). **Узел службы** на следующем рисунке ссылается на узел базы знаний **Узел** и имеет формат `https://YOUR-RESOURCE-NAME.azurewebsites.net/qnamaker`.
 
 
-    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-virtual-agent-fill-in-generate-answer-settings.png" alt-text="Частичный снимок экрана: поток шаблона QnA Maker с выделенной кнопкой "Продолжить".":::
+    :::image type="content" source="../media/how-to-integrate-power-virtual-agent/power-virtual-agent-fill-in-generate-answer-settings.png" alt-text="Частичный снимок экрана: поток шаблона QnA Maker с выделенной кнопкой Продолжить.":::
 
 1. Выберите **Сохранить**, чтобы сохранить поток.
 

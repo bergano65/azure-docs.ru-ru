@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: article
 ms.date: 05/18/2020
 ms.author: victorh
-ms.openlocfilehash: 8b67574f435681d8071eda1ad954dcafb5124cbf
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 1195bb2676634dd3e7c9310da4e8855c4ff814f3
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83655099"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84015970"
 ---
 # <a name="configure-azure-firewall-application-rules-with-sql-fqdns"></a>Настройка правил приложений брандмауэра Azure с полными доменными именами SQL
 
@@ -63,4 +63,4 @@ ms.locfileid: "83655099"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения о прокси-сервере SQL и режимах перенаправления доступны в разделе [Архитектура подключений к базе данных SQL Azure](../sql-database/sql-database-connectivity-architecture.md).
+Сведения о прокси-сервере SQL и режимах перенаправления доступны в разделе [Архитектура подключений к базе данных SQL Azure](../azure-sql/database/connectivity-architecture.md).
