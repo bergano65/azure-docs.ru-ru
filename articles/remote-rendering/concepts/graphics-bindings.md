@@ -1,6 +1,6 @@
 ---
 title: Графическая привязка
-description: Настройка графических привязок и вариантов использования
+description: Настройка графических привязок и варианты использования.
 author: florianborn71
 manager: jlyons
 services: azure-remote-rendering
@@ -9,34 +9,34 @@ ms.author: flborn
 ms.date: 12/11/2019
 ms.topic: conceptual
 ms.service: azure-remote-rendering
-ms.openlocfilehash: 8b5db0532f3dcc8b6dfb024238d0cacff2e6d2a1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 4854d5ff9d697a2bf082a788c0e761a2152b0294
+ms.sourcegitcommit: 0690ef3bee0b97d4e2d6f237833e6373127707a7
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80681887"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83758713"
 ---
 # <a name="graphics-binding"></a>Графическая привязка
 
-Чтобы иметь возможность использовать удаленную визуализацию Azure в пользовательском приложении, ее необходимо интегрировать в конвейер отрисовки приложения. Эта интеграция является обязанностью графической привязки.
+Чтобы иметь возможность использовать Удаленную отрисовку Azure в пользовательском приложении, ее необходимо интегрировать в конвейер отрисовки приложения. За эту интеграцию отвечает графическая привязка.
 
-После настройки графическая привязка предоставляет доступ к различным функциям, влияющим на визуализированный образ. Эти функции можно разделить на две категории: общие функции, которые всегда доступны, и конкретные функции, которые относятся только к выбранному `Microsoft.Azure.RemoteRendering.GraphicsApiType`.
+После настройки графическая привязка обеспечивает доступ к различным функциям, влияющим на отрисованное изображение. Эти функции можно разделить на две категории: общие функции, которые всегда доступны, и специальные функции, которые соответствуют выбранному типу `Microsoft.Azure.RemoteRendering.GraphicsApiType`.
 
 ## <a name="graphics-binding-in-unity"></a>Графическая привязка в Unity
 
-В Unity вся привязка обрабатывается `RemoteUnityClientInit` структурой, передаваемой в. `RemoteManagerUnity.InitializeManager` Чтобы задать графический режим, `GraphicsApiType` поле должно быть установлено в выбранную привязку. Поле будет заполнено автоматически в зависимости от наличия Ксрдевице. Поведение можно переопределить вручную, используя следующие варианты поведения:
+В Unity вся привязка обрабатывается структурой `RemoteUnityClientInit`, передаваемой в `RemoteManagerUnity.InitializeManager`. Чтобы задать графический режим, в поле `GraphicsApiType` необходимо задать выбранную привязку. Это поле заполняется автоматически, в зависимости от наличия XRDevice. Это поведение можно переопределить вручную, используя следующие варианты:
 
-* **HoloLens 2**: всегда используется привязка графики [Windows Mixed Reality](#windows-mixed-reality) .
-* **Плоское классическое приложение UWP**: [имитация](#simulation) всегда используется. Чтобы использовать этот режим, выполните действия, описанные в разделе [учебник. Настройка проекта Unity с нуля](../tutorials/unity/project-setup.md).
-* **Редактор Unity**. [Эмуляция](#simulation) всегда используется, пока не будет ПОДКЛЮЧЕНА гарнитура ВМР VR, в случае чего параметр arr будет отключен, чтобы разрешить отладку частей приложения, не связанных с arr. См. также с [holographic удаленное взаимодействие](../how-tos/unity/holographic-remoting.md).
+* **HoloLens 2**: всегда используется графическая привязка [Windows Mixed Reality](#windows-mixed-reality).
+* **Двухмерное классическое приложение UWP**: всегда используется [моделирование](#simulation). Чтобы использовать этот режим, выполните действия, описанные в [руководстве по настройке проекта Unity с нуля](../tutorials/unity/project-setup.md).
+* **Unity Editor**: всегда используется [моделирование](#simulation), если не подключена гарнитура виртуальной реальности WMR. В этом случае служба ARR будет отключена, чтобы сделать возможной отладку частей приложения, не связанных с ARR. Ознакомьтесь также с [голографическим удаленным взаимодействием](../how-tos/unity/holographic-remoting.md).
 
-Единственная другая соответствующая часть для Unity — доступ к [базовой привязке](#access), все остальные разделы, приведенные ниже, могут быть пропущены.
+Еще одной важной частью для Unity является только доступ к [базовой привязке](#access), все остальные разделы, приведенные ниже, можно пропустить.
 
-## <a name="graphics-binding-setup-in-custom-applications"></a>Настройка привязки графики в пользовательских приложениях
+## <a name="graphics-binding-setup-in-custom-applications"></a>Настройка графической привязки в пользовательских приложениях
 
-Чтобы выбрать графическую привязку, сделайте следующее: во-первых, при инициализации программы должна быть инициализирована статическая привязка графики.
+Чтобы выбрать графическую привязку, выполните следующие два действия. Во-первых, при инициализации программы графическая привязка должна быть инициализирована статически.
 
-``` cs
+```cs
 RemoteRenderingInitialization managerInit = new RemoteRenderingInitialization;
 managerInit.graphicsApi = GraphicsApiType.WmrD3D11;
 managerInit.connectionType = ConnectionType.General;
@@ -44,18 +44,38 @@ managerInit.right = ///...
 RemoteManagerStatic.StartupRemoteRendering(managerInit);
 ```
 
-Приведенный выше вызов необходим для инициализации удаленной отрисовки Azure в более holographic API. Эта функция должна вызываться до вызова любого из holographic API и до обращения к другим интерфейсам API удаленной подготовки к просмотру. Аналогичным образом, соответствующая функция `RemoteManagerStatic.ShutdownRemoteRendering();` de-init должна вызываться после того, как более holographic-интерфейсы больше не вызываются.
+```cpp
+RemoteRenderingInitialization managerInit;
+managerInit.graphicsApi = GraphicsApiType::WmrD3D11;
+managerInit.connectionType = ConnectionType::General;
+managerInit.right = ///...
+StartupRemoteRendering(managerInit); // static function in namespace Microsoft::Azure::RemoteRendering
+```
 
-## <a name="span-idaccessaccessing-graphics-binding"></a><span id="access">Доступ к графической привязке
+Приведенный выше вызов необходим для инициализации Удаленной отрисовки Azure в голографических API. Эта функция должна вызываться перед вызовом какого-либо голографического API и обращением к другим API Удаленной отрисовки. Аналогичным образом соответствующая функция деинициализации `RemoteManagerStatic.ShutdownRemoteRendering();` должна вызываться тогда, когда голографические API уже не вызываются.
 
-После настройки клиента можно получить доступ к базовой графической привязке с помощью `AzureSession.GraphicsBinding` метода получения. В качестве примера можно получить последнюю статистику кадра следующим образом:
+## <a name="span-idaccessaccessing-graphics-binding"></a><span id="access">Обращение к графической привязке
 
-``` cs
-AzureSession currentSesson = ...;
-if (currentSesson.GraphicsBinding)
+После настройки клиента к базовой графической привязке можно обратиться с помощью метода получения `AzureSession.GraphicsBinding`. В качестве примера можно получить статистику последнего кадра, как показано ниже.
+
+```cs
+AzureSession currentSession = ...;
+if (currentSession.GraphicsBinding)
 {
     FrameStatistics frameStatistics;
-    if (session.GraphicsBinding.GetLastFrameStatistics(out frameStatistics) == Result.Success)
+    if (currentSession.GraphicsBinding.GetLastFrameStatistics(out frameStatistics) == Result.Success)
+    {
+        ...
+    }
+}
+```
+
+```cpp
+ApiHandle<AzureSession> currentSession = ...;
+if (ApiHandle<GraphicsBinding> binding = currentSession->GetGraphicsBinding())
+{
+    FrameStatistics frameStatistics;
+    if (*binding->GetLastFrameStatistics(&frameStatistics) == Result::Success)
     {
         ...
     }
@@ -64,50 +84,67 @@ if (currentSesson.GraphicsBinding)
 
 ## <a name="graphic-apis"></a>Графические API
 
-В настоящее время существует два графических API, которые можно выбрать `WmrD3D11` , `SimD3D11`и. Третий элемент `Headless` существует, но еще не поддерживается на стороне клиента.
+В настоящее время можно использовать два графических API, `WmrD3D11` и `SimD3D11`. Третий API, `Headless`, существует, но еще не поддерживается на стороне клиента.
 
 ### <a name="windows-mixed-reality"></a>Windows Mixed Reality
 
-`GraphicsApiType.WmrD3D11`Привязка по умолчанию для запуска в HoloLens 2. Будет создана `GraphicsBindingWmrD3d11` привязка. В этом режиме Удаленная подготовка к просмотру Azure переключается непосредственно в более holographic API.
+`GraphicsApiType.WmrD3D11` — привязка по умолчанию для запуска в HoloLens 2. Создается привязка `GraphicsBindingWmrD3d11`. В этом режиме Удаленная отрисовка Azure подключается непосредственно к голографическим API.
 
-Для доступа к производным графическим привязкам основание `GraphicsBinding` должно быть приведено к типу.
-Для использования привязки ВМР необходимо выполнить два действия:
+Для доступа к производным графическим привязкам требуется привести базовый `GraphicsBinding`.
+Для использования привязки WMR необходимо выполнить две задачи.
 
-#### <a name="inform-remote-rendering-of-the-used-coordinate-system"></a>Уведомление об удаленной отрисовке используемой системы координат
+#### <a name="inform-remote-rendering-of-the-used-coordinate-system"></a>Указать систему координат для Удаленной отрисовки
 
-``` cs
-AzureSession currentSesson = ...;
+```cs
+AzureSession currentSession = ...;
 IntPtr ptr = ...; // native pointer to ISpatialCoordinateSystem
 GraphicsBindingWmrD3d11 wmrBinding = (currentSession.GraphicsBinding as GraphicsBindingWmrD3d11);
-if (binding.UpdateUserCoordinateSystem(ptr) == Result.Success)
+if (wmrBinding.UpdateUserCoordinateSystem(ptr) == Result.Success)
 {
     ...
 }
 ```
 
-Где выше `ptr` должен быть указателем на собственный `ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem` объект, определяющий систему координат в мировом пространстве, в которой координаты в API выражаются в.
+```cpp
+ApiHandle<AzureSession> currentSession = ...;
+void* ptr = ...; // native pointer to ISpatialCoordinateSystem
+ApiHandle<GraphicsBindingWmrD3d11> wmrBinding = currentSession->GetGraphicsBinding().as<GraphicsBindingWmrD3d11>();
+if (*wmrBinding->UpdateUserCoordinateSystem(ptr) == Result::Success)
+{
+    //...
+}
+```
 
-#### <a name="render-remote-image"></a>Отобразить удаленный образ
 
-В начале каждого кадра Удаленная рамка должна быть подготовлена к просмотру в обратном буфере. Это делается путем вызова метода `BlitRemoteFrame`, который будет заполнять сведения о цвете и глубине в привязанном к текущей цели отрисовки. Поэтому важно, чтобы это произошло после привязки заднего буфера в качестве целевого объекта отрисовки.
+В примере выше `ptr` должен быть указателем на собственный объект `ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem`, определяющий систему координат в абсолютном пространстве, в которой выражаются координаты в API.
 
-``` cs
-AzureSession currentSesson = ...;
+#### <a name="render-remote-image"></a>Отобразить удаленное изображение
+
+В начале каждого кадра удаленный кадр должен быть преобразован для просмотра в заднем буфере. Для этого вызывается метод `BlitRemoteFrame`, который передает данные цвета и глубины в текущий привязанный целевой объект отрисовки. Поэтому важно, чтобы это выполнялось после привязки заднего буфера в качестве целевого объекта отрисовки.
+
+```cs
+AzureSession currentSession = ...;
 GraphicsBindingWmrD3d11 wmrBinding = (currentSession.GraphicsBinding as GraphicsBindingWmrD3d11);
-binding.BlitRemoteFrame();
+wmrBinding.BlitRemoteFrame();
+```
+
+```cpp
+ApiHandle<AzureSession> currentSession = ...;
+ApiHandle<GraphicsBindingWmrD3d11> wmrBinding = currentSession->GetGraphicsBinding().as<GraphicsBindingWmrD3d11>();
+wmrBinding->BlitRemoteFrame();
 ```
 
 ### <a name="simulation"></a>Моделирование
 
-`GraphicsApiType.SimD3D11`является привязкой моделирования и, если она выбрана `GraphicsBindingSimD3d11` , создает графическую привязку. Этот интерфейс используется для имитации головного движения, например в классическом приложении, и для отрисовки однообразного изображения.
-Установка является более сложной и работает следующим образом.
+`GraphicsApiType.SimD3D11` — привязка моделирования, и если она выбрана, создается графическая привязка `GraphicsBindingSimD3d11`. Этот интерфейс используется для моделирования движения головы, например в классическом приложении. Он отрисовывает монокулярное изображение.
+Его настройка является более сложной и выполняется следующим образом.
 
-#### <a name="create-proxy-render-target"></a>Создание целевого объекта отрисовки прокси-сервера
+#### <a name="create-proxy-render-target"></a>Создание промежуточного целевого объекта отрисовки
 
-Удаленное и локальное содержимое должно быть подготовлено к просмотру с помощью целевого объекта отрисовки цвета или глубины с именем "прокси" с `GraphicsBindingSimD3d11.Update` использованием данных камеры прокси, предоставленных функцией. Прокси-сервер должен соответствовать разрешению заднего буфера. После того как сеанс будет готов `GraphicsBindingSimD3d11.InitSimulation` , его необходимо вызвать перед подключением к нему:
+Удаленное и локальное содержимое должно быть отрисовано на целевом объекте отрисовки со смещенными значениями цвета и глубины, называемом промежуточным, с использованием данных промежуточной камеры, предоставленных функцией `GraphicsBindingSimD3d11.Update`. Промежуточный целевой объект должен соответствовать разрешению заднего буфера. Когда сеанс готов, перед подключением к нему необходимо вызвать `GraphicsBindingSimD3d11.InitSimulation`.
 
-``` cs
-AzureSession currentSesson = ...;
+```cs
+AzureSession currentSession = ...;
 IntPtr d3dDevice = ...; // native pointer to ID3D11Device
 IntPtr color = ...; // native pointer to ID3D11Texture2D
 IntPtr depth = ...; // native pointer to ID3D11Texture2D
@@ -118,19 +155,31 @@ GraphicsBindingSimD3d11 simBinding = (currentSession.GraphicsBinding as Graphics
 simBinding.InitSimulation(d3dDevice, depth, color, refreshRate, flipBlitRemoteFrameTextureVertically, flipReprojectTextureVertically);
 ```
 
-Функция init должна быть предоставлена с указателями на собственное устройство D3D, а также к цвету и текстуре глубины целевого объекта отрисовки прокси-сервера. После инициализации `AzureSession.ConnectToRuntime` и `DisconnectFromRuntime` может вызываться несколько раз, но при переключении на другой сеанс необходимо сначала `GraphicsBindingSimD3d11.DeinitSimulation` вызвать метод в старом сеансе, прежде чем `GraphicsBindingSimD3d11.InitSimulation` его можно будет вызвать в другом сеансе.
+```cpp
+ApiHandle<AzureSession> currentSession = ...;
+void* d3dDevice = ...; // native pointer to ID3D11Device
+void* color = ...; // native pointer to ID3D11Texture2D
+void* depth = ...; // native pointer to ID3D11Texture2D
+float refreshRate = 60.0f; // Monitor refresh rate up to 60hz.
+bool flipBlitRemoteFrameTextureVertically = false;
+bool flipReprojectTextureVertically = false;
+ApiHandle<GraphicsBindingSimD3d11> simBinding = currentSession->GetGraphicsBinding().as<GraphicsBindingSimD3d11>();
+simBinding->InitSimulation(d3dDevice, depth, color, refreshRate, flipBlitRemoteFrameTextureVertically, flipReprojectTextureVertically);
+```
 
-#### <a name="render-loop-update"></a>Обновление цикла подготовки к просмотру
+Функции инициализации нужно предоставить указатели на собственное устройство D3D, а также на цвет и глубину текстуры промежуточного целевого объекта отрисовки. После инициализации `AzureSession.ConnectToRuntime` и `DisconnectFromRuntime` можно вызывать несколько раз, но при переключении на другой сеанс необходимо сначала вызвать `GraphicsBindingSimD3d11.DeinitSimulation` в старом сеансе, прежде чем можно будет вызвать `GraphicsBindingSimD3d11.InitSimulation` в другом сеансе.
 
-Обновление цикла отрисовки состоит из нескольких шагов:
+#### <a name="render-loop-update"></a>Обновление цикла отрисовки
 
-1. Каждый кадр, перед отрисовкой, `GraphicsBindingSimD3d11.Update` вызывается с текущим преобразованием камеры, переданным на сервер для подготовки к просмотру. В то же время для подготовки к просмотру целевого объекта отрисовки прокси-сервера необходимо применить преобразованное прокси-сервер.
-Если возвращенное обновление `SimulationUpdate.frameId` прокси-сервера имеет значение null, удаленные данные пока отсутствуют. В этом случае вместо отрисовки в целевом объекте прорисовки прокси-сервера любое локальное содержимое должно быть визуализировано в обратном буфере непосредственно с использованием текущих данных камеры, а следующие два шага пропускаются.
-1. Теперь приложение должно выполнить привязку целевого объекта отрисовки и `GraphicsBindingSimD3d11.BlitRemoteFrameToProxy`вызова. Это приведет к заполнению удаленного цвета и сведений о глубине на целевой объект отрисовки прокси-сервера. Теперь любое локальное содержимое можно отобразить на прокси-сервере, используя преобразование с помощью прокси-камеры.
-1. Затем задний буфер должен быть привязан в качестве целевого объекта рендеринга и `GraphicsBindingSimD3d11.ReprojectProxy` вызываться, после чего можно представить задний буфер.
+Обновление цикла отрисовки состоит из нескольких этапов.
 
-``` cs
-AzureSession currentSesson = ...;
+1. Перед отрисовкой каждого кадра вызывается `GraphicsBindingSimD3d11.Update` с текущим преобразованием камеры, которое передается на сервер для отрисовки. В то же время возвращенное промежуточное преобразование необходимо применить к промежуточной камере, чтобы выполнить отрисовку на промежуточном целевом объекте отрисовки.
+Если возвращенное обновление промежуточного преобразования `SimulationUpdate.frameId` имеет значение NULL, удаленные данные пока отсутствуют. В этом случае вместо отрисовки на промежуточном целевом объекте отрисовки любое локальное содержимое должно быть преобразовано для просмотра в заднем буфере с использованием текущих данных камеры, а следующие два шага должны быть пропущены.
+1. Теперь приложение должно привязать промежуточный целевой объект отрисовки и вызвать `GraphicsBindingSimD3d11.BlitRemoteFrameToProxy`. Это позволит применить данные удаленного цвета и глубины к промежуточному целевому объекту. Теперь любое локальное содержимое можно будет отобразить на промежуточном целевом объекте, используя преобразование промежуточной камеры.
+1. Затем задний буфер нужно будет привязать в качестве целевого объекта отрисовки и вызвать `GraphicsBindingSimD3d11.ReprojectProxy` для представления заднего буфера.
+
+```cs
+AzureSession currentSession = ...;
 GraphicsBindingSimD3d11 simBinding = (currentSession.GraphicsBinding as GraphicsBindingSimD3d11);
 SimulationUpdate update = new SimulationUpdate();
 // Fill out camera data with current camera data
@@ -155,6 +204,33 @@ else
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+```cpp
+ApiHandle<AzureSession> currentSession;
+ApiHandle<GraphicsBindingSimD3d11> simBinding = currentSession->GetGraphicsBinding().as<GraphicsBindingSimD3d11>();
+
+SimulationUpdate update;
+// Fill out camera data with current camera data
+...
+SimulationUpdate proxyUpdate;
+simBinding->Update(update, &proxyUpdate);
+// Is the frame data valid?
+if (proxyUpdate.frameId != 0)
+{
+    // Bind proxy render target
+    simBinding->BlitRemoteFrameToProxy();
+    // Use proxy camera data to render local content
+    ...
+    // Bind back buffer
+    simBinding->ReprojectProxy();
+}
+else
+{
+    // Bind back buffer
+    // Use current camera data to render local content
+    ...
+}
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Руководство. Настройка проекта Unity с нуля](../tutorials/unity/project-setup.md)

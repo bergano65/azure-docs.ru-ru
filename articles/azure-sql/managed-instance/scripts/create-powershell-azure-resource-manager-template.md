@@ -3,7 +3,7 @@ title: Создание управляемого экземпляра (шабл�
 titleSuffix: Azure SQL Managed Instance
 description: Используйте этот пример сценария Azure PowerShell для создания управляемого экземпляра.
 services: sql-database
-ms.service: sql-database
+ms.service: sql-managed-instance
 ms.subservice: operations
 ms.custom: seo-dt-2019
 ms.devlang: PowerShell
@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 03/12/2019
-ms.openlocfilehash: 9024759f87d30cddfa2f3b7ea6b965ce03632f59
-ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
+ms.openlocfilehash: f4c4c63e6461dd3aa3cabe86b871434814fb400e
+ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84220869"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84708542"
 ---
 # <a name="use-powershell-with-an-azure-resource-manager-template-to-create-a-managed-instance"></a>Создание управляемого экземпляра с помощью PowerShell с шаблоном Azure Resource Manager
 

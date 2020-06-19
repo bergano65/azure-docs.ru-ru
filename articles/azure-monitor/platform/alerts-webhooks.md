@@ -1,19 +1,19 @@
 ---
-title: Вызов веб-перехватчика с классическим оповещением метрики в Azure Monitor
+title: Вызов веб-перехватчика с помощью классического оповещения метрики в Azure Monitor
 description: Узнайте, как перенаправлять оповещения метрик Azure в другие системы за пределами Azure.
 author: harelbr
 ms.author: harelbr
 ms.topic: conceptual
 ms.date: 04/03/2017
 ms.subservice: alerts
-ms.openlocfilehash: 27510871f9a022cb27c6b03b812ce1d37b47312c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 0677c7a0521fe1f63c9c2c9fce65d8dbd8e6d5c4
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79248987"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83826916"
 ---
-# <a name="call-a-webhook-with-a-classic-metric-alert-in-azure-monitor"></a>Вызов веб-перехватчика с классическим оповещением метрики в Azure Monitor
+# <a name="call-a-webhook-with-a-classic-metric-alert-in-azure-monitor"></a>Вызов веб-перехватчика с помощью классического оповещения метрики в Azure Monitor
 
 С помощью веб-перехватчика можно направлять уведомления об оповещениях Azure в другие системы для постобработки или выполнения настраиваемых действий. Веб-перехватчик можно использовать, чтобы направить оповещение к службам, которые отправляют SMS-сообщения, ведут журналы об ошибках, уведомляют членов команды в чате или службах обмена сообщениями либо выполняют другие действия. 
 
@@ -26,10 +26,10 @@ ms.locfileid: "79248987"
 
 ![Добавление панели правил генерации оповещений](./media/alerts-webhooks/Alertwebhook.png)
 
-Вы также можете настроить оповещение так, чтобы при его активации в URI веб-перехватчика добавлялись соответствующие сведения. Для этого можно использовать [командлеты Azure PowerShell](../../azure-monitor/platform/powershell-quickstart-samples.md#create-metric-alerts), [кроссплатформенный интерфейс командной строки](../../azure-monitor/platform/cli-samples.md#work-with-alerts) или [REST API Azure Monitor](https://msdn.microsoft.com/library/azure/dn933805.aspx).
+Вы также можете настроить оповещение так, чтобы при его активации в URI веб-перехватчика добавлялись соответствующие сведения. Для этого можно использовать [командлеты Azure PowerShell](../samples/powershell-samples.md#create-metric-alerts), [кроссплатформенный интерфейс командной строки](../samples/cli-samples.md#work-with-alerts) или [REST API Azure Monitor](https://msdn.microsoft.com/library/azure/dn933805.aspx).
 
 ## <a name="authenticate-the-webhook"></a>Аутентификация веб-перехватчика
-Для веб-перехватчика может использоваться аутентификация на основе маркеров. Универсальный код ресурса (URI) веб-перехватчика сохраняется вместе с идентификатором маркера. Пример: `https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue`
+Для веб-перехватчика может использоваться аутентификация на основе маркеров. Универсальный код ресурса (URI) веб-перехватчика сохраняется вместе с идентификатором маркера. Например: `https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue`
 
 ## <a name="payload-schema"></a>Схема полезных данных
 Операция POST содержит следующие полезные данные и схему JSON для всех оповещений, связанных с метриками.
@@ -92,15 +92,15 @@ ms.locfileid: "79248987"
 | resourceId |Да | |Идентификатор ресурса затронутого ресурса. |
 | resourceRegion |Да | |Регион или расположение затронутого ресурса. |
 | portalLink |Да | |Прямая ссылка на страницу сводки по ресурсу на портале. |
-| properties |Нет |Необязательный |Набор пар "ключ — значение", содержащих подробные сведения о событии. Например, `Dictionary<String, String>`. Поле свойства не является обязательным. В настраиваемом пользовательском интерфейсе или в рабочем процессе на основе приложения логики пользователи могут вводить пары "ключ — значение" для передачи в виде полезных сведений. Еще один способ передачи пользовательских свойств в веб-перехватчик — через сам универсальный код ресурса (URI) веб-перехватчика (в виде параметров запросов). |
+| properties |Нет |Необязательно |Набор пар "ключ — значение", содержащих подробные сведения о событии. Например, `Dictionary<String, String>`. Поле свойства не является обязательным. В настраиваемом пользовательском интерфейсе или в рабочем процессе на основе приложения логики пользователи могут вводить пары "ключ — значение" для передачи в виде полезных сведений. Еще один способ передачи пользовательских свойств в веб-перехватчик — через сам универсальный код ресурса (URI) веб-перехватчика (в виде параметров запросов). |
 
 > [!NOTE]
 > Значение в поле **свойства** можно задать только с помощью [REST API Azure Monitor](https://msdn.microsoft.com/library/azure/dn933805.aspx).
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие шаги
-* Дополнительные сведения об оповещениях и веб-перехватчиках Azure см. в видео [Интеграция оповещений Azure с PagerDuty](https://go.microsoft.com/fwlink/?LinkId=627080).
+## <a name="next-steps"></a>Дальнейшие действия
+* Дополнительные сведения об оповещениях Azure и веб-перехватчиках см. в видео, посвященном [интеграции оповещений Azure с PagerDuty](https://go.microsoft.com/fwlink/?LinkId=627080).
 * Узнайте больше о [выполнении скриптов службы автоматизации Azure для оповещений Azure](https://go.microsoft.com/fwlink/?LinkId=627081).
 * Узнайте, как [использовать приложение логики для отправки сообщения SMS с помощью Twilio из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app).
 * Узнайте, как [использовать приложение логики для отправки сообщения Slack из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app).

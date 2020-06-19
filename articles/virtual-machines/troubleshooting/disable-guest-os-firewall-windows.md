@@ -1,6 +1,6 @@
 ---
 title: Отключение брандмауэра гостевой ОС на виртуальной машине Azure | Документация Майкрософт
-description: Узнайте о способах устранения неполадок в ситуациях, когда брандмауэр гостевой операционной системы фильтрует частичный или полный трафик к виртуальной машине.
+description: Сведения о способах устранения неполадок в ситуациях, когда брандмауэр гостевой операционной системы фильтрует частичный или полный трафик к виртуальной машине.
 services: virtual-machines-windows
 documentationcenter: ''
 author: Deland-Han
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
-ms.openlocfilehash: e4cd1595d963330bd5decb366310bf5e97f59bc8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 5d8aa456a6454dd511b7dcda5d3f74a739033356
+ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80422360"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83774339"
 ---
 # <a name="disable-the-guest-os-firewall-in-azure-vm"></a>Отключение брандмауэра гостевой ОС на виртуальной машине Azure
 
@@ -27,13 +27,13 @@ ms.locfileid: "80422360"
 
 ## <a name="solution"></a>Решение
 
-Описанное решение позволит вам сосредоточиться на исправлении реальной проблемы, то есть на правильной настройке правил брандмауэра. Рекомендуется включить компонент брандмауэра Windows. Настройка правил брандмауэра зависит от требуемого уровня доступа к виртуальной машине.
+Описанное решение позволит вам сосредоточиться на исправлении реальной проблемы, то есть на правильной настройке правил брандмауэра. Корпорация Майкрософт не рекомендует отключать брандмауэр Windows. Настройка правил брандмауэра зависит от требуемого уровня доступа к виртуальной машине.
 
 ### <a name="online-solutions"></a>Сетевые решения 
 
 Если виртуальная машина подключена к сети и доступна для другой виртуальной машины в той же виртуальной сети, проблемы можно устранить с помощью второй виртуальной машины.
 
-#### <a name="mitigation-1-custom-script-extension-or-run-command-feature"></a>Решение 1. Расширение пользовательских скриптов или функция "Выполнить команду"
+#### <a name="mitigation-1-custom-script-extension-or-run-command-feature"></a>Решение 1. Расширение пользовательских скриптов или функция "Выполнить команду"
 
 Если у вас есть работающий агент Azure, можно применить [расширение пользовательских скриптов](../extensions/custom-script-windows.md) или функцию [Выполнить команду](../windows/run-command.md) (только для виртуальных машин Resource Manager), чтобы удаленно выполнить следующие скрипты.
 
@@ -49,12 +49,12 @@ ms.locfileid: "80422360"
 >   ```
 >   Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\DomainProfile' -name "EnableFirewall" -Value 0
 >   Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile' -name "EnableFirewall" -Value 0
->   Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\StandardProfile' name "EnableFirewall" -Value 0
+>   Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\WindowsFirewall\StandardProfile' -name "EnableFirewall" -Value 0
 >   Restart-Service -Name mpssvc
 >   ```
 >   Но сеанс удаленного подключения будет принудительно разорван, когда политика будет применена повторно. Постоянным решением этой проблемы является изменение политики, примененной к затронутому компьютеру.
 
-#### <a name="mitigation-2-remote-powershell"></a>Решение 2. Удаленный сеанс PowerShell
+#### <a name="mitigation-2-remote-powershell"></a>Решение 2. Удаленный сеанс PowerShell
 
 1.  Подключитесь к любой виртуальной машине, которая находится в той же виртуальной сети, что и виртуальная машина, к которой не удается создать RDP-подключение.
 
@@ -72,7 +72,7 @@ ms.locfileid: "80422360"
 > [!Note]
 > Если брандмауэр настроен через объект групповой политики, описанный метод может не работать, так как эта команда изменяет только записи в локальном реестре. Если настроена политика, она переопределит это изменение. 
 
-#### <a name="mitigation-3-pstools-commands"></a>Решение 3. Команды PSTools
+#### <a name="mitigation-3-pstools-commands"></a>Решение 3. Команды PSTools
 
 1.  На виртуальной машине для устранения неполадок скачайте средство [PSTools](https://docs.microsoft.com/sysinternals/downloads/pstools).
 
@@ -86,13 +86,13 @@ ms.locfileid: "80422360"
     psservice restart mpssvc
     ```
 
-#### <a name="mitigation-4-remote-registry"></a>Решение 4. Удаленный реестр 
+#### <a name="mitigation-4-remote-registry"></a>Решение 4. Удаленный реестр 
 
 Ниже приведены инструкции по использованию [удаленного реестра](https://support.microsoft.com/help/314837/how-to-manage-remote-access-to-the-registry).
 
-1.  На виртуальной машине для устранения неполадок запустите редактор реестра, а затем выберите **файл** > **Подключить сетевой реестр**.
+1.  На виртуальной машине для устранения неполадок запустите редактор реестра и выберите **Файл** > **Подключить сетевой реестр**.
 
-2.  Откройте ветвь \SYSTEM *целевого компьютера*и укажите следующие значения:
+2.  Откройте ветвь *ИМЯ_ЦЕЛЕВОГО_КОМПЬЮТЕРА*\SYSTEM и укажите следующие значения:
 
     ```
     <TARGET MACHINE>\SYSTEM\CurrentControlSet\services\SharedAccess\Parameters\FirewallPolicy\DomainProfile\EnableFirewall           -->        0 
@@ -100,15 +100,15 @@ ms.locfileid: "80422360"
     <TARGET MACHINE>\SYSTEM\CurrentControlSet\services\SharedAccess\Parameters\FirewallPolicy\StandardProfile\EnableFirewall         -->        0
     ```
 
-3.  Перезапустите службу. Так как это невозможно сделать с помощью удаленного реестра, необходимо использовать удаленную консоль службы.
+3.  Перезапустите службу. Это нельзя сделать с помощью удаленного реестра, поэтому используйте удаленную консоль службы.
 
-4.  Откройте экземпляр **Services. msc**.
+4.  Откройте экземпляр **Services.msc**.
 
-5.  Щелкните элемент **Службы (локальные)**.
+5.  Щелкните элемент **Службы (локальные)** .
 
 6.  Выберите **Connect to another computer** (Подключение к другому компьютеру).
 
-7.  Введите **частный IP-адрес (DIP)** проблемы виртуальной машины.
+7.  Введите **частный IP-адрес** проблемной виртуальной машины.
 
 8.  Перезапустите политику локального брандмауэра.
 

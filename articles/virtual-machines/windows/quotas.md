@@ -1,6 +1,6 @@
 ---
-title: квоты виртуальных ЦП для Azure
-description: Сведения о квотах виртуальных ЦП для виртуальных машин Azure.
+title: Квоты виртуальных ЦП для Azure
+description: Дополнительные сведения о квотах виртуальных ЦП для виртуальных машин Azure.
 author: cynthn
 ms.service: virtual-machines
 ms.subservice: sizes
@@ -8,18 +8,19 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 05/31/2018
 ms.author: cynthn
-ms.openlocfilehash: 13d9153d1bf6776b7d3d71c4a85c18d8529188b3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 6640640248854d91078203012a01d8865845702a
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82097886"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83680940"
 ---
 # <a name="virtual-machine-vcpu-quotas"></a>Квоты виртуальных ЦП виртуальной машины
 
 Квоты виртуальных ЦП для виртуальных машин и масштабируемых наборов виртуальных машин разделяются на два уровня для каждой подписки в каждом регионе. Первый уровень — это общие региональные виртуальные ЦП, а второй — ядра для различных семейств размеров виртуальных машин, например виртуальные ЦП серии D. При развертывании новой виртуальной машины ее виртуальные ЦП не должны превышать квоту на виртуальные ЦП для определенного семейства размеров виртуальных машин или квоту на общие региональные виртуальные ЦП. При превышении любой из этих квот развертывание виртуальной машины будет запрещено. Имеется также квота на общее количество виртуальных машин в регионе. Сведения о каждой из этих квот можно просмотреть в разделе **Использование и квоты** на странице **Подписки**[портала Azure](https://portal.azure.com). Кроме того, можно запросить значения с помощью PowerShell.
 
-   
+> [!NOTE]
+> Квота рассчитывается на основе общего числа используемых ядер, как выделенных, так и освобожденных. Если требуются дополнительные ядра, [запросите увеличение квоты](https://docs.microsoft.com/azure/azure-portal/supportability/resource-manager-core-quotas-request) или удалите виртуальные машины, которые больше не нужны. 
  
 ## <a name="check-usage"></a>Проверка использования
 
@@ -77,6 +78,6 @@ Premium Storage Managed Disks                1 10000 Count
 
 Если увеличение квоты необходимо для приобретения зарезервированного экземпляра с одной подпиской, вы можете [запросить увеличение квоты](https://docs.microsoft.com/azure/azure-portal/supportability/resource-manager-core-quotas-request) по подписке.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о выставлении счетов и квотах см. в статье [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits?toc=/azure/billing/TOC.json).

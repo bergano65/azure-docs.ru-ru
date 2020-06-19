@@ -1,17 +1,17 @@
 ---
-title: Создание или соединение параллельных ветвей для действий в рабочих процессах
-description: Узнайте, как создавать или объединять параллельно выполняющиеся ветви для независимых действий рабочего процесса в Azure Logic Apps
+title: Создание или присоединение параллельных ветвей для действий в рабочих процессах
+description: Узнайте, как создавать или объединять параллельно выполняющиеся ветви для независимых действий рабочих процессов в Azure Logic Apps.
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/10/2018
-ms.openlocfilehash: c0b1519992ba930382a1987aed185ef3c92eded4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: f857449d4511b6ae0a5a25bf7aca9e1abc1ae7c0
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75453432"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83833699"
 ---
 # <a name="create-or-join-parallel-branches-for-workflow-actions-in-azure-logic-apps"></a>Создание или присоединение параллельных ветвей для действий рабочих процессов в Azure Logic Apps
 
@@ -24,7 +24,7 @@ ms.locfileid: "75453432"
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
-* Основные сведения о [создании приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md)
+* Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
 <a name="parallel-branches"></a>
 
@@ -41,7 +41,7 @@ ms.locfileid: "75453432"
 
 1. На <a href="https://portal.azure.com" target="_blank">портале Azure</a> откройте приложение логики в конструкторе приложений логики.
 
-1. Наведите указатель мыши на стрелку над шагом, для которого необходимо добавить параллельные ветви. Щелкните появившийся знак **плюс** (**+**), а затем выберите **Добавить параллельную ветвь**. 
+1. Наведите указатель мыши на стрелку над шагом, для которого необходимо добавить параллельные ветви. Щелкните появившийся знак **плюс** ( **+** ), а затем выберите **Добавить параллельную ветвь**. 
 
    ![Добавление параллельной ветви](media/logic-apps-control-flow-branches/add-parallel-branch.png)
 
@@ -53,7 +53,7 @@ ms.locfileid: "75453432"
 
    ![Поиск и выбор нужных действий](media/logic-apps-control-flow-branches/added-parallel-branch.png)
 
-1. Теперь добавьте нужные шаги для каждой параллельной ветви. Чтобы добавить последующее действие в ветвь, необходимо навести указатель мыши над действием, в которое его необходимо добавить. Щелкните знак **плюс** (**+**), который появится, а затем выберите **Добавить действие**.
+1. Теперь добавьте нужные шаги для каждой параллельной ветви. Чтобы добавить последующее действие в ветвь, необходимо навести указатель мыши над действием, в которое его необходимо добавить. Щелкните появившийся знак **плюс** ( **+** ), затем выберите **Добавить действие**.
 
    ![Добавление последующего действия в параллельную ветвь](media/logic-apps-control-flow-branches/add-sequential-action.png)
 
@@ -183,7 +183,7 @@ ms.locfileid: "75453432"
 
 ## <a name="get-support"></a>Получение поддержки
 
-* Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
+* Если у вас есть вопросы, посетите [страницу вопросов и ответов по Azure Logic Apps на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-logic-apps.html).
 * Оставить предложения по функциям или проголосовать за них вы можете на [сайте отзывов пользователей Azure Logic Apps](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Дальнейшие действия

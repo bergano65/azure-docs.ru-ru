@@ -1,15 +1,15 @@
 ---
 title: Управление ресурсами учетной записи с помощью библиотеки .NET для управления пакетной службой
 description: Создание, удаление и изменение ресурсов учетных записей пакетной службы Azure с помощью библиотеки .NET для управления пакетной службой.
-ms.topic: article
+ms.topic: how-to
 ms.date: 04/24/2017
 ms.custom: seodec18, has-adal-ref
-ms.openlocfilehash: 3cb44b89cacd9e597766ca8df3e4826dfabdb2bd
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.openlocfilehash: 05bc0c8a377517c4ab883e08a5a4848eb0042dcb
+ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83201635"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83726542"
 ---
 # <a name="manage-batch-accounts-and-quotas-with-the-batch-management-client-library-for-net"></a>Управление учетными записями и квотами пакетной службы с помощью клиентской библиотеки .NET для управления пакетной службой
 
@@ -27,7 +27,7 @@ ms.locfileid: "83201635"
 * **Объедините функции других служб Azure** для создания полнофункционального приложения для управления, в котором одновременно используются библиотека .NET для управления пакетной службой, [Azure Active Directory][aad_about] и [Azure Resource Manager][resman_overview]. С помощью этих функций и соответствующих API вы можете предоставлять клиентам удобные возможности проверки подлинности, создания и удаления групп ресурсов, а также доступа к описанным выше функциям.
 
 > [!NOTE]
-> Несмотря на то, что в этой статье акцент сделан на программное управление учетными записями пакетной службы, ключами и квотами, большую часть описываемых действий можно выполнить на [портале Azure][azure_portal]. Дополнительные сведения см. в статьях [Создание учетной записи пакетной службы Azure на портале Azure](batch-account-create-portal.md) и [Квоты и ограничения пакетной службы Azure](batch-quota-limit.md).
+> Несмотря на то что в этой статье акцент сделан на программное управление учетными записями пакетной службы, ключами и квотами, большую часть описываемых действий можно выполнить на [портале Azure][azure_portal]. Дополнительные сведения см. в статьях [Создание учетной записи пакетной службы Azure на портале Azure](batch-account-create-portal.md) и [Квоты и ограничения пакетной службы Azure](batch-quota-limit.md).
 > 
 > 
 
@@ -137,14 +137,14 @@ Console.WriteLine("Active job and job schedule quota: {0}", account.Properties.A
 
 ## <a name="use-azure-ad-with-batch-management-net"></a>Использование Azure AD с библиотекой .NET для управления пакетной службой
 
-Данная библиотека является клиентом поставщика ресурсов Azure и используется совместно с [Azure Resource Manager][resman_overview] для программного управления ресурсами учетных записей. Служба Azure AD необходима для аутентификации запросов, выполненных с помощью любого клиента поставщика ресурсов Azure, а также библиотеки .NET для управления пакетной службой и [Azure Resource Manager][resman_overview]. Сведения об использовании Azure AD с библиотекой .NET для управления пакетной службой см. в разделе [Authenticate from Batch solutions with Active Directory](batch-aad-auth.md) (Аутентификация решений пакетной службы в Active Directory). 
+Данная библиотека является клиентом поставщика ресурсов Azure и используется совместно с [Azure Resource Manager][resman_overview] для программного управления ресурсами учетных записей. Служба Azure AD необходима для аутентификации запросов, выполненных с помощью любого клиента поставщика ресурсов Azure, а также библиотеки .NET для управления пакетной службой и [Azure Resource Manager][resman_overview]. Сведения об использовании Azure AD с библиотекой .NET для управления пакетной службой см. в разделе [Authenticate from Batch solutions with Active Directory](batch-aad-auth.md) (Аутентификация решений пакетной службы в Active Directory). 
 
 ## <a name="sample-project-on-github"></a>Пример проекта на сайте GitHub
 
 Работу библиотеки .NET для управления пакетной службой можно посмотреть на примере проекта [AccountManagement][acct_mgmt_sample] на сайте GitHub. В примере приложения AccountManagement демонстрируются следующие операции.
 
 1. Получение маркера безопасности из Active Directory Azure с помощью библиотеки [ADAL][aad_adal]. Если пользователь не выполнил вход, ему будет предложено ввести учетные данные Azure.
-2. Создание [SubscriptionClient][resman_subclient] для отправки запроса к Azure на получение списка подписок, связанных с учетной записью, с помощью маркера безопасности, полученного из Azure AD. Пользователь может выбрать подписку из списка, если он содержит более одной подписки.
+2. Создание [SubscriptionClient][resman_subclient] для отправки запроса к Azure на получение списка подписок, связанных с учетной записью, с помощью маркера безопасности, полученного из Azure AD. Пользователь может выбрать подписку из списка, если он содержит более одной подписки.
 3. Получение учетных данных, связанных с выбранной подпиской.
 4. Создание объекта [ResourceManagementClient][resman_client] с использованием учетных данных.
 5. Создание группы ресурсов с помощью объекта [ResourceManagementClient][resman_client].
@@ -164,9 +164,9 @@ Console.WriteLine("Active job and job schedule quota: {0}", account.Properties.A
 Для успешного выполнения примера приложения необходимо зарегистрировать его в клиенте Azure AD на портале Azure и предоставить разрешения для API Azure Resource Manager. Выполните инструкции, описанные в статье [Аутентификация решений по управлению пакетной службой с помощью Active Directory](batch-aad-auth-management.md).
 
 
-[aad_about]:../active-directory/fundamentals/active-directory-whatis.md "Что такое Azure Active Directory?"
+[aad_about]:../active-directory/fundamentals/active-directory-whatis.md "Что такое Microsoft Azure Active Directory?"
 [aad_adal]: ../active-directory/active-directory-authentication-libraries.md
-[aad_auth_scenarios]:../active-directory/develop/authentication-scenarios.md "Сценарии проверки подлинности в Azure AD"
+[aad_auth_scenarios]:../active-directory/develop/authentication-scenarios.md "Сценарии аутентификации в Azure Active Directory"
 [aad_integrate]:../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md "Интеграция приложений с Azure Active Directory"
 [acct_mgmt_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/AccountManagement
 [api_net]: https://msdn.microsoft.com/library/azure/mt348682.aspx
