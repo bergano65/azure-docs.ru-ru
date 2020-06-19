@@ -9,12 +9,12 @@ ms.date: 05/01/2020
 ms.author: normesta
 ms.subservice: logs
 ms.custom: monitoring
-ms.openlocfilehash: e9abb2ded5465d4b245f4c9bcfab921444d41fa2
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 481406b02d7d864dd16ac42918ae1aa2dea0b145
+ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83684911"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84195224"
 ---
 # <a name="azure-storage-monitoring-data-reference"></a>Справочные материалы по данным мониторинга службы хранилища Azure
 
@@ -84,7 +84,7 @@ ms.locfileid: "83684911"
 | SuccessE2ELatency | Средняя совокупная задержка успешных запросов к службе хранения или указанной операции API. Это значение включает необходимое время обработки в пределах службы хранилища Azure для считывания запроса, отправки ответа и получения подтверждения ответа. <br/><br/> Единица измерения: Миллисекунды <br/> Тип агрегирования: Среднее <br/> Применимые измерения. GeoType, ApiName и Authentication ([определение](#metrics-dimensions)) <br/> Пример значения. 1024 |
 | Доступность | Процент доступности службы хранения или указанной операции API. Доступность рассчитывается следующим образом: общее значение запросов для тарификации делится на количество применимых запросов, включая запросы, вызвавшие непредвиденные ошибки. Все непредвиденные ошибки приводят к снижению уровня доступности службы хранения или указанной операции API. <br/><br/> Единица измерения: Процент <br/> Тип агрегирования: Среднее <br/> Применимые измерения. GeoType, ApiName и Authentication ([определение](#metrics-dimensions)) <br/> Пример значения. 99,99 |
 
-<a id="metrics-dimensions" />
+<a id="metrics-dimensions"></a>
 
 ## <a name="metrics-dimensions"></a>Измерения метрик
 

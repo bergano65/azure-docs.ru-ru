@@ -5,12 +5,12 @@ services: automation
 ms.topic: conceptual
 ms.date: 05/10/2018
 ms.custom: mvc
-ms.openlocfilehash: 014442dee1be23a189e22a505abf86050601b2aa
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 2728964d5bbf83b42251068ffbdea223ff6bd85e
+ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83826748"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84171095"
 ---
 # <a name="enable-change-tracking-and-inventory-from-a-runbook"></a>Включение Отслеживания изменений и инвентаризации в последовательности runbook
 
@@ -104,8 +104,4 @@ ms.locfileid: "83826748"
 
 * Сведения о планировании выполнения модуля runbook см. в статье [Управление расписаниями в службе автоматизации Azure](shared-resources/schedules.md).
 * Дополнительные сведения о работе с этой возможностью см. в статье [Управление решением для Отслеживания изменений и инвентаризации](change-tracking-file-contents.md).
-* Сведения о конфигурациях области см. в статье [Использование конфигураций областей для Отслеживания изменений и инвентаризации](automation-scope-configurations-change-tracking.md).
-* Сведения об использовании этой функции для определения программного обеспечения, установленного в вашей среде, см. в статье [Получение данных об установленном программном обеспечении на виртуальных машинах](automation-tutorial-installed-software.md).
-* Если вы не хотите интегрировать учетную запись службы автоматизации с рабочей областью Log Analytics при включении этой возможности, обратитесь к разделу [Отмена связи рабочей области с учетной записью службы автоматизации](automation-unlink-workspace-change-tracking.md).
-* Завершив развертывание изменений на виртуальных машинах, вы можете их удалить, как описано в статье [Исключение виртуальных машин из Отслеживания изменений и инвентаризации](automation-remove-vms-from-change-tracking.md).
 * Сведения об устранении общих проблем в работе этой функции см. в статье [Устранение неполадок с Отслеживанием изменений и инвентаризацией](troubleshoot/change-tracking.md).

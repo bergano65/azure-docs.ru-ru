@@ -9,12 +9,12 @@ ms.date: 05/19/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring
-ms.openlocfilehash: c8125001b5960a0bf770e8e015ad757a277629ea
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 3ede22b5af942c3f0c0cd88d86b56a625c7656c0
+ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83684905"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84267619"
 ---
 # <a name="monitor-azure-storage"></a>Мониторинг службы хранилища Azure
 
@@ -407,4 +407,3 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
 - Дополнительные сведения о журналах и метриках, созданных службой хранилища Azure, см. на странице со [справочными материалами по данным мониторинга службы хранилища Azure](monitor-storage-reference.md).
 - Подробные сведения о мониторинге ресурсов Azure см. на странице [Мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/insights/monitor-azure-resource.md).
 - Дополнительные сведения о миграции метрик см. на [этой странице](./storage-metrics-migration.md).
-
