@@ -31,7 +31,7 @@ ms.locfileid: "80335496"
 
 Создав учетную запись Azure Maps, вы можете повышать и понижать ценовую категорию для нее. Чтобы повысить или понизить ценовую категорию, выберите пункт **Ценовая категория** в меню параметров. Выберите ценовую категорию, которая не выделена. Нажмите кнопку **Сохранить**, чтобы сохранить выбор ценовой категории.
 
-[![Изменение ценовой](./media/how-to-manage-pricing-tier/change-pricing-tier.png) категории](./media/how-to-manage-pricing-tier/change-pricing-tier.png#lightbox)
+[![Изменение ценовой](./media/how-to-manage-pricing-tier/change-pricing-tier.png)](./media/how-to-manage-pricing-tier/change-pricing-tier.png#lightbox)
 
 > [!NOTE]
 > При повышении или понижении ценовой категории для учетной записи Azure Maps не требуется создавать новые ключи подписок или идентификатор клиента (для проверки подлинности с помощью Azure Active Directory).
