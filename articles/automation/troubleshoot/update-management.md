@@ -8,12 +8,12 @@ ms.date: 03/17/2020
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 35049e148af09376667a55e2f0bb4a28cf728245
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 2989d85ddfca036a27ff6b886bd3b13a981c27a3
+ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83735894"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84170262"
 ---
 # <a name="troubleshoot-update-management-issues"></a>Устранение неполадок с Управлением обновлениями
 
@@ -50,7 +50,7 @@ Error details: Failed to enable the Update solution
 
 * Дополнительные сведения о том, какие адреса и порты должны быть разрешены, чтобы работал агент Log Analytics, см. в разделе [о конфигурации сети](../../azure-monitor/platform/log-analytics-agent.md#network-requirements).
 
-* Проверьте наличие проблем с конфигурацией области. [Конфигурация области](../automation-onboard-solutions-from-automation-account.md#scope-configuration) определяет, какие компьютеры настроены для Управления обновлениями. Если компьютер отображается в рабочей области, но не на портале Управления обновлениями, необходимо задать конфигурацию области для целевых компьютеров. Дополнительные сведения о конфигурации области см. в разделе [Включение компьютеров в рабочей области](../automation-onboard-solutions-from-automation-account.md#enable-machines-in-the-workspace).
+* Проверьте наличие проблем с конфигурацией области. [Конфигурация области](../automation-scope-configurations-update-management.md) определяет, какие компьютеры настроены для Управления обновлениями. Если компьютер отображается в рабочей области, но не на портале Управления обновлениями, необходимо задать конфигурацию области для целевых компьютеров. Дополнительные сведения о конфигурации области см. в разделе [Включение компьютеров в рабочей области](../automation-onboard-solutions-from-automation-account.md#enable-machines-in-the-workspace).
 
 * Удалите конфигурацию рабочей роли, выполнив действия из разделов [Удаление гибридной рабочей роли Runbook с локального компьютера Windows](../automation-windows-hrw-install.md#remove-windows-hybrid-runbook-worker) или [Удаление гибридной рабочей роли Runbook с локального компьютера Linux](../automation-linux-hrw-install.md#remove-linux-hybrid-runbook-worker). 
 

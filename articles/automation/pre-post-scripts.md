@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 05/17/2019
 ms.topic: conceptual
-ms.openlocfilehash: fd37ccc5850baf1cfb778b6706a76c91bd178922
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 7fa2dd335e457307dd6d7e4ecdc787015b742b32
+ms.sourcegitcommit: 2721b8d1ffe203226829958bee5c52699e1d2116
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83835178"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84148282"
 ---
 # <a name="manage-pre-scripts-and-post-scripts"></a>Управление сценариями предварительного и последующего выполнения
 
@@ -115,7 +115,6 @@ ms.locfileid: "83835178"
 
 ![Результаты развертывания](./media/pre-post-scripts/deployment-run.png)
 
-в вашем сценарии.
 
 ## <a name="stop-a-deployment"></a>Остановка развертывания
 

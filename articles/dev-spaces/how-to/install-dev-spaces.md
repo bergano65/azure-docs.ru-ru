@@ -5,12 +5,12 @@ ms.date: 07/24/2019
 ms.topic: conceptual
 description: Сведения о том, как включить Azure Dev Spaces в кластере AKS и установить средства на стороне клиента.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: 3666eeb995c73615c522200a3619d785814ea0b5
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: b62c4a4861529c19363f159b8cc64a32a0ba11e8
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/27/2020
-ms.locfileid: "83873519"
+ms.locfileid: "83996267"
 ---
 # <a name="enable-azure-dev-spaces-on-an-aks-cluster-and-install-the-client-side-tools"></a>Включение Azure Dev Spaces в кластере AKS и установка средств на стороне клиента
 
@@ -60,24 +60,6 @@ Deleting Azure Dev Spaces Controller 'MyAKS' in resource group 'MyResourceGroup'
 
 Приведенная выше команда удаляет Azure Dev Spaces из кластера *MyAKS* в *MyResourceGroup*. Любое пространство имен, созданное с помощью Azure Dev Spaces, будет сохраняться вместе с его рабочими нагрузками, но для новых рабочих нагрузок в этих пространствах имен инструментирование Azure Dev Spaces применяться не будет. Кроме того, при перезапуске существующих pod, инструментируемых с помощью Azure Dev Spaces, могут возникать ошибки. Такие pod необходимо повторно развернуть без инструментов Azure Dev Spaces. Чтобы полностью удалить Azure Dev Spaces из кластера, удалите все pod из всех пространств имен, где ранее была включена служба Azure Dev Spaces.
 
-## <a name="enable-or-remove-azure-dev-spaces-using-the-azure-portal"></a>Включение и удаление Azure Dev Spaces с помощью портала Azure
-
-Чтобы включить Azure Dev Spaces с помощью портала Azure, вам потребуется следующее:
-* Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись][az-portal-create-account].
-* [Кластер AKS][create-aks-portal] в [поддерживаемом регионе][supported-regions].
-
-Чтобы включить Azure Dev Spaces с помощью портала Azure, сделайте следующее:
-1. Войдите на [портал Azure][az-portal].
-1. Перейдите к кластеру AKS.
-1. Выберите пункт меню *Dev Spaces*.
-1. Под надписью *Enable Dev Spaces* (Включить Dev Spaces) нажмите *Да* и щелкните *Сохранить*.
-
-![Включение Dev Spaces на портале Azure](../media/how-to-setup-dev-spaces/enable-dev-spaces-portal.png)
-
-Включение Azure Dev Spaces с помощью портала Azure **не приводит** к установке клиентских средств для Azure Dev Spaces.
-
-Чтобы удалить Azure Dev Spaces из кластера AKS, укажите для значения *Включение Dev Spaces* значение *Нет* и щелкните *Сохранить*. Любое пространство имен, созданное с помощью Azure Dev Spaces, будет сохраняться вместе с его рабочими нагрузками, но для новых рабочих нагрузок в этих пространствах имен инструментирование Azure Dev Spaces применяться не будет. Кроме того, при перезапуске существующих pod, инструментируемых с помощью Azure Dev Spaces, могут возникать ошибки. Такие pod необходимо повторно развернуть без инструментов Azure Dev Spaces. Чтобы полностью удалить Azure Dev Spaces из кластера, удалите все pod из всех пространств имен, где ранее была включена служба Azure Dev Spaces.
-
 ## <a name="install-the-client-side-tools"></a>Установка средств на стороне клиента
 
 Клиентские средства Azure Dev Spaces позволяют взаимодействовать со средой Dev Spaces в кластере AKS с локального компьютера. Существует несколько способов установки средств на стороне клиента.
@@ -94,7 +76,6 @@ Deleting Azure Dev Spaces Controller 'MyAKS' in resource group 'MyResourceGroup'
 > [Краткое руководство. Коллективная разработка в Kubernetes с использованием Azure Dev Spaces][team-development-qs]
 
 [create-aks-cli]: ../../aks/kubernetes-walkthrough.md#create-a-resource-group
-[create-aks-portal]: ../../aks/kubernetes-walkthrough-portal.md#create-an-aks-cluster
 [install-cli]: /cli/azure/install-azure-cli?view=azure-cli-latest
 [supported-regions]: https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service
 [team-development-qs]: ../quickstart-team-development.md

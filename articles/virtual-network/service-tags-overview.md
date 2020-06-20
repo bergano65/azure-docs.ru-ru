@@ -4,21 +4,21 @@ titlesuffix: Azure Virtual Network
 description: Подробные сведения о тегах служб. Теги службы позволяют упростить создание правил безопасности.
 services: virtual-network
 documentationcenter: na
-author: jispar
+author: allegradomel
 ms.service: virtual-network
 ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/18/2020
-ms.author: jispar
+ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: bfeded391f582ab0ac6f3c15d2086789228f1494
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: ea756b965a2539886e695585c9b5f5034eac7684
+ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83660598"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84263213"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети
 <a name="network-service-tags"></a>
@@ -62,7 +62,7 @@ ms.locfileid: "83660598"
 | **AzureDataExplorerManagement** | Управление обозревателем Azure Data Explorer. | Входящий трафик | Нет | Нет |
 | **AzureDataLake** | Azure Data Lake Storage 1-го поколения. | Исходящие | Нет | Да |
 | **AzureDevSpaces** | Azure Dev Spaces. | Исходящие | Нет | Нет |
-| **AzureEventGrid** | Сетка событий Azure. <br/><br/>*Примечание.* Этот тег охватывает конечные точки службы "Сетка событий Azure" только в центрально-южной части США, восточной части США, восточной части США 2, западной части США 2 и центральной части США. | both | Нет | Нет |
+| **AzureEventGrid** | Сетка событий Azure. | both | Нет | Нет |
 | **AzureFrontDoor.Frontend** <br/> **AzureFrontDoor.Backend** <br/> **AzureFrontDoor.FirstParty**  | Azure Front Door. | both | Нет | Нет |
 | **AzureInformationProtection** | Azure Information Protection.<br/><br/>*Примечание.* Этот тег зависит от тегов **AzureActiveDirectory**, **AzureFrontDoor.Frontend** и **AzureFrontDoor.FirstParty**. | Исходящие | Нет | Нет |
 | **AzureIoTHub** | Центр Интернета вещей Azure. | Исходящие | Нет | Нет |

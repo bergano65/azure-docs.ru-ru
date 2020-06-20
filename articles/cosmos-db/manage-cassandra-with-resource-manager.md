@@ -3,15 +3,15 @@ title: Шаблоны Resource Manager для API Cassandra Azure Cosmos DB
 description: Использование шаблонов Azure Resource Manager для создания и настройки API Cassandra Azure Cosmos DB.
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/19/2020
 ms.author: mjbrown
-ms.openlocfilehash: 630c965eadf17e21c75e1bd180fec4496df830e2
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 925bad729cacfb7c342c61872f66dd059cf3560a
+ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83684828"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84117154"
 ---
 # <a name="manage-azure-cosmos-db-cassandra-api-resources-using-azure-resource-manager-templates"></a>Управление ресурсами API Cassandra Azure Cosmos DB с использованием шаблонов Azure Resource Manager
 

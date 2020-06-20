@@ -7,12 +7,12 @@ author: mgoedtel
 ms.author: magoedte
 ms.date: 12/11/2019
 ms.topic: conceptual
-ms.openlocfilehash: 183189253d11638751e1f8283b202f122131b005
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: ae8c4f09c0133dde7b0a73b7c2fcd0a28aa22ae3
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83836317"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84013203"
 ---
 # <a name="integrate-update-management-with-windows-endpoint-configuration-manager"></a>Интеграция Управления обновлениями с Microsoft Endpoint Configuration Manager
 
@@ -38,7 +38,7 @@ ms.locfileid: "83836317"
 1. В службе автоматизации Azure выберите **Управление обновлениями**. Создайте новое развертывание, выполнив шаги, описанные в разделе [Создание развертывания обновлений](automation-tutorial-update-management.md#schedule-an-update-deployment), и выберите **Импортированные группы** в раскрывающемся списке **Тип**, чтобы выбрать соответствующую коллекцию Microsoft Endpoint Configuration Manager. Помните следующие важные моменты: А. Если период обслуживания выбранной коллекции устройств Microsoft Endpoint Configuration Manager задан, элементы коллекции учитывают его вместо параметра **Длительность**, задаваемого в плановом развертывании.
     b. У участников целевой коллекции должно быть подключение к Интернету (прямое, через прокси-сервер или через шлюз Log Analytics).
 
-После развертывания обновления с помощью службы автоматизации Azure конечные компьютеры, которые являются участниками группы, установят обновления в запланированное время из своего кэша локального клиента. Вы можете [просмотреть состояние развертывания обновления](automation-tutorial-update-management.md#view-results-of-an-update-deployment) для мониторинга результатов развертывания.
+После развертывания обновления с помощью службы автоматизации Azure конечные компьютеры, которые являются участниками группы, установят обновления в запланированное время из своего кэша локального клиента. Вы можете [просмотреть состояние развертывания обновления](automation-tutorial-update-management.md#check-deployment-status) для мониторинга результатов развертывания.
 
 ## <a name="manage-software-updates-from-azure-automation"></a>Управление обновлениями программного обеспечения из службы автоматизации Azure
 
