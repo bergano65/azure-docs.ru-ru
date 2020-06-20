@@ -30,9 +30,9 @@
     - name: Использование REST API
       items:
         - name: Получение сведений о намерении
-          href: luis-get-started-get-intent-from-rest.md
+          href: luis-get-started-rest-get-intent.md
         - name: Изменение модели
-          href: get-started-get-model-rest-apis.md
+          href: luis-get-started-rest-get-model.md
 - name: Учебники
   items:
     - name: Создание делимого приложения
@@ -226,6 +226,12 @@
           href: luis-migration-api-v3.md
         - name: Миграция в API версии 2
           href: luis-migration-api-v1-to-v2.md
+    - name: Использование REST API
+      items:
+        - name: Получение сведений о намерении
+          href: luis-get-started-get-intent-from-rest.md
+        - name: Изменение модели
+          href: get-started-get-model-rest-apis.md
     - name: Использование контейнеров
       items:
         - name: Установка и запуск контейнеров

@@ -953,6 +953,9 @@
                 - name: Выпуск
                   displayName: 'change, modify, update'
                   href: virtual-machines/windows/change-sql-server-edition.md
+                - name: Версия
+                  displayName: 'change, modify, update'
+                  href: virtual-machines/windows/change-sql-server-version.md
                 - name: Резервное копирование и восстановление с помощью службы хранилища Azure
                   href: virtual-machines/windows/azure-storage-sql-server-backup-restore-use.md
             - name: Миграция

@@ -11,12 +11,12 @@ metadata:
   author: markingmyname
   ms.author: maghan
   ms.date: 10/02/2019
-  ms.openlocfilehash: 5ab646f80296352bce30eedcbf9b0de670011118
-  ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
+  ms.openlocfilehash: fa9decd8a0b7424d040cab9dcd46b919bb4d7df5
+  ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/27/2020
-  ms.locfileid: "84118739"
+  ms.lasthandoff: 06/20/2020
+  ms.locfileid: "85116236"
 landingContent:
 - title: Сведения о Фабрике данных Azure
   linkLists:
@@ -75,9 +75,9 @@ landingContent:
     - text: Копирование локальных данных в облако
       url: /azure/data-factory/tutorial-hybrid-copy-data-tool
     - text: Копирование данных в пакетном режиме
-      url: /azure/data-factory/
+      url: /azure/data-factory/tutorial-bulk-copy-portal
     - text: Копирование данных с приращением
-      url: /azure/data-factory/tutorial-create-azure-ssis-runtime-portal
+      url: /azure/data-factory/tutorial-incremental-copy-overview
     - text: Загрузка ADLS 2-го поколения
       url: /azure/data-factory/load-azure-data-lake-storage-gen2
     - text: Загрузка Хранилища данных SQL
