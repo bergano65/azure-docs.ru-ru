@@ -407,7 +407,7 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 Когда вы щелкните эту ссылку, на портале откроется страница **Создать подписку на события**, где автоматически определена конечная точка текущего триггера.
 
-:::image type="content" source="media/functions-bindings-event-grid/endpoint-url.png" alt-text="Страница "Создать подписку на события", где определена конечная точка функции" :::
+:::image type="content" source="media/functions-bindings-event-grid/endpoint-url.png" alt-text="Страница Создать подписку на события, где определена конечная точка функции" :::
 
 Дополнительные сведения о создании подписок с помощью портала Azure см. в разделе [Создание и перенаправление пользовательских событий с помощью портала Azure и службы "Сетка событий"](../event-grid/custom-event-quickstart-portal.md) документации по службе "Сетка событий".
 

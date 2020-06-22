@@ -132,7 +132,7 @@ if ($roleDefinitionIds.Count -gt 0)
 
 1. Выберите **Исправление** на странице службы "Политика Azure" слева.
 
-   :::image type="content" source="../media/remediate-resources/select-remediation.png" alt-text="Выбор элемента "Исправление" на странице службы "Политика Azure"" border="false":::
+   :::image type="content" source="../media/remediate-resources/select-remediation.png" alt-text="Выбор элемента Исправление на странице службы Политика Azure" border="false":::
 
 1. Все назначения политики с **deployIfNotExists** или **modify**, для которых есть несоответствующие ресурсы, включаются в список на вкладке **Политики, подлежащие исправлению** и в таблицу данных. Выберите политику с несоответствующими ресурсами. Откроется страница **Новая задача исправления**.
 

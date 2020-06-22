@@ -29,9 +29,9 @@ ms.locfileid: "83748733"
 
 При использовании [диагностики загрузки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics) для просмотра снимка экрана виртуальной машины экран зависает на загрузке с сообщением: *Применение политики "Групповая политика локальных пользователей и групп"* .
 
-:::image type="content" source="media//unresponsive-vm-apply-group-policy/applying-group-policy-1.png" alt-text="Снимок экрана загрузки применения политики "Групповая политика локальных пользователей и групп" (Windows Server 2012 R2).":::
+:::image type="content" source="media//unresponsive-vm-apply-group-policy/applying-group-policy-1.png" alt-text="Снимок экрана загрузки применения политики Групповая политика локальных пользователей и групп (Windows Server 2012 R2).":::
 
-:::image type="content" source="media/unresponsive-vm-apply-group-policy/applying-group-policy-2.png" alt-text="Снимок экрана загрузки применения политики "Групповая политика локальных пользователей и групп" (Windows Server 2012).":::
+:::image type="content" source="media/unresponsive-vm-apply-group-policy/applying-group-policy-2.png" alt-text="Снимок экрана загрузки применения политики Групповая политика локальных пользователей и групп (Windows Server 2012).":::
 
 ## <a name="cause"></a>Причина
 
@@ -66,7 +66,7 @@ ms.locfileid: "83748733"
 1. Откройте редактор реестра на виртуальной машине восстановления.
 2. Разместите ключ **HKEY_LOCAL_MACHINE**, а затем выберите пункты меню **Файл** >  **"Загрузить куст..."** .
 
-    :::image type="content" source="media/unresponsive-vm-apply-group-policy/registry.png" alt-text="На снимке экрана показано выделенный HKEY_LOCAL_MACHINE и меню, содержащее пункт "Загрузить куст".":::
+    :::image type="content" source="media/unresponsive-vm-apply-group-policy/registry.png" alt-text="На снимке экрана показано выделенный HKEY_LOCAL_MACHINE и меню, содержащее пункт Загрузить куст.":::
 
     - Пункт "Загрузить куст" позволяет загружать разделы реестра из автономной системы, в таком случае неисправный диск подключен к виртуальной машине восстановления.
     - Параметры в рамках системы хранятся в `HKEY_LOCAL_MACHINE`, и их можно сократить как "HKLM".

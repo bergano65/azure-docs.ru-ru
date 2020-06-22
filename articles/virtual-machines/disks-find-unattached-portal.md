@@ -32,7 +32,7 @@ ms.locfileid: "84302476"
 1. Выберите отключенный диск, который нужно удалить. Откроется область этого диска.
 1. В области диска можно еще раз проверить его состояние (отключен), а затем нажать **Удалить**.
 
-    :::image type="content" source="media/disks-find-unattached-portal/delete-managed-disk-unattached.png" alt-text="Снимок экрана: область отдельного управляемого диска. Если диск отключен, в этой области отображается состояние "Отключен". Вы можете удалить этот диск, если данные на нем больше не нужны.":::
+    :::image type="content" source="media/disks-find-unattached-portal/delete-managed-disk-unattached.png" alt-text="Снимок экрана: область отдельного управляемого диска. Если диск отключен, в этой области отображается состояние Отключен. Вы можете удалить этот диск, если данные на нем больше не нужны.":::
 
 ## <a name="unmanaged-disks-find-and-delete-unattached-disks"></a>Неуправляемые диски. Поиск и удаление неподключенных дисков
 
@@ -45,17 +45,17 @@ ms.locfileid: "84302476"
 
     Появится список всех неуправляемых дисков. Все диски с пометкой **-** в столбце **Присоединено к** являются отключенными.
 
-    :::image type="content" source="media/disks-find-unattached-portal/unmanaged-disk-unattached-attached-to.png" alt-text="Снимок экрана: область неуправляемых дисков. Диски в этой области, для которых столбец "Присоединено к" содержит "–", являются отключенными.":::
+    :::image type="content" source="media/disks-find-unattached-portal/unmanaged-disk-unattached-attached-to.png" alt-text="Снимок экрана: область неуправляемых дисков. Диски в этой области, для которых столбец Присоединено к содержит –, являются отключенными.":::
 
 1. Выберите отключенный диск, который нужно удалить. Откроется область этого диска.
 
 1. В области диска можно еще раз удостовериться, что он отключен, так как столбец **Присоединено к** будет по-прежнему содержать **-** .
 
-    :::image type="content" source="media/disks-find-unattached-portal/unmanaged-disk-unattached-select-blade.png" alt-text="Снимок экрана: область отдельного неуправляемого диска. Если диск отключен, в столбце "Присоединено к" содержится "–". Если данные на этом диске больше не нужны, его можно удалить.":::
+    :::image type="content" source="media/disks-find-unattached-portal/unmanaged-disk-unattached-select-blade.png" alt-text="Снимок экрана: область отдельного неуправляемого диска. Если диск отключен, в столбце Присоединено к содержится –. Если данные на этом диске больше не нужны, его можно удалить.":::
 
 1. Выберите команду **Удалить**.
 
-    :::image type="content" source="media/disks-find-unattached-portal/delete-unmanaged-disk-unattached.png" alt-text="Снимок экрана: область отдельного неуправляемого диска с выделенной командой "Удалить".":::
+    :::image type="content" source="media/disks-find-unattached-portal/delete-unmanaged-disk-unattached.png" alt-text="Снимок экрана: область отдельного неуправляемого диска с выделенной командой Удалить.":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
