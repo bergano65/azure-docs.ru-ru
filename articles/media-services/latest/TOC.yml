@@ -18,6 +18,11 @@
     - name: Трансляция с помощью портала и OBS
       displayName: 'live, event, portal, obs'
       href: live-events-obs-quickstart.md
+    - name: 'Отправка, кодирование и потоковая передача содержимого с помощью портала'
+      href: manage-assets-quickstart.md
+    - name: Шифрование содержимого с помощью портала
+      displayName: 'protect, drm, aes'
+      href: encrypt-content-quickstart.md
 - name: Учебники
   items:
     - name: Кодирование размещенных удаленно файлов и потоковая передача видео
@@ -378,6 +383,8 @@
       href: /azure/templates/microsoft.media/allversions
     - name: Схемы кодировщика ценовой категории "Стандартный"
       items:
+        - name: Входные метаданные
+          href: input-metadata-schema.md
         - name: Выходные метаданные
           href: output-metadata-schema.md
 - name: Ресурсы

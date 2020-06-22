@@ -25,10 +25,6 @@
   items:
     - name: Создание бессерверного приложения в реальном времени с аутентификацией
       href: signalr-tutorial-authenticate-azure-functions.md
-    - name: Монитор
-      items:
-        - name: Мониторинг Службы SignalR с помощью журналов диагностики
-          href: signalr-tutorial-diagnostic-logs.md
 - name: Примеры
   items:
     - name: Примеры кода
@@ -51,6 +47,8 @@
           href: signalr-concept-serverless-development-config.md
         - name: Справочник по привязкам Службы SignalR для Функций Azure
           href: ../azure-functions/functions-bindings-signalr-service.md
+        - name: Параметры функции отправки данных в вышестоящий ресурс
+          href: concept-upstream.md
     - name: Высокий уровень доступности
       items:
         - name: Устойчивость и аварийное восстановление
@@ -81,12 +79,20 @@
           href: howto-private-endpoints.md
         - name: Управление доступом к сети
           href: howto-network-access-control.md
+        - name: Использование управляемого удостоверения
+          href: howto-use-managed-identity.md
     - name: Интеграция
       items:
         - name: Привязки для Функций Azure
           href: signalr-concept-azure-functions.md
         - name: Интеграция с Сеткой событий
           href: signalr-howto-event-grid-integration.md
+    - name: Монитор
+      items:
+        - name: Мониторинг Службы SignalR с помощью журналов диагностики
+          href: signalr-howto-diagnostic-logs.md
+        - name: Аудит соответствия требованиям с помощью службы "Политика Azure"
+          href: signalr-howto-azure-policy.md
 - name: Ссылки
   items:
     - name: Azure CLI

@@ -36,6 +36,8 @@
       href: manage-dhcp.md
     - name: Аварийное восстановление
       href: disaster-recovery.md
+    - name: Получение справки по сбоям при развертывании или подготовке AVS
+      href: fix-deployment-provisioning-failures.md
     - name: "Azure Backup\_Server для AVS"
       items:
         - name: Настройка Azure Backup Server для AVS

@@ -10,7 +10,7 @@
       href: advisor-get-started.md
 - name: Практические руководства
   items:
-    - name: Повышение уровня доступности приложения Azure
+    - name: Повышение уровня надежности приложения Azure
       href: advisor-high-availability-recommendations.md
     - name: Повышение уровня безопасности ресурсов
       href: advisor-security-recommendations.md

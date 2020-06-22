@@ -60,7 +60,7 @@
           displayName: 'docker, container, run, billing, apikey, logging'
         - name: Использование экземпляров контейнеров
           href: deploy-form-recognizer-on-container-instances.md
-    - name: Копирование моделей для аварийного восстановления
+    - name: Резервное копирование и восстановление моделей
       href: disaster-recovery.md
 - name: Справочник
   items:

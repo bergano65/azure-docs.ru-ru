@@ -34,6 +34,8 @@
       href: log-analytics-samples.md
 - name: Основные понятия
   items:
+    - name: Функции службы "Брандмауэр Azure"
+      href: features.md
     - name: Теги FQDN
       href: fqdn-tags.md
     - name: FQDN инфраструктуры

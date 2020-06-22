@@ -75,7 +75,7 @@
           href: pay-by-invoice.md
         - name: Создание дополнительных подписок
           href: create-subscription.md
-        - name: Передача подписок CSP
+        - name: Передача подписок между участниками программы CSP и подписчиками
           href: transfer-subscriptions-subscribers-csp.md
         - name: Экспорт сведений о подписке
           href: export-subscriptions.md

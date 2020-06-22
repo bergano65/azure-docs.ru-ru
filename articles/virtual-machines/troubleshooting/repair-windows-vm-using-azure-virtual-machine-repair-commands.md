@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 09/10/2019
 ms.author: v-miegge
-ms.openlocfilehash: 6520d508a025aeeecf0c1890224a0691eae09f74
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.openlocfilehash: b754c9e02567939569bf2ef59359dbb2614a6647
+ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83774432"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84219891"
 ---
 # <a name="repair-a-windows-vm-by-using-the-azure-virtual-machine-repair-commands"></a>Восстановление виртуальной машины Windows с помощью команд восстановления виртуальной машины Azure
 
@@ -72,20 +72,19 @@ ms.locfileid: "83774432"
    az extension update -n vm-repair
    ```
 
-3. Выполните `az vm repair create`. Эта команда создает копию диска ОС для неработающей виртуальной машины, создает виртуальную машину для исправления в новой группе ресурсов и подключает копию диска ОС.  Виртуальная машина для исправления будет иметь тот же размер и регион, что и неработающая виртуальная машина.
+3. Выполните `az vm repair create`. Эта команда создает копию диска ОС для неработающей виртуальной машины, создает виртуальную машину для исправления в новой группе ресурсов и подключает копию диска ОС.  Виртуальная машина для исправления будет иметь тот же размер и регион, что и неработающая виртуальная машина. Используемые здесь группа ресурсов и имя виртуальной машины относятся к неработающей виртуальной машине.
 
    ```azurecli-interactive
    az vm repair create -g MyResourceGroup -n myVM --repair-username username --repair-password password!234 --verbose
    ```
 
-4. Выполните `az vm repair run`. Эта команда запустит указанный скрипт исправления на подключенном диске через виртуальную машину для исправления.  Если в руководстве по устранению неполадок указан идентификатор запуска, используйте его здесь. В противном случае можно использовать `az vm repair list-scripts`, чтобы просмотреть доступные скрипты исправления.
+4. Выполните `az vm repair run`. Эта команда запустит указанный скрипт исправления на подключенном диске через виртуальную машину для исправления. Если в руководстве по устранению неполадок указан идентификатор запуска, используйте его здесь. В противном случае можно использовать `az vm repair list-scripts`, чтобы просмотреть доступные скрипты исправления. Используемые здесь группа ресурсов и имя виртуальной машины относятся к неработающей виртуальной машине, упоминавшейся на шаге 3.
 
    ```azurecli-interactive
-
-   az vm repair run  –g MyResourceGroup –n MyVM -–run-on-repair --run-id win-hello-world --verbose
+   az vm repair run -g MyResourceGroup -n MyVM --run-on-repair --run-id win-hello-world --verbose
    ```
 
-5. Выполните `az vm repair restore`. Эта команда поменяет исходный диск ОС виртуальной машины на исправленный.
+5. Выполните `az vm repair restore`. Эта команда поменяет исходный диск ОС виртуальной машины на исправленный. Используемые здесь группа ресурсов и имя виртуальной машины относятся к неработающей виртуальной машине, упоминавшейся на шаге 3.
 
    ```azurecli-interactive
    az vm repair restore -g MyResourceGroup -n MyVM --verbose
