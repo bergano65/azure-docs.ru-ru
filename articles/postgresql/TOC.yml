@@ -193,6 +193,8 @@
           items:
             - name: Варианты настройки
               href: concepts-hyperscale-configuration-options.md
+            - name: Предварительная оплата резервной мощности
+              href: concepts-hyperscale-reserved-pricing.md
 - name: Практические руководства
   items:
     - name: Отдельный сервер

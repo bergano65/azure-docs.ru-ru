@@ -194,30 +194,6 @@
               href: wrangling-data-flow-overview.md
             - name: Поддерживаемые функции
               href: wrangling-data-flow-functions.md
-    - name: Перенос данных для озера данных и EDW
-      items:
-        - name: Преимущества Фабрики данных Azure
-          href: data-migration-guidance-overview.md
-        - name: "Перенос данных из AWS\_S3 в Azure"
-          href: data-migration-guidance-s3-azure-storage.md
-        - name: Перенос данных из локального кластера Hadoop в Azure
-          href: data-migration-guidance-hdfs-azure-storage.md
-        - name: Перенос данных с локального сервера Netezza в Azure
-          href: data-migration-guidance-netezza-azure-sqldw.md
-    - name: Преобразование с помощью функции сопоставления потоков данных
-      items:
-        - name: Обработка текстовых файлов с фиксированной шириной
-          href: how-to-fixed-width.md
-        - name: Обработка строк ошибок
-          href: how-to-data-flow-error-rows.md
-        - name: Миграция из Базы данных SQL Azure в CosmosDB
-          href: how-to-sqldb-to-cosmosdb.md
-    - name: Перенос рабочих нагрузок SSIS из локальных систем
-      items:
-        - name: Обзор переноса рабочих нагрузок SSIS
-          href: scenario-ssis-migration-overview.md
-        - name: Перенос базы данных Integration Services в Управляемый экземпляр SQL Azure
-          href: scenario-ssis-migration-ssisdb-mi.md
     - name: Роли и разрешения
       href: concepts-roles-permissions.md
     - name: Правила именования
@@ -612,7 +588,7 @@
         - name: Мониторинг среды выполнения интеграции
           href: monitor-integration-runtime.md
         - name: Мониторинг Azure-SSIS Integration Runtime
-          href: 'monitor-integration-runtime.md#azure-ssis-integration-runtime'
+          href: monitor-integration-runtime.md#azure-ssis-integration-runtime
         - name: Повторная настройка Azure-SSIS Integration Runtime
           href: manage-azure-ssis-integration-runtime.md
         - name: Копирование или клонирование фабрики данных
@@ -683,6 +659,32 @@
           href: how-to-create-tumbling-window-trigger.md
         - name: 'Создание зависимости триггера, который запускает конвейер в "переворачивающемся" окне'
           href: tumbling-window-trigger-dependency.md
+    - name: Сценарии
+      items:
+        - name: Перенос данных для озера данных и EDW
+          items:
+            - name: Преимущества Фабрики данных Azure
+              href: data-migration-guidance-overview.md
+            - name: "Перенос данных из AWS\_S3 в Azure"
+              href: data-migration-guidance-s3-azure-storage.md
+            - name: Перенос данных из локального кластера Hadoop в Azure
+              href: data-migration-guidance-hdfs-azure-storage.md
+            - name: Перенос данных с локального сервера Netezza в Azure
+              href: data-migration-guidance-netezza-azure-sqldw.md
+        - name: Преобразование с помощью функции сопоставления потоков данных
+          items:
+            - name: Обработка текстовых файлов с фиксированной шириной
+              href: how-to-fixed-width.md
+            - name: Обработка строк ошибок
+              href: how-to-data-flow-error-rows.md
+            - name: Миграция из Базы данных SQL Azure в CosmosDB
+              href: how-to-sqldb-to-cosmosdb.md
+        - name: Перенос рабочих нагрузок SSIS из локальных систем
+          items:
+            - name: Обзор переноса рабочих нагрузок SSIS
+              href: scenario-ssis-migration-overview.md
+            - name: Перенос базы данных Integration Services в Управляемый экземпляр SQL Azure
+              href: scenario-ssis-migration-ssisdb-mi.md
     - name: Шаблоны
       items:
         - name: Общие сведения о шаблонах
