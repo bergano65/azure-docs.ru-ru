@@ -48,11 +48,15 @@
           href: push-notification-updates-ios-13.md
         - name: Отправка push-уведомлений в приложения iOS
           items:
-            - name: Objective-C
-              href: notification-hubs-ios-apple-push-notification-apns-get-started.md
+            - name: Предварительные требования для работы с руководствами по iOS
+              href: ios-sdk-get-started.md
+            - name: "Objective-C (версия\_3.0.0-preview1)"
+              href: ios-sdk-300.md
+            - name: "Objective-C (версия\_2.0.4)"
+              href: ios-sdk-204.md
             - name: Swift
-              href: notification-hubs-ios-push-notifications-swift-apps-get-started.md
-        - name: Отправка push-уведомлений на конкретные устройства
+              href: ios-sdk-swift-rest.md
+        - name: Отправка push-уведомлений на определенные устройства
           href: notification-hubs-ios-xplat-segmented-apns-push-notification.md
         - name: Отправка push-уведомлений определенным пользователям
           href: notification-hubs-aspnet-backend-ios-apple-apns-notification.md
@@ -70,13 +74,13 @@
       items:
         - name: Отправка push-уведомлений в приложения
           href: notification-hubs-windows-mobile-push-notifications-mpns.md
-        - name: Отправка push-уведомлений на конкретные устройства
+        - name: Отправка push-уведомлений на определенные устройства
           href: notification-hubs-windows-phone-push-xplat-segmented-mpns-notification.md
     - name: Windows
       items:
         - name: Отправка push-уведомлений в приложения универсальной платформы Windows
           href: notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md
-        - name: Отправка push-уведомлений на конкретные устройства
+        - name: Отправка push-уведомлений на определенные устройства
           href: notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md
         - name: Отправка локализованных push-уведомлений в приложения
           href: notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification.md

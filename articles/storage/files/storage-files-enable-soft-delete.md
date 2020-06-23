@@ -1,23 +1,23 @@
 ---
 title: Включение обратимого удаления — общие папки Azure
-description: Узнайте, как включить обратимое удаление в общих папках Azure для восстановления данных и предотвращения случайного удаления.
+description: Узнайте, как включить обратимое удаление (предварительная версия) в общих папках Azure для восстановления данных и предотвращения случайного удаления.
 author: roygara
 ms.service: storage
 ms.topic: conceptual
-ms.date: 05/26/2020
+ms.date: 05/28/2020
 ms.author: rogarana
 ms.subservice: files
 services: storage
-ms.openlocfilehash: 755ccd266b8a88471bf7dbc0d2deb790f35f3457
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: 582a3603ad80ec1312429ed7cbd140d4310fadcb
+ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83883017"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84196194"
 ---
 # <a name="enable-soft-delete-on-azure-file-shares"></a>Включение обратимого удаления — общие папки Azure
 
-Служба хранилища Azure теперь предоставляет возможность обратимого удаления для общих папок. Это упрощает восстановление данных, если они ошибочно удалены приложением или другим пользователем учетной записи хранения. Дополнительные сведения об обратимом удалении см. в статье [Как предотвратить случайное удаление общих папок Azure](storage-files-prevent-file-share-deletion.md).
+Служба хранилища Azure теперь предоставляет возможность обратимого удаления (предварительная версия) для общих папок. Это упрощает восстановление данных, которые были случайно удалены приложением или другим пользователем учетной записи хранения. Дополнительные сведения об обратимом удалении см. в статье [Как предотвратить случайное удаление общих папок Azure](storage-files-prevent-file-share-deletion.md).
 
 В следующих разделах показано, как включить обратимое удаление для общих папок Azure в существующей учетной записи хранения.
 
@@ -60,13 +60,13 @@ Get-AzStorageFileServiceProperty -ResourceGroupName $rgName -StorageAccountName 
 
     В результате будут отображены все общие папки, находящиеся в **удаленном** состоянии.
 
-    :::image type="content" source="media/storage-how-to-recover-deleted-account/undelete-file-share.png" alt-text="Если в столбце состояния рядом со столбцом имени установлено значение "Удалено", то общая папка находится в обратимо удаленном состоянии. Такие папки будут окончательно удалены по истечении указанного срока хранения.":::
+    :::image type="content" source="media/storage-how-to-recover-deleted-account/undelete-file-share.png" alt-text="Если в столбце состояния рядом со столбцом имени установлено значение Удалено, то общая папка находится в обратимо удаленном состоянии. Такие папки будут окончательно удалены по истечении указанного срока хранения.":::
 
 1. Выберите папку и щелкните **отменить удаление**. Это приведет к восстановлению общей папки.
 
     Вы можете подтвердить, что общая папка восстановлена, так как ее состояние меняется на **Активна**.
 
-    :::image type="content" source="media/storage-how-to-recover-deleted-account/restored-file-share.png" alt-text="Если в столбце Состояние рядом со столбцом имени установлено значение "Активна", то общая папка была восстановлена.":::
+    :::image type="content" source="media/storage-how-to-recover-deleted-account/restored-file-share.png" alt-text="Если в столбце Состояние рядом со столбцом имени установлено значение Активна, то общая папка была восстановлена.":::
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -97,3 +97,7 @@ Restore-AzRmStorageShare -ResourceGroupName $rgname -StorageAccountName $account
 Update-AzStorageFileServiceProperty -ResourceGroupName $rgName -StorageAccountName $accountName -EnableShareDeleteRetentionPolicy $false
 ```
 ---
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+См. сведения о другом способе защиты и восстановления данных в статье [Общие сведения о моментальных снимках общих ресурсов для Файлов Azure](storage-snapshots-files.md).

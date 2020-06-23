@@ -240,6 +240,8 @@
       items:
         - name: Требования к пакету рисунков
           href: drawing-requirements.md
+        - name: Объект StylesObject для динамических карт
+          href: schema-stateset-stylesobject.md
         - name: Модель использования транспорта
           href: consumption-model.md
         - name: Расширение формата GeoJSON
