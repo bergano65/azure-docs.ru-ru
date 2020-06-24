@@ -4,12 +4,12 @@ description: Узнайте, как быстро создать кластер K
 services: container-service
 ms.topic: quickstart
 ms.date: 05/26/2020
-ms.openlocfilehash: a89f76344e48d5af8c71c5a674a94767795b41a9
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: 74a71bdc4c9aef9a6964f0c9120a902262a50526
+ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83871470"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85207147"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-cluster-using-powershell"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes с помощью PowerShell
 
@@ -47,7 +47,7 @@ New-AzResourceGroup -Name myResourceGroup -Location eastus
 
 В следующем примере выходных данных показано, что группа ресурсов успешно создана:
 
-```Output
+```plaintext
 ResourceGroupName : myResourceGroup
 Location          : eastus
 ProvisioningState : Succeeded
@@ -92,7 +92,7 @@ Import-AzAksCredential -ResourceGroupName myResourceGroup -Name myAKSCluster
 
 В следующем примере показан единый узел, созданный на предыдущих шагах. Убедитесь, что узел находится в состоянии **Ready** (Готово):
 
-```Output
+```plaintext
 NAME                       STATUS   ROLES   AGE     VERSION
 aks-nodepool1-31718369-0   Ready    agent   6m44s   v1.15.10
 ```
@@ -200,7 +200,7 @@ spec:
 
 В следующем примере выходных данных показано, что развертывания и службы успешно созданы.
 
-```Output
+```plaintext
 deployment.apps/azure-vote-back created
 service/azure-vote-back created
 deployment.apps/azure-vote-front created
@@ -220,14 +220,14 @@ service/azure-vote-front created
 
 Изначально для параметра **EXTERNAL-IP** (Внешний IP-адрес) службы **azure-vote-front** отображается состояние **pending** (ожидание).
 
-```Output
+```plaintext
 NAME               TYPE           CLUSTER-IP   EXTERNAL-IP   PORT(S)        AGE
 azure-vote-front   LoadBalancer   10.0.37.27   <pending>     80:30572/TCP   6s
 ```
 
 Когда значение **EXTERNAL-IP** изменится с состояния **pending** на фактический общедоступный IP-адрес, используйте команду `CTRL-C`, чтобы остановить процесс отслеживания `kubectl`. В следующем примере выходных данных показан общедоступный IP-адрес, присвоенный службе.
 
-```Output
+```plaintext
 azure-vote-front   LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m
 ```
 

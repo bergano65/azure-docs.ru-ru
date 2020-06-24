@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 02/28/2020
-ms.openlocfilehash: eb1824e41fe9fc5185ae4e914b4828cddb2c42db
-ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
+ms.date: 06/20/2020
+ms.openlocfilehash: d63e437090b2875c7e6a8273fdf22d49597d408f
+ms.sourcegitcommit: 635114a0f07a2de310b34720856dd074aaf4f9cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82780527"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85262214"
 ---
 # <a name="tutorial-index-from-multiple-data-sources-using-the-net-sdk"></a>Руководство по Индексирование из нескольких источников данных с помощью пакета SDK для .NET
 
@@ -21,7 +21,7 @@ ms.locfileid: "82780527"
 
 Этот учебник описывает, как индексировать данные об отелях из источника данных Azure Cosmos DB и как объединить их с подробными сведениями о номерах отелей, извлеченными из документов в хранилище BLOB-объектов. В результате мы получим индекс поиска данных об отелях со сложными типами данных.
 
-В этом учебнике используется язык C# и [пакет SDK для .NET](https://aka.ms/search-sdk). Вот какие шаги выполняются в этом учебнике:
+В этом учебнике используется язык C# и [пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/search). Вот какие шаги выполняются в этом учебнике:
 
 > [!div class="checklist"]
 > * отправка примера данных и создание источников данных;

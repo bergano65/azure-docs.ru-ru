@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: overview
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 5b7a060aa2313902e4644fdd15068e06816e3f58
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 241d91a8c8670c32461684ed964b6fc0fd7c1672
+ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81529898"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85206416"
 ---
 # <a name="what-is-form-recognizer"></a>Что такое Распознаватель документов?
 
@@ -81,7 +81,7 @@ ms.locfileid: "81529898"
 | **Анализ квитанции** |Проанализируйте один документ квитанции, чтобы извлечь основные сведения и оставшийся текст квитанции.|
 | **Анализ макета** |Проанализируйте макет формы для извлечения текста и структуры таблиц.|
 
-Ознакомьтесь со [справочной документацией по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeWithCustomForm), чтобы узнать больше. Если вы уже знакомы с предыдущей версией API, обратитесь к статье [о новых возможностях и изменениях](./whats-new.md).
+Ознакомьтесь со [справочной документацией по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-previewoperations/AnalyzeWithCustomForm), чтобы узнать больше. Если вы уже знакомы с предыдущей версией API, обратитесь к статье [о новых возможностях и изменениях](./whats-new.md).
 
 ## <a name="input-requirements"></a>Требования к входным данным
 ### <a name="custom-model"></a>Настраиваемая модель
@@ -100,8 +100,8 @@ ms.locfileid: "81529898"
 
 ## <a name="data-privacy-and-security"></a>Конфиденциальность и безопасность данных
 
-Служба предлагается в качестве [предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) службы Azure [согласно условий использования веб-служб](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31). Как и в случае со всеми другими службами Cognitive Services, разработчикам, использующим службу Распознавателя документов, следует учитывать политику корпорации Майкрософт касательно клиентских данных. Дополнительные сведения см. на [странице о Cognitive Services](https://www.microsoft.com/trustcenter/cloudservices/cognitiveservices) Центра управления безопасностью Майкрософт.
+Как и в случае со всеми другими службами Cognitive Services, разработчикам, использующим службу Распознавателя документов, следует учитывать политику корпорации Майкрософт касательно клиентских данных. Дополнительные сведения см. на [странице о Cognitive Services](https://www.microsoft.com/trustcenter/cloudservices/cognitiveservices) Центра управления безопасностью Майкрософт.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Следуйте [краткому руководству](quickstarts/curl-train-extract.md), чтобы приступить к использованию [API Распознавателя документов](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeWithCustomForm).
+Следуйте [краткому руководству](quickstarts/curl-train-extract.md), чтобы приступить к использованию [API Распознавателя документов](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-previewoperations/AnalyzeWithCustomForm).

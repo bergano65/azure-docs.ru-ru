@@ -8,12 +8,12 @@ ms.date: 5/8/2020
 ms.topic: tutorial
 ms.service: digital-twins
 ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 2534b2ef2eec0ca993ee2506dcc285d750ba38ce
-ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
+ms.openlocfilehash: 67b476b2ec6ec0c841639f7aa1d94a0d9d3d3304
+ms.sourcegitcommit: 635114a0f07a2de310b34720856dd074aaf4f9cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84737209"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85262359"
 ---
 # <a name="explore-azure-digital-twins-with-a-sample-client-app"></a>Изучение Azure Digital Twins с помощью примера клиентского приложения
 
@@ -81,7 +81,7 @@ ms.locfileid: "84737209"
 > Если вы хотите попробовать создать свою собственную модель, можно вставить код модели *Room* в новый файл и сохранить его с расширением *JSON* в папке *AdtSampleApp\SampleClientApp\Models*. Затем поэкспериментируйте с добавлением свойств и отношений, представляющих ваши замыслы. Можно также поискать какие-нибудь идеи в других примерах моделей в этой папке.
 
 > [!TIP] 
-> Существует не зависящий от языка [пример проверяющего элемента управления DTDL](https://github.com/Azure-Samples/DTDL-Validator), который можно использовать для проверки документов модели, чтобы убедиться в правильности DTDL. Он построен на библиотеке средства синтаксического анализа DTDL, о которой вы можете подробнее узнать в разделе [Практическое руководство. Анализ и проверка моделей](how-to-use-parser.md).
+> Существует не зависящий от языка [пример проверяющего элемента управления DTDL](https://docs.microsoft.com/samples/azure-samples/dtdl-validator/dtdl-validator), который можно использовать для проверки документов модели, чтобы убедиться в правильности DTDL. Он построен на библиотеке средства синтаксического анализа DTDL, о которой вы можете подробнее узнать в разделе [Практическое руководство. Анализ и проверка моделей](how-to-use-parser.md).
 
 ### <a name="get-started-with-the-command-line-app"></a>Начало работы с приложением командной строки
 

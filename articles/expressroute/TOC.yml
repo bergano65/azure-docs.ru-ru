@@ -54,8 +54,12 @@
       href: expressroute-global-reach.md
     - name: Сведения о шифровании ExpressRoute
       href: expressroute-about-encryption.md
-    - name: Средства управления безопасностью
-      href: expressroute-security-controls.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
+        - name: Атрибуты безопасности
+          href: expressroute-security-controls.md
     - name: О шлюзах виртуальных сетей
       href: expressroute-about-virtual-network-gateways.md
     - name: Подключение Azure к общедоступному облаку
@@ -210,7 +214,7 @@
 - name: Справочник
   items:
     - name: Azure PowerShell
-      href: '/powershell/module/az.network#expressroute'
+      href: /powershell/module/az.network#expressroute
     - name: Azure CLI
       href: /cli/azure/network/express-route
     - name: REST
