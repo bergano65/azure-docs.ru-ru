@@ -4,15 +4,15 @@ description: В этом кратком руководстве содержат�
 author: yegu-ms
 ms.service: cache
 ms.topic: quickstart
-ms.date: 03/26/2018
+ms.date: 06/18/2018
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: 904e15611ae3032c0523d5132fea9973fbfe3f3f
-ms.sourcegitcommit: ba8df8424d73c8c4ac43602678dae4273af8b336
+ms.openlocfilehash: c9dfc7c9b396ec6ecd27891298ba0b0f1fc3e186
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84457122"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85117851"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-an-aspnet-web-app"></a>Краткое руководство. Использование кэша Azure для Redis с веб-приложением ASP.NET 
 
@@ -65,7 +65,7 @@ ms.locfileid: "84457122"
 
     ```xml
     <appSettings>
-        <add key="CacheConnection" value="<cache-name>.redis.cache.windows.net,abortConnect=false,ssl=true,password=<access-key>"/>
+        <add key="CacheConnection" value="<cache-name>.redis.cache.windows.net,abortConnect=false,ssl=true,allowAdmin=true,password=<access-key>"/>
     </appSettings>
     ```
 
@@ -131,49 +131,73 @@ ms.locfileid: "84457122"
 3. Добавьте следующий метод в класс `HomeController` для поддержки нового действия `RedisCache`, выполняющего некоторые команды для нового кэша.
 
     ```csharp
-        public ActionResult RedisCache()
+    public ActionResult RedisCache()
+    {
+        ViewBag.Message = "A simple example with Azure Cache for Redis on ASP.NET.";
+
+        var lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
         {
-            ViewBag.Message = "A simple example with Azure Cache for Redis on ASP.NET.";
+            string cacheConnection = ConfigurationManager.AppSettings["CacheConnection"].ToString();
+            return ConnectionMultiplexer.Connect(cacheConnection);
+        });
 
-            var lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
-            {
-                string cacheConnection = ConfigurationManager.AppSettings["CacheConnection"].ToString();
-                return ConnectionMultiplexer.Connect(cacheConnection);
-            });
-
-            // Connection refers to a property that returns a ConnectionMultiplexer
-            // as shown in the previous example.
+        // Connection refers to a property that returns a ConnectionMultiplexer
+        // as shown in the previous example.
             
-            using (ConnectionMultiplexer redis = lazyConnection.Value)
+        using (ConnectionMultiplexer redis = lazyConnection.Value)
+        {
+            IDatabase cache = redis.GetDatabase();
+
+            // Perform cache operations using the cache object...
+
+            // Simple PING command
+            ViewBag.command1 = "PING";
+            ViewBag.command1Result = cache.Execute(ViewBag.command1).ToString();
+
+            // Simple get and put of integral data types into the cache
+            ViewBag.command2 = "GET Message";
+            ViewBag.command2Result = cache.StringGet("Message").ToString();
+
+            ViewBag.command3 = "SET Message \"Hello! The cache is working from ASP.NET!\"";
+            ViewBag.command3Result = cache.StringSet("Message", "Hello! The cache is working from ASP.NET!").ToString();
+
+            // Demonstrate "SET Message" executed as expected...
+            ViewBag.command4 = "GET Message";
+            ViewBag.command4Result = cache.StringGet("Message").ToString();
+
+            // Get the client list, useful to see if connection list is growing...
+            ViewBag.command5 = "CLIENT LIST";
+            StringBuilder sb = new StringBuilder();
+
+            var endpoint = (System.Net.DnsEndPoint)Connection.GetEndPoints()[0];
+            var server = Connection.GetServer(endpoint.Host, endpoint.Port);
+            var clients = server.ClientList();
+
+            sb.AppendLine("Cache response :");
+            foreach (var client in clients)
             {
-               IDatabase cache = redis.GetDatabase();
-
-
-               // Perform cache operations using the cache object...
-
-               // Simple PING command
-               ViewBag.command1 = "PING";
-               ViewBag.command1Result = cache.Execute(ViewBag.command1).ToString();
-
-               // Simple get and put of integral data types into the cache
-               ViewBag.command2 = "GET Message";
-               ViewBag.command2Result = cache.StringGet("Message").ToString();
-
-               ViewBag.command3 = "SET Message \"Hello! The cache is working from ASP.NET!\"";
-               ViewBag.command3Result = cache.StringSet("Message", "Hello! The cache is working from ASP.NET!").ToString();
-
-               // Demonstrate "SET Message" executed as expected...
-               ViewBag.command4 = "GET Message";
-               ViewBag.command4Result = cache.StringGet("Message").ToString();
-
-               // Get the client list, useful to see if connection list is growing...
-               ViewBag.command5 = "CLIENT LIST";
-               ViewBag.command5Result = cache.Execute("CLIENT", "LIST").ToString().Replace(" id=", "\rid=");
-
+                sb.AppendLine(client.Raw);
             }
 
-            return View();
+            ViewBag.command5Result = sb.ToString();
+
+        return View();
+    }
+                
+    private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
+    {
+        string cacheConnection = ConfigurationManager.AppSettings["CacheConnection"].ToString();
+        return ConnectionMultiplexer.Connect(cacheConnection);
+    });
+
+    public static ConnectionMultiplexer Connection
+    {
+        get
+        {
+            return lazyConnection.Value;
         }
+    }
+
     ```
 
 4. В **обозревателе решений** разверните папку **Представления** > **Общие**. Затем откройте файл *_Layout.cshtml*.

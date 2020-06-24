@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: quickstart
 ms.date: 03/17/2020
 ms.author: juliako
-ms.openlocfilehash: 22b06ce99333750d48d1cb65d9f60779572723b9
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: f6c3953947e6f7e84f4cf9b565d2f66648b177f7
+ms.sourcegitcommit: 666303748238dfdf9da30d49d89b915af73b0468
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79499623"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85130761"
 ---
 # <a name="quickstart-how-to-sign-up-and-upload-your-first-video"></a>Краткое руководство. Как зарегистрироваться и отправить видео
 
@@ -25,7 +25,7 @@ ms.locfileid: "79499623"
 
 ## <a name="sign-up-for-video-indexer"></a>Регистрация в Индексаторе видео
 
-Чтобы начать разработку с помощью Индексатора видео, откройте веб-сайт службы [Индексатор видео](https://www.videoindexer.com) и зарегистрируйтесь на нем.
+Чтобы начать разработку с помощью Индексатора видео, откройте веб-сайт службы [Индексатор видео](https://www.videoindexer.ai/) и зарегистрируйтесь на нем.
 
 > [!NOTE]
 > Как только вы начнете использовать Индексатор видео, все сохраненные данные и переданное содержимое будут шифроваться при хранении с помощью управляемого ключа Майкрософт.
