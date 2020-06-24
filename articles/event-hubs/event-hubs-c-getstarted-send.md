@@ -3,8 +3,7 @@ title: Краткое руководство. Отправка событий с
 description: Краткое руководство. В этой статье описано, как создать приложение C, которое отправляет сообщения в Центры событий Azure.
 services: event-hubs
 documentationcenter: ''
-author: ShubhaVijayasarathy
-manager: timlt
+author: spelluru
 editor: ''
 ms.assetid: ''
 ms.service: event-hubs
@@ -13,14 +12,15 @@ ms.tgt_pltfrm: c
 ms.devlang: csharp
 ms.topic: quickstart
 ms.custom: seodec18
-ms.date: 11/05/2019
-ms.author: shvija
-ms.openlocfilehash: 5bd4bb66b7e3c3ec37724f8684105befbc9132ff
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.date: 06/23/2020
+ms.author: spelluru
+ms.reviewer: shvija
+ms.openlocfilehash: 6bb4e6d754c091b57399a6154d491e93becad57e
+ms.sourcegitcommit: 4042aa8c67afd72823fc412f19c356f2ba0ab554
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "73720666"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85299319"
 ---
 # <a name="quickstart-send-events-to-azure-event-hubs-using-c"></a>Краткое руководство. Отправка событий в Центры событий Azure с помощью C
 
