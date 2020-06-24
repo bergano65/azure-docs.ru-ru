@@ -498,7 +498,7 @@
           items:
             - name: Миграция в Базу данных SQL
               href: database/migrate-to-database-from-sql-server.md
-            - name: Управление базой данных SQL после переноса
+            - name: Управление Базой данных SQL после переноса
               href: database/manage-data-after-migrating-to-database.md
             - name: Импорт и экспорт (доступ для служб Azure отключен)
               href: database/database-import-export-azure-services-off.md
@@ -664,12 +664,15 @@
     - name: Краткие руководства
       href: managed-instance/quickstart-content-reference-guide.md
       items:
-        - name: Создание
+        - name: Создание Управляемого экземпляра
           items:
-            - name: Использование портала Azure
+            - name: Портал Azure
               href: managed-instance/instance-create-quickstart.md
-            - name: Использование PowerShell
+            - name: PowerShell
               href: managed-instance/scripts/create-configure-managed-instance-powershell.md
+            - name: Шаблон ARM
+              displayName: Resource Manager
+              href: managed-instance/create-template-quickstart.md
             - name: Создание пулов экземпляров
               href: managed-instance/instance-pools-configure.md
         - name: Configure
