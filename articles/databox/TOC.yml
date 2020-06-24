@@ -46,8 +46,12 @@
                   href: data-box-system-requirements-rest.md
             - name: Изучение ограничений
               href: data-box-limits.md
-            - name: Проверка состояния защиты
-              href: data-box-security.md
+            - name: Безопасность
+              items:
+                - name: Базовые средства безопасности
+                  href: security-baseline.md
+                - name: Проверка состояния защиты
+                  href: data-box-security.md
             - name: ВОПРОСЫ И ОТВЕТЫ
               href: data-box-faq.md
         - name: Практическое руководство

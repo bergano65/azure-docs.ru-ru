@@ -5,15 +5,15 @@ services: private-link
 author: malopMSFT
 ms.service: private-link
 ms.topic: overview
-ms.date: 06/02/2020
+ms.date: 06/18/2020
 ms.author: allensu
 ms.custom: fasttrack-edit
-ms.openlocfilehash: ec64facd554ca32ddc1357d9b92b08f1d844e377
-ms.sourcegitcommit: f01c2142af7e90679f4c6b60d03ea16b4abf1b97
+ms.openlocfilehash: 5e46f9dabe2b6f38a08b8e14bae845e0fee22457
+ms.sourcegitcommit: 971a3a63cf7da95f19808964ea9a2ccb60990f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84673417"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85081028"
 ---
 # <a name="what-is-azure-private-link"></a>Что собой представляет Приватный канал Azure? 
 Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure и Базе данных SQL), а также размещенным в Azure службам, которые принадлежат клиенту или партнеру, через [частную конечную точку](private-endpoint-overview.md) виртуальной сети.
@@ -43,6 +43,7 @@ ms.locfileid: "84673417"
 |Поддерживаемые службы  |Доступные регионы | Состояние  |
 |:-------------------|:-----------------|:--------|
 |Службы Приватного канала за Azure Load Balancer (цен. категория "Стандартный") | Все общедоступные регионы  | GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/private-link/private-link-service-overview) |
+| Служба автоматизации Azure  | Все общедоступные регионы | Preview (Предварительный просмотр) | |
 | Хранилище Azure        |  Все общедоступные регионы       | GA <br/> [Дополнительные сведения](/azure/storage/common/storage-private-endpoints)  |
 | Azure Data Lake Storage 2-го поколения        |  Все общедоступные регионы      | GA <br/> [Дополнительные сведения](/azure/storage/common/storage-private-endpoints)  |
 |  База данных SQL Azure         | Все общедоступные регионы      |   GA <br/> [Дополнительные сведения](https://docs.microsoft.com/azure/sql-database/sql-database-private-endpoint-overview)      |

@@ -106,6 +106,8 @@
               href: ./spark/apache-spark-history-server.md
     - name: Безопасность
       items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
         - name: Безопасность сети
           items:
             - name: Правила брандмауэра для IP-адресов рабочей области Synapse

@@ -6,24 +6,22 @@ documentationcenter: android
 keywords: push-уведомления, push-уведомление, push-уведомление android, FCM, Firebase Cloud Messaging
 author: sethmanheim
 manager: femila
-editor: jwargo
-ms.assetid: 02298560-da61-4bbb-b07c-e79bd520e420
 ms.service: notification-hubs
 ms.workload: mobile
 ms.tgt_pltfrm: mobile-android
 ms.devlang: java
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 09/11/2019
+ms.date: 06/22/2020
 ms.author: sethm
 ms.reviewer: thsomasu
 ms.lastreviewed: 09/11/2019
-ms.openlocfilehash: 7dbe9faabcb7a46ae3862ac7da6504b6b0407d86
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
+ms.openlocfilehash: 244e9d9136705eeef27680d2fa590d283abb6467
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84170449"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85255472"
 ---
 # <a name="tutorial-send-push-notifications-to-android-devices-using-firebase-sdk-version-06"></a>Руководство по отправке push-уведомлений на устройства Android с помощью Firebase SDK версии 0.6
 
@@ -556,11 +554,13 @@ Push-уведомления с [Портал Azure] можно отправит�
 [!INCLUDE [notification-hubs-sending-notifications-from-the-portal](../../includes/notification-hubs-sending-notifications-from-the-portal.md)]
 
 ### <a name="run-the-mobile-app-on-emulator"></a>Запуск мобильного приложения в эмуляторе
+
 Перед проверкой отправки push-уведомлений в эмуляторе, убедитесь, что образ эмулятора поддерживает уровень API Google, выбранный для приложения. Если образ не поддерживает собственные API-интерфейсы Google, создается исключение **SERVICE\_NOT\_AVAILABLE**.
 
 Кроме того, добавьте учетную запись Google в запущенный эмулятор. Для этого щелкните **Settings** (Параметры) > **Accounts** (Учетные записи). В противном случае попытки регистрации в FCM могут привести к исключению **AUTHENTICATION\_FAILED**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 В этом руководстве вы использовали Firebase Cloud Messaging, для отправки уведомлений на все устройства Android, зарегистрированных в службе. Чтобы узнать, как отправлять push-уведомления на конкретные устройства, перейдите к следующему руководству:
 
 > [!div class="nextstepaction"]
