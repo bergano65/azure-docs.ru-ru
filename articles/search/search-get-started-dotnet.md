@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 06/07/2020
-ms.openlocfilehash: 59ef47ac67955ef5b9b7cb51ae6f39a9e0d30c3b
-ms.sourcegitcommit: ce44069e729fce0cf67c8f3c0c932342c350d890
+ms.openlocfilehash: 5862a446b1522926f8241959d5e1cff66e4da06b
+ms.sourcegitcommit: 971a3a63cf7da95f19808964ea9a2ccb60990f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84634939"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85079387"
 ---
 # <a name="quickstart-create-a-search-index-in-net"></a>Краткое руководство. Создание индекса поиска в .NET
 > [!div class="op_single_selector"]
@@ -25,7 +25,7 @@ ms.locfileid: "84634939"
 > * [Postman](search-get-started-postman.md)
 >*
 
-Создание консольного приложения .NET Core на языке C#, которое создает, загружает и опрашивает индекс Когнитивного поиска Azure, с помощью Visual Studio и [пакета SDK .NET для Когнитивного поиска Azure](https://aka.ms/search-sdk). 
+Создание консольного приложения .NET Core на языке C#, которое создает, загружает и опрашивает индекс Когнитивного поиска Azure, с помощью Visual Studio и [пакета SDK .NET для Когнитивного поиска Azure](https://docs.microsoft.com/dotnet/api/overview/azure/search). 
 
 В статье описан поэтапный процесс создания предложения. Можно также [загрузить и запустить полное приложение](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/Quickstart), если вы хотите перейти к коду.
 
@@ -64,7 +64,7 @@ ms.locfileid: "84634939"
 
 ### <a name="install-nuget-packages"></a>Установка пакетов Nuget
 
-[Пакет SDK .NET для Когнитивного поиска Azure](https://aka.ms/search-sdk) состоит из нескольких клиентских библиотек, которые распространяются в формате пакетов NuGet.
+[Пакет SDK .NET для Когнитивного поиска Azure](https://docs.microsoft.com/dotnet/api/overview/azure/search) состоит из нескольких клиентских библиотек, которые распространяются в формате пакетов NuGet.
 
 Для этого проекта примените версию 9 пакета NuGet `Microsoft.Azure.Search` и последнюю версию пакета NuGet `Microsoft.Extensions.Configuration.Json`.
 

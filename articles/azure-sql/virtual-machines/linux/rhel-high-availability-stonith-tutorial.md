@@ -7,20 +7,18 @@ ms.topic: tutorial
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: jroth
-ms.date: 02/27/2020
-ms.openlocfilehash: d323d89b13a89a8dd9f2dac6292a01215bf6068a
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.date: 06/18/2020
+ms.openlocfilehash: 56af098050315e1b2cb0bdde531cc38452db4738
+ms.sourcegitcommit: 971a3a63cf7da95f19808964ea9a2ccb60990f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84343801"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85079371"
 ---
 # <a name="tutorial-configure-availability-groups-for-sql-server-on-rhel-virtual-machines-in-azure"></a>Руководство по Настройка групп доступности для SQL Server на виртуальных машинах RHEL в Azure 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
 > [!NOTE]
-> Представленное руководство находится в **общедоступной предварительной версии**. 
->
 > В этом учебнике мы используем SQL Server 2017 с RHEL 7.6, но для настройки высокого уровня доступности можно использовать SQL Server 2019 в RHEL 7 или RHEL 8. Команды для настройки ресурсов группы доступности в RHEL 8 изменились, и, чтобы получить дополнительные сведения о правильных командах, вам нужно будет ознакомиться с разделом [Создание ресурса группы доступности](/sql/linux/sql-server-linux-availability-group-cluster-rhel#create-availability-group-resource) и ресурсами RHEL 8.
 
 В этом руководстве описано следующее:
