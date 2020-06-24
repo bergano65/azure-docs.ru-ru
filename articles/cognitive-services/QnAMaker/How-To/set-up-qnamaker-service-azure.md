@@ -3,12 +3,12 @@ title: Настройка службы QnA Maker QnA Maker
 description: Перед созданием базы знаний службы QnA Maker необходимо настроить эту службу в Azure. Настроить службу QnA Maker может любой пользователь с правами на создание ресурсов в подписке.
 ms.topic: conceptual
 ms.date: 05/28/2020
-ms.openlocfilehash: 106796533f42250a2656735d97878ea04d6fa57f
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.openlocfilehash: 0a1b79c91e4e1bd9a57d6dcbb38432125573b9e6
+ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84235522"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85214134"
 ---
 # <a name="manage-qna-maker-resources"></a>Управление ресурсами QnA Maker
 
@@ -51,7 +51,7 @@ ms.locfileid: "84235522"
     * Выберите **расположение app Insights** , в котором будет развернут ресурс Application Insights.
     * Для экономии затрат вы можете [предоставить общий доступ](#configure-qna-maker-to-use-different-cognitive-search-resource) к некоторым (не всем) ресурсам Azure, созданным для QnA Maker.
 
-1. После проверки всех полей выберите **создать**. Процесс может занять несколько минут.
+1. После проверки всех полей выберите **создать**. Процесс создания может занять несколько минут.
 
 1. После завершения развертывания вы увидите следующие ресурсы, созданные в вашей подписке:
 
@@ -60,9 +60,9 @@ ms.locfileid: "84235522"
     У ресурса с типом _Cognitive Services_ есть ключи _подписки_ .
 
 
-## <a name="find-subscription-keys-in-the-azure-portal"></a>Поиск ключей подписки в портал Azure
+## <a name="find-authoring-keys-in-the-azure-portal"></a>Поиск ключей разработки в портал Azure
 
-Вы можете просматривать и сбрасывать ключи подписки в портал Azure, где был создан QnA Maker ресурс.
+Вы можете просматривать и сбрасывать ключи разработки из портал Azure, где был создан QnA Maker ресурс. Эти ключи могут называться ключами подписки. 
 
 1. Перейдите к ресурсу QnA Maker в портал Azure и выберите ресурс с типом _Cognitive Services_ :
 
@@ -72,7 +72,7 @@ ms.locfileid: "84235522"
 
     ![Ключ подписки](../media/qnamaker-how-to-key-management/subscription-key.PNG)
 
-## <a name="find-endpoint-keys-in-the-qna-maker-portal"></a>Поиск ключей конечных точек на портале QnA Maker
+## <a name="find-query-endpoint-keys-in-the-qna-maker-portal"></a>Поиск ключей конечной точки запроса на портале QnA Maker
 
 Конечная точка находится в том же регионе, что и ресурс, так как ключи конечной точки используются для выполнения вызова к базе знаний.
 
@@ -206,7 +206,7 @@ ms.locfileid: "84235522"
     > [!div class="mx-imgBorder"]
     > ![На панели конфигурация выберите * * Общие параметры * *, затем найдите * * Always on * * и выберите в качестве значения * * on * *.](../media/qnamaker-how-to-upgrade-qnamaker/configure-app-service-idle-timeout.png)
 
-1. Нажмите кнопку **Сохранить**, чтобы сохранить конфигурацию.
+1. Нажмите кнопку **сохранить** , чтобы сохранить конфигурацию.
 1. Вам будет предложено перезапустить приложение, чтобы использовать новый параметр. Выберите **Continue** (Продолжить).
 
 Дополнительные сведения о настройке [общих параметров](../../../app-service/configure-common.md#configure-general-settings)службы приложений.

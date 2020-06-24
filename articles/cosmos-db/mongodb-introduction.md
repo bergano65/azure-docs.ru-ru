@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 10/1/2019
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: 670020d276b9d4a868f24eb4a3f522581060adca
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 5f4a90859831e6134530b94dfa80c11eb740301a
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "72754974"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85113319"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb"></a>API Azure Cosmos DB для MongoDB
 
@@ -24,7 +24,7 @@ Azure Cosmos DB реализует сетевые протоколы станд�
 
 По умолчанию новые учетные записи, созданные с помощью API Azure Cosmos DB для MongoDB, совместимы с версией 3.6 сетевого протокола MongoDB. Любой драйвер клиента MongoDB, который распознает эти версии протокола, должен иметь возможность собственного подключения к Cosmos DB.
 
-![API Azure Cosmos DB для MongoDB](./media/mongodb-introduction/cosmosdb-mongodb.png)
+:::image type="content" source="./media/mongodb-introduction/cosmosdb-mongodb.png" alt-text="API Azure Cosmos DB для MongoDB" border="false":::
 
 ## <a name="key-benefits"></a>Основные преимущества
 

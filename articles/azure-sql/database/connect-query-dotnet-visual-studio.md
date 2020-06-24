@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/29/2020
-ms.openlocfilehash: 94f005ee4b2542e4cc0908880d589a2ee6a4d798
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
+ms.openlocfilehash: 3f951c05100b5e36a2162e2422a066d563b24136
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84267432"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85250678"
 ---
 # <a name="quickstart-use-net-and-c-in-visual-studio-to-connect-to-and-query-a-database-in-azure-sql-database-or-azure-sql-managed-instance"></a>Краткое руководство. Использование .NET и C# в Visual Studio для подключения к базе данных в службе "База данных SQL Azure" или Управляемом экземпляре SQL Azure и отправке запросов.
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "84267432"
 Для работы с этим кратким руководством вам понадобится:
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
-- База данных SQL Azure. Для создания и настройки базы данных в службе "База данных SQL Azure" можно использовать одно из этих кратких руководств.
+- База данных в службе "База данных SQL Azure". Для создания и настройки базы данных в службе "База данных SQL Azure" можно использовать одно из этих кратких руководств.
 
   || База данных SQL | Управляемый экземпляр SQL | SQL Server на виртуальной машине Azure |
   |:--- |:--- |:---|:---|
@@ -49,7 +49,7 @@ ms.locfileid: "84267432"
 
 ## <a name="get-server-connection-information"></a>Получение сведений о подключении к серверу
 
-Получите сведения, необходимые для подключения к базе данных SQL Azure. Для дальнейших действий вам понадобится полное имя сервера или имя узла, имя базы данных и данные для входа.
+Получите сведения, необходимые для подключения к базе данных. Для дальнейших действий вам понадобится полное имя сервера или имя узла, имя базы данных и данные для входа.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 

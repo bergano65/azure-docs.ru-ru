@@ -12,12 +12,12 @@ ms.date: 10/24/2019
 ms.author: kenwith
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc1d0687c0d2d48a64e38fd5a57fe32c13063890
-ms.sourcegitcommit: bc943dc048d9ab98caf4706b022eb5c6421ec459
+ms.openlocfilehash: e365503ba975f8cc93302bd3f1084c2cdd4f254f
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2020
-ms.locfileid: "84760309"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85114033"
 ---
 # <a name="tutorial-add-an-on-premises-application-for-remote-access-through-application-proxy-in-azure-active-directory"></a>Руководство по Добавление локального приложения для удаленного доступа через Application Proxy в Azure Active Directory
 
@@ -50,7 +50,9 @@ Azure Active Directory (Azure AD) содержит службу прокси п�
 > Если вы устанавливаете соединитель на Windows Server 2019, необходимо отключить поддержку протокола HTTP2 в компоненте WinHttp. В более ранних версиях поддерживаемых операционных систем она по умолчанию отключена. Добавление следующего раздела реестра и перезагрузка сервера приведет к отключению поддержки в Windows Server 2019. Обратите внимание, что этот раздел реестра действует для всего компьютера.
 >
 > ```
-> HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\EnableDefaultHttp2 (DWORD) Value: 0 
+> Windows Registry Editor Version 5.00
+> 
+> [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp] "EnableDefaultHttp2"=dword:00000000
 > ```
 >
 

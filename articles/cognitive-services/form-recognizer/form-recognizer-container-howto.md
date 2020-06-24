@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: 761cf5831bb2332ae8c3f7a9a8edee707e6810ee
-ms.sourcegitcommit: fc0431755effdc4da9a716f908298e34530b1238
+ms.openlocfilehash: fe6e0a0f3ffd3680c75c086222a4a390ce15d4df
+ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83816341"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85213199"
 ---
 # <a name="install-and-run-form-recognizer-containers-preview"></a>Установка и запуск контейнеров распознавателей форм (Предварительная версия)
 
@@ -39,7 +39,7 @@ ms.locfileid: "83816341"
 |----------|---------|
 | Модуль Docker | На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> В ОС Windows для Docker нужно также настроить поддержку контейнеров Linux.<br><br> |
 | Опыт работы с Docker | Требуется базовое представление о понятиях Docker, таких как реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`. |
-| Интерфейс командной строки Azure | Установите в узле [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). |
+| Интерфейс командной строки Azure | Установите в узле [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli). |
 | Ресурс API Компьютерного зрения | Для обработки отсканированных документов и изображений требуется API Компьютерного зрения. Вы можете получить доступ к функции Распознавание текста как к ресурсу Azure (REST API или пакету SDK) или к [контейнеру](../Computer-vision/computer-vision-how-to-install-containers.md#get-the-container-image-with-docker-pull)" *Распознавание-служба-текст* ". Взымается обычная плата. <br><br>Передайте ключ API и конечные точки для ресурса Компьютерное зрение (облако Azure или контейнер Cognitive Services). Используйте этот ключ API и конечную точку как **{COMPUTER_VISION_API_KEY}** и **{COMPUTER_VISION_ENDPOINT_URI}**.<br><br> Если вы используете контейнер *cognitive-services-recognize-text*, проверьте следующее:<br><br>Ваш ключ Компьютерного зрения для контейнера Распознавателя документов — это ключ, указанный в команде `docker run` Компьютерного зрения для контейнера *cognitive-services-recognize-text*.<br>Ваша конечная точка выставления счетов — это конечная точка контейнера, например `http://localhost:5000`. При совместном использовании контейнеров Компьютерного зрения и Распознавателя документов в одному узле их нельзя одновременно запустить с помощью порта *5000*, заданного по умолчанию. |
 | Ресурс Распознавателя документов | Для использования контейнеров необходимо следующее:<br><br>Ресурс **распознавателя форм** Azure для получения соответствующего ключа API и URI конечной точки. Оба значения доступны на странице Обзор **распознавателя форм** портал Azure и на страницах ключей, и оба значения необходимы для запуска контейнера.<br><br>**{FORM_RECOGNIZER_API_KEY}**: один из двух доступных ключей ресурсов на странице "ключи"<br><br>**{FORM_RECOGNIZER_ENDPOINT_URI}**: конечная точка, указанная на странице обзора |
 
@@ -81,7 +81,7 @@ ms.locfileid: "83816341"
 
 В приведенной ниже таблице указаны минимальное и рекомендуемое число ядер ЦП и памяти для каждого контейнера Распознавателя документов.
 
-| Контейнер | Минимальные | Рекомендуется |
+| Контейнер | Минимальные | Рекомендуемая |
 |-----------|---------|-------------|
 | Распознаватель документов | 2 ядра, 4 ГБ памяти | 4 ядра, 8 ГБ памяти |
 | Распознавание текста | 1 ядро, 8 ГБ памяти | 2 ядра, 8 ГБ памяти |

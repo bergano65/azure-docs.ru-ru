@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
-ms.openlocfilehash: 855feaf9b5b47b7b725ee7927418a2b3a9e25393
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: 8772607c7f43f2a06f5c9f12ee5efd603a1e324f
+ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84017779"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85212655"
 ---
 # <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>Улучшение синтеза с помощью языка разметки речи (SSML)
 
@@ -266,7 +266,7 @@ speechConfig!.setPropertyTo(
 | Сложность                      | Описание |
 |-------------------------------|-------------|
 | None или, если значение не указано | 0 мс        |
-| x-слабый                        | 250 мс      |
+| x-слабый                        | 250 мс      |
 | безопасные                          | 500 мс      |
 | средняя                        | 750 мс      |
 | надежный                        | 1000 мс     |
@@ -403,7 +403,7 @@ speechConfig!.setPropertyTo(
 
 `lexicon`Элемент содержит по крайней мере один `lexeme` элемент. Каждый `lexeme` элемент содержит по крайней мере один `grapheme` элемент и один или несколько `grapheme` `alias` элементов, и `phoneme` . `grapheme`Элемент содержит текст, описывающий <a href="https://www.w3.org/TR/pronunciation-lexicon/#term-Orthography" target="_blank">орсографи <span class="docon docon-navigate-external x-hidden-focus"></span> </a>. `alias`Элементы используются для указания произношения акронима или сокращенного выражения. `phoneme`Элемент предоставляет текст, описывающий, как `lexeme` произносится.
 
-Важно отметить, что нельзя напрямую задавать произношение слова с помощью пользовательского лексикона. Если необходимо задать произношение для, сначала укажите `alias` , а затем свяжите `phoneme` с ним `alias` . Пример:
+Важно отметить, что нельзя напрямую задавать произношение слова с помощью пользовательского лексикона. Если необходимо задать произношение акронима или сокращенного выражения, сначала укажите `alias` , а затем свяжите `phoneme` с ним `alias` . Пример:
 
 ```xml
   <lexeme>
