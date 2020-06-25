@@ -41,6 +41,10 @@
       href: automation-runbook-types.md
     - name: "PowerShell\_DSC"
       href: /powershell/scripting/dsc/overview/overview
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Безопасность данных
       items:
         - name: Шифрование защищенных ресурсов
@@ -63,6 +67,8 @@
           href: how-to/automation-region-dns-records.md
         - name: Управление учетной записью запуска от имени в службе автоматизации
           href: manage-runas-account.md
+        - name: Частное подключение к учетной записи службы автоматизации
+          href: how-to/private-link-security.md
         - name: Управление разрешениями ролей и безопасностью
           href: automation-role-based-access-control.md
         - name: Перемещение учетной записи службы автоматизации в другую подписку
