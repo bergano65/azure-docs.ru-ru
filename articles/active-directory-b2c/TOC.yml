@@ -325,6 +325,8 @@
                     - name: Многофакторная идентификация Azure
                       href: multi-factor-auth-technical-profile.md
                       displayName: mfa
+                    - name: "SSPR в Azure\_AD"
+                      href: aad-sspr-technical-profile.md
                     - name: Преобразование утверждений
                       href: claims-transformation-technical-profile.md
                     - name: Поставщик токенов JWT

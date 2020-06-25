@@ -17,11 +17,11 @@
       href: cognitive-services-apis-create-account.md
     - name: Создание ресурса с помощью Azure CLI
       href: cognitive-services-apis-create-account-cli.md
-    - name: Ведение журнала диагностики
-      href: diagnostic-logging.md
-    - name: Шаблон ARM
+    - name: Создание ресурса с помощью шаблона Resource Manager
       displayName: Resource Manager
       href: resource-manager-template.md
+    - name: Ведение журнала диагностики
+      href: diagnostic-logging.md
 - name: Примеры
   items:
     - name: Встроенные компоненты Политики Azure
