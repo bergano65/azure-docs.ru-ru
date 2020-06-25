@@ -394,30 +394,64 @@
       items:
         - name: Что такое голосовой помощник?
           href: voice-assistants.md
-    - name: Пользовательские команды (предварительная версия)
+    - name: Пользовательские команды
       items:
         - name: Что собой представляют пользовательские команды?
           href: custom-commands.md
         - name: Краткие руководства
           items:
             - name: Создание приложения пользовательских команд
-              href: quickstart-custom-speech-commands-create-new.md
-            - name: Создание пользовательской команды с параметрами
-              href: quickstart-custom-speech-commands-create-parameters.md
-            - name: Использование пользовательских команд с Пользовательским голосом
-              href: quickstart-custom-speech-commands-select-custom-voice.md
-            - name: Использование пользовательских команд с пакетом SDK службы "Речь"
-              href: quickstart-custom-speech-commands-speech-sdk.md
+              href: quickstart-custom-commands-application.md
         - name: Практические руководства
           items:
-            - name: Выполнение команд из клиента
-              href: how-to-custom-speech-commands-fulfill-sdk.md
-            - name: Добавление проверки параметров
-              href: how-to-custom-speech-commands-validations.md
-            - name: Добавление подтверждения
-              href: how-to-custom-speech-commands-confirmations.md
-            - name: Добавление одноэтапного исправления
-              href: how-to-custom-speech-commands-one-step-correction.md
+            - name: Разработка
+              items:
+                - name: Создание приложения с использованием простых команд
+                  href: how-to-custom-commands-create-application-with-simple-commands.md
+                - name: Добавление параметров в команды
+                  href: how-to-custom-commands-add-parameters-to-commands.md
+                - name: Добавление конфигураций в параметры команд
+                  href: how-to-custom-commands-add-parameter-configuration.md
+                - name: Добавление правил взаимодействия
+                  href: how-to-custom-commands-add-interaction-rules.md
+                - name: Добавление шаблонов создания языков для речевых ответов
+                  href: how-to-custom-commands-add-language-generation-templates.md
+            - name: Интеграция
+              items:
+                - name: Интеграция с клиентским приложением с использованием пакета SDK службы "Речь"
+                  href: how-to-custom-commands-setup-speech-sdk.md
+                - name: Отправка действия в клиентское приложение
+                  href: how-to-custom-commands-send-activity-to-client.md
+                - name: Настройка конечных веб-точек
+                  href: how-to-custom-commands-setup-web-endpoints.md
+            - name: Развертывание
+              items:
+                - name: Непрерывное развертывание с помощью Azure DevOps
+                  href: how-to-custom-commands-deploy-cicd.md
+            - name: Тест
+              items:
+                - name: Тестирование приложения пользовательских команд
+                  href: how-to-custom-commands-developer-flow-test.md
+            - name: Отладка
+              items:
+                - name: Отладка ошибок при создании приложения
+                  href: how-to-custom-commands-debug-build-time.md
+                - name: Отладка ошибок при запуске приложения
+                  href: how-to-custom-commands-debug-runtime.md
+            - name: Ссылки
+              items:
+                - name: Основные понятия пользовательских команд
+                  href: custom-commands-references.md
+        - name: Ресурсы
+          items:
+            - name: Примеры пользовательских команд (GitHub)
+              href: 'https://aka.ms/speech/cc-samples'
+            - name: Примеры голосовых помощников (GitHub)
+              href: 'http://aka.ms/speech/va-samples'
+            - name: 'Голосовые помощники: часто задаваемые вопросы'
+              href: faq-voice-assistants.md
+            - name: Пакет SDK для службы "Речь"
+              href: speech-sdk.md
     - name: Канал Direct Line Speech
       items:
         - name: Что такое Direct Line Speech?

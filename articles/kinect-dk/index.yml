@@ -1,0 +1,82 @@
+### YamlMime:Landing
+title: Документация по Azure Kinect DK
+summary: Azure Kinect DK — это комплект для разработчиков с расширенными датчиками ИИ, предоставляющими сложные модели компьютерного зрения и речи. Kinect содержит датчик глубины, массив пространственных микрофонов с видеокамерой и датчик ориентации в формате одного небольшого устройстве с разными режимами, параметрами и пакетами средств разработки программного обеспечения (SDK).
+metadata:
+  title: Документация по Azure Kinect DK
+  description: Azure Kinect DK — это комплект для разработчиков с расширенными датчиками ИИ, предоставляющими сложные модели компьютерного зрения и речи. Kinect содержит датчик глубины, массив пространственных микрофонов с видеокамерой и датчик ориентации в формате одного небольшого устройстве с разными режимами, параметрами и пакетами SDK.
+  ms.prod: kinect-dk
+  ms.topic: landing-page
+  author: tesych
+  ms.author: tesych
+  ms.date: 03/11/2020
+  ms.openlocfilehash: f1691507d75d6de630f3c5a48cd59c8cc22b5999
+  ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/31/2020
+  ms.locfileid: "85277906"
+landingContent:
+- title: Об Azure Kinect DK
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Azure Kinect DK?
+      url: about-azure-kinect-dk.md
+  - linkListType: reference
+    links:
+    - text: Характеристики оборудования
+      url: hardware-specification.md
+    - text: Требования к системе
+      url: system-requirements.md
+- title: Начало работы
+  linkLists:
+  - linkListType: download
+    links:
+    - text: Пакет SDK для датчика Azure Kinect
+      url: sensor-sdk-download.md
+    - text: Пакет SDK Azure Kinect для отслеживания тела
+      url: body-sdk-download.md
+  - linkListType: quickstart
+    links:
+    - text: Настройка Azure Kinect DK
+      url: set-up-azure-kinect-dk.md
+    - text: Запись потоков датчиков в файл
+      url: record-sensor-streams-file.md
+    - text: Создание первого приложения Azure Kinect
+      url: build-first-app.md
+    - text: Настройка пакета SDK для отслеживания тела
+      url: body-sdk-setup.md
+    - text: Создание первого приложения для отслеживания тела
+      url: build-first-body-app.md
+- title: Использование пакета SDK для датчика
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Поиск и открытие устройства
+      url: find-then-open-device.md
+    - text: Получение данных изображения
+      url: about-sensor-sdk.md
+    - text: Получение доступа к микрофону
+      url: access-mics.md
+    - text: Запись и воспроизведение
+      url: record-playback-api.md
+- title: Использование пакета SDK для отслеживания тела
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Получение результатов отслеживания тела
+      url: get-body-tracking-results.md
+    - text: Получение доступа к данным о корпусе
+      url: access-data-body-frame.md
+- title: Справочник
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: API пакета SDK для датчика
+      url: https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/index.html
+    - text: API пакета SDK для отслеживания текста
+      url: https://microsoft.github.io/Azure-Kinect-Body-Tracking/release/1.x.x/index.html
+    - text: Службы зрения
+      url: https://azure.microsoft.com/services/cognitive-services/directory/vision/
+    - text: Службы "Речь"
+      url: https://docs.microsoft.com/azure/cognitive-services/speech-service/

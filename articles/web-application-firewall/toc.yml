@@ -77,6 +77,8 @@
           href: ./afds/waf-front-door-geo-filtering.md
         - name: ВОПРОСЫ И ОТВЕТЫ
           href: ./afds/waf-faq.md
+    - name: WAF и Политика Azure
+      href: ./shared/waf-azure-policy.md
 - name: Практические руководства
   items:
     - name: Шлюз приложений

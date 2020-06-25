@@ -110,12 +110,17 @@
     - name: Создание политик для свойств массива
       displayName: 'array property, alias, aliases, in, notIn, type, defaultValue'
       href: ./how-to/author-policies-for-arrays.md
-    - name: Создание политики гостевой конфигурации в Windows
-      displayName: 'powershell, dsc, chef, windows'
-      href: ./how-to/guest-configuration-create.md
-    - name: Создание политики гостевой конфигурации в Linux
-      displayName: 'powershell, dsc, chef, linux'
-      href: ./how-to/guest-configuration-create-linux.md
+    - name: Гостевая конфигурация
+      items:
+        - name: Создание политики гостевой конфигурации в Windows
+          displayName: 'powershell, dsc, chef, windows'
+          href: ./how-to/guest-configuration-create.md
+        - name: Создание политики гостевой конфигурации в Linux
+          displayName: 'powershell, dsc, chef, linux'
+          href: ./how-to/guest-configuration-create-linux.md
+        - name: Создание политики гостевой конфигурации на основе групповой политики
+          displayName: 'powershell, dsc, grouppolicy, windows'
+          href: ./how-to/guest-configuration-create-group-policy.md
     - name: Получение данных о соответствии
       displayName: 'evaluation, scan, summarize, query, events, log analytics'
       href: ./how-to/get-compliance-data.md
@@ -155,9 +160,9 @@
     - name: Azure PowerShell
       items:
         - name: Политика
-          href: '/powershell/module/az.resources/#policies'
+          href: /powershell/module/az.resources/#policies
         - name: Анализ политик
-          href: '/powershell/module/az.policyinsights#policy_insights'
+          href: /powershell/module/az.policyinsights#policy_insights
         - name: Гостевая конфигурация
           href: 'https://www.powershellgallery.com/packages/Az.GuestConfiguration'
     - name: Azure SDK для .NET

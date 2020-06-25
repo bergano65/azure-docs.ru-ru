@@ -69,6 +69,8 @@
         - name: 'Развертывание политики, которую можно исправить'
           displayName: 'deployIfNotExists, modify, managed identities, managed identity'
           href: ./how-to/deploy-policy-remediation.md
+    - name: Интеграция Azure Sentinel
+      href: ./how-to/manage-sentinel-workspaces.md
     - name: Действия клиента
       items:
         - name: Просмотр поставщиков служб и управление ими

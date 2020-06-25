@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.topic: include
 ms.date: 04/10/2020
 ms.custom: include file
-ms.openlocfilehash: e81f584892126a1d79e0d56ecacaa8c202fa81e3
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 2cb07957af996f19bb15853fda81400cd63c8b21
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83647702"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85113808"
 ---
 1. На **домашней странице** или в меню портала Azure выберите **Создать ресурс**.
 
@@ -37,14 +37,14 @@ ms.locfileid: "83647702"
     > [!NOTE]
     > Вы можете использовать не более одной учетной записи Azure Cosmos DB категории "Бесплатный" на подписку Azure. При создании учетной записи нужно зарегистрироваться. Если параметр подачи заявки на скидку на основе категории "Бесплатный" не отображается, это означает, что в подписке уже включена другая учетная запись категории "Бесплатный".
    
-   ![Страница "Новая учетная запись" для Azure Cosmos DB](./media/cosmos-db-create-dbaccount/azure-cosmos-db-create-new-account-detail.png)
+   :::image type="content" source="./media/cosmos-db-create-dbaccount/azure-cosmos-db-create-new-account-detail.png" alt-text="Страница "Новая учетная запись" для Azure Cosmos DB":::
 
 1. Выберите **Review + create** (Просмотреть и создать). Вы можете пропустить разделы **Сеть** и **Теги**.
 
 1. Проверьте параметры учетной записи, а затем нажмите кнопку **Создать**. Создание учетной записи занимает несколько минут. Дождитесь, пока на странице портала появится сообщение **Развертывание выполнено**. 
 
-    ![Область "Уведомления" на портале Azure](./media/cosmos-db-create-dbaccount/azure-cosmos-db-account-created.png)
+    :::image type="content" source="./media/cosmos-db-create-dbaccount/azure-cosmos-db-account-created.png" alt-text="Область "Уведомления" на портале Azure":::
 
 1. Выберите **Перейти к ресурсу**, чтобы перейти на страницу учетной записи Azure Cosmos DB. 
 
-    ![Страница учетной записи Azure Cosmos DB](./media/cosmos-db-create-dbaccount/azure-cosmos-db-account-created-2.png)
+    :::image type="content" source="./media/cosmos-db-create-dbaccount/azure-cosmos-db-account-created-2.png" alt-text="Страница учетной записи Azure Cosmos DB":::

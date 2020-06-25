@@ -36,6 +36,8 @@
       items:
         - name: Принципы работы MFA
           href: concept-mfa-howitworks.md
+        - name: Приглашения и время существования сеанса
+          href: concepts-azure-multi-factor-authentication-prompts-session-lifetime.md
         - name: Местонахождение данных
           href: concept-mfa-data-residency.md
         - name: Лицензии

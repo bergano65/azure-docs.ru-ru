@@ -41,7 +41,7 @@
       href: security-center-compliance-dashboard.md
 - name: Примеры
   items:
-    - name: Встроенные политики службы "Политика Azure"
+    - name: Встроенные компоненты Политики Azure
       displayName: 'samples, policies, definitions'
       href: ./policy-samples.md
 - name: Основные понятия
@@ -102,7 +102,7 @@
       href: monitor-container-security.md
     - name: Защита серверов с помощью ATP в Microsoft Defender
       href: security-center-wdatp.md
-    - name: Использование расширенной защиты данных для SQL на виртуальных машинах Azure
+    - name: Использование Расширенной защиты данных для виртуальных машин SQL
       href: security-center-iaas-advanced-data.md
     - name: Использование Службы приложений для защиты приложений
       href: security-center-app-services.md

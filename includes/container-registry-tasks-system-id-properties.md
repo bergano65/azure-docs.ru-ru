@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: container-registry
 author: dlepow
@@ -10,12 +10,12 @@ ms.author: danlep
 ms.custom: include file
 ms.openlocfilehash: 700dbfde3be2f24eb57acbdeb9d2841ef2bdfe44
 ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "77112298"
 ---
-В выходных данных команды в `identity` разделе показано, что в задаче `SystemAssigned` задано удостоверение типа. `principalId` — Идентификатор субъекта для удостоверения задачи:
+В выходных данных команды в разделе `identity` показано, что в задаче задано удостоверение типа `SystemAssigned`. `principalId` — это идентификатор субъекта для удостоверения задачи.
 
 ```console
 [...]
@@ -28,7 +28,7 @@ ms.locfileid: "77112298"
   "location": "eastus",
 [...]
 ``` 
-Используйте команду [AZ запись контроля][az-acr-task-show] доступа, чтобы сохранить principalId в переменной для использования в последующих командах. Замените имя задачи и реестра в следующей команде:
+С помощью команды [az acr task show][az-acr-task-show] сохраните principalId в переменной, что использовать это значение в следующих командах. Подставьте имя задачи и реестра в следующей команде:
 
 ```azurecli
 principalID=$(az acr task show --name mytask --registry myregistry --query identity.principalId --output tsv)

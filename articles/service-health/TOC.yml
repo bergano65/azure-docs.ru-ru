@@ -30,7 +30,9 @@
       href: service-health-alert-webhook-pagerduty.md
     - name: Отправка оповещений в OpsGenie
       href: service-health-alert-webhook-opsgenie.md
-    - name: Настройка оповещений о событиях работоспособности ресурсов
+    - name: Настройка оповещений о работоспособности ресурсов на портале Azure
+      href: resource-health-alert-monitor-guide.md
+    - name: Настройка оповещений о работоспособности ресурсов с помощью шаблонов Resource Manager
       href: resource-health-alert-arm-template-guide.md
 - name: Справочник
   items:

@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: container-registry
 author: dlepow
@@ -10,12 +10,12 @@ ms.author: danlep
 ms.custom: include file
 ms.openlocfilehash: 1240b4b7e2c84e798c6d7e5257e459628da1420f
 ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "68642089"
 ---
-В выходных данных команды в `identity` разделе показано, что в задаче `UserAssigned` задано удостоверение типа.
+В выходных данных команды в разделе `identity` показано, что в задаче задано удостоверение типа `UserAssigned`:
 
 ```console
 [...]

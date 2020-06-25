@@ -157,8 +157,16 @@
       href: ../policy-samples.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
 - name: Основные понятия
   items:
-    - name: Изображения
-      href: shared-image-galleries.md
+    - name: Создание образов
+      items:
+        - name: Обзор
+          href: imaging.md
+        - name: Подготовка
+          href: provisioning.md
+        - name: Общедоступные коллекции образов
+          href: shared-image-galleries.md
+        - name: Конструктор образов
+          href: image-builder-overview.md
     - name: Azure Resource Manager
       href: ../../azure-resource-manager/management/overview.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
     - name: Регионы
@@ -394,7 +402,7 @@
               displayName: Azure Resource Manager
             - name: Коды ошибок
               href: ../error-codes-spot.md?toc=/azure/virtual-machines/linux/toc.json
-    - name: Переход с классической модели развертывания на модель Azure Resource Manager
+    - name: Перейдите с классической модели развертывания на модель Azure Resource Manager
       items:
         - name: "Прекращение поддержки с 1\_марта 2023\_г."
           href: ../classic-vm-deprecation.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
@@ -415,6 +423,50 @@
     - name: Использование образов
       displayName: 'SIG, AMI, image'
       items:
+        - name: Требования к распределению
+          items:
+            - name: Общие инструкции
+              href: create-upload-generic.md
+            - name: Ubuntu
+              href: create-upload-ubuntu.md
+            - name: CentOS
+              href: create-upload-centos.md
+            - name: Red Hat
+              href: redhat-create-upload-vhd.md
+            - name: Debian
+              href: debian-create-upload-vhd.md
+            - name: SUSE
+              href: suse-create-upload-vhd.md
+            - name: Oracle Linux
+              href: oracle-create-upload-vhd.md
+            - name: OpenBSD
+              href: create-upload-openbsd.md
+            - name: FreeBSD
+              href: freebsd-intro-on-azure.md
+        - name: Использование cloud-init
+          items:
+            - name: Обзор cloud-Init
+              href: using-cloud-init.md
+            - name: Подробный обзор
+              href: cloud-init-deep-dive.md
+            - name: Устранение неполадок
+              href: cloud-init-troubleshooting.md
+            - name: Настройка имени узла для виртуальной машины
+              href: cloudinit-update-vm-hostname.md
+            - name: Пакеты обновления на виртуальной машине
+              href: cloudinit-update-vm.md
+            - name: Добавление пользователя виртуальной машины
+              href: cloudinit-add-user.md
+            - name: Настройка файла подкачки
+              href: cloudinit-configure-swapfile.md
+            - name: Запуск существующего bash-скрипта
+              href: cloudinit-bash-script.md
+            - name: Подготовка существующей виртуальной машины для cloud-init
+              href: cloudinit-prepare-custom-image.md
+        - name: Создание образов без
+          href: no-agent.md
+        - name: Отключение подготовки агента Linux
+          href: disable-provisioning.md
         - name: Общая коллекция образов
           items:
             - name: CLI
@@ -480,8 +532,6 @@
               href: ../image-version-encryption.md
         - name: Конструктор изображений (предварительная версия)
           items:
-            - name: Обзор
-              href: image-builder-overview.md
             - name: Использование Azure CLI
               href: image-builder.md
             - name: Справочник по шаблонам ARM
@@ -495,27 +545,7 @@
               href: 'https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md'
         - name: Поиск и использование образов
           href: cli-ps-findimage.md
-        - name: Создание пользовательского образа
-          items:
-            - name: Общие инструкции
-              href: create-upload-generic.md
-            - name: Ubuntu
-              href: create-upload-ubuntu.md
-            - name: CentOS
-              href: create-upload-centos.md
-            - name: Red Hat
-              href: redhat-create-upload-vhd.md
-            - name: Debian
-              href: debian-create-upload-vhd.md
-            - name: SUSE
-              href: suse-create-upload-vhd.md
-            - name: Oracle Linux
-              href: oracle-create-upload-vhd.md
-            - name: OpenBSD
-              href: create-upload-openbsd.md
-            - name: FreeBSD
-              href: freebsd-intro-on-azure.md
-        - name: Запись образа виртуальной машины
+        - name: Запись управляемого образа виртуальной машины
           href: capture-image.md
         - name: Создание образа с помощью Packer
           href: build-image-with-packer.md
@@ -813,22 +843,6 @@
               href: /azure/developer/terraform/install-configure
             - name: Создание готовой виртуальной машины
               href: /azure/developer/terraform/create-linux-virtual-machine-with-infrastructure
-        - name: Cloud-init
-          items:
-            - name: Обзор cloud-Init
-              href: using-cloud-init.md
-            - name: Настройка имени узла для виртуальной машины
-              href: cloudinit-update-vm-hostname.md
-            - name: Пакеты обновления на виртуальной машине
-              href: cloudinit-update-vm.md
-            - name: Добавление пользователя виртуальной машины
-              href: cloudinit-add-user.md
-            - name: Настройка файла подкачки
-              href: cloudinit-configure-swapfile.md
-            - name: Запуск существующего bash-скрипта
-              href: cloudinit-bash-script.md
-            - name: Подготовка существующей виртуальной машины для cloud-init
-              href: cloudinit-prepare-custom-image.md
         - name: Jenkins
           href: /azure/developer/jenkins/overview
           items:

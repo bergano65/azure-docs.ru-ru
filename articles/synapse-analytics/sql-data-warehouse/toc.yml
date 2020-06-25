@@ -420,5 +420,7 @@
           href: sql-data-warehouse-partner-data-integration.md
         - name: Управление данными
           href: sql-data-warehouse-partner-data-management.md
+        - name: Машинное обучение и ИИ
+          href: sql-data-warehouse-partner-machine-learning-ai.md
         - name: 'Партнеры, поддержавшие выпуск общедоступной предварительной версии'
           href: sql-data-warehouse-partner-launch.md

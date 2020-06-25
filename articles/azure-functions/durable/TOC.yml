@@ -19,6 +19,9 @@
     - name: 'Создание устойчивой функции: JavaScript'
       displayName: 'get started, chaining'
       href: quickstart-js-vscode.md
+    - name: "Создание устойчивой функции\_— Python"
+      displayName: 'get started, chaining'
+      href: quickstart-python-vscode.md
 - name: Учебники
   items:
     - name: Цепочка функций
@@ -76,7 +79,7 @@
 - name: Справочник
   items:
     - name: Параметры файла host.json
-      href: 'durable-functions-bindings.md#host-json'
+      href: durable-functions-bindings.md#host-json
     - name: Привязки
       href: durable-functions-bindings.md
     - name: API HTTP

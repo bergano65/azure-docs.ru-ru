@@ -91,6 +91,8 @@
           href: troubleshoot-reboot-loop.md
         - name: Зависание при запуске обновления Windows
           href: troubleshoot-stuck-updating-boot-error.md
+        - name: Непредвиденная перезагрузка или ошибка
+          href: troubleshoot-unexpected-restart-error-during-vm-boot.md
         - name: Зависание виртуальной машины при запуске
           href: troubleshoot-vm-boot-configure-update.md
         - name: Не удается загрузить виртуальную машину из-за диспетчера загрузки Windows

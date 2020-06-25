@@ -14,6 +14,10 @@
       items:
         - name: Искусственный интеллект и машинное обучение
           items:
+            - name: Когнитивный поиск
+              href: ../../search/search-get-started-arm.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Cognitive Services
+              href: ../../cognitive-services/resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Виртуальная машина для обработки и анализа данных
               href: ../../machine-learning/data-science-virtual-machine/dsvm-tutorial-resource-manager.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Машинное обучение
@@ -40,6 +44,8 @@
               href: ../../hdinsight/spark/apache-spark-jupyter-spark-sql.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Stream Analytics
               href: ../../stream-analytics/quick-create-azure-resource-manager.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Synapse Analytics
+              href: ../../synapse-analytics/sql-data-warehouse/quickstart-arm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Блокчейн
           items:
             - name: Блокчейн
@@ -130,8 +136,6 @@
               href: ../../key-vault/secrets/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
         - name: Интернет
           items:
-            - name: Когнитивный поиск
-              href: ../../search/search-get-started-arm.md?toc=/azure/azure-resource-manager/templates/toc.json
             - name: Центры уведомлений
               href: ../../notification-hubs/create-notification-hub-template.md?toc=/azure/azure-resource-manager/templates/toc.json
 - name: Учебники
@@ -293,6 +297,14 @@
           href: export-template-portal.md
         - name: Обнаружение ресурсов
           href: view-resources.md
+    - name: Проверка шаблонов
+      items:
+        - name: Развертывание "что если"
+          href: template-deploy-what-if.md
+        - name: Набор средств тестирования
+          href: test-toolkit.md
+        - name: Проверочные варианты
+          href: test-cases.md
     - name: Развертывание шаблонов
       items:
         - name: "Развертывание\_— портал"
@@ -309,8 +321,6 @@
           href: deploy-rest.md
         - name: Развертывание из GitHub
           href: deploy-to-azure-button.md
-        - name: Развертывание "что если"
-          href: template-deploy-what-if.md
         - name: Повторное развертывание при возникновении ошибки
           displayName: rollback
           href: rollback-on-error.md

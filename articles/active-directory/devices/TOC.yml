@@ -35,6 +35,8 @@
 - name: Практические руководства
   expanded: false
   items:
+    - Name: "Планирование развертывания устройств Azure\_AD"
+      href: plan-device-deployment.md
     - name: "Планирование реализации присоединения к Azure\_AD"
       href: azureadjoin-plan.md
     - name: Назначение локальных администраторов присоединенным к Azure AD устройствам

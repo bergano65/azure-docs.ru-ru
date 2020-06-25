@@ -59,6 +59,8 @@
           href: automation-config-aws-account.md
         - name: "Настройка проверки подлинности с помощью Azure\_AD"
           href: automation-use-azure-ad.md
+        - name: 'Управление записью DNS, используемой Службой автоматизации'
+          href: how-to/automation-region-dns-records.md
         - name: Управление учетной записью запуска от имени в службе автоматизации
           href: manage-runas-account.md
         - name: Управление разрешениями ролей и безопасностью
@@ -282,7 +284,7 @@
         - name: Интеграция со службой "Сетка событий" и Microsoft Teams
           href: ../event-grid/ensure-tags-exists-on-new-virtual-machines.md
         - name: Автоматизация запуска и остановки Azure-SSIS IR
-          href: '../data-factory/how-to-schedule-azure-ssis-integration-runtime.md#create-and-schedule-azure-automation-runbook-that-startsstops-azure-ssis-ir'
+          href: ../data-factory/how-to-schedule-azure-ssis-integration-runtime.md#create-and-schedule-azure-automation-runbook-that-startsstops-azure-ssis-ir
 - name: Справочник
   items:
     - name: Azure PowerShell Az

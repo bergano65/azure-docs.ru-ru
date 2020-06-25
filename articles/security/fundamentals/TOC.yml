@@ -58,6 +58,10 @@
       href: network-best-practices.md
     - name: Защита от атак DDoS
       href: ddos-best-practices.md
+    - name: Несвязанные DNS и перенаправление поддомена
+      href: subdomain-takeover.md
+    - name: Базовые показатели безопасности Защиты от атак DDoS
+      href: ddos-protection-security-baseline.md
     - name: Архитектура защищенной гибридной сети
       href: 'https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json'
 - name: Безопасность IaaS
@@ -94,6 +98,8 @@
       href: 'https://docs.microsoft.com/azure/storage/common/storage-security-guide?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json'
     - name: Защищенное хранилище клиента
       href: customer-lockbox-overview.md
+    - name: Базовые показатели безопасности защищенного хранилища
+      href: customer-lockbox-security-baseline.md
 - name: Приложение
   items:
     - name: PaaS
@@ -139,3 +145,5 @@
       href: event-support-ticket.md
     - name: Тестирование на проникновение
       href: pen-testing.md
+    - name: Домены Azure
+      href: azure-domains.md

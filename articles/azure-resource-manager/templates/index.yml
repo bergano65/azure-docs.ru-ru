@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Документация по шаблонам ARM
-summary: Шаблон Azure Resource Manager является файлом нотации объектов JavaScript (JSON), определяющими инфраструктуру и конфигурацию вашего проекта.
+summary: Шаблоны Azure Resource Manager — это файлы нотации объектов JavaScript (JSON), определяющие инфраструктуру и конфигурацию вашего проекта.
 metadata:
   title: Документация по шаблонам ARM
   description: Из этой статьи вы узнаете, как разрабатывать шаблоны Azure Resource Manager и использовать их для развертывания ресурсов Azure.
@@ -12,12 +12,12 @@ metadata:
   author: mumian
   ms.author: jgao
   ms.date: 03/09/2020
-  ms.openlocfilehash: f05b14039f5b83b4f214d7fa479a3ab809e859c6
-  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.openlocfilehash: d6c1708543623423c939d03f0510e1abc72cf637
+  ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/25/2020
-  ms.locfileid: "78943232"
+  ms.lasthandoff: 06/23/2020
+  ms.locfileid: "85209204"
 landingContent:
 - title: Сведения о шаблонах ARM
   linkLists:
@@ -97,7 +97,7 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Subscription
+    - text: Подписка
       url: deploy-to-subscription.md
     - text: группа управления;
       url: deploy-to-management-group.md

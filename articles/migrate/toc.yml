@@ -48,6 +48,10 @@
           href: tutorial-assess-physical.md
         - name: Перенос физических серверов
           href: tutorial-migrate-physical-virtual-machines.md
+    - name: Оценка и перенос виртуальных машин AWS
+      items:
+        - name: 'Обнаружение, оценка и перенос виртуальных машин Amazon Web Services (AWS) в Azure'
+          href: tutorial-migrate-aws-virtual-machines.md
     - name: Оценка импортированных серверов для миграции
       items:
         - name: Оценка импортированных серверов для миграции

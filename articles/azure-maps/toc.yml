@@ -244,7 +244,7 @@
           href: schema-stateset-stylesobject.md
         - name: Модель использования транспорта
           href: consumption-model.md
-        - name: Расширение формата GeoJSON
+        - name: Расширенный формат GeoJSON
           href: extend-geojson.md
         - name: Формат GeoJSON для геозоны
           href: geofence-geojson.md
