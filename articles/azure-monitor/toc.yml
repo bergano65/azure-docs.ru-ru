@@ -615,6 +615,8 @@
               href: app/remove-application-insights.md
         - name: Мониторинг без написания кода
           items:
+            - name: Обзор
+              href: app/codeless-overview.md
             - name: Виртуальные машины Azure и масштабируемые наборы
               href: app/azure-vm-vmss-apps.md
             - name: Служба приложений Azure

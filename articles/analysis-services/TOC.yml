@@ -30,9 +30,9 @@
     - name: Автоматизация с помощью субъектов-служб
       href: analysis-services-service-principal.md
     - name: Клиентские библиотеки
-      href: analysis-services-data-providers.md
+      href: 'https://docs.microsoft.com/analysis-services/client-libraries?view=azure-analysis-services-current'
     - name: Уровень совместимости
-      href: 'https://docs.microsoft.com/analysis-services/tabular-models/compatibility-level-for-tabular-models-in-analysis-services'
+      href: 'https://docs.microsoft.com/analysis-services/tabular-models/compatibility-level-for-tabular-models-in-analysis-services?view=azure-analysis-services-current'
     - name: Подключение к локальным источникам данных
       href: analysis-services-gateway.md
     - name: Подключение к серверам

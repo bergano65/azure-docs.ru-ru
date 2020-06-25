@@ -183,7 +183,7 @@
               href: directory-admin-roles-secure.md
             - name: Создание учетных записей для экстренных ситуаций
               href: directory-emergency-access.md
-        - name: Административная единица
+        - name: Административные единицы
           items:
             - name: Общие сведения об административных единицах
               href: directory-administrative-units.md
