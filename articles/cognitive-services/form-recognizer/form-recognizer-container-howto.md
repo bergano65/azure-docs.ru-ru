@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: conceptual
-ms.date: 04/01/2020
+ms.date: 06/24/2020
 ms.author: aahi
-ms.openlocfilehash: fe6e0a0f3ffd3680c75c086222a4a390ce15d4df
-ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
+ms.openlocfilehash: a014628a9664e33aa855cc4fbf40979236d765f9
+ms.sourcegitcommit: f98ab5af0fa17a9bba575286c588af36ff075615
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85213199"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85355613"
 ---
 # <a name="install-and-run-form-recognizer-containers-preview"></a>Установка и запуск контейнеров распознавателей форм (Предварительная версия)
 
@@ -25,7 +25,7 @@ ms.locfileid: "85213199"
 > [!IMPORTANT]
 > Контейнеры распознавателя форм в настоящее время используют API распознавателя форм версии 1,0. Вы можете получить доступ к последней версии API, используя управляемую службу.
 
-| Компонент | Компоненты |
+| Функция | Компоненты |
 |----------|----------|
 | Распознаватель документов | <li>Обрабатывает файлы PDF, PNG и JPG<li>Обучение пользовательских моделей как минимум из пяти форм одинакового макета <li>Извлекает пары "ключ — значение" и сведения о таблице <li>Использует функцию "Распознавания текста" API Компьютерного зрения Cognitive Service для обнаружения и извлечения печатного текста из изображений в формах<li>Не требует добавления заметок или меток |
 
@@ -35,7 +35,7 @@ ms.locfileid: "85213199"
 
 Прежде чем использовать контейнеры Распознавателя документов, необходимо выполнить следующие условия:
 
-| Обязательно | Назначение |
+| Обязательный | Назначение |
 |----------|---------|
 | Модуль Docker | На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> В ОС Windows для Docker нужно также настроить поддержку контейнеров Linux.<br><br> |
 | Опыт работы с Docker | Требуется базовое представление о понятиях Docker, таких как реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`. |
@@ -138,6 +138,9 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-recognize-t
 Доступны [примеры](form-recognizer-container-configuration.md#example-docker-run-commands) `docker run` команд.
 
 ### <a name="form-recognizer"></a>Распознаватель документов
+
+> [!NOTE]
+> `--mount`В этих примерах используются каталоги с путями к каталогам Windows. Если вы используете Linux или macOS, измените параметр для своей среды. 
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 8g --cpus 2 \
@@ -307,7 +310,7 @@ formrecognizer_config =
 
 [!INCLUDE [How to stop the container](../../../includes/cognitive-services-containers-stop.md)]
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Если контейнер запускается с выходным [подключением](form-recognizer-container-configuration.md#mount-settings) и включенным ведением журнала, контейнер создает файлы журнала, которые удобно использовать для устранения неполадок, возникающих во время запуска или работы контейнера.
 
