@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: sausin
-ms.openlocfilehash: 14bf43375e2ebe37d496a7343c5f85c41f55bc29
-ms.sourcegitcommit: 4042aa8c67afd72823fc412f19c356f2ba0ab554
+ms.openlocfilehash: 2ea850acf0ef581ea66733b0293ba044c87bb3a0
+ms.sourcegitcommit: f98ab5af0fa17a9bba575286c588af36ff075615
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85307607"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85362148"
 ---
 # <a name="create-a-voice-assistant-using-custom-commands"></a>Создание голосового помощника с помощью пользовательских команд
 
@@ -24,7 +24,7 @@ ms.locfileid: "85307607"
 ## <a name="prerequisites"></a>Предварительные требования
 
 > [!div class="checklist"]
-> * <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices" target="_blank">Создайте ресурс службы "Речь" в Azure <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+> * <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices" target="_blank">Создание ресурса речи Azure в регионе, поддерживающем пользовательские команды.<span class="docon docon-navigate-external x-hidden-focus"></span></a>
 > * Скачайте пример файла JSON для [смарт-комнаты Lite](https://aka.ms/speech/cc-quickstart) .
 > * Скачайте последнюю версию [клиента помощника по Windows Voice](https://aka.ms/speech/va-samples-wvac).
 
@@ -82,7 +82,8 @@ ms.locfileid: "85307607"
     - Включение телевизора
     - Установите температуру в 80 градусов.
     - Выключите
-    - установка будильника.
+    - Телевизор
+    - Установить оповещение 5 РМ
 
 ## <a name="integrate-custom-commands-application-in-an-assistant"></a>Интеграция приложения с пользовательскими командами в помощнике
 Перед тем как вы сможете получить доступ к этому приложению извне Speech Studio, необходимо опубликовать приложение. Для публикации приложения необходимо настроить ресурс прогнозирующих LUIS.  
@@ -92,7 +93,7 @@ ms.locfileid: "85307607"
 
 1. На левой панели выберите **Параметры** и в средней области выберите **Luis Resources (ресурсы** ).
 1. Выберите прогнозируемый ресурс или создайте его, выбрав **создать новый ресурс**.
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
     
     > [!div class="mx-imgBorder"]
     > ![Настройка ресурсов LUIS](media/custom-commands/set-luis-resources.png)
@@ -110,7 +111,7 @@ ms.locfileid: "85307607"
 
 В области этой статьи мы будем использовать клиент, скачанный с помощью Windows Voice, в рамках предварительных требований. Распакуйте папку.
 1. Запустите **VoiceAssistantClient.exe**.
-1. Создайте новый профиль публикации и введите значение для **профиля подключения**. В разделе **Общие параметры** введите значения **ключ подписки**, **регион ключа подписки** и **идентификатор приложения пользовательских команд**.
+1. Создайте новый профиль публикации и введите значение для **профиля подключения**. В разделе **Общие параметры** введите значение **ключ подписки** (это то же самое, что и **ключ ресурса речи** , сохраненный при публикации приложения), **регион ключа подписки** и **идентификатор приложения пользовательских команд**.
     > [!div class="mx-imgBorder"]
     > ![ВВАК создать профиль](media/custom-commands/create-profile.png)
 1. Выберите **сохранить и применить профиль**.
@@ -122,6 +123,6 @@ ms.locfileid: "85307607"
 > [!TIP]
 > Можно щелкнуть записи в **журнале действий** , чтобы проверить необработанные ответы, отправляемые из службы пользовательских команд.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы использовали существующее приложение. Далее в разделах с [инструкциями](how-to-custom-commands-create-application-with-simple-commands.md)вы узнаете, как проектировать, разрабатывать, отлаживать, тестировать и интегрировать пользовательские команды с нуля.
