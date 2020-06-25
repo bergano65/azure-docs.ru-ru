@@ -814,7 +814,7 @@
             - name: Специальные возможности Обозревателя службы хранилища
               href: ../../vs-azure-tools-storage-explorer-accessibility.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-          href: 'https://docs.microsoft.com/answers/products/topics/azure-blob-storage.html'
+          href: 'https://docs.microsoft.com/answers/topics/azure-blob-storage.html'
         - name: Служба хранилища Azure на форуме Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/windows-azure-storage'
         - name: Цены

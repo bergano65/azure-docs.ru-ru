@@ -58,6 +58,8 @@
           href: tutorial-assess-import.md
 - name: Основные понятия
   items:
+    - name: Создание плана миграции с помощью службы "Миграция Azure"
+      href: concepts-migration-planning.md
     - name: Таблицы поддержки
       items:
         - name: Общая поддержка
