@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Документация по Azure Digital Twins (предварительная версия)
-summary: Как было объявлено на Microsoft Build 2020, готовится к выпуску новая общедоступная предварительная версия службы Azure Digital Twins. В ближайшее время вы получите полную документацию по новой службе и ее функциям в этом расположении. Вы можете и дальше пользоваться документацией по первой версии Azure Digital Twins, доступной по ссылке ниже.
+summary: Узнайте, как с помощью Azure Digital Twins создать цифровое представление своих активов, сред и бизнес-систем, чтобы разрабатывать решения следующего поколения для Интернета вещей, которое моделирует реальное окружение.
 metadata:
   title: Документация по Azure Digital Twins (предварительная версия). Руководства и справочник по API | Документация Майкрософт
   description: Узнайте, как с помощью Azure Digital Twins создавать связи между людьми, местами и вещами, а также пространственные интеллектуальные решения для Интернета вещей.
@@ -10,16 +10,72 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 02/12/2020
-  ms.openlocfilehash: c6822c319489eedf1ecdd7d1fddcd19456c35dd9
-  ms.sourcegitcommit: 24f31287b6a526e23ff5b5469113522d1ccd4467
+  ms.openlocfilehash: 105a9de63f13a7a6460638ad967be40edd0783a4
+  ms.sourcegitcommit: b56226271541e1393a4b85d23c07fd495a4f644d
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 06/12/2020
-  ms.locfileid: "84744023"
+  ms.lasthandoff: 06/26/2020
+  ms.locfileid: "85392154"
 landingContent:
-- title: Azure Digital Twins, первая версия
+- title: Сведения об Azure Digital Twins
   linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Azure Digital Twins?
+      url: overview.md
+- title: Начало работы с помощью руководств
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Написание кода для клиентского приложения
+      url: tutorial-code.md
+  - linkListType: tutorial
+    links:
+    - text: Изучение основ с помощью примера клиентского приложения
+      url: tutorial-command-line-app.md
+  - linkListType: tutorial
+    links:
+    - text: Подключение комплексного решения
+      url: tutorial-end-to-end.md
+- title: Обучение
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Настраиваемые модели
+      url: concepts-models.md
+  - linkListType: concept
+    links:
+    - text: Цифровые двойники и граф двойника
+      url: concepts-twins-graph.md
+  - linkListType: concept
+    links:
+    - text: Язык запросов
+      url: concepts-query-language.md
+- title: Разработка
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Использование CLI для Azure Digital Twins
+      url: how-to-use-cli.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание экземпляра Azure Digital Twins
+      url: how-to-set-up-instance.md
+  - linkListType: how-to-guide
+    links:
+    - text: Аутентификация клиентского приложения
+      url: how-to-authenticate-client.md
+- title: Справочник по API
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Использование интерфейсов API и пакетов SDK для Azure Digital Twins
+      url: how-to-use-apis-sdks.md
+  - linkListType: how-to-guide
+    links:
+    - text: Создание пользовательских пакетов SDK с помощью AutoRest
+      url: how-to-create-custom-sdks.md
   - linkListType: reference
     links:
-    - text: Документация по предыдущим версиям Azure Digital Twins
-      url: https://docs.microsoft.com/previous-versions/azure/digital-twins/about-digital-twins
+    - text: Интерфейсы REST API
+      url: https://docs.microsoft.com/rest/api/azure-digitaltwins/

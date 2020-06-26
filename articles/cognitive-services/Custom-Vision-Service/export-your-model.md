@@ -3,19 +3,19 @@ title: Экспорт модели в мобильные приложения �
 titleSuffix: Azure Cognitive Services
 description: В этой статье показано, как экспортировать модель для использования при создании мобильных приложений или запустить ее локально для классификации в режиме реального времени.
 services: cognitive-services
-author: anrothMSFT
+author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 03/21/2019
-ms.author: anroth
-ms.openlocfilehash: f734f4f1a11f57b759615e7a9ce2cd2f7f8028fb
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.author: pafarley
+ms.openlocfilehash: be28a10f8a96d21d64d08cfacee4543c065168ae
+ms.sourcegitcommit: b56226271541e1393a4b85d23c07fd495a4f644d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73718951"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85391763"
 ---
 # <a name="export-your-model-for-use-with-mobile-devices"></a>Экспорт модели для использования на мобильных устройствах
 
@@ -73,7 +73,7 @@ ms.locfileid: "73718951"
 
 1. Выберите нужный формат экспорта и щелкните __Экспорт__ , чтобы скачать модель.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Интегрируйте экспортированную модель в приложение, изучив одну из следующих статей или примеров:
 
