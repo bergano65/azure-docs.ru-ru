@@ -36,6 +36,8 @@
       href: ./encryption/cognitive-services-encryption-keys-portal.md
     - name: Аутентификация запросов к Cognitive Services
       href: authentication.md
+    - name: Базовые средства безопасности
+      href: security-baseline.md
 - name: Поддержка контейнеров
   items:
     - name: Поддержка контейнеров
