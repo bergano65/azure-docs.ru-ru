@@ -1,21 +1,20 @@
 ### YamlMime:Landing
 title: Azure Arc
-summary: В Azure Arc добавлена поддержка возможностей Azure Resource Manager для серверов Linux и Windows, а также возможность использовать кластеры Kubernetes в любой инфраструктуре в локальной среде, в нескольких облаках и на пограничных устройствах. Кроме того, Azure Arc позволяет клиентам запускать службы данных Azure в любом расположении. При этом предоставляются преимущества облачных инноваций, включая постоянно поддерживаемые в актуальном состоянии средства работы с данными, развертывание за считаные секунды (а не часы) и динамическую масштабируемость в любой инфраструктуре. Сейчас предоставляется общедоступная предварительная версия Azure Arc для серверов.
+summary: В Azure Arc добавлена поддержка возможностей Azure Resource Manager для серверов Linux и Windows, а также возможность использовать кластеры Kubernetes в любой инфраструктуре в локальной среде, в нескольких облаках и на пограничных устройствах. Кроме того, Azure Arc позволяет клиентам запускать службы данных Azure в любом расположении. При этом предоставляются преимущества облачных инноваций, включая постоянно поддерживаемые в актуальном состоянии средства работы с данными, развертывание за считаные секунды (а не часы) и динамическую масштабируемость в любой инфраструктуре.
 metadata:
   title: Azure Arc для серверов
   description: Узнайте, как управлять локальными компьютерами в Azure
-  author: bobbytreed
-  manager: carmonm
+  author: mgoedtel
   ms.service: azure-arc
   ms.topic: landing-page
-  ms.date: 11/04/2019
-  ms.author: robreed
-  ms.openlocfilehash: e80cdec365a14caee5c74900e1c21f7349165e66
-  ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+  ms.date: 06/26/2020
+  ms.author: magoedte
+  ms.openlocfilehash: 8493a5d90656206c5498fafbc2b0a2743cd973a7
+  ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/13/2020
-  ms.locfileid: "81261284"
+  ms.lasthandoff: 06/27/2020
+  ms.locfileid: "85482349"
 landingContent:
 - title: Общие сведения об Azure Arc
   linkLists:
@@ -37,3 +36,25 @@ landingContent:
       url: ./servers/onboard-service-principal.md
     - text: Подключение компьютеров к Azure с помощью PowerShell DSC
       url: ./servers/onboard-dsc.md
+- title: Подключение кластеров Kubernetes к Azure с помощью Azure Arc
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что представляет собой Azure Arc с поддержкой Kubernetes?
+      url: ./kubernetes/overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Подключение кластера
+      url: ./kubernetes/connect-cluster.md
+    - text: Использование GitOps в подключенном кластере
+      url: ./kubernetes/use-gitops-connected-cluster.md
+    - text: Использование GitOps с Helm
+      url: ./kubernetes/use-gitops-with-helm.md
+    - text: Использование Azure Monitor для контейнеров
+      url: ../azure-monitor/insights/container-insights-enable-arc-enabled-clusters.md
+    - text: Использование Политики Azure
+      url: ./kubernetes/use-azure-policy.md
+    - text: Развертывание рабочих нагрузок Azure IoT Edge
+      url: ./kubernetes/deploy-azure-iot-edge-workloads.md
+    - text: Подключение субъекта-службы
+      url: ./kubernetes/create-onboarding-service-principal.md
