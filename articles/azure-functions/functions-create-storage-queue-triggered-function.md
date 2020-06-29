@@ -1,13 +1,13 @@
 ---
 title: Создание функции, активируемой сообщениями очереди, в Azure
-description: Используйте функции Azure, чтобы создать бессерверную функцию, которая вызывается сообщениями, отправленными в очередь в Azure.
+description: Используйте Функции Azure, чтобы создавать независимые от сервера функции, активируемые сообщениями, отправленными в очередь в Azure.
 ms.assetid: 361da2a4-15d1-4903-bdc4-cc4b27fc3ff4
 ms.topic: how-to
 ms.date: 10/01/2018
 ms.custom: mvc, cc996988-fb4f-47
 ms.openlocfilehash: c4c20579f2306b61741f3c6ab1549285271435a3
 ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/12/2020
 ms.locfileid: "83123349"
@@ -24,7 +24,7 @@ ms.locfileid: "83123349"
 
 [!INCLUDE [Create function app Azure portal](../../includes/functions-create-function-app-portal.md)]
 
-   :::image type="content" source="./media/functions-create-storage-queue-triggered-function/function-app-create-success.png" alt-text="Приложение функции создано успешно..." border="true":::
+   :::image type="content" source="./media/functions-create-storage-queue-triggered-function/function-app-create-success.png" alt-text="Приложение-функция успешно создана." border="true":::
 
 Затем создайте функцию в новом приложении-функции.
 
@@ -32,15 +32,15 @@ ms.locfileid: "83123349"
 
 ## <a name="create-a-queue-triggered-function"></a>Создание функции, активируемой очередью
 
-1. Выберите **функции**и нажмите кнопку **+ Добавить** , чтобы добавить новую функцию.
+1. Выберите **Функции**, а затем выберите **+ Добавить**, чтобы добавить новую функцию.
 
-   :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-app-quickstart-choose-template.png" alt-text="Выберите шаблон функции в портал Azure." border="true":::
+   :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-app-quickstart-choose-template.png" alt-text="Выберите шаблон функции на портале Azure." border="true":::
 
-1. Выберите шаблон **триггер хранилища очередей Azure** .
+1. Выберите шаблон **Триггер для хранилища очередей Azure**.
 
 1. Затем используйте настройки, указанные в таблице под изображением.
 
-    :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-create-queue-storage-trigger-portal.png" alt-text="Назовите и настройте функцию, активируемую для хранилища очередей." border="true":::
+    :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-create-queue-storage-trigger-portal.png" alt-text="Присвойте имя функции, активируемой хранилищем очередей и настройте ее." border="true":::
 
 
     | Параметр | Рекомендуемое значение | Описание |
@@ -49,27 +49,27 @@ ms.locfileid: "83123349"
     | **Имя очереди**   | myqueue-items    | Имя очереди для подключения к вашей учетной записи хранения. |
     | **Подключение к учетной записи хранения** | AzureWebJobsStorage | Вы можете использовать подключение к учетной записи хранения, которое уже используется вашим приложением-функцией, или создать его.  |    
 
-1. Выберите **создать функцию** , чтобы создать функцию.
+1. Выберите **Создать функцию**, чтобы создать функцию.
 
     :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-create-queue-storage-trigger-portal-3.png" alt-text="Создайте функцию, активируемую хранилищем очередей." border="true":::
 
-Затем подключитесь к учетной записи хранения Azure и создайте очередь хранилища **myQueue-Items** .
+Затем необходимо подключиться к своей учетной записи хранения Azure и создать очередь службы хранилища **myqueue-items**.
 
 ## <a name="create-the-queue"></a>Создание очереди
 
 1. В функции на странице **Обзор** выберите группу ресурсов.
 
-    :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-storage-resource-group.png" alt-text="Выберите портал Azure группу ресурсов." border="true":::
+    :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-storage-resource-group.png" alt-text="Выберите группу ресурсов портала Azure." border="true":::
 
-1. Найдите и выберите учетную запись хранения группы ресурсов.
+1. Найдите и выберите учетную запись хранения своей группы ресурсов.
 
-    :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-storage-account-access.png" alt-text="Доступ к учетной записи хранения." border="true":::
+    :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-storage-account-access.png" alt-text="Перейдите к учетной записи хранения." border="true":::
 
-1. Выберите **очереди**, а затем выберите **+ очередь**. 
+1. Выберите **Очереди**, а затем нажмите **+ Очередь**. 
 
-    :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-storage-add-queue.png" alt-text="Добавьте очередь в учетную запись хранения в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-storage-add-queue.png" alt-text="Добавьте очередь в свою учетную запись хранения на портале Azure." border="true":::
 
-1. В поле **имя** введите `myqueue-items` , а затем выберите **создать**.
+1. В поле **Имя** введите `myqueue-items` и нажмите кнопку **Создать**.
 
     :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-storage-name-queue.png" alt-text="Присвойте имя контейнеру хранилища очередей." border="true":::
 
@@ -77,25 +77,25 @@ ms.locfileid: "83123349"
 
 ## <a name="test-the-function"></a>Проверка функции
 
-1. Вернитесь в портал Azure, перейдите к своей функции, разверните **журналы** в нижней части страницы и убедитесь, что потоковая передача журналов не приостановлена.
+1. На портале Azure перейдите к вашей функции, в нижней части страницы разверните **Журналы** и убедитесь, что потоковая передача журналов не остановлена.
 
-    :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-queue-storage-log-expander.png" alt-text="Разверните журнал в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-queue-storage-log-expander.png" alt-text="Разверните журнал на портале Azure." border="true":::
 
-1. В отдельном окне браузера перейдите к группе ресурсов в портал Azure и выберите учетную запись хранения.
+1. В отдельном окне браузера перейдите к группе ресурсов на портале Azure и выберите учетную запись хранения.
 
-1. Выберите **очереди**, а затем выберите контейнер **myQueue-Items** .
+1. Нажмите **Очереди**, а затем выберите контейнер **myqueue-items**.
 
-    :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-storage-queue.png" alt-text="Перейдите к очереди myQueue-Items в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-storage-queue.png" alt-text="Перейдите к очереди myqueue-items на портале Azure." border="true":::
 
-1. Выберите **Добавить сообщение**и введите "Hello World!" в **тексте сообщения**. Нажмите кнопку **ОК**.
+1. Выберите **Добавить сообщение** и введите "Hello World!" в поле **Текст сообщения**. Щелкните **ОК**.
 
-    :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-storage-queue-test.png" alt-text="Перейдите к очереди myQueue-Items в портал Azure." border="true":::
+    :::image type="content" source="./media/functions-create-storage-queue-triggered-function/functions-storage-queue-test.png" alt-text="Перейдите к очереди myqueue-items на портале Azure." border="true":::
 
 1. Подождите несколько секунд, а затем вернитесь в журналы функции и убедитесь, что новое сообщение было считано из очереди.
 
-    :::image type="content" source="./media/functions-create-storage-queue-triggered-function/function-app-in-portal-editor.png" alt-text="Просмотр сообщения в журналах" border="true":::
+    :::image type="content" source="./media/functions-create-storage-queue-triggered-function/function-app-in-portal-editor.png" alt-text="Просмотрите сообщение в журналах." border="true":::
 
-1. Вернувшись в очередь хранилища, выберите **Обновить** и убедитесь, что сообщение было обработано и больше не находится в очереди.
+1. Вернитесь к очереди хранилища, щелкните **Обновить** и убедитесь, что сообщение было обработано и больше не находится в очереди.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

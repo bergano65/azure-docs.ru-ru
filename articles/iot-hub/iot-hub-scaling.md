@@ -13,7 +13,7 @@ ms.custom:
 - mqtt
 ms.openlocfilehash: 4b18878cfc5c75bf27fd46cbceaa06e0b6053ddd
 ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "81759619"
@@ -36,13 +36,13 @@ ms.locfileid: "81759619"
 
 Уровень "Стандартный" Центра Интернета вещей включает все компоненты и необходим для любых решений Интернета вещей, где предполагается использование возможностей двухсторонней связи. Уровень "Базовый" включает подмножество компонентов и предназначен для решений Интернета вещей, которым требуется только однонаправленная связь с устройствами в облаке. Оба уровня предоставляют одинаковые компоненты безопасности и аутентификации.
 
-В пределах уровня для Центра Интернета вещей можно выбрать только один тип [выпуска](https://azure.microsoft.com/pricing/details/iot-hub/). Например, можно создать центр Интернета вещей с несколькими единицами S1, но не с набором единиц из разных выпусков, таких как S1 и S2.
+В пределах уровня для Центра Интернета вещей можно выбрать только один тип [выпуска](https://azure.microsoft.com/pricing/details/iot-hub/). Например, можно создать Центр Интернета вещей с несколькими единицами уровня S1, но не с комбинацией единиц из разных выпусков, например S1 и S2.
 
-| Функция | Уровень Basic | Уровень Free/Standard |
+| Функция | Уровень Basic | Уровень "Бесплатный"/"Стандартный" |
 | ---------- | ---------- | ------------- |
 | [Телеметрия "С устройства в облако"](iot-hub-devguide-messaging.md) | Да | Да |
 | [Удостоверение для каждого устройства](iot-hub-devguide-identity-registry.md) | Да | Да |
-| [Маршрутизация сообщений](iot-hub-devguide-messages-read-custom.md), [обогащение сообщений](iot-hub-message-enrichments-overview.md)и [Интеграция службы "Сетка событий](iot-hub-event-grid.md) " | Да | Да |
+| [Маршрутизация сообщений](iot-hub-devguide-messages-read-custom.md), [обогащение сообщений](iot-hub-message-enrichments-overview.md) и [интеграция службы "Сетка событий"](iot-hub-event-grid.md) | Да | Да |
 | [Протоколы HTTP, AMQP и MQTT](iot-hub-devguide-protocols.md) | Да | Да |
 | [Служба подготовки устройств](../iot-dps/about-iot-dps.md) | Да | Да |
 | [Мониторинг и диагностика](iot-hub-monitor-resource-health.md) | Да | Да |
@@ -50,7 +50,7 @@ ms.locfileid: "81759619"
 | [Двойники устройств](iot-hub-devguide-device-twins.md), [двойники модулей](iot-hub-devguide-module-twins.md) и [управление устройствами](iot-hub-device-management-overview.md) |   | Да |
 | [Потоки устройств (предварительная версия)](iot-hub-device-streams-overview.md) |   | Да |
 | [Azure IoT Edge](../iot-edge/about-iot-edge.md) |   | Да |
-| [Предварительная версия Plug and Play IoT](../iot-pnp/overview-iot-plug-and-play.md) |   | Да |
+| [Предварительная версия IoT Plug and Play](../iot-pnp/overview-iot-plug-and-play.md) |   | Да |
 
 Центр Интернета вещей также предлагает уровень "Бесплатный", который предназначен для тестирования и оценки. Он обладает всеми возможностями уровня "Стандартный", но ограничен квотами на сообщения. С уровня "Бесплатный" нельзя обновиться до уровня "Базовый" или "Стандартный".
 
@@ -58,31 +58,31 @@ ms.locfileid: "81759619"
 
 Центры Интернета вещей Azure содержат несколько основных компонентов [Центров событий Azure](../event-hubs/event-hubs-features.md), включая [секции](../event-hubs/event-hubs-features.md#partitions). Потоки событий для Центров Интернета вещей обычно заполняются входящими данными телеметрии, которые сообщают различные устройства Интернета вещей. Секционирование потока событий используется для сокращения конфликтов, возникающих при одновременном считывании потоков событий и записи в эти потоки.
 
-При создании Центра Интернета вещей выбирается ограничение секции, и его нельзя изменить. Максимальное число секций для центра Интернета вещей уровня "базовый" и центра Интернета вещей уровня "Стандартный" — 32. Для большинства центров Интернета вещей достаточно четырех секций. Дополнительные сведения об определении секций см. в разделе часто задаваемых вопросов о Центрах событий Azure [Сколько секций мне нужно?](../event-hubs/event-hubs-faq.md#how-many-partitions-do-i-need)
+При создании Центра Интернета вещей выбирается ограничение секции, и его нельзя изменить. Максимальное ограничение на количество секций для Центра Интернета вещей уровней "Базовый" и "Стандартный" составляет 32. Для большинства центров Интернета вещей достаточно четырех секций. Дополнительные сведения об определении секций см. в разделе часто задаваемых вопросов о Центрах событий Azure [Сколько секций мне нужно?](../event-hubs/event-hubs-faq.md#how-many-partitions-do-i-need)
 
 ## <a name="tier-upgrade"></a>Обновление уровня
 
-После создания Интернета вещей уровень "Базовый" можно обновить до уровня "Стандартный", не прерывая имеющихся операций. Дополнительные сведения см. [в статье обновление центра Интернета вещей](iot-hub-upgrade.md).
+После создания Интернета вещей уровень "Базовый" можно обновить до уровня "Стандартный", не прерывая имеющихся операций. Дополнительные сведения см. в статье [Как обновить Центр Интернета вещей](iot-hub-upgrade.md).
 
 Конфигурация секции сохраняется при переходе с уровня "Базовый" на уровень "Стандартный".
 
 > [!NOTE]
-> Уровень "бесплатный" не поддерживает обновление до уровня "базовый" или "Стандартный".
+> Уровень "Бесплатный" не поддерживает обновление до уровня "Базовый" или "Стандартный".
 
 ## <a name="iot-hub-rest-apis"></a>Интерфейсы REST API для Центра Интернета вещей
 
 Разница в поддерживаемых возможностях между Центрами Интернета вещей уровня "Базовый" и "Стандартный" означает, что некоторые вызовы API не работают с концентраторами уровня "Базовый". В следующей таблице показаны доступные API:
 
-| API | Уровень Basic | Уровень Free/Standard |
+| API | Уровень Basic | Уровень "Бесплатный"/"Стандартный" |
 | --- | ---------- | ------------- |
 | [Удаление устройства](https://docs.microsoft.com/rest/api/iothub/service/registrymanager/deletedevice) | Да | Да |
 | [Получение устройства](https://docs.microsoft.com/rest/api/iothub/service/registrymanager/getdevice) | Да | Да |
 | [Удаление модуля](https://docs.microsoft.com/rest/api/iothub/service/registrymanager/deletemodule) | Да | Да |
 | [Получение модуля](https://docs.microsoft.com/rest/api/iothub/service/registrymanager/getmodule) | Да | Да |
 | [Получение статистики реестра](https://docs.microsoft.com/rest/api/iothub/service/registrymanager/getdevicestatistics) | Да | Да |
-| [Получение статистики служб](https://docs.microsoft.com/rest/api/iothub/service/registrymanager/getservicestatistics) | Да | Да |
+| [Получение статистики службы](https://docs.microsoft.com/rest/api/iothub/service/registrymanager/getservicestatistics) | Да | Да |
 | [Создание или обновление устройства](https://docs.microsoft.com/rest/api/iothub/service/registrymanager/createorupdatedevice) | Да | Да |
-| [Создать или обновить модуль](https://docs.microsoft.com/rest/api/iothub/service/registrymanager/createorupdatemodule) | Да | Да |
+| [Создание или обновление модуля](https://docs.microsoft.com/rest/api/iothub/service/registrymanager/createorupdatemodule) | Да | Да |
 | [Отправка запроса в Центр Интернета вещей](https://docs.microsoft.com/rest/api/iothub/service/registrymanager/queryiothub) | Да | Да |
 | [Создание URI SAS отправки файла](https://docs.microsoft.com/rest/api/iothub/device/createfileuploadsasuri) | Да | Да |
 | [Получение связанного с устройством уведомления](https://docs.microsoft.com/rest/api/iothub/device/receivedeviceboundnotification) | Да | Да |
@@ -90,9 +90,9 @@ ms.locfileid: "81759619"
 | Отправка события модуля | Только AMQP и MQTT | Только AMQP и MQTT |
 | [Обновление состояния отправки устройства](https://docs.microsoft.com/rest/api/iothub/device/updatefileuploadstatus) | Да | Да |
 | [Массовые операции устройств](https://docs.microsoft.com/rest/api/iothub/service/registrymanager/bulkdevicecrud) | Да, за исключением возможностей IoT Edge | Да |
-| [Отменить импорт задания экспорта](https://docs.microsoft.com/rest/api/iothub/service/jobclient/cancelimportexportjob) | Да | Да |
-| [Создание задания импорта экспорта](https://docs.microsoft.com/rest/api/iothub/service/jobclient/createimportexportjob) | Да | Да |
-| [Получить задание импорта экспорта](https://docs.microsoft.com/rest/api/iothub/service/jobclient/getimportexportjob) | Да | Да |
+| [Отмена задания импорта и экспорта](https://docs.microsoft.com/rest/api/iothub/service/jobclient/cancelimportexportjob) | Да | Да |
+| [Создание задания импорта и экспорта](https://docs.microsoft.com/rest/api/iothub/service/jobclient/createimportexportjob) | Да | Да |
+| [Получение задания импорта и экспорта](https://docs.microsoft.com/rest/api/iothub/service/jobclient/getimportexportjob) | Да | Да |
 | [Получение заданий импорта и экспорта](https://docs.microsoft.com/rest/api/iothub/service/jobclient/getimportexportjobs) | Да | Да |
 | [Очистка очереди команд](https://docs.microsoft.com/rest/api/iothub/service/registrymanager/purgecommandqueue) |   | Да |
 | [Получение двойника устройства](https://docs.microsoft.com/rest/api/iothub/service/twin/getdevicetwin) |   | Да |
@@ -102,7 +102,7 @@ ms.locfileid: "81759619"
 | [Обновление двойника модуля](https://docs.microsoft.com/rest/api/iothub/service/twin/updatemoduletwin) |   | Да |
 | [Отказ от связанного с устройством уведомления](https://docs.microsoft.com/rest/api/iothub/device/abandondeviceboundnotification) |   | Да |
 | [Полное связанное с устройством уведомление](https://docs.microsoft.com/rest/api/iothub/device/completedeviceboundnotification) |   | Да |
-| [отмена задания.](https://docs.microsoft.com/rest/api/iothub/service/jobclient/canceljob) |   | Да |
+| [Отмена задания](https://docs.microsoft.com/rest/api/iothub/service/jobclient/canceljob) |   | Да |
 | [Создание задания](https://docs.microsoft.com/rest/api/iothub/service/jobclient/createjob) |   | Да |
 | [Получение задания](https://docs.microsoft.com/rest/api/iothub/service/jobclient/getjob) |   | Да |
 | [Запрос заданий](https://docs.microsoft.com/rest/api/iothub/service/jobclient/queryjobs) |   | Да |
@@ -115,7 +115,7 @@ ms.locfileid: "81759619"
 * Получение сообщений из облака на устройство
 * операции с реестром удостоверений.
 
-Трафик измеряется для центра Интернета вещей на основе единиц. При создании центра Интернета вещей вы выбираете его уровень и выпуск, а также устанавливаете количество доступных единиц. Вы можете приобрести до 200 единиц для выпуска B1, B2, S1 или S2 или до 10 единиц для выпуска B3 или S3. После создания центра Интернета вещей можно изменить количество единиц, доступных в его выпуске, обновить или перейти на более раннюю версию в пределах своего уровня (от B1 до B2) или обновить от базового до уровня Standard (от B1 до S1), не прерывая существующие операции. Дополнительные сведения см. [в статье обновление центра Интернета вещей](iot-hub-upgrade.md).  
+Трафик в центре Интернета вещей измеряется в пересчете на одну единицу. При создании центра Интернета вещей вы выбираете его уровень и выпуск, а также устанавливаете количество доступных единиц. Вы можете приобрести до 200 единиц для выпуска B1, B2, S1 или S2 или до 10 единиц для выпуска B3 или S3. После создания центра Интернета вещей можно изменить количество единиц, доступных в выпуске, перейти на более высокую или низкую категорию в пределах своего уровня (с B1 на B2) или перейти с уровня "Базовый" на уровень "Стандартный" (от B1 до S1), не прерывая существующие операции. Дополнительные сведения см. в статье [Как обновить Центр Интернета вещей](iot-hub-upgrade.md).  
 
 В качестве примера возможностей трафика каждого уровня для сообщений, передаваемых с устройства в облако, следует соблюдать такие правила.
 
@@ -125,20 +125,20 @@ ms.locfileid: "81759619"
 | B2, S2 |До 16 МБ/мин на единицу<br/>(22,8 ГБ/день на единицу) |В среднем 4167 сообщений/мин на единицу<br/>(6 миллионов сообщений/день на единицу) |
 | B3, S3 |До 814 МБ/мин на единицу<br/>(1144,4 ГБ/день на единицу). |В среднем 208 333 сообщения/мин на единицу<br/>(300 млн сообщений/день на единицу). |
 
-Пропускная способность "с устройства в облако" является только одной из метрик, которые необходимо учитывать при проектировании решения IoT. Более подробные сведения см. в статье [квоты и регулирования центра Интернета вещей](iot-hub-devguide-quotas-throttling.md).
+Пропускная способность передачи данных с устройства в облако является только одной из метрик, которые необходимо учитывать при проектировании решения IoT. Полные сведения см. в разделе о [квотах и регулировании Центра Интернета вещей](iot-hub-devguide-quotas-throttling.md).
 
 ### <a name="identity-registry-operation-throughput"></a>Пропускная способность для операций с реестром удостоверений
 
 Операции с реестром удостоверений Центра Интернета вещей не должны выполняться в среде выполнения, так как они в основном связаны с подготовкой устройств.
 
-Сведения о конкретных показателях пиковой пропускной способности см. в статье [Справочник: квоты и регулирование](iot-hub-devguide-quotas-throttling.md).
+Конкретные показатели пиковой пропускной способности см. в документе [Квоты и ограничения Центра Интернета вещей](iot-hub-devguide-quotas-throttling.md).
 
 ## <a name="auto-scale"></a>Автомасштабирование
 
-Если вы приближаетесь к максимальному ограничению сообщений в центре Интернета вещей, вы можете использовать эти [шаги для автоматического масштабирования](https://azure.microsoft.com/resources/samples/iot-hub-dotnet-autoscale/) , чтобы увеличить единицу центра Интернета вещей на том же уровне центра Интернета вещей.
+Если вы приближаетесь к ограничению на количество разрешенных сообщений в Центре Интернета вещей, выполните [эти действия для автоматического масштабирования](https://azure.microsoft.com/resources/samples/iot-hub-dotnet-autoscale/), чтобы увеличить единицы Центра Интернета вещей на этом же уровне.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о возможностях Центра Интернета вещей и производительности см. на странице [Цены на Центр Интернета вещей](https://azure.microsoft.com/pricing/details/iot-hub) и в статье [Руководство. Квоты и регулирование в Центре Интернета вещей](iot-hub-devguide-quotas-throttling.md).
+* Дополнительные сведения о возможностях Центра Интернета вещей и производительности см. на странице [Цены на Центр Интернета вещей](https://azure.microsoft.com/pricing/details/iot-hub) и в статье [Квоты и регулирование в Центре Интернета вещей](iot-hub-devguide-quotas-throttling.md).
 
 * Чтобы изменить уровень Центра Интернета вещей, выполните действия, описанные в статье [Как обновить Центр Интернета вещей](iot-hub-upgrade.md).

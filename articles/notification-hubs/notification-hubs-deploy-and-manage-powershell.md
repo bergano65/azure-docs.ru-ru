@@ -1,6 +1,6 @@
 ---
-title: Развертывание концентраторов уведомлений и управление ими с помощью PowerShell
-description: Создание концентраторов уведомлений и управление ими с помощью PowerShell для автоматизации
+title: Развертывание Центров уведомлений и управление ими с помощью PowerShell
+description: Создание Центров уведомлений и управление ими с помощью PowerShell в целях автоматизации
 services: notification-hubs
 documentationcenter: ''
 author: sethmanheim
@@ -18,7 +18,7 @@ ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: e6334659d41ba201cfdde190ccc9bfa0d58009e3
 ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/07/2020
 ms.locfileid: "82891202"
@@ -97,7 +97,7 @@ Write-Output "NamespaceManager object for the [$Namespace] namespace has been su
 1. `$Namespace`: присвойте имя пространству имен, в котором нужно создать центр уведомлений.
 2. `$Path`: присвойте путь к имени нового центра уведомлений.  Например, MyHub.
 3. `$WnsPackageSid`: присвойте идентификатор безопасности пакета своему приложению для Windows из [Центра разработки для Windows](https://developer.microsoft.com/en-us/windows).
-4. `$WnsSecretkey`: присвойте значение секретного ключа для своего приложения Windows из [Центра разработки для Windows](https://developer.microsoft.com/en-us/windows).
+4. `$WnsSecretkey`: присвойте значение секретного ключа своему приложению для Windows из [Центра разработки для Windows](https://developer.microsoft.com/en-us/windows).
 
 Эти переменные используются для подключения к пространству имен и создания нового центра уведомлений, настроенного для обработки уведомлений от служб уведомлений Windows (WNS) с использованием учетных данных WNS для приложения для Windows. Сведения о получении идентификатора безопасности пакета и секретного ключа см. в статье [Начало работы с Центрами уведомлений для приложений универсальной платформы Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).
 
@@ -158,7 +158,7 @@ else
 
 [Как приобрести Azure]: https://azure.microsoft.com/pricing/purchase-options/
 [Предложения для участников]: https://azure.microsoft.com/pricing/member-offers/
-[Бесплатная пробная версия]: https://azure.microsoft.com/pricing/free-trial/
+[Создайте бесплатную учетную запись Azure уже сегодня]: https://azure.microsoft.com/pricing/free-trial/
 [Установка и настройка Azure PowerShell]: /powershell/azureps-cmdlets-docs
 [API .NET для центров уведомлений]: https://docs.microsoft.com/dotnet/api/overview/azure/notification-hubs?view=azure-dotnet
 [Get-AzureSBNamespace]: https://docs.microsoft.com/powershell/module/servicemanagement/azure/get-azuresbnamespace

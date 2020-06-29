@@ -3,12 +3,12 @@ title: Резервное копирование фермы SharePoint в Azure 
 description: Резервное копирование данных SharePoint с помощью Azure Backup Server. Эта статья содержит информацию о настройке фермы SharePoint для сохранения нужных данных в Azure. Защищенные данные SharePoint можно восстановить с диска или из Azure.
 ms.topic: conceptual
 ms.date: 04/26/2020
-ms.openlocfilehash: 7e429eeb5319a12c3483510072fd82c69c8d8ab3
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 62fcb434ef00df43ce2950a5df569e346a06903a
+ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83657272"
+ms.lasthandoff: 05/31/2020
+ms.locfileid: "84234786"
 ---
 # <a name="back-up-a-sharepoint-farm-to-azure-with-mabs"></a>Резервное копирование фермы SharePoint в Azure с помощью MABS
 
@@ -68,10 +68,9 @@ ms.locfileid: "83657272"
 
     * Введите учетные данные администратора фермы. Эта учетная запись должна быть членом локальной группы администраторов на интерфейсном веб-сервере. Если администратор фермы не является локальным администратором, предоставьте на интерфейсном веб-сервере следующие разрешения.
 
-        * Предоставьте группе WSS\_Admin\_WPG полный доступ к папке\(%Program Files%\\Data Protection Manager\\DPM\).
-            -A
+        * Предоставьте группе **WSS_Admin_WPG** полный доступ к папке MABS (`%Program Files%\Data Protection Manager\DPM\`).
 
-        * Предоставьте группе WSS\_Admin\_WPG право чтения раздела реестра MABS \(HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Microsoft Data Protection Manager\).
+        * Предоставьте группе **WSS_Admin_WPG** доступ на чтение к разделу реестра MABS (`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Data Protection Manager`).
 
         После каждого изменения в учетных данных администратора фермы SharePoint файл ConfigureSharePoint.exe необходимо перезапускать.
 

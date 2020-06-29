@@ -1,5 +1,5 @@
 ---
-title: Управление масштабируемыми наборами виртуальных машин с помощью Azure CLI
+title: Управление масштабируемыми наборами виртуальных машин с помощью Azure CLI
 description: Стандартные команды Azure CLI для управления масштабируемыми наборами виртуальных машин, в том числе команды для запуска и остановки экземпляра, а также для изменения емкости масштабируемого набора.
 author: ju-shim
 ms.author: jushiman
@@ -11,7 +11,7 @@ ms.reviewer: mimckitt
 ms.custom: mimckitt
 ms.openlocfilehash: 2742b0b73d4143159fd1ed1338988b01a2171041
 ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/12/2020
 ms.locfileid: "83124335"

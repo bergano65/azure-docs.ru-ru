@@ -10,13 +10,13 @@ ms.author: magattus
 ms.custom: include file
 ms.openlocfilehash: 5c6f79cb7ad0a31eb3461d6d8e54307537f0491e
 ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "74284153"
 ---
 > [!IMPORTANT]
-> Это функция **Azure CDN Premium только из Verizon** . для настройки правил на **Azure CDN от Майкрософт** используйте [обработчик стандартных правил](../articles/cdn/cdn-standard-rules-engine-reference.md). Дополнительные правила недоступны для **Azure CDN из Akamai**. Полное сравнение функций CDN см. в разделе [Azure CDN компонентов продукта](../articles/cdn/cdn-features.md). 
+> Это функция только **Azure CDN Premium от Verizon**. Чтобы настроить правила **Azure CDN от Майкрософт**, используйте [стандартный обработчик правил](../articles/cdn/cdn-standard-rules-engine-reference.md). Дополнительные правила недоступны для **Azure CDN от Akamai**. Полное сравнение возможностей CDN см. в статье [Характеристики продукта Azure CDN](../articles/cdn/cdn-features.md). 
 > 
 > 
 

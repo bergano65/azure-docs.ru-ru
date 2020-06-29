@@ -1,5 +1,5 @@
 ---
-title: Подключение Raspberry Pi к решению для удаленного мониторинга — Node. js — Azure | Документация Майкрософт
+title: Подключение устройства Raspberry Pi к решению для удаленного мониторинга с помощью Node.js в Azure | Документация Майкрософт
 description: В статье описывается, как подключить устройство Raspberry Pi к акселератору решения для удаленного мониторинга с помощью приложения на Node.js.
 author: dominicbetts
 manager: timlt
@@ -11,7 +11,7 @@ ms.author: dobett
 ms.custom: mqtt
 ms.openlocfilehash: 9335c45688752ea41801e988157740f4170cfcb4
 ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "81683946"

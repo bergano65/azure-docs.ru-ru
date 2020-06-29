@@ -1,5 +1,5 @@
 ---
-title: Подготовка образа виртуальной машины Azure для использования с Cloud-init
+title: Подготовка образа виртуальной машины Azure для использования с cloud-init
 description: Подготовка существующего образа виртуальной машины Azure к развертыванию с помощью cloud-init
 author: danis
 ms.service: virtual-machines-linux
@@ -9,7 +9,7 @@ ms.date: 06/24/2019
 ms.author: danis
 ms.openlocfilehash: c41368b311708d5ead36d589cf9c320787e596ec
 ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/05/2020
 ms.locfileid: "82792315"
@@ -17,10 +17,10 @@ ms.locfileid: "82792315"
 # <a name="prepare-an-existing-linux-azure-vm-image-for-use-with-cloud-init"></a>Подготовка существующего образа виртуальной машины Azure Linux к использованию с cloud-init
 В этой статье показано, как выбрать и подготовить существующую виртуальную машину Azure к повторному развертыванию и применению cloud-init. Из полученного образа можно развернуть новую виртуальную машину или масштабируемый набор виртуальных машин. И то, и другое вы сможете дополнительно настроить во время развертывания с помощью cloud-init.  Эти скрипты cloud-init выполняются при первой загрузке, если в Azure подготовлены все нужные ресурсы. Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 В этом документе предполагается, что у вас уже есть виртуальная машина Azure под управлением поддерживаемой версии ОС Linux. На этой виртуальной машине должны быть выполнены все необходимые настройки, установлены все необходимые модули, применены все необходимые обновления и проведены все проверки на соответствие требованиям. 
 
-## <a name="preparing-rhel-76--centos-76"></a>Подготовка RHEL 7,6/CentOS 7,6
+## <a name="preparing-rhel-76--centos-76"></a>Подготовка RHEL 7.6 и CentOS 7.6
 Чтобы установить cloud-init, войдите на виртуальную машину Linux с помощью SSH и выполните следующие команды.
 
 ```bash
@@ -65,7 +65,7 @@ sed -i 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/g' /etc/waagent.co
 cloud-init clean
 ```
 
-Разрешите только Azure в качестве источника данных для агента Linux для Azure, создав `/etc/cloud/cloud.cfg.d/91-azure_datasource.cfg` новый файл в любом редакторе с помощью следующей строки:
+Укажите Azure в качестве единственного источника данных агента Linux для Azure, создав в любом текстовом редакторе новый файл `/etc/cloud/cloud.cfg.d/91-azure_datasource.cfg`, содержащий следующую строку:
 
 ```bash
 # Azure Data Source config

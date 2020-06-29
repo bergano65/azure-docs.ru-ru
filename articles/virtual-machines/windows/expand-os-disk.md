@@ -11,7 +11,7 @@ ms.author: mimckitt
 ms.subservice: disks
 ms.openlocfilehash: e69b041a2e4c8a0715adb6ab126a3aede42f7dde
 ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "81869685"
@@ -25,7 +25,7 @@ ms.locfileid: "81869685"
 
 
 > [!IMPORTANT]
-> Чтобы изменить размер диска операционной системы виртуальной машины Azure, необходимо освободить виртуальную машину.
+> Для изменения размера диска ОС для виртуальной машины Azure ее выделение должно быть отменено.
 >
 > После расширения диска необходимо [расширить том ОС](#expand-the-volume-within-the-os), чтобы использовать преимущества диска большего размера.
 > 
@@ -162,7 +162,7 @@ Start-AzVM -ResourceGroupName $rgName -Name $vmName
 
 В этой статье основное внимание уделено расширению диска ОС виртуальной машины. Но разработанный сценарий также можно использовать для увеличения дисков данных, подключенных к виртуальной машине. Например, чтобы увеличить первый диск с данными, подключенный к виртуальной машине, замените объект `OSDisk` в `StorageProfile` на массив `DataDisks` и используйте числовой индекс для получения ссылки на первый подключенный диск с данными, как показано ниже:
 
-**управляемые диски;**
+**Управляемый диск**
 
 ```powershell
 $disk= Get-AzDisk -ResourceGroupName $rgName -DiskName $vm.StorageProfile.DataDisks[0].Name
@@ -181,7 +181,7 @@ $vm.StorageProfile.DataDisks[0].DiskSizeGB = 1023
 Аналогичным образом можно ссылаться на другие диски с данными, подключенные к виртуальной машине, либо с помощью индекса, как показано выше, либо с помощью свойства **Имя** диска:
 
 
-**управляемые диски;**
+**Управляемый диск**
 
 ```powershell
 (Get-AzDisk -ResourceGroupName $rgName -DiskName ($vm.StorageProfile.DataDisks | Where ({$_.Name -eq 'my-second-data-disk'})).Name).DiskSizeGB = 1023
@@ -208,6 +208,6 @@ $vm.StorageProfile.DataDisks[0].DiskSizeGB = 1023
 4.  В командной строке **DISKPART** введите `extend [size=<size>]`. Эта команда расширяет выбранный том на указанный *размер* в МБ.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Диски также можно подключить на [портале Azure](attach-managed-disk-portal.md).

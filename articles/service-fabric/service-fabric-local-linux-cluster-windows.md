@@ -1,5 +1,5 @@
 ---
-title: Настройка кластера Azure Service Fabric Linux в Windows
+title: Установка кластера Azure Service Fabric на платформе Linux в Windows
 description: В этой статье описывается установка кластеров Service Fabric на платформе Linux на компьютерах разработки Windows. Это особенно удобно для кроссплатформенной разработки.
 author: suhuruli
 ms.topic: conceptual
@@ -7,7 +7,7 @@ ms.date: 11/20/2017
 ms.author: suhuruli
 ms.openlocfilehash: 1798d57f9fc4004fd2c7d1f1901fcddf850626c2
 ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "82193332"
@@ -21,7 +21,7 @@ ms.locfileid: "82193332"
 
 * не менее 4 ГБ ОЗУ;
 * последняя версия [Docker](https://store.docker.com/editions/community/docker-ce-desktop-windows);
-* DOCKER должен работать в режиме Linux
+* Docker должен работать в режиме Linux
 
 >[!TIP]
 > * Чтобы установить Docker в среде Windows, можно выполнить инструкции, приведенные в официальной [документации](https://store.docker.com/editions/community/docker-ce-desktop-windows/plans/docker-ce-desktop-windows-tier?tab=instructions) Docker. 
@@ -64,7 +64,7 @@ ms.locfileid: "82193332"
     >Например, добавленный элемент `RUN apt-get install nodejs -y` разрешает поддержку приложений `nodejs` в качестве гостевых исполняемых файлов.
     
     >[!TIP]
-    > По умолчанию вы получите образ с последней версией Service Fabric. Конкретные редакции см. на странице [центра DOCKER](https://hub.docker.com/r/microsoft/service-fabric-onebox/) .
+    > По умолчанию вы получите образ с последней версией Service Fabric. Сведения о конкретной версии см. на странице [Docker Hub](https://hub.docker.com/r/microsoft/service-fabric-onebox/).
 
 3. Чтобы создать образ для многократного использования на основе файла `Dockerfile`, откройте терминал и с помощью команды `cd` перейдите в каталог, в котором хранится `Dockerfile`. Затем выполните следующий код:
 

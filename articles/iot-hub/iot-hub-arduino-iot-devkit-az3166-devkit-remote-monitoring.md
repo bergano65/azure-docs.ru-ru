@@ -1,5 +1,5 @@
 ---
-title: Подключение MXChip IoT DevKit к удаленному мониторингу центра Интернета вещей Azure
+title: Подключение MXChip IoT DevKit к удаленному мониторингу Azure IoT
 description: Из этого руководства вы узнаете, как с помощью IoT DevKit AZ3166 отправлять данные о состоянии датчиков в акселератор решения Azure IoT для удаленного мониторинга.
 author: liydu
 manager: jeffya
@@ -11,7 +11,7 @@ ms.date: 02/02/2018
 ms.author: liydu
 ms.openlocfilehash: 598e361949b000724645c841910b1682a7bbb1a3
 ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "81258462"
@@ -31,7 +31,7 @@ ms.locfileid: "81258462"
 
 Активная подписка Azure. Если у вас еще нет ее, вы можете зарегистрироваться одним из двух способов:
 
-* Активация [бесплатной 30-дневной пробной Microsoft Azure учетной записи](https://azure.microsoft.com/free/)
+* Вы можете активировать [бесплатную 30-дневную пробную учетную запись Microsoft Azure](https://azure.microsoft.com/free/).
 
 * Запросите [деньги на счете в Azure](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), если у вас есть подписка MSDN или Visual Studio.
 
@@ -77,12 +77,12 @@ ms.locfileid: "81258462"
 3. Подключите DevKit на компьютере. VSCode автоматически обнаружит ваш DevKit и откроет следующие страницы:
 
    * Страница введения в набор разработки.
-   * Примеры Arduino: практические примеры по началу работы с набором разработки.
+   * Примеры Arduino. Практические примеры по началу работы с набором разработки.
 
 4. Разверните раздел **Arduino Examples** (Примеры Arduino) слева, перейдите в папку **Examples for MXCHIP AZ3166 (Примеры для MXCHIP AZ3166) > AzureIoT** и щелкните **RemoteMonitoring**. Откроется новое окно VSCode с папкой проекта.
 
    > [!NOTE]
-   > Если вы закрыли эту область, вы можете открыть ее снова. Нажмите `Ctrl+Shift+P` (macOS: `Cmd+Shift+P`) для вызова палитры команд. Введите **Arduino**, затем найдите и выберите **Arduino: Examples** (Arduino: примеры).
+   > Если вы закрыли эту область, вы можете открыть ее снова. Нажмите `Ctrl+Shift+P` (macOS: `Cmd+Shift+P`) для вызова палитры команд. Введите **Arduino**, а затем найдите и выберите **Arduino: примеры**.
 
 ## <a name="provision-required-azure-services"></a>Подготовка необходимых служб Azure
 
@@ -135,6 +135,6 @@ ms.locfileid: "81258462"
 
 * [Обзор акселераторов решений для Интернета вещей Azure](https://docs.microsoft.com/azure/iot-suite/)
 
-* [Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central](/azure/iot-central/core/howto-connect-devkit)
+* [Connect an MXChip IoT DevKit device to your Azure IoT Central application](/azure/iot-central/core/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central)
 
 * [Пакет средств разработки Интернета вещей](https://microsoft.github.io/azure-iot-developer-kit/) 

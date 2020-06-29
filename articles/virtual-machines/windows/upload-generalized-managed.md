@@ -1,5 +1,5 @@
 ---
-title: Создание виртуальной машины на основе загруженного обобщенного виртуального жесткого диска
+title: Создание виртуальной машины на основе отправленного обобщенного образа VHD
 description: Отправка универсального диска VHD в Azure и создание виртуальных машин с его помощью в модели развертывания Resource Manager.
 author: cynthn
 ms.service: virtual-machines-windows
@@ -9,7 +9,7 @@ ms.date: 12/12/2019
 ms.author: cynthn
 ms.openlocfilehash: b0947d1cc4e53763c0f31444b8f3d27ba45b19a4
 ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "82096416"
@@ -20,7 +20,7 @@ ms.locfileid: "82096416"
 
 Если необходим пример сценария, см. статью [Пример сценария для отправки VHD в Azure и создания виртуальной машины](../scripts/virtual-machines-windows-powershell-upload-generalized-script.md).
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 - Прежде чем передавать в Azure какой-либо виртуальный жесткий диск, следует выполнить инструкции из статьи [Подготовка диска VHD или VHDX для Windows к отправке в Azure](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 - Прежде чем начать миграцию на [Управляемые диски](managed-disks-overview.md), внимательно изучите [этот раздел](on-prem-to-azure.md#plan-for-the-migration-to-managed-disks).
@@ -28,9 +28,9 @@ ms.locfileid: "82096416"
  
 ## <a name="generalize-the-source-vm-by-using-sysprep"></a>Подготовка исходной виртуальной машины к использованию с помощью Sysprep
 
-Если вы еще не сделали этого, перед отправкой виртуального жесткого диска в Azure необходимо выполнить Sysprep для виртуальной машины. Помимо прочих действий Sysprep удаляет все сведения о вашей учетной записи и подготавливает машину к использованию в качестве образа. Дополнительные сведения о Sysprep приведены в [обзоре Sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview).
+Если вы еще не сделали этого, перед отправкой виртуального жесткого диска в Azure необходимо подготовить виртуальную машину с помощью Sysprep. Помимо прочих действий Sysprep удаляет все сведения о вашей учетной записи и подготавливает машину к использованию в качестве образа. Дополнительные сведения о Sysprep приведены в [обзоре Sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview).
 
-Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Дополнительные сведения см. в разделе [Поддержка Sysprep для ролей сервера](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles).
+Убедитесь, что Sysprep поддерживает роли сервера, запущенные на компьютере. Дополнительные сведения см. в разделе [Поддержка ролей сервера в Sysprep](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles).
 
 > [!IMPORTANT]
 > Если вы хотите запустить Sysprep перед отправкой виртуального жесткого диска в Azure в первый раз, [подготовьте виртуальную машину](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
@@ -41,7 +41,7 @@ ms.locfileid: "82096416"
 2. Откройте окно командной строки с правами администратора. Измените каталог на %windir%\system32\sysprep и запустите файл `sysprep.exe`.
 3. В диалоговом окне **Программа подготовки системы** выберите **Переход в окно приветствия системы (OOBE)** и убедитесь, что установлен флажок **Подготовка к использованию**.
 4. В разделе **Параметры завершения работы** выберите **Завершение работы**.
-5. Нажмите кнопку **OK**.
+5. Щелкните **ОК**.
    
     ![Запуск Sysprep](./media/upload-generalized-managed/sysprepgeneral.png)
 6. После выполнения всех необходимых действий Sysprep завершает работу виртуальной машины. Не перезапускайте виртуальную машину.
@@ -49,20 +49,20 @@ ms.locfileid: "82096416"
 
 ## <a name="upload-the-vhd"></a>Отправка виртуального жесткого диска 
 
-Теперь виртуальный жесткий диск можно передать прямо в управляемый диск. Инструкции см. в статье [Отправка виртуального жесткого диска в Azure с помощью Azure PowerShell](disks-upload-vhd-to-managed-disk-powershell.md).
+Теперь можно отправить VHD непосредственно в управляемый диск. Инструкции см. в статье [Отправка VHD в Azure с помощью Azure PowerShell](disks-upload-vhd-to-managed-disk-powershell.md).
 
 
 
-После передачи виртуального жесткого диска на управляемый диск необходимо использовать [Get-аздиск](https://docs.microsoft.com/powershell/module/az.compute/get-azdisk) для получения управляемого диска.
+После передачи виртуального жесткого диска на управляемый диск необходимо использовать командлет [Get-AzDisk](https://docs.microsoft.com/powershell/module/az.compute/get-azdisk) для получения управляемого диска.
 
 ```azurepowershell-interactive
 $disk = Get-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'myDiskName'
 ```
 
 ## <a name="create-the-image"></a>Создание образа
-Создание управляемого образа на основе обобщенного управляемого диска ОС. Подставьте собственные значения.
+Создайте управляемый образ с помощью универсального управляемого диска ОС. Подставьте собственные значения.
 
-Сначала задайте некоторые переменные:
+Сначала задайте несколько переменных:
 
 ```powershell
 $location = 'East US'
@@ -110,7 +110,7 @@ New-AzVm `
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Войдите на свою новую виртуальную машину. Дополнительные сведения см. в статье [Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее](connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
 

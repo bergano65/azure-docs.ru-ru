@@ -1,6 +1,6 @@
 ---
-title: Управление эталонными данными в общедоступных средах с помощью C# — Azure Time Series Insights | Документация Майкрософт
-description: Узнайте, как управлять эталонными данными для общедоступной среды, создав пользовательское приложение, написанное на языке C#.
+title: Управление эталонными данными в общедоступных средах с помощью C# — Аналитика временных рядов Azure | Документация Майкрософт
+description: Узнайте, как управлять эталонными данными для общедоступной среды, создав настраиваемое приложение, написанное на C#.
 ms.service: time-series-insights
 services: time-series-insights
 author: deepakpalled
@@ -13,60 +13,60 @@ ms.date: 04/15/2020
 ms.custom: seodec18
 ms.openlocfilehash: f0ce0f7d90540274d24a7e0248e6f197b74033a1
 ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "81416985"
 ---
-# <a name="manage-ga-reference-data-for-an-azure-time-series-insights-environment-using-c"></a>Управление эталонными данными на основе общедоступной версии для среды службы "аналитика временных рядов Azure" с помощью C #
+# <a name="manage-ga-reference-data-for-an-azure-time-series-insights-environment-using-c"></a>Управление общедоступными эталонными данными для среды Аналитики временных рядов Azure с помощью C#
 
-В этой статье показано, как сочетать C#, [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)и Azure Active Directory, чтобы программные запросы API были предоставлены в общедоступной [Управление данными API](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api)службы "аналитика временных рядов Azure".
+В этой статье показано, как объединить C#, [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) и Azure Active Directory, чтобы сделать программные запросы API к общедоступному [API управления эталонными данными](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api) службы Аналитики временных рядов Azure.
 
 > [!TIP]
-> Просмотрите общедоступные примеры кода [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample)C# по адресу.
+> Ознакомьтесь с примерами общедоступного кода C# по адресу [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample).
 
 ## <a name="summary"></a>Сводка
 
 Приведенный ниже пример кода демонстрирует следующие возможности.
 
-* Получение маркера доступа с помощью [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) **публикклиентаппликатион**.
-* Последовательные операции создания, чтения, обновления и удаления в общедоступной [справочной управление данными API](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api).
-* Общие коды ответов, включая [распространенные коды ошибок](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api#validation-and-error-handling).
+* Получение маркера доступа с помощью [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) **PublicClientApplication**.
+* Последовательные операции создания, чтения, обновления и удаления для общедоступного [API управления эталонными данными](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api).
+* Распространенные коды ответов, включая [коды распространенных ошибок](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api#validation-and-error-handling).
     
-    Справочник по Управление данными API обрабатывает каждый элемент по отдельности, а ошибка с одним элементом не мешает успешному выполнению других. Например, если запрос содержит 100 элементов, а один элемент содержит ошибку, то 99 элементов записывается, а один — отклоняется.
+    API управления эталонными данными обрабатывает каждый элемент по отдельности, а ошибка с одним элементом не мешает успешному выполнению других. Например, если запрос содержит 100 элементов и один элемент содержит ошибку, то 99 элементов записываются, а один — отклоняется.
 
-## <a name="prerequisites-and-setup"></a>Предварительные требования и установка
+## <a name="prerequisites-and-setup"></a>Предварительные требования и настройка
 
 Перед компиляцией и запуском примера кода выполните следующие шаги.
 
-1. Подготавливает общедоступную среду службы " [аналитика временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-get-started
-) ".
+1. [Подготовьте к работе общедоступную среду Аналитики временных рядов](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-get-started
+).
 
-1. [Создайте эталонный набор данных](time-series-insights-add-reference-data-set.md) в своей среде. Используйте следующую схему ссылочных данных:
+1. [Создайте эталонный набор данных](time-series-insights-add-reference-data-set.md) в своей среде. Используйте следующую схему эталонных данных:
 
-   | Имя ключа | Type |
+   | Имя ключа | Тип |
    | --- | --- |
    | uuid | Строка | 
 
-1. Настройте среду службы "аналитика временных рядов Azure" для Azure Active Directory, как описано в статье [Проверка подлинности и авторизация](time-series-insights-authentication-and-authorization.md). Используйте `http://localhost:8080/` в качестве **URI перенаправления**.
+1. Настройте среду службы Аналитики временных рядов Azure для Azure Active Directory, как описано в разделе [Проверка подлинности и авторизация](time-series-insights-authentication-and-authorization.md). Используйте `http://localhost:8080/` в качестве **URI перенаправления**.
 
 1. Установите необходимые зависимости проекта.
 
-1. Измените приведенный ниже пример кода, заменив каждый **#PLACEHOLDER #** на соответствующий идентификатор среды.
+1. Измените приведенный ниже пример кода, заменив каждый элемент **#PLACEHOLDER#** соответствующим идентификатором среды.
 
 1. Запустите `dotnet run` в корневом каталоге проекта. При появлении запроса используйте профиль пользователя для входа в Azure. 
 
 ## <a name="project-dependencies"></a>Зависимости проектов
 
-Рекомендуется использовать последнюю версию Visual Studio и **NETCore. app**:
+Рекомендуется использовать последнюю версию Visual Studio и **NETCore.app**:
 
-* [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) — версия 16.4.2 +
-* [NETCore. app](https://www.nuget.org/packages/Microsoft.NETCore.App/2.2.8) -Version 2.2.8
+* [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) — версия 16.4.2 или более поздняя
+* [NETCore.app](https://www.nuget.org/packages/Microsoft.NETCore.App/2.2.8) — версия 2.2.8
 
-Образец кода имеет две необходимые зависимости:
+Пример кода имеет две необходимые зависимости:
 
-* MSAL.NET пакет [Microsoft. Identity. Client](https://www.nuget.org/packages/Microsoft.Identity.Client/) -4.7.1.
-* [Newtonsoft. JSON](https://www.nuget.org/packages/Newtonsoft.Json) — пакет 12.0.3.
+* MSAL.NET [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client/) — пакет 4.7.1.
+* [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json) — пакет 12.0.3.
 
 Добавьте пакеты с помощью [NuGet 2.12 +](https://www.nuget.org/):
 
@@ -75,7 +75,7 @@ ms.locfileid: "81416985"
 
 Или сделайте так:
 
-1. Объявите `csharp-tsi-msal-ga-sample.csproj` файл:
+1. Объявите файл `csharp-tsi-msal-ga-sample.csproj`:
 
     ```XML
     <Project Sdk="Microsoft.NET.Sdk">
@@ -307,6 +307,6 @@ namespace CsharpTsiMsalGaSample
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Прочитайте справочную документацию по общедоступной версии [Управление данными API](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api) .
+- Ознакомьтесь со справочной документацией по общедоступному [API управления эталонными данными](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api).

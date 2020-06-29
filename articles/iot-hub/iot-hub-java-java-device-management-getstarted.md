@@ -12,7 +12,7 @@ ms.date: 08/20/2019
 ms.custom: mqtt
 ms.openlocfilehash: 75d89b54bae6eb8166d44e08ea020a0da67ad20c
 ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "81732558"
@@ -21,7 +21,7 @@ ms.locfileid: "81732558"
 
 [!INCLUDE [iot-hub-selector-dm-getstarted](../../includes/iot-hub-selector-dm-getstarted.md)]
 
-В этом учебнике демонстрируется выполнение следующих действий:
+В этом учебнике описаны следующие процедуры.
 
 * Создание экземпляра Центра Интернета вещей на портале Azure и удостоверения устройства в экземпляре Центра Интернета вещей.
 
@@ -52,15 +52,15 @@ ms.locfileid: "81732558"
 > [!NOTE]
 > Статья о [пакетах SDK для Центра Интернета вещей Azure](iot-hub-devguide-sdks.md) содержит сведения о различных пакетах SDK, которые можно использовать для создания приложений, работающих на устройствах и в серверной части решения.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* [Пакет SDK для Java SE 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable). Щелкните ссылку **Java 8** в разделе **Долгосрочная поддержка**, чтобы скачать все необходимое для работы с JDK 8.
+* [Пакет SDK для Java SE 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable). Щелкните ссылку **Java 8** в разделе **Долгосрочная поддержка**, чтобы скачать все необходимое для работы с JDK 8.
 
-* [Maven 3](https://maven.apache.org/download.cgi)
+* [Maven 3](https://maven.apache.org/download.cgi)
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
-* Убедитесь, что в брандмауэре открыт порт 8883. В примере для устройства в этой статье используется протокол MQTT, который обменивается данными через порт 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
+* Убедитесь, что в брандмауэре открыт порт 8883. Пример устройства в этой статье использует протокол MQTT, который передает данные через порт 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -70,7 +70,7 @@ ms.locfileid: "81732558"
 
 [!INCLUDE [iot-hub-get-started-create-device-identity](../../includes/iot-hub-get-started-create-device-identity.md)]
 
-## <a name="get-the-iot-hub-connection-string"></a>Получение строки подключения для центра Интернета вещей
+## <a name="get-the-iot-hub-connection-string"></a>Получение строки подключения центра Интернета вещей
 
 [!INCLUDE [iot-hub-howto-device-management-shared-access-policy-text](../../includes/iot-hub-howto-device-management-shared-access-policy-text.md)]
 
@@ -88,17 +88,17 @@ ms.locfileid: "81732558"
 
 Это консольное приложение подключается к Центру Интернета вещей для вызова прямого метода и чтения переданных свойств.
 
-1. Создайте пустую папку с именем **DM-Get-Started**.
+1. Создайте пустую папку с именем **dm-get-started**.
 
-2. В папке **DM-Get-Started** создайте проект Maven с именем **Trigger-rereboot** , выполнив в командной строке следующую команду:
+2. В папке **dm-get-started** создайте проект Maven с именем **trigger-reboot**, выполнив в командной строке следующую команду:
 
     ```cmd/sh
     mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=trigger-reboot -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
     ```
 
-3. В командной строке перейдите в папку **Trigger-rereboot** .
+3. В командной строке перейдите к папке **trigger-reboot**.
 
-4. С помощью текстового редактора откройте файл **POM. XML** в папке **триггер-reboot** и добавьте следующую зависимость в узел **зависимости** . Эта зависимость позволит вам использовать в приложении пакет iot-service-client для обмена данными с Центром Интернета вещей:
+4. Откройте в текстовом редакторе файл **pom.xml** из папки **trigger-reboot** и добавьте зависимости, приведенные ниже, в узел **dependencies**. Эта зависимость позволит вам использовать в приложении пакет iot-service-client для обмена данными с Центром Интернета вещей:
 
     ```xml
     <dependency>
@@ -132,7 +132,7 @@ ms.locfileid: "81732558"
 
 6. Сохраните и закройте файл **pom.xml**.
 
-7. В текстовом редакторе откройте исходный файл **Trigger-reboot\src\main\java\com\mycompany\app\app.Java.** .
+7. Откройте в текстовом редакторе файл **trigger-reboot\src\main\java\com\mycompany\app\App.java**.
 
 8. Добавьте в файл следующие инструкции **import** .
 
@@ -149,7 +149,7 @@ ms.locfileid: "81732558"
     import java.util.concurrent.ExecutorService;
     ```
 
-9. Добавьте следующие переменные уровня класса в класс **app** . Замените `{youriothubconnectionstring}` строкой подключения центра Интернета вещей, скопированной ранее в [поле получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string):
+9. Добавьте в класс **App** . Замените `{youriothubconnectionstring}` строкой подключения Центра Интернета вещей, скопированной ранее в разделе [Получение строки подключения центра Интернета вещей](#get-the-iot-hub-connection-string):
 
     ```java
     public static final String iotHubConnectionString = "{youriothubconnectionstring}";
@@ -187,7 +187,7 @@ ms.locfileid: "81732558"
     public static void main(String[] args) throws IOException
     ```
 
-12. Чтобы вызвать прямой метод перезагрузки на имитации устройства, замените код в методе **Main** следующим кодом:
+12. Для вызова прямого метода перезагрузки на имитируемом устройстве замените код в методе **main** на следующий код:
 
     ```java
     System.out.println("Starting sample...");
@@ -229,9 +229,9 @@ ms.locfileid: "81732558"
     System.out.println("Shutting down sample...");
     ```
 
-15. Сохраните и закройте файл **Trigger-reboot\src\main\java\com\mycompany\app\app.Java.** .
+15. Сохраните и закройте файл **trigger-reboot\src\main\java\com\mycompany\app\App.java**.
 
-16. Выполните сборку внутреннего приложения **trigger-reboot** и исправьте ошибки (при наличии). В командной строке перейдите в папку **Trigger-rereboot** и выполните следующую команду:
+16. Выполните сборку внутреннего приложения **trigger-reboot** и исправьте ошибки (при наличии). В командной строке перейдите к папке **trigger-reboot** и выполните следующую команду:
 
     ```cmd/sh
     mvn clean package -DskipTests
@@ -241,15 +241,15 @@ ms.locfileid: "81732558"
 
 В этом разделе приведена процедура создания консольного приложения Java, которое имитирует устройство. Приложение прослушивает вызовы прямого метода перезагрузки из вашего Центра Интернета вещей и немедленно отвечает на такие вызовы. Затем приложение на некоторое время переходит в спящий режим, чтобы имитировать процесс перезагрузки, после чего использует переданное свойство для уведомления внутреннего приложения **trigger-reboot** о завершении перезагрузки.
 
-1. В папке **DM-Get-Started** создайте проект Maven с именем **имитация устройства** , выполнив в командной строке следующую команду:
+1. В папке **dm-get-started** создайте проект Maven с именем **simulated-device**, выполнив в командной строке следующую команду:
 
     ```cmd/sh
     mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=simulated-device -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
     ```
 
-2. В командной строке перейдите в папку **имитация устройства** .
+2. В командной строке перейдите к папке **simulated-device**.
 
-3. В текстовом редакторе откройте файл **POM. XML** в папке **имитации устройства** и добавьте следующую зависимость в узел **зависимости** . Эта зависимость позволит вам использовать в приложении пакет iot-service-client для обмена данными с Центром Интернета вещей:
+3. Откройте в текстовом редакторе файл **pom.xml** из папки **simulated-device** и добавьте приведенную ниже зависимость в узел **dependencies**. Эта зависимость позволит вам использовать в приложении пакет iot-service-client для обмена данными с Центром Интернета вещей:
 
     ```xml
     <dependency>
@@ -262,7 +262,7 @@ ms.locfileid: "81732558"
     > [!NOTE]
     > Наличие последней версии пакета **iot-device-client** можно проверить с помощью [поиска Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-device-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22).
 
-4. Добавьте следующую зависимость в узел **зависимости** . Эта зависимость настраивает NOP для фасадной ведения журнала Apache [SLF4J](https://www.slf4j.org/) , которое используется пакетом SDK для клиента устройства для реализации ведения журнала. Эта конфигурация является необязательной, но если ее опустить, при запуске приложения может появиться предупреждение в консоли. Дополнительные сведения о ведении журналов в клиентском пакете SDK для устройств см. в разделе [ведение журнала](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-samples/readme.md#logging) в *ПРИМЕРАХ для пакета SDK для устройств Azure IOT для Java* .
+4. Добавьте указанную ниже зависимость в узел **dependencies**. Эта зависимость настраивает NOP для интерфейса ведения журнала Apache [SLF4J](https://www.slf4j.org/), который используется пакетом SDK клиента устройства для реализации ведения журнала. Эта конфигурация является необязательной, но если ее опустить, при запуске приложения может появиться предупреждение в консоли. Дополнительные сведения о ведении журнала в пакете SDK клиента устройства см. в разделе [Ведение журнала](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-samples/readme.md#logging) в файле сведений *Примеры для пакета SDK для устройств Azure IoT для Java*.
 
     ```xml
     <dependency>
@@ -292,7 +292,7 @@ ms.locfileid: "81732558"
 
 6. Сохраните и закройте файл **pom.xml**.
 
-7. В текстовом редакторе откройте исходный файл **Simulated-device\src\main\java\com\mycompany\app\app.Java.** .
+7. Откройте в текстовом редакторе исходный файл **simulated-device\src\main\java\com\mycompany\app\App.java**.
 
 8. Добавьте в файл следующие инструкции **import** .
 
@@ -308,7 +308,7 @@ ms.locfileid: "81732558"
     import java.util.HashSet;
     ```
 
-9. Добавьте следующие переменные уровня класса в класс **app** . Замените `{yourdeviceconnectionstring}` строкой подключения устройства, записанной в разделе [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub) :
+9. Добавьте в класс **App** . Замените `{yourdeviceconnectionstring}` строкой подключения устройства, записанной в разделе [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub):
 
     ```java
     private static final int METHOD_SUCCESS = 200;
@@ -377,7 +377,7 @@ ms.locfileid: "81732558"
     }
     ```
 
-14. Чтобы реализовать прямой метод на устройстве, добавьте указанный ниже вложенный класс в класс **App**. Когда имитация приложения получает вызов прямого метода **reboot** , он возвращает подтверждение вызывающему объекту, а затем запускает поток для обработки перезагрузки:
+14. Чтобы реализовать прямой метод на устройстве, добавьте указанный ниже вложенный класс в класс **App**. Когда приложение имитации получает вызов прямого метода **reboot**, оно возвращает вызывающему объекту подтверждение, а затем запускает поток для обработки перезагрузки:
 
     ```java
     protected static class DirectMethodCallback implements com.microsoft.azure.sdk.iot.device.DeviceTwin.DeviceMethodCallback
@@ -415,7 +415,7 @@ ms.locfileid: "81732558"
     public static void main(String[] args) throws IOException, URISyntaxException
     ```
 
-16. Чтобы создать экземпляр **DeviceClient**, замените код в методе **Main** следующим кодом:
+16. Для создания экземпляра **DeviceClient** замените код в методе **main** следующим кодом:
 
     ```java
     System.out.println("Starting device client sample...");
@@ -453,7 +453,7 @@ ms.locfileid: "81732558"
 
 19. Сохраните и закройте файл simulated-device\src\main\java\com\mycompany\app\App.java.
 
-20. Создайте приложение **simulated-device** и исправьте все ошибки. В командной строке перейдите в папку **имитируемed-Device** и выполните следующую команду:
+20. Создайте приложение **simulated-device** и исправьте все ошибки. В командной строке перейдите к папке **simulated-device** и выполните следующую команду:
 
     ```cmd/sh
     mvn clean package -DskipTests
@@ -461,9 +461,9 @@ ms.locfileid: "81732558"
 
 ## <a name="run-the-apps"></a>Запуск приложений
 
-Теперь все готово для запуска приложений.
+Теперь все готово к запуску приложений.
 
-1. В командной строке в папке **имитации устройства** выполните следующую команду, чтобы начать прослушивание вызовов методов перезагрузки из центра Интернета вещей:
+1. В командной строке в папке **simulated-device** выполните следующую команду, чтобы начать прослушивать вызовы метода перезагрузки из центра Интернета вещей:
 
     ```cmd/sh
     mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
@@ -471,7 +471,7 @@ ms.locfileid: "81732558"
 
     ![Приложение имитации устройства Центра Интернета вещей на языке Java для прослушивания вызовов прямого метода перезагрузки](./media/iot-hub-java-java-device-management-getstarted/launchsimulator.png)
 
-2. В командной строке в папке **Trigger-rereboot** выполните следующую команду, чтобы вызвать метод reboot для виртуального устройства из центра Интернета вещей:
+2. В командной строке в папке **trigger-reboot** выполните следующую команду, чтобы вызвать метод перезагрузки на имитируемом устройстве из центра Интернета вещей:
 
     ```cmd/sh
     mvn exec:java -Dexec.mainClass="com.mycompany.app.App"

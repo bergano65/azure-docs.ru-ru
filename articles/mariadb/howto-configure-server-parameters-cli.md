@@ -1,5 +1,5 @@
 ---
-title: Настройка параметров сервера — Azure CLI — база данных Azure для MariaDB
+title: Настройка параметров сервера — Azure CLI — база данных Azure для MariaDB
 description: В этой статье описывается настройка параметров службы в Базе данных Azure для MariaDB с помощью служебной программы командной строки Azure CL.
 author: ajlam
 ms.author: andrela
@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.date: 4/1/2020
 ms.openlocfilehash: 3ba06ea592d51eedbe827e1ab6418f65722d579c
 ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "80632303"
@@ -17,7 +17,7 @@ ms.locfileid: "80632303"
 # <a name="customize-server-configuration-parameters-by-using-azure-cli"></a>Настройка параметров конфигурации сервера с помощью Azure CLI
 С помощью служебной программы командной строки (Azure CLI) можно вывести список параметров конфигурации для сервера Базы данных Azure для MariaDB, а также отобразить и обновить их. Только подмножество конфигураций ядра предоставляется на уровне сервера и может быть изменено.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - [Сервер Базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-cli.md)
 - Программа командной строки [Azure CLI](/cli/azure/install-azure-cli) (или используйте Azure Cloud Shell в браузере).
@@ -97,6 +97,6 @@ SET time_zone = 'US/Pacific';
 
 Описание [Функций даты и времени](https://mariadb.com/kb/en/library/date-time-functions/) см. в документации по MariaDB.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Настройка [параметров сервера на портале Azure](howto-server-parameters.md)

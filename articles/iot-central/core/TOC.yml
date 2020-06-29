@@ -151,6 +151,10 @@
               href: howto-manage-preferences.md
             - name: Переключение чата в реальном времени
               href: howto-show-hide-chat.md
+- name: Справочник
+  items:
+    - name: Azure CLI
+      href: /cli/azure/azure-cli-reference-for-IoT
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки

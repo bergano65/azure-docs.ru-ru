@@ -13,7 +13,7 @@ ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: e429dce497411305964cb1ec5298228dc4093b1f
 ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "81685954"
@@ -24,7 +24,7 @@ ms.locfileid: "81685954"
 
 Эта задача является одним из этапов [процесса обработки и анализа данных группы](overview.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 В этой статье предполагается, что вы:
 
 * Создали учетную запись хранения Azure. Инструкции см. в разделе [Создание учетной записи хранения](../../storage/common/storage-account-create.md).
@@ -33,7 +33,7 @@ ms.locfileid: "81685954"
 ## <a name="load-the-data-into-a-pandas-dataframe"></a>Загрузка данных в кадр данных Pandas
 Для просмотра набора данных и управления им набор необходимо сначала скачать из источника больших двоичных объектов в локальный файл, который в последствии можно загрузить в кадр данных Pandas. Ниже приведен порядок выполнения данной процедуры.
 
-1. Скачайте данные из большого двоичного объекта Azure с помощью следующего примера кода Python, используя службу BLOB-объектов. Замените переменные в этом коде своими значениями.
+1. Скачайте данные из большого двоичного объекта Azure с помощью службы BLOB-объектов. Для этого воспользуйтесь приведенным ниже примером кода Python. Замените переменные в этом коде своими значениями.
 
     ```python
     from azure.storage.blob import BlockBlobService
@@ -63,7 +63,7 @@ ms.locfileid: "81685954"
 
 Теперь вы готовы просматривать эти данные и создавать функции на основе этого набора данных.
 
-## <a name="examples-of-data-exploration-using-pandas"></a><a name="blob-dataexploration"></a>Примеры исследования данных с помощью Pandas
+## <a name="examples-of-data-exploration-using-pandas"></a><a name="blob-dataexploration"></a>Примеры просмотра данных с помощью Pandas
 Вот несколько примеров того, как можно просматривать данные с помощью Pandas.
 
 1. Проверьте **количество строк и столбцов**

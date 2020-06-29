@@ -1,7 +1,7 @@
 ---
-title: Учетные данные сертификата платформы удостоверений Microsoft Identity
+title: Учетные данные сертификата платформы удостоверений Майкрософт
 titleSuffix: Microsoft identity platform
-description: В этой статье обсуждается регистрация и использование учетных данных сертификата для проверки подлинности приложения.
+description: В этой статье рассматривается регистрация и использование учетных данных сертификата для проверки подлинности приложения.
 services: active-directory
 author: hpsin
 manager: CelesteDG
@@ -15,19 +15,19 @@ ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 47a35f70251622674205a28af9b7cc64132d0530
 ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/01/2020
 ms.locfileid: "82690286"
 ---
-# <a name="microsoft-identity-platform-application-authentication-certificate-credentials"></a>Учетные данные сертификата проверки подлинности приложения платформы Microsoft Identity
+# <a name="microsoft-identity-platform-application-authentication-certificate-credentials"></a>Учетные данные сертификата проверки подлинности приложения платформы удостоверений Майкрософт
 
-Платформа Microsoft Identity позволяет приложению использовать собственные учетные данные для проверки подлинности, например, в [учетных данных клиента OAuth 2,0 предоставьте фловв 2.0](v2-oauth2-client-creds-grant-flow.md) и поток "от [имени](v2-oauth2-on-behalf-of-flow.md)".
+Платформа удостоверений Майкрософт позволяет приложению использовать для проверки подлинности свои собственные учетные данные, например в [потоке предоставления учетных данных клиента OAuth 2.0](v2-oauth2-client-creds-grant-flow.md) и [потоке On-Behalf-Of](v2-oauth2-on-behalf-of-flow.md).
 
 Одной из форм учетных данных, которые приложение может использовать для аутентификации, является утверждение JSON Web Token (JWT), подписанное с помощью сертификата приложения.
 
 ## <a name="assertion-format"></a>Формат утверждения
-Платформа Microsoft Identity. чтобы вычислить утверждение, можно использовать одну из многих [JSON Web Token](https://jwt.ms/) библиотек на выбранном языке. Маркер содержит следующие сведения:
+Платформа удостоверений Майкрософт. Чтобы вычислить утверждение, можно использовать одну из множества библиотек [JSON Web Token](https://jwt.ms/) на удобном для вас языке. Маркер содержит следующие сведения:
 
 ### <a name="header"></a>Заголовок
 
@@ -41,14 +41,14 @@ ms.locfileid: "82690286"
 
 | Параметр |  Remarks |
 | --- | --- |
-| `aud` | Аудитория: следует ** https://login.microsoftonline.com/ *tenant_Id*/OAuth2/Token** |
+| `aud` | Audience: Должно быть **https://login.microsoftonline.com/*tenant_Id*/oauth2/token** |
 | `exp` | Срок действия: дата, когда истекает срок действия маркера. Время представлено как количество секунд с 1 января 1970 года (1970-01-01T0:0:0Z) в формате UTC до истечения срока действия маркера.|
 | `iss` | Издатель: параметр должен иметь значение client_id (идентификатор приложения службы клиента) |
 | `jti` | GUID: идентификатор JWT |
 | `nbf` | Не ранее: дата, до которой маркер не может использоваться. Время представлено как количество секунд с 1 января 1970 года (1970-01-01T0:0:0Z) в формате UTC до времени выдачи маркера. |
-| `sub` | Субъект: параметр должен иметь значение client_id (идентификатор приложения службы клиента), как и `iss` |
+| `sub` | Субъект: параметр должен иметь значение client_id (идентификатор приложения службы клиента, как и `iss`) |
 
-### <a name="signature"></a>Подпись
+### <a name="signature"></a>Сигнатура
 
 Подпись формируется через применение сертификата, как описано в [документе RFC7519 о спецификации JSON Web Token](https://tools.ietf.org/html/rfc7519).
 
@@ -85,17 +85,17 @@ ms.locfileid: "82690286"
 Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 ```
 
-## <a name="register-your-certificate-with-microsoft-identity-platform"></a>Регистрация сертификата на платформе Microsoft Identity
+## <a name="register-your-certificate-with-microsoft-identity-platform"></a>Зарегистрируйте сертификат на платформе удостоверений Майкрософт
 
-Учетные данные сертификата можно связать с клиентским приложением на платформе Microsoft Identity с помощью портал Azure одним из следующих способов.
+Учетные данные сертификата можно связать с клиентским приложением на платформе удостоверений Майкрософт через портал Azure с помощью любого из следующих методов:
 
 ### <a name="uploading-the-certificate-file"></a>Передача файла сертификата
 
 При регистрации приложения Azure для клиентского приложения сделайте следующее.
 1. Выберите **Сертификаты и секреты**.
-2. Щелкните **отправить сертификат** и выберите файл сертификата для отправки.
+2. Нажмите **Отправить сертификат** и выберите файл сертификата для отправки.
 3. Нажмите кнопку **Добавить**.
-  После отправки сертификата отображаются отпечаток, Дата начала и срок действия.
+  После передачи сертификата отображаются значения отпечатка сертификата, даты начала и истечения срока действия.
 
 ### <a name="updating-the-application-manifest"></a>Обновление манифеста приложения
 
@@ -107,7 +107,7 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 Также необходимо предоставить идентификатор GUID для определения ключа в манифесте приложения (`$keyId`).
 
 При регистрации приложения Azure для клиентского приложения сделайте следующее.
-1. Выберите **Манифест** , чтобы открыть манифест приложения.
+1. Щелкните **Манифест**, чтобы открыть манифест приложения.
 2. Замените свойство *keyCredentials* данными нового сертификата, используя приведенную ниже схему.
 
    ```JSON
@@ -121,13 +121,13 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
        }
    ]
    ```
-3. Сохраните изменения в манифесте приложения, а затем отправьте манифест на платформу удостоверений Майкрософт.
+3. Сохраните изменения в манифесте приложения и передайте его на платформу удостоверений Майкрософт.
 
    Свойство `keyCredentials` является многозначным, поэтому для расширенного управления ключами можно передать несколько сертификатов.
 
 ## <a name="code-sample"></a>Пример кода
 
 > [!NOTE]
-> Необходимо вычислить заголовок X5T, преобразовав его в базовую строку 64, используя хэш сертификата. Код для выполнения этого кода в C# — `System.Convert.ToBase64String(cert.GetCertHash());`.
+> Необходимо вычислить заголовок X5T, преобразовав его в базовую строку 64, используя хэш сертификата. Код для выполнения этой операции в C#: `System.Convert.ToBase64String(cert.GetCertHash());`.
 
-Пример кода [консольное приложение управляющей программы .NET Core с использованием платформы идентификации Майкрософт](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) показывает, как приложение использует собственные учетные данные для проверки подлинности. В не также показано, как [создать самозаверяющий сертификат](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/tree/master/1-Call-MSGraph#optional-use-the-automation-script) с помощью команды PowerShell `New-SelfSignedCertificate`. Можно также воспользоваться преимуществами [сценариев создания приложений](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/AppCreationScripts-withCert/AppCreationScripts.md) для создания сертификатов, вычисления отпечатков и т. д.
+В примере кода [Консольное приложение управляющей программы .NET Core с использованием платформы удостоверений Майкрософт](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) показано, как приложение использует собственные учетные данные для проверки подлинности. В не также показано, как [создать самозаверяющий сертификат](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/tree/master/1-Call-MSGraph#optional-use-the-automation-script) с помощью команды PowerShell `New-SelfSignedCertificate`. Можно также воспользоваться преимуществами [сценариев создания приложений](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/AppCreationScripts-withCert/AppCreationScripts.md) для создания сертификатов, вычисления отпечатков и т. д.
