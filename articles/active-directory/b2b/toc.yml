@@ -133,8 +133,8 @@
       items:
         - name: ВОПРОСЫ И ОТВЕТЫ
           href: faq.md
-        - name: Получение технической поддержки для B2B
-          href: get-support.md
+        - name: Получение поддержки
+          href: 'https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-troubleshooting-support-howto'
         - name: Форум отзывов и предложений по Azure
           href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
         - name: Стратегия развития Azure
