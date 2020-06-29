@@ -65,7 +65,7 @@
       href: 'https://www.serverlesslibrary.net/'
     - name: Примеры Azure
       items:
-        - name: 'C#'
+        - name: C#
           href: /samples/browse/?products=azure-functions&languages=csharp
         - name: Java
           href: /samples/browse/?products=azure-functions&languages=java
@@ -112,11 +112,11 @@
       items:
         - name: Поддерживаемые языки
           href: supported-languages.md
-        - name: 'C# (библиотека классов)'
+        - name: C# (библиотека классов)
           href: functions-dotnet-class-library.md
-        - name: 'Скрипт C# (.csx)'
+        - name: Скрипт C# (.csx)
           href: functions-reference-csharp.md
-        - name: 'F#'
+        - name: F#
           href: functions-reference-fsharp.md
         - name: JavaScript
           href: functions-reference-node.md
@@ -127,7 +127,7 @@
         - name: Python
           href: functions-reference-python.md
         - name: TypeScript
-          href: 'functions-reference-node.md#typescript'
+          href: functions-reference-node.md#typescript
     - name: Безопасность
       items:
         - name: Общие сведения о безопасности
@@ -377,7 +377,7 @@
             - name: Функции 1.x
               href: functions-bindings-cosmosdb.md
               displayName: Azure Cosmos DB
-            - name: Функции 2.x
+            - name: "Функции\_2.x и более поздних версий"
               displayName: Azure Cosmos DB
               items:
                 - name: Обзор
@@ -507,7 +507,7 @@
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Сведения о квотах
-      href: 'functions-scale.md#service-limits'
+      href: functions-scale.md#service-limits
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Видео

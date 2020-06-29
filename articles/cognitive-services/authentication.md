@@ -9,21 +9,20 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 11/22/2019
 ms.author: erhopf
-ms.openlocfilehash: d36961a12162a587def76b1ffeb2109f9ed63f4d
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 7c2484892f3de3c8eca3f766793be83bc7a29dc8
+ms.sourcegitcommit: 74ba70139781ed854d3ad898a9c65ef70c0ba99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83587686"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85445548"
 ---
 # <a name="authenticate-requests-to-azure-cognitive-services"></a>Проверка подлинности запросов к Azure Cognitive Services
 
 Каждый запрос к службе Azure Cognitive должен содержать заголовок проверки подлинности. Этот заголовок передает ключ подписки или маркер доступа, который позволяет проверить права подписки на доступ к службе или группе служб. В этой статье вы получите сведения о трех методах проверки подлинности запроса и требованиях для каждого из них.
 
-* [Проверка подлинности по ключу подписки для одной службы](#authenticate-with-a-single-service-subscription-key)
-* [Проверка подлинности по ключу подписки для нескольких служб](#authenticate-with-a-multi-service-subscription-key)
-* [Проверка подлинности по маркеру](#authenticate-with-an-authentication-token)
-* [Проверка подлинности с помощью Azure Active Directory (AAD)](#authenticate-with-azure-active-directory)
+* Проверка подлинности с помощью ключа подписки с [одной](#authenticate-with-a-single-service-subscription-key) или [несколькими службами](#authenticate-with-a-multi-service-subscription-key)
+* Проверка подлинности с помощью [токена](#authenticate-with-an-authentication-token)
+* Проверка подлинности с помощью [Azure Active Directory (AAD)](#authenticate-with-azure-active-directory)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -35,7 +34,7 @@ ms.locfileid: "83587686"
 
 Давайте кратко рассмотрим заголовки проверки подлинности, которые доступны для использования с Azure Cognitive Services.
 
-| Заголовок | Описание |
+| Header | Описание |
 |--------|-------------|
 | Ocp-Apim-Subscription-Key | Используйте этот заголовок для проверки подлинности по ключу подписки для конкретной службы или для нескольких служб. |
 | Ocp-Apim-Subscription-Region | Этот заголовок необходим только при использовании ключа подписки с несколькими службами в [службе переводчиков](./Translator/reference/v3-0-reference.md). Используйте этот заголовок, чтобы указать регион подписки. |
@@ -76,7 +75,7 @@ curl -X POST 'https://api.cognitive.microsofttranslator.com/translate?api-versio
 
 ### <a name="supported-regions"></a>Поддерживаемые регионы
 
-Если вы используете ключ подписки для нескольких служб в запросе к `api.cognitive.microsoft.com`, необходимо указать регион в URL-адресе. Например: `westus.api.cognitive.microsoft.com`
+Если вы используете ключ подписки для нескольких служб в запросе к `api.cognitive.microsoft.com`, необходимо указать регион в URL-адресе. Например, `westus.api.cognitive.microsoft.com`.
 
 При использовании ключа подписки с несколькими службами в службе переводчика необходимо указать регион подписки с `Ocp-Apim-Subscription-Region` заголовком.
 

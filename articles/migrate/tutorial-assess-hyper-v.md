@@ -4,12 +4,12 @@ description: В этой статье показано, как оценить г
 ms.topic: tutorial
 ms.date: 06/03/2020
 ms.custom: mvc
-ms.openlocfilehash: d87e0d54a62736623483f1929b1979af8efb3a58
-ms.sourcegitcommit: ff19f4ecaff33a414c0fa2d4c92542d6e91332f8
+ms.openlocfilehash: 53cf4eea4bfe61951be9975bacf9adb2b3fcf435
+ms.sourcegitcommit: e04a66514b21019f117a4ddb23f22c7c016da126
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85052438"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85106486"
 ---
 # <a name="assess-hyper-v-vms-with-azure-migrate-server-assessment"></a>Оценка виртуальных машин Hyper-V с помощью средства "Оценка сервера" службы "Миграция Azure"
 
@@ -102,7 +102,7 @@ ms.locfileid: "85052438"
 
         **Сценарий** | **Загрузить** | **SHA256**
         --- | --- | ---
-        Hyper-V (8,93 ГБ) | [Последняя версия](https://aka.ms/migrate/appliance/hyperv) |  572be425ea0aca69a9aa8658c950bc319b2bdbeb93b440577264500091c846a1
+        Hyper-V (8,93 ГБ) | [Последняя версия](https://aka.ms/migrate/appliance/hyperv) |  572be425ea0aca69a9aa8658c950bc319b2bdbeb93b440577264500091c846a1
 
     - Для Azure для государственных организаций:
 

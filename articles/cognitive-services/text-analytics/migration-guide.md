@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 05/13/2020
+ms.date: 06/25/2020
 ms.author: aahi
-ms.openlocfilehash: 2fd6c908aa95ef22cbf7ea0b62b925d84d66cd28
-ms.sourcegitcommit: f0b206a6c6d51af096a4dc6887553d3de908abf3
+ms.openlocfilehash: 12c09ad8e1db3914263fcc864c9c2d09069d63a6
+ms.sourcegitcommit: fdaad48994bdb9e35cdd445c31b4bac0dd006294
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84143274"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85412589"
 ---
 # <a name="migrate-to-version-3x-of-the-text-analytics-api"></a>Переход на версию 3. x API анализа текста
 
@@ -44,7 +44,7 @@ ms.locfileid: "84143274"
 ## <a name="feature-changes"></a>Изменения функций
 
 > [!NOTE] 
-> В настоящее время [категории сущностей v3](named-entity-types.md) возвращаются только в тексте на английском языке. API возвращает версии 2,1 для запросов на других языках, если они поддерживаются в версии 2,1.
+> В настоящее время [категории сущностей v3](named-entity-types.md) возвращаются только в тексте на английском и испанском языках. API возвращает версии 2,1 для запросов на других языках, если они поддерживаются в версии 2,1.
 
 В версии 2,1 API анализа текста использует одну конечную точку для распознавания именованных сущностей (NER) и связывания сущностей. Версия 3 предоставляет Расширенное обнаружение именованных сущностей и использует отдельные конечные точки для запросов NER и связывания сущностей. Начиная с версии 3.1 – Preview. 1, NER может дополнительно определять персональные `pii` данные и `phi` сведения о работоспособности. 
 
@@ -103,9 +103,9 @@ NER
 ---
 
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Справочник по API анализа текста v2](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/)
-* [Что такое API анализа текста](overview.md)
+* [Что такое API "Анализ текста"?](overview.md)
 * [Поддержка языков](language-support.md)
 * [управления версиями моделей;](concepts/model-versioning.md)

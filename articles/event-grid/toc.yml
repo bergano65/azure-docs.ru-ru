@@ -242,10 +242,14 @@
           href: enable-diagnostic-logs-topic.md
         - name: Устранение неполадок
           href: troubleshoot-errors.md
+        - name: Устранение неполадок подключения к сети
+          href: troubleshoot-network-connectivity.md
         - name: Устранение неполадок при проверке подписки
           href: troubleshoot-subscription-validation.md
-        - name: Просмотр метрик и создание оповещений
+        - name: Просмотр метрик
           href: monitor-event-delivery.md
+        - name: Создание оповещений
+          href: set-alerts.md
 - name: Справочник
   items:
     - name: Azure CLI

@@ -8,6 +8,12 @@
       href: azure-portal-quickstart-center.md
     - name: Поддерживаемые браузеры и устройства
       href: azure-portal-supported-browsers-devices.md
+- name: Краткие руководства
+  items:
+    - name: Создание виртуальной машины на портале
+      href: ../virtual-machines/windows/quick-create-portal.md?toc=/azure/azure-portal/toc.json&bc=/azure/azure-portal/breadcrumb/toc.json
+    - name: Создание панели мониторинга (шаблон ARM)
+      href: quick-create-template.md
 - name: Основные понятия
   items:
     - name: Предоставление общего доступа с управлением доступом на основе ролей

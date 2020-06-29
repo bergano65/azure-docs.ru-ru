@@ -30,7 +30,9 @@
       href: concepts-identity.md
     - name: Обновления частного облака
       href: concepts-upgrades.md
-    - name: Управление API для виртуальных машин AVS
+    - name: Интеграция в звездообразной архитектуре
+      href: concepts-avs-hub-and-spoke-integration.md
+    - name: Управление API
       href: concepts-api-management.md
 - name: Практические руководства
   items:
@@ -40,8 +42,6 @@
       href: manage-dhcp.md
     - name: Аварийное восстановление
       href: disaster-recovery.md
-    - name: Получение справки по сбоям при развертывании или подготовке AVS
-      href: fix-deployment-provisioning-failures.md
     - name: "Azure Backup\_Server для AVS"
       items:
         - name: Настройка Azure Backup Server для AVS
@@ -52,5 +52,9 @@
   items: null
 - name: Ресурсы
   items:
+    - name: Устранение неполадок
+      items:
+        - name: Получение справки по сбоям при развертывании или подготовке AVS
+          href: fix-deployment-provisioning-failures.md
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: faq.md

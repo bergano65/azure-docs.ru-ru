@@ -1,2 +1,178 @@
 - name: Azure Digital Twins
   href: index.yml
+- name: Обзор
+  items:
+    - name: Сведения об Azure Digital Twins
+      href: overview.md
+    - name: Отличия от предыдущего выпуска
+      href: overview-differences.md
+- name: Учебники
+  items:
+    - name: Написание кода для клиентского приложения
+      href: tutorial-code.md
+    - name: Изучение основ с помощью примера клиентского приложения
+      href: tutorial-command-line-app.md
+    - name: Подключение комплексного решения
+      href: tutorial-end-to-end.md
+- name: Основные понятия
+  items:
+    - name: Настраиваемые модели
+      href: concepts-models.md
+    - name: Цифровые двойники и граф двойника
+      href: concepts-twins-graph.md
+    - name: Язык запросов
+      href: concepts-query-language.md
+    - name: Интеграция с другими службами
+      href: concepts-integration.md
+    - name: Маршрутизация событий
+      href: concepts-route-events.md
+    - name: Безопасность для решений Azure Digital Twins
+      href: concepts-security.md
+- name: Практические руководства
+  items:
+    - name: Разработка
+      items:
+        - name: Использование интерфейсов API и пакетов SDK
+          href: how-to-use-apis-sdks.md
+        - name: Создание пользовательских пакетов SDK с помощью AutoRest
+          href: how-to-create-custom-sdks.md
+    - name: Развертывание
+      items:
+        - name: Использование CLI для Azure Digital Twins
+          href: how-to-use-cli.md
+        - name: Создание экземпляра Azure Digital Twins
+          href: how-to-set-up-instance.md
+        - name: Аутентификация клиентского приложения
+          href: how-to-authenticate-client.md
+    - name: Проектирование моделей
+      items:
+        - name: Управление пользовательскими моделями
+          href: how-to-manage-model.md
+        - name: Анализ и проверка моделей
+          href: how-to-use-parser.md
+    - name: Использование динамической среды выполнения
+      items:
+        - name: Управление цифровыми двойниками
+          href: how-to-manage-twin.md
+        - name: Управление графом двойника со связями
+          href: how-to-manage-graph.md
+        - name: Интерпретация данных о событиях
+          href: how-to-interpret-event-data.md
+        - name: Настройка функции Azure для обработки данных
+          href: how-to-create-azure-function.md
+        - name: Запрос данных о графе двойника
+          href: how-to-query-graph.md
+    - name: Входные данные подключения
+      items:
+        - name: Прием данных телеметрии из Центра Интернета вещей
+          href: how-to-ingest-iot-hub-data.md
+    - name: Выходные данные подключения
+      items:
+        - name: Управление конечными точками и маршрутами
+          href: how-to-manage-routes.md
+        - name: Интеграция с Azure Maps
+          href: how-to-integrate-maps.md
+- name: Справочник
+  items:
+    - name: Ограничения службы Digital Twins
+      href: reference-service-limits.md
+    - name: API и SDK
+      items:
+        - name: Уровень управления
+          items:
+            - name: Swagger
+              href: 'https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins'
+            - name: "Пакет SDK для .NET (C#)\_— NuGet"
+              href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.DigitalTwins/1.0.0-preview.1'
+            - name: "Пакет SDK для .NET ( C# )\_— источник"
+              href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Microsoft.Azure.Management.DigitalTwins'
+            - name: Пакет SDK для Python
+              href: 'https://pypi.org/project/azure-mgmt-digitaltwins/'
+            - name: "Пакет SDK для Python\_— источник"
+              href: 'https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/digitaltwins/azure-mgmt-digitaltwins'
+            - name: "Пакет SDK для Go\_— источник"
+              href: 'https://github.com/Azure/azure-sdk-for-go/tree/master/services/preview/digitaltwins/mgmt/2020-03-01-preview/digitaltwins'
+        - name: Плоскость данных
+          items:
+            - name: Справочник по REST API
+              href: 'https://docs.microsoft.com/rest/api/azure-digitaltwins/'
+            - name: Swagger
+              href: 'https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/data-plane/Microsoft.DigitalTwins'
+            - name: "Пакет SDK для .NET (C#)\_— справка"
+              href: 'https://docs.microsoft.com/dotnet/api/overview/azure/digitaltwins?view=azure-dotnet-preview'
+            - name: "Пакет SDK для .NET (C#)\_— NuGet"
+              href: 'https://www.nuget.org/packages/Azure.DigitalTwins.Core'
+            - name: "Пакет SDK для .NET (C#)\_— источник"
+              href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core'
+    - name: DTDL
+      items:
+        - name: "Спецификация DTDL версии\_2"
+          href: 'https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md'
+        - name: Расширение DTDL для VS Code
+          href: 'https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-dtdl'
+        - name: "Библиотека средства синтаксического анализа DTDL\_— NuGet"
+          href: 'https://www.nuget.org/packages/Microsoft.Azure.DigitalTwins.Parser/'
+        - name: Пример проверяющего элемента управления DTDL
+          href: 'https://github.com/Azure-Samples/dtdl-validator'
+        - name: Спецификация DTMI
+          href: 'https://github.com/Azure/digital-twin-model-identifier'
+    - name: Инструменты Azure
+      items:
+        - name: Справочник по Azure CLI
+          href: /cli/azure/iot
+        - name: Расширение CLI для Azure IoT (справочник)
+          href: /cli/azure/ext/azure-iot/iot?view=azure-cli-latest
+        - name: Расширение CLI для Azure IoT (выпуски)
+          href: 'https://github.com/Azure/azure-iot-cli-extension/releases'
+        - name: Azure Cloud Shell
+          href: 'https://shell.azure.com'
+        - name: Azure PowerShell
+          href: /powershell/module/az.iothub#iot
+        - name: Портал Azure
+          href: 'https://portal.azure.com'
+    - name: Документация по Azure RBAC
+      href: /azure/role-based-access-control/overview
+- name: Ресурсы
+  items:
+    - name: Возможности получения поддержки и справки
+      href: /azure/iot-fundamentals/iot-support-help
+    - name: Истории клиентов
+      href: 'https://customers.microsoft.com/en-us/search?sq=%22Azure%20Digital%20Twins%22&ff=&p=0&so=story_publish_date%20desc'
+    - name: Видео на Channel 9
+      href: 'https://channel9.msdn.com/Search?term=%22Azure%20Digital%20Twins%22'
+    - name: Запросы данных клиентов
+      href: resources-customer-data-requests.md
+    - name: Цены и доступность
+      items:
+        - name: Цены
+          href: 'https://azure.microsoft.com/pricing/details/digital-twins'
+        - name: Регионы и доступность
+          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins'
+- name: Сопутствующие материалы
+  items:
+    - name: Решения
+      items:
+        - name: Акселераторы решений для Интернета вещей
+          href: /azure/iot-suite
+        - name: IoT Central
+          href: /azure/iot-central/core/overview-iot-central
+    - name: Службы платформы
+      items:
+        - name: Центр Интернета вещей
+          href: /azure/iot-hub
+        - name: IoT Plug and Play
+          href: /azure/iot-pnp
+        - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
+          href: /azure/iot-dps
+        - name: Maps
+          href: /azure/azure-maps
+        - name: Пакеты SDK службы
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
+        - name: Аналитика временных рядов
+          href: /azure/time-series-insights
+    - name: Решения с Edge
+      items:
+        - name: IoT Edge
+          href: /azure/iot-edge
+        - name: Пакеты SDK для устройств Интернета вещей
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks

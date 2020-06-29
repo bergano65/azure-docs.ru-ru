@@ -8,9 +8,13 @@
       href: lab-services-overview.md
 - name: Учебники
   items:
-    - name: 1. Настройка лаборатории
-      href: tutorial-create-custom-lab.md
-    - name: 2. Доступ к лаборатории
+    - name: Настройка лаборатории
+      items:
+        - name: Использование портала Azure
+          href: tutorial-create-custom-lab.md
+        - name: Использование шаблона Resource Manager
+          href: create-lab-windows-vm-template.md
+    - name: Доступ к лаборатории
       href: tutorial-use-custom-lab.md
 - name: Примеры
   items:
