@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: a6ac2fd0ef3414f5b9d7f6551628264b4724b037
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.openlocfilehash: a01d8568c50cca181ec10f91b316715d64d2c37e
+ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84234331"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84737841"
 ---
 # <a name="tutorial-create-a-host-pool-with-the-azure-portal"></a>Руководство по Создание пула узлов на портале Azure
 
@@ -111,7 +111,7 @@ ms.locfileid: "84234331"
 
     - Если вы выберете **Коллекция**, выберите один из рекомендуемых образов в раскрывающемся меню:
 
-      - Windows 10 Корпоративная с поддержкой нескольких сеансов, версия 1909, с Office 365 ProPlus (поколение 1);
+      - Windows 10 Корпоративная с поддержкой нескольких сеансов, версия 1909 и Приложения Microsoft 365 для предприятий (поколение 1);
       - Windows 10 Корпоративная с поддержкой нескольких сеансов, версия 1909 (поколение 1);
       - Windows Server 2019 Datacenter (поколение 1).
 

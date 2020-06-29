@@ -5,16 +5,16 @@ ms.subservice: B2C
 ms.topic: include
 ms.date: 10/16/2019
 ms.author: mimart
-ms.openlocfilehash: bbbc606497b53a0790d667a63b45101a3c18bbc4
-ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
+ms.openlocfilehash: 3ebe1ec4c0292a530e5ef2c754e9b002e931300e
+ms.sourcegitcommit: f01c2142af7e90679f4c6b60d03ea16b4abf1b97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84297499"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84680308"
 ---
-#### <a name="app-registrations-preview"></a>[Регистрация приложений (предварительная версия)](#tab/app-reg-preview/)
+#### <a name="app-registrations"></a>[Регистрация приложений](#tab/app-reg-ga/) 
 
-1. Выберите **Регистрация приложений (предварительная версия)** .
+1. Щелкните **Регистрация приложений**.
 1. Выберите приложение *webapi1*, чтобы открыть его страницу **Обзор**.
 1. В разделе **Управление** выберите **Предоставление API**.
 1. Рядом с полем **URI идентификатора приложения** щелкните ссылку **Задать**.
@@ -29,9 +29,9 @@ ms.locfileid: "84297499"
     1. **Отображаемое имя согласия администратора**: `Write access to demo API`
     1. **Описание согласия администратора**: `Allows write access to the demo API`
 
-#### <a name="applications"></a>[Приложения](#tab/applications/)
+#### <a name="applications-legacy"></a>[Приложения (прежние версии)](#tab/applications-legacy/)
 
-1. Выберите **Приложения**.
+1. Выберите **Приложения (прежние версии)** .
 1. Выберите приложение *webapi1*, чтобы открыть страницу его **свойств**.
 1. Выберите **Опубликованные области**. Опубликованные области можно использовать для предоставления клиентскому приложению определенных разрешений на доступ к веб-API.
 1. Для параметра **Область** введите `demo.read`, а для параметра **Описание** — `Read access to the web API`.

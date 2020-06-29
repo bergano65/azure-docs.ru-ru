@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 01/30/2020
 ms.topic: tutorial
-ms.openlocfilehash: 7901f12763cb97fa76c0908e76755247ae934a20
-ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
+ms.openlocfilehash: c05daa998829c4ac0687f75ae5678695127a50b0
+ms.sourcegitcommit: 5a8c8ac84c36859611158892422fc66395f808dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84300595"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84659916"
 ---
 # <a name="tutorial-setting-up-a-unity-project-from-scratch"></a>Руководство по Настройка проекта Unity с нуля
 
@@ -32,7 +32,7 @@ ms.locfileid: "84300595"
 * Данные учетной записи (идентификатор и ключ учетной записи, идентификатор подписки). Если у вас нет учетной записи, [создайте ее](../../how-tos/create-an-account.md).
 * Windows SDK 10.0.18362.0 [(скачать)](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
 * Последняя версия Visual Studio 2019 [(скачать)](https://visualstudio.microsoft.com/vs/older-downloads/). 
-* [Средства Visual Studio для службы "Смешанная реальность"](https://docs.microsoft.com/windows/mixed-reality/install-the-tools). В частности, следующие установки для *рабочей нагрузки* являются обязательными:
+* [Средства Visual Studio для службы "Смешанная реальность"](https://docs.microsoft.com/windows/mixed-reality/install-the-tools). В частности, обязательно установить следующие *рабочие нагрузки*:
   * **Разработка классических приложений на C++** .
   * **Разработка приложений для универсальной платформы Windows (UWP)** .
 * GIT [(скачать)](https://git-scm.com/downloads).
@@ -105,6 +105,7 @@ ms.locfileid: "84300595"
 
 1. Выберите *Edit > Project Settings* (Изменить > Параметры проекта).
 1. В списке слева выберите раздел Quality (Качество).
+1. Для параметра **Active Quality Level** (Активный уровень качества) выберите значение *Low* (Низкий).
 1. Измените настройки **Default Quality Level** (Уровень качества по умолчанию) на значение *Low* (Низкий).
 
     ![Изменение параметров качества в проекте](media/settings-quality.png)

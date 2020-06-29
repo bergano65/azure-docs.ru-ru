@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: tutorial
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: 1d71f4c5616efb05efe2733c49507b085ca2dcf6
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7bcf656b1fa0a73021a92113eb5879312d100823
+ms.sourcegitcommit: 9bfd94307c21d5a0c08fe675b566b1f67d0c642d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75426300"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84974506"
 ---
 # <a name="tutorial-write-a-c-user-defined-function-for-azure-stream-analytics-job-preview"></a>Руководство по написанию определяемой пользователем функции на C# для задания Azure Stream Analytics (предварительная версия)
 
@@ -32,7 +32,7 @@ ms.locfileid: "75426300"
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Установите [средства Stream Analytics для Visual Studio](stream-analytics-tools-for-visual-studio-install.md) и рабочие нагрузки **разработки Azure** или **службы хранения и обработки данных**.
-* Ознакомьтесь с существующим [руководством по разработке Stream Analytics для пограничных устройств], если вы создаете задание IoT Edge (stream-analytics-tools-for-visual-studio-edge-jobs.md).
+* Если вы создаете задание IoT Edge, ознакомьтесь со статьей [Разработка заданий Edge Stream Analytics с помощью средств Visual Studio](stream-analytics-tools-for-visual-studio-edge-jobs.md).
 
 ## <a name="create-a-container-in-your-azure-storage-account"></a>Создание контейнера в учетной записи хранения
 

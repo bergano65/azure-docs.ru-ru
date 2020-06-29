@@ -1,24 +1,24 @@
 ---
 title: Встроенные определения политик для Конфигурации приложений Azure
 description: Здесь приведены встроенные определения политик в Политике Azure для Конфигурации приложений Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 05/29/2020
+ms.date: 06/10/2020
 ms.topic: sample
 author: lisaguthrie
 ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.custom: subject-policy-samples
-ms.openlocfilehash: 26d82816aee95d5f9b67b80d58be53e21372ca90
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.openlocfilehash: f44c6a4577dbe07b148ce2750426763f4e7392ec
+ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84234826"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84886357"
 ---
-# <a name="azure-policy-built-in-policy-definitions-for-azure-app-configuration"></a>Встроенные определения политик в Политике Azure для Конфигурации приложений Azure
+# <a name="azure-policy-built-in-definitions-for-azure-app-configuration"></a>Встроенные определения в Политике Azure для Конфигурации приложений Azure
 
 Эта страница представляет собой индекс встроенных определений политик в [Политике Azure](../governance/policy/overview.md) для Конфигурации приложений Azure. Дополнительные встроенные компоненты Политики Azure для других служб см. в статье [Встроенные определения Политики Azure](../governance/policy/samples/built-in-policies.md).
 
-Имя каждого встроенного определения политики связано с определением политики на портале Azure. Перейдите по ссылке в столбце **GitHub**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
+Имя каждого встроенного определения политики связано с определением политики на портале Azure. Перейдите по ссылке в столбце **Версия**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
 
 ## <a name="azure-app-configuration"></a>Конфигурация приложений Azure
 

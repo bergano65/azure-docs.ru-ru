@@ -1,6 +1,6 @@
 ---
-title: Руководство по подключению SQL по запросу (предварительной версии) к Power BI Desktop и созданию отчета
-description: В этом учебнике описано, как подключить SQL по запросу (предварительной версии) в Azure Synapse Analytics к Power BI Desktop и создать демонстрационный отчет на основе представления.
+title: Руководство по подключению SQL по запросу к Power BI Desktop и созданию отчета
+description: В этом руководстве описано, как подключить SQL по запросу в Azure Synapse Analytics к Power BI Desktop и создать демонстрационный отчет на основе представления.
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,14 +9,14 @@ ms.subservice: ''
 ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 1b71e8108ecab0f6d420e404bd602a900ebfcfb2
-ms.sourcegitcommit: 223cea58a527270fe60f5e2235f4146aea27af32
+ms.openlocfilehash: 3f32dc14163df6694c69258be365fcbb1390c926
+ms.sourcegitcommit: 5a8c8ac84c36859611158892422fc66395f808dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84258289"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84660229"
 ---
-# <a name="tutorial-use-sql-on-demand-preview-with-power-bi-desktop--create-a-report"></a>Руководство по Использование SQL по запросу (предварительная версия) с Power BI Desktop и создание отчета
+# <a name="tutorial-use-sql-on-demand-with-power-bi-desktop--create-a-report"></a>Руководство по использованию SQL по запросу с Power BI Desktop и созданию отчета
 
 В этом руководстве описано следующее:
 

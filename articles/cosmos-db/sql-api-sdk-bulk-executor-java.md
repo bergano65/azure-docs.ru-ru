@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: reference
 ms.date: 05/11/2020
 ms.author: anfeldma
-ms.openlocfilehash: 6fe075d2679ec13217200bc8b0da132e8f4d9b57
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: c826b9f813c30a50d8b88b2cca1b188c328465b0
+ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83660443"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84171656"
 ---
 # <a name="java-bulk-executor-library-download-information"></a>Библиотека Bulk Executor для Java: информация о скачивании
 
@@ -23,8 +23,8 @@ ms.locfileid: "83660443"
 > * [.NET Core](sql-api-sdk-dotnet-core.md)
 > * [Node.js](sql-api-sdk-node.md)
 > * [Пакет SDK для Java версии 4](sql-api-sdk-java-v4.md)
-> * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
-> * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
+> * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
+> * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
 > * [Python](sql-api-sdk-python.md)
 > * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
@@ -43,23 +43,23 @@ ms.locfileid: "83660443"
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
-### <a name="2100"></a><a name="2.10.0"/>2.10.0
+### <a name="2100"></a><a name="2.10.0"></a>2.10.0
 
 * Внесено исправление для DocumentAnalyzer.java, чтобы значения ключей вложенных разделов правильно извлекались из JSON.
 
-### <a name="294"></a><a name="2.9.4"/>2.9.4
+### <a name="294"></a><a name="2.9.4"></a>2.9.4
 
 * Добавлены дополнительные функции BulkDelete для повторного выполнения операции в случае конкретных сбоев, а также для получения пользователем списка сбоев операций, которые можно повторить.
 
-### <a name="293"></a><a name="2.9.3"/>2.9.3
+### <a name="293"></a><a name="2.9.3"></a>2.9.3
 
 * Обновление для пакета SDK для Cosmos версии 2.4.7.
 
-### <a name="292"></a><a name="2.9.2"/>2.9.2
+### <a name="292"></a><a name="2.9.2"></a>2.9.2
 
 * Исправлена работа функции mergeAll, чтобы продолжить выполнение операции на основе идентификатора и значения ключа раздела, чтобы все обновляемые свойства документа, которые расположены после id и значения ключа раздела, добавлялись в список обновленных элементов.
 
-### <a name="291"></a><a name="2.9.1"/>2.9.1
+### <a name="291"></a><a name="2.9.1"></a>2.9.1
 
 * Обновлена начальная степень параллелизма до значения 1 и добавлены журналы отладки для мини-пакета.
 

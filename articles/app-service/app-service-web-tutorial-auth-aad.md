@@ -6,12 +6,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 04/29/2020
 ms.custom: seodec18
-ms.openlocfilehash: b95d5d6eb52806e5b43a495b875d30846297c465
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.openlocfilehash: 05cad67290b7f89c127d4417e7b89c48279605d9
+ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82592440"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84886162"
 ---
 # <a name="tutorial-authenticate-and-authorize-users-end-to-end-in-azure-app-service"></a>Руководство по Сквозная проверка подлинности и авторизации в Службе приложений Azure
 
@@ -79,7 +79,7 @@ dotnet run
 
 ### <a name="create-azure-resources"></a>Создание ресурсов Azure
 
-В Cloud Shell введите следующие команды, чтобы создать два веб-приложения: Замените _\<front-end-app-name>_ и _\<back-end-app-name>_ на два глобально уникальных имени приложений (допустимые символы — `a-z`, `0-9` и `-`). Дополнительные сведения о каждой команде см. в статье [Размещение API-интерфейсов RESTful с поддержкой CORS в службе приложений Azure](app-service-web-tutorial-rest-api.md).
+В Cloud Shell введите следующие команды, чтобы создать два веб-приложения: Замените _\<front-end-app-name>_ и _\<back-end-app-name>`-` двумя глобально уникальными именами приложений (допустимые символы:_ , `a-z` и `0-9`). Дополнительные сведения о каждой команде см. в статье [Размещение API-интерфейсов RESTful с поддержкой CORS в службе приложений Azure](app-service-web-tutorial-rest-api.md).
 
 ```azurecli-interactive
 az group create --name myAuthResourceGroup --location "West Europe"
@@ -94,14 +94,14 @@ az webapp create --resource-group myAuthResourceGroup --plan myAuthAppServicePla
 
 ### <a name="push-to-azure-from-git"></a>Публикация в Azure из Git
 
-В _окне терминала на локальном компьютере_ выполните следующие команды Git, чтобы выполнить развертывание в серверное приложение. Замените _\<deploymentLocalGitUrl-of-back-end-app>_ URL-адресом удаленного репозитория Git, который вы сохранили при [создании ресурсов Azure](#create-azure-resources). При появлении запроса на ввод учетных данных в диспетчере учетных данных Git введите [учетные данные развертывания](deploy-configure-credentials.md) (а не используемые для входа на портал Azure).
+В _окне терминала на локальном компьютере_ выполните следующие команды Git, чтобы выполнить развертывание в серверное приложение. Замените _\<deploymentLocalGitUrl-of-back-end-app>_ URL-адресом удаленного репозитория Git, который вы сохранили на этапе [создания ресурсов Azure](#create-azure-resources). При появлении запроса на ввод учетных данных в диспетчере учетных данных Git введите [учетные данные развертывания](deploy-configure-credentials.md) (а не используемые для входа на портал Azure).
 
 ```bash
 git remote add backend <deploymentLocalGitUrl-of-back-end-app>
 git push backend master
 ```
 
-В окне терминала на локальном компьютере выполните следующие команды Git, чтобы выполнить развертывание аналогичного кода в интерфейсное приложение. Замените _\<deploymentLocalGitUrl-of-front-end-app>_ URL-адресом удаленного репозитория Git, который вы сохранили при [создании ресурсов Azure](#create-azure-resources).
+В окне терминала на локальном компьютере выполните следующие команды Git, чтобы выполнить развертывание аналогичного кода в интерфейсное приложение. Замените _\<deploymentLocalGitUrl-of-front-end-app>_ URL-адресом удаленного репозитория Git, который вы сохранили на этапе [создания ресурсов Azure](#create-azure-resources).
 
 ```bash
 git remote add frontend <deploymentLocalGitUrl-of-front-end-app>
@@ -130,7 +130,7 @@ http://<front-end-app-name>.azurewebsites.net
 
 ### <a name="modify-front-end-code"></a>Изменение интерфейсного кода
 
-В локальном репозитории откройте _Controllers/TodoController.cs_. В начале класса `TodoController` добавьте следующие строки и замените _\<back-end-app-name>_ именем своего серверного приложения:
+В локальном репозитории откройте _Controllers/TodoController.cs_. В начале класса `TodoController` добавьте следующие строки и замените _\<back-end-app-name>_ именем вашего внутреннего приложения.
 
 ```cs
 private static readonly HttpClient _client = new HttpClient();
@@ -268,7 +268,7 @@ Azure Active Directory используется в качестве постав
 
 Теперь интерфейсное приложение имеет необходимые разрешения для доступа к серверному приложению в качестве вошедшего в систему пользователя. На этом шаге настройте проверку подлинности и авторизацию в службе приложений, чтобы получить доступный маркер доступа для доступа к серверной части. Для этого шага вам понадобится идентификатор клиента серверного приложения, который вы скопировали на шаге [Включение проверки подлинности и авторизации в серверном приложении](#enable-authentication-and-authorization-for-back-end-app).
 
-В левом меню интерфейсного приложения в разделе **Средства разработки** выберите **Обозреватель ресурсов**, а затем — **Перейти**.
+Перейдите к [обозревателю ресурсов Azure](https://resources.azure.com) и с помощью дерева ресурсов найдите интерфейсное веб-приложение.
 
 Теперь [обозреватель ресурсов Azure](https://resources.azure.com) открывается с помощью интерфейсного приложения, выбранного в дереве ресурсов. В верхней части страницы щелкните **Чтение и запись**, чтобы внести изменения в обозревателе ресурсов Azure.
 

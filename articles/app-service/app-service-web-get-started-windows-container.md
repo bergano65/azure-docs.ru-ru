@@ -4,12 +4,12 @@ description: Разверните первый настраиваемый кон
 ms.topic: quickstart
 ms.date: 08/30/2019
 ms.custom: mvc, seodec18
-ms.openlocfilehash: cd6b78e5fd824cc013cc946d23677237923f485e
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 44ade8b0b218f028cf6f211e37824ffc43a191ac
+ms.sourcegitcommit: bc943dc048d9ab98caf4706b022eb5c6421ec459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80047108"
+ms.lasthandoff: 06/14/2020
+ms.locfileid: "84764083"
 ---
 # <a name="run-a-custom-windows-container-in-azure-preview"></a>Запуск пользовательского контейнера Windows в Azure (предварительная версия)
 
@@ -37,7 +37,7 @@ ms.locfileid: "80047108"
 
 1. В окне **Создание нового проекта** найдите и выберите **Веб-приложение ASP.NET (.NET Framework)** для C#, а затем нажмите кнопку **Далее**.
 
-1. В окне **Настройка проекта** присвойте приложению имя _myFirstAzureWebApp_ и щелкните **Создать**.
+1. В окне **Настроить новый проект** присвойте приложению имя _myfirstazurewebapp_ и щелкните **Создать**.
 
    ![Настройка проекта веб-приложения](./media/app-service-web-get-started-windows-container/configure-web-app-project-container.png)
 
@@ -61,7 +61,7 @@ ms.locfileid: "80047108"
 
 ## <a name="publish-to-docker-hub"></a>Публикация на сайте Docker Hub
 
-1. Щелкните правой кнопкой мыши проект **myFirstAzureWebApp** в **обозревателе решений** и выберите **Опубликовать**.
+1. Щелкните правой кнопкой мыши проект **myfirstazurewebapp** в **обозревателе решений** и выберите **Опубликовать**.
 
 1. Выберите **Служба приложений** и щелкните **Опубликовать**.
 
@@ -121,7 +121,7 @@ ms.locfileid: "80047108"
 
 ## <a name="see-container-start-up-logs"></a>Просмотр журналов запуска контейнера
 
-Загрузка контейнера Windows может занять некоторое время. Чтобы просмотреть ход выполнения, перейдите по следующему URL-адресу, указав вместо *\<app_name >* имя приложения.
+Загрузка контейнера Windows может занять некоторое время. Чтобы просмотреть ход выполнения, перейдите по следующему URL-адресу, заменив *\<app_name>* именем приложения.
 ```
 https://<app_name>.scm.azurewebsites.net/api/logstream
 ```
@@ -149,7 +149,7 @@ https://<app_name>.scm.azurewebsites.net/api/logstream
    </div>
    ```
 
-1. Чтобы выполнить повторное развертывание в Azure, щелкните правой кнопкой мыши проект **myFirstAzureWebApp** в **обозревателе решений**, а затем выберите **Опубликовать**.
+1. Чтобы выполнить повторное развертывание в Azure, щелкните правой кнопкой мыши проект **myfirstazurewebapp** в **обозревателе решений** и выберите **Опубликовать**.
 
 1. На странице публикации выберите **Опубликовать** и дождитесь завершения публикации.
 

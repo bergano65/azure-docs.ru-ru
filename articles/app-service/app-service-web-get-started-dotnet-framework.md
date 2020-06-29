@@ -5,12 +5,12 @@ ms.assetid: 04a1becf-7756-4d4e-92d8-d9471c263d23
 ms.topic: quickstart
 ms.date: 04/21/2020
 ms.custom: mvc, devcenter, seodec18
-ms.openlocfilehash: 056c96807fed7d5acca85635440c8fe4d989c933
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.openlocfilehash: 0119128ea05a55ff752a6eb47b7fd9df4d719040
+ms.sourcegitcommit: 34eb5e4d303800d3b31b00b361523ccd9eeff0ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82592403"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84906349"
 ---
 # <a name="create-an-aspnet-framework-web-app-in-azure"></a>Создание веб-приложения ASP.NET Framework в Azure
 
@@ -84,7 +84,7 @@ ms.locfileid: "82592403"
    |-|-|-|
    | План размещения| myAppServicePlan | Имя плана службы приложений. |
    | Расположение | Западная Европа | Центр обработки данных, где размещается веб-приложение. |
-   | Размер | Free | [Ценовая категория](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) определяет возможности размещения. |
+   | Размер | Бесплатный | [Ценовая категория](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) определяет возможности размещения. |
 
    ![Создание плана службы приложений](./media/app-service-web-get-started-dotnet-framework/app-service-plan-framework-vs2019.png)
 
@@ -145,3 +145,6 @@ ms.locfileid: "82592403"
 
 > [!div class="nextstepaction"]
 > [Создание приложения ASP.NET в Azure с подключением к базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md)
+
+> [!div class="nextstepaction"]
+> [Настройка приложения ASP.NET](configure-language-dotnet-framework.md)

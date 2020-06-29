@@ -1,14 +1,14 @@
 ---
 title: Руководство по Создание определения пользовательской политики
 description: В рамках этого учебника вы создадите определение пользовательской политики для Политики Azure, чтобы применять пользовательские бизнес-правила для ресурсов Azure.
-ms.date: 05/20/2020
+ms.date: 06/16/2020
 ms.topic: tutorial
-ms.openlocfilehash: 4d91ae589adbadb7d03e318dc20d6b2b78a84a18
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: f8702e84923762b2f417eee882a473228d6bafb8
+ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83683243"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84888158"
 ---
 # <a name="tutorial-create-a-custom-policy-definition"></a>Руководство по Создание определения пользовательской политики
 
@@ -171,6 +171,9 @@ ms.locfileid: "83683243"
 ### <a name="get-aliases-in-vs-code-extension"></a>Получение псевдонимов в расширении VS Code
 
 Расширение Политики Azure для расширения VS Code позволяет легко просматривать ресурсы и [обнаруживать псевдонимы](../how-to/extension-for-vscode.md#discover-aliases-for-resource-properties).
+
+> [!NOTE]
+> Расширение VS Code предоставляет только свойства режима диспетчера ресурсов и не отображает свойств [режима поставщика ресурсов](../concepts/definition-structure.md#mode).
 
 ### <a name="azure-cli"></a>Azure CLI
 

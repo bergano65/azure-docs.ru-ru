@@ -11,17 +11,16 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 10/18/2019
+ms.date: 06/09/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dfc38f63c5b6361122c236543320b91d22faa70a
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 01c239c30b24ad110d71c43b31448a0f5b29574b
+ms.sourcegitcommit: bc943dc048d9ab98caf4706b022eb5c6421ec459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "72595050"
+ms.lasthandoff: 06/14/2020
+ms.locfileid: "84762554"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-bluejeans-for-azure-ad"></a>Руководство по интеграции единого входа Azure Active Directory с BlueJeans для Azure AD
 
@@ -88,10 +87,25 @@ ms.locfileid: "72595050"
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<companyname>.bluejeans.com`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.bluejeans.com`.
+
+    а. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `http://samlsp.bluejeans.com`
+
+    а. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://bluejeans.com/sso/saml2/`
 
     > [!NOTE]
-    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [группу поддержки BlueJeans для Azure AD](https://support.bluejeans.com/contact). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [группу поддержки BlueJeans для Azure AD](https://support.bluejeans.com/contact). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+
+1. Приложение BlueJeans ожидает проверочные утверждения SAML в определенном формате, который требует добавить сопоставление настраиваемых атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
+
+    ![Изображение](common/default-attributes.png)
+
+1. В дополнение к описанному выше приложение BlueJeans ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
+
+    | Имя |  Исходный атрибут|
+    | ---------| --------- |
+    | Номер телефона | user.telephonenumber |
+    | title | user.jobtitle |
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
@@ -228,4 +242,3 @@ ms.locfileid: "72595050"
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Попробуйте использовать BlueJeans для Azure AD с Azure AD](https://aad.portal.azure.com/)
-

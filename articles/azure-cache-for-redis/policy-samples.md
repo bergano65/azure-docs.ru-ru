@@ -1,24 +1,24 @@
 ---
 title: Встроенные определения политик для Кэша Azure для Redis
 description: Здесь приведены встроенные определения политик в Политике Azure для Кэша Azure для Redis. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 05/29/2020
+ms.date: 06/10/2020
 ms.topic: sample
 author: yegu-ms
 ms.author: yegu
 ms.service: cache
 ms.custom: subject-policy-samples
-ms.openlocfilehash: 103874e8a2af825bed060ac5af512498dab7160e
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.openlocfilehash: a54dfc87937bdeb438b0a84c6385d3876946c546
+ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84230854"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84883869"
 ---
-# <a name="azure-policy-built-in-policy-definitions-for-azure-cache-for-redis"></a>Встроенные определения политик в Политике Azure для Кэша Azure для Redis
+# <a name="azure-policy-built-in-definitions-for-azure-cache-for-redis"></a>Встроенные определения в Политике Azure для Кэша Azure для Redis
 
 Эта страница представляет собой индекс встроенных определений политик в [Политике Azure](../governance/policy/overview.md) для Кэша Azure для Redis. Дополнительные встроенные компоненты Политики Azure для других служб см. в статье [Встроенные определения Политики Azure](../governance/policy/samples/built-in-policies.md).
 
-Имя каждого встроенного определения политики связано с определением политики на портале Azure. Перейдите по ссылке в столбце **GitHub**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
+Имя каждого встроенного определения политики связано с определением политики на портале Azure. Перейдите по ссылке в столбце **Версия**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
 
 ## <a name="azure-cache-for-redis"></a>Кэш Redis для Azure
 

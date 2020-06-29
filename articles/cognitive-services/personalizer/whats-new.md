@@ -58,7 +58,7 @@ ms.locfileid: "84700640"
 
 [Объявление об обновлениях Azure для Cognitive Services](https://azure.microsoft.com/updates/?product=cognitive-services)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство. создание цикла обратной связи на языке C #](csharp-quickstart-commandline-feedback-loop.md)
 * [Использование интерактивной демонстрации](https://personalizationdemo.azurewebsites.net/)

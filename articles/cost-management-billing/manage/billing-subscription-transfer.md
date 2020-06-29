@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8f259ba9c7da3d7c37ed3eb63c63d17b74f7fbdd
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 633f406d042ce5b8ddde5b28022bdb33fdd70377
+ms.sourcegitcommit: ff19f4ecaff33a414c0fa2d4c92542d6e91332f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83745849"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85052158"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Передача прав владения на выставление счетов для подписки Azure другой учетной записи
 
@@ -100,7 +100,7 @@ ms.locfileid: "83745849"
 
 ## <a name="supported-subscription-types"></a>Поддерживаемые типы подписок
 
-Передача подписки на портале Azure доступна только для перечисленных ниже типов подписок. В настоящее время перенос подписки [бесплатной пробной версии](https://azure.microsoft.com/offers/ms-azr-0044p/) или [Azure с открытой лицензией (AIO)](https://azure.microsoft.com/offers/ms-azr-0111p/) не поддерживается. Сведения об обходном решении см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../../azure-resource-manager/management/move-resource-group-and-subscription.md). Чтобы перенести другие подписки (например, [спонсорское предложение](https://azure.microsoft.com/offers/ms-azr-0036p/) или планы поддержки), [обратитесь в службу поддержки Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+Передача подписки на портале Azure доступна только для перечисленных ниже типов подписок. В настоящее время перенос подписки [бесплатной пробной версии](https://azure.microsoft.com/offers/ms-azr-0044p/) или [Azure с открытой лицензией (AIO)](https://azure.microsoft.com/offers/ms-azr-0111p/) не поддерживается. Сведения об обходном решении см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../../azure-resource-manager/management/move-resource-group-and-subscription.md). Чтобы перенести другие подписки (например, планы поддержки), обратитесь в [службу поддержки Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
 - [Соглашение Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/)\*
 - [Microsoft Partner Network](https://azure.microsoft.com/offers/ms-azr-0025p/)  

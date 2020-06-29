@@ -11,17 +11,16 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 11/28/2019
+ms.date: 01/03/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 042dd242285081001ca48c9f17e4d42c2294c0ff
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: bb9135873b61abf5a5ebd0d9c4d7f52ae314ee12
+ms.sourcegitcommit: f01c2142af7e90679f4c6b60d03ea16b4abf1b97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74979140"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84675383"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-akamai"></a>Руководство по интеграции единого входа Azure Active Directory с Akamai
 
@@ -32,6 +31,61 @@ ms.locfileid: "74979140"
 * Централизованное управление учетными записями через портал Azure.
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+
+Интеграция Azure Active Directory c Akamai Enterprise Application Access обеспечивает простой доступ к устаревшим приложениям, размещенным в облаке или локально. Для доступа к устаревшим приложениям без их изменения или установки агентов в интегрированном решении используются все преимущества современных возможностей Azure Active Directory, в том числе [условный доступ в Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal), [Защита идентификации Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection) и [Azure AD Identity Governance](https://docs.microsoft.com/azure/active-directory/governance/identity-governance-overview).
+
+На рисунке ниже показано место, которое Akamai ЕАА занимает в более обширном гибридном сценарии безопасного доступа.
+
+![Место Akamai ЕАА в более обширном гибридном сценарии безопасного доступа](./media/header-akamai-tutorial/introduction01.png)
+
+### <a name="key-authentication-scenarios"></a>Сценарии проверки подлинности с использованием ключа
+
+Помимо встроенной поддержки интеграции с Azure Active Directory для современных протоколов проверки подлинности, таких как Open ID Connect, SAML и WS-Fed, Akamai EAA обеспечивает для приложений с устаревшей проверкой подлинности безопасный внутренний и внешний доступ с помощью Azure AD, что позволяет использовать для них современные сценарии (например, доступ без пароля). В том числе:
+
+* приложения с проверкой подлинности на основе заголовков;
+* Удаленный рабочий стол
+* SSH (Secure Shell);
+* приложения с проверкой подлинности Kerberos;
+* VNC (Virtual Network Computing);
+* приложения с анонимной проверкой подлинности или без встроенной проверки подлинности;
+* приложения с проверкой подлинности NTLM (защита с двойным подтверждением для пользователя);
+* приложение на основе форм (защита с двойным подтверждением для пользователя).
+
+### <a name="integration-scenarios"></a>Сценарии интеграции
+
+Партнерство между корпорацией Майкрософт и компанией Akamai в отношении решения ЕАА обеспечивает гибкие возможности для соблюдения бизнес-требований благодаря поддержке нескольких сценариев интеграции в зависимости от потребностей организации. С их помощью можно предоставить недостающие компоненты для всех приложений, а также постепенно классифицировать их и настроить соответствующие классификации политик.
+
+#### <a name="integration-scenario-1"></a>Сценарий интеграции 1
+
+Akamai ЕАА настраивается в Azure AD как единое приложение. Администратор может настроить Политику ЦС для приложения, а при выполнении соответствующих условий пользователи могут получить доступ к порталу Akamai ЕАА.
+
+**Преимущества**.
+
+• Достаточно один раз настроить поставщик удостоверений.
+
+**Недостатки**.
+
+• Пользователи в итоге получают два портала приложений.
+
+• Для всех приложений применяется одна общая Политика ЦС.
+
+![Сценарий интеграции 1](./media/header-akamai-tutorial/scenario1.png)
+
+#### <a name="integration-scenario-2"></a>Сценарий интеграции 2
+
+Приложение Akamai ЕАА настраивается отдельно на портале Azure AD. Администратор может настроить отдельные Политики ЦС для приложений, а при выполнении соответствующих условий пользователи могут напрямую перенаправляться к конкретному приложению.
+
+**Преимущества**.
+
+• Можно определить отдельные Политики ЦС.
+
+• Все приложения представлены в меню запуска приложений O365 и на панели myApps.microsoft.com.
+
+**Недостатки**.
+
+• Необходимо настроить несколько поставщиков удостоверений.
+
+![Сценарий интеграции 2](./media/header-akamai-tutorial/scenario2.png)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -45,6 +99,12 @@ ms.locfileid: "74979140"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 - Akamai поддерживает единый вход, инициированный поставщиком удостоверений.
+
+#### <a name="important"></a>Важно!
+
+Все перечисленные ниже настройки одинаковы для сценариев интеграции **1** и **2**. Для **сценария интеграции 2** необходимо настроить отдельный поставщик удостоверений в Akamai ЕАА, а значение свойства "URL-адрес" необходимо изменить на URL-адрес приложения.
+
+![Важно!](./media/header-akamai-tutorial/important.png)
 
 ## <a name="adding-akamai-from-the-gallery"></a>Добавление Akamai из коллекции
 
@@ -67,6 +127,11 @@ ms.locfileid: "74979140"
     * **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Akamai](#configure-akamai-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    * **[Настройка поставщика удостоверений](#setting-up-idp)**
+    * **[Проверка подлинности на основе заголовков](#header-based-authentication)**
+    * **[Удаленный рабочий стол](#remote-desktop)**
+    * **[SSH](#ssh)**
+    * **[Проверка подлинности Kerberos](#kerberos-authentication)**
     * **[Создание тестового пользователя в Akamai](#create-akamai-test-user)** нужно для того, чтобы в Akamai существовал пользователь B.Simon, связанный с представлением этого же пользователя в Azure AD.
 1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
@@ -82,9 +147,9 @@ ms.locfileid: "74979140"
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<Yourapp>.login.go.akamai-access.com/sp/response`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<Yourapp>.login.go.akamai-access.com/saml/sp/response`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https:// <Yourapp>.login.go.akamai-access.com/sp/response`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https:// <Yourapp>.login.go.akamai-access.com/saml/sp/response`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Akamai](https://www.akamai.com/us/en/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -131,17 +196,19 @@ ms.locfileid: "74979140"
 
 ### <a name="setting-up-idp"></a>Настройка IDP
 
-1. Войдите в консоль **доступа к корпоративному приложению Akamai**.
-1. В **консоли Akamai ЕАА** выберите **Identity** > **Identity Providers** (Удостоверение > Поставщики удостоверений).
+**Конфигурация поставщика удостоверений Akamai ЕАА**
+
+1. Войдите в консоль **Akamai Enterprise Application Access**.
+1. В **консоли Akamai ЕАА** выберите **Identity** > **Identity Providers** (Удостоверение > Поставщики удостоверений) и щелкните **Add Identity Provider** (Добавить поставщик удостоверений).
 
     ![Настройка Akamai](./media/header-akamai-tutorial/configure01.png)
 
-1. Щелкните **Add Identity Provider** (Добавить поставщика удостоверений).
+1. В разделе **Create New Identity Provider** (Создание поставщика удостоверений) выполните следующие действия.
 
     ![Настройка Akamai](./media/header-akamai-tutorial/configure02.png)
 
     а. Укажите уникальное имя в **Name** (Имя).
-    
+
     b. Выберите **Third Party SAML** (SAML стороннего производителя) и щелкните **Create Identity Provider and Configure** (Создать и настроить поставщик удостоверений).
 
 ### <a name="general-settings"></a>Общие параметры
@@ -165,6 +232,38 @@ ms.locfileid: "74979140"
 
     ![Настройка Akamai](./media/header-akamai-tutorial/configure04.png)
 
+### <a name="session-settings"></a>Параметры сеанса
+
+Оставьте параметры по умолчанию без изменений.
+
+![Настройка Akamai](./media/header-akamai-tutorial/sessionsettings.png)
+
+### <a name="directories"></a>Каталоги
+
+Пропустите настройку каталога.
+
+![Настройка Akamai](./media/header-akamai-tutorial/directories.png)
+
+### <a name="customization-ui"></a>Пользовательский интерфейс настройки
+
+Поставщик удостоверений можно настроить.
+
+![Настройка Akamai](./media/header-akamai-tutorial/customizationui.png)
+
+### <a name="advanced-settings"></a>Дополнительные параметры
+
+Пропустите настройку дополнительных параметров. Дополнительные сведения см. в документации Akamai.
+
+![Настройка Akamai](./media/header-akamai-tutorial/advancesettings.png)
+
+### <a name="deployment"></a>Развертывание
+
+1. Щелкните Deploy Identity Provider (Развернуть поставщик удостоверений).
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/deployment.png)
+
+2. Проверьте успешность развертывания.
+
 ### <a name="header-based-authentication"></a>Проверка подлинности на основе заголовков
 
 Проверка подлинности Akamai на основе заголовков
@@ -172,6 +271,8 @@ ms.locfileid: "74979140"
 1. Выберите вариант **Custom HTTP** (Настраиваемый HTTP) в мастере добавления приложений.
 
     ![Настройка Akamai](./media/header-akamai-tutorial/configure05.png)
+
+2. Заполните поля **Application Name** (Имя приложения) и **Description** (Описание).
 
     ![Настройка Akamai](./media/header-akamai-tutorial/configure06.png)
 
@@ -181,13 +282,17 @@ ms.locfileid: "74979140"
 
 #### <a name="authentication"></a>Аутентификация
 
-![Настройка Akamai](./media/header-akamai-tutorial/configure09.png)
+1. Перейдите на вкладку **Authentication** (Проверка подлинности).
 
-![Настройка Akamai](./media/header-akamai-tutorial/configure10.png)
+    ![Настройка Akamai](./media/header-akamai-tutorial/configure09.png)
+
+2. Назначьте **поставщик удостоверений**.
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/configure10.png)
 
 #### <a name="services"></a>Службы
 
-1. Щелкните "Save and Go to Authentication" (Сохранить и перейти к проверке подлинности).
+Щелкните "Save and Go to Authentication" (Сохранить и перейти к проверке подлинности).
 
 ![Настройка Akamai](./media/header-akamai-tutorial/configure11.png)
 
@@ -211,13 +316,25 @@ ms.locfileid: "74979140"
 
     ![Настройка Akamai](./media/header-akamai-tutorial/configure15.png)
 
-### <a name="kerberos-authentication"></a>Проверка подлинности Kerberos
+1. Проверьте взаимодействие с пользователем.
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/enduser01.png)
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/enduser02.png)
+
+1. Проверьте условный доступ.
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess01.png)
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess02.png)
 
 #### <a name="remote-desktop"></a>Удаленный рабочий стол
 
 1. Выберите вариант **RDP** в мастере добавления приложений.
 
     ![Настройка Akamai](./media/header-akamai-tutorial/configure16.png)
+
+1. Заполните поля **Application Name** (Имя приложения) и **Description** (Описание).
 
     ![Настройка Akamai](./media/header-akamai-tutorial/configure17.png)
 
@@ -241,21 +358,37 @@ ms.locfileid: "74979140"
 
 #### <a name="advanced-settings"></a>Дополнительные параметры
 
-Щелкните **Save and go to Deployment** (Завершить и перейти к развертыванию).
+1. Щелкните **Save and go to Deployment** (Завершить и перейти к развертыванию).
 
-![Настройка Akamai](./media/header-akamai-tutorial/configure22.png)
+    ![Настройка Akamai](./media/header-akamai-tutorial/configure22.png)
 
-![Настройка Akamai](./media/header-akamai-tutorial/configure23.png)
+    ![Настройка Akamai](./media/header-akamai-tutorial/configure23.png)
 
-![Настройка Akamai](./media/header-akamai-tutorial/configure24.png)
+    ![Настройка Akamai](./media/header-akamai-tutorial/configure24.png)
 
-### <a name="deployment"></a>Развертывание
+1. Проверьте взаимодействие с пользователем.
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/enduser03.png)
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/enduser02.png)
+
+1. Условный доступ
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess04.png)
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess05.png)
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess06.png)
+
+1. Кроме того, можно непосредственно ввести URL-адрес приложения для работы по протоколу RDP.
 
 #### <a name="ssh"></a>SSH
 
-1. Перейдите к разделу "Add Applications" (Добавление приложений) и выберите **SSH**.
+1. Перейдите к разделу Add Applications (Добавление приложений) и выберите **SSH**.
 
     ![Настройка Akamai](./media/header-akamai-tutorial/configure25.png)
+
+1. Заполните поля **Application Name** (Имя приложения) и **Description** (Описание).
 
     ![Настройка Akamai](./media/header-akamai-tutorial/configure26.png)
 
@@ -295,25 +428,165 @@ ms.locfileid: "74979140"
 
 #### <a name="deployment"></a>Развертывание
 
-Щелкните **Deploy Application** (Развернуть приложение).
+1. Щелкните **Deploy Application** (Развернуть приложение).
 
-![Настройка Akamai](./media/header-akamai-tutorial/configure32.png)
+    ![Настройка Akamai](./media/header-akamai-tutorial/configure32.png)
 
-### <a name="kerberos-applications"></a>Приложения Kerberos
+1. Проверьте взаимодействие с пользователем.
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/enduser03.png)
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/enduser04.png)
+
+1. Условный доступ
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess04.png)
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess07.png)
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess08.png)
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess09.png)
+
+### <a name="kerberos-authentication"></a>Проверка подлинности Kerberos
+
+В приведенном ниже примере показано, как опубликовать внутренний веб-сервер [http://frp-app1.superdemo.live](http://frp-app1.superdemo.live/) и разрешать единый вход с применением ограниченного делегирования Kerberos.
+
+#### <a name="general-tab"></a>Вкладка «Общие»
+
+![Настройка Akamai](./media/header-akamai-tutorial/generaltab.png)
+
+#### <a name="authentication-tab"></a>Вкладка "Authentication" (Аутентификация)
+
+Назначьте поставщик удостоверений.
+
+![Настройка Akamai](./media/header-akamai-tutorial/authenticationtab.png)
+
+#### <a name="services-tab"></a>Вкладка Services (Службы)
+
+![Настройка Akamai](./media/header-akamai-tutorial/servicestab.png)
+
+#### <a name="advanced-settings"></a>Дополнительные параметры
+
+![Настройка Akamai](./media/header-akamai-tutorial/advancesettings02.png)
+
+> [!NOTE]
+> Имя субъекта-службы для веб-сервера должно быть задано в формате SPN@Domain. Например, в данном случае это `HTTP/frp-app1.superdemo.live@SUPERDEMO.LIVE`. Оставьте для остальных параметров значение по умолчанию.
+
+#### <a name="deployment-tab"></a>Вкладка Deployment (Развертывание)
+
+![Настройка Akamai](./media/header-akamai-tutorial/deploymenttab.png)
 
 #### <a name="adding-directory"></a>Добавление каталога
 
-![Настройка Akamai](./media/header-akamai-tutorial/configure33.png)
+1. Выберите в раскрывающемся списке **AD**.
 
-![Настройка Akamai](./media/header-akamai-tutorial/configure34.png)
+    ![Настройка Akamai](./media/header-akamai-tutorial/configure33.png)
 
-![Настройка Akamai](./media/header-akamai-tutorial/configure35.png)
+1. Укажите необходимые данные.
 
-![Настройка Akamai](./media/header-akamai-tutorial/configure36.png)
+    ![Настройка Akamai](./media/header-akamai-tutorial/configure34.png)
+
+1. Проверьте создание каталога.
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/directorydomain.png)
+
+1. Добавьте группы или подразделения, которым требуется доступ.
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/addgroup.png)
+
+1. На изображении ниже группа называется EAAGroup и состоит из одного члена.
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/eaagroup.png)
+
+1. Добавьте каталог для поставщика удостоверений. Для этого выберите **Identity** > **Identity Providers** (Удостоверение > Поставщики удостоверений), а затем перейдите на вкладку **Directories** (Каталоги) и щелкните **Assign directory** (Назначить каталог).
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/assigndirectory.png)
+
+### <a name="configure-kcd-delegation-for-eaa-walkthrough"></a>Пошаговое руководство по настройке ограниченного делегирования Kerberos для ЕАА
+
+#### <a name="step-1-create-an-account"></a>Шаг 1. Создание учетной записи 
+
+1. В этом примере мы будем использовать учетную запись с именем **EAADelegation**. Это можно сделать с помощью оснастки **Пользователи и компьютеры Active Directory**.
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/assigndirectory.png)
+
+    > [!NOTE]
+    > Имя пользователя должно быть указано в определенном формате и составлено на основе имени, которое задано в поле **Identity Intercept** (Перехват идентификаторов). На рис. 1 показано **corpapps.login.go.akamai-access.com**.
+
+1. Именем для входа пользователя будет `HTTP/corpapps.login.go.akamai-access.com`.
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/eaadelegation.png)
+
+#### <a name="step-2-configure-the-spn-for-this-account"></a>Шаг 2. Настройка имени субъекта-службы для этой учетной записи
+
+1. Для данного примера имя субъекта-службы будет следующим:
+
+2. setspn -s **Http/corpapps.login.go.akamai-access.com eaadelegation**
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/spn.png)
+
+#### <a name="step-3-configure-delegation"></a>Шаг 3. Настройка делегирования
+
+1. Для учетной записи EAADelegation перейдите на вкладку Delegation (Делегирование).
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/spn.png)
+
+    * Укажите, что можно использовать любой протокол проверки подлинности.
+    * Нажмите Add (Добавить) и добавьте учетную запись пула приложений для веб-сайта Kerberos. Если настройки заданы правильно, она должна автоматически разрешаться в правильное имя субъекта-службы.
+
+#### <a name="step-4-create-a-keytab-file-for-akamai-eaa"></a>Шаг 4. Создание файла keytab для Akamai ЕАА
+
+1. Ниже приведен общий синтаксис.
+
+1. ktpass /out ActiveDirectorydomain.keytab /princ `HTTP/yourloginportalurl@ADDomain.com` /mapuser serviceaccount@ADdomain.com /pass +rdnPass /crypto All /ptype KRB5_NT_PRINCIPAL
+
+1. Пояснения к примеру
+
+    | Фрагмент кода | Объяснение |
+    | - | - |
+    | Ktpass /out EAADemo.keytab | // Имя выходного файла keytab |
+    | /princ HTTP/corpapps.login.go.akamai-access.com@superdemo.live | // HTTP/yourIDPName@YourdomainName |
+    | /mapuser eaadelegation@superdemo.live | // Учетная запись делегирования EAA |
+    | /pass RANDOMPASS | // Пароль учетной записи делегирования EAA |
+    | /crypto All ptype KRB5_NT_PRINCIPAL | // См. в документации по Akamai ЕАА |
+    | | |
+
+1. Ktpass /out EAADemo.keytab /princ HTTP/corpapps.login.go.akamai-access.com@superdemo.live /mapuser eaadelegation@superdemo.live /pass RANDOMPASS /crypto All ptype KRB5_NT_PRINCIPAL
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/administrator.png)
+
+#### <a name="step-5-import-keytab-in-the-akamai-eaa-console"></a>Шаг 5. Импорт keytab в консоли Akamai ЕАА
+
+1. Щелкните **System** > **Keytabs** (Система > Файлы keytab).
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/keytabs.png)
+
+1. В поле Keytab Type (Тип keytab) выберите **Kerberos Delegation** (Делегирование Kerberos).
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/keytabdelegation.png)
+
+1. Убедитесь, что файл keytab отображается как развернутый и проверенный.
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/keytabs02.png)
+
+1. Проверьте взаимодействие с пользователем.
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/enduser03.png)
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/enduser04.png)
+
+1. Условный доступ
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess04.png)
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess10.png)
+
+    ![Настройка Akamai](./media/header-akamai-tutorial/conditionalaccess11.png)
 
 ### <a name="create-akamai-test-user"></a>Создание тестового пользователя Akamai
 
-Из этого разделе вы узнаете, как создать пользователя B.Simon в приложении Akamai. Обратитесь в  [службу поддержки клиентов Akamai](https://www.akamai.com/us/en/contact-us/), чтобы добавить пользователей на платформу Akamai. Перед использованием единого входа необходимо создать и активировать пользователей. 
+Из этого разделе вы узнаете, как создать пользователя B.Simon в приложении Akamai. Обратитесь в [службу поддержки клиентов Akamai](https://www.akamai.com/us/en/contact-us/), чтобы добавить пользователей на платформу Akamai. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ## <a name="test-sso"></a>Проверка единого входа
 

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: msangapu
 ms.custom: mvc, seodec18, tracking-python
-ms.openlocfilehash: d9c7b9b296aaf287d185cd3e7544e40d9cdef2f5
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: 88ca971986119b3612c79d0bee381d3a0fc9a977
+ms.sourcegitcommit: 34eb5e4d303800d3b31b00b361523ccd9eeff0ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84561104"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84906842"
 ---
 # <a name="tutorial-build-a-custom-image-and-run-in-app-service-from-a-private-registry"></a>Руководство по созданию и запуску настраиваемого образа в Службе приложений из частного реестра
 
@@ -236,23 +236,33 @@ az webapp config appsettings set --resource-group myResourceGroup --name <app-na
 
 ## <a name="change-web-app-and-redeploy"></a>Изменение и повторное развертывание веб-приложения
 
-Откройте файл app/templates/app/index.html в локальном репозитории Git. Найдите первый элемент HTML и измените его.
+Откройте файл *app/templates/app/index.html* в локальном репозитории Git. Измените первый элемент HTML в соответствии со следующим кодом.
 
-```python
+```html
 <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Azure App Service - Updated Here!</a>
-      </div>
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Azure App Service - Updated Here!</a>
     </div>
-  </nav>
+  </div>
+</nav>
 ```
 
-После того как вы изменили и сохранили файл Python, необходимо перестроить и передать новый образ Docker. Затем перезапустите веб-приложение, чтобы изменения вступили в силу. Используйте те же команды, которые использовались ранее в этом руководстве. Вы можете ознакомиться с разделами [Создание образа на основе файла Docker](#build-the-image-from-the-docker-file) и [Передача образа в реестр контейнеров Azure](#push-image-to-azure-container-registry). [Протестируйте веб-приложение](#test-the-web-app).
+Сохранив изменения, перестройте и отправьте новый образ Docker с помощью тех же команд, которые использовались ранее в этом руководстве. Вы можете ознакомиться с разделами [Создание образа на основе файла Docker](#build-the-image-from-the-docker-file) и [Передача образа в реестр контейнеров Azure](#push-image-to-azure-container-registry).
+
+После отправки нового образа перезапустите веб-приложение, чтобы изменения вступили в силу, с помощью следующей команды:
+
+```azurecli-interactive
+az webapp restart --name <app_name> --resource-group myResourceGroup
+```
+
+Измените `<app_name>` на имя, которое использовалось ранее.
+
+После перезапуска приложения протестируйте его, следуя инструкциям в разделе [Тестирование веб-приложения](#test-the-web-app).
 
 ## <a name="access-diagnostic-logs"></a>Доступ к журналам диагностики
 
-[!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-no-h.md)]
+[!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-linux-no-h.md)]
 
 ## <a name="enable-ssh-connections"></a>Включение SSH-подключений
 

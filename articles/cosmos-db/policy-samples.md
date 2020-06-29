@@ -1,24 +1,24 @@
 ---
 title: Встроенные определения политик для Azure Cosmos DB
 description: Здесь приведены встроенные определения политик в Политике Azure для Azure Cosmos DB. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 05/29/2020
+ms.date: 06/10/2020
 ms.topic: sample
 author: SnehaGunda
 ms.author: sngun
 ms.service: cosmos-db
 ms.custom: subject-policy-samples
-ms.openlocfilehash: baee1c2b2abe42bca2fe9ed2b3a7b45a1b6028a3
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.openlocfilehash: da05873c3268e5a0d652207ba1f8134a4ac4410f
+ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84236057"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84887969"
 ---
-# <a name="azure-policy-built-in-policy-definitions-for-azure-cosmos-db"></a>Встроенные определения политик в Политике Azure для Azure Cosmos DB
+# <a name="azure-policy-built-in-definitions-for-azure-cosmos-db"></a>Встроенные определения в Политике Azure для Azure Cosmos DB
 
 Эта страница представляет собой индекс встроенных определений политик в [Политике Azure](../governance/policy/overview.md) для Azure Cosmos DB. Дополнительные встроенные компоненты Политики Azure для других служб см. в статье [Встроенные определения Политики Azure](../governance/policy/samples/built-in-policies.md).
 
-Имя каждого встроенного определения политики связано с определением политики на портале Azure. Перейдите по ссылке в столбце **GitHub**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
+Имя каждого встроенного определения политики связано с определением политики на портале Azure. Перейдите по ссылке в столбце **Версия**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
 
 ## <a name="azure-cosmos-db"></a>Azure Cosmos DB
 

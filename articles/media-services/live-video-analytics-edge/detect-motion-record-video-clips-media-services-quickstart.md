@@ -3,12 +3,12 @@ title: Запись видео в Службы мультимедиа Azure пр
 description: В этом кратком руководстве показано, как использовать Аналитику видеотрансляции в IoT Edge для обнаружения движения во время видеотрансляции и записи видеороликов в Службы мультимедиа Azure.
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: f0045f7fddfe6c544f10d280450cdafe8dca9e2d
-ms.sourcegitcommit: 223cea58a527270fe60f5e2235f4146aea27af32
+ms.openlocfilehash: 0a81bebe7333266e1b70f97f8c712fccf392a464
+ms.sourcegitcommit: 1383842d1ea4044e1e90bd3ca8a7dc9f1b439a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84261624"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84817321"
 ---
 # <a name="quickstart-detect-motion-record-video-to-media-services"></a>Краткое руководство. Запись видео в Cлужбы мультимедиа при обнаружении движения
 
@@ -21,9 +21,9 @@ ms.locfileid: "84261624"
 * Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 * [Visual Studio Code](https://code.visualstudio.com/) на компьютере с [расширением Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools).
 * Если вы ранее не выполняли инструкции из статьи [Начало работы, краткое руководство](get-started-detect-motion-emit-events-quickstart.md), выполните указанные ниже действия.
-    * Выполнение [Настройки ресурсов Azure](get-started-detect-motion-emit-events-quickstart.md#set-up-azure-resources)
+    * [Настройка ресурсов Azure](get-started-detect-motion-emit-events-quickstart.md#set-up-azure-resources)
     * [Развертывание модулей](get-started-detect-motion-emit-events-quickstart.md#deploy-modules-on-your-edge-device)
-    * [Настройка Visual Studio Code](get-started-detect-motion-emit-events-quickstart.md#configure-azure-iot-tools-extension-in-visual-studio-code)
+    * [Настройка Visual Studio Code](get-started-detect-motion-emit-events-quickstart.md#configure-the-azure-iot-tools-extension)
 
 ## <a name="review-the-sample-video"></a>Просмотр примера видео
 

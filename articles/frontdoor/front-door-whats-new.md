@@ -1,23 +1,23 @@
 ---
-title: Служба Azure Front Door | Документация Майкрософт
-description: В статье представлен обзор службы Azure Front Door. Узнайте, подходит ли она для балансировки нагрузки трафика пользователя для вашего приложения.
+title: Новые возможности в Azure Front Door
+description: Узнайте о новых возможностях в Azure Front Door.
 services: frontdoor
 documentationcenter: ''
 author: megan-beatty
 editor: ''
 ms.service: frontdoor
 ms.devlang: na
-ms.topic: overview
+ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 4/30/2020
 ms.author: mebeatty
-ms.openlocfilehash: 009891d16d3acf5db2e344bcc2c917ecee9eed5b
-ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.openlocfilehash: f76e54d698e30cb2b8f929050264a3afaec36562
+ms.sourcegitcommit: 24f31287b6a526e23ff5b5469113522d1ccd4467
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82515849"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84743479"
 ---
 # <a name="whats-new-in-azure-front-door"></a>Новые возможности в Azure Front Door
 

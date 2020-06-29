@@ -21,7 +21,7 @@ ms.locfileid: "84789214"
 * [Предварительная версия 3,0. Разработка](luis-migration-authoring-entities.md) Tool
     * Версия 3.2.0-Preview. 3 — [.NET — NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)
     * Версия 4.0.0-Preview. 3- [JS-NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring)
-* Применение методик DevOps с помощью LUIS
+* Применение методик DevOps в LUIS
     * Основные понятия
         * [Рекомендации по DevOps для LUIS](luis-concept-devops-sourcecontrol.md)
         * [Рабочие процессы непрерывной интеграции и непрерывной поставки для LUIS DevOps](luis-concept-devops-automation.md)

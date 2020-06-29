@@ -9,12 +9,12 @@ ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: 149ac61e4737faa81e55fac3e07133c73bbc00d5
-ms.sourcegitcommit: 20e246e86e25d63bcd521a4b4d5864fbc7bad1b0
+ms.openlocfilehash: a581288259a521f8f2f93ff3fbc16f4926486643
+ms.sourcegitcommit: 99d016949595c818fdee920754618d22ffa1cd49
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84488126"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84771178"
 ---
 # <a name="quickstart-on-board-azure-sentinel"></a>Краткое руководство. Подключение к Azure Sentinel
 
@@ -58,7 +58,7 @@ ms.locfileid: "84488126"
    > - Azure Sentinel можно запускать в рабочих областях в любом [общедоступном регионе Log Analytics](https://azure.microsoft.com/global-infrastructure/services/?products=monitor) за исключением Китая и Германии (независимых регионов). Данные, созданные Azure Sentinel (например, инциденты, закладки и правила генерации оповещений, которые могут содержать данные о клиентах из этих рабочих областей), сохраняются либо в регионе "Европа" (для рабочих областей, расположенных в Европе), либо в регионе "Австралия" (для рабочих областей, расположенных в Австралии), либо в регионе "Восточная часть США" (для рабочих областей, расположенных в любом другом регионе).
 
    >[!IMPORTANT]
-   > - После включения Azure Sentinel в рабочей области перемещение этой рабочей области в другие группы ресурсов или подписки не поддерживается. Если вам нужно переместить рабочую область, обратитесь в службу поддержки за инструкциями.
+   > - После включения Azure Sentinel в рабочей области перемещение этой рабочей области в другие группы ресурсов или подписки не поддерживается. Если вам нужно переместить рабочую область, обратитесь в [службу поддержки Azure Sentinel](mailto:AzureSentinel@microsoft.com).
 
 1. Щелкните **Добавить Azure Sentinel**.
   

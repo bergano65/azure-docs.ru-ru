@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 04/22/2020
 ms.author: sudbalas
-ms.openlocfilehash: 78ae393c47de7a9d03d7b3de9b3dcd315d228f05
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ms.openlocfilehash: 19a7cf2ec3a8a7a95952fcebfcf3a127c4dfd013
+ms.sourcegitcommit: 6571e34e609785e82751f0b34f6237686470c1f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84605431"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84792189"
 ---
 # <a name="configure-azure-key-vault-firewalls-and-virtual-networks"></a>Настройка брандмауэров и виртуальных сетей Azure Key Vault
 
@@ -22,6 +22,13 @@ ms.locfileid: "84605431"
 
 > [!IMPORTANT]
 > Когда правила брандмауэра начнут действовать, пользователи смогут выполнять запросы на операции [плоскости данных](secure-your-key-vault.md#data-plane-access-control) в Key Vault только из разрешенных виртуальных сетей или диапазонов IPv4-адресов. Это относится и к получению доступа к Key Vault с портала Azure. Пользователь сможет перейти в хранилище ключей с портала Azure, но не сможет получить список ключей, секретов и сертификатов, если клиентский компьютер не включен в список разрешенных. Это также влияет на выбор хранилища ключей другими службами Azure. Пользователи смогут просматривать список хранилищ ключей, но не список ключей, если правила брандмауэра запрещают доступ их клиентским компьютерам.
+
+> [!NOTE]
+> Следует учитывать следующие ограничения конфигурации:
+> * Допускается не более 127 правил виртуальной сети и 127 правил IPv4. 
+> * Не поддерживаются малые диапазоны адресов с префиксом /31 или /32. Такие диапазоны следует настраивать в отдельных правилах для IP-адресов.
+> * Правила IP-сети можно применять только в общедоступных IP-адресах. Диапазоны IP-адресов, зарезервированные для частных сетей (как определено в документе RFC 1918), запрещено использовать в правилах IP. К частным сетям относятся адреса, начинающиеся с **10.** , **172.16-31** и **192.168.** 
+> * Сейчас поддерживаются только IPV4-адреса.
 
 ## <a name="use-the-azure-portal"></a>Использование портала Azure
 
@@ -115,7 +122,7 @@ ms.locfileid: "84605431"
    ```
 
 ## <a name="references"></a>Ссылки
-
+* Справочник по шаблонам ARM: [Справочник по шаблону ARM Azure Key Vault](https://docs.microsoft.com/azure/templates/Microsoft.KeyVault/vaults).
 * Команда Azure CLI: [az keyvault network-rule](https://docs.microsoft.com/cli/azure/keyvault/network-rule?view=azure-cli-latest).
 * Командлеты Azure PowerShell: [Get-AzKeyVault](https://docs.microsoft.com/powershell/module/az.keyvault/get-azkeyvault), [Add-AzKeyVaultNetworkRule](https://docs.microsoft.com/powershell/module/az.KeyVault/Add-azKeyVaultNetworkRule), [Remove-AzKeyVaultNetworkRule](https://docs.microsoft.com/powershell/module/az.KeyVault/Remove-azKeyVaultNetworkRule), [Update-AzKeyVaultNetworkRuleSet](https://docs.microsoft.com/powershell/module/az.KeyVault/Update-azKeyVaultNetworkRuleSet).
 

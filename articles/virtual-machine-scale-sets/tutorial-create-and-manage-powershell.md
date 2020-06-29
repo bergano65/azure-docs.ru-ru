@@ -9,12 +9,12 @@ ms.subservice: management
 ms.date: 05/18/2018
 ms.reviewer: mimckitt
 ms.custom: mimckitt
-ms.openlocfilehash: 2e9c027a927d4aba9c174db8dfc5a72f0cc4f214
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 43816c815c206da7e3fec197e54e9e7889c6de47
+ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83195175"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84735359"
 ---
 # <a name="tutorial-create-and-manage-a-virtual-machine-scale-set-with-azure-powershell"></a>Руководство по Создание масштабируемого набора виртуальных машин с помощью Azure PowerShell
 
@@ -191,6 +191,8 @@ New-AzVmss `
   -Credential $cred
 ```
 
+> [!IMPORTANT]
+> Мы советуем использовать образ *последней* версии. Укажите "latest", чтобы использовать последнюю версию образа, доступную во время развертывания. Обратите внимание: несмотря на то, что указано "latest", образ виртуальной машины не будет автоматически обновляться после развертывания, даже если станет доступной его новая версия.
 
 ## <a name="understand-vm-instance-sizes"></a>Описание размеров экземпляра виртуальной машины
 Размер экземпляра виртуальной машины (или *номер SKU*) определяет количество выделяемых ему вычислительных ресурсов, таких как ЦП, GPU и память. Размеры экземпляров виртуальных машин в масштабируемом наборе должны соответствовать ожидаемой рабочей нагрузке.

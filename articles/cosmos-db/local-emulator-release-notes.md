@@ -6,12 +6,12 @@ ms.topic: tutorial
 author: milismsft
 ms.author: adrianmi
 ms.date: 06/20/2019
-ms.openlocfilehash: 6dad625bbbcb8279e83ac42e1492c251d5b0299c
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: ab31daafe496f1aaad2bbc8075b2514d9e57e997
+ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83747006"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84687180"
 ---
 # <a name="azure-cosmos-emulator---release-notes-and-download-information"></a>Эмулятор Azure Cosmos. Заметки о выпуске и сведения о скачивании
 
@@ -25,6 +25,10 @@ ms.locfileid: "83747006"
 |**Начало работы**|[Использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде](local-emulator.md)|
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="2111"></a>2.11.1
+
+- В этом выпуске исправлено несколько ошибок, связанных с обозревателем данных эмулятора. Иногда при использовании обозревателя данных эмулятора через веб-браузер не удается подключиться к конечной точке эмулятора Cosmos. Все связанные с этим процессом действия, такие как создание базы данных или контейнера, завершаются ошибкой. Вторая исправленная ошибка связана с созданием элемента из JSON-файла с помощью действия отправки в обозревателе данных.
 
 ### <a name="2110"></a>2.11.0
 

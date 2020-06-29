@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: quickstart
-ms.date: 05/28/2020
+ms.date: 06/04/2020
 ms.author: jingwang
-ms.openlocfilehash: d6191a5f4dcfc3d25072e0cfa00418fb64311773
-ms.sourcegitcommit: 8017209cc9d8a825cc404df852c8dc02f74d584b
+ms.openlocfilehash: 39f2dad088f3f3eb4a99aa17c1bdde5fe2a2f79c
+ms.sourcegitcommit: 5a8c8ac84c36859611158892422fc66395f808dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84248538"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84655793"
 ---
 # <a name="quickstart-create-a-data-factory-by-using-the-azure-data-factory-ui"></a>Краткое руководство. Создание фабрики данных с помощью пользовательского интерфейса службы "Фабрика данных Azure"
 
@@ -42,8 +42,6 @@ ms.locfileid: "84248538"
 1. Запустите веб-браузер **Microsoft Edge** или **Google Chrome**. Сейчас только эти браузеры поддерживают пользовательский интерфейс фабрики данных.
 1. Перейдите на [портал Azure](https://portal.azure.com). 
 1. В меню портала Azure выберите **Создать ресурс**.
-   
-   ![Выберите команду "Создать ресурс" в меню на портале Azure.](./media/doc-common-process/create-a-resource.png)
 1. Выберите пункт **Аналитика**, а затем — **Фабрика данных**. 
    
    ![Выбор фабрики данных в области "Создать"](./media/doc-common-process/new-azure-data-factory-menu.png)
@@ -80,8 +78,12 @@ ms.locfileid: "84248538"
 ## <a name="create-a-linked-service"></a>Создание связанной службы
 На этом этапе вы создадите связанную службу, чтобы связать учетную запись хранения Azure с фабрикой данных. Связанная служба содержит сведения о подключении, используемые фабрикой данных для подключения к ней в среде выполнения.
 
-1. Выберите **Подключения** и нажмите кнопку **Создать** на панели инструментов (кнопка **Подключения** расположена внизу левого столбца в разделе **Ресурсы фабрики**). 
+1. Откройте вкладку [Manage](https://docs.microsoft.com/azure/data-factory/author-management-hub) (Управление) на панели слева.
 
+1. На странице связанных служб выберите **+New** (Создать), чтобы создать связанную службу.
+
+   ![Новая связанная служба](./media/doc-common-process/new-linked-service.png)
+   
 1. На странице **New Linked Service** (Новая связанная служба) выберите **Хранилище BLOB-объектов Azure** и щелкните **Продолжить**. 
 
 1. На странице New Linked Service (Azure Blob Storage) (Новая связанная служба (хранилище BLOB-объектов Azure)) выполните следующие действия: 

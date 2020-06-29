@@ -14,12 +14,12 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 01/16/2020
 ms.author: aschhab
-ms.openlocfilehash: c85b63b4a56e74b0fef9a122ec995b4106496cbe
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 91fae982f53af8da359baaff685996c0d1cb57c2
+ms.sourcegitcommit: 9bfd94307c21d5a0c08fe675b566b1f67d0c642d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78330452"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84976563"
 ---
 # <a name="quickstart-how-to-use-service-bus-topics-and-subscriptions-with-nodejs-and-the-azure-sb-package"></a>Краткое руководство. Использование разделов и подписок служебной шины с Node.js и пакетом azure/sb
 Из этого учебника вы узнаете, как создавать приложения Node.js для отправки сообщений в раздел служебной шины и получения сообщений из подписки служебной шины с помощью пакета [azure-sb](https://www.npmjs.com/package/azure-sb). Эти примеры написаны на JavaScript и используют [модуль Node.js для Azure](https://www.npmjs.com/package/azure) с интегрированным пакетом `azure-sb`.
@@ -80,7 +80,7 @@ var azure = require('azure');
 ```
 
 ### <a name="set-up-a-service-bus-connection"></a>Настройка подключения к Service Bus
-Модуль Azure считывает из переменной среды `AZURE_SERVICEBUS_CONNECTION_STRING` строку подключения, полученную на предыдущем шаге "Извлечение учетных данных". Если эта переменная среды не задана, при вызове `createServiceBusService` необходимо указать сведения об учетной записи.
+Модуль Azure считывает из переменной среды `AZURE_SERVICEBUS_CONNECTION_STRING` строку подключения, которую вы получили при изучении раздела [Предварительные требования](#prerequisites). Если вам нужны инструкции для повторного получения строки подключения, см. раздел [Получение строки подключения](service-bus-quickstart-topics-subscriptions-portal.md#get-the-connection-string). Если эта переменная среды не задана, при вызове `createServiceBusService` необходимо указать сведения об учетной записи.
 
 Пример настройки переменных среды для облачной службы Azure см. в разделе [Пример для Azure CLI](../container-instances/container-instances-environment-variables.md#azure-cli-example).
 

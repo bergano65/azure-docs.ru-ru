@@ -7,14 +7,17 @@ ms.author: cschorm
 ms.date: 05/05/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 7e057d6d973eedd3ac53fd7b2ea228470e9123d7
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ROBOTS: NOINDEX, NOFOLLOW
+ms.openlocfilehash: f36a41a1151255e792281ae959d40ce183040cb5
+ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84611488"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84737144"
 ---
 # <a name="coding-with-the-azure-digital-twins-apis"></a>Написание кода с помощью API Azure Digital Twins
+
+[!INCLUDE [Azure Digital Twins current preview status](../../includes/digital-twins-preview-status.md)]
 
 Часто разработчики, работающие с Azure Digital Twins, пишут клиентское приложение для взаимодействия со своим экземпляром службы Azure Digital Twins. Этот учебник предназначен для разработчиков и содержит вводные сведения о программировании для службы Azure Digital Twins с помощью [клиентской библиотеки Digital Twins Интернета вещей Azure для .NET (C#)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core). В нем пошагово описывается процесс написания консольного клиентского приложения на C# с самого начала.
 
@@ -100,7 +103,7 @@ using Azure.Identity;
 Для выполнения проверки подлинности вам потребуются следующие сведения:
 * *идентификатор каталога (арендатора)* для вашей подписки;
 * *идентификатор приложения (клиента)* , созданный при настройке экземпляра Azure Digital Twins, которая была выполнена ранее;
-* *hostName* (имя хоста) вашего экземпляра службы.
+* *имя узла* вашего экземпляра Azure Digital Twins.
 
 >[!TIP]
 > Если вы не знаете свой *идентификатор каталога (арендатора)* , его можно получить, выполнив в [Azure Cloud Shell](https://shell.azure.com) следующую команду:

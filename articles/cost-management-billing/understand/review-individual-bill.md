@@ -6,14 +6,14 @@ ms.reviewer: judupont
 tags: billing
 ms.service: cost-management-billing
 ms.topic: tutorial
-ms.date: 05/28/2020
+ms.date: 06/16/2020
 ms.author: banders
-ms.openlocfilehash: 5a9e21cacb17743cbb8324a06c083c52aa261eb9
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
+ms.openlocfilehash: 5b0d30d31fbe65360c246282eb2dc2109a541a3f
+ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84194136"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84888323"
 ---
 # <a name="tutorial-review-your-individual-azure-bill"></a>Учебник. Просмотр отдельного счета Azure
 
@@ -100,7 +100,7 @@ ms.locfileid: "84194136"
 
 ![Плата за потребление в счете](./media/review-individual-bill/invoice-usage-charges.png)
 
-В CSV-файле с данными о потреблении примените фильтр по значению *MeterName*, которое соответствует представленному в счете ресурсу. Затем просуммируйте значения *Стоимость* для всех элементов в столбце. Ниже приведен пример.
+В CSV-файле с данными о потреблении примените фильтр по значению *MeterName*, которое соответствует представленному в счете ресурсу. Затем просуммируйте значения *Стоимость* для всех элементов в столбце. Ниже приведен пример с данными по названию единицы измерения (P10 Disks), которое соответствует названию в строке из счета.
 
 ![Сумма значений по MeterName в файле данных о потреблении](./media/review-individual-bill/usage-file-usage-charge-resource.png)
 

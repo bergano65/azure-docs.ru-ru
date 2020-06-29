@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 05/07/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 9c2a2d7059e24b37b0f47d0b568a3929f296d8c6
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: f70c14c424e8aaecbdc1138b52fdd6fb1e9fc265
+ms.sourcegitcommit: ff19f4ecaff33a414c0fa2d4c92542d6e91332f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84560873"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85051798"
 ---
 # <a name="how-to-use-openrowset-with-sql-on-demand-preview"></a>Как использовать OPENROWSET в службе SQL по запросу (предварительная версия)
 
@@ -49,7 +49,7 @@ ms.locfileid: "84560873"
     Этот параметр позволяет настроить расположение учетной записи хранения в источнике данных и указать метод проверки подлинности, который должен использоваться для доступа к хранилищу. 
     
     > [!IMPORTANT]
-    > `OPENROWSET` без `DATA_SOURCE` обеспечивает быстрый и простой способ доступа к файлам хранилища, но поддерживает мало возможностей для проверки подлинности. Например, субъект Azure AD может обращаться к файлам только по [удостоверению Azure AD](develop-storage-files-storage-access-control.md?tabs=user-identity#force-azure-ad-pass-through), что не позволяет получить доступ к общедоступным файлам. Если вам нужны более мощные возможности для проверки подлинности, используйте параметр `DATA_SOURCE` и определите учетные данные, которые нужно использовать для доступа к хранилищу.
+    > `OPENROWSET` без `DATA_SOURCE` обеспечивает быстрый и простой способ доступа к файлам хранилища, но поддерживает мало возможностей для проверки подлинности. Например, субъекты Azure AD могут обращаться к файлам только с использованием [удостоверения Azure AD](develop-storage-files-storage-access-control.md?tabs=user-identity) или общедоступным файлам. Если вам нужны более мощные возможности для проверки подлинности, используйте параметр `DATA_SOURCE` и определите учетные данные, которые нужно использовать для доступа к хранилищу.
 
 
 ## <a name="security"></a>Безопасность
@@ -60,7 +60,8 @@ ms.locfileid: "84560873"
 
 `OPENROWSET` использует следующие правила, чтобы выбрать способ проверки подлинности в хранилище:
 - В `OPENROWSET` без `DATA_SOURCE` механизм проверки подлинности зависит от типа вызывающего объекта.
-  - При использовании имен входа Azure AD доступ к файлам только по собственным [удостоверениям Azure AD](develop-storage-files-storage-access-control.md?tabs=user-identity#supported-storage-authorization-types) возможен, если служба хранилища Azure разрешает конкретному пользователю Azure AD обращаться к базовым файлам (например, если вызывающий объект имеет разрешение читателя в хранилище) и в службе Synapse SQL [включена сквозная проверка подлинности Azure AD](develop-storage-files-storage-access-control.md#force-azure-ad-pass-through).
+  - Любой пользователь может использовать `OPENROWSET` без `DATA_SOURCE`, чтобы читать общедоступные файлы в службе хранилища Azure.
+  - Имена входа Azure AD могут получать доступ к защищенным файлам с помощью собственных [удостоверений Azure AD](develop-storage-files-storage-access-control.md?tabs=user-identity#supported-storage-authorization-types), если служба хранилища Azure позволяет пользователю Azure AD получать доступ к базовым файлам (например, если у вызывающего объекта есть разрешение `Storage Reader` в службе хранилища Azure).
   - Для имен входа SQL также можно использовать `OPENROWSET` без `DATA_SOURCE` для доступа к общедоступным файлам, защищенным с помощью маркера SAS файлам и управляемым удостоверениям рабочей области Synapse. Чтобы разрешить доступ к файлам хранилища, необходимо [создать учетные данные уровня сервера](develop-storage-files-storage-access-control.md#examples). 
 - В `OPENROWSET` с `DATA_SOURCE` механизм проверки подлинности определяется в учетных данных уровня базы данных, которые назначены указанному источнику данных. Этот параметр позволяет обращаться к общедоступному хранилищу, а также к защищенному хранилищу по маркеру SAS, управляемому удостоверению рабочей области или [удостоверению вызывающего объекта Azure AD](develop-storage-files-storage-access-control.md?tabs=user-identity#supported-storage-authorization-types) (если этот вызывающий объект является субъектом Azure AD). Если `DATA_SOURCE` ссылается на хранилище Azure, которое не является общедоступным, придется [создать учетные данные уровня базы данных](develop-storage-files-storage-access-control.md#examples) и указать их в `DATA SOURCE`, чтобы разрешить доступ к файлам хранилища.
 
@@ -238,10 +239,6 @@ FROM
     ) AS [r]
 ```
 
-Если вы получаете ошибку с сообщением о том, что список файлов получить не удается, значит вам нужно предоставить доступ к общедоступному хранилищу Synapse SQL по запросу:
-- При использовании имени входа SQL необходимо [создать учетные данные уровня сервера, предоставляющие доступ к общедоступному хранилищу](develop-storage-files-storage-access-control.md#examples).
-- При использовании субъекта Azure AD для обращения к общедоступному хранилищу необходимо [создать учетные данные уровня сервера, предоставляющие доступ к общедоступному хранилищу](develop-storage-files-storage-access-control.md#examples), и отключить [сквозную проверку подлинности Azure AD](develop-storage-files-storage-access-control.md#disable-forcing-azure-ad-pass-through).
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные примеры см. в [кратком руководстве по работе с запросами к хранилищу данных](query-data-storage.md). В нем показано, как использовать OPENROWSET для чтения файлов в форматах [CSV](query-single-csv-file.md), [PARQUET](query-parquet-files.md) и [JSON](query-json-files.md). Вы также узнаете, как сохранить результаты запроса в службе хранилища Azure с помощью [CETAS](develop-tables-cetas.md).
+См. примеры в [кратком руководстве по работе с запросами к хранилищу данных](query-data-storage.md), где показано, как использовать `OPENROWSET` для чтения файлов в формате [CSV](query-single-csv-file.md), [PARQUET](query-parquet-files.md) и [JSON](query-json-files.md). Вы также узнаете, как сохранить результаты запроса в службе хранилища Azure с помощью [CETAS](develop-tables-cetas.md).

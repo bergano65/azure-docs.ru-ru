@@ -5,12 +5,12 @@ author: christophermanthei
 ms.author: chmant
 ms.date: 03/20/2020
 ms.topic: quickstart
-ms.openlocfilehash: 59b235a32ae9363cc5fc804385867e140be502e2
-ms.sourcegitcommit: 0690ef3bee0b97d4e2d6f237833e6373127707a7
+ms.openlocfilehash: 4e9ddeddf616c581b116d48738e110dd8cdac2d3
+ms.sourcegitcommit: 5a8c8ac84c36859611158892422fc66395f808dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83759002"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84659924"
 ---
 # <a name="quickstart-deploy-unity-sample-to-desktop"></a>Краткое руководство. Развертывание примера Unity на рабочем столе
 
@@ -46,7 +46,7 @@ ms.locfileid: "83759002"
 ## <a name="build-the-sample-project"></a>Сборка примера проекта
 
 1. Откройте *File > Build Settings* (Файл > Параметры сборки).
-1. Для параметра *Платформа* укажите **Универсальная платформа Windows** (поддерживается также вариант **Автономный компьютер**, но здесь мы его не используем).
+1. Для параметра *Platform* (Платформа) укажите **Universal Windows Platform** (Универсальная платформа Windows). Поддерживается также вариант **PC Standalone** (Автономный компьютер), но здесь мы его не используем (см. [ограничения платформы](../reference/limits.md#platform-limitations)).
 1. Для параметра *Target Device* (Целевое устройство) выберите **PC** (ПК).
 1. Для параметра *Architecture* (Архитектура) выберите **x86**.
 1. Для параметра *Build Type* (Тип сборки) выберите **D3D Project** (Проект D3D).
@@ -60,7 +60,7 @@ ms.locfileid: "83759002"
 1. Выполните сборку решения (клавиша F7).
 
 > [!WARNING]
-> Необходимо выбрать **x86**, так как архитектура **x64** сейчас не поддерживается (см.[ограничения платформы](../reference/limits.md#platform-limitations)).
+> Необходимо выбрать **x86**, так как архитектура **UWP/x64** сейчас не поддерживается (см.[ограничения платформы](../reference/limits.md#platform-limitations)).
 
 ## <a name="launch-the-sample-project"></a>Запуск примера проекта
 

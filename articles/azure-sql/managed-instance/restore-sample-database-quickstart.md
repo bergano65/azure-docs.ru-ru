@@ -1,9 +1,9 @@
 ---
 title: Краткое руководство. Восстановление резервных копий (SSMS)
-titleSuffix: Azure SQL SQL Managed Instance
-description: В этом кратком руководстве описано, как восстановить резервную копию базы данных в Управляемый экземпляр SQL Azure с помощью SQL Server Management (SSMS).
+titleSuffix: Azure SQL Managed Instance
+description: В этом кратком руководстве описано, как восстановить резервную копию базы данных в Управляемый экземпляр SQL Azure с помощью SQL Server Management Studio (SSMS).
 services: sql-database
-ms.service: sql-database
+ms.service: sql-managed-instance
 ms.subservice: operations
 ms.custom: ''
 ms.devlang: ''
@@ -12,45 +12,45 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, carlrab, bonova
 ms.date: 12/14/2018
-ms.openlocfilehash: c750912e942d5dadeb97e6675427f1730912704a
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
+ms.openlocfilehash: 0d10105648f434eb1d02a821e972e789bd39d66f
+ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84267585"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84708450"
 ---
-# <a name="quickstart-restore-a-database-to-an-azure-sql-managed-instance-with-ssms"></a>Краткое руководство. Восстановление резервной копии базы данных в Управляемый экземпляр SQL Azure с помощью SSMS
+# <a name="quickstart-restore-a-database-to-azure-sql-managed-instance-with-ssms"></a>Краткое руководство. Восстановление резервной копии базы данных в Управляемый экземпляр SQL Azure с помощью SSMS
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
 
-В этом кратком руководстве будет использоваться SQL Server Management Studio (SSMS) для восстановления базы данных (Wide World Importers — стандартный файл резервной копии) из хранилища BLOB-объектов Azure в [Управляемый экземпляр](sql-managed-instance-paas-overview.md) SQL Azure.
+В этом кратком руководстве показано, как использовать SQL Server Management Studio (SSMS) для восстановления базы данных (Wide World Importers — стандартный файл резервной копии) из Хранилища BLOB-объектов Azure в [Управляемый экземпляр SQL Azure](sql-managed-instance-paas-overview.md).
 
 > [!VIDEO https://www.youtube.com/embed/RxWYojo_Y3Q]
 
 > [!NOTE]
-> Дополнительные сведения об использовании Azure Database Migration Service (DMS) для миграции см. в статье [Перенос в Управляемый экземпляр SQL с помощью DMS](../../dms/tutorial-sql-server-to-managed-instance.md).
+> См. статью [Руководство. Миграция из SQL Server в Управляемый экземпляр базы данных SQL Azure в автономном режиме с помощью DMS](../../dms/tutorial-sql-server-to-managed-instance.md).
 > Дополнительные сведения о методах миграции см. в статье [Перенос SQL Server в Управляемый экземпляр SQL Azure](migrate-to-instance-from-sql-server.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 В этом кратком руководстве:
 
-- Используйте ресурсы из статьи краткого руководства [Создание Управляемого экземпляра SQL Azure](instance-create-quickstart.md).
-- Установите последнюю версию [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms).
+- Используйте ресурсы из статьи [Краткое руководство. Создание Управляемого экземпляра Базы данных SQL Azure](instance-create-quickstart.md).
+- Необходимо установить последнюю версию [SSMS](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms).
 - SSMS используется для подключения к Управляемому экземпляру SQL. Ознакомьтесь с этими краткими руководствами по подключению.
   - [Включение общедоступной конечной точки](public-endpoint-configure.md) в Управляемом экземпляре SQL. Рекомендуется использовать этот подход для работы с данным руководством.
-  - [Подключение к Управляемому экземпляру SQL с виртуальной машины Azure](connect-vm-instance-configure.md)
-  - [Настройка подключения "точка — сеть" к Управляемому экземпляру SQL из локальной сети](point-to-site-p2s-configure.md).
+  - [Подключение к Управляемому экземпляру SQL с виртуальной машины Azure.](connect-vm-instance-configure.md)
+  - [Настройка соединения "точка — сеть" с Управляемым экземпляром SQL.](point-to-site-p2s-configure.md)
 
 > [!NOTE]
 > Дополнительные сведения о резервном копировании и восстановлении базы данных SQL Server при помощи хранилища BLOB-объектов Azure и [ключа подписанного URL-адреса (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) см. в статье [Краткое руководство. Восстановление резервной копии базы данных в Управляемый экземпляр Базы данных SQL Azure](https://docs.microsoft.com/sql/relational-databases/backup-restore/sql-server-backup-to-url?view=sql-server-2017).
 
 ## <a name="restore-from-a-backup-file"></a>Восстановление из файла резервной копии
 
-С помощью SQL Server Management Studio SSMS выполните следующие шаги для восстановления базы данных Wide World Importers в Управляемый экземпляр SQL. Файл резервной копии базы данных хранится в предварительно настроенной учетной записи хранения больших двоичных объектов Azure.
+В SQL Server Management Studio выполните следующие шаги для восстановления базы данных Wide World Importers в Управляемый экземпляр SQL. Файл резервной копии базы данных хранится в предварительно настроенной учетной записи хранения больших двоичных объектов Azure.
 
-1. Откройте SSMS и подключитесь к Управляемому экземпляру SQL.
-2. В **обозревателе объектов** щелкните правой кнопкой мыши "Управляемый экземпляр SQL" и выберите **Создать запрос**, чтобы открыть окно нового запроса.
-3. Запустите следующий скрипт SQL, в котором используется предварительно настроенная учетная запись хранения и ключ SAS, для [создания учетных данных](https://docs.microsoft.com/sql/t-sql/statements/create-credential-transact-sql) в Управляемом экземпляре SQL.
+1. Откройте SSMS и подключитесь к Управляемому экземпляру.
+2. В **обозревателе объектов** щелкните правой кнопкой мыши Управляемый экземпляр и выберите **Создать запрос**, чтобы открыть окно нового запроса.
+3. Запустите следующий скрипт SQL, в котором используется предварительно настроенная учетная запись хранения и ключ SAS, чтобы [создать учетные данные](https://docs.microsoft.com/sql/t-sql/statements/create-credential-transact-sql) в управляемом экземпляре.
 
    ```sql
    CREATE CREDENTIAL [https://mitutorials.blob.core.windows.net/databases]
@@ -97,6 +97,6 @@ ms.locfileid: "84267585"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Если на шаге 5 восстановление базы данных завершается и появляется сообщение ID 22003 (Идентификатор 22003), создайте новый файл резервной копии, содержащий контрольные суммы резервной копии, и снова выполните восстановление. См. статью [Включение или отключение вычисления контрольных сумм резервных копий во время архивации или восстановления](https://docs.microsoft.com/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server).
-- Сведения об устранении неполадок резервного копирования на URL-адрес см. в разделе [Резервное копирование SQL Server на URL-адрес — рекомендации и устранение неполадок](https://docs.microsoft.com/sql/relational-databases/backup-restore/sql-server-backup-to-url-best-practices-and-troubleshooting).
+- См. раздел [Резервное копирование SQL Server на URL-адрес — рекомендации и устранение неполадок](https://docs.microsoft.com/sql/relational-databases/backup-restore/sql-server-backup-to-url-best-practices-and-troubleshooting).
 - Обзор вариантов подключения для приложений см. в статье [Подключение приложения к Управляемому экземпляру SQL](connect-application-instance.md).
 - Чтобы отправлять запросы с помощью привычных средств или языков, ознакомьтесь со статьей [Краткие руководства. Подключение и создание запросов к Базе данных SQL Azure](../database/connect-query-content-reference-guide.md).

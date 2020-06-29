@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
-ms.date: 05/28/2020
-ms.openlocfilehash: a59fafccecaf2fc266a6c7864174c477e1831186
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.date: 06/08/2020
+ms.openlocfilehash: 4e39d4e106a399f0105ee4ec3f3606354f113165
+ms.sourcegitcommit: 5a8c8ac84c36859611158892422fc66395f808dc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84561155"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84661065"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory-in-the-azure-portal"></a>Копирование нескольких таблиц в пакетном режиме с помощью Фабрики данных Azure на портале Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "84561155"
 
 **Подготовка исходной базы данных SQL Azure:**
 
-Создайте базу данных SQL Azure, используя пример данных Adventure Works LT, представленный в статье [Создание базы данных SQL Azure на портале Azure](../azure-sql/database/single-database-create-quickstart.md). В этом руководстве все таблицы из этого примера базы данных копируются в Azure Synapse Analytics (ранее — Хранилище данных SQL).
+Создайте базу данных SQL Azure, используя пример данных Adventure Works LT, представленный в статье [Создание базы данных SQL Azure на портале Azure](../azure-sql/database/single-database-create-quickstart.md). В этом руководстве все таблицы из этого примера базы данных копируются в Azure Synapse Analytics (ранее — Хранилище данных SQL).
 
 **Подготовка приемника в Azure Synapse Analytics (ранее — Хранилище данных SQL)** .
 
@@ -108,13 +108,16 @@ ms.locfileid: "84561155"
 ### <a name="create-the-source-azure-sql-database-linked-service"></a>Создание исходной связанной службы Базы данных SQL Azure
 На этом шаге вы создадите связанную службу, которая свяжет базу данных SQL Azure с фабрикой данных. 
 
-1. Щелкните **Подключения** в нижней части окна, а затем **+Создать** на панели инструментов (кнопка **Подключения** расположена внизу левого столбца в разделе **Ресурсы фабрики**). 
+1. Откройте вкладку [Manage](https://docs.microsoft.com/azure/data-factory/author-management-hub) (Управление) на панели слева.
 
+1. На странице связанных служб выберите **+New** (+Создать), чтобы создать связанную службу.
+
+   ![Новая связанная служба](./media/doc-common-process/new-linked-service.png)
 1. В окне **New Linked Service** (Новая связанная служба) выберите **Azure SQL Database** (База данных SQL Microsoft Azure) и щелкните **Continue** (Продолжить). 
 1. В окне **New Linked Service (Azure SQL Database)** (Новая связанная служба (База данных SQL Azure)) сделайте следующее: 
 
     а. Введите **AzureSqlDatabaseLinkedService** в поле **Имя**.
-    
+
     b. Выберите нужный сервер в списке **Имя сервера**.
     
     c. Выберите базу данных Azure SQL в списке **Имя базы данных**. 
@@ -159,7 +162,6 @@ ms.locfileid: "84561155"
     b. Выберите **учетную запись хранения** в списке **Имя учетной записи хранения**.
     
     c. Нажмите кнопку **Создать**.
-
 
 ## <a name="create-datasets"></a>Создание наборов данных
 В этом руководстве вы создадите наборы данных источника и приемника, в которых указывается место хранения данных. 

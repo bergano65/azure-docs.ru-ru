@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 05/22/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 581c3a035ab5b9e573f153361b41eedcd759baa1
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.openlocfilehash: 77bd880bbbc1d600ca21e058993102d69b417f41
+ms.sourcegitcommit: bc943dc048d9ab98caf4706b022eb5c6421ec459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83853087"
+ms.lasthandoff: 06/14/2020
+ms.locfileid: "84764100"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-textexpander"></a>Руководство по интеграции единого входа Azure Active Directory с TextExpander
 
@@ -43,7 +43,7 @@ ms.locfileid: "83853087"
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* TextExpander поддерживает единый вход, который инициируют **поставщики услуг и удостоверений**.
+* TextExpander поддерживает единый вход, инициированный **поставщиком удостоверений**.
 * TextExpander поддерживает **JIT**-подготовку пользователей.
 * После настройки TextExpander вы сможете применить функцию управления сеансом, которая защищает от кражи конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
@@ -65,9 +65,9 @@ ms.locfileid: "83853087"
 
 Чтобы настроить и проверить единый вход Azure AD в TextExpander, выполните следующие действия:
 
-1. **[Настройка единого входа Azure AD.](#configure-azure-ad-sso)** Требуется, чтобы пользователи могли использовать эту функцию.
-    1. **[Создание тестового пользователя Azure AD.](#create-an-azure-ad-test-user)** Требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
-    1. **[Назначение тестового пользователя Azure AD.](#assign-the-azure-ad-test-user)** Требуется, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
+    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в TextExpander.](#configure-textexpander-sso)** Требуется, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя TextExpander.](#create-textexpander-test-user)** Требуется для того, чтобы в TextExpander существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
 1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
@@ -87,10 +87,6 @@ ms.locfileid: "83853087"
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://app.textexpander.com/acs/<ORGID>`.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://app.textexpander.com/acs/<ORGID>`.
-
-1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
-
-    В текстовом поле **URL-адрес входа** введите URL-адрес: `https://app.textexpander.com/ssoSignin`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов TextExpander](mailto:support@smilesoftware.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

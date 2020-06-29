@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.author: brendm
 author: bmitchell287
 ms.date: 10/06/2019
-ms.openlocfilehash: f08a3b5d0a03b0e898457bbb783dd5031c4b0f27
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 93cefd0c71e2d51187e68c6f5f02777d158e95a4
+ms.sourcegitcommit: 6571e34e609785e82751f0b34f6237686470c1f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76277478"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84792070"
 ---
 # <a name="scale-an-application-in-azure-spring-cloud"></a>масштабированию приложения в Azure Spring Cloud
 
@@ -58,6 +58,9 @@ ms.locfileid: "76277478"
 ![Служба масштабирования на портале Azure](media/spring-cloud-tutorial-scale-manual/scale-up-out.png)
 
 Через несколько секунд внесенные изменения отобразятся на странице **Обзор** с дополнительными сведениями на вкладке **Экземпляры приложения**. В процессе масштабирования не требуется вносить изменения в код или выполнять повторное развертывание.
+
+## <a name="upgrade-to-the-standard-tier"></a>Повышение ценовой категории до уровня "Стандартный"
+Если вы используете уровень "Базовый" и одно или несколькими таких [ограничений](spring-cloud-quotas.md) препятствуют вашей работе, можете перейти на уровень "Стандартный". Для этого перейдите в меню "Ценовая категория", выберите столбец уровня "Стандартный" и нажмите кнопку **Обновить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

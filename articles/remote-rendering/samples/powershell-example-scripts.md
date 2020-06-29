@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/12/2020
 ms.topic: sample
-ms.openlocfilehash: c45d2fc34ccbab6d813f12563678d036f9f35753
-ms.sourcegitcommit: df8b2c04ae4fc466b9875c7a2520da14beace222
+ms.openlocfilehash: 831f09ecf7550a847c483fbe1678f1e4c3cecb61
+ms.sourcegitcommit: ff19f4ecaff33a414c0fa2d4c92542d6e91332f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80891498"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85052288"
 ---
 # <a name="example-powershell-scripts"></a>Примеры скриптов PowerShell
 
@@ -75,6 +75,9 @@ ms.locfileid: "80891498"
 
 > [!CAUTION]
 > Не забудьте правильно экранировать символы обратной косой черты в пути LocalAssetDirectoryPath, используя двойные косые черты, вот так: "\\\\". Во всех остальных путях, таких как inputFolderPath и inputAssetPath, используйте символы прямой косой черты: "/".
+
+> [!CAUTION]
+> Необязательные значения должны быть заполнены либо необходимо удалить ключ и значение. Например, если вы не используете параметр `"outputAssetFileName"`, нужно удалить всю строку в файле `arrconfig.json`.
 
 ### <a name="accountsettings"></a>accountSettings
 
@@ -188,7 +191,7 @@ ms.locfileid: "80891498"
 
 1. Отправьте все файлы, содержащиеся в `assetConversionSettings.modelLocation`, во входной контейнер больших двоичных объектов для заданного пути `inputFolderPath`.
 1. Вызовите [REST API преобразования модели](../how-tos/conversion/conversion-rest-api.md), чтобы начать [преобразование модели](../how-tos/conversion/model-conversion.md).
-1. Опрашивайте состояние преобразования, пока преобразование не завершится (успешно или с ошибкой).
+1. Состояние преобразования будет опрашиваться, пока преобразование не завершится (успешно или с ошибкой).
 1. Выведите сведения о расположении преобразованного файла (учетная запись хранения, контейнер выходных данных, путь к файлу в контейнере).
 
 ### <a name="access-to-storage-via-shared-access-signatures"></a>Доступ к хранилищу через подписанные URL-адреса

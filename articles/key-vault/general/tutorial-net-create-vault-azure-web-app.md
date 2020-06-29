@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 05/06/2020
 ms.author: mbaldwin
-ms.openlocfilehash: dca7392c35c398ae3d9da62114c991ee4c0e57ca
-ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.openlocfilehash: f6e70caaedf906142b19ba45f0eb4d818e2955e7
+ms.sourcegitcommit: ff19f4ecaff33a414c0fa2d4c92542d6e91332f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82997005"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85051905"
 ---
 # <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-web-app-with-net"></a>Руководство по использованию управляемого удостоверения для подключения Key Vault к веб-приложению в .NET
 
@@ -147,7 +147,7 @@ az appservice plan create --name myAppServicePlan --resource-group myResourceGro
 Создайте [веб-приложение Azure](../../app-service/containers/app-service-linux-intro.md) в плане службы приложений `myAppServicePlan`. 
 
 > [!Important]
-> Как и хранилище ключей, веб-приложение Azure должно иметь уникальное имя. В следующих примерах замените заполнитель \<your-webapp-name\> именем своего веб-приложения.
+> Как и хранилище ключей, веб-приложение Azure должно иметь уникальное имя. В следующих примерах замените \<your-webapp-name\> именем своего веб-приложения.
 
 
 ```azurecli-interactive
@@ -279,6 +279,7 @@ dotnet add package Azure.Security.KeyVault.Secrets
 ```csharp
 using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
+using Azure.Core;
 ```
 
 Эти строки следует поместить перед вызовом `app.UseEndpoints`, включив в URI значение `vaultUri` для вашего хранилища ключей. Для проверки подлинности в хранилище ключей в следующем примере кода используется функция [DefaultAzureCredential()](/dotnet/api/azure.identity.defaultazurecredential?view=azure-dotnet), которая использует токен из управляемого удостоверения приложения. В ней также реализована экспоненциальная задержка для повторных попыток на случай регулирования запросов к хранилищу ключей.

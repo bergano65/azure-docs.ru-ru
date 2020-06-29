@@ -8,14 +8,14 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 02/26/2020
+ms.date: 06/12/2020
 ms.custom: tracking-python
-ms.openlocfilehash: 350bc92193a27b595158f65b6ae54edc1c934e35
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ms.openlocfilehash: 2f650681742b2d91396ad41aeb69505c703cd3ac
+ms.sourcegitcommit: 4ac596f284a239a9b3d8ed42f89ed546290f4128
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84608797"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84753038"
 ---
 # <a name="tutorial-use-python-and-ai-to-generate-searchable-content-from-azure-blobs"></a>Руководство по использованию Python и искусственного интеллекта для создания доступного для поиска содержимого на основе больших двоичных объектов Azure
 
@@ -92,7 +92,7 @@ ms.locfileid: "84608797"
    Строка подключения — это URL-адрес в следующем формате:
 
       ```http
-      DefaultEndpointsProtocol=https;AccountName=cogsrchdemostorage;AccountKey=<your account key>;EndpointSuffix=core.windows.net
+      DefaultEndpointsProtocol=https;AccountName=<storageaccountname>;AccountKey=<your account key>;EndpointSuffix=core.windows.net
       ```
 
 1. Сохраните эту строку подключения в Блокноте. Она понадобится позже при настройке подключения к источнику данных.
@@ -101,7 +101,7 @@ ms.locfileid: "84608797"
 
 Обогащение ИИ основано на платформе Cognitive Services, которая включает службы "Анализ текста" для обработки естественного языка и "Компьютерное зрение" для обработки изображений. Если бы вы создавали реальный прототип или проект, на этом этапе нужно было бы создать Cognitive Services (в том же регионе, что и Когнитивный поиск Azure) для связывания с операциями индексирования.
 
-Но для нашего примера подготовку ресурсов можно пропустить, так как Когнитивный поиск Azure может подключаться к Cognitive Services в фоновом режиме и предоставляет 20 бесплатных транзакций для каждого выполнения индексатора. В примере из этого руководства используется всего семь транзакций. Это значит, что нам достаточно уровня "Бесплатный". Для крупных проектов вам, скорее всего, нужно будет подготовить Cognitive Services на уровне S0 с оплатой по мере использования. См. сведения о [подключении Cognitive Services](cognitive-search-attach-cognitive-services.md).
+В этом учебнике используется только 7 транзакций, поэтому подготовку ресурсов можно пропустить, так как Когнитивный поиск Azure может подключаться к Cognitive Services для получения 20 бесплатных транзакций для каждого выполнения индексатора. Свободного выделения будет достаточно. Для крупных проектов вам, скорее всего, нужно будет подготовить Cognitive Services на уровне S0 с оплатой по мере использования. См. сведения о [подключении Cognitive Services](cognitive-search-attach-cognitive-services.md).
 
 ### <a name="azure-cognitive-search"></a>Когнитивный поиск Azure
 
@@ -220,12 +220,14 @@ skillset_payload = {
             "defaultLanguageCode": "en",
             "inputs": [
                 {
-                    "name": "text", "source": "/document/content"
+                    "name": "text", 
+                    "source": "/document/content"
                 }
             ],
             "outputs": [
                 {
-                    "name": "organizations", "targetName": "organizations"
+                    "name": "organizations", 
+                    "targetName": "organizations"
                 }
             ]
         },
@@ -233,7 +235,8 @@ skillset_payload = {
             "@odata.type": "#Microsoft.Skills.Text.LanguageDetectionSkill",
             "inputs": [
                 {
-                    "name": "text", "source": "/document/content"
+                    "name": "text", 
+                    "source": "/document/content"
                 }
             ],
             "outputs": [
@@ -269,10 +272,12 @@ skillset_payload = {
             "context": "/document/pages/*",
             "inputs": [
                 {
-                    "name": "text", "source": "/document/pages/*"
+                    "name": "text", 
+                    "source": "/document/pages/*"
                 },
                 {
-                    "name": "languageCode", "source": "/document/languageCode"
+                    "name": "languageCode", 
+                    "source": "/document/languageCode"
                 }
             ],
             "outputs": [
@@ -378,9 +383,9 @@ print(r.status_code)
 
 Чтобы связать эти объекты вместе в индексаторе, необходимо определить сопоставления полей.
 
-+ Обработка FieldMappings выполняется перед набором навыков. Исходные поля из источника данных сопоставляются с целевыми полями в индексе. Если имена и типы полей одинаковы в исходном и целевом расположениях, сопоставление не требуется.
++ Обработка `"fieldMappings"` выполняется перед набором навыков, при этом исходные поля из источника данных сопоставляются с целевыми полями в индексе. Если имена и типы полей одинаковы в исходном и целевом расположениях, сопоставление не требуется.
 
-+ Обработка OutputFieldMappings выполняется после набора навыков. Добавляются ссылки на элементы sourceFieldNames, которые не существуют, пока они не будут созданы при анализе или обогащении документов. TargetFieldName — это поле в индексе.
++ Обработка `"outputFieldMappings"` выполняется после набора навыков, при этом добавляются ссылки на элементы `"sourceFieldNames"`, которые не существуют, пока они не будут созданы при распознавании или обогащении документов. `"targetFieldName"` — это поле в индексе.
 
 Помимо привязки входных данных к выходным данным, можно также использовать сопоставления полей для преобразования структур данных в плоские структуры. Для получения дополнительных сведений см. раздел [Сопоставление обогащенных полей с индексом, поддерживающим поиск](cognitive-search-output-field-mapping.md).
 
@@ -465,7 +470,7 @@ r = requests.get(endpoint + "/indexers/" + indexer_name +
 pprint(json.dumps(r.json(), indent=1))
 ```
 
-В ответе проверьте значения status и endTime для lastResult. Периодически запускайте скрипт для проверки состояния. Когда индексатор завершит работу, состояние будет иметь значение success, будет указано значение endTime, а в ответ будут включены все ошибки и предупреждения, которые произошли во время обогащения.
+В ответе отслеживайте `"lastResult"` по значениям `"status"` и `"endTime"`. Периодически запускайте скрипт для проверки состояния. Когда индексатор завершит работу, состояние будет иметь значение success, будет указано значение endTime, а в ответ будут включены все ошибки и предупреждения, которые произошли во время обогащения.
 
 ![Индексатор создан](./media/cognitive-search-tutorial-blob-python/py-indexer-is-created.png "Индексатор создан")
 
@@ -505,7 +510,7 @@ pprint(json.dumps(r.json(), indent=1))
 
 ![Индекс запроса для содержимого организаций](./media/cognitive-search-tutorial-blob-python/py-query-index-for-organizations.png "Запрос индекса для возврата содержимого организаций")
 
-Повторите запрос для дополнительных полей: content, languageCode, keyPhrases и organizations в этом упражнении. Вы можете возвратить несколько полей с помощью `$select`, используя разделенный запятыми список.
+Повторите эти действия для дополнительных полей: `content`, `languageCode`, `keyPhrases` и `organizations` в этом упражнении. Вы можете возвратить несколько полей с помощью `$select`, используя разделенный запятыми список.
 
 Можно использовать методы GET или POST, в зависимости от сложности и длины строки запроса. Дополнительные сведения см. в статье [Отправка запросов в индекс службы поиска Azure с помощью REST API](https://docs.microsoft.com/rest/api/searchservice/search-documents).
 

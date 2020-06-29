@@ -6,12 +6,12 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 05/04/2017
 ms.custom: mvc, cli-validate, seodec18
-ms.openlocfilehash: 5dd99d9aa7e63066ac4801282e548f2995e57e67
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 36d6e9ce2ab180c49737230de1f8b528f8da8b40
+ms.sourcegitcommit: 34eb5e4d303800d3b31b00b361523ccd9eeff0ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82085609"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84905968"
 ---
 # <a name="tutorial-build-a-nodejs-and-mongodb-app-in-azure"></a>Руководство по Разработка приложения на основе Node.js и MongoDB в Azure
 
@@ -183,7 +183,7 @@ az cosmosdb list-keys --name <cosmosdb_name> --resource-group myResourceGroup
 
 В локальном репозитории MEAN.js создайте файл с именем _local-production.js_ в папке _config/env/_ . По умолчанию, чтобы этот файл хранился вне репозитория, настраивается _.gitignore_. 
 
-Скопируйте в него следующий код: Замените два заполнителя *\<cosmosdb_name>* именем базы данных Cosmos DB, а заполнитель *\<primary_master_key>*  — ключом, скопированным на предыдущем шаге.
+Скопируйте в него следующий код: Также замените два заполнителя *\<cosmosdb_name>* именем базы данных Cosmos DB, а заполнитель *\<primary_master_key>* ключом, скопированным на предыдущем шаге.
 
 ```javascript
 module.exports = {
@@ -497,3 +497,8 @@ az webapp log tail --name <app_name> --resource-group myResourceGroup
 
 > [!div class="nextstepaction"] 
 > [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](app-service-web-tutorial-custom-domain.md)
+
+Дополнительные ресурсы
+
+> [!div class="nextstepaction"]
+> [Настройка приложения Node.js](configure-language-nodejs.md)

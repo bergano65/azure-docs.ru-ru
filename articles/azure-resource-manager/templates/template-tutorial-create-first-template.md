@@ -2,15 +2,15 @@
 title: Учебник. Создание шаблона и его развертывание
 description: Создайте свой первый шаблон Azure Resource Manager. В этом учебнике вы узнаете о синтаксисе файла шаблона и о том, как развернуть учетную запись хранения.
 author: mumian
-ms.date: 05/29/2020
+ms.date: 06/10/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: dff1dd15f7f161f25ef7de54e36fa83e3e0036d2
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.openlocfilehash: e2419e8ee9f8648ae8f929638ac2c85ea8b67a0f
+ms.sourcegitcommit: f01c2142af7e90679f4c6b60d03ea16b4abf1b97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84235217"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84676154"
 ---
 # <a name="tutorial-create-and-deploy-your-first-arm-template"></a>Руководство по Создание и развертывание шаблона ARM
 
@@ -37,6 +37,7 @@ ms.locfileid: "84235217"
 - [Установка Azure PowerShell](/powershell/azure/install-az-ps)
 - [Установка Azure CLI в Windows](/cli/azure/install-azure-cli-windows)
 - [Установка Azure CLI в Linux](/cli/azure/install-azure-cli-linux)
+- [Установка Azure CLI в macOS](/cli/azure/install-azure-cli-macos)
 
 После установки Azure PowerShell или Azure CLI убедитесь, что вы вошли в систему в первый раз. Дополнительные сведения см. в разделах для [PowerShell](/powershell/azure/install-az-ps#sign-in) или [Azure CLI](/cli/azure/get-started-with-azure-cli#sign-in).
 

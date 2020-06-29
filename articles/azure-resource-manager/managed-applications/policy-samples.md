@@ -1,23 +1,23 @@
 ---
 title: Встроенные определения политик для Управляемых приложений Azure
 description: Здесь приведены встроенные определения политик в Политике Azure для Управляемых приложений Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 05/29/2020
+ms.date: 06/10/2020
 ms.topic: sample
 author: tfitzmac
 ms.author: tomfitz
 ms.custom: subject-policy-samples
-ms.openlocfilehash: 5f730a13a540e758d065214158ae36e1c4e1e8e9
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.openlocfilehash: c0946082f7a6ad334dcc8794a2da8143e18d0235
+ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84234674"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84886651"
 ---
-# <a name="azure-policy-built-in-policy-definitions-for-azure-managed-applications"></a>Встроенные определения политик в Политике Azure для Управляемых приложений Azure
+# <a name="azure-policy-built-in-definitions-for-azure-managed-applications"></a>Встроенные определения в Политике Azure для Управляемых приложений Azure
 
 Эта страница представляет собой индекс встроенных определений политик в [Политике Azure](../../governance/policy/overview.md) для Управляемых приложений Azure. Дополнительные встроенные компоненты Политики Azure для других служб см. в статье [Встроенные определения Политики Azure](../../governance/policy/samples/built-in-policies.md).
 
-Имя каждого встроенного определения политики связано с определением политики на портале Azure. Перейдите по ссылке в столбце **GitHub**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
+Имя каждого встроенного определения политики связано с определением политики на портале Azure. Перейдите по ссылке в столбце **Версия**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
 
 ## <a name="azure-managed-applications"></a>Управляемые приложения Azure
 

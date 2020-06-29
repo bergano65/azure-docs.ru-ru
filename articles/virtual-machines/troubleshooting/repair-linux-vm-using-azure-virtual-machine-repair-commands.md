@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.date: 09/10/2019
 ms.author: v-miegge
-ms.openlocfilehash: da40deb4df55a63f5fecc380500a507b374ca63d
-ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
+ms.openlocfilehash: 9029082a275905bbdb9efe0cefa05337c9969a2f
+ms.sourcegitcommit: 12f23307f8fedc02cd6f736121a2a9cea72e9454
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83711148"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84219915"
 ---
 # <a name="repair-a-linux-vm-by-using-the-azure-virtual-machine-repair-commands"></a>Восстановление виртуальной машины Linux с помощью команд восстановления виртуальной машины Azure
 
@@ -66,7 +66,7 @@ ms.locfileid: "83711148"
    az extension update -n vm-repair
    ```
 
-3. Выполните `az vm repair create`. Эта команда создает копию диска ОС для неработающей виртуальной машины, создает виртуальную машину для исправления в новой группе ресурсов и подключает копию диска ОС.  Виртуальная машина для исправления будет иметь тот же размер и регион, что и неработающая виртуальная машина.
+3. Выполните `az vm repair create`. Эта команда создает копию диска ОС для неработающей виртуальной машины, создает виртуальную машину для исправления в новой группе ресурсов и подключает копию диска ОС.  Виртуальная машина для исправления будет иметь тот же размер и регион, что и неработающая виртуальная машина. Используемые здесь группа ресурсов и имя виртуальной машины относятся к неработающей виртуальной машине.
 
    ```azurecli-interactive
    az vm repair create -g MyResourceGroup -n myVM --repair-username username --repair-password password!234 --verbose
@@ -74,7 +74,7 @@ ms.locfileid: "83711148"
 
 4. Выполните все необходимые действия по устранению проблем на созданной виртуальной машине восстановления, а затем перейдите к шагу 5.
 
-5. Выполните `az vm repair restore`. Эта команда поменяет исходный диск ОС виртуальной машины на исправленный.
+5. Выполните `az vm repair restore`. Эта команда поменяет исходный диск ОС виртуальной машины на исправленный. Используемые здесь группа ресурсов и имя виртуальной машины относятся к неработающей виртуальной машине, упоминавшейся на шаге 3.
 
    ```azurecli-interactive
    az vm repair restore -g MyResourceGroup -n MyVM --verbose

@@ -6,12 +6,12 @@ ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 05/16/2018
-ms.openlocfilehash: 3c55becb098c9d93688b59f1db4f702acbff3f72
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: bb61f6146e588673038fae9f41b770c4865cefb7
+ms.sourcegitcommit: 51977b63624dfd3b4f22fb9fe68761d26eed6824
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83837270"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84945296"
 ---
 # <a name="azure-monitor-cli-samples"></a>Примеры CLI для Azure Monitor
 В этой статье приведены примеры команд интерфейса командной строки для работы с функциями Azure Monitor. Azure Monitor позволяет выполнять автомасштабирование облачных служб, виртуальных машин и веб-приложений, отправлять оповещения и осуществлять вызов URL-адресов на основе значений настроенных данных телеметрии.
@@ -29,51 +29,51 @@ az login
 
 После выполнения этой команды необходимо будет войти, следуя инструкциям на экране. Все команды работают в контексте подписки по умолчанию.
 
-Для получения сведений о текущей подписке используйте следующую команду.
+Получение сведений о текущей подписке.
 
 ```azurecli
 az account show
 ```
 
-Чтобы изменить подписку для рабочего контекста, используйте следующую команду.
+Изменение подписки для рабочего контекста.
 
 ```azurecli
 az account set -s <Subscription ID or name>
 ```
 
-Чтобы просмотреть список всех поддерживаемых команд Azure Monitor, выполните следующую команду.
+Просмотр списка всех поддерживаемых команд Azure Monitor.
 
 ```azurecli
 az monitor -h
 ```
 
-## <a name="view-activity-log-for-a-subscription"></a>Просмотр журнала действий для подписки
+## <a name="view-activity-log"></a>Просмотр журнала действий
 
-Чтобы просмотреть события журнала действий, выполните следующую команду.
+Просмотр списка событий в журнале действий.
 
 ```azurecli
 az monitor activity-log list
 ```
 
-Попробуйте выполнить следующие действия, чтобы просмотреть все доступные параметры.
+Просмотр всех доступных вариантов.
 
 ```azurecli
 az monitor activity-log list -h
 ```
 
-Ниже приведен пример получения списка журналов для группы ресурсов
+Получение списка журналов по группе ресурсов.
 
 ```azurecli
 az monitor activity-log list --resource-group <group name>
 ```
 
-Пример получения списка журналов для вызывающего объекта
+Получение списка журналов по вызывающему объекту.
 
 ```azurecli
 az monitor activity-log list --caller myname@company.com
 ```
 
-Пример получения списка журналов для вызывающего объекта и типа ресурса в определенном диапазоне дат
+Получение списка журналов с указанием вызывающего объекта, типа ресурса и диапазона дат.
 
 ```azurecli
 az monitor activity-log list --resource-provider Microsoft.Web \

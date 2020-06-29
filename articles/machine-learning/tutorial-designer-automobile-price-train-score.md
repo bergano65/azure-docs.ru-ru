@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 05/12/2020
 ms.custom: designer
-ms.openlocfilehash: f6d684829092d8be97785c46058186f3ca5542b2
-ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
+ms.openlocfilehash: 2fab23e9f765d9ab4908cc4be69d8b747c6856b9
+ms.sourcegitcommit: 6571e34e609785e82751f0b34f6237686470c1f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84119034"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84790540"
 ---
 # <a name="tutorial-predict-automobile-price-with-the-designer-preview"></a>Руководство по прогнозированию цен на автомобили с помощью конструктора (предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
@@ -77,7 +77,7 @@ ms.locfileid: "84119034"
     Если у вас уже есть доступный целевой объект вычислений, его можно выбрать для запуска этого конвейера.
 
     > [!NOTE]
-    > Конструктор может выполнять обучающие эксперименты только с целевыми объектами вычислительной среды и вычислительных операций Машинного обучения Azure. Другие целевые объекты вычислений не отображаются.
+    > Конструктор может выполнять обучающие эксперименты только с целевыми объектами вычислительной среды и вычислительных операций Машинного обучения Azure, а другие целевые объекты вычислений не будут отображаться.
 
 1. Укажите имя вычислительного ресурса.
 

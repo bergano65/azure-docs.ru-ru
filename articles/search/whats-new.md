@@ -7,19 +7,23 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: overview
-ms.date: 05/19/2020
-ms.openlocfilehash: f8ddc3ef56aefc6ea613af19d91cd0122435efd7
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.date: 06/08/2020
+ms.openlocfilehash: 97defe2af5b82cccbaf289ccbd805b608b978a43
+ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84344209"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84736090"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Новые возможности в Когнитивном поиске Azure
 
 Узнайте о новых возможностях службы. Создайте закладку для этой страницы, чтобы получать последние сведения об обновлениях службы.
 
 ## <a name="feature-announcements"></a>Объявления о новых возможностях
+
+### <a name="june-2020"></a>Июнь 2020 г.
+
+Навык Машинного обучения Azure — это новый тип навыка для интеграции конечной точки вывода из Машинного обучения Azure. Интерфейс портала поддерживает обнаружение и интеграцию конечной точки Машинного обучения Azure в наборе навыков Когнитивного поиска. Для обнаружения требуется, чтобы службы "Когнитивный поиск" и Azure ML были развернуты в одной подписке. Чтобы зарегистрироваться для использования предварительной версии AML, [заполните форму](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0jK7x7HQYdDm__YfEsbtcZUMTFGTFVTOE5XMkVUMFlDVFBTTlYzSlpLTi4u). Начните с [этого руководства](cognitive-search-tutorial-aml-custom-skill.md).
 
 ### <a name="may-2020-microsoft-build"></a>Май 2020 г. (сборка Microsoft)
 

@@ -7,16 +7,16 @@ author: tamram
 ms.service: storage
 ms.subservice: blobs
 ms.topic: tutorial
-ms.date: 03/06/2020
+ms.date: 06/10/2020
 ms.author: tamram
-ms.reviewer: cbrooks
+ms.reviewer: ozgun
 ms.custom: mvc
-ms.openlocfilehash: 13a2a0bcc362a13b0c42650509d356f613527cfc
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: ac9bf7edf6e3973dd2f1f917d26ac280be4648e3
+ms.sourcegitcommit: 51977b63624dfd3b4f22fb9fe68761d26eed6824
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80061326"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84945653"
 ---
 # <a name="secure-access-to-application-data"></a>Безопасный доступ к данным приложения
 
@@ -43,7 +43,7 @@ ms.locfileid: "80061326"
 blobStorageAccount="<blob_storage_account>"
 
 blobStorageAccountKey=$(az storage account keys list -g myResourceGroup \
-    --name $blobStorageAccount --query [0].value --output tsv) 
+    --account-name $blobStorageAccount --query [0].value --output tsv) 
 
 az storage container set-permission \
     --account-name $blobStorageAccount \
@@ -135,11 +135,13 @@ public static async Task<List<string>> GetThumbNailUrls(AzureStorageConfig _stor
 |[UriBuilder](/dotnet/api/system.uribuilder) | [Запрос](/dotnet/api/system.uribuilder.query) |  |
 |[Список](/dotnet/api/system.collections.generic.list-1) | | [Добавление](/dotnet/api/system.collections.generic.list-1.add) |
 
-## <a name="server-side-encryption"></a>Шифрование на стороне сервера
+## <a name="azure-storage-encryption"></a>Шифрование службы хранилища Azure
 
-[Шифрование службы хранилища Azure (SSE)](../common/storage-service-encryption.md) помогает защитить данные. SSE шифрует данные при хранении, выполняя обработку шифрования, расшифровки и управление ключами. Используется 256-битное [шифрование AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), самая надежная технология блочного шифрования на сегодняшний день.
+[Шифрование службы хранилища Azure](../common/storage-service-encryption.md) помогает защитить данные путем шифрования неактивных данных и управления шифрованием и расшифровкой. Используется 256-битное [шифрование AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), самая надежная технология блочного шифрования на сегодняшний день.
 
-SSE автоматически шифрует данные на всех уровнях производительности ("Стандартный" и "Премиум"), во всех моделях развертывания (Azure Resource Manager и классической) и во всех службах хранилища Azure (больших двоичных объектов, очередей, таблиц и файлов). 
+Вы можете делегировать корпорации Майкрософт управлять ключами шифрования или использовать собственные ключи с ключами, управляемыми клиентами, в Azure Key Vault. См. статью [Использование ключей, управляемых клиентом, в Azure Key Vault для управления шифрованием службы хранилища Azure](../common/encryption-customer-managed-keys.md).
+
+Шифрование службы хранилища Azure автоматически шифрует данные на всех уровнях производительности ("Стандартный" и "Премиум"), во всех моделях развертывания (Azure Resource Manager и классической) и во всех службах хранилища Azure (больших двоичных объектов, очередей, таблиц и файлов).
 
 ## <a name="enable-https-only"></a>Включение только HTTPS
 

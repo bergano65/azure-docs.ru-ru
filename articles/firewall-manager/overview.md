@@ -5,14 +5,14 @@ author: vhorne
 ms.service: firewall-manager
 services: firewall-manager
 ms.topic: overview
-ms.date: 03/13/2020
+ms.date: 06/11/2020
 ms.author: victorh
-ms.openlocfilehash: 149782f627d586e927c828506a7d4f1b5437b987
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: bef948def487e2b60764641e6cf38a3e122e2f87
+ms.sourcegitcommit: 6571e34e609785e82751f0b34f6237686470c1f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79366280"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84792169"
 ---
 # <a name="what-is-azure-firewall-manager-preview"></a>Что такое предварительная версия Диспетчера брандмауэра Azure?
 
@@ -31,7 +31,7 @@ ms.locfileid: "79366280"
 
 Подробное сравнение таких типов архитектуры, как *защищенный виртуальный концентратор* и *центральная виртуальная сеть*, см. в [этой статье](vhubs-and-vnets.md).
 
-![firewall-manager](media/overview/firewallmanagerv5.png)
+![firewall-manager](media/overview/trusted-security-partners.png)
 
 ## <a name="azure-firewall-manager-preview-features"></a>Возможности предварительной версии Диспетчера брандмауэра Azure
 
@@ -78,7 +78,7 @@ ms.locfileid: "79366280"
 
 Ниже описываются известные проблемы в предварительной версии Диспетчера брандмауэра Azure.
 
-|Проблема  |Description  |Меры по снижению риска  |
+|Проблема  |Описание  |Меры по снижению риска  |
 |---------|---------|---------|
 |Ограничения сторонней фильтрации.|Решения сторонних поставщиков для фильтрации трафика из виртуальной сети в Интернет нельзя использовать вместе с Брандмауэром Azure, применяемым для трафика из филиалов в виртуальную сеть или между виртуальными сетями.|Изучаем|
 |Разделение трафика в настоящее время не поддерживается.|Разделение трафика Office 365 и общедоступной платформы PaaS Azure в настоящее время не поддерживается. Таким образом, при выборе стороннего поставщика для трафика из виртуальной сети или филиалов в Интернет весь трафик Office 365 и общедоступной платформы PaaS Azure также направляется через партнерскую службу.|Мы исследуем возможность разделения трафика в концентраторе.

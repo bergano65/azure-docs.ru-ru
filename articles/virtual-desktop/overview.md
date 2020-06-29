@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 05/07/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ab1d0318464f6b44e1f46bd30dc76272584fde64
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.openlocfilehash: 61162a0e2e95a08547848f286f2db489f4b9d963
+ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82929831"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84737025"
 ---
 # <a name="what-is-windows-virtual-desktop"></a>Что такое Виртуальный рабочий стол Windows 
 
@@ -22,7 +22,7 @@ ms.locfileid: "82929831"
 При запуске Виртуального рабочего стола Windows в Azure доступны следующие возможности:
 
 * Настройка развертывания Windows 10 с поддержкой нескольких сеансов со всеми соответствующими возможностями и функцией масштабируемости.
-* Виртуализация Office 365 ProPlus с последующей оптимизацией включения поддержки виртуальных сценариев с несколькими пользователями.
+* Виртуализация приложений Microsoft 365 для предприятий с последующей оптимизацией включения поддержки виртуальных сценариев с несколькими пользователями.
 * Предоставление виртуальных рабочих столов Windows 7 с бесплатными расширенными обновлениями системы безопасности.
 * Перенос существующих служб удаленных рабочих столов, а также рабочих столов и приложений Windows Server на любой компьютер.
 * Виртуализация рабочих столов и приложений.
@@ -109,11 +109,11 @@ ms.locfileid: "82929831"
 
 |Адрес|Исходящий TCP-порт|Назначение|Тег службы|
 |---|---|---|---|
-|*.microsoftonline.com|443|Проверка подлинности в MS Online Services|None|
+|*.microsoftonline.com|443|Проверка подлинности в Microsoft Online Services|None|
 |*.events.data.microsoft.com|443|Служба телеметрии|None|
 |www.msftconnecttest.com|443|Проверка, подключена ли ОС к Интернету.|None|
 |*.prod.do.dsp.mp.microsoft.com|443|Центр обновления Windows|None|
-|login.windows.net|443|Вход в MS Online Services (Office 365)|None|
+|login.windows.net|443|Вход в Microsoft Online Services, Office 365|None|
 |*.sfx.ms|443|Обновления для клиентского программного обеспечения OneDrive|None|
 |*.digicert.com|443|Проверка отзыва сертификата|None|
 
@@ -186,13 +186,13 @@ ms.locfileid: "82929831"
 |Операционная система|Коллекция образов Azure|Развертывание ВМ вручную|Интеграция шаблона Azure Resource Manager|Подготовка пулов узлов в Azure Marketplace|
 |--------------------------------------|:------:|:------:|:------:|:------:|
 |Windows 10 для нескольких сеансов, версия 1903|Да|Да|Да|Да|
-|Windows 10 для нескольких сеансов, версия 1809|Да|Да|нет|нет|
+|Windows 10 для нескольких сеансов, версия 1809|Да|Да|Нет|Нет|
 |Windows 10 Корпоративная, версия 1903|Да|Да|Да|Да|
-|Windows 10 Корпоративная, версия 1809|Да|Да|нет|нет|
-|Windows 7 Корпоративная|Да|Да|нет|нет|
-|Windows Server 2019|Да|Да|нет|нет|
+|Windows 10 Корпоративная, версия 1809|Да|Да|Нет|Нет|
+|Windows 7 Корпоративная|Да|Да|Нет|Нет|
+|Windows Server 2019|Да|Да|Нет|Нет|
 |Windows Server 2016|Да|Да|Да|Да|
-|Windows Server 2012 R2|Да|Да|нет|нет|
+|Windows Server 2012 R2|Да|Да|Нет|Нет|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

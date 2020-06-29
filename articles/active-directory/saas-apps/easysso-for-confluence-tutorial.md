@@ -12,22 +12,22 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 05/18/2020
+ms.date: 05/28/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a0ac6d86c1ef4fb8f2f5b75ac47f1a25e2cda0b
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 81f33972f80075281b735ad69848631e81d2366e
+ms.sourcegitcommit: 34eb5e4d303800d3b31b00b361523ccd9eeff0ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83748176"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84905260"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-easysso-for-confluence"></a>Руководство по интеграции единого входа Azure Active Directory с EasySSO for Confluence
 
 В этом учебнике описано, как интегрировать EasySSO for Confluence с Azure Active Directory (Azure AD). Интеграция EasySSO for Confluence с Azure AD обеспечивает следующие возможности:
 
-* Контроль доступа к EasySSO for Confluence с помощью Azure AD.
-* Автоматический вход пользователей в EasySSO for Confluence с помощью учетных записей Azure AD.
+* С помощью Azure AD вы можете контролировать доступ к Confluence.
+* Можно разрешить автоматический вход пользователей в Confluence с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
@@ -57,6 +57,7 @@ ms.locfileid: "83748176"
 1. Чтобы добавить новое приложение, выберите **Новое приложение**.
 1. В разделе **Добавление из коллекции** в поле поиска введите **EasySSO for Confluence**.
 1. Выберите **EasySSO for Confluence** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
+
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-easysso-for-confluence"></a>Настройка и проверка единого входа Azure Active Directory для EasySSO for Confluence
 
@@ -89,29 +90,32 @@ ms.locfileid: "83748176"
 
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<server-base-url>/`.
+    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<server-base-url>/login.jsp`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов EasySSO for Confluence](mailto:support@techtime.co.nz). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов EasySSO](mailto:support@techtime.co.nz). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. Приложение EasySSO for Confluence ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
     ![Изображение](common/default-attributes.png)
 
 1. В дополнение к описанному выше приложение EasySSO for Confluence ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
+    
+    | Имя |  |  Исходный атрибут|
+    | ---------------| --------------- | --------- |
+    | urn:oid:0.9.2342.19200300.100.1.1 | | user.userprincipalname |
+    | urn:oid:0.9.2342.19200300.100.1.3 | | user.mail |
+    | urn:oid:2.16.840.1.113730.3.1.241 | | user.displayname |
+    | urn:oid:2.5.4.4 | | user.surname |
+    | urn:oid:2.5.4.42 | | user.givenname |
+    
+    Если у пользователей Azure AD настроен **sAMAccountName**, сопоставьте **urn:oid:0.9.2342.19200300.100.1.1** с атрибутом **sAMAccountName**.
+    
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать**, чтобы скачать **Сертификат (Base64)** или **XML метаданных федерации**, и сохраните один из них или оба на компьютере. Они также потребуются позже, чтобы настроить EasySSO для Confluence.
 
-    | Имя |  Исходный атрибут|
-    | --------------- | --------- |
-    | urn:oid:2.16.840.1.113730.3.1.241 | user.displayname |
-    | urn:oid:2.5.4.42 | user.givenname |
-    | urn:oid:2.5.4.4 | user.surname |
-    | urn:oid:0.9.2342.19200300.100.1.1 | user.userprincipalname|
-    | urn:oid:0.9.2342.19200300.100.1.3 | user.userprincipalname |
-    | | |
-
-1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
-
-    ![Ссылка для скачивания сертификата](common/copy-metadataurl.png)
+    ![Ссылка для скачивания сертификата](./media/easysso-for-confluence-tutorial/certificate.png)
+    
+    Если вы планируете выполнить настройку EasySSO для Confluence вручную с помощью сертификата, необходимо также скопировать **URL-адрес входа** и **идентификатор Azure AD** в разделе ниже и сохранить их на компьютере.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -145,60 +149,80 @@ ms.locfileid: "83748176"
 
 ## <a name="configure-easysso-for-confluence-sso"></a>Настройка единого входа в EasySSO for Confluence
 
-1. Войдите в экземпляр EasySSO for Confluence с правами администратора и перейдите к разделу **Manage Apps** (Управление приложениями).
+1. Войдите в экземпляр Atlassian Confluence с правами администратора и перейдите к разделу **Manage Apps** (Управление приложениями). 
 
-    ![Manage Apps (Управление приложениями)](./media/easysso-for-confluence-tutorial/jira-admin-1.png)
+    ![Manage Apps (Управление приложениями)](./media/easysso-for-confluence-tutorial/confluence-admin-1.png)
 
-1. Щелкните пункт **EasySSO**.
+2. На левой стороне найдите пункт **EasySSO** и щелкните его. Затем нажмите кнопку **Configure** (Настройка).
 
-    ![Easy SSO](./media/easysso-for-confluence-tutorial/jira-admin-2.png)
+    ![Easy SSO](./media/easysso-for-confluence-tutorial/confluence-admin-2.png)
 
-1. Выберите параметр **SAML**. Вы перейдете к разделу конфигурации SAML.
+3. Выберите параметр **SAML**. Вы перейдете к разделу конфигурации SAML.
 
-    ![SAML](./media/easysso-for-confluence-tutorial/jira-admin-3.png)
+    ![SAML](./media/easysso-for-confluence-tutorial/confluence-admin-3.png)
 
-1. В верхней части выберите вкладку **Certificates** (Сертификаты). Появится указанный ниже экран. Укажите на нем расположение **сертификата (Base64)** или **файла метаданных**, сохраненного на предыдущих шагах настройки **единого входа Azure AD**. Далее можно воспользоваться одним из следующих вариантов:
+4. В верхней части окна выберите **Сертификаты**, и отобразится следующий экран: 
 
-    ![URL-адрес метаданных](./media/easysso-for-confluence-tutorial/jira-admin-4.png)
+    ![URL-адрес метаданных](./media/easysso-for-confluence-tutorial/confluence-admin-4.png)
+
+5. Теперь найдите **Сертификат (Base64)** или **Файл метаданных**, сохраненный на предыдущих шагах конфигурации **единого входа Azure AD**. Далее можно воспользоваться одним из следующих вариантов:
 
     а. Используйте **файл метаданных** федерации приложений, загруженный в локальный файл на компьютере. Выберите переключатель **Upload** (Отправить) и выполните инструкции в диалоговом окне отправки файла, которые зависят от вашей операционной системы.
 
     **OR**
 
     b. Откройте **файл метаданных** федерации приложений, чтобы просмотреть содержимое файла (в любом редакторе обычного текста) и скопировать его в буфер обмена. Выберите параметр **Input** (Входные данные) и вставьте содержимое буфера обмена в текстовое поле.
-
+ 
     **OR**
 
     c. Полная настройка вручную. Откройте **сертификат (Base64)** федерации приложений, чтобы просмотреть содержимое файла (в любом редакторе обычного текста) и скопировать его в буфер обмена. Вставьте файл в текстовое поле **IdP Token Signing Certificates** (IdP-сертификаты для подписи маркеров). Затем перейдите на вкладку **General** (Общие) и заполните поля **POST Binding URL** (URL-адрес привязки POST) и **Entity ID** (Идентификатор сущности) соответствующими значениями для **URL-адреса входа** и **идентификатора Azure AD**, сохраненных ранее.
+ 
+6. В нижней части страницы нажмите кнопку **Save** (Сохранить). Содержимое файлов метаданных или сертификатов анализируется в полях конфигурации. Настройка EasySSO for Confluence завершена.
 
-1. В нижней части страницы нажмите кнопку **Save** (Сохранить). Содержимое файлов метаданных или сертификатов анализируется в полях конфигурации. Настройка EasySSO for Confluence завершена.
+7. Для лучшего тестирования перейдите на вкладку **Look & Feel** (Дизайн и функциональность) и установите флажок **SAML Login Button** (Кнопка входа SAML). При этом на экране входа в Confluence будет активирована отдельная кнопка, специально предназначенная для тестирования сквозной интеграции SAML в Azure AD. Эту кнопку можно оставить включенной, а также настроить ее размещение, цвет и преобразовать ее для рабочего режима.
 
-1. Для лучшего тестирования перейдите на вкладку **Look & Feel** (Дизайн и функциональность) и установите флажок **SAML Login Button** (Кнопка входа SAML). При этом на экране входа в Jira будет активирована отдельная кнопка, специально предназначенная для тестирования сквозной интеграции SAML в Azure AD. Эту кнопку можно оставить включенной, а также настроить ее размещение, цвет и преобразовать ее для рабочего режима.
-
-    ![Вкладка Look & Feel (Дизайн и функциональность)](./media/easysso-for-confluence-tutorial/jira-admin-5.png)
+    ![Вкладка Look & Feel (Дизайн и функциональность)](./media/easysso-for-confluence-tutorial/confluence-admin-5.png)
 
     > [!NOTE]
     > Если у вас возникнут проблемы, обратитесь в [группу поддержки EasySSO](mailto:support@techtime.co.nz).
 
 ### <a name="create-easysso-for-confluence-test-user"></a>Создание тестового пользователя EasySSO for Confluence
 
-В этом разделе описано, как создать в EasySSO for Confluence пользователя с именем B. Simon. Приложение EasySSO for Confluence поддерживает JIT-подготовку пользователей, которая **отключена** по умолчанию. Чтобы включить подготовку пользователей, необходимо в разделе General (Общие) подключаемого модуля конфигурации EasySSO явно установить флажок **Create user on successful login** (Создать пользователя при успешном входе). Если пользователь еще не существует в EasySSO for Confluence, он создается после проверки подлинности.
+В этом разделе показано, как создать в Confluence пользователя Britta Simon. Приложение EasySSO for Confluence поддерживает JIT-подготовку пользователей, которая **отключена** по умолчанию. Чтобы включить подготовку пользователей, необходимо в разделе General (Общие) подключаемого модуля конфигурации EasySSO явно установить флажок **Create user on successful login** (Создать пользователя при успешном входе). Если пользователь еще не существует в Confluence, он создается после проверки подлинности.
 
-Однако если вы не хотите включать автоматическую подготовку пользователей при первом входе в систему, они должны существовать в серверных каталогах пользователей, которые использует экземпляр EasySSO for Confluence, например протокол LDAP или Atlassian Crowd.
+Но если вы не хотите включать автоматическую подготовку пользователей при первом входе в систему, они должны существовать во внутренних каталогах пользователей, которые использует экземпляр Confluence, например LDAP или Atlassian Crowd.
 
-![Подготовка пользователей](./media/easysso-for-confluence-tutorial/jira-admin-6.png)
+![Подготовка пользователей](./media/easysso-for-confluence-tutorial/confluence-admin-6.png)
 
-## <a name="test-sso"></a>Проверка единого входа
+## <a name="test-sso"></a>Проверка единого входа 
+
+### <a name="idp-initiated-workflow"></a>Рабочий процесс, инициированный поставщиком удостоверений
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку EasySSO for Confluence на Панели доступа, вы автоматически войдете в приложение EasySSO for Confluence, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку EasySSO для Confluence на Панели доступа, вы автоматически войдете в экземпляр Confluence, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+
+### <a name="sp-initiated-workflow"></a>Рабочий процесс, инициированный поставщиком услуг
+
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью кнопки **SAML Login** (Вход SAML) в Confluence.
+
+![Вход SAML для пользователей](./media/easysso-for-confluence-tutorial/confluence-admin-7.png)
+
+В этом сценарии предполагается, что вы включили параметр **SAML Login Button** (Кнопка входа SAML) на вкладке **Look & Feel** (Дизайн и функциональность) на странице конфигурации EasySSO для Confluence (см. выше). Откройте URL-адрес входа Confluence в браузере в режиме инкогнито, чтобы избежать пересечений с существующими сеансами. Нажмите кнопку **Вход SAML**, и вы будете перенаправлены в поток проверки подлинности пользователя Azure AD. После успешного завершения вы будете перенаправлены к экземпляру Confluence в качестве пользователя, прошедшего проверку подлинности с помощью SAML.
+
+Есть вероятность, что после перенаправления обратно из Azure AD вы увидите следующий экран:
+
+![Экран сбоя EasySSO](./media/easysso-for-confluence-tutorial/confluence-admin-8.png)
+
+В этом случае необходимо выполнить [инструкции на этой странице]( https://techtime.co.nz/display/TECHTIME/EasySSO+How+to+get+the+logs#EasySSOHowtogetthelogs-RETRIEVINGTHELOGS), чтобы получить доступ к файлу **atlassian-confluence.log**. Подробные сведения об этой ошибке см. по ссылочному идентификатору на странице ошибки EasySSO.
+
+Если у вас возникнут проблемы с приемом сообщений журнала, обратитесь в [группу поддержки EasySSO](mailto:support@techtime.co.nz).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 - [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
@@ -207,4 +231,3 @@ ms.locfileid: "83748176"
 - [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
 
 - [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
-

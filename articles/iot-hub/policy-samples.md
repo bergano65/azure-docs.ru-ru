@@ -1,26 +1,26 @@
 ---
 title: Встроенные определения политик для Центра Интернета вещей Azure
 description: Здесь приведены встроенные определения политик в Политике Azure для Центра Интернета вещей Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 05/29/2020
+ms.date: 06/10/2020
 ms.topic: sample
 author: robinsh
 ms.author: robinsh
 ms.service: iot-hub
 ms.custom: subject-policy-samples
-ms.openlocfilehash: 99dda1218136ca81256f918fafef77ffb734e19e
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.openlocfilehash: 921bfb8276573feb3cde80e723ff916c84da92a5
+ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84234375"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84886696"
 ---
-# <a name="azure-policy-built-in-policy-definitions-for-azure-iot-hub"></a>Встроенные определения политик в Политике Azure для Центра Интернета вещей Azure
+# <a name="azure-policy-built-in-definitions-for-azure-iot-hub"></a>Встроенные определения в Политике Azure для Центра Интернета вещей
 
 Пример кода для Центра Интернета вещей, демонстрирующий способы реализации распространенных сценариев Интернета вещей, см. в [этом кратком руководстве](https://docs.microsoft.com/azure/iot-hub/quickstart-send-telemetry-cli). Доступны также пакеты средств разработки для нескольких языков программирования, включая C, Node.js и Python.
 
 Эта страница представляет собой индекс встроенных определений политик в [Политике Azure](../governance/policy/overview.md) для Центра Интернета вещей Azure. Дополнительные встроенные компоненты Политики Azure для других служб см. в статье [Встроенные определения Политики Azure](../governance/policy/samples/built-in-policies.md).
 
-Имя каждого встроенного определения политики связано с определением политики на портале Azure. Перейдите по ссылке в столбце **GitHub**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
+Имя каждого встроенного определения политики связано с определением политики на портале Azure. Перейдите по ссылке в столбце **Версия**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
 
 ## <a name="azure-iot-hub"></a>Центр Интернета вещей Azure
 

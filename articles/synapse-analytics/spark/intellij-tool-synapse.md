@@ -2,20 +2,20 @@
 title: Учебник по Azure Toolkit for IntelliJ (для приложения Spark)
 description: Учебник. Использование Azure Toolkit for IntelliJ для разработки приложений Spark на языке Scala и их отправка в пул Apache Spark (предварительной версии)
 services: synapse-analytics
-author: v-jiche
-ms.author: v-jiche
+author: hrasheed-msft
+ms.author: jejiang
 ms.reviewer: jrasnick, carlrab
 ms.service: synapse-analytics
 ms.topic: tutorial
 ms.date: 04/15/2020
-ms.openlocfilehash: b344ae50d921c33a5e8ddd344e08ec86179668e9
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ms.openlocfilehash: 6f71b9ecc5dc0279d2053f6212f685968309284e
+ms.sourcegitcommit: 9bfd94307c21d5a0c08fe675b566b1f67d0c642d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84608763"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84976801"
 ---
-# <a name="tutorial-create-apache-spark-applications-with-intellij-using-synapse-synapse-analytics-workspaces-preview"></a>Руководство по Создание приложений Apache Spark с помощью IntelliJ с использованием Synapse Analytics (предварительная версия рабочих областей)
+# <a name="tutorial-create-an-apache-spark-applications-with-intellij-using-a-synapse-workspace"></a>Руководство по созданию приложений Apache Spark с помощью IntelliJ и рабочей области Synapse
 
 В этом учебнике показано, как с помощью подключаемого модуля Azure Toolkit for IntelliJ разрабатывать приложения Apache Spark на языке [Scala](https://www.scala-lang.org/) и отправлять их в пул Spark (предварительной версии) напрямую из интегрированной среды разработки (IDE) IntelliJ. С помощью подключаемого модуля можно выполнять следующие действия:
 
@@ -146,7 +146,7 @@ ms.locfileid: "84608763"
     |Аргументы командной строки|При необходимости можно ввести аргументы для основного класса, разделив их пробелом.|
     |Referenced Jars (Ссылки на JAR-файлы) и Referenced Files (Ссылки на файлы)|можно ввести пути к используемым JAR и файлам, если они есть. Вы можете также просматривать файлы в виртуальной файловой системе Azure, которая сейчас поддерживает только кластер ADLS 2 поколения. Дополнительные сведения [Конфигурации Apache Spark](https://spark.apache.org/docs/latest/configuration.html#runtime-environment) и [Краткое руководство. Создание большого двоичного объекта с помощью Обозревателя службы хранилища Azure](../../storage/blobs/storage-quickstart-blobs-storage-explorer.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).|
     |Job Upload Storage (Хранилище обновлений заданий)|Разверните раздел, чтобы отобразить дополнительные параметры.|
-    |Тип хранения|Из раскрывающегося списка выберите **Use Azure Blob to upload** (Для передачи использовать большой двоичный объект Azure).|
+    |Тип хранения|В раскрывающемся списке выберите **Use Azure Blob to upload** (Для отправки использовать BLOB-объект Azure) или **Use cluster default storage account to upload** (Для отправки использовать учетную запись хранения по умолчанию для кластера).|
     |Учетная запись хранения|Введите имя своей учетной записи хранения.|
     |Storage Key (Ключ хранилища)|Введите свой ключ к хранилищу данных.|
     |Контейнер хранилища|Если вы ввели значения в поля **Учетная запись хранения** и **Storage Key** (Ключ хранилища), из раскрывающегося списка выберите контейнер хранилища.|
@@ -250,6 +250,7 @@ ms.locfileid: "84608763"
 
     |Свойство |Значение |
     |----|----|
+    |Имя главного класса| Выберите имя класса main.| 
     |Пулы Spark|Выберите пулы Spark, в которых хотите запустить приложение.|
     ||
 

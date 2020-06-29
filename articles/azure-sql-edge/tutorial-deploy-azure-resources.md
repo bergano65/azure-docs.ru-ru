@@ -9,12 +9,12 @@ author: VasiyaKrishnan
 ms.author: vakrishn
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 30c024aafc1cf8f479de77107b7f0aaaa262d47c
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.openlocfilehash: 8c17351c049ef419ab95f46a54aa9f8cc523f7cf
+ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84235073"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84887458"
 ---
 # <a name="install-software-and-set-up-resources-for-the-tutorial"></a>Установка программного обеспечения и настройка ресурсов для учебника
 
@@ -30,6 +30,7 @@ ms.locfileid: "84235073"
 4. Установите [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio/)
 5. Откройте Azure Data Studio и настройте Python для записных книжек. Дополнительные сведения см. в разделе [Настройка Python для записных книжек](/sql/azure-data-studio/sql-notebooks#configure-python-for-notebooks). Этот шаг может занять несколько минут.
 6. Установите [последнюю версию](https://github.com/Azure/azure-powershell/releases/tag/v3.5.0-February2020) Azure CLI. Для следующих сценариев требуется, чтобы зона доступности PowerShell была последней версией (3.5.0, февраль 2020).
+7. Скачайте [DACPAC](https://github.com/microsoft/sql-server-samples/tree/master/samples/demos/azure-sql-edge-demos/iron-ore-silica-impurities/DACPAC) и [файлы образа DOCKER для AMD/ARM](https://github.com/microsoft/sql-server-samples/tree/master/samples/demos/azure-sql-edge-demos/iron-ore-silica-impurities/tar-files), которые понадобятся при работе с этим руководством.
 
 ## <a name="deploy-azure-resources-using-powershell-script"></a>Развертывание ресурсов Azure с помощью скрипта PowerShell
 
