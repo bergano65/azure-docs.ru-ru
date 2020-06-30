@@ -14,17 +14,17 @@ ms.reviewer: davidph
 manager: cgronlun
 ms.date: 07/29/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: a7d0bc787f1ae4444849a1483d6323f8a098ae1e
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: 115688eeccab3a48bf4234f00124bcd6bc950853
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84024134"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85251443"
 ---
 # <a name="tutorial-build-a-clustering-model-in-r-with-azure-sql-database-machine-learning-services-preview"></a>Руководство по Построение модели кластеризации на языке R с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
-Во второй части этого цикла из трех частей вы создадите модель K-средних на языке R для выполнения кластеризации. В следующей части из этой серии описывается, как развернуть эту модель в базе данных SQL с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия).
+Во второй части этого цикла из трех частей вы создадите модель K-средних на языке R для выполнения кластеризации. В следующей части из этой серии описывается, как развернуть эту модель в базе данных в Базе данных SQL с помощью Служб машинного обучения Базы данных SQL Azure (предварительная версия).
 
 [!INCLUDE[ml-preview-note](../../../includes/sql-database-ml-preview-note.md)]
 
@@ -36,9 +36,9 @@ ms.locfileid: "84024134"
 > * Выполнение кластеризации
 > * Анализ результатов
 
-Из [первой части](clustering-model-prepare-data-tutorial.md) вы узнали, как выполнять подготовку данных из базы данных SQL Azure для кластеризации.
+В [первой части](clustering-model-prepare-data-tutorial.md) показано, как подготовить данные из базы данных для выполнения кластеризации.
 
-В [третьей части](clustering-model-deploy-tutorial.md) рассказывается, как создать в Базе данных SQL Azure хранимую процедуру, с помощью которой можно выполнять кластеризацию с помощью R на основе новых данных.
+В [третьей части](clustering-model-deploy-tutorial.md) показано, как создать хранимую процедуру, с помощью которой можно выполнять кластеризацию на языке R на основе новых данных.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -140,7 +140,7 @@ Within cluster sum of squares by cluster:
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-***Если вы не собираетесь продолжать работу с этим учебником***, удалите базу данных tpcxbb_1gb со своего сервера.
+***Если вы не собираетесь продолжать работу с этим руководством***, удалите базу данных tpcxbb_1gb со своего сервера.
 
 На портале Azure сделайте следующее:
 

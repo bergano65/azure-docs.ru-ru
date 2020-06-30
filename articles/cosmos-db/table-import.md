@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 12/07/2017
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 5c828644cb03d83df38265719cd8afabc24cf739
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 3d1efc0a116a38686fa929a2058fa88e4c2cfa82
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "66242572"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85119483"
 ---
 # <a name="migrate-your-data-to-azure-cosmos-db-table-api-account"></a>Перенос данных в учетную запись API таблиц в Azure Cosmos DB
 
@@ -26,11 +26,11 @@ ms.locfileid: "66242572"
 > * импорт данных с помощью AzCopy.
 > * миграция из API таблицы (предварительная версия) в API таблицы. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Увеличьте пропускную способность.** Продолжительность переноса данных зависит от пропускной способности, настроенной для отдельного контейнера или набора контейнеров. Увеличьте пропускную способность для крупных миграций. После переноса уменьшите пропускную способность для экономии расходов. Дополнительные сведения об увеличении пропускной способности на портале Azure см. в статье об уровнях производительности и ценовых категориях в Azure Cosmos DB.
 
-* **Создайте ресурсы Azure Cosmos DB.** Перед началом переноса данных заранее создайте все таблицы на портале Azure. Если вы выполняете перенос в учетную запись Azure Cosmos DB, обладающую пропускной способностью уровня базы данных, обязательно укажите ключ раздела при создании таблиц Azure Cosmos DB.
+* **Создайте ресурсы Azure Cosmos DB**. Прежде чем переносить данные, создайте все таблицы на портале Azure. Если вы выполняете перенос в учетную запись Azure Cosmos DB, обладающую пропускной способностью уровня базы данных, обязательно укажите ключ раздела при создании таблиц Azure Cosmos DB.
 
 ## <a name="data-migration-tool"></a>Средство переноса данных
 
@@ -68,11 +68,11 @@ ms.locfileid: "66242572"
 
 Чтобы получить строку подключения к источнику при импорте из хранилища таблиц Azure, откройте портал Azure, щелкните **Учетные записи хранения** > **Учетная запись** > **Ключи доступа**, а затем нажмите кнопку "Копировать", чтобы скопировать **строку подключения**.
 
-![Снимок экрана: параметры источника HBase](./media/table-import/storage-table-access-key.png)
+:::image type="content" source="./media/table-import/storage-table-access-key.png" alt-text="Снимок экрана: параметры источника HBase":::
 
 Чтобы получить строку подключения к источнику при импорте из учетной записи API таблицы Azure Cosmos DB (предварительная версия), откройте портал Azure, щелкните **Azure Cosmos DB** > **Учетная запись** > **Строка подключения**, а затем нажмите кнопку "Копировать", чтобы скопировать **строку подключения**.
 
-![Снимок экрана: параметры источника HBase](./media/table-import/cosmos-connection-string.png)
+:::image type="content" source="./media/table-import/cosmos-connection-string.png" alt-text="Снимок экрана: параметры источника HBase":::
 
 [Пример команды хранилища таблиц Azure](#azure-table-storage)
 
@@ -99,7 +99,7 @@ ms.locfileid: "66242572"
 dt /s:AzureTable /s.ConnectionString:DefaultEndpointsProtocol=https;AccountName=<Azure Table storage account name>;AccountKey=<Account Key>;EndpointSuffix=core.windows.net /s.Table:<Table name> /t:TableAPIBulk /t.ConnectionString:DefaultEndpointsProtocol=https;AccountName=<Azure Cosmos DB account name>;AccountKey=<Azure Cosmos DB account key>;TableEndpoint=https://<Account name>.table.cosmosdb.azure.com:443 /t.TableName:<Table name> /t.Overwrite
 ```
 <a id="table-api-preview"></a>
-### <a name="sample-command-source-is-azure-cosmos-db-table-api-preview"></a>Пример команды: источник — API таблицы Azure Cosmos DB (предварительная версия)
+### <a name="sample-command-source-is-azure-cosmos-db-table-api-preview"></a>Пример команды: источник — API таблиц Azure Cosmos DB (предварительная версия)
 
 Ниже приведен пример команды для импорта данных из API таблицы (предварительная версия) в API таблицы (общедоступная версия):
 

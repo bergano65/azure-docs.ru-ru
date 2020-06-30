@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 9/27/2019
-ms.openlocfilehash: 7746726775cd5230f48842ad9a9260efe0e540b5
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: fd006e836432ce775be8cbbefea6d9219e8b13b3
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84022118"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85253466"
 ---
 # <a name="branching-and-chaining-activities-in-a-data-factory-pipeline"></a>Ветвления и создание цепочки действий в конвейере фабрики данных
 
@@ -48,7 +48,7 @@ ms.locfileid: "84022118"
 
 * Учетная запись хранения Azure. В этом руководстве в качестве источника будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом [Создание учетной записи хранения](../storage/common/storage-account-create.md).
 * Обозреватель хранилищ Azure Сведения об установке этого инструмента см. раздел [Обозреватель службы хранилища Azure](https://storageexplorer.com/).
-* База данных SQL Azure. Вы используете базу данных как хранилище данных-приемник. Если у вас нет базы данных SQL Azure, см. статью [Создание базы данных SQL Azure](../azure-sql/database/single-database-create-quickstart.md).
+* База данных SQL Azure. Вы используете базу данных как хранилище данных-приемник. Если у вас нет базы данных в службе "База данных SQL Azure", воспользуйтесь кратким руководством [Создание отдельной базы данных в Базе данных SQL Azure](../azure-sql/database/single-database-create-quickstart.md).
 * приведенному. В этой статье используется Visual Studio 2019.
 * Пакет Azure SDK для .NET. Загрузите и установите пакет [Azure SDK для .NET](https://azure.microsoft.com/downloads/).
 

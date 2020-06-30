@@ -14,17 +14,17 @@ ms.reviewer: davidph
 manager: cgronlun
 ms.date: 07/29/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: d5227fc89d99257f3390820d4930c3d57b63f03d
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: 2a90003c9de2cf0e942b518c6d4e9c3569039caf
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84024112"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85251426"
 ---
 # <a name="tutorial-deploy-a-clustering-model-in-r-with-azure-sql-database-machine-learning-services-preview"></a>Руководство по Развертывание модели кластеризации на языке R с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
-В последней части этой серии руководств, состоящей из трех частей, объясняется, как развернуть модель кластеризации, разработанную на языке R, в базе данных SQL с помощью Служб машинного обучения службы "База данных SQL Azure" (предварительная версия).
+В последней части этого руководства, состоящего из трех частей, объясняется, как развернуть модель кластеризации, разработанную на языке R, в базе данных из Базы данных SQL Azure с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия).
 
 [!INCLUDE[ml-preview-note](../../../includes/sql-database-ml-preview-note.md)]
 
@@ -38,7 +38,7 @@ ms.locfileid: "84024112"
 > * Выполнение кластеризации в SQL Server
 > * Использование сведений кластеризации
 
-Из [первой части](clustering-model-prepare-data-tutorial.md) вы узнали, как выполнять подготовку данных из базы данных SQL Azure для кластеризации.
+В [первой части](clustering-model-prepare-data-tutorial.md) показано, как подготовить данные из базы данных для выполнения кластеризации.
 
 Из [второй части](clustering-model-build-tutorial.md) вы узнали, как создать и обучить модель кластеризации по методу K-средних с помощью сценария R.
 
@@ -213,7 +213,7 @@ cluster  customer  orderRatio  itemsRatio  monetaryRatio  frequency
 
 Так как процедура кластеризации сохранена в базе данных, она может эффективно выполнять кластеризацию для данных клиента, хранящихся в той же базе данных. Эту процедуру можно выполнять при каждом обновлении данных клиента и использовать обновленные сведения кластеризации.
 
-Предположим, вам нужно отправлять рекламные сообщения клиентам в кластере 3 — группе с наиболее активными возвратами (описание всех четырех кластеров приведено во [второй части](clustering-model-build-tutorial.md#analyze-the-results)). Приведенный ниже код выбирает адреса электронной почты клиентов в кластере 3.
+Предположим, вам нужно отправлять рекламные сообщения клиентам в кластере 3 — группе с наиболее активными возвратами (описание всех четырех кластеров приведено во [второй части](clustering-model-build-tutorial.md#analyze-the-results)). Приведенный ниже код выбирает адреса электронной почты клиентов в кластере 3.
 
 ```sql
 USE [tpcxbb_1gb]
@@ -248,7 +248,7 @@ WHERE r.cluster = 3
 
 Дополнительные сведения об использовании языка R в Службе машинного обучения Базы данных SQL Azure (предварительная версия) см. в следующих статьях:
 
-* [Руководство по подготовке данных для обучения прогнозной модели на языке R с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия)](predictive-model-prepare-data-tutorial.md)
+* [Руководство. Подготовка данных для обучения прогнозной модели на языке R с помощью Служб машинного обучения в Базе данных SQL Azure (предварительная версия)](predictive-model-prepare-data-tutorial.md)
 * [Запись расширенных функций R в Базу данных SQL Azure с помощью Служб машинного обучения (предварительная версия)](machine-learning-services-functions.md)
 * [Work with R and SQL data in Azure SQL Database Machine Learning Services (preview)](machine-learning-services-data-issues.md) (Работа с данными R и SQL в Службе машинного обучения в Базе данных SQL Azure)
 * [Добавление пакета R в Службу машинного обучения в Базе данных SQL Azure (предварительная версия)](machine-learning-services-add-r-packages.md)

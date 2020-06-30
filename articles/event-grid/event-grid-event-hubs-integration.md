@@ -8,12 +8,12 @@ ms.service: event-grid
 ms.topic: tutorial
 ms.date: 06/08/2020
 ms.author: spelluru
-ms.openlocfilehash: e6733bdc91ba26d52366de09ed6bc255dcd4ff98
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ms.openlocfilehash: 76d63b508705bf426b8fc86b3d27d75241d6f246
+ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84610823"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85212213"
 ---
 # <a name="tutorial-stream-big-data-into-a-data-warehouse"></a>Руководство по Потоковая передача больших данных в хранилище данных
 [Сетка событий](overview.md) Azure — интеллектуальная служба маршрутизации событий, позволяющая реагировать на уведомления (события) приложений и служб. Например, она может активировать функции Azure для обработки данных Центров событий, собранных в хранилище BLOB-объектов Azure или Data Lake Storage, и переноса данных в другие репозитории данных. В этом [примере интеграции Центров событий Azure и службы "Сетка событий"](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo) показано, как с помощью Центров событий Azure и службы "Сетка событий Azure" легко перенести данные Центров событий из хранилища BLOB-объектов в Хранилище данных SQL.
@@ -173,7 +173,7 @@ ms.locfileid: "84610823"
 2. На странице хранилища данных SQL в левом меню выберите **Редактор запросов (предварительная версия)** . 
 
     ![Страница хранилища данных SQL](media/event-grid-event-hubs-integration/sql-data-warehouse-page.png)
-2. Введите имя **пользователя** и **пароль** для SQL Server и щелкните **ОК**. Для успешного входа в SQL Server необходимо иметь IP-адрес клиента в брандмауэре. 
+2. Введите имя **пользователя** и **пароль** для SQL Server и щелкните **ОК**. Для успешного входа в SQL Server необходимо добавить IP-адрес клиента в брандмауэр. 
 
     ![Проверка подлинности SQL Server](media/event-grid-event-hubs-integration/sql-server-authentication.png)
 4. Скопируйте и вставьте следующий код в окно запроса: 

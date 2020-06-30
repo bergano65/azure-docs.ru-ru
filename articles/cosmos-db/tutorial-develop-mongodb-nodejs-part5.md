@@ -10,12 +10,12 @@ ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18
 ms.reviewer: sngun
-ms.openlocfilehash: fb0e08c9d85f4472a2fa13001e71edd12149d430
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: 1bed17084af39fa75fe01d68fbdd33c586d48e67
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82858731"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85114288"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---use-mongoose-to-connect-to-cosmos-db"></a>Создание приложения Angular с использованием API Azure Cosmos DB для MongoDB. Подключение к Cosmos DB с помощью Mongoose
 
@@ -234,7 +234,7 @@ Mongoose является библиотекой моделирования да
 
 1. Теперь переключитесь на браузер. Откройте **средства разработчика** и перейдите на **вкладку "Сеть"** . Перейдите по адресу `http://localhost:3000`, где расположено ваше приложение.
 
-    ![Новая учетная запись Azure Cosmos DB на портале Azure](./media/tutorial-develop-mongodb-nodejs-part5/azure-cosmos-db-heroes-app.png)
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part5/azure-cosmos-db-heroes-app.png" alt-text="Новая учетная запись Azure Cosmos DB на портале Azure":::
 
 В приложении пока нет элементов hero. В следующей части этого руководства мы добавим функции put, push и delete. Затем мы сможем добавлять, обновлять и удалять элементы hero из пользовательского интерфейса, используя подключения Mongoose к базе данных Azure Cosmos. 
 

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 01/22/2019
 ms.author: lbosq
 ms.custom: tracking-python
-ms.openlocfilehash: fd266dd4e75915c0710acce1a2a49f24049c4e9d
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: 0f96cbd86921428a85aa69f3561252aeb7fd67b5
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84559869"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85118225"
 ---
 # <a name="quickstart-create-a-graph-database-in-azure-cosmos-db-using-python-and-the-azure-portal"></a>Краткое руководство. Создание графовой базы данных в Azure Cosmos DB с помощью Python и портала Azure
 
@@ -98,7 +98,7 @@ ms.locfileid: "84559869"
 
     Скопируйте первую часть значения URI.
 
-    ![Просмотр и копирование ключа доступа на портале Azure, страница "Ключи"](./media/create-graph-python/keys.png)
+    :::image type="content" source="./media/create-graph-python/keys.png" alt-text="Просмотр и копирование ключа доступа на портале Azure, страница "Ключи"":::
 
 2. Откройте файл *connect.py* `<YOUR_ENDPOINT>` и в строке 104 вставьте значение URI вместо :
 
@@ -172,15 +172,15 @@ ms.locfileid: "84559869"
 
 1. В учетной записи Azure Cosmos DB на портале Azure выберите **Обозреватель данных**, разверните **sample-graph**, а затем выберите **Граф** и нажмите кнопку **Применить фильтр**. 
 
-   ![Создание документов в обозревателе данных на портале Azure](./media/create-graph-python/azure-cosmosdb-data-explorer-expanded.png)
+   :::image type="content" source="./media/create-graph-python/azure-cosmosdb-data-explorer-expanded.png" alt-text="Создание документов в обозревателе данных на портале Azure":::
 
 2. В списке **Результаты** обратите внимание на трех новых пользователей, добавленных в граф. Здесь можно перетаскивать вершины мышью, увеличивать или уменьшать масштаб колесиком мыши, а также увеличивать размер графа с помощью двойной стрелки. 
 
-   ![Новые вершины в графе в обозревателе данных на портале Azure](./media/create-graph-python/azure-cosmosdb-graph-explorer-new.png)
+   :::image type="content" source="./media/create-graph-python/azure-cosmosdb-graph-explorer-new.png" alt-text="Новые вершины в графе в обозревателе данных на портале Azure":::
 
 3. Давайте добавим несколько новых пользователей. Нажмите кнопку **Новая вершина**, чтобы добавить данные в граф.
 
-   ![Создание документов в обозревателе данных на портале Azure](./media/create-graph-python/azure-cosmosdb-data-explorer-new-vertex.png)
+   :::image type="content" source="./media/create-graph-python/azure-cosmosdb-data-explorer-new-vertex.png" alt-text="Создание документов в обозревателе данных на портале Azure":::
 
 4. Введите метку *person*.
 
@@ -219,15 +219,15 @@ ms.locfileid: "84559869"
 
 12. Теперь можно будет соединить пользователей rakesh и ashley. Убедитесь, что в списке **Результаты** выбрано пользователя **ashley**, а затем нажмите кнопку редактирования рядом с разделом **Целевые объекты** в нижнем правом углу. Чтобы отобразить область **Свойства**, может потребоваться развернуть окно.
 
-    ![Изменение целевого объекта вершины в графе](./media/create-graph-python/azure-cosmosdb-data-explorer-edit-target.png)
+    :::image type="content" source="./media/create-graph-python/azure-cosmosdb-data-explorer-edit-target.png" alt-text="Изменение целевого объекта вершины в графе":::
 
 13. В поле **Целевой объект** введите *rakesh*, затем в поле **Edge label** (Граничная метка) введите слово *знает* и щелкните значок галочки.
 
-    ![Создание связи между пользователями ashley и rakesh в обозревателе данных](./media/create-graph-python/azure-cosmosdb-data-explorer-set-target.png)
+    :::image type="content" source="./media/create-graph-python/azure-cosmosdb-data-explorer-set-target.png" alt-text="Добавление связи между пользователями ashley и rakesh в обозревателе данных":::
 
 14. Теперь выберите пользователя **rakesh** в списке результатов. Вы увидите, что пользователи ashley и rakesh связаны. 
 
-    ![Две вершины, связанные в обозревателе данных](./media/create-graph-python/azure-cosmosdb-graph-explorer.png)
+    :::image type="content" source="./media/create-graph-python/azure-cosmosdb-graph-explorer.png" alt-text="Две вершины, связанные в обозревателе данных":::
 
 На этом часть руководства, посвященная созданию ресурсов, завершена. Вы можете дополнить граф новыми вершинами, а также изменить существующие вершины или запросы. Теперь давайте изучим метрики, которые предоставляет Azure Cosmos DB, а затем очистим все ресурсы. 
 

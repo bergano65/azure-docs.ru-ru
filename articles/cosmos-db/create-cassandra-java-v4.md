@@ -9,12 +9,12 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 05/18/2020
 ms.custom: seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: b87c4c0beec2b3b10c81355fc51ded870d7d1d9e
-ms.sourcegitcommit: 69156ae3c1e22cc570dda7f7234145c8226cc162
+ms.openlocfilehash: 59ea78fed27b41199699d5413f605288bbf1a608
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84310922"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85118395"
 ---
 # <a name="quickstart-build-a-java-app-to-manage-azure-cosmos-db-cassandra-api-data-v4-driver"></a>Краткое руководство. Создание приложения Java для управления данными API Cassandra в Azure Cosmos DB (драйвер версии 4)
 
@@ -153,7 +153,7 @@ ms.locfileid: "84310922"
 
 1. Выберите элемент **Строка подключения** в своей учетной записи Azure Cosmos DB на [портале Azure](https://portal.azure.com/). 
 
-    ![Просмотрите и скопируйте имя пользователя на странице "Строка подключения" на портале Azure.](./media/create-cassandra-java/copy-username-connection-string-azure-portal.png)
+    :::image type="content" source="./media/create-cassandra-java/copy-username-connection-string-azure-portal.png" alt-text="Просмотр и копирование имени пользователя на странице "Строка подключения" на портале Azure":::
 
 2. Вы можете использовать кнопку ![Кнопка "Копировать"](./media/create-cassandra-java/copy-button-azure-portal.png) в правой части экрана, чтобы скопировать значение параметра CONTACT POINT.
 
@@ -215,7 +215,7 @@ ms.locfileid: "84310922"
 
 4. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные. 
 
-    ![Просмотр данных в обозревателе данных — Azure Cosmos DB](./media/create-cassandra-java/view-data-explorer-java-app.png)
+    :::image type="content" source="./media/create-cassandra-java/view-data-explorer-java-app.png" alt-text="Просмотр данных в обозревателе данных — Azure Cosmos DB":::
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 

@@ -8,12 +8,12 @@ ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
 ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 0f9ddf2f4fba9e216ef0b5a5747fc32f4288cf67
-ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
+ms.openlocfilehash: f83eb6a0cab8bdf2f26888f895aeac8a8fa796bb
+ms.sourcegitcommit: 4042aa8c67afd72823fc412f19c356f2ba0ab554
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84737280"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85296990"
 ---
 # <a name="build-out-an-end-to-end-solution"></a>Создание комплексного решения
 
@@ -136,6 +136,8 @@ Query
 > [!NOTE]
 > Может появиться следующее всплывающее окно: :::image type="content" source="media/tutorial-end-to-end/publish-azure-function-7.png" alt-text="Публикация функции Azure в Visual Studio: учетные данные для публикации" border="false":::
 > В таком случае выберите **Пытаться извлечь учетные данные из Azure** и нажмите кнопку **Сохранить**.
+>
+> Если вы видите предупреждение о том, что *ваша версия среды выполнения функций не соответствует версии, работающей в Azure*, следуйте инструкциям на экране, чтобы выполнить обновление до последней версии среды выполнения Функций Azure. Эта проблема может возникать, если вы используете более раннюю версию Visual Studio, чем та, которая рекомендована в разделе *Необходимые компоненты* в начале этого руководства.
 
 ### <a name="assign-permissions-to-the-function-app"></a>Назначение разрешений для приложения-функции
 

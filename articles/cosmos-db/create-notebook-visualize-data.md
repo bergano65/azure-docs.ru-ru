@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.date: 11/05/2019
 ms.author: dech
 ms.reviewer: sngun
-ms.openlocfilehash: 3de73156618b0f5234cc8049c4ea70385b790388
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: dfcde775780cdb42f9df1d677ff2f2475de92843
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83743580"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85115284"
 ---
 # <a name="tutorial-create-a-notebook-in-azure-cosmos-db-to-analyze-and-visualize-the-data"></a>Руководство по Создание записной книжки в Azure Cosmos DB для анализа и визуализации данных
 
@@ -30,7 +30,7 @@ ms.locfileid: "83743580"
 
 1. Перейдите на вкладку **Записная книжка**, выберите `…` рядом с **Мои записные книжки** и создайте **Новую записную книжку**. Выберите **Python 3** в качестве ядра по умолчанию.
 
-   ![Создание записной книжки](./media/create-notebook-visualize-data/create-new-notebook.png)
+   :::image type="content" source="./media/create-notebook-visualize-data/create-new-notebook.png" alt-text="Создание записной книжки":::
 
 1. После создания записной книжки ее можно переименовать на нечто вроде **VisualizeRetailData.ipynb.**
 
@@ -49,7 +49,7 @@ ms.locfileid: "83743580"
 
    Чтобы запустить ячейку, выберите `Shift + Enter` или выделите ячейку и выберите параметр **Запустить активную ячейку** на панели навигации обозревателя данных.
 
-   ![Запуск активной ячейки](./media/create-notebook-visualize-data/run-active-cell.png)
+   :::image type="content" source="./media/create-notebook-visualize-data/run-active-cell.png" alt-text="Запуск активной ячейки":::
 
    База данных и контейнер создаются в текущей учетной записи Azure Cosmos. Контейнер подготавливается с 400 единицами запросов в секунду. После создания базы данных и контейнера вы увидите следующие выходные данные. 
 
@@ -60,7 +60,7 @@ ms.locfileid: "83743580"
 
    Вы также можете обновить вкладку **Данные** и просмотреть только что созданные ресурсы.
 
-   ![Обновление вкладки "Данные" для просмотра нового контейнера](media/create-notebook-visualize-data/refresh-data-tab.png)
+   :::image type="content" source="media/create-notebook-visualize-data/refresh-data-tab.png" alt-text="Обновление вкладки "Данные" для просмотра нового контейнера":::
 
 1. Далее вы импортируете примеры розничных данных в контейнер Azure Cosmos. Ниже приведен формат элемента из данных розничной торговли.
 
@@ -135,7 +135,7 @@ SELECT c.Action, c.Price as ItemRevenue, c.Country, c.Item FROM c
 df_cosmos.head(10)
 ```
 
-![Выполнение запроса для получения 10 ведущих элементов](./media/create-notebook-visualize-data/run-query-get-top10-items.png)
+:::image type="content" source="./media/create-notebook-visualize-data/run-query-get-top10-items.png" alt-text="Выполнение запроса для получения первых десяти элементов":::
 
 ## <a name="run-queries-and-analyze-your-data"></a>Выполнение запросов и анализ данных
 
@@ -148,7 +148,7 @@ df_cosmos.head(10)
    display(df_revenue.head(5))
    ```
 
-   ![Итоговый вывод дохода от продаж](./media/create-notebook-visualize-data/total-sales-revenue-output.png)
+   :::image type="content" source="./media/create-notebook-visualize-data/total-sales-revenue-output.png" alt-text="Сумма дохода от продаж в выходных данных":::
 
 * **Запрос 2**. Чтобы получить список первых пяти приобретенных элементов, откройте новую ячейку записной книжки и выполните приведенный ниже код.
 
@@ -159,7 +159,7 @@ df_cosmos.head(10)
    pd.DataFrame(df_cosmos[df_cosmos['Action']=='Purchased'].groupby('Item').size().sort_values(ascending=False).head(5), columns=['Count'])
    ```
 
-   ![Пять ведущих приобретенных товаров](./media/create-notebook-visualize-data/top5-purchased-items.png)
+   :::image type="content" source="./media/create-notebook-visualize-data/top5-purchased-items.png" alt-text="Пять ведущих товаров по объему продаж":::
 
 ## <a name="visualize-your-data"></a>Визуализация данных  
 
@@ -286,7 +286,7 @@ df_cosmos.head(10)
    show(p)
    ```
 
-   ![Визуализация коэффициента конверсии покупок](./media/create-notebook-visualize-data/visualize-purchase-conversion-rate.png)
+   :::image type="content" source="./media/create-notebook-visualize-data/visualize-purchase-conversion-rate.png" alt-text="Визуализация коэффициента конверсии покупок":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

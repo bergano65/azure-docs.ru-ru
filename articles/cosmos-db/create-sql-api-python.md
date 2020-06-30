@@ -13,12 +13,12 @@ ms.custom:
 - seo-javascript-september2019
 - seo-python-october2019
 - tracking-python
-ms.openlocfilehash: b140371c42fffd55b271fa0215db89ea9d07da0c
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: 1b3a97a11c8d5782b8b7577d6afccbbdaadea0e7
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84559833"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85116576"
 ---
 # <a name="quickstart-build-a-python-application-using-an-azure-cosmos-db-sql-api-account"></a>Краткое руководство. Создание приложения Python с использованием учетной записи API SQL для Azure Cosmos DB
 
@@ -52,7 +52,7 @@ ms.locfileid: "84559833"
     
     Справа отобразится область **Добавить контейнер**. Возможно, вам придется прокрутить экран вправо, чтобы увидеть ее.
 
-    ![Панель "Добавить контейнер" в обозревателе данных на портале Azure](./media/create-sql-api-python/azure-cosmosdb-data-explorer.png)
+    :::image type="content" source="./media/create-sql-api-python/azure-cosmosdb-data-explorer.png" alt-text="Панель "Добавить контейнер" в обозревателе данных на портале Azure":::
 
 2. На странице **Добавить контейнер** введите параметры для нового контейнера.
 
@@ -108,7 +108,7 @@ ms.locfileid: "84559833"
 
 1. На [портале Azure](https://portal.azure.com/) в учетной записи Azure Cosmos DB выберите **Ключи** в области навигации слева. На следующем шаге используйте кнопки копирования в правой части экрана, чтобы скопировать **универсальный код ресурса (URI)** и **первичный ключ** в файл *cosmos_get_started.py*.
 
-    ![Получение ключа доступа и URI в параметрах ключа на портале Azure](./media/create-sql-api-dotnet/access-key-and-uri-in-keys-settings-in-the-azure-portal.png)
+    :::image type="content" source="./media/create-sql-api-dotnet/access-key-and-uri-in-keys-settings-in-the-azure-portal.png" alt-text="Получение ключа доступа и URI в параметрах ключа на портале Azure":::
 
 2. В Visual Studio Code откройте файл *cosmos_get_started.py* из *\git-samples\azure-cosmos-db-python-getting-started*.
 

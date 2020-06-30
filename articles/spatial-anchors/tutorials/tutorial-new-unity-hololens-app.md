@@ -5,15 +5,15 @@ author: craigktreasure
 manager: vriveras
 services: azure-spatial-anchors
 ms.author: crtreasu
-ms.date: 07/05/2019
+ms.date: 06/22/2020
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: a3a81cdfa9e3c6659c870b184cda4ebe6f7f805a
-ms.sourcegitcommit: b55d1d1e336c1bcd1c1a71695b2fd0ca62f9d625
+ms.openlocfilehash: ee8b8c2931d006dbb3d472b545030d3aff79c56a
+ms.sourcegitcommit: 4042aa8c67afd72823fc412f19c356f2ba0ab554
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84429658"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85297993"
 ---
 # <a name="tutorial-step-by-step-instructions-to-create-a-new-hololens-unity-app-using-azure-spatial-anchors"></a>Руководство по созданию приложения HoloLens Unity с использованием Пространственных привязок Azure
 
@@ -101,7 +101,7 @@ ms.locfileid: "84429658"
 
 Затем добавьте следующие переменные-члены в класс `AzureSpatialAnchorsScript`:
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=26-42,48-52,60-79)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=26-47,53-57,65-84)]
 
 Прежде чем продолжить, необходимо установить для созданного шаблона сферы переменную-член spherePrefab. Вернитесь в **Unity**.
 1. В **Unity** на панели **Hierarchy** (Иерархия) выберите объект **MixedRealityCloud**.
@@ -111,15 +111,15 @@ ms.locfileid: "84429658"
 
 В **Visual Studio** снова откройте `AzureSpatialAnchorsScript.cs`. Добавьте указанный ниже код в метод `Start()`. Этот код подключит `GestureRecognizer`, который обнаружит касание и вызовет `HandleTap`.
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=81-90,93&highlight=4-10)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=86-95,98&highlight=4-10)]
 
 Теперь необходимо добавить следующий метод `HandleTap()` под `Update()`. Он выполнит "бросание лучей" и получит точку попадания, в которой нужно разместить сферу.
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=267-277,299-300,304-312)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=273-283,305-306,310-318)]
 
 Теперь необходимо создать сферу. Изначально сфера будет белой, но позже это значение можно будет изменить. Добавьте следующий метод `CreateAndSaveSphere()`:
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=314-325,390)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=320-331,396)]
 
 Запустите приложение из **Visual Studio**, чтобы проверить его еще раз. На этот раз коснитесь экрана, чтобы создать белую сферу и поместить ее на выбранную поверхность.
 
@@ -129,15 +129,15 @@ ms.locfileid: "84429658"
 
 Добавим переменную-член dispatchQueue, которая является очередью действий. Мы поместим действия в очередь, а затем выведем из очереди и запустим действия в основном потоке.
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=38-51&highlight=6-9)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=43-56&highlight=6-9)]
 
 Затем добавим способ, чтобы добавить действие в очередь. Добавьте `QueueOnUpdate()` сразу после `Update()`:
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=107-117)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=112-122)]
 
 Теперь давайте используем цикл Update(), чтобы убедится, что действие находится в очереди. Если да, мы выведем действие из очереди и запустим его.
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=95-105&highlight=4-10)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=100-110&highlight=4-10)]
 
 ## <a name="get-the-azure-spatial-anchors-sdk"></a>Получение пакета SDK Пространственных привязок Azure
 
@@ -165,37 +165,37 @@ ms.locfileid: "84429658"
 
 Затем добавьте следующие переменные-члены в класс `AzureSpatialAnchorsScript`:
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=48-63&highlight=6-11)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=53-68&highlight=6-11)]
 
 ## <a name="attach-a-local-azure-spatial-anchor-to-the-local-anchor"></a>Присоединение локальной пространственной привязки Azure к локальной привязке
 
 Давайте настроим CloudSpatialAnchorSession Пространственной привязки Azure. Для начала добавим следующий метод `InitializeSession()` в класс `AzureSpatialAnchorsScript`. При вызове он создает настройки, необходимые для создания и правильной инициализации сеанса Пространственных привязок Azure при запуске приложения.
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=174-202,205-209)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=179-208,211-215)]
 
 Теперь необходимо написать код, чтобы обработать вызовы делегата. Мы добавим к ним больше по мере продолжения.
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=211-226)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=217-232)]
 
 Теперь подключим метод `initializeSession()` к методу `Start()`.
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=81-93&highlight=12)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=86-98&highlight=12)]
 
 Наконец, добавьте указанный ниже код в метод `CreateAndSaveSphere()`. Он присоединит локальную пространственную привязку службы "Пространственные привязки Azure" к сфере, которую мы размещаем в реальном мире.
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=314-338,390&highlight=14-25)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=320-344,396&highlight=14-25)]
 
-Чтобы продолжить работу, вам следует создать идентификатор и ключ учетной записи Пространственных привязок Azure, если у вас их еще нет. Чтобы получить эти элементы, выполните инструкции из следующего раздела.
+Чтобы продолжить работу, вам следует создать учетную запись службы "Пространственные привязки Azure" для получения идентификатора, ключа и домена учетной записи, если у вас их еще нет. Чтобы получить эти элементы, выполните инструкции из следующего раздела.
 
 [!INCLUDE [Create Spatial Anchors resource](../../../includes/spatial-anchors-get-started-create-resource.md)]
 
 ## <a name="upload-your-local-anchor-into-the-cloud"></a>Отправка локальной привязки в облако
 
-Получив идентификатор учетной записи и ключ Пространственных привязок Azure, перейдите и вставьте `Account Id` в `SpatialAnchorsAccountId` и `Account Key` в `SpatialAnchorsAccountKey`.
+Получив идентификатор, ключ и домен для учетной записи службы "Пространственные привязки Azure", перейдите и вставьте `Account Id` в `SpatialAnchorsAccountId`, `Account Key` в `SpatialAnchorsAccountKey` и `Account Domain` в `SpatialAnchorsAccountDomain`.
 
 Наконец, соединим все компоненты. Добавьте указанный ниже код в метод `SpawnNewAnchoredObject()`. Он будет вызывать метод `CreateAnchorAsync()` сразу после создания сферы. После завершения работы метода указанный ниже код выполнит последнее обновление параметров сферы, изменив ее цвет на синий.
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=314-391&highlight=26-77)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=320-397&highlight=26-77)]
 
 Запустите приложение из **Visual Studio** еще раз. Покрутите головой, а затем коснитесь, чтобы разместить сферу. Когда будет собрано достаточное количество кадров, цвет сферы станет желтым и начнется передача данных в облако. Когда отправка данных завершится, цвет сферы станет синим. При желании вы можете воспользоваться окном вывода в **Visual Studio** для мониторинга сообщений, которые приложение отправляет в журнал. Вы сможете просмотреть рекомендованный прогресс создания, а также идентификатор привязки, который вернет облако после завершения отправки.
 
@@ -210,20 +210,20 @@ ms.locfileid: "84429658"
 * Инициализируйте `CloudSpatialAnchorSession` снова. Это гарантирует, что будет получена новая привязка из облака, а не созданная ранее локальная привязка.
 * Создайте **наблюдателя**, который будет искать привязку, загруженную в Пространственные привязки Azure.
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=267-305&highlight=13-31,35-36)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=273-311&highlight=13-31,35-36)]
 
 Теперь добавим методы `ResetSession()` и `CleanupObjects()`. Их можно поместить ниже `QueueOnUpdate()`
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=119-172)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=124-177)]
 
 Теперь необходимо подключить код, который будет вызываться при обнаружении нужной привязки. Внутри `InitializeSession()` добавьте следующие обратные вызовы:
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=200-206&highlight=4-5)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=206-212&highlight=4-5)]
 
 
 Теперь добавим код, который создаст и разместит зеленую сферу, когда будет найден CloudSpatialAnchor. Также он снова включает отслеживание касания экрана, чтобы вы могли повторить весь процесс: создать новую локальную привязку, передать ее в облако и снова найти.
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=228-265)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=234-271)]
 
 Вот и все! В последний раз запустите приложение из **Visual Studio**, чтобы полностью протестировать весь сценарий работы с ним. Переместите устройство, а затем разместите белую сферу. Продолжайте двигать головой, чтобы собрать достаточное количество данных окружения, пока сфера не станет желтой. Локальная привязка будет отправлена в облако, и цвет этой сферы изменится на синий. Наконец, еще раз коснитесь экрана, чтобы удалить локальную привязку, и попытайтесь получить облачную версию этой привязки. Продолжайте перемещать устройство, пока не обнаружите облачную пространственную привязку. В выбранном ранее месте появится зеленая сфера. Теперь вы можете повторить весь процесс.
 

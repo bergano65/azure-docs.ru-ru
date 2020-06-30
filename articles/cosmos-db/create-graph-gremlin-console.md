@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-graph
 ms.topic: quickstart
 ms.date: 07/23/2019
 ms.author: lbosq
-ms.openlocfilehash: c3e6524f8e43036c4b4c28c679c281c143731471
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 25ad14ac8922a4284833cab28dc3e4aa8b478397
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81450213"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85118344"
 ---
 # <a name="quickstart-create-query-and-traverse-an-azure-cosmos-db-graph-database-using-the-gremlin-console"></a>Краткое руководство. Создание, запрос и просмотр в консоли Gremlin графовой базы данных Azure Cosmos DB
 
@@ -29,7 +29,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 В этом кратком руководстве описано, как создать учетную запись, базу данных и граф (контейнер) [API Gremlin](graph-introduction.md) в Azure Cosmos DB с помощью портала Azure и как использовать [консоль Gremlin](https://tinkerpop.apache.org/docs/current/reference/#gremlin-console) из [Apache TinkerPop](https://tinkerpop.apache.org) для работы с данными API Gremlin. В этом руководстве вы создадите вершины и границы и отправите к ним запрос, обновите свойства вершины, отправите запросы к вершинам, просмотрите граф и удалите вершину.
 
-![Azure DB Cosmos в консоли Apache Gremlin](./media/create-graph-gremlin-console/gremlin-console.png)
+:::image type="content" source="./media/create-graph-gremlin-console/gremlin-console.png" alt-text="Azure DB Cosmos в консоли Apache Gremlin":::
 
 Консоль Gremlin создана на базе Groovy и Java и работает на компьютерах Linux, Mac и Windows. Ее можно скачать с [сайта Apache TinkerPop](https://tinkerpop.apache.org/downloads.html).
 
@@ -63,26 +63,31 @@ Azure Cosmos DB — это глобально распределенная мн
     Пул подключений|{enableSsl: true}|Параметр пула подключений для TLS.
     serializer|{ className: org.apache.tinkerpop.gremlin.<br>driver.ser.GraphSONMessageSerializerV2d0,<br> config: { serializeResultToString: true }}|Задайте это значение и удалите все разрывы строк `\n` при вставке значения.
 
-    Для параметра hosts скопируйте значение **Gremlin URI** на странице **Обзор**. ![Просмотр и копирование значения Gremlin URI на странице "Обзор" на портале Azure](./media/create-graph-gremlin-console/gremlin-uri.png)
+   Для параметра hosts скопируйте значение **Gremlin URI** на странице **Обзор**.
 
-    Для параметра password скопируйте **первичный ключ** на странице **Ключи** страницы: ![Просмотр и копирование первичного ключа на странице "Ключи" портала Azure](./media/create-graph-gremlin-console/keys.png)
+   :::image type="content" source="./media/create-graph-gremlin-console/gremlin-uri.png" alt-text="Просмотр и копирование значения Gremlin URI на странице "Обзор" на портале Azure":::
 
-Файл remote-secure.yaml должен выглядеть следующим образом:
+   Для параметра password скопируйте **первичный ключ** на странице **Ключи** страницы:
 
-```
-hosts: [your_database_server.gremlin.cosmos.azure.com] 
-port: 443
-username: /dbs/your_database_account/colls/your_collection
-password: your_primary_key
-connectionPool: {
-  enableSsl: true
-}
-serializer: { className: org.apache.tinkerpop.gremlin.driver.ser.GraphSONMessageSerializerV2d0, config: { serializeResultToString: true }}
-```
+   :::image type="content" source="./media/create-graph-gremlin-console/keys.png" alt-text="Просмотр и копирование первичного ключа на странице "Ключи" портала Azure":::
 
-Убедитесь в том, что значение параметра hosts заключено в квадратные скобки []. 
+   Файл remote-secure.yaml должен выглядеть следующим образом:
+
+   ```
+   hosts: [your_database_server.gremlin.cosmos.azure.com] 
+   port: 443
+   username: /dbs/your_database_account/colls/your_collection
+   password: your_primary_key
+   connectionPool: {
+     enableSsl: true
+   }
+   serializer: { className: org.apache.tinkerpop.gremlin.driver.   ser.GraphSONMessageSerializerV2d0, config: {    serializeResultToString: true }}
+   ```
+
+   Убедитесь в том, что значение параметра hosts заключено в квадратные скобки []. 
 
 1. В окне терминала запустите файл `bin/gremlin.bat` или `bin/gremlin.sh`, чтобы запустить [консоль Gremlin](https://tinkerpop.apache.org/docs/3.2.5/tutorials/getting-started/).
+
 1. Чтобы подключиться к службе приложений, в окне терминала запустите файл `:remote connect tinkerpop.server conf/remote-secure.yaml`.
 
     > [!TIP]

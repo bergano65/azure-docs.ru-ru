@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 01/11/2018
-ms.openlocfilehash: 83e6498f47c36fa54890131922dc8d452a3d9220
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: edb6846d199470818e07a208feb778aca3021d9e
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84560488"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85253670"
 ---
 # <a name="branching-and-chaining-activities-in-an-azure-data-factory-pipeline-using-the-azure-portal"></a>Ветвление и создание цепочки действий в конвейере Фабрики данных Azure с помощью портала Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "84560488"
 
 * **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 * **Учетная запись хранения Azure.** В этом руководстве в качестве **источника** будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом [Создание учетной записи хранения](../storage/common/storage-account-create.md).
-* **База данных SQL Azure**. Используйте базу данных как хранилище данных-**приемник**. Если у вас нет базы данных SQL Azure, вы можете создать ее, выполнив шаги из статьи [Создание базы данных SQL Azure на портале Azure](../azure-sql/database/single-database-create-quickstart.md).
+* **База данных SQL Azure**. Используйте базу данных как хранилище данных-**приемник**. Если у вас нет базы данных в службе "База данных SQL Azure", вы можете создать ее, выполнив инструкции из статьи [Создание отдельной базы данных в Базе данных SQL Azure](../azure-sql/database/single-database-create-quickstart.md).
 
 ### <a name="create-blob-table"></a>Создание таблицы больших двоичных объектов
 
@@ -206,6 +206,7 @@ https://prodxxx.eastus.logic.azure.com:443/workflows/000000/triggers/manual/path
 13. Перейдите на вкладку **Конвейер** или щелкните конвейер в представлении в виде дерева. Убедитесь, что в списке **Source Dataset** (Исходный набор данных) выбрано значение **SourceBlobDataset**.
 
     ![Исходный набор данных](./media/tutorial-control-flow-portal/pipeline-source-dataset-selected.png)
+
 13. В окне свойств перейдите на вкладку **Приемник** и нажмите кнопку **+ Создать** в поле **Sink Dataset** (Целевой набор данных). В этом шаге вы создадите целевой набор данных, точно так же, как исходный набор данных ранее.
 
     ![Кнопка "Новый целевой набор данных"](./media/tutorial-control-flow-portal/new-sink-dataset-button.png)

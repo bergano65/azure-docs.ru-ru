@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 ms.custom: tracking-python
-ms.openlocfilehash: 30ceed388412f08e31b9c9b0c7ea6fdf2fed143e
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ms.openlocfilehash: 5555c176adfb5be78ea73f17bfa01ba87766acc1
+ms.sourcegitcommit: 51718f41d36192b9722e278237617f01da1b9b4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84607216"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85100397"
 ---
 # <a name="tutorial-create-and-connect-a-client-application-to-your-azure-iot-central-application-python"></a>Руководство по Создание клиентского приложения и его подключение к приложению Azure IoT Central (Python)
 
@@ -306,7 +306,7 @@ python3 environmental_sensor.py
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы как разработчик устройства узнали о принципах создания устройств с помощью Node.js, ознакомьтесь со следующими руководствами:
+Теперь, когда вы как разработчик устройства узнали о принципах создания устройств с помощью Python, ознакомьтесь со следующими руководствами:
 
 * Узнайте, как [подключить реальное устройство MXChip IoT DevKit к приложению Azure IoT Central](./howto-connect-devkit.md).
 * Прочитайте статью [Что такое шаблоны устройств?](./concepts-device-templates.md), чтобы узнать больше о роли шаблонов устройств при реализации кода устройства.
