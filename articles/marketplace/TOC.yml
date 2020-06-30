@@ -258,36 +258,6 @@
           href: ./cloud-partner-portal/saas-app/cpp-saas-offer.md
         - name: Предложение виртуальной машины
           href: ./cloud-partner-portal/virtual-machine/cpp-virtual-machine-offer.md
-    - name: Справочник по API
-      items:
-        - name: Обзор
-          href: ./cloud-partner-portal-orig/cloud-partner-portal-api-overview.md
-        - name: Предварительные требования
-          href: ./cloud-partner-portal-orig/cloud-partner-portal-api-prerequisites.md
-        - name: Рекомендации
-          href: ./cloud-partner-portal-orig/cloud-partner-portal-api-considerations.md
-        - name: Управление параллелизмом
-          href: ./cloud-partner-portal-orig/cloud-partner-portal-api-concurrency-control.md
-        - name: Получение предложений
-          href: ./cloud-partner-portal-orig/cloud-partner-portal-api-retrieve-offers.md
-        - name: Получение определенного предложения
-          href: ./cloud-partner-portal-orig//cloud-partner-portal-api-retrieve-specific-offer.md
-        - name: Добавление или изменение предложения
-          href: ./cloud-partner-portal-orig/cloud-partner-portal-api-creating-offer.md
-        - name: Получение состояния предложения
-          href: ./cloud-partner-portal-orig/cloud-partner-portal-api-retrieve-offer-status.md
-        - name: Публикация предложения
-          href: ./cloud-partner-portal-orig/cloud-partner-portal-api-publish-offer.md
-        - name: Получение операций
-          href: ./cloud-partner-portal-orig/cloud-partner-portal-api-retrieve-operations.md
-        - name: Отмена операций
-          href: ./cloud-partner-portal-orig/cloud-partner-portal-api-cancel-operations.md
-        - name: Запуск
-          href: ./cloud-partner-portal-orig/cloud-partner-portal-api-go-live.md
-        - name: Цены на предложения виртуальных машин
-          href: ./cloud-partner-portal-orig/cloud-partner-portal-api-setting-price.md
-        - name: Устранение неполадок с аутентификацией
-          href: ./cloud-partner-portal-orig/cloud-partner-portal-api-troubleshooting-authentication-errors.md
     - name: Получение поддержки
       href: ./cloud-partner-portal-orig/cloud-partner-portal-support-for-cloud-partner-portal.md
 - name: Коммерческая платформа в Центре партнеров
@@ -433,8 +403,6 @@
       href: ./partner-center-portal/update-existing-offer.md
     - name: Активация преимуществ
       href: ./partner-center-portal/marketplace-rewards.md
-    - name: Варианты поддержки
-      href: ./partner-center-portal/support.md
     - name: Аналитика Центра партнеров
       items:
         - name: Аналитика для коммерческой платформы
@@ -471,3 +439,35 @@
           href: ./partner-center-portal/payout-policy-details.md
         - name: Сведения о налогах
           href: ./partner-center-portal/tax-details-paid-transactions.md
+    - name: Справочник по интерфейсам API Портала Cloud Partner
+      items:
+        - name: Обзор
+          href: ./cloud-partner-portal-api-overview.md
+        - name: Предварительные требования
+          href: ./cloud-partner-portal-api-prerequisites.md
+        - name: Рекомендации
+          href: ./cloud-partner-portal-api-considerations.md
+        - name: Управление параллелизмом
+          href: ./cloud-partner-portal-api-concurrency-control.md
+        - name: Получение предложений
+          href: ./cloud-partner-portal-api-retrieve-offers.md
+        - name: Получение определенного предложения
+          href: ./cloud-partner-portal-api-retrieve-specific-offer.md
+        - name: Добавление или изменение предложения
+          href: ./cloud-partner-portal-api-creating-offer.md
+        - name: Получение состояния предложения
+          href: ./cloud-partner-portal-api-retrieve-offer-status.md
+        - name: Публикация предложения
+          href: ./cloud-partner-portal-api-publish-offer.md
+        - name: Получение операций
+          href: ./cloud-partner-portal-api-retrieve-operations.md
+        - name: Отмена операций
+          href: ./cloud-partner-portal-api-cancel-operations.md
+        - name: Запуск
+          href: ./cloud-partner-portal-api-go-live.md
+        - name: Цены на предложения виртуальных машин
+          href: ./cloud-partner-portal-api-setting-price.md
+        - name: Устранение неполадок с аутентификацией
+          href: ./cloud-partner-portal-api-troubleshooting-authentication-errors.md
+    - name: Варианты поддержки
+      href: ./partner-center-portal/support.md

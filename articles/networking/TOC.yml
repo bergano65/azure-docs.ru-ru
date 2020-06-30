@@ -4,6 +4,8 @@
       href: networking-overview.md
     - name: Architecture
       items:
+        - name: Azure для сетевых инженеров
+          href: azure-for-network-engineers.md
         - name: Виртуальные центры данных
           href: /azure/architecture/vdc/networking-virtual-datacenter
         - name: Асимметричная маршрутизация с использованием нескольких сетевых путей
