@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 05/11/2020
 ms.author: anfeldma
 ms.custom: seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 236cff59ffbef835b5a57a3d5a0d223cfebf34ae
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: bb711dc67df51edc569f23bd1e6c54eef55012d2
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83647712"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85115400"
 ---
 # <a name="quickstart-build-a-java-app-to-manage-azure-cosmos-db-sql-api-data"></a>Краткое руководство. Создание приложения Java для управления данными API SQL для Azure Cosmos DB
 
@@ -30,7 +30,7 @@ ms.locfileid: "83647712"
 В этом кратком руководстве вы научитесь создавать учетную запись API SQL Azure Cosmos DB и управлять ею на портале Azure, а также с помощью приложения Java, клонированного с GitHub. Сначала создайте учетную запись API SQL для Azure Cosmos DB с помощью портала Azure, затем создайте приложение Java с использованием пакета SDK Java для SQL и добавьте ресурсы в учетную запись Cosmos DB с помощью приложения Java. Azure Cosmos DB — это служба многомодельной базы данных, позволяющая быстро создавать и запрашивать документы, таблицы, пары "ключ-значение" и графовые базы данных, используя возможности глобального распределения и горизонтального масштабирования.
 
 > [!IMPORTANT]  
-> Это краткое руководство применимо только к пакету SDK Java для Azure Cosmos DB версии 4. Дополнительные сведения см. в [заметках о выпуске](sql-api-sdk-java-v4.md) для пакета средств разработки Java для Azure Cosmos DB версии 4, [репозитории Maven](https://mvnrepository.com/artifact/com.azure/azure-cosmos), [рекомендациях по повышению производительности](performance-tips-java-sdk-v4-sql.md) и [руководстве по устранению неполадок](troubleshoot-java-sdk-v4-sql.md) для пакета средств разработки Java для Azure Cosmos DB версии 4. Если в настоящее время вы используете более раннюю версию, чем версия 4, руководство [Перевод приложения на использование пакета средств разработки Java для Azure Cosmos DB версии 4](migrate-java-v4-sdk.md) поможет вам обновить его до версии 4.
+> Это краткое руководство применимо только к пакету SDK Java для Azure Cosmos DB версии 4. Дополнительные сведения см. в [заметках о выпуске](sql-api-sdk-java-v4.md) для пакета средств разработки Java для Azure Cosmos DB версии 4, [репозитории Maven](https://mvnrepository.com/artifact/com.azure/azure-cosmos), [рекомендациях по повышению производительности](performance-tips-java-sdk-v4-sql.md) и [руководстве по устранению неполадок](troubleshoot-java-sdk-v4-sql.md) для пакета средств разработки Java для Azure Cosmos DB версии 4. Если сейчас вы используете более раннюю версию, чем версия 4, руководство [Перевод приложения на использование пакета средств разработки Java для Azure Cosmos DB версии 4](migrate-java-v4-sdk.md) поможет вам обновить его до версии 4.
 >
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -44,7 +44,7 @@ ms.locfileid: "83647712"
 
 *Структура учетной записи Cosmos DB.* Независимо от API или языка программирования, *учетная запись* Cosmos DB содержит несколько *баз данных* или не содержит их вовсе. *База данных* содержит несколько *контейнеров* или не содержит их вовсе, а *контейнер* содержит несколько элементов или не содержит их вовсе, как показано на схеме ниже:
 
-![Сущности учетной записи Azure Cosmos](./media/databases-containers-items/cosmos-entities.png)
+:::image type="content" source="./media/databases-containers-items/cosmos-entities.png" alt-text="Сущности учетной записи Azure Cosmos" border="false":::
 
 Дополнительные сведения о базах данных, контейнерах и элементах см. [здесь](databases-containers-items.md). На уровне контейнера определены несколько важных свойств, среди которых *подготовленная пропускная способность* и *ключ секции*. 
 

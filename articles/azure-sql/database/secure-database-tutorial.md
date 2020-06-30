@@ -10,12 +10,12 @@ ms.author: vanto
 ms.reviewer: carlrab
 ms.date: 09/03/2019
 ms.custom: seoapril2019 sqldbrb=1
-ms.openlocfilehash: a709d0d4aa9b7c4e3ab06e6d34bbb199cb1b5917
-ms.sourcegitcommit: 58ff2addf1ffa32d529ee9661bbef8fbae3cddec
+ms.openlocfilehash: c658283ed610dcd14fca82b14217cba979388fc2
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84323932"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85252922"
 ---
 # <a name="tutorial-secure-a-database-in-azure-sql-database"></a>Руководство по Защита базы данных в службе "База данных SQL Azure"
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -301,7 +301,7 @@ ms.locfileid: "84323932"
     ![Записи аудита](./media/secure-database-tutorial/audit-records.png)
 
 > [!IMPORTANT]
-> Дополнительные сведения о том, как настроить события аудита с помощью PowerShell или REST API, см. в статье [Приступая к работе с аудитом базы данных SQL](../../azure-sql/database/auditing-overview.md).
+> Дополнительные сведения о том, как настроить события аудита с помощью PowerShell или REST API, см. в статье [Аудит в Базе данных SQL и Azure Synapse Analytics](../../azure-sql/database/auditing-overview.md).
 
 ### <a name="dynamic-data-masking"></a>Динамическое маскирование данных
 

@@ -5,18 +5,18 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 5/25/2020
 ms.author: baanders
-ms.openlocfilehash: 76480959d94b9e2a2e04857c85b7359105e73e4f
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ms.openlocfilehash: 4aa016294f0ef3bd26f7f3ef6fa374e9367b672d
+ms.sourcegitcommit: 4042aa8c67afd72823fc412f19c356f2ba0ab554
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84611477"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85296973"
 ---
 [!INCLUDE [cloud-shell-try-it.md](cloud-shell-try-it.md)]
 
 ### <a name="set-up-cloud-shell-session"></a>Создание сеанса Cloud Shell
 
-После открытия окна Cloud Shell необходимо войти в систему и задать контекст оболочки для подписки на этот сеанс. 
+После открытия окна Cloud Shell необходимо войти в систему и задать контекст оболочки для подписки на этот сеанс. Выполните в Cloud Shell следующие команды:
 
 ```azurecli
 az login
@@ -29,16 +29,18 @@ az account set --subscription <your-Azure-subscription-ID>
 az provider register --namespace 'Microsoft.DigitalTwins'
 ```
 
-Выполните следующую команду в экземпляре Cloud Shell, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI.
+Затем добавьте в Cloud Shell расширение [**Microsoft Azure IoT для Azure CLI**](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot?view=azure-cli-latest), чтобы разрешить использовать команды для взаимодействия с Azure Digital Twins и другими службами Интернета вещей. Чтобы добавить расширение, используйте следующую команду:
 
    ```azurecli-interactive
    az extension add --name azure-iot
    ```
 
-> [!NOTE]
-> В этой статье используется последняя версия расширения Azure IoT под названием `azure-iot`. Прежняя версия называется `azure-iot-cli-ext`. В каждый момент времени должна быть установлена только одна версия. Проверить установленные расширения можно с помощью команды `az extension list`.
-> Используйте `az extension remove --name azure-cli-iot-ext`, чтобы удалить устаревшую версию расширения.
-> Используйте `az extension add --name azure-iot`, чтобы добавить новую версию расширения. Чтобы узнать, какие расширения установлены, используйте `az extension list`.
+Если вы установили расширение ранее, в выходных данных может отобразиться сообщение "Расширение «azure-iot» уже установлено". В таком случае выполните следующую команду, чтобы убедиться в наличии последнего обновления: 
 
-> [!TIP]
-> Вы можете запустить `az dt -h`, чтобы просмотреть команды верхнего уровня Azure Digital Twins.
+   ```azurecli-interactive
+   az extension update --name azure-iot
+   ```
+
+Теперь вы готовы к работе с Azure Digital Twins в Cloud Shell.
+
+Это можно проверить в любой момент, выполнив команду `az dt -h`, чтобы вывести список доступных команд Azure Digital Twins верхнего уровня.

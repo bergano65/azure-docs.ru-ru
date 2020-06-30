@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: a01d8568c50cca181ec10f91b316715d64d2c37e
-ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
+ms.openlocfilehash: 8a20d7cb05f4529d5aa8a115b7d1db6e4d812be0
+ms.sourcegitcommit: 51718f41d36192b9722e278237617f01da1b9b4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84737841"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85100863"
 ---
 # <a name="tutorial-create-a-host-pool-with-the-azure-portal"></a>Руководство по Создание пула узлов на портале Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "84737841"
 - Где расположен источник нужного образа? Это образ из коллекции Azure или пользовательский образ?
 - Учетные данные для присоединения к домену.
 
-Кроме того, убедитесь, что вы зарегистрировали поставщик ресурсов Microsoft.DesktopVirtualization. Если вы этого еще не сделали, перейдите в раздел **Подписки**, выберите имя подписки и щелкните **Поставщики ресурсов Azure**.
+Кроме того, убедитесь, что вы зарегистрировали поставщик ресурсов Microsoft.DesktopVirtualization. Если вы этого еще не сделали, перейдите в раздел **Подписки**, выберите имя подписки и щелкните **Azure resource providers** (Поставщики ресурсов Azure).
 
 При создании пула узлов Виртуального рабочего стола Windows на основе шаблона Azure Resource Manager вы можете создать виртуальную машину из коллекции Azure, на основе управляемого образа или неуправляемого образа. Дополнительные сведения о создании образов виртуальных машин см. в статьях [Подготовка диска VHD или VHDX для Windows к отправке в Azure](../virtual-machines/windows/prepare-for-upload-vhd-image.md) и [Создание управляемого образа универсальной виртуальной машины в Azure](../virtual-machines/windows/capture-image-resource.md).
 

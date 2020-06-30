@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 06/08/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94dcd06e1b3c201a10e656b6752cfa60c0c7d39c
-ms.sourcegitcommit: bc943dc048d9ab98caf4706b022eb5c6421ec459
+ms.openlocfilehash: f33992c7aa205e503c7de150adad7180ff823881
+ms.sourcegitcommit: 51718f41d36192b9722e278237617f01da1b9b4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2020
-ms.locfileid: "84765251"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85099660"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-ibm-digital-business-automation-on-cloud"></a>Руководство по интеграции единого входа Azure Active Directory с IBM Digital Business Automation on Cloud
 
@@ -81,7 +81,21 @@ ms.locfileid: "84765251"
 
    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
-1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
+1. Если у вас есть **файл метаданных поставщика служб**, выполните следующие действия в разделе **Базовая конфигурация SAML**:
+    
+    а. Щелкните **Отправить файл метаданных**.
+
+    b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
+
+    c. После успешной отправки файла метаданных значения **Идентификатор** и **URL-адрес ответа** будут заполнены автоматически в текстовом поле в разделе IBM Digital Business Automation on Cloud.
+
+    > [!Note]
+    > Если поля **Идентификатор** и **URL-адрес ответа** автоматически не заполняются, введите эти значения вручную в соответствии с поставленной задачей.
+
+    > [!Note]
+    > Клиенты могут получить файл метаданных для своей облачной подписки у [команды DevOps DBAoC](mailto:supportbpmoncloud@us.ibm.com).
+
+1. Если вы хотите настроить приложение в режиме, **инициируемом поставщиком удостоверений**, но у вас нет **файла метаданных, предоставленного поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.automationcloud.ibm.com/isam/sps/<TENANT>/saml20`.
 

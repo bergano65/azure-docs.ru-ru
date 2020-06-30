@@ -14,12 +14,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
-ms.openlocfilehash: 6ffc1aa6e28bf17d0de3783e5e03b6a2df541e4a
-ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
+ms.openlocfilehash: 2c3f2ccd80f2f329a7495beda1a002d84d769802
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84194645"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85253925"
 ---
 # <a name="set-up-an-azure-ssis-ir-in-azure-data-factory-by-using-powershell"></a>Настройка Azure-SSIS IR в Фабрике данных Azure с помощью PowerShell
 
@@ -55,7 +55,7 @@ ms.locfileid: "84194645"
     - В зависимости от выбранного сервера базы данных SSISDB можно создать от вашего имени как отдельную базу данных, а также как часть эластичного пула в Базе данных SQL или Управляемом экземпляре SQL. Доступ к этой базе данных можно получить через общедоступную сеть или после присоединения к виртуальной сети. Инструкции по выбору типа сервера базы данных для размещения SSISDB см. в разделе [Сравнение Базы данных SQL и Управляемого экземпляра SQL](create-azure-ssis-integration-runtime.md#comparison-of-sql-database-and-sql-managed-instance).
     
       Если наряду с сервером Базы данных SQL используется брандмауэр IP-адресов, конечные точки служб для виртуальной сети или Управляемый экземпляр SQL с частной конечной точкой для размещения SSISDB или если вам нужен доступ к локальным данным без настройки локальной среды выполнения интеграции, присоедините Azure-SSIS IR к виртуальной сети. См. сведения о [создании среды выполнения интеграции Azure SSIS в виртуальной сети](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime).
-    - Убедитесь, что для Базы данных SQL включен параметр **Разрешить доступ к службам Azure**. Этот параметр не применяется, если наряду с Базой данных SQL используются правила брандмауэра для IP-адресов, конечные точки служб для виртуальной сети или Управляемый экземпляр SQL с частной конечной точкой для размещения базы данных SSISDB. Дополнительные сведения см. в разделе [Создание правила брандмауэра на уровне сервера с помощью портала Azure](../azure-sql/database/secure-database-tutorial.md#create-firewall-rules). Сведения о включении этого параметра с помощью PowerShell см. в статье [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule).
+    - Убедитесь, что для Базы данных SQL включен параметр **Разрешить доступ к службам Azure**. Этот параметр не применяется, если наряду с Базой данных SQL используются правила брандмауэра для IP-адресов, конечные точки служб для виртуальной сети или Управляемый экземпляр SQL с частной конечной точкой для размещения базы данных SSISDB. Дополнительные сведения см. в разделе [Создание правила брандмауэра](../azure-sql/database/secure-database-tutorial.md#create-firewall-rules). Сведения о включении этого параметра с помощью PowerShell см. в статье [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule).
     - Добавьте IP-адрес клиентского компьютера или содержащий его диапазон IP-адресов в список IP-адресов клиента в параметрах брандмауэра для Базы данных SQL. Дополнительные сведения см. в статье [Правила брандмауэра на уровнях сервера и базы данных](../azure-sql/database/firewall-configure.md).
     - Для подключения к Базе данных SQL или Управляемому экземпляру SQL можно пройти аутентификацию SQL, указав учетные данные администратора сервера, либо использовать систему проверки подлинности Azure Active Directory (Azure AD) и управляемое удостоверение вашей фабрики данных. Для проверки подлинности Azure AD управляемое удостоверение фабрики данных нужно добавить в группу Azure AD, которая обладает разрешениями на доступ к серверу базы данных. См.статью о [создании Azure-SSIS IR с проверкой подлинности Azure AD](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime).
     - Подтвердите, что База данных SQL или Управляемый экземпляр SQL еще не имеют SSISDB. При настройке Azure-SSIS IR использование существующей базы данных SSISDB не поддерживается.

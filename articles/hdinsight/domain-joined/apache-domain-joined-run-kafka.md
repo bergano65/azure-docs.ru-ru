@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
 ms.date: 05/19/2020
-ms.openlocfilehash: 6da2537464e39ecb2c613a97b19f2d8f316818af
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: d2780b3456a802904800b894f6849544cfee4e61
+ms.sourcegitcommit: e04a66514b21019f117a4ddb23f22c7c016da126
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83677550"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105936"
 ---
 # <a name="tutorial-configure-apache-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство по Настройка политик Apache Kafka в HDInsight с Корпоративным пакетом безопасности (предварительная версия)
 
@@ -48,7 +48,7 @@ ms.locfileid: "83677550"
 
 1. Откройте **пользовательский интерфейс администратора Ranger**.
 
-2. Нажмите кнопку **\<ClusterName>_kafka** в разделе **Kafka**. Может быть указана одна предварительно настроенная политика.
+2. Щелкните **\<ClusterName>_kafka** а разделе **Kafka**. Может быть указана одна предварительно настроенная политика.
 
 3. Щелкните **Добавить новую политику**, а затем введите следующие значения.
 
@@ -117,8 +117,8 @@ ms.locfileid: "83677550"
 1. Выполните следующие команды:
 
    ```bash
-   java -jar -Djava.security.auth.login.config=/usr/hdp/current/kafka-broker/config/kafka_client_jaas.conf kafka-producer-consumer.jar create salesevents $KAFKABROKERS
-   java -jar -Djava.security.auth.login.config=/usr/hdp/current/kafka-broker/config/kafka_client_jaas.conf kafka-producer-consumer.jar create marketingspend $KAFKABROKERS
+   java -jar -Djava.security.auth.login.config=/usr/hdp/current/kafka-broker/conf/kafka_client_jaas.conf kafka-producer-consumer.jar create salesevents $KAFKABROKERS
+   java -jar -Djava.security.auth.login.config=/usr/hdp/current/kafka-broker/conf/kafka_client_jaas.conf kafka-producer-consumer.jar create marketingspend $KAFKABROKERS
    ```
 
 ## <a name="test-the-ranger-policies"></a>Тестирование политик Ranger
@@ -131,13 +131,7 @@ ms.locfileid: "83677550"
    ssh sales_user1@CLUSTERNAME-ssh.azurehdinsight.net
    ```
 
-2. Выполните следующую команду:
-
-   ```bash
-   export KAFKA_OPTS="-Djava.security.auth.login.config=/usr/hdp/current/kafka-broker/config/kafka_client_jaas.conf"
-   ```
-
-3. Используйте имена брокера из предыдущего раздела, чтобы настроить следующую переменную среды.
+2. Используйте имена брокера из предыдущего раздела, чтобы настроить следующую переменную среды.
 
    ```bash
    export KAFKABROKERS=<brokerlist>:9092
@@ -145,48 +139,80 @@ ms.locfileid: "83677550"
 
    Например, `export KAFKABROKERS=wn0-khdicl.contoso.com:9092,wn1-khdicl.contoso.com:9092`.
 
-4. Выполните шаг 3 в разделе **Создание и развертывание примера** в статье [Руководство. Используйте API производителя и потребителя Apache Kafka](../kafka/apache-kafka-producer-consumer-api.md#build-and-deploy-the-example), чтобы убедиться, что `kafka-producer-consumer.jar` также доступно для **sales_user**.
+3. Выполните шаг 3 в разделе **Создание и развертывание примера** в статье [Руководство. Используйте API производителя и потребителя Apache Kafka](../kafka/apache-kafka-producer-consumer-api.md#build-and-deploy-the-example), чтобы убедиться, что `kafka-producer-consumer.jar` также доступно для **sales_user**.
 
-> [!NOTE]  
-> Для работы с этим руководством используйте файл kafka-producer-consumer.jar в проекте DomainJoined-Producer-Consumer (не в проекте Producer-Consumer, который предназначен для сценариев без присоединения к домену).
+   > [!NOTE]  
+   > Для работы с этим руководством используйте файл kafka-producer-consumer.jar в проекте DomainJoined-Producer-Consumer (не в проекте Producer-Consumer, который предназначен для сценариев без присоединения к домену).
 
-5. Убедитесь, что **sales_user1** может работать с разделом `salesevents`, выполнив следующую команду.
+4. Убедитесь, что **sales_user1** может работать с разделом `salesevents`, выполнив следующую команду.
 
    ```bash
-   java -jar kafka-producer-consumer.jar producer salesevents $KAFKABROKERS
+   java -jar -Djava.security.auth.login.config=/usr/hdp/current/kafka-broker/conf/kafka_client_jaas.conf kafka-producer-consumer.jar producer salesevents $KAFKABROKERS
    ```
 
-6. Выполните следующую команду, чтобы использовать ресурсы из раздела `salesevents`.
+5. Выполните следующую команду, чтобы использовать ресурсы из раздела `salesevents`.
 
    ```bash
-   java -jar kafka-producer-consumer.jar consumer salesevents $KAFKABROKERS
+   java -jar -Djava.security.auth.login.config=/usr/hdp/current/kafka-broker/conf/kafka_client_jaas.conf kafka-producer-consumer.jar consumer salesevents $KAFKABROKERS
    ```
 
    Убедитесь, что вы можете читать сообщения.
 
-7. Убедитесь, что **sales_user1** не может работать с разделом `marketingspend`, выполнив следующее в том же окне SSH.
+6. Убедитесь, что **sales_user1** не может работать с разделом `marketingspend`, выполнив следующее в том же окне SSH.
 
    ```bash
-   java -jar kafka-producer-consumer.jar producer marketingspend $KAFKABROKERS
+   java -jar -Djava.security.auth.login.config=/usr/hdp/current/kafka-broker/conf/kafka_client_jaas.conf kafka-producer-consumer.jar producer marketingspend $KAFKABROKERS
    ```
 
    Происходит ошибка авторизации, ее можно игнорировать.
 
-8. Обратите внимание, что пользователь **marketing_user1** не может использовать ресурсы из раздела `salesevents`.
+7. Обратите внимание, что пользователь **marketing_user1** не может использовать ресурсы из раздела `salesevents`.
 
-   Повторите шаги 1–4, приведенные выше, но на этот раз как пользователь **marketing_user1**.
+   Повторите шаги 1–3 выше, но на этот раз от имени пользователя **marketing_user1**.
 
    Выполните следующую команду, чтобы использовать ресурсы из раздела `salesevents`.
 
    ```bash
-   java -jar kafka-producer-consumer.jar consumer salesevents $KAFKABROKERS
+   java -jar -Djava.security.auth.login.config=/usr/hdp/current/kafka-broker/conf/kafka_client_jaas.conf kafka-producer-consumer.jar consumer salesevents $KAFKABROKERS
    ```
 
    Предыдущие сообщения не будут отображаться.
 
-9. Просмотрите события доступа к ресурсам аудита из интерфейса Ranger.
+8. Просмотрите события доступа к ресурсам аудита из интерфейса Ranger.
 
    ![События доступа к ресурсам аудита политики в пользовательском интерфейсе Ranger ](./media/apache-domain-joined-run-kafka/apache-ranger-admin-audit.png)
+   
+## <a name="produce-and-consume-topics-in-esp-kafka-by-using-the-console"></a>Создание и использование разделов в ESP Kafka с помощью консоли
+
+> [!NOTE]
+> Использовать команды консоли для создания разделов нельзя. Вместо этого необходимо использовать код Java, показанный в предыдущем разделе. См. раздел [Создание разделов в кластере Kafka с ESP](#create-topics-in-a-kafka-cluster-with-esp).
+
+Для создания и использования разделов в ESP Kafka с помощью консоли выполните следующие действия.
+
+1. Используйте `kinit` с именем пользователя. Введите пароль, когда появится запрос.
+
+   ```bash
+   kinit sales_user1
+   ```
+
+2. Задайте переменные среды.
+
+   ```bash
+   export KAFKA_OPTS="-Djava.security.auth.login.config=/usr/hdp/current/kafka-broker/conf/kafka_client_jaas.conf"
+   export KAFKABROKERS=<brokerlist>:9092
+   ```
+
+3. Создайте сообщения для раздела `salesevents`.
+
+   ```bash
+   /usr/hdp/current/kafka-broker/bin/kafka-console-producer.sh --topic salesevents --broker-list $KAFKABROKERS --security-protocol SASL_PLAINTEXT
+   ```
+
+4. Получите сообщения из раздела `salesevents`.
+
+   ```bash
+   /usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --topic salesevents --from-beginning --bootstrap-server $KAFKABROKERS --security-protocol SASL_PLAINTEXT
+   ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

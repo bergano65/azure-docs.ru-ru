@@ -4,20 +4,19 @@ description: Сведения о настройке Центров уведом�
 services: notification-hubs
 author: sethmanheim
 manager: femila
-editor: dbradish-microsoft
 ms.service: notification-hubs
 ms.workload: mobile
 ms.topic: quickstart
-ms.date: 02/14/2019
+ms.date: 06/22/2020
 ms.author: sethm
-ms.reviewer: jowargo
+ms.reviewer: thsomasu
 ms.lastreviewed: 02/14/2019
-ms.openlocfilehash: 78afb124ee1d1ab9b212197fb7a7140f88de9940
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: af792ccfe8e00c26abc6aab2e4a96d7ef9ff5122
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80349510"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85252055"
 ---
 # <a name="quickstart-set-up-push-notifications-in-a-notification-hub"></a>Краткое руководство. Настройка push-уведомлений в центре уведомлений
 
@@ -49,7 +48,7 @@ ms.locfileid: "80349510"
 
      ![Снимок экрана настройки токена APNS на портале Azure](./media/configure-notification-hub-portal-pns-settings/notification-hubs-apple-config-token.png)
 
-См. подробнее об [отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure](notification-hubs-ios-apple-push-notification-apns-get-started.md).
+См. статью [Руководство. Отправка push-уведомлений в приложения iOS с помощью Центров уведомлений Azure](ios-sdk-get-started.md).
 
 ## <a name="google-firebase-cloud-messaging-fcm"></a>Google Firebase Cloud Messaging (FCM)
 
@@ -150,7 +149,7 @@ ms.locfileid: "80349510"
 Чтобы настроить push-уведомления для Baidu, сделайте следующее:
 
 1. На портале Azure на странице **Центр уведомлений** выберите **Baidu (Android China)** в меню слева.
-2. В соответствующее поле введите **ключ API**, полученный из консоли Baidu, в проекте службы push-уведомлений облака Baidu.
+2. В соответствующее поле введите **ключ API**, полученный в консоли Baidu в проекте службы push-уведомлений облака Baidu.
 3. Введите **секретный ключ**, полученный из консоли Baidu в проекте службы push-уведомлений облака Baidu.
 4. Щелкните **Сохранить**.
 
@@ -166,8 +165,8 @@ ms.locfileid: "80349510"
 
 Дополнительные сведения о том, как отправлять push-уведомления на различные платформы, см. в следующих учебниках:
 
--[руководство по отправке push-уведомлений на устройства iOS с помощью центров уведомлений и APNS](notification-hubs-ios-apple-push-notification-apns-get-started.md); 
--[руководство по отправке push-уведомлений на устройства Android с помощью центров уведомлений и Google FCM](notification-hubs-android-push-notification-google-fcm-get-started.md); 
--[руководство по отправке уведомлений в приложение UWP на устройстве Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md); 
--[руководство по отправке уведомлений в приложение Windows Phone 8 с помощью MPNS](notification-hubs-windows-mobile-push-notifications-mpns.md); 
--[руководство по отправке push-уведомлений с помощью центров уведомлений и службы push-уведомлений облака Baidu](notification-hubs-baidu-china-android-notifications-get-started.md).
+* [Руководство. Отправка push-уведомлений в приложения iOS с помощью Центров уведомлений Azure](ios-sdk-get-started.md)
+* [Руководство по отправке push-уведомлений на устройства Android с помощью Firebase SDK версии 0.6](notification-hubs-android-push-notification-google-fcm-get-started.md)
+* [Руководство по отправке уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md)
+* [Руководство по отправке push-уведомлений в приложения Windows Phone с помощью Центров уведомлений](notification-hubs-windows-mobile-push-notifications-mpns.md)
+* [Начало работы с Центрами уведомлений с использованием Baidu](notification-hubs-baidu-china-android-notifications-get-started.md)

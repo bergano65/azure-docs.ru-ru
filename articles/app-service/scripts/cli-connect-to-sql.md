@@ -1,6 +1,6 @@
 ---
-title: Интерфейс командной строки. подключение приложения к базе данных SQL
-description: Сведения об использовании Azure CLI для автоматизации развертывания приложения Службы приложений и управления им. В этом примере показано, как подключить приложение к базе данных SQL.
+title: Интерфейс командной строки. Подключение приложения к Базе данных SQL
+description: Сведения об использовании Azure CLI для автоматизации развертывания приложения Службы приложений и управления им. В этом примере показано, как подключить приложение к Базе данных SQL.
 author: msangapu-msft
 tags: azure-service-management
 ms.assetid: 7c2efdd0-f553-4038-a77a-e953021b3f77
@@ -9,16 +9,16 @@ ms.topic: sample
 ms.date: 12/11/2017
 ms.author: msangapu
 ms.custom: mvc, seodec18
-ms.openlocfilehash: aa922930314d630e1aece004bab0c74adaf8eb2f
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: 297ef15cbf2b8e261d38dabe3a91cb26f3b449d2
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84015494"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85250746"
 ---
-# <a name="connect-an-app-service-app-to-a-sql-database-using-cli"></a>Подключение приложения Службы приложений к базе данных SQL в интерфейсе командной строки
+# <a name="connect-an-app-service-app-to-sql-database-using-cli"></a>Подключение приложения Службы приложений к Базе данных SQL с помощью CLI
 
-При помощи этого примера сценария создается база данных SQL Azure и приложение Службы приложений. Затем база данных SQL связывается с приложением при помощи параметров приложения.
+Этот пример скрипта создает базу данных в Базе данных SQL Azure и приложение Службы приложений. Затем база данных связывается с приложением с использованием параметров приложения.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 

@@ -7,12 +7,12 @@ ms.custom: mvc
 ms.service: postgresql
 ms.topic: overview
 ms.date: 11/25/2019
-ms.openlocfilehash: 9ea0610811f6906526afe55d577e04a8decd5f49
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: deb720638e0921762eb9c5800d218c3cfccb7f55
+ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74481663"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85213607"
 ---
 # <a name="what-is-azure-database-for-postgresql"></a>Что такое база данных Azure для PostgreSQL
 База данных Azure для PostgreSQL — это служба управления реляционной базой данных в облаке Microsoft, созданная для разработчиков. Она основана на версии сообщества ядра СУБД [PostgreSQL](https://www.postgresql.org/) с открытым кодом и доступна в двух вариантах развертывания: отдельный сервер и Гипермасштабирование (Citus).
@@ -52,6 +52,6 @@ ms.locfileid: "74481663"
 - Чтобы отправить отзыв или отправить запрос на новые возможности, создайте запись через [UserVoice](https://feedback.azure.com/forums/597976-azure-database-for-postgresql).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Ознакомьтесь со [страницей цен](https://azure.microsoft.com/pricing/details/postgresql/) для сравнения цен и доступа к калькуляторам.
+- Ознакомьтесь со [страницей цен](https://azure.microsoft.com/pricing/details/postgresql/) для сравнения цен и доступа к калькуляторам. Оба варианта развертывания (Отдельный сервер и Гипермасштабирование (Citus)) также предлагают предварительно оплаченные скидки на зарезервированные экземпляры. См. сведения о ценах на варианты [Отдельный сервер](concept-reserved-pricing.md) и [Гипермасштабирование (Citus)](concepts-hyperscale-reserved-pricing.md) (RI).
 - Приступите к работе, создав свою первую Базу данных Azure для PostgreSQL с [отдельным сервером](./quickstart-create-server-database-portal.md) или [Гипермасштабированием (Citus)](./quickstart-create-hyperscale-portal.md).
 - Создайте приложение на Python, PHP, Ruby, C\#, Java, Node.js: [Библиотеки подключений для базы данных Azure для PostgreSQL](./concepts-connection-libraries.md).

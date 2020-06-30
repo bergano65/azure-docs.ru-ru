@@ -13,12 +13,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/29/2020
-ms.openlocfilehash: 5ecf180b71c43d5df25d7c3c948a59482dd06a1c
-ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
+ms.openlocfilehash: 3b601fbbc448ef909b0700ac887375147c42ecdd
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84267313"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85253619"
 ---
 # <a name="quickstart-use-ssms-to-connect-to-and-query-azure-sql-database-or-azure-sql-managed-instance"></a>Краткое руководство. Использование SSMS для подключения к Базе данных SQL Azure или Управляемому экземпляру SQL Azure
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -47,7 +47,7 @@ ms.locfileid: "84267313"
   > [!IMPORTANT]
   > Скрипты в этой статье предназначены для использования базы данных Adventure Works. Используя управляемый экземпляр, необходимо импортировать базу данных Adventure Works в базу данных экземпляра или изменить скрипты в этой статье для использования базы данных Wide World Importers.
 
-Если вы просто хотите выполнить некоторые нерегламентированные запросы, не устанавливая SSMS, см. статью [Краткое руководство. Использование редактора запросов на портале Azure для запросов к базе данных SQL](connect-query-portal.md).
+Если вы просто хотите выполнить некоторые нерегламентированные запросы, не устанавливая SSMS, см. статью [Краткое руководство. Выполнение запросов к Базе данных SQL Azure с помощью редактора запросов на портале Azure](connect-query-portal.md).
 
 ## <a name="get-server-connection-information"></a>Получение сведений о подключении к серверу
 

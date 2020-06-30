@@ -5,16 +5,16 @@ services: synapse-analytics
 author: filippopovic
 ms.service: synapse-analytics
 ms.topic: overview
-ms.subservice: ''
+ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: f70c14c424e8aaecbdc1138b52fdd6fb1e9fc265
-ms.sourcegitcommit: ff19f4ecaff33a414c0fa2d4c92542d6e91332f8
+ms.openlocfilehash: 2c5f65993909e142de6017b07591529cd7cb7b86
+ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85051798"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85200585"
 ---
 # <a name="how-to-use-openrowset-with-sql-on-demand-preview"></a>Как использовать OPENROWSET в службе SQL по запросу (предварительная версия)
 
@@ -60,7 +60,7 @@ ms.locfileid: "85051798"
 
 `OPENROWSET` использует следующие правила, чтобы выбрать способ проверки подлинности в хранилище:
 - В `OPENROWSET` без `DATA_SOURCE` механизм проверки подлинности зависит от типа вызывающего объекта.
-  - Любой пользователь может использовать `OPENROWSET` без `DATA_SOURCE`, чтобы читать общедоступные файлы в службе хранилища Azure.
+  - Любой пользователь может использовать `OPENROWSET` без `DATA_SOURCE`, чтобы считывать общедоступные файлы в службе хранилища Azure.
   - Имена входа Azure AD могут получать доступ к защищенным файлам с помощью собственных [удостоверений Azure AD](develop-storage-files-storage-access-control.md?tabs=user-identity#supported-storage-authorization-types), если служба хранилища Azure позволяет пользователю Azure AD получать доступ к базовым файлам (например, если у вызывающего объекта есть разрешение `Storage Reader` в службе хранилища Azure).
   - Для имен входа SQL также можно использовать `OPENROWSET` без `DATA_SOURCE` для доступа к общедоступным файлам, защищенным с помощью маркера SAS файлам и управляемым удостоверениям рабочей области Synapse. Чтобы разрешить доступ к файлам хранилища, необходимо [создать учетные данные уровня сервера](develop-storage-files-storage-access-control.md#examples). 
 - В `OPENROWSET` с `DATA_SOURCE` механизм проверки подлинности определяется в учетных данных уровня базы данных, которые назначены указанному источнику данных. Этот параметр позволяет обращаться к общедоступному хранилищу, а также к защищенному хранилищу по маркеру SAS, управляемому удостоверению рабочей области или [удостоверению вызывающего объекта Azure AD](develop-storage-files-storage-access-control.md?tabs=user-identity#supported-storage-authorization-types) (если этот вызывающий объект является субъектом Azure AD). Если `DATA_SOURCE` ссылается на хранилище Azure, которое не является общедоступным, придется [создать учетные данные уровня базы данных](develop-storage-files-storage-access-control.md#examples) и указать их в `DATA SOURCE`, чтобы разрешить доступ к файлам хранилища.
@@ -178,7 +178,7 @@ ESCAPE_CHAR = 'char'
 
 Задает символ в файле, используемый для экранирования собственно этого символа и всех значений разделителей в файле. Если за escape-символом следует значение, отличное от него самого или какого-либо из значений разделителей, при считывании этого значения escape-символ пропускается. 
 
-Параметр ESCAPE_CHAR будет применяться независимо от того, включен ли параметр FIELDQUOTE. Он не будет использоваться для экранирования символа кавычек. Символ кавычек экранируется с помощью двойных кавычек, как и в CSV-файлах Excel.
+Параметр ESCAPE_CHAR будет применяться независимо от того, включен ли параметр FIELDQUOTE. Он не будет использоваться для экранирования символа кавычек. Символ кавычек нужно экранировать другим символом кавычек. Такой символ может использоваться в значении столбца только в том случае, если значение инкапсулировано с помощью символов кавычек.
 
 FIRSTROW = 'first_row' (первая_строка) 
 

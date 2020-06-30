@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: tutorial
 ms.date: 05/12/2020
 ms.author: anfeldma
-ms.openlocfilehash: 6f8431bfd3be75651f3a08fe9b07fc3902436331
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: d29f97bf421804fb234ce8d86c66c12b01854681
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83657295"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85113809"
 ---
 # <a name="tutorial-build-a-java-web-application-using-azure-cosmos-db-and-the-sql-api"></a>Руководство по Создание веб-приложения Java с использованием Azure Cosmos DB и API SQL
 
@@ -32,7 +32,7 @@ ms.locfileid: "83657295"
 
 В данном руководстве рассказывается о том, как создать веб-приложение для управления задачами, с помощью которого можно создавать и извлекать задачи, а также помечать их как завершенные, как показано на рисунке ниже. Каждая задача из списка ToDo будет храниться в виде документов JSON в службе Azure Cosmos DB.
 
-![Приложение My ToDo List на Java](./media/sql-api-java-application/image1.png)
+:::image type="content" source="./media/sql-api-java-application/image1.png" alt-text="Приложение My ToDo List на Java":::
 
 > [!TIP]
 > В данном учебнике по разработке приложения предполагается, что у вас имеется некоторый опыт использования Java. Если вы никогда не работали с Java или [необходимыми инструментами](#Prerequisites), мы рекомендуем скачать полный учебный проект [todo](https://github.com/Azure-Samples/documentdb-java-todo-app) с портала GitHub и создать его, следуя [инструкциям, приведенным в конце этой статьи](#GetProject). После создания ознакомьтесь со статьей, чтобы разобраться в коде этого проекта.  
@@ -66,7 +66,7 @@ ms.locfileid: "83657295"
 
 1. Сначала необходимо создать проект Java. В меню Eclipse выберите **File** (Файл), щелкните **New** (Создать), а затем выберите **Dynamic Web Project** (Динамический веб-проект). Если элемента **Dynamic Web Project** (Динамический веб-проект) нет в списке доступных проектов, откройте меню **File** (Файл), щелкните пункт **New** (Создать), а затем выберите **Project** (Проект), разверните список **Web** (Интернет), выберите **Dynamic Web Project** (Динамический веб-проект) и нажмите кнопку **Next** (Далее).
    
-    ![Разработка приложений JSP Java](./media/sql-api-java-application/image10.png)
+    :::image type="content" source="./media/sql-api-java-application/image10.png" alt-text="Разработка приложений JSP Java":::
 
 1. Введите имя проекта в **соответствующем** поле и в раскрывающемся меню **Target Runtime** (Целевая среда выполнения). Если необходимо, выберите значение (например, Apache Tomcat v7.0), а затем нажмите кнопку **Finish** (Готово). Выбор целевой среды выполнения позволит вам запустить локальный проект через Eclipse.
 
@@ -74,7 +74,7 @@ ms.locfileid: "83657295"
 
 1. В диалоговом окне **New JSP File** (Новый JSP-файл) укажите для файла имя **index.jsp**. Сохраните родительскую папку с именем **WebContent**, как показано на следующей иллюстрации, и нажмите кнопку **Next** (Далее).
    
-    ![Создание файла JSP — учебник по разработке веб-приложений Java](./media/sql-api-java-application/image11.png)
+    :::image type="content" source="./media/sql-api-java-application/image11.png" alt-text="Создание файла JSP — учебник по разработке веб-приложений Java":::
 
 1. В диалоговом окне **Select JSP Template** (Выбор шаблона JSP) в целях обучения выберите **New JSP File (html)** (Новый JSP-файл (html)) и нажмите кнопку **Finish** (Готово).
 

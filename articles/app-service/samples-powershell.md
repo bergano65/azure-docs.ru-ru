@@ -6,12 +6,12 @@ ms.assetid: b48d1137-8c04-46e0-b430-101e07d7e470
 ms.topic: sample
 ms.date: 03/08/2017
 ms.custom: mvc
-ms.openlocfilehash: f289bd453f2387282402394c807fe9700151f221
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 6300b9fe10d7b12d71f87adec85d3a86658a8c97
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81532431"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85254486"
 ---
 # <a name="powershell-samples-for-azure-app-service"></a>Примеры PowerShell для Службы приложений Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "81532431"
 | [Масштабирование приложения вручную](./scripts/powershell-scale-manual.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Создает приложение Службы приложений и масштабирует его по двум экземплярам. |
 | [Глобальное масштабирование приложения с помощью высокодоступной архитектуры](./scripts/powershell-scale-high-availability.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Создает два приложения Службы приложений в двух разных географических регионах и делает их доступными через одну конечную точку с помощью диспетчера трафика Azure. |
 |**Подключение приложения к ресурсам**||
-| [Подключение приложения к Базе данных SQL](./scripts/powershell-connect-to-sql.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создает приложение Службы приложений и базу данных SQL, а затем добавляет строку подключения базы данных к параметрам приложения. |
+| [Подключение приложения к Базе данных SQL](./scripts/powershell-connect-to-sql.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создает приложение Службы приложений и базу данных в Базе данных SQL Azure, а затем добавляет строку подключения базы данных к параметрам приложения. |
 | [Подключение приложения к учетной записи хранения](./scripts/powershell-connect-to-storage.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создает приложение Службы приложений и учетную запись хранения, а затем добавляет строку подключения хранилища к параметрам приложения. |
 |**Резервное копирование и восстановление приложения**||
 | [Резервное копирование приложения](./scripts/powershell-backup-onetime.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Создает приложение Службы приложений и однократно создает его резервную копию. |

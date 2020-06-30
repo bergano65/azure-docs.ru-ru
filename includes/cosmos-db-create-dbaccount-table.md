@@ -8,22 +8,22 @@ ms.topic: include
 ms.date: 01/24/2020
 ms.author: sngun
 ms.custom: include file
-ms.openlocfilehash: 2001d0621a340cbdb04c0bb5eea1166ce8b88eab
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 5015371afc67574a214097f8d3eef661df29c22f
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77212768"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85115050"
 ---
 1. В новом окне браузера войдите на [портал Azure](https://portal.azure.com/).
 
 2. В меню слева выберите **Создать ресурс**.
    
-   ![Создание ресурса на портале Azure](./media/cosmos-db-create-dbaccount-table/create-nosql-db-databases-json-tutorial-0.png)
+   :::image type="content" source="./media/cosmos-db-create-dbaccount-table/create-nosql-db-databases-json-tutorial-0.png" alt-text="Создание ресурса на портале Azure":::
    
 3. На странице **New** (Новый) выберите **Базы данных** > **Azure Cosmos DB**.
    
-   ![Область "Базы данных" на портале Azure](./media/cosmos-db-create-dbaccount-table/create-nosql-db-databases-json-tutorial-1.png)
+   :::image type="content" source="./media/cosmos-db-create-dbaccount-table/create-nosql-db-databases-json-tutorial-1.png" alt-text="Область "Базы данных" на портале Azure":::
    
 3. На странице **Создание учетной записи Azure Cosmos DB** введите параметры для новой учетной записи Azure Cosmos DB. 
  
@@ -39,9 +39,9 @@ ms.locfileid: "77212768"
 
 5. Выберите **Просмотр и создание**. После завершения проверки нажмите **Создать**, чтобы создать учетную запись. 
  
-   ![Страница "Новая учетная запись" для Azure Cosmos DB](./media/cosmos-db-create-dbaccount-table/azure-cosmos-db-create-new-account.png)
+   :::image type="content" source="./media/cosmos-db-create-dbaccount-table/azure-cosmos-db-create-new-account.png" alt-text="Страница "Новая учетная запись" для Azure Cosmos DB":::
 
 6. Создание учетной записи занимает несколько минут. Вы увидите сообщение **Развертывание выполняется**. Дождитесь завершения развертывания, а затем нажмите кнопку **Перейти к ресурсу**.
 
-    ![Область "Уведомления" на портале Azure](./media/cosmos-db-create-dbaccount-table/azure-cosmos-db-account-created.png)
+    :::image type="content" source="./media/cosmos-db-create-dbaccount-table/azure-cosmos-db-account-created.png" alt-text="Область "Уведомления" на портале Azure":::
 

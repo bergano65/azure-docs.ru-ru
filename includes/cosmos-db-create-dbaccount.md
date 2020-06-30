@@ -37,13 +37,13 @@ ms.locfileid: "85113808"
     > [!NOTE]
     > Вы можете использовать не более одной учетной записи Azure Cosmos DB категории "Бесплатный" на подписку Azure. При создании учетной записи нужно зарегистрироваться. Если параметр подачи заявки на скидку на основе категории "Бесплатный" не отображается, это означает, что в подписке уже включена другая учетная запись категории "Бесплатный".
    
-   :::image type="content" source="./media/cosmos-db-create-dbaccount/azure-cosmos-db-create-new-account-detail.png" alt-text="Страница "Новая учетная запись" для Azure Cosmos DB":::
+   :::image type="content" source="./media/cosmos-db-create-dbaccount/azure-cosmos-db-create-new-account-detail.png" alt-text="Страница Новая учетная запись для Azure Cosmos DB":::
 
 1. Выберите **Review + create** (Просмотреть и создать). Вы можете пропустить разделы **Сеть** и **Теги**.
 
 1. Проверьте параметры учетной записи, а затем нажмите кнопку **Создать**. Создание учетной записи занимает несколько минут. Дождитесь, пока на странице портала появится сообщение **Развертывание выполнено**. 
 
-    :::image type="content" source="./media/cosmos-db-create-dbaccount/azure-cosmos-db-account-created.png" alt-text="Область "Уведомления" на портале Azure":::
+    :::image type="content" source="./media/cosmos-db-create-dbaccount/azure-cosmos-db-account-created.png" alt-text="Область Уведомления на портале Azure":::
 
 1. Выберите **Перейти к ресурсу**, чтобы перейти на страницу учетной записи Azure Cosmos DB. 
 

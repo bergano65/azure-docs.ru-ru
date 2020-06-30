@@ -12,6 +12,12 @@
   items:
     - name: Мониторинг ресурса Azure
       href: learn/quick-monitor-azure-resource.md
+    - name: Отправка журнала действий в рабочую область
+      items:
+        - name: Портал Azure
+          href: learn/quick-collect-activity-log-portal.md
+        - name: Шаблон ARM
+          href: learn/quick-collect-activity-log-arm.md
     - name: Мониторинг виртуальных машин
       items:
         - name: Виртуальные машины Azure
@@ -455,7 +461,7 @@
             - name: Действия webhook
               href: platform/alerts-log-webhook.md
             - name: 'Устранение неполадок, связанных с оповещениями журналов'
-              href: platform/alert-log-troubleshoot.md
+              href: platform/alerts-troubleshoot-log.md
         - name: Правила генерации оповещений журнала действий
           items:
             - name: Оповещение о событии журнала действий
@@ -506,6 +512,8 @@
           href: platform/api-alerts.md
         - name: 'Устранение неполадок, связанных с оповещениями'
           href: platform/alerts-troubleshoot.md
+        - name: Оповещения и перемещения между регионами
+          href: platform/alerts-resource-move.md
         - name: Управление ИТ-услугами
           items:
             - name: Соединитель управления ИТ-услугами
@@ -555,12 +563,12 @@
             - name: ASP.NET
               displayname: 'ASP.NET, c#, csharp, .NET, NET, dotnet'
               href: app/asp-net.md
+            - name: Консоль ASP.NET
+              displayname: 'console, .NET, dotnet console, dotnet, c#, csharp, NET'
+              href: app/console.md
             - name: Приложения не на основе HTTP и фоновые приложения
               displayname: 'console, .NET, .NET Core, dotnet console, dotnet, c#, csharp, NET, worker, background, generic host'
               href: app/worker-service.md
-            - name: Консоль .NET
-              displayname: 'console, .NET, dotnet console, dotnet, c#, csharp, NET'
-              href: app/console.md
             - name: Java
               items:
                 - name: Веб-приложения

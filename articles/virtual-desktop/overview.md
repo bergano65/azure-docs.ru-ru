@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 05/07/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 61162a0e2e95a08547848f286f2db489f4b9d963
-ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
+ms.openlocfilehash: 289cc463732ee6b612b67f6c408d9d7260016137
+ms.sourcegitcommit: 398fecceba133d90aa8f6f1f2af58899f613d1e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84737025"
+ms.lasthandoff: 06/21/2020
+ms.locfileid: "85125810"
 ---
 # <a name="what-is-windows-virtual-desktop"></a>Что такое Виртуальный рабочий стол Windows 
 
@@ -113,7 +113,7 @@ ms.locfileid: "84737025"
 |*.events.data.microsoft.com|443|Служба телеметрии|None|
 |www.msftconnecttest.com|443|Проверка, подключена ли ОС к Интернету.|None|
 |*.prod.do.dsp.mp.microsoft.com|443|Центр обновления Windows|None|
-|login.windows.net|443|Вход в Microsoft Online Services, Office 365|None|
+|login.windows.net|443|Вход в Microsoft Online Services, Microsoft 365|None|
 |*.sfx.ms|443|Обновления для клиентского программного обеспечения OneDrive|None|
 |*.digicert.com|443|Проверка отзыва сертификата|None|
 

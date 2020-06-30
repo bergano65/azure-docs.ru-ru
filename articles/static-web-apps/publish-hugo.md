@@ -7,16 +7,16 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: aapowell
-ms.openlocfilehash: 44472981e48a7018fcdf55f28d33d0dda9479d44
-ms.sourcegitcommit: eeba08c8eaa1d724635dcf3a5e931993c848c633
+ms.openlocfilehash: 250be11f498e825c3e487abfac1c0acc585e5317
+ms.sourcegitcommit: 4042aa8c67afd72823fc412f19c356f2ba0ab554
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84669908"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85297947"
 ---
 # <a name="tutorial-publish-a-hugo-site-to-azure-static-web-apps-preview"></a>Руководство по Публикация сайта Hugo в предварительной версии службы "Статические веб-приложения Azure"
 
-В этой статье показано, как создать и развернуть веб-приложение [Hugo](https://gohugo.io/) в службе [Статические веб-приложения Azure](overview.md). Конечным результатом будет новый ресурс Статических веб-приложений Azure (со связанными действиями GitHub), позволяющий управлять процессом сборки и публикации приложения.
+В этой статье показано, как создать и развернуть веб-приложение [Hugo](https://gohugo.io/) в службе [Статические веб-приложения Azure](overview.md). В результате вы получите новый экземпляр Статических веб-приложений Azure со связанным компонентом GitHub Actions для управления процессом сборки и публикации приложения.
 
 В этом руководстве описано следующее:
 
@@ -144,42 +144,6 @@ ms.locfileid: "84669908"
 1. Нажмите кнопку **Просмотр и создание** и убедитесь, что вы указали правильные сведения.
 
 1. Щелкните **Создать**, чтобы начать создание приложения службы "Статические веб-приложения Azure", а также подготовить действие GitHub к развертыванию.
-
-1. После завершения развертывания перейдите к терминалу и зафиксируйте изменения с помощью действия GitHub на компьютере.
-
-   ```bash
-   git pull
-   ```
-
-1. Откройте приложение Hugo в текстовом редакторе и откройте файл _.github/workflows/azure-pages-<WORKFLOW_NAME>.yml_.
-
-1. чтобы создать приложение Hugo, замените строку `- uses: actions/checkout@v2` (строка 18) на указанную ниже. Если требуется Hugo Extended, раскомментируйте `extended: true`.
-
-   ```yml
-   - uses: actions/checkout@v2
-     with:
-       submodules: true  # Fetch Hugo themes (true OR recursive)
-       fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-
-   - name: Setup Hugo
-     uses: peaceiris/actions-hugo@v2.4.11
-     with:
-       hugo-version: "latest"  # Hugo version: latest OR x.y.z
-       # extended: true
-
-   - name: Build
-     run: hugo
-   ```
-   
-   Дополнительные сведения об установке Hugo в средстве выполнения GitHub Actions см. по адресу [peaceiris/actions-hugo](https://github.com/peaceiris/actions-hugo).
-
-1. Зафиксируйте обновленный рабочий процесс и отправьте его в GitHub.
-
-   ```bash
-   git add -A
-   git commit -m "Updating GitHub Actions workflow"
-   git push
-   ```
 
 1. Дождитесь завершения действия GitHub.
 

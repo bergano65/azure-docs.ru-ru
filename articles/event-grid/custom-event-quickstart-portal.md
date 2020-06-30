@@ -35,7 +35,7 @@ ms.locfileid: "84907738"
     :::image type="content" source="./media/custom-event-quickstart-portal/select-event-grid-topics.png" alt-text="Поиск и выбор разделов Сетки событий":::
 3. На странице **Разделы сетки событий** на панели инструментов выберите **+ Добавить**. 
 
-    :::image type="content" source="./media/custom-event-quickstart-portal/add-event-grid-topic-button.png" alt-text="Добавление кнопки "Раздел Сетки событий"":::
+    :::image type="content" source="./media/custom-event-quickstart-portal/add-event-grid-topic-button.png" alt-text="Добавление кнопки Раздел Сетки событий":::
 4. На странице **Создать раздел** выполните следующие действия:
     1. Выберите свою **подписку Azure**.
     2. Щелкните имеющуюся группу ресурсов или выберите **Создать** и введите **имя** для новой **группы ресурсов**.
@@ -43,7 +43,7 @@ ms.locfileid: "84907738"
     4. Выберите **расположение** для раздела Сетки событий.
     5. В нижней части страницы выберите **Review + create** (Проверить и создать). 
 
-        :::image type="content" source="./media/custom-event-quickstart-portal/create-custom-topic.png" alt-text="Страница "Создание раздела"":::
+        :::image type="content" source="./media/custom-event-quickstart-portal/create-custom-topic.png" alt-text="Страница Создание раздела":::
     6. На вкладке **Просмотр и создание** на странице **Создание раздела** выберите **Создать**. 
     
         :::image type="content" source="./media/custom-event-quickstart-portal/review-create-page.png" alt-text="Просмотр параметров и создание":::

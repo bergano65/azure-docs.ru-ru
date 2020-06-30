@@ -6,12 +6,12 @@ ms.assetid: 53e6a15a-370a-48df-8618-c6737e26acec
 ms.topic: sample
 ms.date: 12/12/2017
 ms.custom: mvc
-ms.openlocfilehash: 499bf25f06030ae9fc5c1f8381ef4cd6ff6873dc
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 857d6cdc26e41f5ea7b1d66aaff6efb4056c47c4
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81535627"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85254503"
 ---
 # <a name="cli-samples-for-azure-app-service"></a>Примеры интерфейса командной строки для Службы приложений Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "81535627"
 |**Защита приложения**||
 | [Интеграция со Шлюзом приложений Azure](./scripts/cli-integrate-app-service-with-application-gateway.md?toc=%2fcli%2fazure%2ftoc.json) | Создает приложение Службы приложений и интегрирует его со Шлюзом приложений, используя конечную точку службы и ограничения доступа. |
 |**Подключение приложения к ресурсам**||
-| [Подключение приложения к Базе данных SQL](./scripts/cli-connect-to-sql.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений и базу данных SQL, а затем добавляет строку подключения базы данных к параметрам приложения. |
+| [Подключение приложения к Базе данных SQL](./scripts/cli-connect-to-sql.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений и базу данных в Базе данных SQL Azure, а затем добавляет строку подключения базы данных к параметрам приложения. |
 | [Подключение приложения к учетной записи хранения](./scripts/cli-connect-to-storage.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений и учетную запись хранения, а затем добавляет строку подключения хранилища к параметрам приложения. |
 | [Подключение приложения к кэшу Azure для Redis](./scripts/cli-connect-to-redis.md?toc=%2fcli%2fazure%2ftoc.json) | Создает приложение Службы приложений и кэш Azure для Redis, а затем добавляет сведения о подключении Redis в параметры приложения. |
 | [Подключение приложения к Cosmos DB](./scripts/cli-connect-to-documentdb.md?toc=%2fcli%2fazure%2ftoc.json) | Создает приложение Службы приложений и базу данных Cosmos DB, а затем добавляет сведения о подключении Cosmos DB в параметры приложения. |

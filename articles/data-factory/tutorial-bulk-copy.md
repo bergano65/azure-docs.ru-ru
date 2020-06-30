@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019
 ms.date: 01/22/2018
-ms.openlocfilehash: c150972c2804b12ac436a0dd10cdf13f92f43478
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: b1601bf095b5898de965d42a16e63f278499a9bf
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84561009"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85251519"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory-using-powershell"></a>Копирование нескольких таблиц в пакетном режиме с помощью Фабрики данных Azure и PowerShell
 
@@ -59,7 +59,7 @@ ms.locfileid: "84561009"
 
 **Подготовка исходной базы данных SQL Azure:**
 
-Создайте базу данных SQL Azure, используя пример данных Adventure Works LT, представленный в статье [Создание базы данных SQL Azure на портале Azure](../azure-sql/database/single-database-create-quickstart.md). В этом руководстве копируются все таблицы из этого примера базы данных в хранилище данных SQL.
+Создайте базу данных в службе "База данных SQL", используя пример данных Adventure Works LT, представленный в статье [Создание базы данных в службе "База данных SQL Azure"](../azure-sql/database/single-database-create-quickstart.md). В этом руководстве копируются все таблицы из этого примера базы данных в хранилище данных SQL.
 
 **Подготовка хранилища данных-приемника SQL Azure:**
 
@@ -334,7 +334,7 @@ ms.locfileid: "84561009"
                         "activities": [
                             {
                                 "name": "CopyData",
-                                "description": "Copy data from SQL database to SQL DW",
+                                "description": "Copy data from Azure SQL Database to SQL DW",
                                 "type": "Copy",
                                 "inputs": [
                                     {

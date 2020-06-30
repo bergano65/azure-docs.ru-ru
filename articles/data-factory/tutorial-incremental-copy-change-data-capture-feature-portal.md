@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: ''
 ms.date: 05/04/2020
-ms.openlocfilehash: 754fb27d03aebf6029d3ae2f22e748db87a89753
-ms.sourcegitcommit: 58ff2addf1ffa32d529ee9661bbef8fbae3cddec
+ms.openlocfilehash: ca6b0ff197c21dd41521d2aa6106aa3b0df2d177
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84325229"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85249502"
 ---
 # <a name="incrementally-load-data-from-azure-sql-managed-instance-to-azure-storage-using-change-data-capture-cdc"></a>Добавочная загрузка данных из управляемого экземпляра SQL Azure в хранилище Azure с использованием технологии "Отслеживание измененных данных" (CDC)
 
@@ -55,7 +55,8 @@ ms.locfileid: "84325229"
 * **Управляемый экземпляр базы данных SQL Azure**. Используйте базу данных как **исходное** хранилище данных. Если у вас нет управляемого экземпляра базы данных SQL Azure, вы можете создать ее, выполнив шаги из статьи [Создание управляемого экземпляра базы данных SQL Azure на портале Azure](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-get-started).
 * **Учетная запись хранения Azure.** В этом руководстве в качестве **приемника** будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом [Создание учетной записи хранения](../storage/common/storage-account-create.md). Создание контейнера с именем **raw**. 
 
-### <a name="create-a-data-source-table-in-your-azure-sql-database"></a>Создание таблицы источника данных в базе данных SQL Azure
+### <a name="create-a-data-source-table-in-azure-sql-database"></a>Создание таблицы источника данных в Базе данных SQL Azure
+
 1. Запустите **SQL Server Management Studio** и подключитесь к серверу управляемого экземпляра SQL Azure.
 2. В **обозревателе сервера** щелкните правой кнопкой мыши **базу данных** и выберите **Создать запрос**.
 3. Выполните указанную ниже команду SQL для базы данных управляемых экземпляров SQL Azure, чтобы создать таблицу с именем `customers` в качестве хранилища источника данных.  

@@ -1,23 +1,25 @@
 ---
 title: Сведения о соответствии нормативным требованиям теста производительности CIS для платформ Microsoft Azure
 description: Подробные сведения о встроенной инициативе о соответствии нормативным требованиям теста производительности CIS для платформ Microsoft Azure. Каждый элемент управления сопоставляется с определениями одной или нескольких Политик Azure, которые помогают выполнять оценку.
-ms.date: 06/10/2020
+ms.date: 06/23/2020
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 1e3c2baec1186e29da45c6395123e2f5aab9165a
-ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
+ms.openlocfilehash: 214d50c790f9976b96bf29906d4db64a111e859f
+ms.sourcegitcommit: 4042aa8c67afd72823fc412f19c356f2ba0ab554
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84736838"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85299030"
 ---
 # <a name="details-of-the-cis-microsoft-azure-foundations-benchmark-regulatory-compliance-built-in-initiative"></a>Подробные сведения о встроенной инициативе о соответствии нормативным требованиям теста производительности CIS для платформ Microsoft Azure
 
-В следующей статье подробно описано, как в определении встроенной инициативы о соответствии нормативным требованиям Политики Azure **области соответствия нормативным требованиям** и **элементы управления** сопоставляются с тестом производительности CIS для платформ Microsoft Azure.
+В следующей статье подробно описано, как определение встроенной инициативы о соответствии нормативным требованиям Политики Azure сопоставляется с **областями соответствия нормативным требованиям** и **элементами управления** в тестах CIS оценки безопасности для платформ Microsoft Azure.
 Дополнительные сведения об этом стандарте соответствия требованиям см. в статье [Тест производительности CIS для платформ Microsoft Azure](https://www.cisecurity.org/benchmark/azure/). Сведения о термине _Ответственный_ см. в статьях [Определение службы "Политика Azure"](../concepts/definition-structure.md#type) и [Разделение ответственности в облаке](../../../security/fundamentals/shared-responsibility.md).
 
 Ниже приведены сопоставления соответствующие элементам управления **Теста производительности CIS для платформ Microsoft Azure v1.1.0**. Используйте панель навигации справа для перехода непосредственно к конкретной **области соответствия нормативным требованиям**. Многие элементы управления реализуются с помощью определения инициативы [Политики Azure](../overview.md). Чтобы просмотреть полное определение инициативы, откройте раздел **Политика** на портале Azure и перейдите на страницу **Определения**.
 Затем найдите и выберите определение встроенной инициативы о соответствии требованиям **теста производительности CIS для платформ Microsoft Azure версии 1.1.0**.
+
+Эта встроенная инициатива развертывается в составе [примера схемы CIS для оценки безопасности для платформ Microsoft Azure](../../blueprints/samples/cis-azure-1-1-0.md).
 
 > [!IMPORTANT]
 > Каждый элемент управления ниже связан с одним или несколькими определениями [Политики Azure](../overview.md).
@@ -196,7 +198,7 @@ ms.locfileid: "84736838"
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[В Управляемом экземпляре SQL должна быть включена Расширенная защита данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fabfb7388-5bf4-4ad7-ba99-2cd2f41cebb9) |Проверьте каждый Управляемый экземпляр SQL без Расширенной защиты данных. |AuditIfNotExists, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlManagedInstance_AdvancedDataSecurity_Audit.json) |
+|[В Управляемом экземпляре SQL должна быть включена Расширенная защита данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fabfb7388-5bf4-4ad7-ba99-2cd2f41cebb9) |Проверка всех Управляемых экземпляров SQL без Расширенной защиты данных. |AuditIfNotExists, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlManagedInstance_AdvancedDataSecurity_Audit.json) |
 |[На серверах SQL должна быть включена Расширенная защита данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fabfb4388-5bf4-4ad7-ba82-2cd2f41ceae9) |Аудит серверов SQL без Расширенной защиты данных |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServer_AdvancedDataSecurity_Audit.json) |
 
 ### <a name="ensure-that-auditactiongroups-in-auditing-policy-for-a-sql-server-is-set-properly"></a>Обеспечение того, что параметр AuditActionGroups в политике аудита для SQL-сервера установлен правильно
@@ -245,7 +247,7 @@ ms.locfileid: "84736838"
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Уведомления по электронной почте для администраторов и владельцев подписок следует включить в параметрах Расширенной защиты данных для Управляемого экземпляра SQL](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Faeb23562-188d-47cb-80b8-551f16ef9fff) |Проверьте, что в параметрах Расширенной защиты от угроз для Управляемого экземпляра SQL включена отправка уведомлений по электронной почте администраторам и владельцам подписок. Так администраторы Управляемого экземпляра SQL смогут максимально быстро узнавать об обнаруженных в нем подозрительных действиях. |AuditIfNotExists, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlManagedInstance_AdvancedDataSecurityEmailAdmins_Audit.json) |
+|[Уведомления по электронной почте для администраторов и владельцев подписок следует включить в параметрах Расширенной защиты данных для Управляемого экземпляра SQL](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Faeb23562-188d-47cb-80b8-551f16ef9fff) |Следите за тем, чтобы в параметрах Расширенной защиты от угроз для Управляемого экземпляра SQL была включена отправка уведомлений по электронной почте администраторам и владельцам подписок. Так администраторы Управляемого экземпляра SQL смогут максимально быстро узнавать об обнаруженных в нем подозрительных действиях. |AuditIfNotExists, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlManagedInstance_AdvancedDataSecurityEmailAdmins_Audit.json) |
 |[Уведомления по электронной почте для администраторов и владельцев подписок следует включить в параметрах расширенной защиты данных для сервера SQL](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc8343d2f-fdc9-4a97-b76f-fc71d1163bfc) |Проверка того, что в параметрах расширенной защиты от угроз для сервера SQL включена отправка уведомлений по электронной почте администраторам и владельцам подписок. При включении уведомлений администраторы сервера SQL будут максимально быстро узнавать об обнаруженных на нем подозрительных действиях. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServer_AdvancedDataSecurityEmailAdmins_Audit.json) |
 
 ### <a name="ensure-that-send-alerts-to-is-set"></a>Обеспечение того, что задано значение параметра "Отправить оповещения в"
@@ -254,7 +256,7 @@ ms.locfileid: "84736838"
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Параметры Расширенной защиты данных для Управляемого экземпляра SQL должны содержать адрес электронной почты для получения оповещений системы безопасности](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3965c43d-b5f4-482e-b74a-d89ee0e0b3a8) |Убедитесь, что в поле "Кому отправлять оповещения" в параметрах Расширенной защиты данных указан адрес электронной почты. На этот адрес приходят уведомления об обнаруженных подозрительных действиях в Управляемых экземплярах SQL. |AuditIfNotExists, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlManagedInstance_AdvancedDataSecurityEmails_Audit.json) |
+|[Параметры Расширенной защиты данных Управляемого экземпляра SQL должны включать электронный адрес для оповещений системы безопасности](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3965c43d-b5f4-482e-b74a-d89ee0e0b3a8) |Требование указать адрес электронной почты в поле "Кому отправлять оповещения" в параметрах Расширенной защиты данных. На этот адрес приходят уведомления об обнаруженных подозрительных действиях в Управляемом экземпляре SQL. |AuditIfNotExists, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlManagedInstance_AdvancedDataSecurityEmails_Audit.json) |
 |[Параметры Расширенной защиты данных для сервера SQL должны содержать адрес электронной почты для получения оповещений системы безопасности](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F9677b740-f641-4f3c-b9c5-466005c85278) |Проверка на то, что в поле "Кому отправлять оповещения" в параметрах сервера Расширенной защиты данных указан адрес электронной почты. На этот адрес приходят уведомления об обнаруженных подозрительных действиях на серверах SQL. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServer_AdvancedDataSecurityEmails_Audit.json) |
 
 ### <a name="ensure-that-threat-detection-types-is-set-to-all"></a>Обеспечение того, что для параметра "Типы обнаружения угроз" задано значение "Все"
@@ -606,7 +608,6 @@ ms.locfileid: "84736838"
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Нужно выбрать Центр безопасности с ценовой категорией "Стандартный"](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa1181c5f-672a-477a-979a-7d58aa086233) |Ценовая категория "Стандартный" включает обнаружение угроз для сетей и виртуальных машин, предоставляя возможности аналитики угроз, обнаружения аномалий и аналитики поведения в Центре безопасности Azure |Audit, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_Standard_pricing_tier.json) |
 
 ## <a name="storage-accounts"></a>Учетные записи хранения
 

@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
 ms.date: 01/22/2018
-ms.openlocfilehash: 340017a121d12c95c7c04bbfe67b336638209e9c
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 4b291dcc95e0beecb1fd9fbf038055d8a77c7b79
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75439010"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85254979"
 ---
 # <a name="tutorial-build-your-first-data-factory-by-using-the-azure-portal"></a>Руководство по Создание первой фабрики данных с помощью портала Azure
 > [!div class="op_single_selector"]
@@ -432,7 +432,7 @@ ms.locfileid: "75439010"
 * Создание конвейера с действием HDInsight Hive.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В этой статье вы создали конвейер с действием преобразования (действие HDInsight), которое выполняет сценарий Hive в кластере HDInsight по требованию. Сведения о копировании данных из хранилища BLOB-объектов в базу данных SQL с помощью действия копирования см. в [этом руководстве](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
+В этой статье вы создали конвейер с действием преобразования (действие HDInsight), которое выполняет сценарий Hive в кластере HDInsight по требованию. Сведения о копировании данных из хранилища BLOB-объектов в Базу данных SQL Azure с помощью действия копирования см. в [этом руководстве](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 ## <a name="see-also"></a>См. также раздел
 | Раздел | Описание |

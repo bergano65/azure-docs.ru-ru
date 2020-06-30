@@ -1,18 +1,18 @@
 ---
 title: Создание ресурсов Azure Cosmos DB и управление ими с помощью PowerShell
-description: Используйте Azure Powershell для управления учетными записями, базами данных, контейнерами и пропускной способностью Azure Cosmos.
+description: Используйте Azure PowerShell для управления учетными записями, базами данных, контейнерами и пропускной способностью Azure Cosmos.
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: sample
+ms.topic: how-to
 ms.date: 05/13/2020
 ms.author: mjbrown
 ms.custom: seodec18
-ms.openlocfilehash: 0ae3ff54e1060255913d8155b297c5d412ce345f
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 494c5f0c3d7d0a4c8a388ce06143795fe5f12f20
+ms.sourcegitcommit: 635114a0f07a2de310b34720856dd074aaf4f9cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83656286"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85262282"
 ---
 # <a name="manage-azure-cosmos-db-sql-api-resources-using-powershell"></a>Управление ресурсами API SQL для Azure Cosmos DB с помощью PowerShell
 
@@ -21,13 +21,13 @@ ms.locfileid: "83656286"
 > [!NOTE]
 > В примерах этой статьи используются командлеты управления [Az.CosmosDB](https://docs.microsoft.com/powershell/module/az.cosmosdb). Сведения о последних изменениях см. на странице справочника по API [Az.CosmosDB](https://docs.microsoft.com/powershell/module/az.cosmosdb).
 
-Для управления ресурсами Azure Cosmos DB на нескольких платформах можно использовать командлеты `Az` и `Az.CosmosDB` в [кроссплатформенном средстве PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell), а также [Azure CLI](manage-with-cli.md), [REST API][rp-rest-api] или [портал Azure](create-sql-api-dotnet.md#create-account).
+Для управления ресурсами Azure Cosmos DB на нескольких платформах можно использовать командлеты `Az` и `Az.CosmosDB` в [кроссплатформенном средстве PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell), а также [Azure CLI](manage-with-cli.md), [REST API][rp-rest-api] или [портал Azure](create-sql-api-dotnet.md#create-account).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="getting-started"></a>Приступая к работе
 
-Следуйте инструкциям из статьи [Общие сведения об Azure PowerShell][powershell-install-configure], чтобы установить средство PowerShell и войти через него в учетную запись Azure.
+Следуйте инструкциям из статьи об [установке и настройке Azure PowerShell][powershell-install-configure], чтобы установить средство PowerShell и войти через него в учетную запись Azure.
 
 ## <a name="azure-cosmos-accounts"></a>Учетные записи Azure Cosmos
 
@@ -44,6 +44,7 @@ ms.locfileid: "83656286"
 * [вывод списка строк подключения для учетной записи Azure Cosmos;](#list-connection-strings)
 * [изменение приоритета при отработке отказа в учетной записи Azure Cosmos.](#modify-failover-priority)
 * [активация перехода на другой ресурс для учетной записи Azure Cosmos](#trigger-manual-failover)
+* [вывод списка блокировок ресурсов в учетной записи Azure Cosmos DB.](#list-account-locks)
 
 ### <a name="create-an-azure-cosmos-account"></a><a id="create-account"></a> Создание учетной записи Azure Cosmos
 
@@ -327,6 +328,21 @@ Update-AzCosmosDBAccountFailoverPriority `
     -FailoverPolicy $locations
 ```
 
+### <a name="list-resource-locks-on-an-azure-cosmos-db-account"></a><a id="list-account-locks"></a> Вывод списка блокировок ресурсов в учетной записи Azure Cosmos DB
+
+Блокировки ресурсов можно применять к ресурсам Azure Cosmos DB, включая базы данных и коллекции. В примере ниже показано, как вывести список всех блокировок ресурсов Azure в учетной записи Azure Cosmos DB.
+
+```azurepowershell-interactive
+$resourceGroupName = "myResourceGroup"
+$resourceTypeAccount = "Microsoft.DocumentDB/databaseAccounts"
+$accountName = "mycosmosaccount"
+
+Get-AzResourceLock `
+    -ResourceGroupName $resourceGroupName `
+    -ResourceType $resourceTypeAccount `
+    -ResourceName $accountName
+```
+
 ## <a name="azure-cosmos-db-database"></a>База данных Azure Cosmos DB
 
 В следующих разделах описано управление базой данных Azure Cosmos DB, включая:
@@ -337,6 +353,8 @@ Update-AzCosmosDBAccountFailoverPriority `
 * [вывод списка всех баз данных Azure Cosmos DB в учетной записи;](#list-db)
 * [получение сведений об одной базе данных Azure Cosmos DB;](#get-db)
 * [удаление базы данных Azure Cosmos DB.](#delete-db)
+* [создание блокировки ресурса в базе данных Azure Cosmos DB для предотвращения удаления;](#create-db-lock)
+* [снятие блокировки ресурса в базе данных Azure Cosmos DB.](#remove-db-lock)
 
 ### <a name="create-an-azure-cosmos-db-database"></a><a id="create-db"></a>Создание базы данных Azure Cosmos DB
 
@@ -416,6 +434,42 @@ Remove-AzCosmosDBSqlDatabase `
     -Name $databaseName
 ```
 
+### <a name="create-a-resource-lock-on-an-azure-cosmos-db-database-to-prevent-delete"></a><a id="create-db-lock"></a>Создание блокировки ресурса в базе данных Azure Cosmos DB для предотвращения удаления
+
+```azurepowershell-interactive
+$resourceGroupName = "myResourceGroup"
+$resourceType = "Microsoft.DocumentDB/databaseAccounts/sqlDatabases"
+$accountName = "mycosmosaccount"
+$databaseName = "myDatabase"
+$resourceName = "$accountName/$databaseName"
+$lockName = "myResourceLock"
+$lockLevel = "CanNotDelete"
+
+New-AzResourceLock `
+    -ResourceGroupName $resourceGroupName `
+    -ResourceType $resourceType `
+    -ResourceName $resourceName `
+    -LockName $lockName `
+    -LockLevel $lockLevel
+```
+
+### <a name="remove-a-resource-lock-on-an-azure-cosmos-db-database"></a><a id="remove-db-lock"></a>Снятие блокировки ресурса в базе данных Azure Cosmos DB
+
+```azurepowershell-interactive
+$resourceGroupName = "myResourceGroup"
+$resourceType = "Microsoft.DocumentDB/databaseAccounts/sqlDatabases"
+$accountName = "mycosmosaccount"
+$databaseName = "myDatabase"
+$resourceName = "$accountName/$databaseName"
+$lockName = "myResourceLock"
+
+Remove-AzResourceLock `
+    -ResourceGroupName $resourceGroupName `
+    -ResourceType $resourceType `
+    -ResourceName $resourceName `
+    -LockName $lockName
+```
+
 ## <a name="azure-cosmos-db-container"></a>Контейнер Azure Cosmos DB
 
 В следующих разделах описаны процедуры управления контейнером Azure Cosmos DB, включая:
@@ -430,6 +484,8 @@ Remove-AzCosmosDBSqlDatabase `
 * [вывод списка всех контейнеров Azure Cosmos DB в базе данных;](#list-containers)
 * [получение сведений об одном контейнере Azure Cosmos DB в базе данных;](#get-container)
 * [удаление контейнера Azure Cosmos DB.](#delete-container)
+* [создание блокировки ресурса в контейнере Azure Cosmos DB для предотвращения удаления;](#create-container-lock)
+* [снятие блокировки ресурса в контейнере Azure Cosmos DB.](#remove-container-lock)
 
 ### <a name="create-an-azure-cosmos-db-container"></a><a id="create-container"></a>Создание контейнера Azure Cosmos DB
 
@@ -667,6 +723,43 @@ Remove-AzCosmosDBSqlContainer `
     -AccountName $accountName `
     -DatabaseName $databaseName `
     -Name $containerName
+```
+### <a name="create-a-resource-lock-on-an-azure-cosmos-db-container-to-prevent-delete"></a><a id="create-container-lock"></a>Создание блокировки ресурса в контейнере Azure Cosmos DB для предотвращения удаления
+
+```azurepowershell-interactive
+$resourceGroupName = "myResourceGroup"
+$resourceType = "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers"
+$accountName = "mycosmosaccount"
+$databaseName = "myDatabase"
+$containerName = "myContainer"
+$resourceName = "$accountName/$databaseName/$containerName"
+$lockName = "myResourceLock"
+$lockLevel = "CanNotDelete"
+
+New-AzResourceLock `
+    -ResourceGroupName $resourceGroupName `
+    -ResourceType $resourceType `
+    -ResourceName $resourceName `
+    -LockName $lockName `
+    -LockLevel $lockLevel
+```
+
+### <a name="remove-a-resource-lock-on-an-azure-cosmos-db-container"></a><a id="remove-container-lock"></a>Снятие блокировки ресурса в контейнере Azure Cosmos DB
+
+```azurepowershell-interactive
+$resourceGroupName = "myResourceGroup"
+$resourceType = "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers"
+$accountName = "mycosmosaccount"
+$databaseName = "myDatabase"
+$containerName = "myContainer"
+$resourceName = "$accountName/$databaseName/$containerName"
+$lockName = "myResourceLock"
+
+Remove-AzResourceLock `
+    -ResourceGroupName $resourceGroupName `
+    -ResourceType $resourceType `
+    -ResourceName $resourceName `
+    -LockName $lockName
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

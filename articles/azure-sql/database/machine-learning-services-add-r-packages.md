@@ -14,12 +14,12 @@ ms.reviewer: davidph
 manager: cgronlun
 ms.date: 04/29/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 764d0131b0b8074a210bd9eb7f806f5d1a32fa1f
-ms.sourcegitcommit: 58ff2addf1ffa32d529ee9661bbef8fbae3cddec
+ms.openlocfilehash: b42dba59e061eee0472d39f324b7474d7d829310
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84324238"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85250729"
 ---
 # <a name="add-an-r-package-to-azure-sql-database-machine-learning-services-preview"></a>Добавление пакета R в Службу машинного обучения в Базе данных SQL Azure (предварительная версия)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "84324238"
 
 ## <a name="list-r-packages"></a>Получение списка пакетов R
 
-Корпорация Майкрософт предоставляет ряд пакетов R, предварительно установленных с помощью Службы машинного обучения в базе данных SQL Azure.
+Корпорация Майкрософт предоставляет ряд пакетов R, предварительно установленных с помощью Службы машинного обучения Базы данных SQL Azure.
 Чтобы отобразился список установленных пакетов R, выполните следующую команду в Azure Data Studio или SSMS.
 
 1. Откройте Azure Data Studio или SSMS и подключитесь к Базе данных SQL Azure.
@@ -166,7 +166,7 @@ sql_remove.packages(connectionString = connection, pkgs = "glue", scope = "PUBLI
 ```
 
 > [!TIP]
-> Другой способ установить пакет R в базе данных SQL Azure — отправить пакет R из потока байтов с помощью инструкции T-SQL **CREATE EXTERNAL LIBRARY**. Ознакомьтесь с разделом [Создание библиотеки из потока байтов](/sql/t-sql/statements/create-external-library-transact-sql#create-a-library-from-a-byte-stream) в справочной документации [CREATE EXTERNAL LIBRARY](https://docs.microsoft.com/sql/t-sql/statements/create-external-library-transact-sql).
+> Другой способ установить пакет R в Базе данных SQL Azure — отправить пакет R из потока байтов с помощью инструкции T-SQL **CREATE EXTERNAL LIBRARY**. Ознакомьтесь с разделом [Создание библиотеки из потока байтов](/sql/t-sql/statements/create-external-library-transact-sql#create-a-library-from-a-byte-stream) в справочной документации [CREATE EXTERNAL LIBRARY](https://docs.microsoft.com/sql/t-sql/statements/create-external-library-transact-sql).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

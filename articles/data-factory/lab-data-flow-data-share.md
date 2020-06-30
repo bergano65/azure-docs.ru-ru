@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: tutorial
 ms.custom: seo-lt-2019
 ms.date: 01/08/2020
-ms.openlocfilehash: 7d453b2724c308e48366d653a51d9e6aa8e82c96
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: dac018db1737b0395f78955d16dd753c6ac2f359
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81415927"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85252681"
 ---
 # <a name="data-integration-using-azure-data-factory-and-azure-data-share"></a>Интеграция данных с помощью Фабрики данных Azure и Azure Data Share
 
@@ -22,9 +22,9 @@ ms.locfileid: "81415927"
 
 Усовершенствования в Azure Data Factory позволят вашим инженерам-разработчикам данных уверенно привносить больше данных, а значит, и больше ценности в ваше предприятие — от создания безкодовых ETL/ELT до полного представления о ваших данных. Azure Data Share позволяет управлять общим доступом к межкорпоративным данным.
 
-В этом семинаре вы будете использовать Фабрику данных Azure (ADF) для приема данных из базы данных SQL Azure (SQL DB) в Azure Data Lake Storage 2-го поколения (ADLS 2-го поколения). После загрузки данных в lake, вы будете преобразовывать их с помощью потоков данных сопоставления, собственной службы преобразования фабрики данных, и погружать их в Azure Synapse Analytics (ранее — Хранилище данных SQL). Затем вы поделитесь таблицей с преобразованными данными и некоторыми дополнительными данными, используя Azure Data Share. 
+В этом семинаре вы будете использовать Фабрику данных Azure (ADF) для приема данных из Базы данных SQL Azure в Azure Data Lake Storage 2-го поколения (ADLS 2-го поколения). После загрузки данных в lake, вы будете преобразовывать их с помощью потоков данных сопоставления, собственной службы преобразования фабрики данных, и погружать их в Azure Synapse Analytics (ранее — Хранилище данных SQL). Затем вы поделитесь таблицей с преобразованными данными и некоторыми дополнительными данными, используя Azure Data Share. 
 
-В этой тестовой службе используются данные такси Нью-Йорка. Чтобы импортировать их в базу данных Azure SQL, скачайте [BACPAC-файл данных такси](https://github.com/djpmsft/ADF_Labs/blob/master/sample-data/taxi-data.bacpac).
+В этой тестовой службе используются данные такси Нью-Йорка. Чтобы импортировать их в базу данных в службе "База данных SQL", скачайте [BACPAC-файл данных о такси](https://github.com/djpmsft/ADF_Labs/blob/master/sample-data/taxi-data.bacpac).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -62,7 +62,7 @@ ms.locfileid: "81415927"
 
     ![Портал](media/lab-data-flow-data-share/configure1.png)
 
-### <a name="create-an-azure-sql-database-linked-service"></a>Создание связанной службы базы данных SQL Azure
+### <a name="create-an-azure-sql-database-linked-service"></a>Создание связанной службы Базы данных SQL Azure
 
 1. На странице редактирования создаются такие ресурсы фабрики данных, как конвейеры, наборы данных, потоки данных, триггеры и связанные службы. Нажмите кнопку **Соединения** в нижнем правом углу, чтобы создать связанную службу.
 
