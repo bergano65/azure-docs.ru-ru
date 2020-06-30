@@ -29,9 +29,15 @@
       href: how-to-customize-launch-button.md
     - name: Кэширование маркера проверки подлинности
       href: how-to-cache-token.md
+    - name: Настройка функции чтения вслух
+      href: how-to-configure-read-aloud.md
+    - name: Настройка перевода
+      href: how-to-configure-translation.md
+    - name: Хранение настроек пользователя
+      href: how-to-store-user-preferences.md
 - name: Справочник
   items:
-    - name: Справочник по пакету SDK
+    - name: Пакет SDK для JavaScript
       href: reference.md
 - name: Ресурсы
   items:

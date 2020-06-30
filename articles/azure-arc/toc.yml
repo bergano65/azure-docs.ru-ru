@@ -2,28 +2,57 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Что собой представляет Azure Arc для серверов?
+    - name: Сведения об Arc для Kubernetes
+      href: ./kubernetes/overview.md
+    - name: Сведения об Azure Arc для серверов
       href: ./servers/overview.md
-- name: Практические руководства
-  items:
-    - name: Подключение к Azure Arc
-      items:
-        - name: Общие сведения об агенте Connected Machine
-          href: ./servers/agent-overview.md
-        - name: Подключение компьютеров к Azure Arc на портале Azure
-          href: ./servers/onboard-portal.md
-        - name: Подключение компьютеров в большом масштабе с помощью субъекта-службы
-          href: ./servers/onboard-service-principal.md
-        - name: Подключение компьютеров к Azure Arc с помощью PowerShell DSC
-          href: ./servers/onboard-dsc.md
-    - name: Управление
-      items:
-        - name: Использование расширений виртуальной машины Azure и управление ими
-          href: ./servers/manage-vm-extensions.md
-        - name: Управление агентом
-          href: ./servers/manage-agent.md
 - name: Примеры
   items:
     - name: Встроенные компоненты Политики Azure
-      displayName: 'samples, policies, definitions'
-      href: ./servers/policy-samples.md
+      items:
+        - name: Arc для Kubernetes
+          href: ./kubernetes/policy-samples.md
+        - name: Arc для серверов
+          href: ./servers/policy-samples.md
+- name: Практические руководства
+  items:
+    - name: Arc для Kubernetes
+      items:
+        - name: Операции с кластером
+          items:
+            - name: Подключение кластера
+              href: ./kubernetes/connect-cluster.md
+            - name: Использование GitOps для подключенных кластеров
+              href: ./kubernetes/use-gitops-connected-cluster.md
+            - name: Использование GitOps с Helm
+              href: ./kubernetes/use-gitops-with-helm.md
+            - name: Принудительное применение GitOps с помощью службы "Политика Azure"
+              href: ./kubernetes/use-azure-policy.md
+            - name: Мониторинг с использованием Azure Monitor для контейнеров
+              href: ../azure-monitor/insights/container-insights-enable-arc-enabled-clusters.md
+            - name: Применение политик управления допуском с помощью службы "Политика Azure"
+              href: ../governance/policy/concepts/policy-for-kubernetes.md?toc=/azure/azure-arc/kubernetes/toc.json
+            - name: Развертывание рабочих нагрузок для Интернета вещей
+              href: ./kubernetes/deploy-azure-iot-edge-workloads.md
+            - name: Подключение субъекта-службы
+              href: ./kubernetes/create-onboarding-service-principal.md
+            - name: Устранение неполадок
+              href: ./kubernetes/Troubleshooting.md
+    - name: Arc для серверов
+      items:
+        - name: Подключение к Azure Arc
+          items:
+            - name: Общие сведения об агенте Connected Machine
+              href: ./servers/agent-overview.md
+            - name: Подключение компьютеров к Azure Arc на портале Azure
+              href: ./servers/onboard-portal.md
+            - name: Подключение компьютеров в большом масштабе с помощью субъекта-службы
+              href: ./servers/onboard-service-principal.md
+            - name: Подключение компьютеров к Azure Arc с помощью PowerShell DSC
+              href: ./servers/onboard-dsc.md
+        - name: Управление
+          items:
+            - name: Использование расширений виртуальной машины Azure и управление ими
+              href: ./servers/manage-vm-extensions.md
+            - name: Управление агентом
+              href: ./servers/manage-agent.md

@@ -11,12 +11,12 @@ metadata:
   author: PatrickFarley
   ms.author: pafarley
   ms.date: 10/01/2019
-  ms.openlocfilehash: 35c37f5b2b307bb1a3d90b9876f148b5a1120490
-  ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
+  ms.openlocfilehash: 3f2feec02efebbf6b3736b01151098cbe2bf02ae
+  ms.sourcegitcommit: fdaad48994bdb9e35cdd445c31b4bac0dd006294
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/20/2020
-  ms.locfileid: "83713636"
+  ms.lasthandoff: 06/26/2020
+  ms.locfileid: "85413796"
 landingContent:
 - title: Сведения о Компьютерном зрении
   linkLists:
@@ -32,11 +32,11 @@ landingContent:
     links:
     - text: Создание интеллектуальных приложений с помощью интерфейсов API Компьютерного зрения
       url: https://azure.microsoft.com/resources/videos/connect-2017-microsoft-cognitive-services-put-intelligence-into-your-business-apps/
-- title: Распознавание печатного и рукописного текста
+- title: Чтение текста с изображений и из документов
   linkLists:
   - linkListType: concept
     links:
-    - text: Распознавание печатного и рукописного текста
+    - text: Распознавание текста
       url: concept-recognizing-text.md
   - linkListType: quickstart
     links:

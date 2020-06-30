@@ -147,7 +147,7 @@
               href: ../common/storage-initiate-account-failover.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Authenticate
       items:
-        - name: Включение проверки подлинности и авторизации в локальной среде
+        - name: "Включение проверки подлинности и авторизации AD\_DS в локальной среде"
           items:
             - name: Обзор AD DS
               href: storage-files-identity-auth-active-directory-enable.md

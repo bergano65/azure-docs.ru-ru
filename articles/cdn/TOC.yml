@@ -12,8 +12,8 @@
       href: cdn-create-a-storage-account-with-cdn.md
     - name: Создание профиля и конечной точки
       href: cdn-create-new-endpoint.md
-    - name: Создание профиля с помощью шаблона Azure Resource Manager
-      href: create-profile-resource-manager-template.md
+    - name: Создание профиля и конечной точки с помощью шаблона ARM
+      href: create-profile-endpoint-template.md
 - name: Учебники
   items:
     - name: Добавление Azure CDN в веб-приложение
