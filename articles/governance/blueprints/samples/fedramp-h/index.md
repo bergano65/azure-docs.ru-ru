@@ -3,12 +3,12 @@ title: 'Пример схемы FedRAMP высокого уровня: общи�
 description: Общие сведения о примере схемы FedRAMP высокого уровня. Этот пример схемы помогает клиентам оценить определенные средства управления FedRAMP высокого уровня.
 ms.date: 01/31/2020
 ms.topic: sample
-ms.openlocfilehash: dede255b73a2a052acf1e8b95ad5171a1ace6ae5
-ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+ms.openlocfilehash: 3a26c6f8e781a1bb2ff30ca9e2c179bcda8eadec
+ms.sourcegitcommit: 581aaca8956b1717b7bc1c1d7710c782c22e6320
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "77087291"
+ms.lasthandoff: 06/29/2020
+ms.locfileid: "85517122"
 ---
 # <a name="overview-of-the-fedramp-high-blueprint-sample"></a>Общие сведения о примере схемы FedRAMP высокого уровня
 
