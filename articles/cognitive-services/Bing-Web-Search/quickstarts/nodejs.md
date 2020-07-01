@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 05/22/2020
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 4a96f31588e199d5696e2d9eff351051d46c1f96
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: 872a90a0b4f5b348e45b04998067f9e97a3ae987
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83873959"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85611328"
 ---
 # <a name="quickstart-search-the-web-using-the-bing-web-search-rest-api-and-nodejs"></a>Краткое руководство. Поиск в Интернете с помощью REST API Bing для поиска в Интернете и Node.js
 
@@ -43,7 +43,7 @@ const https = require('https')
 
 ## <a name="set-the-subscription-key"></a>Настройка ключа подписки
 
-Для хранения ключа подписки в фрагменте кода используется переменная среды `AZURE_SUBSCRIPTION_KEY`, чтобы защитить ключи при развертывании кода. Сведения о получении ключа подписки см. [здесь](https://azure.microsoft.com/try/cognitive-services/my-apis/?apiSlug=search-api-v7).
+Для хранения ключа подписки в фрагменте кода используется переменная среды `AZURE_SUBSCRIPTION_KEY`, чтобы защитить ключи при развертывании кода.
 
 Если вы не знакомы с переменными среды или вам нужно быстро запустить приложение, замените `process.env['AZURE_SUBSCRIPTION_KEY']` ключом подписки, заданным в качестве строки.
 

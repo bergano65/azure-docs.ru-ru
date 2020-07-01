@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 12/18/2019
 ms.author: scottwhi
 ms.custom: seodec2018
-ms.openlocfilehash: e0e99c7f677173c64afad3109b2f4accd7cb3cb9
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: d44fe58eb17e7f11dc64ee1426df7f356cb91aef
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75448442"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85602760"
 ---
 # <a name="what-is-the-bing-news-search-api"></a>Общие сведения об API Поиска новостей Bing
 
@@ -40,10 +40,8 @@ API Bing для поиска новостей в основном находит
 
 API Bing для поиска новостей является веб-службой RESTful, которую легко вызвать с любого языка программирования, поддерживающего выполнение HTTP-запросов и анализа JSON. Вы можете использовать службу с помощью REST API или пакета SDK.
 
-1. Создайте учетную запись API Cognitive Services с доступом к API-интерфейсам поиска Bing. Если у вас нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-news-api).
-
+1. Создайте [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с доступом к API-интерфейсам поиска Bing. Если у вас нет подписки Azure, создайте бесплатную [учетную запись](https://azure.microsoft.com/free/cognitive-services/).
 2. Отправьте запрос к API с допустимым поисковым запросом.
-
 3. Обработайте ответ API путем анализа возвращенного сообщения JSON.
 
 ## <a name="next-steps"></a>Дальнейшие действия
