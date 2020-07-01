@@ -140,7 +140,7 @@ $headers = array();
 
 * [Знакомство с API Bing для поиска изображений](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/overview)  
 * [Попробуйте интерактивную демонстрацию в подключенном режиме.](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/) 
-* [Узнайте о ценах на API Поиска Bing.](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/) 
+* [Узнайте о ценах на API "Поиск Bing".](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/) 
 * [Получите бесплатный ключ доступа Cognitive Services.](https://azure.microsoft.com/try/cognitive-services/?api=bing-image-search-api)
 * [Просмотрите документацию по Cognitive Services.](https://docs.microsoft.com/azure/cognitive-services)
 * [Просмотрите справочник по API Поиска изображений Bing.](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)
