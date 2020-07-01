@@ -10,12 +10,12 @@ ms.subservice: bing-visual-search
 ms.topic: overview
 ms.date: 12/19/2019
 ms.author: scottwhi
-ms.openlocfilehash: 52e3e65fb4f42530373decca547674a28a60f759
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 14acebb71538dddfd2421fbb27794f456b6c9c8f
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75446656"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85611515"
 ---
 # <a name="what-is-the-bing-visual-search-api"></a>Знакомство с API Визуального поиска Bing
 
@@ -48,7 +48,7 @@ API Визуального поиска Bing возвращает аналити
 
 API визуального поиска Bing является веб-службой RESTful, которую легко вызвать с любого языка программирования, поддерживающего выполнение HTTP-запросов и анализ JSON. Для этой службы вы можете использовать REST API или пакет SDK.
 
-1. Создайте [учетную запись Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить доступ к API Поиска Bing. Если у вас нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/). Ключ подписки можно получить на [портале Azure](../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource), создав учетную запись, или на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis) после активации бесплатной пробной версии.
+1. Создайте [учетную запись Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить доступ к API Поиска Bing. Если у вас нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
 2. Отправьте запрос к API с допустимым поисковым запросом.
 3. Обработайте ответ API путем анализа возвращенного сообщения JSON.
 

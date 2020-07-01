@@ -10,12 +10,12 @@ ms.subservice: bing-autosuggest
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: aahi
-ms.openlocfilehash: 10e25338ab6960addeebcc224d0a6633df451964
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 04f4c91ece77f7476cbe3bb27236ecdc2b5c60e7
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "78943147"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85603168"
 ---
 # <a name="tutorial-get-search-suggestions-on-a-web-page"></a>Руководство по Получение результатов поиска на веб-странице
 
@@ -29,7 +29,7 @@ ms.locfileid: "78943147"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы выполнить задания, описанные в этом руководстве, требуется ключ подписки для API автозаполнения Bing. Если у вас нет такого ключа, [создайте ресурс Автозаполнения Bing](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingAutosuggest-v7) на портале Azure. Можно также использовать [ключ пробной версии](https://azure.microsoft.com/try/cognitive-services/).
+Чтобы выполнить задания, описанные в этом руководстве, требуется ключ подписки для API автозаполнения Bing. Если у вас нет такого ключа, [создайте ресурс Автозаполнения Bing](https://portal.azure.com/#create/Microsoft.CognitiveServicesBingAutosuggest-v7) на портале Azure.
 
 ## <a name="create-a-new-web-page"></a>Создание веб-страницы
 
