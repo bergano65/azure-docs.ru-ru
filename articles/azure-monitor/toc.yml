@@ -17,6 +17,7 @@
         - name: Портал Azure
           href: learn/quick-collect-activity-log-portal.md
         - name: Шаблон ARM
+          displayName: Resource Manager
           href: learn/quick-collect-activity-log-arm.md
     - name: Мониторинг виртуальных машин
       items:
