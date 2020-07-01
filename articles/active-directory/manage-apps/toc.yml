@@ -3,20 +3,14 @@
 - name: Обзор
   expanded: true
   items:
-    - name: Что собой представляет управление облачными приложениями и единый вход?
+    - name: Что такое управление приложениями?
       href: what-is-application-management.md
-    - name: Что собой представляет прокси приложения для локальных приложений?
-      href: what-is-application-proxy.md
-    - name: Общие сценарии управления приложениями
-      href: common-scenarios.md
-    - name: Что собой представляет подготовка приложения?
-      href: /azure/active-directory/app-provisioning/user-provisioning?context=azure/active-directory/manage-apps/context/manage-apps-context
 - name: Краткие руководства
   items:
-    - name: Добавление облачного приложения из коллекции
-      href: add-application-portal.md
     - name: Просмотр корпоративных приложений
       href: view-applications-portal.md
+    - name: Добавление облачного приложения из коллекции
+      href: add-application-portal.md
 - name: Учебники
   items:
     - name: 'Интегрированные приложения из коллекции (например, ServiceNow, Salesforce, Dropbox)'
@@ -32,6 +26,8 @@
   items:
     - name: Рекомендации по управлению приложениями
       href: application-management-fundamentals.md
+    - name: Общие сценарии управления приложениями
+      href: common-scenarios.md
     - name: Облачные приложения и единый вход
       items:
         - name: Планирование интеграции облачных приложений
@@ -80,6 +76,8 @@
       items:
         - name: Прокси приложения
           href: application-proxy.md
+        - name: Что собой представляет прокси приложения для локальных приложений?
+          href: what-is-application-proxy.md
         - name: Планирование развертывания прокси приложения
           href: application-proxy-deployment-plan.md
         - name: Соединители

@@ -4,6 +4,14 @@
   items:
     - name: Что такое Помощник по Azure?
       href: advisor-overview.md
+- name: Краткие руководства
+  items:
+    - name: Настройка оповещений для новых рекомендаций
+      items:
+        - name: Портал Azure
+          href: advisor-alerts-portal.md
+        - name: Шаблон ARM
+          href: advisor-alerts-arm.md
 - name: Учебники
   items:
     - name: Начало работы с Помощником
@@ -25,7 +33,7 @@
     - name: Разрешения и блокировка действий
       href: permissions.md
     - name: Настройка оповещений для рекомендаций
-      href: advisor-alerts.md
+      href: advisor-alerts-portal.md
     - name: Групповое исправление для рекомендаций
       href: advisor-quick-fix.md
     - name: Данные Помощника в Azure Resource Graph

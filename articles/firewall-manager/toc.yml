@@ -12,7 +12,7 @@
       href: quick-secure-virtual-hub.md
 - name: Учебники
   items:
-    - name: Защита глобальной сети с помощью портала
+    - name: Защита виртуального концентратора с помощью портала
       href: secure-cloud-network.md
     - name: Защита виртуальной сети с центральной станцией с помощью портала
       href: secure-hybrid-network.md
@@ -26,16 +26,24 @@
       href: deployment-overview.md
     - name: Поставщики партнера по безопасности
       href: trusted-security-partners.md
+    - name: Группы IP-адресов
+      href: ip-groups.md
     - name: Логика обработки правил
       href: rule-processing.md
     - name: Варианты архитектуры
       href: vhubs-and-vnets.md
+    - name: Параметры аналитики угроз
+      href: threat-intelligence-settings.md
+    - name: Полное доменное имя в правилах сети
+      href: fqdn-filtering-network-rules.md
 - name: Практические руководства
   items:
     - name: Развертывание поставщиков партнера по безопасности
       href: deploy-trusted-security-partner.md
     - name: Переход на политику брандмауэра (PowerShell)
       href: migrate-to-policy.md
+    - name: Параметры DNS
+      href: dns-settings.md
 - name: Справочник
   items:
     - name: Azure CLI

@@ -8,7 +8,7 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: "Выполнение запроса\_— Azure CLI"
+    - name: Выполнение первого запроса с помощью портала
       displayName: 'portal, resource, graph, explorer'
       href: ./first-query-portal.md
     - name: Выполнение первого запроса с помощью Azure CLI
@@ -26,6 +26,9 @@
     - name: "Выполнение первого запроса\_— Python"
       displayName: 'library, azure-mgmt, cli'
       href: ./first-query-python.md
+    - name: "Создание общего запроса с помощью Azure\_CLI"
+      displayName: 'extension, docker, queries'
+      href: ./shared-query-azure-cli.md
     - name: Развертывание общего запроса с помощью шаблона ARM
       displayName: 'resource manager, queries'
       href: ./shared-query-template.md

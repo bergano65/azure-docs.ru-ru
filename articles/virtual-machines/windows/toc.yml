@@ -855,6 +855,8 @@
           href: incremental-snapshots.md
         - name: Миграция и преобразование
           items:
+            - name: Преобразование для шифрования на стороне сервера
+              href: disks-ade-sse-conversion-powershell.md
             - name: Переход между хранилищами ценовых категорий "Стандартный" и "Премиум" для дисков
               href: convert-disk-storage.md
             - name: Миграция в хранилище ценовой категории "Премиум" с помощью Azure Site Recovery

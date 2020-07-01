@@ -135,6 +135,8 @@
           href: batch-virtual-network.md
         - name: Создание пула с общедоступными IP-адресами
           href: create-pool-public-ip.md
+        - name: Создание пула без общедоступных IP-адресов
+          href: batch-pool-no-public-ip-address.md
         - name: Подключение виртуальной файловой системы
           href: virtual-file-mount.md
         - name: Подключение файлового ресурса Azure

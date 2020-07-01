@@ -117,6 +117,8 @@
       items:
         - name: Добавление поддержки для типа данных "длинное целое"
           href: time-series-insights-long-data-type.md
+        - name: Изменения параметров преобразования в плоскую структуру и хранения JSON
+          href: ingestion-rules-update.md
 - name: Справочник
   items:
     - name: Аналитика временных рядов

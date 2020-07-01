@@ -103,6 +103,8 @@
           href: unresponsive-vm-apply-group-policy.md
         - name: При применении политики безопасности виртуальная машина не отвечает
           href: unresponsive-vm-apply-security-policy.md
+        - name: 'STOP-ошибка Windows "Status No Memory" (Состояние: недостаточно памяти)'
+          href: troubleshoot-windows-stop-error.md
 - name: Не удается подключиться к виртуальной машине
   items:
     - name: RDP

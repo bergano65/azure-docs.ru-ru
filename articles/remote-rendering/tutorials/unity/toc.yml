@@ -1,6 +1,14 @@
-- name: Настройка проекта Unity с нуля
-  href: project-setup.md
-- name: Работа с удаленными сущностями в Unity
-  href: working-with-remote-entities.md
-- name: Изменение среды и материалов
-  href: changing-environment-and-materials.md
+- name: Обзор
+  href: tutorial-landing.md
+- name: Просмотр модели удаленной отрисовки
+  href: view-remote-models/view-remote-models.md
+- name: Интерфейсы и пользовательские модели
+  href: custom-models/custom-models.md
+- name: Манипулирование моделями
+  href: manipulate-models/manipulate-models.md
+- name: 'Детализация материалов, освещения и эффектов'
+  href: materials-lighting-effects/materials-lighting-effects.md
+- name: Защита службы "Удаленная отрисовка Azure" и хранилища моделей
+  href: security/security.md
+- name: Создание коммерческого готового приложения в службе "Удаленная отрисовка Azure"
+  href: commercial-ready/commercial-ready.md

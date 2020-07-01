@@ -84,8 +84,16 @@
               href: 'https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins'
             - name: "Пакет SDK для .NET (C#)\_— NuGet"
               href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.DigitalTwins/1.0.0-preview.1'
-            - name: "Пакет SDK для .NET ( C# )\_— источник"
+            - name: "Пакет SDK для .NET (C#)\_— источник"
               href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Microsoft.Azure.Management.DigitalTwins'
+            - name: Пакет SDK для Java
+              href: 'https://search.maven.org/artifact/com.microsoft.azure.digitaltwins.v2020_03_01_preview/azure-mgmt-digitaltwins'
+            - name: "Пакет SDK для Java\_— источник"
+              href: 'https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins'
+            - name: Пакет SDK для JavaScript
+              href: 'https://www.npmjs.com/package/@azure/arm-digitaltwins'
+            - name: "Пакет SDK для JavaScript\_— источник"
+              href: 'https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/arm-digitaltwins'
             - name: Пакет SDK для Python
               href: 'https://pypi.org/project/azure-mgmt-digitaltwins/'
             - name: "Пакет SDK для Python\_— источник"
