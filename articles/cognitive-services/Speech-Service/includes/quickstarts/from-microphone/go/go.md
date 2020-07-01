@@ -22,7 +22,7 @@ ms.locfileid: "84609643"
 
 ## <a name="setup-your-environment"></a>Настройте среду.
 
-Обновите файл go.mod, используя последнюю версию пакета SDK, добавив эту строку.
+Обновите файл go.mod, используя последнюю версию пакета SDK. Для этого добавьте следующую строку:
 ```sh
 require (
     github.com/Microsoft/cognitive-services-speech-sdk-go v1.12.1
