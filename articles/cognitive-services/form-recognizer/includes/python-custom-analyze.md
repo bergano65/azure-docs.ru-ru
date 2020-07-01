@@ -5,16 +5,16 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 11/14/2019
 ms.author: pafarley
-ms.openlocfilehash: 426158945e609b2bb46dd9fbbbbe378f25cd93f1
-ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
+ms.openlocfilehash: 76b2b465354df5b06ecd93986aec71530d175fe6
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85206249"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85562891"
 ---
 ## <a name="analyze-forms-for-key-value-pairs-and-tables"></a>Анализ форм для пар "ключ — значение" и таблиц
 
-Теперь с помощью новой обученной модели нужно проанализировать документ и извлечь из него пары "ключ — значение" и таблицы. Вызовите API **[анализа формы](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-previewoperations/AnalyzeWithCustomForm)** , выполнив следующий код в новом сценарии Python. Перед выполнением сценария внесите следующие изменения:
+Теперь с помощью новой обученной модели нужно проанализировать документ и извлечь из него пары "ключ — значение" и таблицы. Вызовите API **[анализа формы](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeWithCustomForm)** , выполнив следующий код в новом сценарии Python. Перед выполнением сценария внесите следующие изменения:
 
 1. Замените `<file path>` путем к файлу формы (например, C:\temp\file.pdf). Это также может быть URL-адрес удаленного файла. При работе с этим кратким руководством можно использовать файлы в папке **Test** из [примера набора данных](https://go.microsoft.com/fwlink/?linkid=2090451).
 1. Замените `<model_id>` идентификатором модели, полученным в предыдущем разделе.

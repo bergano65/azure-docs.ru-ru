@@ -10,20 +10,20 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: pafarley
-ms.openlocfilehash: a207118af0b07be79c934a9665f47e73c5eecde0
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 680e3647e7a5847e132a53986e2cf17150bceac3
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83589199"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85560171"
 ---
 # <a name="language-support-for-computer-vision"></a>Языковая поддержка для Компьютерное зрение
 
 Некоторые функции Компьютерное зрение поддерживают несколько языков. все функции, не упомянутые здесь, поддерживают только английский язык.
 
-## <a name="text-recognition"></a>Распознавание текста
+## <a name="text-detection-ocr"></a>Обнаружение текста (OCR)
 
-Компьютерное зрение может распознать текст на многих языках. Для OCR и Read API не требуется указывать код языка. Дополнительные сведения об этих функциях и преимуществах каждого API см. в разделе [распознавание печатного и рукописного текста](concept-recognizing-text.md) .
+Компьютерное зрение может обнаруживать текст на многих языках. Для интерфейсов API чтения и OCR не требуется указывать код языка. Дополнительные сведения об этих функциях и преимуществах каждого API см. в разделе [чтение текста из изображений и документов](concept-recognizing-text.md) .
 
 |Язык| Код языка | API OCR | API чтения |
 |:-----|:----:|:-----:|:---:|

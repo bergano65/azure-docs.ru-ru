@@ -112,6 +112,10 @@
           href: concepts-data-in-replication.md
         - name: Реплики чтения
           href: concepts-read-replicas.md
+    - name: Переключение между регионами
+      items:
+        - name: Портал Azure
+          href: howto-move-regions-portal.md
 - name: Практические руководства
   items:
     - name: Управление сервером

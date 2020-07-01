@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 05/27/2020
 ms.author: pafarley
 ms.custom: tracking-python
-ms.openlocfilehash: 12af4c57fd906d687eedfe7c865d36abaa0da18e
-ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
+ms.openlocfilehash: d9bb6ef7629d236120660912daaad82ad18b8480
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85209153"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85563106"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-rest-api-and-python"></a>Обучение модели Распознавателя документов по примерам с метками с помощью REST API и Python
 
@@ -65,8 +65,8 @@ ms.locfileid: "85209153"
 
 Файлы результатов OCR нужны для того, чтобы служба распознала соответствующие входные файлы для обучения с использованием меток. Чтобы получить результаты OCR для определенной исходной формы, выполните следующие действия.
 
-1. Вызовите API **[анализа макета](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-previewoperations/AnalyzeLayoutAsync)** для входного контейнера макета, указав входной файл в тексте запроса. Сохраните обнаруженный идентификатор в заголовке ответа **Operation-Location**.
-1. Вызовите API **[получения результатов анализа макета](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-previewoperations/GetAnalyzeLayoutResult)** , используя идентификатор операции из предыдущего шага.
+1. Вызовите API **[анализа макета](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeLayoutAsync)** для входного контейнера макета, указав входной файл в тексте запроса. Сохраните обнаруженный идентификатор в заголовке ответа **Operation-Location**.
+1. Вызовите API **[получения результатов анализа макета](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/GetAnalyzeLayoutResult)** , используя идентификатор операции из предыдущего шага.
 1. Получите ответ и запишите его содержимое в файл. Для каждой исходной формы файл распознавания текста должен иметь то же имя, что и оригинал, с добавлением суффикса `.ocr.json`. Выходные данные OCR в формате JSON должны иметь следующий формат. См. полный пример [примера файла OCR](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/Invoice_1.pdf.ocr.json). 
 
     ```json
@@ -197,7 +197,7 @@ ms.locfileid: "85209153"
 
 ## <a name="train-a-model-using-labeled-data"></a>Обучение модели с использованием маркированных данных
 
-Чтобы обучить модель с использованием маркированных данных, вызовите API **[обучения настраиваемой модели](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-previewoperations/TrainCustomModelAsync)** , выполнив следующий код Python. Перед выполнением команды внесите следующие изменения:
+Чтобы обучить модель с использованием маркированных данных, вызовите API **[обучения настраиваемой модели](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/TrainCustomModelAsync)** , выполнив следующий код Python. Перед выполнением команды внесите следующие изменения:
 
 1. Замените `<Endpoint>` на URL-адрес конечной точки для ресурса Распознавателя документов.
 1. Замените `<SAS URL>` подписанным URL-адресом контейнера хранилища BLOB-объектов Azure. Чтобы получить подписанный URL-адрес, откройте Обозреватель службы хранилища Microsoft Azure, щелкните контейнер правой кнопкой мыши и выберите **Get shared access signature** (Получить подписанный URL-адрес). Убедитесь, что разрешение на **чтение** и разрешение **списка** установлены и нажмите кнопку **Создать**. Затем скопируйте значение в разделе **URL-адрес**. Оно должно быть в таком формате: `https://<storage account>.blob.core.windows.net/<container name>?<SAS value>`.
@@ -561,4 +561,4 @@ print("Train operation did not complete within the allocated time.")
 В этом кратком руководстве описано, как выполнять обучение модели с использованием данных с метками, присвоенными вручную, с помощью REST API Распознавателя документов и Python. Ознакомьтесь со справочной документацией по API, чтобы узнать больше об API Распознавателя документов.
 
 > [!div class="nextstepaction"]
-> [Справочная документация по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-previewoperations/AnalyzeWithCustomForm)
+> [Справочная документация по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeWithCustomForm)

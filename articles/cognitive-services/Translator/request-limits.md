@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
-ms.date: 05/26/2020
+ms.date: 06/29/2020
 ms.author: swmachan
-ms.openlocfilehash: 100084a244944bcaf0d566e347d56dd4a03ecfae
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.openlocfilehash: d9fda476a184731cd00317facbeceaf7bdf55edf
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83995791"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85561467"
 ---
 # <a name="request-limits-for-translator"></a>Ограничения запросов для переводчика
 
@@ -66,14 +66,13 @@ ms.locfileid: "83995791"
 
 | Язык | Код | Допустимое число знаков |
 |----------|------|-----------------|
-| Китайский | zh | 132 |
-| Немецкий | de | 290 |
-| Итальянский | it | 280 |
-| Японский | ja | 150 |
-| Португальский | pt | 290 |
-| Испанский | es | 280 |
-| Итальянский | it | 280 |
-| Тайский | th | 258 |
+| Китайский | zh | 166 |
+| Немецкий | de | 800 |
+| Итальянский | it | 800 |
+| Японский | ja | 166 |
+| Португальский | pt | 800 |
+| Испанский | es | 800 |
+| Тайский | th | 180 |
 
 > [!NOTE]
 > Это ограничение не применяется к переводам.

@@ -7,7 +7,11 @@
 - name: Краткие руководства
   items:
     - name: Настройка оповещений о событиях работоспособности служб
-      href: ../azure-monitor/platform/alerts-activity-log-service-notifications.md
+      items:
+        - name: Портал Azure
+          href: alerts-activity-log-service-notifications-portal.md
+        - name: Шаблон ARM
+          href: alerts-activity-log-service-notifications-arm.md
 - name: Основные понятия
   items:
     - name: Страница состояния Azure

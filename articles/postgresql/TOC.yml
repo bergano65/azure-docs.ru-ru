@@ -161,6 +161,10 @@
               href: concepts-read-replicas.md
             - name: Логическое декодирование
               href: concepts-logical.md
+        - name: Переключение между регионами
+          items:
+            - name: Портал Azure
+              href: howto-move-regions-portal.md
     - name: Гипермасштабирование (Citus)
       items:
         - name: Узлы

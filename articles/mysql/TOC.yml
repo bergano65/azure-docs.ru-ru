@@ -294,6 +294,10 @@
           href: howto-restart-server-cli.md
         - name: Azure PowerShell
           href: howto-restart-server-powershell.md
+    - name: Переключение между регионами
+      items:
+        - name: Портал Azure
+          href: howto-move-regions-portal.md
 - name: Справочник
   items:
     - name: Azure CLI

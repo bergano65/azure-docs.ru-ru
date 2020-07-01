@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: pafarley
-ms.openlocfilehash: 7898fcf9b149f50f8478576d18cd3c3b984eb937
-ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
+ms.openlocfilehash: ad87c7e3517aad8a611c711773c5e1cc99b24f88
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85209102"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85562885"
 ---
 # <a name="whats-new-in-form-recognizer"></a>Новые возможности Распознавателя документов
 
@@ -46,8 +46,8 @@ ms.locfileid: "85209102"
   Новый пакет SDK поддерживает все функции REST API версии 2.0 для распознавателя форм. Например, можно обучить модель с метками или без них, а также извлечь текст, пары "ключ-значение" и таблицы из форм, извлечь данные из чеков с помощью предварительно построенной службы получения и извлечь текст и таблицы со службой макета из документов. Вы можете поделиться своими отзывами о [пакетах SDK в форме отзывов SDK](https://aka.ms/FR_SDK_v1_feedback).
  
 * **Копировать пользовательскую модель** Теперь вы можете копировать модели между регионами и подписками, используя новую пользовательскую функцию копирования модели. Перед вызовом API копирования настраиваемой модели необходимо сначала получить авторизацию для копирования в целевой ресурс, вызвав операцию копирования авторизации для конечной точки целевого ресурса.
-   * [Создание авторизации копии](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-previewoperations/CopyCustomFormModelAuthorization) REST API
-   * [Копирование настраиваемой модели](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-previewoperations/CopyCustomFormModel) REST API 
+   * [Создание авторизации копии](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/CopyCustomFormModelAuthorization) REST API
+   * [Копирование настраиваемой модели](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/CopyCustomFormModel) REST API 
 
 ### <a name="security-improvements"></a>Усовершенствования системы безопасности
 
@@ -137,4 +137,4 @@ API-интерфейсы для чтения уведомлений о прод�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Следуйте [краткому руководству](quickstarts/curl-train-extract.md), чтобы приступить к использованию [API Распознавателя документов](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-previewoperations/AnalyzeWithCustomForm).
+Следуйте [краткому руководству](quickstarts/curl-train-extract.md), чтобы приступить к использованию [API Распознавателя документов](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeWithCustomForm).

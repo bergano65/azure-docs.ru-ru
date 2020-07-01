@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 06/15/2020
 ms.author: pafarley
-ms.openlocfilehash: c150d60b05ccd306f055c60d180ee9421b356feb
-ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
+ms.openlocfilehash: 811daf9b1bf5bf26419385517a67cd22cb8346e6
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85242069"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85570156"
 ---
 [Справочная документация](https://docs.microsoft.com/python/api/overview/azure/formrecognizer) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/azure/ai/formrecognizer) | [Пакет (PyPi)](https://pypi.org/project/azure-ai-formrecognizer/) | [Примеры](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples)
 
@@ -58,7 +58,7 @@ key = os.environ["FORM_RECOGNIZER_KEY"]
 После установки Python вы можете установить клиентскую библиотеку с помощью следующей команды:
 
 ```console
-pip install azure_ai_formrecognizer
+pip install azure-ai-formrecognizer
 ```
 
 <!-- 

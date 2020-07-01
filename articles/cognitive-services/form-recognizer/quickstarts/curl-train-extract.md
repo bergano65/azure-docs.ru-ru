@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 05/27/2020
 ms.author: pafarley
-ms.openlocfilehash: ea38b7351d2ba512261de94ac00a06eec9ba9946
-ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
+ms.openlocfilehash: 0abc98c95c03e3dd2e12a601188d9c5f7cb4523d
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85206263"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85558979"
 ---
 # <a name="quickstart-train-a-form-recognizer-model-and-extract-form-data-by-using-the-rest-api-with-curl"></a>Краткое руководство. Обучение модели Распознавателя документов и извлечение данных форм с помощью REST API и cURL
 
@@ -39,7 +39,7 @@ ms.locfileid: "85206263"
 > [!NOTE]
 > Используя функцию помеченных данных, можно заранее пометить вручную некоторые или все данные для обучения. Это более сложный процесс, но его результатом является лучшая обученная модель. Дополнительные сведения об этой функции см. в разделе об [обучении с использованием меток](../overview.md#train-with-labels).
 
-Чтобы обучить модель Распознавателя документов с помощью документов в контейнере больших двоичных объектов Azure, вызовите API-интерфейс **[обучения пользовательской модели](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-previewoperations/TrainCustomModelAsync)** , выполнив команду cURL, показанную ниже. Перед выполнением команды внесите следующие изменения:
+Чтобы обучить модель Распознавателя документов с помощью документов в контейнере больших двоичных объектов Azure, вызовите API-интерфейс **[обучения пользовательской модели](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/TrainCustomModelAsync)** , выполнив команду cURL, показанную ниже. Перед выполнением команды внесите следующие изменения:
 
 1. Замените `<Endpoint>` конечной точкой, полученной из подписки Распознавателя документов.
 1. Замените `<subscription key>` ключом подписки, скопированным на предыдущем шаге.
@@ -53,7 +53,7 @@ curl -i -X POST "https://<Endpoint>/formrecognizer/v2.0/custom/models" -H "Conte
 
 ## <a name="get-training-results"></a>Получение результатов обучения
 
-После начала операции обучения используется новая операция, **[Get Custom Model](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-previewoperations/GetCustomModel)** (Получение пользовательской модели), для проверки состояния обучения. Передайте идентификатор модели в этот вызов API, чтобы проверить состояние обучения:
+После начала операции обучения используется новая операция, **[Get Custom Model](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/GetCustomModel)** (Получение пользовательской модели), для проверки состояния обучения. Передайте идентификатор модели в этот вызов API, чтобы проверить состояние обучения:
 
 1. Замените `<Endpoint>` конечной точкой, полученной из ключа подписки Распознавателя документов
 1. Замените `<subscription key>` ключом своей подписки.
@@ -135,7 +135,7 @@ curl -X GET "https://<Endpoint>/formrecognizer/v2.0/custom/models/<model ID>" -H
 
 ## <a name="analyze-forms-for-key-value-pairs-and-tables"></a>Анализ форм для пар "ключ — значение" и таблиц
 
-Теперь с помощью новой обученной модели нужно проанализировать документ и извлечь из него пары "ключ — значение" и таблицы. Вызовите API **[анализа формы](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-previewoperations/AnalyzeWithCustomForm)** , выполнив следующую команду. Перед выполнением команды внесите следующие изменения:
+Теперь с помощью новой обученной модели нужно проанализировать документ и извлечь из него пары "ключ — значение" и таблицы. Вызовите API **[анализа формы](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeWithCustomForm)** , выполнив следующую команду. Перед выполнением команды внесите следующие изменения:
 
 1. Замените `<Endpoint>` конечной точкой, которую вы получили из своего ключа подписки Распознавателя документов (см. ресурс Распознавателя документов на вкладке **Обзор**).
 1. Замените `<model ID>` идентификатором модели, полученным в предыдущем разделе.
@@ -422,4 +422,4 @@ curl -X GET "https://<Endpoint>/formrecognizer/v2.0/custom/models/<model ID>/ana
 В примере, приведенном в этом руководстве, для обучения модели и ее запуска используется REST API Распознавателя документов и cURL. Для более подробного изучения API Распознавателя документов см. справочную документацию.
 
 > [!div class="nextstepaction"]
-> [Справочная документация по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-previewoperations/AnalyzeWithCustomForm)
+> [Справочная документация по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeWithCustomForm)

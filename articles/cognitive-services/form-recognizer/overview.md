@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: overview
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 241d91a8c8670c32461684ed964b6fc0fd7c1672
-ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
+ms.openlocfilehash: 8885f66b3501217ead302486d2e5ef7de63f5f47
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85206416"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85563252"
 ---
 # <a name="what-is-form-recognizer"></a>Что такое Распознаватель документов?
 
@@ -81,7 +81,7 @@ ms.locfileid: "85206416"
 | **Анализ квитанции** |Проанализируйте один документ квитанции, чтобы извлечь основные сведения и оставшийся текст квитанции.|
 | **Анализ макета** |Проанализируйте макет формы для извлечения текста и структуры таблиц.|
 
-Ознакомьтесь со [справочной документацией по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-previewoperations/AnalyzeWithCustomForm), чтобы узнать больше. Если вы уже знакомы с предыдущей версией API, обратитесь к статье [о новых возможностях и изменениях](./whats-new.md).
+Ознакомьтесь со [справочной документацией по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeWithCustomForm), чтобы узнать больше. Если вы уже знакомы с предыдущей версией API, обратитесь к статье [о новых возможностях и изменениях](./whats-new.md).
 
 ## <a name="input-requirements"></a>Требования к входным данным
 ### <a name="custom-model"></a>Настраиваемая модель
@@ -104,4 +104,4 @@ ms.locfileid: "85206416"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Следуйте [краткому руководству](quickstarts/curl-train-extract.md), чтобы приступить к использованию [API Распознавателя документов](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-previewoperations/AnalyzeWithCustomForm).
+Следуйте [краткому руководству](quickstarts/curl-train-extract.md), чтобы приступить к использованию [API Распознавателя документов](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeWithCustomForm).

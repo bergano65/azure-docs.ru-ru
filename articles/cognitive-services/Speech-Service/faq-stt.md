@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/4/2019
 ms.author: panosper
-ms.openlocfilehash: a279aebdd19ebd3a41ddad0c1c279937e00838c2
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: c572c03936a809ce2f5ccb0071352d6c84c2ee90
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77168467"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85561576"
 ---
 # <a name="speech-to-text-frequently-asked-questions"></a>Часто задаваемые вопросы о преобразовании речи в текст
 
 Если в этой статье вы не нашли ответы на свои вопросы, ознакомьтесь с [другими вариантами поддержки](support.md).
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 
 **Вопрос. Чем отличаются базовая и пользовательская модели преобразования речи в текст?**
 
@@ -100,7 +100,7 @@ ms.locfileid: "77168467"
   - вход (при необходимости),
   - Выберите проект и развертывание,
   - Выберите конечную точку, для которой требуется увеличение параллелизма,
-  - Скопируйте `Endpoint ID`.
+  - Скопируйте `Endpoint ID` .
 
 Чтобы увеличить параллелизм для ***базовой модели***, необходимы следующие сведения:
 
@@ -110,14 +110,17 @@ ms.locfileid: "77168467"
 
 - маркер доступа для подписки (см. [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-speech-to-text#how-to-get-an-access-token)),
 
-или диспетчер конфигурации служб
+или
 
 - Идентификатор ресурса для вашей подписки:
   - Перейдите к [портал Azure](https://portal.azure.com)
-  - в `Cognitive Services` поле поиска выберите
+  - `Cognitive Services`в поле поиска выберите
   - в отображаемых службах выберите службу распознавания речи, для которой требуется увеличить параллелизм.
   - отобразить `Properties` для этой службы
-  - Скопируйте полный `Resource ID`.
+  - Скопируйте полный `Resource ID` .
+  
+>[!NOTE]
+>[Контейнеры](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-container-howto) не нуждаются в увеличении ограничений параллелизма, так как контейнеры ограничены только процессорами оборудования, на котором они размещены.
 
 ## <a name="importing-data"></a>импорт данных
 
@@ -195,7 +198,7 @@ ms.locfileid: "77168467"
 
 Речевые функции, встроенные в Office 365, такие как Диктовка и субтитры PowerPoint, не изменяются при создании модели клиента для приложений службы распознавания речи.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Устранение неполадок](troubleshooting.md)
 - [Заметки о выпуске](releasenotes.md)
