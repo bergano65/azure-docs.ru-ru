@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/25/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 95ebfaef863a1fa05e8a5d3b46fca9659c61f6b7
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 7933d5e5cf7d82de013e18b221f3a0c3ce6b5229
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74110615"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85800534"
 ---
 # <a name="bing-web-search-api-response-structure-and-answer-types"></a>Структура откликов и типы ответов API Bing для поиска в Интернете  
 
@@ -38,7 +38,7 @@ ms.locfileid: "74110615"
 }, ...
 ```
 
-Как правило, служба "Поиск в Интернете Bing" возвращает только некоторые из ответов. Например, если термин запроса был *гоночные дингхиес*, ответ может включать `webPages`, `images`и. `rankingResponse` Если вы не отфильтровали веб-страницы с помощью объекта [responseFilter](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#responsefilter), отклик всегда включает ответы `webpages` и `rankingResponse`.
+Как правило, служба "Поиск в Интернете Bing" возвращает только некоторые из ответов. Например, если термин запроса был *гоночные дингхиес*, ответ может включать `webPages` , `images` и `rankingResponse` . Если вы не отфильтровали веб-страницы с помощью объекта [responseFilter](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#responsefilter), отклик всегда включает ответы `webpages` и `rankingResponse`.
 
 [!INCLUDE [cognitive-services-bing-url-note](../../../includes/cognitive-services-bing-url-note.md)]
 
@@ -294,9 +294,9 @@ Encoded query: 8^2%2B11^2-2*8*11*cos%2837%29
 |------------|-----------------|
 |+|Сложение|
 |-|Вычитание|
-|/|Деление|
+|/|Отдел|
 |*|Умножение|
-|^|Питание|
+|^|Мощный|
 |!|Факториал|
 |.|Decimal|
 |()|Группирование по приоритету|
@@ -449,15 +449,18 @@ Query: What time is it in the U.S.
 
 Установить прокси-сервер CORS довольно просто. Это позволит нашему [учебному приложению](tutorial-bing-web-search-single-page-app.md) иметь доступ к необязательным заголовкам клиента. Для начала [установите платформу Node.js](https://nodejs.org/en/download/), если она еще не установлена. В командной строке введите следующую команду:
 
-    npm install -g cors-proxy-server
+```console
+npm install -g cors-proxy-server
+```
 
-Затем в HTML-файле измените конечную точку API Bing для поиска в Интернете на следующую.
-
-    http://localhost:9090/https://api.cognitive.microsoft.com/bing/v7.0/search
+Затем измените конечную точку API Bing для поиска в Интернете в HTML-файле на: \
+`http://localhost:9090/https://api.cognitive.microsoft.com/bing/v7.0/search`
 
 И наконец, запустите прокси-сервер CORS с помощью следующей команды:
 
-    cors-proxy-server
+```console
+cors-proxy-server
+```
 
 Не закрывайте командное окно, пока используете учебное приложение. Это приведет к остановке прокси-сервера. Теперь в развертываемом разделе заголовков HTTP под результатами поиска можно увидеть заголовок `X-MSEdge-ClientID` (среди прочих) и убедиться, что он одинаковый для всех запросов.
 
@@ -473,7 +476,7 @@ Query: What time is it in the U.S.
 
 ![Пример предложения правописания Bing](./media/cognitive-services-bing-web-api/bing-web-spellingsuggestion.GIF)  
 
-## <a name="next-steps"></a>Следующие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 * Ознакомьтесь с документацией по [регулированию запросов](throttling-requests.md).  
 

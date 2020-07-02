@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 05/18/2020
 ms.author: pafarley
-ms.openlocfilehash: 31bd6a2680d8c71df6b6030187ff44ca10d09440
-ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
+ms.openlocfilehash: fa292f0441369ed13f3f85035a2ec8cc3f5c6723
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84561044"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85800097"
 ---
 # <a name="learn-text-moderation-concepts"></a>Изучение концепций модерации текста
 
@@ -36,13 +36,15 @@ ms.locfileid: "84561044"
 
 Если API обнаруживает ненормативную лексику на любом из [поддерживаемых языков](Text-Moderation-API-Languages.md), эти термины включаются в ответ. В ответе также указывается их расположение (`Index`) в исходном тексте. Объект `ListId` в следующем примере JSON обозначает обнаруженные термины из [пользовательских списков терминов](try-terms-list-api.md) (при наличии):
 
-    "Terms": [
+```json
+"Terms": [
     {
         "Index": 118,
         "OriginalIndex": 118,
         "ListId": 0,
         "Term": "crap"
     }
+```
 
 > [!NOTE]
 > Для параметра **language** (язык) задайте значение `eng` или оставьте это поле пустым, чтобы в ответе отобразился результат **classification** (классификация), которая сейчас выполняется в режиме предварительной версии. **Эта функция поддерживает только английский язык**.
@@ -55,18 +57,20 @@ ms.locfileid: "84561044"
 
 Ниже приводится пример ответа в формате JSON:
 
-    "Classification": {
-        "ReviewRecommended": true,
-        "Category1": {
-              "Score": 1.5113095059859916E-06
-            },
-        "Category2": {
-              "Score": 0.12747249007225037
-            },
-        "Category3": {
-              "Score": 0.98799997568130493
-        }
+```json
+"Classification": {
+    "ReviewRecommended": true,
+    "Category1": {
+        "Score": 1.5113095059859916E-06
+    },
+    "Category2": {
+        "Score": 0.12747249007225037
+    },
+    "Category3": {
+        "Score": 0.98799997568130493
     }
+}
+```
 
 ### <a name="explanation"></a>Объяснение
 
@@ -127,11 +131,11 @@ ms.locfileid: "84561044"
 
 Предположим, что входной текст — ("лзай" и "f0x" являются преднамеренными):
 
-    The qu!ck brown f0x jumps over the lzay dog.
+> Qu! CK Браун f0x перейдет на лзай собака.
 
 Если передать его на автоматическое исправление, ответ будет содержать правильную версию текста:
 
-    The quick brown fox jumps over the lazy dog.
+> При быстром коричневом элементе Fox происходит переход на ленивую собака.
 
 ## <a name="creating-and-managing-your-custom-lists-of-terms"></a>Создание пользовательских списков терминов и управление ими
 
@@ -143,13 +147,15 @@ ms.locfileid: "84561044"
 
 В следующем примере представлен идентификатор совпадения по списку:
 
-    "Terms": [
+```json
+"Terms": [
     {
         "Index": 118,
         "OriginalIndex": 118,
         "ListId": 231.
         "Term": "crap"
     }
+```
 
 Content Moderator предоставляет [API списка терминов](https://westus.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f67f) с операциями для управления пользовательскими списками терминов. Начните работу с изучения [консоли API для списков терминов](try-terms-list-api.md) и примеров кода для REST API. Также изучите [краткое руководство по спискам терминов для .NET](term-lists-quickstart-dotnet.md), если вы уже знакомы с C# и Visual Studio.
 

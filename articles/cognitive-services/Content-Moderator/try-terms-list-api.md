@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: pafarley
-ms.openlocfilehash: 16cfb6c15a4d17ff3fb4f7f41f59f9f80af1e9e7
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: f1dfe88741a304da92901d3997c746654336ef54
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75382129"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85800046"
 ---
 # <a name="moderate-with-custom-term-lists-in-the-api-console"></a>Модерация с помощью настраиваемых списков терминов в консоли API
 
@@ -77,19 +77,21 @@ API управления списками можно использовать д
 
 5. Используйте заполнители пар "ключ-значение", чтобы назначить более понятные метаданные для списка.
 
-       {
-          "Name": "MyExclusionList",
-          "Description": "MyListDescription",
-          "Metadata": 
-          {
-             "Category": "Competitors",
-             "Type": "Exclude"
-          }
-       }
+    ```json
+    {
+        "Name": "MyExclusionList",
+        "Description": "MyListDescription",
+        "Metadata": 
+        {
+            "Category": "Competitors",
+            "Type": "Exclude"
+        }
+    }
+    ```
 
    Добавьте метаданные списка в виде пар "ключ-значение", а не фактических терминов.
  
-6. Выберите **Отправить**. Будет создан список. Запишите значение **ID** (Идентификатор) этого нового списка. Этот идентификатор необходим для других функций управления списками терминов.
+6. Нажмите кнопку **Отправить**. Будет создан список. Запишите значение **ID** (Идентификатор) этого нового списка. Этот идентификатор необходим для других функций управления списками терминов.
 
    ![Идентификатор списка в поле "Response content" (Содержимое ответа) в консоли "Term Lists - Create" (Списки терминов — создание)](images/try-terms-list-create-2.png)
  
@@ -111,7 +113,7 @@ API управления списками можно использовать д
 
     Откроется консоль API **Term - Get All Terms** (Термин — получение всех терминов).
 
-11. В поле **listId** введите идентификатор списка, а затем введите свой ключ подписки. Выберите **Отправить**.
+11. В поле **listId** введите идентификатор списка, а затем введите свой ключ подписки. Нажмите кнопку **Отправить**.
 
 12. В поле **Response content** (Содержимое ответа) проверьте введенные термины.
 
@@ -170,6 +172,6 @@ API управления списками можно использовать д
    ![Внесение изменений в поле "Request body" (Текст запроса) в консоли "Term Lists - Update Details" (Списки терминов — обновление сведений)](images/try-terms-list-change-1.png)
  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте в коде REST API или начните с [краткого руководства по работе со списками терминов с помощью .NET](term-lists-quickstart-dotnet.md), чтобы интегрировать эту функцию в приложение.

@@ -10,12 +10,12 @@ ms.subservice: bing-image-search
 ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: aahi
-ms.openlocfilehash: 6841e573446103466e2719797da9e4161b70b5a6
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 3114c19ecff1a8ae70012592592078302d4a6222
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68881699"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85800029"
 ---
 # <a name="frequently-asked-questions-faq-about-the-bing-image-search-api"></a>Часто задаваемые вопросы об API Bing для поиска изображений
 
@@ -39,15 +39,18 @@ ms.locfileid: "68881699"
 
 Установить прокси-сервер CORS довольно просто. Это позволит нашему [учебному приложению](tutorial-bing-image-search-single-page-app.md) иметь доступ к необязательным заголовкам клиента. Для начала [установите платформу Node.js](https://nodejs.org/en/download/), если она еще не установлена. В командной строке введите следующую команду:
 
-    npm install -g cors-proxy-server
+```console
+npm install -g cors-proxy-server
+```
 
-Затем в HTML-файле измените конечную точку API Bing для поиска изображений на следующую:
-
-    http://localhost:9090/https://api.cognitive.microsoft.com/bing/v7.0/search
+Затем измените конечную точку API Bing для поиска изображений в HTML-файле на: \
+`http://localhost:9090/https://api.cognitive.microsoft.com/bing/v7.0/search`
 
 И наконец, запустите прокси-сервер CORS с помощью следующей команды:
 
-    cors-proxy-server
+```console
+cors-proxy-server
+```
 
 Не закрывайте командное окно, пока используете учебное приложение. Это приведет к остановке прокси-сервера. Теперь в развертываемом разделе заголовков HTTP под результатами поиска можно увидеть заголовок `X-MSEdge-ClientID` (среди прочих) и убедиться, что он одинаковый для всех запросов.
 
@@ -59,7 +62,7 @@ ms.locfileid: "68881699"
 
 Такой подход также защищает ключ API от общего доступа, так как он необходим только серверному сценарию. Чтобы обеспечить авторизацию запроса, сценарий может использовать другой метод (такой как источник ссылки HTTP).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 У вас есть вопрос об отсутствующей функции или компоненте? Вы можете отправить запрос или проголосовать за них на нашем [веб-сайте User Voice](https://cognitive.uservoice.com/forums/555907-bing-search).
 
