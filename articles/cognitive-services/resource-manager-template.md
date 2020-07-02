@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 06/18/2020
 ms.author: aahi
 ms.custom: subject-armqs
-ms.openlocfilehash: 30e3f901d9feca07902e20c87f4fbf5b6979a11b
-ms.sourcegitcommit: 4042aa8c67afd72823fc412f19c356f2ba0ab554
+ms.openlocfilehash: fbaa10ec8a0b48d40644bb90144d89f53ab52563
+ms.sourcegitcommit: 374e47efb65f0ae510ad6c24a82e8abb5b57029e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85299489"
+ms.lasthandoff: 06/28/2020
+ms.locfileid: "85513542"
 ---
 # <a name="quickstart-create-a-cognitive-services-resource-using-an-arm-template"></a>Краткое руководство. Создание ресурса Cognitive Services с помощью шаблона ARM
 

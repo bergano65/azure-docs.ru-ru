@@ -3,12 +3,12 @@ title: Учебник по извлечению структурированны
 description: Извлечение структурированных данных из речевого фрагмента с помощью сущности, прошедшей машинное обучение. Для повышения точности извлечения добавьте вложенные сущности с признаками.
 ms.topic: tutorial
 ms.date: 05/08/2020
-ms.openlocfilehash: f9a732d38d2d4557340080d9d1bbdcf789caea08
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: e16badfb2e024c5d82f1aed8a02aa901dca2c2a9
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83676172"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85611022"
 ---
 # <a name="tutorial-extract-structured-data-from-user-utterance-with-machine-learning-entities-in-language-understanding-luis"></a>Руководство по извлечению структурированных данных из речевого фрагмента пользователя с помощью сущностей, прошедших машинное обучение, в службе "Распознавание речи" (LUIS)
 
@@ -98,7 +98,7 @@ ms.locfileid: "83676172"
 
 1. В раскрывающемся меню выберите **Create new phrase list** (Создать список фраз).
 
-1. В поле **Create new phrase list** (Создать новый список фраз) введите имя `SizePhraselist` и следующие значения: `small`, `medium` и `large`. Когда заполнится поле **Suggestions** (Предложения), выберите `extra large` и `xl`. Нажмите **Save** (Сохранить), чтобы создать новый список фраз.
+1. В поле **Create new phrase list** (Создать новый список фраз) введите имя `SizePhraselist` и следующие значения: `small`, `medium` и `large`. Когда заполнится поле **Suggestions** (Предложения), выберите `extra large` и `xl`. Щелкните **Create** (Создать), чтобы создать новый список фраз.
 
     Эта возможность создания списка фраз позволяет вложенной сущности `Size` находить слова, связанные с размером, предоставляя примеры соответствующих слов. Не обязательно включать в этот список фраз все слова, имеющие отношение к размеру, но важно включить все слова, которые вы ожидаете в речевых фрагментах.
 
@@ -131,7 +131,7 @@ ms.locfileid: "83676172"
 
 1. На вкладке **Schema and features** (Схема и компоненты) выберите сущность **Size**, а затем выберите **+ Add feature** (+ Добавить компонент).
 
-1. Выберите **@ SizeList** в раскрывающемся списке.
+1. Выберите **@ SizeListentity** в раскрывающемся списке.
 
 <a name="add-prebuilt-number-entity-to-app"></a>
 

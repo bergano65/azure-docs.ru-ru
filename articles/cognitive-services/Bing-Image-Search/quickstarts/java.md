@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 05/08/2020
 ms.author: aahi
 ms.custom: seodec2018, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 6032478dfc45d3d4ca1488913356718ab188e057
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: a41a448a344325c2e3820a891017a078ae1532c5
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83872040"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85603423"
 ---
 # <a name="quickstart-search-for-images-with-the-bing-image-search-api-and-java"></a>Краткое руководство. Поиск изображений с помощью пакета API "Поиск изображений Bing" и Java 
 
@@ -162,8 +162,7 @@ connection.setRequestProperty("Ocp-Apim-Subscription-Key", subscriptionKey);
 ## <a name="see-also"></a>См. также раздел
 
 * [Знакомство с API Bing для поиска изображений](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/overview)  
-* [Попробуйте интерактивную демонстрацию в подключенном режиме.](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/)
-* [Узнайте о ценах на API "Поиск Bing".](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/)
-* [Получите бесплатный ключ доступа Cognitive Services.](https://azure.microsoft.com/try/cognitive-services/?api=bing-image-search-api)
-* [Просмотрите документацию по Cognitive Services.](https://docs.microsoft.com/azure/cognitive-services)
-* [Просмотрите справочник по API "Поиск изображений Bing".](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)
+* [Попробуйте API Bing для поиска изображений](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/)
+* [Узнайте о ценах на интерфейсы API Поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/)
+* [Просмотрите документацию по Cognitive Services](https://docs.microsoft.com/azure/cognitive-services)
+* [Справочник по API Bing для поиска изображений](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)

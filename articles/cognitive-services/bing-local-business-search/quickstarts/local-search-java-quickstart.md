@@ -10,12 +10,12 @@ ms.subservice: bing-local-business
 ms.topic: quickstart
 ms.date: 05/12/2020
 ms.author: aahi
-ms.openlocfilehash: c50222c645926a6e48995e6c66d7844adc02699f
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: eb236c77fb9b5e2d5da16ff980693d1c9fce3d8d
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83873000"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85611223"
 ---
 # <a name="quickstart-send-a-query-to-the-bing-local-business-search-api-using-java"></a>Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью Java
 
@@ -25,9 +25,9 @@ ms.locfileid: "83873000"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
+* подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
 * [Комплект SDK Java (JDK).](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
-* [Учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с API-интерфейсами Поиска Bing. Для работы с этим кратким руководством достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api). Сохраните ключ API, указанный при активации бесплатной пробной версии. См. сведения на странице [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
-
+* Получив подписку Azure, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7"  title="создайте ресурс Поиска Bing"  target="_blank">Create a Bing Search resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
 
 ## <a name="create-the-request"></a>Создание запроса 
 

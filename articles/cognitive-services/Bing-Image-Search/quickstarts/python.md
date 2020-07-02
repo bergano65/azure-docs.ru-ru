@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 05/08/2020
 ms.author: aahi
 ms.custom: seodec2018, tracking-python
-ms.openlocfilehash: c913e6a8f1acf6603fad7a0b93758e5a7678f9a5
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ms.openlocfilehash: f818030f5fa7c562b4041543cb702d9673648dee
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84609205"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85603338"
 ---
 # <a name="quickstart-search-for-images-using-the-bing-image-search-rest-api-and-python"></a>Краткое руководство. Поиск изображений с помощью REST API Bing для поиска изображений и Python
 
@@ -151,7 +151,6 @@ ms.locfileid: "84609205"
 > [Руководство по одностраничным приложениям для API Bing для поиска изображений](../tutorial-bing-image-search-single-page-app.md)
 
 * [Знакомство с API Bing для поиска изображений](../overview.md)  
-* [Узнайте о ценах на API Поиска Bing.](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/) 
-* [Получите бесплатный ключ доступа Cognitive Services.](https://azure.microsoft.com/try/cognitive-services/?api=bing-image-search-api) 
-* [Просмотрите документацию по Cognitive Services.](https://docs.microsoft.com/azure/cognitive-services)
-* [Просмотрите справочник по API Поиска изображений Bing.](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)
+* [Узнайте о ценах на интерфейсы API Поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/) 
+* [Просмотрите документацию по Cognitive Services](https://docs.microsoft.com/azure/cognitive-services)
+* [Справочник по API Bing для поиска изображений](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)

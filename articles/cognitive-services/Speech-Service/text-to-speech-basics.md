@@ -12,12 +12,12 @@ ms.date: 04/14/2020
 ms.author: trbye
 ms.custom: tracking-python
 zone_pivot_groups: programming-languages-set-two-with-js
-ms.openlocfilehash: 2bba1536c9d0990eb771f62d27b852ae1eb3b45c
-ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
+ms.openlocfilehash: ddcfeaad70e6552f94f9c87b6e9cf24ed15bfba8
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84604621"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85611478"
 ---
 # <a name="learn-the-basics-of-speech-synthesis"></a>Основные сведения о синтезе речи
 
@@ -29,8 +29,8 @@ ms.locfileid: "84604621"
 * использование нейронных голосовых моделей.
 
 > [!TIP]
-> Если у вас нет возможности воспользоваться одним из наших кратких руководств, мы рекомендуем вам начать работу и попробовать распознавание речи самостоятельно.
-> * [Распознавание речи с микрофона](quickstarts/text-to-speech.md)
+> Если у вас нет возможности воспользоваться одним из наших кратких руководств, мы рекомендуем вам начать работу с преобразованием текста в речь самостоятельно.
+> * [Синтезирование речи в виде речи докладчика](quickstarts/text-to-speech.md)
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [C# Basics include](includes/how-to/text-to-speech-basics/text-to-speech-basics-csharp.md)]

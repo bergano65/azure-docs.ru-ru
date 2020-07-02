@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: overview
-ms.date: 03/12/2020
+ms.date: 06/25/2020
 ms.author: trbye
-ms.openlocfilehash: 664b71c56ae63ea73478923171731e343dfa5cbe
-ms.sourcegitcommit: 8e5b4e2207daee21a60e6581528401a96bfd3184
+ms.openlocfilehash: 43efc770f3a3b29a1b0fc214d2927c8c153dff96
+ms.sourcegitcommit: b56226271541e1393a4b85d23c07fd495a4f644d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84417231"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85391644"
 ---
 # <a name="what-is-the-speech-service"></a>Что собой представляет служба "Речь"
 
@@ -55,7 +55,7 @@ ms.locfileid: "84417231"
 > [!NOTE]
 > Функции преобразования речи в текст и текста в речь также используют конечные точки REST и связанные примеры использования.
 
-После того как у вас будет возможность использовать службы "Речь", просмотрите наше руководство, которое научит вас распознавать намерения из речи с помощью пакета SDK для распознавания речи и LUIS.
+Когда у вас будет возможность использовать службу "Речь", просмотрите наше руководство с описанием разных сценариев.
 
 - [Руководство. Распознавание намерений в речи с помощью пакета SDK для распознавания речи и LUIS, C#](how-to-recognize-intents-from-speech-csharp.md)
 - [Руководство. Включение голосовых команд в боте с помощью пакета SDK службы "Речь" для C#](tutorial-voice-enable-your-bot-speech-sdk.md)

@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 05/08/2020
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 50ce929904df7d4cf4e6ee83d77a9ad16c5f8cff
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: aad804179739a77010446a146d32cd51ac6e6757
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83118878"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85603372"
 ---
 # <a name="quickstart-search-for-images-using-the-bing-image-search-rest-api-and-php"></a>Краткое руководство. Поиск изображений с помощью REST API Bing для поиска изображений и PHP
 
@@ -139,8 +139,7 @@ $headers = array();
 ## <a name="see-also"></a>См. также раздел
 
 * [Знакомство с API Bing для поиска изображений](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/overview)  
-* [Попробуйте интерактивную демонстрацию в подключенном режиме.](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/) 
-* [Узнайте о ценах на API "Поиск Bing".](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/) 
-* [Получите бесплатный ключ доступа Cognitive Services.](https://azure.microsoft.com/try/cognitive-services/?api=bing-image-search-api)
-* [Просмотрите документацию по Cognitive Services.](https://docs.microsoft.com/azure/cognitive-services)
-* [Просмотрите справочник по API Поиска изображений Bing.](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)
+* [Попробуйте API Bing для поиска изображений](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/) 
+* [Узнайте о ценах на интерфейсы API Поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/) 
+* [Просмотрите документацию по Cognitive Services](https://docs.microsoft.com/azure/cognitive-services)
+* [Справочник по API Bing для поиска изображений](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)

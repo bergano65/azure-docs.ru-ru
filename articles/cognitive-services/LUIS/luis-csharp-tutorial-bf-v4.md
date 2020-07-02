@@ -2,13 +2,13 @@
 title: Руководство по Бот распознавания речи версии 4 на C#
 description: Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), используя C#. Бот создается с помощью Bot Framework версии 4 и службы бота веб-приложения Azure.
 ms.topic: tutorial
-ms.date: 02/03/2020
-ms.openlocfilehash: 2381f4cba39f81ab593f3149a2708f442156f30d
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.date: 06/22/2020
+ms.openlocfilehash: b9da1d1fecbb251ebf27833cc381eb658a9df46b
+ms.sourcegitcommit: 74ba70139781ed854d3ad898a9c65ef70c0ba99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76988008"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85445905"
 ---
 # <a name="tutorial-use-a-web-app-bot-enabled-with-language-understanding-in-c"></a>Руководство по совместному использованию бота веб-приложения и службы распознавания речи в C#
 
@@ -27,7 +27,6 @@ ms.locfileid: "76988008"
 * [Bot Emulator](https://aka.ms/abs/build/emulatordownload)
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/)
 
-
 ## <a name="create-a-web-app-bot-resource"></a>Создание ресурса бота веб-приложения
 
 1. На [портале Azure](https://portal.azure.com) выберите **Создание ресурса**.
@@ -38,7 +37,7 @@ ms.locfileid: "76988008"
 
     |Параметр|Назначение|Предлагаемый параметр|
     |--|--|--|
-    |Имя бота|Имя ресурса|`luis-csharp-bot-` + `<your-name>`, например `luis-csharp-bot-johnsmith`|
+    |Bot handle (Дескриптор бота)|Имя ресурса|`luis-csharp-bot-` + `<your-name>`, например `luis-csharp-bot-johnsmith`|
     |Подписка|Подписка, в которой нужно создать бот.|Основная подписка.
     |Группа ресурсов|Логическая группа ресурсов Azure|Создайте группу для хранения всех ресурсов, используемых с этим ботом, и назовите эту группу `luis-csharp-bot-resource-group`.|
     |Расположение|Регион Azure не обязательно должен совпадать с регионом разработки или публикации LUIS.|`westus`|
@@ -54,7 +53,6 @@ ms.locfileid: "76988008"
 
     |Параметр|Назначение|Выбор|
     |--|--|--|
-    |Версия пакета SDK|Версия Bot Framework|**Пакет SDK версии 4**|
     |Язык пакета SDK|Язык программирования бота|**C#**|
     |Бот|Тип бота|**Базовый бот**|
 
@@ -64,6 +62,8 @@ ms.locfileid: "76988008"
     > [![Создание бота веб-приложения](./media/bfv4-csharp/create-web-app-service.png)](./media/bfv4-csharp/create-web-app-service.png#lightbox)
 
     Прежде, чем продолжить, дождитесь создания службы ботов.
+
+1. Выберите `Go to resource` в уведомлении, чтобы открыть страницу бота веб-приложения.
 
 ## <a name="the-bot-has-a-language-understanding-model"></a>Бот содержит модель распознавания речи
 
@@ -86,6 +86,7 @@ ms.locfileid: "76988008"
     Для быстрой проверки бота можно выполнить тестирование функциональных возможностей. Для выполнения более сложного тестирования, в которое входит отладка, скачайте код бота и используйте Visual Studio.
 
 ## <a name="download-the-web-app-bot-source-code"></a>Скачивание исходного кода бота веб-приложения
+
 Чтобы разработать код бота веб-приложения, загрузите код и используйте его на локальном компьютере.
 
 1. Выберите **Сборка** в разделе **Bot management** (Управление ботом) на портале Azure.
@@ -105,6 +106,9 @@ ms.locfileid: "76988008"
 1. Чтобы отправить речевой фрагмент пользователя в конечную точку прогнозирования LUIS, откройте файл **FlightBookingRecognizer.cs**. Это место, где фраза пользователя, введенная в бот, отправляется в LUIS. Ответ от LUIS будет получен из метода **RecognizeAsync**.
 
     ```csharp
+    // Copyright (c) Microsoft Corporation. All rights reserved.
+    // Licensed under the MIT License.
+
     using System.Threading;
     using System.Threading.Tasks;
     using Microsoft.Bot.Builder;
@@ -142,7 +146,7 @@ ms.locfileid: "76988008"
                 => await _recognizer.RecognizeAsync<T>(turnContext, cancellationToken);
         }
     }
-    ````
+    ```
 
 1. Выберите **Диалоги -> MainDialog.cs**, чтобы записать речевой фрагмент и отправить его в запрос executeLuisQuery в методе actStep.
 
@@ -311,21 +315,18 @@ ms.locfileid: "76988008"
 
 1. Запустите эмулятор бота и выберите **Open Bot** (Открыть бот).
 1. Во сплывающем диалоговом окне **Open Bot** (Открыть бот) введите URL-адрес бота, например `http://localhost:3978/api/messages`. Путь `/api/messages` — веб-адрес бота.
-1. Введите **Microsoft App ID** (Идентификатор приложения Майкрософт) и **Microsoft App password**(Пароля приложения Майкрософт), которые можно найти в файле **appsettings.json** в корне кода бота, который был скачан.
-
+1. Введите **идентификатор приложения Майкрософт** и **пароль приложения Майкрософт**, которые можно найти в файле **appsettings.json** в корне скачанного кода, а затем щелкните **Connect** (Подключить).
 
 1. В эмуляторе бота введите `Book a flight from Seattle to Berlin tomorrow` и получите такой же ответ от основного бота, как и ответ, полученный при **тестировании в Web Chat**.
 
     [![Ответ базового бота в эмуляторе](./media/bfv4-nodejs/ask-bot-emulator-a-question-and-get-response.png)](./media/bfv4-nodejs/ask-bot-emulator-a-question-and-get-response.png#lightbox)
 
 1. Выберите **Да**. Бот ответит сводкой своих действий.
-1. Из журнала эмулятора бота выберите строку, в которой содержится `Luis Trace`. Появится ответ в формате JSON, полученный от LUIS, для намерения и сущностей речевого фрагмента.
+1. Из журнала эмулятора бота выберите строку, в которой содержится `<- trace LuisV3 Trace`. Появится ответ в формате JSON, полученный от LUIS, для намерения и сущностей речевого фрагмента.
 
     [![Ответ базового бота в эмуляторе](./media/bfv4-nodejs/ask-luis-book-flight-question-get-json-response-in-bot-emulator.png)](./media/bfv4-nodejs/ask-luis-book-flight-question-get-json-response-in-bot-emulator.png#lightbox)
 
-
 [!INCLUDE [Bot Information](../../../includes/cognitive-services-qnamaker-luis-bot-info.md)]
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
